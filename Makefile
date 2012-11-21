@@ -6,7 +6,7 @@ all: piecewise-nonlinear-fit
 piecewise-nonlinear-fit: piecewise-nonlinear-fit.o
 	g++ $< -o $@ $(LDFLAGS)
 
-piecewise-nonlinear-fit.o: piecewise-nonlinear-fit.cpp *.h
+piecewise-nonlinear-fit.o: piecewise-nonlinear-fit.cpp 
 	g++ -c $(CFLAGS) $< -o $@
 
 clean:
