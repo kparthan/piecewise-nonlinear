@@ -1,10 +1,11 @@
-#include <iostream>
+/*#include <iostream>
 #include <cstdlib>
 #include <vector>
 #include <array>
 #include <liblcb/liblcb.h>
 
 using namespace std;
+using namespace lcb;*/
 
 void constructBoundingBox(vector<array<double,3>> &coordinates)
 {
@@ -18,6 +19,8 @@ void constructBoundingBox(vector<array<double,3>> &coordinates)
 
 int main(int argc, char **argv)
 {
+  Usage(argc,argv);
+  /* parse protein coordinates */
   lcb::BrookhavenPDBParser parser;
   lcb::ProteinStructure *structure = parser.getStructure(argv[1])->select(lcb::CASelector());
   vector<array<double,3>> coordinates = structure->getAtomicCoordinates<double>();
