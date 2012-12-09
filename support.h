@@ -10,6 +10,8 @@
 
 #define AOM 0.001
 
+//double pi = boost::math::constants::pi<double>();
+
 using namespace std;
 using namespace lcb;
 using namespace lcb::geometry;

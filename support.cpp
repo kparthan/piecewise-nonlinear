@@ -138,6 +138,11 @@ void rotateOntoXAxis(ProteinStructure *structure)
 
   /* rotate the line joining origin and the above projection so that the
      line coincides with the X-axis */
+  Line<Point<double>> xaxis(Point<double> {0,0,0},Point<double> {1,0,0});
+  Line<Point<double>> projectedLine(p1,projection);
+  double angle1 = angle(xaxis,projectedLine); 
+  cout << angle1 << endl;
+  
 
   /* */
   cout << "[OK]" << endl;
