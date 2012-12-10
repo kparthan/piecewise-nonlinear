@@ -25,6 +25,7 @@ void writeToFile(vector<array<double,3>> &, const char*);
 void translateToOrigin(ProteinStructure *);
 void rotateOntoXAxis(ProteinStructure *);
 void transformProteinStructure (ProteinStructure *);
+template<class T> Matrix<T> rotationMatrix1(T);
 
 double constructBoundingBox (vector<array<double,3>> &);
 double findMinimum (vector<array<double,3>> &, unsigned);
