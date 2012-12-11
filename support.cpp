@@ -129,61 +129,48 @@ void rotateOntoXAxis(ProteinStructure *structure)
   cout << endl << end.x() << " " << end.y() << " " << end.z() << endl;
 
   /* project the last point onto the XZ plane first */
-  Point<double> pos1(0,0,0);
-  Point<double> pos2(1,0,0);
-  Point<double> pos3(0,0,1);
-  Plane<Point<double>> xzPlane(pos1,pos2,pos3);
+  Point<double> origin(0,0,0);
+  Point<double> unitVectorX(1,0,0);
+  Point<double> unitVectorZ(0,0,1);
+  Plane<Point<double>> xzPlane(origin,unitVectorX,unitVectorZ);
   Point<double> projection = project(end,xzPlane);
   cout << projection.x() << " " << projection.y() << " " << projection.z() << endl;
 
-  /* rotate the line joining origin and the above projection so that the
-     line coincides with the X-axis */
+  /* brings the last point in the protein to lie on the XY plane */
   Line<Point<double>> xaxis(Point<double> {0,0,0},Point<double> {1,0,0});
-  Line<Point<double>> projectedLine(pos1,projection);
-  double angle1 = angle(xaxis,projectedLine); 
-  cout << angle1 << endl;
+  Line<Point<double>> projectedLine(origin,projection);
+  double angleWithX = angle(xaxis,projectedLine); 
+  cout << angleWithX << endl;
+  double theta;
   Vector<double> yaxis(vector<double>{0,1,0});
-  //Matrix<double> rotate1 = rotationMatrix(yaxis,angle1);
-
-  /* brings the line into the XY plane */
-  Matrix<double> rotate1 = rotationMatrix1(angle1);
-  structure->transform(rotate1);
-  /*atoms = structure->getAtoms();
-  end = atoms[atoms.size()-1].point<double>();
-  cout << endl << end.x() << " " << end.y() << " " << end.z() << endl;*/
-
-  /* rotates the line in XY plane (about Z axis) onto X-axis */
+  if (projection.z() > 0) {
+    theta = angleWithX;
+  } else {
+    theta = -angleWithX;
+  }
+  Matrix<double> rotate = rotationMatrix(yaxis,theta);
+  structure->transform(rotate);
   atoms = structure->getAtoms();
+  end = atoms[atoms.size()-1].point<double>();
+  cout << endl << end.x() << " " << end.y() << " " << end.z() << endl;
+
+  /* brings the last point on the protein to lie on the X-axis */
+  atoms = structure->getAtoms();
+  end = atoms[atoms.size()-1].point<double>();
+  projectedLine = Line<Point<double>>(origin,end); 
+
+  /*atoms = structure->getAtoms();
   end = atoms[atoms.size()-1].point<double>();
   Line<Point<double>> lineInXYPlane(pos1,end);
   double angle2 = angle(xaxis,lineInXYPlane);
   cout << angle2 << endl;
   Vector<double> zaxis(vector<double>{0,0,1});
-  Matrix<double> rotate1 = rotationMatrix1(angle1);
-  structure->transform(rotate1);
+  structure->transform(rotate1);*/
 
   
   
   /* */
   cout << "[OK]" << endl;
-}
-
-/*!
- *  \brief This module is used to generate the transformation matrix to
- *  rotate about Y-axis
- *  \param angle a double
- *  \return rotation matrix
- */
-template<class T>
-Matrix<T> rotationMatrix1(T angle)
-{
-  Matrix<T> R = Matrix<T>::identity(3);
-  R[0][0] = cos(angle);
-  R[0][2] = -sin(angle);
-  R[2][0] = sin(angle);
-  R[2][2] = cos(angle);
-  R.print();
-  return R;
 }
 
 /*!
