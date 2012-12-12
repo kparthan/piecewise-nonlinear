@@ -1,4 +1,5 @@
-#include "support.h"
+//#include "support.h"
+#include "StandardForm.h"
 
 int main(int argc, char **argv)
 {
@@ -8,9 +9,9 @@ int main(int argc, char **argv)
   ProteinStructure *structure = parsePDBFile(argv[1]);
 
   /* transform the protein structure to the standard canonical form */
-  transformProteinStructure(structure);
+  StandardForm protein(structure);
+  protein.transform();
 
-  //vector<array<double,3>> coordinates = structure->getAtomicCoordinates<double>();  
   //double volume = constructBoundingBox(coordinates);
 
   return 0;

@@ -80,29 +80,51 @@ void writeToFile(vector<array<double,3>> &coordinates, const char *fileName)
  *  and the second point on the XY-plane.
  *  \param structure a reference to a lcb::ProteinStructure
  */
-void transformProteinStructure(ProteinStructure *structure)
+/*void transformProteinStructure(ProteinStructure *structure)
 {
   cout << "Transforming the protein to a standard canonical form ...\n";
-  vector<array<double,3>> coordinates = structure->getAtomicCoordinates<double>();  
+  vector<array<double,3>> coordinates;// = structure->getAtomicCoordinates<double>();  
   //writeToFile(coordinates,"before_translation");
 
-  /* translate the protein so that first point is at origin */
+   translate the protein so that first point is at origin 
   translateToOrigin(structure);
 
-  /* move the last point onto the X-axis */
+   move the last point onto the X-axis 
   rotateOntoXAxis(structure);
 
-  coordinates = structure->getAtomicCoordinates<double>();  
+  //coordinates = structure->getAtomicCoordinates<double>();  
   //writeToFile(coordinates,"after_translation");
+
+   rotate second point of the protein onto the XY plane 
+  rotateSecondPoint(structure);
+  coordinates = structure->getAtomicCoordinates<double>();  
+  writeToFile(coordinates,"final");
+  
   cout << "Transformation to standard form done ..." << endl;
-}
+}*/
+
+/*!
+ *  \brief This module transforms the protein such that the second point 
+ *  lies on the XY plane
+ *  \param structure a ProteinStructure
+ */
+/*void rotateSecondPoint(ProteinStructure *structure)
+{
+  cout << "Rotating protein so that second point lies on XY plane ... ";
+  vector<Atom> atoms = structure->getAtoms();
+  Point<double> second = atoms[1].point<double>();
+
+   brings the second point in the protein to lie on the XY plane 
+  Matrix<double> rotate = projectAndRotate(second); 
+  structure->transform(rotate);
+}*/
 
 /*!
  *  \brief This module shifts the whole protein so that the first coordinate
  *  of interest is at the origin.
  *  \param structure a reference to a lcb::ProteinStructure
  */
-void translateToOrigin(ProteinStructure *structure)
+/*void translateToOrigin(ProteinStructure *structure)
 {
   cout << "Translation to origin ... ";
   vector<array<double,3>> coordinates = structure->getAtomicCoordinates<double>();  
@@ -113,34 +135,34 @@ void translateToOrigin(ProteinStructure *structure)
   Matrix<double> translate = translationMatrix(offsetx,offsety,offsetz);
   structure->transform(translate);
   cout << "[OK]" << endl;
-}
+}*/
 
 /*!
- *  \brief This module rotates the protein so that its last point lies on
- *  the X-axis.
- *  \param structure a reference to a lcb::ProteinStructure
+ *  \brief This module projects a point onto the XZ plane
+ *  \param p a Point<double>
+ *  \return point of projection
  */
-void rotateOntoXAxis(ProteinStructure *structure)
+/*Point<double> projectOnXZPlane(Point<double> p)
 {
-  cout << "Rotating protein so that last point lies on X-axis ... ";
-  vector<Atom> atoms = structure->getAtoms();
-  Point<double> start = atoms[0].point<double>();
-  Point<double> end = atoms[atoms.size()-1].point<double>();
-  cout << endl << end.x() << " " << end.y() << " " << end.z() << endl;
-
-  /* project the last point onto the XZ plane first */
   Point<double> origin(0,0,0);
   Point<double> unitVectorX(1,0,0);
   Point<double> unitVectorZ(0,0,1);
   Plane<Point<double>> xzPlane(origin,unitVectorX,unitVectorZ);
-  Point<double> projection = project(end,xzPlane);
-  cout << projection.x() << " " << projection.y() << " " << projection.z() << endl;
+  return project(p,xzPlane);
+}*/
 
-  /* brings the last point in the protein to lie on the XY plane */
+/*!
+ *  \brief This module generates a rotation matrix such that a point lies
+ *  on the XY plane
+ *  \param projection a Point<double>
+ *  \return a transformation matrix
+ */
+/*Matrix<double> rotateOntoXYPlane(Point<double> projection)
+{
+  Point<double> origin(0,0,0);
   Line<Point<double>> xaxis(Point<double> {0,0,0},Point<double> {1,0,0});
   Line<Point<double>> projectedLine(origin,projection);
   double angleWithX = angle(xaxis,projectedLine); 
-  cout << angleWithX << endl;
   double theta;
   Vector<double> yaxis(vector<double>{0,1,0});
   if (projection.z() > 0) {
@@ -148,30 +170,70 @@ void rotateOntoXAxis(ProteinStructure *structure)
   } else {
     theta = -angleWithX;
   }
-  Matrix<double> rotate = rotationMatrix(yaxis,theta);
-  structure->transform(rotate);
-  atoms = structure->getAtoms();
-  end = atoms[atoms.size()-1].point<double>();
-  cout << endl << end.x() << " " << end.y() << " " << end.z() << endl;
+  return rotationMatrix(yaxis,theta);
+}*/
 
-  /* brings the last point on the protein to lie on the X-axis */
-  atoms = structure->getAtoms();
-  end = atoms[atoms.size()-1].point<double>();
-  projectedLine = Line<Point<double>>(origin,end); 
-
-  /*atoms = structure->getAtoms();
-  end = atoms[atoms.size()-1].point<double>();
-  Line<Point<double>> lineInXYPlane(pos1,end);
-  double angle2 = angle(xaxis,lineInXYPlane);
-  cout << angle2 << endl;
+/*!
+ *  \brief This module generates a rotation matrix to bring a point in XY
+ *  plane onto the X axis
+ *  \param p a Point<double>
+ *  \return a transformation matrix
+ */
+/*Matrix<double> rotateInXYPlane(Point<double> p)
+{
+  Point<double> origin(0,0,0);
+  Line<Point<double>> xaxis(Point<double> {0,0,0},Point<double> {1,0,0});
+  Line<Point<double>> projectedLine(origin,p); 
+  double angleWithX = angle(xaxis,projectedLine);
+  double theta;
+  if (p.y() > 0){
+    theta = -angleWithX;
+  } else {
+    theta = angleWithX;
+  }
   Vector<double> zaxis(vector<double>{0,0,1});
-  structure->transform(rotate1);*/
+  return rotationMatrix(zaxis,theta);
+}*/
 
-  
-  
-  /* */
+/*!
+ *  \brief This module rotates a point of interest in the protein onto the
+ *  XY plane
+ *  \param p a Point<double>
+ *  \return a rotation matrix to effect that transformation
+ */
+/*Matrix<double> projectAndRotate(Point<double> &p)
+{
+   project the point onto the XZ plane first 
+  Point<double> projection = projectOnXZPlane(p);
+
+   now rotate the point onto the XY plane 
+  return rotateOntoXYPlane(projection); 
+}*/
+
+/*!
+ *  \brief This module rotates the protein so that its last point lies on
+ *  the X-axis.
+ *  \param structure a reference to a lcb::ProteinStructure
+ */
+/*void rotateOntoXAxis(ProteinStructure *structure)
+{
+  cout << "Rotating protein so that last point lies on X-axis ... ";
+  vector<Atom> atoms = structure->getAtoms();
+  Point<double> end = atoms[atoms.size()-1].point<double>();
+
+   brings the last point in the protein to lie on the XY plane 
+  Matrix<double> rotate = projectAndRotate(end); 
+  structure->transform(rotate);
+
+  atoms = structure->getAtoms();
+  end = atoms[atoms.size()-1].point<double>();
+
+   brings the last point on the protein to lie on the X-axis 
+  rotate = rotateInXYPlane(end);
+  structure->transform(rotate);
+
   cout << "[OK]" << endl;
-}
+}*/
 
 /*!
  *  \brief
