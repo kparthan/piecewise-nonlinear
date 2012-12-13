@@ -1,4 +1,3 @@
-//#include "support.h"
 #include "StandardForm.h"
 
 int main(int argc, char **argv)
@@ -11,8 +10,7 @@ int main(int argc, char **argv)
   /* transform the protein structure to the standard canonical form */
   StandardForm protein(structure);
   protein.transform();
-
-  //double volume = constructBoundingBox(coordinates);
+  double volume = protein.boundingBox(); 
 
   return 0;
 }

@@ -5,8 +5,13 @@
  *  object
  *  \param s a reference to a ProteinStructure
  */
-StandardForm::StandardForm(ProteinStructure *s) : structure(s)
+StandardForm::StandardForm(ProteinStructure *s) : structure(s), volume(0)
 {
+}
+
+void StandardForm::updateCoordinates(void)
+{
+  coordinates = structure->getAtomicCoordinates<double>();  
 }
 
 /*!
@@ -19,22 +24,22 @@ StandardForm::StandardForm(ProteinStructure *s) : structure(s)
 void StandardForm::transform(void)
 {
   cout << "Transforming the protein to a standard canonical form ...\n";
-  coordinates = structure->getAtomicCoordinates<double>();  
+  updateCoordinates();
   writeToFile(coordinates,"before_translation");
 
   /* translate the protein so that first point is at origin */
   translateToOrigin();
-  coordinates = structure->getAtomicCoordinates<double>();  
+  updateCoordinates();
   writeToFile(coordinates,"after_translation");
 
   /* move the last point onto the X-axis */
-  rotateOntoXAxis();
-  coordinates = structure->getAtomicCoordinates<double>();  
+  rotateLastPoint();
+  updateCoordinates();
   writeToFile(coordinates,"rotate1");
 
   /* rotate second point of the protein onto the XY plane */
   rotateSecondPoint();
-  coordinates = structure->getAtomicCoordinates<double>();  
+  updateCoordinates();
   writeToFile(coordinates,"final");
   
   cout << "Transformation to standard form done ..." << endl;
@@ -61,14 +66,14 @@ void StandardForm::translateToOrigin()
  *  \brief This module rotates the protein so that its last point lies on
  *  the X-axis.
  */
-void StandardForm::rotateOntoXAxis()
+void StandardForm::rotateLastPoint()
 {
   cout << "Rotating protein so that last point lies on X-axis ... ";
   atoms = structure->getAtoms();
   Point<double> end = atoms[atoms.size()-1].point<double>();
 
   /* brings the last point in the protein to lie on the XY plane */
-  Matrix<double> rotate = projectAndRotate(end); 
+  Matrix<double> rotate = projectAndRotateLast(end); 
   structure->transform(rotate);
 
   atoms = structure->getAtoms();
@@ -82,19 +87,19 @@ void StandardForm::rotateOntoXAxis()
 }
 
 /*!
- *  \brief This module rotates a point of interest in the protein onto the
+ *  \brief This module rotates the last point in the protein onto the
  *  XY plane
  *  \param p a reference to a Point<double>
  *  \return a rotation matrix to effect that transformation
  */
-Matrix<double> StandardForm::projectAndRotate(Point<double> &p)
+Matrix<double> StandardForm::projectAndRotateLast(Point<double> &p)
 {
   /* project the point onto the XZ plane first */
   Point<double> projection = projectOnXZPlane(p);
-  cout << projection.x() << " " << projection.y() << " " << projection.z() << endl;
+  //cout << projection.x() << " " << projection.y() << " " << projection.z() << endl;
 
   /* now rotate the point onto the XY plane */
-  return rotateOntoXYPlane(projection); 
+  return rotateLastOntoXYPlane(projection); 
 }
 
 /*!
@@ -112,12 +117,12 @@ Point<double> StandardForm::projectOnXZPlane(Point<double> &p)
 }
 
 /*!
- *  \brief This module generates a rotation matrix such that a point lies
- *  on the XY plane
+ *  \brief This module generates a rotation matrix such that the last point
+ *  lies on the XY plane
  *  \param projection a reference to a Point<double>
  *  \return a transformation matrix
  */
-Matrix<double> StandardForm::rotateOntoXYPlane(Point<double> &projection)
+Matrix<double> StandardForm::rotateLastOntoXYPlane(Point<double> &projection)
 {
   Point<double> origin(0,0,0);
   Line<Point<double>> xaxis(Point<double> {0,0,0},Point<double> {1,0,0});
@@ -166,9 +171,141 @@ void StandardForm::rotateSecondPoint()
   Point<double> second = atoms[1].point<double>();
 
   /* brings the second point in the protein to lie on the XY plane */
-  Matrix<double> rotate = projectAndRotate(second); 
+  Matrix<double> rotate = projectAndRotateSecond(second); 
   structure->transform(rotate);
 
   cout << "[OK]" << endl;
+}
+
+/*!
+ *  \brief This module rotates the second point in the protein onto the
+ *  XY plane
+ *  \param p a reference to a Point<double>
+ *  \return a rotation matrix to effect that transformation
+ */
+Matrix<double> StandardForm::projectAndRotateSecond(Point<double> &p)
+{
+  /* project the point onto the YZ plane first */
+  Point<double> projection = projectOnYZPlane(p);
+  //cout << projection.x() << " " << projection.y() << " " << projection.z() << endl;
+
+  /* now rotate the point onto the XY plane */
+  return rotateSecondOntoXYPlane(projection); 
+}
+
+/*!
+ *  \brief This module projects a point onto the YZ plane
+ *  \param p a reference to a Point<double>
+ *  \return point of projection
+ */
+Point<double> StandardForm::projectOnYZPlane(Point<double> &p)
+{
+  Point<double> origin(0,0,0);
+  Point<double> unitVectorY(0,1,0);
+  Point<double> unitVectorZ(0,0,1);
+  Plane<Point<double>> yzPlane(origin,unitVectorZ,unitVectorY);
+  return project(p,yzPlane);
+}
+
+/*!
+ *  \brief This module generates a rotation matrix such that the second 
+ *  point lies in the XY plane
+ *  \param projection a reference to a Point<double>
+ *  \return a transformation matrix
+ */
+Matrix<double> StandardForm::rotateSecondOntoXYPlane(Point<double> &projection)
+{
+  Point<double> origin(0,0,0);
+  Line<Point<double>> yaxis(Point<double> {0,0,0},Point<double> {0,1,0});
+  Line<Point<double>> projectedLine(origin,projection);
+  double angleWithY = angle(yaxis,projectedLine); 
+  double theta;
+  if (projection.z() > 0) {
+    theta = -angleWithY;
+  } else {
+    theta = angleWithY;
+  }
+  Vector<double> xaxis(vector<double>{1,0,0});
+  return rotationMatrix(xaxis,theta);
+}
+
+/*!
+ *  \brief This module computes the volume of the bounding box for
+ *  the standard protein configuration
+ *  \return volume of the bounding box
+ */
+double StandardForm::boundingBox()
+{
+  if (volume != 0) {
+    return volume;
+  } else {
+    updateCoordinates();
+    double xmin = findMinimum(0);
+    double xmax = findMaximum(0);
+    double ymin = findMinimum(1);
+    double ymax = findMaximum(1);
+    double zmin = findMinimum(2);
+    double zmax = findMaximum(2);
+    /*cout << xmin << " " << xmax << endl;
+    cout << ymin << " " << ymax << endl;
+    cout << zmin << " " << zmax << endl;*/
+    volume =  (xmax-xmin)*(ymax-ymin)*(zmax-zmin); 
+    //cout << "bounding box volume = " << volume << endl;
+    return volume;
+  }
+}
+
+/*!
+ *  \brief This module computes the minimum coordinates (x,y or z) value
+ *  \param index an unsigned integer
+ *  \return the minimum coordinate value
+ */
+double StandardForm::findMinimum(unsigned index)
+{
+  int size = coordinates.size();
+  if (size <= 0){
+    cout << "Empty list of coordinates passed ..." << endl;
+    cout << "exiting ..." << endl;
+    exit(1);
+  }
+  if (index > coordinates[0].size()){
+    cout << "Index exceeds std::array<> size ..." << endl;
+    cout << "exiting ..." << endl;
+    exit(1);
+  }
+  double minimum = coordinates[0][index];
+  for(int i=1; i<size; i++){
+    if(coordinates[i][index] < minimum){
+      minimum = coordinates[i][index];
+    }
+  }
+  return minimum;
+}
+
+/*!
+ *  \brief This module computes the maximum coordinate (x,y or z) value
+ *  \param index an unsigned integer
+ *  \return the maximum coordinate value
+ */
+double StandardForm::findMaximum(unsigned index)
+{
+  int size = coordinates.size();
+  if (size <= 0){
+    cout << "Empty list of coordinates passed ..." << endl;
+    cout << "exiting ..." << endl;
+    exit(1);
+  }
+  if (index > coordinates[0].size()){
+    cout << "Index exceeds std::array<> size ..." << endl;
+    cout << "exiting ..." << endl;
+    exit(1);
+  }
+  double maximum = coordinates[0][index];
+  for(int i=1; i<size; i++){
+    if(coordinates[i][index] > maximum){
+      maximum = coordinates[i][index];
+    }
+  }
+  return maximum;
 }
 
