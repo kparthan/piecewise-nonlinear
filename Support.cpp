@@ -1,4 +1,4 @@
-#include "support.h"
+#include "Support.h"
 
 /*!
  *  \brief This function checks to see if valid arguments are given to the 

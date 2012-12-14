@@ -9,9 +9,22 @@ StandardForm::StandardForm(ProteinStructure *s) : structure(s), volume(0)
 {
 }
 
+/*!
+ *  \brief This module updates the list of coordinates with respect to
+ *  the current configuration of the protein
+ */
 void StandardForm::updateCoordinates(void)
 {
   coordinates = structure->getAtomicCoordinates<double>();  
+}
+
+/*!
+ *  \brief This module updates the list of atoms with respect to
+ *  the current configuration of the protein
+ */
+void StandardForm::updateAtoms(void)
+{
+  atoms = structure->getAtoms();
 }
 
 /*!
@@ -41,6 +54,8 @@ void StandardForm::transform(void)
   rotateSecondPoint();
   updateCoordinates();
   writeToFile(coordinates,"final");
+
+  updateAtoms();
   
   cout << "Transformation to standard form done ..." << endl;
 }
@@ -52,7 +67,7 @@ void StandardForm::transform(void)
 void StandardForm::translateToOrigin()
 {
   cout << "Translation to origin ... ";
-  coordinates = structure->getAtomicCoordinates<double>();  
+  updateCoordinates();
   double offsetx,offsety,offsetz; 
   offsetx = -coordinates[0][0];
   offsety = -coordinates[0][1];
@@ -69,14 +84,14 @@ void StandardForm::translateToOrigin()
 void StandardForm::rotateLastPoint()
 {
   cout << "Rotating protein so that last point lies on X-axis ... ";
-  atoms = structure->getAtoms();
+  updateAtoms();
   Point<double> end = atoms[atoms.size()-1].point<double>();
 
   /* brings the last point in the protein to lie on the XY plane */
   Matrix<double> rotate = projectAndRotateLast(end); 
   structure->transform(rotate);
 
-  atoms = structure->getAtoms();
+  updateAtoms();
   end = atoms[atoms.size()-1].point<double>();
 
   /* brings the last point on the protein to lie on the X-axis */
@@ -167,7 +182,7 @@ Matrix<double> StandardForm::rotateInXYPlane(Point<double> &p)
 void StandardForm::rotateSecondPoint()
 {
   cout << "Rotating protein so that second point lies on XY plane ... ";
-  atoms = structure->getAtoms();
+  updateAtoms();
   Point<double> second = atoms[1].point<double>();
 
   /* brings the second point in the protein to lie on the XY plane */
@@ -307,5 +322,25 @@ double StandardForm::findMaximum(unsigned index)
     }
   }
   return maximum;
+}
+
+/*!
+ *  \brief This module returns the coordinates at the given index
+ *  \param index an integer
+ *  \return the coordinates at an index
+ */
+array<double,3> StandardForm::getCoordinates(int index)
+{
+  return coordinates[index];
+}
+
+/*!
+ *  \brief This module returns the atom at a particular index
+ *  \param index an integer
+ *  \return an Atom at the given index
+ */
+Atom StandardForm::getAtoms(int index)
+{
+  return atoms[index];
 }
 

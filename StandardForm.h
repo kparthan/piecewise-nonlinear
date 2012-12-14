@@ -1,7 +1,7 @@
 #ifndef STANDARD_FORM_H
 #define STANDARD_FORM_H
 
-#include "support.h"
+#include "Support.h"
 
 /*!
  *  \class StandardForm 
@@ -29,6 +29,9 @@ class StandardForm
 
     //! updates the private variable wrt the current configuration
     void updateCoordinates();
+
+    //! updates the private variable wrt the current configuration
+    void updateAtoms();
 
     //! convert to the standard canonical form
     void transform();
@@ -73,6 +76,12 @@ class StandardForm
 
     //! gets the maximum coordinate value
     double findMaximum(unsigned);
+
+    //! returns the coordinates of the structure
+    array<double,3> getCoordinates(int);
+
+    //! returns the atom of the structure
+    Atom getAtom(int);
 };
 
 #endif

@@ -1,4 +1,4 @@
-#include "StandardForm.h"
+#include "Segment.h"
 
 int main(int argc, char **argv)
 {
@@ -11,6 +11,10 @@ int main(int argc, char **argv)
   StandardForm protein(structure);
   protein.transform();
   double volume = protein.boundingBox(); 
+
+  Segment segment(0,5,protein);
+  segment.linearFit();
+  segment.print();
 
   return 0;
 }
