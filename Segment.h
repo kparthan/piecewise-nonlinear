@@ -19,7 +19,7 @@ class Segment
     vector<array<double,3>> coordinates;
    
     //! list of atoms
-    vector<Atoms> atoms;
+    vector<Atom> atoms;
  
     //! message length for the linear fit
     double linearFitMsgLen;
@@ -51,8 +51,7 @@ class Segment
     Plane<Point<double>> constructPlane(Point<double> &, Point<double> &);
 
     //! computes deviations from the line
-    vector<array<double,2>> computeDeviations(vector<array<double>,3> &,
-                                              Line<Point<double>> &,
+    vector<array<double,3>> computeDeviations(Line<Point<double>> &,
                                               Plane<Point<double>> &);
 
     //! gets the message length for the linear fit

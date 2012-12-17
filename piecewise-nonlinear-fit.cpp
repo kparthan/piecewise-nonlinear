@@ -16,6 +16,8 @@ int main(int argc, char **argv)
   segment.linearFit();
   segment.print();
 
+  //Message message(segment);
+
   return 0;
 }
 

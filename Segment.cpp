@@ -35,22 +35,40 @@ void Segment::linearFit(void)
   Point<double> end = atoms[atoms.size()-1].point<double>();
   Line<Point<double>> line(start,end);
   Plane<Point<double>> plane = constructPlane(start,end);
-  vector<array<double,2>> deviations = 
-    computeDeviations(coordinates,line,plane);
+  vector<array<double,3>> deviations = computeDeviations(line,plane);
 }
 
 /*!
  *  \brief This module computes the deviations of each of the intermediate
  *  points from the line describing the end points of the segment
- *  \param coordinates a reference to a vector<array<double,3>>
  *  \param line a reference to a Line<Point<double>>
  *  \param plane a reference to a Plane<Point<double>> 
  */
-vector<array<double,2>> Segment::computeDeviations
-                                 (vector<array<double,3>> &coordinates,
-                                  Line<Point<double>> &line,
-                                  Plane<Point<double>> &plane)
+vector<array<double,3>> Segment::computeDeviations(Line<Point<double>> &line,
+                                                  Plane<Point<double>> &plane)
 {
+  vector<array<double,3>> deviations;
+  array<double,3> d;
+  Vector<double> normal = plane.normal(); normal.print() ;
+  Point<double> p,projection,previous;
+  previous = line.startPoint();
+  for(int i=0; i<numIntermediate; i++){
+    p = atoms[i+1].point<double>();
+    d[0] = plane.signedDistance(p); 
+    projection = project(p,plane);
+    d[1] = line.signedDistance(normal,projection);
+    projection = project(p,line);
+    d[2] = line.signedDistance(previous,projection);
+    deviations.push_back(d);
+    previous = projection;
+  }
+  cout << "Deviations ...\n"; 
+  for (int i=0; i<deviations.size(); i++){
+    cout << deviations[i][0] << " ";
+    cout << deviations[i][1] << " ";
+    cout << deviations[i][2] << endl;
+  }
+  return deviations;
 }
 
 /*!
