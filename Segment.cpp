@@ -27,7 +27,7 @@ Segment::Segment(int start, int end, StandardForm &s):
 }
 
 /*!
- *  \brief This module fits a linear model for the segment
+ *  \brief This module fits a linear model to the segment
  */
 void Segment::linearFit(void)
 {
