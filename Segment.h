@@ -2,12 +2,17 @@
 #define SEGMENT_H
 
 #include "StandardForm.h"
+#include "Message.h"
+#include "geometry3D.h"
 
 class Segment
 {
   private:
     //! start and end points of the segment
     int start,end;
+
+    //! volume of the bounding box
+    double volume;
 
     //! number of intermediate points
     int numIntermediate;
@@ -19,7 +24,7 @@ class Segment
     vector<array<double,3>> coordinates;
    
     //! list of atoms
-    vector<Atoms> atoms;
+    vector<Atom> atoms;
  
     //! message length for the linear fit
     double linearFitMsgLen;
@@ -33,7 +38,7 @@ class Segment
 
   public:
     //! constructor
-    Segment(int, int, StandardForm &);
+    Segment(int, int, StandardForm &, double);
 
     //! returns number of intermediate points
     int getNumberOfIntermediatePoints();
@@ -45,15 +50,19 @@ class Segment
     array<double,3> getCoordinates(int);
 
     //! fits a linear model
-    void linearFit();
+    double linearFit();
 
     //! constructs a plane
     Plane<Point<double>> constructPlane(Point<double> &, Point<double> &);
 
     //! computes deviations from the line
-    vector<array<double,2>> computeDeviations(vector<array<double>,3> &,
-                                              Line<Point<double>> &,
+    vector<array<double,3>> computeDeviations(Line<Point<double>> &,
                                               Plane<Point<double>> &);
+
+    vector<array<double,3>> computeDeviations2(Line<Point<double>> &,
+                                              Plane<Point<double>> &);
+    //! computes the message length for the segment
+    double messageLength(vector<array<double,3>> &, double);
 
     //! gets the message length for the linear fit
     double getLinearFit();

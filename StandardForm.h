@@ -77,11 +77,11 @@ class StandardForm
     //! gets the maximum coordinate value
     double findMaximum(unsigned);
 
-    //! returns the coordinates of the structure
+    //! accesses the coordinates of the structure
     array<double,3> getCoordinates(int);
 
-    //! returns the atom of the structure
-    Atom getAtom(int);
+    //! accesses the atom of the structure
+    Atom getAtoms(int);
 };
 
 #endif

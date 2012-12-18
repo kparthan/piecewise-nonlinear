@@ -76,3 +76,48 @@ void writeToFile(vector<array<double,3>> &coordinates, const char *fileName)
  file.close(); 
 }
 
+/*!
+ *  \brief This module computes the message length associated with a log star
+ *  distribution
+ *  \param value a double
+ *  \return the message length
+ */
+double msglenLogStar(double value)
+{
+  double result = 0;
+  if( value < 1 ){
+    throw range_error("Not a positive real integer");
+  }
+  
+  double partial = log2(value);
+  while(partial > 0){
+    result += partial;
+    partial = log2(partial);
+  }
+  return (result + log2(2.865));
+}
+
+/*!
+ *  \brief This module computes the standard deviation of a set of samples
+ *  given the mean of the distribution
+ *  \param samples a reference to a vector<double>
+ *  \param mean a double
+ *  \return the variance of the samples
+ */
+double computeVariance(vector<double> &samples, double mean)
+{
+  double variance = 0;
+  for (int i=0; i<samples.size(); i++){
+    variance += (samples[i] - mean) * (samples[i] - mean);
+  }
+   variance = variance/samples.size();
+   if (variance < 9 * AOM * AOM){
+    return 9 * AOM * AOM;
+  } else {
+    return variance;
+  }
+}
+
+
+
+

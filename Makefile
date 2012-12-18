@@ -4,7 +4,9 @@ LDFLAGS=$(shell pkg-config --libs liblcb-experimental)
 OBJECTS = piecewise-nonlinear-fit.o \
   Support.o \
   StandardForm.o \
-  Segment.o
+  Segment.o \
+  Message.o \
+  geometry3D.o
 
 all: piecewise-nonlinear-fit 
 
@@ -17,12 +19,16 @@ piecewise-nonlinear-fit.o: piecewise-nonlinear-fit.cpp *.h
 Support.o: Support.cpp Support.h
 	g++ -c $(CFLAGS) $< -o $@
 
-StandardForm.o: StandardForm.cpp \
-                StandardForm.h \
-                Support.h
+StandardForm.o: StandardForm.cpp StandardForm.h
 	g++ -c $(CFLAGS) $< -o $@
 
 Segment.o: Segment.cpp Segment.h
+	g++ -c $(CFLAGS) $< -o $@
+
+Message.o: Message.cpp Message.h
+	g++ -c $(CFLAGS) $< -o $@
+
+geometry3D.o: geometry3D.cpp geometry3D.h
 	g++ -c $(CFLAGS) $< -o $@
 
 clean:
