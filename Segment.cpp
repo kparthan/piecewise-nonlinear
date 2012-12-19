@@ -2,26 +2,25 @@
 
 /*!
  *  \brief constructor function used for instantiation
- *  \param start an integer
- *  \param end an integer
- *  \param s a StandardForm object
+ *  \param coordinates a vector<array<double,3>>
+ *  \param atoms a vector<Atom>
  *  \param volume a double
  */
-Segment::Segment(int start, int end, StandardForm &s, double volume):
-          start(start), end(end), volume(volume)
+Segment::Segment(vector<array<double,3>> &coordinates, vector<Atom> &atoms,
+                double volume): 
+                coordinates(coordinates), atoms(atoms), volume(volume)
 {
-  numIntermediate = end - start - 1;
-  numPoints = numIntermediate + 2;
-  int i;
-  for (i=0; i<numPoints; i++) {
-    coordinates.push_back(s.getCoordinates(i+start));
-    atoms.push_back(s.getAtoms(i+start));
+  if (coordinates.size() != atoms.size()){
+    cout << "Size of atoms and coordinates not same..." << endl;
+    exit(1);
   }
+  numPoints = atoms.size();
+  numIntermediate = numPoints - 2;
 
   /* instantiating message length components */
   linearFitMsgLen = 0;
   singleControlMsgLen = vector<double>(numIntermediate,0);
-  for (i=0; i<numIntermediate; i++){
+  for (int i=0; i<numIntermediate; i++){
     vector<double> temp = vector<double>(numIntermediate,0);
     doubleControlMsgLen.push_back(temp);
   }
@@ -38,9 +37,9 @@ double Segment::linearFit(void)
   double length = distance(start,end);
   Line<Point<double>> line(start,end);
   Plane<Point<double>> plane = constructPlane(start,end);
-  vector<array<double,3>> deviations1 = computeDeviations(line,plane);
-  vector<array<double,3>> deviations2 = computeDeviations2(line,plane);
-  //linearFitMsgLen = messageLength(deviations1,length);
+  vector<array<double,3>> deviations = computeDeviations(line,plane);
+  //vector<array<double,3>> deviations2 = computeDeviations2(line,plane);
+  linearFitMsgLen = messageLength(deviations,length);
   return linearFitMsgLen;
 }
 
@@ -55,16 +54,26 @@ double Segment::messageLength(vector<array<double,3>> &deviations,
   double msglen = 0;
 
   /* message length to state the end point of the segment */
-  msglen += log2(volume);
+  msglen += log2(volume) - 3 * log2(AOM);
+ // cout << "code length(end point): " << msglen << endl;
 
-  /* message length to state the number of intermediate points */
-  if (numIntermediate > 0) {
+  /*if (numIntermediate <= 2) {
+    msglen = HUGE_VALUE;
+  } else {
+    // message length to state the number of intermediate points 
     msglen += msglenLogStar(numIntermediate);
 
-    /* message length to state the deviations */
+    // message length to state the deviations 
     Message msg(deviations,length);
     msglen += msg.encodingLength();
-  } 
+  }*/
+  // message length to state the number of intermediate points 
+  msglen += msglenLogStar(numIntermediate+1);
+  if (numIntermediate > 0){
+    // message length to state the deviations 
+    Message msg(deviations,length);
+    msglen += msg.encodingLength();
+  }
 
   return msglen;
 }
@@ -99,22 +108,31 @@ vector<array<double,3>> Segment::computeDeviations2(Line<Point<double>> &line,
   for (int i=0; i<3; i++){
     vec2[i] = line_end[i] - line_start[i];
   }
-  cout << "vec2:" << vec2[0] << " " << vec2[1] << " " << vec2[2] << endl;
+  //cout << "vec2:" << vec2[0] << " " << vec2[1] << " " << vec2[2] << endl;
 
   vector<array<double,3>> deviations;
   array<double,3> d;
-  double A[3],proj[3];
+  double A[3],proj[3],projl[3],prev_proj[3];
   Point<double> p;
+
+  for (int j=0; j<3; j++) { prev_proj[j] = line_start[j];}
   for(int i=0; i<numIntermediate; i++){
     p = atoms[i+1].point<double>();
     convertPointToArray(p,A);
-    cout << "A: " << A[0] << " " << A[1] << " " << A[2] << endl <<endl;
+    //cout << "A: " << A[0] << " " << A[1] << " " << A[2] << endl <<endl;
     /* project p onto plane */
     projectPoint2Plane(A,line_start,vec1,vec2,proj);
-    cout << proj[0] << " " << proj[1] << " " << proj[2] << endl;
+    //cout << proj[0] << " " << proj[1] << " " << proj[2] << endl;
     d[0] = normAminusB(A,proj);
-    d[1] = 0;
-    d[2] = 0;
+
+    /* project 'proj' onto line */
+    projectPoint2Line(proj,line_start,vec2,projl);
+    //cout << projl[0] << " " << projl[1] << " " << projl[2] << endl;
+    d[1] = normAminusB(proj,projl);
+
+    /* compute deviation along the line */
+    d[2] = normAminusB(projl,prev_proj);
+    for (int j=0; j<3; j++) { prev_proj[j] = projl[j];}
     deviations.push_back(d);
   }
   cout << "\nDeviations ...\n"; 
@@ -151,14 +169,14 @@ vector<array<double,3>> Segment::computeDeviations(Line<Point<double>> &line,
     deviations.push_back(d);
     previous = projection;
   }
-  cout << "*****************" << endl;
+  /*cout << "*****************" << endl;
   cout << "Deviations ...\n"; 
   for (int i=0; i<deviations.size(); i++){
     cout << deviations[i][0] << " ";
     cout << deviations[i][1] << " ";
     cout << deviations[i][2] << endl;
   }
-  cout << "*****************" << endl;
+  cout << "*****************" << endl;*/
   return deviations;
 }
 

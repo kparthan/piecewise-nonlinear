@@ -458,11 +458,11 @@ void projectPoint2Plane(
 
 	double normal[3] ;
 	computeNormal( vect1, vect2, normal) ;
-  cout << "NORMAL: " << normal[0] << " " << normal[1] << " " << normal[2] << endl;
+  //cout << "NORMAL: " << normal[0] << " " << normal[1] << " " << normal[2] << endl;
 
   double dp;
   computeDotProduct(vect2,normal,dp);
-  cout << "dot product: " << dp << endl;
+  //cout << "dot product: " << dp << endl;
 	/* Rx+Sy+Tz+U = 0 defines a plane with a non-zero normal vector N (R,S,T) passing through a point X0 = (x0,y0,z0).
 	 * N.(X-X0) = 0 ;
 	 * =>(R,S,T).([x-x0],[y-y0],[z-z0]) = 0
@@ -483,21 +483,21 @@ void projectPoint2Plane(
 
 	double sqrsum = 1/ ( sqrt( (plane[0]*plane[0]) + (plane[1]*plane[1]) + (plane[2]*plane[2]) ) );  // denomenator
 	double distance = (plane[0]*A[0]) + (plane[1]*A[1]) + (plane[2]*A[2]) + plane[3] ; // numerator
-	distance /= sqrsum ;
+	distance *= sqrsum ;
 
 	/* Note the distance is signed. Positive distance indicates that
 	 * the point A -- that is to be projected -- is on the same side of the plane as the normal vector
 	 * and negative if on the other side.
 	 */
-	if( distance <= 0 ) {
-		P[0] = X0[0]-normal[0]*distance ;
-		P[1] = X0[1]-normal[1]*distance ;
-		P[2] = X0[2]-normal[2]*distance ;
+	if( distance >= 0 ) {
+		P[0] = A[0]-normal[0]*distance ;
+		P[1] = A[1]-normal[1]*distance ;
+		P[2] = A[2]-normal[2]*distance ;
 	}
 	else{
-		P[0] = X0[0]+normal[0]*distance ;
-		P[1] = X0[1]+normal[1]*distance ;
-		P[2] = X0[2]+normal[2]*distance ;
+		P[0] = A[0]+normal[0]*distance ;
+		P[1] = A[1]+normal[1]*distance ;
+		P[2] = A[2]+normal[2]*distance ;
 	}
 }
 

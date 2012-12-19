@@ -6,21 +6,26 @@
 class Message
 {
   private:
-    //! deviations as data samples
+    //! Deviations as data samples
     vector<vector<double>> samples;
 
-    //! length of the segment
+    //! Length of the segment
     double length;
 
   public:
-    //! constructor
+    //! Constructor
     Message(vector<array<double,3>> &, double);
 
-    //! computes the length of the encoding (in bits)
+    //! Computes the length of the encoding (in bits)
     double encodingLength();
 
     //! Wallace Freeman formulation of message length (in bits)
+    //! one parameter
     double encodeWallaceFreeman(int, double); 
+
+    //! Wallace Freeman formulation of message length (in bits)
+    //! two parameters
+    double encodeWallaceFreeman(int, double, double); 
 };
 
 #endif

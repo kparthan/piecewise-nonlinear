@@ -10,6 +10,112 @@ StandardForm::StandardForm(ProteinStructure *s) : structure(s), volume(0)
 }
 
 /*!
+ *  \brief This module gets the number of residues in the protein structure
+ *  \return number of residues
+ */
+int StandardForm::getNumberOfResidues(void)
+{
+  return structure->getNumberOfResidues();
+}
+
+/*!
+ *  \brief This module returns the coordinates at the given index
+ *  \param index an integer
+ *  \return the coordinates at an index
+ */
+array<double,3> StandardForm::getCoordinates(int index)
+{
+  return coordinates[index];
+}
+
+/*!
+ *  \brief This module returns the atom at a particular index
+ *  \param index an integer
+ *  \return an Atom at the given index
+ */
+Atom StandardForm::getAtoms(int index)
+{
+  return atoms[index];
+}
+
+/*!
+ *  \brief This module computes the minimum coordinates (x,y or z) value
+ *  \param index an unsigned integer
+ *  \return the minimum coordinate value
+ */
+double StandardForm::getMinimum(unsigned index)
+{
+  int size = coordinates.size();
+  if (size <= 0){
+    cout << "Empty list of coordinates passed ..." << endl;
+    cout << "exiting ..." << endl;
+    exit(1);
+  }
+  if (index > coordinates[0].size()){
+    cout << "Index exceeds std::array<> size ..." << endl;
+    cout << "exiting ..." << endl;
+    exit(1);
+  }
+  double minimum = coordinates[0][index];
+  for(int i=1; i<size; i++){
+    if(coordinates[i][index] < minimum){
+      minimum = coordinates[i][index];
+    }
+  }
+  return minimum;
+}
+
+/*!
+ *  \brief This module computes the maximum coordinate (x,y or z) value
+ *  \param index an unsigned integer
+ *  \return the maximum coordinate value
+ */
+double StandardForm::getMaximum(unsigned index)
+{
+  int size = coordinates.size();
+  if (size <= 0){
+    cout << "Empty list of coordinates passed ..." << endl;
+    cout << "exiting ..." << endl;
+    exit(1);
+  }
+  if (index > coordinates[0].size()){
+    cout << "Index exceeds std::array<> size ..." << endl;
+    cout << "exiting ..." << endl;
+    exit(1);
+  }
+  double maximum = coordinates[0][index];
+  for(int i=1; i<size; i++){
+    if(coordinates[i][index] > maximum){
+      maximum = coordinates[i][index];
+    }
+  }
+  return maximum;
+}
+
+/*!
+ *  \brief This module constructs a segment between the specified indices
+ *  \param i an unsigned integer
+ *  \param j an unsigned integer
+ *  \return a segment
+ */
+Segment StandardForm::getSegment(unsigned i, unsigned j)
+{
+  if (j < i) {
+    cout << "Index of segment's end point is less than the index "
+         << " of the segment's start point..." << endl;
+    exit(1);
+  }
+  int numPoints = j - i + 1;
+  vector<array<double,3>> coordinates;
+  vector<Atom> atoms;
+  for (int k=0; k<numPoints; k++){
+    coordinates.push_back(getCoordinates(i+k));
+    atoms.push_back(getAtoms(i+k));
+  }
+  return Segment(coordinates,atoms,volume);
+}
+
+/*!
  *  \brief This module updates the list of coordinates with respect to
  *  the current configuration of the protein
  */
@@ -249,98 +355,141 @@ Matrix<double> StandardForm::rotateSecondOntoXYPlane(Point<double> &projection)
  *  the standard protein configuration
  *  \return volume of the bounding box
  */
-double StandardForm::boundingBox()
+void StandardForm::boundingBox()
 {
-  if (volume != 0) {
-    return volume;
-  } else {
-    updateCoordinates();
-    double xmin = findMinimum(0);
-    double xmax = findMaximum(0);
-    double ymin = findMinimum(1);
-    double ymax = findMaximum(1);
-    double zmin = findMinimum(2);
-    double zmax = findMaximum(2);
-    /*cout << xmin << " " << xmax << endl;
-    cout << ymin << " " << ymax << endl;
-    cout << zmin << " " << zmax << endl;*/
-    volume =  (xmax-xmin)*(ymax-ymin)*(zmax-zmin); 
-    //cout << "bounding box volume = " << volume << endl;
-    return volume;
-  }
+  updateCoordinates();
+  double xmin = getMinimum(0);
+  double xmax = getMaximum(0);
+  double ymin = getMinimum(1);
+  double ymax = getMaximum(1);
+  double zmin = getMinimum(2);
+  double zmax = getMaximum(2);
+  cout << "boundary values:\n";
+  cout << xmin << " " << xmax << endl;
+  cout << ymin << " " << ymax << endl;
+  cout << zmin << " " << zmax << endl;
+  volume =  (xmax-xmin)*(ymax-ymin)*(zmax-zmin); 
+  cout << "bounding box volume = " << volume << endl;
 }
 
 /*!
- *  \brief This module computes the minimum coordinates (x,y or z) value
- *  \param index an unsigned integer
- *  \return the minimum coordinate value
+ *  \brief This module constructs the code length matrix
  */
-double StandardForm::findMinimum(unsigned index)
+void StandardForm::computeCodeLengthMatrix(void)
 {
-  int size = coordinates.size();
-  if (size <= 0){
-    cout << "Empty list of coordinates passed ..." << endl;
-    cout << "exiting ..." << endl;
-    exit(1);
+  int numResidues = getNumberOfResidues();
+  vector<double> tmp;
+
+  for (int i=0; i<numResidues; i++){
+    for (int j=0; j<numResidues; j++){
+      if (i > j){
+        tmp.push_back(-1);
+      } 
+      else if (i < j){
+        //cout << i << " -- " << j << endl;
+        Segment segment = getSegment(i,j);
+        tmp.push_back(segment.linearFit());
+      } else {
+        tmp.push_back(0);
+      }
+    }
+    codeLength.push_back(tmp);
+    tmp.clear();
   }
-  if (index > coordinates[0].size()){
-    cout << "Index exceeds std::array<> size ..." << endl;
-    cout << "exiting ..." << endl;
-    exit(1);
-  }
-  double minimum = coordinates[0][index];
-  for(int i=1; i<size; i++){
-    if(coordinates[i][index] < minimum){
-      minimum = coordinates[i][index];
+
+/*
+  Segment segment = getSegment(0,5);
+  cout << segment.linearFit() << endl;
+  segment.print();
+*/ 
+/* 
+  for (int i=0; i<numResidues; i++){
+    for (int j=0; j<numResidues; j++){
+      cout << codeLength[i][j] << " ";
+    }
+    cout << endl;
+  }*/
+}
+
+/*!
+ *  \brief This module computes the optimal fit using dynamic programming
+ */
+void StandardForm::optimalFit(void)
+{
+  int numResidues = getNumberOfResidues();
+  vector<double> optimal;
+  vector<int> optimalIndex;
+  optimal.push_back(0);
+  optimalIndex.push_back(0);
+  double min,index;
+
+  for (int i=1; i<numResidues; i++){
+    min = codeLength[0][i];
+    index = i;
+    optimal.push_back(min);
+    optimalIndex.push_back(index);
+    for (int j=0; j<i; j++){
+      if (codeLength[j][i] + optimal[j] < min){
+        min = codeLength[j][i] + optimal[j];
+        index = j;
+        optimal[i] = min;
+        optimalIndex[i] = index;
+      }
     }
   }
-  return minimum;
-}
 
-/*!
- *  \brief This module computes the maximum coordinate (x,y or z) value
- *  \param index an unsigned integer
- *  \return the maximum coordinate value
- */
-double StandardForm::findMaximum(unsigned index)
-{
-  int size = coordinates.size();
-  if (size <= 0){
-    cout << "Empty list of coordinates passed ..." << endl;
-    cout << "exiting ..." << endl;
-    exit(1);
+  double best = optimal[optimal.size()-1];
+  cout << "optimal: " << best << endl;
+  cout << "per residue: " << best / numResidues << endl;
+ 
+  vector<int> tmp; 
+  for (int i=0; i<optimal.size(); i++){
+    cout << optimal[i] << " ";
   }
-  if (index > coordinates[0].size()){
-    cout << "Index exceeds std::array<> size ..." << endl;
-    cout << "exiting ..." << endl;
-    exit(1);
+  cout << endl;
+  for (int i=0; i<optimalIndex.size(); i++){
+    cout << optimalIndex[i] << " ";
   }
-  double maximum = coordinates[0][index];
-  for(int i=1; i<size; i++){
-    if(coordinates[i][index] > maximum){
-      maximum = coordinates[i][index];
+  cout << endl;
+  index = numResidues-1;
+  while (1){
+    index = optimalIndex[index];
+    if (index == optimalIndex[index]){
+      tmp.push_back(index);
+      break;
     }
+    tmp.push_back(index);
   }
-  return maximum;
+  tmp.push_back(0);
+  cout << endl;
+  for (int i=tmp.size()-1; i>=0; i--){
+    cout << tmp[i] << "-->";
+  }
+  cout << numResidues-1 << endl << endl;
+  for (int i=tmp.size()-1; i>=0; i--){
+    cout << codeLength[tmp[i]][tmp[i-1]] << " ";
+  }
+  cout << endl;
 }
 
-/*!
- *  \brief This module returns the coordinates at the given index
- *  \param index an integer
- *  \return the coordinates at an index
- */
-array<double,3> StandardForm::getCoordinates(int index)
-{
-  return coordinates[index];
-}
 
-/*!
- *  \brief This module returns the atom at a particular index
- *  \param index an integer
- *  \return an Atom at the given index
- */
-Atom StandardForm::getAtoms(int index)
-{
-  return atoms[index];
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

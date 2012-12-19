@@ -98,26 +98,58 @@ double msglenLogStar(double value)
 }
 
 /*!
+ *  \brief This module computes the mean of a set of samples
+ *  \param samples a reference to a vector<double>
+ *  \return the mean value
+ */
+double meanEstimate(vector<double> &samples)
+{
+  double mean = 0;
+  for (int i=0; i<samples.size(); i++) {
+    mean += samples[i];
+  }
+  return mean/samples.size();
+}
+
+/*!
  *  \brief This module computes the standard deviation of a set of samples
  *  given the mean of the distribution
  *  \param samples a reference to a vector<double>
  *  \param mean a double
- *  \return the variance of the samples
+ *  \return the biased variance of the samples
  */
-double computeVariance(vector<double> &samples, double mean)
+double varianceEstimateOneParam(vector<double> &samples, double mean)
 {
   double variance = 0;
   for (int i=0; i<samples.size(); i++){
     variance += (samples[i] - mean) * (samples[i] - mean);
   }
-   variance = variance/samples.size();
-   if (variance < 9 * AOM * AOM){
+  variance = variance/samples.size();
+  if (variance < 9 * AOM * AOM){
     return 9 * AOM * AOM;
   } else {
     return variance;
   }
 }
 
-
-
+/*!
+ *  \brief This module computes the standard deviation of a set of samples
+ *  given the mean of the distribution
+ *  \param samples a reference to a vector<double>
+ *  \return the unbiased variance of the samples
+ */
+double varianceEstimateTwoParam(vector<double> &samples)
+{
+  double mean = meanEstimate(samples);
+  double variance = 0;
+  for (int i=0; i<samples.size(); i++){
+    variance += (samples[i] - mean) * (samples[i] - mean);
+  }
+  variance = variance/(samples.size()-1);
+  if (variance < 9 * AOM * AOM){
+    return 9 * AOM * AOM;
+  } else {
+    return variance;
+  }
+}
 
