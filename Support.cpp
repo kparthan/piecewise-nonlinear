@@ -98,6 +98,23 @@ double msglenLogStar(double value)
 }
 
 /*!
+ *  \brief This module computes the message length associated with a normal
+ *  distribution.
+ *  \param x a double
+ *  \param mean a double
+ *  \param variance a double
+ *  \return the message length
+ */
+double msglenNormal(double x, double mean, double variance)
+{
+  double prob,c,expnt;
+  c = 1.0 / sqrt(2 * PI * variance);
+  expnt = -((x-mean)*(x-mean))/(2 * variance);
+  prob = AOM * c * exp(expnt);
+  return -log2(prob);
+}
+
+/*!
  *  \brief This module computes the mean of a set of samples
  *  \param samples a reference to a vector<double>
  *  \return the mean value
@@ -153,3 +170,14 @@ double varianceEstimateTwoParam(vector<double> &samples)
   }
 }
 
+  /*std::vector<lcb::Atom> atoms = structure->getAtoms();
+  for (auto atom : atoms) {
+    std::cout << atom.formatPDBLine() << std::endl;
+  }*/
+  //constructBoundingBox(coordinates);
+  /*for (int i=0; i<coordinates.size(); i++) {
+    for (int j=0; j<3; j++) {
+      cout << coordinates[i][j] << " " ;
+    }
+    cout << endl ;
+  }*/

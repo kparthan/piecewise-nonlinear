@@ -18,19 +18,10 @@ int main(int argc, char **argv)
   protein.computeCodeLengthMatrix();
 
   /* Find the optimal fit */
+  protein.sphereModelFit();
+  protein.nullModelFit();
   protein.optimalFit();
 
   return 0;
 }
  
-  /*std::vector<lcb::Atom> atoms = structure->getAtoms();
-  for (auto atom : atoms) {
-    std::cout << atom.formatPDBLine() << std::endl;
-  }*/
-  //constructBoundingBox(coordinates);
-  /*for (int i=0; i<coordinates.size(); i++) {
-    for (int j=0; j<3; j++) {
-      cout << coordinates[i][j] << " " ;
-    }
-    cout << endl ;
-  }*/

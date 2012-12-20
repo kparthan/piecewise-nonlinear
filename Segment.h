@@ -71,9 +71,18 @@ class Segment
 
     vector<array<double,3>> computeDeviations2(Line<Point<double>> &,
                                               Plane<Point<double>> &);
-    //! Computes the message length for the segment
-    double messageLength(vector<array<double,3>> &, double);
 
+    //! Computes the message length for the segment with zero intermediate
+    //! points
+    double messageLength();
+
+    //! Computes the message length for the segment with one intermediate
+    //! point
+    double messageLength(Point<double> &, Point<double> &);
+
+    //! Computes the message length for the segment with more than one
+    //! intermediate points
+    double messageLength(vector<array<double,3>> &, double);
 };
 
 #endif

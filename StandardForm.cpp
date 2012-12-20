@@ -397,11 +397,10 @@ void StandardForm::computeCodeLengthMatrix(void)
     tmp.clear();
   }
 
-/*
-  Segment segment = getSegment(0,5);
+  /*Segment segment = getSegment(0,2);
   cout << segment.linearFit() << endl;
-  segment.print();
-*/ 
+  segment.print();*/
+ 
 /* 
   for (int i=0; i<numResidues; i++){
     for (int j=0; j<numResidues; j++){
@@ -409,6 +408,22 @@ void StandardForm::computeCodeLengthMatrix(void)
     }
     cout << endl;
   }*/
+}
+
+/*!
+ *  \brief This module computes the sphere model fit to the structure.
+ */
+void StandardForm::sphereModelFit(void)
+{
+  double msglen = 0;
+  int numResidues = getNumberOfResidues();
+  for (int i=1; i<numResidues; i++){
+    Point<double> previous = atoms[i-1].point<double>();
+    Point<double> current = atoms[i].point<double>();
+    double r = distance(previous,current);
+    Message msg(r);
+    msglen += msg.
+  }
 }
 
 /*!
@@ -421,7 +436,8 @@ void StandardForm::optimalFit(void)
   vector<int> optimalIndex;
   optimal.push_back(0);
   optimalIndex.push_back(0);
-  double min,index;
+  double min;
+  int index;
 
   for (int i=1; i<numResidues; i++){
     min = codeLength[0][i];

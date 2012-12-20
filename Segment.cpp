@@ -32,19 +32,71 @@ Segment::Segment(vector<array<double,3>> &coordinates, vector<Atom> &atoms,
  */
 double Segment::linearFit(void)
 {
-  Point<double> start = atoms[0].point<double>();
-  Point<double> end = atoms[atoms.size()-1].point<double>();
-  double length = distance(start,end);
-  Line<Point<double>> line(start,end);
-  Plane<Point<double>> plane = constructPlane(start,end);
-  vector<array<double,3>> deviations = computeDeviations(line,plane);
-  //vector<array<double,3>> deviations2 = computeDeviations2(line,plane);
-  linearFitMsgLen = messageLength(deviations,length);
+  if (numIntermediate > 1){
+    Point<double> start = atoms[0].point<double>();
+    Point<double> end = atoms[atoms.size()-1].point<double>();
+    double length = distance(start,end);
+    Line<Point<double>> line(start,end);
+    Plane<Point<double>> plane = constructPlane(start,end);
+    vector<array<double,3>> deviations = computeDeviations(line,plane);
+    //vector<array<double,3>> deviations2 = computeDeviations2(line,plane);
+    linearFitMsgLen = messageLength(deviations,length);
+  } else if (numIntermediate == 1){
+    Point<double> start = atoms[0].point<double>();
+    Point<double> first = atoms[1].point<double>();
+    linearFitMsgLen = messageLength(start,first);
+  } else if (numIntermediate == 0) {
+    linearFitMsgLen = messageLength();
+  }
   return linearFitMsgLen;
 }
 
 /*!
- *  \brief This module computes the message length for the segment
+ *  \brief This module computes the message length for the segment with
+ *  zero intermediate points.
+ *  \return the message length(in bits)
+ */
+double Segment::messageLength()
+{
+  double msglen = 0;
+
+  /* message length to state the end point of the segment */
+  msglen += log2(volume) - 3 * log2(AOM);
+
+  /* message length to state the number of intermediate points */
+  msglen += msglenLogStar(numIntermediate+1);
+
+  return msglen;
+}
+
+/*!
+ *  \brief This module computes the message length for the segment with
+ *  more one intermediate point.
+ *  \param p1 a Point<double>
+ *  \param p2 a Point<double>
+ *  \return the message length(in bits)
+ */
+double Segment::messageLength(Point<double> &p1, Point<double> &p2)
+{
+  double msglen = 0;
+
+  /* message length to state the end point of the segment */
+  msglen += log2(volume) - 3 * log2(AOM);
+
+  /* message length to state the number of intermediate points */
+  msglen += msglenLogStar(numIntermediate+1);
+
+  /* message length for the null model */
+  double r = distance(p1,p2);
+  Message msg(r);
+  msglen += msg.encodingLength(0);
+
+  return msglen;
+}
+
+/*!
+ *  \brief This module computes the message length for the segment with
+ *  more than one intermediate points.
  *  \param deviations a reference to a vector<array<double,3>>
  *  \return the message length(in bits)
  */
@@ -57,23 +109,12 @@ double Segment::messageLength(vector<array<double,3>> &deviations,
   msglen += log2(volume) - 3 * log2(AOM);
  // cout << "code length(end point): " << msglen << endl;
 
-  /*if (numIntermediate <= 2) {
-    msglen = HUGE_VALUE;
-  } else {
-    // message length to state the number of intermediate points 
-    msglen += msglenLogStar(numIntermediate);
-
-    // message length to state the deviations 
-    Message msg(deviations,length);
-    msglen += msg.encodingLength();
-  }*/
-  // message length to state the number of intermediate points 
+  /* message length to state the number of intermediate points */
   msglen += msglenLogStar(numIntermediate+1);
-  if (numIntermediate > 0){
-    // message length to state the deviations 
-    Message msg(deviations,length);
-    msglen += msg.encodingLength();
-  }
+
+  /* message length to state the deviations */
+  Message msg(deviations,length);
+  msglen += msg.encodingLength(1);
 
   return msglen;
 }

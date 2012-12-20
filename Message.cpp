@@ -2,6 +2,13 @@
 
 /*!
  *  \brief This is a constructor function used to instantiate the object
+ *  \param radius a double
+ */
+Message::Message(double radius) : radius(radius)
+{}
+
+/*!
+ *  \brief This is a constructor function used to instantiate the object
  *  \param deviations a reference to a vector<array<double,3>>
  *  \param length a double
  */
@@ -20,25 +27,41 @@ Message::Message(vector<array<double,3>> &deviations, double length):
 
 /*!
  *  \brief This module computes the length of the encoded message
+ *  \param flag a boolean
+ *    0 if null model is used
+ *    1 if sent using normal distribution
  *  \return the message length (in bits)
  */
-double Message::encodingLength(void)
+double Message::encodingLength(bool flag)
 {
-  double msglen = 0,variance;
-  for (int i=0; i<2; i++){
-    /*variance = varianceEstimateOneParam(samples[i],0);
-    msglen += encodeWallaceFreeman(samples[i].size(),variance);*/
-    variance = varianceEstimateTwoParam(samples[i]);
-    msglen += encodeWallaceFreeman(samples[i].size(),0,variance);
-  }
-  /*double mean = length / (samples[2].size()+1);
-  variance = varianceEstimateOneParam(samples[2],mean);
-  msglen += encodeWallaceFreeman(samples[2].size(),variance);*/
+  double msglen = 0;
+  double mean,sigma,variance;
+  switch(flag){
+    case 0:
+      /* null model */
+      mean = 3.8;
+      sigma = 0.4;
+      msglen += msglenNormal(radius,mean,sigma*sigma);
+      msglen += log2(4*PI*radius*radius) - 2*log2(AOM);
+      //cout << "NULL MODEL: " << msglen << endl;
+      break;
 
-  double mean = length / (samples[2].size()+1);
-  variance = varianceEstimateTwoParam(samples[2]);
-  msglen += encodeWallaceFreeman(samples[2].size(),mean,variance);
-  
+    case 1:
+      for (int i=0; i<2; i++){
+        variance = varianceEstimateOneParam(samples[i],0);
+        msglen += encodeWallaceFreeman(samples[i].size(),variance);
+        /*variance = varianceEstimateTwoParam(samples[i]);
+        msglen += encodeWallaceFreeman(samples[i].size(),0,variance);*/
+      }
+      /*mean = length / (samples[2].size()+1);
+      variance = varianceEstimateOneParam(samples[2],mean);
+      msglen += encodeWallaceFreeman(samples[2].size(),variance);*/
+
+      mean = length / (samples[2].size()+1);
+      variance = varianceEstimateTwoParam(samples[2]);
+      msglen += encodeWallaceFreeman(samples[2].size(),mean,variance);
+      break;
+  }
   return msglen;
 }
 

@@ -10,14 +10,17 @@ class Message
     vector<vector<double>> samples;
 
     //! Length of the segment
-    double length;
+    double length,radius;
 
   public:
+    //! Constructor
+    Message(double) ;
+
     //! Constructor
     Message(vector<array<double,3>> &, double);
 
     //! Computes the length of the encoding (in bits)
-    double encodingLength();
+    double encodingLength(bool);
 
     //! Wallace Freeman formulation of message length (in bits)
     //! one parameter

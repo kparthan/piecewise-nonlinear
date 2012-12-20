@@ -100,6 +100,9 @@ class StandardForm
     //! Computes the code length matrix
     void computeCodeLengthMatrix();
 
+    //! Computes the null model fit
+    void nullModelFit();
+
     //! Computes the optimal fit
     void optimalFit();
 };
