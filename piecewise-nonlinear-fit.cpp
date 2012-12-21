@@ -1,4 +1,5 @@
 #include "StandardForm.h"
+#include "Test.h"
 
 int main(int argc, char **argv)
 {
@@ -14,13 +15,20 @@ int main(int argc, char **argv)
   /* Construct the bounding box */
   protein.boundingBox(); 
 
-  /* Compute the code length matrix */
-  protein.computeCodeLengthMatrix();
-
-  /* Find the optimal fit */
+  /* Sphere model fit */
   protein.sphereModelFit();
+
+  /* Null model fit */
   protein.nullModelFit();
-  protein.optimalFit();
+
+  /* Linear model fit */
+  protein.linearModelFit();
+ 
+  Point<double> sp(0,0,0);
+  Point<double> ep(5,5,5);
+  Test test(5,sp,ep);
+  test.generate();
+  test.print();
 
   return 0;
 }

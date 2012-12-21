@@ -97,14 +97,20 @@ class StandardForm
     //! Computes the volume of bounding box
     void boundingBox();
 
-    //! Computes the code length matrix
-    void computeCodeLengthMatrix();
+    //! Computes the sphere model fit
+    void sphereModelFit();
 
     //! Computes the null model fit
     void nullModelFit();
 
     //! Computes the optimal fit
-    void optimalFit();
+    void linearModelFit();
+
+    //! Computes the code length matrix
+    void computeCodeLengthMatrix();
+
+    //! Computes the optimal segmentation
+    void optimalSegmentation();
 };
 
 #endif

@@ -77,27 +77,6 @@ void writeToFile(vector<array<double,3>> &coordinates, const char *fileName)
 }
 
 /*!
- *  \brief This module computes the message length associated with a log star
- *  distribution
- *  \param value a double
- *  \return the message length
- */
-double msglenLogStar(double value)
-{
-  double result = 0;
-  if( value < 1 ){
-    throw range_error("Not a positive real integer");
-  }
-  
-  double partial = log2(value);
-  while(partial > 0){
-    result += partial;
-    partial = log2(partial);
-  }
-  return (result + log2(2.865));
-}
-
-/*!
  *  \brief This module computes the message length associated with a normal
  *  distribution.
  *  \param x a double

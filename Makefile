@@ -6,6 +6,7 @@ OBJECTS = piecewise-nonlinear-fit.o \
   StandardForm.o \
   Segment.o \
   Message.o \
+  Test.o \
   geometry3D.o
 
 all: piecewise-nonlinear-fit 
@@ -26,6 +27,9 @@ Segment.o: Segment.cpp Segment.h
 	g++ -c $(CFLAGS) $< -o $@
 
 Message.o: Message.cpp Message.h
+	g++ -c $(CFLAGS) $< -o $@
+
+Test.o: Test.cpp Test.h
 	g++ -c $(CFLAGS) $< -o $@
 
 geometry3D.o: geometry3D.cpp geometry3D.h

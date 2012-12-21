@@ -27,7 +27,7 @@ Segment::Segment(vector<array<double,3>> &coordinates, vector<Atom> &atoms,
 }
 
 /*!
- *  \brief This module fits a linear model for the segment
+ *  \brief This module fits a linear model to the segment
  *  \return message length fitting a linear model
  */
 double Segment::linearFit(void)
@@ -61,17 +61,18 @@ double Segment::messageLength()
   double msglen = 0;
 
   /* message length to state the end point of the segment */
-  msglen += log2(volume) - 3 * log2(AOM);
+  Message msg1;
+  msglen += msg1.encodeUsingNullModel(volume); 
 
   /* message length to state the number of intermediate points */
-  msglen += msglenLogStar(numIntermediate+1);
+  msglen += msg1.encodeUsingLogStarModel(numIntermediate+1);
 
   return msglen;
 }
 
 /*!
  *  \brief This module computes the message length for the segment with
- *  more one intermediate point.
+ *  one intermediate point.
  *  \param p1 a Point<double>
  *  \param p2 a Point<double>
  *  \return the message length(in bits)
@@ -81,15 +82,14 @@ double Segment::messageLength(Point<double> &p1, Point<double> &p2)
   double msglen = 0;
 
   /* message length to state the end point of the segment */
-  msglen += log2(volume) - 3 * log2(AOM);
+  Message msg1;
+  msglen += msg1.encodeUsingNullModel(volume); 
 
   /* message length to state the number of intermediate points */
-  msglen += msglenLogStar(numIntermediate+1);
+  msglen += msg1.encodeUsingLogStarModel(numIntermediate+1);
 
-  /* message length for the null model */
-  double r = distance(p1,p2);
-  Message msg(r);
-  msglen += msg.encodingLength(0);
+  /* message length to state the intermediate point using the null model */
+  msglen += msg1.encodeUsingNullModel(volume); 
 
   return msglen;
 }
@@ -106,15 +106,16 @@ double Segment::messageLength(vector<array<double,3>> &deviations,
   double msglen = 0;
 
   /* message length to state the end point of the segment */
-  msglen += log2(volume) - 3 * log2(AOM);
+  Message msg1;
+  msglen += msg1.encodeUsingNullModel(volume); 
  // cout << "code length(end point): " << msglen << endl;
 
   /* message length to state the number of intermediate points */
-  msglen += msglenLogStar(numIntermediate+1);
+  msglen += msg1.encodeUsingLogStarModel(numIntermediate+1);
 
   /* message length to state the deviations */
-  Message msg(deviations,length);
-  msglen += msg.encodingLength(1);
+  Message msg2(deviations,length);
+  msglen += msg2.encodeUsingNormalModel();;
 
   return msglen;
 }

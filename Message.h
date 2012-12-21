@@ -10,17 +10,30 @@ class Message
     vector<vector<double>> samples;
 
     //! Length of the segment
-    double length,radius;
+    double length;
 
   public:
     //! Constructor
-    Message(double) ;
+    Message() ;
 
     //! Constructor
     Message(vector<array<double,3>> &, double);
 
-    //! Computes the length of the encoding (in bits)
-    double encodingLength(bool);
+    //! Computes the length of encoding (in bits) for encoding using a
+    //! null model (bounding box)
+    double encodeUsingNullModel(double);
+
+    //! Computes the length of encoding (in bits) for encoding using a
+    //! sphere model
+    double encodeUsingSphereModel(double);
+
+    //! Computes the length of encoding (in bits) for encoding using a
+    //! Normal distribution
+    double encodeUsingNormalModel();
+
+    //! Computes the length of encoding (in bits) for encoding using a
+    //! log star distribution 
+    double encodeUsingLogStarModel(double);
 
     //! Wallace Freeman formulation of message length (in bits)
     //! one parameter

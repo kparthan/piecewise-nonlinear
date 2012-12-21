@@ -164,6 +164,7 @@ void StandardForm::transform(void)
   updateAtoms();
   
   cout << "Transformation to standard form done ..." << endl;
+  cout << "Number of residues: " << getNumberOfResidues() << endl;
 }
 
 /*!
@@ -364,12 +365,60 @@ void StandardForm::boundingBox()
   double ymax = getMaximum(1);
   double zmin = getMinimum(2);
   double zmax = getMaximum(2);
-  cout << "boundary values:\n";
+  /*cout << "boundary values:\n";
   cout << xmin << " " << xmax << endl;
   cout << ymin << " " << ymax << endl;
-  cout << zmin << " " << zmax << endl;
+  cout << zmin << " " << zmax << endl;*/
   volume =  (xmax-xmin)*(ymax-ymin)*(zmax-zmin); 
-  cout << "bounding box volume = " << volume << endl;
+  cout << "bounding box volume: " << volume << endl;
+}
+
+/*!
+ *  \brief This module computes the sphere model fit to the structure.
+ */
+void StandardForm::sphereModelFit(void)
+{
+  cout << "*** SPHERE FIT ***" << endl;
+  double msglen = 0;
+  int numResidues = getNumberOfResidues();
+  for (int i=1; i<numResidues; i++){
+    Point<double> previous = atoms[i-1].point<double>();
+    Point<double> current = atoms[i].point<double>();
+    double r = distance(previous,current);
+    Message msg;
+    msglen += msg.encodeUsingSphereModel(r);
+    //cout << i << " " << msglen << endl;
+  }
+  cout << "Sphere Model Fit: " << msglen << " bits." << endl;
+  cout << "Bits per residue: " << msglen/(numResidues-1) << endl << endl;
+}
+
+/*!
+ *  \brief This module computes the null model fit to the structure.
+ */
+void StandardForm::nullModelFit(void)
+{
+  cout << "*** NULL MODEL ***" << endl;
+  double msglen = 0;
+  int numResidues = getNumberOfResidues();
+  Message msg;
+  msglen = (numResidues-1) * msg.encodeUsingNullModel(volume);
+  cout << "Null Model Fit: " << msglen << " bits." << endl;
+  cout << "Bits per residue: " << msglen/(numResidues-1) << endl << endl;
+}
+
+/*!
+ *  \brief This module computes the linear model fit to hte structure.
+ */
+void StandardForm::linearModelFit(void)
+{
+  cout << "*** LINEAR FIT ***" << endl;
+
+  /* compute the code length matrix */
+  computeCodeLengthMatrix();
+
+  /* compute the optimal segmentation using dynamic programming */
+  optimalSegmentation();
 }
 
 /*!
@@ -396,11 +445,9 @@ void StandardForm::computeCodeLengthMatrix(void)
     codeLength.push_back(tmp);
     tmp.clear();
   }
-
   /*Segment segment = getSegment(0,2);
   cout << segment.linearFit() << endl;
   segment.print();*/
- 
 /* 
   for (int i=0; i<numResidues; i++){
     for (int j=0; j<numResidues; j++){
@@ -411,25 +458,10 @@ void StandardForm::computeCodeLengthMatrix(void)
 }
 
 /*!
- *  \brief This module computes the sphere model fit to the structure.
+ *  \brief This module computes the optimal segmentation using
+ *  dynamic programming
  */
-void StandardForm::sphereModelFit(void)
-{
-  double msglen = 0;
-  int numResidues = getNumberOfResidues();
-  for (int i=1; i<numResidues; i++){
-    Point<double> previous = atoms[i-1].point<double>();
-    Point<double> current = atoms[i].point<double>();
-    double r = distance(previous,current);
-    Message msg(r);
-    msglen += msg.
-  }
-}
-
-/*!
- *  \brief This module computes the optimal fit using dynamic programming
- */
-void StandardForm::optimalFit(void)
+void StandardForm::optimalSegmentation(void)
 {
   int numResidues = getNumberOfResidues();
   vector<double> optimal;
@@ -455,8 +487,8 @@ void StandardForm::optimalFit(void)
   }
 
   double best = optimal[optimal.size()-1];
-  cout << "optimal: " << best << endl;
-  cout << "per residue: " << best / numResidues << endl;
+  cout << "Linear fit: " << best << " bits." << endl;
+  cout << "Bits per residue: " << best / (numResidues-1) << endl;
  
   vector<int> tmp; 
   for (int i=0; i<optimal.size(); i++){
@@ -487,25 +519,4 @@ void StandardForm::optimalFit(void)
   }
   cout << endl;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

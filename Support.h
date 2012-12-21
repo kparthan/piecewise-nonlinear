@@ -25,7 +25,6 @@ ProteinStructure *parsePDBFile (char *);
 void printCoordinates (vector<array<double,3>> &);
 void writeToFile(vector<array<double,3>> &, const char*);
 
-double msglenLogStar(double);
 double msglenNormal(double, double, double);
 double meanEstimate(vector<double> &);
 double varianceEstimateOneParam(vector<double> &, double);
