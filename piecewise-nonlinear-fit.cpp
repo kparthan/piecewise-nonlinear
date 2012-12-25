@@ -26,7 +26,8 @@ int main(int argc, char **argv)
  
   Point<double> sp(0,0,0);
   Point<double> ep(5,5,5);
-  Test test(5,sp,ep);
+  Point<double> p(1,2,-1);
+  Test test(5,sp,ep,p);
   test.generate();
   test.print();
 

@@ -5,9 +5,11 @@
  *  \param numPoints an integer
  *  \param start a reference to a Point<double>
  *  \param end a reference to a Point<double>
+ *  \param third a reference to a Point<double>
  */
-Test::Test(int numPoints, Point<double> &start, Point<double> &end) : 
-          numPoints(numPoints), start(start), end(end)
+Test::Test(int numPoints, Point<double> &start, Point<double> &end,
+           Point<double> &third) : numPoints(numPoints), start(start), 
+           end(end), third(third)
 {}
 
 /*!
@@ -15,12 +17,35 @@ Test::Test(int numPoints, Point<double> &start, Point<double> &end) :
  */
 void Test::generate()
 {
+  /* generate points on the line */
   Line<Point<double>> line(start,end);
   vector<Point<double>>::iterator it;
   points = line.generate(numPoints);
   it = points.begin();
   points.insert(it,start);
   points.push_back(end);
+
+  /* construct a plane */
+  Plane<Point<double>> plane(start,end,third);
+  Vector<double> normal = plane.normal();
+  Vector<double> dcs = line.directionVector();
+  Vector<double> n = Vector<double>::crossProduct(normal,dcs);
+  Point<double> perpendicular(n),p;
+  bool flag = 0;
+  for (int i=0; i<points.size(); i++){
+    if (i%2 == 0){
+      p = points[i];
+    } else {
+      if (flag == 0){
+        p = points[i] + perpendicular * 5;
+        flag = 1;
+      } else {
+        p = points[i] - perpendicular * 5;
+        flag = 0;
+      }
+    }
+    fvals.push_back(p);
+  }
 }
 
 /*!
@@ -28,16 +53,14 @@ void Test::generate()
  */
 void Test::print()
 {
-  /*for (int i=0; i<points.size(); i++){
-    cout << points[i].x() << " ";
+  for (int i=0; i<points.size(); i++){
+    cout << "[" << points[i].x() << " ";
     cout << points[i].y() << " ";
-    cout << points[i].z() << endl;
-  }*/
-  vector<Point<double>>::iterator it;
-  for (it = points.begin(); it < points.end(); it++) {
-    cout << (*it).x() << " ";
-    cout << (*it).y() << " ";
-    cout << (*it).z() << endl;
+    cout << points[i].z() << "]  ";
+
+    cout << "[" << fvals[i].x() << " ";
+    cout << fvals[i].y() << " ";
+    cout << fvals[i].z() << "]" << endl;
   }
 }
 

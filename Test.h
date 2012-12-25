@@ -10,14 +10,14 @@ class Test
     int numPoints;
 
     //! End points of the line
-    Point<double> start, end;
+    Point<double> start, end, third;
 
     //! Points along the line
-    vector<Point<double>> points;
+    vector<Point<double>> points,fvals;
 
   public:
     //! Constructor
-    Test(int, Point<double> &, Point<double> &);
+    Test(int, Point<double> &, Point<double> &, Point<double> &);
 
     //! Generate data
     void generate();
