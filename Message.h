@@ -1,7 +1,7 @@
 #ifndef MESSAGE_H
 #define MESSAGE_H
 
-#include "Support.h"
+#include "Header.h"
 
 class Message
 {

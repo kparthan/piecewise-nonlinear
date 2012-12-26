@@ -1,27 +1,15 @@
 #ifndef SUPPORT_H
 #define SUPPORT_H
 
-#include <iostream>
-#include <cstdlib>
-#include <vector>
-#include <array>
-#include <fstream>
-#include <cmath>
-#include <stdexcept>
-#include <liblcb/liblcb.h>
-#include <boost/math/constants/constants.hpp>
+#include "Header.h"
+#include "Test.h"
+#include "StandardForm.h"
+#include "Structure.h"
 
-#define AOM 0.001
-#define PI boost::math::constants::pi<double>()
-#define HUGE_VALUE 100000000
-
-using namespace std;
-using namespace lcb;
-using namespace lcb::geometry;
-
-void Usage (int, char **);
-bool checkFile (char *);
-ProteinStructure *parsePDBFile (char *);
+int Usage (int, char **, string &);
+bool checkFile (const char *);
+ProteinStructure *parsePDBFile (const char *);
+vector<Point<double>> parseFile (const char *);
 void printCoordinates (vector<array<double,3>> &);
 void writeToFile(vector<array<double,3>> &, const char*);
 
@@ -29,6 +17,10 @@ double msglenNormal(double, double, double);
 double meanEstimate(vector<double> &);
 double varianceEstimateOneParam(vector<double> &, double);
 double varianceEstimateTwoParam(vector<double> &);
+
+void testFit(void);
+void proteinFit(string);
+void generalFit(string);
 
 #endif
 

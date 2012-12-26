@@ -1,7 +1,8 @@
 CFLAGS=-std=c++0x -g $(shell pkg-config --cflags liblcb-experimental)
-LDFLAGS=$(shell pkg-config --libs liblcb-experimental)
+LDFLAGS=$(shell pkg-config --libs liblcb-experimental) -lboost_program_options
 
 OBJECTS = piecewise-nonlinear-fit.o \
+  Structure.o \
   Support.o \
   StandardForm.o \
   Segment.o \
@@ -12,21 +13,24 @@ OBJECTS = piecewise-nonlinear-fit.o \
 all: piecewise-nonlinear-fit 
 
 piecewise-nonlinear-fit: $(OBJECTS)
-	g++ $(OBJECTS) -o $@ $(LDFLAGS)
+	g++ $(OBJECTS) -o $@ $(LDFLAGS) 
 
-piecewise-nonlinear-fit.o: piecewise-nonlinear-fit.cpp *.h 
+piecewise-nonlinear-fit.o: piecewise-nonlinear-fit.cpp Support.h 
+	g++ -c $(CFLAGS) $< -o $@
+
+Structure.o: Structure.cpp Structure.h 
 	g++ -c $(CFLAGS) $< -o $@
 
 Support.o: Support.cpp Support.h
 	g++ -c $(CFLAGS) $< -o $@
 
-StandardForm.o: StandardForm.cpp StandardForm.h
+StandardForm.o: StandardForm.cpp StandardForm.h Message.h 
 	g++ -c $(CFLAGS) $< -o $@
 
-Segment.o: Segment.cpp Segment.h
+Segment.o: Segment.cpp Segment.h Message.h
 	g++ -c $(CFLAGS) $< -o $@
 
-Message.o: Message.cpp Message.h
+Message.o: Message.cpp Message.h Support.h
 	g++ -c $(CFLAGS) $< -o $@
 
 Test.o: Test.cpp Test.h

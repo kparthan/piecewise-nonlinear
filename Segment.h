@@ -1,8 +1,8 @@
 #ifndef SEGMENT_H
 #define SEGMENT_H
 
-#include "Message.h"
 #include "geometry3D.h"
+#include "Header.h"
 
 class Segment
 {
@@ -19,9 +19,6 @@ class Segment
     //! Coordinates of the points
     vector<array<double,3>> coordinates;
    
-    //! List of atoms
-    vector<Atom> atoms;
- 
     //! Message length for the linear fit
     double linearFitMsgLen;
 
@@ -34,7 +31,7 @@ class Segment
 
   public:
     //! Constructor
-    Segment(vector<array<double,3>> &, vector<Atom> &, double);
+    Segment(vector<array<double,3>> &, double);
 
                             /* Accessor functions */
     //! Gets number of intermediate points

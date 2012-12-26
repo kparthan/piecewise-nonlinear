@@ -1,12 +1,14 @@
 #include "StandardForm.h"
+#include "Message.h"
 
 /*!
  *  \brief This is a constructor function which is used to instantiate the
  *  object
  *  \param s a reference to a ProteinStructure
  */
-StandardForm::StandardForm(ProteinStructure *s) : structure(s), volume(0)
+StandardForm::StandardForm(Structure s) : structure(s), volume(0)
 {
+  coordinates = structure.getCoordinates();
 }
 
 /*!
@@ -15,7 +17,7 @@ StandardForm::StandardForm(ProteinStructure *s) : structure(s), volume(0)
  */
 int StandardForm::getNumberOfResidues(void)
 {
-  return structure->getNumberOfResidues();
+  return coordinates.size(); 
 }
 
 /*!
@@ -26,16 +28,6 @@ int StandardForm::getNumberOfResidues(void)
 array<double,3> StandardForm::getCoordinates(int index)
 {
   return coordinates[index];
-}
-
-/*!
- *  \brief This module returns the atom at a particular index
- *  \param index an integer
- *  \return an Atom at the given index
- */
-Atom StandardForm::getAtoms(int index)
-{
-  return atoms[index];
 }
 
 /*!
@@ -107,12 +99,10 @@ Segment StandardForm::getSegment(unsigned i, unsigned j)
   }
   int numPoints = j - i + 1;
   vector<array<double,3>> coordinates;
-  vector<Atom> atoms;
   for (int k=0; k<numPoints; k++){
     coordinates.push_back(getCoordinates(i+k));
-    atoms.push_back(getAtoms(i+k));
   }
-  return Segment(coordinates,atoms,volume);
+  return Segment(coordinates,volume);
 }
 
 /*!
@@ -121,16 +111,7 @@ Segment StandardForm::getSegment(unsigned i, unsigned j)
  */
 void StandardForm::updateCoordinates(void)
 {
-  coordinates = structure->getAtomicCoordinates<double>();  
-}
-
-/*!
- *  \brief This module updates the list of atoms with respect to
- *  the current configuration of the protein
- */
-void StandardForm::updateAtoms(void)
-{
-  atoms = structure->getAtoms();
+  coordinates = structure.getCoordinates();  
 }
 
 /*!
@@ -161,8 +142,6 @@ void StandardForm::transform(void)
   updateCoordinates();
   writeToFile(coordinates,"final");
 
-  updateAtoms();
-  
   cout << "Transformation to standard form done ..." << endl;
   cout << "Number of residues: " << getNumberOfResidues() << endl;
 }
@@ -180,7 +159,7 @@ void StandardForm::translateToOrigin()
   offsety = -coordinates[0][1];
   offsetz = -coordinates[0][2];
   Matrix<double> translate = translationMatrix(offsetx,offsety,offsetz);
-  structure->transform(translate);
+  structure.transform(translate);
   cout << "[OK]" << endl;
 }
 
@@ -191,19 +170,18 @@ void StandardForm::translateToOrigin()
 void StandardForm::rotateLastPoint()
 {
   cout << "Rotating protein so that last point lies on X-axis ... ";
-  updateAtoms();
-  Point<double> end = atoms[atoms.size()-1].point<double>();
+  Point<double> end(coordinates[coordinates.size()-1]);
 
   /* brings the last point in the protein to lie on the XY plane */
   Matrix<double> rotate = projectAndRotateLast(end); 
-  structure->transform(rotate);
+  structure.transform(rotate);
 
-  updateAtoms();
-  end = atoms[atoms.size()-1].point<double>();
+  updateCoordinates();
+  end = Point<double>(coordinates[coordinates.size()-1]);
 
   /* brings the last point on the protein to lie on the X-axis */
   rotate = rotateInXYPlane(end);
-  structure->transform(rotate);
+  structure.transform(rotate);
 
   cout << "[OK]" << endl;
 }
@@ -289,12 +267,12 @@ Matrix<double> StandardForm::rotateInXYPlane(Point<double> &p)
 void StandardForm::rotateSecondPoint()
 {
   cout << "Rotating protein so that second point lies on XY plane ... ";
-  updateAtoms();
-  Point<double> second = atoms[1].point<double>();
+  updateCoordinates();
+  Point<double> second = Point<double>(coordinates[1]);
 
   /* brings the second point in the protein to lie on the XY plane */
   Matrix<double> rotate = projectAndRotateSecond(second); 
-  structure->transform(rotate);
+  structure.transform(rotate);
 
   cout << "[OK]" << endl;
 }
@@ -382,8 +360,8 @@ void StandardForm::sphereModelFit(void)
   double msglen = 0;
   int numResidues = getNumberOfResidues();
   for (int i=1; i<numResidues; i++){
-    Point<double> previous = atoms[i-1].point<double>();
-    Point<double> current = atoms[i].point<double>();
+    Point<double> previous = Point<double>(coordinates[i-1]);
+    Point<double> current = Point<double>(coordinates[i]);
     double r = distance(previous,current);
     Message msg;
     msglen += msg.encodeUsingSphereModel(r);

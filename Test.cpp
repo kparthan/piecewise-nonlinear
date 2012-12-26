@@ -64,3 +64,12 @@ void Test::print()
   }
 }
 
+/*!
+ *  \brief This module gets the data to be used
+ *  \return the test data
+ */
+vector<Point<double>> Test::testData()
+{
+  return fvals;
+}
+

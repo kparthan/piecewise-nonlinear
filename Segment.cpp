@@ -1,4 +1,5 @@
 #include "Segment.h"
+#include "Message.h"
 
 /*!
  *  \brief constructor function used for instantiation
@@ -6,15 +7,10 @@
  *  \param atoms a vector<Atom>
  *  \param volume a double
  */
-Segment::Segment(vector<array<double,3>> &coordinates, vector<Atom> &atoms,
-                double volume): 
-                coordinates(coordinates), atoms(atoms), volume(volume)
+Segment::Segment(vector<array<double,3>> &coordinates, double volume): 
+                coordinates(coordinates), volume(volume)
 {
-  if (coordinates.size() != atoms.size()){
-    cout << "Size of atoms and coordinates not same..." << endl;
-    exit(1);
-  }
-  numPoints = atoms.size();
+  numPoints = coordinates.size();
   numIntermediate = numPoints - 2;
 
   /* instantiating message length components */
@@ -33,8 +29,8 @@ Segment::Segment(vector<array<double,3>> &coordinates, vector<Atom> &atoms,
 double Segment::linearFit(void)
 {
   if (numIntermediate > 1){
-    Point<double> start = atoms[0].point<double>();
-    Point<double> end = atoms[atoms.size()-1].point<double>();
+    Point<double> start = Point<double>(coordinates[0]);
+    Point<double> end = Point<double>(coordinates[coordinates.size()-1]);
     double length = distance(start,end);
     Line<Point<double>> line(start,end);
     Plane<Point<double>> plane = constructPlane(start,end);
@@ -42,8 +38,8 @@ double Segment::linearFit(void)
     //vector<array<double,3>> deviations2 = computeDeviations2(line,plane);
     linearFitMsgLen = messageLength(deviations,length);
   } else if (numIntermediate == 1){
-    Point<double> start = atoms[0].point<double>();
-    Point<double> first = atoms[1].point<double>();
+    Point<double> start = Point<double>(coordinates[0]);
+    Point<double> first = Point<double>(coordinates[1]);
     linearFitMsgLen = messageLength(start,first);
   } else if (numIntermediate == 0) {
     linearFitMsgLen = messageLength();
@@ -159,7 +155,7 @@ vector<array<double,3>> Segment::computeDeviations2(Line<Point<double>> &line,
 
   for (int j=0; j<3; j++) { prev_proj[j] = line_start[j];}
   for(int i=0; i<numIntermediate; i++){
-    p = atoms[i+1].point<double>();
+    p = Point<double>(coordinates[i+1]);
     convertPointToArray(p,A);
     //cout << "A: " << A[0] << " " << A[1] << " " << A[2] << endl <<endl;
     /* project p onto plane */
@@ -202,7 +198,7 @@ vector<array<double,3>> Segment::computeDeviations(Line<Point<double>> &line,
   Point<double> p,projection,previous;
   previous = line.startPoint();
   for(int i=0; i<numIntermediate; i++){
-    p = atoms[i+1].point<double>();
+    p = Point<double>(coordinates[i+1]);
     d[0] = plane.signedDistance(p); 
     projection = project(p,plane);
     d[1] = line.signedDistance(normal,projection);

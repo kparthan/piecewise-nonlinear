@@ -2,6 +2,7 @@
 #define STANDARD_FORM_H
 
 #include "Support.h"
+#include "Structure.h"
 #include "Segment.h"
 
 /*!
@@ -13,13 +14,10 @@ class StandardForm
 {
   private:
     //! Stores the standard canonical form
-    ProteinStructure *structure;
+    Structure structure;
 
     //! Cartesian coordinates of the protein structure
     vector<array<double,3>> coordinates;
-
-    //! List of atoms
-    vector<Atom> atoms;
 
     //! Volume of the bounding box
     double volume;
@@ -29,7 +27,7 @@ class StandardForm
 
   public:
     //! Constructor
-    StandardForm(ProteinStructure *);
+    StandardForm(Structure);
 
                             /* Accessor functions */
     //! Gets the number of residues
@@ -37,9 +35,6 @@ class StandardForm
 
     //! Gets the coordinates of the structure
     array<double,3> getCoordinates(int);
-
-    //! Gets the atom of the structure
-    Atom getAtoms(int);
 
     //! Gets the minimum coordinate value
     double getMinimum(unsigned);

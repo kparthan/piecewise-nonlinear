@@ -1,36 +1,22 @@
-#include "StandardForm.h"
-#include "Test.h"
+#include "Support.h"
 
 int main(int argc, char **argv)
 {
-  Usage(argc,argv);
- 
-  /* Obtain protein coordinates */
-  ProteinStructure *structure = parsePDBFile(argv[1]);
+  string file;
+  int status = Usage(argc,argv,file);
 
-  /* Transform the protein structure to the standard canonical form */
-  StandardForm protein(structure);
-  protein.transform();
+  switch(status) {
+    case 0:   // test
+      testFit();
+      break;
 
-  /* Construct the bounding box */
-  protein.boundingBox(); 
+    case 1:   // protein file
+      proteinFit(file);
+      break;
 
-  /* Sphere model fit */
-  protein.sphereModelFit();
+    case 2:   // general 3D structure
+      generalFit(file);
+      break;
+  }
+ }
 
-  /* Null model fit */
-  protein.nullModelFit();
-
-  /* Linear model fit */
-  protein.linearModelFit();
- 
-  Point<double> sp(0,0,0);
-  Point<double> ep(5,5,5);
-  Point<double> p(1,2,-1);
-  Test test(5,sp,ep,p);
-  test.generate();
-  test.print();
-
-  return 0;
-}
- 

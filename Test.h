@@ -1,7 +1,7 @@
 #ifndef TEST_H
 #define TEST_H
 
-#include "Support.h"
+#include "Header.h"
 
 class Test
 {
@@ -24,6 +24,9 @@ class Test
 
     //! Prints the points
     void print();
+
+    //! Gets the set of coordinates
+    vector<Point<double>> testData();
 };
 
 #endif

@@ -5,20 +5,164 @@
  *  command line output.
  *  \param argc an integer
  *  \param argv an array of strings
+ *  \param file a reference to a string
+ *  \return the appropriate status
  */
-void Usage (int argc, char **argv)
+int Usage (int argc, char **argv, string &file)
 {
+  int flag = -1;
+  bool noargs = 1;
   cout << "Checking command-line input ...";
-  if (argc != 2){
-    cout << "\nNot enough arguments passed ..." << endl;
-    cout << "Usage: " << "<" << argv[0] << "> <filename>" << endl;
-    exit(1);
-  }  
-  if(!checkFile(argv[1])){
-    cout << "\nFile \"" << argv[1] << "\" does not exist ..." << endl;
+
+  options_description desc("Allowed options");
+  desc.add_options()
+       ("help","produce help message")
+       ("test","perform a demo")
+       ("protein",value<string>(&file),"pdb file")
+       ("generic",value<string >(&file),"general 3D structure")
+  ;
+  variables_map vm;
+  store(parse_command_line(argc,argv,desc),vm);
+  notify(vm);
+
+  if (vm.count("help")) {
+    cout << "Usage: " << argv[0] << " [options]" << endl;
+    cout << desc << endl;
     exit(1);
   }
-  cout << " [OK]" << endl;
+  
+  if (vm.count("test")) {
+    cout << "Running a demo..." << endl;
+    flag = 0;
+    noargs = 0;
+  }
+
+  if (vm.count("protein")) {
+    if (flag != 0) {
+      cout << "Using pdb file: " << vm["protein"].as<string>() << endl;
+      flag = 1;
+      noargs = 0;
+    } else {
+      cout << "Please specify one of --test or --protein" << endl;
+      cout << "Usage: " << argv[0] << " [options]" << endl;
+      cout << desc << endl;
+      exit(1);
+    }
+  }
+
+  if (vm.count("generic")) {
+    if (flag == 0) {
+      cout << "Please specify one of --test or --protein" << endl;
+      cout << "Usage: " << argv[0] << " [options]" << endl;
+      cout << desc << endl;
+      exit(1);
+    } else if (flag == 1) {
+      cout << "Please specify one of --protein or --generic" << endl;
+      cout << "Usage: " << argv[0] << " [options]" << endl;
+      cout << desc << endl;
+      exit(1);
+    } else {
+      cout << "Using structure file: " << vm["generic"].as<string>() 
+      << endl;
+      flag = 2;
+      noargs = 0;
+    }
+  }
+
+  if (noargs) {
+    cout << "No arguments supplied..." << endl;
+    cout << "Usage: " << argv[0] << " [options]" << endl;
+    cout << desc << endl;
+    exit(1);
+  } else {
+    return flag;
+  }
+}
+
+/*!
+ *  \brief This module generates test data and fits a model to it.
+ */
+void testFit(void)
+{
+  Point<double> sp(0,0,0);
+  Point<double> ep(50,50,50);
+  Point<double> p(1,2,-1);
+  Test test(50,sp,ep,p);
+  test.generate();
+  test.print();
+
+  /* Obtain structure coordinates */
+  Structure structure(test.testData());
+  StandardForm shape(structure);
+
+  /* Transform the shape to the standard canonical form */
+  shape.transform();
+
+  /* Construct the bounding box */
+  shape.boundingBox(); 
+
+  /* Sphere model fit */
+  shape.sphereModelFit();
+
+  /* Null model fit */
+  shape.nullModelFit();
+
+  /* Linear model fit */
+  shape.linearModelFit();
+}
+
+/*!
+ *  \brief This module fits a model to a protein structure
+ *  \param file a string
+ */
+void proteinFit(string file)
+{
+  /* Obtain protein coordinates */
+  ProteinStructure *p = parsePDBFile(file.c_str());
+  Structure structure(p);
+
+  /* Transform the protein structure to the standard canonical form */
+  StandardForm protein(structure);
+  protein.transform();
+
+  /* Construct the bounding box */
+  protein.boundingBox(); 
+
+  /* Sphere model fit */
+  protein.sphereModelFit();
+
+  /* Null model fit */
+  protein.nullModelFit();
+
+  /* Linear model fit */
+  protein.linearModelFit();
+}
+ 
+/*!
+ *  \brief This module fits a model to a general 3D structure
+ *  \param file a string
+ */
+void generalFit(string file)
+{
+  /* Obtain structure coordinates */
+  vector<Point<double>> coordinates = parseFile(file.c_str());
+  Structure structure(coordinates);
+
+  /* Transform the structure to the standard canonical form */
+  StandardForm shape(structure);
+  shape.transform();
+
+  /* Construct the bounding box */
+  shape.boundingBox(); 
+
+  /* Sphere model fit */
+  shape.sphereModelFit();
+
+  /* Null model fit */
+  shape.nullModelFit();
+
+  /* Linear model fit */
+  shape.linearModelFit();
 }
 
 /*!
@@ -26,7 +170,7 @@ void Usage (int argc, char **argv)
  *  \param fileName a character string
  *  \return true or false depending on whether the file exists or not.
  */
-bool checkFile(char *fileName)
+bool checkFile(const char *fileName)
 {
   ifstream file(fileName);
   return file;
@@ -37,13 +181,39 @@ bool checkFile(char *fileName)
  *  \param pdbFile a pointer to a character array
  *  \return a pointer to a ProteinStructure object
  */
-ProteinStructure *parsePDBFile(char *pdbFile)
+ProteinStructure *parsePDBFile(const char *pdbFile)
 {
+  if(!checkFile(pdbFile)){
+    cout << "\nFile \"" << pdbFile << "\" does not exist ..." << endl;
+    exit(1);
+  }
   cout << "Parsing PDB file ...";
   BrookhavenPDBParser parser;
   ProteinStructure *structure = parser.getStructure(pdbFile)->select(CASelector());
   cout << " [OK]" << endl;
   return structure;
+}
+
+/*!
+ *  \brief This module parses the input file.
+ *  \param fname a pointer to a character array
+ *  \return the coordinates of the structure
+ */
+vector<Point<double>> parseFile(const char *fname)
+{
+  if(!checkFile(fname)){
+    cout << "\nFile \"" << fname << "\" does not exist ..." << endl;
+    exit(1);
+  }
+  vector<Point<double>> list;
+  Point<double> p;
+  double x,y,z;
+  ifstream file(fname);
+  while (file >> x >> y >> z) {
+    p = Point<double>(x,y,z);
+    list.push_back(p);
+  }
+  return list;
 }
 
 /*!
