@@ -3,7 +3,7 @@
 int main(int argc, char **argv)
 {
   string file;
-  int status = Usage(argc,argv,file);
+  int status = parseCommandLineInput(argc,argv,file);
 
   switch(status) {
     case 0:   // test

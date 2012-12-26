@@ -25,6 +25,9 @@ class StandardForm
     //! Code length matrix
     vector<vector<double>> codeLength;
 
+    //! Code length matrix for the general case
+    vector<vector<double>> codeLengthBezier;
+
   public:
     //! Constructor
     StandardForm(Structure);
@@ -89,6 +92,9 @@ class StandardForm
     Matrix<double> rotateSecondOntoXYPlane(Point<double> &);
 
                             /* Utility functions */
+    //! Fits models to the 3D structure
+    void fitModels();
+
     //! Computes the volume of bounding box
     void boundingBox();
 
@@ -106,6 +112,15 @@ class StandardForm
 
     //! Computes the optimal segmentation
     void optimalSegmentation();
+
+    //! Bezier curve fit
+    void bezierCurveModelFit();
+
+    //! Computes the code length matrix for the Bezier curve fit
+    void computeCodeLengthMatrixBezier();
+
+    //! Computes the optimal segmentation for the Bezier curve fit
+    void optimalSegmentationBezier();
 };
 
 #endif

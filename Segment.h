@@ -52,6 +52,9 @@ class Segment
     //! Gets the message length using two intermediate control points
     double getNonLinearFit(int, int);
 
+    //! Gets the minimum message length amongst all Bezier curve fits
+    double getOptimalFit();
+
     //! Prints details of the segment
     void print(); 
 
@@ -80,6 +83,9 @@ class Segment
     //! Computes the message length for the segment with more than one
     //! intermediate points
     double messageLength(vector<array<double,3>> &, double);
+
+    //! Fits a Bezier curve
+    void bezierCurveFit(int);
 };
 
 #endif

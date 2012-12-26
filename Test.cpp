@@ -37,10 +37,10 @@ void Test::generate()
       p = points[i];
     } else {
       if (flag == 0){
-        p = points[i] + perpendicular * 5;
+        p = points[i] + perpendicular * 115;
         flag = 1;
       } else {
-        p = points[i] - perpendicular * 5;
+        p = points[i] - perpendicular * 115;
         flag = 0;
       }
     }

@@ -1,4 +1,7 @@
 #include "Support.h"
+#include "Test.h"
+#include "StandardForm.h"
+#include "Structure.h"
 
 /*!
  *  \brief This function checks to see if valid arguments are given to the 
@@ -8,7 +11,7 @@
  *  \param file a reference to a string
  *  \return the appropriate status
  */
-int Usage (int argc, char **argv, string &file)
+int parseCommandLineInput(int argc, char **argv, string &file)
 {
   int flag = -1;
   bool noargs = 1;
@@ -26,9 +29,7 @@ int Usage (int argc, char **argv, string &file)
   notify(vm);
 
   if (vm.count("help")) {
-    cout << "Usage: " << argv[0] << " [options]" << endl;
-    cout << desc << endl;
-    exit(1);
+    Usage(argv[0],desc);
   }
   
   if (vm.count("test")) {
@@ -44,23 +45,17 @@ int Usage (int argc, char **argv, string &file)
       noargs = 0;
     } else {
       cout << "Please specify one of --test or --protein" << endl;
-      cout << "Usage: " << argv[0] << " [options]" << endl;
-      cout << desc << endl;
-      exit(1);
+      Usage(argv[0],desc);
     }
   }
 
   if (vm.count("generic")) {
     if (flag == 0) {
       cout << "Please specify one of --test or --protein" << endl;
-      cout << "Usage: " << argv[0] << " [options]" << endl;
-      cout << desc << endl;
-      exit(1);
+      Usage(argv[0],desc);
     } else if (flag == 1) {
       cout << "Please specify one of --protein or --generic" << endl;
-      cout << "Usage: " << argv[0] << " [options]" << endl;
-      cout << desc << endl;
-      exit(1);
+      Usage(argv[0],desc);
     } else {
       cout << "Using structure file: " << vm["generic"].as<string>() 
       << endl;
@@ -71,12 +66,22 @@ int Usage (int argc, char **argv, string &file)
 
   if (noargs) {
     cout << "No arguments supplied..." << endl;
-    cout << "Usage: " << argv[0] << " [options]" << endl;
-    cout << desc << endl;
-    exit(1);
+    Usage(argv[0],desc);
   } else {
     return flag;
   }
+}
+
+/*!
+ *  \brief This module prints the acceptable input format to the program
+ *  \param exe a reference to a const char
+ *  \param desc a reference to a options_description object
+ */
+void Usage (const char *exe, options_description &desc)
+{
+  cout << "Usage: " << exe << " [options]" << endl;
+  cout << desc << endl;
+  exit(1);
 }
 
 /*!
@@ -84,9 +89,9 @@ int Usage (int argc, char **argv, string &file)
  */
 void testFit(void)
 {
-  Point<double> sp(0,0,0);
-  Point<double> ep(50,50,50);
-  Point<double> p(1,2,-1);
+  Point<double> sp(10,-3,30);
+  Point<double> ep(50,-5,143);
+  Point<double> p(1,200,-1);
   Test test(50,sp,ep,p);
   test.generate();
   test.print();
@@ -95,20 +100,7 @@ void testFit(void)
   Structure structure(test.testData());
   StandardForm shape(structure);
 
-  /* Transform the shape to the standard canonical form */
-  shape.transform();
-
-  /* Construct the bounding box */
-  shape.boundingBox(); 
-
-  /* Sphere model fit */
-  shape.sphereModelFit();
-
-  /* Null model fit */
-  shape.nullModelFit();
-
-  /* Linear model fit */
-  shape.linearModelFit();
+  shape.fitModels();
 }
 
 /*!
@@ -121,23 +113,11 @@ void proteinFit(string file)
   ProteinStructure *p = parsePDBFile(file.c_str());
   Structure structure(p);
 
-  /* Transform the protein structure to the standard canonical form */
   StandardForm protein(structure);
-  protein.transform();
 
-  /* Construct the bounding box */
-  protein.boundingBox(); 
-
-  /* Sphere model fit */
-  protein.sphereModelFit();
-
-  /* Null model fit */
-  protein.nullModelFit();
-
-  /* Linear model fit */
-  protein.linearModelFit();
+  protein.fitModels();
 }
- 
+
 /*!
  *  \brief This module fits a model to a general 3D structure
  *  \param file a string
@@ -148,21 +128,9 @@ void generalFit(string file)
   vector<Point<double>> coordinates = parseFile(file.c_str());
   Structure structure(coordinates);
 
-  /* Transform the structure to the standard canonical form */
   StandardForm shape(structure);
-  shape.transform();
 
-  /* Construct the bounding box */
-  shape.boundingBox(); 
-
-  /* Sphere model fit */
-  shape.sphereModelFit();
-
-  /* Null model fit */
-  shape.nullModelFit();
-
-  /* Linear model fit */
-  shape.linearModelFit();
+  shape.fitModels();
 }
 
 /*!
@@ -244,6 +212,19 @@ void writeToFile(vector<array<double,3>> &coordinates, const char *fileName)
     file << endl;
   }
  file.close(); 
+}
+
+/*!
+ *  \brief This module converts a Point object to a std::array to use functions
+ *  in Arun's geometry3D.cpp file
+ *  \param p a reference to a Point
+ *  \param container a reference to an array
+ */
+void convertPointToArrcontainery(Point<double> &p, double container[])
+{
+  container[0] = p.x();
+  container[1] = p.y();
+  container[2] = p.z();
 }
 
 /*!
