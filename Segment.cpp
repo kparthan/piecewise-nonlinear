@@ -1,5 +1,6 @@
 #include "Segment.h"
 #include "Message.h"
+#include "BezierCurve.h"
 
 /*!
  *  \brief constructor function used for instantiation
@@ -15,6 +16,7 @@ Segment::Segment(vector<array<double,3>> &coordinates, double volume):
 
   /* instantiating message length components */
   linearFitMsgLen = 0;
+  zeroControlMsgLen = 0;
   singleControlMsgLen = vector<double>(numIntermediate,0);
   for (int i=0; i<numIntermediate; i++){
     vector<double> temp = vector<double>(numIntermediate,0);
@@ -327,8 +329,133 @@ double Segment::messageLength(vector<array<double,3>> &deviations,
 /*!
  *  \brief This module computes the message length based on the number
  *  of intermediate control points
+ *  \param numIntermediateControlPoints an integer
  */
-void Segment::bezierCurveFit(int numControlPoints)
+void Segment::bezierCurveFit(int numIntermediateControlPoints)
 {
+  switch(numIntermediateControlPoints) {
+    case 0:
+      if (numIntermediate > 1){
+        Point<double> start = Point<double>(coordinates[0]);
+        Point<double> end = Point<double>(coordinates[coordinates.size()-1]);
+        //double length = distance(start,end);
+        //Line<Point<double>> line(start,end);
+        BezierCurve curve(start,end,numIntermediateControlPoints+2);
+        Plane<Point<double>> plane = constructPlane(start,end);
+        vector<array<double,3>> deviations = computeDeviations(line,plane);
+        //vector<array<double,3>> deviations2 = computeDeviations2(line,plane);
+        zeroControlMsgLen = messageLengthBezier(numIntermediateControlPoints,
+                                                deviations,length);
+      } else if (numIntermediate == 1){
+        Point<double> start = Point<double>(coordinates[0]);
+        Point<double> first = Point<double>(coordinates[1]);
+        zeroControlMsgLen = messageLengthBezier(numIntermediateControlPoints,
+                                                start,first);
+      } else if (numIntermediate == 0) {
+        zeroControlMsgLen = messageLengthBezier(numIntermediateControlPoints);
+      }
+      break;
+
+    case 1:
+      break;
+
+    case 2:
+      break;
+  }
 }
+
+/*!
+ *  \brief This module computes the message length for the segment with
+ *  zero control points and zero intermediate points.
+ *  \param numIntermediateControlPoints an integer
+ *  \return the message length(in bits)
+ */
+double Segment::messageLengthBezier(int numIntermediateControlPoints)
+{
+  double msglen = 0;
+
+  /* message length to state the end point of the segment */
+  Message msg1;
+  msglen += msg1.encodeUsingNullModel(volume); 
+
+  /* message length to state the number of control points */
+  msglen += msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
+
+  /* message length to state the number of intermediate points */
+  msglen += msg1.encodeUsingLogStarModel(numIntermediate+1);
+
+  return msglen;
+}
+
+/*!
+ *  \brief This module computes the message length for the segment with
+ *  one intermediate point.
+ *  \param numIntermediateControlPoints an integer
+ *  \param p1 a Point<double>
+ *  \param p2 a Point<double>
+ *  \return the message length(in bits)
+ */
+double Segment::messageLengthBezier(int numIntermediateControlPoints,
+                                    Point<double> &p1, Point<double> &p2)
+{
+  double msglen = 0;
+
+  /* message length to state the end point of the segment */
+  Message msg1;
+  msglen += msg1.encodeUsingNullModel(volume); 
+
+  /* message length to state the number of control points */
+  msglen += msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
+
+  /* message length to state the number of intermediate points */
+  msglen += msg1.encodeUsingLogStarModel(numIntermediate+1);
+
+  /* message length to state the intermediate point using the null model */
+  msglen += msg1.encodeUsingNullModel(volume); 
+
+  return msglen;
+}
+
+/*!
+ *  \brief This module computes the message length for the segment with
+ *  more than one intermediate points.
+ *  \param numIntermediateControlPoints an integer
+ *  \param deviations a reference to a vector<array<double,3>>
+ *  \return the message length(in bits)
+ */
+double Segment::messageLengthBezier(int numIntermediateControlPoints,
+                                    vector<array<double,3>> &deviations,
+                                    double length)
+{
+  double msglen = 0;
+
+  /* message length to state the end point of the segment */
+  Message msg1;
+  msglen += msg1.encodeUsingNullModel(volume); 
+
+  /* message length to state the number of control points */
+  msglen += msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
+
+  /* message length to state the number of intermediate points */
+  msglen += msg1.encodeUsingLogStarModel(numIntermediate+1);
+
+  /* message length to state the deviations */
+  Message msg2(deviations,length);
+  msglen += msg2.encodeUsingNormalModel();;
+
+  return msglen;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 

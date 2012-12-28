@@ -22,6 +22,9 @@ class Segment
     //! Message length for the linear fit
     double linearFitMsgLen;
 
+    //! Message length using zero control points
+    double zeroControlMsgLen;
+
     //! Message length using one control point
     vector<double> singleControlMsgLen;
 

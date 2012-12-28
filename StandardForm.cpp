@@ -555,7 +555,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
         //cout << i << " -- " << j << endl;
         Segment segment = getSegment(i,j);
         segment.linearFit();
-        for (int k=0; k<3; k++) {
+        for (int k=0; k<=MAX_INTERMEDIATE_CONTROL_POINTS; k++) {
           segment.bezierCurveFit(k);
         }
         double optimal = segment.getOptimalFit();
