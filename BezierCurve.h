@@ -10,6 +10,7 @@ class BezierCurve
     int degree;
 
     //! Control points of the curve
+    //! # of control points = degree + 1
     vector<Point<double>> controlPoints;
   
   public:
@@ -22,6 +23,10 @@ class BezierCurve
 
     //! Gets a point on the curve 
     Point<double> getPoint(double);
+
+                            /* Utility functions */
+    //! Computes the shortest distance from the point to the curve
+    double shortestDistance(const Point<double> &); 
 };
 
 #endif

@@ -8,6 +8,8 @@
 #include <string>
 #include <fstream>
 #include <cmath>
+#include <complex>
+#include <limits>
 #include <stdexcept>
 #include <liblcb/liblcb.h>
 #include <boost/math/constants/constants.hpp>
@@ -15,8 +17,9 @@
 
 #define AOM 0.001
 #define PI boost::math::constants::pi<double>()
-#define HUGE_VALUE 100000000
+#define ZERO std::numeric_limits<double>::epsilon()
 #define MAX_INTERMEDIATE_CONTROL_POINTS 2
+#define HUGE_VALUE 100000000
 
 using namespace std;
 using namespace lcb;
