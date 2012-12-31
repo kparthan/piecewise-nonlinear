@@ -117,24 +117,62 @@ double Polynomial::value(double x)
  */
 void Polynomial::findRoots()
 {
-  double x;
+  /* check if 0 is a root */
+  Polynomial p = refine(roots);
+  if (p.getDegree() == -1) {
+    switch(degree) {
+      case 1: /* LINEAR */
+        solveLinear();
+        break;
 
-  switch(degree) {
-    case 1: /* LINEAR */
-      solveLinear();
-      break;
+      case 2: /* QUADRATIC */
+        solveQuadratic();
+        break;
 
-    case 2: /* QUADRATIC */
-      solveQuadratic();
-      break;
+      case 3: /* CUBIC */
+        solveCubic();
+        break;
 
-    case 3: /* CUBIC */
-      solveCubic();
-      break;
+      default:
+        solveUsingBairstow();
+        break;
+    }
+  } else if (p.getDegree() == 1) {
+    double x = -p.getCoefficients(0) / p.getCoefficients(1);
+    roots.push_back(complex<double>(x,0));
+  } else {
+    vector<complex<double>> roots2 = p.getRoots();
+    for (int i=0; i<roots2.size(); i++) {
+      roots.push_back(roots2[i]);
+    }
+  }
+}
 
-    default:
-      solveUsingBairstow();
-      break;
+/*!
+ *  \brief This module is a preprocessing routine which factors out a
+ *  polynomial whose constant term is non-zero.
+ *  \param roots a reference to a vector<complex<double>>
+ *  \return a refined Polynomial
+ */
+Polynomial Polynomial::refine(vector<complex<double>> &roots)
+{
+  int i = 0;
+  while(fabs(coefficients[i]) < ZERO) {
+    roots.push_back(complex<double>(0,0));
+    i++;
+  }
+  if (i == 0) {
+    return Polynomial();
+  } else if (i == degree) {
+    vector<double> residual(2,0);
+    residual[1] = 1;
+    return Polynomial(residual);
+  } else {
+    vector<double> residual(degree-i+1,0);
+    for (int j=0; j<degree-i+1; j++) {
+      residual[j] = coefficients[j+i];
+    }
+    return Polynomial(residual);
   }
 }
 
@@ -290,7 +328,18 @@ void Polynomial::solveCubic()
  */
 void Polynomial::solveUsingBairstow()
 {
-  bairstow(roots);
+  Polynomial p = refine(roots);
+  if (p.getDegree() == -1) {
+    bairstow(roots);
+  } else if (p.getDegree() == 1) {
+    double x = -p.getCoefficients(0) / p.getCoefficients(1);
+    roots.push_back(complex<double>(x,0));
+  } else {
+    vector<complex<double>> roots2 = p.getRoots();
+    for (int i=0; i<roots2.size(); i++) {
+      roots.push_back(roots2[i]);
+    }
+  } 
 }
 
 /*!
@@ -345,7 +394,7 @@ void Polynomial::solveUsingBairstow()
  */
 void Polynomial::bairstow(vector<complex<double>> &roots)
 {
-  double r = 0.5, s = -0.5, tol = 0.0001;
+  double r = 0.5, s = -0.5, tol = 1e-8;
   int count = 0;
 
   if (degree >= 3) {

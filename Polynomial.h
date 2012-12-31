@@ -16,6 +16,9 @@ class Polynomial
     //! Stores the roots as complex numbers
     vector<complex<double>> roots;
 
+    //! Preprocess to make constant term non-zero
+    Polynomial refine(vector<complex<double>> &);
+
     //! Computes the root of the linear equation
     void solveLinear();
 
