@@ -1,7 +1,7 @@
 CFLAGS=-std=c++0x -g $(shell pkg-config --cflags liblcb-experimental)
 LDFLAGS=$(shell pkg-config --libs liblcb-experimental) -lboost_unit_test_framework-mt -lboost_system-mt
 
-OBJECTS = test_Polynomial.o Polynomial.o
+OBJECTS = test_Polynomial.o Polynomial.o 
 
 all: test_Polynomial
 
@@ -13,3 +13,7 @@ test_Polynomial.o: test_Polynomial.cpp Polynomial.h
 
 Polynomial.o: Polynomial.cpp Polynomial.h
 	g++ -c $(CFLAGS) $< -o $@
+
+clean:
+	rm -f *.o *~ test_Polynomial 
+

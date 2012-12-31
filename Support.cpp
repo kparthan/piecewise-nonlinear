@@ -300,6 +300,22 @@ double varianceEstimateTwoParam(vector<double> &samples)
   }
 }
 
+/*!
+ *  \brief This module returns the sign of a number.
+ *  \param number a double
+ *  \return the sign
+ */
+int sign(double number)
+{
+  if (number <= ZERO) {
+    return 0;
+  } else if (number > 0) {
+    return 1;
+  } else {
+    return -1;
+  }
+}
+
   /*std::vector<lcb::Atom> atoms = structure->getAtoms();
   for (auto atom : atoms) {
     std::cout << atom.formatPDBLine() << std::endl;

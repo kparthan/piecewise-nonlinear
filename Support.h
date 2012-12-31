@@ -16,6 +16,7 @@ double msglenNormal (double, double, double);
 double meanEstimate (vector<double> &);
 double varianceEstimateOneParam (vector<double> &, double);
 double varianceEstimateTwoParam (vector<double> &);
+int sign(double);
 
 void testFit (void);
 void proteinFit (string);
