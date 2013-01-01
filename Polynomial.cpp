@@ -90,7 +90,7 @@ void Polynomial::print()
     cout << "]" << endl;
   }
   if (roots.size() > 0) {
-    for (int i=0; i<degree; i++) {
+    for (int i=0; i<roots.size(); i++) {
       cout << roots[i] << endl;
     }
   }
@@ -131,6 +131,7 @@ void Polynomial::findRoots()
 
       case 3: /* CUBIC */
         solveCubic();
+        //solveUsingBairstow();
         break;
 
       default:
@@ -164,6 +165,7 @@ Polynomial Polynomial::refine(vector<complex<double>> &roots)
   if (i == 0) {
     return Polynomial();
   } else if (i == degree) {
+    roots.pop_back();
     vector<double> residual(2,0);
     residual[1] = 1;
     return Polynomial(residual);
@@ -394,7 +396,16 @@ void Polynomial::solveUsingBairstow()
  */
 void Polynomial::bairstow(vector<complex<double>> &roots)
 {
-  double r = 0.5, s = -0.5, tol = 1e-8;
+  double r,s,tol;
+  r = -coefficients[degree-1]/coefficients[degree];
+  if (fabs(r) < ZERO) {
+    r = 0.5;
+  }
+  s = -coefficients[degree-2]/coefficients[degree];
+  if (fabs(s) < ZERO) {
+    s = -0.5;
+  }
+  tol = 1e-6;
   int count = 0;
 
   if (degree >= 3) {
@@ -419,7 +430,7 @@ void Polynomial::bairstow(vector<complex<double>> &roots)
 
       /* compute relative error */
       array<double,2> errors = relativeError(increments,r,s);
-      if (fabs(errors[0]) < tol && fabs(errors[1] < tol)) {
+      if (fabs(errors[0]) < tol && (fabs(errors[1]) < tol)) {
         break;
       }
     }
@@ -488,7 +499,9 @@ array<double,2> Polynomial::computeIncrements(const vector<double> &b,
   A[0][0] = c[2]; A[0][1] = c[3];
   A[1][0] = c[1]; A[1][1] = c[2];
   B[0][0] = -b[1]; B[1][0] = -b[0];
-  X = A.solveLinearSystem(B);
+  //A.print(); B.print();
+  X = A.solveLinearSystem(B); 
+  //X.print();
   array<double,2> increments;
   increments[0] = X[0][0];
   increments[1] = X[1][0];

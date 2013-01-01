@@ -194,7 +194,7 @@ BOOST_AUTO_TEST_CASE( bairstow_cubic )
 
   vector<double> c(4,0);
   Polynomial p;
-
+/*
   c[0] = -1; c[1] = 3; c[2] = -3; c[3] = 1;
   p = Polynomial(c);
   p.solveUsingBairstow();
@@ -209,11 +209,47 @@ BOOST_AUTO_TEST_CASE( bairstow_cubic )
 
   c[0] = -27; c[1] = -72; c[2] = -6; c[3] = 1;
   p = Polynomial(c);
-  p.findRoots();
+  p.solveUsingBairstow();
+  p.print();
+  cout << endl;
+
+  c[0] = 1; c[1] = 0; c[2] = 0; c[3] = 1;
+  p = Polynomial(c);
+  p.solveUsingBairstow();
+  p.print();
+  cout << endl;
+
+  c[0] = 0; c[1] = 0; c[2] = 0; c[3] = 1;
+  p = Polynomial(c);
+  p.solveUsingBairstow();
+  p.print();
+  cout << endl;
+
+  c[0] = 1; c[1] = 0; c[2] = 0; c[3] = 1;
+  p = Polynomial(c);
+  p.solveUsingBairstow();
+  p.print();
+  cout << endl;
+
+  c[0] = 0; c[1] = 0; c[2] = 1; c[3] = 1;
+  p = Polynomial(c);
+  p.solveUsingBairstow();
+  p.print();
+  cout << endl;
+
+  c[0] = 0; c[1] = 1; c[2] = 1; c[3] = 1;
+  p = Polynomial(c);
+  p.solveUsingBairstow();
+  p.print();
+  cout << endl;
+*/
+  c[0] = 1; c[1] = 1; c[2] = 1; c[3] = 1;
+  p = Polynomial(c);
+  p.solveUsingBairstow();
   p.print();
   cout << endl;
 }
-
+/*
 BOOST_AUTO_TEST_CASE( bairstow_quartic )
 {
   cout << "\n*** TESTING BAIRSTOW [QUARTIC] ***" << endl;
@@ -223,25 +259,57 @@ BOOST_AUTO_TEST_CASE( bairstow_quartic )
 
   c[0] = 4; c[1] = -10; c[2] = 10; c[3] = -5; c[4] = 1;
   p = Polynomial(c);
-  p.findRoots();
+  //p.findRoots();
+  p.solveUsingBairstow();
   p.print();
   cout << endl;
 
   c[0] = 1; c[1] = 1; c[2] = 2; c[3] = 1; c[4] = 1;
   p = Polynomial(c);
-  p.findRoots();
-  p.print();
-  cout << endl;
-
-  c[0] = 1; c[1] = 1; c[2] = 2; c[3] = 1; c[4] = 1;
-  p = Polynomial(c);
-  p.findRoots();
+  //p.findRoots();
+  p.solveUsingBairstow();
   p.print();
   cout << endl;
 
   c[0] = 54; c[1] = 44; c[2] = 20; c[3] = -3; c[4] = 1;
   p = Polynomial(c);
-  p.findRoots();
+  //p.findRoots();
+  p.solveUsingBairstow();
+  p.print();
+  cout << endl;
+
+  c[0] = 1; c[1] = 1; c[2] = 1; c[3] = 1; c[4] = 1;
+  p = Polynomial(c);
+  //p.findRoots();
+  p.solveUsingBairstow();
+  p.print();
+  cout << endl;
+
+  c[0] = 0; c[1] = 1; c[2] = 1; c[3] = 1; c[4] = 1;
+  p = Polynomial(c);
+  //p.findRoots();
+  p.solveUsingBairstow();
+  p.print();
+  cout << endl;
+
+  c[0] = 0; c[1] = 0; c[2] = 1; c[3] = 1; c[4] = 1;
+  p = Polynomial(c);
+  //p.findRoots();
+  p.solveUsingBairstow();
+  p.print();
+  cout << endl;
+
+  c[0] = 0; c[1] = 0; c[2] = 0; c[3] = 1; c[4] = 1;
+  p = Polynomial(c);
+  //p.findRoots();
+  p.solveUsingBairstow();
+  p.print();
+  cout << endl;
+
+  c[0] = 0; c[1] = 0; c[2] = 0; c[3] = 0; c[4] = 1;
+  p = Polynomial(c);
+  //p.findRoots();
+  p.solveUsingBairstow();
   p.print();
   cout << endl;
 }
@@ -254,6 +322,42 @@ BOOST_AUTO_TEST_CASE( bairstow_quintic )
   Polynomial p;
 
   c[0] = 6; c[1] = 11; c[2] = -33; c[3] = -33; c[4] = 11; c[5] = 6;
+  p = Polynomial(c);
+  p.findRoots();
+  p.print();
+  cout << endl;
+
+  c[0] = 1; c[1] = 1; c[2] = 1; c[3] = 1; c[4] = 1; c[5] = 1;
+  p = Polynomial(c);
+  p.findRoots();
+  p.print();
+  cout << endl;
+
+  c[0] = 0; c[1] = 1; c[2] = 1; c[3] = 1; c[4] = 1; c[5] = 1;
+  p = Polynomial(c);
+  p.findRoots();
+  p.print();
+  cout << endl;
+
+  c[0] = 0; c[1] = 0; c[2] = 1; c[3] = 1; c[4] = 1; c[5] = 1;
+  p = Polynomial(c);
+  p.findRoots();
+  p.print();
+  cout << endl;
+
+  c[0] = 0; c[1] = 0; c[2] = 0; c[3] = -3; c[4] = 1; c[5] = 1;
+  p = Polynomial(c);
+  p.findRoots();
+  p.print();
+  cout << endl;
+
+  c[0] = 0; c[1] = 0; c[2] = 0; c[3] = 0; c[4] = -2; c[5] = 11;
+  p = Polynomial(c);
+  p.findRoots();
+  p.print();
+  cout << endl;
+
+  c[0] = 0; c[1] = 0; c[2] = 0; c[3] = 0; c[4] = 0; c[5] = -79.0011;
   p = Polynomial(c);
   p.findRoots();
   p.print();
@@ -272,9 +376,26 @@ BOOST_AUTO_TEST_CASE( bairstow_sextic )
   p.findRoots();
   p.print();
   cout << endl;
+
+  c[0] = 0; c[1] = 1; c[2] = 1; c[3] = 1; c[4] = 1; c[5] = 1; c[6] = 1;
+  p = Polynomial(c);
+  p.findRoots();
+  p.print();
+  cout << endl;
+
+  c[0] = 0; c[1] = 0; c[2] = 1; c[3] = 1; c[4] = 1; c[5] = 1; c[6] = 1;
+  p = Polynomial(c);
+  p.findRoots();
+  p.print();
+  cout << endl;
+
+  c[0] = 0; c[1] = 0; c[2] = 0; c[3] = 0; c[4] = 0; c[5] = 0; c[6] = 1;
+  p = Polynomial(c);
+  p.findRoots();
+  p.print();
+  cout << endl;
 }
-
-
+*/
 
 
 
