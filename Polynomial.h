@@ -13,11 +13,11 @@ class Polynomial
     //! # of coefficients = degree + 1
     vector<double> coefficients;
 
+    //! Normalized coefficients of the polynomial
+    vector<double> scaledCoefficients;
+
     //! Stores the roots as complex numbers
     vector<complex<double>> roots;
-
-    //! Preprocess to make constant term non-zero
-    Polynomial refine(vector<complex<double>> &);
 
     //! Computes the root of the linear equation
     void solveLinear();
@@ -31,11 +31,17 @@ class Polynomial
     //! Bairstow implementation
     void bairstow(vector<complex<double>> &);
 
+    //! Sets the initial estimates of the roots
+    array<double,2> initializeRoots();
+
     //! Division of the polynomial by a quadratic expression
     vector<double> divide(const vector<double> &, double, double);
 
     //! Computes increments to the coefficients of the quadratic
     array<double,2> computeIncrements(const vector<double> &, double, double);
+
+    //! Computes the partial derivatives of the coefficients
+    vector<double> partialDerivatives(const vector<double> &, double, double);
 
     //! Computes the relative errors of the increments
     array<double,2> relativeError(const array<double,2> &, double, double);
@@ -69,6 +75,19 @@ class Polynomial
                             /* Utility functions */
     //! Computes the value of the polynomial
     double value(double);
+
+    //! Computes the value of the polynomial
+    complex<double> value(complex<double>);
+
+    //! Preprocess to normalize and remove trivial roots 
+    Polynomial preprocess();
+
+    //! Scales the coefficients so that the modulus of the 
+    //! maximum coefficient is 1
+    void normalize();
+
+    //! Removes trivial roots
+    Polynomial removeTrivialRoots();
 
     //! Computes the roots of the polynomial
     void findRoots();
