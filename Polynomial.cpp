@@ -727,11 +727,9 @@ array<double,2> Polynomial::initializeRoots()
   double mean = pow(product,1/(double)degree);
 
   /* compute the modulus of the polynomial value at select points */
-  vector<complex<double>> points = predefinedPoints(mean);
-  vector<double> modulus = polynomialModulus(points);
-  vector<double> modulus_approx = approximateModulus(modulus,points);
-  array<double,2> estimates;
-  return estimates;
+  vector<complex<double>> points = pointsAlongBoundary(mean);
+  vector<double> bivariate = bivariateApproximation(points);
+  return initialEstimates(bivariate,mean);
 }
 
 /*!
@@ -740,22 +738,34 @@ array<double,2> Polynomial::initializeRoots()
  *  \param r a double
  *  \return the set of points used in the initial estimation process
  */
-vector<complex<double>> Polynomial::predefinedPoints(double r)
+vector<complex<double>> Polynomial::pointsAlongBoundary(double r)
 {
-  vector<complex<double>> points;
-  complex<double> p(0,0);
-  points.push_back(p);
-  p = complex<double>(r/2,0);
-  points.push_back(p);
-  p = complex<double>(r,0);
-  points.push_back(p);
-  p = complex<double>(0,fabs(r)/2);
-  points.push_back(p);
-  p = complex<double>(0,fabs(r));
-  points.push_back(p);
-  p = complex<double>(r,fabs(r));
-  points.push_back(p);
+  vector<complex<double>> points(6,0);
+  points[0] = complex<double> (0,0);
+  points[1] = complex<double> (r/2,0);
+  points[2] = complex<double> (r,0);
+  points[3] = complex<double> (0,fabs(r)/2);
+  points[4] = complex<double> (0,fabs(r));
+  points[5] = complex<double> (r,fabs(r));
   return points;
+}
+
+/*!
+ *  \brief This module computes the coefficients of the bivariate polynomial
+ *  used to approximate the modulus of the polynomial under consideration.
+ *  \param points a reference to a vector<complex<double>> 
+ *  \return the coefficients of the approximated bivariate polynomial
+ */
+vector<double> Polynomial::bivariateApproximation(vector<complex<double>> 
+                                                  &points)
+{
+  vector<double> modulus = polynomialModulus(points);
+  vector<double> bivariate = approximateModulus(modulus,points);
+  if (bivariate.size() != 6) {
+    cout << "Error in bivariate approximation ..." << endl;
+    exit(1);
+  }
+  return bivariate;
 }
 
 /*!
@@ -793,6 +803,208 @@ vector<double> Polynomial::approximateModulus(vector<double> &modulus,
     A[i][3] = points[i].real() * points[i].imag();
     A[i][4] = points[i].real() * points[i].real();
     A[i][5] = points[i].imag() * points[i].imag();
+    B[i][0] = modulus[i];
+  }
+  Matrix<double> X = A.solveLinearSystem(B);
+  vector<double> c(6,0);
+  for (int i=0; i<6; i++) {
+    c[i] = X[i][0];
+  }
+  return c;
+}
+
+/*!
+ *  \brief This module computes the initial estimates of the coefficients
+ *  of the quadratic divisor
+ *  \param bivariate a reference to a vector<double>
+ *  \param r a double
+ *  \return the initial estimates
+ */
+array<double,2> Polynomial::initialEstimates(vector<double> &bivariate,
+                                             double r)
+{
+  double x,y;
+  complex<double> min_point;
+  double denominator = 4*bivariate[4]*bivariate[5] - bivariate[3]*bivariate[3];
+
+  if (fabs(denominator) > ZERO) {
+    x = (-2*bivariate[1]*bivariate[5]+bivariate[2]*bivariate[3])/denominator;
+    y = (-2*bivariate[2]*bivariate[2]+bivariate[1]*bivariate[3])/denominator;
+    if (sign(x) * sign(r) < 0 || fabs(x) > fabs(r) || fabs(y) > fabs(r)) {
+      /* minimum does not lie in the selected region 
+         in which case find the minimum on the boundary */
+      min_point = minimumAlongBoundary(bivariate,r);
+    } else {
+      min_point = complex<double>(x,y);
+    }
+  } else {
+    min_point = minimumAlongBoundary(bivariate,r);
+  }
+
+  array<double,2> estimates;
+  if (fabs(min_point.imag()) > ZERO) {
+    /* if the approximated root is a complex number */
+    double roots_sum = 2 * min_point.real();
+    double roots_product = norm(min_point) * norm(min_point);
+    estimates[0] = roots_sum;
+    estimates[1] = -roots_product;
+  } else if (fabs(min_point.real()) < ZERO) {
+    /* if the approximated root is real and zero */
+    estimates[0] = 0;
+    estimates[1] = 0;
+  } else {
+    /* if the approximated root is real and non-zero, then another real root 
+       is obtained by approximating the geometric mean of these two initial
+       roots by the geometric mean of the roots of the original polynomial*/
+    double product = fabs(r);
+    double root2 = (pow(r,2/(double)degree)) / min_point.real();
+    double roots_sum = min_point.real() + root2;
+    double roots_product = min_point.real() * root2;  
+    estimates[0] = roots_sum;
+    estimates[1] = -roots_product;
+  }
+  return estimates;
+}
+
+/*!
+ *  \brief This module computes the position along the square boundary at
+ *  which the bivariate function attains a minimum value.
+ *
+ *  The boundary is a square formed by the X-axis, Y-axis, x = r, and y = r.
+ *  The function z = f(x,y) = a0 + a1*x + a2*y + a3*x*y + a4*x^2 + a5*y^2
+ *  needs to be minimized along the square boundary. Four cases arise:-
+ *  1. x = 0 => z = a0 + a2*y + a5*y^2, hence
+ *     y_min = -a2/(2*a5)
+ *  2. y = 0 => z = a0 + a1*x + a4*x^2
+ *     x_min = -a1/(2*a4)
+ *  3. x = r => z = (a0 + a1*r + a4*r^2) + (a2 + a3*r)*y + a5*y^2  
+ *     y_min = -(a2 + a3*r)/(2*a5)
+ *  4. y = r => z = (a0 + a2*r + a5*r^2) + (a1 + a3*r)*x + a4*x^2  
+ *     x_min = -(a1 + a3*r)/(2*a4)
+ *
+ *  \param a a reference to a vector<double>
+ *  \param r a double
+ *  \return the point on the boundary 
+ */
+complex<double> Polynomial::minimumAlongBoundary(vector<double> &a, double r)
+{
+  double x,y,val,xmin,ymin,min_val;
+
+  /* case 1 */
+  xmin = 0;
+  ymin = minimizeQuadratic(a[5],a[2],a[0],0,r);
+  min_val = bivariateFunctionValue(a,xmin,ymin);
+
+  /* case 2 */
+  y = 0;
+  x = minimizeQuadratic(a[4],a[1],a[0],0,r);
+  val = bivariateFunctionValue(a,x,y);
+  if (val < min_val) {
+    min_val = val;
+    xmin = x;
+    ymin = y;
+  }
+  
+  /* case 3 */
+  x = r;
+  y = minimizeQuadratic(a[5],a[2]+a[3]*r,a[0]+a[1]*r+a[4]*r*r,0,r);
+  val = bivariateFunctionValue(a,x,y);
+  if (val < min_val) {
+    min_val = val;
+    xmin = x;
+    ymin = y;
+  }
+  
+  /* case 4 */
+  y = r;
+  x = minimizeQuadratic(a[4],a[1]+a[3]*r,a[0]+a[2]*r+a[5]*r*r,0,r);
+  val = bivariateFunctionValue(a,x,y);
+  if (val < min_val) {
+    min_val = val;
+    xmin = x;
+    ymin = y;
+  }
+  
+  return complex<double>(xmin,ymin);
+}
+
+/*!
+ *  \brief This module computes the value of a quadratic expression at a given
+ *  point
+ *  \param a a reference to a vector<double>
+ *  \param a a double
+ *  \param b a double
+ *  \return the value of the bivariate function at (x,y)
+ */
+double Polynomial::bivariateFunctionValue(vector<double> &a, double x, double y)
+{
+  return a[0] + a[1] * x + a[2] * y + a[3] * x * y 
+          + a[4] * x * x + a[5] * y * y;
+}
+
+/*!
+ *  \brief This module computes the point at which a quadratic attains minimum
+ *  within a given range
+ *  A quadratic expression f(x) = a*x^2 + b*x + c has a critical point at
+ *  x* = -b/2*a. If a > 0, then f(x) has a minimum at x* and if a < 0, f(x)
+ *  has a maximum at x*
+ *  \param a a double
+ *  \param b a double
+ *  \param c a double
+ *  \param r1 a double
+ *  \param r2 a double
+ *  \return the value in the range at which the minimum is reached
+ */
+double Polynomial::minimizeQuadratic(double a, double b, double c,
+                                     double r1, double r2)
+{
+  if (fabs(a) < ZERO) {
+    /* if the leading coefficient is zero */
+    return minimizeLinear(b,c,r1,r2);
+  } else {
+    double critical_point = -b / (2 * a);
+    if (a > 0) {
+      /* quadratic has a minimum */
+      if (critical_point < r1) {
+        return r1;
+      } else if (critical_point > r2) {
+        return r2;
+      } else {
+        return critical_point;
+      }
+    } else {
+      /* quadratic has a maximum */
+      if (critical_point < r1) {
+        return r2;
+      } else if (critical_point > r2) {
+        return r1;
+      } else {
+        if (critical_point < (r1 + r2)/2) {
+          return r2;
+        } else {
+          return r1;
+        }
+      }
+    }
+  }
+}
+
+/*!
+ *  \brief This module computes the point at which a linear function attains
+ *  a minimum value within a range.
+ *  \param a a double
+ *  \param b a double
+ *  \param r1 a double
+ *  \param r2 a double
+ */
+double Polynomial::minimizeLinear(double a, double b, double r1, double r2)
+{
+  if (a > 0) {
+    return r1;
+  } else if (a < 0) {
+    return r2;
+  } else {
+    return r1;
   }
 }
 

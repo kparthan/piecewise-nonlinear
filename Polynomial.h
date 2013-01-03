@@ -28,18 +28,6 @@ class Polynomial
     //! Bairstow implementation
     void bairstow(vector<complex<double>> &);
 
-    //! Sets the initial estimates of the roots
-    array<double,2> initializeRoots();
-
-    //! Forms the set of points used in the initial estimation
-    vector<complex<double>> predefinedPoints(double);
-
-    //!
-    vector<double> polynomialModulus(vector<complex<double>> &);
-
-    //!
-    vector<double> approximateModulus(vector<double> &, vector<complex<double>> &);
-
     //! Division of the polynomial by a quadratic expression
     vector<double> divide(const vector<double> &, double, double);
 
@@ -56,6 +44,39 @@ class Polynomial
     //! Computes the norm of the polynomial
     double normDivisorRoots(double, double, double, double);
   
+               /* Functions used in intial root approximation */
+    //! Sets the initial estimates of the roots
+    array<double,2> initializeRoots();
+
+    //! Forms the set of points used in the initial estimation
+    vector<complex<double>> pointsAlongBoundary(double);
+
+    //! A bivariate approximation of the modulus of the polynomial
+    vector<double> bivariateApproximation(vector<complex<double>> &);
+
+    //! Computes the modulus of the polynomial at the given set of points 
+    vector<double> polynomialModulus(vector<complex<double>> &);
+
+    //! Approximates the modulus of the polynomial
+    vector<double> approximateModulus(vector<double> &,
+                                      vector<complex<double>> &);
+
+    //! Estimates the initial estimates of the coefficients of the
+    //! quadratic divisor
+    array<double,2> initialEstimates(vector<double> &, double);
+
+    //! Finds at the point along the square boundary at which minimum occurs
+    complex<double> minimumAlongBoundary(vector<double> &, double);
+
+    //! Finds a point at which a quadratic expression attains minimum
+    double minimizeQuadratic(double, double, double, double, double);
+
+    //! Finds a point at which a quadratic expression attains minimum
+    double minimizeLinear(double, double, double, double);
+
+    //! Computes the bivariate function value at a given (x,y)
+    double bivariateFunctionValue(vector<double> &, double, double);
+
   public:
     //! Null constructor
     Polynomial();
