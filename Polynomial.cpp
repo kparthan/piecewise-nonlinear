@@ -533,39 +533,40 @@ void Polynomial::solveUsingBairstow()
  */
 void Polynomial::bairstow(vector<complex<double>> &roots)
 {
-  double tol = 1e-4;
-  double r = 0.5, s = -0.5;
-  /*array<double,2> initial_estimates = initializeRoots();
-  double r = initial_estimates[0];
-  double s = initial_estimates[1];*/
-  
   int count = 0;
 
-  if (degree >= 3) {
+  if (degree > 3) {
+    double tol = 1e-8;
+    double norm_prev = -1, norm_current = -1;
+    /*array<double,2> initial_estimates = initializeRoots();
+    double r = initial_estimates[0];
+    double s = initial_estimates[1];*/
+    double r = 0.5, s = -0.5;
+
     vector<double> b;
+    array<double,2> increments;
+  
     while (1) {
       cout << "---------- Iteration " << ++count << " -----------" << endl;
+
       /* divide this polynomial by the quadratic: x^2 - r*x - s */
       b = divide(coefficients,r,s);
-      /*for (int i=0; i<b.size(); i++) {
-        cout << "a[" << i << "]: " << coefficients[i] << ";  b[" << i << "]: "
-        << b[i] << endl;
-      }*/
 
       /* compute the increments to r & s */
-      array<double,2> increments = computeIncrements(b,r,s);
-      //cout << "dr: " << increments[0] << "; ds: " << increments[1] << endl; 
+      computeIncrements(b,r,s,increments,norm_prev,norm_current);
 
       /* update r & s */
       r += increments[0];
       s += increments[1];
-      //cout << "r: " << r << "; s: " << s << endl;
 
       /* compute relative error */
       array<double,2> errors = relativeError(increments,r,s);
       if (fabs(errors[0]) < tol && (fabs(errors[1]) < tol)) {
         break;
       }
+
+      norm_prev = norm_current;
+      norm_current = normDivisorRoots(b[0],b[1],r,s); 
     }
 
     /* compute the roots of the quadratic equation x^2 - r*x - s = 0 */
@@ -573,7 +574,6 @@ void Polynomial::bairstow(vector<complex<double>> &roots)
     c[0] = -s; c[1] = -r; c[2] = 1;
     Polynomial quadraticDivisor(c);
     vector<complex<double>> x = quadraticDivisor.getRoots();
-    //cout << "divisor roots: " << x[0] << " " << x[1] << endl;
     roots.push_back(x[0]);
     roots.push_back(x[1]);
 
@@ -589,6 +589,149 @@ void Polynomial::bairstow(vector<complex<double>> &roots)
       roots.push_back(x[i]);
     }
   }
+}
+
+/*!
+ *  \brief This module computes the product of the polynomial values
+ *  at the roots of the quadratic divisor.
+ *  Norm = |P(x1) * P(x2)| = |(b0 + b1*x1) * (b0 + b1*x2)|
+ *                         = |b0^2 + r*b0*b1 - s*b1^2|
+ *  \param b0 a double
+ *  \param b1 a double
+ *  \param r a double
+ *  \param s a double
+ *  \return the norm
+ */
+double Polynomial::normDivisorRoots(double b0, double b1, double r, double s)
+{
+  return fabs(b0*b0 + r*b0*b1 -s*b1*b1);
+}
+
+/*!
+ *  \brief This module computes the coefficients of the quotient using the
+ *  recurrence relation
+ *        bn = an, 
+ *        b_{n-1} = a_{n-1} + r*bn, 
+ *        bi = ai + r*b_{i+1} + s*b_{i+2}, for i=(n-2),(n-3),...1, and
+ *        b0 = a0 + s*b2
+ *  \param coefficients a reference to a vector<double>
+ *  \param r a double
+ *  \param s a double
+ *  \return the coefficients of the quotient polynomial
+ */
+vector<double> Polynomial::divide(const vector<double> &a, double r, double s)
+{
+  int n = a.size();
+  vector<double> b(n,0);
+  b[n-1] = a[n-1];
+  b[n-2] = a[n-2] + r * b[n-1];
+  for (int i=n-3; i>=1; i--) {
+    b[i] = a[i] + r * b[i+1] + s * b[i+2];
+  }
+  b[0] = a[0] + s * b[2];
+  return b;
+}
+
+/*!
+ *  \brief This module computes the increments to the coefficients of the
+ *  quadratic expression used to divide the polynomial.
+ *  \param b a reference to a vector<double> 
+ *  \param r a double
+ *  \param s a double
+ *  \param increments a reference to an array<double,2> 
+ *  \param norm_prev a double
+ *  \param norm_current a double
+ */
+void Polynomial::computeIncrements(const vector<double> &b,double r, double s,
+            array<double,2> &increments, double norm_prev, double norm_current)
+{
+  /* monitor the progress at each iteration */
+  if (norm_prev < 0 || norm_current < norm_prev) {
+    /* solve for the partial derivatives to be used in the 
+       formulation of simultaneous linear equations */
+    vector<double> derivatives = partialDerivatives(b,r,s);
+    double d = derivatives[0] * derivatives[3] - derivatives[1] * derivatives[2];
+
+    increments[0] = (b[0] * derivatives[1] - b[1] * derivatives[3]) / d;
+    increments[1] = (b[1] * derivatives[2] - b[0] * derivatives[0]) / d;
+  } else {
+    increments[0] /= 2;
+    increments[1] /= 2;
+  }
+}
+
+/*!
+ *  \brief This module computes the partial derivatives of the coefficients of
+ *  the quotient polynomial w.r.t. the coefficients of the quadratic divisor
+ *  polynomial used in the Bairstow method.
+ *              pr(n)   = 0
+ *    sn      = pr(n-1) = bn
+ *    s_{n-1} = pr(n-2) = b_{n-1} + r*pr(n-1)
+ *    s_{i+1} = pr(i)   = b_{i+1} + r*pr(i+1) + s*pr(i+2), for i = (n-3),(n-4),...,1
+ *    s1      = pr(0)   = s*pr(2)
+ *
+ *                ps(n) = 0
+ *              ps(n-1) = 0
+ *    tn      = ps(n-2) = bn
+ *    t_{n-1} = ps(n-3) = b_{n-1} + r*ps(n-2)
+ *    t_{i+2} = ps(i)   = b_{i+2} + r*ps(i+1) + s*ps_{i+2}, for i = (n-4),(n-5),...,1
+ *    t2      = ps(0)   = b2 + s*ps(2)
+ *
+ *  \frac{\partial b1}{\partial r} = s2 = t2 + p*t3
+ *  \frac{\partial b1}{\partial s} = t3
+ *  \frac{\partial b0}{\partial r} = s1 = s * t3
+ *  \frac{\partial b0}{\partial s} = t2
+ *  \param b a reference to a vector<double>
+ *  \param r a double
+ *  \param s a double
+ *  \param flag a boolean
+ *  \return the partial derivatives
+ */
+vector<double> Polynomial::partialDerivatives(const vector<double> &b,
+                                              double r, double s)
+{
+  vector<double> t = divide(b,r,s);
+  t[2] = b[2] + s * t[4];
+  vector<double> derivatives(4,0);
+  derivatives[0] = t[2] + r * t[3];
+  derivatives[1] = t[3];
+  derivatives[2] = s * t[3];
+  derivatives[3] = t[2];
+  return derivatives;
+}
+
+/*!
+ *  \brief This module computes the relative errors of the increments to the
+ *  coefficients of the quadratic expression
+ *  \param increments a reference to a const array<double>
+ *  \param r a double
+ *  \param s a double
+ *  \return the relative errors stored in an array<double> 
+ */
+array<double,2> Polynomial::relativeError(const array<double,2> &increments,
+                                          double r, double s)
+{
+  array<double,2> errors;
+  errors[0] = increments[0] * 100 / r;
+  errors[1] = increments[1] * 100 / s;
+  return errors;
+}
+
+/*!
+ *  \brief This module computes the initial estimates to be used as roots.
+ *  \return initial estimates of the coefficients of the quadratic divisor
+ */
+array<double,2> Polynomial::initializeRoots()
+{
+  double product = fabs(coefficients[0]/coefficients[degree]);
+  double mean = pow(product,1/(double)degree);
+
+  /* compute the modulus of the polynomial value at select points */
+  vector<complex<double>> points = predefinedPoints(mean);
+  vector<double> modulus = polynomialModulus(points);
+  vector<double> modulus_approx = approximateModulus(modulus,points);
+  array<double,2> estimates;
+  return estimates;
 }
 
 /*!
@@ -651,127 +794,6 @@ vector<double> Polynomial::approximateModulus(vector<double> &modulus,
     A[i][4] = points[i].real() * points[i].real();
     A[i][5] = points[i].imag() * points[i].imag();
   }
-}
-
-/*!
- *  \brief This module computes the initial estimates to be used as roots.
- *  \return initial estimates of the coefficients of the quadratic divisor
- */
-array<double,2> Polynomial::initializeRoots()
-{
-  double product = fabs(coefficients[0]/coefficients[degree]);
-  double mean = pow(product,1/(double)degree);
-
-  /* compute the modulus of the polynomial value at select points */
-  vector<complex<double>> points = predefinedPoints(mean);
-  vector<double> modulus = polynomialModulus(points);
-  vector<double> modulus_approx = approximateModulus(modulus,points);
-  array<double,2> estimates;
-  return estimates;
-}
-
-/*!
- *  \brief This module computes the coefficients of the quotient using the
- *  recurrence relation
- *        bn = an, 
- *        b_{n-1} = a_{n-1} + r*bn, 
- *        bi = ai + r*b_{i+1} + s*b_{i+2}, for i=(n-2),(n-3),...1, and
- *        b0 = a0 + s*b2
- *  \param coefficients a reference to a vector<double>
- *  \param r a double
- *  \param s a double
- *  \return the coefficients of the quotient polynomial
- */
-vector<double> Polynomial::divide(const vector<double> &a, double r, double s)
-{
-  int n = a.size();
-  vector<double> b(n,0);
-  b[n-1] = a[n-1];
-  b[n-2] = a[n-2] + r * b[n-1];
-  for (int i=n-3; i>=1; i--) {
-    b[i] = a[i] + r * b[i+1] + s * b[i+2];
-  }
-  b[0] = a[0] + s * b[2];
-  return b;
-}
-
-/*!
- *  \brief This module computes the partial derivatives of the coefficients of
- *  the quotient polynomial w.r.t. the coefficients of the quadratic divisor
- *  polynomial used in the Bairstow method.
- *              pr(n)   = 0
- *    sn      = pr(n-1) = bn
- *    s_{n-1} = pr(n-2) = b_{n-1} + r*pr(n-1)
- *    s_{i+1} = pr(i)   = b_{i+1} + r*pr(i+1) + s*pr(i+2), for i = (n-3),(n-4),...,1
- *    s1      = pr(0)   = s*pr(2)
- *
- *                ps(n) = 0
- *              ps(n-1) = 0
- *    tn      = ps(n-2) = bn
- *    t_{n-1} = ps(n-3) = b_{n-1} + r*ps(n-2)
- *    t_{i+2} = ps(i)   = b_{i+2} + r*ps(i+1) + s*ps_{i+2}, for i = (n-4),(n-5),...,1
- *    t2      = ps(0)   = b2 + s*ps(2)
- *
- *  \frac{\partial b1}{\partial r} = s2 = t2 + p*t3
- *  \frac{\partial b1}{\partial s} = t3
- *  \frac{\partial b0}{\partial r} = s1 = s * t3
- *  \frac{\partial b0}{\partial s} = t2
- *  \param b a reference to a vector<double>
- *  \param r a double
- *  \param s a double
- *  \param flag a boolean
- *  \return the partial derivatives
- */
-vector<double> Polynomial::partialDerivatives(const vector<double> &b,
-                                              double r, double s)
-{
-  vector<double> t = divide(b,r,s);
-  t[2] = b[2] + s * t[4];
-  vector<double> derivatives(4,0);
-  derivatives[0] = t[2] + r * t[3];
-  derivatives[1] = t[3];
-  derivatives[2] = s * t[3];
-  derivatives[3] = t[2];
-  return derivatives;
-}
-
-/*!
- *  \brief This module computes the increments to the coefficients of the
- *  quadratic expression used to divide the polynomial.
- *  \param b a reference to a vector<double> 
- *  \param r a double
- *  \param s a double
- *  \return the increments stored in an array<double> 
- */
-array<double,2> Polynomial::computeIncrements(const vector<double> &b,
-                                              double r, double s)
-{
-  /* solve for the partial derivatives to be used in the 
-     formulation of simultaneous linear equations */
-  vector<double> derivatives = partialDerivatives(b,r,s);
-  double d = derivatives[0] * derivatives[3] - derivatives[1] * derivatives[2];
-
-  array<double,2> increments;
-  increments[0] = (b[0] * derivatives[1] - b[1] * derivatives[3]) / d;
-  increments[1] = (b[1] * derivatives[2] - b[0] * derivatives[0]) / d;
-  return increments;
-}
-
-/*!
- *  \brief This module computes the relative errors of the increments to the
- *  coefficients of the quadratic expression
- *  \param increments a reference to a const array<double>
- *  \param r a double
- *  \param s a double
- *  \return the relative errors stored in an array<double> 
- */
-array<double,2> Polynomial::relativeError(const array<double,2> &increments,
-                                          double r, double s)
-{
-  array<double,2> errors;
-  errors[0] = increments[0] * 100 / r;
-  errors[1] = increments[1] * 100 / s;
-  return errors;
 }
 
 /*!
