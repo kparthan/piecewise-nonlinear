@@ -44,13 +44,17 @@ class Polynomial
     vector<double> divide(const vector<double> &, double, double);
 
     //! Computes increments to the coefficients of the quadratic
-    array<double,2> computeIncrements(const vector<double> &, double, double);
+    void computeIncrements(const vector<double> &, double, double,
+                           array<double,2> &, double, double);
 
     //! Computes the partial derivatives of the coefficients
     vector<double> partialDerivatives(const vector<double> &, double, double);
 
     //! Computes the relative errors of the increments
     array<double,2> relativeError(const array<double,2> &, double, double);
+
+    //! Computes the norm of the polynomial
+    double normDivisorRoots(double, double, double, double);
   
   public:
     //! Null constructor
