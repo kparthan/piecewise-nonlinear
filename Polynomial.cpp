@@ -14,7 +14,8 @@ Polynomial::Polynomial() : degree(-1)
  *  \param coefficients a reference to a vector<double>
  */
 Polynomial::Polynomial(const vector<double> &coefficients) : 
-                       coefficients(coefficients)
+                       coefficients(coefficients), 
+                       originalCoefficients(coefficients)
 {
   degree = coefficients.size() - 1;
   if (fabs(coefficients[degree]) <= ZERO) {
@@ -29,7 +30,7 @@ Polynomial::Polynomial(const vector<double> &coefficients) :
  */
 Polynomial::Polynomial(const Polynomial &source) : degree(source.degree),
             coefficients(source.coefficients), roots(source.roots),
-            scaledCoefficients(source.scaledCoefficients)
+            originalCoefficients(source.originalCoefficients)
 {}
 
 /*!
@@ -43,7 +44,7 @@ Polynomial Polynomial::operator=(const Polynomial &source)
     degree = source.degree;
     coefficients = source.coefficients;
     roots = source.roots;
-    scaledCoefficients = source.scaledCoefficients;
+    originalCoefficients = source.originalCoefficients;
   }
   return *this;
 }
@@ -57,7 +58,7 @@ int Polynomial::getDegree()
 }
 
 /*!
- *  \brief This module returns the corresponding coefficient.
+ *  \brief This module returns the corresponding scaled coefficient.
  *  \param exponent an unsigned integer
  *  \return the coefficient
  */
@@ -85,7 +86,12 @@ void Polynomial::print()
 {
   cout << "Degree of the polynomial: " << degree << endl;
   if (coefficients.size() > 0) {
-    cout << "Coefficients: [ ";
+    cout << "Original coefficients: [ ";
+    for (int i=0; i<=degree; i++) {
+      cout << originalCoefficients[i] << " ";
+    }
+    cout << "]" << endl;
+    cout << "Scaled coefficients: [ ";
     for (int i=0; i<=degree; i++) {
       cout << coefficients[i] << " ";
     }
@@ -192,7 +198,6 @@ void Polynomial::findRoots()
 
       case 3: /* CUBIC */
         solveCubic();
-        //solveUsingBairstow();
         break;
 
       default:
@@ -253,9 +258,8 @@ double absoluteMaximum(vector<double> &list)
 void Polynomial::normalize()
 {
   double max = absoluteMaximum(coefficients);
-  scaledCoefficients = vector<double>(degree+1,0);
   for (int i=0; i<=degree; i++) {
-    scaledCoefficients[i] = coefficients[i] / max;
+    coefficients[i] /= max;
   }
 }
 
@@ -268,7 +272,7 @@ Polynomial Polynomial::removeTrivialRoots()
 {
   int i = 0;
   /* check if 0 is a root */
-  while(fabs(scaledCoefficients[i]) < ZERO) {
+  while(fabs(coefficients[i]) < ZERO) {
     roots.push_back(complex<double>(0,0));
     i++;
   }
@@ -282,7 +286,7 @@ Polynomial Polynomial::removeTrivialRoots()
   } else {
     vector<double> residual(degree-i+1,0);
     for (int j=0; j<degree-i+1; j++) {
-      residual[j] = scaledCoefficients[j+i];
+      residual[j] = coefficients[j+i];
     }
     return Polynomial(residual);
   }
@@ -295,8 +299,8 @@ Polynomial Polynomial::removeTrivialRoots()
  */
 void Polynomial::solveLinear()
 {
-  double a = scaledCoefficients[1];
-  double b = scaledCoefficients[0];
+  double a = coefficients[1];
+  double b = coefficients[0];
   double val = -b / a;
   complex<double> x(val,0);
   roots.push_back(x);
@@ -310,9 +314,9 @@ void Polynomial::solveLinear()
  */
 void Polynomial::solveQuadratic()
 {
-  double a = scaledCoefficients[2];
-  double b = scaledCoefficients[1];
-  double c = scaledCoefficients[0];
+  double a = coefficients[2];
+  double b = coefficients[1];
+  double c = coefficients[0];
 
   double discriminant = b * b - 4 * a * c;
   if (discriminant >= 0){
@@ -529,20 +533,20 @@ void Polynomial::solveUsingBairstow()
  */
 void Polynomial::bairstow(vector<complex<double>> &roots)
 {
-  double tol = 1e-6;
-  //double r = 0.5, s = -0.5;
-  array<double,2> initial_estimates = initializeRoots();
+  double tol = 1e-4;
+  double r = 0.5, s = -0.5;
+  /*array<double,2> initial_estimates = initializeRoots();
   double r = initial_estimates[0];
-  double s = initial_estimates[1];
+  double s = initial_estimates[1];*/
   
   int count = 0;
 
-  if (degree > 3) {
+  if (degree >= 3) {
     vector<double> b;
     while (1) {
       cout << "---------- Iteration " << ++count << " -----------" << endl;
       /* divide this polynomial by the quadratic: x^2 - r*x - s */
-      b = divide(scaledCoefficients,r,s);
+      b = divide(coefficients,r,s);
       /*for (int i=0; i<b.size(); i++) {
         cout << "a[" << i << "]: " << coefficients[i] << ";  b[" << i << "]: "
         << b[i] << endl;
@@ -661,7 +665,9 @@ array<double,2> Polynomial::initializeRoots()
   /* compute the modulus of the polynomial value at select points */
   vector<complex<double>> points = predefinedPoints(mean);
   vector<double> modulus = polynomialModulus(points);
-  vector<double> modulus_approx = approximateModulus(points);
+  vector<double> modulus_approx = approximateModulus(modulus,points);
+  array<double,2> estimates;
+  return estimates;
 }
 
 /*!
@@ -775,7 +781,7 @@ array<double,2> Polynomial::relativeError(const array<double,2> &increments,
  */
 vector<complex<double>> Polynomial::solveGeneralEquation(double constant)
 {
-  vector<double> newCoefficients(coefficients);
+  vector<double> newCoefficients(originalCoefficients);
   newCoefficients[degree] = coefficients[degree] - constant;
   Polynomial newPolynomial(newCoefficients);
   return newPolynomial.getRoots();

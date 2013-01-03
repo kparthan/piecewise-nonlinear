@@ -11,10 +11,7 @@ class Polynomial
 
     //! Coefficients of the polynomial
     //! # of coefficients = degree + 1
-    vector<double> coefficients;
-
-    //! Normalized coefficients of the polynomial
-    vector<double> scaledCoefficients;
+    vector<double> coefficients, originalCoefficients;
 
     //! Stores the roots as complex numbers
     vector<complex<double>> roots;
@@ -36,6 +33,12 @@ class Polynomial
 
     //! Forms the set of points used in the initial estimation
     vector<complex<double>> predefinedPoints(double);
+
+    //!
+    vector<double> polynomialModulus(vector<complex<double>> &);
+
+    //!
+    vector<double> approximateModulus(vector<double> &, vector<complex<double>> &);
 
     //! Division of the polynomial by a quadratic expression
     vector<double> divide(const vector<double> &, double, double);
