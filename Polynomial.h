@@ -28,18 +28,6 @@ class Polynomial
     //! Bairstow implementation
     void bairstow(vector<complex<double>> &);
 
-    //! Sets the initial estimates of the roots
-    array<double,2> initializeRoots();
-
-    //! Forms the set of points used in the initial estimation
-    vector<complex<double>> predefinedPoints(double);
-
-    //!
-    vector<double> polynomialModulus(vector<complex<double>> &);
-
-    //!
-    vector<double> approximateModulus(vector<double> &, vector<complex<double>> &);
-
     //! Division of the polynomial by a quadratic expression
     vector<double> divide(const vector<double> &, double, double);
 

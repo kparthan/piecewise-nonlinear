@@ -105,47 +105,6 @@ void Polynomial::print()
 }
 
 /*!
- *  \brief This module computes the product of two complex numbers
- *  \param c1 a reference to a complex<double>
- *  \param c2 a reference to a complex<double>
- *  \return the product as a complex number
- */
-complex<double> complexProduct(const complex<double> &c1, 
-                               const complex<double> &c2)
-{
-  double real_part = c1.real() * c2.real() - c1.imag() * c2.imag();
-  double imaginary_part = c1.real() * c2.imag() + c2.real() * c1.imag();
-  return complex<double>(real_part,imaginary_part);
-}
-
-/*!
- *  \brief This module computes the sum of two complex numbers
- *  \param c1 a reference to a complex<double>
- *  \param c2 a reference to a complex<double>
- *  \return the sum as a compln number
- */
-complex<double> complexSum(const complex<double> &c1, 
-                           const complex<double> &c2)
-{
-  double real_part = c1.real() + c2.real();
-  double imaginary_part = c1.imag() + c2.imag();
-  return complex<double>(real_part,imaginary_part);
-}
-
-/*!
- *  \brief This module computes the product of a scalar with a complex number
- *  \param scalar a double
- *  \param c a reference to a complex<double>
- *  \return the complex product
- */
-complex<double> complexProduct(double scalar, complex<double> &c)
-{
-  double real_part = scalar * c.real();
-  double imaginary_part = scalar * c.imag();
-  return complex<double>(real_part,imaginary_part);
-}
-
-/*!
  *  \brief This module computes the function value for a given x
  *  \param x a double
  *  \return the function value
@@ -158,25 +117,6 @@ double Polynomial::value(double x)
     exponent *= x;
   }
   return val;
-}
-
-/*!
- *  \brief This module computes the function value at a given point in the
- *  complex plane
- *  \param number a complex<double>
- *  \return the function value as a complex number
- */
-complex<double> Polynomial::value(complex<double> number)
-{
-  complex<double> value(coefficients[0],0);
-  complex<double> exponent(1,0);
-  complex<double> temp;
-  for (int i=1; i<=degree; i++) {
-    exponent = complexProduct(exponent,number);  
-    temp = complexProduct(coefficients[i],exponent);
-    value = complexSum(value,temp);
-  }
-  return value;
 }
 
 /*!
@@ -542,6 +482,7 @@ void Polynomial::bairstow(vector<complex<double>> &roots)
     double r = initial_estimates[0];
     double s = initial_estimates[1];*/
     double r = 0.5, s = -0.5;
+    //cout << "initial estimates: [" << r << " , " << s << "]" << endl;
 
     vector<double> b;
     array<double,2> increments;
@@ -715,85 +656,6 @@ array<double,2> Polynomial::relativeError(const array<double,2> &increments,
   errors[0] = increments[0] * 100 / r;
   errors[1] = increments[1] * 100 / s;
   return errors;
-}
-
-/*!
- *  \brief This module computes the initial estimates to be used as roots.
- *  \return initial estimates of the coefficients of the quadratic divisor
- */
-array<double,2> Polynomial::initializeRoots()
-{
-  double product = fabs(coefficients[0]/coefficients[degree]);
-  double mean = pow(product,1/(double)degree);
-
-  /* compute the modulus of the polynomial value at select points */
-  vector<complex<double>> points = predefinedPoints(mean);
-  vector<double> modulus = polynomialModulus(points);
-  vector<double> modulus_approx = approximateModulus(modulus,points);
-  array<double,2> estimates;
-  return estimates;
-}
-
-/*!
- *  \brief This module computes the points at which the modulus of the 
- *  polynomial is to be calculated.
- *  \param r a double
- *  \return the set of points used in the initial estimation process
- */
-vector<complex<double>> Polynomial::predefinedPoints(double r)
-{
-  vector<complex<double>> points;
-  complex<double> p(0,0);
-  points.push_back(p);
-  p = complex<double>(r/2,0);
-  points.push_back(p);
-  p = complex<double>(r,0);
-  points.push_back(p);
-  p = complex<double>(0,fabs(r)/2);
-  points.push_back(p);
-  p = complex<double>(0,fabs(r));
-  points.push_back(p);
-  p = complex<double>(r,fabs(r));
-  points.push_back(p);
-  return points;
-}
-
-/*!
- *  \brief This modulus computes the modulus of the polynomial at the
- *  given points.
- *  \param points a reference to a vector<complex<double>> 
- *  \return the vector containing the modulus of the polynomial at the 
- *  given points.
- */
-vector<double> Polynomial::polynomialModulus(vector<complex<double>> &points)
-{
-  vector<double> modulus;
-  for (int i=0; i<points.size(); i++) {
-    complex<double> c = value(points[i]);
-    modulus.push_back(norm(c));
-  }
-  return modulus;
-}
-
-/*!
- *  \brief This module uses the original polynomial modulus values at the 
- *  given points and approximates them by a predefined bivariate polynomial
- *  function: f(x,y) = a0 + a1*x + a2*y + a3*x*y + a4*x^2 + a5*y^2
- *  Using the modulus values, the coefficients of the bivariate polynomial
- *  are computed by solving a sustem of linear equations.
- */
-vector<double> Polynomial::approximateModulus(vector<double> &modulus,
-              vector<complex<double>> &points)
-{
-  Matrix<double> A(6,6), B(6,1);
-  for (int i=0; i<6; i++) {
-    A[i][0] = 1;
-    A[i][1] = points[i].real();
-    A[i][2] = points[i].imag();
-    A[i][3] = points[i].real() * points[i].imag();
-    A[i][4] = points[i].real() * points[i].real();
-    A[i][5] = points[i].imag() * points[i].imag();
-  }
 }
 
 /*!

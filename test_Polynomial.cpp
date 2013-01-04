@@ -194,7 +194,7 @@ BOOST_AUTO_TEST_CASE( bairstow_cubic )
 
   vector<double> c(4,0);
   Polynomial p;
-/*
+
   c[0] = -1; c[1] = 3; c[2] = -3; c[3] = 1;
   p = Polynomial(c);
   p.solveUsingBairstow();
@@ -242,14 +242,14 @@ BOOST_AUTO_TEST_CASE( bairstow_cubic )
   p.solveUsingBairstow();
   p.print();
   cout << endl;
-*/
+
   c[0] = 1; c[1] = 1; c[2] = 1; c[3] = 1;
   p = Polynomial(c);
   p.solveUsingBairstow();
   p.print();
   cout << endl;
 }
-/*
+
 BOOST_AUTO_TEST_CASE( bairstow_quartic )
 {
   cout << "\n*** TESTING BAIRSTOW [QUARTIC] ***" << endl;
@@ -371,6 +371,12 @@ BOOST_AUTO_TEST_CASE( bairstow_sextic )
   vector<double> c(7,0);
   Polynomial p;
 
+  c[0] = -1; c[1] = 10; c[2] = 9; c[3] = 0; c[4] = 5; c[5] = 4; c[6] = 11;
+  p = Polynomial(c);
+  p.findRoots();
+  p.print();
+  cout << endl;
+
   c[0] = 1; c[1] = 0; c[2] = 0; c[3] = 0; c[4] = 0; c[5] = 0; c[6] = 1;
   p = Polynomial(c);
   p.findRoots();
@@ -395,7 +401,6 @@ BOOST_AUTO_TEST_CASE( bairstow_sextic )
   p.print();
   cout << endl;
 }
-*/
 
 
 
