@@ -169,24 +169,6 @@ Polynomial Polynomial::preprocess()
 }
 
 /*!
- *  \brief This module finds the maximum absolute value in a list
- *  \param list a reference to a vector<double>
- *  \return the maximum absolute value
- */
-double absoluteMaximum(vector<double> &list)
-{
-  double max = fabs(list[0]);
-  if (list.size() > 2) {
-    for (int i=1; i<list.size(); i++) {
-      if (fabs(list[i]) > max) {
-        max = fabs(list[i]);
-      }
-    }
-  }
-  return max;
-}
-
-/*!
  *  \brief This module scales the coefficients of the polynomial so that
  *  the absolute value of the maximum coefficient is 1. 
 
@@ -284,43 +266,6 @@ void Polynomial::solveQuadratic()
     complex<double> r2(x1,-x2);
     roots.push_back(r2);
   }  
-}
-
-/*!
- *  \brief This module returns the sign of a number.
- *  \param number a double
- *  \return the sign
- */
-int sign(double number)
-{
-  if (fabs(number) <= ZERO) {
-    return 0;
-  } else if (number > 0) {
-    return 1;
-  } else {
-    return -1;
-  }
-}
-
-/*!
- *  \brief This module computes the cube root of a number
- *  \param number a double
- *  \return the cube root
- */
-double cubeRoot(double number)
-{
-  double positiveCubeRoot = pow(fabs(number),1/3.0);
-  int sgn = sign(number);
-  switch(sgn) {
-    case 0:
-      return 0;
-
-    case 1:
-      return positiveCubeRoot;
-
-    case -1:
-      return -positiveCubeRoot;
-  }
 }
 
 /*!

@@ -17,6 +17,8 @@ double meanEstimate (vector<double> &);
 double varianceEstimateOneParam (vector<double> &, double);
 double varianceEstimateTwoParam (vector<double> &);
 int sign(double);
+double absoluteMaximum(vector<double> &);
+double cubeRoot(double);
 
 void testFit (void);
 void proteinFit (string);

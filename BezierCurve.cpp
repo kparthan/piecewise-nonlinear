@@ -4,7 +4,7 @@
 /*!
  *  \brief This module is the constructor function to instantiate a 
  *  BezierCurve object
- *  \param controlPoints a vector container of Point<double>
+ *  \param controlPoints a reference to vector<Point<double>>
  */
 BezierCurve::BezierCurve(vector<Point<double>> &controlPoints) : 
                          controlPoints(controlPoints)
@@ -19,6 +19,21 @@ BezierCurve::BezierCurve(vector<Point<double>> &controlPoints) :
 int BezierCurve::getDegree()
 {
   return degree;
+}
+
+/*!
+ *  \brief This module returns a control point
+ *  \param index an integer
+ *  \return a control point
+ */
+Point<double> BezierCurve::getControlPoint(int index)
+{
+  if (index < 0 || index > degree) {
+    cout << "Control point index out of bounds ..." << endl;
+    exit(1);
+  } else {
+    return controlPoints[index];
+  }
 }
 
 /*!
@@ -66,6 +81,7 @@ Point<double> BezierCurve::getPoint(double t)
  *            A t + B = 0     where
  *  A = (p1 - p0) . (p1 - p0);
  *  B = (p0 - p) * (p1 - p0);
+ *  gives t = -B/A as the parameter of the shortest point on the curve.
  *
  *  Degree: 2  => P(t) = (1-t)^2 p0 + 2t(1-t)p1 + t^2 p2, where
  *  p0, p2 are the control points through which the curve passes and p1 is 
@@ -79,6 +95,20 @@ Point<double> BezierCurve::getPoint(double t)
  *  C = (p0 - 2p1 + p2) . (p0 - p) + 2 (p1 - p0) . (p1 - p0)
  *  D = (p1 - p0) . (p0 - p)
  *
+ *  Degree: 3 => P(t) = (1-t)^3 p0 + 3t(1-t)^2 p1 + 3t^2(1-t)p2 + t^3 p3, where
+ *  p0, p2 are the control points through which the curve passes and p1, p3 are
+ *  the intermediate control points
+ *  i.e., P(t) = (-p0+3p1-3p2+p3)t^3 + 3(p0-2p1+p2)t^2 + 3(-p0+p1)t + p0
+ *   and P'(t) = 3(-p0+3p1-3p2+p3)t^2 + 6(p0-2p1+p2)t + 3(-p0+p1)
+ *  Substituting these values in (1) and solving for t gives:
+ *            A t^5 + B t^4 + C t^3 + D t^2 + E t + F = 0   where
+ *  A = (-p0 + 3p1 - 3p2 + p3) . (-p0 + 3p1 - 3p2 + p3)
+ *  B = 5 (-p0 + 3p1 - 3p2 + p3) . (p0 - 2p1 + p2)
+ *  C = 6 (p0 - 2p1 + p2).(p0 - 2p1 + p2) + 4 (-p0 + p1).(-p0 + 3p1 - 3p2 + p3)
+ *  D = 9 (-p0 + p1) . (p0 - 2p1 + p2) + (p0 - p) . (-p0 + 3p1 - 3p2 + p3)
+ *  E = 3 (-p0 + p1) . (-p0 + p1) + 2 (p0 - p) . (p0 - 2p1 + p2)
+ *  F = (p1 - p0) . (p0 - p)
+ *
  *  \param p a reference to a Point<double>
  *  \return the shortest distance
  */
@@ -86,21 +116,15 @@ double BezierCurve::shortestDistance(const Point<double> &p)
 {
   double t;
   vector<double> coefficients;
-  double w;
-  Point<double> p0,p1,p2;
-  Point<double> temp;
+  Point<double> p0,p1,p2,p3;
+  Point<double> temp1,temp2,temp3,temp4;
   Polynomial polynomial;
+
   switch(degree) {
     case 1:
       p0 = controlPoints[0];
       p1 = controlPoints[1];
-      w = (p1 - p0) * (p1 - p0);
-      coefficients.push_back(w);
-      w = (p0 - p) * (p1 - p0);
-      coefficients.push_back(w);
-      polynomial = Polynomial(coefficients);
       t = ((p - p0) * (p1 - p0)) / ((p1 - p0) * (p1 - p0)); 
-      //cout << "t: " << t << endl;
       break;
 
     case 2:
@@ -108,20 +132,37 @@ double BezierCurve::shortestDistance(const Point<double> &p)
       p1 = controlPoints[1];
       p2 = controlPoints[2];
       /* solve a cubic equation */
-      temp = p0 - p1 * 2 + p2;
-      w = temp * temp;
-      coefficients.push_back(w);
-      w = 3 * (temp * (p1 - p0));
-      coefficients.push_back(w);
-      w = temp * (p0 - p) + 2 * ((p1 - p0) * (p1 - p0));
-      coefficients.push_back(w);
-      w = (p0 - p) * (p1 - p0);
-      coefficients.push_back(w);
+      coefficients = vector<double>(4,0);
+      temp1 = p0 - p1 * 2 + p2; 
+      temp2 = p1 - p0;
+      temp3 = p0 - p;
+      coefficients[0] = temp1 * temp1;
+      coefficients[1] = 3 * (temp1 * temp2);
+      coefficients[2] = temp1 * temp3 + 2 * temp2 * temp2; 
+      coefficients[3] = temp2 * temp3;
       polynomial = Polynomial(coefficients);
-      
+      t = processRoots(polynomial.getRoots());
       break;
 
     case 3:
+      p0 = controlPoints[0];
+      p1 = controlPoints[1];
+      p2 = controlPoints[2];
+      p3 = controlPoints[3];
+      /* solve a quintic equation */
+      coefficients = vector<double>(6,0);
+      temp1 = p1 * 3 - p2 * 3 + p3 - p0;
+      temp2 = p0 - p1 * 2 + p2; 
+      temp3 = p1 - p0;
+      temp4 = p0 - p;
+      coefficients[0] = temp1 * temp1;
+      coefficients[1] = 5 * (temp1 * temp2);
+      coefficients[2] = 6 * (temp2 * temp2) + 4 * (temp3 * temp1);
+      coefficients[3] = 9 * (temp3 * temp2) + (temp4 * temp1);
+      coefficients[4] = 3 * (temp3 * temp3) + 2 * (temp4 * temp2);
+      coefficients[5] = temp3 * temp4;
+      polynomial = Polynomial(coefficients);
+      t = processRoots(polynomial.getRoots());
       break;
 
     default:
@@ -129,12 +170,33 @@ double BezierCurve::shortestDistance(const Point<double> &p)
       << endl;
       exit(1); 
   }
+  //cout << "t: " << t << endl;
   Point<double> pmin = getPoint(t);
   cout << "pmin: " << pmin.x() << " " << pmin.y() << " " << pmin.z() << endl;
   return distance(p,pmin);
 }
 
-
+/*!
+ *  \brief This module returns the root which lies in the range [0,1]
+ *  \param roots a reference to a vector<complex<double>>
+ *  \return the value of t in the range [0,1]
+ */
+double BezierCurve::processRoots(vector<complex<double>> &roots)
+{
+  double t;
+  for (int i=0; i<roots.size(); i++) {
+    if (fabs(roots[i].imag()) < ZERO) {
+      /* if the root is real */
+      double real_part = roots[i].real();
+      if (real_part > 0 && real_part < 1) {
+        return real_part;
+      } else {
+        t = real_part; 
+      }
+    }
+  }
+  return t;
+}
 
 
 

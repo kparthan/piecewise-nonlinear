@@ -65,12 +65,18 @@ class Segment
     //! Fits a linear model
     double linearFit();
 
-    //! Constructs a plane
+    //! Constructs a plane given two end points
     Plane<Point<double>> constructPlane(Point<double> &, Point<double> &);
+
+    //! Constructs a plane used along with a Bezier curve 
+    Plane<Point<double>> constructPlane(BezierCurve &);
 
     //! Computes deviations from the line
     vector<array<double,3>> computeDeviations(Line<Point<double>> &,
                                               Plane<Point<double>> &);
+
+    //! Computes deviations from a Bezier curve 
+    vector<array<double,3>> computeDeviations(BezierCurve &);
 
     vector<array<double,3>> computeDeviations2(Line<Point<double>> &,
                                               Plane<Point<double>> &);

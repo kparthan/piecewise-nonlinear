@@ -301,13 +301,31 @@ double varianceEstimateTwoParam(vector<double> &samples)
 }
 
 /*!
+ *  \brief This module finds the maximum absolute value in a list
+ *  \param list a reference to a vector<double>
+ *  \return the maximum absolute value
+ */
+double absoluteMaximum(vector<double> &list)
+{
+  double max = fabs(list[0]);
+  if (list.size() > 2) {
+    for (int i=1; i<list.size(); i++) {
+      if (fabs(list[i]) > max) {
+        max = fabs(list[i]);
+      }
+    }
+  }
+  return max;
+}
+
+/*!
  *  \brief This module returns the sign of a number.
  *  \param number a double
  *  \return the sign
  */
 int sign(double number)
 {
-  if (number <= ZERO) {
+  if (fabs(number) <= ZERO) {
     return 0;
   } else if (number > 0) {
     return 1;
@@ -316,14 +334,24 @@ int sign(double number)
   }
 }
 
-  /*std::vector<lcb::Atom> atoms = structure->getAtoms();
-  for (auto atom : atoms) {
-    std::cout << atom.formatPDBLine() << std::endl;
-  }*/
-  //constructBoundingBox(coordinates);
-  /*for (int i=0; i<coordinates.size(); i++) {
-    for (int j=0; j<3; j++) {
-      cout << coordinates[i][j] << " " ;
-    }
-    cout << endl ;
-  }*/
+/*!
+ *  \brief This module computes the cube root of a number
+ *  \param number a double
+ *  \return the cube root
+ */
+double cubeRoot(double number)
+{
+  double positiveCubeRoot = pow(fabs(number),1/3.0);
+  int sgn = sign(number);
+  switch(sgn) {
+    case 0:
+      return 0;
+
+    case 1:
+      return positiveCubeRoot;
+
+    case -1:
+      return -positiveCubeRoot;
+  }
+}
+

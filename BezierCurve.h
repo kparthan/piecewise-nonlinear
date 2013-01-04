@@ -21,12 +21,18 @@ class BezierCurve
     //! Gets the degree of the curve
     int getDegree();
 
+    //! Gets a control point
+    Point<double> getControlPoint(int);
+
     //! Gets a point on the curve 
     Point<double> getPoint(double);
 
                             /* Utility functions */
     //! Computes the shortest distance from the point to the curve
     double shortestDistance(const Point<double> &); 
+
+    //! Processes the list of roots and returns the appropriate one
+    double processRoots(vector<complex<double>> &);
 };
 
 #endif
