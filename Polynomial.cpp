@@ -542,6 +542,7 @@ void Polynomial::bairstow(vector<complex<double>> &roots)
     double r = initial_estimates[0];
     double s = initial_estimates[1];*/
     double r = 0.5, s = -0.5;
+    //cout << "initial estimates: [" << r << " , " << s << "]" << endl;
 
     vector<double> b;
     array<double,2> increments;
@@ -780,7 +781,7 @@ vector<double> Polynomial::polynomialModulus(vector<complex<double>> &points)
   vector<double> modulus;
   for (int i=0; i<points.size(); i++) {
     complex<double> c = value(points[i]);
-    modulus.push_back(norm(c));
+    modulus.push_back(sqrt(norm(c)));
   }
   return modulus;
 }
@@ -840,12 +841,15 @@ array<double,2> Polynomial::initialEstimates(vector<double> &bivariate,
   } else {
     min_point = minimumAlongBoundary(bivariate,r);
   }
+  cout << min_point.real() << " " << min_point.imag() << endl;
+  cout << "norm: " << norm(value(min_point)) << endl;
 
   array<double,2> estimates;
   if (fabs(min_point.imag()) > ZERO) {
+    cout << norm(min_point) << endl;
     /* if the approximated root is a complex number */
     double roots_sum = 2 * min_point.real();
-    double roots_product = norm(min_point) * norm(min_point);
+    double roots_product = norm(min_point); 
     estimates[0] = roots_sum;
     estimates[1] = -roots_product;
   } else if (fabs(min_point.real()) < ZERO) {
@@ -854,10 +858,11 @@ array<double,2> Polynomial::initialEstimates(vector<double> &bivariate,
     estimates[1] = 0;
   } else {
     /* if the approximated root is real and non-zero, then another real root 
-       is obtained by approximating the geometric mean of these two initial
-       roots by the geometric mean of the roots of the original polynomial*/
-    double product = fabs(r);
-    double root2 = (pow(r,2/(double)degree)) / min_point.real();
+       is obtained by approximating the geometric mean of these two roots 
+       by the geometric mean of the roots of the original polynomial */
+    double root2 = r * r / fabs(min_point.real());
+    double sum_all_roots = -coefficients[degree-1] / coefficients[degree];
+    root2 = sign(sum_all_roots) * root2;
     double roots_sum = min_point.real() + root2;
     double roots_product = min_point.real() * root2;  
     estimates[0] = roots_sum;
