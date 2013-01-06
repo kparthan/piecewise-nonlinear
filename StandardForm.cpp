@@ -350,7 +350,7 @@ void StandardForm::fitModels()
   linearModelFit();
 
   /* Bezier Curve fit */
-  bezierCurveModelFit();
+  //bezierCurveModelFit();
 } 
 
 /*!
@@ -447,7 +447,7 @@ void StandardForm::computeCodeLengthMatrix(void)
     codeLength.push_back(tmp);
     tmp.clear();
   }
-  /*Segment segment = getSegment(0,2);
+  /*Segment segment = getSegment(0,10);
   cout << segment.linearFit() << endl;
   segment.print();*/
 /* 

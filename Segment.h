@@ -3,6 +3,7 @@
 
 #include "geometry3D.h"
 #include "Header.h"
+#include "BezierCurve.h"
 
 class Segment
 {
@@ -95,6 +96,15 @@ class Segment
 
     //! Fits a Bezier curve
     void bezierCurveFit(int);
+
+    //!
+    double messageLengthBezier(int);
+
+    //!
+    double messageLengthBezier(int, Point<double> &, Point<double> &);
+
+    //!
+    double messageLengthBezier(int, vector<array<double,3>> &, double);
 };
 
 #endif

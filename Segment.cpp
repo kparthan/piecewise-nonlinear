@@ -1,6 +1,6 @@
 #include "Segment.h"
 #include "Message.h"
-#include "BezierCurve.h"
+#include "Support.h"
 
 /*!
  *  \brief constructor function used for instantiation
@@ -203,21 +203,31 @@ vector<array<double,3>> Segment::computeDeviations(Line<Point<double>> &line,
 {
   vector<array<double,3>> deviations;
   array<double,3> d;
+  array<double,3> d2;
   Vector<double> normal = plane.normal();
   Point<double> p,projection,previous;
   previous = line.startPoint();
+
   for(int i=0; i<numIntermediate; i++){
     p = Point<double>(coordinates[i+1]);
+
+    /* project onto plane */
     d[0] = plane.signedDistance(p); 
     projection = project(p,plane);
+    //cout << projection.x() << " " << projection.y() << " " << projection.z() << endl;
+
+    /* project onto line */
     d[1] = line.signedDistance(normal,projection);
-    projection = project(p,line);
+    projection = project(projection,line);
+    //cout << projection.x() << " " << projection.y() << " " << projection.z() << endl;
+
+    /* distance from previous projection */
     d[2] = line.signedDistance(previous,projection);
     deviations.push_back(d);
     previous = projection;
   }
-  /*cout << "*****************" << endl;
-  cout << "Deviations ...\n"; 
+ /* cout << "*****************" << endl;
+  cout << "Deviations 1...\n"; 
   for (int i=0; i<deviations.size(); i++){
     cout << deviations[i][0] << " ";
     cout << deviations[i][1] << " ";
@@ -274,13 +284,13 @@ vector<array<double,3>> Segment::computeDeviations2(Line<Point<double>> &line,
     for (int j=0; j<3; j++) { prev_proj[j] = projl[j];}
     deviations.push_back(d);
   }
-  cout << "\nDeviations ...\n"; 
+  /*cout << "\nDeviations 2...\n"; 
   for (int i=0; i<deviations.size(); i++){
     cout << deviations[i][0] << " ";
     cout << deviations[i][1] << " ";
     cout << deviations[i][2] << endl;
   }
-  cout << "----------------" << endl;
+  cout << "----------------" << endl;*/
   return deviations;
 }
 
@@ -365,13 +375,14 @@ void Segment::bezierCurveFit(int numIntermediateControlPoints)
       if (numIntermediate > 1){
         Point<double> start = Point<double>(coordinates[0]);
         Point<double> end = Point<double>(coordinates[coordinates.size()-1]);
-        veector<Point<double>> controlPoints.
+        vector<Point<double>> controlPoints;
         controlPoints.push_back(start);
         controlPoints.push_back(end);
 
         BezierCurve curve(controlPoints);
         vector<array<double,3>> deviations = computeDeviations(curve);
-
+    
+        double length = 100;
         zeroControlMsgLen = messageLengthBezier(numIntermediateControlPoints,
                                                 deviations,length);
       } else if (numIntermediate == 1){

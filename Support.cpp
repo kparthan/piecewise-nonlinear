@@ -220,7 +220,7 @@ void writeToFile(vector<array<double,3>> &coordinates, const char *fileName)
  *  \param p a reference to a Point
  *  \param container a reference to an array
  */
-void convertPointToArrcontainery(Point<double> &p, double container[])
+void convertPointToArray(Point<double> &p, double container[])
 {
   container[0] = p.x();
   container[1] = p.y();

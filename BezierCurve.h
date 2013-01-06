@@ -27,12 +27,19 @@ class BezierCurve
     //! Gets a point on the curve 
     Point<double> getPoint(double);
 
+    //! Gets the tangent vector at a point
+    Vector<double> tangent(double);
+
                             /* Utility functions */
-    //! Computes the shortest distance from the point to the curve
-    double shortestDistance(const Point<double> &); 
+    //! Projects a point onto the curve
+    double project(const Point<double> &);
 
     //! Processes the list of roots and returns the appropriate one
-    double processRoots(vector<complex<double>> &);
+    double processRoots(vector<complex<double>>);
+
+    //! Computes the signed distance from the point to the curve
+    double signedDistance(const Point<double> &, double t, Vector<double> &); 
+
 };
 
 #endif

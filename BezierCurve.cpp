@@ -66,6 +66,46 @@ Point<double> BezierCurve::getPoint(double t)
 }
 
 /*!
+ *  \brief This module computes the tangent vector at a point
+ *  \param t a double
+ *  \return the tangent vector
+ */
+Vector<double> BezierCurve::tangent(double t)
+{
+  Vector<double> direction;
+  Point<double> p0,p1,p2,p3;
+  Point<double> temp1,temp2,temp3,temp4;
+
+  switch(degree) {
+    case 1:
+      p0 = controlPoints[0];
+      p1 = controlPoints[1];
+      direction = c1.positionVector() - c0.positionVector(); 
+      break;
+
+    case 2:
+      p0 = controlPoints[0];
+      p1 = controlPoints[1];
+      p2 = controlPoints[2];
+      temp1 = p0 - (p1 * 2) + p2;
+      temp2 = p1 - p0;  
+      temp3 = temp1 + temp2;
+      direction = temp3.positionVector();
+      break;
+
+    case 3:
+      temp1 = (p1 * 3) - (p2 * 3) + p3 - p0;
+      temp2 = (p0 - (p1 * 2) + p2) * 2; 
+      temp3 = p1 - p0;
+      temp4 = temp1 + temp2 + temp3;
+      direction = temp4.positionVector();
+      break;
+  }
+  direction.normalize();
+  return direction;
+}
+
+/*!
  *  \brief This module computes the shortest distance from the polynomial to
  *  the curve. 
  *  Let P(t) represent a point on the curve and P'(t) represent a tangent to
@@ -112,13 +152,12 @@ Point<double> BezierCurve::getPoint(double t)
  *  \param p a reference to a Point<double>
  *  \return the shortest distance
  */
-double BezierCurve::shortestDistance(const Point<double> &p)
+double BezierCurve::project(const Point<double> &p)
 {
   double t;
   vector<double> coefficients;
   Point<double> p0,p1,p2,p3;
   Point<double> temp1,temp2,temp3,temp4;
-  Polynomial polynomial;
 
   switch(degree) {
     case 1:
@@ -133,15 +172,13 @@ double BezierCurve::shortestDistance(const Point<double> &p)
       p2 = controlPoints[2];
       /* solve a cubic equation */
       coefficients = vector<double>(4,0);
-      temp1 = p0 - p1 * 2 + p2; 
+      temp1 = p0 - (p1 * 2) + p2; 
       temp2 = p1 - p0;
       temp3 = p0 - p;
       coefficients[0] = temp1 * temp1;
       coefficients[1] = 3 * (temp1 * temp2);
-      coefficients[2] = temp1 * temp3 + 2 * temp2 * temp2; 
+      coefficients[2] = (temp1 * temp3) + 2 * (temp2 * temp2); 
       coefficients[3] = temp2 * temp3;
-      polynomial = Polynomial(coefficients);
-      t = processRoots(polynomial.getRoots());
       break;
 
     case 3:
@@ -151,8 +188,8 @@ double BezierCurve::shortestDistance(const Point<double> &p)
       p3 = controlPoints[3];
       /* solve a quintic equation */
       coefficients = vector<double>(6,0);
-      temp1 = p1 * 3 - p2 * 3 + p3 - p0;
-      temp2 = p0 - p1 * 2 + p2; 
+      temp1 = (p1 * 3) - (p2 * 3) + p3 - p0;
+      temp2 = p0 - (p1 * 2) + p2; 
       temp3 = p1 - p0;
       temp4 = p0 - p;
       coefficients[0] = temp1 * temp1;
@@ -161,8 +198,6 @@ double BezierCurve::shortestDistance(const Point<double> &p)
       coefficients[3] = 9 * (temp3 * temp2) + (temp4 * temp1);
       coefficients[4] = 3 * (temp3 * temp3) + 2 * (temp4 * temp2);
       coefficients[5] = temp3 * temp4;
-      polynomial = Polynomial(coefficients);
-      t = processRoots(polynomial.getRoots());
       break;
 
     default:
@@ -170,10 +205,10 @@ double BezierCurve::shortestDistance(const Point<double> &p)
       << endl;
       exit(1); 
   }
+  Polynomial polynomial(coefficients);
+  t = processRoots(polynomial.getRoots());
   //cout << "t: " << t << endl;
-  Point<double> pmin = getPoint(t);
-  cout << "pmin: " << pmin.x() << " " << pmin.y() << " " << pmin.z() << endl;
-  return distance(p,pmin);
+  return t;
 }
 
 /*!
@@ -181,7 +216,7 @@ double BezierCurve::shortestDistance(const Point<double> &p)
  *  \param roots a reference to a vector<complex<double>>
  *  \return the value of t in the range [0,1]
  */
-double BezierCurve::processRoots(vector<complex<double>> &roots)
+double BezierCurve::processRoots(vector<complex<double>> roots)
 {
   double t;
   for (int i=0; i<roots.size(); i++) {
@@ -198,7 +233,24 @@ double BezierCurve::processRoots(vector<complex<double>> &roots)
   return t;
 }
 
-
+/*!
+ *  \brief This module computes the signed distance of a point from a point
+ *  on the Bezier curve
+ *  \param p a Point<double>
+ *  \param t a double
+ *  \param normal a Vector<double>
+ *  \return the signed distance
+ */
+double BezierCurve::signedDistance(const Point<double> &p, double t,
+                                   Vector<double> &normal)
+{
+  Vector<double> direction = tangent(t);
+  Point<double> pc = getPoint(t);
+  Plane<Point<double>> plane(pc,normal,direction);
+  double d = fabs(distance(p,pc));
+  int point_orientation = plane.orientation(p);
+  return d * point_orientation;
+}
 
 
 

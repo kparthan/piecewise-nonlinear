@@ -489,7 +489,7 @@ void projectPoint2Plane(
 	 * the point A -- that is to be projected -- is on the same side of the plane as the normal vector
 	 * and negative if on the other side.
 	 */
-	if( distance >= 0 ) {
+	if( distance < 0 ) {
 		P[0] = A[0]-normal[0]*distance ;
 		P[1] = A[1]-normal[1]*distance ;
 		P[2] = A[2]-normal[2]*distance ;
