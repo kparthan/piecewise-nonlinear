@@ -13,14 +13,15 @@ Segment::Segment(vector<array<double,3>> &coordinates, double volume):
 {
   numPoints = coordinates.size();
   numIntermediate = numPoints - 2;
+  start = Point<double>(coordinates[0]);
+  end = Point<double>(coordinates[coordinates.size()-1]);
 
   /* instantiating message length components */
   linearFitMsgLen = 0;
   zeroControlMsgLen = 0;
   singleControlMsgLen = vector<double>(numIntermediate,0);
   for (int i=0; i<numIntermediate; i++){
-    vector<double> temp = vector<double>(numIntermediate,0);
-    doubleControlMsgLen.push_back(temp);
+    doubleControlMsgLen.push_back(vector<double>(numIntermediate,0));
   }
 }
 
@@ -132,22 +133,15 @@ void Segment::print(void)
  */
 double Segment::linearFit(void)
 {
-  if (numIntermediate > 1){
-    Point<double> start = Point<double>(coordinates[0]);
-    Point<double> end = Point<double>(coordinates[coordinates.size()-1]);
+  vector<array<double,3>> deviations;
+  if (numIntermediate > 1) {
     double length = distance(start,end);
     Line<Point<double>> line(start,end);
     Plane<Point<double>> plane = constructPlane(start,end);
-    vector<array<double,3>> deviations = computeDeviations(line,plane);
+    deviations = computeDeviations(line,plane);
     //vector<array<double,3>> deviations2 = computeDeviations2(line,plane);
-    linearFitMsgLen = messageLength(deviations,length);
-  } else if (numIntermediate == 1){
-    Point<double> start = Point<double>(coordinates[0]);
-    Point<double> first = Point<double>(coordinates[1]);
-    linearFitMsgLen = messageLength(start,first);
-  } else if (numIntermediate == 0) {
-    linearFitMsgLen = messageLength();
   }
+  linearFitMsgLen = messageLength(deviations);
   return linearFitMsgLen;
 }
 
@@ -296,69 +290,30 @@ vector<array<double,3>> Segment::computeDeviations2(Line<Point<double>> &line,
 
 /*!
  *  \brief This module computes the message length for the segment with
- *  zero intermediate points.
- *  \return the message length(in bits)
- */
-double Segment::messageLength()
-{
-  double msglen = 0;
-
-  /* message length to state the end point of the segment */
-  Message msg1;
-  msglen += msg1.encodeUsingNullModel(volume); 
-
-  /* message length to state the number of intermediate points */
-  msglen += msg1.encodeUsingLogStarModel(numIntermediate+1);
-
-  return msglen;
-}
-
-/*!
- *  \brief This module computes the message length for the segment with
- *  one intermediate point.
- *  \param p1 a Point<double>
- *  \param p2 a Point<double>
- *  \return the message length(in bits)
- */
-double Segment::messageLength(Point<double> &p1, Point<double> &p2)
-{
-  double msglen = 0;
-
-  /* message length to state the end point of the segment */
-  Message msg1;
-  msglen += msg1.encodeUsingNullModel(volume); 
-
-  /* message length to state the number of intermediate points */
-  msglen += msg1.encodeUsingLogStarModel(numIntermediate+1);
-
-  /* message length to state the intermediate point using the null model */
-  msglen += msg1.encodeUsingNullModel(volume); 
-
-  return msglen;
-}
-
-/*!
- *  \brief This module computes the message length for the segment with
  *  more than one intermediate points.
  *  \param deviations a reference to a vector<array<double,3>>
  *  \return the message length(in bits)
  */
-double Segment::messageLength(vector<array<double,3>> &deviations,
-                              double length)
+double Segment::messageLength(vector<array<double,3>> &deviations)
 {
   double msglen = 0;
 
   /* message length to state the end point of the segment */
   Message msg1;
   msglen += msg1.encodeUsingNullModel(volume); 
- // cout << "code length(end point): " << msglen << endl;
+  // cout << "code length(end point): " << msglen << endl;
 
   /* message length to state the number of intermediate points */
   msglen += msg1.encodeUsingLogStarModel(numIntermediate+1);
 
-  /* message length to state the deviations */
-  Message msg2(deviations,length);
-  msglen += msg2.encodeUsingNormalModel();;
+  if (numIntermediate == 1) {
+    /* message length to state the intermediate point using the null model */
+    msglen += msg1.encodeUsingNullModel(volume); 
+  } else if (numIntermediate > 1) {
+    /* message length to state the deviations */
+    Message msg2(deviations);
+    msglen += msg2.encodeUsingNormalModel();
+  }
 
   return msglen;
 }
@@ -370,35 +325,77 @@ double Segment::messageLength(vector<array<double,3>> &deviations,
  */
 void Segment::bezierCurveFit(int numIntermediateControlPoints)
 {
+  vector<Point<double>> controlPoints;
+  vector<array<double,3>> deviations;
+  BezierCurve curve;
+  vector<int> cpIndex(numIntermediate,0);
+  int i,j;
+
   switch(numIntermediateControlPoints) {
     case 0:
-      if (numIntermediate > 1){
-        Point<double> start = Point<double>(coordinates[0]);
-        Point<double> end = Point<double>(coordinates[coordinates.size()-1]);
-        vector<Point<double>> controlPoints;
-        controlPoints.push_back(start);
-        controlPoints.push_back(end);
+      /* zero intermediate control points */
+      controlPoints = vector<Point<double>>(2,Point<double>());
+      controlPoints[0] = start;
+      controlPoints[1] = end;
+      curve = BezierCurve(controlPoints);
 
-        BezierCurve curve(controlPoints);
-        vector<array<double,3>> deviations = computeDeviations(curve);
-    
-        double length = 100;
-        zeroControlMsgLen = messageLengthBezier(numIntermediateControlPoints,
-                                                deviations,length);
-      } else if (numIntermediate == 1){
-        Point<double> start = Point<double>(coordinates[0]);
-        Point<double> first = Point<double>(coordinates[1]);
-        zeroControlMsgLen = messageLengthBezier(numIntermediateControlPoints,
-                                                start,first);
-      } else if (numIntermediate == 0) {
-        zeroControlMsgLen = messageLengthBezier(numIntermediateControlPoints);
+      if (numIntermediate > 1) {
+        deviations = computeDeviations(curve,cpIndex);
       }
+      zeroControlMsgLen = messageLengthBezier(curve,cpIndex,deviations);
       break;
 
     case 1:
+      /* one intermediate control point */
+      // => numIntermediate >= 1
+      if (numIntermediate >= 1) {
+        controlPoints = vector<Point<double>>(3,Point<double>());
+        controlPoints[0] = start;
+        controlPoints[2] = end;
+        if (numIntermediate == 1) {
+          controlPoints[1] = Point<double>(coordinates[1]);
+          curve = BezierCurve(controlPoints);
+          singleControlMsgLen[0] = messageLengthBezier(curve,deviations);
+        } else if (numIntermediate == 2){
+          for (i=1; i<=numIntermediate; i++) {
+            controlPoints[1] = Point<double>(coordinates[i]);
+            curve = BezierCurve(controlPoints);
+            singleControlMsgLen[i-1] = messageLengthBezier(curve,deviations);
+          }
+        } else {
+          for (i=1; i<=numIntermediate; i++) {
+            controlPoints[1] = Point<double>(coordinates[i]);
+            curve = BezierCurve(controlPoints);
+            deviations = computeDeviations(curve,i,0);
+            singleControlMsgLen[i-1] = messageLengthBezier(curve,deviations);
+          }
+        }
+      }
       break;
 
     case 2:
+      /* two intermediate control points */
+      // => numIntermediate >= 2
+      if (numIntermediate >= 2) {
+        controlPoints = vector<Point<double>>(4,Point<double>());
+        controlPoints[0] = start;
+        controlPoints[3] = end;
+        if (numIntermediate == 2) {
+          for (i=1; i<=numIntermediate; i++) {
+            controlPoints[1] = Point<double>(coordinates[i]);
+            for (j=1; j<=numIntermediate; j++) {
+              if (i > j) {
+                doubleControlMsgLen[i-1][j-1] = doubleControlMsgLen[j-1][i-1];
+              } else {
+                controlPoints[2] = Point<double>(coordinates[j]);
+                curve = BezierCurve(controlPoints);
+                if (i == j) {
+                } 
+              }
+            }
+          } 
+        }
+      }
       break;
   }
 }
@@ -417,6 +414,7 @@ vector<array<double,3>> Segment::computeDeviations(BezierCurve &curve)
   Vector<double> normal = plane.normal();
   Point<double> p,projection,previous;
   int i;
+  double tmin_current,tmin_prev = 0;
 
   switch(curve.getDegree()) {
     case 1:
@@ -424,8 +422,13 @@ vector<array<double,3>> Segment::computeDeviations(BezierCurve &curve)
         p = Point<double>(coordinates[i+1]);
         d[0] = plane.signedDistance(p); 
         projection = project(p,plane);
-        
-        d[1] = curve.signedDistance(normal,projection);
+
+        tmin_current = curve.project(projection);
+        d[1] = curve.signedDistance(projection,tmin_current,normal);
+
+        d[2] = tmin_current - tmin_prev;
+        deviations.push_back(d);
+        tmin_prev = tmin_current;
       }
       break;
 
@@ -439,70 +442,19 @@ vector<array<double,3>> Segment::computeDeviations(BezierCurve &curve)
       cout << "Invalid degree of the curve";
       exit(1);
   }
+  return deviations;
 }
 
-/*!
- *  \brief This module computes the message length for the segment with
- *  zero control points and zero intermediate points.
- *  \param numIntermediateControlPoints an integer
- *  \return the message length(in bits)
- */
-double Segment::messageLengthBezier(int numIntermediateControlPoints)
-{
-  double msglen = 0;
-
-  /* message length to state the end point of the segment */
-  Message msg;
-  msglen += msg.encodeUsingNullModel(volume); 
-
-  /* message length to state the number of control points */
-  msglen += msg.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
-
-  /* message length to state the number of intermediate points */
-  msglen += msg.encodeUsingLogStarModel(numIntermediate+1);
-
-  return msglen;
-}
-
-/*!
- *  \brief This module computes the message length for the segment with
- *  one intermediate point.
- *  \param numIntermediateControlPoints an integer
- *  \param p1 a Point<double>
- *  \param p2 a Point<double>
- *  \return the message length(in bits)
- */
-double Segment::messageLengthBezier(int numIntermediateControlPoints,
-                                    Point<double> &p1, Point<double> &p2)
-{
-  double msglen = 0;
-
-  /* message length to state the end point of the segment */
-  Message msg;
-  msglen += msg.encodeUsingNullModel(volume); 
-
-  /* message length to state the number of control points */
-  msglen += msg.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
-
-  /* message length to state the number of intermediate points */
-  msglen += msg.encodeUsingLogStarModel(numIntermediate+1);
-
-  /* message length to state the intermediate point using the null model */
-  msglen += msg.encodeUsingNullModel(volume); 
-
-  return msglen;
-}
-
-/*!
- *  \brief This module computes the message length for the segment with
- *  more than one intermediate points.
- *  \param numIntermediateControlPoints an integer
+/*
+ *  \brief Thie module computes the length of the message used to encode a
+ *  segment using a Bezier curve model
+ *  \param curve a reference to a BezierCurve
+ *  \param cpIndex a reference to a vector<int>
  *  \param deviations a reference to a vector<array<double,3>>
- *  \return the message length(in bits)
+ *  \return the message length (in bits)
  */
-double Segment::messageLengthBezier(int numIntermediateControlPoints,
-                                    vector<array<double,3>> &deviations,
-                                    double length)
+double Segment::messageLengthBezier(BezierCurve &curve, vector<int> &cpIndex,
+                                    vector<array<double,3>> &deviations)
 {
   double msglen = 0;
 
@@ -511,19 +463,51 @@ double Segment::messageLengthBezier(int numIntermediateControlPoints,
   msglen += msg1.encodeUsingNullModel(volume); 
 
   /* message length to state the number of control points */
+  int numIntermediateControlPoints = curve.getDegree() - 1;
   msglen += msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
 
-  /* message length to state the number of intermediate points */
-  msglen += msg1.encodeUsingLogStarModel(numIntermediate+1);
+  /* message length to state the control points */
+  msglen += numIntermediateControlPoints * msg1.encodeUsingNullModel(volume);
 
-  /* message length to state the deviations */
-  Message msg2(deviations,length);
-  msglen += msg2.encodeUsingNormalModel();;
+  switch(numIntermediateControlPoints) {
+    case 0:
+      // zero intermediate control points 
+      /* message length to state the number of intermediate points */
+      msglen += msg1.encodeUsingLogStarModel(numIntermediate+1);
+      if (numIntermediate == 1) {
+        msglen += msg1.encodeUsingNullModel(volume); 
+      } else {
+        if (deviations.size() > 1) {
+          /* message length to state the deviations */
+          Message msg2(deviations);
+          msglen += msg2.encodeUsingNormalModel();
+        }
+      }
+      break;
+
+    case 1:
+      // one intermediate control point 
+      /* message length to state the number of intermediate deviations */
+      msglen += msg1.encodeUsingLogStarModel(deviations.size()+1);
+      if (numIntermediate == 2) {
+        msglen += msg1.encodeUsingNullModel(volume); 
+      } else {
+        if (deviations.size() > 1) {
+          /* message length to state the deviations */
+          Message msg2(deviations);
+          msglen += msg2.encodeUsingNormalModel();
+        }
+      }
+      break;
+
+    case 2:
+      // two intermediate control points 
+      break;
+
+  }
 
   return msglen;
 }
-
-
 
 
 

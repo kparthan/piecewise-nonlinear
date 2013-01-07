@@ -11,10 +11,8 @@ Message::Message()
 /*!
  *  \brief This is a constructor function used to instantiate the object
  *  \param deviations a reference to a vector<array<double,3>>
- *  \param length a double
  */
-Message::Message(vector<array<double,3>> &deviations, double length):
-         length(length)
+Message::Message(vector<array<double,3>> &deviations):
 {
   vector<double> tmp;
   for (int i=0; i<3; i++){
@@ -54,7 +52,7 @@ double Message::encodeUsingSphereModel(double radius)
 
   /* state the cell index on the surface of the sphere */
   msglen += log2(4*PI*radius*radius) - 2*log2(AOM);
-  //cout << "NULL MODEL: " << msglen << endl;
+  //cout << "SPHERE MODEL: " << msglen << endl;
   return msglen;
 }
 
@@ -69,17 +67,11 @@ double Message::encodeUsingNormalModel()
   double mean,variance;
 
   for (int i=0; i<2; i++){
-    variance = varianceEstimateOneParam(samples[i],0);
+    variance = varianceEstimate(samples[i],0);
     msglen += encodeWallaceFreeman(samples[i].size(),variance);
-    /*variance = varianceEstimateTwoParam(samples[i]);
-    msglen += encodeWallaceFreeman(samples[i].size(),0,variance);*/
   }
-  /*mean = length / (samples[2].size()+1);
-  variance = varianceEstimateOneParam(samples[2],mean);
-  msglen += encodeWallaceFreeman(samples[2].size(),variance);*/
-
-  mean = length / (samples[2].size()+1);
-  variance = varianceEstimateTwoParam(samples[2]);
+  mean = estimateMean(samples[2]);
+  variance = varianceEstimate(samples[2],mean);
   msglen += encodeWallaceFreeman(samples[2].size(),mean,variance);
   return msglen;
 }

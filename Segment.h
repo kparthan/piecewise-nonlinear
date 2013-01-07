@@ -17,6 +17,9 @@ class Segment
     //! Number of points
     int numPoints;
 
+    //! End points of the segment
+    Point<double> start,end;
+
     //! Coordinates of the points
     vector<array<double,3>> coordinates;
    
@@ -82,29 +85,17 @@ class Segment
     vector<array<double,3>> computeDeviations2(Line<Point<double>> &,
                                               Plane<Point<double>> &);
 
-    //! Computes the message length for the segment with zero intermediate
-    //! points
-    double messageLength();
-
-    //! Computes the message length for the segment with one intermediate
-    //! point
-    double messageLength(Point<double> &, Point<double> &);
-
-    //! Computes the message length for the segment with more than one
-    //! intermediate points
-    double messageLength(vector<array<double,3>> &, double);
+    //! Computes the message length for the segment described by a 
+    //! linear model
+    double messageLength(vector<array<double,3>> &);
 
     //! Fits a Bezier curve
     void bezierCurveFit(int);
 
-    //!
-    double messageLengthBezier(int);
-
-    //!
-    double messageLengthBezier(int, Point<double> &, Point<double> &);
-
-    //!
-    double messageLengthBezier(int, vector<array<double,3>> &, double);
+    //! Computes the message length for the segment described by a 
+    //! Bezier curve
+    double messageLengthBezier(BezierCurve &, vector<int> &,
+                               vector<array<double,3>> &);
 };
 
 #endif

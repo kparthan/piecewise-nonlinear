@@ -265,7 +265,7 @@ double meanEstimate(vector<double> &samples)
  *  \param mean a double
  *  \return the biased variance of the samples
  */
-double varianceEstimateOneParam(vector<double> &samples, double mean)
+double varianceEstimate(vector<double> &samples, double mean)
 {
   double variance = 0;
   for (int i=0; i<samples.size(); i++){
@@ -285,7 +285,7 @@ double varianceEstimateOneParam(vector<double> &samples, double mean)
  *  \param samples a reference to a vector<double>
  *  \return the unbiased variance of the samples
  */
-double varianceEstimateTwoParam(vector<double> &samples)
+double varianceEstimate(vector<double> &samples)
 {
   double mean = meanEstimate(samples);
   double variance = 0;

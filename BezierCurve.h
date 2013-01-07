@@ -17,6 +17,9 @@ class BezierCurve
     //! Constructor
     BezierCurve(vector<Point<double>> &);
 
+    //! Assignment operator
+    BezierCurve operator=(const BezierCurve &);
+
                             /* Accessor functions */        
     //! Gets the degree of the curve
     int getDegree();

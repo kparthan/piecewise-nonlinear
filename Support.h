@@ -14,8 +14,8 @@ void convertPointToArray(Point<double> &, double a[]);
 
 double msglenNormal (double, double, double);
 double meanEstimate (vector<double> &);
-double varianceEstimateOneParam (vector<double> &, double);
-double varianceEstimateTwoParam (vector<double> &);
+double varianceEstimate(vector<double> &, double);
+double varianceEstimate(vector<double> &);
 int sign(double);
 double absoluteMaximum(vector<double> &);
 double cubeRoot(double);

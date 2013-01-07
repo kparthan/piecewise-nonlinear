@@ -13,6 +13,20 @@ BezierCurve::BezierCurve(vector<Point<double>> &controlPoints) :
 }
 
 /*!
+ *  \brief This module assigns a source BezierCurve to a target BezierCurve
+ *  \param source a reference to a BezierCurve
+ *  \return a BezierCurve
+ */
+BezierCurve BezierCurve::operator=(const BezierCurve &source)
+{
+  if (this != &source) {
+   degree = source.degree;
+   controlPoints = source.controlPoints; 
+  }
+  return *this;
+}
+
+/*!
  *  \brief This module returns the degree of tbe curve
  *  \return the degree of the polynomial curve
  */
@@ -251,30 +265,4 @@ double BezierCurve::signedDistance(const Point<double> &p, double t,
   int point_orientation = plane.orientation(p);
   return d * point_orientation;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
