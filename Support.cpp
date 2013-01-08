@@ -301,24 +301,6 @@ double varianceEstimate(vector<double> &samples)
 }
 
 /*!
- *  \brief This module finds the maximum absolute value in a list
- *  \param list a reference to a vector<double>
- *  \return the maximum absolute value
- */
-double absoluteMaximum(vector<double> &list)
-{
-  double max = fabs(list[0]);
-  if (list.size() > 2) {
-    for (int i=1; i<list.size(); i++) {
-      if (fabs(list[i]) > max) {
-        max = fabs(list[i]);
-      }
-    }
-  }
-  return max;
-}
-
-/*!
  *  \brief This module returns the sign of a number.
  *  \param number a double
  *  \return the sign
@@ -353,5 +335,61 @@ double cubeRoot(double number)
     case -1:
       return -positiveCubeRoot;
   }
+}
+
+/*!
+ *  \brief This module finds the maximum absolute value in a list
+ *  \param list a reference to a vector<double>
+ *  \return the maximum absolute value
+ */
+double absoluteMaximum(vector<double> &list)
+{
+  double max = fabs(list[0]);
+  for (int i=1; i<list.size(); i++) {
+    if (fabs(list[i]) > max) {
+      max = fabs(list[i]);
+    }
+  }
+}
+
+/*!
+ *  \brief This module finds the minimum value in a list
+ *  \param list a reference to a vector<double>
+ *  \return the minimum value in the list
+ */
+double minimum(vector<double> &list)
+{
+  double min;
+  if (list.size() > 0) {
+    min = list[0];
+  }
+  for (int i=1; i<list.size(); i++) {
+    if (list[i] < min) {
+      min = list[i];
+    }
+  }
+  return min;
+}
+
+/*!
+ *  \brief This module finds the minimum value in a 2D-vector 
+ *  \param list a reference to a vector<vector<double>>
+ *  \return the minimum value
+ */
+double minimum(vector<vector<double>> &list)
+{
+  double current_min;
+  double min;
+
+  if (list.size() > 0) {
+    min = minimum(list[0]);
+  }
+  for (int i=1; i<list.size(); i++) {
+    current_min = minimum(list[i]);
+    if (current_min < min) {
+      min = current_min;
+    }
+  }  
+  return min;
 }
 

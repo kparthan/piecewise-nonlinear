@@ -362,6 +362,17 @@ BOOST_AUTO_TEST_CASE( bairstow_quintic )
   p.findRoots();
   p.print();
   cout << endl;
+
+  c[0] = 62.647117000000051; 
+  c[1] = -121.60621000000012; 
+  c[2] = 30.524781999999988; 
+  c[3] = -3.7877735220884112; 
+  c[4] = 56.597816681392295; 
+  c[5] = -5.1790549999999982;
+  p = Polynomial(c);
+  p.findRoots();
+  p.print();
+  cout << endl;
 }
 
 BOOST_AUTO_TEST_CASE( bairstow_sextic )

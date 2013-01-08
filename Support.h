@@ -17,8 +17,10 @@ double meanEstimate (vector<double> &);
 double varianceEstimate(vector<double> &, double);
 double varianceEstimate(vector<double> &);
 int sign(double);
-double absoluteMaximum(vector<double> &);
 double cubeRoot(double);
+double absoluteMaximum(vector<double> &);
+double minimum(vector<double> &);
+double minimum(vector<vector<double>> &);
 
 void testFit (void);
 void proteinFit (string);

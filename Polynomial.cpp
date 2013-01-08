@@ -421,13 +421,9 @@ void Polynomial::bairstow(vector<complex<double>> &roots)
   int count = 0;
 
   if (degree > 3) {
-    double tol = 1e-8;
+    double tol = 1e-4;
     double norm_prev = -1, norm_current = -1;
-    /*array<double,2> initial_estimates = initializeRoots();
-    double r = initial_estimates[0];
-    double s = initial_estimates[1];*/
-    double r = 0.5, s = -0.5;
-    //cout << "initial estimates: [" << r << " , " << s << "]" << endl;
+    double r = 0.25, s = -0.25;
 
     vector<double> b;
     array<double,2> increments;

@@ -2,6 +2,12 @@
 #include "Polynomial.h"
 
 /*!
+ *  \brief Null comstructor
+ */
+BezierCurve::BezierCurve() : degree(0), controlPoints(0)
+{}
+
+/*!
  *  \brief This module is the constructor function to instantiate a 
  *  BezierCurve object
  *  \param controlPoints a reference to vector<Point<double>>
@@ -94,7 +100,7 @@ Vector<double> BezierCurve::tangent(double t)
     case 1:
       p0 = controlPoints[0];
       p1 = controlPoints[1];
-      direction = c1.positionVector() - c0.positionVector(); 
+      direction = p1.positionVector() - p0.positionVector(); 
       break;
 
     case 2:
@@ -178,7 +184,7 @@ double BezierCurve::project(const Point<double> &p)
       p0 = controlPoints[0];
       p1 = controlPoints[1];
       t = ((p - p0) * (p1 - p0)) / ((p1 - p0) * (p1 - p0)); 
-      break;
+      return t;
 
     case 2:
       p0 = controlPoints[0];

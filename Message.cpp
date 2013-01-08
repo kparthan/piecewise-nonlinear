@@ -12,7 +12,7 @@ Message::Message()
  *  \brief This is a constructor function used to instantiate the object
  *  \param deviations a reference to a vector<array<double,3>>
  */
-Message::Message(vector<array<double,3>> &deviations):
+Message::Message(vector<array<double,3>> &deviations)
 {
   vector<double> tmp;
   for (int i=0; i<3; i++){
@@ -70,7 +70,7 @@ double Message::encodeUsingNormalModel()
     variance = varianceEstimate(samples[i],0);
     msglen += encodeWallaceFreeman(samples[i].size(),variance);
   }
-  mean = estimateMean(samples[2]);
+  mean = meanEstimate(samples[2]);
   variance = varianceEstimate(samples[2],mean);
   msglen += encodeWallaceFreeman(samples[2].size(),mean,variance);
   return msglen;

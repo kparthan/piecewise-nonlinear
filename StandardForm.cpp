@@ -350,7 +350,7 @@ void StandardForm::fitModels()
   linearModelFit();
 
   /* Bezier Curve fit */
-  //bezierCurveModelFit();
+  bezierCurveModelFit();
 } 
 
 /*!
@@ -437,9 +437,9 @@ void StandardForm::computeCodeLengthMatrix(void)
         tmp.push_back(-1);
       } 
       else if (i < j){
-        //cout << i << " -- " << j << endl;
         Segment segment = getSegment(i,j);
-        tmp.push_back(segment.linearFit());
+        segment.linearFit();
+        tmp.push_back(segment.getLinearFit());
       } else {
         tmp.push_back(0);
       }
@@ -543,36 +543,50 @@ void StandardForm::bezierCurveModelFit()
  */
 void StandardForm::computeCodeLengthMatrixBezier(void)
 {
+  int i,j,k;
   int numResidues = getNumberOfResidues();
-  vector<double> tmp;
+  for (k=0; k<=MAX_INTERMEDIATE_CONTROL_POINTS; k++) {
+    vector<vector<double>> matrix;
+    for (i=0; i<numResidues; i++){
+      vector<double> tmp(numResidues,0);
+      matrix.push_back(tmp);
+    }
+    codeLengthBezier[k] = matrix;
+  }
+  vector<double> optimal;
 
-  for (int i=0; i<numResidues; i++){
-    for (int j=0; j<numResidues; j++){
+  for (i=0; i<numResidues; i++){
+    for (j=0; j<numResidues; j++){
+      cout << "Segment: [" << i << "," << j << "]" << endl;
       if (i > j){
-        tmp.push_back(-1);
+        for (k=0; k<=MAX_INTERMEDIATE_CONTROL_POINTS; k++) {
+          codeLengthBezier[k][i][j] = -1; 
+        }
+        optimal.push_back(optimalCodeLength[j][i]);
       } 
       else if (i < j){
-        //cout << i << " -- " << j << endl;
         Segment segment = getSegment(i,j);
-        segment.linearFit();
-        for (int k=0; k<=MAX_INTERMEDIATE_CONTROL_POINTS; k++) {
+        for (k=0; k<=MAX_INTERMEDIATE_CONTROL_POINTS; k++) {
           segment.bezierCurveFit(k);
+          codeLengthBezier[k][i][j] = segment.getNonLinearFit(k);
         }
-        double optimal = segment.getOptimalFit();
-        tmp.push_back(optimal);
+        optimal.push_back(segment.getOptimalFit());
       } else {
-        tmp.push_back(0);
+        for (k=0; k<=MAX_INTERMEDIATE_CONTROL_POINTS; k++) {
+          codeLengthBezier[k][i][j] = 0; 
+        }
+        optimal.push_back(0);
       }
     }
-    codeLengthBezier.push_back(tmp);
-    tmp.clear();
+    optimalCodeLength.push_back(optimal);
+    optimal.clear();
   }
   /*Segment segment = getSegment(0,2);
   cout << segment.linearFit() << endl;
   segment.print();*/
 /* 
-  for (int i=0; i<numResidues; i++){
-    for (int j=0; j<numResidues; j++){
+  for (i=0; i<numResidues; i++){
+    for (j=0; j<numResidues; j++){
       cout << codeLength[i][j] << " ";
     }
     cout << endl;
@@ -594,13 +608,13 @@ void StandardForm::optimalSegmentationBezier(void)
   int index;
 
   for (int i=1; i<numResidues; i++){
-    min = codeLengthBezier[0][i];
+    min = optimalCodeLength[0][i];
     index = i;
     optimal.push_back(min);
     optimalIndex.push_back(index);
     for (int j=0; j<i; j++){
-      if (codeLengthBezier[j][i] + optimal[j] < min){
-        min = codeLengthBezier[j][i] + optimal[j];
+      if (optimalCodeLength[j][i] + optimal[j] < min){
+        min = optimalCodeLength[j][i] + optimal[j];
         index = j;
         optimal[i] = min;
         optimalIndex[i] = index;
@@ -637,7 +651,7 @@ void StandardForm::optimalSegmentationBezier(void)
   }
   cout << numResidues-1 << endl << endl;
   for (int i=tmp.size()-1; i>=0; i--){
-    cout << codeLengthBezier[tmp[i]][tmp[i-1]] << " ";
+    cout << optimalCodeLength[tmp[i]][tmp[i-1]] << " ";
   }
   cout << endl;
 }

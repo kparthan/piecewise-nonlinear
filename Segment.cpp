@@ -63,26 +63,54 @@ double Segment::getLinearFit()
 }
 
 /*!
- *  \brief This module returns the details of the non-linear fit using a
- *  single control point
- *  \param index an integer
- *  \return the message length of the non-linear fit using the point at
- *  'index' as the control point
+ *  \brief This module returns the best bezier curve fit for the given
+ *  number of intermediate control points
+ *  \param numIntermediateControlPoints an integer
+ *  \return the bezier curve fit with minimum message length
  */
-double Segment::getNonLinearFit(int index)
+double Segment::getNonLinearFit(int numIntermediateControlPoints)
+{
+  switch(numIntermediateControlPoints) {
+    case 0:
+      return zeroControlMsgLen;
+
+    case 1:
+      return minimum(singleControlMsgLen);
+
+    case 2:
+      return minimum(doubleControlMsgLen);
+  }
+}
+
+/*!
+ *  \brief This module returns the details of the non-linear fit using 
+ *  zero intermediate control points
+ *  \return the message length of the non-linear fit
+ */
+double Segment::getBezierCurveFit()
+{
+  return zeroControlMsgLen; 
+}
+
+/*!
+ *  \brief This module returns the details of the non-linear fit using a
+ *  single intermediate control point
+ *  \param index an integer
+ *  \return the message length of the non-linear fit 
+ */
+double Segment::getBezierCurveFit(int index)
 {
   return singleControlMsgLen[index];
 }
 
 /*!
  *  \brief This module returns the details of the non-linear fit using a
- *  two control points
+ *  two intermediate control points
  *  \param index1 an integer
  *  \param index2 an integer
- *  \return the message length of the non-linear fit using the points at
- *  'index1' and 'index2' as control points
+ *  \return the message length of the non-linear fit 
  */
-double Segment::getNonLinearFit(int index1, int index2)
+double Segment::getBezierCurveFit(int index1, int index2)
 {
   return doubleControlMsgLen[index1][index2];
 }
@@ -94,7 +122,15 @@ double Segment::getNonLinearFit(int index1, int index2)
  */
 double Segment::getOptimalFit()
 {
-  
+  double min = zeroControlMsgLen;
+  double current_min; 
+  for (int i=0; i<=MAX_INTERMEDIATE_CONTROL_POINTS; i++) {
+    current_min = getNonLinearFit(i);
+    if (current_min < min) {
+      min = current_min;
+    }
+  }
+  return min;
 }
 
 /*!
@@ -129,9 +165,8 @@ void Segment::print(void)
 
 /*!
  *  \brief This module fits a linear model to the segment
- *  \return message length fitting a linear model
  */
-double Segment::linearFit(void)
+void Segment::linearFit(void)
 {
   vector<array<double,3>> deviations;
   if (numIntermediate > 1) {
@@ -142,7 +177,6 @@ double Segment::linearFit(void)
     //vector<array<double,3>> deviations2 = computeDeviations2(line,plane);
   }
   linearFitMsgLen = messageLength(deviations);
-  return linearFitMsgLen;
 }
 
 /*!
@@ -338,11 +372,8 @@ void Segment::bezierCurveFit(int numIntermediateControlPoints)
       controlPoints[0] = start;
       controlPoints[1] = end;
       curve = BezierCurve(controlPoints);
-
-      if (numIntermediate > 1) {
-        deviations = computeDeviations(curve,cpIndex);
-      }
-      zeroControlMsgLen = messageLengthBezier(curve,cpIndex,deviations);
+      deviations = computeDeviations(curve,cpIndex);
+      zeroControlMsgLen = messageLength(curve,deviations);
       break;
 
     case 1:
@@ -352,23 +383,13 @@ void Segment::bezierCurveFit(int numIntermediateControlPoints)
         controlPoints = vector<Point<double>>(3,Point<double>());
         controlPoints[0] = start;
         controlPoints[2] = end;
-        if (numIntermediate == 1) {
-          controlPoints[1] = Point<double>(coordinates[1]);
+        for (i=0; i<numIntermediate; i++) {
+          cpIndex[i] = 1;
+          controlPoints[1] = Point<double>(coordinates[i+1]);
           curve = BezierCurve(controlPoints);
-          singleControlMsgLen[0] = messageLengthBezier(curve,deviations);
-        } else if (numIntermediate == 2){
-          for (i=1; i<=numIntermediate; i++) {
-            controlPoints[1] = Point<double>(coordinates[i]);
-            curve = BezierCurve(controlPoints);
-            singleControlMsgLen[i-1] = messageLengthBezier(curve,deviations);
-          }
-        } else {
-          for (i=1; i<=numIntermediate; i++) {
-            controlPoints[1] = Point<double>(coordinates[i]);
-            curve = BezierCurve(controlPoints);
-            deviations = computeDeviations(curve,i,0);
-            singleControlMsgLen[i-1] = messageLengthBezier(curve,deviations);
-          }
+          deviations = computeDeviations(curve,cpIndex);
+          singleControlMsgLen[i] = messageLength(curve,deviations);
+          cpIndex[i] = 0;
         }
       }
       break;
@@ -380,21 +401,25 @@ void Segment::bezierCurveFit(int numIntermediateControlPoints)
         controlPoints = vector<Point<double>>(4,Point<double>());
         controlPoints[0] = start;
         controlPoints[3] = end;
-        if (numIntermediate == 2) {
-          for (i=1; i<=numIntermediate; i++) {
-            controlPoints[1] = Point<double>(coordinates[i]);
-            for (j=1; j<=numIntermediate; j++) {
-              if (i > j) {
-                doubleControlMsgLen[i-1][j-1] = doubleControlMsgLen[j-1][i-1];
-              } else {
-                controlPoints[2] = Point<double>(coordinates[j]);
-                curve = BezierCurve(controlPoints);
-                if (i == j) {
-                } 
-              }
+        for (i=0; i<numIntermediate; i++) {
+          controlPoints[1] = Point<double>(coordinates[i+1]);
+          cpIndex[i] = 1;
+          for (j=0; j<numIntermediate; j++) {
+            if (i > j) {
+              doubleControlMsgLen[i][j] = doubleControlMsgLen[j][i];
+            } else {
+              controlPoints[2] = Point<double>(coordinates[j+1]);
+              cpIndex[j] = 1;
+              curve = BezierCurve(controlPoints);
+              deviations = computeDeviations(curve,cpIndex);
+              doubleControlMsgLen[i][j] = messageLength(curve,deviations);
+            }
+            if (i != j) {
+              cpIndex[j] = 0;
             }
           } 
-        }
+          cpIndex[i] = 0;
+        }    
       }
       break;
   }
@@ -404,44 +429,34 @@ void Segment::bezierCurveFit(int numIntermediateControlPoints)
  *  \brief This module computes the deviations of each of the intermediate
  *  points from the curve
  *  \param curve a reference to a BezierCurve
+ *  \param cpIndex a reference to a vector<int>
  *  \return the set of deviations
  */
-vector<array<double,3>> Segment::computeDeviations(BezierCurve &curve)
+vector<array<double,3>> Segment::computeDeviations(BezierCurve &curve,
+                                                   vector<int> &cpIndex)
 {
   Plane<Point<double>> plane = constructPlane(curve);
   vector<array<double,3>> deviations;
   array<double,3> d;
   Vector<double> normal = plane.normal();
   Point<double> p,projection,previous;
-  int i;
   double tmin_current,tmin_prev = 0;
 
-  switch(curve.getDegree()) {
-    case 1:
-      for (i=0; i<numIntermediate; i++) {
-        p = Point<double>(coordinates[i+1]);
-        d[0] = plane.signedDistance(p); 
-        projection = project(p,plane);
+  for (int i=0; i<numIntermediate; i++) {
+    if (cpIndex[i] != 1) {
+      p = Point<double>(coordinates[i+1]);
+      d[0] = plane.signedDistance(p);
+      projection = project(p,plane);
 
-        tmin_current = curve.project(projection);
-        d[1] = curve.signedDistance(projection,tmin_current,normal);
+      tmin_current = curve.project(projection);
+      d[1] = curve.signedDistance(projection,tmin_current,normal);
 
-        d[2] = tmin_current - tmin_prev;
-        deviations.push_back(d);
-        tmin_prev = tmin_current;
-      }
-      break;
-
-    case 2:
-      break;
-
-    case 3:
-      break;
-
-    default:
-      cout << "Invalid degree of the curve";
-      exit(1);
+      d[2] = tmin_current - tmin_prev;
+      deviations.push_back(d);
+      tmin_prev = tmin_current;
+    }
   }
+
   return deviations;
 }
 
@@ -449,12 +464,11 @@ vector<array<double,3>> Segment::computeDeviations(BezierCurve &curve)
  *  \brief Thie module computes the length of the message used to encode a
  *  segment using a Bezier curve model
  *  \param curve a reference to a BezierCurve
- *  \param cpIndex a reference to a vector<int>
  *  \param deviations a reference to a vector<array<double,3>>
  *  \return the message length (in bits)
  */
-double Segment::messageLengthBezier(BezierCurve &curve, vector<int> &cpIndex,
-                                    vector<array<double,3>> &deviations)
+double Segment::messageLength(BezierCurve &curve, 
+                              vector<array<double,3>> &deviations)
 {
   double msglen = 0;
 
@@ -469,54 +483,19 @@ double Segment::messageLengthBezier(BezierCurve &curve, vector<int> &cpIndex,
   /* message length to state the control points */
   msglen += numIntermediateControlPoints * msg1.encodeUsingNullModel(volume);
 
-  switch(numIntermediateControlPoints) {
-    case 0:
-      // zero intermediate control points 
-      /* message length to state the number of intermediate points */
-      msglen += msg1.encodeUsingLogStarModel(numIntermediate+1);
-      if (numIntermediate == 1) {
-        msglen += msg1.encodeUsingNullModel(volume); 
-      } else {
-        if (deviations.size() > 1) {
-          /* message length to state the deviations */
-          Message msg2(deviations);
-          msglen += msg2.encodeUsingNormalModel();
-        }
-      }
-      break;
-
-    case 1:
-      // one intermediate control point 
-      /* message length to state the number of intermediate deviations */
-      msglen += msg1.encodeUsingLogStarModel(deviations.size()+1);
-      if (numIntermediate == 2) {
-        msglen += msg1.encodeUsingNullModel(volume); 
-      } else {
-        if (deviations.size() > 1) {
-          /* message length to state the deviations */
-          Message msg2(deviations);
-          msglen += msg2.encodeUsingNormalModel();
-        }
-      }
-      break;
-
-    case 2:
-      // two intermediate control points 
-      break;
-
+  /* message length to state the number of intermediate deviations */
+  int numDeviations = deviations.size();
+  msglen += msg1.encodeUsingLogStarModel(numDeviations+1); 
+  
+  /* message length to state the deviations */
+  if (numDeviations == 1) {
+    msglen += msg1.encodeUsingNullModel(volume); 
+  } else if (numDeviations > 1) {
+    /* message length to state the deviations */
+    Message msg2(deviations);
+    msglen += msg2.encodeUsingNormalModel();
   }
 
   return msglen;
 }
-
-
-
-
-
-
-
-
-
-
-
 

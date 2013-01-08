@@ -14,6 +14,9 @@ class BezierCurve
     vector<Point<double>> controlPoints;
   
   public:
+    //! Null constructor
+    BezierCurve();
+
     //! Constructor
     BezierCurve(vector<Point<double>> &);
 

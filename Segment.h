@@ -53,11 +53,18 @@ class Segment
     //! Gets the message length for the linear fit
     double getLinearFit();
 
-    //! Gets the message length using one intermediate control point
+    //! Gets the minimum message length given the number of
+    //! intermediate control points
     double getNonLinearFit(int);
 
+    //! Gets the message length using zero intermediate control points
+    double getBezierCurveFit();
+
+    //! Gets the message length using one intermediate control point
+    double getBezierCurveFit(int);
+
     //! Gets the message length using two intermediate control points
-    double getNonLinearFit(int, int);
+    double getBezierCurveFit(int, int);
 
     //! Gets the minimum message length amongst all Bezier curve fits
     double getOptimalFit();
@@ -66,21 +73,18 @@ class Segment
     void print(); 
 
                             /* Utility funcitons */
-    //! Fits a linear model
-    double linearFit();
-
     //! Constructs a plane given two end points
     Plane<Point<double>> constructPlane(Point<double> &, Point<double> &);
 
     //! Constructs a plane used along with a Bezier curve 
     Plane<Point<double>> constructPlane(BezierCurve &);
 
+    //! Fits a linear model
+    void linearFit();
+
     //! Computes deviations from the line
     vector<array<double,3>> computeDeviations(Line<Point<double>> &,
                                               Plane<Point<double>> &);
-
-    //! Computes deviations from a Bezier curve 
-    vector<array<double,3>> computeDeviations(BezierCurve &);
 
     vector<array<double,3>> computeDeviations2(Line<Point<double>> &,
                                               Plane<Point<double>> &);
@@ -92,10 +96,12 @@ class Segment
     //! Fits a Bezier curve
     void bezierCurveFit(int);
 
+    //! Computes deviations from a Bezier curve 
+    vector<array<double,3>> computeDeviations(BezierCurve &, vector<int> &);
+
     //! Computes the message length for the segment described by a 
     //! Bezier curve
-    double messageLengthBezier(BezierCurve &, vector<int> &,
-                               vector<array<double,3>> &);
+    double messageLength(BezierCurve &, vector<array<double,3>> &);
 };
 
 #endif
