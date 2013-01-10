@@ -28,8 +28,11 @@ class Polynomial
     //! Bairstow implementation
     void bairstow(vector<complex<double>> &);
 
+    //! Division of the polynomial by a linear expression
+    vector<double> division(const vector<double> &, double);
+
     //! Division of the polynomial by a quadratic expression
-    vector<double> divide(const vector<double> &, double, double);
+    vector<double> division(const vector<double> &, double, double);
 
     //! Computes increments to the coefficients of the quadratic
     void computeIncrements(const vector<double> &, double, double,
@@ -119,6 +122,18 @@ class Polynomial
 
     //! Removes trivial roots
     Polynomial removeTrivialRoots();
+
+    //! Division by a linear expression
+    vector<double> divide(double, double);
+
+    //! Division by a quadratic expression
+    vector<double> divide(double, double, double);
+
+    //! Division by an expression of degree (n-1)
+    vector<double> divide(const vector<double> &);
+
+    //! Computes the number of real roots of the polynomial
+    int countRealRoots();
 
     //! Computes the roots of the polynomial
     void findRoots();

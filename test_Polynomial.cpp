@@ -187,7 +187,7 @@ BOOST_AUTO_TEST_CASE( solveCubic )
   p.print();
   cout << endl;
 }
-
+/*
 BOOST_AUTO_TEST_CASE( bairstow_cubic )
 {
   cout << "\n*** TESTING BAIRSTOW [CUBIC] ***" << endl;
@@ -249,7 +249,7 @@ BOOST_AUTO_TEST_CASE( bairstow_cubic )
   p.print();
   cout << endl;
 }
-
+*/
 BOOST_AUTO_TEST_CASE( bairstow_quartic )
 {
   cout << "\n*** TESTING BAIRSTOW [QUARTIC] ***" << endl;
@@ -257,63 +257,56 @@ BOOST_AUTO_TEST_CASE( bairstow_quartic )
   vector<double> c(5,0);
   Polynomial p;
 
-  c[0] = 4; c[1] = -10; c[2] = 10; c[3] = -5; c[4] = 1;
+  c[0] = 1; c[1] = 1; c[2] = 2; c[3] = 1; c[4] = 1;
   p = Polynomial(c);
-  //p.findRoots();
+  p.findRoots();
   p.solveUsingBairstow();
   p.print();
   cout << endl;
-
-  c[0] = 1; c[1] = 1; c[2] = 2; c[3] = 1; c[4] = 1;
+/*
+  c[0] = 4; c[1] = -10; c[2] = 10; c[3] = -5; c[4] = 1;
   p = Polynomial(c);
-  //p.findRoots();
-  p.solveUsingBairstow();
+  p.findRoots();
   p.print();
   cout << endl;
 
   c[0] = 54; c[1] = 44; c[2] = 20; c[3] = -3; c[4] = 1;
   p = Polynomial(c);
-  //p.findRoots();
-  p.solveUsingBairstow();
+  p.findRoots();
   p.print();
   cout << endl;
 
   c[0] = 1; c[1] = 1; c[2] = 1; c[3] = 1; c[4] = 1;
   p = Polynomial(c);
-  //p.findRoots();
-  p.solveUsingBairstow();
+  p.findRoots();
   p.print();
   cout << endl;
 
   c[0] = 0; c[1] = 1; c[2] = 1; c[3] = 1; c[4] = 1;
   p = Polynomial(c);
-  //p.findRoots();
-  p.solveUsingBairstow();
+  p.findRoots();
   p.print();
   cout << endl;
 
   c[0] = 0; c[1] = 0; c[2] = 1; c[3] = 1; c[4] = 1;
   p = Polynomial(c);
-  //p.findRoots();
-  p.solveUsingBairstow();
+  p.findRoots();
   p.print();
   cout << endl;
 
   c[0] = 0; c[1] = 0; c[2] = 0; c[3] = 1; c[4] = 1;
   p = Polynomial(c);
-  //p.findRoots();
-  p.solveUsingBairstow();
+  p.findRoots();
   p.print();
   cout << endl;
 
   c[0] = 0; c[1] = 0; c[2] = 0; c[3] = 0; c[4] = 1;
   p = Polynomial(c);
-  //p.findRoots();
-  p.solveUsingBairstow();
+  p.findRoots();
   p.print();
-  cout << endl;
+  cout << endl;*/
 }
-
+/*
 BOOST_AUTO_TEST_CASE( bairstow_quintic )
 {
   cout << "\n*** TESTING BAIRSTOW [QUINTIC] ***" << endl;
@@ -401,7 +394,7 @@ BOOST_AUTO_TEST_CASE( bairstow_sextic )
   p.print();
   cout << endl;
 }
-
+*/
 
 
 

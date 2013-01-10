@@ -1,5 +1,5 @@
 #include "Polynomial.h"
-#include "Support.h"
+//#include "Support.h"
 
 /*!
  *  \brief This module instantiates a null Polynomial object.
@@ -292,6 +292,133 @@ Polynomial Polynomial::removeTrivialRoots()
   }
 }
 
+/*
+ *  \brief This module divides a polynomial f(x) with a linear expression
+ *  Given the polynomial f(x) = a0 + a1*x + a2*x^2 + a3*x^3 + ... + an*x^n
+ *  and the linear expression: x - r
+ *  f(x) = (x - r) Q(x) + R(x), where
+ *  Q(x) = b1 + b2x + b3*x^2 + ... + b_{n-1}*x^{n-2} + bn*x^{n-1},
+ *  and R(x) = b0 (a constant), and the coefficients are related by the 
+ *  following recurrence relations:
+ *    bn = an
+ *    bi = ai + r b_{i+1}, for i = n-1,n-2,...,0
+ *  \param a a reference to a vector<double>
+ *  \param r a double
+ *  \return the coefficients of the quotient and the remainder 
+ */
+vector<double> Polynomial::division(const vector<double> &a, double r)
+{
+  int n = a.size();
+  vector<double> b(n,0);
+  b[n-1] = a[n-1];
+  for (int i=n-2; i>=0; i--) {
+    b[i] = a[i] + r * b[i+1];
+  }
+  return b;
+}
+
+/*!
+ *  \brief This module divides the polynomial f(x) with a linear expression
+ *  f(x) = Q(x) (a*x+b) + R(x) 
+ *  \param a a double
+ *  \param b a double
+ *  \return the coefficients of the quotient and the remainder 
+ */
+vector<double> Polynomial::divide(double a, double b)
+{
+  double r = -b / a;
+  vector<double> result = division(coefficients,r);
+  for (int i=0; i<result.size(); i++) {
+    result[i] = result[i] / a;
+  }
+  return result;
+}
+
+/*!
+ *  \brief This module computes the coefficients of the quotient Q(x) and the
+ *  remainder R(x) when a polynomial f(x) is divided by a quadratic expression
+ *  of the form (x^2 - r * x - s) using the recurrence relation
+ *        bn = an, 
+ *        b_{n-1} = a_{n-1} + r*bn, 
+ *        bi = ai + r*b_{i+1} + s*b_{i+2}, for i=(n-2),(n-3),...1, and
+ *        b0 = a0 + s*b2, where
+ *  f(x) = a0 + a1 * x + a2 * x^2 + ... + an * x^n,
+ *  Q(x) = b2 + b3 * x + b4 * x^2 + ... + bn * x^(n-2), and
+ *  R(x) = b1 * x + b0
+ *  \param coefficients a reference to a vector<double>
+ *  \param r a double
+ *  \param s a double
+ *  \return the coefficients of the quotient & the remainder polynomial
+ */
+vector<double> Polynomial::division(const vector<double> &a, double r, double s)
+{
+  int n = a.size();
+  vector<double> b(n,0);
+  b[n-1] = a[n-1];
+  b[n-2] = a[n-2] + r * b[n-1];
+  for (int i=n-3; i>=1; i--) {
+    b[i] = a[i] + r * b[i+1] + s * b[i+2];
+  }
+  b[0] = a[0] + s * b[2];
+  return b;
+}
+
+/*!
+ *  \brief This module divides the polynomial f(x) with a quadratic expression
+ *  f(x) = Q(x) (a*x^2+b*x+c) + R(x) 
+ *  \param a a double
+ *  \param b a double
+ *  \return the coefficients of the quotient and the remainder 
+ */
+vector<double> Polynomial::divide(double a, double b, double c)
+{
+  double r = -b / a;
+  double s = -c / a;
+  vector<double> result = division(coefficients,r,s);
+  for (int i=0; i<result.size(); i++) {
+    result[i] = result[i] / a;
+  }
+  return result;
+}
+
+/*!
+ *  \brief This module divides a polynomial f(x) of degree n by a polynomial
+ *  of degree (n-1)
+ *  If f(x) = a0 + a1 * x + a2 * x^2 + ... + an * x^n, and the divisor 
+ *  d(x) = d0 + d1 * x + d2 * x^2 + ... + d_{n-1} * x^{n-1}, then
+ *  f(x) = Q(x) * d(x) + R(x), where
+ *  Q(x) = b_{n-1} + bn * x (a linear expression),
+ *  R(x) = b0 + b1 * x + b2 * x^2 + ... + b_{n-2}*x^{n-2}, and the coefficients
+ *  are related by the following recurrence relations:
+ *      bn = an / d_{n-1}
+ *      b_{n-1} = (a_{n-1} - bn * d_{n-2}) / d_{n-1}
+ *      bi = ai - b_{n-1} * di - bn * d_{i-1}, for i = n-2,n-3,...,2,1
+ *      b0 = a0 - b_{n-1} * d0
+ *  \param d a reference to a vector<double>
+ *  \return the coefficients of the quotient and the remainder
+ */
+vector<double> Polynomial::divide(const vector<double> &d)
+{
+  vector<double> a(coefficients);
+  vector<double> n = a.size();
+  vector<double> b(n,0);
+  b[n-1] = a[n-1] / d[n-2];
+  b[n-2] = (a[n-2] - b[n-1] * d[n-3]) / d[n-2];
+  for (int i=n-3, i>=1; i--) {
+    b[i] = a[i] - b[n-2] * d[i] - b[n-1] * d[i-1];
+  }
+  b[0] = a[0] - b[n-2] * d[0];
+  return b;
+}
+
+/*!
+ *  \brief This module computes the number of real roots of the polynomial
+ *  using Sturm's theorem.
+ */
+int Polynomial::countRealRoots()
+{
+}
+
 /*!
  *  \brief This module computes the root of a linear equation
  *  Solve: a x + b = 0
@@ -551,7 +678,7 @@ void Polynomial::bairstow(vector<complex<double>> &roots)
       cout << "---------- Iteration " << ++count << " -----------" << endl;
 
       /* divide this polynomial by the quadratic: x^2 - r*x - s */
-      b = divide(coefficients,r,s);
+      b = division(coefficients,r,s);
 
       /* compute the increments to r & s */
       computeIncrements(b,r,s,increments,norm_prev,norm_current);
@@ -606,31 +733,6 @@ void Polynomial::bairstow(vector<complex<double>> &roots)
 double Polynomial::normDivisorRoots(double b0, double b1, double r, double s)
 {
   return fabs(b0*b0 + r*b0*b1 -s*b1*b1);
-}
-
-/*!
- *  \brief This module computes the coefficients of the quotient using the
- *  recurrence relation
- *        bn = an, 
- *        b_{n-1} = a_{n-1} + r*bn, 
- *        bi = ai + r*b_{i+1} + s*b_{i+2}, for i=(n-2),(n-3),...1, and
- *        b0 = a0 + s*b2
- *  \param coefficients a reference to a vector<double>
- *  \param r a double
- *  \param s a double
- *  \return the coefficients of the quotient polynomial
- */
-vector<double> Polynomial::divide(const vector<double> &a, double r, double s)
-{
-  int n = a.size();
-  vector<double> b(n,0);
-  b[n-1] = a[n-1];
-  b[n-2] = a[n-2] + r * b[n-1];
-  for (int i=n-3; i>=1; i--) {
-    b[i] = a[i] + r * b[i+1] + s * b[i+2];
-  }
-  b[0] = a[0] + s * b[2];
-  return b;
 }
 
 /*!
@@ -691,7 +793,7 @@ void Polynomial::computeIncrements(const vector<double> &b,double r, double s,
 vector<double> Polynomial::partialDerivatives(const vector<double> &b,
                                               double r, double s)
 {
-  vector<double> t = divide(b,r,s);
+  vector<double> t = division(b,r,s);
   t[2] = b[2] + s * t[4];
   vector<double> derivatives(4,0);
   derivatives[0] = t[2] + r * t[3];
