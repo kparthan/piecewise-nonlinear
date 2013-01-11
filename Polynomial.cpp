@@ -68,6 +68,15 @@ double Polynomial::getCoefficients(unsigned exponent)
 }
 
 /*!
+ *  \brief This module returns all the coefficients
+ *  \return the coefficients
+ */
+vector<double> Polynomial::getCoefficients()
+{
+  return originalCoefficients;
+}
+
+/*!
  *  \brief This module returns the roots of the polynomial
  *  \returns the roots of the polynomial
  */
@@ -400,14 +409,140 @@ vector<double> Polynomial::divide(double a, double b, double c)
 vector<double> Polynomial::divide(const vector<double> &d)
 {
   vector<double> a(coefficients);
-  vector<double> n = a.size();
+  int n = a.size();
   vector<double> b(n,0);
   b[n-1] = a[n-1] / d[n-2];
   b[n-2] = (a[n-2] - b[n-1] * d[n-3]) / d[n-2];
-  for (int i=n-3, i>=1; i--) {
+  for (int i=n-3; i>=1; i--) {
     b[i] = a[i] - b[n-2] * d[i] - b[n-1] * d[i-1];
   }
   b[0] = a[0] - b[n-2] * d[0];
+  return b;
+}
+
+/*!
+ *  \brief This module computes the coefficients of the quotient and the
+ *  remainder polynomials when divided by any general polynomial.
+ *  Let n & m be the degrees of the polynomial f(x) and the divisor polynomial
+ *  d(x) respectively. Let Q(x) and R(x) be the quotient and the remainder
+ *  polynomials respectively. Then,
+ *            f(x) = Q(x) d(x) + R(x), where
+ *  f(x) = a0 + a1 * x + a2 * x^2 + ... + an * xn
+ *  d(x) = d0 + d1 * x + d2 * x^2 + ... + dm * xm
+ *  Three cases arise:-
+ *  1. n = m 
+ *     Q(x) = bn (a constant), and
+ *     R(x) = b0 + b1 * x + b2 * x^2 + ... + b_{n-1} * x^{n-1}
+ *  The coefficients are then given by
+ *  bn = an / dn, and
+ *  bi = ai - bn * di, for i = n-1,n-2,...,2,1,0
+ *
+ *  2. n < 2m
+ *     Q(x) = bm + b_{m+1} x + b_{m+2} x^2 + ... + bn x^{n-m}
+ *     R(x) = b0 + b1 x + b2 x^2 + ... + b_{m-1} x^{m-1}
+ *  The coefficients are related as 
+ *  a0 = b0 + bm d0
+ *  a1 = b1 + bm d1 + b_{m+1} d0
+ *  a2 = b2 + bm d2 + b_{m+1} d1 + b_{m+2} d0
+ *  a3 = b3 + bm d3 + b_{m+1} d2 + b_{m+2} d1 + b_{m+3} d0
+ *  ...
+ *  ...
+ *  ...
+ *  a_{m-1} = b_{m-1}+bm d_{m-1}+b_{m+1}d_{m-2}+b_{m+2}d_{m-3}+...+b_{2m-1}d0
+ *  am = bm dm + b_{m+1}d_{m-1} + b_{m+2}d_{m-2} + ... + bn d_{2m-n}
+ *  a_{m+1} = b_{m+1}dm+b_{m+2}d_{m-1}+b_{m+3}d_{m-2}+...+bn d_{2m-n+1}
+ *  a_{m+2} = b_{m+2}dm+b_{m+3}d_{m-1}+b_{m+4}d_{m-2}+...+bn d_{2m-n+2}
+ *  ...
+ *  ...
+ *  ...
+ *  a_{n-1} = b_{n-1} dm + bn d_{m-1}
+ *  an = bn dm
+ *
+ *  3. n >= 2m
+ *     Q(x) = bm+b_{m+1}x+b_{m+2}x^2+...+b_{2m}x^{2m}+...+bnx^{n-m}
+ *     R(x) = b0 + b1 x + b2 x^2 + ... + b_{m-1} x^{m-1}
+ *  The coefficients are related as 
+ *  a0 = b0 + bm d0
+ *  a1 = b1 + bm d1 + b_{m+1} d0
+ *  a2 = b2 + bm d2 + b_{m+1} d1 + b_{m+2} d0
+ *  a3 = b3 + bm d3 + b_{m+1} d2 + b_{m+2} d1 + b_{m+3} d0
+ *  ...
+ *  ...
+ *  ...
+ *  a_{m-1} = b_{m-1}+bm d_{m-1}+b_{m+1}d_{m-2}+b_{m+2}d_{m-3}+...+b_{2m-1}d0
+ *  am = bm dm + b_{m+1} d_{m-1} + b_{m+2} d_{m-2} + ... + b_{2m} d0
+ *  a_{m+1} = b_{m+1} dm + b_{m+2} d_{m-1} + b_{m+3} d_{m-2} +... + b_{2m+1} d0
+ *  ...
+ *  ...
+ *  ...
+ *  a_{n-m-1} = b_{n-m-1} dm + b_{n-m} d_{m-1} + ... + b_{n-1} d0
+ *  a_{n-m} = b_{n-m} dm + b_{n-m+1} d_{m-1} + ... + bn d0
+ *  ...
+ *  ...
+ *  ...
+ *  a_{n-2} = b_{n-2} dm + b_{n-1} d_{m-1} + bn d_{m-2}
+ *  a_{n-1} = b_{n-1} dm + bn d_{m-1}
+ *  an = bn dm
+ *
+ *  \param p a reference to a Polynomial
+ *  \return the coefficients of the quotient and the remainder
+ */
+vector<double> Polynomial::divide(Polynomial &p)
+{
+  int nplusone = degree + 1;
+  int mplusone = p.getDegree() + 1;
+  vector<double> d = p.getCoefficients();
+  vector<double> a = originalCoefficients;
+  vector<double> b(nplusone,0);
+
+  if ((nplusone-1) == (mplusone-1)) {
+    //  n = m
+    b[nplusone-1] = a[nplusone-1] / d[nplusone-1];
+    for (int j=nplusone-2; j>=0; j--) {
+      b[j] = a[j] - b[nplusone-1] * d[j];
+    }
+  } else if ((nplusone-1) < 2 * (mplusone-1)) {
+    // n < 2m
+    b[nplusone-1] = a[nplusone-1] / d[mplusone-1];
+    for (int j=nplusone-2; j>=mplusone-1; j--) {
+      double sum = 0;
+      for (int k=j+1; k<=nplusone-1; k++) {
+        sum += b[k] * d[mplusone-1+j-k];
+      }
+      b[j] = (a[j] - sum) / d[mplusone-1];
+    }
+    for (int j=mplusone-2; j>=0; j--) {
+      double sum = 0;
+      for (int k=0; k<=j; k++) {
+        sum += b[mplusone-1+k] * d[j-k];
+      }
+      b[j] = a[j] - sum;
+    }
+  } else {
+    // n >= 2m
+    b[nplusone-1] = a[nplusone-1] / d[mplusone-1];
+    for (int j=nplusone-2; j>=nplusone-mplusone; j--) {
+      double sum = 0;
+      for (int k=j+1; k<=nplusone-1; k++) {
+        sum += b[k] * d[mplusone-1+j-k];
+      }
+      b[j] = (a[j] - sum) / d[mplusone-1];
+    }
+    for (int j=nplusone-mplusone-1; j>=mplusone-1; j--) {
+      double sum = 0;
+      for (int k=1; k<=mplusone-1; k++) {
+        sum += b[j+k] * d[mplusone-1-k];
+      }
+      b[j] = (a[j] - sum) / d[mplusone-1];
+    }
+    for (int j=mplusone-2; j>=0; j--) {
+      double sum = 0;
+      for (int k=0; k<=j; k++) {
+        sum += b[mplusone-1+k] * d[j-k];
+      }
+      b[j] = a[j] - sum;
+    }
+  }
   return b;
 }
 

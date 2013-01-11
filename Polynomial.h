@@ -100,6 +100,9 @@ class Polynomial
     //! Gets the coefficients of the polynomial
     double getCoefficients(unsigned);
 
+    //! Gets all the coefficients
+    vector<double> getCoefficients();
+
     //! Gets the roots of the polynomial
     vector<complex<double>> getRoots();
 
@@ -131,6 +134,9 @@ class Polynomial
 
     //! Division by an expression of degree (n-1)
     vector<double> divide(const vector<double> &);
+
+    //! Division by a polynomial of any degree
+    vector<double> divide(Polynomial &);
 
     //! Computes the number of real roots of the polynomial
     int countRealRoots();

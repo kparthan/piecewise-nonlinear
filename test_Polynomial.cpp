@@ -87,6 +87,73 @@ BOOST_AUTO_TEST_CASE( assignment_operator )
   BOOST_CHECK(p4.getDegree() == 2);
 }
 
+BOOST_AUTO_TEST_CASE( division )
+{
+  cout << "\n*** TESTING DIVSION BY A POLYNOMIAL ***" << endl;
+  vector<double> b;
+  int i;
+  Polynomial p,d;
+
+  // dividing degree 4 polynomial by degree 4 polynomial
+  vector<double> c1(5,0);
+
+  c1[0] = 1; c1[1] = 1; c1[2] = 1; c1[3] = 1; c1[4] = 3;
+  p = Polynomial(c1);
+  c1[0] = -6; c1[1] = -7; c1[2] = -6; c1[3] = 1; c1[4] = -2;
+  d = Polynomial(c1);
+  b = p.divide(d);
+  cout << "[ ";
+  for (i=0; i<b.size(); i++) {
+    cout << b[i] << ", ";
+  }
+  cout << "]" << endl;
+
+  // dividing degree 5 polynomial by degree 3 polynomial
+  vector<double> c2(6,0);
+  vector<double> c3(4,0);
+
+  c2[0] = 2; c2[1] = 2; c2[2] = 2; c2[3] = 2; c2[4] = 3; c2[5] = -9;
+  p = Polynomial(c2);
+  c3[0] = -6; c3[1] = -7; c3[2] = -6; c3[3] = 3;
+  d = Polynomial(c3);
+  b = p.divide(d);
+  cout << "[ ";
+  for (i=0; i<b.size(); i++) {
+    cout << b[i] << ", ";
+  }
+  cout << "]" << endl;
+
+  // dividing degree 10 polynomial by degree 6 polynomial
+  vector<double> c4(11,0);
+  vector<double> c5(7,0);
+
+  c4[0] = 2; c4[1] = 2; c4[2] = 2; c4[3] = 2; c4[4] = 3; c4[5] = -9;
+  c4[6] = 3; c4[7] = -9.77; c4[8] = 3.2; c4[9] = 100; c4[10] = 5;
+  p = Polynomial(c4);
+  c5[0] = -6; c5[1] = -7; c5[2] = -6; c5[3] = 3; c5[4] = -1; c5[5] = -86;
+  c5[6] = 7.6; 
+  d = Polynomial(c5);
+  b = p.divide(d);
+  cout << "[ ";
+  for (i=0; i<b.size(); i++) {
+    cout << b[i] << ", ";
+  }
+  cout << "]" << endl;
+
+  // dividing degree 10 polynomial by degree 4 polynomial
+  vector<double> c6(5,0);
+
+  c6[0] = -6; c6[1] = -7; c6[2] = -6; c6[3] = 3; c6[4] = -1;
+  d = Polynomial(c6);
+  b = p.divide(d);
+  cout << "[ ";
+  for (i=0; i<b.size(); i++) {
+    cout << b[i] << ", ";
+  }
+  cout << "]" << endl;
+}
+  
+/*
 BOOST_AUTO_TEST_CASE( solveLinear )
 {
   cout << "\n*** TESTING LINEAR ***" << endl;
@@ -186,7 +253,7 @@ BOOST_AUTO_TEST_CASE( solveCubic )
   p.findRoots();
   p.print();
   cout << endl;
-}
+}*/
 /*
 BOOST_AUTO_TEST_CASE( bairstow_cubic )
 {
