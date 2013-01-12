@@ -138,6 +138,9 @@ class Polynomial
     //! Division by a polynomial of any degree
     vector<double> divide(Polynomial &);
 
+    //! Derivative of the polynomial
+    Polynomial derivative();
+
     //! Computes the number of real roots of the polynomial
     int countRealRoots();
 

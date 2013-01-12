@@ -151,8 +151,67 @@ BOOST_AUTO_TEST_CASE( division )
     cout << b[i] << ", ";
   }
   cout << "]" << endl;
+
+  // dividing degree 10 polynomial by degree 5 polynomial
+  vector<double> c7(6,0);
+
+  c7[0] = -6; c7[1] = -7; c7[2] = -6; c7[3] = 3; c7[4] = -1; c7[5] = -8;
+  d = Polynomial(c7);
+  b = p.divide(d);
+  cout << "[ ";
+  for (i=0; i<b.size(); i++) {
+    cout << b[i] << ", ";
+  }
+  cout << "]" << endl;
 }
   
+BOOST_AUTO_TEST_CASE( derivative )
+{
+  cout << "\n*** TESTING DERIVATIVE ***" << endl;
+  
+  vector<double> c7(6,0);
+  c7[0] = -6; c7[1] = -7; c7[2] = -6; c7[3] = 3; c7[4] = -1; c7[5] = -8;
+  Polynomial p(c7);
+  p.print();
+  cout << "Derivative: ";
+  Polynomial d = p.derivative();
+  d.print();
+  cout << endl;
+
+  vector<double> c4(11,0);
+  c4[0] = 2; c4[1] = 2; c4[2] = 2; c4[3] = 2; c4[4] = 3; c4[5] = -9;
+  c4[6] = 3; c4[7] = -9.77; c4[8] = 3.2; c4[9] = 100; c4[10] = 5;
+  p = Polynomial(c4);
+  p.print();
+  cout << "Derivative: ";
+  d = p.derivative();
+  d.print();
+  cout << endl;
+  
+  vector<double> c1(2,0);
+  c1[0] = -6; c1[1] = -7;
+  p = Polynomial(c1);
+  p.print();
+  cout << "Derivative: ";
+  d = p.derivative();
+  d.print();
+  cout << endl;
+  
+  vector<double> c2(1,0);
+  c2[0] = -6;
+  p = Polynomial(c2);
+  p.print();
+  cout << "Derivative: ";
+  d = p.derivative();
+  d.print();
+}
+
+BOOST_AUTO_TEST_CASE( sturm_sequence )
+{
+  cout << "\n*** TESTING STURM SEQUENCE ***" << endl;
+  
+}
+
 /*
 BOOST_AUTO_TEST_CASE( solveLinear )
 {

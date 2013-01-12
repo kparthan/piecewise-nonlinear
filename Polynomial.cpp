@@ -18,7 +18,7 @@ Polynomial::Polynomial(const vector<double> &coefficients) :
                        originalCoefficients(coefficients)
 {
   degree = coefficients.size() - 1;
-  if (fabs(coefficients[degree]) <= ZERO) {
+  if (degree != 0 && fabs(coefficients[degree]) <= ZERO) {
     cout << "Error: coefficient of the highest order term is zero." << endl;
     exit(1);
   }
@@ -489,56 +489,56 @@ vector<double> Polynomial::divide(const vector<double> &d)
  */
 vector<double> Polynomial::divide(Polynomial &p)
 {
-  int nplusone = degree + 1;
-  int mplusone = p.getDegree() + 1;
+  int n = degree + 1;
+  int m = p.getDegree() + 1;
   vector<double> d = p.getCoefficients();
   vector<double> a = originalCoefficients;
-  vector<double> b(nplusone,0);
+  vector<double> b(n,0);
 
-  if ((nplusone-1) == (mplusone-1)) {
+  if ((n-1) == (m-1)) {
     //  n = m
-    b[nplusone-1] = a[nplusone-1] / d[nplusone-1];
-    for (int j=nplusone-2; j>=0; j--) {
-      b[j] = a[j] - b[nplusone-1] * d[j];
+    b[n-1] = a[n-1] / d[n-1];
+    for (int j=n-2; j>=0; j--) {
+      b[j] = a[j] - b[n-1] * d[j];
     }
-  } else if ((nplusone-1) < 2 * (mplusone-1)) {
+  } else if ((n-1) < 2 * (m-1)) {
     // n < 2m
-    b[nplusone-1] = a[nplusone-1] / d[mplusone-1];
-    for (int j=nplusone-2; j>=mplusone-1; j--) {
+    b[n-1] = a[n-1] / d[m-1];
+    for (int j=n-2; j>=m-1; j--) {
       double sum = 0;
-      for (int k=j+1; k<=nplusone-1; k++) {
-        sum += b[k] * d[mplusone-1+j-k];
+      for (int k=j+1; k<=n-1; k++) {
+        sum += b[k] * d[m-1+j-k];
       }
-      b[j] = (a[j] - sum) / d[mplusone-1];
+      b[j] = (a[j] - sum) / d[m-1];
     }
-    for (int j=mplusone-2; j>=0; j--) {
+    for (int j=m-2; j>=0; j--) {
       double sum = 0;
       for (int k=0; k<=j; k++) {
-        sum += b[mplusone-1+k] * d[j-k];
+        sum += b[m-1+k] * d[j-k];
       }
       b[j] = a[j] - sum;
     }
   } else {
     // n >= 2m
-    b[nplusone-1] = a[nplusone-1] / d[mplusone-1];
-    for (int j=nplusone-2; j>=nplusone-mplusone; j--) {
+    b[n-1] = a[n-1] / d[m-1];
+    for (int j=n-2; j>=n-m; j--) {
       double sum = 0;
-      for (int k=j+1; k<=nplusone-1; k++) {
-        sum += b[k] * d[mplusone-1+j-k];
+      for (int k=j+1; k<=n-1; k++) {
+        sum += b[k] * d[m-1+j-k];
       }
-      b[j] = (a[j] - sum) / d[mplusone-1];
+      b[j] = (a[j] - sum) / d[m-1];
     }
-    for (int j=nplusone-mplusone-1; j>=mplusone-1; j--) {
+    for (int j=n-m-1; j>=m-1; j--) {
       double sum = 0;
-      for (int k=1; k<=mplusone-1; k++) {
-        sum += b[j+k] * d[mplusone-1-k];
+      for (int k=1; k<=m-1; k++) {
+        sum += b[j+k] * d[m-1-k];
       }
-      b[j] = (a[j] - sum) / d[mplusone-1];
+      b[j] = (a[j] - sum) / d[m-1];
     }
-    for (int j=mplusone-2; j>=0; j--) {
+    for (int j=m-2; j>=0; j--) {
       double sum = 0;
       for (int k=0; k<=j; k++) {
-        sum += b[mplusone-1+k] * d[j-k];
+        sum += b[m-1+k] * d[j-k];
       }
       b[j] = a[j] - sum;
     }
@@ -547,11 +547,83 @@ vector<double> Polynomial::divide(Polynomial &p)
 }
 
 /*!
+ *  \brief This module computes the derivative of the polynomial
+ *  \return the polynomial after differentiation
+ */
+Polynomial Polynomial::derivative()
+{
+  vector<double> d;
+  if (degree == 0) {
+    d = vector<double> (1,0);
+  } else {
+    d = vector<double> (degree,0);
+    for (int i=0; i<d.size(); i++) {
+      d[i] = (i+1) * coefficients[i+1];
+    }
+  }
+  return Polynomial(d);
+}
+
+/*!
  *  \brief This module computes the number of real roots of the polynomial
  *  using Sturm's theorem.
+ *  Let f(x) be a real polynomial. Denote it by f0(x) and its derivative f'(x)
+ *  by f1(x). Proceed as follows:
+ *    f0(x) = q1(x) f1(x) - f2(x),
+ *    f1(x) = q2(x) f2(x) - f3(x),
+ *    ...
+ *    ...
+ *    ...
+ *    f_{k-2}(x) = q_{k-1}(x) f_{k-1}(x) - fk(x),
+ *    f_{k-1}(x) = qk(x) fk(x)
+ *  f0,f1,...,fk is the Sturm sequence for the polynomial f. The number of
+ *  distinct real zeros of a polynomial in (a,b) is equal to the excess of the
+ *  number of changes of sign in the sequence f0(a),...,fk(a) over the number
+ *  of changes of sign in the sequence f0(b),...,fk(b).
+ *  \return the number of distinct real roots
  */
 int Polynomial::countRealRoots()
 {
+  vector<Polynomial> sturm_sequence;
+  Polynomial remainder;
+  Polynomial current(*this);
+  sturm_sequence.push_back(current);
+  Polynomial current_divisor = derivative();
+  int i;
+
+  while(1) {
+    sturm_sequence.push_back(current_divisor);
+    vector<double> b = current.divide(current_divisor);
+    int m = current_divisor.getDegree();
+    vector<double> r;
+    for (i=0; i<m; i++) {
+      r.push_back(b[i]);
+    }
+    int truncate = 0;
+    for (i=m-1; i>=0; i--) {
+      if (fabs(r[i]) < ZERO) {
+        truncate++;
+      } else {
+        break;
+      }
+    }
+    for (i=0; i<truncate; i++) {
+      r.pop_back();
+    }
+    for (i=0; i<r.size(); i++) {
+      r[i] = -r[i];
+    }
+    if (r.size() <= 1) { // stop
+      current_divisor = Polynomial (r); // remainder
+      sturm_sequence.push_back(current_divisor);
+      break;
+    }
+    current_divisor = Polynomial (r); // remainder
+  }
+  cout << "Sturm Sequence: " << endl;
+  for (i=0; i<sturm_sequence.size(); i++) {
+    sturm_sequence[i].print();
+  }
 }
 
 /*!
