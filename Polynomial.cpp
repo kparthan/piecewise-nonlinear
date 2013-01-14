@@ -28,10 +28,15 @@ Polynomial::Polynomial(const vector<double> &coefficients) :
  *  \brief This module is used to create a copy of a Polynomial object
  *  \param source a reference to a Polynomial
  */
-Polynomial::Polynomial(const Polynomial &source) : degree(source.degree),
+Polynomial::Polynomial(const Polynomial &source) /*: degree(source.degree),
             coefficients(source.coefficients), roots(source.roots),
-            originalCoefficients(source.originalCoefficients)
-{}
+            originalCoefficients(source.originalCoefficients)*/
+{
+  degree = source.degree;
+  coefficients = source.coefficients;
+  roots = source.roots;
+  originalCoefficients = source.originalCoefficients;
+}
 
 /*!
  *  \brief This module assigns a source polynomial to a target polynomial.
@@ -558,7 +563,7 @@ Polynomial Polynomial::derivative()
   } else {
     d = vector<double> (degree,0);
     for (int i=0; i<d.size(); i++) {
-      d[i] = (i+1) * coefficients[i+1];
+      d[i] = (i+1) * coefficients[i+1] / 5;
     }
   }
   return Polynomial(d);
@@ -585,7 +590,6 @@ Polynomial Polynomial::derivative()
 int Polynomial::countRealRoots()
 {
   vector<Polynomial> sturm_sequence;
-  Polynomial remainder;
   Polynomial current(*this);
   sturm_sequence.push_back(current);
   Polynomial current_divisor = derivative();
@@ -597,7 +601,7 @@ int Polynomial::countRealRoots()
     int m = current_divisor.getDegree();
     vector<double> r;
     for (i=0; i<m; i++) {
-      r.push_back(b[i]);
+      r.push_back(-b[i]);
     }
     int truncate = 0;
     for (i=m-1; i>=0; i--) {
@@ -610,18 +614,16 @@ int Polynomial::countRealRoots()
     for (i=0; i<truncate; i++) {
       r.pop_back();
     }
-    for (i=0; i<r.size(); i++) {
-      r[i] = -r[i];
-    }
+    current = current_divisor;
+    current_divisor = Polynomial (r); // remainder
     if (r.size() <= 1) { // stop
-      current_divisor = Polynomial (r); // remainder
       sturm_sequence.push_back(current_divisor);
       break;
     }
-    current_divisor = Polynomial (r); // remainder
   }
   cout << "Sturm Sequence: " << endl;
   for (i=0; i<sturm_sequence.size(); i++) {
+    cout << "f(" << i << ") : ";
     sturm_sequence[i].print();
   }
 }

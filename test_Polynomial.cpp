@@ -89,7 +89,7 @@ BOOST_AUTO_TEST_CASE( assignment_operator )
 
 BOOST_AUTO_TEST_CASE( division )
 {
-  cout << "\n*** TESTING DIVSION BY A POLYNOMIAL ***" << endl;
+  cout << "\n*** TESTING DIVISION BY A POLYNOMIAL ***" << endl;
   vector<double> b;
   int i;
   Polynomial p,d;
@@ -163,6 +163,28 @@ BOOST_AUTO_TEST_CASE( division )
     cout << b[i] << ", ";
   }
   cout << "]" << endl;
+
+  // dividing degree 5 polynomial by degree 4 polynomial
+  vector<double> c8(6,0);
+  vector<double> c9(5,0);
+
+  c8[0] = 2; c8[1] = -10; c8[2] = -20; c8[3] = 0; c8[4] = 5; c8[5] = 1;
+  c9[0] = -2; c9[1] = -8; c9[2] = 0; c9[3] = 4; c9[4] = 1; 
+  //p = Polynomial(c8);
+  Polynomial p1(c8);
+  vector<double> b2 = p1.divide(c9);
+  d = Polynomial(c9);
+  b = p1.divide(d);
+  cout << "[ ";
+  for (i=0; i<b.size(); i++) {
+    cout << b[i] << ", ";
+  }
+  cout << "]" << endl;
+  cout << "[ ";
+  for (i=0; i<b2.size(); i++) {
+    cout << b2[i] << ", ";
+  }
+  cout << "]" << endl;
 }
   
 BOOST_AUTO_TEST_CASE( derivative )
@@ -209,7 +231,27 @@ BOOST_AUTO_TEST_CASE( derivative )
 BOOST_AUTO_TEST_CASE( sturm_sequence )
 {
   cout << "\n*** TESTING STURM SEQUENCE ***" << endl;
-  
+ 
+  vector<double> c1(6,0);
+  c1[0] = 2; c1[1] = -10; c1[2] = -20; c1[3] = 0; c1[4] = 5; c1[5] = 1;
+  Polynomial p(c1);
+  p.print();
+  p.countRealRoots(); 
+  cout << endl;
+ 
+  vector<double> c2(5,0);
+  c2[0] = -1; c2[1] = -1; c2[2] = 0; c2[3] = 1; c2[4] = 1;
+  p = Polynomial(c2);
+  p.print();
+  p.countRealRoots(); 
+  cout << endl;
+ 
+  vector<double> c3(4,0);
+  c3[0] = -3; c3[1] = 2; c3[2] = 0; c3[3] = 1;
+  p = Polynomial(c3);
+  p.print();
+  p.countRealRoots(); 
+  cout << endl;
 }
 
 /*
@@ -376,6 +418,7 @@ BOOST_AUTO_TEST_CASE( bairstow_cubic )
   cout << endl;
 }
 */
+/*
 BOOST_AUTO_TEST_CASE( bairstow_quartic )
 {
   cout << "\n*** TESTING BAIRSTOW [QUARTIC] ***" << endl;
@@ -389,7 +432,6 @@ BOOST_AUTO_TEST_CASE( bairstow_quartic )
   p.solveUsingBairstow();
   p.print();
   cout << endl;
-/*
   c[0] = 4; c[1] = -10; c[2] = 10; c[3] = -5; c[4] = 1;
   p = Polynomial(c);
   p.findRoots();
@@ -430,8 +472,8 @@ BOOST_AUTO_TEST_CASE( bairstow_quartic )
   p = Polynomial(c);
   p.findRoots();
   p.print();
-  cout << endl;*/
-}
+  cout << endl;
+}*/
 /*
 BOOST_AUTO_TEST_CASE( bairstow_quintic )
 {
