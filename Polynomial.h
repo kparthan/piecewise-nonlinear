@@ -16,6 +16,9 @@ class Polynomial
     //! Stores the roots as complex numbers
     vector<complex<double>> roots;
 
+    //! Computes a real root using Newton's method
+    double solveNewtonMethod();
+
     //! Computes the root of the linear equation
     void solveLinear();
 
@@ -141,8 +144,21 @@ class Polynomial
     //! Derivative of the polynomial
     Polynomial derivative();
 
-    //! Computes the number of real roots of the polynomial
-    int countRealRoots();
+    //! Computes the bound of roots
+    double getBoundOnRoots();
+
+    //! Constructs the Sturm sequence
+    vector<Polynomial> sturmSequence();
+
+    //! Computes the number of distinct real roots of the polynomial
+    int countDistinctRealRoots();
+
+    //! Computes the number of distinct real roots of the polynomial
+    //! within an interval
+    int countDistinctRealRoots(double, double);
+
+    //! Computes the real roots
+    vector<double> findRealRoots();
 
     //! Computes the roots of the polynomial
     void findRoots();

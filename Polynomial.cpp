@@ -1,5 +1,20 @@
 #include "Polynomial.h"
-//#include "Support.h"
+
+/*!
+ *  \brief This module returns the sign of a number.
+ *  \param number a double
+ *  \return the sign
+ */
+int sign(double number)
+{
+  if (fabs(number) <= ZERO) {
+    return 0;
+  } else if (number > 0) {
+    return 1;
+  } else {
+    return -1;
+  }
+}
 
 /*!
  *  \brief This module instantiates a null Polynomial object.
@@ -28,15 +43,10 @@ Polynomial::Polynomial(const vector<double> &coefficients) :
  *  \brief This module is used to create a copy of a Polynomial object
  *  \param source a reference to a Polynomial
  */
-Polynomial::Polynomial(const Polynomial &source) /*: degree(source.degree),
+Polynomial::Polynomial(const Polynomial &source) : degree(source.degree),
             coefficients(source.coefficients), roots(source.roots),
-            originalCoefficients(source.originalCoefficients)*/
-{
-  degree = source.degree;
-  coefficients = source.coefficients;
-  roots = source.roots;
-  originalCoefficients = source.originalCoefficients;
-}
+            originalCoefficients(source.originalCoefficients)
+{}
 
 /*!
  *  \brief This module assigns a source polynomial to a target polynomial.
@@ -191,6 +201,59 @@ complex<double> Polynomial::value(complex<double> number)
     value = complexSum(value,temp);
   }
   return value;
+}
+
+/*!
+ *  \brief This method solves for a real root of the polynomial using
+ *  Newton's method.
+ *  \return a real root
+ */
+double Polynomial::solveNewtonMethod()
+{
+  double x = getBoundOnRoots();
+  double tol = 0.000001;
+  while(1) {
+    vector<double> b = divide(1,-x);
+    vector<double> quotient;
+    double remainder = b[0];
+    for (int i=1; i<b.size(); i++) {
+      quotient.push_back(b[i]);
+    }
+    Polynomial q(quotient);
+    double slope = q.value(x);
+    double diff = remainder / slope;
+    x -= diff;
+    if (fabs(diff) < tol) {
+      break;
+    }
+  }
+  return x;
+}
+
+/*!
+ *  \brief This module computes the real roots of a polynomial
+ *  \return the real roots
+ */
+vector<double> Polynomial::findRealRoots()
+{
+  vector<double> real_roots;
+  int num_real = countDistinctRealRoots();
+  Polynomial p(*this);
+
+  while (1) {
+    double x = p.solveNewtonMethod();
+    real_roots.push_back(x);
+    vector<double> b = p.divide(1,-x);
+    vector<double> quotient;
+    for (int i=1; i<b.size(); i++) {
+      quotient.push_back(b[i]);
+    }
+    if (real_roots.size() == num_real) {
+      break;
+    }
+    p = Polynomial(quotient);
+  }
+  return real_roots;
 }
 
 /*!
@@ -447,13 +510,13 @@ vector<double> Polynomial::divide(const vector<double> &d)
  *     R(x) = b0 + b1 x + b2 x^2 + ... + b_{m-1} x^{m-1}
  *  The coefficients are related as 
  *  a0 = b0 + bm d0
- *  a1 = b1 + bm d1 + b_{m+1} d0
- *  a2 = b2 + bm d2 + b_{m+1} d1 + b_{m+2} d0
- *  a3 = b3 + bm d3 + b_{m+1} d2 + b_{m+2} d1 + b_{m+3} d0
+ *  a1 = b1 + bm d1 + b_{m+1} d0 + ... + bn d_{m+1-n}
+ *  a2 = b2 + bm d2 + b_{m+1} d1 + b_{m+2} d0 + ... + bn d_{m+2-n}
+ *  a3 = b3 + bm d3 + b_{m+1} d2 + b_{m+2} d1 + ... + bn d_{m+3-n}
  *  ...
  *  ...
  *  ...
- *  a_{m-1} = b_{m-1}+bm d_{m-1}+b_{m+1}d_{m-2}+b_{m+2}d_{m-3}+...+b_{2m-1}d0
+ *  a_{m-1} = b_{m-1}+bm d_{m-1}+b_{m+1}d_{m-2}+b_{m+2}d_{m-3}+...+bn d_{2m-1-n}
  *  am = bm dm + b_{m+1}d_{m-1} + b_{m+2}d_{m-2} + ... + bn d_{2m-n}
  *  a_{m+1} = b_{m+1}dm+b_{m+2}d_{m-1}+b_{m+3}d_{m-2}+...+bn d_{2m-n+1}
  *  a_{m+2} = b_{m+2}dm+b_{m+3}d_{m-1}+b_{m+4}d_{m-2}+...+bn d_{2m-n+2}
@@ -499,7 +562,14 @@ vector<double> Polynomial::divide(Polynomial &p)
   vector<double> d = p.getCoefficients();
   vector<double> a = originalCoefficients;
   vector<double> b(n,0);
-
+/*
+  for (int i=0; i<d.size(); i++) {
+    cout << "d[" << i << "]: " << d[i] << endl;
+  }
+  for (int i=0; i<a.size(); i++) {
+    cout << "a[" << i << "]: " << a[i] << endl;
+  }
+*/
   if ((n-1) == (m-1)) {
     //  n = m
     b[n-1] = a[n-1] / d[n-1];
@@ -518,8 +588,8 @@ vector<double> Polynomial::divide(Polynomial &p)
     }
     for (int j=m-2; j>=0; j--) {
       double sum = 0;
-      for (int k=0; k<=j; k++) {
-        sum += b[m-1+k] * d[j-k];
+      for (int k=m-1; k<n; k++) {
+        sum += b[k] * d[m-1+j-k];
       }
       b[j] = a[j] - sum;
     }
@@ -570,8 +640,24 @@ Polynomial Polynomial::derivative()
 }
 
 /*!
- *  \brief This module computes the number of real roots of the polynomial
- *  using Sturm's theorem.
+ *  \brief This module computes the radius of the circle within which all 
+ *  the zeros of the polynomial lie.
+ *  \return the bound
+ */
+double Polynomial::getBoundOnRoots()
+{
+  double max = fabs(coefficients[0]);
+  for (int i=1; i<coefficients.size()-1; i++) {
+    if (fabs(coefficients[i]) > max) {
+      max = fabs(coefficients[i]);
+    }
+  }
+  max = fabs(max / coefficients[degree]);
+  return 1 + max;
+}
+
+/*!
+ *  \brief This module constructs the Sturm sequence of a polynomial
  *  Let f(x) be a real polynomial. Denote it by f0(x) and its derivative f'(x)
  *  by f1(x). Proceed as follows:
  *    f0(x) = q1(x) f1(x) - f2(x),
@@ -585,9 +671,9 @@ Polynomial Polynomial::derivative()
  *  distinct real zeros of a polynomial in (a,b) is equal to the excess of the
  *  number of changes of sign in the sequence f0(a),...,fk(a) over the number
  *  of changes of sign in the sequence f0(b),...,fk(b).
- *  \return the number of distinct real roots
+ *  \return the Sturm sequence
  */
-int Polynomial::countRealRoots()
+vector<Polynomial> Polynomial::sturmSequence()
 {
   vector<Polynomial> sturm_sequence;
   Polynomial current(*this);
@@ -626,6 +712,91 @@ int Polynomial::countRealRoots()
     cout << "f(" << i << ") : ";
     sturm_sequence[i].print();
   }
+  return sturm_sequence;
+}
+
+/*!
+ *  \brief This module computes the number of distinct real roots of the 
+ *  polynomial using Sturm's theorem.
+ *  \return the number of distinct real roots
+ */
+int Polynomial::countDistinctRealRoots()
+{
+  int lower = 0,lower_current,lower_previous;
+  int upper = 0,upper_current,upper_previous;
+  vector<Polynomial> sequence = sturmSequence();
+
+  int n = sequence[0].getDegree();
+  lower_previous = sign(sequence[0].getCoefficients(n));
+  if (n % 2 == 1) {
+    lower_previous *= -1;
+  }
+  cout << "L: " << lower_previous << " ";
+  for (int i=1; i<sequence.size(); i++) {
+    n = sequence[i].getDegree();
+    lower_current = sign(sequence[i].getCoefficients(n));
+    if (n % 2 == 1) {
+      lower_current *= -1;
+    }
+    cout << lower_current << " ";
+    if(lower_current != lower_previous) {
+      lower++;
+      lower_previous = lower_current;
+    } 
+  }
+  cout << endl;
+  n = sequence[0].getDegree();
+  upper_previous = sign(sequence[0].getCoefficients(n));
+  cout << "U: " << upper_previous << " ";
+  for (int i=1; i<sequence.size(); i++) {
+    n = sequence[i].getDegree();
+    upper_current = sign(sequence[i].getCoefficients(n));
+    cout << upper_current << " ";
+    if(upper_current != upper_previous) {
+      upper++;
+      upper_previous = upper_current;
+    } 
+  }
+  cout << endl;
+  return lower - upper;
+}
+
+/*!
+ *  \brief This module computes the number of distinct real roots of the 
+ *  polynomial in an interval using Sturm's theorem.
+ *  \param a a double
+ *  \param b a double
+ *  \return the number of distinct real roots
+ */
+int Polynomial::countDistinctRealRoots(double a, double b)
+{
+  int lower = 0,lower_current,lower_previous;
+  int upper = 0,upper_current,upper_previous;
+  vector<Polynomial> sequence = sturmSequence();
+
+  lower_previous = sign(sequence[0].value(a));
+  cout << "L: " << lower_previous << " ";
+  for (int i=1; i<sequence.size(); i++) {
+    lower_current = sign(sequence[i].value(a));
+    cout << lower_current << " ";
+    if(lower_current != lower_previous) {
+      lower++;
+      lower_previous = lower_current;
+    }
+  }
+  cout << endl;
+  upper_previous = sign(sequence[0].value(b));
+  cout << "U: " << upper_previous << " ";
+  for (int i=1; i<sequence.size(); i++) {
+    upper_current = sign(sequence[i].value(b));
+    cout << upper_current << " ";
+    if(upper_current != upper_previous) {
+      upper++;
+      upper_previous = upper_current;
+    }
+  }
+  cout << endl;
+  return lower - upper;
 }
 
 /*!
@@ -680,22 +851,6 @@ void Polynomial::solveQuadratic()
     complex<double> r2(x1,-x2);
     roots.push_back(r2);
   }  
-}
-
-/*!
- *  \brief This module returns the sign of a number.
- *  \param number a double
- *  \return the sign
- */
-int sign(double number)
-{
-  if (fabs(number) <= ZERO) {
-    return 0;
-  } else if (number > 0) {
-    return 1;
-  } else {
-    return -1;
-  }
 }
 
 /*!

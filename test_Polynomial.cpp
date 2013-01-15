@@ -170,11 +170,33 @@ BOOST_AUTO_TEST_CASE( division )
 
   c8[0] = 2; c8[1] = -10; c8[2] = -20; c8[3] = 0; c8[4] = 5; c8[5] = 1;
   c9[0] = -2; c9[1] = -8; c9[2] = 0; c9[3] = 4; c9[4] = 1; 
-  //p = Polynomial(c8);
-  Polynomial p1(c8);
-  vector<double> b2 = p1.divide(c9);
+  p = Polynomial(c8);
+  vector<double> b2 = p.divide(c9);
   d = Polynomial(c9);
-  b = p1.divide(d);
+  b = p.divide(d);
+  cout << "[ ";
+  for (i=0; i<b.size(); i++) {
+    cout << b[i] << ", ";
+  }
+  cout << "]" << endl;
+  cout << "[ ";
+  for (i=0; i<b2.size(); i++) {
+    cout << b2[i] << ", ";
+  }
+  cout << "]" << endl;
+
+  // dividing degree 10 polynomial by degree 9 polynomial
+  vector<double> c10(11,0);
+  vector<double> c11(10,0);
+
+  c10[0] = 2; c10[1] = -10; c10[2] = -20; c10[3] = 0; c10[4] = 5; c10[5] = 1;
+  c10[6] = 12; c10[7] = 0; c10[8] = -2; c10[9] = 3.55; c10[10] = 1.5; 
+  c11[0] = -2; c11[1] = -8; c11[2] = 0; c11[3] = 4; c11[4] = 1; 
+  c11[5] = 1.2; c11[6] = 18; c11[7] = 10; c11[8] = 1.4; c11[9] = -11; 
+  p = Polynomial(c10);
+  b2 = p.divide(c11);
+  d = Polynomial(c11);
+  b = p.divide(d);
   cout << "[ ";
   for (i=0; i<b.size(); i++) {
     cout << b[i] << ", ";
@@ -186,7 +208,7 @@ BOOST_AUTO_TEST_CASE( division )
   }
   cout << "]" << endl;
 }
-  
+
 BOOST_AUTO_TEST_CASE( derivative )
 {
   cout << "\n*** TESTING DERIVATIVE ***" << endl;
@@ -236,24 +258,76 @@ BOOST_AUTO_TEST_CASE( sturm_sequence )
   c1[0] = 2; c1[1] = -10; c1[2] = -20; c1[3] = 0; c1[4] = 5; c1[5] = 1;
   Polynomial p(c1);
   p.print();
-  p.countRealRoots(); 
+  p.sturmSequence(); 
   cout << endl;
  
   vector<double> c2(5,0);
   c2[0] = -1; c2[1] = -1; c2[2] = 0; c2[3] = 1; c2[4] = 1;
   p = Polynomial(c2);
   p.print();
-  p.countRealRoots(); 
+  p.sturmSequence(); 
   cout << endl;
  
   vector<double> c3(4,0);
   c3[0] = -3; c3[1] = 2; c3[2] = 0; c3[3] = 1;
   p = Polynomial(c3);
   p.print();
-  p.countRealRoots(); 
+  p.sturmSequence(); 
   cout << endl;
 }
 
+BOOST_AUTO_TEST_CASE( count_distinct_real_roots )
+{
+  cout << "\n*** TESTING COUNT DISTINCT REAL ROOTS ***" << endl;
+
+  vector<double> c,roots;
+  Polynomial p;
+  
+  c = vector<double> (6,0);
+  c[0] = 2; c[1] = -10; c[2] = -20; c[3] = 0; c[4] = 5; c[5] = 1;
+  p = Polynomial(c);
+  p.print();
+  roots = p.findRealRoots();
+  cout << "Real roots: ";
+  for (int i=0; i<roots.size(); i++) {
+    cout << roots[i] << ", ";
+  }
+  cout << endl << endl;
+  
+  c = vector<double> (5,0);
+  c[0] = -1; c[1] = -1; c[2] = 0; c[3] = 1; c[4] = 1;
+  p = Polynomial(c);
+  p.print();
+  roots = p.findRealRoots();
+  cout << "Real roots: ";
+  for (int i=0; i<roots.size(); i++) {
+    cout << roots[i] << ", ";
+  }
+  cout << endl << endl;
+  
+  c = vector<double> (6,0);
+  c[0] = -1; c[1] = -3; c[2] = 0; c[3] = 0; c[4] = 0; c[5] = 1;
+  p = Polynomial(c);
+  p.print();
+  roots = p.findRealRoots();
+  cout << "Real roots: ";
+  for (int i=0; i<roots.size(); i++) {
+    cout << roots[i] << ", ";
+  }
+  cout << endl << endl;
+  
+  c = vector<double> (3,0);
+  c[0] = 1; c[1] = -2; c[2] = 1;
+  p = Polynomial(c);
+  p.print();
+  roots = p.findRealRoots();
+  cout << "Real roots: ";
+  for (int i=0; i<roots.size(); i++) {
+    cout << roots[i] << ", ";
+  }
+  cout << endl << endl;
+}
+ 
 /*
 BOOST_AUTO_TEST_CASE( solveLinear )
 {
