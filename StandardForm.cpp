@@ -350,7 +350,7 @@ void StandardForm::fitModels()
   linearModelFit();
 
   /* Bezier Curve fit */
-  bezierCurveModelFit();
+  //bezierCurveModelFit();
 } 
 
 /*!
@@ -438,6 +438,7 @@ void StandardForm::computeCodeLengthMatrix(void)
       } 
       else if (i < j){
         Segment segment = getSegment(i,j);
+        //cout << "Segment [" << i << ", " << j << "]\n";
         segment.linearFit();
         tmp.push_back(segment.getLinearFit());
       } else {
@@ -450,13 +451,17 @@ void StandardForm::computeCodeLengthMatrix(void)
   /*Segment segment = getSegment(0,10);
   cout << segment.linearFit() << endl;
   segment.print();*/
-/* 
+
+  ofstream codeLengthFile("codeLengthFile");
+  codeLengthFile << "# of residues: " << numResidues << endl; 
   for (int i=0; i<numResidues; i++){
     for (int j=0; j<numResidues; j++){
-      cout << codeLength[i][j] << " ";
+      //codeLengthFile << "[" << i << ", " << j << "] "; 
+      codeLengthFile << fixed << setw(9) << setprecision(3) << codeLength[i][j];
+      //codeLengthFile << codeLength[i][j] << " ";
     }
-    cout << endl;
-  }*/
+    codeLengthFile << endl;
+  }
 }
 
 /*!
