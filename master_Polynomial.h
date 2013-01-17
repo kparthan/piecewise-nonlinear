@@ -16,9 +16,6 @@ class Polynomial
     //! Stores the roots as complex numbers
     vector<complex<double>> roots;
 
-    //! Computes a real root using Newton's method
-    double solveNewtonMethod();
-
     //! Computes the root of the linear equation
     void solveLinear();
 
@@ -28,60 +25,14 @@ class Polynomial
     //! Computes the roots of the cubic equation
     void solveCubic();
 
-    //! Bairstow implementation
-    void bairstow(vector<complex<double>> &);
+    //! Computes a real root using Newton's method
+    double solveNewtonMethod();
 
     //! Division of the polynomial by a linear expression
     vector<double> division(const vector<double> &, double);
 
     //! Division of the polynomial by a quadratic expression
     vector<double> division(const vector<double> &, double, double);
-
-    //! Computes increments to the coefficients of the quadratic
-    void computeIncrements(const vector<double> &, double, double,
-                           array<double,2> &, double, double);
-
-    //! Computes the partial derivatives of the coefficients
-    vector<double> partialDerivatives(const vector<double> &, double, double);
-
-    //! Computes the relative errors of the increments
-    array<double,2> relativeError(const array<double,2> &, double, double);
-
-    //! Computes the norm of the polynomial
-    double normDivisorRoots(double, double, double, double);
-  
-               /* Functions used in intial root approximation */
-    //! Sets the initial estimates of the roots
-    array<double,2> initializeRoots();
-
-    //! Forms the set of points used in the initial estimation
-    vector<complex<double>> pointsAlongBoundary(double);
-
-    //! A bivariate approximation of the modulus of the polynomial
-    vector<double> bivariateApproximation(vector<complex<double>> &);
-
-    //! Computes the modulus of the polynomial at the given set of points 
-    vector<double> polynomialModulus(vector<complex<double>> &);
-
-    //! Approximates the modulus of the polynomial
-    vector<double> approximateModulus(vector<double> &,
-                                      vector<complex<double>> &);
-
-    //! Estimates the initial estimates of the coefficients of the
-    //! quadratic divisor
-    array<double,2> initialEstimates(vector<double> &, double);
-
-    //! Finds at the point along the square boundary at which minimum occurs
-    complex<double> minimumAlongBoundary(vector<double> &, double);
-
-    //! Finds a point at which a quadratic expression attains minimum
-    double minimizeQuadratic(double, double, double, double, double);
-
-    //! Finds a point at which a quadratic expression attains minimum
-    double minimizeLinear(double, double, double, double);
-
-    //! Computes the bivariate function value at a given (x,y)
-    double bivariateFunctionValue(vector<double> &, double, double);
 
   public:
     //! Null constructor
@@ -115,9 +66,6 @@ class Polynomial
                             /* Utility functions */
     //! Computes the value of the polynomial
     double value(double);
-
-    //! Computes the value of the polynomial
-    complex<double> value(complex<double>);
 
     //! Preprocess to normalize and remove trivial roots 
     Polynomial preprocess();
@@ -157,18 +105,8 @@ class Polynomial
     //! within an interval
     int countDistinctRealRoots(double, double);
 
-    //! Computes the real roots
-    vector<double> findRealRoots();
-
     //! Computes the roots of the polynomial
     void findRoots();
-
-    //! Computes the roots using Bairstow method
-    void solveUsingBairstow();
-
-    //! Computes the value of x when the polynomial value equals
-    //! a particular value (not necessarily zero)
-    vector<complex<double>> solveGeneralEquation(double);
 };
 
 #endif
