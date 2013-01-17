@@ -438,7 +438,6 @@ void StandardForm::computeCodeLengthMatrix(void)
       } 
       else if (i < j){
         Segment segment = getSegment(i,j);
-        //cout << "Segment [" << i << ", " << j << "]\n";
         segment.linearFit();
         tmp.push_back(segment.getLinearFit());
       } else {

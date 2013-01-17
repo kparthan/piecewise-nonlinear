@@ -172,27 +172,12 @@ void Segment::linearFit(void)
   if (numIntermediate > 2) {
     double length = distance(start,end);
     Line<Point<double>> line(start,end);
-    //Plane<Point<double>> plane = constructPlane(start,end);
     Point<double> p(coordinates[1]);
     Plane<Point<double>> plane(start,p,end); 
     deviations = computeDeviations(line,plane);
     //vector<array<double,3>> deviations2 = computeDeviations2(line,plane);
   }
   linearFitMsgLen = messageLength(deviations);
-}
-
-/*!
- *  \brief This module constructs a plane given two end points assuming the 
- *  third point is one directly above the first point
- *  \param start a Point
- *  \param end a Point
- *  \return a plane
- */
-Plane<Point<double>> Segment::constructPlane(Point<double> &start,
-                                             Point<double> &end)
-{
-  Point<double> above(start.x(),start.y(),start.z()+1);
-  return Plane<Point<double>>(start,above,end);
 }
 
 /*!

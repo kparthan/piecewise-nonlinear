@@ -147,7 +147,7 @@ Vector<double> BezierCurve::tangent(double t)
  *  p0, p2 are the control points through which the curve passes and p1 is 
  *  an intermediate control point
  *  i.e., P(t) = (p0 - 2p1 + p2)t^2 + 2(p1 - p0)t + p0
- *   and P'(t) = 2(p0 -2p1 + p2)t + 2(p1 - p0)
+ *   and P'(t) = 2(p0 - 2p1 + p2)t + 2(p1 - p0)
  *  Substituting these values in (1) and solving for t gives:
  *            A t^3 + B t^2 + C t + D = 0   where
  *  A = (p0 - 2p1 + p2) . (p0 - 2p1 + p2)
@@ -226,7 +226,7 @@ double BezierCurve::project(const Point<double> &p)
       exit(1); 
   }
   Polynomial polynomial(coefficients);
-  t = processRoots(polynomial.getRoots());
+  t = processRoots(polynomial.findRealRoots());
   //cout << "t: " << t << endl;
   return t;
 }
