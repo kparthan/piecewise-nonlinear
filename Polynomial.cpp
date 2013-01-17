@@ -32,9 +32,14 @@ Polynomial::Polynomial(const vector<double> &coefficients) :
                        coefficients(coefficients), 
                        originalCoefficients(coefficients)
 {
-  degree = coefficients.size() - 1;
-  if (degree != 0 && fabs(coefficients[degree]) <= ZERO) {
-    cout << "Error: coefficient of the highest order term is zero." << endl;
+  if (coefficients.size() > 0) {
+    degree = coefficients.size() - 1;
+    if (degree > 0 && fabs(coefficients[degree]) <= ZERO) {
+      cout << "Error: coefficient of the highest order term is zero." << endl;
+      exit(1);
+    }
+  } else {
+    cout << "Error: empty list of coefficients passed." << endl;
     exit(1);
   }
 }
@@ -633,7 +638,7 @@ Polynomial Polynomial::derivative()
   } else {
     d = vector<double> (degree,0);
     for (int i=0; i<d.size(); i++) {
-      d[i] = (i+1) * coefficients[i+1] / 5;
+      d[i] = (i+1) * coefficients[i+1];
     }
   }
   return Polynomial(d);
@@ -700,9 +705,12 @@ vector<Polynomial> Polynomial::sturmSequence()
     for (i=0; i<truncate; i++) {
       r.pop_back();
     }
+    if (r.size() == 0) {
+      break;
+    }
     current = current_divisor;
     current_divisor = Polynomial (r); // remainder
-    if (r.size() <= 1) { // stop
+    if (r.size() == 1) { // stop
       sturm_sequence.push_back(current_divisor);
       break;
     }
