@@ -13,9 +13,9 @@ void writeToFile (vector<array<double,3>> &, const char*);
 void convertPointToArray(Point<double> &, double a[]);
 
 double msglenNormal (double, double, double);
-double meanEstimate (vector<double> &);
-double varianceEstimate(vector<double> &, double);
-double varianceEstimate(vector<double> &);
+double estimateMean (vector<double> &);
+double estimateVariance (vector<double> &, double);
+double estimateVariance (vector<double> &);
 int sign(double);
 double cubeRoot(double);
 double absoluteMaximum(vector<double> &);

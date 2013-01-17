@@ -471,57 +471,52 @@ void StandardForm::computeCodeLengthMatrix(void)
 void StandardForm::optimalSegmentation(void)
 {
   int numResidues = getNumberOfResidues();
-  vector<double> optimal;
-  vector<int> optimalIndex;
-  optimal.push_back(0);
-  optimalIndex.push_back(0);
-  double min;
-  int index;
+  vector<double> optimal(numResidues,100000);
+  vector<int> optimalIndex(numResidues,-1);
 
-  for (int i=1; i<numResidues; i++){
-    min = codeLength[0][i];
-    index = i;
-    optimal.push_back(min);
-    optimalIndex.push_back(index);
-    for (int j=0; j<i; j++){
-      if (codeLength[j][i] + optimal[j] < min){
-        min = codeLength[j][i] + optimal[j];
-        index = j;
-        optimal[i] = min;
-        optimalIndex[i] = index;
+  for (int i=0; i<numResidues; i++){
+    optimal[i] = codeLength[0][i];
+    optimalIndex[i] = i;
+    for (int j=1; j<i; j++){
+      if (codeLength[j][i] + optimal[j] < optimal[i]){
+        optimal[i] = codeLength[j][i] + optimal[j];
+        optimalIndex[i] = j;
       }
     }
   }
 
-  double best = optimal[optimal.size()-1];
+  double best = optimal[numResidues-1];
   cout << "Linear fit: " << best << " bits." << endl;
   cout << "Bits per residue: " << best / (numResidues-1) << endl;
- 
-  vector<int> tmp; 
-  for (int i=0; i<optimal.size(); i++){
+
+  ofstream opt("optimal"); 
+  for (int i=0; i<numResidues; i++){
     cout << optimal[i] << " ";
+    opt << optimal[i] << "\t\t" << optimalIndex[i] << endl ;
   }
-  cout << endl;
-  for (int i=0; i<optimalIndex.size(); i++){
+  cout << endl << endl;
+  for (int i=0; i<numResidues; i++){
     cout << optimalIndex[i] << " ";
   }
   cout << endl;
-  index = numResidues-1;
+  int index = numResidues-1;
+  vector<int> tmp; 
+  tmp.push_back(numResidues-1);
   while (1){
-    index = optimalIndex[index];
     if (index == optimalIndex[index]){
-      tmp.push_back(index);
       break;
     }
+    index = optimalIndex[index];
     tmp.push_back(index);
   }
   tmp.push_back(0);
   cout << endl;
-  for (int i=tmp.size()-1; i>=0; i--){
+  cout << "# of linear segments: " << tmp.size()-1 << endl;
+  for (int i=tmp.size()-1; i>0; i--){
     cout << tmp[i] << "-->";
   }
-  cout << numResidues-1 << endl << endl;
-  for (int i=tmp.size()-1; i>=0; i--){
+  cout << tmp[0] << endl << endl;
+  for (int i=tmp.size()-1; i>0; i--){
     cout << codeLength[tmp[i]][tmp[i-1]] << " ";
   }
   cout << endl;

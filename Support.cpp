@@ -249,7 +249,7 @@ double msglenNormal(double x, double mean, double variance)
  *  \param samples a reference to a vector<double>
  *  \return the mean value
  */
-double meanEstimate(vector<double> &samples)
+double estimateMean(vector<double> &samples)
 {
   double mean = 0;
   for (int i=0; i<samples.size(); i++) {
@@ -265,13 +265,13 @@ double meanEstimate(vector<double> &samples)
  *  \param mean a double
  *  \return the biased variance of the samples
  */
-double varianceEstimate(vector<double> &samples, double mean)
+double estimateVariance(vector<double> &samples, double mean)
 {
   double variance = 0;
   for (int i=0; i<samples.size(); i++){
     variance += (samples[i] - mean) * (samples[i] - mean);
   }
-  variance = variance/samples.size();
+  variance /= samples.size() - 1;
   if (variance < 9 * AOM * AOM){
     return 9 * AOM * AOM;
   } else {
@@ -285,14 +285,14 @@ double varianceEstimate(vector<double> &samples, double mean)
  *  \param samples a reference to a vector<double>
  *  \return the unbiased variance of the samples
  */
-double varianceEstimate(vector<double> &samples)
+double estimateVariance(vector<double> &samples)
 {
-  double mean = meanEstimate(samples);
+  double mean = estimateMean(samples);
   double variance = 0;
   for (int i=0; i<samples.size(); i++){
     variance += (samples[i] - mean) * (samples[i] - mean);
   }
-  variance = variance/(samples.size()-1);
+  variance /= samples.size() - 1;
   if (variance < 9 * AOM * AOM){
     return 9 * AOM * AOM;
   } else {

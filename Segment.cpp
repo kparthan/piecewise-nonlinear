@@ -169,10 +169,12 @@ void Segment::print(void)
 void Segment::linearFit(void)
 {
   vector<array<double,3>> deviations;
-  if (numIntermediate > 1) {
+  if (numIntermediate > 2) {
     double length = distance(start,end);
     Line<Point<double>> line(start,end);
-    Plane<Point<double>> plane = constructPlane(start,end);
+    //Plane<Point<double>> plane = constructPlane(start,end);
+    Point<double> p(coordinates[1]);
+    Plane<Point<double>> plane(start,p,end); 
     deviations = computeDeviations(line,plane);
     //vector<array<double,3>> deviations2 = computeDeviations2(line,plane);
   }
@@ -236,7 +238,7 @@ vector<array<double,3>> Segment::computeDeviations(Line<Point<double>> &line,
   Point<double> p,projection,previous;
   previous = line.startPoint();
 
-  for(int i=0; i<numIntermediate; i++){
+  for(int i=1; i<numIntermediate; i++){
     p = Point<double>(coordinates[i+1]);
 
     /* project onto plane */
@@ -340,10 +342,13 @@ double Segment::messageLength(vector<array<double,3>> &deviations)
   /* message length to state the number of intermediate points */
   msglen += msg1.encodeUsingLogStarModel(numIntermediate+1);
 
-  if (numIntermediate == 1) {
-    /* message length to state the intermediate point using the null model */
+  if (numIntermediate <= 2) {
+    /* message length to state the intermediate points using the null model */
+    msglen += numIntermediate * msg1.encodeUsingNullModel(volume); 
+  } else if (numIntermediate > 2) {
+    /* message length to communicate the third point on the plane */
     msglen += msg1.encodeUsingNullModel(volume); 
-  } else if (numIntermediate > 1) {
+
     /* message length to state the deviations */
     Message msg2(deviations);
     msglen += msg2.encodeUsingNormalModel();

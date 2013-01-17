@@ -17,7 +17,7 @@ Message::Message(vector<array<double,3>> &deviations)
   vector<double> tmp;
   for (int i=0; i<3; i++){
     for (int j=0; j<deviations.size(); j++){
-      tmp.push_back(deviations[i][j]);
+      tmp.push_back(deviations[j][i]);
     }
     samples.push_back(tmp);
     tmp.clear();
@@ -66,21 +66,11 @@ double Message::encodeUsingNormalModel()
   double msglen = 0;
   double mean,variance;
 
-  for (int i=0; i<2; i++){
-    mean = meanEstimate(samples[i]);
-    variance = varianceEstimate(samples[i],mean);
-   /* cout << "Mean: " << mean << endl;
-    cout << "Sigma: " << sqrt(variance) << endl << endl;*/
+  for (int i=0; i<3; i++){
+    mean = estimateMean(samples[i]);
+    variance = estimateVariance(samples[i],mean);
     msglen += encodeWallaceFreeman(samples[i].size(),mean,variance);
   }
-  mean = meanEstimate(samples[2]);
-  variance = varianceEstimate(samples[2],mean);
-    /*cout << "Mean: " << mean << endl;
-    cout << "Sigma: " << sqrt(variance) << endl;
-    cout << "-------\n";*/
-    //sleep(1) ;
-
-  msglen += encodeWallaceFreeman(samples[2].size(),mean,variance);
   return msglen;
 }
 
@@ -136,7 +126,7 @@ double Message::encodeWallaceFreeman(int N, double mean, double variance)
   double rangeSigma = 3.0;
   double msglen = 0.5 * (N+1) + log(K2) + log(rangeMu * rangeSigma)
                   + 0.5 * log(2 * N * N) + (N/2.0)*log(2 * PI) - N * log(AOM)
-                  + 0.5 * (N-1) * log(variance * N /double (N-1));
+                  + 0.5 * (N-1) * log(variance);
   return msglen/log(2);
 }
 
