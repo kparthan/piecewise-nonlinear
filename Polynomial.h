@@ -14,7 +14,7 @@ class Polynomial
     vector<double> coefficients, originalCoefficients;
 
     //! The real roots
-    vector<double> roots;
+    vector<double> realRoots;
 
     //! Computes the root of the linear equation
     void solveLinear();
@@ -98,8 +98,11 @@ class Polynomial
     //! Computes the number of distinct real roots of the polynomial
     int countDistinctRealRoots();
 
+    //! Computes the real roots of lower order polynomials
+    vector<double> solveLowerOrder();
+
     //! Computes the real roots of the polynomial
-    vector<double> findRealRoots();
+    vector<double> computeRealRoots();
 };
 
 #endif

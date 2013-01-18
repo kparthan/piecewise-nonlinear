@@ -18,7 +18,7 @@
 #define AOM 0.001
 #define PI boost::math::constants::pi<double>()
 #define ZERO std::numeric_limits<double>::epsilon()
-#define MAX_INTERMEDIATE_CONTROL_POINTS 2
+#define MAX_INTERMEDIATE_CONTROL_POINTS 0 
 #define HUGE_VALUE 100000000
 
 using namespace std;

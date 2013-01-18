@@ -172,9 +172,9 @@ Vector<double> BezierCurve::tangent(double t)
  *  \param p a reference to a Point<double>
  *  \return the shortest distance
  */
-double BezierCurve::project(const Point<double> &p)
+vector<double> BezierCurve::project(const Point<double> &p)
 {
-  double t;
+  vector<double> t;
   vector<double> coefficients;
   Point<double> p0,p1,p2,p3;
   Point<double> temp1,temp2,temp3,temp4;
@@ -183,7 +183,7 @@ double BezierCurve::project(const Point<double> &p)
     case 1:
       p0 = controlPoints[0];
       p1 = controlPoints[1];
-      t = ((p - p0) * (p1 - p0)) / ((p1 - p0) * (p1 - p0)); 
+      t.push_back(((p - p0) * (p1 - p0)) / ((p1 - p0) * (p1 - p0))); 
       return t;
 
     case 2:
@@ -226,31 +226,27 @@ double BezierCurve::project(const Point<double> &p)
       exit(1); 
   }
   Polynomial polynomial(coefficients);
-  t = processRoots(polynomial.findRealRoots());
-  //cout << "t: " << t << endl;
+  t = polynomial.computeRealRoots();
   return t;
 }
 
 /*!
- *  \brief This module returns the root which lies in the range [0,1]
- *  \param roots a reference to a vector<complex<double>>
- *  \return the value of t in the range [0,1]
+ *  \brief This module computes the nearest point from a list of points
+ *  \param from a double
+ *  \param set a reference to a vector<double>
+ *  \return the parameter of the nearest point
  */
-double BezierCurve::processRoots(vector<complex<double>> roots)
+double BezierCurve::nearestPoint(double from, vector<double> &set)
 {
-  double t;
-  for (int i=0; i<roots.size(); i++) {
-    if (fabs(roots[i].imag()) < ZERO) {
-      /* if the root is real */
-      double real_part = roots[i].real();
-      if (real_part > 0 && real_part < 1) {
-        return real_part;
-      } else {
-        t = real_part; 
-      }
+  double tmin = set[0];
+  double delta = fabs(from-tmin);
+  for (int i=1; i<set.size(); i++) {
+    if (fabs(from-set[i]) < delta) {
+      tmin = set[i];
+      delta = fabs(from-set[i]);
     }
   }
-  return t;
+  return tmin;
 }
 
 /*!

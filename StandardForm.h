@@ -26,7 +26,7 @@ class StandardForm
     vector<vector<double>> codeLength;
 
     //! Code length matrix for the general case
-    vector<vector<double>> codeLengthBezier[3];
+    vector<vector<double>> codeLengthBezier[MAX_INTERMEDIATE_CONTROL_POINTS+1];
 
     //! Optimal code length
     vector<vector<double>> optimalCodeLength;

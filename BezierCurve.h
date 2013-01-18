@@ -38,11 +38,11 @@ class BezierCurve
 
                             /* Utility functions */
     //! Projects a point onto the curve
-    double project(const Point<double> &);
+    vector<double> project(const Point<double> &);
 
-    //! Processes the list of roots and returns the appropriate one
-    double processRoots(vector<complex<double>>);
-
+    //! Gets the nearest point
+    double nearestPoint(double, vector<double> &);
+  
     //! Computes the signed distance from the point to the curve
     double signedDistance(const Point<double> &, double t, Vector<double> &); 
 

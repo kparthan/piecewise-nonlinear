@@ -34,7 +34,7 @@ Polynomial::Polynomial(const vector<double> &coefficients) :
  *  \param source a reference to a Polynomial
  */
 Polynomial::Polynomial(const Polynomial &source) : degree(source.degree),
-            coefficients(source.coefficients), roots(source.roots),
+            coefficients(source.coefficients), realRoots(source.realRoots),
             originalCoefficients(source.originalCoefficients)
 {}
 
@@ -48,7 +48,7 @@ Polynomial Polynomial::operator=(const Polynomial &source)
   if (this != &source) {
     degree = source.degree;
     coefficients = source.coefficients;
-    roots = source.roots;
+    realRoots = source.realRoots;
     originalCoefficients = source.originalCoefficients;
   }
   return *this;
@@ -99,9 +99,9 @@ void Polynomial::print()
     }
     cout << "]" << endl;
   }
-  if (roots.size() > 0) {
-    for (int i=0; i<roots.size(); i++) {
-      cout << roots[i] << endl;
+  if (realRoots.size() > 0) {
+    for (int i=0; i<realRoots.size(); i++) {
+      cout << realRoots[i] << endl;
     }
   }
 }
@@ -131,8 +131,7 @@ void Polynomial::solveLinear()
   double a = coefficients[1];
   double b = coefficients[0];
   double val = -b / a;
-  complex<double> x(val,0);
-  roots.push_back(x);
+  realRoots.push_back(val);
 }
 
 /*!
@@ -159,20 +158,11 @@ void Polynomial::solveQuadratic()
       x1 = (2 * c) / (-b + sqrtDiscriminant);
       x2 = (-b + sqrtDiscriminant) / (2 * a);
     }
-    complex<double> r1(x1,0);
-    roots.push_back(r1);
-    complex<double> r2(x2,0);
-    roots.push_back(r2);
-  } else {
-    /* roots are imaginary */
-    double sqrtDiscriminant = sqrt(-discriminant);
-    double x1 = -b / (2 * a);
-    double x2 = sqrtDiscriminant / (2 * a);
-    complex<double> r1(x1,x2);
-    roots.push_back(r1);
-    complex<double> r2(x1,-x2);
-    roots.push_back(r2);
-  }  
+    realRoots.push_back(x1);
+    if (fabs(discriminant) > ZERO) {
+      realRoots.push_back(x2);
+    }
+  }
 }
 
 /*!
@@ -209,7 +199,7 @@ void Polynomial::solveCubic()
     x[1] = k2 * cos ((theta+2*PI)/3) - k1;
     x[2] = k2 * cos ((theta-2*PI)/3) - k1;
     for (i=0; i<3; i++) {
-      roots.push_back(complex<double>(x[i],0));
+      realRoots.push_back(x[i]);
     } 
   } else {
     /* has imaginary roots */
@@ -222,11 +212,7 @@ void Polynomial::solveCubic()
     double AplusB = A + B;
     double AminusB = A - B;
     double x1 = AplusB - k1;
-    roots.push_back(complex<double>(x1,0));
-    double x2 = -AplusB / 2.0 - k1;
-    double x3 = AminusB * sqrt(3) / 2;
-    roots.push_back(complex<double>(x2,x3));
-    roots.push_back(complex<double>(x2,-x3));
+    realRoots.push_back(x1);
   }
 }
 
@@ -261,37 +247,61 @@ double Polynomial::solveNewtonMethod()
  *  \brief This module computes the real roots of a polynomial
  *  \return the real roots
  */
-vector<double> Polynomial::findRealRoots()
+vector<double> Polynomial::computeRealRoots()
 {
-  Polynomial P = preprocess();
-  switch(P.getDegree()) {
-    case 1:
-     vector<double> 
-  }
+  Polynomial p = preprocess();
   vector<double> real_roots;
-  int num_real = countDistinctRealRoots();
-  Polynomial p(*this);
 
-  while (1) {
-    double x = p.solveNewtonMethod();
-    real_roots.push_back(x);
-    vector<double> b = p.divide(1,-x);
-    vector<double> quotient;
-    for (int i=1; i<b.size(); i++) {
-      quotient.push_back(b[i]);
+  if (p.getDegree() <= 3) {
+    real_roots = p.solveLowerOrder();
+  } else {
+    int num_real = p.countDistinctRealRoots();
+    while (1) {
+      double x = p.solveNewtonMethod();
+      real_roots.push_back(x);
+      vector<double> b = p.divide(1,-x);
+      vector<double> quotient;
+      for (int i=1; i<b.size(); i++) {
+        quotient.push_back(b[i]);
+      }
+      if (real_roots.size() == num_real) {
+        break;
+      }
+      p = Polynomial(quotient);
     }
-    if (real_roots.size() == num_real) {
-      break;
-    }
-    p = Polynomial(quotient);
+  }
+  if (realRoots.size() > 0) {
+    real_roots.push_back(0);
   }
   return real_roots;
 }
 
 /*!
+ *  \brief This module solves lower order polynomials (upto degree 3)
+ *  using analytical methods
+ *  \return the real roots
+ */
+vector<double> Polynomial::solveLowerOrder()
+{
+  switch(degree) {
+    case 1:
+      solveLinear();
+      break;
+
+    case 2:
+      solveQuadratic();
+      break;
+
+    case 3:
+      solveCubic();
+      break;
+  }
+  return realRoots;
+}
+
+/*!
  *  \brief This module is a preprocessing routine which factors out a
  *  polynomial whose constant term is non-zero.
- *  \param roots a reference to a vector<complex<double>>
  *  \return a preprocessed Polynomial
  */
 Polynomial Polynomial::preprocess()
@@ -328,17 +338,17 @@ Polynomial Polynomial::removeTrivialRoots()
   int i = 0;
   /* check if 0 is a root */
   while(fabs(coefficients[i]) < ZERO) {
-    roots.push_back(0);
     i++;
   }
   if (i == 0) {
-    return Polynomial();
+    return Polynomial(*this);
   } else if (i == degree) {
-    roots.pop_back();
+    realRoots.push_back(0);
     vector<double> residual(2,0);
     residual[1] = 1;
     return Polynomial(residual);
   } else {
+    realRoots.push_back(0);
     vector<double> residual(degree-i+1,0);
     for (int j=0; j<degree-i+1; j++) {
       residual[j] = coefficients[j+i];

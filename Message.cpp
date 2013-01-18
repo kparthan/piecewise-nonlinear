@@ -122,7 +122,7 @@ double Message::encodeWallaceFreeman(int N, double variance)
 double Message::encodeWallaceFreeman(int N, double mean, double variance)
 {
   double K2 = 5.0 / (36 * sqrt(3));
-  double rangeMu = 5.0;
+  double rangeMu = 10.0;
   double rangeSigma = 3.0;
   double msglen = 0.5 * (N+1) + log(K2) + log(rangeMu * rangeSigma)
                   + 0.5 * log(2 * N * N) + (N/2.0)*log(2 * PI) - N * log(AOM)

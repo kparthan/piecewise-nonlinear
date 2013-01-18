@@ -174,10 +174,18 @@ void Segment::linearFit(void)
     Line<Point<double>> line(start,end);
     Point<double> p(coordinates[1]);
     Plane<Point<double>> plane(start,p,end); 
+    //Plane<Point<double>> plane = constructPlane(start,end); 
     deviations = computeDeviations(line,plane);
     //vector<array<double,3>> deviations2 = computeDeviations2(line,plane);
   }
   linearFitMsgLen = messageLength(deviations);
+}
+
+Plane<Point<double>> Segment::constructPlane(Point<double> &start, 
+                                             Point<double> &end)
+{
+  Point<double> above(start.x(),start.y(),start.z()+1);
+  return Plane<Point<double>>(start,above,end);
 }
 
 /*!
@@ -194,8 +202,12 @@ Plane<Point<double>> Segment::constructPlane(BezierCurve &curve)
   points[2] = curve.getControlPoint(degree);
   switch(degree) {
     case 1:
-      /* construct a plane with the two end points of and the Z-axis*/
-      return constructPlane(points[0],points[2]);
+      /* construct a plane with the two end points and a third point if any */
+      if (numIntermediate >= 1) {
+        return Plane<Point<double>> (points[0],coordinates[1],points[2]);
+      } else {
+        return Plane<Point<double>>();
+      }
       
     default:
       /* construct a plane using three control points (two end points
@@ -354,15 +366,20 @@ void Segment::bezierCurveFit(int numIntermediateControlPoints)
   BezierCurve curve;
   vector<int> cpIndex(numIntermediate,0);
   int i,j;
+  double msglen;
 
   switch(numIntermediateControlPoints) {
     case 0:
       /* zero intermediate control points */
+      // => numIntermediate >= 0 
       controlPoints = vector<Point<double>>(2,Point<double>());
       controlPoints[0] = start;
       controlPoints[1] = end;
       curve = BezierCurve(controlPoints);
-      deviations = computeDeviations(curve,cpIndex);
+      if (numIntermediate > 2) {
+        cpIndex[0] = 1;
+        deviations = computeDeviations(curve,cpIndex);
+      }
       zeroControlMsgLen = messageLength(curve,deviations);
       break;
 
@@ -373,13 +390,20 @@ void Segment::bezierCurveFit(int numIntermediateControlPoints)
         controlPoints = vector<Point<double>>(3,Point<double>());
         controlPoints[0] = start;
         controlPoints[2] = end;
-        for (i=0; i<numIntermediate; i++) {
-          cpIndex[i] = 1;
-          controlPoints[1] = Point<double>(coordinates[i+1]);
-          curve = BezierCurve(controlPoints);
-          deviations = computeDeviations(curve,cpIndex);
-          singleControlMsgLen[i] = messageLength(curve,deviations);
-          cpIndex[i] = 0;
+        if (numIntermediate > 2) {
+          for (i=0; i<numIntermediate; i++) {
+            cpIndex[i] = 1;
+            controlPoints[1] = Point<double>(coordinates[i+1]);
+            curve = BezierCurve(controlPoints);
+            deviations = computeDeviations(curve,cpIndex);
+            singleControlMsgLen[i] = messageLength(curve,deviations);
+            cpIndex[i] = 0;
+          }
+        } else {
+          msglen = messageLength(curve,deviations);
+          for (i=0; i<numIntermediate; i++) {
+            singleControlMsgLen[i] = msglen;
+          }
         }
       }
       break;
@@ -425,28 +449,35 @@ void Segment::bezierCurveFit(int numIntermediateControlPoints)
 vector<array<double,3>> Segment::computeDeviations(BezierCurve &curve,
                                                    vector<int> &cpIndex)
 {
-  Plane<Point<double>> plane = constructPlane(curve);
   vector<array<double,3>> deviations;
-  array<double,3> d;
-  Vector<double> normal = plane.normal();
-  Point<double> p,projection,previous;
-  double tmin_current,tmin_prev = 0;
+  int i,sum = 0;
+  for (i=0; i<cpIndex.size(); i++) {
+    sum += cpIndex[i];
+  }
+  int numDeviationsToBeComputed = numIntermediate - sum;
 
-  for (int i=0; i<numIntermediate; i++) {
-    if (cpIndex[i] != 1) {
-      p = Point<double>(coordinates[i+1]);
-      d[0] = plane.signedDistance(p);
-      projection = project(p,plane);
+  if (numDeviationsToBeComputed >= 2) {
+    Plane<Point<double>> plane = constructPlane(curve);
+    Vector<double> normal = plane.normal();
+    array<double,3> d;
+    Point<double> p,projection,previous;
+    double tmin_current,tmin_prev = 0;
+    for (i=0; i<numIntermediate; i++) {
+      if (cpIndex[i] != 1) {
+        p = Point<double>(coordinates[i+1]);
+        d[0] = plane.signedDistance(p);
+        projection = project(p,plane);
 
-      tmin_current = curve.project(projection);
-      d[1] = curve.signedDistance(projection,tmin_current,normal);
+        vector<double> tmin = curve.project(projection);
+        tmin_current = curve.nearestPoint(tmin_prev,tmin);
+        d[1] = curve.signedDistance(projection,tmin_current,normal);
 
-      d[2] = tmin_current - tmin_prev;
-      deviations.push_back(d);
-      tmin_prev = tmin_current;
+        d[2] = tmin_current - tmin_prev;
+        deviations.push_back(d);
+        tmin_prev = tmin_current;
+      }
     }
   }
-
   return deviations;
 }
 
@@ -473,17 +504,45 @@ double Segment::messageLength(BezierCurve &curve,
   /* message length to state the control points */
   msglen += numIntermediateControlPoints * msg1.encodeUsingNullModel(volume);
 
-  /* message length to state the number of intermediate deviations */
-  int numDeviations = deviations.size();
-  msglen += msg1.encodeUsingLogStarModel(numDeviations+1); 
-  
-  /* message length to state the deviations */
-  if (numDeviations == 1) {
-    msglen += msg1.encodeUsingNullModel(volume); 
-  } else if (numDeviations > 1) {
-    /* message length to state the deviations */
-    Message msg2(deviations);
-    msglen += msg2.encodeUsingNormalModel();
+  /* message length to state the number of intermediate points */
+  msglen += msg1.encodeUsingLogStarModel(numIntermediate+1); 
+
+  /* message length to state the number of intermediate deviations if any */  
+  Message msg2(deviations);
+  switch(numIntermediateControlPoints) {
+    case 0:
+      // numIntermediate >= 0
+      if (numIntermediate <= 2) {
+        msglen += numIntermediate * msg1.encodeUsingNullModel(volume);
+      } else if (numIntermediate > 2) {
+        /* state the first intermediate point to construct the plane */
+        msglen += msg1.encodeUsingNullModel(volume);
+        /* state the deviations */
+        msglen += msg2.encodeUsingNormalModel();
+      }
+      break;
+
+    case 1:
+      // numIntermediate >= 1 
+      if (numIntermediate == 2) {
+        /* state the one point */
+        msglen += msg1.encodeUsingNullModel(volume);
+      } else if (numIntermediate > 2) {
+        /* state the deviations */
+        msglen += msg2.encodeUsingNormalModel();
+      }
+      break;
+
+    case 2:
+      // numIntermediate >= 2 
+      if (numIntermediate == 3) {
+        /* state the one point */
+        msglen += msg1.encodeUsingNullModel(volume);
+      } else if (numIntermediate > 3) {
+        /* state the deviations */
+        msglen += msg2.encodeUsingNormalModel();
+      }
+      break;
   }
 
   return msglen;

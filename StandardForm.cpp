@@ -350,7 +350,7 @@ void StandardForm::fitModels()
   linearModelFit();
 
   /* Bezier Curve fit */
-  //bezierCurveModelFit();
+  bezierCurveModelFit();
 } 
 
 /*!
