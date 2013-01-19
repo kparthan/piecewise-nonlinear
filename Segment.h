@@ -17,6 +17,9 @@ class Segment
     //! Number of points
     int numPoints;
 
+    //! Number of free points
+    int numFreePoints;
+
     //! End points of the segment
     Point<double> start,end;
 
@@ -92,6 +95,9 @@ class Segment
     //! Computes the message length for the segment described by a 
     //! linear model
     double messageLength(vector<array<double,3>> &);
+
+    //! Updates the number of free points
+    void computeFreePoints(vector<int> &);
 
     //! Fits a Bezier curve
     void bezierCurveFit(int);
