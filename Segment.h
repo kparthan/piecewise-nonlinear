@@ -73,7 +73,7 @@ class Segment
     double getOptimalFit();
 
     //! Prints details of the segment
-    void print(); 
+    void printInfo(); 
 
                             /* Utility funcitons */
     //!
@@ -83,7 +83,7 @@ class Segment
     Plane<Point<double>> constructPlane(BezierCurve &);
 
     //! Fits a linear model
-    void linearFit();
+    void fitLinear();
 
     //! Computes deviations from the line
     vector<array<double,3>> computeDeviations(Line<Point<double>> &,
@@ -100,7 +100,7 @@ class Segment
     void computeFreePoints(vector<int> &);
 
     //! Fits a Bezier curve
-    void bezierCurveFit(int);
+    void fitBezierCurve(int);
 
     //! Computes deviations from a Bezier curve 
     vector<array<double,3>> computeDeviations(BezierCurve &, vector<int> &);

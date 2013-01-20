@@ -3,7 +3,7 @@
 
 #include "Header.h"
 
-int parseCommandLineInput (int, char **, string &);
+int parseCommandLineInput (int, char **, string &, vector<int> &);
 void Usage (const char *, options_description &);
 bool checkFile (const char *);
 ProteinStructure *parsePDBFile (const char *);
@@ -22,9 +22,9 @@ double absoluteMaximum(vector<double> &);
 double minimum(vector<double> &);
 double minimum(vector<vector<double>> &);
 
-void testFit (void);
-void proteinFit (string);
-void generalFit (string);
+void testFit (vector<int> &);
+void proteinFit (string, vector<int> &);
+void generalFit (string, vector<int> &);
 
 #endif
 

@@ -11,7 +11,8 @@
  *  \param file a reference to a string
  *  \return the appropriate status
  */
-int parseCommandLineInput(int argc, char **argv, string &file)
+int parseCommandLineInput(int argc, char **argv, string &file, 
+                          vector<int> &controls)
 {
   int flag = -1;
   bool noargs = 1;
@@ -22,7 +23,9 @@ int parseCommandLineInput(int argc, char **argv, string &file)
        ("help","produce help message")
        ("test","perform a demo")
        ("protein",value<string>(&file),"pdb file")
-       ("generic",value<string >(&file),"general 3D structure")
+       ("generic",value<string>(&file),"general 3D structure")
+       ("controls",value<vector<int>>(&controls)->multitoken(),
+                                  "intermediate control points [0,1,2]")
   ;
   variables_map vm;
   store(parse_command_line(argc,argv,desc),vm);
@@ -64,6 +67,16 @@ int parseCommandLineInput(int argc, char **argv, string &file)
     }
   }
 
+  if (vm.count("controls")) {
+    for (int i=0; i<controls.size(); i++) {
+      if (controls[i] < 0 || controls[i] > MAX_INTERMEDIATE_CONTROL_POINTS) {
+        cout << "# of intermediate control points: " << controls[i]
+        << " not supported" << endl;
+        Usage(argv[0],desc);
+      }
+    } 
+  }
+
   if (noargs) {
     cout << "No arguments supplied..." << endl;
     Usage(argv[0],desc);
@@ -86,8 +99,9 @@ void Usage (const char *exe, options_description &desc)
 
 /*!
  *  \brief This module generates test data and fits a model to it.
+ *  \param controls a reference to a vector<int>
  */
-void testFit(void)
+void testFit(vector<int> &controls)
 {
   Point<double> sp(10,-3,30);
   Point<double> ep(50,-5,143);
@@ -98,7 +112,7 @@ void testFit(void)
 
   /* Obtain structure coordinates */
   Structure structure(test.testData());
-  StandardForm shape(structure);
+  StandardForm shape(structure,controls);
 
   shape.fitModels();
 }
@@ -106,14 +120,15 @@ void testFit(void)
 /*!
  *  \brief This module fits a model to a protein structure
  *  \param file a string
+ *  \param controls a reference to a vector<int>
  */
-void proteinFit(string file)
+void proteinFit(string file, vector<int> &controls)
 {
   /* Obtain protein coordinates */
   ProteinStructure *p = parsePDBFile(file.c_str());
   Structure structure(p);
 
-  StandardForm protein(structure);
+  StandardForm protein(structure,controls);
 
   protein.fitModels();
 }
@@ -121,14 +136,15 @@ void proteinFit(string file)
 /*!
  *  \brief This module fits a model to a general 3D structure
  *  \param file a string
+ *  \param controls a reference to a vector<int>
  */
-void generalFit(string file)
+void generalFit(string file, vector<int> &controls)
 {
   /* Obtain structure coordinates */
   vector<Point<double>> coordinates = parseFile(file.c_str());
   Structure structure(coordinates);
 
-  StandardForm shape(structure);
+  StandardForm shape(structure,controls);
 
   shape.fitModels();
 }

@@ -4,6 +4,7 @@
 #include "Support.h"
 #include "Structure.h"
 #include "Segment.h"
+#include "OptimalInfo.h"
 
 /*!
  *  \class StandardForm 
@@ -16,6 +17,9 @@ class StandardForm
     //! Stores the standard canonical form
     Structure structure;
 
+    //! Number of intermediate control points to be used
+    vector<int> controls;
+
     //! Cartesian coordinates of the protein structure
     vector<array<double,3>> coordinates;
 
@@ -25,15 +29,15 @@ class StandardForm
     //! Code length matrix
     vector<vector<double>> codeLength;
 
-    //! Code length matrix for the general case
-    vector<vector<double>> codeLengthBezier[MAX_INTERMEDIATE_CONTROL_POINTS+1];
+    //! Code length matrix for Bezier curve fit
+    vector<vector<OptimalInfo>> codeLengthBezier;
 
     //! Optimal code length
     vector<vector<double>> optimalCodeLength;
 
   public:
     //! Constructor
-    StandardForm(Structure);
+    StandardForm(Structure, vector<int> &);
 
                             /* Accessor functions */
     //! Gets the number of residues
@@ -102,13 +106,13 @@ class StandardForm
     void boundingBox();
 
     //! Computes the sphere model fit
-    void sphereModelFit();
+    void fitSphereModel();
 
     //! Computes the null model fit
-    void nullModelFit();
+    void fitNullModel();
 
     //! Computes the optimal fit
-    void linearModelFit();
+    void fitLinearModel();
 
     //! Computes the code length matrix
     void computeCodeLengthMatrix();
@@ -117,7 +121,7 @@ class StandardForm
     void optimalSegmentation();
 
     //! Bezier curve fit
-    void bezierCurveModelFit();
+    void fitBezierCurveModel();
 
     //! Computes the code length matrix for the Bezier curve fit
     void computeCodeLengthMatrixBezier();

@@ -10,6 +10,7 @@ OBJECTS = piecewise-nonlinear-fit.o \
   BezierCurve.o \
   Polynomial.o \
   Test.o \
+  OptimalInfo.o \
   geometry3D.o
 
 all: piecewise-nonlinear-fit 
@@ -42,6 +43,9 @@ Polynomial.o: Polynomial.cpp Polynomial.h
 	g++ -c $(CFLAGS) $< -o $@
 
 Test.o: Test.cpp Test.h
+	g++ -c $(CFLAGS) $< -o $@
+
+OptimalInfo.o: OptimalInfo.cpp OptimalInfo.h
 	g++ -c $(CFLAGS) $< -o $@
 
 geometry3D.o: geometry3D.cpp geometry3D.h

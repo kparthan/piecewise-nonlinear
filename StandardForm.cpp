@@ -5,8 +5,10 @@
  *  \brief This is a constructor function which is used to instantiate the
  *  object
  *  \param s a reference to a ProteinStructure
+ *  \param controls a reference to a vector<int>
  */
-StandardForm::StandardForm(Structure s) : structure(s), volume(0)
+StandardForm::StandardForm(Structure s, vector<int> &controls) : 
+                          structure(s), controls(controls), volume(0)
 {
   coordinates = structure.getCoordinates();
 }
@@ -341,16 +343,16 @@ void StandardForm::fitModels()
   boundingBox(); 
 
   /* Sphere model fit */
-  sphereModelFit();
+  fitSphereModel();
 
   /* Null model fit */
-  nullModelFit();
+  fitNullModel();
 
   /* Linear model fit */
-  linearModelFit();
+  fitLinearModel();
 
   /* Bezier Curve fit */
-  bezierCurveModelFit();
+  fitBezierCurveModel();
 } 
 
 /*!
@@ -378,7 +380,7 @@ void StandardForm::boundingBox()
 /*!
  *  \brief This module computes the sphere model fit to the structure.
  */
-void StandardForm::sphereModelFit(void)
+void StandardForm::fitSphereModel(void)
 {
   cout << "*** SPHERE FIT ***" << endl;
   double msglen = 0;
@@ -389,7 +391,6 @@ void StandardForm::sphereModelFit(void)
     double r = distance(previous,current);
     Message msg;
     msglen += msg.encodeUsingSphereModel(r);
-    //cout << i << " " << msglen << endl;
   }
   cout << "Sphere Model Fit: " << msglen << " bits." << endl;
   cout << "Bits per residue: " << msglen/(numResidues-1) << endl << endl;
@@ -398,7 +399,7 @@ void StandardForm::sphereModelFit(void)
 /*!
  *  \brief This module computes the null model fit to the structure.
  */
-void StandardForm::nullModelFit(void)
+void StandardForm::fitNullModel(void)
 {
   cout << "*** NULL MODEL ***" << endl;
   double msglen = 0;
@@ -412,7 +413,7 @@ void StandardForm::nullModelFit(void)
 /*!
  *  \brief This module computes the linear model fit to hte structure.
  */
-void StandardForm::linearModelFit(void)
+void StandardForm::fitLinearModel(void)
 {
   cout << "*** LINEAR FIT ***" << endl;
 
@@ -438,7 +439,7 @@ void StandardForm::computeCodeLengthMatrix(void)
       } 
       else if (i < j){
         Segment segment = getSegment(i,j);
-        segment.linearFit();
+        segment.fitLinear();
         tmp.push_back(segment.getLinearFit());
       } else {
         tmp.push_back(0);
@@ -448,7 +449,7 @@ void StandardForm::computeCodeLengthMatrix(void)
     tmp.clear();
   }
   /*Segment segment = getSegment(0,10);
-  cout << segment.linearFit() << endl;
+  cout << segment.fitLinear() << endl;
   segment.print();*/
 
   ofstream codeLengthFile("codeLengthFile");
@@ -524,7 +525,7 @@ void StandardForm::optimalSegmentation(void)
 /*!
  *  \brief This module fits Bezier curve to the structure
  */
-void StandardForm::bezierCurveModelFit()
+void StandardForm::fitBezierCurveModel()
 {
   cout << "*** BEZIER CURVE FIT ***" << endl;
 
@@ -534,6 +535,31 @@ void StandardForm::bezierCurveModelFit()
   /* compute the optimal segmentation using dynamic programming */
   optimalSegmentationBezier();
   
+}
+
+/*!
+ *  \brief This module constructs the code length matrix for the Bezier curve
+ *  fit
+ */
+void StandardForm::computeCodeLengthMatrixBezier(void)
+{
+  int numResidues = getNumberOfResidues();
+  for (int i=0; i<numResidues; i++) {
+    vector<OptimalInfo> encodings;
+    for (int j=0; j<numResidues; j++) {
+      Segment segment = getSegment(i,j);
+      OptimalInfo min_fit, current_fit;
+      min_fit = segment.fitBezierCurve(controls[0]);
+      for (int k=1; k<controls.size(); k++) {
+        current_fit = segment.fitBezierCurve(controls[k]);
+        if (current_fit < min_fit) {
+          min_fit = current_fit;
+        }
+      }
+      encodings.push_back(min_fit);
+    }
+    codeLengthBezier.push_back(encodings);
+  }
 }
 
 /*!
@@ -566,7 +592,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
       else if (i < j){
         Segment segment = getSegment(i,j);
         for (k=0; k<=MAX_INTERMEDIATE_CONTROL_POINTS; k++) {
-          segment.bezierCurveFit(k);
+          segment.fitBezierCurve(k);
           codeLengthBezier[k][i][j] = segment.getNonLinearFit(k);
         }
         optimal.push_back(segment.getOptimalFit());
@@ -581,7 +607,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
     optimal.clear();
   }
   /*Segment segment = getSegment(0,2);
-  cout << segment.linearFit() << endl;
+  cout << segment.fitLinear() << endl;
   segment.print();*/
 /* 
   for (i=0; i<numResidues; i++){
