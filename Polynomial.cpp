@@ -216,6 +216,10 @@ complex<double> Polynomial::value(complex<double> number)
 double Polynomial::solveNewtonMethod()
 {
   double x = getBoundOnRoots();
+  double roots_sum = -coefficients[degree-1] / coefficients[degree];
+  if (roots_sum < 0) {
+    x = -x;
+  }
   double tol = 0.000001;
   while(1) {
     vector<double> b = divide(1,-x);
@@ -657,7 +661,7 @@ double Polynomial::getBoundOnRoots()
       max = fabs(coefficients[i]);
     }
   }
-  max = fabs(max / coefficients[degree]);
+  max = fabs(max) / fabs(coefficients[degree]);
   return 1 + max;
 }
 
@@ -766,6 +770,7 @@ int Polynomial::countDistinctRealRoots()
     } 
   }
   cout << endl;
+  cout << "# of real roots: " << lower-upper << endl;
   return lower - upper;
 }
 
