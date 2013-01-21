@@ -4,6 +4,7 @@
 #include "geometry3D.h"
 #include "Header.h"
 #include "BezierCurve.h"
+#include "OptimalFit.h"
 
 class Segment
 {
@@ -100,7 +101,7 @@ class Segment
     void computeFreePoints(vector<int> &);
 
     //! Fits a Bezier curve
-    void fitBezierCurve(int);
+    OptimalFit fitBezierCurve(int);
 
     //! Computes deviations from a Bezier curve 
     vector<array<double,3>> computeDeviations(BezierCurve &, vector<int> &);

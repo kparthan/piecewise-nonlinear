@@ -391,7 +391,7 @@ double Segment::messageLength(vector<array<double,3>> &deviations)
  *  based on the number of intermediate control points
  *  \param numIntermediateControlPoints an integer
  */
-OptimalInfo Segment::fitBezierCurve(int numIntermediateControlPoints)
+OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
 {
   vector<Point<double>> controlPoints;
   vector<array<double,3>> deviations;
@@ -399,7 +399,7 @@ OptimalInfo Segment::fitBezierCurve(int numIntermediateControlPoints)
   vector<int> cpIndex(numIntermediate,0);
   int i,j;
   double msglen;
-  OptimalInfo min_fit,current_fit;
+  OptimalFit min_fit,current_fit;
 
   switch(numIntermediateControlPoints) {
     case 0:
@@ -415,7 +415,7 @@ OptimalInfo Segment::fitBezierCurve(int numIntermediateControlPoints)
         deviations = computeDeviations(curve,cpIndex);
       }
       zeroControlMsgLen = messageLength(curve,deviations);
-      min_fit = OptimalInfo(0,controlPoints,zeroControlMsgLen);
+      min_fit = OptimalFit(0,controlPoints,zeroControlMsgLen);
       break;
 
     case 1:
@@ -434,9 +434,9 @@ OptimalInfo Segment::fitBezierCurve(int numIntermediateControlPoints)
           singleControlMsgLen[i] = messageLength(curve,deviations);
           cpIndex[i] = 0;
           if (i == 0) {
-            min_fit = OptimalInfo(1,controlPoints,singleControlMsgLen[0]);
+            min_fit = OptimalFit(1,controlPoints,singleControlMsgLen[0]);
           } else {
-            current_fit = OptimalInfo(1,controlPoints,singleControlMsgLen[i]);
+            current_fit = OptimalFit(1,controlPoints,singleControlMsgLen[i]);
             if (current_fit < min_fit) {
               min_fit = current_fit;
             }
@@ -456,6 +456,8 @@ OptimalInfo Segment::fitBezierCurve(int numIntermediateControlPoints)
           controlPoints[1] = Point<double>(coordinates[i+1]);
           cpIndex[i] = 1;
           for (j=0; j<numIntermediate; j++) {
+            i = 0; j = 7;
+            cout << "Controls: " << i << " " << j << endl;
             if (i > j) {
               doubleControlMsgLen[i][j] = doubleControlMsgLen[j][i];
             } else {
@@ -470,9 +472,9 @@ OptimalInfo Segment::fitBezierCurve(int numIntermediateControlPoints)
               cpIndex[j] = 0;
             }
             if (i == 0 && j == 0) {
-              min_fit = OptimalInfo(2,controlPoints,doubleControlMsgLen[0][0]);
+              min_fit = OptimalFit(2,controlPoints,doubleControlMsgLen[0][0]);
             } else {
-              current_fit = OptimalInfo(2,controlPoints,
+              current_fit = OptimalFit(2,controlPoints,
                                         doubleControlMsgLen[i][j]);
               if (current_fit < min_fit) {
                 min_fit = current_fit;

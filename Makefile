@@ -10,7 +10,7 @@ OBJECTS = piecewise-nonlinear-fit.o \
   BezierCurve.o \
   Polynomial.o \
   Test.o \
-  OptimalInfo.o \
+  OptimalFit.o \
   geometry3D.o
 
 all: piecewise-nonlinear-fit 
@@ -45,12 +45,12 @@ Polynomial.o: Polynomial.cpp Polynomial.h
 Test.o: Test.cpp Test.h
 	g++ -c $(CFLAGS) $< -o $@
 
-OptimalInfo.o: OptimalInfo.cpp OptimalInfo.h
+OptimalFit.o: OptimalFit.cpp OptimalFit.h
 	g++ -c $(CFLAGS) $< -o $@
 
 geometry3D.o: geometry3D.cpp geometry3D.h
 	g++ -c $(CFLAGS) $< -o $@
 
 clean:
-	rm -f *.o *~ piecewise-nonlinear-fit before_translation after_translation rotate1 final 
+	rm -f *.o *~ piecewise-nonlinear-fit before_translation after_translation rotate1 final codeLengthFile linear_segmentation bezier_segmentation optimal 
 

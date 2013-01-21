@@ -249,8 +249,11 @@ double Polynomial::solveNewtonMethod()
  */
 vector<double> Polynomial::computeRealRoots()
 {
-  Polynomial p = preprocess();
+  //Polynomial p = preprocess();
+  Polynomial p(*this);
+  p.normalize();
   vector<double> real_roots;
+  p.print();
 
   if (p.getDegree() <= 3) {
     real_roots = p.solveLowerOrder();

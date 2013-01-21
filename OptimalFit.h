@@ -3,7 +3,7 @@
 
 #include "Header.h"
 
-class OptimalInfo
+class OptimalFit
 {
   private:
     //! Number of control points
@@ -17,24 +17,27 @@ class OptimalInfo
 
   public:
     //! Null constructor
-    OptimalInfo();
+    OptimalFit();
 
     //! Constructor
-    OptimalInfo(int, vector<Point<double>> &, double);
+    OptimalFit(int, vector<Point<double>> &, double);
 
     //! Copy constructor
-    OptimalInfo(const OptimalInfo &);
+    OptimalFit(const OptimalFit &);
 
                             /* Accessor functions */
+    //! Gets the control points
+    vector<Point<double>> getControlPoints() const;
+
     //! Gets the message length
     double getMessageLength() const;
 
                             /* Utility functions */
     //! Assignment operator
-    OptimalInfo operator=(const OptimalInfo &);
+    OptimalFit operator=(const OptimalFit &);
 
     //! Compares the optimal message length of two segments
-    bool operator<(const OptimalInfo &);
+    bool operator<(const OptimalFit &);
 };
 
 #endif

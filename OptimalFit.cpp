@@ -1,9 +1,9 @@
-#include "OptimalInfo.h"
+#include "OptimalFit.h"
 
 /*!
  *  \brief Null constructor
  */
-OptimalInfo::OptimalInfo()
+OptimalFit::OptimalFit()
 {}
 
 /*!
@@ -12,7 +12,7 @@ OptimalInfo::OptimalInfo()
  *  \param controlPoints a reference to a vector<Point<double>>
  *  \param messageLength a double
  */
-OptimalInfo::OptimalInfo(int numControlPoints, 
+OptimalFit::OptimalFit(int numControlPoints, 
                          vector<Point<double>> &controlPoints, 
                          double messageLength) : 
                          numControlPoints(numControlPoints),
@@ -21,30 +21,39 @@ OptimalInfo::OptimalInfo(int numControlPoints,
 {}
 
 /*
- *  \brief This module is used to create a copy of an OptimalInfo object.
- *  \param source a reference to an OptimalInfo object
+ *  \brief This module is used to create a copy of an OptimalFit object.
+ *  \param source a reference to an OptimalFit object
  */
-OptimalInfo::OptimalInfo(const OptimalInfo &source) :
+OptimalFit::OptimalFit(const OptimalFit &source) :
                          numControlPoints(source.numControlPoints),
                          controlPoints(source.controlPoints), 
                          messageLength(source.messageLength)
 {}
 
 /*!
+ *  \brief This module returns the control points
+ *  \return the control points
+ */
+vector<Point<double>> OptimalFit::getControlPoints() const
+{
+  return controlPoints;
+}
+
+/*!
  *  \brief This module returns the stored message length.
  *  \return the message length
  */
-double OptimalInfo::getMessageLength() const
+double OptimalFit::getMessageLength() const
 {
   return messageLength;
 }
 
 /*!
- *  \brief This module assigns an OptimalInfo object on the rhs to one
+ *  \brief This module assigns an OptimalFit object on the rhs to one
  *  on the lhs
- *  \param source a reference to an OptimalInfo object
+ *  \param source a reference to an OptimalFit object
  */
-OptimalInfo OptimalInfo::operator=(const OptimalInfo &source)
+OptimalFit OptimalFit::operator=(const OptimalFit &source)
 {
   if (this != &source) {
     numControlPoints = source.numControlPoints;
@@ -57,11 +66,11 @@ OptimalInfo OptimalInfo::operator=(const OptimalInfo &source)
 /*
  *  \brief This module compares the optimal message lengths of
  *  two segments.
- *  \param other a reference to an OptimalInfo object
+ *  \param other a reference to an OptimalFit object
  *  \return true if the message length is less compared to that of
  *  the other segment
  */
-bool OptimalInfo::operator<(const OptimalInfo &other)
+bool OptimalFit::operator<(const OptimalFit &other)
 {
   if (messageLength < other.getMessageLength()) {
     return 1;

@@ -9,6 +9,7 @@
  *  \param argc an integer
  *  \param argv an array of strings
  *  \param file a reference to a string
+ *  \param controls a reference to a vector<int>
  *  \return the appropriate status
  */
 int parseCommandLineInput(int argc, char **argv, string &file, 
@@ -75,10 +76,17 @@ int parseCommandLineInput(int argc, char **argv, string &file,
         Usage(argv[0],desc);
       }
     } 
+  } else {
+    /* default: run for all allowed intermediate control points */
+    if (controls.size() == 0) {
+      for (int i=0; i<=MAX_INTERMEDIATE_CONTROL_POINTS; i++) {
+        controls.push_back(i);
+      }
+    }
   }
 
   if (noargs) {
-    cout << "No arguments supplied..." << endl;
+    cout << "Not enough arguments supplied..." << endl;
     Usage(argv[0],desc);
   } else {
     return flag;
@@ -103,6 +111,7 @@ void Usage (const char *exe, options_description &desc)
  */
 void testFit(vector<int> &controls)
 {
+  string file;
   Point<double> sp(10,-3,30);
   Point<double> ep(50,-5,143);
   Point<double> p(1,200,-1);
@@ -112,7 +121,7 @@ void testFit(vector<int> &controls)
 
   /* Obtain structure coordinates */
   Structure structure(test.testData());
-  StandardForm shape(structure,controls);
+  StandardForm shape(file,structure,controls);
 
   shape.fitModels();
 }
@@ -128,7 +137,7 @@ void proteinFit(string file, vector<int> &controls)
   ProteinStructure *p = parsePDBFile(file.c_str());
   Structure structure(p);
 
-  StandardForm protein(structure,controls);
+  StandardForm protein(file,structure,controls);
 
   protein.fitModels();
 }
@@ -144,7 +153,7 @@ void generalFit(string file, vector<int> &controls)
   vector<Point<double>> coordinates = parseFile(file.c_str());
   Structure structure(coordinates);
 
-  StandardForm shape(structure,controls);
+  StandardForm shape(file,structure,controls);
 
   shape.fitModels();
 }
@@ -366,6 +375,7 @@ double absoluteMaximum(vector<double> &list)
       max = fabs(list[i]);
     }
   }
+  return max;
 }
 
 /*!

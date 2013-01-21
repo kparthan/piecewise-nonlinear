@@ -5,11 +5,6 @@ int main(int argc, char **argv)
   string file;
   vector<int> controls;
   int status = parseCommandLineInput(argc,argv,file,controls);
-  if (controls.size() == 0) {
-    for (int i=0; i<=MAX_INTERMEDIATE_CONTROL_POINTS; i++) {
-      controls.push_back(i);
-    }
-  }
 
   switch(status) {
     case 0:   // test

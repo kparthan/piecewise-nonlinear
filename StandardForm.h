@@ -4,7 +4,7 @@
 #include "Support.h"
 #include "Structure.h"
 #include "Segment.h"
-#include "OptimalInfo.h"
+#include "OptimalFit.h"
 
 /*!
  *  \class StandardForm 
@@ -14,6 +14,9 @@
 class StandardForm
 {
   private:
+    //! Name of the structure file
+    string file;
+
     //! Stores the standard canonical form
     Structure structure;
 
@@ -30,14 +33,11 @@ class StandardForm
     vector<vector<double>> codeLength;
 
     //! Code length matrix for Bezier curve fit
-    vector<vector<OptimalInfo>> codeLengthBezier;
-
-    //! Optimal code length
-    vector<vector<double>> optimalCodeLength;
+    vector<vector<OptimalFit>> optimalBezierFit;
 
   public:
     //! Constructor
-    StandardForm(Structure, vector<int> &);
+    StandardForm(string, Structure, vector<int> &);
 
                             /* Accessor functions */
     //! Gets the number of residues
@@ -114,20 +114,23 @@ class StandardForm
     //! Computes the optimal fit
     void fitLinearModel();
 
-    //! Computes the code length matrix
-    void computeCodeLengthMatrix();
-
-    //! Computes the optimal segmentation
-    void optimalSegmentation();
-
     //! Bezier curve fit
     void fitBezierCurveModel();
+
+    //! Computes the code length matrix
+    void computeCodeLengthMatrix();
 
     //! Computes the code length matrix for the Bezier curve fit
     void computeCodeLengthMatrixBezier();
 
-    //! Computes the optimal segmentation for the Bezier curve fit
-    void optimalSegmentationBezier();
+    //! Computes the optimal segmentation
+    vector<int> optimalSegmentation();
+
+    //! Prints the segmentation details for the linear fit
+    void printLinearSegmentation(vector<int> &);
+
+    //! Prints the segmentation details for the Bezier curve fit
+    void printBezierSegmentation(vector<int> &);
 };
 
 #endif

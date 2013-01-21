@@ -4,11 +4,13 @@
 /*!
  *  \brief This is a constructor function which is used to instantiate the
  *  object
+ *  \param file a string
  *  \param s a reference to a ProteinStructure
  *  \param controls a reference to a vector<int>
  */
-StandardForm::StandardForm(Structure s, vector<int> &controls) : 
-                          structure(s), controls(controls), volume(0)
+StandardForm::StandardForm(string file, Structure s, vector<int> &controls) : 
+                           file(file), structure(s), controls(controls), 
+                           volume(0)
 {
   coordinates = structure.getCoordinates();
 }
@@ -411,7 +413,7 @@ void StandardForm::fitNullModel(void)
 }
 
 /*!
- *  \brief This module computes the linear model fit to hte structure.
+ *  \brief This module computes the linear model fit to the structure.
  */
 void StandardForm::fitLinearModel(void)
 {
@@ -421,7 +423,23 @@ void StandardForm::fitLinearModel(void)
   computeCodeLengthMatrix();
 
   /* compute the optimal segmentation using dynamic programming */
-  optimalSegmentation();
+  vector<int> segments = optimalSegmentation();
+  printLinearSegmentation(segments);
+}
+
+/*!
+ *  \brief This module fits Bezier curve to the structure
+ */
+void StandardForm::fitBezierCurveModel()
+{
+  cout << "*** BEZIER CURVE FIT ***" << endl;
+
+  /* compute the code length matrix for the Bezier curve fit */
+  computeCodeLengthMatrixBezier();
+
+  /* compute the optimal segmentation using dynamic programming */
+  vector<int> segments = optimalSegmentation();
+  printBezierSegmentation(segments);
 }
 
 /*!
@@ -430,23 +448,22 @@ void StandardForm::fitLinearModel(void)
 void StandardForm::computeCodeLengthMatrix(void)
 {
   int numResidues = getNumberOfResidues();
-  vector<double> tmp;
 
   for (int i=0; i<numResidues; i++){
+    vector<double> encodings;
     for (int j=0; j<numResidues; j++){
       if (i > j){
-        tmp.push_back(-1);
+        encodings.push_back(-1);
       } 
       else if (i < j){
         Segment segment = getSegment(i,j);
         segment.fitLinear();
-        tmp.push_back(segment.getLinearFit());
+        encodings.push_back(segment.getLinearFit());
       } else {
-        tmp.push_back(0);
+        encodings.push_back(0);
       }
     }
-    codeLength.push_back(tmp);
-    tmp.clear();
+    codeLength.push_back(encodings);
   }
   /*Segment segment = getSegment(0,10);
   cout << segment.fitLinear() << endl;
@@ -465,10 +482,62 @@ void StandardForm::computeCodeLengthMatrix(void)
 }
 
 /*!
+ *  \brief This module constructs the code length matrix for the
+ *  Bezier curve fit
+ */
+void StandardForm::computeCodeLengthMatrixBezier(void)
+{/*
+  int numResidues = getNumberOfResidues();
+  for (int i=0; i<numResidues; i++) {
+    vector<OptimalFit> encodings;
+    for (int j=0; j<numResidues; j++) {
+      cout << "Segment: " << i << " " << j << "\n";
+      if (i > j) {
+        vector<Point<double>> controlPoints;
+        OptimalFit tmp(0,controlPoints,-1);
+        encodings.push_back(tmp);
+      } else if (i < j) {
+        Segment segment = getSegment(i,j);
+        OptimalFit min_fit, current_fit;
+        min_fit = segment.fitBezierCurve(controls[0]);
+        for (int k=1; k<controls.size(); k++) {
+          current_fit = segment.fitBezierCurve(controls[k]);
+          if (current_fit < min_fit) {
+            min_fit = current_fit;
+          }
+        }
+        encodings.push_back(min_fit);
+      } else {
+        vector<Point<double>> controlPoints;
+        OptimalFit tmp(0,controlPoints,0);
+        encodings.push_back(tmp);
+      }
+    }
+    optimalBezierFit.push_back(encodings);
+  }
+  for (int i=0; i<numResidues; i++) {
+    for (int j=0; j<numResidues; j++) {
+      codeLength[i][j] = optimalBezierFit[i][j].getMessageLength();
+    }
+  }
+*/
+        Segment segment = getSegment(0,16);
+        OptimalFit min_fit, current_fit;
+        min_fit = segment.fitBezierCurve(controls[0]);
+        for (int k=1; k<controls.size(); k++) {
+          current_fit = segment.fitBezierCurve(controls[k]);
+          if (current_fit < min_fit) {
+            min_fit = current_fit;
+          }
+        }
+}
+
+/*!
  *  \brief This module computes the optimal segmentation using
  *  dynamic programming
+ *  \return the indices of the segments
  */
-void StandardForm::optimalSegmentation(void)
+vector<int> StandardForm::optimalSegmentation(void)
 {
   int numResidues = getNumberOfResidues();
   vector<double> optimal(numResidues,100000);
@@ -486,198 +555,109 @@ void StandardForm::optimalSegmentation(void)
   }
 
   double best = optimal[numResidues-1];
-  cout << "Linear fit: " << best << " bits." << endl;
+  cout << "Best fit: " << best << " bits." << endl;
   cout << "Bits per residue: " << best / (numResidues-1) << endl;
 
   ofstream opt("optimal"); 
+  cout << "Optimal message lengths:- ";
   for (int i=0; i<numResidues; i++){
     cout << optimal[i] << " ";
     opt << optimal[i] << "\t\t" << optimalIndex[i] << endl ;
   }
   cout << endl << endl;
-  for (int i=0; i<numResidues; i++){
+  /*for (int i=0; i<numResidues; i++){
     cout << optimalIndex[i] << " ";
   }
-  cout << endl;
+  cout << endl;*/
   int index = numResidues-1;
-  vector<int> tmp; 
-  tmp.push_back(numResidues-1);
+  vector<int> backtrack; 
+  backtrack.push_back(numResidues-1);
   while (1){
     if (index == optimalIndex[index]){
       break;
     }
     index = optimalIndex[index];
-    tmp.push_back(index);
+    backtrack.push_back(index);
   }
-  tmp.push_back(0);
-  cout << endl;
-  cout << "# of linear segments: " << tmp.size()-1 << endl;
-  for (int i=tmp.size()-1; i>0; i--){
-    cout << tmp[i] << "-->";
+  backtrack.push_back(0);
+  vector<int> segments;
+  for (int i=backtrack.size()-1; i>=0; i--){
+    segments.push_back(backtrack[i]);
   }
-  cout << tmp[0] << endl << endl;
-  for (int i=tmp.size()-1; i>0; i--){
-    cout << codeLength[tmp[i]][tmp[i-1]] << " ";
-  }
-  cout << endl;
+  return segments;
 }
 
 /*!
- *  \brief This module fits Bezier curve to the structure
+ *  \brief This module prints the details of the linear segmentation
+ *  \param segments a reference to a vector<int>
  */
-void StandardForm::fitBezierCurveModel()
+void StandardForm::printLinearSegmentation(vector<int> &segments)
 {
-  cout << "*** BEZIER CURVE FIT ***" << endl;
-
-  /* compute the code length matrix for the Bezier curve fit */
-  computeCodeLengthMatrixBezier();
-
-  /* compute the optimal segmentation using dynamic programming */
-  optimalSegmentationBezier();
-  
+  int i;
+  ofstream fw("linear_segmentation");
+  fw << "Using structure file: " << file << endl;
+  fw << "Doing a LINEAR segmentation ..." << endl << endl;
+  fw << "# of residues: " << getNumberOfResidues() << endl;
+  cout << "# of linear segments: " << segments.size()-1 << endl;
+  fw << "# of linear segments: " << segments.size()-1 << endl;
+  for (i=0; i<segments.size()-1; i++) {
+    cout << segments[i] << "-->";
+    fw << segments[i] << "-->";
+  }
+  cout << segments[i] << endl << endl;
+  fw << segments[i] << endl << endl;
+  for (i=0; i<segments.size()-1; i++) {
+    int segment_start = segments[i];
+    int segment_end = segments[i+1];
+    fw << "Segment # " << i+1 << endl;
+    fw << "Residue stretch: [" <<  segment_start << ", " << segment_end << "]" 
+    << endl;
+    fw << "Length of the segment: " << segment_end - segment_start + 1 << endl;
+    fw << "\t\tMessage length: " << codeLength[segment_start][segment_end] 
+    << endl << endl;
+  } 
+  fw.close();
 }
 
 /*!
- *  \brief This module constructs the code length matrix for the Bezier curve
- *  fit
+ *  \brief This module prints the segmentation details for the 
+ *  Bezier curve fit.
+ *  \param segments a reference to a vector<int>
  */
-void StandardForm::computeCodeLengthMatrixBezier(void)
+void StandardForm::printBezierSegmentation(vector<int> &segments)
 {
-  int numResidues = getNumberOfResidues();
-  for (int i=0; i<numResidues; i++) {
-    vector<OptimalInfo> encodings;
-    for (int j=0; j<numResidues; j++) {
-      Segment segment = getSegment(i,j);
-      OptimalInfo min_fit, current_fit;
-      min_fit = segment.fitBezierCurve(controls[0]);
-      for (int k=1; k<controls.size(); k++) {
-        current_fit = segment.fitBezierCurve(controls[k]);
-        if (current_fit < min_fit) {
-          min_fit = current_fit;
-        }
-      }
-      encodings.push_back(min_fit);
+  int i;
+  ofstream fw("bezier_segmentation");
+  fw << "Using structure file: " << file << endl;
+  fw << "Doing a BEZIER segmentation ..." << endl << endl;
+  fw << "# of residues: " << getNumberOfResidues() << endl;
+  cout << "# of non-linear segments: " << segments.size()-1 << endl;
+  fw << "# of non-linear segments: " << segments.size()-1 << endl;
+  for (i=0; i<segments.size()-1; i++) {
+    cout << segments[i] << "-->";
+    fw << segments[i] << "-->";
+  }
+  cout << segments[i] << endl << endl;
+  fw << segments[i] << endl << endl;
+  for (i=0; i<segments.size()-1; i++) {
+    int segment_start = segments[i];
+    int segment_end = segments[i+1];
+    fw << "Segment # " << i+1 << endl;
+    fw << "Residue stretch: [" <<  segment_start << ", " << segment_end << "]" 
+    << endl;
+    fw << "Length of the segment: " << segment_end - segment_start + 1 << endl;
+    OptimalFit optimal = optimalBezierFit[segment_start][segment_end];
+    vector<Point<double>> controlPoints = optimal.getControlPoints();
+    int numIntermediate = controlPoints.size() - 2;
+    fw << "\t\t# of intermediate control points: " << numIntermediate << endl;
+    for (int j=1; j<=numIntermediate; j++) {
+      fw << "\t\tControl Point # " << j << ": (";
+      fw << controlPoints[i].x() << ", ";
+      fw << controlPoints[i].y() << ", ";
+      fw << controlPoints[i].z() << ")" << endl;
     }
-    codeLengthBezier.push_back(encodings);
-  }
-}
-
-/*!
- *  \brief This module constructs the code length matrix for the Bezier curve
- *  fit
- */
-void StandardForm::computeCodeLengthMatrixBezier(void)
-{
-  int i,j,k;
-  int numResidues = getNumberOfResidues();
-  for (k=0; k<=MAX_INTERMEDIATE_CONTROL_POINTS; k++) {
-    vector<vector<double>> matrix;
-    for (i=0; i<numResidues; i++){
-      vector<double> tmp(numResidues,0);
-      matrix.push_back(tmp);
-    }
-    codeLengthBezier[k] = matrix;
-  }
-  vector<double> optimal;
-
-  for (i=0; i<numResidues; i++){
-    for (j=0; j<numResidues; j++){
-      cout << "Segment: [" << i << "," << j << "]" << endl;
-      if (i > j){
-        for (k=0; k<=MAX_INTERMEDIATE_CONTROL_POINTS; k++) {
-          codeLengthBezier[k][i][j] = -1; 
-        }
-        optimal.push_back(optimalCodeLength[j][i]);
-      } 
-      else if (i < j){
-        Segment segment = getSegment(i,j);
-        for (k=0; k<=MAX_INTERMEDIATE_CONTROL_POINTS; k++) {
-          segment.fitBezierCurve(k);
-          codeLengthBezier[k][i][j] = segment.getNonLinearFit(k);
-        }
-        optimal.push_back(segment.getOptimalFit());
-      } else {
-        for (k=0; k<=MAX_INTERMEDIATE_CONTROL_POINTS; k++) {
-          codeLengthBezier[k][i][j] = 0; 
-        }
-        optimal.push_back(0);
-      }
-    }
-    optimalCodeLength.push_back(optimal);
-    optimal.clear();
-  }
-  /*Segment segment = getSegment(0,2);
-  cout << segment.fitLinear() << endl;
-  segment.print();*/
-/* 
-  for (i=0; i<numResidues; i++){
-    for (j=0; j<numResidues; j++){
-      cout << codeLength[i][j] << " ";
-    }
-    cout << endl;
-  }*/
-}
-
-/*!
- *  \brief This module computes the optimal segmentation using
- *  dynamic programming for the Bezier curve fit
- */
-void StandardForm::optimalSegmentationBezier(void)
-{
-  int numResidues = getNumberOfResidues();
-  vector<double> optimal;
-  vector<int> optimalIndex;
-  optimal.push_back(0);
-  optimalIndex.push_back(0);
-  double min;
-  int index;
-
-  for (int i=1; i<numResidues; i++){
-    min = optimalCodeLength[0][i];
-    index = i;
-    optimal.push_back(min);
-    optimalIndex.push_back(index);
-    for (int j=0; j<i; j++){
-      if (optimalCodeLength[j][i] + optimal[j] < min){
-        min = optimalCodeLength[j][i] + optimal[j];
-        index = j;
-        optimal[i] = min;
-        optimalIndex[i] = index;
-      }
-    }
-  }
-
-  double best = optimal[optimal.size()-1];
-  cout << "Linear fit: " << best << " bits." << endl;
-  cout << "Bits per residue: " << best / (numResidues-1) << endl;
- 
-  vector<int> tmp; 
-  for (int i=0; i<optimal.size(); i++){
-    cout << optimal[i] << " ";
-  }
-  cout << endl;
-  for (int i=0; i<optimalIndex.size(); i++){
-    cout << optimalIndex[i] << " ";
-  }
-  cout << endl;
-  index = numResidues-1;
-  while (1){
-    index = optimalIndex[index];
-    if (index == optimalIndex[index]){
-      tmp.push_back(index);
-      break;
-    }
-    tmp.push_back(index);
-  }
-  tmp.push_back(0);
-  cout << endl;
-  for (int i=tmp.size()-1; i>=0; i--){
-    cout << tmp[i] << "-->";
-  }
-  cout << numResidues-1 << endl << endl;
-  for (int i=tmp.size()-1; i>=0; i--){
-    cout << optimalCodeLength[tmp[i]][tmp[i-1]] << " ";
-  }
-  cout << endl;
+    fw << "\t\tMessage length: " << optimal.getMessageLength() << endl << endl;
+  } 
+  fw.close();
 }
 
