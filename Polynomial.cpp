@@ -216,12 +216,20 @@ complex<double> Polynomial::value(complex<double> number)
 double Polynomial::solveNewtonMethod()
 {
   double x = getBoundOnRoots();
-  double roots_sum = -coefficients[degree-1] / coefficients[degree];
-  if (roots_sum < 0) {
-    x = -x;
+  if (degree % 2 == 1) {
+    double product = -coefficients[0] / coefficients[degree];
+    if (product < 0) {
+      x = -x;
+    }
+  } else {
+    double roots_sum = -coefficients[degree-1] / coefficients[degree];
+    if (roots_sum < 0) {
+      x = -x;
+    }
   }
   double tol = 0.000001;
   while(1) {
+    //cout << "x: " << x << endl;
     vector<double> b = divide(1,-x);
     vector<double> quotient;
     double remainder = b[0];
