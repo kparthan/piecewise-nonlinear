@@ -224,9 +224,17 @@ void Polynomial::solveCubic()
 double Polynomial::solveNewtonMethod()
 {
   double x = getBoundOnRoots();
-  double roots_sum = -coefficients[degree-1] / coefficients[degree];
-  if (roots_sum < 0) {
-    x = -x;
+  if (degree % 2 == 1) {  // polynomial of odd degree
+    double roots_product = -coefficients[0] / coefficients[degree];
+    if (roots_product < 0) {
+      x = -x;
+    }
+  } else { // polynomial of even degree
+    double roots_sum = -coefficients[degree-1] / coefficients[degree];
+    double roots_product = coefficients[0] / coefficients[degree];
+    if (roots_product > 0 && roots_sum < 0) {
+      x = -x;
+    }
   }
   double tol = 0.000001;
   while(1) {
