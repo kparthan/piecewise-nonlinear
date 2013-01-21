@@ -456,7 +456,7 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
           controlPoints[1] = Point<double>(coordinates[i+1]);
           cpIndex[i] = 1;
           for (j=0; j<numIntermediate; j++) {
-            i = 0; j = 7;
+            //i = 5; j = 12;
             cout << "Controls: " << i << " " << j << endl;
             if (i > j) {
               doubleControlMsgLen[i][j] = doubleControlMsgLen[j][i];

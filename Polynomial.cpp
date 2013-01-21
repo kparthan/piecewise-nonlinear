@@ -224,6 +224,10 @@ void Polynomial::solveCubic()
 double Polynomial::solveNewtonMethod()
 {
   double x = getBoundOnRoots();
+  double roots_sum = -coefficients[degree-1] / coefficients[degree];
+  if (roots_sum < 0) {
+    x = -x;
+  }
   double tol = 0.000001;
   while(1) {
     vector<double> b = divide(1,-x);
@@ -249,9 +253,9 @@ double Polynomial::solveNewtonMethod()
  */
 vector<double> Polynomial::computeRealRoots()
 {
-  //Polynomial p = preprocess();
-  Polynomial p(*this);
-  p.normalize();
+  Polynomial p = preprocess();
+  //Polynomial p(*this);
+  //p.normalize();
   vector<double> real_roots;
   p.print();
 
