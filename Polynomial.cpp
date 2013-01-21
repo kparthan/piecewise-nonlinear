@@ -216,14 +216,15 @@ complex<double> Polynomial::value(complex<double> number)
 double Polynomial::solveNewtonMethod()
 {
   double x = getBoundOnRoots();
-  if (degree % 2 == 1) {
-    double product = -coefficients[0] / coefficients[degree];
-    if (product < 0) {
+  if (degree % 2 == 1) {  // polynomial of odd degree
+    double roots_product = -coefficients[0] / coefficients[degree];
+    if (roots_product < 0) {
       x = -x;
     }
-  } else {
+  } else { // polynomial of even degree
     double roots_sum = -coefficients[degree-1] / coefficients[degree];
-    if (roots_sum < 0) {
+    double roots_product = coefficients[0] / coefficients[degree];
+    if (roots_product > 0 && roots_sum < 0) {
       x = -x;
     }
   }
