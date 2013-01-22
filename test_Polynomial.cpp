@@ -327,7 +327,7 @@ BOOST_AUTO_TEST_CASE( count_distinct_real_roots )
 
   vector<double> c,roots;
   Polynomial p;
-
+/*
   c = vector<double> (6,0);
   c[0] = 2; c[1] = -10; c[2] = -20; c[3] = 0; c[4] = 5; c[5] = 1;
   p = Polynomial(c);
@@ -399,6 +399,18 @@ BOOST_AUTO_TEST_CASE( count_distinct_real_roots )
   c = vector<double> (6,0);
   c[0] = 0.238462; c[1] = -0.385642; c[2] = -0.471123; 
   c[3] = 0.305043; c[4] = 1; c[5] = -0.503156;
+  p = Polynomial(c);
+  p.print();
+  roots = p.findRealRoots();
+  cout << "Real roots: ";
+  for (int i=0; i<roots.size(); i++) {
+    cout << roots[i] << ", ";
+  }
+  cout << endl << endl;
+*/
+  c = vector<double> (6,0);
+  c[0] = 200.943; c[1] = -216.08; c[2] = -379.608; 
+  c[3] = 290.734; c[4] = 281.868; c[5] = -155.431;
   p = Polynomial(c);
   p.print();
   roots = p.findRealRoots();
