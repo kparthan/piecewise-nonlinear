@@ -187,19 +187,21 @@ vector<double> BezierCurve::project(const Point<double> &p)
       return t;
 
     case 2:
-      p0 = controlPoints[0];
-      p1 = controlPoints[1];
-      p2 = controlPoints[2];
-      /* solve a cubic equation */
-      coefficients = vector<double>(4,0);
-      temp1 = p0 - (p1 * 2) + p2; 
-      temp2 = p1 - p0;
-      temp3 = p0 - p;
-      coefficients[0] = temp1 * temp1;
-      coefficients[1] = 3 * (temp1 * temp2);
-      coefficients[2] = (temp1 * temp3) + 2 * (temp2 * temp2); 
-      coefficients[3] = temp2 * temp3;
-      break;
+      {
+        //Point<double> p0 = controlPoints[0];
+        //Point<double> p1 = controlPoints[1];
+        //Point<double> p2 = controlPoints[2];
+        /* solve a cubic equation */
+        coefficients = vector<double>(4,0);
+        Point<double> temp1( controlPoints[0] - (controlPoints[1] * 2) + controlPoints[2] ); 
+        Point<double> temp2( controlPoints[1] - controlPoints[0] );
+        Point<double> temp3( controlPoints[0] - p );
+        coefficients[0] = temp1 * temp1;
+        coefficients[1] = 3 * (temp1 * temp2);
+        coefficients[2] = (temp1 * temp3) + 2 * (temp2 * temp2); 
+        coefficients[3] = temp2 * temp3;
+        break;
+      }
 
     case 3:
       p0 = controlPoints[0];
@@ -236,7 +238,7 @@ vector<double> BezierCurve::project(const Point<double> &p)
  *  \param set a reference to a vector<double>
  *  \return the parameter of the nearest point
  */
-double BezierCurve::nearestPoint(double from, vector<double> &set)
+double BezierCurve::nearestPoint(double from, const vector<double> &set)
 {
   double tmin = set[0];
   double delta = fabs(from-tmin);
@@ -260,11 +262,11 @@ double BezierCurve::nearestPoint(double from, vector<double> &set)
 double BezierCurve::signedDistance(const Point<double> &p, double t,
                                    Vector<double> &normal)
 {
-  Vector<double> direction = tangent(t);
+  //Vector<double> direction = tangent(t);
   Point<double> pc = getPoint(t);
-  Plane<Point<double>> plane(pc,normal,direction);
-  double d = fabs(distance(p,pc));
-  int point_orientation = plane.orientation(p);
-  return d * point_orientation;
+  Plane<Point<double>> plane(pc,normal,tangent(t));
+  //double d = fabs(distance(p,pc));
+  //int point_orientation = plane.orientation(p);
+  return fabs(distance(p,pc)) * plane.orientation(p);
 }
 

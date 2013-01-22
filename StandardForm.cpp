@@ -486,15 +486,16 @@ void StandardForm::computeCodeLengthMatrix(void)
  *  Bezier curve fit
  */
 void StandardForm::computeCodeLengthMatrixBezier(void)
-{/*
+{
   int numResidues = getNumberOfResidues();
   for (int i=0; i<numResidues; i++) {
     vector<OptimalFit> encodings;
     for (int j=0; j<numResidues; j++) {
       cout << "Segment: " << i << " " << j << "\n";
+      vector<int> index;
       if (i > j) {
         vector<Point<double>> controlPoints;
-        OptimalFit tmp(0,controlPoints,-1);
+        OptimalFit tmp(0,index,controlPoints,-1);
         encodings.push_back(tmp);
       } else if (i < j) {
         Segment segment = getSegment(i,j);
@@ -509,7 +510,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
         encodings.push_back(min_fit);
       } else {
         vector<Point<double>> controlPoints;
-        OptimalFit tmp(0,controlPoints,0);
+        OptimalFit tmp(0,index,controlPoints,0);
         encodings.push_back(tmp);
       }
     }
@@ -520,8 +521,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
       codeLength[i][j] = optimalBezierFit[i][j].getMessageLength();
     }
   }
-*/
-        Segment segment = getSegment(0,16);
+        /*Segment segment = getSegment(0,16);
         OptimalFit min_fit, current_fit;
         min_fit = segment.fitBezierCurve(controls[0]);
         for (int k=1; k<controls.size(); k++) {
@@ -529,7 +529,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
           if (current_fit < min_fit) {
             min_fit = current_fit;
           }
-        }
+        }*/
 }
 
 /*!
@@ -647,14 +647,15 @@ void StandardForm::printBezierSegmentation(vector<int> &segments)
     << endl;
     fw << "Length of the segment: " << segment_end - segment_start + 1 << endl;
     OptimalFit optimal = optimalBezierFit[segment_start][segment_end];
+    vector<int> index = optimal.getControlPointsIndex();
     vector<Point<double>> controlPoints = optimal.getControlPoints();
     int numIntermediate = controlPoints.size() - 2;
     fw << "\t\t# of intermediate control points: " << numIntermediate << endl;
     for (int j=1; j<=numIntermediate; j++) {
-      fw << "\t\tControl Point # " << j << ": (";
-      fw << controlPoints[i].x() << ", ";
-      fw << controlPoints[i].y() << ", ";
-      fw << controlPoints[i].z() << ")" << endl;
+      //fw << "\t\tControl Point # " << j << " [" << index[j-1] << "] (";
+      fw << controlPoints[j].x() << ", ";
+      fw << controlPoints[j].y() << ", ";
+      fw << controlPoints[j].z() << ")" << endl;
     }
     fw << "\t\tMessage length: " << optimal.getMessageLength() << endl << endl;
   } 

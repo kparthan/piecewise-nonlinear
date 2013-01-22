@@ -399,6 +399,7 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
   vector<int> cpIndex(numIntermediate,0);
   int i,j;
   double msglen;
+  vector<int> index;
   OptimalFit min_fit,current_fit;
 
   switch(numIntermediateControlPoints) {
@@ -415,13 +416,14 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
         deviations = computeDeviations(curve,cpIndex);
       }
       zeroControlMsgLen = messageLength(curve,deviations);
-      min_fit = OptimalFit(0,controlPoints,zeroControlMsgLen);
+      min_fit = OptimalFit(0,index,controlPoints,zeroControlMsgLen);
       break;
 
     case 1:
       /* one intermediate control point */
       // => numIntermediate >= 1
       if (numIntermediate >= 1) {
+        index = vector<int>(1,0);
         controlPoints = vector<Point<double>>(3,Point<double>());
         controlPoints[0] = start;
         controlPoints[2] = end;
@@ -434,14 +436,22 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
           singleControlMsgLen[i] = messageLength(curve,deviations);
           cpIndex[i] = 0;
           if (i == 0) {
-            min_fit = OptimalFit(1,controlPoints,singleControlMsgLen[0]);
+            min_fit = OptimalFit(1,index,controlPoints,singleControlMsgLen[0]);
           } else {
-            current_fit = OptimalFit(1,controlPoints,singleControlMsgLen[i]);
+            index[0] = i;
+            current_fit = OptimalFit(1,index,controlPoints,singleControlMsgLen[i]);
             if (current_fit < min_fit) {
               min_fit = current_fit;
             }
           }
         }
+      } else {
+        controlPoints = vector<Point<double>>(2,Point<double>());
+        controlPoints[0] = start;
+        controlPoints[1] = end;
+        curve = BezierCurve(controlPoints);
+        msglen = messageLength(curve,deviations);
+        min_fit = OptimalFit(0,index,controlPoints,msglen);
       }
       break;
 
@@ -449,15 +459,17 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
       /* two intermediate control points */
       // => numIntermediate >=1 
       if (numIntermediate >= 1) {
+        index = vector<int>(2,0);
         controlPoints = vector<Point<double>>(4,Point<double>());
         controlPoints[0] = start;
         controlPoints[3] = end;
         for (i=0; i<numIntermediate; i++) {
           controlPoints[1] = Point<double>(coordinates[i+1]);
           cpIndex[i] = 1;
+          index[0] = i;
           for (j=0; j<numIntermediate; j++) {
-            //i = 5; j = 12;
-            cout << "Controls: " << i << " " << j << endl;
+            //cout << "Controls: " << i << " " << j << endl;
+            index[1] = j;
             if (i > j) {
               doubleControlMsgLen[i][j] = doubleControlMsgLen[j][i];
             } else {
@@ -472,9 +484,9 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
               cpIndex[j] = 0;
             }
             if (i == 0 && j == 0) {
-              min_fit = OptimalFit(2,controlPoints,doubleControlMsgLen[0][0]);
+              min_fit = OptimalFit(2,index,controlPoints,doubleControlMsgLen[0][0]);
             } else {
-              current_fit = OptimalFit(2,controlPoints,
+              current_fit = OptimalFit(2,index,controlPoints,
                                         doubleControlMsgLen[i][j]);
               if (current_fit < min_fit) {
                 min_fit = current_fit;
@@ -483,6 +495,13 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
           } 
           cpIndex[i] = 0;
         }    
+      } else {
+        controlPoints = vector<Point<double>>(2,Point<double>());
+        controlPoints[0] = start;
+        controlPoints[1] = end;
+        curve = BezierCurve(controlPoints);
+        msglen = messageLength(curve,deviations);
+        min_fit = OptimalFit(0,index,controlPoints,msglen);
       }
       break;
   }
@@ -500,26 +519,27 @@ vector<array<double,3>> Segment::computeDeviations(BezierCurve &curve,
                                                    vector<int> &cpIndex)
 {
   vector<array<double,3>> deviations;
-  int i;
 
   if (numFreePoints >= 2) {
+    deviations.resize(numIntermediate-1);
     Plane<Point<double>> plane = constructPlane(curve);
     Vector<double> normal = plane.normal();
     array<double,3> d;
-    Point<double> p,projection,previous;
+    //Point<double> p,projection;
     double tmin_current,tmin_prev = 0;
-    for (i=0; i<numIntermediate; i++) {
+    int dev_idx = 0;
+    for (int i=0; i<numIntermediate; i++) {
       if (cpIndex[i] != 1) {
-        p = Point<double>(coordinates[i+1]);
+        Point<double> p(coordinates[i+1]);
         d[0] = plane.signedDistance(p);
-        projection = project(p,plane);
+        Point<double> projection(project(p,plane));
 
-        vector<double> tmin = curve.project(projection);
-        tmin_current = curve.nearestPoint(tmin_prev,tmin);
+        tmin_current = curve.nearestPoint(tmin_prev,curve.project(projection));
         d[1] = curve.signedDistance(projection,tmin_current,normal);
 
         d[2] = tmin_current - tmin_prev;
-        deviations.push_back(d);
+        //deviations.push_back(d);
+        deviations[dev_idx++] = d;
         tmin_prev = tmin_current;
       }
     }

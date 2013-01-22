@@ -41,7 +41,7 @@ class BezierCurve
     vector<double> project(const Point<double> &);
 
     //! Gets the nearest point
-    double nearestPoint(double, vector<double> &);
+    double nearestPoint(double, const vector<double> &);
   
     //! Computes the signed distance from the point to the curve
     double signedDistance(const Point<double> &, double t, Vector<double> &); 
