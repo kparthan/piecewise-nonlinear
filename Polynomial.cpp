@@ -328,19 +328,21 @@ double Polynomial::solveBisectionMethod(int num_real)
  */
 double Polynomial::findPointOppositeSign(double a, double b)
 {
+  if (fabs(b-a) < TOLERANCE) {
+    return 0;
+  }
   int sign_end = sign(value(a));
   while (1) {
     double mid = (a + b) / 2;
     if (sign(value(mid)) != sign_end) {
       return mid;
-    } else if (fabs(mid-a) < TOLERANCE) {
-      return 0;
     } else {
       double x = findPointOppositeSign(a,mid);
       if (fabs(x) > ZERO) {
         return x;
+      } else {
+        return findPointOppositeSign(mid,b);
       }
-      return findPointOppositeSign(mid,b);
     }
   }
 }
@@ -363,8 +365,8 @@ double Polynomial::bisect(double a, double b)
     return b;
   }
   if (sign(fa) == sign(fb)) {
-    cout << "Repeated roots in interval [" << a << ", " << b << "]" << endl;
-    exit(1);
+    cout << "Function value has same sign at the ends of the interval" << endl;
+    //exit(1);
   }
   double mid = (a + b) / 2;
 
