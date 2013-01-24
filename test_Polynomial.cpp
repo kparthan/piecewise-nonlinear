@@ -360,7 +360,7 @@ BOOST_AUTO_TEST_CASE( count_distinct_real_roots )
     cout << roots[i] << ", ";
   }
   cout << endl << endl;
- 
+ */
   c = vector<double> (3,0);
   c[0] = 1; c[1] = -2; c[2] = 1;
   p = Polynomial(c);
@@ -371,7 +371,7 @@ BOOST_AUTO_TEST_CASE( count_distinct_real_roots )
     cout << roots[i] << ", ";
   }
   cout << endl << endl;
-
+/*
   c = vector<double> (6,0);
   c[0] = 97.5987; c[1] = -444.163; c[2] = 602.102; 
   c[3] = 100.061; c[4] = -233.35; c[5] = -26.8519;
@@ -407,7 +407,7 @@ BOOST_AUTO_TEST_CASE( count_distinct_real_roots )
     cout << roots[i] << ", ";
   }
   cout << endl << endl;
-*/
+
   c = vector<double> (6,0);
   c[0] = 200.943; c[1] = -216.08; c[2] = -379.608; 
   c[3] = 290.734; c[4] = 281.868; c[5] = -155.431;
@@ -419,6 +419,7 @@ BOOST_AUTO_TEST_CASE( count_distinct_real_roots )
     cout << roots[i] << ", ";
   }
   cout << endl << endl;
+*/
 }
  
 /*
