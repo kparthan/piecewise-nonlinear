@@ -256,6 +256,118 @@ double Polynomial::solveNewtonMethod()
 }
 
 /*!
+ *  \brief This module solves for a real root of the polynomial
+ *  using the interval bisection method.
+ *  \return a real root
+ */
+double Polynomial::solveBisectionMethod(int num_real)
+{
+  double x = getBoundOnRoots();
+  if (num_real % 2 == 1) {
+    /* if the number of roots are odd, then the function     
+       value at the ends of the interval are of opposite signs */
+    return bisect(-x,x);
+  } else {
+    /* if the number of roots are even, then the function     
+       value at the ends of the interval are of same sign, 
+       hence, find an appropriate interval */
+    double fa = value(-x);
+    if (fabs(fa) < ZERO) {
+      return -x;
+    }
+    double fb = value(x);
+    if (fabs(fb) < ZERO) {
+      return x;
+    }
+    double fmid = value(0);
+    if (fabs(fmid) < ZERO) {
+      return 0;
+    }
+    if (sign(fa) == sign(fmid)) {
+      double a = findPointOppositeSign(-x,0);
+      if (fabs(a) > ZERO) {
+        return bisect(-x,a);
+      } else {
+        a = findPointOppositeSign(0,x);
+        return bisect(a,x);
+      }
+    } else {
+      return bisect(-x,0);
+    }
+  }
+}
+
+/*!
+ *  \brief This module finds a point in the given interval where the function
+ *  value is of sign oppposite to that at the end points of the interval
+ *  \param a a double
+ *  \param b a double
+ *  \return an intermediate point from within the range
+ */
+double Polynomial::findPointOppositeSign(double a, double b)
+{
+  if (fabs(b-a) < TOLERANCE) {
+    return 0;
+  }
+  int sign_end = sign(value(a));
+  while (1) {
+    double mid = (a + b) / 2;
+    if (sign(value(mid)) != sign_end) {
+      return mid;
+    } else {
+      double x = findPointOppositeSign(a,mid);
+      if (fabs(x) > ZERO) {
+        return x;
+      } else {
+        return findPointOppositeSign(mid,b);
+      }
+    }
+  }
+}
+
+/*!
+ *  \brief This module bisects the interval to keep approximating
+ *  the real roots of the polynomial
+ *  \param a a double
+ *  \param b a double
+ *  \return a root
+ */
+double Polynomial::bisect(double a, double b)
+{
+  double fa = value(a);
+  if (fabs(fa) < ZERO) {
+    return a;
+  }
+  double fb = value(b);
+  if (fabs(fb) < ZERO) {
+    return b;
+  }
+  if (sign(fa) == sign(fb)) {
+    cout << "Function value has same sign at the ends of the interval" << endl;
+    //exit(1);
+  }
+  double mid = (a + b) / 2;
+
+  while(1) {
+    double fmid = value(mid);
+    if (fabs(fmid) < ZERO) {
+      break;
+    } else if (sign(fa) != sign(fmid)) {
+      b = mid;
+    } else {
+      a = mid;
+    }
+    double previous = mid;
+    mid = (a + b) / 2;
+    if (fabs(mid - previous) < TOLERANCE) {
+      break;
+    }
+    fa = value(a);
+  }
+  return mid;
+}
+
+/*!
  *  \brief This module computes the real roots of a polynomial
  *  \return the real roots
  */
@@ -270,6 +382,7 @@ vector<double> Polynomial::computeRealRoots()
     int num_real = p.countDistinctRealRoots();
     while (1) {
       double x = p.solveNewtonMethod();
+      //double x = p.solveBisectionMethod(count);
       real_roots.push_back(x);
       vector<double> b = p.divide(1,-x);
       vector<double> quotient;

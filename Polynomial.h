@@ -28,6 +28,15 @@ class Polynomial
     //! Computes a real root using Newton's method
     double solveNewtonMethod();
 
+    //! Computes a real root using Newton's method
+    double solveBisectionMethod(int);
+
+    //! Computes a point whose function value is of opposite sign
+    double findPointOppositeSign(double, double);
+
+    //! Bisects an interval to find a real root
+    double bisect(double, double);
+
     //! Division of the polynomial by a linear expression
     vector<double> division(const vector<double> &, double);
 

@@ -196,7 +196,7 @@ void Segment::fitLinear(void)
     Plane<Point<double>> plane(start,p,end); 
     //Plane<Point<double>> plane = constructPlane(start,end); 
     deviations = computeDeviations(line,plane);
-    //vector<array<double,3>> deviations2 = computeDeviations2(line,plane);
+    //deviations = computeDeviations2(line,plane);
   }
   linearFitMsgLen = messageLength(deviations);
 }
@@ -285,14 +285,15 @@ vector<array<double,3>> Segment::computeDeviations(Line<Point<double>> &line,
     deviations.push_back(d);
     previous = projection;
   }
- /* cout << "*****************" << endl;
-  cout << "Deviations 1...\n"; 
+  //cout << "*****************" << endl;
+  //cout << "Deviations 1...\n"; 
+  ofstream dev_linear("dev_linear");
   for (int i=0; i<deviations.size(); i++){
-    cout << deviations[i][0] << " ";
-    cout << deviations[i][1] << " ";
-    cout << deviations[i][2] << endl;
+    dev_linear << deviations[i][0] << " ";
+    dev_linear << deviations[i][1] << " ";
+    dev_linear << deviations[i][2] << endl;
   }
-  cout << "*****************" << endl;*/
+  //cout << "*****************" << endl;
   return deviations;
 }
 
@@ -366,10 +367,14 @@ double Segment::messageLength(vector<array<double,3>> &deviations)
   /* message length to state the end point of the segment */
   Message msg1;
   msglen += msg1.encodeUsingNullModel(volume); 
+  double p1 = msg1.encodeUsingNullModel(volume); 
+  cout << "p1: " << p1 << endl;
   // cout << "code length(end point): " << msglen << endl;
 
   /* message length to state the number of intermediate points */
   msglen += msg1.encodeUsingLogStarModel(numIntermediate+1);
+  double p2 = msg1.encodeUsingLogStarModel(numIntermediate+1);
+  cout << "p2: " << p2 << endl;
 
   if (numIntermediate <= 2) {
     /* message length to state the intermediate points using the null model */
@@ -381,6 +386,7 @@ double Segment::messageLength(vector<array<double,3>> &deviations)
     /* message length to state the deviations */
     Message msg2(deviations);
     msglen += msg2.encodeUsingNormalModel();
+    cout << "deviations msglen linear: " << msg2.encodeUsingNormalModel() << endl;
   }
 
   return msglen;
@@ -521,7 +527,7 @@ vector<array<double,3>> Segment::computeDeviations(BezierCurve &curve,
   vector<array<double,3>> deviations;
 
   if (numFreePoints >= 2) {
-    deviations.resize(numIntermediate-1);
+    //deviations.resize(numFreePoints);
     Plane<Point<double>> plane = constructPlane(curve);
     Vector<double> normal = plane.normal();
     array<double,3> d;
@@ -537,12 +543,26 @@ vector<array<double,3>> Segment::computeDeviations(BezierCurve &curve,
         tmin_current = curve.nearestPoint(tmin_prev,curve.project(projection));
         d[1] = curve.signedDistance(projection,tmin_current,normal);
 
-        d[2] = tmin_current - tmin_prev;
+        //d[2] = tmin_current - tmin_prev;
         //deviations.push_back(d);
-        deviations[dev_idx++] = d;
+        Point<double> p1 = curve.getPoint(tmin_prev);
+        Point<double> p2 = curve.getPoint(tmin_current);
+        if (tmin_current < tmin_prev) {
+          d[2] = -distance(p1,p2);
+        } else {
+          d[2] = distance(p1,p2);
+        }
+        //deviations[dev_idx++] = d;
+        deviations.push_back(d);
         tmin_prev = tmin_current;
       }
     }
+  }
+  ofstream dev_bezier("dev_bezier");
+  for (int i=0; i<deviations.size(); i++){
+    dev_bezier << deviations[i][0] << " ";
+    dev_bezier << deviations[i][1] << " ";
+    dev_bezier << deviations[i][2] << endl;
   }
   return deviations;
 }
@@ -562,21 +582,28 @@ double Segment::messageLength(BezierCurve &curve,
   /* message length to state the end point of the segment */
   Message msg1;
   msglen += msg1.encodeUsingNullModel(volume); 
+  double p1 = msg1.encodeUsingNullModel(volume); 
+  cout << "p1: " << p1 << endl;
 
   /* message length to state the number of control points */
   int numIntermediateControlPoints = curve.getDegree() - 1;
-  msglen += msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
+  //cout << "junk: " << msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1) << endl; 
+  //msglen += msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
 
   /* message length to state the control points */
-  msglen += numIntermediateControlPoints * msg1.encodeUsingNullModel(volume);
+  //msglen += numIntermediateControlPoints * msg1.encodeUsingNullModel(volume);
 
   /* message length to state the number of intermediate deviations if any */  
   Message msg2(deviations);
+  double p2;
   switch(numIntermediateControlPoints) {
     case 0:
       // numIntermediate >= 0
       /* message length to state the number of intermediate points */
       msglen += msg1.encodeUsingLogStarModel(numIntermediate+1); 
+      p2 = msg1.encodeUsingLogStarModel(numIntermediate+1);
+      cout << "p2: " << p2 << endl;
+
       if (numIntermediate <= 2) {
         msglen += numIntermediate * msg1.encodeUsingNullModel(volume);
       } else if (numIntermediate > 2) {
@@ -584,6 +611,7 @@ double Segment::messageLength(BezierCurve &curve,
         msglen += msg1.encodeUsingNullModel(volume);
         /* state the deviations */
         msglen += msg2.encodeUsingNormalModel();
+        cout << "deviations msglen bezier: " << msg2.encodeUsingNormalModel() << endl;
       }
       break;
 
