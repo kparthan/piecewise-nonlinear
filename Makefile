@@ -1,4 +1,4 @@
-CFLAGS=-std=c++0x -O3 $(shell pkg-config --cflags liblcb-experimental)
+CFLAGS=-std=c++0x -O3 -g $(shell pkg-config --cflags liblcb-experimental)
 LDFLAGS=$(shell pkg-config --libs liblcb-experimental) -lboost_program_options
 
 OBJECTS = piecewise-nonlinear-fit.o \
@@ -52,5 +52,6 @@ geometry3D.o: geometry3D.cpp geometry3D.h
 	g++ -c $(CFLAGS) $< -o $@
 
 clean:
-	rm -f *.o *~ piecewise-nonlinear-fit before_translation after_translation rotate1 final codeLengthFile linear_segmentation bezier_segmentation optimal 
+	rm -f *.o *~ piecewise-nonlinear-fit linear_segmentation bezier_segmentation 
+#before_translation after_translation rotate1 final codeLengthFile optimal 
 

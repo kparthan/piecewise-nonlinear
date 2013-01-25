@@ -68,6 +68,7 @@ OptimalFit OptimalFit::operator=(const OptimalFit &source)
 {
   if (this != &source) {
     numControlPoints = source.numControlPoints;
+    index = source.index;
     controlPoints = source.controlPoints;
     messageLength = source.messageLength;
   }

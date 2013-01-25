@@ -174,28 +174,26 @@ Vector<double> BezierCurve::tangent(double t)
  */
 vector<double> BezierCurve::project(const Point<double> &p)
 {
-  vector<double> t;
   vector<double> coefficients;
-  Point<double> p0,p1,p2,p3;
-  Point<double> temp1,temp2,temp3,temp4;
 
   switch(degree) {
     case 1:
-      p0 = controlPoints[0];
-      p1 = controlPoints[1];
-      t.push_back(((p - p0) * (p1 - p0)) / ((p1 - p0) * (p1 - p0))); 
-      return t;
+      {
+        Point<double> temp1 = p - controlPoints[0];
+        Point<double> temp2 = controlPoints[1] - controlPoints[0];
+        vector<double> t;
+        t.push_back(((temp1 * temp2) / (temp2 * temp2)));
+        return t;
+      }
 
     case 2:
       {
-        //Point<double> p0 = controlPoints[0];
-        //Point<double> p1 = controlPoints[1];
-        //Point<double> p2 = controlPoints[2];
+        Point<double> temp1 = controlPoints[0] - (controlPoints[1] * 2)
+                              + controlPoints[2]; 
+        Point<double> temp2 = controlPoints[1] - controlPoints[0];
+        Point<double> temp3 = controlPoints[0] - p;
         /* solve a cubic equation */
         coefficients = vector<double>(4,0);
-        Point<double> temp1( controlPoints[0] - (controlPoints[1] * 2) + controlPoints[2] ); 
-        Point<double> temp2( controlPoints[1] - controlPoints[0] );
-        Point<double> temp3( controlPoints[0] - p );
         coefficients[0] = temp1 * temp1;
         coefficients[1] = 3 * (temp1 * temp2);
         coefficients[2] = (temp1 * temp3) + 2 * (temp2 * temp2); 
@@ -204,23 +202,23 @@ vector<double> BezierCurve::project(const Point<double> &p)
       }
 
     case 3:
-      p0 = controlPoints[0];
-      p1 = controlPoints[1];
-      p2 = controlPoints[2];
-      p3 = controlPoints[3];
-      /* solve a quintic equation */
-      coefficients = vector<double>(6,0);
-      temp1 = (p1 * 3) - (p2 * 3) + p3 - p0;
-      temp2 = p0 - (p1 * 2) + p2; 
-      temp3 = p1 - p0;
-      temp4 = p0 - p;
-      coefficients[0] = temp1 * temp1;
-      coefficients[1] = 5 * (temp1 * temp2);
-      coefficients[2] = 6 * (temp2 * temp2) + 4 * (temp3 * temp1);
-      coefficients[3] = 9 * (temp3 * temp2) + (temp4 * temp1);
-      coefficients[4] = 3 * (temp3 * temp3) + 2 * (temp4 * temp2);
-      coefficients[5] = temp3 * temp4;
-      break;
+      {
+        Point<double> temp1 = (controlPoints[1] * 3) - (controlPoints[2] * 3) 
+                              + controlPoints[3] - controlPoints[0];
+        Point<double> temp2 = controlPoints[0] - (controlPoints[1] * 2) 
+                              + controlPoints[2]; 
+        Point<double> temp3 = controlPoints[1] - controlPoints[0];
+        Point<double> temp4 = controlPoints[0] - p;
+        /* solve a quintic equation */
+        coefficients = vector<double>(6,0);
+        coefficients[0] = temp1 * temp1;
+        coefficients[1] = 5 * (temp1 * temp2);
+        coefficients[2] = 6 * (temp2 * temp2) + 4 * (temp3 * temp1);
+        coefficients[3] = 9 * (temp3 * temp2) + (temp4 * temp1);
+        coefficients[4] = 3 * (temp3 * temp3) + 2 * (temp4 * temp2);
+        coefficients[5] = temp3 * temp4;
+        break;
+      }
 
     default:
       cout << "Degree of Bezier curve: " << degree << " not supported."
@@ -228,8 +226,7 @@ vector<double> BezierCurve::project(const Point<double> &p)
       exit(1); 
   }
   Polynomial polynomial(coefficients);
-  t = polynomial.computeRealRoots();
-  return t;
+  return polynomial.computeRealRoots();
 }
 
 /*!

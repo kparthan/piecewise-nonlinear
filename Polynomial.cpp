@@ -376,24 +376,29 @@ vector<double> Polynomial::computeRealRoots()
   Polynomial p = preprocess();
   vector<double> real_roots;
 
-  if (p.getDegree() <= 3) {
-    real_roots = p.solveLowerOrder();
-  } else {
-    int num_real = p.countDistinctRealRoots();
-    while (1) {
-      double x = p.solveNewtonMethod();
-      //double x = p.solveBisectionMethod(count);
-      real_roots.push_back(x);
-      vector<double> b = p.divide(1,-x);
-      vector<double> quotient;
-      for (int i=1; i<b.size(); i++) {
-        quotient.push_back(b[i]);
+  int num_real = p.countDistinctRealRoots();
+  int count = num_real;
+  while (1) {
+    //double x = p.solveNewtonMethod();
+    if (p.getDegree() <= 3) {
+      vector<double> roots = p.solveLowerOrder();
+      for(int i=0; i<roots.size(); i++) {
+        real_roots.push_back(roots[i]);
       }
-      if (real_roots.size() == num_real) {
-        break;
-      }
-      p = Polynomial(quotient);
+      break;
     }
+    double x = p.solveBisectionMethod(count);
+    real_roots.push_back(x);
+    vector<double> b = p.divide(1,-x);
+    vector<double> quotient;
+    for (int i=1; i<b.size(); i++) {
+      quotient.push_back(b[i]);
+    }
+    if (real_roots.size() == num_real) {
+      break;
+    }
+    p = Polynomial(quotient);
+    count--;
   }
   if (realRoots.size() > 0) {
     real_roots.push_back(0);
