@@ -11,6 +11,7 @@ OBJECTS = piecewise-nonlinear-fit.o \
   Polynomial.o \
   Test.o \
   OptimalFit.o \
+  Complex.o \
   geometry3D.o
 
 all: piecewise-nonlinear-fit 
@@ -46,6 +47,9 @@ Test.o: Test.cpp Test.h
 	g++ -c $(CFLAGS) $< -o $@
 
 OptimalFit.o: OptimalFit.cpp OptimalFit.h
+	g++ -c $(CFLAGS) $< -o $@
+
+Complex.o: Complex.cpp Complex.h
 	g++ -c $(CFLAGS) $< -o $@
 
 geometry3D.o: geometry3D.cpp geometry3D.h
