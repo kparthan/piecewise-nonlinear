@@ -37,6 +37,9 @@ class Polynomial
     //! Computes the roots of the cubic equation
     void solveCubic();
 
+    //! Computes the roots of the quartic
+    void solveQuartic();
+
     //! Bairstow implementation
     void bairstow(vector<complex<double>> &);
 

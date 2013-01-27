@@ -410,6 +410,10 @@ void Polynomial::findRoots()
         solveCubic();
         break;
 
+      case 4: /* QUARTIC */
+        solveQuartic();
+        break;
+
       default:
         solveUsingBairstow();
         break;
@@ -1064,6 +1068,28 @@ void Polynomial::solveCubic()
     roots.push_back(complex<double>(x2,x3));
     roots.push_back(complex<double>(x2,-x3));
   }
+}
+
+/*!
+ *  \brief This module computes the roots of the quartic analytically
+ */
+void Polynomial::solveQuartic()
+{
+  /* form a monic polynomial: x^4 + p x^3 + q x^2 + r x + s = 0 */
+  vector<double> newCoefficients;
+  for (i=0; i<4; i++) {
+    newCoefficients.push_back(coefficients[i]/coefficients[4]);
+  }
+  newCoefficients.push_back(1);
+  Polynomial monic(newCoefficients);
+  /* p,q,r, and s are real coefficients */
+  double p = monic.getCoefficients(3);
+  double q = monic.getCoefficients(2);
+  double r = monic.getCoefficients(1);
+  double s = monic.getCoefficients(0);
+
+  /* reduction to a */
+  
 }
 
 /*!
