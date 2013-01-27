@@ -1,0 +1,19 @@
+CFLAGS=-std=c++0x -g $(shell pkg-config --cflags liblcb-experimental)
+LDFLAGS=$(shell pkg-config --libs liblcb-experimental) -lboost_unit_test_framework-mt -lboost_system-mt
+
+OBJECTS = test_Complex.o Complex.o 
+
+all: test_Complex
+
+test_Complex: $(OBJECTS) 
+	g++ $(OBJECTS) -o $@ $(LDFLAGS) 
+
+test_Complex.o: test_Complex.cpp Complex.h
+	g++ -c $(CFLAGS) $< -o $@
+
+Complex.o: Complex.cpp Complex.h
+	g++ -c $(CFLAGS) $< -o $@
+
+clean:
+	rm -f *.o *~ test_Complex 
+
