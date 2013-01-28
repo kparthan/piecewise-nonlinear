@@ -95,6 +95,9 @@ BOOST_AUTO_TEST_CASE( difference )
   C = A - B + A + B;
   cout << "Real: " << C.real() << endl;
   cout << "Imag: " << C.imag() << endl;
+
+  C = Complex(0,0) - A;
+  C.print();
 }
 
 BOOST_AUTO_TEST_CASE( overloading_asteriskequals )
@@ -119,6 +122,16 @@ BOOST_AUTO_TEST_CASE( product )
   B.print();
   Complex C = A * B;
   C.print();
+
+  cout << "C: "; C.print();
+  cout << "A: "; A.print();
+  Complex D = A * A;
+  cout << "A * A: "; D.print();
+  D = C - A * A;
+  cout << "C-A*A: "; D.print();
+
+  D = (A+C) * 2;
+  D.print();
 }
 
 BOOST_AUTO_TEST_CASE( product_scalar )
@@ -161,6 +174,9 @@ BOOST_AUTO_TEST_CASE( division )
 
   D /= 4;
   D.print();
+
+  Complex E = Complex(3,4) / Complex(2,0);
+  E.print();
 }
 
 BOOST_AUTO_TEST_CASE( square_root )
@@ -176,6 +192,10 @@ BOOST_AUTO_TEST_CASE( square_root )
   B.print();  
 
   A = Complex(0,-1);
+  B = A.squareRoot();
+  B.print();  
+
+  A = Complex(0,0);
   B = A.squareRoot();
   B.print();  
 }

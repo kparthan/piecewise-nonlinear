@@ -395,8 +395,9 @@ double Polynomial::bisect(double a, double b)
  */
 void Polynomial::findRoots()
 {
-  Polynomial p = preprocess();
-  if (p.getDegree() == -1) {
+  //Polynomial p = preprocess();
+  Polynomial p(*this);
+  if (degree <= 4) {
     switch(degree) {
       case 1: /* LINEAR */
         solveLinear();
@@ -1071,13 +1072,58 @@ void Polynomial::solveCubic()
 }
 
 /*!
+ *  \brief This module returns a real root to be used in
+ *  the inference of the four roots of a quartic
+ *  \return a real root
+ */
+double Polynomial::getCubicRealRoot()
+{
+  int i;
+  /* form a monic polynomial: x^3 + a x^2 + b x + c = 0 */
+  vector<double> newCoefficients;
+  for (i=0; i<3; i++) {
+    newCoefficients.push_back(coefficients[i]/coefficients[3]);
+  }
+  newCoefficients.push_back(1);
+  Polynomial monic(newCoefficients);
+  /* a,b,c are real coefficients */
+  double a = monic.getCoefficients(2);
+  double b = monic.getCoefficients(1);
+  double c = monic.getCoefficients(0);
+
+  double k1 = a / 3.0 ; 
+  double Q = (a * a - 3 * b) / 9.0;
+  double R = (2 * a * a * a - 9 * a * b + 27 * c) / 54.0;
+  double diff = R * R - Q * Q * Q;
+  if (diff < 0) {
+    /* all three roots are real */
+    double theta = acos(R / sqrt(Q * Q * Q));
+    double x[3];
+    double k2 = -2 * sqrt(Q);
+    x[0] = k2 * cos (theta/3) - k1;
+    return x[0];
+  } else {
+    /* has imaginary roots */
+    double k2 = fabs(R) + sqrt(diff);
+    double A = -sign(R) * cubeRoot(k2); 
+    double B = 0;
+    if (fabs(A) > ZERO) {
+      B = Q / (double)A;
+    }
+    double AplusB = A + B;
+    double AminusB = A - B;
+    double x1 = AplusB - k1;
+    return x1;
+  }
+}
+/*!
  *  \brief This module computes the roots of the quartic analytically
  */
 void Polynomial::solveQuartic()
 {
   /* form a monic polynomial: x^4 + p x^3 + q x^2 + r x + s = 0 */
   vector<double> newCoefficients;
-  for (i=0; i<4; i++) {
+  for (int i=0; i<4; i++) {
     newCoefficients.push_back(coefficients[i]/coefficients[4]);
   }
   newCoefficients.push_back(1);
@@ -1088,8 +1134,52 @@ void Polynomial::solveQuartic()
   double r = monic.getCoefficients(1);
   double s = monic.getCoefficients(0);
 
-  /* reduction to a */
-  
+  /* reduction to a cubic */
+  /* z^3 - q z^2 + (pr-4s) z + (4qs - r^2 - p^2 s) = 0 */
+  vector<double> transformed(4,0);
+  transformed[0] = 4 * q * s - r * r - p * p * s;
+  transformed[1] = p * r - 4 * s;
+  transformed[2] = -q;
+  transformed[3] = 1;
+  Polynomial cubic(transformed);
+  double z1 = cubic.getCubicRealRoot();
+  /* compute R */
+  double tmp = p * p / 4 - q + z1;
+  Complex T(tmp,0);
+  Complex R = T.squareRoot();
+  Complex D,E;
+  if (fabs(R.real()) < ZERO && fabs(R.imag()) < ZERO) {
+    tmp = p * p * 0.75 - 2 * q;
+    Complex A(tmp,0);
+    tmp = z1 * z1 - 4 * s;
+    T = Complex(tmp,0);
+    Complex B = T.squareRoot();
+    B *= 2;
+    Complex C = A + B;
+    D = C.squareRoot();
+    C = A - B;
+    E = C.squareRoot();
+  } else {
+    tmp = p * p * 0.75 - 2 * q;
+    T = Complex(tmp,0);
+    Complex A = T - R * R;
+    tmp = p * q - 2 * r - p * p * p / 4;
+    T = Complex(tmp,0);
+    Complex B = T / R;
+    Complex C = A + B;
+    D = C.squareRoot();
+    C = A - B;
+    E = C.squareRoot();
+  }
+  T = Complex(-p/4.0,0);
+  Complex X1 = T + (R + D) / 2;
+  Complex X2 = T + (R - D) / 2;
+  Complex X3 = T - (R - E) / 2;
+  Complex X4 = T - (R + E) / 2;
+  X1.print();
+  X2.print();
+  X3.print();
+  X4.print();
 }
 
 /*!

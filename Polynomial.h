@@ -2,6 +2,7 @@
 #define POLYNOMIAL_H
 
 #include "Header.h"
+#include "Complex.h"
 
 class Polynomial
 {
@@ -37,8 +38,8 @@ class Polynomial
     //! Computes the roots of the cubic equation
     void solveCubic();
 
-    //! Computes the roots of the quartic
-    void solveQuartic();
+    //! Solves for a real root of the cubic
+    double getCubicRealRoot();
 
     //! Bairstow implementation
     void bairstow(vector<complex<double>> &);
@@ -174,6 +175,9 @@ class Polynomial
 
     //! Computes the roots of the polynomial
     void findRoots();
+
+    //! Computes the roots of the quartic
+    void solveQuartic();
 
     //! Computes the roots using Bairstow method
     void solveUsingBairstow();
