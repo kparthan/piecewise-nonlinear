@@ -320,7 +320,7 @@ BOOST_AUTO_TEST_CASE( sturm_sequence )
   p.sturmSequence(); 
   cout << endl;
 }
-
+/*
 BOOST_AUTO_TEST_CASE( count_distinct_real_roots )
 {
   cout << "\n*** TESTING COUNT DISTINCT REAL ROOTS ***" << endl;
@@ -430,7 +430,7 @@ BOOST_AUTO_TEST_CASE( count_distinct_real_roots )
     cout << roots[i] << ", ";
   }
   cout << endl << endl;
-}
+}*/
  
 /*
 BOOST_AUTO_TEST_CASE( solveLinear )
@@ -533,6 +533,25 @@ BOOST_AUTO_TEST_CASE( solveCubic )
   p.print();
   cout << endl;
 }*/
+
+BOOST_AUTO_TEST_CASE( quartic )
+{
+  cout << "\n*** TESTING QUARTIC ***" << endl;
+
+  vector<double> c(5,0);
+  Polynomial p;
+
+  c[0] = 0; c[1] = 5; c[2] = 4; c[3] = -2; c[4] = 1;
+  p = Polynomial(c);
+  p.solveQuartic();
+  cout << endl;
+  
+  c[0] = 1; c[1] = 1; c[2] = 1; c[3] = 1; c[4] = 1;
+  p = Polynomial(c);
+  p.solveQuartic();
+  cout << endl;
+}
+
 /*
 BOOST_AUTO_TEST_CASE( bairstow_cubic )
 {
