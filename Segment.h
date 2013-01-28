@@ -77,9 +77,6 @@ class Segment
     void printInfo(); 
 
                             /* Utility funcitons */
-    //!
-    Plane<Point<double>> constructPlane(Point<double> &, Point<double> &);
-    
     //! Constructs a plane used along with a Bezier curve 
     Plane<Point<double>> constructPlane(BezierCurve &);
 

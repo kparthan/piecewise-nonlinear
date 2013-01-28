@@ -26,6 +26,9 @@ class StandardForm
     //! Cartesian coordinates of the protein structure
     vector<array<double,3>> coordinates;
 
+    //! Stores the number of residues
+    int numResidues;
+
     //! Volume of the bounding box
     double volume;
 
@@ -124,13 +127,13 @@ class StandardForm
     void computeCodeLengthMatrixBezier();
 
     //! Computes the optimal segmentation
-    vector<int> optimalSegmentation();
+    pair<double,vector<int>> optimalSegmentation();
 
     //! Prints the segmentation details for the linear fit
-    void printLinearSegmentation(vector<int> &);
+    void printLinearSegmentation(pair<double,vector<int>> &);
 
     //! Prints the segmentation details for the Bezier curve fit
-    void printBezierSegmentation(vector<int> &);
+    void printBezierSegmentation(pair<double,vector<int>> &);
 };
 
 #endif

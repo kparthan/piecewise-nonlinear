@@ -2,6 +2,7 @@
 #define POLYNOMIAL_H
 
 #include "Header.h"
+#include "Complex.h"
 
 class Polynomial
 {
@@ -25,17 +26,14 @@ class Polynomial
     //! Computes the roots of the cubic equation
     void solveCubic();
 
+    //! Computes the roots of the quartic equation
+    void solveQuartic();
+
     //! Computes a real root using Newton's method
     double solveNewtonMethod();
 
     //! Computes a real root using Newton's method
-    double solveBisectionMethod(int);
-
-    //! Computes a point whose function value is of opposite sign
-    double findPointOppositeSign(double, double);
-
-    //! Bisects an interval to find a real root
-    double bisect(double, double);
+    double solveBisectionMethod();
 
     //! Division of the polynomial by a linear expression
     vector<double> division(const vector<double> &, double);

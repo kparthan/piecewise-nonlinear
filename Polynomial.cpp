@@ -217,6 +217,75 @@ void Polynomial::solveCubic()
 }
 
 /*!
+ *  \brief This module computes the roots of the quartic analytically
+ */
+void Polynomial::solveQuartic()
+{
+  /* form a monic polynomial: x^4 + p x^3 + q x^2 + r x + s = 0 */
+  vector<double> newCoefficients;
+  for (int i=0; i<4; i++) {
+    newCoefficients.push_back(coefficients[i]/coefficients[4]);
+  }
+  newCoefficients.push_back(1);
+  Polynomial monic(newCoefficients);
+  /* p,q,r, and s are real coefficients */
+  double p = monic.getCoefficients(3);
+  double q = monic.getCoefficients(2);
+  double r = monic.getCoefficients(1);
+  double s = monic.getCoefficients(0);
+
+  /* reduction to a cubic */
+  /* z^3 - q z^2 + (pr-4s) z + (4qs - r^2 - p^2 s) = 0 */
+  vector<double> transformed(4,0);
+  transformed[0] = 4 * q * s - r * r - p * p * s;
+  transformed[1] = p * r - 4 * s;
+  transformed[2] = -q;
+  transformed[3] = 1;
+  Polynomial cubic(transformed);
+  vector<double> z = cubic.solveLowerOrder();
+
+  double z1 = z[0];
+  double tmp = p * p / 4 - q + z1;
+  Complex T(tmp,0);
+  Complex R = T.squareRoot();
+  Complex D,E;
+  if (fabs(R.real()) < ZERO && fabs(R.imag()) < ZERO) {
+    tmp = p * p * 0.75 - 2 * q;
+    Complex A(tmp,0);
+    tmp = z1 * z1 - 4 * s;
+    T = Complex(tmp,0);
+    Complex B = T.squareRoot();
+    B *= 2;
+    Complex C = A + B;
+    D = C.squareRoot();
+    C = A - B;
+    E = C.squareRoot();
+  } else {
+    tmp = p * p * 0.75 - 2 * q;
+    T = Complex(tmp,0);
+    Complex A = T - R * R;
+    tmp = p * q - 2 * r - p * p * p / 4;
+    T = Complex(tmp,0);
+    Complex B = T / R;
+    Complex C = A + B;
+    D = C.squareRoot();
+    C = A - B;
+    E = C.squareRoot();
+  }
+  T = Complex(-p/4.0,0);
+  Complex X[4];
+  X[0] = T + (R + D) / 2;
+  X[1] = T + (R - D) / 2;
+  X[2] = T - (R - E) / 2;
+  X[3] = T - (R + E) / 2;
+  for (int i=0; i<4; i++) {
+    if (fabs(X[i].imag()) < ZERO) {
+      realRoots.push_back(X[i].real());
+    }
+  }
+}
+
+/*!
  *  \brief This method solves for a real root of the polynomial using
  *  Newton's method.
  *  \return a real root
@@ -224,6 +293,12 @@ void Polynomial::solveCubic()
 double Polynomial::solveNewtonMethod()
 {
   double x = getBoundOnRoots();
+  if (fabs(value(x)) < ZERO) {
+    return x;
+  }
+  if (fabs(value(-x)) < ZERO) {
+    return -x;
+  }
   if (degree % 2 == 1) {  // polynomial of odd degree
     double roots_product = -coefficients[0] / coefficients[degree];
     if (roots_product < 0) {
@@ -236,7 +311,6 @@ double Polynomial::solveNewtonMethod()
       x = -x;
     }
   }
-  double tol = 0.000001;
   while(1) {
     vector<double> b = divide(1,-x);
     vector<double> quotient;
@@ -248,7 +322,7 @@ double Polynomial::solveNewtonMethod()
     double slope = q.value(x);
     double diff = remainder / slope;
     x -= diff;
-    if (fabs(diff) < tol) {
+    if (fabs(diff) < TOLERANCE) {
       break;
     }
   }
@@ -260,94 +334,21 @@ double Polynomial::solveNewtonMethod()
  *  using the interval bisection method.
  *  \return a real root
  */
-double Polynomial::solveBisectionMethod(int num_real)
+double Polynomial::solveBisectionMethod()
 {
   double x = getBoundOnRoots();
-  if (num_real % 2 == 1) {
-    /* if the number of roots are odd, then the function     
-       value at the ends of the interval are of opposite signs */
-    return bisect(-x,x);
-  } else {
-    /* if the number of roots are even, then the function     
-       value at the ends of the interval are of same sign, 
-       hence, find an appropriate interval */
-    double fa = value(-x);
-    if (fabs(fa) < ZERO) {
-      return -x;
-    }
-    double fb = value(x);
-    if (fabs(fb) < ZERO) {
-      return x;
-    }
-    double fmid = value(0);
-    if (fabs(fmid) < ZERO) {
-      return 0;
-    }
-    if (sign(fa) == sign(fmid)) {
-      double a = findPointOppositeSign(-x,0);
-      if (fabs(a) > ZERO) {
-        return bisect(-x,a);
-      } else {
-        a = findPointOppositeSign(0,x);
-        return bisect(a,x);
-      }
-    } else {
-      return bisect(-x,0);
-    }
-  }
-}
-
-/*!
- *  \brief This module finds a point in the given interval where the function
- *  value is of sign oppposite to that at the end points of the interval
- *  \param a a double
- *  \param b a double
- *  \return an intermediate point from within the range
- */
-double Polynomial::findPointOppositeSign(double a, double b)
-{
-  if (fabs(b-a) < TOLERANCE) {
-    return 0;
-  }
-  int sign_end = sign(value(a));
-  while (1) {
-    double mid = (a + b) / 2;
-    if (sign(value(mid)) != sign_end) {
-      return mid;
-    } else {
-      double x = findPointOppositeSign(a,mid);
-      if (fabs(x) > ZERO) {
-        return x;
-      } else {
-        return findPointOppositeSign(mid,b);
-      }
-    }
-  }
-}
-
-/*!
- *  \brief This module bisects the interval to keep approximating
- *  the real roots of the polynomial
- *  \param a a double
- *  \param b a double
- *  \return a root
- */
-double Polynomial::bisect(double a, double b)
-{
-  double fa = value(a);
+  
+  double fa = value(-x);
   if (fabs(fa) < ZERO) {
-    return a;
+    return -x;
   }
-  double fb = value(b);
+  double fb = value(x);
   if (fabs(fb) < ZERO) {
-    return b;
+    return x;
   }
-  if (sign(fa) == sign(fb)) {
-    cout << "Function value has same sign at the ends of the interval" << endl;
-    //exit(1);
-  }
-  double mid = (a + b) / 2;
 
+  double a = -x, b = x;
+  double mid = 0; 
   while(1) {
     double fmid = value(mid);
     if (fabs(fmid) < ZERO) {
@@ -373,21 +374,21 @@ double Polynomial::bisect(double a, double b)
  */
 vector<double> Polynomial::computeRealRoots()
 {
-  Polynomial p = preprocess();
+  //Polynomial p = preprocess();
+  Polynomial p(*this);
   vector<double> real_roots;
 
   int num_real = p.countDistinctRealRoots();
-  int count = num_real;
   while (1) {
-    //double x = p.solveNewtonMethod();
-    if (p.getDegree() <= 3) {
+    if (p.getDegree() <= 4) {
       vector<double> roots = p.solveLowerOrder();
       for(int i=0; i<roots.size(); i++) {
         real_roots.push_back(roots[i]);
       }
       break;
     }
-    double x = p.solveBisectionMethod(count);
+    double x = p.solveBisectionMethod();
+    //double x = p.solveNewtonMethod();
     real_roots.push_back(x);
     vector<double> b = p.divide(1,-x);
     vector<double> quotient;
@@ -398,7 +399,6 @@ vector<double> Polynomial::computeRealRoots()
       break;
     }
     p = Polynomial(quotient);
-    count--;
   }
   if (realRoots.size() > 0) {
     real_roots.push_back(0);
@@ -424,6 +424,10 @@ vector<double> Polynomial::solveLowerOrder()
 
     case 3:
       solveCubic();
+      break;
+
+    case 4:
+      solveQuartic();
       break;
   }
   return realRoots;

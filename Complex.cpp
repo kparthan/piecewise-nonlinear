@@ -242,9 +242,19 @@ Complex Complex::operator/(double c)
  */
 Complex Complex::squareRoot()
 {
-  double mod = modulus();
-  double x = sqrt((real_part + mod) / 2);
-  double y = sign(imag_part) * sqrt((-real_part + mod) / 2);
-  return Complex(x,y);
+  if (fabs(imag_part) > ZERO) {
+    double mod = modulus();
+    double x = sqrt((real_part + mod) / 2);
+    double y = sign(imag_part) * sqrt((-real_part + mod) / 2);
+    return Complex(x,y);
+  } else {
+    if (real_part >= 0) {
+      double x = sqrt(real_part);
+      return Complex(x,0);
+    } else {
+      double x = sqrt(-real_part);
+      return Complex(0,x);
+    }
+  }
 }
 

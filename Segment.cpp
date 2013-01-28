@@ -194,18 +194,10 @@ void Segment::fitLinear(void)
     Line<Point<double>> line(start,end);
     Point<double> p(coordinates[1]);
     Plane<Point<double>> plane(start,p,end); 
-    //Plane<Point<double>> plane = constructPlane(start,end); 
     deviations = computeDeviations(line,plane);
     //deviations = computeDeviations2(line,plane);
   }
   linearFitMsgLen = messageLength(deviations);
-}
-
-Plane<Point<double>> Segment::constructPlane(Point<double> &start, 
-                                             Point<double> &end)
-{
-  Point<double> above(start.x(),start.y(),start.z()+1);
-  return Plane<Point<double>>(start,above,end);
 }
 
 /*!
@@ -297,6 +289,11 @@ vector<array<double,3>> Segment::computeDeviations(Line<Point<double>> &line,
   return deviations;
 }
 
+/*
+ *  \brief Another module to compute deviations (using Arun's geometry3D file)
+ *  \param line a reference to a Line
+ *  \param plane a reference to a Plane
+ */
 vector<array<double,3>> Segment::computeDeviations2(Line<Point<double>> &line,
                                                   Plane<Point<double>> &plane)
 {
@@ -437,12 +434,12 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
           singleControlMsgLen[i] = messageLength(curve,deviations);
           cpIndex[i] = 0;
           if (i == 0) {
+            index[0] = 0;
             min_fit = OptimalFit(1,index,controlPoints,singleControlMsgLen[0]);
           } else {
-            index[0] = i;
-            current_fit = OptimalFit(1,index,controlPoints,singleControlMsgLen[i]);
-            if (current_fit < min_fit) {
-              min_fit = current_fit;
+            if (singleControlMsgLen[i] < min_fit.getMessageLength()) {
+              index[0] = i;
+              min_fit = OptimalFit(1,index,controlPoints,singleControlMsgLen[i]);
             }
           }
         }
@@ -467,10 +464,7 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
         for (i=0; i<numIntermediate; i++) {
           controlPoints[1] = Point<double>(coordinates[i+1]);
           cpIndex[i] = 1;
-          index[0] = i;
           for (j=0; j<numIntermediate; j++) {
-            //cout << "Controls: " << i << " " << j << endl;
-            index[1] = j;
             if (i > j) {
               doubleControlMsgLen[i][j] = doubleControlMsgLen[j][i];
             } else {
@@ -485,12 +479,15 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
               cpIndex[j] = 0;
             }
             if (i == 0 && j == 0) {
+              index[0] = 0;
+              index[1] = 0;
               min_fit = OptimalFit(2,index,controlPoints,doubleControlMsgLen[0][0]);
             } else {
-              current_fit = OptimalFit(2,index,controlPoints,
-                                        doubleControlMsgLen[i][j]);
-              if (current_fit < min_fit) {
-                min_fit = current_fit;
+              if (doubleControlMsgLen[i][j] < min_fit.getMessageLength()) {
+                index[0] = i;
+                index[1] = j;
+                min_fit = OptimalFit(2,index,controlPoints,
+                                     doubleControlMsgLen[i][j]);
               }
             }
           } 
