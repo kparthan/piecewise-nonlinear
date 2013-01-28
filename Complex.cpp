@@ -242,10 +242,10 @@ Complex Complex::operator/(double c)
 Complex Complex::squareRoot()
 {
   if (fabs(imag_part) > ZERO) {
-          double mod = modulus();
-          double x = sqrt((real_part + mod) / 2);
-          double y = boost::math::sign(imag_part) * sqrt((-real_part + mod) / 2);
-          return Complex(x,y);
+    double mod = modulus();
+    double x = sqrt((real_part + mod) / 2);
+    double y = boost::math::sign(imag_part) * sqrt((-real_part + mod) / 2);
+    return Complex(x,y);
   } else {
     if (real_part >= 0) {
       double x = sqrt(real_part);
