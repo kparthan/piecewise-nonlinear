@@ -76,14 +76,14 @@ int parseCommandLineInput(int argc, char **argv, string &file,
         Usage(argv[0],desc);
       }
     } 
-  } else {
-    /* default: run for all allowed intermediate control points */
+  } /*else {
+    // default: run for all allowed intermediate control points 
     if (controls.size() == 0) {
       for (int i=0; i<=MAX_INTERMEDIATE_CONTROL_POINTS; i++) {
         controls.push_back(i);
       }
     }
-  }
+  }*/
 
   if (noargs) {
     cout << "Not enough arguments supplied..." << endl;
@@ -250,6 +250,20 @@ void convertPointToArray(Point<double> &p, double container[])
   container[0] = p.x();
   container[1] = p.y();
   container[2] = p.z();
+}
+
+/*!
+ *  \brief This module extracts the file name from the path
+ *  \param file a reference to a string
+ *  \return the extracted portion of the file name
+ */
+string extractName(string &file)
+{
+  unsigned pos1 = file.find_last_of("/");
+  unsigned pos2 = file.find(".");
+  int length = pos2 - pos1 - 1;
+  string sub = file.substr(pos1+1,length);
+  return sub;
 }
 
 /*!

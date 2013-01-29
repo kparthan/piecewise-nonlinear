@@ -18,6 +18,12 @@ StandardForm::StandardForm(string file, Structure s, vector<int> &controls) :
     vector<double> tmp(numResidues,0);
     codeLength.push_back(tmp);
   }
+  if (controls.size() > 0) {
+    for (int i=0; i<numResidues; i++) {
+      vector<OptimalFit> tmp(numResidues,OptimalFit());
+      optimalBezierFit.push_back(tmp);
+    }
+  }
 }
 
 /*!
@@ -355,11 +361,13 @@ void StandardForm::fitModels()
   /* Null model fit */
   fitNullModel();
 
-  /* Linear model fit */
-  fitLinearModel();
-
-  /* Bezier Curve fit */
-  fitBezierCurveModel();
+  if (controls.size() == 0) {
+    /* Linear model fit */
+    fitLinearModel();
+  } else {
+    /* Bezier Curve fit */
+    fitBezierCurveModel();
+  }
 } 
 
 /*!
@@ -450,8 +458,13 @@ void StandardForm::fitBezierCurveModel()
  */
 void StandardForm::computeCodeLengthMatrix(void)
 {
+  int procs = omp_get_num_procs();
+  omp_set_num_threads(procs);
+  int j;
+  //#pragma omp parallel for private(j)
   for (int i=0; i<numResidues; i++){
-    for (int j=i+1; j<numResidues; j++){
+    #pragma omp parallel for 
+    for (j=i+1; j<numResidues; j++){
       Segment segment = getSegment(i,j);
       segment.fitLinear();
       codeLength[i][j] = segment.getLinearFit(); 
@@ -490,10 +503,14 @@ void StandardForm::computeCodeLengthMatrix(void)
  */
 void StandardForm::computeCodeLengthMatrixBezier(void)
 {
-  for (int i=0; i<numResidues; i++) {
-    //cout << "Segment from: " << i << endl;
-    vector<OptimalFit> encodings(numResidues,OptimalFit());
-    for (int j=i+1; j<numResidues; j++) {
+  int procs = omp_get_num_procs();
+  omp_set_num_threads(procs);
+  int i,j;
+  //#pragma omp parallel for private(j)
+  for (i=0; i<numResidues; i++) {
+    cout << "Segment from: " << i << endl;
+    //#pragma omp parallel for
+    for (j=i+1; j<numResidues; j++) {
       cout << "Segment: " << i << " " << j << "\n";
       vector<int> index;
       Segment segment = getSegment(i,j);
@@ -505,12 +522,12 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
           min_fit = current_fit;
         }
       }
-      encodings[j] = min_fit;
+      optimalBezierFit[i][j] = min_fit;
     }
-    optimalBezierFit.push_back(encodings);
   }
-  for (int i=0; i<numResidues; i++) {
-    for (int j=i+1; j<numResidues; j++) {
+  #pragma omp parallel for private(j)
+  for (i=0; i<numResidues; i++) {
+    for (j=i+1; j<numResidues; j++) {
       codeLength[i][j] = optimalBezierFit[i][j].getMessageLength();
     }
   }
@@ -613,15 +630,40 @@ pair<double,vector<int>> StandardForm::optimalSegmentation(void)
 }
 
 /*!
+ *  \brief This module creates a new output file to print the
+ *  segmentation results to.
+ *  \param status a boolean variable (0 - linear, 1 - bezier)
+ *  \return the output file path
+ */
+string StandardForm::createOutputFile(bool status)
+{
+  string filtered = extractName(file);
+  string output_file;
+  if (status) {
+    output_file = "output/bezier_segmentation_";
+    output_file = output_file + filtered + "_";
+    for (int i=0; i<controls.size(); i++) {
+      output_file += boost::lexical_cast<string>(controls[i]); 
+    }
+  } else {
+    output_file = "output/linear_segmentation_";
+    output_file += filtered;
+  }
+  return output_file;
+}
+
+/*!
  *  \brief This module prints the details of the linear segmentation
  *  \param segmentation a reference to a pair<double,vector<int>>
  */
 void StandardForm::printLinearSegmentation(pair<double,vector<int>> 
                                            &segmentation)
 {
+  string output_file = createOutputFile(0);
+  ofstream fw(output_file.c_str());
+
   int i;
   vector<int> segments = segmentation.second;
-  ofstream fw("linear_segmentation");
   fw << "Using structure file: " << file << endl;
   fw << "Doing a LINEAR segmentation ..." << endl << endl;
   fw << "# of residues: " << getNumberOfResidues() << endl;
@@ -657,9 +699,11 @@ void StandardForm::printLinearSegmentation(pair<double,vector<int>>
 void StandardForm::printBezierSegmentation(pair<double,vector<int>>
                                            &segmentation)
 {
+  string output_file = createOutputFile(1);
+  ofstream fw(output_file.c_str());
+
   int i;
   vector<int> segments = segmentation.second;
-  ofstream fw("bezier_segmentation");
   fw << "Using structure file: " << file << endl;
   fw << "Doing a BEZIER segmentation ..." << endl << endl;
   fw << "# of residues: " << getNumberOfResidues() << endl;

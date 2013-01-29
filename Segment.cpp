@@ -259,6 +259,7 @@ vector<array<double,3>> Segment::computeDeviations(Line<Point<double>> &line,
   Point<double> p,projection,previous;
   previous = line.startPoint();
 
+  deviations.resize(numIntermediate-1);
   for(int i=1; i<numIntermediate; i++){
     p = Point<double>(coordinates[i+1]);
 
@@ -274,7 +275,7 @@ vector<array<double,3>> Segment::computeDeviations(Line<Point<double>> &line,
 
     /* distance from previous projection */
     d[2] = line.signedDistance(previous,projection);
-    deviations.push_back(d);
+    deviations[i-1] = d;
     previous = projection;
   }
   //cout << "*****************" << endl;
@@ -399,6 +400,8 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
   double msglen;
   vector<int> index;
   OptimalFit min_fit,current_fit;
+  int procs = omp_get_num_procs();
+  omp_set_num_threads(procs);
 
   switch(numIntermediateControlPoints) {
     case 0:
@@ -425,6 +428,7 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
         controlPoints = vector<Point<double>>(3,Point<double>());
         controlPoints[0] = start;
         controlPoints[2] = end;
+        //#pragma omp parallel for
         for (i=0; i<numIntermediate; i++) {
           cpIndex[i] = 1;
           controlPoints[1] = Point<double>(coordinates[i+1]);

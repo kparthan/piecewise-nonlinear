@@ -129,6 +129,9 @@ class StandardForm
     //! Computes the optimal segmentation
     pair<double,vector<int>> optimalSegmentation();
 
+    //! Creates a suitable output file
+    string createOutputFile(bool);
+
     //! Prints the segmentation details for the linear fit
     void printLinearSegmentation(pair<double,vector<int>> &);
 
