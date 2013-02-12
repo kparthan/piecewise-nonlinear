@@ -537,14 +537,14 @@ vector<array<double,3>> Segment::computeDeviations(BezierCurve &curve,
         tmin_current = curve.nearestPoint(tmin_prev,curve.project(projection));
         d[1] = curve.signedDistance(projection,tmin_current,normal);
 
-        d[2] = tmin_current - tmin_prev;
-        /*Point<double> p1 = curve.getPoint(tmin_prev);
+        //d[2] = tmin_current - tmin_prev;
+        Point<double> p1 = curve.getPoint(tmin_prev);
         Point<double> p2 = curve.getPoint(tmin_current);
         if (tmin_current < tmin_prev) {
           d[2] = -distance(p1,p2);
         } else {
           d[2] = distance(p1,p2);
-        }*/
+        }
         deviations.push_back(d);
         tmin_prev = tmin_current;
       }

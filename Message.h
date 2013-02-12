@@ -15,7 +15,7 @@ class Message
 
     //! Wallace Freeman formulation of message length (in bits)
     //! two parameters
-    double encodeWallaceFreeman(int, double, double); 
+    double encodeWallaceFreeman(int, double, double, double, double); 
 
   public:
     //! Constructor

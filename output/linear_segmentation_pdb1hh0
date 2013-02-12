@@ -2,54 +2,19 @@ Using structure file: test/pdb1hh0.ent.gz
 Doing a LINEAR segmentation ...
 
 # of residues: 46
-# of linear segments: 9
-0-->2-->8-->14-->20-->26-->32-->38-->39-->45
+# of linear segments: 2
+0-->5-->45
 
-Best fit: 1486.96 bits.
-Bits per residue: 33.0435
+Best fit: 1766.7 bits.
+Bits per residue: 39.26
 
 Segment # 1
-Residue stretch: [0, 2]
-Length of the segment: 3
-		Message length: 87.5055
+Residue stretch: [0, 5]
+Length of the segment: 6
+		Message length: 211.47
 
 Segment # 2
-Residue stretch: [2, 8]
-Length of the segment: 7
-		Message length: 202.968
-
-Segment # 3
-Residue stretch: [8, 14]
-Length of the segment: 7
-		Message length: 201.981
-
-Segment # 4
-Residue stretch: [14, 20]
-Length of the segment: 7
-		Message length: 201.846
-
-Segment # 5
-Residue stretch: [20, 26]
-Length of the segment: 7
-		Message length: 201.616
-
-Segment # 6
-Residue stretch: [26, 32]
-Length of the segment: 7
-		Message length: 200.817
-
-Segment # 7
-Residue stretch: [32, 38]
-Length of the segment: 7
-		Message length: 173.105
-
-Segment # 8
-Residue stretch: [38, 39]
-Length of the segment: 2
-		Message length: 44.012
-
-Segment # 9
-Residue stretch: [39, 45]
-Length of the segment: 7
-		Message length: 173.105
+Residue stretch: [5, 45]
+Length of the segment: 41
+		Message length: 1555.23
 

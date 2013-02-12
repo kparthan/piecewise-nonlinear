@@ -237,12 +237,34 @@ vector<double> BezierCurve::project(const Point<double> &p)
  */
 double BezierCurve::nearestPoint(double from, const vector<double> &set)
 {
-  double tmin = set[0];
+  /*double tmin = set[0];
   double delta = fabs(from-tmin);
   for (int i=1; i<set.size(); i++) {
     if (fabs(from-set[i]) < delta) {
       tmin = set[i];
       delta = fabs(from-set[i]);
+    }
+  }*/
+  vector<double> valid_t;
+  for (int i=0; i<set.size(); i++){
+    if (set[i] >= 0 && set[i] <=1) {
+      valid_t.push_back(set[i]);
+    }
+  }
+  if (valid_t.size() == 0) {
+    valid_t = set;
+  }
+  double tmin = valid_t[0];
+  Point<double> prev = getPoint(from);
+  Point<double> p = getPoint(tmin);
+  double dmin = distance(prev,p);
+  for (int i=1; i<valid_t.size(); i++) {
+    double t = valid_t[i];
+    p = getPoint(t);
+    double d = distance(prev,p);
+    if (d < dmin) {
+      dmin = d;
+      tmin = t;
     }
   }
   return tmin;

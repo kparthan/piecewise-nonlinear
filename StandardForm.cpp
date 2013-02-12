@@ -461,10 +461,11 @@ void StandardForm::computeCodeLengthMatrix(void)
   int procs = omp_get_num_procs();
   omp_set_num_threads(procs);
   int j;
-  //#pragma omp parallel for private(j)
+  #pragma omp parallel for private(j)
   for (int i=0; i<numResidues; i++){
-    #pragma omp parallel for 
+    //#pragma omp parallel for 
     for (j=i+1; j<numResidues; j++){
+      cout << "Segment: " << i << " " << j <<endl;
       Segment segment = getSegment(i,j);
       segment.fitLinear();
       codeLength[i][j] = segment.getLinearFit(); 
@@ -506,7 +507,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
   int procs = omp_get_num_procs();
   omp_set_num_threads(procs);
   int i,j;
-  //#pragma omp parallel for private(j)
+  #pragma omp parallel for private(j)
   for (i=0; i<numResidues; i++) {
     cout << "Segment from: " << i << endl;
     //#pragma omp parallel for
@@ -559,7 +560,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
       }
     }*/
 /*
-    Segment segment = getSegment(1,40);
+    Segment segment = getSegment(0,8);
     OptimalFit min_fit, current_fit;
     min_fit = segment.fitBezierCurve(controls[0]);
     for (int k=1; k<controls.size(); k++) {
@@ -568,7 +569,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
         min_fit = current_fit;
       }
     }
-    cout << "bezier fit: " << min_fit.getMessageLength() << endl;
+    cout << "\nbezier fit: " << min_fit.getMessageLength() << endl;
   */  
 }
 
