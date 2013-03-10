@@ -390,7 +390,7 @@ double Segment::messageLength(vector<array<double,3>> &deviations)
  *  based on the number of intermediate control points
  *  \param numIntermediateControlPoints an integer
  */
-OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
+/*OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
 {
   vector<Point<double>> controlPoints;
   vector<array<double,3>> deviations;
@@ -508,6 +508,84 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
       break;
   }
   return min_fit;
+}*/
+
+/*!
+ *  \brief This function estimates the free parameter values of the
+ *  intermediate points
+ *  \return the list of parameter values
+ */
+vector<double> Segment::estimateFreeParameters()
+{
+  vector<double> length(numPoints-1,0);
+  double totalLength = 0;
+  Point<double> x1(coordinates[0]);
+  Point<double> x2(coordinates[1]);
+  length[0] = distance(x1,x2);
+  for (int i=1; i<numPoints-1; i++) {
+    x1 = Point<double>(coordinates[i+1]);
+    length[i] = length[i-1] + distance(x1,x2);
+    totalLength += length[i];
+    x2 = x1;
+  }
+  vector<double> t(numPoints,0);
+  for (int i=1; i<numPoints-1; i++) {
+    t[i] = length[i] / (double)totalLength;
+  }
+  t[numPoints-1] = 1;
+  return t;
+}
+
+/*!
+ *  \brief This module computes the message length to encode the segment
+ *  based on the number of intermediate control points
+ *  \param numIntermediateControlPoints an integer
+ */
+OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
+{
+  int mplusone = numIntermediateControlPoints + 2;
+  vector<Point<double>> controlPoints(mplusone,Point<double()>);
+  controlPoints[0] = start;
+  controlPoints[mplusone-1] = end;
+  vector<array<double,3>> deviations;
+  BezierCurve curve;
+  int i,j;
+  double msglen;
+  vector<int> index;
+  OptimalFit min_fit,current_fit;
+  int procs = omp_get_num_procs();
+  omp_set_num_threads(procs);
+
+  if (numIntermediateControlPoints != 0) {
+    vector<double> t = estimateFreeParameters();
+    Matrix<double> A(mplusone-2,mplusone-2);
+    for (int i=1; i<mplusone-1; i++) {
+      for (int j=1; j<mplusone-1; j++) {
+        double sum = 0;
+        for (int n=0; n<numPoints; n++) {
+          sum += bernstein(mplusone-1,i,t[n]) * bernstein(mplusone-1,j,t[n]);
+        }
+        A[i-1][j-1] = sum;
+      }
+    }
+  }
+  Point<double> p1,p2,p3,p4;
+  Matrix<double> B(mplusone-2,3);
+  for (int i=1; i<mplusone-1; i++) {
+    Point<double> p;
+    for (int n=0; n<numPoints; n++) {
+      p1 = controlPoints[0] * bernstein(mplusone-1,0,t[n]);
+      p2 = controlPoints[mplusone-1] * bernstein(mplusone-1,mplusone-1,t[n]);
+      p3 = p1 + p2;
+      Point<double> pn(coordinates[n]);
+      p4 = pn - p3;
+      p += p4 * bernstein(mplusone-1,i,t[n]);
+    }
+    B[i-1][0] = p.x();
+    B[i-1][1] = p.y();
+    B[i-1][2] = p.z();
+  }
+    
 }
 
 /*!
