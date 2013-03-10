@@ -433,3 +433,20 @@ double minimum(vector<vector<double>> &list)
   return min;
 }
 
+/*!
+ *  \brief This function computes the Bernstein polynomials
+ *  used as coefficients in the Bezier curve
+ *  \param m an integer
+ *  \param i an integer
+ *  \param t a double
+ *  \return the Bernstein polynomial value at given t
+ */
+double bernstein(int m, int i, double t)
+{
+  double x = pow(1-t,m);
+  for(int j=1; j<=i; j++) {
+    x *= ((m-j+1) * t) / (j * (1-t));
+  }
+  return x;
+}
+

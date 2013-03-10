@@ -100,9 +100,6 @@ class Segment
     //! Fits a Bezier curve
     OptimalFit fitBezierCurve(int);
 
-    //! Estimates the free parameters of the intermediate points
-    vector<double> estimateFreeParameters();
-
     //! Computes deviations from a Bezier curve 
     vector<array<double,3>> computeDeviations(BezierCurve &, vector<int> &);
 

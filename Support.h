@@ -22,6 +22,7 @@ double cubeRoot(double);
 double absoluteMaximum(vector<double> &);
 double minimum(vector<double> &);
 double minimum(vector<vector<double>> &);
+double bernstein(int, int, double);
 
 void testFit (vector<int> &);
 void proteinFit (string, vector<int> &);
