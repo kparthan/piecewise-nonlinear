@@ -100,6 +100,15 @@ class Segment
     //! Computes the message length for the segment described by a 
     //! Bezier curve
     double messageLength(BezierCurve &, vector<array<double,3>> &);
+
+    //!
+    double messageLengthMML(BezierCurve &, double);
+
+    //!
+    double sigmaMML(BezierCurve &, vector<double> &);
+
+    //! 
+    OptimalFit stateUsingCurve(OptimalFit &);
 };
 
 #endif

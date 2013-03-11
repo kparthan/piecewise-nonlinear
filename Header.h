@@ -21,6 +21,7 @@
 
 #define AOM 0.001
 #define TOLERANCE 0.0000001
+#define LARGE_NUM 1000000
 #define PI boost::math::constants::pi<double>()
 #define ZERO std::numeric_limits<double>::epsilon()
 #define MAX_INTERMEDIATE_CONTROL_POINTS 2 

@@ -333,24 +333,53 @@ double Segment::messageLength(vector<array<double,3>> &deviations)
  */
 vector<double> Segment::estimateFreeParameters()
 {
-  vector<double> length(numPoints-1,0);
-  Point<double> x1(coordinates[0]);
-  Point<double> x2(coordinates[1]);
-  length[0] = distance(x1,x2);
-  for (int i=1; i<numPoints-1; i++) {
-    x1 = Point<double>(coordinates[i+1]);
-    length[i] = length[i-1] + distance(x1,x2);
-    x2 = x1;
-  }
   vector<double> t(numPoints,0);
-  for (int i=1; i<numPoints-1; i++) {
-    t[i] = length[i-1] / (double)length[numPoints-2];
+  if (numPoints > 2) {
+    vector<double> length(numPoints-1,0);
+    Point<double> x1(coordinates[0]);
+    Point<double> x2(coordinates[1]);
+    length[0] = distance(x1,x2);
+    for (int i=1; i<numPoints-1; i++) {
+      x1 = Point<double>(coordinates[i+1]);
+      length[i] = length[i-1] + distance(x1,x2);
+      x2 = x1;
+    }
+    for (int i=1; i<numPoints-1; i++) {
+      t[i] = length[i-1] / (double)length[numPoints-2];
+    }
+    t[numPoints-1] = 1;
+    /*for (int i=0; i<t.size(); i++) {
+      cout << t[i] << endl;
+    }*/
+  } else {
+    t[1] = 1;
   }
-  t[numPoints-1] = 1;
-  /*for (int i=0; i<t.size(); i++) {
-    cout << t[i] << endl;
-  }*/
   return t;
+}
+
+/*!
+ *
+ */
+double Segment::sigmaMML(BezierCurve &curve, vector<double> &t)
+{
+  int m = curve.getDegree();
+  int N = t.size();
+  if (N+1 == m) {
+    return LARGE_NUM;
+  } else {
+    double variance = 0;
+    for (int n=0; n<N; n++) {
+      Point<double> xn(coordinates[n]);
+      Point<double> pt = curve.getPoint(t[n]);
+      Point<double> diff = xn - pt;
+      variance += diff * diff;
+    }
+    double sigma = sqrt(variance / (N+1-m));
+    if (sigma < ZERO) {
+      sigma = 3 * AOM;
+    }
+    return sigma;
+  }
 }
 
 /*!
@@ -365,8 +394,8 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
   controlPoints[0] = start;
   controlPoints[m-1] = end;
 
+  vector<double> t = estimateFreeParameters();
   if (numIntermediateControlPoints != 0) {
-    vector<double> t = estimateFreeParameters();
     Matrix<double> A(m-2,m-2);
     for (int i=1; i<m-1; i++) {
       for (int j=1; j<m-1; j++) {
@@ -377,36 +406,84 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
         A[i-1][j-1] = sum;
       }
     }
-    Point<double> p1,p2,p3,p4;
-    Matrix<double> B(m-2,3);
-    for (int i=1; i<m-1; i++) {
-      Point<double> p;
-      for (int n=0; n<numPoints; n++) {
-        p1 = controlPoints[0] * bernstein(m-1,0,t[n]);
-        p2 = controlPoints[m-1] * bernstein(m-1,m-1,t[n]);
-        p3 = p1 + p2;
-        Point<double> pn(coordinates[n]);
-        p4 = pn - p3;
-        p += p4 * bernstein(m-1,i,t[n]);
+    if (fabs(A.determinant()) < ZERO) {
+      return fitBezierCurve(0);
+    } else {
+      Point<double> p1,p2,p3,p4;
+      Matrix<double> B(m-2,3);
+      for (int i=1; i<m-1; i++) {
+        Point<double> p;
+        for (int n=0; n<numPoints; n++) {
+          p1 = controlPoints[0] * bernstein(m-1,0,t[n]);
+          p2 = controlPoints[m-1] * bernstein(m-1,m-1,t[n]);
+          p3 = p1 + p2;
+          Point<double> pn(coordinates[n]);
+          p4 = pn - p3;
+          p += p4 * bernstein(m-1,i,t[n]);
+        }
+        B[i-1][0] = p.x();
+        B[i-1][1] = p.y();
+        B[i-1][2] = p.z();
       }
-      B[i-1][0] = p.x();
-      B[i-1][1] = p.y();
-      B[i-1][2] = p.z();
-    }
-    // Solve: AX = B (A is a square matrix)  
-    Matrix<double> cps = A.inverse() * B;
-    for (int i=1; i<=cps.rows(); i++) {
-      controlPoints[i].x(cps[i-1][0]);
-      controlPoints[i].y(cps[i-1][1]);
-      controlPoints[i].z(cps[i-1][2]);
-      controlPoints[i].print();
+      // Solve: AX = B (A is a square matrix)  
+      Matrix<double> cps = A.inverse() * B;
+      for (int i=1; i<=cps.rows(); i++) {
+        controlPoints[i].x(cps[i-1][0]);
+        controlPoints[i].y(cps[i-1][1]);
+        controlPoints[i].z(cps[i-1][2]);
+        //controlPoints[i].print();
+      }
     }
   }
 
   BezierCurve curve(controlPoints);
+  //vector<array<double,3>> deviations = computeDeviations(curve);
+  //double msglen = messageLength(curve,deviations);
+  double sigma = sigmaMML(curve,t);
+  double msglen = messageLengthMML(curve,sigma);
+  return OptimalFit(controlPoints,msglen);
+}
+
+/*!
+ *
+ */
+OptimalFit Segment::stateUsingCurve(OptimalFit &optimal)
+{
+  vector<Point<double>> cps = optimal.getControlPoints();
+  BezierCurve curve(cps);
   vector<array<double,3>> deviations = computeDeviations(curve);
   double msglen = messageLength(curve,deviations);
-  return OptimalFit(controlPoints,msglen);
+  return OptimalFit(cps,msglen);
+}
+
+/*!
+ *  \brief This function is used to compute the MML way of fitting 
+ *  Bezier curves and the associated message length
+ */
+double Segment::messageLengthMML(BezierCurve &curve, double sigma)
+{
+  int m = curve.getDegree();
+  int N = numPoints;
+  double msglen = 0;
+  msglen += -0.5 * m * log(2*PI);
+  msglen += 0.5 * log (m*PI);
+  msglen += 0.5 * m * log(N);
+  msglen += -0.5 * (m-1) * log(2*m+1);
+  msglen += (N-m+1) * log(sigma);
+  msglen += -N * log(AOM);
+  msglen += 0.5 * N * log(2*PI);
+  msglen += (m-1) * log(volume);
+  msglen += 0.5 * (N-m+1);
+  double c;
+  if (m == 1) {
+    c = 1;
+  } else if (m == 2) {
+    c = 2 / 3.0;
+  } else if (m == 3) {
+    c = 63 / 400.0;
+  }
+  msglen += 0.5 * log(c);
+  return msglen/log(2);
 }
 
 /*!
