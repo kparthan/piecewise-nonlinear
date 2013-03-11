@@ -19,10 +19,8 @@ Segment::Segment(vector<array<double,3>> &coordinates, double volume):
   /* instantiating message length components */
   linearFitMsgLen = 0;
   zeroControlMsgLen = 0;
-  singleControlMsgLen = vector<double>(numIntermediate,0);
-  for (int i=0; i<numIntermediate; i++){
-    doubleControlMsgLen.push_back(vector<double>(numIntermediate,0));
-  }
+  singleControlMsgLen = 0; 
+  doubleControlMsgLen = 0;
 }
 
 /*!
@@ -68,59 +66,17 @@ double Segment::getLinearFit()
  *  \param numIntermediateControlPoints an integer
  *  \return the bezier curve fit with minimum message length
  */
-double Segment::getNonLinearFit(int numIntermediateControlPoints)
+double Segment::getBezierCurveFit(int numIntermediateControlPoints)
 {
   switch(numIntermediateControlPoints) {
     case 0:
       return zeroControlMsgLen;
 
     case 1:
-      return minimum(singleControlMsgLen);
+      return singleControlMsgLen;
 
     case 2:
-      return minimum(doubleControlMsgLen);
-  }
-}
-
-/*!
- *  \brief This module returns the details of the non-linear fit using 
- *  zero intermediate control points
- *  \return the message length of the non-linear fit
- */
-double Segment::getBezierCurveFit()
-{
-  return zeroControlMsgLen; 
-}
-
-/*!
- *  \brief This module returns the details of the non-linear fit using a
- *  single intermediate control point
- *  \param index an integer
- *  \return the message length of the non-linear fit 
- */
-double Segment::getBezierCurveFit(int index)
-{
-  if (numIntermediate >= 1 && index >=0 && index < numIntermediate) {
-    return singleControlMsgLen[index];
-  } else {
-    return -1;
-  }
-}
-
-/*!
- *  \brief This module returns the details of the non-linear fit using a
- *  two intermediate control points
- *  \param index1 an integer
- *  \param index2 an integer
- *  \return the message length of the non-linear fit 
- */
-double Segment::getBezierCurveFit(int index1, int index2)
-{
-  if (numIntermediate >= 1 && index1 >= 0 && index1 < numIntermediate
-                           && index2 >= 0 && index2 < numIntermediate) {
-    return doubleControlMsgLen[index1][index2];
-  } else {
-    return -1;
+      return doubleControlMsgLen;
   }
 }
 
@@ -134,7 +90,7 @@ double Segment::getOptimalFit()
   double min = zeroControlMsgLen;
   double current_min; 
   for (int i=1; i<=MAX_INTERMEDIATE_CONTROL_POINTS; i++) {
-    current_min = getNonLinearFit(i);
+    current_min = getBezierCurveFit(i);
     if (current_min < min) {
       min = current_min;
     }
@@ -147,38 +103,37 @@ double Segment::getOptimalFit()
  */
 void Segment::printInfo(void)
 {
-  int i,j;
   cout << "Printing the details of the segment ..." << endl;
   cout << "# of intermediate points: " << getNumberOfIntermediatePoints()
   << endl;
   cout << "# of points: " << getNumberOfPoints() << endl;
-  for (i=0; i<numPoints; i++){
+  for (int i=0; i<numPoints; i++){
     cout << "coordinate[" << i << "]: " ;
     array<double,3> c = getCoordinates(i);
-    for (j=0; j<3; j++){
+    for (int j=0; j<3; j++){
       cout << c[j] << " ";
     }
     cout << endl;
   }
   cout << "Linear fit: " << getLinearFit() << endl;
   cout << "Bezier curve fit:- " << endl;
-  cout << "# of control points: 0" << endl;
-  cout << "\t\tMessage length = " << zeroControlMsgLen << endl;
-  if (numIntermediate >= 1) {
-    cout << "# of control points: 1" << endl;
-    for (i=0; i<numIntermediate; i++){
-      cout << "\tcp1: " << i+1 << "\t\t";
-      cout <<  getBezierCurveFit(i) << endl;
+  for (int i=0; i<MAX_INTERMEDIATE_CONTROL_POINTS+1; i++) {
+    cout << "# of intermediate control points: " << i << endl;
+    if (i == 1) {
+      cout << "\tIntermediate control point: (";
+      cout << intermediateControlPoints[0].x() << ", ";
+      cout << intermediateControlPoints[0].y() << ", ";
+      cout << intermediateControlPoints[0].z() << ")" << endl;
+    } else if (i == 2) {
+      cout << "\tIntermediate control points: (";
+      cout << intermediateControlPoints[1].x() << ", ";
+      cout << intermediateControlPoints[1].y() << ", ";
+      cout << intermediateControlPoints[1].z() << "); (";
+      cout << intermediateControlPoints[2].x() << ", ";
+      cout << intermediateControlPoints[2].y() << ", ";
+      cout << intermediateControlPoints[2].z() << ")" << endl;
     }
-    cout << "# of control points: 2" << endl;
-    for (i=0; i<numIntermediate; i++){
-      cout << "\tcp1: " << i+1 << " ";
-      for (j=0; j<numIntermediate; j++){
-        cout << ";cp2: " << j+1 << "\t\t";
-        cout << getBezierCurveFit(i,j) << endl;
-      }
-      cout << endl;
-    }
+    cout << "\t\tMessage length = " << getBezierCurveFit(i) << endl;
   }
   cout << "Optimal Fit: " << getOptimalFit() << endl;
 }
@@ -216,7 +171,7 @@ Plane<Point<double>> Segment::constructPlane(BezierCurve &curve)
     case 1:
       /* construct a plane with the two end points and a third point if any */
       if (numIntermediate >= 1) {
-        return Plane<Point<double>> (points[0],coordinates[1],points[2]);
+        return Plane<Point<double>>(points[0],coordinates[1],points[2]);
       } else {
         return Plane<Point<double>>();
       }
@@ -227,19 +182,6 @@ Plane<Point<double>> Segment::constructPlane(BezierCurve &curve)
       points[1] = curve.getControlPoint(1);
       return Plane<Point<double>> (points[0],points[1],points[2]);
   }
-}
-
-/*!
- *  \brief This module computes the number of free points in the segment
- *  \param cpIndex a reference to a vector<int>
- */
-void Segment::computeFreePoints(vector<int> &cpIndex)
-{
-  int sum = 0;
-  for (int i=0; i<cpIndex.size(); i++) {
-    sum += cpIndex[i];
-  }
-  numFreePoints = numIntermediate - sum;
 }
 
 /*!
@@ -379,136 +321,10 @@ double Segment::messageLength(vector<array<double,3>> &deviations)
     /* message length to state the deviations */
     Message msg2(deviations);
     msglen += msg2.encodeUsingNormalModel();
-    //cout << "deviations msglen linear: " << msg2.encodeUsingNormalModel() << endl;
   }
 
   return msglen;
 }
-
-/*!
- *  \brief This module computes the message length to encode the segment
- *  based on the number of intermediate control points
- *  \param numIntermediateControlPoints an integer
- */
-/*OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
-{
-  vector<Point<double>> controlPoints;
-  vector<array<double,3>> deviations;
-  BezierCurve curve;
-  vector<int> cpIndex(numIntermediate,0);
-  int i,j;
-  double msglen;
-  vector<int> index;
-  OptimalFit min_fit,current_fit;
-  int procs = omp_get_num_procs();
-  omp_set_num_threads(procs);
-
-  switch(numIntermediateControlPoints) {
-    case 0:
-      // zero intermediate control points 
-      // => numIntermediate >= 0 
-      controlPoints = vector<Point<double>>(2,Point<double>());
-      controlPoints[0] = start;
-      controlPoints[1] = end;
-      curve = BezierCurve(controlPoints);
-      if (numIntermediate > 2) {
-        cpIndex[0] = 1;
-        computeFreePoints(cpIndex);
-        deviations = computeDeviations(curve,cpIndex);
-      }
-      zeroControlMsgLen = messageLength(curve,deviations);
-      min_fit = OptimalFit(0,index,controlPoints,zeroControlMsgLen);
-      break;
-
-    case 1:
-      // one intermediate control point 
-      // => numIntermediate >= 1
-      if (numIntermediate >= 1) {
-        index = vector<int>(1,0);
-        controlPoints = vector<Point<double>>(3,Point<double>());
-        controlPoints[0] = start;
-        controlPoints[2] = end;
-        //#pragma omp parallel for
-        for (i=0; i<numIntermediate; i++) {
-          cpIndex[i] = 1;
-          controlPoints[1] = Point<double>(coordinates[i+1]);
-          curve = BezierCurve(controlPoints);
-          computeFreePoints(cpIndex);
-          deviations = computeDeviations(curve,cpIndex);
-          singleControlMsgLen[i] = messageLength(curve,deviations);
-          cpIndex[i] = 0;
-          if (i == 0) {
-            index[0] = 0;
-            min_fit = OptimalFit(1,index,controlPoints,singleControlMsgLen[0]);
-          } else {
-            if (singleControlMsgLen[i] < min_fit.getMessageLength()) {
-              index[0] = i;
-              min_fit = OptimalFit(1,index,controlPoints,singleControlMsgLen[i]);
-            }
-          }
-        }
-      } else {
-        controlPoints = vector<Point<double>>(2,Point<double>());
-        controlPoints[0] = start;
-        controlPoints[1] = end;
-        curve = BezierCurve(controlPoints);
-        msglen = messageLength(curve,deviations);
-        min_fit = OptimalFit(0,index,controlPoints,msglen);
-      }
-      break;
-
-    case 2:
-      // two intermediate control points 
-      // => numIntermediate >=1 
-      if (numIntermediate >= 1) {
-        index = vector<int>(2,0);
-        controlPoints = vector<Point<double>>(4,Point<double>());
-        controlPoints[0] = start;
-        controlPoints[3] = end;
-        for (i=0; i<numIntermediate; i++) {
-          controlPoints[1] = Point<double>(coordinates[i+1]);
-          cpIndex[i] = 1;
-          for (j=0; j<numIntermediate; j++) {
-            if (i > j) {
-              doubleControlMsgLen[i][j] = doubleControlMsgLen[j][i];
-            } else {
-              controlPoints[2] = Point<double>(coordinates[j+1]);
-              cpIndex[j] = 1;
-              curve = BezierCurve(controlPoints);
-              computeFreePoints(cpIndex);
-              deviations = computeDeviations(curve,cpIndex);
-              doubleControlMsgLen[i][j] = messageLength(curve,deviations);
-            }
-            if (i != j) {
-              cpIndex[j] = 0;
-            }
-            if (i == 0 && j == 0) {
-              index[0] = 0;
-              index[1] = 0;
-              min_fit = OptimalFit(2,index,controlPoints,doubleControlMsgLen[0][0]);
-            } else {
-              if (doubleControlMsgLen[i][j] < min_fit.getMessageLength()) {
-                index[0] = i;
-                index[1] = j;
-                min_fit = OptimalFit(2,index,controlPoints,
-                                     doubleControlMsgLen[i][j]);
-              }
-            }
-          } 
-          cpIndex[i] = 0;
-        }    
-      } else {
-        controlPoints = vector<Point<double>>(2,Point<double>());
-        controlPoints[0] = start;
-        controlPoints[1] = end;
-        curve = BezierCurve(controlPoints);
-        msglen = messageLength(curve,deviations);
-        min_fit = OptimalFit(0,index,controlPoints,msglen);
-      }
-      break;
-  }
-  return min_fit;
-}*/
 
 /*!
  *  \brief This function estimates the free parameter values of the
@@ -518,21 +334,22 @@ double Segment::messageLength(vector<array<double,3>> &deviations)
 vector<double> Segment::estimateFreeParameters()
 {
   vector<double> length(numPoints-1,0);
-  double totalLength = 0;
   Point<double> x1(coordinates[0]);
   Point<double> x2(coordinates[1]);
   length[0] = distance(x1,x2);
   for (int i=1; i<numPoints-1; i++) {
     x1 = Point<double>(coordinates[i+1]);
     length[i] = length[i-1] + distance(x1,x2);
-    totalLength += length[i];
     x2 = x1;
   }
   vector<double> t(numPoints,0);
   for (int i=1; i<numPoints-1; i++) {
-    t[i] = length[i] / (double)totalLength;
+    t[i] = length[i-1] / (double)length[numPoints-2];
   }
   t[numPoints-1] = 1;
+  /*for (int i=0; i<t.size(); i++) {
+    cout << t[i] << endl;
+  }*/
   return t;
 }
 
@@ -543,90 +360,115 @@ vector<double> Segment::estimateFreeParameters()
  */
 OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
 {
-  int mplusone = numIntermediateControlPoints + 2;
-  vector<Point<double>> controlPoints(mplusone,Point<double()>);
+  int m = numIntermediateControlPoints + 2;
+  vector<Point<double>> controlPoints(m,Point<double>());
   controlPoints[0] = start;
-  controlPoints[mplusone-1] = end;
-  vector<array<double,3>> deviations;
-  BezierCurve curve;
-  int i,j;
-  double msglen;
-  vector<int> index;
-  OptimalFit min_fit,current_fit;
-  int procs = omp_get_num_procs();
-  omp_set_num_threads(procs);
+  controlPoints[m-1] = end;
 
   if (numIntermediateControlPoints != 0) {
     vector<double> t = estimateFreeParameters();
-    Matrix<double> A(mplusone-2,mplusone-2);
-    for (int i=1; i<mplusone-1; i++) {
-      for (int j=1; j<mplusone-1; j++) {
+    Matrix<double> A(m-2,m-2);
+    for (int i=1; i<m-1; i++) {
+      for (int j=1; j<m-1; j++) {
         double sum = 0;
         for (int n=0; n<numPoints; n++) {
-          sum += bernstein(mplusone-1,i,t[n]) * bernstein(mplusone-1,j,t[n]);
+          sum += bernstein(m-1,i,t[n]) * bernstein(m-1,j,t[n]);
         }
         A[i-1][j-1] = sum;
       }
     }
-  }
-  Point<double> p1,p2,p3,p4;
-  Matrix<double> B(mplusone-2,3);
-  for (int i=1; i<mplusone-1; i++) {
-    Point<double> p;
-    for (int n=0; n<numPoints; n++) {
-      p1 = controlPoints[0] * bernstein(mplusone-1,0,t[n]);
-      p2 = controlPoints[mplusone-1] * bernstein(mplusone-1,mplusone-1,t[n]);
-      p3 = p1 + p2;
-      Point<double> pn(coordinates[n]);
-      p4 = pn - p3;
-      p += p4 * bernstein(mplusone-1,i,t[n]);
+    Point<double> p1,p2,p3,p4;
+    Matrix<double> B(m-2,3);
+    for (int i=1; i<m-1; i++) {
+      Point<double> p;
+      for (int n=0; n<numPoints; n++) {
+        p1 = controlPoints[0] * bernstein(m-1,0,t[n]);
+        p2 = controlPoints[m-1] * bernstein(m-1,m-1,t[n]);
+        p3 = p1 + p2;
+        Point<double> pn(coordinates[n]);
+        p4 = pn - p3;
+        p += p4 * bernstein(m-1,i,t[n]);
+      }
+      B[i-1][0] = p.x();
+      B[i-1][1] = p.y();
+      B[i-1][2] = p.z();
     }
-    B[i-1][0] = p.x();
-    B[i-1][1] = p.y();
-    B[i-1][2] = p.z();
+    // Solve: AX = B (A is a square matrix)  
+    Matrix<double> cps = A.inverse() * B;
+    for (int i=1; i<=cps.rows(); i++) {
+      controlPoints[i].x(cps[i-1][0]);
+      controlPoints[i].y(cps[i-1][1]);
+      controlPoints[i].z(cps[i-1][2]);
+      controlPoints[i].print();
+    }
   }
-    
+
+  BezierCurve curve(controlPoints);
+  vector<array<double,3>> deviations = computeDeviations(curve);
+  double msglen = messageLength(curve,deviations);
+  return OptimalFit(controlPoints,msglen);
 }
 
 /*!
- *  \brief This module computes the deviations of each of the intermediate
- *  points from the curve
+ *  \brief This module calls the getDeviations() method based on the
+ *  degree of the curve and the number of intermediate points
  *  \param curve a reference to a BezierCurve
- *  \param cpIndex a reference to a vector<int>
  *  \return the set of deviations
  */
-vector<array<double,3>> Segment::computeDeviations(BezierCurve &curve,
-                                                   vector<int> &cpIndex)
+vector<array<double,3>> Segment::computeDeviations(BezierCurve &curve)
 {
   vector<array<double,3>> deviations;
-
-  if (numFreePoints >= 2) {
-    Plane<Point<double>> plane = constructPlane(curve);
-    Vector<double> normal = plane.normal();
-    array<double,3> d;
-    double tmin_current,tmin_prev = 0;
-    int dev_idx = 0;
-    for (int i=0; i<numIntermediate; i++) {
-      if (cpIndex[i] != 1) {
-        Point<double> p(coordinates[i+1]);
-        d[0] = plane.signedDistance(p);
-        Point<double> projection(project(p,plane));
-
-        tmin_current = curve.nearestPoint(tmin_prev,curve.project(projection));
-        d[1] = curve.signedDistance(projection,tmin_current,normal);
-
-        //d[2] = tmin_current - tmin_prev;
-        Point<double> p1 = curve.getPoint(tmin_prev);
-        Point<double> p2 = curve.getPoint(tmin_current);
-        if (tmin_current < tmin_prev) {
-          d[2] = -distance(p1,p2);
-        } else {
-          d[2] = distance(p1,p2);
-        }
-        deviations.push_back(d);
-        tmin_prev = tmin_current;
+  switch(curve.getDegree()) {
+    case 1:
+      if (numIntermediate >= 3) {
+        deviations = getDeviations(curve);
       }
+      break;
+
+    default:
+      if (numIntermediate >= 2) {
+        deviations = getDeviations(curve);
+      }
+      break;
+  }
+  return deviations;
+}
+
+/*!
+ *  \brief This module computes the deviations of the intermediate points 
+ *  from the Bezier curve
+ *  \param curve a reference to a BezierCurve
+ *  \return the set of deviations
+ */
+vector<array<double,3>> Segment::getDeviations(BezierCurve &curve)
+{
+  Plane<Point<double>> plane = constructPlane(curve);
+  Vector<double> normal = plane.normal();
+  double tmin_current,tmin_prev = 0;
+  int index_start = 0;
+  if (curve.getDegree() == 1) {
+    index_start = 1;
+  }
+  array<double,3> d;
+  vector<array<double,3>> deviations;
+  for (int i=index_start; i<numIntermediate; i++) {
+    Point<double> p(coordinates[i+1]);
+    d[0] = plane.signedDistance(p);
+    Point<double> projection(project(p,plane));
+
+    tmin_current = curve.nearestPoint(tmin_prev,curve.project(projection));
+    d[1] = curve.signedDistance(projection,tmin_current,normal);
+
+    //d[2] = tmin_current - tmin_prev;
+    Point<double> p1 = curve.getPoint(tmin_prev);
+    Point<double> p2 = curve.getPoint(tmin_current);
+    if (tmin_current < tmin_prev) {
+      d[2] = -distance(p1,p2);
+    } else {
+      d[2] = distance(p1,p2);
     }
+    deviations.push_back(d);
+    tmin_prev = tmin_current;
   }
   /*ofstream dev_bezier("dev_bezier");
   for (int i=0; i<deviations.size(); i++){
@@ -662,29 +504,26 @@ double Segment::messageLength(BezierCurve &curve,
 
   /* message length to state the number of intermediate deviations if any */  
   Message msg2(deviations);
-  switch(numIntermediateControlPoints) {
-    case 0:
-      // numIntermediate >= 0
+  switch(curve.getDegree()) {
+    case 1:
       /* message length to state the number of intermediate points */
       msglen += msg1.encodeUsingLogStarModel(numIntermediate+1); 
-
-      if (numIntermediate <= 2) {
+      if (numIntermediate < 3) {
         msglen += numIntermediate * msg1.encodeUsingNullModel(volume);
-      } else if (numIntermediate > 2) {
+      } else { 
         /* state the first intermediate point to construct the plane */
         msglen += msg1.encodeUsingNullModel(volume);
         /* state the deviations */
         msglen += msg2.encodeUsingNormalModel();
-        //cout << "deviations msglen bezier: " << msg2.encodeUsingNormalModel() << endl;
       }
       break;
 
     default:
-      msglen += msg1.encodeUsingLogStarModel(numFreePoints+1); 
-      if (numFreePoints == 1) {
-        /* state the one point */
-        msglen += msg1.encodeUsingNullModel(volume);
-      } else if (numFreePoints >= 2) {
+      /* message length to state the number of intermediate points */
+      msglen += msg1.encodeUsingLogStarModel(numIntermediate+1); 
+      if (numIntermediate < 2) {
+        msglen += numIntermediate * msg1.encodeUsingNullModel(volume);
+      } else {
         /* state the deviations */
         msglen += msg2.encodeUsingNormalModel();
       }

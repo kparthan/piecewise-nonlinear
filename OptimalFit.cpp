@@ -8,18 +8,17 @@ OptimalFit::OptimalFit()
 
 /*!
  *  \brief This module instantiates a new optimalInfo object
- *  \param numControlPoints an integer
  *  \param index a reference to a vector<int>
  *  \param controlPoints a reference to a vector<Point<double>>
  *  \param messageLength a double
  */
-OptimalFit::OptimalFit(int numControlPoints, vector<int> &index,  
-                       vector<Point<double>> &controlPoints, 
+OptimalFit::OptimalFit(vector<Point<double>> &controlPoints, 
                        double messageLength) : 
-                       numControlPoints(numControlPoints), index(index),
                        controlPoints(controlPoints), 
                        messageLength(messageLength)
-{}
+{
+  numControlPoints = controlPoints.size();
+}
 
 /*
  *  \brief This module is used to create a copy of an OptimalFit object.
@@ -27,19 +26,9 @@ OptimalFit::OptimalFit(int numControlPoints, vector<int> &index,
  */
 OptimalFit::OptimalFit(const OptimalFit &source) :
                        numControlPoints(source.numControlPoints),
-                       index(source.index),  
                        controlPoints(source.controlPoints), 
                        messageLength(source.messageLength)
 {}
-
-/*!
- *  \brief This module returns the index of the intermediate control points
- *  \return the index
- */
-vector<int> OptimalFit::getControlPointsIndex() const
-{
-  return index;
-}
 
 /*!
  *  \brief This module returns the control points
@@ -68,7 +57,6 @@ OptimalFit OptimalFit::operator=(const OptimalFit &source)
 {
   if (this != &source) {
     numControlPoints = source.numControlPoints;
-    index = source.index;
     controlPoints = source.controlPoints;
     messageLength = source.messageLength;
   }

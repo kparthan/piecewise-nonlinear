@@ -18,27 +18,27 @@ class Segment
     //! Number of points
     int numPoints;
 
-    //! Number of free points
-    int numFreePoints;
-
     //! End points of the segment
     Point<double> start,end;
 
     //! Coordinates of the points
     vector<array<double,3>> coordinates;
    
-    //! Message length for the linear fit
+    //! Message length for the linear fit 
+    //! does not use the Bezier definition
     double linearFitMsgLen;
 
     //! Message length using zero control points
     double zeroControlMsgLen;
 
     //! Message length using one control point
-    vector<double> singleControlMsgLen;
+    double singleControlMsgLen;
 
     //! Message length using two control points
-    vector<vector<double>> doubleControlMsgLen;
+    double doubleControlMsgLen;
 
+    //! Two intermediate control points
+    Point<double> intermediateControlPoints[3];
 
   public:
     //! Constructor
@@ -54,21 +54,12 @@ class Segment
     //! Gets the coordinates given the index
     array<double,3> getCoordinates(int);
 
-    //! Gets the message length for the linear fit
+    //! Gets the message length for the linear fit 
+    //! does not use the Bezier definition
     double getLinearFit();
 
-    //! Gets the minimum message length given the number of
-    //! intermediate control points
-    double getNonLinearFit(int);
-
-    //! Gets the message length using zero intermediate control points
-    double getBezierCurveFit();
-
-    //! Gets the message length using one intermediate control point
+    //! Gets the message length for the Bezier fit 
     double getBezierCurveFit(int);
-
-    //! Gets the message length using two intermediate control points
-    double getBezierCurveFit(int, int);
 
     //! Gets the minimum message length amongst all Bezier curve fits
     double getOptimalFit();
@@ -94,17 +85,17 @@ class Segment
     //! linear model
     double messageLength(vector<array<double,3>> &);
 
-    //! Updates the number of free points
-    void computeFreePoints(vector<int> &);
+    //! Estimates the free parameters of the intermediate points
+    vector<double> estimateFreeParameters();
 
     //! Fits a Bezier curve
     OptimalFit fitBezierCurve(int);
 
-    //! Estimates the free parameters of the intermediate points
-    vector<double> estimateFreeParameters();
+    //! Computes deviations from a Bezier curve 
+    vector<array<double,3>> computeDeviations(BezierCurve &);
 
     //! Computes deviations from a Bezier curve 
-    vector<array<double,3>> computeDeviations(BezierCurve &, vector<int> &);
+    vector<array<double,3>> getDeviations(BezierCurve &);
 
     //! Computes the message length for the segment described by a 
     //! Bezier curve

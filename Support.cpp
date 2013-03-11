@@ -443,10 +443,18 @@ double minimum(vector<vector<double>> &list)
  */
 double bernstein(int m, int i, double t)
 {
-  double x = pow(1-t,m);
-  for(int j=1; j<=i; j++) {
-    x *= ((m-j+1) * t) / (j * (1-t));
+  double x = pow(t,i) * pow(1-t,m-i);
+  double y;
+  if (i == 0 || m == i) {
+    y = x;
+  } else {
+    double c = 1;
+    for(int j=1; j<=i; j++) {
+      c *= (m-j+1) / j;
+    }
+    y = c * x;
   }
-  return x;
+  //cout << "(" << m << "," << i << ") " << y << endl;
+  return y;
 }
 

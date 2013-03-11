@@ -449,8 +449,8 @@ void StandardForm::fitBezierCurveModel()
   computeCodeLengthMatrixBezier();
 
   /* compute the optimal segmentation using dynamic programming */
-  pair<double,vector<int>> segmentation = optimalSegmentation();
-  printBezierSegmentation(segmentation);
+  //pair<double,vector<int>> segmentation = optimalSegmentation();
+  //printBezierSegmentation(segmentation);
 }
 
 /*!
@@ -461,7 +461,7 @@ void StandardForm::computeCodeLengthMatrix(void)
   int procs = omp_get_num_procs();
   omp_set_num_threads(procs);
   int j;
-  #pragma omp parallel for private(j)
+  //#pragma omp parallel for private(j)
   for (int i=0; i<numResidues; i++){
     //#pragma omp parallel for 
     for (j=i+1; j<numResidues; j++){
@@ -507,31 +507,35 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
   int procs = omp_get_num_procs();
   omp_set_num_threads(procs);
   int i,j;
-  #pragma omp parallel for private(j)
-  for (i=0; i<numResidues; i++) {
-    cout << "Segment from: " << i << endl;
+  //#pragma omp parallel for private(j)
+  /*for (i=0; i<numResidues; i++) {
+    //cout << "Segment from: " << i << endl;
     //#pragma omp parallel for
     for (j=i+1; j<numResidues; j++) {
       cout << "Segment: " << i << " " << j << "\n";
-      vector<int> index;
       Segment segment = getSegment(i,j);
-      OptimalFit min_fit, current_fit;
-      min_fit = segment.fitBezierCurve(controls[0]);
-      for (int k=1; k<controls.size(); k++) {
-        current_fit = segment.fitBezierCurve(controls[k]);
-        if (current_fit < min_fit) {
-          min_fit = current_fit;
+      OptimalFit min_fit;
+      if (j != i+1) {
+        OptimalFit current_fit;
+        min_fit = segment.fitBezierCurve(controls[0]);
+        for (int k=1; k<controls.size(); k++) {
+          current_fit = segment.fitBezierCurve(controls[k]);
+          if (current_fit < min_fit) {
+            min_fit = current_fit;
+          }
         }
+      } else {
+        min_fit = segment.fitBezierCurve(0);
       }
       optimalBezierFit[i][j] = min_fit;
     }
   }
-  #pragma omp parallel for private(j)
+  //#pragma omp parallel for private(j)
   for (i=0; i<numResidues; i++) {
     for (j=i+1; j<numResidues; j++) {
       codeLength[i][j] = optimalBezierFit[i][j].getMessageLength();
     }
-  }
+  }*/
   /*ofstream codeLengthFile("codeLengthBezier");
   codeLengthFile << "# of residues: " << numResidues << endl; 
   for (int i=0; i<numResidues; i++){
@@ -559,8 +563,8 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
         }
       }
     }*/
-/*
-    Segment segment = getSegment(0,8);
+
+    Segment segment = getSegment(1,3);
     OptimalFit min_fit, current_fit;
     min_fit = segment.fitBezierCurve(controls[0]);
     for (int k=1; k<controls.size(); k++) {
@@ -570,7 +574,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
       }
     }
     cout << "\nbezier fit: " << min_fit.getMessageLength() << endl;
-  */  
+   
 }
 
 /*!
@@ -727,14 +731,12 @@ void StandardForm::printBezierSegmentation(pair<double,vector<int>>
     << endl;
     fw << "Length of the segment: " << segment_end - segment_start + 1 << endl;
     OptimalFit optimal = optimalBezierFit[segment_start][segment_end];
-    vector<int> index = optimal.getControlPointsIndex();
     vector<Point<double>> controlPoints = optimal.getControlPoints();
     int numIntermediateControlPoints = controlPoints.size() - 2;
     fw << "\t\t# of intermediate control points: " 
        << numIntermediateControlPoints << endl;
     for (int j=1; j<=numIntermediateControlPoints; j++) {
-      fw << "\t\tControl Point # " << j << " [" << index[j-1]+1+segment_start
-         << "] (";
+      fw << "\t\tControl Point # " << j << ": (";
       fw << controlPoints[j].x() << ", ";
       fw << controlPoints[j].y() << ", ";
       fw << controlPoints[j].z() << ")" << endl;

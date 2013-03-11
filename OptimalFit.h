@@ -9,9 +9,6 @@ class OptimalFit
     //! Number of control points
     int numControlPoints;
 
-    //! Index of the control points
-    vector<int> index;
-
     //! The control points
     vector<Point<double>> controlPoints;
 
@@ -23,15 +20,12 @@ class OptimalFit
     OptimalFit();
 
     //! Constructor
-    OptimalFit(int, vector<int> &, vector<Point<double>> &, double);
+    OptimalFit(vector<Point<double>> &, double);
 
     //! Copy constructor
     OptimalFit(const OptimalFit &);
 
                             /* Accessor functions */
-    //! Gets the indices of the intermediate control points
-    vector<int> getControlPointsIndex() const;
-
     //! Gets the control points
     vector<Point<double>> getControlPoints() const;
 
