@@ -364,9 +364,9 @@ double Segment::sigmaMML(BezierCurve &curve, vector<double> &t)
 {
   int m = curve.getDegree();
   int N = t.size();
-  if (N+1 == m) {
+  /*if (N+1 == m) {
     return LARGE_NUM;
-  } else {
+  } else {*/
     double variance = 0;
     for (int n=0; n<N; n++) {
       Point<double> xn(coordinates[n]);

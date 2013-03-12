@@ -522,17 +522,18 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
           min_fit = current_fit;
         }
       }
-      OptimalFit fit = segment.stateUsingCurve(min_fit);
-      optimalBezierFit[i][j] = fit;
+      //OptimalFit fit = segment.stateUsingCurve(min_fit);
+      optimalBezierFit[i][j] = min_fit;
+      codeLength[i][j] = optimalBezierFit[i][j].getMessageLength();
       cout << optimalBezierFit[i][j].getMessageLength() << endl;
     }
   }
   //#pragma omp parallel for private(j)
-  for (i=0; i<numResidues; i++) {
+  /*for (i=0; i<numResidues; i++) {
     for (j=i+1; j<numResidues; j++) {
       codeLength[i][j] = optimalBezierFit[i][j].getMessageLength();
     }
-  }
+  }*/
   /*ofstream codeLengthFile("codeLengthBezier");
   codeLengthFile << "# of residues: " << numResidues << endl; 
   for (int i=0; i<numResidues; i++){
