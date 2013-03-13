@@ -23,6 +23,10 @@ class Segment
 
     //! Coordinates of the points
     vector<array<double,3>> coordinates;
+
+    //! Free parameters of the points with respect to a
+    //! Bezier curve
+    vector<double> t;
    
     //! Message length for the linear fit 
     //! does not use the Bezier definition
@@ -86,7 +90,7 @@ class Segment
     double messageLength(vector<array<double,3>> &);
 
     //! Estimates the free parameters of the intermediate points
-    vector<double> estimateFreeParameters();
+    void estimateFreeParameters();
 
     //! Fits a Bezier curve
     OptimalFit fitBezierCurve(int);
@@ -105,7 +109,7 @@ class Segment
     double messageLengthMML(BezierCurve &, double);
 
     //!
-    double sigmaMML(BezierCurve &, vector<double> &);
+    double rootMeanSquaredError(BezierCurve &);
 
     //! 
     OptimalFit stateUsingCurve(OptimalFit &);

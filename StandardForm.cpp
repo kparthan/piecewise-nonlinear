@@ -7,10 +7,14 @@
  *  \param file a string
  *  \param s a reference to a ProteinStructure
  *  \param controls a reference to a vector<int>
+ *  \param status an integer
+ *  \param end_points a reference to a vector<int>
  */
-StandardForm::StandardForm(string file, Structure s, vector<int> &controls) : 
+StandardForm::StandardForm(string file, Structure s, vector<int> &controls,
+                           int fit_status, vector<int> &end_points) : 
                            file(file), structure(s), controls(controls), 
-                           volume(0)
+                           volume(0), fit_status(fit_status), 
+                           end_points(end_points)
 {
   coordinates = structure.getCoordinates();
   numResidues = coordinates.size();
@@ -445,12 +449,36 @@ void StandardForm::fitBezierCurveModel()
 {
   cout << "*** BEZIER CURVE FIT ***" << endl;
 
-  /* compute the code length matrix for the Bezier curve fit */
-  computeCodeLengthMatrixBezier();
+  if (fit_status == 0) {
+    /* compute the code length matrix for the Bezier curve fit */
+    computeCodeLengthMatrixBezier();
 
-  /* compute the optimal segmentation using dynamic programming */
-  pair<double,vector<int>> segmentation = optimalSegmentation();
-  printBezierSegmentation(segmentation);
+    /* compute the optimal segmentation using dynamic programming */
+    pair<double,vector<int>> segmentation = optimalSegmentation();
+    printBezierSegmentation(segmentation);
+  } else {
+    fitOneSegment();
+  }
+}
+
+/*
+ *  \brief This function fits Bezier curves to just this segment
+ */
+void StandardForm::fitOneSegment()
+{
+  Segment segment = getSegment(end_points[0]-1,end_points[1]-1);
+  segment.estimateFreeParameters();
+  OptimalFit min_fit, current_fit;
+  min_fit = segment.fitBezierCurve(controls[0]);
+  cout << "\nFit (" << controls[0] << "): " << min_fit.getMessageLength() << endl;
+  for (int k=1; k<controls.size(); k++) {
+    current_fit = segment.fitBezierCurve(controls[k]);
+    cout << "\nFit (" << controls[k] << "): " << current_fit.getMessageLength() << endl;
+    if (current_fit < min_fit) {
+      min_fit = current_fit;
+    }
+  }
+  cout << "\nbezier fit: " << min_fit.getMessageLength() << endl;
 }
 
 /*!
@@ -514,6 +542,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
     for (j=i+1; j<numResidues; j++) {
       cout << "Segment: " << i << " " << j << " ";
       Segment segment = getSegment(i,j);
+      segment.estimateFreeParameters();
       OptimalFit min_fit,current_fit;
       min_fit = segment.fitBezierCurve(controls[0]);
       for (int k=1; k<controls.size(); k++) {
@@ -561,18 +590,6 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
         }
       }
     }*/
-/*
-    Segment segment = getSegment(0,8);
-    OptimalFit min_fit, current_fit;
-    min_fit = segment.fitBezierCurve(controls[0]);
-    for (int k=1; k<controls.size(); k++) {
-      current_fit = segment.fitBezierCurve(controls[k]);
-      if (current_fit < min_fit) {
-        min_fit = current_fit;
-      }
-    }
-    cout << "\nbezier fit: " << min_fit.getMessageLength() << endl;
-  */ 
 }
 
 /*!

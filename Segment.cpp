@@ -329,11 +329,10 @@ double Segment::messageLength(vector<array<double,3>> &deviations)
 /*!
  *  \brief This function estimates the free parameter values of the
  *  intermediate points
- *  \return the list of parameter values
  */
-vector<double> Segment::estimateFreeParameters()
+void Segment::estimateFreeParameters()
 {
-  vector<double> t(numPoints,0);
+  t = vector<double>(numPoints,0);
   if (numPoints > 2) {
     vector<double> length(numPoints-1,0);
     Point<double> x1(coordinates[0]);
@@ -348,38 +347,38 @@ vector<double> Segment::estimateFreeParameters()
       t[i] = length[i-1] / (double)length[numPoints-2];
     }
     t[numPoints-1] = 1;
-    /*for (int i=0; i<t.size(); i++) {
-      cout << t[i] << endl;
-    }*/
   } else {
     t[1] = 1;
   }
-  return t;
+  /*for (int i=0; i<t.size(); i++) {
+    cout << t[i] << endl;
+  }*/
 }
 
 /*!
- *
+ *  \brief This function returns the error of fitting a Bezier curve
+ *  to a segment
+ *  \param curve a reference to a Bezier curve
+ *  \return the least square fit error
  */
-double Segment::sigmaMML(BezierCurve &curve, vector<double> &t)
+double Segment::rootMeanSquaredError(BezierCurve &curve)
 {
   int m = curve.getDegree();
-  int N = t.size();
-  /*if (N+1 == m) {
-    return LARGE_NUM;
-  } else {*/
-    double variance = 0;
-    for (int n=0; n<N; n++) {
-      Point<double> xn(coordinates[n]);
-      Point<double> pt = curve.getPoint(t[n]);
-      Point<double> diff = xn - pt;
-      variance += diff * diff;
-    }
-    double sigma = sqrt(variance / (N+1-m));
-    if (sigma < ZERO) {
-      sigma = 3 * AOM;
-    }
-    return sigma;
+  int N = numPoints;
+  double variance = 0;
+  for (int n=0; n<N; n++) {
+    Point<double> xn(coordinates[n]);
+    Point<double> pt = curve.getPoint(t[n]);
+    Point<double> diff = xn - pt;
+    variance += diff * diff;
   }
+  double sigma = sqrt(variance / (N+1-m));
+  if (sigma < ZERO) {
+    sigma = 3 * AOM;
+  }
+  return sigma;
+  //double error = sqrt(variance/N);
+  //return error;
 }
 
 /*!
@@ -394,7 +393,15 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
   controlPoints[0] = start;
   controlPoints[m-1] = end;
 
-  vector<double> t = estimateFreeParameters();
+  /*if (numPoints == 2) {
+      vector<Point<double>> controlPoints(m,Point<double>());
+      controlPoints[0] = start;
+      controlPoints[1] = end;
+      BezierCurve curve(controlPoints);
+      double msglen = messageLengthMML(curve,AOM);
+      return OptimalFit(controlPoints,msglen);
+  }*/
+
   if (numIntermediateControlPoints != 0) {
     Matrix<double> A(m-2,m-2);
     for (int i=1; i<m-1; i++) {
@@ -428,19 +435,22 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
       // Solve: AX = B (A is a square matrix)  
       Matrix<double> cps = A.inverse() * B;
       for (int i=1; i<=cps.rows(); i++) {
-        controlPoints[i].x(cps[i-1][0]);
-        controlPoints[i].y(cps[i-1][1]);
-        controlPoints[i].z(cps[i-1][2]);
+        int a = cps[i-1][0] / AOM;
+        controlPoints[i].x(a*AOM);
+        a = cps[i-1][1] / AOM;
+        controlPoints[i].y(a*AOM);
+        a = cps[i-1][2] / AOM;
+        controlPoints[i].z(a*AOM);
         //controlPoints[i].print();
       }
     }
   }
 
   BezierCurve curve(controlPoints);
-  //vector<array<double,3>> deviations = computeDeviations(curve);
-  //double msglen = messageLength(curve,deviations);
-  double sigma = sigmaMML(curve,t);
-  double msglen = messageLengthMML(curve,sigma);
+  vector<array<double,3>> deviations = computeDeviations(curve);
+  double msglen = messageLength(curve,deviations);
+  //double sigma = rootMeanSquaredError(curve);
+  //double msglen = messageLengthMML(curve,sigma);
   return OptimalFit(controlPoints,msglen);
 }
 

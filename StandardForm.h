@@ -23,6 +23,13 @@ class StandardForm
     //! Number of intermediate control points to be used
     vector<int> controls;
 
+    //! Status to determine whether the whole protein or a
+    //! part of it is used to fit Bezier curve
+    int fit_status;
+
+    //! End points of a segment
+    vector<int> end_points;
+
     //! Cartesian coordinates of the protein structure
     vector<array<double,3>> coordinates;
 
@@ -40,7 +47,7 @@ class StandardForm
 
   public:
     //! Constructor
-    StandardForm(string, Structure, vector<int> &);
+    StandardForm(string, Structure, vector<int> &, int, vector<int> &);
 
                             /* Accessor functions */
     //! Gets the number of residues
@@ -119,6 +126,9 @@ class StandardForm
 
     //! Bezier curve fit
     void fitBezierCurveModel();
+
+    //! Bezier curve fit for a particular segment
+    void fitOneSegment();
 
     //! Computes the code length matrix
     void computeCodeLengthMatrix();

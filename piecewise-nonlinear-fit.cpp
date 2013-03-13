@@ -3,23 +3,25 @@
 int main(int argc, char **argv)
 {
   string file;
+  vector<int> end_points(2,0);
   vector<int> controls;
-  int status = parseCommandLineInput(argc,argv,file,controls);
+  pair<int,int> status = parseCommandLineInput(argc,argv,file,end_points,controls);
+  //cout << end_points[0] << " " << end_points[1] << endl;
 
   clock_t c_start = clock();
   auto t_start = high_resolution_clock::now();
 
-  switch(status) {
+  switch(status.first) {
     case 0:   // test
-      testFit(controls);
+      testFit(controls,status.second,end_points);
       break;
 
     case 1:   // protein file
-      proteinFit(file,controls);
+      proteinFit(file,controls,status.second,end_points);
       break;
 
     case 2:   // general 3D structure
-      generalFit(file,controls);
+      generalFit(file,controls,status.second,end_points);
       break;
   }
 

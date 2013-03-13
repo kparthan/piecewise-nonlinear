@@ -12,10 +12,11 @@
  *  \param controls a reference to a vector<int>
  *  \return the appropriate status
  */
-int parseCommandLineInput(int argc, char **argv, string &file, 
-                          vector<int> &controls)
+pair<int,int> parseCommandLineInput(int argc, char **argv, string &file, 
+                          vector<int> &end_points, vector<int> &controls)
 {
   int flag = -1;
+  int flag_ends = 0;
   bool noargs = 1;
   cout << "Checking command-line input ...";
 
@@ -25,6 +26,7 @@ int parseCommandLineInput(int argc, char **argv, string &file,
        ("test","perform a demo")
        ("protein",value<string>(&file),"pdb file")
        ("generic",value<string>(&file),"general 3D structure")
+       ("segment",value<vector<int>>(&end_points)->multitoken(),"segment")
        ("controls",value<vector<int>>(&controls)->multitoken(),
                                   "intermediate control points [0,1,2]")
   ;
@@ -68,6 +70,12 @@ int parseCommandLineInput(int argc, char **argv, string &file,
     }
   }
 
+  if (vm.count("segment")) {
+    cout << "Fitting a single segment between the residues "
+         << "[" << end_points[0] << ", " << end_points[1] << "]" << endl;
+    flag_ends = 1;
+  }
+
   if (vm.count("controls")) {
     for (int i=0; i<controls.size(); i++) {
       if (controls[i] < 0 || controls[i] > MAX_INTERMEDIATE_CONTROL_POINTS) {
@@ -89,7 +97,10 @@ int parseCommandLineInput(int argc, char **argv, string &file,
     cout << "Not enough arguments supplied..." << endl;
     Usage(argv[0],desc);
   } else {
-    return flag;
+    pair<int,int> status;
+    status.first = flag;
+    status.second = flag_ends;
+    return status;
   }
 }
 
@@ -108,8 +119,10 @@ void Usage (const char *exe, options_description &desc)
 /*!
  *  \brief This module generates test data and fits a model to it.
  *  \param controls a reference to a vector<int>
+ *  \param fit_status an integer
+ *  \param end_points a reference to a vector<int>
  */
-void testFit(vector<int> &controls)
+void testFit(vector<int> &controls, int fit_status, vector<int> &end_points)
 {
   string file;
   Point<double> sp(10,-3,30);
@@ -121,7 +134,7 @@ void testFit(vector<int> &controls)
 
   /* Obtain structure coordinates */
   Structure structure(test.testData());
-  StandardForm shape(file,structure,controls);
+  StandardForm shape(file,structure,controls,fit_status,end_points);
 
   shape.fitModels();
 }
@@ -130,14 +143,17 @@ void testFit(vector<int> &controls)
  *  \brief This module fits a model to a protein structure
  *  \param file a string
  *  \param controls a reference to a vector<int>
+ *  \param fit_status an integer
+ *  \param end_points a reference to a vector<int>
  */
-void proteinFit(string file, vector<int> &controls)
+void proteinFit(string file, vector<int> &controls, int fit_status, 
+                vector<int> &end_points)
 {
   /* Obtain protein coordinates */
   ProteinStructure *p = parsePDBFile(file.c_str());
   Structure structure(p);
 
-  StandardForm protein(file,structure,controls);
+  StandardForm protein(file,structure,controls,fit_status,end_points);
 
   protein.fitModels();
 }
@@ -146,14 +162,17 @@ void proteinFit(string file, vector<int> &controls)
  *  \brief This module fits a model to a general 3D structure
  *  \param file a string
  *  \param controls a reference to a vector<int>
+ *  \param fit_status an integer
+ *  \param end_points a reference to a vector<int>
  */
-void generalFit(string file, vector<int> &controls)
+void generalFit(string file, vector<int> &controls, int fit_status, 
+                vector<int> &end_points)
 {
   /* Obtain structure coordinates */
   vector<Point<double>> coordinates = parseFile(file.c_str());
   Structure structure(coordinates);
 
-  StandardForm shape(file,structure,controls);
+  StandardForm shape(file,structure,controls,fit_status,end_points);
 
   shape.fitModels();
 }
