@@ -159,7 +159,7 @@ void StandardForm::transform(void)
   /* rotate second point of the protein onto the XY plane */
   rotateSecondPoint();
   updateCoordinates();
-  //writeToFile(coordinates,"final");
+  writeToFile(coordinates,"final");
 
   cout << "Transformation to standard form done ..." << endl;
   cout << "Number of residues: " << getNumberOfResidues() << endl;
@@ -470,15 +470,21 @@ void StandardForm::fitOneSegment()
   segment.estimateFreeParameters();
   OptimalFit min_fit, current_fit;
   min_fit = segment.fitBezierCurve(controls[0]);
-  cout << "\nFit (" << controls[0] << "): " << min_fit.getMessageLength() << endl;
+  cout << "\nFit (" << controls[0] << " intermediate control points): " 
+  << endl;
+  min_fit.printFitInfo();
   for (int k=1; k<controls.size(); k++) {
     current_fit = segment.fitBezierCurve(controls[k]);
-    cout << "\nFit (" << controls[k] << "): " << current_fit.getMessageLength() << endl;
+    cout << "\nFit (" << controls[k] << " intermediate control points): " 
+    << endl;
+    current_fit.printFitInfo();
     if (current_fit < min_fit) {
       min_fit = current_fit;
     }
   }
-  cout << "\nbezier fit: " << min_fit.getMessageLength() << endl;
+
+  cout << "\nOPTIMAL BEZIER FIT:" << endl;
+  min_fit.printFitInfo();
 }
 
 /*!

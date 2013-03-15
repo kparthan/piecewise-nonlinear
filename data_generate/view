@@ -1,0 +1,13 @@
+set title "Graph"
+set xlabel "X"
+set ylabel "Y"
+set zlabel "Z"
+
+set term post eps enhanced
+set output "plot.eps"
+set multiplot
+#set xrange[-10:10]
+#set yrange[-10:10]
+#set zrange[-10:10]
+#splot "line.dat" using 1:2:3 with lines lc rgb "red" notitle 
+splot "zigzag.dat" using 2:1:3 with lines lc rgb "blue" notitle 

@@ -1,7 +1,7 @@
 #ifndef BEZIER_DATA_GENERATOR_H
 #define BEZIER_DATA_GENERATOR_H
 
-#include "../Header.h"
+#include "Header.h"
 
 class BezierDataGenerator
 {
@@ -21,12 +21,24 @@ class BezierDataGenerator
     //! Free parameter list
     vector<double> t;
 
-    //! Coordiantes of the generated points
+    //! Coordinates of the generated points
+    vector<Point<double>> fx;
+
+    //! Noise added coordinates
     vector<Point<double>> points;
+
+    //! Sort the generated free parameters
+    vector<double> sort(vector<double> &);
+
+    //! Quicksort algorithm
+    void quicksort(vector<double> &,vector<int> &, int, int);
+
+    //! Partitioning the array
+    int partition(vector<double> &,vector<int> &, int, int);
 
   public:
     //! Constructor
-    BezierDataGenerator(int, vector<Point<double>> &);
+    BezierDataGenerator(int, double, vector<Point<double>> &);
 
     //! Generate free parameters
     void generateFreeParameters();
@@ -34,8 +46,20 @@ class BezierDataGenerator
     //! Generate random noise samples
     vector<double> generateNoise(int, double, double);
 
+    //! Generate random data
+    void generateData();
+
     //! Compute the coordinates using the free parameters
-    void computeCoordinates();
+    void computeFunctionValues();
+
+    //! Adds noise to the actual function values
+    void addNoise();
+
+    //! Write the generated data to a file
+    void writeToFile();
+
+    //! Plot data
+    void plot();
 };
 
 #endif

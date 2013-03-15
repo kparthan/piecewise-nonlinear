@@ -38,6 +38,9 @@ class OptimalFit
 
     //! Compares the optimal message length of two segments
     bool operator<(const OptimalFit &);
+
+    //! Prints the details of the optimal fit
+    void printFitInfo();
 };
 
 #endif
