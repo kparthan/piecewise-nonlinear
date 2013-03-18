@@ -2,7 +2,8 @@ CFLAGS=-std=c++0x -g $(shell pkg-config --cflags liblcb-experimental)
 LDFLAGS=$(shell pkg-config --libs liblcb-experimental) 
 
 OBJECTS = main.o \
-  BezierDataGenerator.o
+  BezierDataGenerator.o \
+  BezierCurve.o
 
 all: main 
 
@@ -13,6 +14,9 @@ main.o: main.cpp BezierDataGenerator.h
 	g++ -c $(CFLAGS) $< -o $@
 
 BezierDataGenerator.o: BezierDataGenerator.cpp BezierDataGenerator.h
+	g++ -c $(CFLAGS) $< -o $@
+
+BezierCurve.o: BezierCurve.cpp BezierCurve.h
 	g++ -c $(CFLAGS) $< -o $@
 
 clean:

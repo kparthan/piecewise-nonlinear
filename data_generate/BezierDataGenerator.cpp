@@ -1,4 +1,5 @@
 #include "BezierDataGenerator.h"
+#include "BezierCurve.h"
 
 /*!
  *  \brief Constructor
@@ -240,11 +241,180 @@ void BezierDataGenerator::plot()
   script << "splot \"bezier_data.txt\" using 1:2:3 title 'f(x)' with lines "
   "lc rgb \"red\", \\" << endl;
 	script << "\"bezier_data_noise.txt\" using 1:2:3 title 'y' with points "
+	"lc rgb \"red\", \\" << endl;
+	script << "\"bezier_data_estimate.txt\" using 1:2:3 title 'estimate' with points "
 	"lc rgb \"blue\", \\" << endl;
-	script << "\"cps.txt\" using 1:2:3 title 'cps' with points "
-	"lc rgb \"green\"" << endl;
+	script << "\"bezier_data_estimate_curve.txt\" using 1:2:3 title 'estimate_curve' with lines "
+	"lc rgb \"blue\", \\" << endl;
+	script << "\"cps_true.txt\" using 1:2:3 title 'cps_true' with points "
+	"lc rgb \"green\", \\" << endl;
+	script << "\"cps_estimate.txt\" using 1:2:3 title 'cps_estimate' with points "
+	"lc rgb \"black\"" << endl;
 	script.close();
 
 	system("gnuplot -persist plotScript.p");	
+}
+
+/*!
+ *  \brief This function computes the Bernstein polynomials
+ *  used as coefficients in the Bezier curve
+ *  \param m an integer
+ *  \param i an integer
+ *  \param t a double
+ *  \return the Bernstein polynomial value at given t
+ */
+double bernstein(int m, int i, double t)
+{
+  double x = pow(t,i) * pow(1-t,m-i);
+  double y;
+  if (i == 0 || m == i) {
+    y = x;
+  } else {
+    double c = 1;
+    for(int j=1; j<=i; j++) {
+      c *= (m-j+1) / j;
+    }
+    y = c * x;
+  }
+  //cout << "(" << m << "," << i << ") " << y << endl;
+  return y;
+}
+
+/*!
+ *  \brief This function estimates the control points of the curve
+ */
+/*void BezierDataGenerator::estimateControlPoints()
+{
+  int m = degree;
+  Matrix<double> A(m+1,m+1);
+  for (int i=0; i<m+1; i++) {
+    for (int j=0; j<m+1; j++) {
+      double sum = 0;
+      for (int n=0; n<numPoints; n++) {
+        sum += bernstein(m,i,t[n]) * bernstein(m,j,t[n]);
+      }
+      A[i][j] = sum;
+    }
+  }
+  A.print();
+  Matrix<double> B(m+1,3);
+  for (int i=0; i<m+1; i++) {
+    Point<double> p;
+    for (int n=0; n<numPoints; n++) {
+      Point<double> pn(points[n]);
+      p += pn * bernstein(m,i,t[n]);
+    }
+    B[i][0] = p.x();
+    B[i][1] = p.y();
+    B[i][2] = p.z();
+  }
+  // Solve: AX = B (A is a square matrix)  
+  Matrix<double> cps = A.inverse() * B;
+  cps.print();
+  ofstream fw("cps.txt");
+  for (int i=0; i<cps.rows(); i++) {
+    for (int j=0; j<cps.columns(); j++) {
+      fw << cps[i][j] << " ";
+    }
+    fw << endl;
+  }
+  vector<Point<double>> controlPoints(m+1,Point<double>());
+  for (int i=0; i<cps.rows(); i++) {
+    controlPoints[i].x(cps[i][0]);
+    controlPoints[i].y(cps[i][1]);
+    controlPoints[i].z(cps[i][2]);
+  }  
+  estimateCurve(controlPoints);
+}*/
+
+/*!
+ *  \brief This function estimates the control points of the curve
+ */
+void BezierDataGenerator::estimateControlPoints()
+{
+  int m = degree;
+  vector<Point<double>> controlPoints(m+1,Point<double>());
+  controlPoints[0] = points[0];
+  controlPoints[m] = points[numPoints-1];
+  Matrix<double> A(m-1,m-1);
+  for (int i=1; i<m; i++) {
+    for (int j=1; j<m; j++) {
+      double sum = 0;
+      for (int n=1; n<numPoints-1; n++) {
+        sum += bernstein(m,i,t[n]) * bernstein(m,j,t[n]);
+      }
+      A[i-1][j-1] = sum;
+    }
+  }
+  Matrix<double> B(m-1,3);
+  Point<double> p1,p2,p3,p4;
+  for (int i=1; i<m; i++) {
+    Point<double> p;
+    for (int n=1; n<numPoints-1; n++) {
+      p1 = controlPoints[0] * bernstein(m,0,t[n]);
+      p2 = controlPoints[m] * bernstein(m,m,t[n]);
+      p3 = p1 + p2;
+      Point<double> pn(points[n]);
+      p4 = pn - p3;
+      p += pn * bernstein(m,i,t[n]);
+    }
+    B[i-1][0] = p.x();
+    B[i-1][1] = p.y();
+    B[i-1][2] = p.z();
+  }
+  cout << "det = " << A.determinant() << endl;
+  // Solve: AX = B (A is a square matrix)  
+  Matrix<double> cps = A.inverse() * B;
+  cps.print();
+  controlPoints[0].print();
+  for (int i=1; i<=cps.rows(); i++) {
+    double a = cps[i-1][0];
+    controlPoints[i].x(a);
+    a = cps[i-1][1];
+    controlPoints[i].y(a);
+    a = cps[i-1][2];
+    controlPoints[i].z(a);
+    controlPoints[i].print();
+  }
+  controlPoints[m].print();
+  cout << endl;
+  ofstream fw("cps.txt");
+  for (int i=0; i<m+1; i++) {
+    fw << controlPoints[i].x() << " ";
+    fw << controlPoints[i].y() << " ";
+    fw << controlPoints[i].z() << endl;
+  }
+  estimateCurve(controlPoints);
+}
+
+/*!
+ *
+ */
+void BezierDataGenerator::estimateCurve(vector<Point<double>> &cps)
+{
+  ofstream fwcps("cps_estimate.txt");
+  for (int i=0; i<cps.size(); i++) {
+    fwcps << cps[i].x() << " ";
+    fwcps << cps[i].y() << " ";
+    fwcps << cps[i].z() << endl;
+  }
+  // write true curve
+  BezierCurve curve(cps);  
+  double dt = 1 / (double)numPoints;
+  double t1 = 0;
+  ofstream fw1("bezier_data_estimate_curve.txt");
+  ofstream fw2("bezier_data_estimate.txt");
+  for (int n=0; n<numPoints; n++) {
+    Point<double> p1 = curve.getPoint(t1);
+    fw1 << p1.x() << " ";
+    fw1 << p1.y() << " ";
+    fw1 << p1.z() << endl;
+    t1 += dt;
+
+    Point<double> p2 = curve.getPoint(t[n]);
+    fw2 << p2.x() << " ";
+    fw2 << p2.y() << " ";
+    fw2 << p2.z() << endl;
+  }
 }
 

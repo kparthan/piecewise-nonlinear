@@ -388,64 +388,56 @@ double Segment::rootMeanSquaredError(BezierCurve &curve)
  */
 OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
 {
-  int m = numIntermediateControlPoints + 2;
-  vector<Point<double>> controlPoints(m,Point<double>());
-  controlPoints[0] = start;
-  controlPoints[m-1] = end;
-
-  /*if (numPoints == 2) {
-      vector<Point<double>> controlPoints(m,Point<double>());
+  estimateFreeParameters();
+  vector<Point<double>> controlPoints;
+  if (numPoints == 2) {
+      controlPoints = vector<Point<double>>(2,Point<double>());
       controlPoints[0] = start;
       controlPoints[1] = end;
-      BezierCurve curve(controlPoints);
+      /*BezierCurve curve(controlPoints);
       double msglen = messageLengthMML(curve,AOM);
-      return OptimalFit(controlPoints,msglen);
-  }*/
-
-  if (numIntermediateControlPoints != 0) {
-    Matrix<double> A(m-2,m-2);
-    for (int i=1; i<m-1; i++) {
-      for (int j=1; j<m-1; j++) {
-        double sum = 0;
-        for (int n=0; n<numPoints; n++) {
-          sum += bernstein(m-1,i,t[n]) * bernstein(m-1,j,t[n]);
+      return OptimalFit(controlPoints,msglen);*/
+  } else {
+    int m = numIntermediateControlPoints + 1; // degree of curve
+    controlPoints = vector<Point<double>>(m+1,Point<double>());
+    controlPoints[0] = start;
+    controlPoints[m] = end;
+    if (numIntermediateControlPoints != 0) {
+      Matrix<double> A(m+1,m+1);
+      for (int i=0; i<m+1; i++) {
+        for (int j=0; j<m+1; j++) {
+          double sum = 0;
+          for (int n=0; n<numPoints; n++) {
+            sum += bernstein(m,i,t[n]) * bernstein(m,j,t[n]);
+          }
+          A[i][j] = sum;
         }
-        A[i-1][j-1] = sum;
       }
-    }
-    if (fabs(A.determinant()) < ZERO) {
-      return fitBezierCurve(0);
-    } else {
-      Point<double> p1,p2,p3,p4;
-      Matrix<double> B(m-2,3);
-      for (int i=1; i<m-1; i++) {
+      //A.print();
+      if (fabs(A.determinant()) < ZERO) {
+        return fitBezierCurve(0);
+      }
+      Matrix<double> B(m+1,3);
+      for (int i=0; i<m+1; i++) {
         Point<double> p;
         for (int n=0; n<numPoints; n++) {
-          p1 = controlPoints[0] * bernstein(m-1,0,t[n]);
-          p2 = controlPoints[m-1] * bernstein(m-1,m-1,t[n]);
-          p3 = p1 + p2;
           Point<double> pn(coordinates[n]);
-          p4 = pn - p3;
-          p += p4 * bernstein(m-1,i,t[n]);
+          p += pn * bernstein(m,i,t[n]);
         }
-        B[i-1][0] = p.x();
-        B[i-1][1] = p.y();
-        B[i-1][2] = p.z();
+        B[i][0] = p.x();
+        B[i][1] = p.y();
+        B[i][2] = p.z();
       }
       // Solve: AX = B (A is a square matrix)  
       Matrix<double> cps = A.inverse() * B;
-      for (int i=1; i<=cps.rows(); i++) {
-        int a = cps[i-1][0] / AOM;
-        controlPoints[i].x(a*AOM);
-        a = cps[i-1][1] / AOM;
-        controlPoints[i].y(a*AOM);
-        a = cps[i-1][2] / AOM;
-        controlPoints[i].z(a*AOM);
-        //controlPoints[i].print();
-      }
+      //cps.print();
+      for (int i=1; i<cps.rows()-1; i++) {
+        controlPoints[i].x(cps[i][0]);
+        controlPoints[i].y(cps[i][1]);
+        controlPoints[i].z(cps[i][2]);
+      }  
     }
   }
-
   BezierCurve curve(controlPoints);
   vector<array<double,3>> deviations = computeDeviations(curve);
   double msglen = messageLength(curve,deviations);

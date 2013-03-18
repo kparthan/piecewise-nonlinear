@@ -60,6 +60,12 @@ class BezierDataGenerator
 
     //! Plot data
     void plot();
+
+    //! Estimate control points
+    void estimateControlPoints();
+
+    //! Estimate of the Bezier curve
+    void estimateCurve(vector<Point<double>> &);
 };
 
 #endif
