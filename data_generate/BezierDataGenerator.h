@@ -19,7 +19,7 @@ class BezierDataGenerator
     vector<Point<double>> controlPoints;
 
     //! Free parameter list
-    vector<double> t;
+    vector<double> t,t_est;
 
     //! Coordinates of the generated points
     vector<Point<double>> fx;
@@ -42,6 +42,9 @@ class BezierDataGenerator
 
     //! Generate free parameters
     void generateFreeParameters();
+
+    //! Estimate free parameters
+    void estimateFreeParameters();
 
     //! Generate random noise samples
     vector<double> generateNoise(int, double, double);

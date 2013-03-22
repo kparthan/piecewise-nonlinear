@@ -36,6 +36,35 @@ void BezierDataGenerator::generateFreeParameters()
 }
 
 /*!
+ *  \brief This function estimates the free parameter values of the
+ *  intermediate points
+ */
+/*void BezierDataGenerator::estimateFreeParameters()
+{
+  t_est = vector<double>(numPoints,0);
+  if (numPoints > 2) {
+    vector<double> length(numPoints-1,0);
+    Point<double> x1(coordinates[0]);
+    Point<double> x2(coordinates[1]);
+    length[0] = distance(x1,x2);
+    for (int i=1; i<numPoints-1; i++) {
+      x1 = Point<double>(coordinates[i+1]);
+      length[i] = length[i-1] + distance(x1,x2);
+      x2 = x1;
+    }
+    for (int i=1; i<numPoints-1; i++) {
+      t_est[i] = length[i-1] / (double)length[numPoints-2];
+    }
+    t_est[numPoints-1] = 1;
+  } else {
+    t_est[1] = 1;
+  }
+  for (int i=0; i<t_est.size(); i++) {
+    cout << t_est[i] << endl;
+  }
+}*/
+
+/*!
  *  \brief This function sorts the elements in the list
  *  \param list a reference to a vector<double>
  *  \return the sorted list
@@ -272,7 +301,7 @@ double bernstein(int m, int i, double t)
   } else {
     double c = 1;
     for(int j=1; j<=i; j++) {
-      c *= (m-j+1) / j;
+      c *= (m-j+1) / (double)j;
     }
     y = c * x;
   }
@@ -330,7 +359,7 @@ double bernstein(int m, int i, double t)
 /*!
  *  \brief This function estimates the control points of the curve
  */
-void BezierDataGenerator::estimateControlPoints()
+/*void BezierDataGenerator::estimateControlPoints()
 {
   int m = degree;
   vector<Point<double>> controlPoints(m+1,Point<double>());
@@ -385,6 +414,86 @@ void BezierDataGenerator::estimateControlPoints()
     fw << controlPoints[i].z() << endl;
   }
   estimateCurve(controlPoints);
+}*/
+
+/*!
+ *  \brief This function estimates the control points of the curve
+ */
+/*void BezierDataGenerator::estimateControlPoints()
+{
+  int m = degree;
+  Matrix<double> controlPoints(m+1,3);
+  Matrix<double> A(numPoints,m+1);
+  Matrix<double> B(numPoints,3);
+  for (int i=0; i<numPoints; i++) {
+    for (int j=0; j<m+1; j++) {
+      A[i][j] = bernstein(m,j,t[i]);
+    }
+    B[i][0] = points[i].x();
+    B[i][1] = points[i].y();
+    B[i][2] = points[i].z();
+  }
+  Matrix<double> A_trans = A.transpose();
+  Matrix<double> AtransA = A_trans * A;
+  Matrix<double> AtransB = A_trans * B;
+  controlPoints = AtransA.solveLinearSystem(AtransB);
+  //cout << "det = " << A.determinant() << endl;
+  controlPoints.print();
+
+  vector<Point<double>> cps(m+1,Point<double>());
+  ofstream fw("cps.txt");
+  for (int i=0; i<m+1; i++) {
+    cps[i].x(controlPoints[i][0]);
+    cps[i].y(controlPoints[i][1]);
+    cps[i].z(controlPoints[i][2]);
+    cout << endl;
+  }
+  estimateCurve(cps);
+}*/
+
+/*!
+ *  \brief This function estimates the control points of the curve
+ */
+void BezierDataGenerator::estimateControlPoints()
+{
+  int m = degree;
+  Matrix<double> controlPoints(m-1,3);
+  Matrix<double> A(numPoints-2,m-1);
+  Matrix<double> B(numPoints-2,3);
+  for (int i=1; i<numPoints-1; i++) {
+    for (int j=1; j<m; j++) {
+      A[i-1][j-1] = bernstein(m,j,t[i]);
+    }
+    B[i-1][0] = points[i].x() - bernstein(m,0,t[i]) * points[0].x() 
+                            - bernstein(m,m,t[i]) * points[numPoints-1].x();
+    B[i-1][1] = points[i].y() - bernstein(m,0,t[i]) * points[0].y() 
+                            - bernstein(m,m,t[i]) * points[numPoints-1].y();
+    B[i-1][2] = points[i].z() - bernstein(m,0,t[i]) * points[0].z() 
+                            - bernstein(m,m,t[i]) * points[numPoints-1].z();
+  }
+  Matrix<double> A_trans = A.transpose();
+  Matrix<double> AtransA = A_trans * A;
+  Matrix<double> AtransB = A_trans * B;
+  controlPoints = AtransA.solveLinearSystem(AtransB);
+  //cout << "det = " << A.determinant() << endl;
+  //controlPoints.print();
+
+  vector<Point<double>> cps(m+1,Point<double>());
+  ofstream fw("cps.txt");
+  cps[0] = points[0];
+  for (int i=1; i<m; i++) {
+    cps[i].x(controlPoints[i-1][0]);
+    cps[i].y(controlPoints[i-1][1]);
+    cps[i].z(controlPoints[i-1][2]);
+    cout << endl;
+  }
+  cps[m] = points[numPoints-1];
+  for (int i=0; i<m+1; i++) {
+    cout << cps[i].x() << " ";
+    cout << cps[i].y() << " ";
+    cout << cps[i].z() << endl;
+  }
+  estimateCurve(cps);
 }
 
 /*!
