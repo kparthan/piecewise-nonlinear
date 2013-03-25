@@ -11,7 +11,7 @@ class Structure
 
   public:
     //! Constructor
-    Structure(vector<Point<double>> coordinates);
+    Structure(vector<Point<double>>);
 
     //! Constructor from ProteinStructure
     Structure(ProteinStructure *);

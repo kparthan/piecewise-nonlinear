@@ -15,11 +15,13 @@
 #include <boost/program_options.hpp>
 #include <boost/lexical_cast.hpp>
 
+#define AOM 0.001
 #define PI boost::math::constants::pi<double>()
 #define ZERO std::numeric_limits<double>::epsilon()
 
 using namespace std;
 using namespace lcb;
+using namespace lcb::geometry;
 using namespace boost::program_options;
 
 void parseCommandLineInput(int, char **, int &, int &, int &, int &, double &);

@@ -394,55 +394,57 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
       controlPoints = vector<Point<double>>(2,Point<double>());
       controlPoints[0] = start;
       controlPoints[1] = end;
-      /*BezierCurve curve(controlPoints);
-      double msglen = messageLengthMML(curve,AOM);
-      return OptimalFit(controlPoints,msglen);*/
   } else {
     int m = numIntermediateControlPoints + 1; // degree of curve
     controlPoints = vector<Point<double>>(m+1,Point<double>());
     controlPoints[0] = start;
     controlPoints[m] = end;
     if (numIntermediateControlPoints != 0) {
-      Matrix<double> A(m+1,m+1);
-      for (int i=0; i<m+1; i++) {
-        for (int j=0; j<m+1; j++) {
+      Matrix<double> A(m-1,m-1);
+      for (int i=1; i<m; i++) {
+        for (int j=1; j<m; j++) {
           double sum = 0;
-          for (int n=0; n<numPoints; n++) {
+          for (int n=1; n<numPoints-1; n++) {
             sum += bernstein(m,i,t[n]) * bernstein(m,j,t[n]);
           }
-          A[i][j] = sum;
+          A[i-1][j-1] = sum;
         }
       }
-      //A.print();
       if (fabs(A.determinant()) < ZERO) {
         return fitBezierCurve(0);
       }
-      Matrix<double> B(m+1,3);
-      for (int i=0; i<m+1; i++) {
+      Matrix<double> B(m-1,3);
+      Point<double> p1,p2,p3,p4;
+      for (int i=1; i<m; i++) {
         Point<double> p;
-        for (int n=0; n<numPoints; n++) {
+        for (int n=1; n<numPoints-1; n++) {
+          p1 = controlPoints[0] * bernstein(m,0,t[n]);
+          p2 = controlPoints[m] * bernstein(m,m,t[n]);
+          p3 = p1 + p2;
           Point<double> pn(coordinates[n]);
-          p += pn * bernstein(m,i,t[n]);
+          p4 = pn - p3;
+          p += p4 * bernstein(m,i,t[n]);
         }
-        B[i][0] = p.x();
-        B[i][1] = p.y();
-        B[i][2] = p.z();
+        B[i-1][0] = p.x();
+        B[i-1][1] = p.y();
+        B[i-1][2] = p.z();
       }
       // Solve: AX = B (A is a square matrix)  
       Matrix<double> cps = A.inverse() * B;
       //cps.print();
-      for (int i=1; i<cps.rows()-1; i++) {
-        controlPoints[i].x(cps[i][0]);
-        controlPoints[i].y(cps[i][1]);
-        controlPoints[i].z(cps[i][2]);
+      for (int i=1; i<=cps.rows(); i++) {
+        int a = cps[i-1][0] / AOM;
+        controlPoints[i].x((double)a * AOM);
+        a = cps[i-1][1] / AOM;
+        controlPoints[i].y((double)a * AOM);
+        a = cps[i-1][2] / AOM;
+        controlPoints[i].z((double)a * AOM);
       }  
     }
   }
   BezierCurve curve(controlPoints);
   vector<array<double,3>> deviations = computeDeviations(curve);
   double msglen = messageLength(curve,deviations);
-  //double sigma = rootMeanSquaredError(curve);
-  //double msglen = messageLengthMML(curve,sigma);
   return OptimalFit(controlPoints,msglen);
 }
 

@@ -40,16 +40,16 @@ void BezierDataGenerator::generateFreeParameters()
  *  \brief This function estimates the free parameter values of the
  *  intermediate points
  */
-/*void BezierDataGenerator::estimateFreeParameters()
+void BezierDataGenerator::estimateFreeParameters()
 {
   t_est = vector<double>(numPoints,0);
   if (numPoints > 2) {
     vector<double> length(numPoints-1,0);
-    Point<double> x1(coordinates[0]);
-    Point<double> x2(coordinates[1]);
+    Point<double> x1(points[0]);
+    Point<double> x2(points[1]);
     length[0] = distance(x1,x2);
     for (int i=1; i<numPoints-1; i++) {
-      x1 = Point<double>(coordinates[i+1]);
+      x1 = Point<double>(points[i+1]);
       length[i] = length[i-1] + distance(x1,x2);
       x2 = x1;
     }
@@ -60,10 +60,10 @@ void BezierDataGenerator::generateFreeParameters()
   } else {
     t_est[1] = 1;
   }
-  for (int i=0; i<t_est.size(); i++) {
+  /*for (int i=0; i<t_est.size(); i++) {
     cout << t_est[i] << endl;
-  }
-}*/
+  }*/
+}
 
 /*!
  *  \brief This function sorts the elements in the list
@@ -317,6 +317,7 @@ double bernstein(int m, int i, double t)
  */
 void BezierDataGenerator::estimateControlPoints(int method, int version)
 {
+  estimateFreeParameters();
   if (method == 0) { // calculus
     if (version == 0) { // generalized
       estimateUsingCalculusGeneral();
@@ -339,13 +340,14 @@ void BezierDataGenerator::estimateControlPoints(int method, int version)
  */
 void BezierDataGenerator::estimateUsingCalculusGeneral()
 {
+  //t_est = t;
   int m = degree;
   Matrix<double> A(m+1,m+1);
   for (int i=0; i<m+1; i++) {
     for (int j=0; j<m+1; j++) {
       double sum = 0;
       for (int n=0; n<numPoints; n++) {
-        sum += bernstein(m,i,t[n]) * bernstein(m,j,t[n]);
+        sum += bernstein(m,i,t_est[n]) * bernstein(m,j,t_est[n]);
       }
       A[i][j] = sum;
     }
@@ -356,7 +358,7 @@ void BezierDataGenerator::estimateUsingCalculusGeneral()
     Point<double> p;
     for (int n=0; n<numPoints; n++) {
       Point<double> pn(points[n]);
-      p += pn * bernstein(m,i,t[n]);
+      p += pn * bernstein(m,i,t_est[n]);
     }
     B[i][0] = p.x();
     B[i][1] = p.y();
@@ -375,9 +377,13 @@ void BezierDataGenerator::estimateUsingCalculusGeneral()
   }
   vector<Point<double>> controlPoints(m+1,Point<double>());
   for (int i=0; i<cps.rows(); i++) {
-    controlPoints[i].x(cps[i][0]);
-    controlPoints[i].y(cps[i][1]);
-    controlPoints[i].z(cps[i][2]);
+    int a = cps[i][0] / AOM;   
+    controlPoints[i].x((double)a * AOM);
+    a = cps[i][1] / AOM;
+    controlPoints[i].y((double)a * AOM);
+    a = cps[i][2] / AOM;
+    controlPoints[i].z((double)a * AOM);
+    //controlPoints[i].print();
   }  
   estimateCurve(controlPoints);
 }
@@ -389,6 +395,7 @@ void BezierDataGenerator::estimateUsingCalculusGeneral()
  */
 void BezierDataGenerator::estimateUsingCalculusConstrained()
 {
+  //t_est = t;
   int m = degree;
   vector<Point<double>> controlPoints(m+1,Point<double>());
   controlPoints[0] = points[0];
@@ -398,7 +405,7 @@ void BezierDataGenerator::estimateUsingCalculusConstrained()
     for (int j=1; j<m; j++) {
       double sum = 0;
       for (int n=1; n<numPoints-1; n++) {
-        sum += bernstein(m,i,t[n]) * bernstein(m,j,t[n]);
+        sum += bernstein(m,i,t_est[n]) * bernstein(m,j,t_est[n]);
       }
       A[i-1][j-1] = sum;
     }
@@ -409,12 +416,12 @@ void BezierDataGenerator::estimateUsingCalculusConstrained()
   for (int i=1; i<m; i++) {
     Point<double> p;
     for (int n=1; n<numPoints-1; n++) {
-      p1 = controlPoints[0] * bernstein(m,0,t[n]);
-      p2 = controlPoints[m] * bernstein(m,m,t[n]);
+      p1 = controlPoints[0] * bernstein(m,0,t_est[n]);
+      p2 = controlPoints[m] * bernstein(m,m,t_est[n]);
       p3 = p1 + p2;
       Point<double> pn(points[n]);
       p4 = pn - p3;
-      p += p4 * bernstein(m,i,t[n]);
+      p += p4 * bernstein(m,i,t_est[n]);
     }
     B[i-1][0] = p.x();
     B[i-1][1] = p.y();
@@ -453,13 +460,14 @@ void BezierDataGenerator::estimateUsingCalculusConstrained()
  */
 void BezierDataGenerator::estimateUsingAlgebraicGeneral()
 {
+  //t_est = t;
   int m = degree;
   Matrix<double> controlPoints(m+1,3);
   Matrix<double> A(numPoints,m+1);
   Matrix<double> B(numPoints,3);
   for (int i=0; i<numPoints; i++) {
     for (int j=0; j<m+1; j++) {
-      A[i][j] = bernstein(m,j,t[i]);
+      A[i][j] = bernstein(m,j,t_est[i]);
     }
     B[i][0] = points[i].x();
     B[i][1] = points[i].y();
@@ -490,20 +498,21 @@ void BezierDataGenerator::estimateUsingAlgebraicGeneral()
  */
 void BezierDataGenerator::estimateUsingAlgebraicConstrained()
 {
+  //t_est = t;
   int m = degree;
   Matrix<double> controlPoints(m-1,3);
   Matrix<double> A(numPoints-2,m-1);
   Matrix<double> B(numPoints-2,3);
   for (int i=1; i<numPoints-1; i++) {
     for (int j=1; j<m; j++) {
-      A[i-1][j-1] = bernstein(m,j,t[i]);
+      A[i-1][j-1] = bernstein(m,j,t_est[i]);
     }
-    B[i-1][0] = points[i].x() - bernstein(m,0,t[i]) * points[0].x() 
-                            - bernstein(m,m,t[i]) * points[numPoints-1].x();
-    B[i-1][1] = points[i].y() - bernstein(m,0,t[i]) * points[0].y() 
-                            - bernstein(m,m,t[i]) * points[numPoints-1].y();
-    B[i-1][2] = points[i].z() - bernstein(m,0,t[i]) * points[0].z() 
-                            - bernstein(m,m,t[i]) * points[numPoints-1].z();
+    B[i-1][0] = points[i].x() - bernstein(m,0,t_est[i]) * points[0].x() 
+                            - bernstein(m,m,t_est[i]) * points[numPoints-1].x();
+    B[i-1][1] = points[i].y() - bernstein(m,0,t_est[i]) * points[0].y() 
+                            - bernstein(m,m,t_est[i]) * points[numPoints-1].y();
+    B[i-1][2] = points[i].z() - bernstein(m,0,t_est[i]) * points[0].z() 
+                            - bernstein(m,m,t_est[i]) * points[numPoints-1].z();
   }
   Matrix<double> A_trans = A.transpose();
   Matrix<double> AtransA = A_trans * A;
@@ -536,6 +545,7 @@ void BezierDataGenerator::estimateUsingAlgebraicConstrained()
  */
 void BezierDataGenerator::estimateCurve(vector<Point<double>> &cps)
 {
+  //t_est = t;
   ofstream fwcps("cps_estimate.txt");
   for (int i=0; i<cps.size(); i++) {
     fwcps << cps[i].x() << " ";
@@ -555,7 +565,7 @@ void BezierDataGenerator::estimateCurve(vector<Point<double>> &cps)
     fw1 << p1.z() << endl;
     t1 += dt;
 
-    Point<double> p2 = curve.getPoint(t[n]);
+    Point<double> p2 = curve.getPoint(t_est[n]);
     fw2 << p2.x() << " ";
     fw2 << p2.y() << " ";
     fw2 << p2.z() << endl;

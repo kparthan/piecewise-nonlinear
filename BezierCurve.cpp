@@ -194,10 +194,10 @@ vector<double> BezierCurve::project(const Point<double> &p)
         Point<double> temp3 = controlPoints[0] - p;
         /* solve a cubic equation */
         coefficients = vector<double>(4,0);
-        coefficients[0] = temp1 * temp1;
-        coefficients[1] = 3 * (temp1 * temp2);
-        coefficients[2] = (temp1 * temp3) + 2 * (temp2 * temp2); 
-        coefficients[3] = temp2 * temp3;
+        coefficients[3] = temp1 * temp1;
+        coefficients[2] = 3 * (temp1 * temp2);
+        coefficients[1] = (temp1 * temp3) + 2 * (temp2 * temp2); 
+        coefficients[0] = temp2 * temp3;
         break;
       }
 
@@ -211,12 +211,12 @@ vector<double> BezierCurve::project(const Point<double> &p)
         Point<double> temp4 = controlPoints[0] - p;
         /* solve a quintic equation */
         coefficients = vector<double>(6,0);
-        coefficients[0] = temp1 * temp1;
-        coefficients[1] = 5 * (temp1 * temp2);
-        coefficients[2] = 6 * (temp2 * temp2) + 4 * (temp3 * temp1);
-        coefficients[3] = 9 * (temp3 * temp2) + (temp4 * temp1);
-        coefficients[4] = 3 * (temp3 * temp3) + 2 * (temp4 * temp2);
-        coefficients[5] = temp3 * temp4;
+        coefficients[5] = temp1 * temp1;
+        coefficients[4] = 5 * (temp1 * temp2);
+        coefficients[3] = 6 * (temp2 * temp2) + 4 * (temp3 * temp1);
+        coefficients[2] = 9 * (temp3 * temp2) + (temp4 * temp1);
+        coefficients[1] = 3 * (temp3 * temp3) + 2 * (temp4 * temp2);
+        coefficients[0] = temp3 * temp4;
         break;
       }
 

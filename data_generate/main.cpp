@@ -18,9 +18,9 @@ int main(int argc, char **argv)
     controlPoints[2] = Point<double>(10,0,0);
   } else if (degree == 3) {
     controlPoints[0] = Point<double>(0,0,0);
-    controlPoints[1] = Point<double>(2,15,3);
-    controlPoints[2] = Point<double>(6,5,-3);
-    controlPoints[3] = Point<double>(10,0,0);
+    controlPoints[1] = Point<double>(20,15,3);
+    controlPoints[2] = Point<double>(60,55,-23);
+    controlPoints[3] = Point<double>(100,0,0);
   }
 
   ofstream fw("cps_true.txt");
