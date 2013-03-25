@@ -36,6 +36,18 @@ class BezierDataGenerator
     //! Partitioning the array
     int partition(vector<double> &,vector<int> &, int, int);
 
+    //!
+    void estimateUsingCalculusGeneral();
+
+    //!
+    void estimateUsingCalculusConstrained();
+
+    //!
+    void estimateUsingAlgebraicGeneral();
+
+    //!
+    void estimateUsingAlgebraicConstrained();
+
   public:
     //! Constructor
     BezierDataGenerator(int, double, vector<Point<double>> &);
@@ -65,7 +77,7 @@ class BezierDataGenerator
     void plot();
 
     //! Estimate control points
-    void estimateControlPoints();
+    void estimateControlPoints(int, int);
 
     //! Estimate of the Bezier curve
     void estimateCurve(vector<Point<double>> &);

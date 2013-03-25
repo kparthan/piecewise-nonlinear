@@ -12,12 +12,18 @@
 #include <stdexcept>
 #include <liblcb/liblcb.h>
 #include <boost/math/constants/constants.hpp>
+#include <boost/program_options.hpp>
+#include <boost/lexical_cast.hpp>
 
 #define PI boost::math::constants::pi<double>()
 #define ZERO std::numeric_limits<double>::epsilon()
 
 using namespace std;
 using namespace lcb;
+using namespace boost::program_options;
+
+void parseCommandLineInput(int, char **, int &, int &, int &, int &, double &);
+void Usage (const char *, options_description &);
 
 #endif
 

@@ -18,7 +18,8 @@ BezierDataGenerator::BezierDataGenerator(int numPoints, double noise_sigma,
  */
 void BezierDataGenerator::generateFreeParameters()
 {
-  srand(time(NULL));
+  //srand(time(NULL));
+  srand(1000);
   vector<double> t_random(numPoints,0);
   for (int i=1; i<numPoints-1; i++) {
     t_random[i] = rand() / (double)RAND_MAX;
@@ -155,8 +156,8 @@ vector<double> BezierDataGenerator::generateNoise(int samples, double mu,
                                                   double sigma)
 {
   vector<double> x(samples,0);
-  srand(time(NULL));
-  //srand(1000);
+  //srand(time(NULL));
+  srand(1000);
   for (int i=0; i<samples; i=i+2) {
     double u = (double) rand() / RAND_MAX;
     double v = (double) rand() / RAND_MAX;
@@ -309,10 +310,34 @@ double bernstein(int m, int i, double t)
   return y;
 }
 
+/*
+ *  \brief This function estimates the control points
+ *  \param method an integer
+ *  \param version an integer
+ */
+void BezierDataGenerator::estimateControlPoints(int method, int version)
+{
+  if (method == 0) { // calculus
+    if (version == 0) { // generalized
+      estimateUsingCalculusGeneral();
+    } else if (version == 1) { // constrained
+      estimateUsingCalculusConstrained();
+    }
+  } else if (method == 1) { // algebraic
+    if (version == 0) { // generalized
+      estimateUsingAlgebraicGeneral();
+    } else if (version == 1) { // constrained
+      estimateUsingAlgebraicConstrained();
+    }
+  }
+}
+
 /*!
  *  \brief This function estimates the control points of the curve
+ *  using the calculus approach without constraining the start and the
+ *  end control points
  */
-/*void BezierDataGenerator::estimateControlPoints()
+void BezierDataGenerator::estimateUsingCalculusGeneral()
 {
   int m = degree;
   Matrix<double> A(m+1,m+1);
@@ -337,6 +362,7 @@ double bernstein(int m, int i, double t)
     B[i][1] = p.y();
     B[i][2] = p.z();
   }
+  B.print();
   // Solve: AX = B (A is a square matrix)  
   Matrix<double> cps = A.inverse() * B;
   cps.print();
@@ -354,12 +380,14 @@ double bernstein(int m, int i, double t)
     controlPoints[i].z(cps[i][2]);
   }  
   estimateCurve(controlPoints);
-}*/
+}
 
 /*!
  *  \brief This function estimates the control points of the curve
+ *  using the calculus approach by constraining the start and end 
+ *  control points
  */
-/*void BezierDataGenerator::estimateControlPoints()
+void BezierDataGenerator::estimateUsingCalculusConstrained()
 {
   int m = degree;
   vector<Point<double>> controlPoints(m+1,Point<double>());
@@ -375,6 +403,7 @@ double bernstein(int m, int i, double t)
       A[i-1][j-1] = sum;
     }
   }
+  A.print();
   Matrix<double> B(m-1,3);
   Point<double> p1,p2,p3,p4;
   for (int i=1; i<m; i++) {
@@ -385,12 +414,13 @@ double bernstein(int m, int i, double t)
       p3 = p1 + p2;
       Point<double> pn(points[n]);
       p4 = pn - p3;
-      p += pn * bernstein(m,i,t[n]);
+      p += p4 * bernstein(m,i,t[n]);
     }
     B[i-1][0] = p.x();
     B[i-1][1] = p.y();
     B[i-1][2] = p.z();
   }
+  B.print();
   cout << "det = " << A.determinant() << endl;
   // Solve: AX = B (A is a square matrix)  
   Matrix<double> cps = A.inverse() * B;
@@ -414,12 +444,14 @@ double bernstein(int m, int i, double t)
     fw << controlPoints[i].z() << endl;
   }
   estimateCurve(controlPoints);
-}*/
+}
 
 /*!
  *  \brief This function estimates the control points of the curve
+ *  using the algebraic approach for the generalized version (does
+ *  not constrain the start and end control points).
  */
-/*void BezierDataGenerator::estimateControlPoints()
+void BezierDataGenerator::estimateUsingAlgebraicGeneral()
 {
   int m = degree;
   Matrix<double> controlPoints(m+1,3);
@@ -435,7 +467,9 @@ double bernstein(int m, int i, double t)
   }
   Matrix<double> A_trans = A.transpose();
   Matrix<double> AtransA = A_trans * A;
+  AtransA.print();
   Matrix<double> AtransB = A_trans * B;
+  AtransB.print();
   controlPoints = AtransA.solveLinearSystem(AtransB);
   //cout << "det = " << A.determinant() << endl;
   controlPoints.print();
@@ -446,15 +480,15 @@ double bernstein(int m, int i, double t)
     cps[i].x(controlPoints[i][0]);
     cps[i].y(controlPoints[i][1]);
     cps[i].z(controlPoints[i][2]);
-    cout << endl;
   }
   estimateCurve(cps);
-}*/
+}
 
 /*!
  *  \brief This function estimates the control points of the curve
+ *  using the algebraic approach for the constrained version.
  */
-void BezierDataGenerator::estimateControlPoints()
+void BezierDataGenerator::estimateUsingAlgebraicConstrained()
 {
   int m = degree;
   Matrix<double> controlPoints(m-1,3);
@@ -473,7 +507,9 @@ void BezierDataGenerator::estimateControlPoints()
   }
   Matrix<double> A_trans = A.transpose();
   Matrix<double> AtransA = A_trans * A;
+  AtransA.print();
   Matrix<double> AtransB = A_trans * B;
+  AtransB.print();
   controlPoints = AtransA.solveLinearSystem(AtransB);
   //cout << "det = " << A.determinant() << endl;
   //controlPoints.print();
@@ -485,7 +521,6 @@ void BezierDataGenerator::estimateControlPoints()
     cps[i].x(controlPoints[i-1][0]);
     cps[i].y(controlPoints[i-1][1]);
     cps[i].z(controlPoints[i-1][2]);
-    cout << endl;
   }
   cps[m] = points[numPoints-1];
   for (int i=0; i<m+1; i++) {

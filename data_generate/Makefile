@@ -1,5 +1,5 @@
 CFLAGS=-std=c++0x -g $(shell pkg-config --cflags liblcb-experimental) 
-LDFLAGS=$(shell pkg-config --libs liblcb-experimental) 
+LDFLAGS=$(shell pkg-config --libs liblcb-experimental) -lboost_program_options
 
 OBJECTS = main.o \
   BezierDataGenerator.o \
