@@ -56,6 +56,6 @@ geometry3D.o: geometry3D.cpp geometry3D.h
 	g++ -c $(CFLAGS) $< -o $@
 
 clean:
-	rm -f *.o *~ piecewise-nonlinear-fit  
+	rm -f *.o *~ piecewise-nonlinear-fit  dev_bezier*
 #before_translation after_translation rotate1 final codeLengthFile optimal 
 

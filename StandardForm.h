@@ -20,12 +20,18 @@ class StandardForm
     //! Stores the standard canonical form
     Structure structure;
 
+    //! Stores the transformation matrix
+    Matrix<double> transformation;
+
     //! Number of intermediate control points to be used
     vector<int> controls;
 
     //! Status to determine whether the whole protein or a
     //! part of it is used to fit Bezier curve
     int fit_status;
+
+    //! Output flag
+    int print_status;
 
     //! End points of a segment
     vector<int> end_points;
@@ -47,7 +53,7 @@ class StandardForm
 
   public:
     //! Constructor
-    StandardForm(string, Structure, vector<int> &, int, vector<int> &);
+    StandardForm(string, Structure, vector<int> &, int, int, vector<int> &);
 
                             /* Accessor functions */
     //! Gets the number of residues

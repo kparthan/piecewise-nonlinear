@@ -11,10 +11,11 @@
  *  \param end_points a reference to a vector<int>
  */
 StandardForm::StandardForm(string file, Structure s, vector<int> &controls,
-                           int fit_status, vector<int> &end_points) : 
+                           int fit_status, int print_status,
+                           vector<int> &end_points) : 
                            file(file), structure(s), controls(controls), 
                            volume(0), fit_status(fit_status), 
-                           end_points(end_points)
+                           print_status(print_status), end_points(end_points)
 {
   coordinates = structure.getCoordinates();
   numResidues = coordinates.size();
@@ -73,7 +74,7 @@ double StandardForm::getMinimum(unsigned index)
       minimum = coordinates[i][index];
     }
   }
-  return minimum;
+  return minimum; 
 }
 
 /*!
@@ -121,7 +122,7 @@ Segment StandardForm::getSegment(unsigned i, unsigned j)
   for (int k=0; k<numPoints; k++){
     coordinates.push_back(getCoordinates(i+k));
   }
-  return Segment(coordinates,volume);
+  return Segment(coordinates,print_status,volume);
 }
 
 /*!
@@ -180,6 +181,7 @@ void StandardForm::translateToOrigin()
   Matrix<double> translate = translationMatrix(offsetx,offsety,offsetz);
   structure.transform(translate);
   cout << "[OK]" << endl;
+  transformation = translate;
 }
 
 /*!
@@ -194,6 +196,7 @@ void StandardForm::rotateLastPoint()
   /* brings the last point in the protein to lie on the XY plane */
   Matrix<double> rotate = projectAndRotateLast(end); 
   structure.transform(rotate);
+  transformation = transformation * rotate;
 
   updateCoordinates();
   end = Point<double>(coordinates[coordinates.size()-1]);
@@ -201,6 +204,7 @@ void StandardForm::rotateLastPoint()
   /* brings the last point on the protein to lie on the X-axis */
   rotate = rotateInXYPlane(end);
   structure.transform(rotate);
+  transformation = transformation * rotate;
 
   cout << "[OK]" << endl;
 }
@@ -292,6 +296,7 @@ void StandardForm::rotateSecondPoint()
   /* brings the second point in the protein to lie on the XY plane */
   Matrix<double> rotate = projectAndRotateSecond(second); 
   structure.transform(rotate);
+  transformation = transformation * rotate;
 
   cout << "[OK]" << endl;
 }

@@ -6,10 +6,12 @@
  *  \brief constructor function used for instantiation
  *  \param coordinates a vector<array<double,3>>
  *  \param atoms a vector<Atom>
+ *  \param print_status an integer
  *  \param volume a double
  */
-Segment::Segment(vector<array<double,3>> &coordinates, double volume): 
-                coordinates(coordinates), volume(volume)
+Segment::Segment(vector<array<double,3>> &coordinates, int print_status,
+                double volume): coordinates(coordinates), volume(volume),
+                print_status(print_status)
 {
   numPoints = coordinates.size();
   numIntermediate = numPoints - 2;
@@ -551,17 +553,21 @@ vector<array<double,3>> Segment::getDeviations(BezierCurve &curve)
     deviations.push_back(d);
     tmin_prev = tmin_current;
   }
-  /*ofstream dev_bezier("dev_bezier");
-  for (int i=0; i<deviations.size(); i++){
-    dev_bezier << deviations[i][0] << " ";
-    dev_bezier << deviations[i][1] << " ";
-    dev_bezier << deviations[i][2] << endl;
-  }*/
+  if (print_status) {
+    string file("dev_bezier_");
+    file += boost::lexical_cast<string>(curve.getDegree()-1);
+    ofstream dev_bezier(file.c_str());
+    for (int i=0; i<deviations.size(); i++){
+      dev_bezier << deviations[i][0] << " ";
+      dev_bezier << deviations[i][1] << " ";
+      dev_bezier << deviations[i][2] << endl;
+    }
+  }
   return deviations;
 }
 
 /*
- *  \brief Thie module computes the length of the message used to encode a
+ *  \brief The module computes the length of the message used to encode a
  *  segment using a Bezier curve model
  *  \param curve a reference to a BezierCurve
  *  \param deviations a reference to a vector<array<double,3>>
@@ -571,42 +577,85 @@ double Segment::messageLength(BezierCurve &curve,
                               vector<array<double,3>> &deviations)
 {
   double msglen = 0;
+  double x;
 
   /* message length to state the end point of the segment */
   Message msg1;
-  msglen += msg1.encodeUsingNullModel(volume); 
+  x = msg1.encodeUsingNullModel(volume); 
+  msglen += x;
+  if (print_status) { 
+    cout << "\nmsglen(end point): " << x << endl;
+  }
 
   /* message length to state the number of control points */
   int numIntermediateControlPoints = curve.getDegree() - 1;
-  msglen += msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
-
+  x = msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
+  msglen += x; 
+  if (print_status) { 
+    cout << "msglen(#int cps): " << x << endl;
+  }
+ 
   /* message length to state the control points */
-  msglen += numIntermediateControlPoints * msg1.encodeUsingNullModel(volume);
+  x = numIntermediateControlPoints * msg1.encodeUsingNullModel(volume);
+  msglen += x; 
+  if (print_status) { 
+    cout << "msglen(int cps): " << x << endl;
+  }
 
   /* message length to state the number of intermediate deviations if any */  
   Message msg2(deviations);
   switch(curve.getDegree()) {
     case 1:
       /* message length to state the number of intermediate points */
-      msglen += msg1.encodeUsingLogStarModel(numIntermediate+1); 
+      x = msg1.encodeUsingLogStarModel(numIntermediate+1);
+      msglen += x; 
+      if (print_status) { 
+        cout << "msglen(# int points): " << x << endl;
+      }
+ 
       if (numIntermediate < 3) {
-        msglen += numIntermediate * msg1.encodeUsingNullModel(volume);
+        x = numIntermediate * msg1.encodeUsingNullModel(volume);
+        msglen += x;
+        if (print_status) { 
+          cout << "msglen(int points): " << x << endl;
+        }
       } else { 
         /* state the first intermediate point to construct the plane */
-        msglen += msg1.encodeUsingNullModel(volume);
+        x = msg1.encodeUsingNullModel(volume);
+        msglen += x;
+        if (print_status) { 
+          cout << "msglen(int point for plane): " << x << endl;
+        }
         /* state the deviations */
-        msglen += msg2.encodeUsingNormalModel();
+        x = msg2.encodeUsingNormalModel();
+        msglen += x;
+        if (print_status) { 
+          cout << "msglen(deviations): " << x;
+        }
       }
       break;
 
     default:
       /* message length to state the number of intermediate points */
-      msglen += msg1.encodeUsingLogStarModel(numIntermediate+1); 
+      x = msg1.encodeUsingLogStarModel(numIntermediate+1);
+      msglen += x; 
+      if (print_status) { 
+        cout << "msglen(# int points): " << x << endl;
+      }
+
       if (numIntermediate < 2) {
-        msglen += numIntermediate * msg1.encodeUsingNullModel(volume);
+        x = numIntermediate * msg1.encodeUsingNullModel(volume);
+        msglen += x;
+        if (print_status) { 
+          cout << "msglen(int points): " << x << endl;
+        }
       } else {
         /* state the deviations */
-        msglen += msg2.encodeUsingNormalModel();
+        x = msg2.encodeUsingNormalModel();
+        msglen += x;
+        if (print_status) { 
+          cout << "msglen(deviations): " << x;
+        }
       }
       break;
   }

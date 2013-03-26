@@ -12,6 +12,9 @@ class Segment
     //! Volume of the bounding box
     double volume;
 
+    //! Output flag
+    int print_status;
+
     //! Number of intermediate points
     int numIntermediate;
 
@@ -46,7 +49,7 @@ class Segment
 
   public:
     //! Constructor
-    Segment(vector<array<double,3>> &, double);
+    Segment(vector<array<double,3>> &, int, double);
 
                             /* Accessor functions */
     //! Gets number of intermediate points
