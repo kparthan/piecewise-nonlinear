@@ -17,8 +17,9 @@ StandardForm::StandardForm(string file, Structure s, vector<int> &controls,
                            volume(0), fit_status(fit_status), 
                            print_status(print_status), end_points(end_points)
 {
-  coordinates = structure.getCoordinates();
-  numResidues = coordinates.size();
+  original_coordinates = structure.getCoordinates();
+  numResidues = original_coordinates.size();
+  rotation = Matrix<double>::identity(3);
   for (int i=0; i<numResidues; i++) {
     vector<double> tmp(numResidues,0);
     codeLength.push_back(tmp);
@@ -122,7 +123,7 @@ Segment StandardForm::getSegment(unsigned i, unsigned j)
   for (int k=0; k<numPoints; k++){
     coordinates.push_back(getCoordinates(i+k));
   }
-  return Segment(coordinates,print_status,volume);
+  return Segment(coordinates,fit_status,print_status,volume);
 }
 
 /*!
@@ -145,25 +146,59 @@ void StandardForm::transform(void)
 {
   cout << "Transforming the protein to a standard canonical form ...\n";
   updateCoordinates();
-  //writeToFile(coordinates,"before_translation");
+  if(print_status) {
+    writeToFile(coordinates,"output/before_translation");
+  }
 
   /* translate the protein so that first point is at origin */
   translateToOrigin();
   updateCoordinates();
-  //writeToFile(coordinates,"after_translation");
+  if(print_status) {
+    writeToFile(coordinates,"output/after_translation");
+  }
 
   /* move the last point onto the X-axis */
   rotateLastPoint();
   updateCoordinates();
-  //writeToFile(coordinates,"rotate1");
+  if(print_status) {
+    writeToFile(coordinates,"output/rotate_last_point");
+  }
 
   /* rotate second point of the protein onto the XY plane */
   rotateSecondPoint();
   updateCoordinates();
-  writeToFile(coordinates,"final");
+  if(print_status) {
+    writeToFile(coordinates,"output/rotate_second_point");
+  }
+
+  if(print_status) {
+    /* overall transformation matrix */
+    transformationMatrix();
+
+    /* validate transformation */
+    structure.validateTransformation(transformation);
+  }
 
   cout << "Transformation to standard form done ..." << endl;
   cout << "Number of residues: " << getNumberOfResidues() << endl;
+}
+
+/*!
+ *  This method constructs the overall transformation matrix
+ */
+void StandardForm::transformationMatrix()
+{
+  rotation.changeDimensions(4,4);
+  rotation[3][3] = 1;
+  transformation = rotation * translation;
+  ofstream fw("output/transformation_matrices");
+  fw << "Transformation matrix:" << endl;
+  for (int i=0; i<4; i++) {
+    for (int j=0; j<4; j++) {
+      fw << transformation[i][j] << " ";
+    }
+    fw << endl;
+  }
 }
 
 /*!
@@ -178,10 +213,9 @@ void StandardForm::translateToOrigin()
   offsetx = -coordinates[0][0];
   offsety = -coordinates[0][1];
   offsetz = -coordinates[0][2];
-  Matrix<double> translate = translationMatrix(offsetx,offsety,offsetz);
-  structure.transform(translate);
+  translation = translationMatrix(offsetx,offsety,offsetz);
+  structure.transform(translation);
   cout << "[OK]" << endl;
-  transformation = translate;
 }
 
 /*!
@@ -196,7 +230,7 @@ void StandardForm::rotateLastPoint()
   /* brings the last point in the protein to lie on the XY plane */
   Matrix<double> rotate = projectAndRotateLast(end); 
   structure.transform(rotate);
-  transformation = transformation * rotate;
+  rotation = rotate* rotation;
 
   updateCoordinates();
   end = Point<double>(coordinates[coordinates.size()-1]);
@@ -204,7 +238,7 @@ void StandardForm::rotateLastPoint()
   /* brings the last point on the protein to lie on the X-axis */
   rotate = rotateInXYPlane(end);
   structure.transform(rotate);
-  transformation = transformation * rotate;
+  rotation = rotate* rotation;
 
   cout << "[OK]" << endl;
 }
@@ -296,7 +330,7 @@ void StandardForm::rotateSecondPoint()
   /* brings the second point in the protein to lie on the XY plane */
   Matrix<double> rotate = projectAndRotateSecond(second); 
   structure.transform(rotate);
-  transformation = transformation * rotate;
+  rotation = rotate* rotation;
 
   cout << "[OK]" << endl;
 }
@@ -393,12 +427,14 @@ void StandardForm::boundingBox()
   double ymax = getMaximum(1);
   double zmin = getMinimum(2);
   double zmax = getMaximum(2);
-  cout << "boundary values:\n";
-  cout << xmin << " " << xmax << endl;
-  cout << ymin << " " << ymax << endl;
-  cout << zmin << " " << zmax << endl;
   volume =  (xmax-xmin)*(ymax-ymin)*(zmax-zmin); 
-  cout << "bounding box volume: " << volume << endl;
+  if (print_status) {
+    cout << "boundary values:\n";
+    cout << xmin << " " << xmax << endl;
+    cout << ymin << " " << ymax << endl;
+    cout << zmin << " " << zmax << endl;
+    cout << "bounding box volume: " << volume << endl;
+  }
 }
 
 /*!
@@ -461,6 +497,7 @@ void StandardForm::fitBezierCurveModel()
     /* compute the optimal segmentation using dynamic programming */
     pair<double,vector<int>> segmentation = optimalSegmentation();
     printBezierSegmentation(segmentation);
+    structure.reconstruct(optimalBezierFit,segmentation.second,transformation);
   } else {
     fitOneSegment();
   }
@@ -671,13 +708,13 @@ string StandardForm::createOutputFile(bool status)
   string filtered = extractName(file);
   string output_file;
   if (status) {
-    output_file = "output/bezier_segmentation_";
+    output_file = "output/segmentation/bezier_";
     output_file = output_file + filtered + "_";
     for (int i=0; i<controls.size(); i++) {
       output_file += boost::lexical_cast<string>(controls[i]); 
     }
   } else {
-    output_file = "output/linear_segmentation_";
+    output_file = "output/segmentation/linear_";
     output_file += filtered;
   }
   return output_file;

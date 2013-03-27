@@ -2,6 +2,7 @@
 #define HEADER_H
 
 #include <iostream>
+#include <memory>
 #include <cstdlib>
 #include <vector>
 #include <array>

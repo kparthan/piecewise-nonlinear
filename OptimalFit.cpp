@@ -31,6 +31,15 @@ OptimalFit::OptimalFit(const OptimalFit &source) :
 {}
 
 /*!
+ *  \brief This function returns the number of control points
+ *  \return the number of control points
+ */
+int OptimalFit::getNumberOfControlPoints()
+{
+  return numControlPoints;
+}
+
+/*!
  *  \brief This module returns the control points
  *  \return the control points
  */

@@ -21,7 +21,7 @@ class StandardForm
     Structure structure;
 
     //! Stores the transformation matrix
-    Matrix<double> transformation;
+    Matrix<double> translation,rotation,transformation;
 
     //! Number of intermediate control points to be used
     vector<int> controls;
@@ -37,7 +37,7 @@ class StandardForm
     vector<int> end_points;
 
     //! Cartesian coordinates of the protein structure
-    vector<array<double,3>> coordinates;
+    vector<array<double,3>> original_coordinates,coordinates;
 
     //! Stores the number of residues
     int numResidues;
@@ -50,6 +50,9 @@ class StandardForm
 
     //! Code length matrix for Bezier curve fit
     vector<vector<OptimalFit>> optimalBezierFit;
+
+    //! Constructs the overall transformation matrix
+    void transformationMatrix();
 
   public:
     //! Constructor

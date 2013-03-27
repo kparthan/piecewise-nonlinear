@@ -6,12 +6,14 @@
  *  \brief constructor function used for instantiation
  *  \param coordinates a vector<array<double,3>>
  *  \param atoms a vector<Atom>
+ *  \param fit_status an integer
  *  \param print_status an integer
  *  \param volume a double
  */
-Segment::Segment(vector<array<double,3>> &coordinates, int print_status,
-                double volume): coordinates(coordinates), volume(volume),
-                print_status(print_status)
+Segment::Segment(vector<array<double,3>> &coordinates, int fit_status,
+                 int print_status, double volume): 
+                 coordinates(coordinates), volume(volume),
+                 fit_status(fit_status), print_status(print_status)
 {
   numPoints = coordinates.size();
   numIntermediate = numPoints - 2;
@@ -553,8 +555,8 @@ vector<array<double,3>> Segment::getDeviations(BezierCurve &curve)
     deviations.push_back(d);
     tmin_prev = tmin_current;
   }
-  if (print_status) {
-    string file("dev_bezier_");
+  if (print_status == 1 && fit_status == 1) {
+    string file("output/dev_bezier_");
     file += boost::lexical_cast<string>(curve.getDegree()-1);
     ofstream dev_bezier(file.c_str());
     for (int i=0; i<deviations.size(); i++){
@@ -583,7 +585,7 @@ double Segment::messageLength(BezierCurve &curve,
   Message msg1;
   x = msg1.encodeUsingNullModel(volume); 
   msglen += x;
-  if (print_status) { 
+  if (print_status == 1 && fit_status == 1) { 
     cout << "\nmsglen(end point): " << x << endl;
   }
 
@@ -591,14 +593,14 @@ double Segment::messageLength(BezierCurve &curve,
   int numIntermediateControlPoints = curve.getDegree() - 1;
   x = msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
   msglen += x; 
-  if (print_status) { 
+  if (print_status == 1 && fit_status == 1) { 
     cout << "msglen(#int cps): " << x << endl;
   }
  
   /* message length to state the control points */
   x = numIntermediateControlPoints * msg1.encodeUsingNullModel(volume);
   msglen += x; 
-  if (print_status) { 
+  if (print_status == 1 && fit_status == 1) { 
     cout << "msglen(int cps): " << x << endl;
   }
 
@@ -609,27 +611,27 @@ double Segment::messageLength(BezierCurve &curve,
       /* message length to state the number of intermediate points */
       x = msg1.encodeUsingLogStarModel(numIntermediate+1);
       msglen += x; 
-      if (print_status) { 
+      if (print_status == 1 && fit_status == 1) { 
         cout << "msglen(# int points): " << x << endl;
       }
  
       if (numIntermediate < 3) {
         x = numIntermediate * msg1.encodeUsingNullModel(volume);
         msglen += x;
-        if (print_status) { 
+        if (print_status == 1 && fit_status == 1) { 
           cout << "msglen(int points): " << x << endl;
         }
       } else { 
         /* state the first intermediate point to construct the plane */
         x = msg1.encodeUsingNullModel(volume);
         msglen += x;
-        if (print_status) { 
+        if (print_status == 1 && fit_status == 1) { 
           cout << "msglen(int point for plane): " << x << endl;
         }
         /* state the deviations */
         x = msg2.encodeUsingNormalModel();
         msglen += x;
-        if (print_status) { 
+        if (print_status == 1 && fit_status == 1) { 
           cout << "msglen(deviations): " << x;
         }
       }
@@ -639,21 +641,21 @@ double Segment::messageLength(BezierCurve &curve,
       /* message length to state the number of intermediate points */
       x = msg1.encodeUsingLogStarModel(numIntermediate+1);
       msglen += x; 
-      if (print_status) { 
+      if (print_status == 1 && fit_status == 1) { 
         cout << "msglen(# int points): " << x << endl;
       }
 
       if (numIntermediate < 2) {
         x = numIntermediate * msg1.encodeUsingNullModel(volume);
         msglen += x;
-        if (print_status) { 
+        if (print_status == 1 && fit_status == 1) { 
           cout << "msglen(int points): " << x << endl;
         }
       } else {
         /* state the deviations */
         x = msg2.encodeUsingNormalModel();
         msglen += x;
-        if (print_status) { 
+        if (print_status == 1 && fit_status == 1) { 
           cout << "msglen(deviations): " << x;
         }
       }

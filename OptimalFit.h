@@ -26,6 +26,9 @@ class OptimalFit
     OptimalFit(const OptimalFit &);
 
                             /* Accessor functions */
+    //! Gets the number of control points
+    int getNumberOfControlPoints();
+
     //! Gets the control points
     vector<Point<double>> getControlPoints() const;
 
