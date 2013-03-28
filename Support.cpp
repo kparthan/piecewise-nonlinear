@@ -134,7 +134,8 @@ void testFit(vector<int> &controls, int fit_status, int print_status,
   test.print();
 
   /* Obtain structure coordinates */
-  Structure structure(test.testData());
+  vector<Point<double>> data = test.testData();
+  Structure structure(data);
   StandardForm shape(file,structure,controls,fit_status,print_status,
                      end_points);
 

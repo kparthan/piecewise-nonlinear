@@ -3,11 +3,13 @@
 /*!
  *  \brief This is a constructor function used to instantiate the Structure
  *  object
- *  \param coordinates a vector<Point<double>>
+ *  \param coordinates a reference to a vector<Point<double>>
  */
-Structure::Structure(vector<Point<double>> coordinates) : 
+Structure::Structure(vector<Point<double>> &coordinates) : 
            original_coordinates(coordinates), coordinates(coordinates)
-{}
+{
+  type = 0;
+}
 
 /*!
  *  \brief This is a constructor function used to instantiate the Structure
@@ -16,6 +18,7 @@ Structure::Structure(vector<Point<double>> coordinates) :
  */
 Structure::Structure(ProteinStructure *protein) : protein(protein)
 {
+  type = 1;
   vector<Atom> atoms = protein->getAtoms();
   Point<double> p;
   for (int i=0; i<atoms.size(); i++) {
@@ -102,8 +105,49 @@ void Structure::validateTransformation(Matrix<double> &transformation)
 /*!
  *  \brief This function reconstructs the original structure with the
  *  control points
+ *  \param optimalBezierFit a reference to a vector<vector<OptimalFit>>
+ *  \param segments a reference to a vector<int>
+ *  \param transformation a reference to a Matrix<double>
  */
 void Structure::reconstruct(vector<vector<OptimalFit>> &optimalBezierFit,
+                            vector<int> &segments, Matrix<double> &transformation)
+{
+  switch(type) {
+    case 0:
+      reconstructGeneric(optimalBezierFit,segments,transformation);
+      break;
+
+    case 1:
+      reconstructProtein(optimalBezierFit,segments,transformation);
+      break;
+  }
+}
+
+/*!
+ *  \brief This function reconstructs the original structure with the
+ *  control points
+ *  \param optimalBezierFit a reference to a vector<vector<OptimalFit>>
+ *  \param segments a reference to a vector<int>
+ *  \param transformation a reference to a Matrix<double>
+ */
+void Structure::reconstructGeneric(vector<vector<OptimalFit>> &optimalBezierFit,
+                            vector<int> &segments, Matrix<double> &transformation)
+{
+  int segment_start = 0;
+  for(int i=1; i<segments.size(); i++) {
+    int segment_end = segments[i];
+    
+  }
+}
+
+/*!
+ *  \brief This function reconstructs the original protein structure with the
+ *  control points
+ *  \param optimalBezierFit a reference to a vector<vector<OptimalFit>>
+ *  \param segments a reference to a vector<int>
+ *  \param transformation a reference to a Matrix<double>
+ */
+void Structure::reconstructProtein(vector<vector<OptimalFit>> &optimalBezierFit,
                             vector<int> &segments, Matrix<double> &transformation)
 {
   protein->undoLastSelection();

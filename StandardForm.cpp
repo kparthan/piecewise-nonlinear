@@ -171,10 +171,10 @@ void StandardForm::transform(void)
     writeToFile(coordinates,"output/rotate_second_point");
   }
 
-  if(print_status) {
-    /* overall transformation matrix */
-    transformationMatrix();
+  /* overall transformation matrix */
+  transformationMatrix();
 
+  if(print_status) {
     /* validate transformation */
     structure.validateTransformation(transformation);
   }
@@ -191,13 +191,15 @@ void StandardForm::transformationMatrix()
   rotation.changeDimensions(4,4);
   rotation[3][3] = 1;
   transformation = rotation * translation;
-  ofstream fw("output/transformation_matrices");
-  fw << "Transformation matrix:" << endl;
-  for (int i=0; i<4; i++) {
-    for (int j=0; j<4; j++) {
-      fw << transformation[i][j] << " ";
+  if (print_status) {
+    ofstream fw("output/transformation_matrices");
+    fw << "Transformation matrix:" << endl;
+    for (int i=0; i<4; i++) {
+      for (int j=0; j<4; j++) {
+        fw << transformation[i][j] << " ";
+      }
+      fw << endl;
     }
-    fw << endl;
   }
 }
 

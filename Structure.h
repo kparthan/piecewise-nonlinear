@@ -7,15 +7,25 @@
 class Structure
 {
   private:
+    //! Type of structure
+    int type;
+
     //! Protein Structure
     ProteinStructure *protein;
 
     //! Stores the coordinates
     vector<Point<double>> original_coordinates,coordinates;
 
+    //! Reconstruct the generic structure back with the control points added
+    void reconstructGeneric(vector<vector<OptimalFit>> &, vector<int> &, 
+                            Matrix<double> &);
+
+    //! Reconstruct the protein back with the control points added
+    void reconstructProtein(vector<vector<OptimalFit>> &, vector<int> &, 
+                            Matrix<double> &);
   public:
     //! Constructor
-    Structure(vector<Point<double>>);
+    Structure(vector<Point<double>> &);
 
     //! Constructor from ProteinStructure
     Structure(ProteinStructure *);
@@ -35,7 +45,7 @@ class Structure
     void printTransformation(vector<Point<double>> &, Matrix<double> &, 
                              const char *);
 
-    //! Reconstruct the protein back with the control points added
+    //! Reconstruct the original structure back with the control points added
     void reconstruct(vector<vector<OptimalFit>> &, vector<int> &, 
                      Matrix<double> &);
 };
