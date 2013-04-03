@@ -114,11 +114,13 @@ void Structure::reconstruct(vector<vector<OptimalFit>> &optimalBezierFit,
 {
   switch(type) {
     case 0:
-      reconstructGeneric(optimalBezierFit,segments,transformation);
+      vector<array<int,3>> colours_generic = colourGeneric(segments.size());
+      reconstructGeneric(optimalBezierFit,segments,transformation,colours_generic);
       break;
 
     case 1:
-      reconstructProtein(optimalBezierFit,segments,transformation);
+      vector<array<double,3>> colours_protein = colourProtein(segments.size());
+      reconstructProtein(optimalBezierFit,segments,transformation,colours_protein);
       break;
   }
 }
@@ -153,26 +155,26 @@ void Structure::reconstructProtein(vector<vector<OptimalFit>> &optimalBezierFit,
   protein->undoLastSelection();
   Matrix<double> inverse_transform = transformation.inverse();
   shared_ptr<Chain> new_chain = make_shared<Chain>("X");
-  shared_ptr<Residue> new_residue = make_shared<Residue>("XR");
   int segment_start = 0;
   for(int i=1; i<segments.size(); i++) {
     int segment_end = segments[i];
+    string residue_id = "R" + boost::lexical_cast<string>(i);
+    shared_ptr<Residue> new_residue = make_shared<Residue>(residue_id);
     OptimalFit fit = optimalBezierFit[segment_start][segment_end];
     int numIntermediateControls = fit.getNumberOfControlPoints() - 2;
     if (numIntermediateControls > 0) {
       vector<Point<double>> cps = fit.getControlPoints();
       for (int j=1; j<=numIntermediateControls; j++) {
-        string id1 = boost::lexical_cast<string>(i);
-        string id2 = boost::lexical_cast<string>(j);
-        shared_ptr<Atom> new_atom = make_shared<Atom>(id1+id2);
+        string atom_id = "A" + boost::lexical_cast<string>(j);
+        shared_ptr<Atom> new_atom = make_shared<Atom>(atom_id);
         Point<double> p = lcb::geometry::transform<double>(cps[j],inverse_transform);
         new_atom->setAtomicCoordinate(p);
         new_residue->addAtom(new_atom);
       }
     }
+    new_chain->addResidue(new_residue);
     segment_start = segment_end;
   }
-  new_chain->addResidue(new_residue);
   protein->addChain(new_chain);
   //vector<string> chain_ids = protein->getChainIdentifiers();
   //for (int i=0; i<chain_ids)
@@ -182,5 +184,101 @@ void Structure::reconstructProtein(vector<vector<OptimalFit>> &optimalBezierFit,
     fw << atoms[i].formatPDBLine() << endl;
   }
   fw.close();
+  createPymolScript();
+}
+
+/*!
+ *  \brief This fucntion generates the Pymol script to show the segments
+ */
+void Structure::createPymolScript()
+{
+  ofstream script("segmentation.pml");
+  script << "load new.pdb" << endl;
+  script << "hide" << endl;
+  script << "show cartoon" << endl;
+  for
+}
+
+//void Structure::reconstructProtein(vector<vector<OptimalFit>> &optimalBezierFit,
+//                            vector<int> &segments, Matrix<double> &transformation)
+//{
+//  protein->undoLastSelection();
+//  Matrix<double> inverse_transform = transformation.inverse();
+//  shared_ptr<Chain> new_chain = make_shared<Chain>("X");
+//  shared_ptr<Residue> new_residue = make_shared<Residue>("XR");
+//  int segment_start = 0;
+//  for(int i=1; i<segments.size(); i++) {
+//    int segment_end = segments[i];
+//    OptimalFit fit = optimalBezierFit[segment_start][segment_end];
+//    int numIntermediateControls = fit.getNumberOfControlPoints() - 2;
+//    if (numIntermediateControls > 0) {
+//      vector<Point<double>> cps = fit.getControlPoints();
+//      for (int j=1; j<=numIntermediateControls; j++) {
+//        string id1 = boost::lexical_cast<string>(i);
+//        string id2 = boost::lexical_cast<string>(j);
+//        shared_ptr<Atom> new_atom = make_shared<Atom>(id1+id2);
+//        Point<double> p = lcb::geometry::transform<double>(cps[j],inverse_transform);
+//        new_atom->setAtomicCoordinate(p);
+//        new_residue->addAtom(new_atom);
+//      }
+//    }
+//    segment_start = segment_end;
+//  }
+//  new_chain->addResidue(new_residue);
+//  protein->addChain(new_chain);
+//  //vector<string> chain_ids = protein->getChainIdentifiers();
+//  //for (int i=0; i<chain_ids)
+//  vector<Atom> atoms = protein->getAtoms();
+//  ofstream fw("new.pdb");
+//  for (int i=0; i<atoms.size(); i++) {
+//    fw << atoms[i].formatPDBLine() << endl;
+//  }
+//  fw.close();
+//}
+
+/*
+ *  \brief This function generates the colours for the individual segments
+ *  of the generic 3D structure
+ *  \param num_segments an integer
+ *  \return the list of RGB values (0-255) corresponding to each segment 
+ */
+vector<array<int,3>> Structure::colourGeneric(int num_segments)
+{
+  return randomRGB(num_segments);
+}
+
+/*
+ *  \brief This function generates the colours for the individual segments
+ *  \param num_segments an integer
+ *  \return the list of RGB values (0.0-1.0) corresponding to each segment 
+ */
+vector<array<double,3>> Structure::colourProtein(int num_segments)
+{
+  vector<array<int,3>> rgb_temp = randomRGB(num_segments);
+  vector<array<double,3>> rgb(rgb_temp);
+  for (int i=0; i<num_segments; i++) {
+    for (int j=0; j<3; j++) {
+      rgb[i][j] /= 255;
+    }
+  }
+  return rgb;
+}
+
+/*
+ *  \brief This function generates the colours for the individual segments
+ *  \param num_segments an integer
+ *  \return the list of RGB values (0-255) corresponding to each segment 
+ */
+vector<array<int,3>> Structure::randomRGB(int num_segments)
+{
+  vector<array<int,3>> rgb;
+  for (int i=0; i<num_segments; i++) {
+    array<int,3> a;
+    for (int j=0; j<3; j++) {
+      a[j] = (int)( (double)rand() * 255 / (double)RAND_MAX);
+    }
+    rgb.push_back(a);
+  }
+  return rgb;
 }
 

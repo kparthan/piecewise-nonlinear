@@ -12,6 +12,9 @@ int main(int argc, char **argv)
   clock_t c_start = clock();
   auto t_start = high_resolution_clock::now();
 
+  // flags[0] -- kind of fit (protein/generic)
+  // flags[1] -- for fitting an individual segment
+  // flags[2] -- verbose flag
   switch(flags[0]) {
     case 0:   // test
       testFit(controls,flags[1],flags[2],end_points);

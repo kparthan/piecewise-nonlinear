@@ -23,6 +23,16 @@ class Structure
     //! Reconstruct the protein back with the control points added
     void reconstructProtein(vector<vector<OptimalFit>> &, vector<int> &, 
                             Matrix<double> &);
+
+    //! Generates appropriate RGB indices for a generic structure
+    vector<array<int,3>> colourGeneric(int);
+
+    //! Generates appropriate RGB indices for a protein structure
+    vector<array<double,3>> colourProtein(int);
+
+    //! Generate integral RGB indices
+    vector<array<int,3>> randomRGB(int);
+
   public:
     //! Constructor
     Structure(vector<Point<double>> &);
@@ -48,6 +58,7 @@ class Structure
     //! Reconstruct the original structure back with the control points added
     void reconstruct(vector<vector<OptimalFit>> &, vector<int> &, 
                      Matrix<double> &);
+
 };
 
 #endif
