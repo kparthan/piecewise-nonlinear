@@ -205,6 +205,19 @@ void Structure::reconstructProtein(vector<vector<OptimalFit>> &optimalBezierFit,
 }
 
 /*!
+ *  \brief This function maps the segmentation indexes to the original
+ *  protein indexes
+ *  \param segments a reference to a vector<int>
+ *  \return the original protein indexes
+ */
+vector<int> Structure::mapToActualSegments(vector<int> &segments)
+{
+  int num_indexes = segments.size();
+  vector<int> actual_segments(num_indexes,0);
+  return actual_segments;
+}
+
+/*!
  *  \brief This function generates the Pymol script to show the segments
  *  \param optimalBezierFit a reference to a vector<vector<OptimalFit>>
  *  \param segments a reference to a vector<int>
@@ -214,6 +227,8 @@ void Structure::createPymolScript(vector<vector<OptimalFit>> &optimalBezierFit,
                                   vector<int> &segments, 
                                   vector<array<double,3>> &colors)
 {
+  vector<int> actual_segments = mapToActualSegments(segments);
+  actual_segments = segments;
   Chain chain = protein->getDefaultModel()["X"];
   vector<string> res_ids = chain.getResidueIdentifiers();
 
@@ -226,59 +241,35 @@ void Structure::createPymolScript(vector<vector<OptimalFit>> &optimalBezierFit,
     // choose a color
     script << "set_color c" << i << " = [" << colors[i-1][0]
     << "," << colors[i-1][1] << "," << colors[i-1][2] << "]" << endl;
+
     // select segment
     int segment_end = segments[i] + 1;
-    script << "select seg" << i << ", (resi " << segment_start << "-" 
-    << segment_end;
+    script << "select seg" << i << ", resi " << segment_start << "-" 
+    << segment_end << endl;
     OptimalFit fit = optimalBezierFit[segment_start-1][segment_end-1];
     int numIntermediateControls = fit.getNumberOfControlPoints() - 2;
-    if (numIntermediateControls > 0) {
-      script << "," << res_ids[i-1];
+
+    // join the control points by straight lines to visualize
+    string p1,p2;
+    p1 = "\"resi " + boost::lexical_cast<string>(segment_start) + " and name CA\"";
+    for (int j=1; j<=numIntermediateControls; j++) {
+      p2 = "\"resi " + res_ids[i-1] + " and name A" + 
+           boost::lexical_cast<string>(j) + "\"";
+      script << "print cmd.distance(" << p1 << "," << p2 << ")" << endl;
+      script << "hide label" << endl;
+      p1 = p2;
     }
-    script << ")" << endl;
+    p2 = "\"resi " + boost::lexical_cast<string>(segment_end) + " and name CA\"";
+    script << "print cmd.distance(" << p1 << "," << p2 << ")" << endl;
+    script << "hide label" << endl;
+
     // color the segment
     script << "color c" << i << ", seg" << i << endl;  
+
     segment_start = segment_end;
   }
   script.close();
 }
-
-//void Structure::reconstructProtein(vector<vector<OptimalFit>> &optimalBezierFit,
-//                            vector<int> &segments, Matrix<double> &transformation)
-//{
-//  protein->undoLastSelection();
-//  Matrix<double> inverse_transform = transformation.inverse();
-//  shared_ptr<Chain> new_chain = make_shared<Chain>("X");
-//  shared_ptr<Residue> new_residue = make_shared<Residue>("XR");
-//  int segment_start = 0;
-//  for(int i=1; i<segments.size(); i++) {
-//    int segment_end = segments[i];
-//    OptimalFit fit = optimalBezierFit[segment_start][segment_end];
-//    int numIntermediateControls = fit.getNumberOfControlPoints() - 2;
-//    if (numIntermediateControls > 0) {
-//      vector<Point<double>> cps = fit.getControlPoints();
-//      for (int j=1; j<=numIntermediateControls; j++) {
-//        string id1 = boost::lexical_cast<string>(i);
-//        string id2 = boost::lexical_cast<string>(j);
-//        shared_ptr<Atom> new_atom = make_shared<Atom>(id1+id2);
-//        Point<double> p = lcb::geometry::transform<double>(cps[j],inverse_transform);
-//        new_atom->setAtomicCoordinate(p);
-//        new_residue->addAtom(new_atom);
-//      }
-//    }
-//    segment_start = segment_end;
-//  }
-//  new_chain->addResidue(new_residue);
-//  protein->addChain(new_chain);
-//  //vector<string> chain_ids = protein->getChainIdentifiers();
-//  //for (int i=0; i<chain_ids)
-//  vector<Atom> atoms = protein->getAtoms();
-//  ofstream fw("new.pdb");
-//  for (int i=0; i<atoms.size(); i++) {
-//    fw << atoms[i].formatPDBLine() << endl;
-//  }
-//  fw.close();
-//}
 
 /*
  *  \brief This function generates the colors for the individual segments
@@ -317,6 +308,7 @@ vector<array<double,3>> Structure::colorProtein(int num_segments)
  */
 vector<array<int,3>> Structure::randomRGB(int num_segments)
 {
+  srand(time(NULL));
   vector<array<int,3>> rgb;
   for (int i=0; i<num_segments; i++) {
     array<int,3> a;

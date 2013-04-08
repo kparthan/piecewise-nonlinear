@@ -40,18 +40,18 @@ void parseCommandLineInput(int argc, char **argv, vector<int> &flags, string &fi
   
   if (vm.count("test")) {
     cout << "Running a demo..." << endl;
-    flags[0] = 0;
+    flags[0] = TEST_FIT;
     noargs = 0;
   }
 
   if (vm.count("verbose")) {
-    flags[2] = 1;
+    flags[2] = PRINT;
   }
 
   if (vm.count("protein")) {
-    if (flags[0] != 0) {
+    if (flags[0] != TEST_FIT) {
       cout << "Using pdb file: " << vm["protein"].as<string>() << endl;
-      flags[0] = 1;
+      flags[0] = PROTEIN_FIT;
       noargs = 0;
     } else {
       cout << "Please specify one of --test or --protein" << endl;
@@ -60,16 +60,16 @@ void parseCommandLineInput(int argc, char **argv, vector<int> &flags, string &fi
   }
 
   if (vm.count("generic")) {
-    if (flags[0] == 0) {
+    if (flags[0] == TEST_FIT) {
       cout << "Please specify one of --test or --protein" << endl;
       Usage(argv[0],desc);
-    } else if (flags[0] == 1) {
+    } else if (flags[0] == PROTEIN_FIT) {
       cout << "Please specify one of --protein or --generic" << endl;
       Usage(argv[0],desc);
     } else {
       cout << "Using structure file: " << vm["generic"].as<string>() 
       << endl;
-      flags[0] = 2;
+      flags[0] = GENERIC_FIT;
       noargs = 0;
     }
   }
@@ -77,7 +77,7 @@ void parseCommandLineInput(int argc, char **argv, vector<int> &flags, string &fi
   if (vm.count("segment")) {
     cout << "Fitting a single segment between the residues "
          << "[" << end_points[0] << ", " << end_points[1] << "]" << endl;
-    flags[1] = 1;
+    flags[1] = FIT_SINGLE_SEGMENT;
   }
 
   if (vm.count("controls")) {

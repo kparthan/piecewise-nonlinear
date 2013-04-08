@@ -12,19 +12,19 @@ int main(int argc, char **argv)
   clock_t c_start = clock();
   auto t_start = high_resolution_clock::now();
 
-  // flags[0] -- kind of fit (protein/generic)
+  // flags[0] -- kind of fit (test/protein/generic)
   // flags[1] -- for fitting an individual segment
   // flags[2] -- verbose flag
   switch(flags[0]) {
-    case 0:   // test
+    case TEST_FIT:   // test
       testFit(controls,flags[1],flags[2],end_points);
       break;
 
-    case 1:   // protein file
+    case PROTEIN_FIT:   // protein file
       proteinFit(file,controls,flags[1],flags[2],end_points);
       break;
 
-    case 2:   // general 3D structure
+    case GENERIC_FIT:   // general 3D structure
       generalFit(file,controls,flags[1],flags[2],end_points);
       break;
   }

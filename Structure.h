@@ -33,6 +33,9 @@ class Structure
     //! Generate integral RGB indices
     vector<array<int,3>> randomRGB(int);
 
+    //! Map to original protein indexes
+    vector<int> mapToActualSegments(vector<int> &);
+
     //! Generates the Pymol script for coloring the individual segments
     void createPymolScript(vector<vector<OptimalFit>> &, vector<int> &,
                            vector<array<double,3>> &);

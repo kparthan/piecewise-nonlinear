@@ -578,61 +578,101 @@ vector<array<double,3>> Segment::getDeviations(BezierCurve &curve)
 double Segment::messageLength(BezierCurve &curve,
                               vector<array<double,3>> &deviations)
 {
-  double msglen = 0;
+  double part1=0,part2=0;
   double x;
 
+  // FIRST PART
   /* message length to state the end point of the segment */
   Message msg1;
   x = msg1.encodeUsingNullModel(volume); 
-  msglen += x;
+  part1 += x;
   if (print_status == 1 && fit_status == 1) { 
     cout << "\nmsglen(end point): " << x << endl;
   }
 
-  /* message length to state the number of control points */
-  int numIntermediateControlPoints = curve.getDegree() - 1;
-  x = msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
-  msglen += x; 
-  if (print_status == 1 && fit_status == 1) { 
-    cout << "msglen(#int cps): " << x << endl;
-  }
- 
-  /* message length to state the control points */
-  x = numIntermediateControlPoints * msg1.encodeUsingNullModel(volume);
-  msglen += x; 
-  if (print_status == 1 && fit_status == 1) { 
-    cout << "msglen(int cps): " << x << endl;
+  /* message length to describe the intermediate control points */
+  int numIntermediateControlPoints;
+  switch(curve.getDegree()) {
+    case 1:
+      /* message length to state the number of control points */
+      numIntermediateControlPoints = 0;
+      x = msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
+      part1 += x; 
+      if (print_status == 1 && fit_status == 1) { 
+        cout << "msglen(#int cps): " << x << endl;
+      }
+      /* message length to state the control points */
+      if (print_status == 1 && fit_status == 1) { 
+        cout << "msglen(int cps): 0" << endl;
+      }
+      break;
+
+    default:
+      if (numIntermediate >= 2) {
+        /* message length to state the number of control points */
+        numIntermediateControlPoints = curve.getDegree() - 1;
+        x = msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
+        part1 += x; 
+        if (print_status == 1 && fit_status == 1) { 
+          cout << "msglen(#int cps): " << x << endl;
+        }
+        /* message length to state the control points */
+        x = numIntermediateControlPoints * msg1.encodeUsingNullModel(volume);
+        part1 += x; 
+        if (print_status == 1 && fit_status == 1) { 
+          cout << "msglen(int cps): " << x << endl;
+        }
+      } else {
+        /* message length to state the number of control points */
+        numIntermediateControlPoints = 0;
+        x = msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
+        part1 += x; 
+        if (print_status == 1 && fit_status == 1) { 
+          cout << "msglen(#int cps): " << x << endl;
+        }
+        /* message length to state the control points */
+        if (print_status == 1 && fit_status == 1) { 
+          cout << "msglen(int cps): 0" << endl;
+        }
+      }
+      break;
   }
 
+  /* first part description ends */
+  if (print_status == 1 && fit_status == 1) { 
+    cout << "\tmsglen(first part): " << part1 << endl;
+  }
+  
+  // SECOND PART
   /* message length to state the number of intermediate deviations if any */  
   Message msg2(deviations);
   switch(curve.getDegree()) {
     case 1:
       /* message length to state the number of intermediate points */
       x = msg1.encodeUsingLogStarModel(numIntermediate+1);
-      msglen += x; 
+      part2 += x; 
       if (print_status == 1 && fit_status == 1) { 
         cout << "msglen(# int points): " << x << endl;
       }
  
       if (numIntermediate < 3) {
         x = numIntermediate * msg1.encodeUsingNullModel(volume);
-        msglen += x;
+        part2 += x;
         if (print_status == 1 && fit_status == 1) { 
           cout << "msglen(int points): " << x << endl;
         }
       } else { 
         /* state the first intermediate point to construct the plane */
         x = msg1.encodeUsingNullModel(volume);
-        msglen += x;
+        part2 += x;
         if (print_status == 1 && fit_status == 1) { 
           cout << "msglen(int point for plane): " << x << endl;
         }
         /* state the deviations */
         x = msg2.encodeUsingNormalModel();
-        msglen += x;
+        part2 += x;
         if (print_status == 1 && fit_status == 1) { 
-          cout << "msglen(deviations): " << x;
+          cout << "msglen(deviations): " << x << endl;
         }
       }
       break;
@@ -640,28 +680,33 @@ double Segment::messageLength(BezierCurve &curve,
     default:
       /* message length to state the number of intermediate points */
       x = msg1.encodeUsingLogStarModel(numIntermediate+1);
-      msglen += x; 
+      part2 += x; 
       if (print_status == 1 && fit_status == 1) { 
         cout << "msglen(# int points): " << x << endl;
       }
 
       if (numIntermediate < 2) {
         x = numIntermediate * msg1.encodeUsingNullModel(volume);
-        msglen += x;
+        part2 += x;
         if (print_status == 1 && fit_status == 1) { 
           cout << "msglen(int points): " << x << endl;
         }
       } else {
         /* state the deviations */
         x = msg2.encodeUsingNormalModel();
-        msglen += x;
+        part2 += x;
         if (print_status == 1 && fit_status == 1) { 
-          cout << "msglen(deviations): " << x;
+          cout << "msglen(deviations): " << x << endl;
         }
       }
       break;
   }
 
-  return msglen;
+  /* second part description ends */
+  if (print_status == 1 && fit_status == 1) { 
+    cout << "\tmsglen(second part): " << part2 << endl << endl;
+  }
+
+  return part1 + part2;
 }
 

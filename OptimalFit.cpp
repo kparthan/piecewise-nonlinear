@@ -99,6 +99,6 @@ void OptimalFit::printFitInfo()
     controlPoints[i].print();
     cout << endl;
   }
-  cout << "msglen: " << messageLength << endl;
+  cout << "total msglen: " << messageLength << endl;
 }
 

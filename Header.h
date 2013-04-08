@@ -27,6 +27,13 @@
 #define ZERO std::numeric_limits<double>::epsilon()
 #define MAX_INTERMEDIATE_CONTROL_POINTS 2 
 
+#define FIT_SINGLE_SEGMENT 1
+#define FIT_ENTIRE_PROTEIN 0
+#define TEST_FIT 0
+#define PROTEIN_FIT 1
+#define GENERIC_FIT 2
+#define PRINT 1
+
 using namespace std;
 using namespace std::chrono;
 using namespace lcb;

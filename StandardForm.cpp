@@ -492,7 +492,7 @@ void StandardForm::fitBezierCurveModel()
 {
   cout << "*** BEZIER CURVE FIT ***" << endl;
 
-  if (fit_status == 0) {
+  if (fit_status == FIT_ENTIRE_PROTEIN) {
     /* compute the code length matrix for the Bezier curve fit */
     computeCodeLengthMatrixBezier();
 
@@ -500,7 +500,7 @@ void StandardForm::fitBezierCurveModel()
     pair<double,vector<int>> segmentation = optimalSegmentation();
     printBezierSegmentation(segmentation);
     structure.reconstruct(optimalBezierFit,segmentation.second,transformation);
-  } else {
+  } else if (fit_status == FIT_SINGLE_SEGMENT) {
     fitOneSegment();
   }
 }
@@ -513,15 +513,15 @@ void StandardForm::fitOneSegment()
   Segment segment = getSegment(end_points[0]-1,end_points[1]-1);
   segment.estimateFreeParameters();
   OptimalFit min_fit, current_fit;
+  cout << "\nFit (" << controls[0] << " intermediate control points):- ";
   min_fit = segment.fitBezierCurve(controls[0]);
-  cout << "\nFit (" << controls[0] << " intermediate control points): " 
-  << endl;
   min_fit.printFitInfo();
+  cout << "------------------------------------------------" << endl;
   for (int k=1; k<controls.size(); k++) {
+    cout << "\nFit (" << controls[k] << " intermediate control points):- "; 
     current_fit = segment.fitBezierCurve(controls[k]);
-    cout << "\nFit (" << controls[k] << " intermediate control points): " 
-    << endl;
     current_fit.printFitInfo();
+    cout << "------------------------------------------------" << endl;
     if (current_fit < min_fit) {
       min_fit = current_fit;
     }
