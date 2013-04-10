@@ -20,7 +20,7 @@
 #include <boost/program_options.hpp>
 #include <boost/lexical_cast.hpp>
 
-#define AOM 0.001
+#define AOM 0.1
 #define TOLERANCE 0.0000001
 #define LARGE_NUM 1000000
 #define PI boost::math::constants::pi<double>()
