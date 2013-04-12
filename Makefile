@@ -13,7 +13,6 @@ OBJECTS = piecewise-nonlinear-fit.o \
   OptimalFit.o \
   Complex.o \
   Identifier.o \
-  geometry3D.o
 
 all: piecewise-nonlinear-fit 
 
@@ -56,9 +55,6 @@ Complex.o: Complex.cpp Complex.h
 Identifier.o: Identifier.cpp Identifier.h
 	g++ -c $(CFLAGS) $< -o $@
 
-geometry3D.o: geometry3D.cpp geometry3D.h
-	g++ -c $(CFLAGS) $< -o $@
-
 clean:
-	rm -f *.o *~ *.pdb piecewise-nonlinear-fit output/segmentation/* output/modified_pdb_files/* output/pymol_scripts/*
+	rm -f *.o *~ *.pdb piecewise-nonlinear-fit 
 

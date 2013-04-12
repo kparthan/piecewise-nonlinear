@@ -26,7 +26,7 @@ class Message
 
     //! Computes the length of encoding (in bits) for encoding using a
     //! null model (bounding box)
-    double encodeUsingNullModel(double);
+    double encodeUsingNullModel(double, double);
 
     //! Computes the length of encoding (in bits) for encoding using a
     //! sphere model

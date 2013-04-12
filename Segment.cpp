@@ -154,7 +154,6 @@ void Segment::fitLinear(void)
     Point<double> p(coordinates[1]);
     Plane<Point<double>> plane(start,p,end); 
     deviations = computeDeviations(line,plane);
-    //deviations = computeDeviations2(line,plane);
   }
   linearFitMsgLen = messageLength(deviations);
 }
@@ -236,68 +235,6 @@ vector<array<double,3>> Segment::computeDeviations(Line<Point<double>> &line,
   return deviations;
 }
 
-/*
- *  \brief Another module to compute deviations (using Arun's geometry3D file)
- *  \param line a reference to a Line
- *  \param plane a reference to a Plane
- */
-vector<array<double,3>> Segment::computeDeviations2(Line<Point<double>> &line,
-                                                  Plane<Point<double>> &plane)
-{
-  cout << endl << endl;
-  cout << "----------------" << endl;
-  /* line */
-  Point<double> s1 = line.startPoint();
-  double line_start[3]; convertPointToArray(s1,line_start);
-  cout << "line sp:" << line_start[0] << " " << line_start[1] << " " << line_start[2] << endl;
-  Point<double> e1 = line.endPoint();
-  double line_end[3]; convertPointToArray(e1,line_end);
-  cout << "line ep:" << line_end[0] << " " << line_end[1] << " " << line_end[2] << endl;
-
-  /* plane */
-  // line_start is a point in the plane
-  double vec1[3],vec2[3];
-  vec1[0]=0; vec1[1]=0; vec1[2]=1;
-  for (int i=0; i<3; i++){
-    vec2[i] = line_end[i] - line_start[i];
-  }
-  //cout << "vec2:" << vec2[0] << " " << vec2[1] << " " << vec2[2] << endl;
-
-  vector<array<double,3>> deviations;
-  array<double,3> d;
-  double A[3],proj[3],projl[3],prev_proj[3];
-  Point<double> p;
-
-  for (int j=0; j<3; j++) { prev_proj[j] = line_start[j];}
-  for(int i=0; i<numIntermediate; i++){
-    p = Point<double>(coordinates[i+1]);
-    convertPointToArray(p,A);
-    //cout << "A: " << A[0] << " " << A[1] << " " << A[2] << endl <<endl;
-    /* project p onto plane */
-    projectPoint2Plane(A,line_start,vec1,vec2,proj);
-    //cout << proj[0] << " " << proj[1] << " " << proj[2] << endl;
-    d[0] = normAminusB(A,proj);
-
-    /* project 'proj' onto line */
-    projectPoint2Line(proj,line_start,vec2,projl);
-    //cout << projl[0] << " " << projl[1] << " " << projl[2] << endl;
-    d[1] = normAminusB(proj,projl);
-
-    /* compute deviation along the line */
-    d[2] = normAminusB(projl,prev_proj);
-    for (int j=0; j<3; j++) { prev_proj[j] = projl[j];}
-    deviations.push_back(d);
-  }
-  /*cout << "\nDeviations 2...\n"; 
-  for (int i=0; i<deviations.size(); i++){
-    cout << deviations[i][0] << " ";
-    cout << deviations[i][1] << " ";
-    cout << deviations[i][2] << endl;
-  }
-  cout << "----------------" << endl;*/
-  return deviations;
-}
-
 /*!
  *  \brief This module computes the message length for the segment with
  *  more than one intermediate points.
@@ -310,17 +247,17 @@ double Segment::messageLength(vector<array<double,3>> &deviations)
 
   /* message length to state the end point of the segment */
   Message msg1;
-  msglen += msg1.encodeUsingNullModel(volume); 
+  msglen += msg1.encodeUsingNullModel(volume,AOM); 
 
   /* message length to state the number of intermediate points */
   msglen += msg1.encodeUsingLogStarModel(numIntermediate+1);
 
   if (numIntermediate <= 2) {
     /* message length to state the intermediate points using the null model */
-    msglen += numIntermediate * msg1.encodeUsingNullModel(volume); 
+    msglen += numIntermediate * msg1.encodeUsingNullModel(volume,AOM); 
   } else if (numIntermediate > 2) {
     /* message length to communicate the third point on the plane */
-    msglen += msg1.encodeUsingNullModel(volume); 
+    msglen += msg1.encodeUsingNullModel(volume,AOM); 
 
     /* message length to state the deviations */
     Message msg2(deviations);
@@ -437,12 +374,12 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
       Matrix<double> cps = A.inverse() * B;
       //cps.print();
       for (int i=1; i<=cps.rows(); i++) {
-        int a = cps[i-1][0] / AOM;
-        controlPoints[i].x((double)a * AOM);
-        a = cps[i-1][1] / AOM;
-        controlPoints[i].y((double)a * AOM);
-        a = cps[i-1][2] / AOM;
-        controlPoints[i].z((double)a * AOM);
+        int a = cps[i-1][0] / AOPV;
+        controlPoints[i].x((double)a * AOPV);
+        a = cps[i-1][1] / AOPV;
+        controlPoints[i].y((double)a * AOPV);
+        a = cps[i-1][2] / AOPV;
+        controlPoints[i].z((double)a * AOPV);
       }  
     }
   }
@@ -584,7 +521,7 @@ double Segment::messageLength(BezierCurve &curve,
   // FIRST PART
   /* message length to state the end point of the segment */
   Message msg1;
-  x = msg1.encodeUsingNullModel(volume); 
+  x = msg1.encodeUsingNullModel(volume,AOM); 
   part1 += x;
   if (print_status == 1 && fit_status == 1) { 
     cout << "\nmsglen(end point): " << x << endl;
@@ -617,7 +554,7 @@ double Segment::messageLength(BezierCurve &curve,
           cout << "msglen(#int cps): " << x << endl;
         }
         /* message length to state the control points */
-        x = numIntermediateControlPoints * msg1.encodeUsingNullModel(volume);
+        x = numIntermediateControlPoints * msg1.encodeUsingNullModel(volume,AOPV);
         part1 += x; 
         if (print_status == 1 && fit_status == 1) { 
           cout << "msglen(int cps): " << x << endl;
@@ -656,14 +593,14 @@ double Segment::messageLength(BezierCurve &curve,
       }
  
       if (numIntermediate < 3) {
-        x = numIntermediate * msg1.encodeUsingNullModel(volume);
+        x = numIntermediate * msg1.encodeUsingNullModel(volume,AOM);
         part2 += x;
         if (print_status == 1 && fit_status == 1) { 
           cout << "msglen(int points): " << x << endl;
         }
       } else { 
         /* state the first intermediate point to construct the plane */
-        x = msg1.encodeUsingNullModel(volume);
+        x = msg1.encodeUsingNullModel(volume,AOM);
         part2 += x;
         if (print_status == 1 && fit_status == 1) { 
           cout << "msglen(int point for plane): " << x << endl;
@@ -686,7 +623,7 @@ double Segment::messageLength(BezierCurve &curve,
       }
 
       if (numIntermediate < 2) {
-        x = numIntermediate * msg1.encodeUsingNullModel(volume);
+        x = numIntermediate * msg1.encodeUsingNullModel(volume,AOM);
         part2 += x;
         if (print_status == 1 && fit_status == 1) { 
           cout << "msglen(int points): " << x << endl;

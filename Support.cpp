@@ -266,19 +266,6 @@ void writeToFile(vector<array<double,3>> &coordinates, const char *fileName)
 }
 
 /*!
- *  \brief This module converts a Point object to a std::array to use functions
- *  in Arun's geometry3D.cpp file
- *  \param p a reference to a Point
- *  \param container a reference to an array
- */
-void convertPointToArray(Point<double> &p, double container[])
-{
-  container[0] = p.x();
-  container[1] = p.y();
-  container[2] = p.z();
-}
-
-/*!
  *  \brief This module extracts the file name from the path
  *  \param file a reference to a string
  *  \return the extracted portion of the file name

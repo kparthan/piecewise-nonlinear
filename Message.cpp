@@ -28,11 +28,12 @@ Message::Message(vector<array<double,3>> &deviations)
  *  \brief This module computes the statement cost to communicate a point
  *  in 3D space using a null model (bounding box approach)
  *  \param volume a double
+ *  \param accuracy a double
  *  \return the length of the encoding (in bits)
  */
-double Message::encodeUsingNullModel(double volume)
+double Message::encodeUsingNullModel(double volume, double accuracy)
 {
-  return log2(volume) - 3 * log2(AOM);
+  return log2(volume) - 3 * log2(accuracy);
 }
 
 /*!

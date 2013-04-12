@@ -1,7 +1,6 @@
 #ifndef SEGMENT_H
 #define SEGMENT_H
 
-#include "geometry3D.h"
 #include "Header.h"
 #include "BezierCurve.h"
 #include "OptimalFit.h"
@@ -83,9 +82,6 @@ class Segment
 
     //! Computes deviations from the line
     vector<array<double,3>> computeDeviations(Line<Point<double>> &,
-                                              Plane<Point<double>> &);
-
-    vector<array<double,3>> computeDeviations2(Line<Point<double>> &,
                                               Plane<Point<double>> &);
 
     //! Computes the message length for the segment described by a 

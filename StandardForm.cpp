@@ -465,7 +465,7 @@ void StandardForm::fitNullModel(void)
   cout << "*** NULL MODEL ***" << endl;
   double msglen = 0;
   Message msg;
-  msglen = (numResidues-1) * msg.encodeUsingNullModel(volume);
+  msglen = (numResidues-1) * msg.encodeUsingNullModel(volume,AOM);
   cout << "Null Model Fit: " << msglen << " bits." << endl;
   cout << "Bits per residue: " << msglen/(numResidues-1) << endl << endl;
 }

@@ -20,7 +20,8 @@
 #include <boost/program_options.hpp>
 #include <boost/lexical_cast.hpp>
 
-#define AOM 0.1
+#define AOM 0.001
+#define AOPV 0.1
 #define TOLERANCE 0.0000001
 #define PI boost::math::constants::pi<double>()
 #define ZERO std::numeric_limits<double>::epsilon()

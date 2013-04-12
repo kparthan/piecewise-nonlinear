@@ -11,7 +11,6 @@ ProteinStructure *parsePDBFile (const char *);
 vector<Point<double>> parseFile (const char *);
 void printCoordinates (vector<array<double,3>> &);
 void writeToFile (vector<array<double,3>> &, const char*);
-void convertPointToArray(Point<double> &, double a[]);
 string extractName(string &);
 
 double msglenNormal (double, double, double);

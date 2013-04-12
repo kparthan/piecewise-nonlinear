@@ -1,0 +1,54 @@
+Using structure file: test/2WYQ.pdb.gz
+Doing a BEZIER segmentation ...
+
+# of residues: 77
+# of non-linear segments: 7
+0-->10-->18-->43-->50-->58-->67-->76
+
+Best fit: 3095.9 bits.
+Bits per residue: 40.7355
+
+Segment # 1
+Residue stretch: [0, 10]
+Length of the segment: 11
+		# of intermediate control points: 0
+		Message length: 402.994
+
+Segment # 2
+Residue stretch: [10, 18]
+Length of the segment: 9
+		# of intermediate control points: 0
+		Message length: 318.167
+
+Segment # 3
+Residue stretch: [18, 43]
+Length of the segment: 26
+		# of intermediate control points: 2
+		Control Point # 1: (13, -20.8, -9.3)
+		Control Point # 2: (26, 33.9, 1)
+		Message length: 1016.49
+
+Segment # 4
+Residue stretch: [43, 50]
+Length of the segment: 8
+		# of intermediate control points: 0
+		Message length: 286.583
+
+Segment # 5
+Residue stretch: [50, 58]
+Length of the segment: 9
+		# of intermediate control points: 0
+		Message length: 324.978
+
+Segment # 6
+Residue stretch: [58, 67]
+Length of the segment: 10
+		# of intermediate control points: 0
+		Message length: 383.416
+
+Segment # 7
+Residue stretch: [67, 76]
+Length of the segment: 10
+		# of intermediate control points: 0
+		Message length: 363.268
+
