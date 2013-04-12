@@ -11,7 +11,7 @@ class Identifier
 
   public:
     //! Constructor
-    Identifier(vector<Atom> &);
+    Identifier(string &, string &, string &);
 
                             /* Accessor functions */
     //! Gets the identifier of the atom

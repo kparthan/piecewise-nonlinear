@@ -499,7 +499,7 @@ void StandardForm::fitBezierCurveModel()
     /* compute the optimal segmentation using dynamic programming */
     pair<double,vector<int>> segmentation = optimalSegmentation();
     printBezierSegmentation(segmentation);
-    structure.reconstruct(optimalBezierFit,segmentation.second,transformation);
+    structure.reconstruct(file,optimalBezierFit,segmentation.second,transformation);
   } else if (fit_status == FIT_SINGLE_SEGMENT) {
     fitOneSegment();
   }

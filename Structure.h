@@ -3,6 +3,7 @@
 
 #include "Header.h"
 #include "OptimalFit.h"
+#include "Identifier.h"
 
 class Structure
 {
@@ -21,7 +22,7 @@ class Structure
                             Matrix<double> &, vector<array<int,3>> &);
 
     //! Reconstruct the protein back with the control points added
-    void reconstructProtein(vector<vector<OptimalFit>> &, vector<int> &, 
+    void reconstructProtein(string &, vector<vector<OptimalFit>> &, vector<int> &, 
                             Matrix<double> &, vector<array<double,3>> &);
 
     //! Generates appropriate RGB indices for a generic structure
@@ -34,11 +35,11 @@ class Structure
     vector<array<int,3>> randomRGB(int);
 
     //! Map to original protein indexes
-    vector<int> mapToActualSegments(vector<int> &);
+    vector<Identifier> mapToActualSegments(vector<int> &);
 
     //! Generates the Pymol script for coloring the individual segments
-    void createPymolScript(vector<vector<OptimalFit>> &, vector<int> &,
-                           vector<array<double,3>> &);
+    void createPymolScript(string &, vector<vector<OptimalFit>> &, vector<int> &,
+                           vector<Identifier> &, vector<array<double,3>> &);
 
   public:
     //! Constructor
@@ -63,7 +64,7 @@ class Structure
                              const char *);
 
     //! Reconstruct the original structure back with the control points added
-    void reconstruct(vector<vector<OptimalFit>> &, vector<int> &, 
+    void reconstruct(string &, vector<vector<OptimalFit>> &, vector<int> &, 
                      Matrix<double> &);
 };
 

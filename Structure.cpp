@@ -1,4 +1,6 @@
 #include "Structure.h"
+#include "Support.h"
+#include "BezierCurve.h"
 
 /*!
  *  \brief This is a constructor function used to instantiate the Structure
@@ -105,11 +107,13 @@ void Structure::validateTransformation(Matrix<double> &transformation)
 /*!
  *  \brief This function reconstructs the original structure with the
  *  control points
+ *  \param file a reference to a string
  *  \param optimalBezierFit a reference to a vector<vector<OptimalFit>>
  *  \param segments a reference to a vector<int>
  *  \param transformation a reference to a Matrix<double>
  */
-void Structure::reconstruct(vector<vector<OptimalFit>> &optimalBezierFit,
+void Structure::reconstruct(string &file, 
+                            vector<vector<OptimalFit>> &optimalBezierFit,
                             vector<int> &segments, Matrix<double> &transformation)
 {
   switch(type) {
@@ -123,7 +127,7 @@ void Structure::reconstruct(vector<vector<OptimalFit>> &optimalBezierFit,
     case 1:
     {
       vector<array<double,3>> colors_protein = colorProtein(segments.size());
-      reconstructProtein(optimalBezierFit,segments,transformation,colors_protein);
+      reconstructProtein(file,optimalBezierFit,segments,transformation,colors_protein);
       break;
     }
   }
@@ -152,106 +156,167 @@ void Structure::reconstructGeneric(vector<vector<OptimalFit>> &optimalBezierFit,
 /*!
  *  \brief This function reconstructs the original protein structure with the
  *  control points
+ *  \param file a reference to a string
  *  \param optimalBezierFit a reference to a vector<vector<OptimalFit>>
  *  \param segments a reference to a vector<int>
  *  \param transformation a reference to a Matrix<double>
  *  \param colors a reference to a vector<array<int,3>>
  */
-void Structure::reconstructProtein(vector<vector<OptimalFit>> &optimalBezierFit,
+void Structure::reconstructProtein(string &file, 
+                                   vector<vector<OptimalFit>> &optimalBezierFit,
                                    vector<int> &segments, 
                                    Matrix<double> &transformation,
                                    vector<array<double,3>> &colors)
 {
+  vector<Identifier> identifiers = mapToActualSegments(segments);
   protein->undoLastSelection();
   Matrix<double> inverse_transform = transformation.inverse();
-  shared_ptr<Chain> new_chain = make_shared<Chain>("X");
+  shared_ptr<Chain> cps_chain = make_shared<Chain>("X");
+  shared_ptr<Chain> curve_chain = make_shared<Chain>("Y");
+  int count = 0;
   int segment_start = 0;
   for(int i=1; i<segments.size(); i++) {
     int segment_end = segments[i];
     string residue_id = "R" + boost::lexical_cast<string>(i);
-    shared_ptr<Residue> new_residue = make_shared<Residue>(residue_id);
+    shared_ptr<Residue> cps_residue = make_shared<Residue>(residue_id);
     OptimalFit fit = optimalBezierFit[segment_start][segment_end];
     int numIntermediateControls = fit.getNumberOfControlPoints() - 2;
     if (numIntermediateControls > 0) {
+      count++;
+      vector<Point<double>> control_points;
+      control_points.push_back(original_coordinates[segment_start]);
       vector<Point<double>> cps = fit.getControlPoints();
       for (int j=1; j<=numIntermediateControls; j++) {
         string atom_id = "A" + boost::lexical_cast<string>(j);
-        shared_ptr<Atom> new_atom = make_shared<Atom>(atom_id);
+        shared_ptr<Atom> cps_atom = make_shared<Atom>(atom_id);
         Point<double> p = lcb::geometry::transform<double>(cps[j],inverse_transform);
-        new_atom->setAtomicCoordinate(p);
-        new_residue->addAtom(new_atom);
+        control_points.push_back(p);
+        cps_atom->setAtomicCoordinate(p);
+        cps_residue->addAtom(cps_atom);
       }
+      control_points.push_back(original_coordinates[segment_end]);
+      residue_id = "C" + boost::lexical_cast<string>(i);
+      shared_ptr<Residue> curve_residue = make_shared<Residue>(residue_id);
+      BezierCurve curve(control_points);
+      double t = 0;
+      for (int k=1; k<1.0/DELTA_T; k++) {
+        t += DELTA_T;
+        Point<double> p = curve.getPoint(t);
+        string atom_id = boost::lexical_cast<string>(k);
+        shared_ptr<Atom> curve_atom = make_shared<Atom>(atom_id);
+        curve_atom->setAtomicCoordinate(p);
+        curve_residue->addAtom(curve_atom);
+      } 
+      curve_chain->addResidue(curve_residue);
     }
-    new_chain->addResidue(new_residue);
+    cps_chain->addResidue(cps_residue);
     segment_start = segment_end;
   }
-  protein->addChain(new_chain);
+  protein->addChain(cps_chain);
+  protein->addChain(curve_chain);
   vector<Atom> atoms = protein->getAtoms();
-  ofstream fw("new.pdb");
+  string pdb_file = extractName(file);
+  string modified_pdb = "output/modified_pdb_files/" + pdb_file + ".pdb";
+  ofstream fw(modified_pdb.c_str());
   for (int i=0; i<atoms.size(); i++) {
     fw << atoms[i].formatPDBLine() << endl;
   }
   fw.close();
-  createPymolScript(optimalBezierFit,segments,colors);
-  /*vector<string> chain_ids = protein->getChainIdentifiers();
-  for (int i=0; i<chain_ids.size(); i++) {
-    cout << chain_ids[i] << endl;
-  }
-  Chain chain = protein->getDefaultModel()["X"];
-  vector<string> res_ids = chain.getResidueIdentifiers();
-  for (int i=0; i<res_ids.size(); i++) {
-    cout << res_ids[i] << endl;
-  }*/
+  createPymolScript(pdb_file,optimalBezierFit,segments,identifiers,colors);
 }
 
 /*!
  *  \brief This function maps the segmentation indexes to the original
- *  protein indexes
+ *  protein identifiers
  *  \param segments a reference to a vector<int>
- *  \return the original protein indexes
+ *  \return the identifiers of the atoms corresponding to the end points
+ *  of each segment
  */
-vector<int> Structure::mapToActualSegments(vector<int> &segments)
+vector<Identifier> Structure::mapToActualSegments(vector<int> &segments)
 {
-  int num_indexes = segments.size();
-  vector<int> actual_segments(num_indexes,0);
-  return actual_segments;
+  vector<Identifier> identifiers;
+  vector<Atom> atoms = protein->getAtoms();
+  for (int i=0; i<segments.size(); i++) {
+    int position = segments[i];
+    Atom atom = atoms[position];
+    string atom_id = atom.getIdentifier();
+    Residue *residue = atom.getParent();
+    string residue_id = residue->getIdentifier();
+    Chain *chain = residue->getParent();
+    string chain_id = chain->getIdentifier();
+    Identifier id(atom_id,residue_id,chain_id);
+    identifiers.push_back(id);
+  }
+  return identifiers;
 }
 
 /*!
  *  \brief This function generates the Pymol script to show the segments
+ *  \param pdb_file a reference to a string
  *  \param optimalBezierFit a reference to a vector<vector<OptimalFit>>
  *  \param segments a reference to a vector<int>
+ *  \param identifiers a reference to vector<Identifier>
  *  \param colors a reference to a vector<array<double,3>>
  */
-void Structure::createPymolScript(vector<vector<OptimalFit>> &optimalBezierFit,
+void Structure::createPymolScript(string &pdb_file,
+                                  vector<vector<OptimalFit>> &optimalBezierFit,
                                   vector<int> &segments, 
+                                  vector<Identifier> &identifiers,
                                   vector<array<double,3>> &colors)
 {
-  vector<int> actual_segments = mapToActualSegments(segments);
-  actual_segments = segments;
   Chain chain = protein->getDefaultModel()["X"];
   vector<string> res_ids = chain.getResidueIdentifiers();
 
-  ofstream script("segmentation.pml");
-  script << "load new.pdb" << endl;
+  string pymol_file = "output/pymol_scripts/" + pdb_file + ".pml";
+  ofstream script(pymol_file.c_str());
+
+  string modified_pdb = "modified_pdb_files/" + pdb_file + ".pdb";
+  script << "load ../" << modified_pdb << endl;
   script << "hide" << endl;
   script << "show cartoon" << endl;
+
+  // draw the bezier curves
+  Chain curve_chain = protein->getDefaultModel()["Y"];
+  vector<string> curve_ids = curve_chain.getResidueIdentifiers();
+  for (int i=1; i<=curve_ids.size(); i++) {
+    string curve_index = curve_ids[i-1].substr(1);
+    script << "select curve" << curve_index << ", chain Y and resi " 
+    << curve_ids[i-1] << endl;
+  }
+
+  string start_atom = identifiers[0].getAtomID();
+  string start_residue = identifiers[0].getResidueID();
+  string start_chain = identifiers[0].getChainID();
   int segment_start = 1;
   for(int i=1; i<segments.size(); i++) {
     // choose a color
     script << "set_color c" << i << " = [" << colors[i-1][0]
     << "," << colors[i-1][1] << "," << colors[i-1][2] << "]" << endl;
 
-    // select segment
+    // segment end 
+    string end_atom = identifiers[i].getAtomID();
+    string end_residue = identifiers[i].getResidueID();
+    string end_chain = identifiers[i].getChainID();
     int segment_end = segments[i] + 1;
-    script << "select seg" << i << ", resi " << segment_start << "-" 
-    << segment_end << endl;
+
+    script << "select seg" << i << ", ";
+    if (start_chain == end_chain) {
+      script << "chain " << start_chain << " and resi ";
+      script << start_residue << "-" << end_residue << endl;
+    } else {
+      Chain seg_chain = protein->getDefaultModel()[start_chain];
+      int num_residues = seg_chain.getNumberOfResidues();
+      script << "(chain " << start_chain << " and resi ";
+      script << start_residue << "-" << num_residues << ") or ";
+      script << "(chain " << end_chain << " and resi 1-";
+      script << end_residue << ")" << endl;
+    }
     OptimalFit fit = optimalBezierFit[segment_start-1][segment_end-1];
     int numIntermediateControls = fit.getNumberOfControlPoints() - 2;
 
     // join the control points by straight lines to visualize
     string p1,p2;
-    p1 = "\"resi " + boost::lexical_cast<string>(segment_start) + " and name CA\"";
+    p1 = "\"chain " + start_chain + " and resi " + start_residue + " and name CA\"";
     for (int j=1; j<=numIntermediateControls; j++) {
       p2 = "\"resi " + res_ids[i-1] + " and name A" + 
            boost::lexical_cast<string>(j) + "\"";
@@ -259,13 +324,16 @@ void Structure::createPymolScript(vector<vector<OptimalFit>> &optimalBezierFit,
       script << "hide label" << endl;
       p1 = p2;
     }
-    p2 = "\"resi " + boost::lexical_cast<string>(segment_end) + " and name CA\"";
+    p2 = "\"chain " + end_chain + " and resi " + end_residue + " and name CA\"";
     script << "print cmd.distance(" << p1 << "," << p2 << ")" << endl;
     script << "hide label" << endl;
 
     // color the segment
     script << "color c" << i << ", seg" << i << endl;  
 
+    start_atom = end_atom;
+    start_residue = end_residue;
+    start_chain = end_chain;
     segment_start = segment_end;
   }
   script.close();

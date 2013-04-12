@@ -22,10 +22,10 @@
 
 #define AOM 0.1
 #define TOLERANCE 0.0000001
-#define LARGE_NUM 1000000
 #define PI boost::math::constants::pi<double>()
 #define ZERO std::numeric_limits<double>::epsilon()
 #define MAX_INTERMEDIATE_CONTROL_POINTS 2 
+#define DELTA_T 0.001
 
 #define FIT_SINGLE_SEGMENT 1
 #define FIT_ENTIRE_PROTEIN 0
