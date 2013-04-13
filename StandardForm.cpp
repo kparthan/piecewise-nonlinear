@@ -5,19 +5,19 @@
  *  \brief This is a constructor function which is used to instantiate the
  *  object
  *  \param file a string
- *  \param s a reference to a ProteinStructure
+ *  \param s a reference to a Structure
  *  \param controls a reference to a vector<int>
  *  \param status an integer
  *  \param end_points a reference to a vector<int>
  */
-StandardForm::StandardForm(string file, Structure s, vector<int> &controls,
+StandardForm::StandardForm(string file, Structure *s, vector<int> &controls,
                            int fit_status, int print_status,
                            vector<int> &end_points) : 
                            file(file), structure(s), controls(controls), 
                            volume(0), fit_status(fit_status), 
                            print_status(print_status), end_points(end_points)
 {
-  original_coordinates = structure.getCoordinates();
+  original_coordinates = structure->getCoordinates();
   numResidues = original_coordinates.size();
   rotation = Matrix<double>::identity(3);
   for (int i=0; i<numResidues; i++) {
@@ -132,7 +132,7 @@ Segment StandardForm::getSegment(unsigned i, unsigned j)
  */
 void StandardForm::updateCoordinates(void)
 {
-  coordinates = structure.getCoordinates();  
+  coordinates = structure->getCoordinates();  
 }
 
 /*!
@@ -176,7 +176,7 @@ void StandardForm::transform(void)
 
   if(print_status) {
     /* validate transformation */
-    structure.validateTransformation(transformation);
+    structure->validateTransformation(transformation);
   }
 
   cout << "Transformation to standard form done ..." << endl;
@@ -216,7 +216,7 @@ void StandardForm::translateToOrigin()
   offsety = -coordinates[0][1];
   offsetz = -coordinates[0][2];
   translation = translationMatrix(offsetx,offsety,offsetz);
-  structure.transform(translation);
+  structure->transform(translation);
   cout << "[OK]" << endl;
 }
 
@@ -231,7 +231,7 @@ void StandardForm::rotateLastPoint()
 
   /* brings the last point in the protein to lie on the XY plane */
   Matrix<double> rotate = projectAndRotateLast(end); 
-  structure.transform(rotate);
+  structure->transform(rotate);
   rotation = rotate* rotation;
 
   updateCoordinates();
@@ -239,7 +239,7 @@ void StandardForm::rotateLastPoint()
 
   /* brings the last point on the protein to lie on the X-axis */
   rotate = rotateInXYPlane(end);
-  structure.transform(rotate);
+  structure->transform(rotate);
   rotation = rotate* rotation;
 
   cout << "[OK]" << endl;
@@ -331,7 +331,7 @@ void StandardForm::rotateSecondPoint()
 
   /* brings the second point in the protein to lie on the XY plane */
   Matrix<double> rotate = projectAndRotateSecond(second); 
-  structure.transform(rotate);
+  structure->transform(rotate);
   rotation = rotate* rotation;
 
   cout << "[OK]" << endl;
@@ -499,7 +499,7 @@ void StandardForm::fitBezierCurveModel()
     /* compute the optimal segmentation using dynamic programming */
     pair<double,vector<int>> segmentation = optimalSegmentation();
     printBezierSegmentation(segmentation);
-    structure.reconstruct(file,optimalBezierFit,segmentation.second,transformation);
+    structure->reconstruct(file,optimalBezierFit,segmentation.second,transformation);
   } else if (fit_status == FIT_SINGLE_SEGMENT) {
     fitOneSegment();
   }

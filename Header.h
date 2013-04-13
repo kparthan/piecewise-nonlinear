@@ -32,7 +32,7 @@
 #define FIT_ENTIRE_PROTEIN 0
 #define TEST_FIT 0
 #define PROTEIN_FIT 1
-#define GENERIC_FIT 2
+#define GENERAL_FIT 2
 #define PRINT 1
 
 using namespace std;

@@ -4,6 +4,8 @@ LDFLAGS=$(shell pkg-config --libs liblcb-experimental) -lboost_program_options -
 OBJECTS = piecewise-nonlinear-fit.o \
   Support.o \
   Structure.o \
+  Protein.o \
+  General.o \
   StandardForm.o \
   Segment.o \
   Message.o \
@@ -22,10 +24,16 @@ piecewise-nonlinear-fit: $(OBJECTS)
 piecewise-nonlinear-fit.o: piecewise-nonlinear-fit.cpp Support.h 
 	g++ -c $(CFLAGS) $< -o $@
 
-Support.o: Support.cpp Support.h Test.h StandardForm.h Structure.h
+Support.o: Support.cpp Support.h Test.h StandardForm.h
 	g++ -c $(CFLAGS) $< -o $@
 
 Structure.o: Structure.cpp Structure.h 
+	g++ -c $(CFLAGS) $< -o $@
+
+Protein.o: Protein.cpp Protein.h Structure.h
+	g++ -c $(CFLAGS) $< -o $@
+
+General.o: General.cpp General.h Structure.h
 	g++ -c $(CFLAGS) $< -o $@
 
 StandardForm.o: StandardForm.cpp StandardForm.h Message.h 

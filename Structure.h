@@ -3,59 +3,33 @@
 
 #include "Header.h"
 #include "OptimalFit.h"
-#include "Identifier.h"
 
 class Structure
 {
-  private:
-    //! Type of structure
-    int type;
-
-    //! Protein Structure
-    ProteinStructure *protein;
-
-    //! Stores the coordinates
-    vector<Point<double>> original_coordinates,coordinates;
-
-    //! Reconstruct the generic structure back with the control points added
-    void reconstructGeneric(vector<vector<OptimalFit>> &, vector<int> &, 
-                            Matrix<double> &, vector<array<int,3>> &);
-
-    //! Reconstruct the protein back with the control points added
-    void reconstructProtein(string &, vector<vector<OptimalFit>> &, vector<int> &, 
-                            Matrix<double> &, vector<array<double,3>> &);
-
-    //! Generates appropriate RGB indices for a generic structure
-    vector<array<int,3>> colorGeneric(int);
-
-    //! Generates appropriate RGB indices for a protein structure
-    vector<array<double,3>> colorProtein(int);
-
-    //! Generate integral RGB indices
-    vector<array<int,3>> randomRGB(int);
-
-    //! Map to original protein indexes
-    vector<Identifier> mapToActualSegments(vector<int> &);
-
-    //! Generates the Pymol script for coloring the individual segments
-    void createPymolScript(string &, vector<vector<OptimalFit>> &, vector<int> &,
-                           vector<Identifier> &, vector<array<double,3>> &);
-
   public:
+    //! Null constructor
+    Structure();
+
     //! Constructor
     Structure(vector<Point<double>> &);
 
-    //! Constructor from ProteinStructure
-    Structure(ProteinStructure *);
+    //! Types of structures
+    enum StructureType {
+      DEFAULT,
+      PROTEIN,
+      GENERAL
+    };
 
-                            /* Accessor functions */
     //! Gets the coordinates
     vector<array<double,3>> getCoordinates();
 
-                            /* Utility functions */
     //! Transforms the structure
     void transform(Matrix<double> &);
 
+    //! Reconstruct the original structure back with the control points added
+    virtual void reconstruct(string &, vector<vector<OptimalFit>> &, 
+                             vector<int> &, Matrix<double> &){}
+    
     //! Validate the transformation
     void validateTransformation(Matrix<double> &);
 
@@ -63,9 +37,16 @@ class Structure
     void printTransformation(vector<Point<double>> &, Matrix<double> &, 
                              const char *);
 
-    //! Reconstruct the original structure back with the control points added
-    void reconstruct(string &, vector<vector<OptimalFit>> &, vector<int> &, 
-                     Matrix<double> &);
+    //! Generate integral RGB indices
+    vector<array<int,3>> generateSegmentColors(int);
+
+  protected:
+    //! The structure type
+    StructureType type;
+
+    //! Stores the coordinates
+    vector<Point<double>> original_coordinates,coordinates;
+
 };
 
 #endif

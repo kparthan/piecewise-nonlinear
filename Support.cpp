@@ -1,7 +1,8 @@
 #include "Support.h"
+#include "Protein.h"
+#include "General.h"
 #include "Test.h"
 #include "StandardForm.h"
-#include "Structure.h"
 
 /*!
  *  \brief This function checks to see if valid arguments are given to the 
@@ -69,7 +70,7 @@ void parseCommandLineInput(int argc, char **argv, vector<int> &flags, string &fi
     } else {
       cout << "Using structure file: " << vm["generic"].as<string>() 
       << endl;
-      flags[0] = GENERIC_FIT;
+      flags[0] = GENERAL_FIT;
       noargs = 0;
     }
   }
@@ -135,10 +136,10 @@ void testFit(vector<int> &controls, int fit_status, int print_status,
 
   /* Obtain structure coordinates */
   vector<Point<double>> data = test.testData();
-  Structure structure(data);
+  General general(data);
+  Structure *structure = &general;
   StandardForm shape(file,structure,controls,fit_status,print_status,
                      end_points);
-
   shape.fitModels();
 }
 
@@ -155,12 +156,12 @@ void proteinFit(string file, vector<int> &controls, int fit_status,
 {
   /* Obtain protein coordinates */
   ProteinStructure *p = parsePDBFile(file.c_str());
-  Structure structure(p);
+  Protein protein(p);
+  Structure *structure = &protein;
 
-  StandardForm protein(file,structure,controls,fit_status,print_status,
+  StandardForm shape(file,structure,controls,fit_status,print_status,
                        end_points);
-
-  protein.fitModels();
+  shape.fitModels();
 }
 
 /*!
@@ -176,11 +177,11 @@ void generalFit(string file, vector<int> &controls, int fit_status,
 {
   /* Obtain structure coordinates */
   vector<Point<double>> coordinates = parseFile(file.c_str());
-  Structure structure(coordinates);
+  General general(coordinates);
+  Structure *structure = &general;
 
   StandardForm shape(file,structure,controls,fit_status,print_status,
                      end_points);
-
   shape.fitModels();
 }
 

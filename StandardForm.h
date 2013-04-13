@@ -18,7 +18,7 @@ class StandardForm
     string file;
 
     //! Stores the standard canonical form
-    Structure structure;
+    Structure *structure;
 
     //! Stores the transformation matrix
     Matrix<double> translation,rotation,transformation;
@@ -56,7 +56,7 @@ class StandardForm
 
   public:
     //! Constructor
-    StandardForm(string, Structure, vector<int> &, int, int, vector<int> &);
+    StandardForm(string, Structure *, vector<int> &, int, int, vector<int> &);
 
                             /* Accessor functions */
     //! Gets the number of residues

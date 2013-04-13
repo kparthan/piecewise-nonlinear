@@ -24,7 +24,7 @@ int main(int argc, char **argv)
       proteinFit(file,controls,flags[1],flags[2],end_points);
       break;
 
-    case GENERIC_FIT:   // general 3D structure
+    case GENERAL_FIT:   // general 3D structure
       generalFit(file,controls,flags[1],flags[2],end_points);
       break;
   }
