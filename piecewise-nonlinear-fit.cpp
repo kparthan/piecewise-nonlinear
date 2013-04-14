@@ -4,7 +4,7 @@ int main(int argc, char **argv)
 {
   string file;
   vector<int> flags(3,0);
-  vector<int> end_points(2,0);
+  vector<string> end_points(3,0);
   vector<int> controls;
   parseCommandLineInput(argc,argv,flags,file,end_points,controls);
   //cout << end_points[0] << " " << end_points[1] << endl;

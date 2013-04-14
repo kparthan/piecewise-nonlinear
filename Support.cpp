@@ -11,10 +11,11 @@
  *  \param argv an array of strings
  *  \param flags a reference to a vector<int>
  *  \param file a reference to a string
+ *  \param end_points a reference to a vector<string>
  *  \param controls a reference to a vector<int>
  */
 void parseCommandLineInput(int argc, char **argv, vector<int> &flags, string &file, 
-                           vector<int> &end_points, vector<int> &controls)
+                           vector<string> &end_points, vector<int> &controls)
 {
   flags[0] = -1;
   bool noargs = 1;
@@ -27,7 +28,7 @@ void parseCommandLineInput(int argc, char **argv, vector<int> &flags, string &fi
        ("verbose","print some details")
        ("protein",value<string>(&file),"pdb file")
        ("generic",value<string>(&file),"general 3D structure")
-       ("segment",value<vector<int>>(&end_points)->multitoken(),"segment")
+       ("segment",value<vector<string>>(&end_points)->multitoken(),"segment")
        ("controls",value<vector<int>>(&controls)->multitoken(),
                                   "intermediate control points [0,1,2]")
   ;
@@ -77,7 +78,8 @@ void parseCommandLineInput(int argc, char **argv, vector<int> &flags, string &fi
 
   if (vm.count("segment")) {
     cout << "Fitting a single segment between the residues "
-         << "[" << end_points[0] << ", " << end_points[1] << "]" << endl;
+         << "[" << end_points[1] << ", " << end_points[2] << "] of chain "
+         << end_points[0] << endl;
     flags[1] = FIT_SINGLE_SEGMENT;
   }
 
@@ -124,7 +126,7 @@ void Usage (const char *exe, options_description &desc)
  *  \param end_points a reference to a vector<int>
  */
 void testFit(vector<int> &controls, int fit_status, int print_status,
-             vector<int> &end_points)
+             vector<string> &end_points)
 {
   string file;
   Point<double> sp(10,-3,30);
@@ -152,7 +154,7 @@ void testFit(vector<int> &controls, int fit_status, int print_status,
  *  \param end_points a reference to a vector<int>
  */
 void proteinFit(string file, vector<int> &controls, int fit_status, 
-                int print_status, vector<int> &end_points)
+                int print_status, vector<string> &end_points)
 {
   /* Obtain protein coordinates */
   ProteinStructure *p = parsePDBFile(file.c_str());
@@ -173,7 +175,7 @@ void proteinFit(string file, vector<int> &controls, int fit_status,
  *  \param end_points a reference to a vector<int>
  */
 void generalFit(string file, vector<int> &controls, int fit_status, 
-                int print_status, vector<int> &end_points)
+                int print_status, vector<string> &end_points)
 {
   /* Obtain structure coordinates */
   vector<Point<double>> coordinates = parseFile(file.c_str());

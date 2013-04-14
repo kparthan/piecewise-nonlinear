@@ -4,7 +4,7 @@
 #include "Header.h"
 
 void parseCommandLineInput (int, char **, vector<int> &, string &, 
-                            vector<int> &, vector<int> &);
+                            vector<string> &, vector<int> &);
 void Usage (const char *, options_description &);
 bool checkFile (const char *);
 ProteinStructure *parsePDBFile (const char *);
@@ -24,9 +24,9 @@ double minimum(vector<double> &);
 double minimum(vector<vector<double>> &);
 double bernstein(int, int, double);
 
-void testFit (vector<int> &, int, int, vector<int> &);
-void proteinFit (string, vector<int> &, int, int, vector<int> &);
-void generalFit (string, vector<int> &, int, int, vector<int> &);
+void testFit (vector<int> &, int, int, vector<string> &);
+void proteinFit (string, vector<int> &, int, int, vector<string> &);
+void generalFit (string, vector<int> &, int, int, vector<string> &);
 
 #endif
 

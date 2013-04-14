@@ -8,11 +8,11 @@
  *  \param s a reference to a Structure
  *  \param controls a reference to a vector<int>
  *  \param status an integer
- *  \param end_points a reference to a vector<int>
+ *  \param end_points a reference to a vector<string>
  */
 StandardForm::StandardForm(string file, Structure *s, vector<int> &controls,
                            int fit_status, int print_status,
-                           vector<int> &end_points) : 
+                           vector<string> &end_points) : 
                            file(file), structure(s), controls(controls), 
                            volume(0), fit_status(fit_status), 
                            print_status(print_status), end_points(end_points)

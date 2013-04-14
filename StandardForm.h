@@ -34,7 +34,7 @@ class StandardForm
     int print_status;
 
     //! End points of a segment
-    vector<int> end_points;
+    vector<string> end_points;
 
     //! Cartesian coordinates of the protein structure
     vector<array<double,3>> original_coordinates,coordinates;
@@ -56,7 +56,7 @@ class StandardForm
 
   public:
     //! Constructor
-    StandardForm(string, Structure *, vector<int> &, int, int, vector<int> &);
+    StandardForm(string, Structure *, vector<int> &, int, int, vector<string> &);
 
                             /* Accessor functions */
     //! Gets the number of residues
