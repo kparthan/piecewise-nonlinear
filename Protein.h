@@ -28,6 +28,9 @@ class Protein : public Structure
     void reconstruct(string &, vector<vector<OptimalFit>> &, vector<int> &, 
                      Matrix<double> &);
 
+    //! Gets the indexes of the end points to be internally used
+    array<int,2> getEndPoints(vector<string> &);
+
 };
 
 #endif

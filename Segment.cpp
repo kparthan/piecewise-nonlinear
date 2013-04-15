@@ -610,6 +610,7 @@ double Segment::messageLength(BezierCurve &curve,
         part2 += x;
         if (print_status == 1 && fit_status == 1) { 
           cout << "msglen(deviations): " << x << endl;
+          cout << "msglen(deviations)/residue: " << x/(numIntermediate-1) << endl;
         }
       }
       break;
@@ -634,6 +635,7 @@ double Segment::messageLength(BezierCurve &curve,
         part2 += x;
         if (print_status == 1 && fit_status == 1) { 
           cout << "msglen(deviations): " << x << endl;
+          cout << "msglen(deviations)/residue: " << x/numIntermediate << endl;
         }
       }
       break;

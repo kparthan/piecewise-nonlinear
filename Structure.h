@@ -29,6 +29,10 @@ class Structure
     //! Reconstruct the original structure back with the control points added
     virtual void reconstruct(string &, vector<vector<OptimalFit>> &, 
                              vector<int> &, Matrix<double> &){}
+
+    //! Gets the end points of the segment in accordance with the internal
+    //! representation used
+    virtual array<int,2> getEndPoints(vector<string> &);
     
     //! Validate the transformation
     void validateTransformation(Matrix<double> &);

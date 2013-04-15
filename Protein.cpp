@@ -221,3 +221,39 @@ void Protein::createPymolScript(string &pdb_file,
   script.close();
 }
 
+/*! 
+ *  \brief This function gets the end points of the segment in accordance 
+ *  with the internal representation used.
+ *  \param end_points a reference to a string
+ *  \return the indexes of the end points to be internally used
+ */
+array<int,2> Protein::getEndPoints(vector<string> &end_points)
+{
+  array<int,2> indexes;
+  int lower = boost::lexical_cast<int>(end_points[1]);
+  int upper = boost::lexical_cast<int>(end_points[2]);
+  bool stop = 0;
+  vector<Atom> atoms = protein->getAtoms();
+  for (int i=0; i<atoms.size(); i++) {
+    Atom atom = atoms[i];
+    string atom_id = atom.getIdentifier();
+    Residue *residue = atom.getParent();
+    string residue_id = residue->getIdentifier();
+    Chain *chain = residue->getParent();
+    string chain_id = chain->getIdentifier();
+    int residue_index = boost::lexical_cast<int>(residue_id);
+    if (chain_id.compare(end_points[0]) == 0) {
+      if (residue_index == lower) {
+        indexes[0] = i;
+      } else if (residue_index == upper) {
+        indexes[1] = i;
+        stop = 1;
+      }
+      if (stop) {
+        break;
+      }
+    }
+  }
+  return indexes;
+}
+

@@ -18,6 +18,7 @@ void parseCommandLineInput(int argc, char **argv, vector<int> &flags, string &fi
                            vector<string> &end_points, vector<int> &controls)
 {
   flags[0] = -1;
+  //flags[1] = FIT_ENTIRE_PROTEIN;
   bool noargs = 1;
   cout << "Checking command-line input ..." << endl;
 
@@ -29,6 +30,7 @@ void parseCommandLineInput(int argc, char **argv, vector<int> &flags, string &fi
        ("protein",value<string>(&file),"pdb file")
        ("generic",value<string>(&file),"general 3D structure")
        ("segment",value<vector<string>>(&end_points)->multitoken(),"segment")
+      // ("fit",value<string>,"fit an entire protein or just a portion")
        ("controls",value<vector<int>>(&controls)->multitoken(),
                                   "intermediate control points [0,1,2]")
   ;
@@ -82,7 +84,17 @@ void parseCommandLineInput(int argc, char **argv, vector<int> &flags, string &fi
          << end_points[0] << endl;
     flags[1] = FIT_SINGLE_SEGMENT;
   }
-
+/*
+  if (vm.count("fit")) {
+    string fit = vm["fit"].as<string>;
+    if (fit.compare("complete") == 0) {
+      flags[1] = FIT_ENTIRE_PROTEIN;
+    } else if (fit.compare("partial") == 0) {
+      if (flags[1] == FIT)
+      flags[1] = FIT_PARTIAL_PROTEIN;
+    }
+  }
+*/
   if (vm.count("controls")) {
     for (int i=0; i<controls.size(); i++) {
       if (controls[i] < 0 || controls[i] > MAX_INTERMEDIATE_CONTROL_POINTS) {
@@ -91,14 +103,7 @@ void parseCommandLineInput(int argc, char **argv, vector<int> &flags, string &fi
         Usage(argv[0],desc);
       }
     } 
-  } /*else {
-    // default: run for all allowed intermediate control points 
-    if (controls.size() == 0) {
-      for (int i=0; i<=MAX_INTERMEDIATE_CONTROL_POINTS; i++) {
-        controls.push_back(i);
-      }
-    }
-  }*/
+  }
 
   if (noargs) {
     cout << "Not enough arguments supplied..." << endl;

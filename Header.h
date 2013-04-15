@@ -30,6 +30,7 @@
 
 #define FIT_SINGLE_SEGMENT 1
 #define FIT_ENTIRE_PROTEIN 0
+#define FIT_PARTIAL_PROTEIN 2
 #define TEST_FIT 0
 #define PROTEIN_FIT 1
 #define GENERAL_FIT 2

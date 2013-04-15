@@ -510,7 +510,8 @@ void StandardForm::fitBezierCurveModel()
  */
 void StandardForm::fitOneSegment()
 {
-  Segment segment = getSegment(end_points[0]-1,end_points[1]-1);
+  array<int,2> indexes = structure->getEndPoints(end_points);
+  Segment segment = getSegment(indexes[0],indexes[1]);
   segment.estimateFreeParameters();
   OptimalFit min_fit, current_fit;
   cout << "\nFit (" << controls[0] << " intermediate control points):- ";
@@ -608,21 +609,21 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
     }
   }
   //#pragma omp parallel for private(j)
-  /*for (i=0; i<numResidues; i++) {
-    for (j=i+1; j<numResidues; j++) {
-      codeLength[i][j] = optimalBezierFit[i][j].getMessageLength();
+  if (print_status == 1) {
+    for (i=0; i<numResidues; i++) {
+      for (j=i+1; j<numResidues; j++) {
+        codeLength[i][j] = optimalBezierFit[i][j].getMessageLength();
+      }
     }
-  }*/
-  /*ofstream codeLengthFile("codeLengthBezier");
-  codeLengthFile << "# of residues: " << numResidues << endl; 
-  for (int i=0; i<numResidues; i++){
-    for (int j=0; j<numResidues; j++){
-      codeLengthFile << fixed << setw(9) << setprecision(3) << codeLength[i][j];
+    ofstream codeLengthFile("codeLengthBezier");
+    codeLengthFile << "# of residues: " << numResidues << endl; 
+    for (int i=0; i<numResidues; i++){
+      for (int j=0; j<numResidues; j++){
+        codeLengthFile << fixed << setw(9) << setprecision(3) << codeLength[i][j];
+      }
+      codeLengthFile << endl;
     }
-    codeLengthFile << endl;
-  }*/
-   
-  /*
+    /*
     ofstream fw("test_bezier");
     for (int i=0; i<numResidues; i++) {
       for (int j=0; j<numResidues; j++) {
@@ -640,6 +641,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
         }
       }
     }*/
+  }
 }
 
 /*!

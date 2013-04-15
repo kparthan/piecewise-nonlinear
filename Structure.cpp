@@ -14,6 +14,20 @@ Structure::Structure(vector<Point<double>> &coordinates) : type(DEFAULT),
            coordinates(coordinates), original_coordinates(coordinates)
 {}
 
+/*! 
+ *  \brief This function gets the end points of the segment in accordance 
+ *  with the internal representation used.
+ *  \param end_points a reference to a string
+ *  \return the indexes of the end points to be internally used
+ */
+array<int,2> Structure::getEndPoints(vector<string> &end_points)
+{
+  array<int,2> indexes;
+  indexes[0] = boost::lexical_cast<int>(end_points[0]) - 1;
+  indexes[1] = boost::lexical_cast<int>(end_points[1]) - 1;
+  return indexes;
+}
+
 /*!
  *  \brief This module returns the coordinates of the structure
  *  \return the coordinates of the structure

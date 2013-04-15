@@ -69,11 +69,23 @@ double Message::encodeUsingNormalModel()
 
   double rangeMu = 10.0;
   double rangeSigma = 3.0;
-  for (int i=0; i<3; i++){
-    mean = estimateMean(samples[i]);
+  int i; double x;
+  for (i=0; i<2; i++){
+    //mean = estimateMean(samples[i]);
+    mean = 0;
     variance = estimateVariance(samples[i],mean);
-    msglen += encodeWallaceFreeman(samples[i].size(),mean,variance,rangeMu,rangeSigma);
+    cout << "sigma(" << i + 1 << "): " << sqrt(variance) << endl;
+    x = encodeWallaceFreeman(samples[i].size(),variance);
+    //double x = encodeWallaceFreeman(samples[i].size(),mean,variance,rangeMu,rangeSigma);
+    cout << "msglen (dev " << i+1 << "): " << x << endl;
+    msglen += x;
   }
+  mean = estimateMean(samples[i]);
+  variance = estimateVariance(samples[i],mean);
+  cout << "sigma(" << i + 1 << "): " << sqrt(variance) << endl;
+  x = encodeWallaceFreeman(samples[i].size(),mean,variance,rangeMu,rangeSigma);
+  cout << "msglen (dev " << i+1 << "): " << x << endl;
+  msglen += x;
   return msglen;
 }
 
