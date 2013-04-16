@@ -323,7 +323,7 @@ double estimateMean(vector<double> &samples)
  *  given the mean of the distribution
  *  \param samples a reference to a vector<double>
  *  \param mean a double
- *  \return the biased variance of the samples
+ *  \return the sample variance
  */
 double estimateVariance(vector<double> &samples, double mean)
 {
@@ -331,10 +331,12 @@ double estimateVariance(vector<double> &samples, double mean)
   for (int i=0; i<samples.size(); i++){
     variance += (samples[i] - mean) * (samples[i] - mean);
   }
-  variance /= samples.size() - 1;
+  variance /= samples.size();
   if (variance < 9 * AOM * AOM){
     return 9 * AOM * AOM;
-  } else {
+  } /*else if (variance > 16) {
+    return 16;
+  }*/ else {
     return variance;
   }
 }
@@ -343,7 +345,7 @@ double estimateVariance(vector<double> &samples, double mean)
  *  \brief This module computes the standard deviation of a set of samples
  *  given the mean of the distribution
  *  \param samples a reference to a vector<double>
- *  \return the unbiased variance of the samples
+ *  \return the unbiased sample variance
  */
 double estimateVariance(vector<double> &samples)
 {
@@ -355,7 +357,9 @@ double estimateVariance(vector<double> &samples)
   variance /= samples.size() - 1;
   if (variance < 9 * AOM * AOM){
     return 9 * AOM * AOM;
-  } else {
+  } /*else if (variance > 16) {
+    return 16;
+  }*/ else {
     return variance;
   }
 }

@@ -1,0 +1,70 @@
+Using structure file: test/test_1QLP.pdb
+Doing a BEZIER segmentation ...
+
+# of residues: 160
+# of non-linear segments: 9
+0-->16-->40-->59-->79-->95-->120-->137-->149-->159
+
+Best fit: 6488.6 bits.
+Bits per residue: 40.8088
+
+Segment # 1
+Residue stretch: [0, 16]
+Length of the segment: 17
+		# of intermediate control points: 0
+		Message length: 635.091
+
+Segment # 2
+Residue stretch: [16, 40]
+Length of the segment: 25
+		# of intermediate control points: 1
+		Control Point # 1: (17.9, 1.4, -10.2)
+		Message length: 985.567
+
+Segment # 3
+Residue stretch: [40, 59]
+Length of the segment: 20
+		# of intermediate control points: 1
+		Control Point # 1: (0.8, -0.3, 12.7)
+		Message length: 790.95
+
+Segment # 4
+Residue stretch: [59, 79]
+Length of the segment: 21
+		# of intermediate control points: 0
+		Message length: 800.144
+
+Segment # 5
+Residue stretch: [79, 95]
+Length of the segment: 17
+		# of intermediate control points: 1
+		Control Point # 1: (23.8, -5.1, 6.5)
+		Message length: 655.503
+
+Segment # 6
+Residue stretch: [95, 120]
+Length of the segment: 26
+		# of intermediate control points: 1
+		Control Point # 1: (4, -5.8, -24.7)
+		Message length: 1030.23
+
+Segment # 7
+Residue stretch: [120, 137]
+Length of the segment: 18
+		# of intermediate control points: 0
+		Message length: 683.502
+
+Segment # 8
+Residue stretch: [137, 149]
+Length of the segment: 13
+		# of intermediate control points: 1
+		Control Point # 1: (28.4, 0.1, 12.7)
+		Message length: 498.722
+
+Segment # 9
+Residue stretch: [149, 159]
+Length of the segment: 11
+		# of intermediate control points: 1
+		Control Point # 1: (15.7, -21.5, 4.8)
+		Message length: 408.888
+

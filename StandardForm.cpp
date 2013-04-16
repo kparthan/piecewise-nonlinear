@@ -588,8 +588,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
   int i,j;
   //#pragma omp parallel for private(j)
   for (i=0; i<numResidues; i++) {
-    //cout << "Segment from: " << i << endl;
-    //#pragma omp parallel for
+    #pragma omp parallel for
     for (j=i+1; j<numResidues; j++) {
       cout << "Segment: " << i << " " << j << " ";
       Segment segment = getSegment(i,j);
@@ -712,7 +711,7 @@ string StandardForm::createOutputFile(bool status)
   string filtered = extractName(file);
   string output_file;
   if (status) {
-    output_file = "output/segmentation/bezier_";
+    output_file = "output/segmentation/";
     output_file = output_file + filtered + "_";
     for (int i=0; i<controls.size(); i++) {
       output_file += boost::lexical_cast<string>(controls[i]); 

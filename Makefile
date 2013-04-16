@@ -24,7 +24,7 @@ piecewise-nonlinear-fit: $(OBJECTS)
 piecewise-nonlinear-fit.o: piecewise-nonlinear-fit.cpp Support.h 
 	g++ -c $(CFLAGS) $< -o $@
 
-Support.o: Support.cpp Support.h Test.h StandardForm.h
+Support.o: Support.cpp Support.h Test.h StandardForm.h Header.h
 	g++ -c $(CFLAGS) $< -o $@
 
 Structure.o: Structure.cpp Structure.h 
@@ -42,7 +42,7 @@ StandardForm.o: StandardForm.cpp StandardForm.h Message.h
 Segment.o: Segment.cpp Segment.h Message.h
 	g++ -c $(CFLAGS) $< -o $@
 
-Message.o: Message.cpp Message.h Support.h
+Message.o: Message.cpp Message.h Support.h Header.h
 	g++ -c $(CFLAGS) $< -o $@
 
 BezierCurve.o: BezierCurve.cpp BezierCurve.h Polynomial.h

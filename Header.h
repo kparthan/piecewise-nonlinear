@@ -22,6 +22,7 @@
 
 #define AOM 0.001
 #define AOPV 0.1
+#define LARGE_NUMBER 1000000
 #define TOLERANCE 0.0000001
 #define PI boost::math::constants::pi<double>()
 #define ZERO std::numeric_limits<double>::epsilon()

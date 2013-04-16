@@ -53,7 +53,7 @@ double Message::encodeUsingSphereModel(double radius)
 
   /* state the cell index on the surface of the sphere */
   msglen += log2(4*PI*radius*radius) - 2*log2(AOM);
-  //cout << "SPHERE MODEL: " << msglen << endl;
+
   return msglen;
 }
 
@@ -68,23 +68,32 @@ double Message::encodeUsingNormalModel()
   double mean,variance;
 
   double rangeMu = 10.0;
-  double rangeSigma = 3.0;
+  double rangeSigma = 2.0;
   int i; double x;
+
+  /* state the first two deviations using mean of 0 */
   for (i=0; i<2; i++){
-    //mean = estimateMean(samples[i]);
     mean = 0;
     variance = estimateVariance(samples[i],mean);
-    cout << "sigma(" << i + 1 << "): " << sqrt(variance) << endl;
-    x = encodeWallaceFreeman(samples[i].size(),variance);
-    //double x = encodeWallaceFreeman(samples[i].size(),mean,variance,rangeMu,rangeSigma);
-    cout << "msglen (dev " << i+1 << "): " << x << endl;
+    if (variance > 9){
+      x = LARGE_NUMBER;
+    } else {
+      x = encodeWallaceFreeman(samples[i].size(),variance);
+    }
+    //cout << "sigma(" << i + 1 << "): " << sqrt(variance) << endl;
+    //cout << "msglen (dev " << i+1 << "): " << x << endl;
     msglen += x;
   }
+  /* state the third deviation by estimating the mean */
   mean = estimateMean(samples[i]);
   variance = estimateVariance(samples[i],mean);
-  cout << "sigma(" << i + 1 << "): " << sqrt(variance) << endl;
-  x = encodeWallaceFreeman(samples[i].size(),mean,variance,rangeMu,rangeSigma);
-  cout << "msglen (dev " << i+1 << "): " << x << endl;
+    if (variance > 9){
+      x = LARGE_NUMBER;
+    } else {
+      x = encodeWallaceFreeman(samples[i].size(),mean,variance,rangeMu,rangeSigma);
+    }
+  //cout << "sigma(" << i + 1 << "): " << sqrt(variance) << endl;
+  //cout << "msglen (dev " << i+1 << "): " << x << endl;
   msglen += x;
   return msglen;
 }
@@ -119,7 +128,7 @@ double Message::encodeUsingLogStarModel(double value)
 double Message::encodeWallaceFreeman(int N, double variance)
 {
   double K1 = 1.0 / 12;
-  double R = 3.0;
+  double R = 2.0;
   double part1 = 0.5 * log(K1) + 0.5 * log(2 * N) + log(R);
   double part2 = 0.5 * (N+1) + (N/2.0)*log(2 * PI) - N * log(AOM)
                  + 0.5 * N * log(variance);

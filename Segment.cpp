@@ -386,6 +386,8 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
   BezierCurve curve(controlPoints);
   vector<array<double,3>> deviations = computeDeviations(curve);
   double msglen = messageLength(curve,deviations);
+  //double sigma = rootMeanSquaredError(curve);
+  //double msglen = messageLengthMML(curve,sigma);
   return OptimalFit(controlPoints,msglen);
 }
 
@@ -551,7 +553,7 @@ double Segment::messageLength(BezierCurve &curve,
         x = msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
         part1 += x; 
         if (print_status == 1 && fit_status == 1) { 
-          cout << "msglen(#int cps): " << x << endl;
+          cout << "msglen(# of int cps): " << x << endl;
         }
         /* message length to state the control points */
         x = numIntermediateControlPoints * msg1.encodeUsingNullModel(volume,AOPV);
@@ -565,7 +567,7 @@ double Segment::messageLength(BezierCurve &curve,
         x = msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
         part1 += x; 
         if (print_status == 1 && fit_status == 1) { 
-          cout << "msglen(#int cps): " << x << endl;
+          cout << "msglen(# of int cps): " << x << endl;
         }
         /* message length to state the control points */
         if (print_status == 1 && fit_status == 1) { 
@@ -589,7 +591,7 @@ double Segment::messageLength(BezierCurve &curve,
       x = msg1.encodeUsingLogStarModel(numIntermediate+1);
       part2 += x; 
       if (print_status == 1 && fit_status == 1) { 
-        cout << "msglen(# int points): " << x << endl;
+        cout << "msglen(# of int points): " << x << endl;
       }
  
       if (numIntermediate < 3) {
@@ -620,7 +622,7 @@ double Segment::messageLength(BezierCurve &curve,
       x = msg1.encodeUsingLogStarModel(numIntermediate+1);
       part2 += x; 
       if (print_status == 1 && fit_status == 1) { 
-        cout << "msglen(# int points): " << x << endl;
+        cout << "msglen(# of int points): " << x << endl;
       }
 
       if (numIntermediate < 2) {
