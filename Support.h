@@ -3,8 +3,19 @@
 
 #include "Header.h"
 
-void parseCommandLineInput (int, char **, vector<int> &, string &, 
-                            vector<string> &, vector<int> &);
+struct Parameters
+{
+  string file;
+  int structure; // Protein or General or Test
+  int portion_to_fit; // Fit entire protein or a segment
+  int print_status; // verbose or not 
+  vector<string> end_points;
+  vector<int> controls;
+  double max_sigma;
+  int max_segment_length;
+};
+
+struct Parameters parseCommandLineInput (int, char **); 
 void Usage (const char *, options_description &);
 bool checkFile (const char *);
 ProteinStructure *parsePDBFile (const char *);

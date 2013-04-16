@@ -2,7 +2,7 @@ load ../modified_pdb_files/pdb1hh0.pdb
 hide
 show cartoon
 select curve1, chain Y and resi C1
-set_color c1 = [0.811765,0.509804,0.462745]
+set_color c1 = [0.235294,0.294118,0.886275]
 select seg1, chain A and resi 1-46
 print cmd.distance("chain A and resi 1 and name CA","resi R1 and name A1")
 hide label

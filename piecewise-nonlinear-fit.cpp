@@ -2,29 +2,21 @@
 
 int main(int argc, char **argv)
 {
-  string file;
-  vector<int> flags(3,0);
-  vector<string> end_points;
-  vector<int> controls;
-  parseCommandLineInput(argc,argv,flags,file,end_points,controls);
-  //cout << end_points[0] << " " << end_points[1] << endl;
+  struct Parameters parameters = parseCommandLineInput(argc,argvs);
 
   clock_t c_start = clock();
   auto t_start = high_resolution_clock::now();
 
-  // flags[0] -- kind of fit (test/protein/generic)
-  // flags[1] -- for fitting an individual segment
-  // flags[2] -- verbose flag
-  switch(flags[0]) {
-    case TEST_FIT:   // test
+  switch(parameters.structure) {
+    case TEST:   // test
       testFit(controls,flags[1],flags[2],end_points);
       break;
 
-    case PROTEIN_FIT:   // protein file
+    case PROTEIN:   // protein file
       proteinFit(file,controls,flags[1],flags[2],end_points);
       break;
 
-    case GENERAL_FIT:   // general 3D structure
+    case GENERAL:   // general 3D structure
       generalFit(file,controls,flags[1],flags[2],end_points);
       break;
   }

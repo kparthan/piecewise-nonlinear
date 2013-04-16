@@ -9,30 +9,32 @@
  *  command line output.
  *  \param argc an integer
  *  \param argv an array of strings
- *  \param flags a reference to a vector<int>
- *  \param file a reference to a string
- *  \param end_points a reference to a vector<string>
- *  \param controls a reference to a vector<int>
+ *  \return the parameters of the model
  */
-void parseCommandLineInput(int argc, char **argv, vector<int> &flags, string &file, 
-                           vector<string> &end_points, vector<int> &controls)
+struct Parameters parseCommandLineInput(int argc, char **argv)
 {
-  flags[0] = -1;
-  //flags[1] = FIT_ENTIRE_PROTEIN;
-  bool noargs = 1;
-  cout << "Checking command-line input ..." << endl;
+  struct Parameters parameters;
 
+  parameters.structure = -1;
+  bool noargs = 1;
+
+  cout << "Checking command-line input ..." << endl;
   options_description desc("Allowed options");
   desc.add_options()
        ("help","produce help message")
        ("test","perform a demo")
        ("verbose","print some details")
-       ("protein",value<string>(&file),"pdb file")
-       ("generic",value<string>(&file),"general 3D structure")
-       ("segment",value<vector<string>>(&end_points)->multitoken(),"segment")
-      // ("fit",value<string>,"fit an entire protein or just a portion")
-       ("controls",value<vector<int>>(&controls)->multitoken(),
+       ("protein",value<string>(&parameters.file),"pdb file")
+       ("generic",value<string>(&parameters.file),"general 3D structure")
+       ("segment",value<vector<string>>(&parameters.end_points)->multitoken(),
+                                  "segment to be fit")
+       // TODO: ("fit",value<string>,"fit an entire protein or just a portion")
+       ("controls",value<vector<int>>(&parameters.controls)->multitoken(),
                                   "intermediate control points [0,1,2]")
+       ("sigma",value<double>(&parameters.max_sigma),
+                                  "maximum value of standard deviation allowed")
+       ("length",value<int>(&parameters.max_segment_length),
+                                  "maximum length of the segment considered")
   ;
   variables_map vm;
   store(parse_command_line(argc,argv,desc),vm);
@@ -44,18 +46,18 @@ void parseCommandLineInput(int argc, char **argv, vector<int> &flags, string &fi
   
   if (vm.count("test")) {
     cout << "Running a demo..." << endl;
-    flags[0] = TEST_FIT;
+    parameters.structure = TEST;
     noargs = 0;
   }
 
   if (vm.count("verbose")) {
-    flags[2] = PRINT;
+    parameters.print_status = PRINT;
   }
 
   if (vm.count("protein")) {
-    if (flags[0] != TEST_FIT) {
+    if (parameters.structure != TEST) {
       cout << "Using pdb file: " << vm["protein"].as<string>() << endl;
-      flags[0] = PROTEIN_FIT;
+      parameters.structure = PROTEIN;
       noargs = 0;
     } else {
       cout << "Please specify one of --test or --protein" << endl;
@@ -64,25 +66,25 @@ void parseCommandLineInput(int argc, char **argv, vector<int> &flags, string &fi
   }
 
   if (vm.count("generic")) {
-    if (flags[0] == TEST_FIT) {
+    if (parameters.structure == TEST) {
       cout << "Please specify one of --test or --protein" << endl;
       Usage(argv[0],desc);
-    } else if (flags[0] == PROTEIN_FIT) {
+    } else if (parameters.structure == PROTEIN) {
       cout << "Please specify one of --protein or --generic" << endl;
       Usage(argv[0],desc);
     } else {
       cout << "Using structure file: " << vm["generic"].as<string>() 
       << endl;
-      flags[0] = GENERAL_FIT;
+      parameters.structure = GENERAL;
       noargs = 0;
     }
   }
 
   if (vm.count("segment")) {
     cout << "Fitting a single segment between the residues "
-         << "[" << end_points[1] << ", " << end_points[2] << "] of chain "
-         << end_points[0] << endl;
-    flags[1] = FIT_SINGLE_SEGMENT;
+         << "[" << parameters.end_points[1] << ", " << parameters.end_points[2]
+         << "] of chain " << parameters.end_points[0] << endl;
+    parameters.portion_to_fit = FIT_SINGLE_SEGMENT;
   }
 /*
   if (vm.count("fit")) {
@@ -96,19 +98,36 @@ void parseCommandLineInput(int argc, char **argv, vector<int> &flags, string &fi
   }
 */
   if (vm.count("controls")) {
-    for (int i=0; i<controls.size(); i++) {
-      if (controls[i] < 0 || controls[i] > MAX_INTERMEDIATE_CONTROL_POINTS) {
-        cout << "# of intermediate control points: " << controls[i]
+    for (int i=0; i<parameters.controls.size(); i++) {
+      if (parameters.controls[i] < 0 || 
+          parameters.controls[i] > MAX_INTERMEDIATE_CONTROL_POINTS) {
+        cout << "# of intermediate control points: " << parameters.controls[i]
         << " not supported" << endl;
         Usage(argv[0],desc);
       }
     } 
   }
 
+  if (vm.count("sigma")) {
+    cout << "Maximum value of standard deviation for the deviations of the "
+         << "intermediate points set to: " << vm["sigma"].as<double>() << endl;
+  } else {
+    parameters.max_sigma = -1;
+  }
+
+  if (vm.count("length")) {
+    cout << "Maximum length of the segment considered: " 
+         << vm["length"].as<int>() << endl;
+  } else {
+    parameters.max_segment_length = 0;
+  }
+
   if (noargs) {
     cout << "Not enough arguments supplied..." << endl;
     Usage(argv[0],desc);
   }
+
+  return parameters;
 }
 
 /*!
