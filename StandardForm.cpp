@@ -4,18 +4,11 @@
 /*!
  *  \brief This is a constructor function which is used to instantiate the
  *  object
- *  \param file a string
+ *  \param parameters a reference to a struct Parameters
  *  \param s a reference to a Structure
- *  \param controls a reference to a vector<int>
- *  \param status an integer
- *  \param end_points a reference to a vector<string>
  */
-StandardForm::StandardForm(string file, Structure *s, vector<int> &controls,
-                           int fit_status, int print_status,
-                           vector<string> &end_points) : 
-                           file(file), structure(s), controls(controls), 
-                           volume(0), fit_status(fit_status), 
-                           print_status(print_status), end_points(end_points)
+StandardForm::StandardForm(struct Parameters &parameters, Structure *s) :
+                           parameters(parameters), structure(s)
 {
   original_coordinates = structure->getCoordinates();
   numResidues = original_coordinates.size();
@@ -24,7 +17,7 @@ StandardForm::StandardForm(string file, Structure *s, vector<int> &controls,
     vector<double> tmp(numResidues,0);
     codeLength.push_back(tmp);
   }
-  if (controls.size() > 0) {
+  if (parameters.controls.size() > 0) {
     for (int i=0; i<numResidues; i++) {
       vector<OptimalFit> tmp(numResidues,OptimalFit());
       optimalBezierFit.push_back(tmp);
@@ -123,7 +116,7 @@ Segment StandardForm::getSegment(unsigned i, unsigned j)
   for (int k=0; k<numPoints; k++){
     coordinates.push_back(getCoordinates(i+k));
   }
-  return Segment(coordinates,fit_status,print_status,volume);
+  return Segment(coordinates,parameters,volume);
 }
 
 /*!
@@ -146,35 +139,35 @@ void StandardForm::transform(void)
 {
   cout << "Transforming the protein to a standard canonical form ...\n";
   updateCoordinates();
-  if(print_status) {
+  if(parameters.print == PRINT_DETAIL) {
     writeToFile(coordinates,"output/before_translation");
   }
 
   /* translate the protein so that first point is at origin */
   translateToOrigin();
   updateCoordinates();
-  if(print_status) {
+  if(parameters.print == PRINT_DETAIL) {
     writeToFile(coordinates,"output/after_translation");
   }
 
   /* move the last point onto the X-axis */
   rotateLastPoint();
   updateCoordinates();
-  if(print_status) {
+  if(parameters.print == PRINT_DETAIL) {
     writeToFile(coordinates,"output/rotate_last_point");
   }
 
   /* rotate second point of the protein onto the XY plane */
   rotateSecondPoint();
   updateCoordinates();
-  if(print_status) {
+  if(parameters.print == PRINT_DETAIL) {
     writeToFile(coordinates,"output/rotate_second_point");
   }
 
   /* overall transformation matrix */
   transformationMatrix();
 
-  if(print_status) {
+  if(parameters.print == PRINT_DETAIL) {
     /* validate transformation */
     structure->validateTransformation(transformation);
   }
@@ -191,7 +184,7 @@ void StandardForm::transformationMatrix()
   rotation.changeDimensions(4,4);
   rotation[3][3] = 1;
   transformation = rotation * translation;
-  if (print_status) {
+  if(parameters.print == PRINT_DETAIL) {
     ofstream fw("output/transformation_matrices");
     fw << "Transformation matrix:" << endl;
     for (int i=0; i<4; i++) {
@@ -406,7 +399,7 @@ void StandardForm::fitModels()
   /* Null model fit */
   fitNullModel();
 
-  if (controls.size() == 0) {
+  if (parameters.controls.size() == 0) {
     /* Linear model fit */
     fitLinearModel();
   } else {
@@ -430,7 +423,7 @@ void StandardForm::boundingBox()
   double zmin = getMinimum(2);
   double zmax = getMaximum(2);
   volume =  (xmax-xmin)*(ymax-ymin)*(zmax-zmin); 
-  if (print_status) {
+  if(parameters.print == PRINT_DETAIL) {
     cout << "boundary values:\n";
     cout << xmin << " " << xmax << endl;
     cout << ymin << " " << ymax << endl;
@@ -492,15 +485,16 @@ void StandardForm::fitBezierCurveModel()
 {
   cout << "*** BEZIER CURVE FIT ***" << endl;
 
-  if (fit_status == FIT_ENTIRE_PROTEIN) {
+  if (parameters.portion_to_fit == FIT_ENTIRE_STRUCTURE) {
     /* compute the code length matrix for the Bezier curve fit */
     computeCodeLengthMatrixBezier();
 
     /* compute the optimal segmentation using dynamic programming */
     pair<double,vector<int>> segmentation = optimalSegmentation();
     printBezierSegmentation(segmentation);
-    structure->reconstruct(file,optimalBezierFit,segmentation.second,transformation);
-  } else if (fit_status == FIT_SINGLE_SEGMENT) {
+    structure->reconstruct(parameters.file,optimalBezierFit,segmentation.second,
+                           transformation);
+  } else if (parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
     fitOneSegment();
   }
 }
@@ -510,17 +504,17 @@ void StandardForm::fitBezierCurveModel()
  */
 void StandardForm::fitOneSegment()
 {
-  array<int,2> indexes = structure->getEndPoints(end_points);
+  array<int,2> indexes = structure->getEndPoints(parameters.end_points);
   Segment segment = getSegment(indexes[0],indexes[1]);
   segment.estimateFreeParameters();
   OptimalFit min_fit, current_fit;
-  cout << "\nFit (" << controls[0] << " intermediate control points):- ";
-  min_fit = segment.fitBezierCurve(controls[0]);
+  cout << "\nFit (" << parameters.controls[0] << " intermediate control points):- ";
+  min_fit = segment.fitBezierCurve(parameters.controls[0]);
   min_fit.printFitInfo();
   cout << "------------------------------------------------" << endl;
-  for (int k=1; k<controls.size(); k++) {
-    cout << "\nFit (" << controls[k] << " intermediate control points):- "; 
-    current_fit = segment.fitBezierCurve(controls[k]);
+  for (int k=1; k<parameters.controls.size(); k++) {
+    cout << "\nFit (" << parameters.controls[k] << " intermediate control points):- "; 
+    current_fit = segment.fitBezierCurve(parameters.controls[k]);
     current_fit.printFitInfo();
     cout << "------------------------------------------------" << endl;
     if (current_fit < min_fit) {
@@ -594,9 +588,9 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
       Segment segment = getSegment(i,j);
       segment.estimateFreeParameters();
       OptimalFit min_fit,current_fit;
-      min_fit = segment.fitBezierCurve(controls[0]);
-      for (int k=1; k<controls.size(); k++) {
-        current_fit = segment.fitBezierCurve(controls[k]);
+      min_fit = segment.fitBezierCurve(parameters.controls[0]);
+      for (int k=1; k<parameters.controls.size(); k++) {
+        current_fit = segment.fitBezierCurve(parameters.controls[k]);
         if (current_fit < min_fit) {
           min_fit = current_fit;
         }
@@ -608,7 +602,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
     }
   }
   //#pragma omp parallel for private(j)
-  if (print_status == 1) {
+  if(parameters.print == PRINT_DETAIL) {
     for (i=0; i<numResidues; i++) {
       for (j=i+1; j<numResidues; j++) {
         codeLength[i][j] = optimalBezierFit[i][j].getMessageLength();
@@ -708,13 +702,13 @@ pair<double,vector<int>> StandardForm::optimalSegmentation(void)
  */
 string StandardForm::createOutputFile(bool status)
 {
-  string filtered = extractName(file);
+  string filtered = extractName(parameters.file);
   string output_file;
   if (status) {
     output_file = "output/segmentation/";
     output_file = output_file + filtered + "_";
-    for (int i=0; i<controls.size(); i++) {
-      output_file += boost::lexical_cast<string>(controls[i]); 
+    for (int i=0; i<parameters.controls.size(); i++) {
+      output_file += boost::lexical_cast<string>(parameters.controls[i]); 
     }
   } else {
     output_file = "output/segmentation/linear_";
@@ -735,7 +729,7 @@ void StandardForm::printLinearSegmentation(pair<double,vector<int>>
 
   int i;
   vector<int> segments = segmentation.second;
-  fw << "Using structure file: " << file << endl;
+  fw << "Using structure file: " << parameters.file << endl;
   fw << "Doing a LINEAR segmentation ..." << endl << endl;
   fw << "# of residues: " << getNumberOfResidues() << endl;
   cout << "# of linear segments: " << segments.size()-1 << endl;
@@ -775,7 +769,7 @@ void StandardForm::printBezierSegmentation(pair<double,vector<int>>
 
   int i;
   vector<int> segments = segmentation.second;
-  fw << "Using structure file: " << file << endl;
+  fw << "Using structure file: " << parameters.file << endl;
   fw << "Doing a BEZIER segmentation ..." << endl << endl;
   fw << "# of residues: " << getNumberOfResidues() << endl;
   cout << "# of non-linear segments: " << segments.size()-1 << endl;

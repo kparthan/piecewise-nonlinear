@@ -3,24 +3,24 @@ Doing a BEZIER segmentation ...
 
 # of residues: 77
 # of non-linear segments: 7
-0-->10-->19-->41-->51-->61-->62-->76
+0-->10-->19-->41-->51-->61-->68-->76
 
-Best fit: 3133.12 bits.
-Bits per residue: 41.2252
+Best fit: 3094.28 bits.
+Bits per residue: 40.7143
 
 Segment # 1
 Residue stretch: [0, 10]
 Length of the segment: 11
 		# of intermediate control points: 1
 		Control Point # 1: (16, 3, 7.6)
-		Message length: 401.374
+		Message length: 395.154
 
 Segment # 2
 Residue stretch: [10, 19]
 Length of the segment: 10
 		# of intermediate control points: 1
 		Control Point # 1: (13.2, 13, 7.6)
-		Message length: 368.117
+		Message length: 361.901
 
 Segment # 3
 Residue stretch: [19, 41]
@@ -28,31 +28,30 @@ Length of the segment: 23
 		# of intermediate control points: 2
 		Control Point # 1: (18.8, -16, -7.9)
 		Control Point # 2: (21.2, 27, -0.3)
-		Message length: 914.191
+		Message length: 907.946
 
 Segment # 4
 Residue stretch: [41, 51]
 Length of the segment: 11
 		# of intermediate control points: 0
-		Message length: 412.088
+		Message length: 405.873
 
 Segment # 5
 Residue stretch: [51, 61]
 Length of the segment: 11
 		# of intermediate control points: 1
 		Control Point # 1: (21.8, -7.9, -13)
-		Message length: 418.028
+		Message length: 411.807
 
 Segment # 6
-Residue stretch: [61, 62]
-Length of the segment: 2
+Residue stretch: [61, 68]
+Length of the segment: 8
 		# of intermediate control points: 0
-		Message length: 46.7142
+		Message length: 288.607
 
 Segment # 7
-Residue stretch: [62, 76]
-Length of the segment: 15
-		# of intermediate control points: 1
-		Control Point # 1: (6.5, 7.2, 20.4)
-		Message length: 572.605
+Residue stretch: [68, 76]
+Length of the segment: 9
+		# of intermediate control points: 0
+		Message length: 322.997
 

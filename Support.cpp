@@ -32,8 +32,8 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        // TODO: ("fit",value<string>,"fit an entire protein or just a portion")
        ("controls",value<vector<int>>(&parameters.controls)->multitoken(),
                                   "intermediate control points [0,1,2]")
-       ("constrain",value<vector<string>>(&constrain),"to constrain the maximum 
-                          segment length and/or the maximum standard deviation")
+       ("constrain",value<vector<string>>(&constrain),
+        "to constrain the maximum segment length and/or the maximum standard deviation")
        ("sigma",value<double>(&parameters.max_sigma),
                                   "maximum value of standard deviation allowed")
        ("length",value<int>(&parameters.max_segment_length),
@@ -85,6 +85,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     }
   }
 
+  parameters.portion_to_fit = FIT_ENTIRE_STRUCTURE;
   if (vm.count("segment")) {
     cout << "Fitting a single segment between the residues "
          << "[" << parameters.end_points[1] << ", " << parameters.end_points[2]
@@ -116,7 +117,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
   parameters.constrain_sigma = NON_CONSTRAIN;
   parameters.constrain_segment_length = NON_CONSTRAIN;
   if (vm.count("constrain")) {
-    for (int i=0; i<constrain.length(); i++) {
+    for (int i=0; i<constrain.size(); i++) {
       if (constrain[i].compare("sigma") == 0) {
         parameters.constrain_sigma = CONSTRAIN;
       } else if (constrain[i].compare("length") == 0) {
@@ -128,6 +129,8 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     }
   }
 
+  parameters.min_sigma = MIN_SIGMA;
+  parameters.max_sigma = MAX_SIGMA;
   if (parameters.constrain_sigma == CONSTRAIN) {
     if (vm.count("sigma")) {
       cout << "Maximum value of standard deviation for the deviations of the "
@@ -147,6 +150,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     }
   }
   
+  parameters.max_segment_length = MAX_SEGMENT_LENGTH;
   if (parameters.constrain_segment_length == CONSTRAIN) {
     if (vm.count("length")) {
       cout << "Maximum length of the segment considered: " 
@@ -171,6 +175,22 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     Usage(argv[0],desc);
   }
 
+  cout << parameters.file << endl; 
+  cout << parameters.structure << endl; 
+  cout << parameters.portion_to_fit << endl; 
+  cout << parameters.print << endl; 
+  for (int i=0; i<parameters.end_points.size(); i++) {  
+    cout << parameters.end_points[i] << " ";
+  }cout << endl;
+  for (int i=0; i<parameters.controls.size(); i++) {  
+    cout << parameters.controls[i] << " ";
+  }cout << endl;
+  cout << parameters.constrain_sigma << endl; 
+  cout << parameters.min_sigma << endl; 
+  cout << parameters.max_sigma << endl; 
+  cout << parameters.constrain_segment_length << endl; 
+  cout << parameters.max_segment_length << endl; 
+
   return parameters;
 }
 
@@ -188,13 +208,9 @@ void Usage (const char *exe, options_description &desc)
 
 /*!
  *  \brief This module generates test data and fits a model to it.
- *  \param controls a reference to a vector<int>
- *  \param fit_status an integer
- *  \param print_status an integer
- *  \param end_points a reference to a vector<int>
+ *  \param parameters a reference to a struct Parameters
  */
-void testFit(vector<int> &controls, int fit_status, int print_status,
-             vector<string> &end_points)
+void testFit(struct Parameters &parameters)
 {
   string file;
   Point<double> sp(10,-3,30);
@@ -208,50 +224,37 @@ void testFit(vector<int> &controls, int fit_status, int print_status,
   vector<Point<double>> data = test.testData();
   General general(data);
   Structure *structure = &general;
-  StandardForm shape(file,structure,controls,fit_status,print_status,
-                     end_points);
+  StandardForm shape(parameters,structure);
   shape.fitModels();
 }
 
 /*!
  *  \brief This module fits a model to a protein structure
- *  \param file a string
- *  \param controls a reference to a vector<int>
- *  \param fit_status an integer
- *  \param print_status an integer
- *  \param end_points a reference to a vector<int>
+ *  \param parameters a reference to a struct Parameters
  */
-void proteinFit(string file, vector<int> &controls, int fit_status, 
-                int print_status, vector<string> &end_points)
+void proteinFit(struct Parameters &parameters)
 {
   /* Obtain protein coordinates */
-  ProteinStructure *p = parsePDBFile(file.c_str());
+  ProteinStructure *p = parsePDBFile(parameters.file.c_str());
   Protein protein(p);
   Structure *structure = &protein;
 
-  StandardForm shape(file,structure,controls,fit_status,print_status,
-                       end_points);
+  StandardForm shape(parameters,structure);
   shape.fitModels();
 }
 
 /*!
  *  \brief This module fits a model to a general 3D structure
- *  \param file a string
- *  \param controls a reference to a vector<int>
- *  \param fit_status an integer
- *  \param print_status an integer
- *  \param end_points a reference to a vector<int>
+ *  \param parameters a reference to a struct Parameters
  */
-void generalFit(string file, vector<int> &controls, int fit_status, 
-                int print_status, vector<string> &end_points)
+void generalFit(struct Parameters &parameters)
 {
   /* Obtain structure coordinates */
-  vector<Point<double>> coordinates = parseFile(file.c_str());
+  vector<Point<double>> coordinates = parseFile(parameters.file.c_str());
   General general(coordinates);
   Structure *structure = &general;
 
-  StandardForm shape(file,structure,controls,fit_status,print_status,
-                     end_points);
+  StandardForm shape(parameters,structure);
   shape.fitModels();
 }
 
@@ -397,9 +400,7 @@ double estimateVariance(vector<double> &samples, double mean)
   variance /= samples.size();
   if (variance < 9 * AOM * AOM){
     return 9 * AOM * AOM;
-  } /*else if (variance > 16) {
-    return 16;
-  }*/ else {
+  } else {
     return variance;
   }
 }
@@ -418,11 +419,9 @@ double estimateVariance(vector<double> &samples)
     variance += (samples[i] - mean) * (samples[i] - mean);
   }
   variance /= samples.size() - 1;
-  if (variance < 9 * AOM * AOM){
+  if (variance < 9 * AOM * AOM) {
     return 9 * AOM * AOM;
-  } /*else if (variance > 16) {
-    return 16;
-  }*/ else {
+  } else {
     return variance;
   }
 }

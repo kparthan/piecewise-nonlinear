@@ -1,19 +1,16 @@
 #include "Segment.h"
 #include "Message.h"
-#include "Support.h"
 
 /*!
  *  \brief constructor function used for instantiation
  *  \param coordinates a vector<array<double,3>>
- *  \param atoms a vector<Atom>
- *  \param fit_status an integer
- *  \param print_status an integer
+ *  \param parameters a reference to a struct Parameters
  *  \param volume a double
  */
-Segment::Segment(vector<array<double,3>> &coordinates, int fit_status,
-                 int print_status, double volume): 
-                 coordinates(coordinates), volume(volume),
-                 fit_status(fit_status), print_status(print_status)
+Segment::Segment(vector<array<double,3>> &coordinates, 
+                 struct Parameters &parameters, double volume): 
+                 coordinates(coordinates), parameters(parameters), 
+                 volume(volume)
 {
   numPoints = coordinates.size();
   numIntermediate = numPoints - 2;
@@ -260,7 +257,7 @@ double Segment::messageLength(vector<array<double,3>> &deviations)
     msglen += msg1.encodeUsingNullModel(volume,AOM); 
 
     /* message length to state the deviations */
-    Message msg2(deviations);
+    Message msg2(deviations,parameters);
     msglen += msg2.encodeUsingNormalModel();
   }
 
@@ -386,8 +383,6 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
   BezierCurve curve(controlPoints);
   vector<array<double,3>> deviations = computeDeviations(curve);
   double msglen = messageLength(curve,deviations);
-  //double sigma = rootMeanSquaredError(curve);
-  //double msglen = messageLengthMML(curve,sigma);
   return OptimalFit(controlPoints,msglen);
 }
 
@@ -494,7 +489,7 @@ vector<array<double,3>> Segment::getDeviations(BezierCurve &curve)
     deviations.push_back(d);
     tmin_prev = tmin_current;
   }
-  if (print_status == 1 && fit_status == 1) {
+  if (parameters.print == PRINT_DETAIL && parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
     string file("output/dev_bezier_");
     file += boost::lexical_cast<string>(curve.getDegree()-1);
     ofstream dev_bezier(file.c_str());
@@ -525,7 +520,8 @@ double Segment::messageLength(BezierCurve &curve,
   Message msg1;
   x = msg1.encodeUsingNullModel(volume,AOM); 
   part1 += x;
-  if (print_status == 1 && fit_status == 1) { 
+  if (parameters.print == PRINT_DETAIL && 
+      parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
     cout << "\nmsglen(end point): " << x << endl;
   }
 
@@ -537,11 +533,13 @@ double Segment::messageLength(BezierCurve &curve,
       numIntermediateControlPoints = 0;
       x = msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
       part1 += x; 
-      if (print_status == 1 && fit_status == 1) { 
+      if (parameters.print == PRINT_DETAIL && 
+          parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
         cout << "msglen(#int cps): " << x << endl;
       }
       /* message length to state the control points */
-      if (print_status == 1 && fit_status == 1) { 
+      if (parameters.print == PRINT_DETAIL && 
+          parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
         cout << "msglen(int cps): 0" << endl;
       }
       break;
@@ -552,13 +550,15 @@ double Segment::messageLength(BezierCurve &curve,
         numIntermediateControlPoints = curve.getDegree() - 1;
         x = msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
         part1 += x; 
-        if (print_status == 1 && fit_status == 1) { 
+        if (parameters.print == PRINT_DETAIL && 
+            parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
           cout << "msglen(# of int cps): " << x << endl;
         }
         /* message length to state the control points */
         x = numIntermediateControlPoints * msg1.encodeUsingNullModel(volume,AOPV);
         part1 += x; 
-        if (print_status == 1 && fit_status == 1) { 
+        if (parameters.print == PRINT_DETAIL && 
+            parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
           cout << "msglen(int cps): " << x << endl;
         }
       } else {
@@ -566,11 +566,13 @@ double Segment::messageLength(BezierCurve &curve,
         numIntermediateControlPoints = 0;
         x = msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
         part1 += x; 
-        if (print_status == 1 && fit_status == 1) { 
+        if (parameters.print == PRINT_DETAIL && 
+            parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
           cout << "msglen(# of int cps): " << x << endl;
         }
         /* message length to state the control points */
-        if (print_status == 1 && fit_status == 1) { 
+        if (parameters.print == PRINT_DETAIL && 
+            parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
           cout << "msglen(int cps): 0" << endl;
         }
       }
@@ -578,39 +580,44 @@ double Segment::messageLength(BezierCurve &curve,
   }
 
   /* first part description ends */
-  if (print_status == 1 && fit_status == 1) { 
+  if (parameters.print == PRINT_DETAIL && 
+      parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
     cout << "\tmsglen(first part): " << part1 << endl;
   }
   
   // SECOND PART
   /* message length to state the number of intermediate deviations if any */  
-  Message msg2(deviations);
+  Message msg2(deviations,parameters);
   switch(curve.getDegree()) {
     case 1:
       /* message length to state the number of intermediate points */
       x = msg1.encodeUsingLogStarModel(numIntermediate+1);
       part2 += x; 
-      if (print_status == 1 && fit_status == 1) { 
+      if (parameters.print == PRINT_DETAIL && 
+          parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
         cout << "msglen(# of int points): " << x << endl;
       }
  
       if (numIntermediate < 3) {
         x = numIntermediate * msg1.encodeUsingNullModel(volume,AOM);
         part2 += x;
-        if (print_status == 1 && fit_status == 1) { 
+        if (parameters.print == PRINT_DETAIL && 
+            parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
           cout << "msglen(int points): " << x << endl;
         }
       } else { 
         /* state the first intermediate point to construct the plane */
         x = msg1.encodeUsingNullModel(volume,AOM);
         part2 += x;
-        if (print_status == 1 && fit_status == 1) { 
+        if (parameters.print == PRINT_DETAIL && 
+            parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
           cout << "msglen(int point for plane): " << x << endl;
         }
         /* state the deviations */
         x = msg2.encodeUsingNormalModel();
         part2 += x;
-        if (print_status == 1 && fit_status == 1) { 
+        if (parameters.print == PRINT_DETAIL && 
+            parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
           cout << "msglen(deviations): " << x << endl;
           cout << "msglen(deviations)/residue: " << x/(numIntermediate-1) << endl;
         }
@@ -621,21 +628,24 @@ double Segment::messageLength(BezierCurve &curve,
       /* message length to state the number of intermediate points */
       x = msg1.encodeUsingLogStarModel(numIntermediate+1);
       part2 += x; 
-      if (print_status == 1 && fit_status == 1) { 
+      if (parameters.print == PRINT_DETAIL && 
+          parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
         cout << "msglen(# of int points): " << x << endl;
       }
 
       if (numIntermediate < 2) {
         x = numIntermediate * msg1.encodeUsingNullModel(volume,AOM);
         part2 += x;
-        if (print_status == 1 && fit_status == 1) { 
+        if (parameters.print == PRINT_DETAIL && 
+            parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
           cout << "msglen(int points): " << x << endl;
         }
       } else {
         /* state the deviations */
         x = msg2.encodeUsingNormalModel();
         part2 += x;
-        if (print_status == 1 && fit_status == 1) { 
+        if (parameters.print == PRINT_DETAIL && 
+            parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
           cout << "msglen(deviations): " << x << endl;
           cout << "msglen(deviations)/residue: " << x/numIntermediate << endl;
         }
@@ -644,7 +654,8 @@ double Segment::messageLength(BezierCurve &curve,
   }
 
   /* second part description ends */
-  if (print_status == 1 && fit_status == 1) { 
+  if (parameters.print == PRINT_DETAIL && 
+      parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
     cout << "\tmsglen(second part): " << part2 << endl << endl;
   }
 

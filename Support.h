@@ -12,6 +12,7 @@ struct Parameters
   vector<string> end_points;
   vector<int> controls;
   int constrain_sigma;
+  double min_sigma;
   double max_sigma;
   int constrain_segment_length;
   int max_segment_length;

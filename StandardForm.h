@@ -14,8 +14,8 @@
 class StandardForm
 {
   private:
-    //! Name of the structure file
-    string file;
+    //! Model parameters
+    struct Parameters parameters;
 
     //! Stores the standard canonical form
     Structure *structure;
@@ -25,16 +25,6 @@ class StandardForm
 
     //! Number of intermediate control points to be used
     vector<int> controls;
-
-    //! Status to determine whether the whole protein or a
-    //! part of it is used to fit Bezier curve
-    int fit_status;
-
-    //! Output flag
-    int print_status;
-
-    //! End points of a segment
-    vector<string> end_points;
 
     //! Cartesian coordinates of the protein structure
     vector<array<double,3>> original_coordinates,coordinates;
@@ -56,7 +46,7 @@ class StandardForm
 
   public:
     //! Constructor
-    StandardForm(string, Structure *, vector<int> &, int, int, vector<string> &);
+    StandardForm(struct Parameters &, Structure *);
 
                             /* Accessor functions */
     //! Gets the number of residues

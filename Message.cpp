@@ -1,4 +1,3 @@
-#include "Support.h"
 #include "Message.h"
 
 /*!
@@ -11,8 +10,10 @@ Message::Message()
 /*!
  *  \brief This is a constructor function used to instantiate the object
  *  \param deviations a reference to a vector<array<double,3>>
+ *  \param parameters a reference to a struct Parameters
  */
-Message::Message(vector<array<double,3>> &deviations)
+Message::Message(vector<array<double,3>> &deviations, 
+                 struct Parameters &parameters) : parameters(parameters)
 {
   vector<double> tmp;
   for (int i=0; i<3; i++){
@@ -66,34 +67,41 @@ double Message::encodeUsingNormalModel()
 {
   double msglen = 0;
   double mean,variance;
-
-  double rangeMu = 10.0;
-  double rangeSigma = 2.0;
-  int i; double x;
+  double range_mu = 10.0;
+  double range_log_sigma = log(parameters.max_sigma/parameters.min_sigma);
+  int i; 
+  double x;
 
   /* state the first two deviations using mean of 0 */
   for (i=0; i<2; i++){
     mean = 0;
     variance = estimateVariance(samples[i],mean);
-    if (variance > 9){
-      x = LARGE_NUMBER;
+    if (parameters.constrain_sigma == CONSTRAIN &&
+        (variance > parameters.max_sigma * parameters.max_sigma)) {
+        x = LARGE_NUMBER;
     } else {
-      x = encodeWallaceFreeman(samples[i].size(),variance);
+      x = encodeWallaceFreeman(samples[i].size(),variance,range_log_sigma);
     }
-    //cout << "sigma(" << i + 1 << "): " << sqrt(variance) << endl;
-    //cout << "msglen (dev " << i+1 << "): " << x << endl;
+    if (parameters.print == PRINT_DETAIL &&
+        parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
+      cout << "sigma(" << i + 1 << "): " << sqrt(variance) << endl;
+      cout << "msglen (dev " << i+1 << "): " << x << endl;
+    }
     msglen += x;
   }
   /* state the third deviation by estimating the mean */
-  mean = estimateMean(samples[i]);
-  variance = estimateVariance(samples[i],mean);
-    if (variance > 9){
+  variance = estimateVariance(samples[i]);
+  if (parameters.constrain_sigma == CONSTRAIN &&
+      (variance > parameters.max_sigma * parameters.max_sigma)) {
       x = LARGE_NUMBER;
-    } else {
-      x = encodeWallaceFreeman(samples[i].size(),mean,variance,rangeMu,rangeSigma);
-    }
-  //cout << "sigma(" << i + 1 << "): " << sqrt(variance) << endl;
-  //cout << "msglen (dev " << i+1 << "): " << x << endl;
+  } else {
+    x = encodeWallaceFreeman(samples[i].size(),variance,range_mu,range_log_sigma);
+  }
+  if (parameters.print == PRINT_DETAIL &&
+      parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
+    cout << "sigma(" << i + 1 << "): " << sqrt(variance) << endl;
+    cout << "msglen (dev " << i+1 << "): " << x << endl;
+  }
   msglen += x;
   return msglen;
 }
@@ -123,13 +131,15 @@ double Message::encodeUsingLogStarModel(double value)
  *  Wallace Freeman formulation (for one parameter)
  *  \param N an integer
  *  \param variance a double
+ *  \param range_log_sigma a double
  *  \return the encoding length(in bits)
  */
-double Message::encodeWallaceFreeman(int N, double variance)
+double Message::encodeWallaceFreeman(int N, double variance, 
+                                     double range_log_sigma)
 {
   double K1 = 1.0 / 12;
-  double R = 2.0;
-  double part1 = 0.5 * log(K1) + 0.5 * log(2 * N) + log(R);
+  //double R = 2.0;
+  double part1 = 0.5 * log(K1) + 0.5 * log(2 * N) + log(range_log_sigma);
   double part2 = 0.5 * (N+1) + (N/2.0)*log(2 * PI) - N * log(AOM)
                  + 0.5 * N * log(variance);
   return ((part1+part2)/log(2));
@@ -139,17 +149,16 @@ double Message::encodeWallaceFreeman(int N, double variance)
  *  \brief This module computes the encoded message length using
  *  Wallace Freeman formulation (for two parameters)
  *  \param N an integer
- *  \param mean a double
  *  \param variance a double
+ *  \param range_mu a double
+ *  \param range_log_sigma a double
  *  \return the encoding length(in bits)
  */
-double Message::encodeWallaceFreeman(int N, double mean, double variance,
-                                     double rangeMu, double rangeSigma)
+double Message::encodeWallaceFreeman(int N, double variance, double range_mu,
+                                     double range_log_sigma)
 {
   double K2 = 5.0 / (36 * sqrt(3));
-  //double rangeMu = 10.0;
-  //double rangeSigma = 3.0;
-  double msglen = 0.5 * (N+1) + log(K2) + log(rangeMu * rangeSigma)
+  double msglen = 0.5 * (N+1) + log(K2) + log(range_mu * range_log_sigma)
                   + 0.5 * log(2 * N * N) + (N/2.0)*log(2 * PI) - N * log(AOM)
                   + 0.5 * (N-1) * log(variance);
   return msglen/log(2);

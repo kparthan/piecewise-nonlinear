@@ -1,7 +1,7 @@
 #ifndef SEGMENT_H
 #define SEGMENT_H
 
-#include "Header.h"
+#include "Support.h"
 #include "BezierCurve.h"
 #include "OptimalFit.h"
 
@@ -11,8 +11,8 @@ class Segment
     //! Volume of the bounding box
     double volume;
 
-    //! Output flags
-    int fit_status, print_status;
+    //! Model parameters
+    struct Parameters parameters;
 
     //! Number of intermediate points
     int numIntermediate;
@@ -48,7 +48,7 @@ class Segment
 
   public:
     //! Constructor
-    Segment(vector<array<double,3>> &, int, int, double);
+    Segment(vector<array<double,3>> &, struct Parameters &, double);
 
                             /* Accessor functions */
     //! Gets number of intermediate points

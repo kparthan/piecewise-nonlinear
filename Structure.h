@@ -15,9 +15,9 @@ class Structure
 
     //! Types of structures
     enum StructureType {
-      DEFAULT,
-      PROTEIN,
-      GENERAL
+      DEFAULT_TYPE,
+      PROTEIN_TYPE,
+      GENERAL_TYPE
     };
 
     //! Gets the coordinates

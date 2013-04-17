@@ -3,14 +3,14 @@
 /*!
  *  \brief This is a null constructor.
  */
-Structure::Structure() : type(DEFAULT)
+Structure::Structure() : type(DEFAULT_TYPE)
 {}
 
 /*!
  *  \brief This is a constructor function
  *  \param coordinates a reference to a vector<Point<double>>
  */
-Structure::Structure(vector<Point<double>> &coordinates) : type(DEFAULT),
+Structure::Structure(vector<Point<double>> &coordinates) : type(DEFAULT_TYPE),
            coordinates(coordinates), original_coordinates(coordinates)
 {}
 

@@ -9,7 +9,7 @@
  */
 Protein::Protein(ProteinStructure *protein_structure) : protein(protein_structure)
 {
-  type = Structure::PROTEIN;
+  type = Structure::PROTEIN_TYPE;
   vector<Atom> atoms = protein->getAtoms();
   Point<double> p;
   for (int i=0; i<atoms.size(); i++) {

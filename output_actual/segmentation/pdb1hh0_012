@@ -5,13 +5,13 @@ Doing a BEZIER segmentation ...
 # of non-linear segments: 1
 0-->45
 
-Best fit: 1759.31 bits.
-Bits per residue: 39.0959
+Best fit: 1753.06 bits.
+Bits per residue: 38.9569
 
 Segment # 1
 Residue stretch: [0, 45]
 Length of the segment: 46
 		# of intermediate control points: 1
 		Control Point # 1: (41.5, -12.4, -8.9)
-		Message length: 1759.31
+		Message length: 1753.06
 

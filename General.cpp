@@ -7,7 +7,7 @@
  */
 General::General(vector<Point<double>> &coordinates) : Structure(coordinates)
 {
-  type = Structure::GENERAL;
+  type = Structure::GENERAL_TYPE;
 }
 
 /*!

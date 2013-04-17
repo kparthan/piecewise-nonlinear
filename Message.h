@@ -1,28 +1,31 @@
 #ifndef MESSAGE_H
 #define MESSAGE_H
 
-#include "Header.h"
+#include "Support.h"
 
 class Message
 {
   private:
+    //! Model parameters
+    struct Parameters parameters;
+
     //! Deviations as data samples
     vector<vector<double>> samples;
 
     //! Wallace Freeman formulation of message length (in bits)
     //! one parameter
-    double encodeWallaceFreeman(int, double); 
+    double encodeWallaceFreeman(int, double, double); 
 
     //! Wallace Freeman formulation of message length (in bits)
     //! two parameters
-    double encodeWallaceFreeman(int, double, double, double, double); 
+    double encodeWallaceFreeman(int, double, double, double); 
 
   public:
     //! Constructor
     Message() ;
 
     //! Constructor
-    Message(vector<array<double,3>> &);
+    Message(vector<array<double,3>> &, struct Parameters &);
 
     //! Computes the length of encoding (in bits) for encoding using a
     //! null model (bounding box)
