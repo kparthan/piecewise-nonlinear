@@ -6,12 +6,14 @@
 struct Parameters
 {
   string file;
-  int structure; // Protein or General or Test
+  int structure;      // Protein or General or Test
   int portion_to_fit; // Fit entire protein or a segment
-  int print_status; // verbose or not 
+  int print;          // verbose or not 
   vector<string> end_points;
   vector<int> controls;
+  int constrain_sigma;
   double max_sigma;
+  int constrain_segment_length;
   int max_segment_length;
 };
 
@@ -35,9 +37,9 @@ double minimum(vector<double> &);
 double minimum(vector<vector<double>> &);
 double bernstein(int, int, double);
 
-void testFit (vector<int> &, int, int, vector<string> &);
-void proteinFit (string, vector<int> &, int, int, vector<string> &);
-void generalFit (string, vector<int> &, int, int, vector<string> &);
+void testFit (struct Parameters &);
+void proteinFit (struct Parameters &);
+void generalFit (struct Parameters &);
 
 #endif
 

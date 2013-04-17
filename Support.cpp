@@ -14,6 +14,7 @@
 struct Parameters parseCommandLineInput(int argc, char **argv)
 {
   struct Parameters parameters;
+  vector<string> constrain;
 
   parameters.structure = -1;
   bool noargs = 1;
@@ -31,6 +32,8 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        // TODO: ("fit",value<string>,"fit an entire protein or just a portion")
        ("controls",value<vector<int>>(&parameters.controls)->multitoken(),
                                   "intermediate control points [0,1,2]")
+       ("constrain",value<vector<string>>(&constrain),"to constrain the maximum 
+                          segment length and/or the maximum standard deviation")
        ("sigma",value<double>(&parameters.max_sigma),
                                   "maximum value of standard deviation allowed")
        ("length",value<int>(&parameters.max_segment_length),
@@ -51,7 +54,9 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
   }
 
   if (vm.count("verbose")) {
-    parameters.print_status = PRINT;
+    parameters.print = PRINT_DETAIL;
+  } else {
+    parameters.print = PRINT_NON_DETAIL;
   }
 
   if (vm.count("protein")) {
@@ -108,18 +113,57 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     } 
   }
 
-  if (vm.count("sigma")) {
-    cout << "Maximum value of standard deviation for the deviations of the "
-         << "intermediate points set to: " << vm["sigma"].as<double>() << endl;
-  } else {
-    parameters.max_sigma = -1;
+  parameters.constrain_sigma = NON_CONSTRAIN;
+  parameters.constrain_segment_length = NON_CONSTRAIN;
+  if (vm.count("constrain")) {
+    for (int i=0; i<constrain.length(); i++) {
+      if (constrain[i].compare("sigma") == 0) {
+        parameters.constrain_sigma = CONSTRAIN;
+      } else if (constrain[i].compare("length") == 0) {
+        parameters.constrain_segment_length = CONSTRAIN;
+      } else {
+        cout << "Invalid constrain option supplied ..." << endl;
+        Usage(argv[0],desc);
+      }
+    }
   }
 
-  if (vm.count("length")) {
-    cout << "Maximum length of the segment considered: " 
-         << vm["length"].as<int>() << endl;
+  if (parameters.constrain_sigma == CONSTRAIN) {
+    if (vm.count("sigma")) {
+      cout << "Maximum value of standard deviation for the deviations of the "
+           << "intermediate points set to: " << vm["sigma"].as<double>() << endl;
+    } else {
+      parameters.max_sigma = MAX_SIGMA;
+      cout << "Using default value of maximum allowed standard deviation: " 
+           << MAX_SIGMA << endl;
+    }
   } else {
-    parameters.max_segment_length = 0;
+    if (vm.count("sigma")) {
+      cout << "Please indicate whether you would like to constrain "
+           << "sigma or not" << endl;
+      Usage(argv[0],desc);
+    } else {
+      cout << "Sigma is unconstrained ..." << endl;
+    }
+  }
+  
+  if (parameters.constrain_segment_length == CONSTRAIN) {
+    if (vm.count("length")) {
+      cout << "Maximum length of the segment considered: " 
+           << vm["length"].as<int>() << endl;
+    } else {
+      parameters.max_segment_length = MAX_SEGMENT_LENGTH;
+      cout << "Using default value of maximum segment length: " 
+           << MAX_SEGMENT_LENGTH << endl;
+    }
+  } else {
+    if (vm.count("length")) {
+      cout << "Please indicate whether you would like to constrain segment "
+           << "length or not" << endl;
+      Usage(argv[0],desc);
+    } else {
+      cout << "Segment length is unconstrained ..." << endl;
+    }
   }
 
   if (noargs) {

@@ -2,22 +2,22 @@
 
 int main(int argc, char **argv)
 {
-  struct Parameters parameters = parseCommandLineInput(argc,argvs);
+  struct Parameters parameters = parseCommandLineInput(argc,argv);
 
   clock_t c_start = clock();
   auto t_start = high_resolution_clock::now();
 
   switch(parameters.structure) {
     case TEST:   // test
-      testFit(controls,flags[1],flags[2],end_points);
+      testFit(parameters);
       break;
 
     case PROTEIN:   // protein file
-      proteinFit(file,controls,flags[1],flags[2],end_points);
+      proteinFit(parameters);
       break;
 
     case GENERAL:   // general 3D structure
-      generalFit(file,controls,flags[1],flags[2],end_points);
+      generalFit(parameters);
       break;
   }
 

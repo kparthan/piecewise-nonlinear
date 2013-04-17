@@ -37,7 +37,13 @@
 #define PROTEIN 1
 #define GENERAL 2
 
-#define PRINT 1
+#define PRINT_NON_DETAIL 0
+#define PRINT_DETAIL 1
+#define NON_CONSTRAIN 0
+#define CONSTRAIN 1
+
+#define MAX_SIGMA 4.0
+#define MAX_SEGMENT_LENGTH 30
 
 using namespace std;
 using namespace std::chrono;
