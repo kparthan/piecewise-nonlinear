@@ -579,35 +579,62 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
 {
   int procs = omp_get_num_procs();
   omp_set_num_threads(procs);
-  int i,j;
-  //#pragma omp parallel for private(j)
-  for (i=0; i<numResidues; i++) {
-    #pragma omp parallel for
-    for (j=i+1; j<numResidues; j++) {
-      cout << "Segment: " << i << " " << j << " ";
-      Segment segment = getSegment(i,j);
-      segment.estimateFreeParameters();
-      OptimalFit min_fit,current_fit;
-      min_fit = segment.fitBezierCurve(parameters.controls[0]);
-      for (int k=1; k<parameters.controls.size(); k++) {
-        current_fit = segment.fitBezierCurve(parameters.controls[k]);
-        if (current_fit < min_fit) {
-          min_fit = current_fit;
+  int i,j,k,window_size,limit;
+  if (parameters.constrain_segment_length == CONSTRAIN) {
+    window_size = parameters.max_segment_length;
+    #pragma omp parallel for private(j)
+    for (i=0; i<numResidues; i++) {
+      if (i + window_size <= numResidues) {
+        limit = i + window_size - 1;
+      } else {
+        limit = numResidues - 1;
+      }
+      //#pragma omp parallel for
+      for (j=i+1; j<=limit; j++) {
+        cout << "Segment: " << i << " " << j << " ";
+        Segment segment = getSegment(i,j);
+        segment.estimateFreeParameters();
+        OptimalFit min_fit,current_fit;
+        min_fit = segment.fitBezierCurve(parameters.controls[0]);
+        for (k=1; k<parameters.controls.size(); k++) {
+          current_fit = segment.fitBezierCurve(parameters.controls[k]);
+          if (current_fit < min_fit) {
+            min_fit = current_fit;
+          }
+        }
+        //OptimalFit fit = segment.stateUsingCurve(min_fit);
+        optimalBezierFit[i][j] = min_fit;
+        codeLength[i][j] = optimalBezierFit[i][j].getMessageLength();
+        cout << optimalBezierFit[i][j].getMessageLength() << endl;
+      }
+      if (limit != numResidues - 1) {
+        for (k=limit+1; k<numResidues; k++) {
+          codeLength[i][k] = LARGE_NUMBER;
         }
       }
-      //OptimalFit fit = segment.stateUsingCurve(min_fit);
-      optimalBezierFit[i][j] = min_fit;
-      codeLength[i][j] = optimalBezierFit[i][j].getMessageLength();
-      cout << optimalBezierFit[i][j].getMessageLength() << endl;
     }
-  }
-  //#pragma omp parallel for private(j)
-  if(parameters.print == PRINT_DETAIL) {
+  } else {
     for (i=0; i<numResidues; i++) {
+      #pragma omp parallel for
       for (j=i+1; j<numResidues; j++) {
+        cout << "Segment: " << i << " " << j << " ";
+        Segment segment = getSegment(i,j);
+        segment.estimateFreeParameters();
+        OptimalFit min_fit,current_fit;
+        min_fit = segment.fitBezierCurve(parameters.controls[0]);
+        for (k=1; k<parameters.controls.size(); k++) {
+          current_fit = segment.fitBezierCurve(parameters.controls[k]);
+          if (current_fit < min_fit) {
+            min_fit = current_fit;
+          }
+        }
+        optimalBezierFit[i][j] = min_fit;
         codeLength[i][j] = optimalBezierFit[i][j].getMessageLength();
+        cout << optimalBezierFit[i][j].getMessageLength() << endl;
       }
     }
+  }
+  if(parameters.print == PRINT_DETAIL) {
     ofstream codeLengthFile("codeLengthBezier");
     codeLengthFile << "# of residues: " << numResidues << endl; 
     for (int i=0; i<numResidues; i++){
@@ -616,24 +643,6 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
       }
       codeLengthFile << endl;
     }
-    /*
-    ofstream fw("test_bezier");
-    for (int i=0; i<numResidues; i++) {
-      for (int j=0; j<numResidues; j++) {
-        if (j>i) {
-          Segment segment = getSegment(i,j);
-          OptimalFit min_fit, current_fit;
-          min_fit = segment.fitBezierCurve(controls[0]);
-          for (int k=1; k<controls.size(); k++) {
-            current_fit = segment.fitBezierCurve(controls[k]);
-            if (current_fit < min_fit) {
-              min_fit = current_fit;
-            }
-          }
-          fw << "[" << i << ", " << j << "]: " << min_fit.getMessageLength() << endl;
-        }
-      }
-    }*/
   }
 }
 

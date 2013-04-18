@@ -32,7 +32,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        // TODO: ("fit",value<string>,"fit an entire protein or just a portion")
        ("controls",value<vector<int>>(&parameters.controls)->multitoken(),
                                   "intermediate control points [0,1,2]")
-       ("constrain",value<vector<string>>(&constrain),
+       ("constrain",value<vector<string>>(&constrain)->multitoken(),
         "to constrain the maximum segment length and/or the maximum standard deviation")
        ("sigma",value<double>(&parameters.max_sigma),
                                   "maximum value of standard deviation allowed")
@@ -189,6 +189,9 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
   cout << parameters.min_sigma << endl; 
   cout << parameters.max_sigma << endl; 
   cout << parameters.constrain_segment_length << endl; 
+  for (int i=0; i<constrain.size(); i++) {  
+    cout << constrain[i] << " ";
+  }cout << endl;
   cout << parameters.max_segment_length << endl; 
 
   return parameters;

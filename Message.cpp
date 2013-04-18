@@ -69,6 +69,7 @@ double Message::encodeUsingNormalModel()
   double mean,variance;
   double range_mu = 10.0;
   double range_log_sigma = log(parameters.max_sigma/parameters.min_sigma);
+  //double range_log_sigma = 2.0;
   int i; 
   double x;
 
