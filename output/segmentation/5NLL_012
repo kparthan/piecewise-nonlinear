@@ -2,11 +2,11 @@ Using structure file: test/5NLL.pdb.gz
 Doing a BEZIER segmentation ...
 
 # of residues: 138
-# of non-linear segments: 9
-0-->8-->26-->33-->46-->57-->78-->88-->106-->137
+# of non-linear segments: 10
+0-->8-->26-->33-->46-->57-->78-->88-->106-->108-->137
 
-Best fit: 5612.98 bits.
-Bits per residue: 40.9706
+Best fit: 5620.13 bits.
+Bits per residue: 41.0228
 
 Segment # 1
 Residue stretch: [0, 8]
@@ -63,9 +63,15 @@ Length of the segment: 19
 		Message length: 728.971
 
 Segment # 9
-Residue stretch: [106, 137]
-Length of the segment: 32
+Residue stretch: [106, 108]
+Length of the segment: 3
+		# of intermediate control points: 0
+		Message length: 94.0228
+
+Segment # 10
+Residue stretch: [108, 137]
+Length of the segment: 30
 		# of intermediate control points: 1
-		Control Point # 1: (1.2, 21.4, -36.9)
-		Message length: 1273.02
+		Control Point # 1: (-0.9, 23.2, -34.8)
+		Message length: 1186.15
 

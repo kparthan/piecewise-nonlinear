@@ -174,7 +174,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     cout << "Not enough arguments supplied..." << endl;
     Usage(argv[0],desc);
   }
-
+/*
   cout << parameters.file << endl; 
   cout << parameters.structure << endl; 
   cout << parameters.portion_to_fit << endl; 
@@ -193,7 +193,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     cout << constrain[i] << " ";
   }cout << endl;
   cout << parameters.max_segment_length << endl; 
-
+*/
   return parameters;
 }
 

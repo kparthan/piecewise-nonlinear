@@ -582,16 +582,16 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
   int i,j,k,window_size,limit;
   if (parameters.constrain_segment_length == CONSTRAIN) {
     window_size = parameters.max_segment_length;
-    #pragma omp parallel for private(j)
+    //#pragma omp parallel for private(j)
     for (i=0; i<numResidues; i++) {
       if (i + window_size <= numResidues) {
         limit = i + window_size - 1;
       } else {
         limit = numResidues - 1;
       }
-      //#pragma omp parallel for
+      #pragma omp parallel for
       for (j=i+1; j<=limit; j++) {
-        cout << "Segment: " << i << " " << j << " ";
+        //cout << "Segment: " << i << " " << j << " ";
         Segment segment = getSegment(i,j);
         segment.estimateFreeParameters();
         OptimalFit min_fit,current_fit;
@@ -605,7 +605,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
         //OptimalFit fit = segment.stateUsingCurve(min_fit);
         optimalBezierFit[i][j] = min_fit;
         codeLength[i][j] = optimalBezierFit[i][j].getMessageLength();
-        cout << optimalBezierFit[i][j].getMessageLength() << endl;
+        //cout << optimalBezierFit[i][j].getMessageLength() << endl;
       }
       if (limit != numResidues - 1) {
         for (k=limit+1; k<numResidues; k++) {
@@ -617,7 +617,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
     for (i=0; i<numResidues; i++) {
       #pragma omp parallel for
       for (j=i+1; j<numResidues; j++) {
-        cout << "Segment: " << i << " " << j << " ";
+        //cout << "Segment: " << i << " " << j << " ";
         Segment segment = getSegment(i,j);
         segment.estimateFreeParameters();
         OptimalFit min_fit,current_fit;
@@ -630,7 +630,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
         }
         optimalBezierFit[i][j] = min_fit;
         codeLength[i][j] = optimalBezierFit[i][j].getMessageLength();
-        cout << optimalBezierFit[i][j].getMessageLength() << endl;
+        //cout << optimalBezierFit[i][j].getMessageLength() << endl;
       }
     }
   }
@@ -673,17 +673,6 @@ pair<double,vector<int>> StandardForm::optimalSegmentation(void)
   cout << "Best fit: " << best << " bits." << endl;
   cout << "Bits per residue: " << best / (numResidues-1) << endl;
 
-  /*ofstream opt("optimal"); 
-  cout << "Optimal message lengths:- ";
-  for (int i=0; i<numResidues; i++){
-    cout << optimal[i] << " ";
-    opt << optimal[i] << "\t\t" << optimalIndex[i] << endl ;
-  }
-  cout << endl << endl;*/
-  /*for (int i=0; i<numResidues; i++){
-    cout << optimalIndex[i] << " ";
-  }
-  cout << endl;*/
   int index = numResidues-1;
   vector<int> backtrack; 
   backtrack.push_back(numResidues-1);

@@ -25,10 +25,14 @@ int main(int argc, char **argv)
   auto t_end = high_resolution_clock::now();
 
   cout << endl;
-  cout << "CPU time used: " 
-  << double(c_end-c_start)/(double)(CLOCKS_PER_SEC) << " secs." << endl;
-  cout << "Wall clock time elapsed: "
-  << duration_cast<seconds>(t_end-t_start).count() << " secs." << endl;
+  double cpu_time = double(c_end-c_start)/(double)(CLOCKS_PER_SEC);
+  double wall_time = duration_cast<seconds>(t_end-t_start).count();
+  cout << "CPU time used: " << cpu_time << " secs." << endl;
+  cout << "Wall clock time elapsed: " << wall_time << " secs." << endl;
+  
+  ofstream fp("running_time.txt",ios::app);
+  fp << parameters.file << "\t\t" << cpu_time << "\t\t" << wall_time << endl;
+  fp.close();
 
   return 0;
 }

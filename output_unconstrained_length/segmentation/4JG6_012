@@ -1,0 +1,127 @@
+Using structure file: test/4JG6.pdb
+Doing a BEZIER segmentation ...
+
+# of residues: 302
+# of non-linear segments: 18
+0-->22-->32-->45-->63-->74-->99-->101-->122-->140-->141-->169-->175-->201-->224-->238-->269-->284-->301
+
+Best fit: 12415.6 bits.
+Bits per residue: 41.2477
+
+Segment # 1
+Residue stretch: [0, 22]
+Length of the segment: 23
+		# of intermediate control points: 1
+		Control Point # 1: (3.3, 30.2, -30.4)
+		Message length: 912.491
+
+Segment # 2
+Residue stretch: [22, 32]
+Length of the segment: 11
+		# of intermediate control points: 0
+		Message length: 423.601
+
+Segment # 3
+Residue stretch: [32, 45]
+Length of the segment: 14
+		# of intermediate control points: 1
+		Control Point # 1: (26.4, 27.9, -4.1)
+		Message length: 535.364
+
+Segment # 4
+Residue stretch: [45, 63]
+Length of the segment: 19
+		# of intermediate control points: 1
+		Control Point # 1: (7.3, 10.7, 4.8)
+		Message length: 742.382
+
+Segment # 5
+Residue stretch: [63, 74]
+Length of the segment: 12
+		# of intermediate control points: 0
+		Message length: 459.144
+
+Segment # 6
+Residue stretch: [74, 99]
+Length of the segment: 26
+		# of intermediate control points: 0
+		Message length: 1033.13
+
+Segment # 7
+Residue stretch: [99, 101]
+Length of the segment: 3
+		# of intermediate control points: 0
+		Message length: 97.2527
+
+Segment # 8
+Residue stretch: [101, 122]
+Length of the segment: 22
+		# of intermediate control points: 0
+		Message length: 828.692
+
+Segment # 9
+Residue stretch: [122, 140]
+Length of the segment: 19
+		# of intermediate control points: 1
+		Control Point # 1: (38, 6.8, -2.2)
+		Message length: 757.663
+
+Segment # 10
+Residue stretch: [140, 141]
+Length of the segment: 2
+		# of intermediate control points: 0
+		Message length: 49.6449
+
+Segment # 11
+Residue stretch: [141, 169]
+Length of the segment: 29
+		# of intermediate control points: 1
+		Control Point # 1: (11.9, -5.2, -4.1)
+		Message length: 1175.14
+
+Segment # 12
+Residue stretch: [169, 175]
+Length of the segment: 7
+		# of intermediate control points: 0
+		Message length: 269.561
+
+Segment # 13
+Residue stretch: [175, 201]
+Length of the segment: 27
+		# of intermediate control points: 0
+		Message length: 1016.33
+
+Segment # 14
+Residue stretch: [201, 224]
+Length of the segment: 24
+		# of intermediate control points: 1
+		Control Point # 1: (51, 2.3, -9.9)
+		Message length: 950.548
+
+Segment # 15
+Residue stretch: [224, 238]
+Length of the segment: 15
+		# of intermediate control points: 1
+		Control Point # 1: (57.4, 24.4, 18)
+		Message length: 589.785
+
+Segment # 16
+Residue stretch: [238, 269]
+Length of the segment: 32
+		# of intermediate control points: 1
+		Control Point # 1: (26.1, -8.3, 15.9)
+		Message length: 1268.66
+
+Segment # 17
+Residue stretch: [269, 284]
+Length of the segment: 16
+		# of intermediate control points: 1
+		Control Point # 1: (45.6, 39, 28)
+		Message length: 622.36
+
+Segment # 18
+Residue stretch: [284, 301]
+Length of the segment: 18
+		# of intermediate control points: 0
+		Message length: 683.815
+
