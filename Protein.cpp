@@ -80,45 +80,55 @@ void Protein::reconstruct(string &file,
   Matrix<double> inverse_transform = transformation.inverse();
   shared_ptr<Chain> cps_chain = make_shared<Chain>("X");
   shared_ptr<Chain> curve_chain = make_shared<Chain>("Y");
+
   int count = 0;
   int segment_start = 0;
+
   for(int i=1; i<segments.size(); i++) {
     int segment_end = segments[i];
+
+    // construct the control points of the segment as residues
     string residue_id = "R" + boost::lexical_cast<string>(i);
     shared_ptr<Residue> cps_residue = make_shared<Residue>(residue_id);
     OptimalFit fit = optimalBezierFit[segment_start][segment_end];
     int numIntermediateControls = fit.getNumberOfControlPoints() - 2;
-    if (numIntermediateControls > 0) {
-      count++;
-      vector<Point<double>> control_points;
-      control_points.push_back(original_coordinates[segment_start]);
-      vector<Point<double>> cps = fit.getControlPoints();
-      for (int j=1; j<=numIntermediateControls; j++) {
-        string atom_id = "A" + boost::lexical_cast<string>(j);
-        shared_ptr<Atom> cps_atom = make_shared<Atom>(atom_id);
-        Point<double> p = lcb::geometry::transform<double>(cps[j],inverse_transform);
-        control_points.push_back(p);
-        cps_atom->setAtomicCoordinate(p);
-        cps_residue->addAtom(cps_atom);
-      }
-      control_points.push_back(original_coordinates[segment_end]);
-      residue_id = "C" + boost::lexical_cast<string>(i);
-      shared_ptr<Residue> curve_residue = make_shared<Residue>(residue_id);
-      BezierCurve curve(control_points);
-      double t = 0;
-      for (int k=1; k<1.0/DELTA_T; k++) {
-        t += DELTA_T;
-        Point<double> p = curve.getPoint(t);
-        string atom_id = boost::lexical_cast<string>(k);
-        shared_ptr<Atom> curve_atom = make_shared<Atom>(atom_id);
-        curve_atom->setAtomicCoordinate(p);
-        curve_residue->addAtom(curve_atom);
-      } 
-      curve_chain->addResidue(curve_residue);
+    count++;
+    vector<Point<double>> control_points;
+    control_points.push_back(original_coordinates[segment_start]);
+    vector<Point<double>> cps = fit.getControlPoints();
+    for (int j=1; j<=numIntermediateControls; j++) {
+      string atom_id = "A" + boost::lexical_cast<string>(j);
+      shared_ptr<Atom> cps_atom = make_shared<Atom>(atom_id);
+      Point<double> p = lcb::geometry::transform<double>(cps[j],inverse_transform);
+      control_points.push_back(p);
+      cps_atom->setAtomicCoordinate(p);
+      cps_residue->addAtom(cps_atom);
     }
+    control_points.push_back(original_coordinates[segment_end]);
     cps_chain->addResidue(cps_residue);
+
+    // construct the curve as a protein residue for visualizing in Pymol
+    residue_id = "C" + boost::lexical_cast<string>(i);
+    shared_ptr<Residue> curve_residue = make_shared<Residue>(residue_id);
+    BezierCurve curve(control_points);
+    double t = 0;
+    for (int k=1; k<1.0/DELTA_T; k++) {
+      t += DELTA_T;
+      Point<double> p = curve.getPoint(t);
+      string atom_id = boost::lexical_cast<string>(k);
+      shared_ptr<Atom> curve_atom = make_shared<Atom>(atom_id);
+      curve_atom->setAtomicCoordinate(p);
+      curve_residue->addAtom(curve_atom);
+    } 
+    curve_chain->addResidue(curve_residue);
+
+    for (int k=0; k<control_points.size(); k++) {
+      all_control_points.push_back(control_points[k]);
+    }
+
     segment_start = segment_end;
   }
+
   protein->addChain(cps_chain);
   protein->addChain(curve_chain);
   vector<Atom> atoms = protein->getAtoms();
@@ -157,14 +167,8 @@ void Protein::createPymolScript(string &pdb_file,
   script << "hide" << endl;
   script << "show cartoon" << endl;
 
-  // draw the bezier curves
   Chain curve_chain = protein->getDefaultModel()["Y"];
   vector<string> curve_ids = curve_chain.getResidueIdentifiers();
-  for (int i=1; i<=curve_ids.size(); i++) {
-    string curve_index = curve_ids[i-1].substr(1);
-    script << "select curve" << curve_index << ", chain Y and resi " 
-    << curve_ids[i-1] << endl;
-  }
 
   string start_atom = identifiers[0].getAtomID();
   string start_residue = identifiers[0].getResidueID();
@@ -193,10 +197,15 @@ void Protein::createPymolScript(string &pdb_file,
       script << "(chain " << end_chain << " and resi 1-";
       script << end_residue << ")" << endl;
     }
-    OptimalFit fit = optimalBezierFit[segment_start-1][segment_end-1];
-    int numIntermediateControls = fit.getNumberOfControlPoints() - 2;
+    
+    // draw the bezier curves
+    string curve_index = curve_ids[i-1].substr(1);
+    script << "select curve" << curve_index << ", chain Y and resi " 
+    << curve_ids[i-1] << endl;
 
     // join the control points by straight lines to visualize
+    OptimalFit fit = optimalBezierFit[segment_start-1][segment_end-1];
+    int numIntermediateControls = fit.getNumberOfControlPoints() - 2;
     string p1,p2;
     p1 = "\"chain " + start_chain + " and resi " + start_residue + " and name CA\"";
     for (int j=1; j<=numIntermediateControls; j++) {

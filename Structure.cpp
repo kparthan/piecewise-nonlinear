@@ -121,3 +121,72 @@ vector<array<int,3>> Structure::generateSegmentColors(int num_segments)
   return rgb;
 }
 
+/*!
+ *  \brief This function constructs lines by connecting the successive
+ *  control points.
+ */
+void Structure::connectControlPoints()
+{
+  Point<double> start,end;
+
+  start = all_control_points[0];
+  for (int i=1; i<all_control_points.size(); i++) {
+    end = all_control_points[i];
+    Line<Point<double>> line(start,end);
+    connecting_lines.push_back(line);
+    start = end;
+  }
+}
+
+/*!
+ *  \brief This function computes the planar angles between the lines 
+ *  connecting the control points.
+ *  \return the list of planar angles
+ */
+vector<double> Structure::computePlanarAngles()
+{
+  connectControlPoints();
+  vector<double> angles;
+  if (connecting_lines.size() < 2) {
+    cout << "Planar angles require at least 3 control points ..." << endl;
+  } else {
+    Line<Point<double>> line1,line2;
+    line1 = connecting_lines[0];
+    for (int i=1; i<connecting_lines.size(); i++) {
+      line2 = connecting_lines[i];
+      double theta = angle(line1,line2);
+      angles.push_back(theta);
+      line1 = line2;
+    }
+  }
+  return angles;
+}
+
+/*!
+ *  \brief This function computes the dihedral angles between the adjacent 
+ *  planes formed by the control points.
+ *  \return the list of dihedral angles
+ */
+vector<double> Structure::computeDihedralAngles()
+{
+  vector<double> angles;
+  if (all_control_points.size() < 4) {
+    cout << "Dihedral angles require at least 4 control points ..." << endl;
+  } else {
+    Plane<Point<double>> plane1,plane2;
+    Point<double> p0,p1,p2,p3;
+    p0 = all_control_points[0];
+    p1 = all_control_points[1];
+    p2 = all_control_points[2];
+    plane1 = Plane<Point<double>>(p0,p1,p2);
+    for (int i=3; i<all_control_points.size(); i++) {
+      p3 = all_control_points[i];
+      plane2 = Plane<Point<double>>(p1,p2,p3);
+      double theta = angle(plane1,plane2);
+      angles.push_back(theta);
+      plane1 = plane2;
+    }
+  }
+  return angles;
+}
+

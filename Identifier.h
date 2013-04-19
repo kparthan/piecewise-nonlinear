@@ -13,6 +13,12 @@ class Identifier
     //! Constructor
     Identifier(string &, string &, string &);
 
+    //! Copy constructor
+    Identifier(const Identifier &);
+
+    //! Assigning an Identifier object using = operator
+    Identifier operator=(const Identifier &);
+
                             /* Accessor functions */
     //! Gets the identifier of the atom
     string getAtomID();

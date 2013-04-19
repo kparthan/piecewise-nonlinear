@@ -14,7 +14,7 @@ OBJECTS = piecewise-nonlinear-fit.o \
   Test.o \
   OptimalFit.o \
   Complex.o \
-  Identifier.o \
+  Identifier.o 
 
 all: piecewise-nonlinear-fit 
 

@@ -11,6 +11,29 @@ Identifier::Identifier(string &atom_id, string &residue_id, string &chain_id):
 {}
 
 /*!
+ *  \brief This module is used to create a copy of an Identifier object
+ *  \param source a reference to an Identifier
+ */
+Identifier::Identifier(const Identifier &source) : atom_id(source.atom_id),
+            residue_id(source.residue_id), chain_id(source.chain_id)
+{}
+
+/*!
+ *  \brief This module assigns a source Identifier to a target Identifier.
+ *  \param source a reference to an Identifier
+ *  \return an Identifier object
+ */
+Identifier Identifier::operator=(const Identifier &source)
+{
+  if (this != &source) {
+    atom_id = source.atom_id;
+    residue_id = source.residue_id;
+    chain_id = source.chain_id;
+  }
+  return *this;
+}
+
+/*!
  *  \brief This function returns the identifier of the atom
  *  \return the identifier of the atom
  */

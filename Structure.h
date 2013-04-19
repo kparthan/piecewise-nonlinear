@@ -44,12 +44,27 @@ class Structure
     //! Generate integral RGB indices
     vector<array<int,3>> generateSegmentColors(int);
 
+    //! Connect the successive control points
+    void connectControlPoints();
+
+    //! Calculate the planar angles
+    vector<double> computePlanarAngles(); 
+
+    //! Calculate the dihedral angles
+    vector<double> computeDihedralAngles();
+
   protected:
     //! The structure type
     StructureType type;
 
     //! Stores the coordinates
     vector<Point<double>> original_coordinates,coordinates;
+
+    //! List of all control points
+    vector<Point<double>> all_control_points;
+
+    //! Lines connecting the control points
+    vector<Line<Point<double>>> connecting_lines;
 
 };
 
