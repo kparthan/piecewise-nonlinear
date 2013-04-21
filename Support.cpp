@@ -15,6 +15,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
 {
   struct Parameters parameters;
   vector<string> constrain;
+  string encode;
 
   parameters.structure = -1;
   bool noargs = 1;
@@ -38,6 +39,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
                                   "maximum value of standard deviation allowed")
        ("length",value<int>(&parameters.max_segment_length),
                                   "maximum length of the segment considered")
+       ("encode",value<string>(&encode), "type of encoding the deviations")
   ;
   variables_map vm;
   store(parse_command_line(argc,argv,desc),vm);
@@ -170,6 +172,19 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     }
   }
 
+  if (vm.count("encode")) {
+    if (encode.compare("general") == 0) {
+      parameters.encode_deviations = ENCODE_DEVIATIONS_GENERAL;
+    } else if (encode.compare("custom") == 0) {
+      parameters.encode_deviations = ENCODE_DEVIATIONS_CUSTOMIZED;
+    } else {
+      cout << "Invalid encoding scheme ..." << endl;
+      Usage(argv[0],desc);
+    }
+  } else {
+    parameters.encode_deviations = ENCODE_DEVIATIONS_CUSTOMIZED;
+  }
+
   if (noargs) {
     cout << "Not enough arguments supplied..." << endl;
     Usage(argv[0],desc);
@@ -200,6 +215,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
       cout << constrain[i] << " ";
     }
     cout << endl;
+    cout << "ENCODING DEVIATIONS: " << parameters.encode_deviations << endl;
   }
 
   return parameters;

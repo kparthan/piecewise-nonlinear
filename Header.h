@@ -46,6 +46,9 @@
 #define MAX_SIGMA 4.0
 #define MAX_SEGMENT_LENGTH 30
 
+#define ENCODE_DEVIATIONS_GENERAL 0
+#define ENCODE_DEVIATIONS_CUSTOMIZED 1
+
 using namespace std;
 using namespace std::chrono;
 using namespace lcb;

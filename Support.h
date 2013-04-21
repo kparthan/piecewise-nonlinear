@@ -16,6 +16,7 @@ struct Parameters
   double max_sigma;
   int constrain_segment_length;
   int max_segment_length;
+  int encode_deviations;
 };
 
 struct Parameters parseCommandLineInput (int, char **); 
