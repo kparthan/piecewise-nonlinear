@@ -174,26 +174,34 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     cout << "Not enough arguments supplied..." << endl;
     Usage(argv[0],desc);
   }
-/*
-  cout << parameters.file << endl; 
-  cout << parameters.structure << endl; 
-  cout << parameters.portion_to_fit << endl; 
-  cout << parameters.print << endl; 
-  for (int i=0; i<parameters.end_points.size(); i++) {  
-    cout << parameters.end_points[i] << " ";
-  }cout << endl;
-  for (int i=0; i<parameters.controls.size(); i++) {  
-    cout << parameters.controls[i] << " ";
-  }cout << endl;
-  cout << parameters.constrain_sigma << endl; 
-  cout << parameters.min_sigma << endl; 
-  cout << parameters.max_sigma << endl; 
-  cout << parameters.constrain_segment_length << endl; 
-  for (int i=0; i<constrain.size(); i++) {  
-    cout << constrain[i] << " ";
-  }cout << endl;
-  cout << parameters.max_segment_length << endl; 
-*/
+
+  if (parameters.print == PRINT_DETAIL) {
+    cout << "FILE: " <<parameters.file << endl; 
+    cout << "STRUCTURE: " << parameters.structure << endl; 
+    cout << "PORTION: " << parameters.portion_to_fit << endl; 
+    cout << "PRINT: " << parameters.print << endl; 
+    cout << "END_POINTS: ";
+    for (int i=0; i<parameters.end_points.size(); i++) {  
+      cout << parameters.end_points[i] << " ";
+    }
+    cout << endl;
+    cout << "CONTROLS: ";
+    for (int i=0; i<parameters.controls.size(); i++) {  
+      cout << parameters.controls[i] << " ";
+    }
+    cout << endl;
+    cout << "CONSTRAIN_SIGMA: " << parameters.constrain_sigma << endl;
+    cout << "SIGMA_MIN: " << parameters.min_sigma << endl; 
+    cout << "SIGMA_MAX: " << parameters.max_sigma << endl; 
+    cout << "CONSTRAIN_LENGTH: " << parameters.constrain_segment_length << endl; 
+    cout << "LENGTH_MAX: " << parameters.max_segment_length << endl; 
+    cout << "CONSTRAINED PARAMETERS: ";
+    for (int i=0; i<constrain.size(); i++) {  
+      cout << constrain[i] << " ";
+    }
+    cout << endl;
+  }
+
   return parameters;
 }
 

@@ -83,6 +83,7 @@ void Protein::reconstruct(string &file,
 
   int count = 0;
   int segment_start = 0;
+  all_control_points.push_back(original_coordinates[0]);
 
   for(int i=1; i<segments.size(); i++) {
     int segment_end = segments[i];
@@ -101,10 +102,12 @@ void Protein::reconstruct(string &file,
       shared_ptr<Atom> cps_atom = make_shared<Atom>(atom_id);
       Point<double> p = lcb::geometry::transform<double>(cps[j],inverse_transform);
       control_points.push_back(p);
+      all_control_points.push_back(p);
       cps_atom->setAtomicCoordinate(p);
       cps_residue->addAtom(cps_atom);
     }
     control_points.push_back(original_coordinates[segment_end]);
+    all_control_points.push_back(original_coordinates[segment_end]);
     cps_chain->addResidue(cps_residue);
 
     // construct the curve as a protein residue for visualizing in Pymol
@@ -121,10 +124,6 @@ void Protein::reconstruct(string &file,
       curve_residue->addAtom(curve_atom);
     } 
     curve_chain->addResidue(curve_residue);
-
-    for (int k=0; k<control_points.size(); k++) {
-      all_control_points.push_back(control_points[k]);
-    }
 
     segment_start = segment_end;
   }
@@ -155,6 +154,16 @@ void Protein::createPymolScript(string &pdb_file,
                                 vector<int> &segments, 
                                 vector<Identifier> &identifiers)
 {
+  vector<double> planar_angles = computePlanarAngles();
+  vector<double> dihedral_angles = computeDihedralAngles();
+  cout << "Planar angles: ";
+  for (int i=0; i<planar_angles.size(); i++) {
+    planar_angles[i] *= 180 / PI;
+    cout << fixed;
+    cout << setprecision(2) << planar_angles[i] << " ";
+  }
+  cout << endl;
+
   vector<array<double,3>> colors = generateProteinColors(segments.size()-1);
   Chain chain = protein->getDefaultModel()["X"];
   vector<string> res_ids = chain.getResidueIdentifiers();
@@ -166,6 +175,7 @@ void Protein::createPymolScript(string &pdb_file,
   script << "load ../" << modified_pdb << endl;
   script << "hide" << endl;
   script << "show cartoon" << endl;
+  script << "set label_font_id, 10" << endl;
 
   Chain curve_chain = protein->getDefaultModel()["Y"];
   vector<string> curve_ids = curve_chain.getResidueIdentifiers();
@@ -174,6 +184,7 @@ void Protein::createPymolScript(string &pdb_file,
   string start_residue = identifiers[0].getResidueID();
   string start_chain = identifiers[0].getChainID();
   int segment_start = 1;
+  int count = 0;
   for(int i=1; i<segments.size(); i++) {
     // choose a color
     script << "set_color c" << i << " = [" << colors[i-1][0]
@@ -206,12 +217,17 @@ void Protein::createPymolScript(string &pdb_file,
     // join the control points by straight lines to visualize
     OptimalFit fit = optimalBezierFit[segment_start-1][segment_end-1];
     int numIntermediateControls = fit.getNumberOfControlPoints() - 2;
-    string p1,p2;
-    p1 = "\"chain " + start_chain + " and resi " + start_residue + " and name CA\"";
+    string sel1,sel2,p1,p2;
+    sel1 = "chain " + start_chain + " and resi " + start_residue + " and name CA";
+    p1 = "\"" + sel1 + "\""; 
     for (int j=1; j<=numIntermediateControls; j++) {
-      p2 = "\"resi " + res_ids[i-1] + " and name A" + 
-           boost::lexical_cast<string>(j) + "\"";
+      sel2 = "resi " + res_ids[i-1] + " and name A" + 
+           boost::lexical_cast<string>(j);
+      p2 = "\"" + sel2 + "\""; 
       script << "print cmd.distance(" << p1 << "," << p2 << ")" << endl;
+      if (count < planar_angles.size()) {
+        script << "label " << sel2 << ", \"" << planar_angles[count++] << "\"" << endl;
+      }
       script << "hide label" << endl;
       p1 = p2;
     }

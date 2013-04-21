@@ -127,8 +127,13 @@ vector<array<int,3>> Structure::generateSegmentColors(int num_segments)
  */
 void Structure::connectControlPoints()
 {
-  Point<double> start,end;
+  /*for (int i=0; i<all_control_points.size(); i++) {
+    cout << i << " ";
+    all_control_points[i].print();
+    cout << endl;
+  }*/
 
+  Point<double> start,end;
   start = all_control_points[0];
   for (int i=1; i<all_control_points.size(); i++) {
     end = all_control_points[i];
@@ -154,7 +159,7 @@ vector<double> Structure::computePlanarAngles()
     line1 = connecting_lines[0];
     for (int i=1; i<connecting_lines.size(); i++) {
       line2 = connecting_lines[i];
-      double theta = angle(line1,line2);
+      double theta = PI - angle(line1,line2);
       angles.push_back(theta);
       line1 = line2;
     }
@@ -185,6 +190,8 @@ vector<double> Structure::computeDihedralAngles()
       double theta = angle(plane1,plane2);
       angles.push_back(theta);
       plane1 = plane2;
+      p1 = p2;
+      p2 = p3;
     }
   }
   return angles;
