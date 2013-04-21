@@ -1,0 +1,22 @@
+Using structure file: test/5.pdb
+Doing a BEZIER segmentation ...
+
+# of residues: 49
+# of non-linear segments: 2
+0-->46-->48
+
+Best fit: 1766.4 bits.
+Bits per residue: 36.8
+
+Segment # 1
+Residue stretch: [0, 46]
+Length of the segment: 47
+		# of intermediate control points: 0
+		Message length: 1679.39
+
+Segment # 2
+Residue stretch: [46, 48]
+Length of the segment: 3
+		# of intermediate control points: 0
+		Message length: 87.0116
+

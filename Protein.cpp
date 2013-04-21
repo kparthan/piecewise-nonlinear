@@ -185,6 +185,7 @@ void Protein::createPymolScript(string &pdb_file,
   string start_chain = identifiers[0].getChainID();
   int segment_start = 1;
   int count = 0;
+  int non_lin_seg = 1;
   for(int i=1; i<segments.size(); i++) {
     // choose a color
     script << "set_color c" << i << " = [" << colors[i-1][0]
@@ -221,8 +222,7 @@ void Protein::createPymolScript(string &pdb_file,
     sel1 = "chain " + start_chain + " and resi " + start_residue + " and name CA";
     p1 = "\"" + sel1 + "\""; 
     for (int j=1; j<=numIntermediateControls; j++) {
-      sel2 = "resi " + res_ids[i-1] + " and name A" + 
-           boost::lexical_cast<string>(j);
+      sel2 = "resi " + res_ids[non_lin_seg-1] + " and name A" + boost::lexical_cast<string>(j);
       p2 = "\"" + sel2 + "\""; 
       script << "print cmd.distance(" << p1 << "," << p2 << ")" << endl;
       if (count < planar_angles.size()) {
@@ -231,7 +231,11 @@ void Protein::createPymolScript(string &pdb_file,
       script << "hide label" << endl;
       p1 = p2;
     }
-    p2 = "\"chain " + end_chain + " and resi " + end_residue + " and name CA\"";
+    if (numIntermediateControls > 0) {
+      non_lin_seg++;
+    }
+    sel2 = "chain " + end_chain + " and resi " + end_residue + " and name CA";
+    p2 = "\"" + sel2 + "\"";
     script << "print cmd.distance(" << p1 << "," << p2 << ")" << endl;
     script << "hide label" << endl;
 
