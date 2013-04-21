@@ -588,7 +588,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
   //#pragma omp parallel for private(j)
   for (i=0; i<numResidues; i++) {
     //cout << "Segment from: " << i << endl;
-    //#pragma omp parallel for
+    #pragma omp parallel for
     for (j=i+1; j<numResidues; j++) {
       cout << "Segment: " << i << " " << j << " ";
       Segment segment = getSegment(i,j);

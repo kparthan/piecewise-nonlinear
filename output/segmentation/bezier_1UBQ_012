@@ -1,0 +1,50 @@
+Using structure file: test/1UBQ.pdb.gz
+Doing a BEZIER segmentation ...
+
+# of residues: 76
+# of non-linear segments: 6
+0-->8-->16-->38-->47-->58-->75
+
+Best fit: 1573.55 bits.
+Bits per residue: 20.9807
+
+Segment # 1
+Residue stretch: [0, 8]
+Length of the segment: 9
+		# of intermediate control points: 0
+		Message length: 170.205
+
+Segment # 2
+Residue stretch: [8, 16]
+Length of the segment: 9
+		# of intermediate control points: 0
+		Message length: 160.501
+
+Segment # 3
+Residue stretch: [16, 38]
+Length of the segment: 23
+		# of intermediate control points: 2
+		Control Point # 1: (12.2, -26.9, 8.6)
+		Control Point # 2: (13.1, 20, -21.5)
+		Message length: 455.391
+
+Segment # 4
+Residue stretch: [38, 47]
+Length of the segment: 10
+		# of intermediate control points: 0
+		Message length: 188.944
+
+Segment # 5
+Residue stretch: [47, 58]
+Length of the segment: 12
+		# of intermediate control points: 0
+		Message length: 250.176
+
+Segment # 6
+Residue stretch: [58, 75]
+Length of the segment: 18
+		# of intermediate control points: 2
+		Control Point # 1: (-11.4, 14.3, 7.9)
+		Control Point # 2: (30.2, -6.2, 0.6)
+		Message length: 348.334
+
