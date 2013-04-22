@@ -85,12 +85,14 @@ double Message::encodeUsingNormalModel()
       }
       if (parameters.print == PRINT_DETAIL &&
           parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
+        cout << "mean(" << i + 1 << "): " << mean << endl;
         cout << "sigma(" << i + 1 << "): " << sqrt(variance) << endl;
         cout << "msglen (dev " << i+1 << "): " << x << endl;
       }
       msglen += x;
     }
     /* state the third deviation by estimating the mean */
+    mean = estimateMean(samples[i]);
     variance = estimateVariance(samples[i]);
     if (parameters.constrain_sigma == CONSTRAIN &&
         (variance > parameters.max_sigma * parameters.max_sigma)) {
@@ -100,6 +102,7 @@ double Message::encodeUsingNormalModel()
     }
     if (parameters.print == PRINT_DETAIL &&
         parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
+      cout << "mean(" << i + 1 << "): " << mean << endl;
       cout << "sigma(" << i + 1 << "): " << sqrt(variance) << endl;
       cout << "msglen (dev " << i+1 << "): " << x << endl;
     }
@@ -116,6 +119,7 @@ double Message::encodeUsingNormalModel()
       }
       if (parameters.print == PRINT_DETAIL &&
           parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
+        cout << "mean(" << i + 1 << "): " << mean << endl;
         cout << "sigma(" << i + 1 << "): " << sqrt(variance) << endl;
         cout << "msglen (dev " << i+1 << "): " << x << endl;
       }

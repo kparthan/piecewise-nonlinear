@@ -1,0 +1,68 @@
+Using structure file: test/1HHOA.pdb
+Doing a BEZIER segmentation ...
+
+# of residues: 141
+# of non-linear segments: 9
+0-->2-->35-->48-->73-->93-->112-->117-->138-->140
+
+Best fit: 5665.35 bits.
+Bits per residue: 40.4668
+
+Segment # 1
+Residue stretch: [0, 2]
+Length of the segment: 3
+		# of intermediate control points: 0
+		Message length: 94.1811
+
+Segment # 2
+Residue stretch: [2, 35]
+Length of the segment: 34
+		# of intermediate control points: 1
+		Control Point # 1: (-7.9, 37.6, -3.9)
+		Message length: 1311.22
+
+Segment # 3
+Residue stretch: [35, 48]
+Length of the segment: 14
+		# of intermediate control points: 1
+		Control Point # 1: (29.7, 20.5, 1.2)
+		Message length: 541.945
+
+Segment # 4
+Residue stretch: [48, 73]
+Length of the segment: 26
+		# of intermediate control points: 1
+		Control Point # 1: (7.2, 28.4, -4.9)
+		Message length: 1000.83
+
+Segment # 5
+Residue stretch: [73, 93]
+Length of the segment: 21
+		# of intermediate control points: 1
+		Control Point # 1: (24.8, 16.2, -12.1)
+		Message length: 822.971
+
+Segment # 6
+Residue stretch: [93, 112]
+Length of the segment: 20
+		# of intermediate control points: 0
+		Message length: 759.266
+
+Segment # 7
+Residue stretch: [112, 117]
+Length of the segment: 6
+		# of intermediate control points: 0
+		Message length: 224.183
+
+Segment # 8
+Residue stretch: [117, 138]
+Length of the segment: 22
+		# of intermediate control points: 0
+		Message length: 816.572
+
+Segment # 9
+Residue stretch: [138, 140]
+Length of the segment: 3
+		# of intermediate control points: 0
+		Message length: 94.1811
+

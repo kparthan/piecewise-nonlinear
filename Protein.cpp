@@ -163,6 +163,13 @@ void Protein::createPymolScript(string &pdb_file,
     cout << setprecision(2) << planar_angles[i] << " ";
   }
   cout << endl;
+  cout << "Dihedral angles: ";
+  for (int i=0; i<dihedral_angles.size(); i++) {
+    dihedral_angles[i] *= 180 / PI;
+    cout << fixed;
+    cout << setprecision(2) << dihedral_angles[i] << " ";
+  }
+  cout << endl;
 
   vector<array<double,3>> colors = generateProteinColors(segments.size()-1);
   Chain chain = protein->getDefaultModel()["X"];
