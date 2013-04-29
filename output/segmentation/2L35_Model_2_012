@@ -1,0 +1,48 @@
+Using structure file: test/2L35_Model_2.pdb
+Doing a BEZIER segmentation ...
+
+# of residues: 95
+# of non-linear segments: 6
+0-->33-->34-->61-->63-->93-->94
+
+Best fit: 3733.61 bits.
+Bits per residue: 39.7193
+
+Segment # 1
+Residue stretch: [0, 33]
+Length of the segment: 34
+		# of intermediate control points: 1
+		Control Point # 1: (27.5, 12.5, 5.4)
+		Message length: 1316.82
+
+Segment # 2
+Residue stretch: [33, 34]
+Length of the segment: 2
+		# of intermediate control points: 0
+		Message length: 47.1089
+
+Segment # 3
+Residue stretch: [34, 61]
+Length of the segment: 28
+		# of intermediate control points: 0
+		Message length: 1064.64
+
+Segment # 4
+Residue stretch: [61, 63]
+Length of the segment: 3
+		# of intermediate control points: 0
+		Message length: 92.1808
+
+Segment # 5
+Residue stretch: [63, 93]
+Length of the segment: 31
+		# of intermediate control points: 1
+		Control Point # 1: (28.5, 1.4, -6.8)
+		Message length: 1165.75
+
+Segment # 6
+Residue stretch: [93, 94]
+Length of the segment: 2
+		# of intermediate control points: 0
+		Message length: 47.1089
+

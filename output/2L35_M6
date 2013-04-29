@@ -1,0 +1,30 @@
+Checking command-line input ...
+Using pdb file: test/2L35_Model_6.pdb
+Using default value of maximum allowed standard deviation: 4
+Segment length is unconstrained ...
+Parsing PDB file ... [OK]
+Transforming the protein to a standard canonical form ...
+Translation to origin ... [OK]
+Rotating protein so that last point lies on X-axis ... [OK]
+Rotating protein so that second point lies on XY plane ... [OK]
+Transformation to standard form done ...
+Number of residues: 95
+*** SPHERE FIT ***
+Sphere Model Fit: 4196.68 bits.
+Bits per residue: 44.6456
+
+*** NULL MODEL ***
+Null Model Fit: 4143.35 bits.
+Bits per residue: 44.0782
+
+*** BEZIER CURVE FIT ***
+Best fit: 3726.17 bits.
+Bits per residue: 39.6401
+# of non-linear segments: 6
+0-->33-->34-->61-->63-->93-->94
+
+Planar angles: 134.26 131.61 87.32 140.64 105.36 64.53 163.24 73.64 
+Dihedral angles: 20.11 7.91 49.79 139.32 15.51 14.89 131.33 
+
+CPU time used: 19.43 secs.
+Wall clock time elapsed: 19.00 secs.
