@@ -170,6 +170,7 @@ vector<double> Structure::computePlanarAngles()
 /*!
  *  \brief This function computes the dihedral angles between the adjacent 
  *  planes formed by the control points.
+ *  Reference: http://math.stackexchange.com/questions/47059/how-do-i-calculate-a-dihedral-angle-given-cartesian-coordinates
  *  \return the list of dihedral angles
  */
 vector<double> Structure::computeDihedralAngles()
@@ -179,19 +180,30 @@ vector<double> Structure::computeDihedralAngles()
     cout << "Dihedral angles require at least 4 control points ..." << endl;
   } else {
     Plane<Point<double>> plane1,plane2;
-    Point<double> p0,p1,p2,p3;
-    p0 = all_control_points[0];
-    p1 = all_control_points[1];
-    p2 = all_control_points[2];
-    plane1 = Plane<Point<double>>(p0,p1,p2);
+    Vector<double> p0,p1,p2,p3;
+    Vector<double> v1,v2,v3,n1,n2,m1;
+    p0 = all_control_points[0].positionVector();
+    p1 = all_control_points[1].positionVector();
+    p2 = all_control_points[2].positionVector();
+    v1 = p1 - p0;
+    v2 = p2 - p1;
+    n1 = Vector<double>::crossProduct(v1,v2);
+    n1.normalize();
     for (int i=3; i<all_control_points.size(); i++) {
-      p3 = all_control_points[i];
-      plane2 = Plane<Point<double>>(p1,p2,p3);
-      double theta = angle(plane1,plane2);
+      p3 = all_control_points[i].positionVector();
+      v3 = p3 - p2;
+      n2 = Vector<double>::crossProduct(v2,v3);
+      n2.normalize();
+      m1 = Vector<double>::crossProduct(n1,v2);
+      m1.normalize();
+      double x = n1 * n2;
+      double y = m1 * n2;
+      double theta = atan2(y,x);
       angles.push_back(theta);
-      plane1 = plane2;
-      p1 = p2;
+      v1 = v2;
+      v2 = v3;
       p2 = p3;
+      n1 = n2;
     }
   }
   return angles;
