@@ -87,24 +87,15 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     }
   }
 
-  parameters.portion_to_fit = FIT_ENTIRE_STRUCTURE;
   if (vm.count("segment")) {
     cout << "Fitting a single segment between the residues "
          << "[" << parameters.end_points[1] << ", " << parameters.end_points[2]
          << "] of chain " << parameters.end_points[0] << endl;
     parameters.portion_to_fit = FIT_SINGLE_SEGMENT;
+  } else {
+    parameters.portion_to_fit = FIT_ENTIRE_STRUCTURE;
   }
-/*
-  if (vm.count("fit")) {
-    string fit = vm["fit"].as<string>;
-    if (fit.compare("complete") == 0) {
-      flags[1] = FIT_ENTIRE_PROTEIN;
-    } else if (fit.compare("partial") == 0) {
-      if (flags[1] == FIT)
-      flags[1] = FIT_PARTIAL_PROTEIN;
-    }
-  }
-*/
+
   if (vm.count("controls")) {
     for (int i=0; i<parameters.controls.size(); i++) {
       if (parameters.controls[i] < 0 || 

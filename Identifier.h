@@ -7,7 +7,7 @@ class Identifier
 {
   private:
     //! Identifiers 
-    string atom_id, residue_id, chain_id;
+    string atom_id,residue_id,chain_id;
 
   public:
     //! Constructor

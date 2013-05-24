@@ -31,7 +31,6 @@
 
 #define FIT_ENTIRE_STRUCTURE 0
 #define FIT_SINGLE_SEGMENT 1
-#define FIT_PARTIAL_STRUCTURE 2
 
 #define TEST 0
 #define PROTEIN 1

@@ -24,7 +24,7 @@ class StandardForm
     Matrix<double> translation,rotation,transformation;
 
     //! Number of intermediate control points to be used
-    vector<int> controls;
+    //vector<int> controls;
 
     //! Cartesian coordinates of the protein structure
     vector<array<double,3>> original_coordinates,coordinates;

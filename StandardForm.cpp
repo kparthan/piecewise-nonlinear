@@ -422,7 +422,7 @@ void StandardForm::boundingBox()
   double ymax = getMaximum(1);
   double zmin = getMinimum(2);
   double zmax = getMaximum(2);
-  volume =  (xmax-xmin)*(ymax-ymin)*(zmax-zmin); 
+  volume = (xmax-xmin) * (ymax-ymin) * (zmax-zmin); 
   if(parameters.print == PRINT_DETAIL) {
     cout << "boundary values:\n";
     cout << xmin << " " << xmax << endl;

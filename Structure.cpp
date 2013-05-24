@@ -34,9 +34,9 @@ array<int,2> Structure::getEndPoints(vector<string> &end_points)
  */
 vector<array<double,3>> Structure::getCoordinates()
 {
-  array<double,3> a;
   vector<array<double,3>> list;
   for (int i=0; i<coordinates.size(); i++){
+    array<double,3> a;
     a[0] = coordinates[i].x();
     a[1] = coordinates[i].y();
     a[2] = coordinates[i].z();

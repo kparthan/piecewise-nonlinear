@@ -81,7 +81,6 @@ void Protein::reconstruct(string &file,
   shared_ptr<Chain> cps_chain = make_shared<Chain>("X");
   shared_ptr<Chain> curve_chain = make_shared<Chain>("Y");
 
-  int count = 0;
   int segment_start = 0;
   all_control_points.push_back(original_coordinates[0]);
 
@@ -93,7 +92,6 @@ void Protein::reconstruct(string &file,
     shared_ptr<Residue> cps_residue = make_shared<Residue>(residue_id);
     OptimalFit fit = optimalBezierFit[segment_start][segment_end];
     int numIntermediateControls = fit.getNumberOfControlPoints() - 2;
-    count++;
     vector<Point<double>> control_points;
     control_points.push_back(original_coordinates[segment_start]);
     vector<Point<double>> cps = fit.getControlPoints();
@@ -180,6 +178,7 @@ void Protein::createPymolScript(string &pdb_file,
 
   string modified_pdb = "modified_pdb_files/" + pdb_file + ".pdb";
   script << "load ../" << modified_pdb << endl;
+  //script << "bg_color white" << endl;
   script << "hide" << endl;
   script << "show cartoon" << endl;
   script << "set label_font_id, 10" << endl;

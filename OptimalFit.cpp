@@ -96,8 +96,7 @@ void OptimalFit::printFitInfo()
   cout << "Degree of curve: " << numControlPoints - 1 << endl;
   for (int i=0; i<numControlPoints; i++) {
     cout << "\tControl point #" << i << " : ";
-    controlPoints[i].print();
-    cout << endl;
+    cout << controlPoints[i] << endl;
   }
   cout << "total msglen: " << messageLength << endl;
 }
