@@ -20,7 +20,7 @@ void Test::generate()
   /* generate points on the line */
   Line<Point<double>> line(start,end);
   vector<Point<double>>::iterator it;
-  points = line.generate(numPoints);
+  points = generatePointsOnLine(line,numPoints);
   it = points.begin();
   points.insert(it,start);
   points.push_back(end);

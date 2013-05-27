@@ -206,17 +206,17 @@ vector<array<double,3>> Segment::computeDeviations(Line<Point<double>> &line,
     p = Point<double>(coordinates[i+1]);
 
     /* project onto plane */
-    d[0] = plane.signedDistance(p); 
+    d[0] = signedDistance(plane,p); 
     projection = project(p,plane);
     //cout << projection.x() << " " << projection.y() << " " << projection.z() << endl;
 
     /* project onto line */
-    d[1] = line.signedDistance(normal,projection);
+    d[1] = signedDistance(line,normal,projection);
     projection = project(projection,line);
     //cout << projection.x() << " " << projection.y() << " " << projection.z() << endl;
 
     /* distance from previous projection */
-    d[2] = line.signedDistance(previous,projection);
+    d[2] = signedDistance(line,previous,projection);
     deviations[i-1] = d;
     previous = projection;
   }
@@ -472,7 +472,7 @@ vector<array<double,3>> Segment::getDeviations(BezierCurve &curve)
   vector<array<double,3>> deviations;
   for (int i=index_start; i<numIntermediate; i++) {
     Point<double> p(coordinates[i+1]);
-    d[0] = plane.signedDistance(p);
+    d[0] = signedDistance(plane,p);
     Point<double> projection(project(p,plane));
 
     tmin_current = curve.nearestPoint(tmin_prev,curve.project(projection));
