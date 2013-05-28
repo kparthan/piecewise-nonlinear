@@ -589,7 +589,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
       } else {
         limit = numResidues - 1;
       }
-      #pragma omp parallel for
+      //#pragma omp parallel for
       for (j=i+1; j<=limit; j++) {
         Segment segment = getSegment(i,j);
         segment.estimateFreeParameters();
@@ -617,7 +617,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
     }
   } else {
     for (i=0; i<numResidues; i++) {
-      #pragma omp parallel for
+      //#pragma omp parallel for
       for (j=i+1; j<numResidues; j++) {
         Segment segment = getSegment(i,j);
         segment.estimateFreeParameters();

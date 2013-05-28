@@ -114,6 +114,10 @@ Vector<double> BezierCurve::tangent(double t)
       break;
 
     case 3:
+      p0 = controlPoints[0];
+      p1 = controlPoints[1];
+      p2 = controlPoints[2];
+      p3 = controlPoints[3];
       temp1 = (p1 * 3) - (p2 * 3) + p3 - p0;
       temp2 = (p0 - (p1 * 2) + p2) * 2; 
       temp3 = p1 - p0;
