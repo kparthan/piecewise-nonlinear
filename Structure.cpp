@@ -77,7 +77,8 @@ void Structure::printTransformation(vector<Point<double>> &coordinates,
     p = lcb::geometry::transform<double>(coordinates[i],transformation);
     fw << p.x() << " ";
     fw << p.y() << " ";
-    fw << p.z() << endl;
+    fw << p.z() << " ";
+    fw << endl;
   }
   fw.close();
 }

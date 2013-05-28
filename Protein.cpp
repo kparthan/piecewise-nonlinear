@@ -99,6 +99,7 @@ void Protein::reconstruct(string &file,
       string atom_id = "A" + boost::lexical_cast<string>(j);
       shared_ptr<Atom> cps_atom = make_shared<Atom>(atom_id);
       Point<double> p = lcb::geometry::transform<double>(cps[j],inverse_transform);
+      //cout << p << endl;
       control_points.push_back(p);
       all_control_points.push_back(p);
       cps_atom->setAtomicCoordinate(p);
@@ -172,6 +173,7 @@ void Protein::createPymolScript(string &pdb_file,
   vector<array<double,3>> colors = generateProteinColors(segments.size()-1);
   Chain chain = protein->getDefaultModel()["X"];
   vector<string> res_ids = chain.getResidueIdentifiers();
+  //for (int i=0; i<res_ids.size(); i++){cout << res_ids[i] << endl;}
 
   string pymol_file = "output/pymol_scripts/" + pdb_file + ".pml";
   ofstream script(pymol_file.c_str());
@@ -233,8 +235,8 @@ void Protein::createPymolScript(string &pdb_file,
       script << "print cmd.distance(" << p1 << "," << p2 << ")" << endl;
       /*if (count < planar_angles.size()) {
         script << "label " << sel2 << ", \"" << planar_angles[count++] << "\"" << endl;
-      }
-      script << "hide label" << endl;*/
+      }*/
+      script << "hide label" << endl;
       p1 = p2;
     }
     if (numIntermediateControls > 0) {
@@ -243,7 +245,7 @@ void Protein::createPymolScript(string &pdb_file,
     sel2 = "chain " + end_chain + " and resi " + end_residue + " and name CA";
     p2 = "\"" + sel2 + "\"";
     script << "print cmd.distance(" << p1 << "," << p2 << ")" << endl;
-    //script << "hide label" << endl;
+    script << "hide label" << endl;
 
     // color the segment
     script << "color c" << i << ", seg" << i << endl;  
