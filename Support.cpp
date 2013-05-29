@@ -40,6 +40,10 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("length",value<int>(&parameters.max_segment_length),
                                   "maximum length of the segment considered")
        ("encode",value<string>(&encode), "type of encoding the deviations")
+       ("compare",value<string>(&parameters.comparison_type)
+                                    "types of structures that are compared")
+       ("files",value<vector<string>>(&parameters.comparison_files)->multitoken(),
+                                                                "structure files")
   ;
   variables_map vm;
   store(parse_command_line(argc,argv,desc),vm);
@@ -174,6 +178,10 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     }
   } else {
     parameters.encode_deviations = ENCODE_DEVIATIONS_CUSTOMIZED;
+  }
+
+  if (vm.count("compare")) {
+    if
   }
 
   if (noargs) {

@@ -3,6 +3,7 @@
 
 #include "Header.h"
 #include "OptimalFit.h"
+#include "Segmentation.h"
 
 class Structure
 {
@@ -27,7 +28,7 @@ class Structure
     void transform(Matrix<double> &);
 
     //! Reconstruct the original structure back with the control points added
-    virtual void reconstruct(string &, vector<vector<OptimalFit>> &, 
+    virtual Segmentation reconstruct(string &, vector<vector<OptimalFit>> &, 
                              vector<int> &, Matrix<double> &){}
 
     //! Gets the end points of the segment in accordance with the internal

@@ -18,7 +18,7 @@ General::General(vector<Point<double>> &coordinates) : Structure(coordinates)
  *  \param segments a reference to a vector<int>
  *  \param transformation a reference to a Matrix<double>
  */
-void General::reconstruct(string &file,
+Segmentation General::reconstruct(string &file,
                           vector<vector<OptimalFit>> &optimalBezierFit,
                           vector<int> &segments, Matrix<double> &transformation)
 {

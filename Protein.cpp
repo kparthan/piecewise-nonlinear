@@ -70,16 +70,17 @@ vector<array<double,3>> Protein::generateProteinColors(int num_segments)
  *  \param optimalBezierFit a reference to a vector<vector<OptimalFit>>
  *  \param segments a reference to a vector<int>
  *  \param transformation a reference to a Matrix<double>
+ *  \return the segmentation profile of the protein
  */
-void Protein::reconstruct(string &file, 
+Segmentation Protein::reconstruct(string &file, 
                           vector<vector<OptimalFit>> &optimalBezierFit,
                           vector<int> &segments, Matrix<double> &transformation)
 {
   vector<Identifier> identifiers = mapToActualSegments(segments);
   protein->undoLastSelection();
   Matrix<double> inverse_transform = transformation.inverse();
-  shared_ptr<Chain> cps_chain = make_shared<Chain>("X");
-  shared_ptr<Chain> curve_chain = make_shared<Chain>("Y");
+  shared_ptr<Chain> cps_chain = make_shared<Chain>("x");
+  shared_ptr<Chain> curve_chain = make_shared<Chain>("y");
 
   int segment_start = 0;
   all_control_points.push_back(original_coordinates[0]);
@@ -126,9 +127,28 @@ void Protein::reconstruct(string &file,
 
     segment_start = segment_end;
   }
-
   protein->addChain(cps_chain);
   protein->addChain(curve_chain);
+
+  /* compute planar angles, dihedral angles, and lengths of connecting lines */
+  vector<double> planar_angles = computePlanarAngles();
+  vector<double> dihedral_angles = computeDihedralAngles();
+  cout << "Planar angles: ";
+  for (int i=0; i<planar_angles.size(); i++) {
+    planar_angles[i] *= 180 / PI;
+    cout << fixed;
+    cout << setprecision(2) << planar_angles[i] << " ";
+  }
+  cout << endl;
+  cout << "Dihedral angles: ";
+  for (int i=0; i<dihedral_angles.size(); i++) {
+    dihedral_angles[i] *= 180 / PI;
+    cout << fixed;
+    cout << setprecision(2) << dihedral_angles[i] << " ";
+  }
+  cout << endl;
+
+  /* visualize the protein segmentation */
   vector<Atom> atoms = protein->getAtoms();
   string pdb_file = extractName(file);
   string modified_pdb = "output/modified_pdb_files/" + pdb_file + ".pdb";
@@ -153,7 +173,7 @@ void Protein::createPymolScript(string &pdb_file,
                                 vector<int> &segments, 
                                 vector<Identifier> &identifiers)
 {
-  vector<double> planar_angles = computePlanarAngles();
+  /*vector<double> planar_angles = computePlanarAngles();
   vector<double> dihedral_angles = computeDihedralAngles();
   cout << "Planar angles: ";
   for (int i=0; i<planar_angles.size(); i++) {
@@ -168,10 +188,10 @@ void Protein::createPymolScript(string &pdb_file,
     cout << fixed;
     cout << setprecision(2) << dihedral_angles[i] << " ";
   }
-  cout << endl;
+  cout << endl;*/
 
   vector<array<double,3>> colors = generateProteinColors(segments.size()-1);
-  Chain chain = protein->getDefaultModel()["X"];
+  Chain chain = protein->getDefaultModel()["x"];
   vector<string> res_ids = chain.getResidueIdentifiers();
   //for (int i=0; i<res_ids.size(); i++){cout << res_ids[i] << endl;}
 
@@ -185,7 +205,7 @@ void Protein::createPymolScript(string &pdb_file,
   script << "show cartoon" << endl;
   script << "set label_font_id, 10" << endl;
 
-  Chain curve_chain = protein->getDefaultModel()["Y"];
+  Chain curve_chain = protein->getDefaultModel()["y"];
   vector<string> curve_ids = curve_chain.getResidueIdentifiers();
 
   string start_atom = identifiers[0].getAtomID();

@@ -1,5 +1,6 @@
 #include "StandardForm.h"
 #include "Message.h"
+#include "Segmentation.h"
 
 /*!
  *  \brief This is a constructor function which is used to instantiate the
@@ -492,8 +493,8 @@ void StandardForm::fitBezierCurveModel()
     /* compute the optimal segmentation using dynamic programming */
     pair<double,vector<int>> segmentation = optimalSegmentation();
     printBezierSegmentation(segmentation);
-    structure->reconstruct(parameters.file,optimalBezierFit,segmentation.second,
-                           transformation);
+    Segmentation segmentation = structure->reconstruct(parameters.file,
+                        optimalBezierFit,segmentation.second,transformation);
   } else if (parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
     fitOneSegment();
   }

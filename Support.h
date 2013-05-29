@@ -17,6 +17,8 @@ struct Parameters
   int constrain_segment_length;
   int max_segment_length;
   int encode_deviations;
+  int comparison_type;
+  vector<string> comparison_files;
 };
 
 struct Parameters parseCommandLineInput (int, char **); 
