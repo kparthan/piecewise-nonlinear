@@ -7,19 +7,19 @@ int main(int argc, char **argv)
   clock_t c_start = clock();
   auto t_start = high_resolution_clock::now();
 
-  switch(parameters.structure) {
-    case TEST:   // test
-      testFit(parameters);
+  switch (parameters.comparison_type) {
+    case -1:  // no comparison
+      segmentStructure();
       break;
 
-    case PROTEIN:   // protein file
-      proteinFit(parameters);
+    case PROTEIN: // compare proteins
+      compareProteinStructures(parameters);
       break;
 
-    case GENERAL:   // general 3D structure
-      generalFit(parameters);
+    case GENERAL: // compare generic structures
+      compareGenericStructures(parameters);
       break;
-  }
+  } 
 
   clock_t c_end = clock();
   auto t_end = high_resolution_clock::now();

@@ -5,6 +5,7 @@
 #include "Structure.h"
 #include "Segment.h"
 #include "OptimalFit.h"
+#include "Segmentation.h"
 
 /*!
  *  \class StandardForm 
@@ -109,7 +110,7 @@ class StandardForm
 
                             /* Utility functions */
     //! Fits models to the 3D structure
-    void fitModels();
+    Segmentation fitModels();
 
     //! Computes the volume of bounding box
     void boundingBox();
@@ -124,7 +125,7 @@ class StandardForm
     void fitLinearModel();
 
     //! Bezier curve fit
-    void fitBezierCurveModel();
+    Segmentation fitBezierCurveModel();
 
     //! Bezier curve fit for a particular segment
     void fitOneSegment();

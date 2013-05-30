@@ -15,7 +15,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
 {
   struct Parameters parameters;
   vector<string> constrain;
-  string encode;
+  string encode,comparison_type;
 
   parameters.structure = -1;
   bool noargs = 1;
@@ -40,8 +40,8 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("length",value<int>(&parameters.max_segment_length),
                                   "maximum length of the segment considered")
        ("encode",value<string>(&encode), "type of encoding the deviations")
-       ("compare",value<string>(&parameters.comparison_type)
-                                    "types of structures that are compared")
+       ("compare",value<string>(&comparison_type)
+                        "types of structures that are compared (protein/general)")
        ("files",value<vector<string>>(&parameters.comparison_files)->multitoken(),
                                                                 "structure files")
   ;
@@ -181,7 +181,23 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
   }
 
   if (vm.count("compare")) {
-    if
+    if (comparison_type.compare("protein") == 0) {
+      parameters.comparison_type = PROTEIN;
+    } else if (comparison_type.compare("general") == 0) {
+      parameters.comparison_type = GENERAL;
+    } else {
+      cout << "Comparison type not supported ..." << endl;
+      Usage(argv[0],desc);
+    }
+  } else {
+      parameters.comparison_type = -1;
+  }
+
+  if (vm.count("files")) {
+    if (parameters.comparison_files.size() != 2) {
+      cout << "Please input two files to compare ..." << endl;
+      Usage(argv[0],desc);
+    }
   }
 
   if (noargs) {
@@ -233,6 +249,53 @@ void Usage (const char *exe, options_description &desc)
 }
 
 /*!
+ *  \brief This module does the segmentation of a structure
+ *  \param parameters a reference to a struct Parameters 
+ */
+void segmentStructure(struct Parameters &parameters)
+{
+  switch(parameters.structure) {
+    case TEST:   // test
+      testFit(parameters);
+      break;
+
+    case PROTEIN:   // protein file
+      proteinFit(parameters);
+      break;
+
+    case GENERAL:   // general 3D structure
+      generalFit(parameters);
+      break;
+  }
+}
+
+/*!
+ *  \brief This module compares the segmentation of two protein structures
+ *  \param parameters a reference to a struct Parameters
+ */
+void compareProteinStructures(struct Parameters &parameters)
+{
+  parameters.file = parameters.comparison_files[0];
+  Segmentation a = proteinFit(parameters);
+
+  parameters.file = parameters.comparison_files[1];
+  Segmentation b = proteinFit(parameters);
+}
+
+/*!
+ *  \brief This module compares the segmentation of two generic structures
+ *  \param parameters a reference to a struct Parameters
+ */
+void compareGenericStructures(struct Parameters &parameters)
+{
+  parameters.file = parameters.comparison_files[0];
+  Segmentation a = generalFit(parameters);
+
+  parameters.file = parameters.comparison_files[1];
+  Segmentation b = generalFit(parameters);
+}
+
+/*!
  *  \brief This module generates test data and fits a model to it.
  *  \param parameters a reference to a struct Parameters
  */
@@ -258,7 +321,7 @@ void testFit(struct Parameters &parameters)
  *  \brief This module fits a model to a protein structure
  *  \param parameters a reference to a struct Parameters
  */
-void proteinFit(struct Parameters &parameters)
+Segmentation proteinFit(struct Parameters &parameters)
 {
   /* Obtain protein coordinates */
   ProteinStructure *p = parsePDBFile(parameters.file.c_str());
@@ -266,14 +329,14 @@ void proteinFit(struct Parameters &parameters)
   Structure *structure = &protein;
 
   StandardForm shape(parameters,structure);
-  shape.fitModels();
+  return shape.fitModels();
 }
 
 /*!
  *  \brief This module fits a model to a general 3D structure
  *  \param parameters a reference to a struct Parameters
  */
-void generalFit(struct Parameters &parameters)
+Segmentation generalFit(struct Parameters &parameters)
 {
   /* Obtain structure coordinates */
   vector<Point<double>> coordinates = parseFile(parameters.file.c_str());
@@ -281,7 +344,7 @@ void generalFit(struct Parameters &parameters)
   Structure *structure = &general;
 
   StandardForm shape(parameters,structure);
-  shape.fitModels();
+  return shape.fitModels();
 }
 
 /*!

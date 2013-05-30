@@ -21,6 +21,10 @@ struct Parameters
   vector<string> comparison_files;
 };
 
+void segmentStructure(struct Parameters &);
+void compareProteinStructures(struct Parameters &);
+void compareGenericStructures(struct Parameters &);
+
 struct Parameters parseCommandLineInput (int, char **); 
 void Usage (const char *, options_description &);
 bool checkFile (const char *);

@@ -1,6 +1,5 @@
 #include "StandardForm.h"
 #include "Message.h"
-#include "Segmentation.h"
 
 /*!
  *  \brief This is a constructor function which is used to instantiate the
@@ -386,7 +385,7 @@ Matrix<double> StandardForm::rotateSecondOntoXYPlane(Point<double> &projection)
 /*!
  *  \brief This module fits the different models to the StandardForm object
  */
-void StandardForm::fitModels()
+Segmentation StandardForm::fitModels()
 {
   /* Transform the protein structure to the standard canonical form */
   transform();
@@ -402,10 +401,10 @@ void StandardForm::fitModels()
 
   if (parameters.controls.size() == 0) {
     /* Linear model fit */
-    fitLinearModel();
+    return fitLinearModel();
   } else {
     /* Bezier Curve fit */
-    fitBezierCurveModel();
+    return fitBezierCurveModel();
   }
 } 
 
@@ -482,10 +481,11 @@ void StandardForm::fitLinearModel(void)
 /*!
  *  \brief This module fits Bezier curve to the structure
  */
-void StandardForm::fitBezierCurveModel()
+Segmentation StandardForm::fitBezierCurveModel()
 {
   cout << "*** BEZIER CURVE FIT ***" << endl;
 
+  Segmentation segmentation;
   if (parameters.portion_to_fit == FIT_ENTIRE_STRUCTURE) {
     /* compute the code length matrix for the Bezier curve fit */
     computeCodeLengthMatrixBezier();
@@ -493,11 +493,12 @@ void StandardForm::fitBezierCurveModel()
     /* compute the optimal segmentation using dynamic programming */
     pair<double,vector<int>> segmentation = optimalSegmentation();
     printBezierSegmentation(segmentation);
-    Segmentation segmentation = structure->reconstruct(parameters.file,
-                        optimalBezierFit,segmentation.second,transformation);
+    segmentation = structure->reconstruct(parameters.file,optimalBezierFit,
+                                          segmentation.second,transformation);
   } else if (parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
     fitOneSegment();
   }
+  return segmentation;
 }
 
 /*
