@@ -130,24 +130,6 @@ Segmentation Protein::reconstruct(string &file,
   protein->addChain(cps_chain);
   protein->addChain(curve_chain);
 
-  /* compute planar angles, dihedral angles, and lengths of connecting lines */
-  vector<double> planar_angles = computePlanarAngles();
-  vector<double> dihedral_angles = computeDihedralAngles();
-  cout << "Planar angles: ";
-  for (int i=0; i<planar_angles.size(); i++) {
-    planar_angles[i] *= 180 / PI;
-    cout << fixed;
-    cout << setprecision(2) << planar_angles[i] << " ";
-  }
-  cout << endl;
-  cout << "Dihedral angles: ";
-  for (int i=0; i<dihedral_angles.size(); i++) {
-    dihedral_angles[i] *= 180 / PI;
-    cout << fixed;
-    cout << setprecision(2) << dihedral_angles[i] << " ";
-  }
-  cout << endl;
-
   /* visualize the protein segmentation */
   vector<Atom> atoms = protein->getAtoms();
   string pdb_file = extractName(file);
@@ -158,6 +140,12 @@ Segmentation Protein::reconstruct(string &file,
   }
   fw.close();
   createPymolScript(pdb_file,optimalBezierFit,segments,identifiers);
+
+  /* compute planar angles, dihedral angles, and lengths of connecting lines */
+  vector<double> planar_angles = computePlanarAngles();
+  vector<double> dihedral_angles = computeDihedralAngles();
+  vector<double> lengths;
+  return Segmentation(planar_angles,dihedral_angles,lengths);
 }
 
 /*!
@@ -173,23 +161,6 @@ void Protein::createPymolScript(string &pdb_file,
                                 vector<int> &segments, 
                                 vector<Identifier> &identifiers)
 {
-  /*vector<double> planar_angles = computePlanarAngles();
-  vector<double> dihedral_angles = computeDihedralAngles();
-  cout << "Planar angles: ";
-  for (int i=0; i<planar_angles.size(); i++) {
-    planar_angles[i] *= 180 / PI;
-    cout << fixed;
-    cout << setprecision(2) << planar_angles[i] << " ";
-  }
-  cout << endl;
-  cout << "Dihedral angles: ";
-  for (int i=0; i<dihedral_angles.size(); i++) {
-    dihedral_angles[i] *= 180 / PI;
-    cout << fixed;
-    cout << setprecision(2) << dihedral_angles[i] << " ";
-  }
-  cout << endl;*/
-
   vector<array<double,3>> colors = generateProteinColors(segments.size()-1);
   Chain chain = protein->getDefaultModel()["x"];
   vector<string> res_ids = chain.getResidueIdentifiers();

@@ -466,7 +466,7 @@ void StandardForm::fitNullModel(void)
 /*!
  *  \brief This module computes the linear model fit to the structure.
  */
-void StandardForm::fitLinearModel(void)
+Segmentation StandardForm::fitLinearModel(void)
 {
   cout << "*** LINEAR FIT ***" << endl;
 
@@ -476,6 +476,7 @@ void StandardForm::fitLinearModel(void)
   /* compute the optimal segmentation using dynamic programming */
   pair<double,vector<int>> segmentation = optimalSegmentation();
   printLinearSegmentation(segmentation);
+  return Segmentation();
 }
 
 /*!
@@ -485,7 +486,7 @@ Segmentation StandardForm::fitBezierCurveModel()
 {
   cout << "*** BEZIER CURVE FIT ***" << endl;
 
-  Segmentation segmentation;
+  Segmentation segmentation_profile;
   if (parameters.portion_to_fit == FIT_ENTIRE_STRUCTURE) {
     /* compute the code length matrix for the Bezier curve fit */
     computeCodeLengthMatrixBezier();
@@ -493,12 +494,12 @@ Segmentation StandardForm::fitBezierCurveModel()
     /* compute the optimal segmentation using dynamic programming */
     pair<double,vector<int>> segmentation = optimalSegmentation();
     printBezierSegmentation(segmentation);
-    segmentation = structure->reconstruct(parameters.file,optimalBezierFit,
+    segmentation_profile = structure->reconstruct(parameters.file,optimalBezierFit,
                                           segmentation.second,transformation);
   } else if (parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
     fitOneSegment();
   }
-  return segmentation;
+  return segmentation_profile;
 }
 
 /*

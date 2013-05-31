@@ -29,6 +29,9 @@
 #define MAX_INTERMEDIATE_CONTROL_POINTS 2 
 #define DELTA_T 0.001
 
+#define SET 1
+#define NOT_SET 0
+
 #define FIT_ENTIRE_STRUCTURE 0
 #define FIT_SINGLE_SEGMENT 1
 

@@ -5,7 +5,6 @@
 #include "Structure.h"
 #include "Segment.h"
 #include "OptimalFit.h"
-#include "Segmentation.h"
 
 /*!
  *  \class StandardForm 
@@ -122,7 +121,7 @@ class StandardForm
     void fitNullModel();
 
     //! Computes the optimal fit
-    void fitLinearModel();
+    Segmentation fitLinearModel();
 
     //! Bezier curve fit
     Segmentation fitBezierCurveModel();

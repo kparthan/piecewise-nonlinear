@@ -2,6 +2,7 @@
 #define SUPPORT_H
 
 #include "Header.h"
+#include "Segmentation.h"
 
 struct Parameters
 {
@@ -27,6 +28,7 @@ void compareGenericStructures(struct Parameters &);
 
 struct Parameters parseCommandLineInput (int, char **); 
 void Usage (const char *, options_description &);
+string getPDBFilePath(string &);
 bool checkFile (const char *);
 ProteinStructure *parsePDBFile (const char *);
 vector<Point<double>> parseFile (const char *);
@@ -45,9 +47,9 @@ double minimum(vector<double> &);
 double minimum(vector<vector<double>> &);
 double bernstein(int, int, double);
 
-void testFit (struct Parameters &);
-void proteinFit (struct Parameters &);
-void generalFit (struct Parameters &);
+Segmentation testFit (struct Parameters &);
+Segmentation proteinFit (struct Parameters &);
+Segmentation generalFit (struct Parameters &);
 
 #endif
 

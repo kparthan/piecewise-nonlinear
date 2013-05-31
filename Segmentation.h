@@ -16,8 +16,14 @@ class Segmentation
     vector<double> lengths;
 
   public:
+    //! Null constructor
+    Segmentation();
+
     //! Constructor
     Segmentation(vector<double> &, vector<double> &, vector<double> &);
+
+    //! Copy constructor
+    Segmentation(const Segmentation &);
 
     //! Assignment operator
     Segmentation operator=(const Segmentation &);
@@ -31,6 +37,9 @@ class Segmentation
 
     //! Get the lengths of connecting lines
     vector<double> getLengths();
+
+    //! Print the segmentation details
+    void print();
 };
 
 #endif

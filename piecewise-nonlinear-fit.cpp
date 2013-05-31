@@ -9,7 +9,7 @@ int main(int argc, char **argv)
 
   switch (parameters.comparison_type) {
     case -1:  // no comparison
-      segmentStructure();
+      segmentStructure(parameters);
       break;
 
     case PROTEIN: // compare proteins

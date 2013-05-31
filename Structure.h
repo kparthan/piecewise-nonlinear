@@ -29,7 +29,7 @@ class Structure
 
     //! Reconstruct the original structure back with the control points added
     virtual Segmentation reconstruct(string &, vector<vector<OptimalFit>> &, 
-                             vector<int> &, Matrix<double> &){}
+                             vector<int> &, Matrix<double> &){ return Segmentation(); }
 
     //! Gets the end points of the segment in accordance with the internal
     //! representation used
