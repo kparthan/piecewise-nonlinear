@@ -7,7 +7,7 @@ int main(int argc, char **argv)
   clock_t c_start = clock();
   auto t_start = high_resolution_clock::now();
 
-  switch (parameters.comparison_type) {
+  switch (parameters.comparison) {
     case -1:  // no comparison
       segmentStructure(parameters);
       break;

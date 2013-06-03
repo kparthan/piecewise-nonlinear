@@ -161,7 +161,7 @@ vector<double> Structure::computePlanarAngles()
     for (int i=1; i<connecting_lines.size(); i++) {
       line2 = connecting_lines[i];
       double theta = PI - angle(line1,line2);
-      angles.push_back(theta);
+      angles.push_back(theta * 180 / PI);
       line1 = line2;
     }
   }
@@ -200,7 +200,12 @@ vector<double> Structure::computeDihedralAngles()
       double x = n1 * n2;
       double y = m1 * n2;
       double theta = atan2(y,x);
-      angles.push_back(theta);
+      double theta_degrees = theta * 180 / PI;
+      if (theta_degrees < 0) {
+        angles.push_back(360 + theta_degrees);
+      } else {
+        angles.push_back(theta_degrees);
+      }
       v1 = v2;
       v2 = v3;
       p2 = p3;
@@ -208,5 +213,20 @@ vector<double> Structure::computeDihedralAngles()
     }
   }
   return angles;
+}
+
+/*!
+ *  \brief This module computes the lengths of the lines connecting the
+ *  control points.
+ *  \return the lengths of the connecting lines
+ */
+vector<double> Structure::computeConnectingLinesLengths()
+{
+  vector<double> lengths;
+  for (int i=0; i<connecting_lines.size(); i++) {
+    double x = lcb::geometry::length(connecting_lines[i]);
+    lengths.push_back(x);
+  }
+  return lengths;
 }
 

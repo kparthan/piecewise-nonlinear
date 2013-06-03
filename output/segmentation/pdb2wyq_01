@@ -2,11 +2,11 @@ Using structure file: /home/parthan/Research/PDB/wy/pdb2wyq.ent.gz
 Doing a BEZIER segmentation ...
 
 # of residues: 77
-# of non-linear segments: 7
-0-->10-->19-->41-->51-->61-->62-->76
+# of non-linear segments: 8
+0-->10-->21-->23-->43-->51-->61-->62-->76
 
-Best fit: 3133.12 bits.
-Bits per residue: 41.2252
+Best fit: 3136.1 bits.
+Bits per residue: 41.2644
 
 Segment # 1
 Residue stretch: [0, 10]
@@ -16,40 +16,45 @@ Length of the segment: 11
 		Message length: 401.374
 
 Segment # 2
-Residue stretch: [10, 19]
-Length of the segment: 10
+Residue stretch: [10, 21]
+Length of the segment: 12
 		# of intermediate control points: 1
-		Control Point # 1: (13.2, 13, 7.6)
-		Message length: 368.117
+		Control Point # 1: (7.4, 12.6, 4.3)
+		Message length: 448.488
 
 Segment # 3
-Residue stretch: [19, 41]
-Length of the segment: 23
-		# of intermediate control points: 2
-		Control Point # 1: (18.8, -16, -7.9)
-		Control Point # 2: (21.2, 27, -0.3)
-		Message length: 914.191
+Residue stretch: [21, 23]
+Length of the segment: 3
+		# of intermediate control points: 0
+		Message length: 91.3913
 
 Segment # 4
-Residue stretch: [41, 51]
-Length of the segment: 11
-		# of intermediate control points: 0
-		Message length: 412.088
+Residue stretch: [23, 43]
+Length of the segment: 21
+		# of intermediate control points: 1
+		Control Point # 1: (22.2, 20.7, -1.8)
+		Message length: 820.651
 
 Segment # 5
+Residue stretch: [43, 51]
+Length of the segment: 9
+		# of intermediate control points: 0
+		Message length: 336.843
+
+Segment # 6
 Residue stretch: [51, 61]
 Length of the segment: 11
 		# of intermediate control points: 1
 		Control Point # 1: (21.8, -7.9, -13)
 		Message length: 418.028
 
-Segment # 6
+Segment # 7
 Residue stretch: [61, 62]
 Length of the segment: 2
 		# of intermediate control points: 0
 		Message length: 46.7142
 
-Segment # 7
+Segment # 8
 Residue stretch: [62, 76]
 Length of the segment: 15
 		# of intermediate control points: 1

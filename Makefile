@@ -15,7 +15,8 @@ OBJECTS = piecewise-nonlinear-fit.o \
   OptimalFit.o \
   Complex.o \
   Identifier.o \
-  Segmentation.o
+  Segmentation.o \
+  Comparison.o
 
 all: piecewise-nonlinear-fit 
 
@@ -65,6 +66,9 @@ Identifier.o: Identifier.cpp Identifier.h
 	g++ -c $(CFLAGS) $< -o $@
 
 Segmentation.o: Segmentation.cpp Segmentation.h
+	g++ -c $(CFLAGS) $< -o $@
+
+Comparison.o: Comparison.cpp Comparison.h
 	g++ -c $(CFLAGS) $< -o $@
 
 clean:

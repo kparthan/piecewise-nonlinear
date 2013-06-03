@@ -18,7 +18,9 @@ struct Parameters
   int constrain_segment_length;
   int max_segment_length;
   int encode_deviations;
-  int comparison_type;
+  int comparison;
+  double gap_penalty;
+  int comparison_method;
   vector<string> comparison_files;
 };
 

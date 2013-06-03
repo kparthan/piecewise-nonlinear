@@ -3,6 +3,7 @@
 #include "General.h"
 #include "Test.h"
 #include "StandardForm.h"
+#include "Comparison.h"
 
 /*!
  *  \brief This function checks to see if valid arguments are given to the 
@@ -16,10 +17,9 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
   struct Parameters parameters;
   string structure;
   vector<string> constrain,pdb_ids;
-  string encode,comparison_type,pdb_id;
+  string encode,pdb_id,comparison_method;
 
   parameters.structure = -1;
-  int protein_flag = NOT_SET, compare_flag = NOT_SET;
   bool noargs = 1;
 
   cout << "Checking command-line input ..." << endl;
@@ -30,10 +30,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("verbose","print some details")
        ("structure",value<string>(&structure),"type of structure (protein/general)")
        ("file",value<string>(&parameters.file),"pdb file")
-       
-       ("protein",value<string>(&parameters.file),"pdb file")
        ("pdbid",value<string>(&pdb_id),"PDB ID")
-       ("generic",value<string>(&parameters.file),"general 3D structure")
        ("segment",value<vector<string>>(&parameters.end_points)->multitoken(),
                                   "segment to be fit")
        // TODO: ("fit",value<string>,"fit an entire protein or just a portion")
@@ -46,8 +43,9 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("length",value<int>(&parameters.max_segment_length),
                                   "maximum length of the segment considered")
        ("encode",value<string>(&encode), "type of encoding the deviations")
-       ("compare",value<string>(&comparison_type),
-                        "types of structures that are compared (protein/general)")
+       ("compare",value<string>(&comparison_method),
+                                      "comparison method (basic/mml)")
+       ("gap",value<double>(&parameters.gap_penalty),"gap penalty used in alignment")
        ("files",value<vector<string>>(&parameters.comparison_files)->multitoken(),
                                                                 "structure files")
        ("pdbids",value<vector<string>>(&pdb_ids)->multitoken(),"PDB IDs to compare")
@@ -73,6 +71,10 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
   }
 
   if (vm.count("structure")) {
+    if (parameters.structure == TEST) {
+      cout << "Please input one of --test or --structure ..." << endl;
+      Usage(argv[0],desc);
+    }
     if (structure.compare("protein") == 0) {
       parameters.structure = PROTEIN;
     } else if (structure.compare("general") == 0) {
@@ -83,7 +85,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     }
   }
 
-  if (parameters.structure == PROTEIN) {
+  if (parameters.structure == PROTEIN && !vm.count("compare")) {
     if (vm.count("file") && vm.count("pdbid")) {
       cout << "Please use one of --file or --pdbid ..." << endl;
       Usage(argv[0],desc);
@@ -93,47 +95,79 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
       cout << "Using PDB ID: " << pdb_id << endl;
       parameters.file = getPDBFilePath(pdb_id);
       parameters.structure = PROTEIN;
+    } else {
+      cout << "Input protein structure file not provided ..." << endl;
+      Usage(argv[0],desc);
+    }
+    noargs = 0;
+  }
+
+  if (parameters.structure == GENERAL && !vm.count("compare")) {
+    if (vm.count("file")) {
+      cout << "Using general structure file: " << parameters.file << endl;
       noargs = 0;
+    } else {
+      cout << "Input general structure file not provided ..." << endl;
+      Usage(argv[0],desc);
     }
   }
 
-  if (vm.count("protein")) {
-    protein_flag = SET;
-    if (parameters.structure != TEST) {
-      cout << "Using pdb file: " << vm["protein"].as<string>() << endl;
-      parameters.structure = PROTEIN;
+  if (vm.count("compare")) {
+    noargs = 1;
+    if (parameters.structure == PROTEIN) {
+      if (vm.count("files") && vm.count("pdbids")) {
+        cout << "Please use one of --files or --pdbids for comparison ..." << endl;
+        Usage(argv[0],desc);
+      } else if (vm.count("files")) {
+        if (parameters.comparison_files.size() != 2) {
+          cout << "Please input TWO files to compare ..." << endl;
+          Usage(argv[0],desc);
+        } else {
+          cout << "Comparing protein structure files: "
+               << parameters.comparison_files[0] << " and "
+               << parameters.comparison_files[1] << endl;
+        }
+      } else if (vm.count("pdbids")) {
+        if (pdb_ids.size() != 2) {
+          cout << "Please input TWO PDB Ids to compare ..." << endl;
+          Usage(argv[0],desc);
+        }
+        parameters.comparison_files.push_back(getPDBFilePath(pdb_ids[0]));
+        parameters.comparison_files.push_back(getPDBFilePath(pdb_ids[1]));
+      }
+      parameters.comparison = PROTEIN;
       noargs = 0;
+    } else if (parameters.structure == GENERAL) {
+      if (vm.count("files")) {
+        if (parameters.comparison_files.size() != 2) {
+          cout << "Please input TWO files to compare ..." << endl;
+          Usage(argv[0],desc);
+        } else {
+          cout << "Comparing structure files: "
+               << parameters.comparison_files[0] << " and "
+               << parameters.comparison_files[1] << endl;
+        }
+        noargs = 0;
+        parameters.comparison = GENERAL;
+      }
+    }
+    if (comparison_method.compare("basic") == 0) {
+      parameters.comparison_method = BASIC_ALIGN;
+    } else if (comparison_method.compare("mml") == 0) {
+      parameters.comparison_method = MML_ALIGN;
     } else {
-      cout << "Please specify one of --test or --protein" << endl;
+      cout << "Unsupported comparison method ..." << endl;
       Usage(argv[0],desc);
     }
-  }
-
-  if (vm.count("pdbid")) {
-    if (protein_flag) {
-      cout << "Please use one of --protein or --pdbid ..." << endl;
-      Usage(argv[0],desc);
+    if (vm.count("gap")) {
+      cout << "Using a gap penalty of " << parameters.gap_penalty 
+           << " ..." << endl;
     } else {
-      cout << "Using PDB ID: " << pdb_id << endl;
-      parameters.file = getPDBFilePath(pdb_id);
-      parameters.structure = PROTEIN;
-      noargs = 0;
+      parameters.gap_penalty = GAP_PENALTY;
+      cout << "Using default value of gap penalty: " << GAP_PENALTY << endl;
     }
-  }
-
-  if (vm.count("generic")) {
-    if (parameters.structure == TEST) {
-      cout << "Please specify one of --test or --protein" << endl;
-      Usage(argv[0],desc);
-    } else if (parameters.structure == PROTEIN) {
-      cout << "Please specify one of --protein or --generic" << endl;
-      Usage(argv[0],desc);
-    } else {
-      cout << "Using structure file: " << vm["generic"].as<string>() 
-      << endl;
-      parameters.structure = GENERAL;
-      noargs = 0;
-    }
+  } else {
+    parameters.comparison = -1;
   }
 
   if (vm.count("segment")) {
@@ -225,39 +259,6 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     parameters.encode_deviations = ENCODE_DEVIATIONS_CUSTOMIZED;
   }
 
-  if (vm.count("compare")) {
-    compare_flag = SET;
-    if (comparison_type.compare("protein") == 0) {
-      parameters.comparison_type = PROTEIN;
-    } else if (comparison_type.compare("general") == 0) {
-      parameters.comparison_type = GENERAL;
-    } else {
-      cout << "Comparison type not supported ..." << endl;
-      Usage(argv[0],desc);
-    }
-  } else {
-      parameters.comparison_type = -1;
-  }
-
-  if (compare_flag) {
-    if (vm.count("files") && vm.count("pdbids")) {
-      cout << "Please use one of --files or --pdbids for comparison ..." << endl;
-      Usage(argv[0],desc);
-    } else if (vm.count("files")) {
-      if (parameters.comparison_files.size() != 2) {
-        cout << "Please input two files to compare ..." << endl;
-        Usage(argv[0],desc);
-      }
-    } else if (vm.count("pdbids")) {
-      if (pdb_ids.size() != 2) {
-        cout << "Please input two files to compare ..." << endl;
-        Usage(argv[0],desc);
-      }
-      parameters.comparison_files.push_back(getPDBFilePath(pdb_ids[0]));
-      parameters.comparison_files.push_back(getPDBFilePath(pdb_ids[1]));
-    }
-  }
-
   if (noargs) {
     cout << "Not enough arguments supplied..." << endl;
     Usage(argv[0],desc);
@@ -312,18 +313,22 @@ void Usage (const char *exe, options_description &desc)
  */
 void segmentStructure(struct Parameters &parameters)
 {
+  Segmentation segmentation;
   switch(parameters.structure) {
     case TEST:   // test
-      testFit(parameters);
+      segmentation = testFit(parameters);
       break;
 
     case PROTEIN:   // protein file
-      proteinFit(parameters);
+      segmentation = proteinFit(parameters);
       break;
 
     case GENERAL:   // general 3D structure
-      generalFit(parameters);
+      segmentation = generalFit(parameters);
       break;
+  }
+  if (parameters.print == PRINT_DETAIL) {
+    segmentation.print();
   }
 }
 
@@ -340,6 +345,17 @@ void compareProteinStructures(struct Parameters &parameters)
   parameters.file = parameters.comparison_files[1];
   Segmentation b = proteinFit(parameters);
   b.print();
+
+  Comparison comparison(a,b);
+  switch (parameters.comparison_method) {
+    case BASIC_ALIGN:
+      comparison.basicAlignment(parameters.gap_penalty);
+      break;
+
+    case MML_ALIGN:
+      comparison.mmlAlignment();
+      break;
+  }
 }
 
 /*!
@@ -353,6 +369,17 @@ void compareGenericStructures(struct Parameters &parameters)
 
   parameters.file = parameters.comparison_files[1];
   Segmentation b = generalFit(parameters);
+
+  Comparison comparison(a,b);
+  switch (parameters.comparison_method) {
+    case BASIC_ALIGN:
+      comparison.basicAlignment(parameters.gap_penalty);
+      break;
+
+    case MML_ALIGN:
+      comparison.mmlAlignment();
+      break;
+  }
 }
 
 /*!
@@ -415,7 +442,7 @@ Segmentation generalFit(struct Parameters &parameters)
 string getPDBFilePath(string &pdb_id)
 {
   boost::algorithm::to_lower(pdb_id);
-  string path = "/home/pkas7/Research/PDB/" ;
+  string path = "/home/parthan/Research/PDB/" ;
   string directory(pdb_id,1,2);
   path += directory + "/pdb" + pdb_id + ".ent.gz";
   return path;

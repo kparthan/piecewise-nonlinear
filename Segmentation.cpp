@@ -75,24 +75,23 @@ vector<double> Segmentation::getLengths()
  */
 void Segmentation::print()
 {
-  cout << "Planar angles: ";
+  cout << fixed << setw(25) << "Planar angles [" << planar_angles.size() << "] : ";
   for (int i=0; i<planar_angles.size(); i++) {
-    planar_angles[i] *= 180 / PI;
-    cout << fixed;
+    cout << fixed << setw(6);
     cout << setprecision(2) << planar_angles[i] << " ";
   }
   cout << endl;
-  cout << "Dihedral angles: ";
+  cout << fixed << setw(25) << "Dihedral angles [" << dihedral_angles.size() << "] : ";
   for (int i=0; i<dihedral_angles.size(); i++) {
-    dihedral_angles[i] *= 180 / PI;
-    cout << fixed;
+    cout << fixed << setw(6);
     cout << setprecision(2) << dihedral_angles[i] << " ";
   }
   cout << endl;
-  cout << "Lengths: ";
+  cout << fixed << setw(25) << "Lengths [" << lengths.size() << "] : ";
   for (int i=0; i<lengths.size(); i++) {
     cout << fixed;
     cout << setprecision(2) << lengths[i] << " ";
   }
+  cout << endl;
 }
 
