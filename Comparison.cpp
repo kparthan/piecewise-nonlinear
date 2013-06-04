@@ -18,121 +18,36 @@ Comparison::Comparison(Segmentation &a, Segmentation &b)
 }
 
 /*!
- *  \brief This module implements the basic alignment of dihedral angles
- *  \param gap_penalty a double
- */
-void Comparison::basicAlignment(double gap_penalty)
-{
-  vector<double> x = profiles[0].getDihedralAngles();
-  vector<double> y = profiles[1].getDihedralAngles();
-  int i,j;
-  vector<vector<double>> matrix;
-  vector<vector<int>> direction;
-  const int LEFT = -1, UP = 1, DIAGONAL = 0;
-  for (i=0; i<=x.size(); i++) {
-    vector<double> temp(y.size()+1,0);
-    matrix.push_back(temp);
-    vector<int> temp2(y.size()+1,0);
-    direction.push_back(temp2);
-  }
-  for (i=1; i<=x.size(); i++) {
-    matrix[i][0] = i * gap_penalty;
-    direction[i][0] = UP;
-  }
-  for (j=1; j<=y.size(); j++) {
-    matrix[0][j] = j * gap_penalty;
-    direction[0][j] = LEFT;
-  }
-  double t;
-  for (i=1; i<=x.size(); i++) {
-    for (j=1; j<=y.size(); j++) {
-      /* cost of matching the angles */
-      double diff_angles = fabs(x[i-1] - y[j-1]);
-      if (diff_angles > 180) {
-        t = 360 - diff_angles;
-      } else {
-        t = diff_angles;
-      }
-      matrix[i][j] = matrix[i-1][j-1] + 45 - t;
-      direction[i][j] = DIAGONAL;
-      if (matrix[i][j] < matrix[i-1][j] + gap_penalty) {
-        matrix[i][j] = matrix[i-1][j] + gap_penalty;
-        direction[i][j] = UP;
-      }
-      if (matrix[i][j] < matrix[i][j-1] + gap_penalty) {
-        matrix[i][j] = matrix[i][j-1] + gap_penalty;
-        direction[i][j] = LEFT;
-      }
-    }
-  }
-  cout << "\nAlignment score: " << matrix[x.size()][y.size()] << endl;
-  /*for (i=0; i<matrix.size(); i++) {
-    for(j=0; j<matrix[i].size(); j++) {
-      cout << fixed << setw(6) << setprecision(2) << matrix[i][j] << " ";
-    }
-    cout << endl;
-  }*/
-  vector<array<double,2>> traceback;
-  i = x.size(); j = y.size();
-  while (1) {
-    array<double,2> angles;
-    switch (direction[i][j]) {
-      case LEFT:
-        angles[0] = 1000;
-        angles[1] = y[--j];
-        break;
-
-      case UP:
-        angles[0] = x[--i];
-        angles[1] = 1000;
-        break;
-
-      case DIAGONAL:
-        angles[0] = x[--i];
-        angles[1] = y[--j];
-        break;
-    }
-    traceback.push_back(angles);
-    if (i == 0 && j == 0) {
-      break;
-    }
-  }
-  cout << "\nAlignment:\n";
-  for (i=traceback.size()-1; i>=0; i--) {
-    if (traceback[i][0] == 1000) {
-      cout << fixed << setw(6) << "-" << "  ";
-    } else {
-      cout << fixed << setw(6) << setprecision(2) << traceback[i][0] << "  ";
-    }
-  }
-  cout << endl;
-  for (i=traceback.size()-1; i>=0; i--) {
-    if (traceback[i][1] == 1000) {
-      cout << fixed << setw(6) << "-" << "  ";
-    } else {
-      cout << fixed << setw(6) << setprecision(2) << traceback[i][1] << "  ";
-    }
-  }
-  cout << endl;
-}
-
-/*!
- *  \brief
- */
-void Comparison::mmlAlignment()
-{}
-
-/*!
  *  \brief This module implements the basic alignment of two strings 
  */
-/*void Comparison::basicAlignment()
+/*void Comparison::computeBasicAlignment()
 {
   string x = "vintner";
   string y = "writers";
   string x = "appropriate meaning";
   string y = "approximate matching";
-  editDistance(x,y);
+  computeEditDistance(x,y);
 }*/
+
+/*!
+ *  \brief This module is used to initialize the dynamic programming matrices
+ *  (scoring and the direction matrix)
+ *  \param matrix a pointer to a vector<vector<double>>
+ *  \param direction a pointer to a vector<vector<int>>
+ *  \param length1 an integer
+ *  \param length2 an integer
+ */
+void Comparison::initialize(vector<vector<double>> &matrix, 
+                            vector<vector<int>> &direction, 
+                            int length1, int length2)
+{
+  for (int i=0; i<=length1; i++) {
+    vector<double> temp(length2+1,0);
+    matrix.push_back(temp);
+    vector<int> temp2(length2+1,0);
+    direction.push_back(temp2);
+  }
+}
 
 /*!
  *  \brief This module implements the edit distance algorithm
@@ -140,18 +55,12 @@ void Comparison::mmlAlignment()
  *  \param x a reference to a string
  *  \param y a reference to a string
  */
-void Comparison::editDistance(string &x, string &y)
+void Comparison::computeEditDistance(string &x, string &y)
 {
   int i,j;
   vector<vector<double>> matrix;
   vector<vector<int>> direction;
-  const int LEFT = -1, UP = 1, DIAGONAL = 0;
-  for (i=0; i<=x.length(); i++) {
-    vector<double> temp(y.length()+1,0);
-    matrix.push_back(temp);
-    vector<int> temp2(y.length()+1,0);
-    direction.push_back(temp2);
-  }
+  initialize(matrix,direction,x.length(),y.length());
   for (i=1; i<=x.length(); i++) {
     matrix[i][0] = i;
     direction[i][0] = UP;
@@ -219,5 +128,178 @@ void Comparison::editDistance(string &x, string &y)
   for (i=traceback.size()-1; i>=0; i--) {
     cout << traceback[i][1] << " ";
   }
+}
+
+/*!
+ *  \brief This module constructs the optimal alignment by traversing through
+ *  the dynamic programming scoring matrix.
+ *  \param direction a reference to a vector<vector<int>>
+ *  \param x a reference to a vector<double>
+ *  \param y a reference to a vector<double>
+ */
+vector<array<double,2>> Comparison::traceback(vector<vector<int>> &direction,
+                                    vector<double> &x, vector<double> &y)
+{
+  vector<array<double,2>> optimal_alignment;
+  int i = x.size(); 
+  int j = y.size();
+  while (1) {
+    array<double,2> angles;
+    switch (direction[i][j]) {
+      case LEFT:
+        angles[0] = 1000;
+        angles[1] = y[--j];
+        break;
+
+      case UP:
+        angles[0] = x[--i];
+        angles[1] = 1000;
+        break;
+
+      case DIAGONAL:
+        angles[0] = x[--i];
+        angles[1] = y[--j];
+        break;
+    }
+    optimal_alignment.push_back(angles);
+    if (i == 0 && j == 0) {
+      break;
+    }
+  }
+  return optimal_alignment;
+}
+
+/*!
+ *  \brief This module prints the optimal alignment to the screen
+ *  \param alignment a reference to a vector<array<double,2>>
+ */
+void Comparison::printAlignment(vector<array<double,2>> &alignment)
+{
+  cout << "\nAlignment:\n";
+  for (int i=alignment.size()-1; i>=0; i--) {
+    if (alignment[i][0] == 1000) {
+      cout << fixed << setw(6) << "-" << "  ";
+    } else {
+      cout << fixed << setw(6) << setprecision(2) << alignment[i][0] << "  ";
+    }
+  }
+  cout << endl;
+  for (int i=alignment.size()-1; i>=0; i--) {
+    if (alignment[i][1] == 1000) {
+      cout << fixed << setw(6) << "-" << "  ";
+    } else {
+      cout << fixed << setw(6) << setprecision(2) << alignment[i][1] << "  ";
+    }
+  }
+  cout << endl;
+}
+
+/*!
+ *  \brief This module implements the edit distance of dihedral angles
+ *  \param gap_penalty a double
+ */
+void Comparison::computeEditDistance(double gap_penalty)
+{
+  vector<double> x = profiles[0].getDihedralAngles();
+  vector<double> y = profiles[1].getDihedralAngles();
+  int i,j;
+  vector<vector<double>> matrix;
+  vector<vector<int>> direction;
+  initialize(matrix,direction,x.size(),y.size());
+  for (i=1; i<=x.size(); i++) {
+    matrix[i][0] = i * gap_penalty;
+    direction[i][0] = UP;
+  }
+  for (j=1; j<=y.size(); j++) {
+    matrix[0][j] = j * gap_penalty;
+    direction[0][j] = LEFT;
+  }
+  double t;
+  for (i=1; i<=x.size(); i++) {
+    for (j=1; j<=y.size(); j++) {
+      /* cost of matching the angles */
+      double diff_angles = fabs(x[i-1] - y[j-1]);
+      if (diff_angles > 180) {
+        t = 360 - diff_angles;
+      } else {
+        t = diff_angles;
+      }
+      matrix[i][j] = matrix[i-1][j-1] + t;
+      direction[i][j] = DIAGONAL;
+      if (matrix[i][j] > matrix[i-1][j] + gap_penalty) {
+        matrix[i][j] = matrix[i-1][j] + gap_penalty;
+        direction[i][j] = UP;
+      }
+      if (matrix[i][j] > matrix[i][j-1] + gap_penalty) {
+        matrix[i][j] = matrix[i][j-1] + gap_penalty;
+        direction[i][j] = LEFT;
+      }
+    }
+  }
+  cout << "\nEdit distance: " << matrix[x.size()][y.size()] << endl;
+  vector<array<double,2>> optimal_alignment = traceback(direction,x,y);
+  printAlignment(optimal_alignment);
+}
+
+/*!
+ *  \brief This module implements the basic alignment of dihedral angles
+ *  \param gap_penalty a double
+ */
+void Comparison::computeBasicAlignment(double gap_penalty)
+{
+  vector<double> x = profiles[0].getDihedralAngles();
+  vector<double> y = profiles[1].getDihedralAngles();
+  int i,j;
+  vector<vector<double>> matrix;
+  vector<vector<int>> direction;
+  initialize(matrix,direction,x.size(),y.size());
+  for (i=1; i<=x.size(); i++) {
+    matrix[i][0] = i * gap_penalty;
+    direction[i][0] = UP;
+  }
+  for (j=1; j<=y.size(); j++) {
+    matrix[0][j] = j * gap_penalty;
+    direction[0][j] = LEFT;
+  }
+  double t;
+  for (i=1; i<=x.size(); i++) {
+    for (j=1; j<=y.size(); j++) {
+      /* cost of matching the angles */
+      double diff_angles = fabs(x[i-1] - y[j-1]);
+      if (diff_angles > 180) {
+        t = 360 - diff_angles;
+      } else {
+        t = diff_angles;
+      }
+      matrix[i][j] = matrix[i-1][j-1] + 45 - t;
+      direction[i][j] = DIAGONAL;
+      if (matrix[i][j] < matrix[i-1][j] + gap_penalty) {
+        matrix[i][j] = matrix[i-1][j] + gap_penalty;
+        direction[i][j] = UP;
+      }
+      if (matrix[i][j] < matrix[i][j-1] + gap_penalty) {
+        matrix[i][j] = matrix[i][j-1] + gap_penalty;
+        direction[i][j] = LEFT;
+      }
+    }
+  }
+  cout << "\nAlignment score: " << matrix[x.size()][y.size()] << endl;
+  vector<array<double,2>> optimal_alignment = traceback(direction,x,y);
+  printAlignment(optimal_alignment);
+}
+
+/*!
+ *  \brief This method computes the alignment for the MML based approach.
+ */
+void Comparison::computeMMLAlignment()
+{
+  vector<double> x = profiles[0].getDihedralAngles();
+  vector<double> y = profiles[1].getDihedralAngles();
+  int i,j;
+  vector<vector<double>> matrix;
+  vector<vector<int>> direction;
+  initialize(matrix,direction,x.size(),y.size());
+  vector<vector<double>> transition_probability;
+  vector<double> state_probability;
 }
 

@@ -7,11 +7,28 @@
 class Comparison
 {
   private:
-    //! the two segmentation profiles
+    //! Direction to choose in the dynamic programming matrix
+    enum Direction {
+      LEFT,
+      UP,
+      DIAGONAL
+    };
+
+    //! The two segmentation profiles
     Segmentation profiles[2];
 
+    //! Initialize the dynamic programming matrices
+    void initialize(vector<vector<double>> &, vector<vector<int>> &, int, int);
+
+    //! Construct the optimal alignment
+    vector<array<double,2>> traceback(vector<vector<int>> &, vector<double> &, 
+                                      vector<double> &);
+
+    //! Prints the alignment
+    void printAlignment(vector<array<double,2>> &);
+
     //! Edit distance
-    void editDistance(string &, string &);
+    void computeEditDistance(string &, string &);
 
   public:
     //! Null constructor
@@ -20,11 +37,14 @@ class Comparison
     //! Constructor
     Comparison(Segmentation &, Segmentation &);
 
+    //! Edit distance
+    void computeEditDistance(double);
+
     //! Basic Alignment
-    void basicAlignment(double);
+    void computeBasicAlignment(double);
 
     //! MML Alignment
-    void mmlAlignment();
+    void computeMMLAlignment();
 };
 
 #endif

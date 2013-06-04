@@ -32,9 +32,10 @@
 #define FIT_ENTIRE_STRUCTURE 0
 #define FIT_SINGLE_SEGMENT 1
 
-#define BASIC_ALIGN 0
-#define MML_ALIGN 1
-#define GAP_PENALTY 20
+#define EDIT_DISTANCE 0
+#define BASIC_ALIGNMENT 1
+#define MML_ALIGNMENT 2
+#define GAP_PENALTY -20
 
 #define TEST 0
 #define PROTEIN 1

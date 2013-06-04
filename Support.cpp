@@ -151,10 +151,12 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
         parameters.comparison = GENERAL;
       }
     }
-    if (comparison_method.compare("basic") == 0) {
-      parameters.comparison_method = BASIC_ALIGN;
-    } else if (comparison_method.compare("mml") == 0) {
-      parameters.comparison_method = MML_ALIGN;
+    if (comparison_method.compare("edit_distance") == 0) {
+      parameters.comparison_method = EDIT_DISTANCE;
+    } else if (comparison_method.compare("basic_alignment") == 0) {
+      parameters.comparison_method = BASIC_ALIGNMENT;
+    } else if (comparison_method.compare("mml_alignment") == 0) {
+      parameters.comparison_method = MML_ALIGNMENT;
     } else {
       cout << "Unsupported comparison method ..." << endl;
       Usage(argv[0],desc);
@@ -346,16 +348,7 @@ void compareProteinStructures(struct Parameters &parameters)
   Segmentation b = proteinFit(parameters);
   b.print();
 
-  Comparison comparison(a,b);
-  switch (parameters.comparison_method) {
-    case BASIC_ALIGN:
-      comparison.basicAlignment(parameters.gap_penalty);
-      break;
-
-    case MML_ALIGN:
-      comparison.mmlAlignment();
-      break;
-  }
+  compareSegmentations(a,b,parameters);
 }
 
 /*!
@@ -370,14 +363,30 @@ void compareGenericStructures(struct Parameters &parameters)
   parameters.file = parameters.comparison_files[1];
   Segmentation b = generalFit(parameters);
 
+  compareSegmentations(a,b,parameters);
+}
+
+/*!
+ *  \brief This module compares any two given segmentations
+ *  \param a a reference to a Segmentation
+ *  \param b a reference to a Segmentation
+ *  \param parameters a reference to a struct Parameters
+ */
+void compareSegmentations(Segmentation &a, Segmentation &b, 
+                          struct Parameters &parameters)
+{
   Comparison comparison(a,b);
   switch (parameters.comparison_method) {
-    case BASIC_ALIGN:
-      comparison.basicAlignment(parameters.gap_penalty);
+    case EDIT_DISTANCE:
+      comparison.computeEditDistance(parameters.gap_penalty);
       break;
 
-    case MML_ALIGN:
-      comparison.mmlAlignment();
+    case BASIC_ALIGNMENT:
+      comparison.computeBasicAlignment(parameters.gap_penalty);
+      break;
+
+    case MML_ALIGNMENT:
+      comparison.computeMMLAlignment();
       break;
   }
 }
@@ -442,7 +451,7 @@ Segmentation generalFit(struct Parameters &parameters)
 string getPDBFilePath(string &pdb_id)
 {
   boost::algorithm::to_lower(pdb_id);
-  string path = "/home/parthan/Research/PDB/" ;
+  string path = "/home/pkas7/Research/PDB/" ;
   string directory(pdb_id,1,2);
   path += directory + "/pdb" + pdb_id + ".ent.gz";
   return path;

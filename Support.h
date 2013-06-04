@@ -27,6 +27,7 @@ struct Parameters
 void segmentStructure(struct Parameters &);
 void compareProteinStructures(struct Parameters &);
 void compareGenericStructures(struct Parameters &);
+void compareSegmentations(Segmentation &, Segmentation &, struct Parameters &);
 
 struct Parameters parseCommandLineInput (int, char **); 
 void Usage (const char *, options_description &);
