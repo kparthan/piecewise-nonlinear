@@ -40,6 +40,12 @@ class Segmentation
 
     //! Print the segmentation details
     void print();
+
+    //! Write the segmentation details
+    void save();
+
+    //! Read the segmentation
+    void read();
 };
 
 #endif

@@ -244,8 +244,9 @@ void Comparison::computeEditDistance(double gap_penalty)
 /*!
  *  \brief This module implements the basic alignment of dihedral angles
  *  \param gap_penalty a double
+ *  \param max_diff a double
  */
-void Comparison::computeBasicAlignment(double gap_penalty)
+void Comparison::computeBasicAlignment(double gap_penalty, double max_diff)
 {
   vector<double> x = profiles[0].getDihedralAngles();
   vector<double> y = profiles[1].getDihedralAngles();
@@ -271,7 +272,7 @@ void Comparison::computeBasicAlignment(double gap_penalty)
       } else {
         t = diff_angles;
       }
-      matrix[i][j] = matrix[i-1][j-1] + 45 - t;
+      matrix[i][j] = matrix[i-1][j-1] + max_diff - t;
       direction[i][j] = DIAGONAL;
       if (matrix[i][j] < matrix[i-1][j] + gap_penalty) {
         matrix[i][j] = matrix[i-1][j] + gap_penalty;

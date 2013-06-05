@@ -41,7 +41,7 @@ class Comparison
     void computeEditDistance(double);
 
     //! Basic Alignment
-    void computeBasicAlignment(double);
+    void computeBasicAlignment(double, double);
 
     //! MML Alignment
     void computeMMLAlignment();

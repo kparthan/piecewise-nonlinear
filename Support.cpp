@@ -46,6 +46,8 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("compare",value<string>(&comparison_method),
                                       "comparison method (basic/mml)")
        ("gap",value<double>(&parameters.gap_penalty),"gap penalty used in alignment")
+       ("diff",value<double>(&parameters.max_angle_diff),
+                                      "maximum difference allowed for the angles")
        ("files",value<vector<string>>(&parameters.comparison_files)->multitoken(),
                                                                 "structure files")
        ("pdbids",value<vector<string>>(&pdb_ids)->multitoken(),"PDB IDs to compare")
@@ -167,6 +169,14 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     } else {
       parameters.gap_penalty = GAP_PENALTY;
       cout << "Using default value of gap penalty: " << GAP_PENALTY << endl;
+    }
+    if (vm.count("diff")) {
+      cout << "Using a maximum allowed difference in aligning angles: "
+           << parameters.max_angle_diff << endl;
+    } else {
+      parameters.max_angle_diff = MAX_DIFFERENCE_ANGLES;
+      cout << "Using default value of maximum allowed angle difference "
+           << " for alignment: " << parameters.max_angle_diff << endl;
     }
   } else {
     parameters.comparison = -1;
@@ -382,7 +392,8 @@ void compareSegmentations(Segmentation &a, Segmentation &b,
       break;
 
     case BASIC_ALIGNMENT:
-      comparison.computeBasicAlignment(parameters.gap_penalty);
+      comparison.computeBasicAlignment(parameters.gap_penalty,
+                                       parameters.max_angle_diff);
       break;
 
     case MML_ALIGNMENT:

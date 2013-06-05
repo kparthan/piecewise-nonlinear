@@ -36,6 +36,7 @@
 #define BASIC_ALIGNMENT 1
 #define MML_ALIGNMENT 2
 #define GAP_PENALTY -20
+#define MAX_DIFFERENCE_ANGLES 45
 
 #define TEST 0
 #define PROTEIN 1

@@ -20,6 +20,7 @@ struct Parameters
   int encode_deviations;
   int comparison;
   double gap_penalty;
+  double max_angle_diff;
   int comparison_method;
   vector<string> comparison_files;
 };

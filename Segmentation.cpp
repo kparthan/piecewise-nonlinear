@@ -95,3 +95,18 @@ void Segmentation::print()
   cout << endl;
 }
 
+/*!
+ *  \brief This function is used to save the segmentation to a file
+ */
+void Segmentation::save()
+{
+}
+
+/*!
+ *  \brief This function is used to read the segmentation from a file
+ */
+void Segmentation::read()
+{
+}
+
+
