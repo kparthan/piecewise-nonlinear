@@ -23,8 +23,8 @@ class StandardForm
     //! Stores the transformation matrix
     Matrix<double> translation,rotation,transformation;
 
-    //! Number of intermediate control points to be used
-    //vector<int> controls;
+    //! Log file 
+    string output_file;
 
     //! Cartesian coordinates of the protein structure
     vector<array<double,3>> original_coordinates,coordinates;

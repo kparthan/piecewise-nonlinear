@@ -10,8 +10,9 @@ class General : public Structure
     General(vector<Point<double>> &);
 
     //! Reconstruct the generic structure back with the control points added
-    Segmentation reconstruct(string &, vector<vector<OptimalFit>> &, vector<int> &, 
-                     Matrix<double> &);
+    Segmentation reconstruct(string &, string &, vector<vector<double>> &,
+                             vector<vector<OptimalFit>> &, vector<int> &, 
+                             Matrix<double> &);
 };
 
 #endif

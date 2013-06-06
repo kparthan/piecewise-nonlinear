@@ -97,15 +97,30 @@ void Segmentation::print()
 
 /*!
  *  \brief This function is used to save the segmentation to a file
+ *  \param pdb_file a reference to a string
  */
-void Segmentation::save()
+void Segmentation::save(string &pdb_file)
 {
+  string output_file = "output/segmentation_profile/" + pdb_file + ".profile";
+  ofstream profile(output_file.c_str());
+  for (int i=0; i<planar_angles.size(); i++) {
+    profile << planar_angles[i] << " ";
+  }
+  profile << endl;
+  for (int i=0; i<dihedral_angles.size(); i++) {
+    profile << dihedral_angles[i] << " ";
+  }
+  profile << endl;
+  for (int i=0; i<lengths.size(); i++) {
+    profile << lengths[i] << " ";
+  }
+  profile.close();
 }
 
 /*!
  *  \brief This function is used to read the segmentation from a file
  */
-void Segmentation::read()
+void Segmentation::load()
 {
 }
 

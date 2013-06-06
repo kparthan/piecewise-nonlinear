@@ -67,32 +67,48 @@ vector<array<double,3>> Protein::generateProteinColors(int num_segments)
  *  \brief This function reconstructs the original protein structure with the
  *  control points
  *  \param file a reference to a string
+ *  \param output_file a reference to a string
+ *  \param codeLength a reference to a vector<vector<double>>
  *  \param optimalBezierFit a reference to a vector<vector<OptimalFit>>
  *  \param segments a reference to a vector<int>
  *  \param transformation a reference to a Matrix<double>
  *  \return the segmentation profile of the protein
  */
-Segmentation Protein::reconstruct(string &file, 
-                          vector<vector<OptimalFit>> &optimalBezierFit,
-                          vector<int> &segments, Matrix<double> &transformation)
+Segmentation Protein::reconstruct(string &file, string &output_file, 
+                                  vector<vector<double>> &codeLength,
+                                  vector<vector<OptimalFit>> &optimalBezierFit,
+                                  vector<int> &segments, 
+                                  Matrix<double> &transformation)
 {
   vector<Identifier> identifiers = mapToActualSegments(segments);
   protein->undoLastSelection();
   Matrix<double> inverse_transform = transformation.inverse();
-  shared_ptr<Chain> cps_chain = make_shared<Chain>("x");
-  shared_ptr<Chain> curve_chain = make_shared<Chain>("y");
+  shared_ptr<Chain> cps_chain = make_shared<Chain>("X");
+  shared_ptr<Chain> curve_chain = make_shared<Chain>("Y");
 
   int segment_start = 0;
   all_control_points.push_back(original_coordinates[0]);
+  ofstream log_file(output_file.c_str(),ios::app);
 
+  string start_residue = identifiers[0].getResidueID();
+  string start_chain = identifiers[0].getChainID();
   for(int i=1; i<segments.size(); i++) {
+    string end_residue = identifiers[i].getResidueID();
+    string end_chain = identifiers[i].getChainID();
     int segment_end = segments[i];
+
+    log_file << setw(15) << i
+             << setw(15) << start_chain + " " + start_residue
+             << setw(15) << end_chain + " " + end_residue
+             << setw(15) << segment_end - segment_start + 1
+             << setw(15) << codeLength[segment_start][segment_end];
 
     // construct the control points of the segment as residues
     string residue_id = "R" + boost::lexical_cast<string>(i);
     shared_ptr<Residue> cps_residue = make_shared<Residue>(residue_id);
     OptimalFit fit = optimalBezierFit[segment_start][segment_end];
     int numIntermediateControls = fit.getNumberOfControlPoints() - 2;
+
     vector<Point<double>> control_points;
     control_points.push_back(original_coordinates[segment_start]);
     vector<Point<double>> cps = fit.getControlPoints();
@@ -100,7 +116,6 @@ Segmentation Protein::reconstruct(string &file,
       string atom_id = "A" + boost::lexical_cast<string>(j);
       shared_ptr<Atom> cps_atom = make_shared<Atom>(atom_id);
       Point<double> p = lcb::geometry::transform<double>(cps[j],inverse_transform);
-      //cout << p << endl;
       control_points.push_back(p);
       all_control_points.push_back(p);
       cps_atom->setAtomicCoordinate(p);
@@ -109,6 +124,25 @@ Segmentation Protein::reconstruct(string &file,
     control_points.push_back(original_coordinates[segment_end]);
     all_control_points.push_back(original_coordinates[segment_end]);
     cps_chain->addResidue(cps_residue);
+
+    // write the control points to the log file
+    log_file << setw(10) << control_points[0];  // end_point
+    if (numIntermediateControls > 0) {
+      log_file << setw(10) << control_points[1];
+    }
+    log_file << endl;
+    log_file << setw(85) << control_points[control_points.size()-1]; // end_point
+    for (int k=2; k<=numIntermediateControls; k++) {
+      if (numIntermediateControls == 2) {
+        log_file << setw(10) << control_points[k];
+      } else if (k == numIntermediateControls) {
+        log_file << setw(95) << control_points[k] << endl;
+        break;
+      } else {
+        log_file << setw(95) << control_points[k] << endl;
+      }
+    }
+    log_file << endl << endl;
 
     // construct the curve as a protein residue for visualizing in Pymol
     residue_id = "C" + boost::lexical_cast<string>(i);
@@ -125,10 +159,13 @@ Segmentation Protein::reconstruct(string &file,
     } 
     curve_chain->addResidue(curve_residue);
 
+    start_residue = end_residue;
+    start_chain = end_chain;
     segment_start = segment_end;
   }
   protein->addChain(cps_chain);
   protein->addChain(curve_chain);
+  log_file.close();
 
   /* visualize the protein segmentation */
   vector<Atom> atoms = protein->getAtoms();
@@ -145,7 +182,7 @@ Segmentation Protein::reconstruct(string &file,
   vector<double> planar_angles = computePlanarAngles();
   vector<double> dihedral_angles = computeDihedralAngles();
   vector<double> lengths = computeConnectingLinesLengths();
-  return Segmentation(planar_angles,dihedral_angles,lengths);
+  rerurn Segmentation(planar_angles,dihedral_angles,lengths);
 }
 
 /*!
@@ -162,7 +199,7 @@ void Protein::createPymolScript(string &pdb_file,
                                 vector<Identifier> &identifiers)
 {
   vector<array<double,3>> colors = generateProteinColors(segments.size()-1);
-  Chain chain = protein->getDefaultModel()["x"];
+  Chain chain = protein->getDefaultModel()["X"];
   vector<string> res_ids = chain.getResidueIdentifiers();
   //for (int i=0; i<res_ids.size(); i++){cout << res_ids[i] << endl;}
 
@@ -176,7 +213,7 @@ void Protein::createPymolScript(string &pdb_file,
   script << "show cartoon" << endl;
   script << "set label_font_id, 10" << endl;
 
-  Chain curve_chain = protein->getDefaultModel()["y"];
+  Chain curve_chain = protein->getDefaultModel()["Y"];
   vector<string> curve_ids = curve_chain.getResidueIdentifiers();
 
   string start_atom = identifiers[0].getAtomID();

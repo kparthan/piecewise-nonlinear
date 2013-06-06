@@ -25,8 +25,9 @@ class Protein : public Structure
     Protein(ProteinStructure *);
 
     //! Reconstruct the protein back with the control points added
-    Segmentation reconstruct(string &, vector<vector<OptimalFit>> &, vector<int> &, 
-                     Matrix<double> &);
+    Segmentation reconstruct(string &, string &, vector<vector<double>> &,
+                             vector<vector<OptimalFit>> &, vector<int> &, 
+                             Matrix<double> &);
 
     //! Gets the indexes of the end points to be internally used
     array<int,2> getEndPoints(vector<string> &);

@@ -18,11 +18,47 @@ StandardForm::StandardForm(struct Parameters &parameters, Structure *s) :
     codeLength.push_back(tmp);
   }
   if (parameters.controls.size() > 0) {
+    output_file = createOutputFile(1);
+    ofstream log_file(output_file.c_str());
+    log_file << "Using structure file: " << parameters.file << endl;
+    log_file << "Number of residues: " << numResidues << endl;
+    log_file << "Doing a BEZIER segmentation ..." << endl << endl;
+    log_file.close();
     for (int i=0; i<numResidues; i++) {
       vector<OptimalFit> tmp(numResidues,OptimalFit());
       optimalBezierFit.push_back(tmp);
     }
+  } else {
+    output_file = createOutputFile(0);
+    ofstream log_file(output_file.c_str(),ios::app);
+    log_file << "Using structure file: " << parameters.file << endl;
+    log_file << "Number of residues: " << numResidues << endl;
+    log_file << "Doing a LINEAR segmentation ..." << endl << endl;
+    log_file.close();
   }
+}
+
+/*!
+ *  \brief This module creates a new output file to print the
+ *  segmentation results to.
+ *  \param status a boolean variable (0 - linear, 1 - bezier)
+ *  \return the output file path
+ */
+string StandardForm::createOutputFile(bool status)
+{
+  string filtered = extractName(parameters.file);
+  string output_file;
+  if (status) {
+    output_file = "output/segmentation/";
+    output_file = output_file + filtered + "_";
+    for (int i=0; i<parameters.controls.size(); i++) {
+      output_file += boost::lexical_cast<string>(parameters.controls[i]); 
+    }
+  } else {
+    output_file = "output/segmentation/linear_";
+    output_file += filtered;
+  }
+  return output_file;
 }
 
 /*!
@@ -137,9 +173,9 @@ void StandardForm::updateCoordinates(void)
  */
 void StandardForm::transform(void)
 {
-  cout << "Transforming the protein to a standard canonical form ...\n";
   updateCoordinates();
   if(parameters.print == PRINT_DETAIL) {
+    cout << "Transforming the protein to a standard canonical form ...\n";
     writeToFile(coordinates,"output/before_translation");
   }
 
@@ -170,10 +206,9 @@ void StandardForm::transform(void)
   if(parameters.print == PRINT_DETAIL) {
     /* validate transformation */
     structure->validateTransformation(transformation);
+    cout << "Transformation to standard form done ..." << endl;
+    cout << "Number of residues: " << getNumberOfResidues() << endl;
   }
-
-  cout << "Transformation to standard form done ..." << endl;
-  cout << "Number of residues: " << getNumberOfResidues() << endl;
 }
 
 /*!
@@ -185,13 +220,13 @@ void StandardForm::transformationMatrix()
   rotation[3][3] = 1;
   transformation = rotation * translation;
   if(parameters.print == PRINT_DETAIL) {
-    ofstream fw("output/transformation_matrices");
-    fw << "Transformation matrix:" << endl;
+    ofstream log_file("output/transformation_matrices");
+    log_file << "Transformation matrix:" << endl;
     for (int i=0; i<4; i++) {
       for (int j=0; j<4; j++) {
-        fw << transformation[i][j] << " ";
+        log_file << transformation[i][j] << " ";
       }
-      fw << endl;
+      log_file << endl;
     }
   }
 }
@@ -202,7 +237,9 @@ void StandardForm::transformationMatrix()
  */
 void StandardForm::translateToOrigin()
 {
-  cout << "Translation to origin ... ";
+  if(parameters.print == PRINT_DETAIL) {
+    cout << "Translation to origin ... ";
+  }
   updateCoordinates();
   double offsetx,offsety,offsetz; 
   offsetx = -coordinates[0][0];
@@ -210,7 +247,9 @@ void StandardForm::translateToOrigin()
   offsetz = -coordinates[0][2];
   translation = translationMatrix(offsetx,offsety,offsetz);
   structure->transform(translation);
-  cout << "[OK]" << endl;
+  if(parameters.print == PRINT_DETAIL) {
+    cout << "[OK]" << endl;
+  }
 }
 
 /*!
@@ -219,7 +258,9 @@ void StandardForm::translateToOrigin()
  */
 void StandardForm::rotateLastPoint()
 {
-  cout << "Rotating protein so that last point lies on X-axis ... ";
+  if(parameters.print == PRINT_DETAIL) {
+    cout << "Rotating protein so that last point lies on X-axis ... ";
+  }
   Point<double> end(coordinates[coordinates.size()-1]);
 
   /* brings the last point in the protein to lie on the XY plane */
@@ -235,7 +276,9 @@ void StandardForm::rotateLastPoint()
   structure->transform(rotate);
   rotation = rotate* rotation;
 
-  cout << "[OK]" << endl;
+  if(parameters.print == PRINT_DETAIL) {
+    cout << "[OK]" << endl;
+  }
 }
 
 /*!
@@ -318,16 +361,20 @@ Matrix<double> StandardForm::rotateInXYPlane(Point<double> &p)
  */
 void StandardForm::rotateSecondPoint()
 {
-  cout << "Rotating protein so that second point lies on XY plane ... ";
+  if(parameters.print == PRINT_DETAIL) {
+    cout << "Rotating protein so that second point lies on XY plane ... ";
+  }
   updateCoordinates();
   Point<double> second = Point<double>(coordinates[1]);
 
   /* brings the second point in the protein to lie on the XY plane */
   Matrix<double> rotate = projectAndRotateSecond(second); 
   structure->transform(rotate);
-  rotation = rotate* rotation;
+  rotation = rotate * rotation;
 
-  cout << "[OK]" << endl;
+  if(parameters.print == PRINT_DETAIL) {
+    cout << "[OK]" << endl;
+  }
 }
 
 /*!
@@ -393,11 +440,11 @@ Segmentation StandardForm::fitModels()
   /* Construct the bounding box */
   boundingBox(); 
 
-  /* Sphere model fit */
-  fitSphereModel();
-
   /* Null model fit */
   fitNullModel();
+
+  /* Sphere model fit */
+  //fitSphereModel();
 
   if (parameters.controls.size() == 0) {
     /* Linear model fit */
@@ -430,6 +477,9 @@ void StandardForm::boundingBox()
     cout << zmin << " " << zmax << endl;
     cout << "bounding box volume: " << volume << endl;
   }
+  ofstream log_file(output_file.c_str(),ios::app);
+  log_file << "Bounding box volume: " << volume << endl;
+  log_file.close();
 }
 
 /*!
@@ -437,7 +487,6 @@ void StandardForm::boundingBox()
  */
 void StandardForm::fitSphereModel(void)
 {
-  cout << "*** SPHERE FIT ***" << endl;
   double msglen = 0;
   for (int i=1; i<numResidues; i++){
     Point<double> previous = Point<double>(coordinates[i-1]);
@@ -446,8 +495,15 @@ void StandardForm::fitSphereModel(void)
     Message msg;
     msglen += msg.encodeUsingSphereModel(r);
   }
-  cout << "Sphere Model Fit: " << msglen << " bits." << endl;
-  cout << "Bits per residue: " << msglen/(numResidues-1) << endl << endl;
+  if(parameters.print == PRINT_DETAIL) {
+    cout << "*** SPHERE FIT ***" << endl;
+    cout << "Sphere Model Fit: " << msglen << " bits." << endl;
+    cout << "Bits per residue: " << msglen/(numResidues-1) << endl << endl;
+  }
+  ofstream log_file(output_file.c_str(),ios::app);
+  log_file << "Sphere Model Fit: " << msglen << " bits." << endl;
+  log_file << "Bits per residue: " << msglen/(numResidues-1) << endl << endl;
+  log_file.close();
 }
 
 /*!
@@ -455,12 +511,18 @@ void StandardForm::fitSphereModel(void)
  */
 void StandardForm::fitNullModel(void)
 {
-  cout << "*** NULL MODEL ***" << endl;
   double msglen = 0;
   Message msg;
   msglen = (numResidues-1) * msg.encodeUsingNullModel(volume,AOM);
-  cout << "Null Model Fit: " << msglen << " bits." << endl;
-  cout << "Bits per residue: " << msglen/(numResidues-1) << endl << endl;
+  if(parameters.print == PRINT_DETAIL) {
+    cout << "*** NULL MODEL ***" << endl;
+    cout << "Null Model Fit: " << msglen << " bits." << endl;
+    cout << "Bits per residue: " << msglen/(numResidues-1) << endl << endl;
+  }
+  ofstream log_file(output_file.c_str(),ios::app);
+  log_file << "Null Model Fit: " << msglen << " bits." << endl;
+  log_file << "Bits per residue: " << msglen/(numResidues-1) << endl << endl;
+  log_file.close();
 }
 
 /*!
@@ -468,8 +530,9 @@ void StandardForm::fitNullModel(void)
  */
 Segmentation StandardForm::fitLinearModel(void)
 {
-  cout << "*** LINEAR FIT ***" << endl;
-
+  if(parameters.print == PRINT_DETAIL) {
+    cout << "*** LINEAR FIT ***" << endl;
+  }
   /* compute the code length matrix */
   computeCodeLengthMatrix();
 
@@ -484,8 +547,9 @@ Segmentation StandardForm::fitLinearModel(void)
  */
 Segmentation StandardForm::fitBezierCurveModel()
 {
-  cout << "*** BEZIER CURVE FIT ***" << endl;
-
+  if(parameters.print == PRINT_DETAIL) {
+    cout << "*** BEZIER CURVE FIT ***" << endl;
+  }
   Segmentation segmentation_profile;
   if (parameters.portion_to_fit == FIT_ENTIRE_STRUCTURE) {
     /* compute the code length matrix for the Bezier curve fit */
@@ -494,8 +558,9 @@ Segmentation StandardForm::fitBezierCurveModel()
     /* compute the optimal segmentation using dynamic programming */
     pair<double,vector<int>> segmentation = optimalSegmentation();
     printBezierSegmentation(segmentation);
-    segmentation_profile = structure->reconstruct(parameters.file,optimalBezierFit,
-                                          segmentation.second,transformation);
+    segmentation_profile = structure->reconstruct(parameters.file,output_file,
+                           codeLength,optimalBezierFit,segmentation.second,
+                           transformation);
   } else if (parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
     fitOneSegment();
   }
@@ -557,13 +622,13 @@ void StandardForm::computeCodeLengthMatrix(void)
   }*/
 
   /*
-  ofstream fw("test_linear");
+  ofstream log_file("test_linear");
   for (int i=0; i<numResidues; i++) {
     for (int j=0; j<numResidues; j++) {
       if (j > i) {
         Segment segment = getSegment(i,j);
         segment.fitLinear();
-        fw << "[" << i << ", " << j << "]: " << segment.getLinearFit() << endl;
+        log_file << "[" << i << ", " << j << "]: " << segment.getLinearFit() << endl;
       }
     }
   }
@@ -674,12 +739,11 @@ pair<double,vector<int>> StandardForm::optimalSegmentation(void)
       }
     }
   }
-
-  double best = optimal[numResidues-1];
-  segmentation.first = best;
-  cout << "Best fit: " << best << " bits." << endl;
-  cout << "Bits per residue: " << best / (numResidues-1) << endl;
-
+  segmentation.first = optimal[numResidues-1];
+  if(parameters.print == PRINT_DETAIL) {
+    cout << "Best fit: " << segmentation.first << " bits." << endl;
+    cout << "Bits per residue: " << segmentation.first / (numResidues-1) << endl;
+  }
   int index = numResidues-1;
   vector<int> backtrack; 
   backtrack.push_back(numResidues-1);
@@ -700,65 +764,35 @@ pair<double,vector<int>> StandardForm::optimalSegmentation(void)
 }
 
 /*!
- *  \brief This module creates a new output file to print the
- *  segmentation results to.
- *  \param status a boolean variable (0 - linear, 1 - bezier)
- *  \return the output file path
- */
-string StandardForm::createOutputFile(bool status)
-{
-  string filtered = extractName(parameters.file);
-  string output_file;
-  if (status) {
-    output_file = "output/segmentation/";
-    output_file = output_file + filtered + "_";
-    for (int i=0; i<parameters.controls.size(); i++) {
-      output_file += boost::lexical_cast<string>(parameters.controls[i]); 
-    }
-  } else {
-    output_file = "output/segmentation/linear_";
-    output_file += filtered;
-  }
-  return output_file;
-}
-
-/*!
  *  \brief This module prints the details of the linear segmentation
  *  \param segmentation a reference to a pair<double,vector<int>>
  */
-void StandardForm::printLinearSegmentation(pair<double,vector<int>> 
-                                           &segmentation)
+void StandardForm::printLinearSegmentation(pair<double,
+                                           vector<int>> &segmentation)
 {
-  string output_file = createOutputFile(0);
-  ofstream fw(output_file.c_str());
-
+  ofstream log_file(output_file.c_str(),ios::app);
   int i;
   vector<int> segments = segmentation.second;
-  fw << "Using structure file: " << parameters.file << endl;
-  fw << "Doing a LINEAR segmentation ..." << endl << endl;
-  fw << "# of residues: " << getNumberOfResidues() << endl;
-  cout << "# of linear segments: " << segments.size()-1 << endl;
-  fw << "# of linear segments: " << segments.size()-1 << endl;
+  log_file << "Linear model fit: " << segmentation.first << " bits." << endl;
+  log_file << "Bits per residue: " << segmentation.first / (numResidues-1) 
+           << endl << endl; 
+  log_file << "# of linear segments: " << segments.size()-1 << endl;
+  log_file << "Internal segmentation:" << endl;
   for (i=0; i<segments.size()-1; i++) {
-    cout << segments[i] << "-->";
-    fw << segments[i] << "-->";
+    log_file << segments[i] << "-->";
   }
-  cout << segments[i] << endl << endl;
-  fw << segments[i] << endl << endl;
-  fw << "Best fit: " << segmentation.first <<  " bits." << endl;
-  fw << "Bits per residue: " << segmentation.first / (getNumberOfResidues()-1) 
-  << endl << endl;
+  log_file << segments[i] << endl << endl;
   for (i=0; i<segments.size()-1; i++) {
     int segment_start = segments[i];
     int segment_end = segments[i+1];
-    fw << "Segment # " << i+1 << endl;
-    fw << "Residue stretch: [" <<  segment_start << ", " << segment_end << "]" 
+    log_file << "Segment # " << i+1 << endl;
+    log_file << "Residue stretch: [" <<  segment_start << ", " << segment_end << "]" 
     << endl;
-    fw << "Length of the segment: " << segment_end - segment_start + 1 << endl;
-    fw << "\t\tMessage length: " << codeLength[segment_start][segment_end] 
+    log_file << "Length of the segment: " << segment_end - segment_start + 1 << endl;
+    log_file << "\t\tMessage length: " << codeLength[segment_start][segment_end] 
     << endl << endl;
   } 
-  fw.close();
+  log_file.close();
 }
 
 /*!
@@ -769,45 +803,46 @@ void StandardForm::printLinearSegmentation(pair<double,vector<int>>
 void StandardForm::printBezierSegmentation(pair<double,vector<int>>
                                            &segmentation)
 {
-  string output_file = createOutputFile(1);
-  ofstream fw(output_file.c_str());
-
+  ofstream log_file(output_file.c_str(),ios::app);
   int i;
   vector<int> segments = segmentation.second;
-  fw << "Using structure file: " << parameters.file << endl;
-  fw << "Doing a BEZIER segmentation ..." << endl << endl;
-  fw << "# of residues: " << getNumberOfResidues() << endl;
-  cout << "# of non-linear segments: " << segments.size()-1 << endl;
-  fw << "# of non-linear segments: " << segments.size()-1 << endl;
+  log_file << "Bezier model fit: " << segmentation.first << " bits." << endl;
+  log_file << "Bits per residue: " << segmentation.first / (numResidues-1) 
+           << endl << endl; 
+  log_file << "# of segments: " << segments.size()-1 << endl;
+  log_file << "Internal segmentation:" << endl;
   for (i=0; i<segments.size()-1; i++) {
-    cout << segments[i] << "-->";
-    fw << segments[i] << "-->";
+    log_file << segments[i] << "-->";
   }
-  cout << segments[i] << endl << endl;
-  fw << segments[i] << endl << endl;
-  fw << "Best fit: " << segmentation.first <<  " bits." << endl;
-  fw << "Bits per residue: " << segmentation.first / (getNumberOfResidues()-1) 
-  << endl << endl;
-  for (i=0; i<segments.size()-1; i++) {
+  log_file << segments[i] << endl << endl;
+  /*for (i=0; i<segments.size()-1; i++) {
     int segment_start = segments[i];
     int segment_end = segments[i+1];
-    fw << "Segment # " << i+1 << endl;
-    fw << "Residue stretch: [" <<  segment_start << ", " << segment_end << "]" 
+    log_file << "Segment # " << i+1 << endl;
+    log_file << "Residue stretch: [" <<  segment_start << ", " << segment_end << "]" 
     << endl;
-    fw << "Length of the segment: " << segment_end - segment_start + 1 << endl;
+    log_file << "Length of the segment: " << segment_end - segment_start + 1 << endl;
     OptimalFit optimal = optimalBezierFit[segment_start][segment_end];
     vector<Point<double>> controlPoints = optimal.getControlPoints();
     int numIntermediateControlPoints = controlPoints.size() - 2;
-    fw << "\t\t# of intermediate control points: " 
+    log_file << "\t\t# of intermediate control points: " 
        << numIntermediateControlPoints << endl;
     for (int j=1; j<=numIntermediateControlPoints; j++) {
-      fw << "\t\tControl Point # " << j << ": (";
-      fw << controlPoints[j].x() << ", ";
-      fw << controlPoints[j].y() << ", ";
-      fw << controlPoints[j].z() << ")" << endl;
+      log_file << "\t\tControl Point # " << j << ": (";
+      log_file << controlPoints[j].x() << ", ";
+      log_file << controlPoints[j].y() << ", ";
+      log_file << controlPoints[j].z() << ")" << endl;
     }
-    fw << "\t\tMessage length: " << optimal.getMessageLength() << endl << endl;
-  } 
-  fw.close();
+    log_file << "\t\tMessage length: " << optimal.getMessageLength() << endl << endl;
+  }*/
+  log_file << setw(15) << "SEGMENT"
+           << setw(15) << "START"
+           << setw(15) << "END"
+           << setw(15) << "NUM_RESIDUES"
+           << setw(15) << "MESSAGE_LENGTH"
+           << setw(30) << "END_POINTS"
+           << setw(35) << "INTERMEDIATE_CONTROL_POINTS"
+           << endl;
+  log_file.close();
 }
 

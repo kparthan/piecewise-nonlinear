@@ -1,23 +1,19 @@
 Using structure file: test/1.pdb
+Number of residues: 49
 Doing a BEZIER segmentation ...
 
-# of residues: 49
-# of non-linear segments: 2
-0-->27-->48
+Bounding box volume: 3199.01
+Null Model Fit: 1993.96 bits.
+Bits per residue: 41.5408
 
-Best fit: 1846.13 bits.
-Bits per residue: 38.461
+Bezier model fit: 1754.81 bits.
+Bits per residue: 36.5586
 
-Segment # 1
-Residue stretch: [0, 27]
-Length of the segment: 28
-		# of intermediate control points: 1
-		Control Point # 1: (20.1, 0.8, 0.8)
-		Message length: 1031.29
+# of segments: 1
+Internal segmentation:
+0-->48
 
-Segment # 2
-Residue stretch: [27, 48]
-Length of the segment: 22
-		# of intermediate control points: 0
-		Message length: 814.835
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 49             49        1754.81         (-4.557, 1.808, 0)         (-20.759, -29.1798, -6.94357)
+                                                                                    (-39.799, -58.185, -15.443)
 
