@@ -32,6 +32,9 @@
 #define FIT_ENTIRE_STRUCTURE 0
 #define FIT_SINGLE_SEGMENT 1
 
+#define SET 1 
+#define UNSET 0
+
 #define EDIT_DISTANCE 0
 #define BASIC_ALIGNMENT 1
 #define MML_ALIGNMENT 2

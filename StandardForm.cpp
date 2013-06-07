@@ -521,7 +521,8 @@ void StandardForm::fitNullModel(void)
   }
   ofstream log_file(output_file.c_str(),ios::app);
   log_file << "Null Model Fit: " << msglen << " bits." << endl;
-  log_file << "Bits per residue: " << msglen/(numResidues-1) << endl << endl;
+  null_bpr = msglen / (numResidues-1);
+  log_file << "Bits per residue: " << null_bpr << endl << endl;
   log_file.close();
 }
 
@@ -561,6 +562,7 @@ Segmentation StandardForm::fitBezierCurveModel()
     segmentation_profile = structure->reconstruct(parameters.file,output_file,
                            codeLength,optimalBezierFit,segmentation.second,
                            transformation);
+    segmentation_profile.setBitsPerResidue(null_bpr,bezier_bpr);
   } else if (parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
     fitOneSegment();
   }
@@ -740,9 +742,10 @@ pair<double,vector<int>> StandardForm::optimalSegmentation(void)
     }
   }
   segmentation.first = optimal[numResidues-1];
+  bezier_bpr = segmentation.first / (numResidues - 1);
   if(parameters.print == PRINT_DETAIL) {
     cout << "Best fit: " << segmentation.first << " bits." << endl;
-    cout << "Bits per residue: " << segmentation.first / (numResidues-1) << endl;
+    cout << "Bits per residue: " << bezier_bpr << endl;
   }
   int index = numResidues-1;
   vector<int> backtrack; 
@@ -815,26 +818,6 @@ void StandardForm::printBezierSegmentation(pair<double,vector<int>>
     log_file << segments[i] << "-->";
   }
   log_file << segments[i] << endl << endl;
-  /*for (i=0; i<segments.size()-1; i++) {
-    int segment_start = segments[i];
-    int segment_end = segments[i+1];
-    log_file << "Segment # " << i+1 << endl;
-    log_file << "Residue stretch: [" <<  segment_start << ", " << segment_end << "]" 
-    << endl;
-    log_file << "Length of the segment: " << segment_end - segment_start + 1 << endl;
-    OptimalFit optimal = optimalBezierFit[segment_start][segment_end];
-    vector<Point<double>> controlPoints = optimal.getControlPoints();
-    int numIntermediateControlPoints = controlPoints.size() - 2;
-    log_file << "\t\t# of intermediate control points: " 
-       << numIntermediateControlPoints << endl;
-    for (int j=1; j<=numIntermediateControlPoints; j++) {
-      log_file << "\t\tControl Point # " << j << ": (";
-      log_file << controlPoints[j].x() << ", ";
-      log_file << controlPoints[j].y() << ", ";
-      log_file << controlPoints[j].z() << ")" << endl;
-    }
-    log_file << "\t\tMessage length: " << optimal.getMessageLength() << endl << endl;
-  }*/
   log_file << setw(15) << "SEGMENT"
            << setw(15) << "START"
            << setw(15) << "END"

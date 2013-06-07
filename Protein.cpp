@@ -182,7 +182,7 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
   vector<double> planar_angles = computePlanarAngles();
   vector<double> dihedral_angles = computeDihedralAngles();
   vector<double> lengths = computeConnectingLinesLengths();
-  rerurn Segmentation(planar_angles,dihedral_angles,lengths);
+  return Segmentation(planar_angles,dihedral_angles,lengths);
 }
 
 /*!

@@ -15,6 +15,9 @@ class Segmentation
     //! Lengths of lines connecting control points
     vector<double> lengths;
 
+    //! Bits per residue for the segmentation
+    double null_bpr,bezier_bpr;
+
   public:
     //! Null constructor
     Segmentation();
@@ -45,7 +48,7 @@ class Segmentation
     void save(string &);
 
     //! Read the segmentation
-    void load();
+    void load(string &);
 };
 
 #endif

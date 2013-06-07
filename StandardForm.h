@@ -35,6 +35,9 @@ class StandardForm
     //! Volume of the bounding box
     double volume;
 
+    //! Message length (bits per residue)
+    double null_bpr,bezier_bpr;
+
     //! Code length matrix
     vector<vector<double>> codeLength;
 

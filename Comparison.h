@@ -17,6 +17,12 @@ class Comparison
     //! The two segmentation profiles
     Segmentation profiles[2];
 
+    //! Alignment score
+    double alignment_score;
+
+    //! Optimal alignment
+    vector<array<double,2>> optimal_alignment;
+
     //! Initialize the dynamic programming matrices
     void initialize(vector<vector<double>> &, vector<vector<int>> &, int, int);
 
@@ -25,7 +31,7 @@ class Comparison
                                       vector<double> &);
 
     //! Prints the alignment
-    void printAlignment(vector<array<double,2>> &);
+    void printAlignment(ostream &, vector<array<double,2>> &);
 
     //! Edit distance
     void computeEditDistance(string &, string &);
@@ -45,6 +51,9 @@ class Comparison
 
     //! MML Alignment
     void computeMMLAlignment();
+
+    //! Save the alignment to a file
+    void save(vector<string> &);
 };
 
 #endif

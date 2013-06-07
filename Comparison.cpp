@@ -1,4 +1,5 @@
 #include "Comparison.h"
+#include "Support.h"
 
 /*!
  *  \brief This is a null constructor module.
@@ -15,6 +16,21 @@ Comparison::Comparison(Segmentation &a, Segmentation &b)
 {
   profiles[0] = a;
   profiles[1] = b;
+}
+
+/*!
+ *  \brief This method writes the optimal alignment to a file
+ *  \param comparison_files a reference to a vector<string>
+ */
+void Comparison::save(vector<string> &comparison_files)
+{
+  string file1 = extractName(comparison_files[0]);
+  string file2 = extractName(comparison_files[1]);
+  string file_name = "output/alignments/" + file1 + "_" + file2 + ".alignment";
+  ofstream file(file_name.c_str());
+  file << "Alignment score: " << alignment_score << endl;
+  printAlignment(file,optimal_alignment);
+  file.close();
 }
 
 /*!
@@ -140,7 +156,7 @@ void Comparison::computeEditDistance(string &x, string &y)
 vector<array<double,2>> Comparison::traceback(vector<vector<int>> &direction,
                                     vector<double> &x, vector<double> &y)
 {
-  vector<array<double,2>> optimal_alignment;
+  vector<array<double,2>> alignment;
   int i = x.size(); 
   int j = y.size();
   while (1) {
@@ -161,37 +177,41 @@ vector<array<double,2>> Comparison::traceback(vector<vector<int>> &direction,
         angles[1] = y[--j];
         break;
     }
-    optimal_alignment.push_back(angles);
+    alignment.push_back(angles);
     if (i == 0 && j == 0) {
       break;
     }
+  }
+  for (int i=alignment.size()-1; i>=0; i--) {
+    optimal_alignment.push_back(alignment[i]);
   }
   return optimal_alignment;
 }
 
 /*!
  *  \brief This module prints the optimal alignment to the screen
+ *  \param os a reference to a ostream
  *  \param alignment a reference to a vector<array<double,2>>
  */
-void Comparison::printAlignment(vector<array<double,2>> &alignment)
+void Comparison::printAlignment(ostream &os, vector<array<double,2>> &alignment)
 {
-  cout << "\nAlignment:\n";
-  for (int i=alignment.size()-1; i>=0; i--) {
+  os << "\nAlignment:\n";
+  for (int i=0; i < alignment.size(); i++) {
     if (alignment[i][0] == 1000) {
-      cout << fixed << setw(6) << "-" << "  ";
+      os << fixed << setw(6) << "-" << "  ";
     } else {
-      cout << fixed << setw(6) << setprecision(2) << alignment[i][0] << "  ";
+      os << fixed << setw(6) << setprecision(2) << alignment[i][0] << "  ";
     }
   }
-  cout << endl;
-  for (int i=alignment.size()-1; i>=0; i--) {
+  os << endl;
+  for (int i=0; i < alignment.size(); i++) {
     if (alignment[i][1] == 1000) {
-      cout << fixed << setw(6) << "-" << "  ";
+      os << fixed << setw(6) << "-" << "  ";
     } else {
-      cout << fixed << setw(6) << setprecision(2) << alignment[i][1] << "  ";
+      os << fixed << setw(6) << setprecision(2) << alignment[i][1] << "  ";
     }
   }
-  cout << endl;
+  os << endl;
 }
 
 /*!
@@ -236,9 +256,10 @@ void Comparison::computeEditDistance(double gap_penalty)
       }
     }
   }
-  cout << "\nEdit distance: " << matrix[x.size()][y.size()] << endl;
+  //cout << "\nEdit distance: " << matrix[x.size()][y.size()] << endl;
+  alignment_score = matrix[x.size()][y.size()];
   vector<array<double,2>> optimal_alignment = traceback(direction,x,y);
-  printAlignment(optimal_alignment);
+  //printAlignment(cout,optimal_alignment);
 }
 
 /*!
@@ -284,9 +305,10 @@ void Comparison::computeBasicAlignment(double gap_penalty, double max_diff)
       }
     }
   }
-  cout << "\nAlignment score: " << matrix[x.size()][y.size()] << endl;
+  //cout << "\nAlignment score: " << matrix[x.size()][y.size()] << endl;
+  alignment_score = matrix[x.size()][y.size()];
   vector<array<double,2>> optimal_alignment = traceback(direction,x,y);
-  printAlignment(optimal_alignment);
+  //printAlignment(cout,optimal_alignment);
 }
 
 /*!

@@ -6,14 +6,17 @@ Bounding box volume: 3199.01
 Null Model Fit: 1993.96 bits.
 Bits per residue: 41.5408
 
-Bezier model fit: 1754.81 bits.
-Bits per residue: 36.5586
+Bezier model fit: 1846.13 bits.
+Bits per residue: 38.461
 
-# of segments: 1
+# of segments: 2
 Internal segmentation:
-0-->48
+0-->27-->48
 
         SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
-              1            A 1           A 49             49        1754.81         (-4.557, 1.808, 0)         (-20.759, -29.1798, -6.94357)
+              1            A 1           A 28             28        1031.29         (-4.557, 1.808, 0)         (-13.6585, -15.4248, -5.04829)
+                                                                                    (-22.202, -33.174, -9.321)
+
+              2           A 28           A 49             22        814.835         (-22.202, -33.174, -9.321)
                                                                                     (-39.799, -58.185, -15.443)
 

@@ -44,6 +44,15 @@ Segmentation Segmentation::operator=(const Segmentation &source)
 }
 
 /*!
+ *
+ */
+void Segmentation::setBitsPerResidue(double null, double bezier)
+{
+  null_bpr = null;
+  bezier_bpr = bezier;
+}
+
+/*!
  *  \brief This function returns the list of planar angles
  *  \return the planar angles
  */
@@ -103,6 +112,8 @@ void Segmentation::save(string &pdb_file)
 {
   string output_file = "output/segmentation_profile/" + pdb_file + ".profile";
   ofstream profile(output_file.c_str());
+  profile << null_bpr << endl;
+  profile << bezier_bpr << endl;
   for (int i=0; i<planar_angles.size(); i++) {
     profile << planar_angles[i] << " ";
   }
@@ -119,9 +130,50 @@ void Segmentation::save(string &pdb_file)
 
 /*!
  *  \brief This function is used to read the segmentation from a file
+ *  \param pdb_file a reference to a string
  */
-void Segmentation::load()
+void Segmentation::load(string &pdb_file)
 {
-}
+  planar_angles.clear();
+  dihedral_angles.clear();
+  lengths.clear();
+  string output_file = "output/segmentation_profile/" + pdb_file + ".profile";
+  ifstream profile(output_file.c_str());
+  
+  string line;
+  for (int i=0; i<5; i++) {
+    getline(profile,line);
+    const char *str = line.c_str();
+    vector<double> numbers;
+    do {
+      const char *begin = str;
+      while (*str != ' ' && *str) {
+        str++;
+      }
+      if (*str++ == 0) {
+        break;
+      } else {
+        string x = string(begin,--str);
+        istringstream iss(x);
+        double value;
+        iss >> value;
+        numbers.push_back(value);
+      }
+    }
+    while (*str++ != 0);
+    if (i == 0) {
+      null_bpr = numbers[0];
+    } else if (i == 1) {
+      bezier_bpr = numbers[0];
+    } if (i == 2) {
+      planar_angles = numbers;
+    } else if (i == 3) {
+      dihedral_angles = numbers;
+    } else if (i == 4) {
+      lengths = numbers;
+    }
+  }
 
+  profile.close();
+}
 

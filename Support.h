@@ -23,12 +23,14 @@ struct Parameters
   double max_angle_diff;
   int comparison_method;
   vector<string> comparison_files;
+  int force_segmentation;
 };
 
 void segmentStructure(struct Parameters &);
 void compareProteinStructures(struct Parameters &);
 void compareGenericStructures(struct Parameters &);
 void compareSegmentations(Segmentation &, Segmentation &, struct Parameters &);
+bool checkIfSegmentationExists(string &);
 
 struct Parameters parseCommandLineInput (int, char **); 
 void Usage (const char *, options_description &);

@@ -51,6 +51,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("files",value<vector<string>>(&parameters.comparison_files)->multitoken(),
                                                                 "structure files")
        ("pdbids",value<vector<string>>(&pdb_ids)->multitoken(),"PDB IDs to compare")
+       ("force","force segmentation (even though it exists already)")
   ;
   variables_map vm;
   store(parse_command_line(argc,argv,desc),vm);
@@ -64,6 +65,12 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     cout << "Running a demo..." << endl;
     parameters.structure = TEST;
     noargs = 0;
+  }
+
+  if (vm.count("force")) {
+    parameters.force_segmentation = SET;
+  } else {
+    parameters.force_segmentation = UNSET;
   }
 
   if (vm.count("verbose")) {
@@ -326,13 +333,24 @@ void Usage (const char *exe, options_description &desc)
 void segmentStructure(struct Parameters &parameters)
 {
   Segmentation segmentation;
+  string pdb_file;
+  bool status;
+
   switch(parameters.structure) {
     case TEST:   // test
       segmentation = testFit(parameters);
       break;
 
     case PROTEIN:   // protein file
-      segmentation = proteinFit(parameters);
+      pdb_file = extractName(parameters.file);
+      status = checkIfSegmentationExists(pdb_file);
+      if (status && parameters.force_segmentation == UNSET) {
+        cout << "Segmentation profile of " << pdb_file << " exists ..." << endl;
+        segmentation.load(pdb_file);
+      } else {
+        segmentation = proteinFit(parameters);
+        segmentation.save(pdb_file);
+      }
       break;
 
     case GENERAL:   // general 3D structure
@@ -350,15 +368,45 @@ void segmentStructure(struct Parameters &parameters)
  */
 void compareProteinStructures(struct Parameters &parameters)
 {
+  Segmentation a,b;
+
   parameters.file = parameters.comparison_files[0];
-  Segmentation a = proteinFit(parameters);
-  a.print();
+  string pdb_file = extractName(parameters.file);
+  bool status = checkIfSegmentationExists(pdb_file);
+  if (status && parameters.force_segmentation == UNSET) {
+    cout << "Segmentation profile of " << pdb_file << " exists ..." << endl;
+    a.load(pdb_file);
+  } else {
+    a = proteinFit(parameters);
+    a.save(pdb_file);
+  }
+  //a.print();
 
   parameters.file = parameters.comparison_files[1];
-  Segmentation b = proteinFit(parameters);
-  b.print();
+  pdb_file = extractName(parameters.file);
+  status = checkIfSegmentationExists(pdb_file);
+  if (status && parameters.force_segmentation == UNSET) {
+    cout << "Segmentation profile of " << pdb_file << " exists ..." << endl;
+    b.load(pdb_file);
+  } else {
+    b = proteinFit(parameters);
+    b.save(pdb_file);
+  }
+  //b.print();
 
   compareSegmentations(a,b,parameters);
+}
+
+/*!
+ *  \brief This module checks if the segmentation already exists or not.
+ *  \param pdb_file a reference to a string
+ *  \return the segmentation exists or not
+ */
+bool checkIfSegmentationExists(string &pdb_file)
+{
+  string segmentation_profile = "output/segmentation_profile/" + pdb_file 
+                                + ".profile";
+  return checkFile(segmentation_profile.c_str()); 
 }
 
 /*!
@@ -400,6 +448,7 @@ void compareSegmentations(Segmentation &a, Segmentation &b,
       comparison.computeMMLAlignment();
       break;
   }
+  comparison.save(parameters.comparison_files);
 }
 
 /*!
