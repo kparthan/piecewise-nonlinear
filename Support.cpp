@@ -521,7 +521,7 @@ Segmentation generalFit(struct Parameters &parameters)
 string getPDBFilePath(string &pdb_id)
 {
   boost::algorithm::to_lower(pdb_id);
-  string path = "/home/parthan/Research/PDB/" ;
+  string path = "/home/pkas7/Research/PDB/" ;
   string directory(pdb_id,1,2);
   path += directory + "/pdb" + pdb_id + ".ent.gz";
   return path;

@@ -18,6 +18,9 @@ class Segmentation
     //! Bits per residue for the segmentation
     double null_bpr,bezier_bpr;
 
+    //!
+    double cpu_time,wall_time;
+
   public:
     //! Null constructor
     Segmentation();
@@ -52,6 +55,15 @@ class Segmentation
 
     //!
     double getBezierBPR();
+
+    //!
+    void setTime(double, double);
+
+    //!
+    double getCPUTime();
+
+    //!
+    double getWallTime();
 
     //! Write the segmentation details
     void save(string &);

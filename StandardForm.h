@@ -148,7 +148,7 @@ class StandardForm
     void printLinearSegmentation(pair<double,vector<int>> &);
 
     //! Prints the segmentation details for the Bezier curve fit
-    void printBezierSegmentation(pair<double,vector<int>> &);
+    void printBezierSegmentation(pair<double,vector<int>> &, double, double);
 };
 
 #endif

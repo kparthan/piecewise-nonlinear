@@ -553,16 +553,25 @@ Segmentation StandardForm::fitBezierCurveModel()
   }
   Segmentation segmentation_profile;
   if (parameters.portion_to_fit == FIT_ENTIRE_STRUCTURE) {
+    clock_t c_start = clock();
+    auto t_start = high_resolution_clock::now();
+
     /* compute the code length matrix for the Bezier curve fit */
     computeCodeLengthMatrixBezier();
 
     /* compute the optimal segmentation using dynamic programming */
     pair<double,vector<int>> segmentation = optimalSegmentation();
-    printBezierSegmentation(segmentation);
+    clock_t c_end = clock();
+    auto t_end = high_resolution_clock::now();
+    double cpu_time = double(c_end-c_start)/(double)(CLOCKS_PER_SEC);
+    double wall_time = duration_cast<seconds>(t_end-t_start).count();
+    printBezierSegmentation(segmentation,cpu_time,wall_time);
     segmentation_profile = structure->reconstruct(parameters.file,output_file,
                            codeLength,optimalBezierFit,segmentation.second,
                            transformation);
     segmentation_profile.setBitsPerResidue(null_bpr,bezier_bpr);
+
+    //segmentation_profile.setTime(cpu_time,wall_time);
   } else if (parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
     fitOneSegment();
   }
@@ -804,7 +813,8 @@ void StandardForm::printLinearSegmentation(pair<double,
  *  \param segmentation a reference to a pair<double,vector<int>>
  */
 void StandardForm::printBezierSegmentation(pair<double,vector<int>>
-                                           &segmentation)
+                                           &segmentation, double cpu_time,
+                                           double wall_time)
 {
   ofstream log_file(output_file.c_str(),ios::app);
   int i;
@@ -818,6 +828,8 @@ void StandardForm::printBezierSegmentation(pair<double,vector<int>>
     log_file << segments[i] << "-->";
   }
   log_file << segments[i] << endl << endl;
+  log_file << "CPU time used: " << cpu_time << " secs." << endl;
+  log_file << "Wall clock time elapsed: " << wall_time << " secs." << endl << endl;
   log_file << setw(15) << "SEGMENT"
            << setw(15) << "START"
            << setw(15) << "END"

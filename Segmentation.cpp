@@ -41,6 +41,8 @@ Segmentation Segmentation::operator=(const Segmentation &source)
     lengths = source.lengths;
     null_bpr = source.null_bpr;
     bezier_bpr = source.bezier_bpr;
+    cpu_time = source.cpu_time;
+    wall_time = source.wall_time;
   }
   return *this;
 }
@@ -65,6 +67,22 @@ double Segmentation::getNullBPR()
 double Segmentation::getBezierBPR()
 {
   return bezier_bpr;
+}
+
+void Segmentation::setTime(double cpu, double wall)
+{
+  cpu_time = cpu;
+  wall_time = wall;
+}
+
+double Segmentation::getCPUTime()
+{
+  return cpu_time;
+}
+
+double Segmentation::getWallTime()
+{
+  return wall_time;
 }
 
 /*!
@@ -156,37 +174,35 @@ void Segmentation::load(string &pdb_file)
   ifstream profile(output_file.c_str());
   
   string line;
-  for (int i=0; i<5; i++) {
-    getline(profile,line);
+  int i = 0;
+  while(getline(profile,line)) {
     const char *str = line.c_str();
+    vector<string> result;
     vector<double> numbers;
     do {
       const char *begin = str;
-      while (*str != ' ' && *str) {
+      while (*str != ' ' && *str) 
         str++;
-      }
-      if (*str++ == 0) {
-        break;
-      } else {
-        string x = string(begin,--str);
-        istringstream iss(x);
-        double value;
-        iss >> value;
-        numbers.push_back(value);
-      }
-    }
-    while (*str++ != 0);
+      string y = string(begin,str);
+      result.push_back(y);
+
+      istringstream iss(y);
+      double x;
+      iss >> x;
+      numbers.push_back(x);
+    } while (0 != *str++);
     if (i == 0) {
       null_bpr = numbers[0];
     } else if (i == 1) {
       bezier_bpr = numbers[0];
-    } if (i == 2) {
+    } else if (i == 2) {
       planar_angles = numbers;
     } else if (i == 3) {
       dihedral_angles = numbers;
     } else if (i == 4) {
       lengths = numbers;
     }
+    i++;
   }
 
   profile.close();
