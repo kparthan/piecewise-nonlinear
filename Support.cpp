@@ -449,6 +449,16 @@ void compareSegmentations(Segmentation &a, Segmentation &b,
       break;
   }
   comparison.save(parameters.comparison_files);
+  vector<double> scores = comparison.getAlignmentScores();
+  ofstream file("output/comparison.results",ios::app);
+  file << extractName(parameters.comparison_files[0]) << " "
+       << extractName(parameters.comparison_files[1]) << " "
+       << a.getNullBPR() << " " << a.getBezierBPR() << " " 
+       << a.getNullBPR() - a.getBezierBPR() << " "
+       << b.getNullBPR() << " " << b.getBezierBPR() << " " 
+       << b.getNullBPR() - b.getBezierBPR() << " "
+       << scores[0] << " " << scores[1] << " " << scores[2] << endl;
+  file.close(); 
 }
 
 /*!
@@ -511,7 +521,7 @@ Segmentation generalFit(struct Parameters &parameters)
 string getPDBFilePath(string &pdb_id)
 {
   boost::algorithm::to_lower(pdb_id);
-  string path = "/home/pkas7/Research/PDB/" ;
+  string path = "/home/parthan/Research/PDB/" ;
   string directory(pdb_id,1,2);
   path += directory + "/pdb" + pdb_id + ".ent.gz";
   return path;

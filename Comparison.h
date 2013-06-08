@@ -18,7 +18,7 @@ class Comparison
     Segmentation profiles[2];
 
     //! Alignment score
-    double alignment_score;
+    double alignment_score,avg_alignment_score,normalized_alignment_score;
 
     //! Optimal alignment
     vector<array<double,2>> optimal_alignment;
@@ -54,6 +54,9 @@ class Comparison
 
     //! Save the alignment to a file
     void save(vector<string> &);
+
+    //! 
+    vector<double> getAlignmentScores();
 };
 
 #endif

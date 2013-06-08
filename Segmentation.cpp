@@ -39,6 +39,8 @@ Segmentation Segmentation::operator=(const Segmentation &source)
     planar_angles = source.planar_angles;
     dihedral_angles = source.dihedral_angles;
     lengths = source.lengths;
+    null_bpr = source.null_bpr;
+    bezier_bpr = source.bezier_bpr;
   }
   return *this;
 }
@@ -50,6 +52,19 @@ void Segmentation::setBitsPerResidue(double null, double bezier)
 {
   null_bpr = null;
   bezier_bpr = bezier;
+}
+
+/*!
+ *
+ */
+double Segmentation::getNullBPR()
+{
+  return null_bpr;
+}
+
+double Segmentation::getBezierBPR()
+{
+  return bezier_bpr;
 }
 
 /*!

@@ -29,6 +29,8 @@ void Comparison::save(vector<string> &comparison_files)
   string file_name = "output/alignments/" + file1 + "_" + file2 + ".alignment";
   ofstream file(file_name.c_str());
   file << "Alignment score: " << alignment_score << endl;
+  file << "Avg. Alignment score: " << avg_alignment_score << endl;
+  file << "Normalized Alignment score: " << normalized_alignment_score << endl;
   printAlignment(file,optimal_alignment);
   file.close();
 }
@@ -259,6 +261,8 @@ void Comparison::computeEditDistance(double gap_penalty)
   //cout << "\nEdit distance: " << matrix[x.size()][y.size()] << endl;
   alignment_score = matrix[x.size()][y.size()];
   vector<array<double,2>> optimal_alignment = traceback(direction,x,y);
+  avg_alignment_score = alignment_score / optimal_alignment.size();
+  normalized_alignment_score = alignment_score / (x.size() + y.size());
   //printAlignment(cout,optimal_alignment);
 }
 
@@ -308,6 +312,8 @@ void Comparison::computeBasicAlignment(double gap_penalty, double max_diff)
   //cout << "\nAlignment score: " << matrix[x.size()][y.size()] << endl;
   alignment_score = matrix[x.size()][y.size()];
   vector<array<double,2>> optimal_alignment = traceback(direction,x,y);
+  avg_alignment_score = alignment_score / optimal_alignment.size();
+  normalized_alignment_score = alignment_score / (x.size() + y.size());
   //printAlignment(cout,optimal_alignment);
 }
 
@@ -324,5 +330,17 @@ void Comparison::computeMMLAlignment()
   initialize(matrix,direction,x.size(),y.size());
   vector<vector<double>> transition_probability;
   vector<double> state_probability;
+}
+
+/*!
+ *
+ */
+vector<double> Comparison::getAlignmentScores()
+{
+  vector<double> scores;
+  scores.push_back(alignment_score);
+  scores.push_back(avg_alignment_score);
+  scores.push_back(normalized_alignment_score);
+  return scores;
 }
 

@@ -44,6 +44,15 @@ class Segmentation
     //! Print the segmentation details
     void print();
 
+    //!
+    void setBitsPerResidue(double, double);
+
+    //!
+    double getNullBPR();
+
+    //!
+    double getBezierBPR();
+
     //! Write the segmentation details
     void save(string &);
 
