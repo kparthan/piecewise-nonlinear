@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ul/d1ulra_.ent
+Number of residues: 87
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 19699.4
+Null Model Fit: 3798.04 bits.
+Bits per residue: 44.1632
+
+Bezier model fit: 3511.28 bits.
+Bits per residue: 40.8289
+
+# of segments: 7
+Internal segmentation:
+0-->8-->12-->36-->48-->64-->76-->86
+
+CPU time used: 4.24 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 2           A 10              9         323.23         (5.441, 25.168, 13.723)         (14.7866, 30.3355, 22.7566)
+                                                                                    (19.177, 25.354, 35.465)
+
+              2           A 10           A 14              5        179.392         (19.177, 25.354, 35.465)
+                                                                                    (27.99, 19.088, 31.645)
+
+              3           A 14           A 38             25        973.638         (27.99, 19.088, 31.645)         (-0.247493, 2.58113, 4.27502)
+                                                                                    (27.922, 31.198, 27.795)
+
+              4           A 38           A 50             13        490.741         (27.922, 31.198, 27.795)
+                                                                                    (2.592, 20.891, 17.437)
+
+              5           A 50           A 66             17         648.13         (2.592, 20.891, 17.437)
+                                                                                    (21.93, 14.504, 36.211)
+
+              6           A 66           A 78             13        471.388         (21.93, 14.504, 36.211)         (8.42614, 33.2044, 37.5865)
+                                                                                    (7.047, 29.699, 12.041)
+
+              7           A 78           A 88             11        424.767         (7.047, 29.699, 12.041)         (16.2755, 14.2996, 4.05553)
+                                                                                    (26.575, 23.038, 19.347)
+

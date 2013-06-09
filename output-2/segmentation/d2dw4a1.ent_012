@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/dw/d2dw4a1.ent
+Number of residues: 102
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 28444.6
+Null Model Fit: 4514.02 bits.
+Bits per residue: 44.6932
+
+Bezier model fit: 4173.27 bits.
+Bits per residue: 41.3195
+
+# of segments: 7
+Internal segmentation:
+0-->10-->14-->31-->52-->67-->88-->101
+
+CPU time used: 5.1 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 172          A 182             11        418.406         (61.553, 44.165, 38.758)
+                                                                                    (48.017, 39.674, 41.635)
+
+              2          A 182          A 186              5        179.552         (48.017, 39.674, 41.635)
+                                                                                    (58.727, 35.458, 45.858)
+
+              3          A 186          A 203             18        709.023         (58.727, 35.458, 45.858)         (37.5884, 16.6328, 43.0342)
+                                                                                    (64.135, 21.457, 47.529)
+
+              4          A 203          A 224             22        819.281         (64.135, 21.457, 47.529)
+                                                                                    (52.497, 41.158, 24.361)
+
+              5          A 224          A 239             16         627.45         (52.497, 41.158, 24.361)         (48.1505, 22.8165, 19.5271)
+                                                                                    (67.128, 31.641, 29.112)
+
+              6          A 239          A 260             22        856.395         (67.128, 31.641, 29.112)         (58.344, 13.2376, 33.8165)
+                                                                                    (43.51, 32.333, 32.796)
+
+              7          A 260          A 273             14        563.163         (43.51, 32.333, 32.796)         (48.1204, 43.2807, 18.9289)
+                                                                                    (41.243, 25.439, 17.937)
+

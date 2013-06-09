@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/vx/d2vxaa_.ent
+Number of residues: 66
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16707.1
+Null Model Fit: 2855.16 bits.
+Bits per residue: 43.9255
+
+Bezier model fit: 2623.02 bits.
+Bits per residue: 40.3542
+
+# of segments: 7
+Internal segmentation:
+0-->14-->15-->30-->39-->48-->52-->65
+
+CPU time used: 2.94 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 3           A 17             15        544.615         (-11.512, -41.534, -6.005)         (-17.335, -16.7536, 8.40597)
+                                                                                    (-40.959, -19.171, 9.963)
+
+              2           A 17           A 18              2        46.9626         (-40.959, -19.171, 9.963)
+                                                                                    (-38.832, -21.962, 11.465)
+
+              3           A 18           A 33             16        603.732         (-38.832, -21.962, 11.465)
+                                                                                    (-23.216, -20.576, -6.339)
+
+              4           A 33           A 42             10        372.637         (-23.216, -20.576, -6.339)         (-22.9474, -40.1293, -7.84582)
+                                                                                    (-27.31, -29.324, 11.202)
+
+              5           A 42           A 51             10        366.918         (-27.31, -29.324, 11.202)
+                                                                                    (-40.553, -8.101, 21.596)
+
+              6           A 51           A 55              5        177.563         (-40.553, -8.101, 21.596)
+                                                                                    (-38.385, -13.101, 14.821)
+
+              7           A 55           A 68             14        510.596         (-38.385, -13.101, 14.821)         (-23.2156, -31.4197, 11.8908)
+                                                                                    (-14.667, -31.806, -9.68)
+

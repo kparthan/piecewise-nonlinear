@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/vi/d2vi6d_.ent
+Number of residues: 55
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 10191.5
+Null Model Fit: 2333.47 bits.
+Bits per residue: 43.2124
+
+Bezier model fit: 2231.27 bits.
+Bits per residue: 41.3199
+
+# of segments: 7
+Internal segmentation:
+0-->3-->17-->23-->33-->35-->51-->54
+
+CPU time used: 2.22 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            D 6            D 9              4        134.924         (17.587, 61.093, 58.985)
+                                                                                    (11.518, 67.73, 58.355)
+
+              2            D 9           D 23             15        564.705         (11.518, 67.73, 58.355)
+                                                                                    (11.213, 60.702, 78.101)
+
+              3           D 23           D 29              7        247.337         (11.213, 60.702, 78.101)
+                                                                                    (2.041, 52.039, 72.295)
+
+              4           D 29           D 39             11        417.022         (2.041, 52.039, 72.295)
+                                                                                    (3.175, 60.801, 59.884)
+
+              5           D 39           D 41              3        90.4619         (3.175, 60.801, 59.884)
+                                                                                    (6.651, 54.829, 60.251)
+
+              6           D 41           D 57             17        641.899         (6.651, 54.829, 60.251)
+                                                                                    (25.767, 57.27, 78.114)
+
+              7           D 57           D 60              4        134.924         (25.767, 57.27, 78.114)
+                                                                                    (20.636, 54.967, 78.926)
+

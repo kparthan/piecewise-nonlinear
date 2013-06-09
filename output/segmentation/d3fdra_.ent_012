@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/fd/d3fdra_.ent
+Number of residues: 89
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 20552.5
+Null Model Fit: 3891.75 bits.
+Bits per residue: 44.2244
+
+Bezier model fit: 3602.02 bits.
+Bits per residue: 40.9321
+
+# of segments: 7
+Internal segmentation:
+0-->15-->25-->37-->49-->59-->67-->88
+
+CPU time used: 4.58 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 5           A 20             16        606.191         (2.086, 27.537, 6.346)
+                                                                                    (13.963, 21.178, -14.595)
+
+              2           A 20           A 30             11        398.163         (13.963, 21.178, -14.595)         (5.43215, 5.64755, -25.9784)
+                                                                                    (-10.903, 17.396, -18.423)
+
+              3           A 30           A 42             13         505.59         (-10.903, 17.396, -18.423)
+                                                                                    (8.62, 30.166, -11.239)
+
+              4           A 42           A 54             13        480.789         (8.62, 30.166, -11.239)         (-12.5117, 12.7222, -6.08417)
+                                                                                    (-8.444, 28.876, -28.484)
+
+              5           A 54           A 64             11         420.06         (-8.444, 28.876, -28.484)
+                                                                                    (-5.126, 26.016, -4.102)
+
+              6           A 64           A 72              9        338.058         (-5.126, 26.016, -4.102)         (-11.0036, 36.2901, -12.1122)
+                                                                                    (1.049, 24.067, -23.191)
+
+              7           A 72           A 93             22        853.172         (1.049, 24.067, -23.191)         (9.03018, 2.45539, 3.96882)
+                                                                                    (-17.794, 30.733, -3.106)
+

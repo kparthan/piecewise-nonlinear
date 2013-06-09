@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/sv/d1svto_.ent
+Number of residues: 97
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 41301.8
+Null Model Fit: 4342.2 bits.
+Bits per residue: 45.2313
+
+Bezier model fit: 3989.28 bits.
+Bits per residue: 41.555
+
+# of segments: 7
+Internal segmentation:
+0-->5-->25-->36-->50-->70-->79-->96
+
+CPU time used: 4.81 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            O 1            O 6              6        220.809         (75.689, -13.894, -101.003)
+                                                                                    (77.657, -28.793, -105.692)
+
+              2            O 6           O 26             21        817.964         (77.657, -28.793, -105.692)
+                                                                                    (43.849, -27.816, -80.357)
+
+              3           O 26           O 37             12        462.326         (43.849, -27.816, -80.357)         (64.7539, -31.2351, -71.0958)
+                                                                                    (58.851, -30.041, -94.366)
+
+              4           O 37           O 51             15        578.897         (58.851, -30.041, -94.366)         (73.3497, -21.6402, -110.842)
+                                                                                    (80.637, -41.992, -115.159)
+
+              5           O 51           O 71             21        828.295         (80.637, -41.992, -115.159)         (46.2451, -18.0659, -110.16)
+                                                                                    (72.66, -38.077, -90.785)
+
+              6           O 71           O 80             10        373.116         (72.66, -38.077, -90.785)
+                                                                                    (71.789, -14.99, -91.08)
+
+              7           O 80           O 97             18        707.874         (71.789, -14.99, -91.08)         (75.6397, -49.8556, -101.001)
+                                                                                    (48.5, -28.629, -105.487)
+

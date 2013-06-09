@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/co/d2co5b_.ent
+Number of residues: 94
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 27750.7
+Null Model Fit: 4153.16 bits.
+Bits per residue: 44.6576
+
+Bezier model fit: 3816.84 bits.
+Bits per residue: 41.0413
+
+# of segments: 7
+Internal segmentation:
+0-->21-->27-->43-->57-->65-->73-->93
+
+CPU time used: 4.73 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            B 1           B 22             22        870.932         (16.514, 43.643, 55.597)         (-8.06696, 36.9259, 64.4269)
+                                                                                    (-9.527, 53.415, 48.225)
+
+              2           B 22           B 28              7         259.72         (-9.527, 53.415, 48.225)
+                                                                                    (-17.662, 48.697, 61.458)
+
+              3           B 28           B 44             17         664.09         (-17.662, 48.697, 61.458)         (-9.53144, 30.0074, 42.7878)
+                                                                                    (-12.91, 41.442, 67.764)
+
+              4           B 44           B 58             15        560.938         (-12.91, 41.442, 67.764)
+                                                                                    (-0.184, 57.027, 62.318)
+
+              5           B 58           B 66              9        324.243         (-0.184, 57.027, 62.318)
+                                                                                    (-22.313, 60.297, 62.664)
+
+              6           B 66           B 74              9        336.717         (-22.313, 60.297, 62.664)
+                                                                                    (-2.254, 57.758, 55.669)
+
+              7           B 74           B 94             21        800.203         (-2.254, 57.758, 55.669)
+                                                                                    (6.947, 32.495, 42.782)
+

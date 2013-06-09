@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/k5/d1k52a_.ent
+Number of residues: 72
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16323.1
+Null Model Fit: 3116.33 bits.
+Bits per residue: 43.892
+
+Bezier model fit: 2854.51 bits.
+Bits per residue: 40.2044
+
+# of segments: 8
+Internal segmentation:
+0-->8-->20-->22-->32-->50-->60-->61-->71
+
+CPU time used: 3.3 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A -7            A 1              9        337.215         (11.002, 53.148, 39.501)
+                                                                                    (-11.195, 54.294, 37.43)
+
+              2            A 1           A 13             13        464.765         (-11.195, 54.294, 37.43)         (1.1119, 50.0114, 21.8042)
+                                                                                    (8.965, 29.557, 18.241)
+
+              3           A 13           A 15              3         91.821         (8.965, 29.557, 18.241)
+                                                                                    (8.963, 33.251, 14.243)
+
+              4           A 15           A 25             11        397.091         (8.963, 33.251, 14.243)         (-7.24948, 43.3761, 17.6485)
+                                                                                    (-6.618, 49.663, 35.148)
+
+              5           A 25           A 43             19        711.837         (-6.618, 49.663, 35.148)
+                                                                                    (0.194, 24.845, 22.282)
+
+              6           A 43           A 53             11         402.17         (0.194, 24.845, 22.282)         (13.938, 31.4385, 32.0848)
+                                                                                    (7.75, 51.36, 27.514)
+
+              7           A 53           A 54              2         46.929         (7.75, 51.36, 27.514)
+                                                                                    (7.53, 51.771, 31.276)
+
+              8           A 54           A 64             11        402.682         (7.53, 51.771, 31.276)
+                                                                                    (7.832, 26.023, 21.497)
+

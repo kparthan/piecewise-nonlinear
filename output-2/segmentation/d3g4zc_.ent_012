@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/g4/d3g4zc_.ent
+Number of residues: 117
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 34541.7
+Null Model Fit: 5216.91 bits.
+Bits per residue: 44.9734
+
+Bezier model fit: 4650.83 bits.
+Bits per residue: 40.0933
+
+# of segments: 7
+Internal segmentation:
+0-->6-->34-->63-->72-->91-->92-->116
+
+CPU time used: 6.04 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            C 1            C 7              7        270.269         (1.503, 7.108, 44.89)         (-10.2221, 12.3189, 44.4337)
+                                                                                    (-0.773, 5.708, 50.99)
+
+              2            C 7           C 35             29        1135.89         (-0.773, 5.708, 50.99)         (33.505, -1.3323, 33.7365)
+                                                                                    (19.309, 1.662, 14.671)
+
+              3           C 35           C 64             30        1115.34         (19.309, 1.662, 14.671)         (10.6127, 8.40282, 33.4381)
+                                                                                    (5.204, 16.073, 54.483)
+
+              4           C 64           C 73             10        384.833         (5.204, 16.073, 54.483)
+                                                                                    (18.375, 19.092, 52.788)
+
+              5           C 73           C 92             20        757.588         (18.375, 19.092, 52.788)
+                                                                                    (25.342, 7.526, 27.196)
+
+              6           C 92           C 93              2        48.0105         (25.342, 7.526, 27.196)
+                                                                                    (27.78, 7.219, 30.166)
+
+              7           C 93          C 117             25          938.9         (27.78, 7.219, 30.166)
+                                                                                    (9.305, 6.691, 62.85)
+

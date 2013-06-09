@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/vc/d1vcta1.ent
+Number of residues: 99
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 36122
+Null Model Fit: 4413.72 bits.
+Bits per residue: 45.0379
+
+Bezier model fit: 3876.31 bits.
+Bits per residue: 39.5542
+
+# of segments: 7
+Internal segmentation:
+0-->4-->30-->31-->60-->65-->94-->98
+
+CPU time used: 4.77 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 9           A 13              5        176.939         (67.175, 27.529, 61.9)
+                                                                                    (55.463, 22.482, 63.127)
+
+              2           A 13           A 39             27        1014.65         (55.463, 22.482, 63.127)         (37.6023, 35.6519, 66.8134)
+                                                                                    (37.408, 55.347, 64.313)
+
+              3           A 39           A 40              2         48.075         (37.408, 55.347, 64.313)
+                                                                                    (41.081, 54.63, 64.949)
+
+              4           A 40           A 69             30        1116.25         (41.081, 54.63, 64.949)         (54.6342, 37.6715, 54.467)
+                                                                                    (52.471, 14.268, 52.351)
+
+              5           A 69           A 74              6        222.783         (52.471, 14.268, 52.351)
+                                                                                    (48.664, 11.649, 54.04)
+
+              6           A 74          A 103             30        1117.06         (48.664, 11.649, 54.04)         (34.5425, 31.6408, 56.0706)
+                                                                                    (41.596, 53.992, 56.761)
+
+              7          A 103          A 107              5        180.558         (41.596, 53.992, 56.761)
+                                                                                    (31.583, 58.562, 57.803)
+

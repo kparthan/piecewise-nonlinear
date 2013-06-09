@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ei/d2eifa2.ent
+Number of residues: 59
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 14651.7
+Null Model Fit: 2536.7 bits.
+Bits per residue: 43.7361
+
+Bezier model fit: 2396.8 bits.
+Bits per residue: 41.3241
+
+# of segments: 7
+Internal segmentation:
+0-->12-->21-->23-->33-->40-->49-->58
+
+CPU time used: 2.52 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 74           A 86             13        483.289         (17.369, 0.827, 8.102)         (22.8576, 9.37857, -17.6917)
+                                                                                    (3.702, -8.203, -12.91)
+
+              2           A 86           A 95             10        367.227         (3.702, -8.203, -12.91)
+                                                                                    (25.973, 2.631, -5.66)
+
+              3           A 95           A 97              3        91.5093         (25.973, 2.631, -5.66)
+                                                                                    (25.041, -1.093, -10.071)
+
+              4           A 97          A 107             11        403.169         (25.041, -1.093, -10.071)         (7.31615, -13.2885, -4.87271)
+                                                                                    (2.727, 5.703, -4.538)
+
+              5          A 107          A 114              8         304.17         (2.727, 5.703, -4.538)
+                                                                                    (14.527, 5.666, -15.87)
+
+              6          A 114          A 123             10        363.962         (14.527, 5.666, -15.87)         (13.5785, 8.96185, -0.350008)
+                                                                                    (16.338, -7.128, 8.137)
+
+              7          A 123          A 132             10        383.473         (16.338, -7.128, 8.137)
+                                                                                    (11.988, 10.879, -7.661)
+

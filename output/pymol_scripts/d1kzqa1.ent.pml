@@ -1,0 +1,84 @@
+load ../modified_pdb_files/d1kzqa1.ent.pdb
+hide
+show cartoon
+set label_font_id, 10
+set_color c1 = [0.639216,0.396078,0.0745098]
+select seg1, chain A and resi 3-14
+select curve1, chain Y and resi C1
+print cmd.distance("chain A and resi 3 and name CA","resi R1 and name A1")
+hide label
+print cmd.distance("resi R1 and name A1","chain A and resi 14 and name CA")
+hide label
+color c1, seg1
+set_color c2 = [0.647059,0.254902,0.623529]
+select seg2, chain A and resi 14-25
+select curve2, chain Y and resi C2
+print cmd.distance("chain A and resi 14 and name CA","resi R2 and name A1")
+hide label
+print cmd.distance("resi R2 and name A1","chain A and resi 25 and name CA")
+hide label
+color c2, seg2
+set_color c3 = [0.32549,0.0470588,0.843137]
+select seg3, chain A and resi 25-36
+select curve3, chain Y and resi C3
+print cmd.distance("chain A and resi 25 and name CA","chain A and resi 36 and name CA")
+hide label
+color c3, seg3
+set_color c4 = [0.211765,0.662745,0.254902]
+select seg4, chain A and resi 36-48
+select curve4, chain Y and resi C4
+print cmd.distance("chain A and resi 36 and name CA","resi R4 and name A1")
+hide label
+print cmd.distance("resi R4 and name A1","chain A and resi 48 and name CA")
+hide label
+color c4, seg4
+set_color c5 = [0.996078,0.00392157,0.145098]
+select seg5, chain A and resi 48-56
+select curve5, chain Y and resi C5
+print cmd.distance("chain A and resi 48 and name CA","chain A and resi 56 and name CA")
+hide label
+color c5, seg5
+set_color c6 = [0.439216,0.568627,0.356863]
+select seg6, chain A and resi 56-63
+select curve6, chain Y and resi C6
+print cmd.distance("chain A and resi 56 and name CA","resi R6 and name A1")
+hide label
+print cmd.distance("resi R6 and name A1","chain A and resi 63 and name CA")
+hide label
+color c6, seg6
+set_color c7 = [0.878431,0.65098,0.592157]
+select seg7, chain A and resi 63-86
+select curve7, chain Y and resi C7
+print cmd.distance("chain A and resi 63 and name CA","resi R7 and name A1")
+hide label
+print cmd.distance("resi R7 and name A1","chain A and resi 86 and name CA")
+hide label
+color c7, seg7
+set_color c8 = [0.517647,0.682353,0.298039]
+select seg8, chain A and resi 86-90
+select curve8, chain Y and resi C8
+print cmd.distance("chain A and resi 86 and name CA","chain A and resi 90 and name CA")
+hide label
+color c8, seg8
+set_color c9 = [0.0588235,0.188235,0.0352941]
+select seg9, chain A and resi 90-101
+select curve9, chain Y and resi C9
+print cmd.distance("chain A and resi 90 and name CA","chain A and resi 101 and name CA")
+hide label
+color c9, seg9
+set_color c10 = [0.752941,0.827451,0.176471]
+select seg10, chain A and resi 101-119
+select curve10, chain Y and resi C10
+print cmd.distance("chain A and resi 101 and name CA","resi R10 and name A1")
+hide label
+print cmd.distance("resi R10 and name A1","resi R10 and name A2")
+hide label
+print cmd.distance("resi R10 and name A2","chain A and resi 119 and name CA")
+hide label
+color c10, seg10
+set_color c11 = [0.313725,0.466667,0.572549]
+select seg11, chain A and resi 119-131
+select curve11, chain Y and resi C11
+print cmd.distance("chain A and resi 119 and name CA","chain A and resi 131 and name CA")
+hide label
+color c11, seg11

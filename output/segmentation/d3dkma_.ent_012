@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/dk/d3dkma_.ent
+Number of residues: 79
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 19673.2
+Null Model Fit: 3444.58 bits.
+Bits per residue: 44.1613
+
+Bezier model fit: 3278.98 bits.
+Bits per residue: 42.0382
+
+# of segments: 8
+Internal segmentation:
+0-->3-->22-->34-->45-->53-->65-->76-->78
+
+CPU time used: 3.7 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1         A 1264         A 1267              4         137.77         (35.5, -2.006, 44.98)
+                                                                                    (27.148, -1.99, 41.7)
+
+              2         A 1267         A 1286             20        787.318         (27.148, -1.99, 41.7)         (10.7439, 22.6066, 48.3393)
+                                                                                    (26.95, 4.364, 28.643)
+
+              3         A 1286         A 1298             13         517.68         (26.95, 4.364, 28.643)         (9.27146, 13.587, 16.3162)
+                                                                                    (26.759, 17.101, 25.725)
+
+              4         A 1298         A 1309             12        447.838         (26.759, 17.101, 25.725)         (10.5524, 20.8823, 44.7967)
+                                                                                    (10.545, -0.044, 37.336)
+
+              5         A 1309         A 1317              9        328.346         (10.545, -0.044, 37.336)
+                                                                                    (17.924, 21.954, 29.899)
+
+              6         A 1317         A 1329             13        513.404         (17.924, 21.954, 29.899)
+                                                                                    (16.595, -3.821, 31.212)
+
+              7         A 1329         A 1340             12        454.266         (16.595, -3.821, 31.212)
+                                                                                    (27.486, 17.795, 40.163)
+
+              8         A 1340         A 1342              3        92.3597         (27.486, 17.795, 40.163)
+                                                                                    (26.325, 15.158, 45.922)
+

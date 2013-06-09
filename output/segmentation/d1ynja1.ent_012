@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/yn/d1ynja1.ent
+Number of residues: 103
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 48789.4
+Null Model Fit: 4638.11 bits.
+Bits per residue: 45.4716
+
+Bezier model fit: 4146.63 bits.
+Bits per residue: 40.6533
+
+# of segments: 8
+Internal segmentation:
+0-->11-->23-->43-->44-->58-->60-->73-->102
+
+CPU time used: 5.18 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 6           A 17             12        443.423         (0.535, 64.666, 75.163)         (-4.76897, 64.8859, 58.2258)
+                                                                                    (-3.136, 67.83, 41.292)
+
+              2           A 17           A 29             13        500.694         (-3.136, 67.83, 41.292)
+                                                                                    (6.253, 68.73, 70.559)
+
+              3           A 29           A 49             21        815.013         (6.253, 68.73, 70.559)         (18.4704, 73.0868, 56.3484)
+                                                                                    (14.047, 58.862, 41.806)
+
+              4           A 49          A 173              2        48.5087         (14.047, 58.862, 41.806)
+                                                                                    (10.812, 65.014, 40.115)
+
+              5          A 173          A 187             15        570.955         (10.812, 65.014, 40.115)         (10.5848, 83.683, 57.1151)
+                                                                                    (-4.728, 72.453, 73.928)
+
+              6          A 187          A 189              3        94.9803         (-4.728, 72.453, 73.928)
+                                                                                    (1.557, 74.61, 76.017)
+
+              7          A 189          A 202             14        503.342         (1.557, 74.61, 76.017)
+                                                                                    (6.712, 67.973, 37.855)
+
+              8          A 202          A 231             30        1169.72         (6.712, 67.973, 37.855)         (2.16701, 54.7215, 53.5282)
+                                                                                    (34.206, 49.214, 71.021)
+

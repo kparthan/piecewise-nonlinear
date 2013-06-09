@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/e0/d1e0fi_.ent
+Number of residues: 57
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 21107.3
+Null Model Fit: 2478.72 bits.
+Bits per residue: 44.2628
+
+Bezier model fit: 2351.53 bits.
+Bits per residue: 41.9917
+
+# of segments: 6
+Internal segmentation:
+0-->3-->12-->21-->22-->33-->56
+
+CPU time used: 2.31 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            I 1            I 4              4        138.075         (36.956, 40.642, 14.441)
+                                                                                    (37.809, 30.361, 13.974)
+
+              2            I 4           I 13             10         385.19         (37.809, 30.361, 13.974)         (27.7371, 36.5991, 20.6577)
+                                                                                    (22.174, 28.194, 4.122)
+
+              3           I 13           I 22             10         374.69         (22.174, 28.194, 4.122)         (31.3442, 45.1971, 2.97369)
+                                                                                    (31.515, 24.685, 12.311)
+
+              4           I 22           I 23              2        47.2999         (31.515, 24.685, 12.311)
+                                                                                    (35.14, 25.787, 12.384)
+
+              5           I 23           I 34             12        464.028         (35.14, 25.787, 12.384)         (28.3239, 39.2264, -9.321)
+                                                                                    (27.85, 22.574, 10.086)
+
+              6           I 34           I 57             24         942.25         (27.85, 22.574, 10.086)         (41.1477, 35.9367, -23.2815)
+                                                                                    (34.635, 66.892, -4.017)
+

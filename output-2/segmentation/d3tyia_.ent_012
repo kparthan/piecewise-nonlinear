@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ty/d3tyia_.ent
+Number of residues: 108
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 23488.7
+Null Model Fit: 4752.62 bits.
+Bits per residue: 44.417
+
+Bezier model fit: 4464.39 bits.
+Bits per residue: 41.7233
+
+# of segments: 7
+Internal segmentation:
+0-->17-->31-->41-->59-->79-->91-->107
+
+CPU time used: 5.62 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A -5           A 13             18         701.27         (-3.022, 2.03, -14)         (11.7342, 22.515, 3.87338)
+                                                                                    (3.081, -0.004, 5.313)
+
+              2           A 13           A 27             15          599.5         (3.081, -0.004, 5.313)         (26.1133, 1.444, -1.98447)
+                                                                                    (14.23, -8.711, 5.507)
+
+              3           A 27           A 37             11        419.237         (14.23, -8.711, 5.507)
+                                                                                    (13.893, -0.471, -14.613)
+
+              4           A 37           A 55             19         758.56         (13.893, -0.471, -14.613)         (19.2584, -22.5675, 4.47366)
+                                                                                    (6.279, -12.899, -13.74)
+
+              5           A 55           A 75             21        836.657         (6.279, -12.899, -13.74)         (14.7221, 14.1995, -20.7602)
+                                                                                    (1.323, -11.862, -9.08)         (-13.0071, -6.77405, 2.90967)
+
+              6           A 75           A 87             13        504.123         (1.323, -11.862, -9.08)         (4.97704, -17.7069, 6.45023)
+                                                                                    (-6.371, 4.653, -2.661)
+
+              7           A 87          A 103             17        645.047         (-6.371, 4.653, -2.661)
+                                                                                    (17.584, 5.367, -6.996)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/bw/d3bwgc1.ent
+Number of residues: 75
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 20028.8
+Null Model Fit: 3269.85 bits.
+Bits per residue: 44.1871
+
+Bezier model fit: 3064.95 bits.
+Bits per residue: 41.4183
+
+# of segments: 7
+Internal segmentation:
+0-->14-->32-->34-->48-->57-->58-->74
+
+CPU time used: 3.63 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            C 5           C 19             15        565.451         (45.386, 38.282, 65.189)
+                                                                                    (42.623, 34.334, 85.733)
+
+              2           C 19           C 37             19        763.314         (42.623, 34.334, 85.733)         (25.9402, 48.3687, 79.2681)
+                                                                                    (47.791, 50.306, 72.14)
+
+              3           C 37           C 39              3        92.4113         (47.791, 50.306, 72.14)
+                                                                                    (42.076, 51.184, 67.782)
+
+              4           C 39           C 53             15        563.788         (42.076, 51.184, 67.782)
+                                                                                    (36.53, 30.918, 68.597)
+
+              5           C 53           C 62             10        376.781         (36.53, 30.918, 68.597)
+                                                                                    (25.933, 44.674, 79.177)
+
+              6           C 62           C 63              2        47.2242         (25.933, 44.674, 79.177)
+                                                                                    (29.333, 44.369, 77.421)
+
+              7           C 63           C 79             17         655.98         (29.333, 44.369, 77.421)         (40.4238, 8.41284, 82.6389)
+                                                                                    (36.451, 24, 61.984)
+

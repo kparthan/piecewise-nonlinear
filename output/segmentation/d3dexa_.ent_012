@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/de/d3dexa_.ent
+Number of residues: 79
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 12873
+Null Model Fit: 3396.85 bits.
+Bits per residue: 43.5494
+
+Bezier model fit: 3199.66 bits.
+Bits per residue: 41.0213
+
+# of segments: 7
+Internal segmentation:
+0-->1-->11-->32-->43-->51-->67-->78
+
+CPU time used: 3.65 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 11           A 12              2        46.5865         (33.688, 123.849, 19.933)
+                                                                                    (32.152, 126.67, 22)
+
+              2           A 12           A 22             11        402.073         (32.152, 126.67, 22)         (18.1364, 131.154, 10.964)
+                                                                                    (5.75, 126.141, 4.216)
+
+              3           A 22           A 43             22        846.161         (5.75, 126.141, 4.216)         (29.7491, 122.26, -1.91717)
+                                                                                    (34.579, 126.734, 16.27)
+
+              4           A 43           A 54             12        450.956         (34.579, 126.734, 16.27)         (17.8968, 117.521, 17.0184)
+                                                                                    (5.978, 132.044, 7.2)
+
+              5           A 54           A 62              9        329.814         (5.978, 132.044, 7.2)         (19.3751, 134.693, 5.17496)
+                                                                                    (24.851, 132.502, 20.174)
+
+              6           A 62           A 78             17         672.13         (24.851, 132.502, 20.174)         (6.27993, 144.923, 0.436916)
+                                                                                    (30.242, 134.834, 1.611)
+
+              7           A 78           A 89             12        451.943         (30.242, 134.834, 1.611)
+                                                                                    (36.983, 136.062, 15.307)
+

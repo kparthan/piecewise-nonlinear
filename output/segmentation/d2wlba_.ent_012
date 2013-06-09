@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/wl/d2wlba_.ent
+Number of residues: 103
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 25209.9
+Null Model Fit: 4540.94 bits.
+Bits per residue: 44.5191
+
+Bezier model fit: 4223.99 bits.
+Bits per residue: 41.4117
+
+# of segments: 7
+Internal segmentation:
+0-->12-->22-->43-->56-->76-->86-->102
+
+CPU time used: 5.35 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 516          A 528             13        492.751         (-45.338, -2.85, -2.395)
+                                                                                    (-30.641, -6.627, 21.727)
+
+              2          A 528          A 538             11        400.489         (-30.641, -6.627, 21.727)         (-40.1108, 3.97686, 5.21294)
+                                                                                    (-33.579, -11.576, -4.15)
+
+              3          A 538          A 559             22        878.488         (-33.579, -11.576, -4.15)         (-20.7151, 3.4419, 19.7487)
+                                                                                    (-20.625, -20.184, -0.423)
+
+              4          A 559          A 572             14        546.483         (-20.625, -20.184, -0.423)         (-18.623, -16.0952, 17.4132)
+                                                                                    (-43.908, -18.316, 11.431)
+
+              5          A 572          A 592             21        816.542         (-43.908, -18.316, 11.431)         (-26.4627, -34.3913, -7.81778)
+                                                                                    (-22.956, -21.744, 17.886)
+
+              6          A 592          A 602             11        426.965         (-22.956, -21.744, 17.886)         (-41.2067, -26.1292, 17.2198)
+                                                                                    (-26.731, -15.772, 3.113)
+
+              7          A 602          A 618             17        662.273         (-26.731, -15.772, 3.113)         (-56.671, -7.46461, -4.18619)
+                                                                                    (-27.307, -14.975, 18.065)
+

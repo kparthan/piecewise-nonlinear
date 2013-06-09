@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ef/d1ef1a3.ent
+Number of residues: 84
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 28455.7
+Null Model Fit: 3709.58 bits.
+Bits per residue: 44.6938
+
+Bezier model fit: 3439.91 bits.
+Bits per residue: 41.4448
+
+# of segments: 7
+Internal segmentation:
+0-->9-->17-->38-->50-->60-->70-->83
+
+CPU time used: 3.99 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 4           A 13             10        380.228         (48.82, 140.398, 84.838)         (45.1547, 134.19, 69.5331)
+                                                                                    (48.873, 139.219, 59.044)
+
+              2           A 13           A 21              9        321.738         (48.873, 139.219, 59.044)         (53.941, 141.948, 73.3819)
+                                                                                    (44.395, 142.337, 84.448)
+
+              3           A 21           A 42             22        866.693         (44.395, 142.337, 84.448)         (22.4887, 136.063, 79.0006)
+                                                                                    (34.575, 146.153, 64.087)         (59.4946, 157.338, 61.0739)
+
+              4           A 42           A 54             13        493.266         (34.575, 146.153, 64.087)
+                                                                                    (39.719, 121.816, 72.509)
+
+              5           A 54           A 64             11        425.968         (39.719, 121.816, 72.509)         (28.1537, 140.18, 67.2543)
+                                                                                    (35.563, 138.381, 81.896)
+
+              6           A 64           A 74             11        431.021         (35.563, 138.381, 81.896)         (34.3281, 124.002, 79.6259)
+                                                                                    (50.553, 131.436, 78.785)
+
+              7           A 74           A 87             14            521         (50.553, 131.436, 78.785)
+                                                                                    (26.635, 141.358, 51.742)
+

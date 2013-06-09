@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/bw/d2bwqa_.ent
+Number of residues: 122
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 38305.6
+Null Model Fit: 5459.84 bits.
+Bits per residue: 45.1226
+
+Bezier model fit: 4961.49 bits.
+Bits per residue: 41.004
+
+# of segments: 8
+Internal segmentation:
+0-->15-->35-->48-->65-->81-->97-->108-->121
+
+CPU time used: 6.44 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 725          A 740             16        592.742         (20.624, 20.352, 6.452)         (1.65261, 4.55148, 7.70501)
+                                                                                    (-3.069, -11.157, 28.481)
+
+              2          A 740          A 760             21        819.156         (-3.069, -11.157, 28.481)
+                                                                                    (17.613, 12.668, -8.314)
+
+              3          A 760          A 773             14        514.414         (17.613, 12.668, -8.314)         (7.06998, -4.99688, 1.82785)
+                                                                                    (18.126, -7.792, 23.174)
+
+              4          A 773          A 790             18        725.312         (18.126, -7.792, 23.174)         (10.2106, -18.5432, 3.41009)
+                                                                                    (9.725, 8.544, -1.613)
+
+              5          A 790          A 806             17        649.232         (9.725, 8.544, -1.613)         (-2.04754, -17.1382, 10.015)
+                                                                                    (8.022, -6.934, 33.328)
+
+              6          A 806          A 829             17        665.788         (8.022, -6.934, 33.328)
+                                                                                    (22.069, 2.809, 1.777)
+
+              7          A 829          A 840             12        450.362         (22.069, 2.809, 1.777)
+                                                                                    (8.03, 4.599, 27.608)
+
+              8          A 840          A 853             14        544.482         (8.03, 4.599, 27.608)         (-13.1975, 3.40945, 13.3856)
+                                                                                    (17.791, 9.869, 12.434)
+

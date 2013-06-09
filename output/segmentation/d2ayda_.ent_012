@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ay/d2ayda_.ent
+Number of residues: 76
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 17683.4
+Null Model Fit: 3300.56 bits.
+Bits per residue: 44.0075
+
+Bezier model fit: 3058.81 bits.
+Bits per residue: 40.7842
+
+# of segments: 7
+Internal segmentation:
+0-->9-->16-->29-->42-->54-->58-->75
+
+CPU time used: 3.5 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 293          A 302             10        366.274         (15.159, 4.469, -0.571)         (27.6534, -6.03374, 6.92322)
+                                                                                    (34.417, -15.405, -3.31)
+
+              2          A 302          A 309              8        301.292         (34.417, -15.405, -3.31)
+                                                                                    (15.99, -14.099, -2.712)
+
+              3          A 309          A 322             14        511.009         (15.99, -14.099, -2.712)         (19.5193, 0.0676215, -27.7621)
+                                                                                    (40.837, 0.486, -7.395)
+
+              4          A 322          A 335             14        528.114         (40.837, 0.486, -7.395)
+                                                                                    (6.875, -6.557, -13.425)
+
+              5          A 335          A 347             13        482.484         (6.875, -6.557, -13.425)
+                                                                                    (38.887, -2.603, -2.779)
+
+              6          A 347          A 351              5        179.433         (38.887, -2.603, -2.779)
+                                                                                    (36.499, -10.675, 0.431)
+
+              7          A 351          A 368             18         690.21         (36.499, -10.675, 0.431)         (2.13549, 12.7752, -3.73106)
+                                                                                    (11.213, -20.689, -6.56)
+

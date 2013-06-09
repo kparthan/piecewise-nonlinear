@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/w9/d1w96c1.ent
+Number of residues: 99
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 38717.9
+Null Model Fit: 4423.53 bits.
+Bits per residue: 45.1381
+
+Bezier model fit: 3998.86 bits.
+Bits per residue: 40.8046
+
+# of segments: 8
+Internal segmentation:
+0-->16-->32-->45-->51-->63-->64-->83-->98
+
+CPU time used: 4.98 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          C 451          C 467             17        628.389         (47.666, 77.882, 127.45)         (38.0855, 91.2718, 103.665)
+                                                                                    (57.134, 107.109, 92.569)
+
+              2          C 467          C 483             17         674.69         (57.134, 107.109, 92.569)         (65.3351, 92.8624, 109.889)
+                                                                                    (47.324, 96.106, 123.59)
+
+              3          C 483          C 496             14        531.415         (47.324, 96.106, 123.59)
+                                                                                    (55.876, 84.365, 94.203)
+
+              4          C 496          C 502              7         268.19         (55.876, 84.365, 94.203)
+                                                                                    (53.505, 93.473, 94.039)
+
+              5          C 502          C 514             13        468.359         (53.505, 93.473, 94.039)
+                                                                                    (42.804, 83.899, 128.694)
+
+              6          C 514          C 515              2        48.1751         (42.804, 83.899, 128.694)
+                                                                                    (39.89, 82.631, 126.615)
+
+              7          C 515          C 534             20        757.744         (39.89, 82.631, 126.615)
+                                                                                    (46.944, 105.505, 106.368)
+
+              8          C 534          C 549             16        621.893         (46.944, 105.505, 106.368)
+                                                                                    (29.118, 90.832, 115.776)
+

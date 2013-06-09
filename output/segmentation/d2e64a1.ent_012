@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/e6/d2e64a1.ent
+Number of residues: 47
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 9018.32
+Null Model Fit: 1979.66 bits.
+Bits per residue: 43.036
+
+Bezier model fit: 1895.48 bits.
+Bits per residue: 41.2061
+
+# of segments: 6
+Internal segmentation:
+0-->8-->20-->21-->30-->39-->46
+
+CPU time used: 1.72 secs.
+Wall clock time elapsed: 1 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 189          A 197              9        336.499         (-0.128, -23.43, -10.873)         (-9.68368, -23.4136, -0.34595)
+                                                                                    (-21.521, -30.843, -4.133)
+
+              2          A 197          A 209             13        483.165         (-21.521, -30.843, -4.133)         (5.43336, -27.754, -2.43059)
+                                                                                    (-11.605, -24.423, -24.805)
+
+              3          A 209          A 210              2        46.0731         (-11.605, -24.423, -24.805)
+                                                                                    (-14.933, -23.983, -22.95)
+
+              4          A 210          A 219             10        369.953         (-14.933, -23.983, -22.95)
+                                                                                    (-4.375, -38.789, -7.172)
+
+              5          A 219          A 228             10        368.225         (-4.375, -38.789, -7.172)         (-10.0771, -32.1077, -19.2464)
+                                                                                    (-22.534, -21.763, -11.832)
+
+              6          A 228          A 235              8        291.567         (-22.534, -21.763, -11.832)
+                                                                                    (-5.321, -22.636, -0.077)
+

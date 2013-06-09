@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/vl/d1vlba1.ent
+Number of residues: 113
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 39513.1
+Null Model Fit: 5058.75 bits.
+Bits per residue: 45.1674
+
+Bezier model fit: 4644.55 bits.
+Bits per residue: 41.4692
+
+# of segments: 7
+Internal segmentation:
+0-->19-->42-->59-->77-->93-->110-->112
+
+CPU time used: 5.74 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 81          A 100             20        801.513         (58.562, -3.082, 4.909)         (75.0397, -3.92539, 18.8336)
+                                                                                    (50.133, -12.643, 18.294)
+
+              2          A 100          A 123             24        953.429         (50.133, -12.643, 18.294)         (60.3472, 19.1751, 11.3778)
+                                                                                    (64.749, 1.163, 30.191)
+
+              3          A 123          A 140             18        704.809         (64.749, 1.163, 30.191)         (44.6665, 13.4768, 26.5492)
+                                                                                    (54.614, -10.646, 26.027)
+
+              4          A 140          A 158             19        716.837         (54.614, -10.646, 26.027)
+                                                                                    (75.958, 4.011, 15.938)
+
+              5          A 158          A 174             17        667.118         (75.958, 4.011, 15.938)
+                                                                                    (70.622, -26.677, 15.287)
+
+              6          A 174          A 191             18        706.476         (70.622, -26.677, 15.287)
+                                                                                    (51.636, -4.801, 9.529)
+
+              7          A 191          A 193              3        94.3719         (51.636, -4.801, 9.529)
+                                                                                    (49.701, -10.052, 8.367)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ix/d1ixra2.ent
+Number of residues: 62
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 12391.4
+Null Model Fit: 2653.16 bits.
+Bits per residue: 43.4944
+
+Bezier model fit: 2498.08 bits.
+Bits per residue: 40.9522
+
+# of segments: 7
+Internal segmentation:
+0-->2-->13-->21-->23-->40-->53-->61
+
+CPU time used: 2.68 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 3              3        91.0259         (-8.568, 2.363, 22.807)
+                                                                                    (-11.12, 7.209, 25.798)
+
+              2            A 3           A 14             12        451.104         (-11.12, 7.209, 25.798)         (2.18485, 14.0542, 46.8541)
+                                                                                    (2.521, 24.355, 24.156)
+
+              3           A 14           A 22              9        323.494         (2.521, 24.355, 24.156)
+                                                                                    (0.336, 5.471, 37.013)
+
+              4           A 22           A 24              3        91.0259         (0.336, 5.471, 37.013)
+                                                                                    (3.571, 6.518, 32.623)
+
+              5           A 24           A 41             18        696.714         (3.571, 6.518, 32.623)         (-15.5373, 34.7192, 13.3288)
+                                                                                    (0.657, 20.055, 39.044)
+
+              6           A 41           A 54             14        511.449         (0.657, 20.055, 39.044)         (-21.5935, 9.42821, 29.4182)
+                                                                                    (2.477, 6.504, 9.863)
+
+              7           A 54           A 62              9        333.271         (2.477, 6.504, 9.863)
+                                                                                    (-10.55, 17.048, 25.866)
+

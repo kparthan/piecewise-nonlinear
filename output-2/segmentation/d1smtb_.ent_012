@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/sm/d1smtb_.ent
+Number of residues: 101
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 52683.5
+Null Model Fit: 4558.24 bits.
+Bits per residue: 45.5824
+
+Bezier model fit: 4098.1 bits.
+Bits per residue: 40.981
+
+# of segments: 7
+Internal segmentation:
+0-->26-->51-->52-->67-->75-->86-->100
+
+CPU time used: 5.13 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           B 20           B 46             27        1041.29         (-7.223, 68.09, 38.535)         (25.2889, 53.4753, 44.7312)
+                                                                                    (6.268, 30.418, 28.868)
+
+              2           B 46           B 71             26        1042.72         (6.268, 30.418, 28.868)         (-6.10177, 21.6305, 54.095)
+                                                                                    (8.66, 16.381, 31.708)
+
+              3           B 71           B 72              2        48.6195         (8.66, 16.381, 31.708)
+                                                                                    (11.116, 14.77, 34.155)
+
+              4           B 72           B 87             16        605.525         (11.116, 14.77, 34.155)
+                                                                                    (11.228, 34.687, 45.324)
+
+              5           B 87           B 95              9        331.637         (11.228, 34.687, 45.324)
+                                                                                    (6.502, 14.547, 56.473)
+
+              6           B 95          B 106             12        459.378         (6.502, 14.547, 56.473)
+                                                                                    (0.206, 39.241, 44.998)
+
+              7          B 106          B 120             15        568.931         (0.206, 39.241, 44.998)
+                                                                                    (-10.954, 40.925, 27.451)
+

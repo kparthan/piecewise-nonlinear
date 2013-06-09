@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ju/d1jupa1.ent
+Number of residues: 71
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 25864.4
+Null Model Fit: 3118.92 bits.
+Bits per residue: 44.556
+
+Bezier model fit: 2838.64 bits.
+Bits per residue: 40.552
+
+# of segments: 6
+Internal segmentation:
+0-->15-->19-->42-->43-->68-->70
+
+CPU time used: 3.14 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 2           A 17             16        598.049         (129.994, 49.898, 80.204)
+                                                                                    (115.869, 62.276, 92.788)
+
+              2           A 17           A 21              5        181.038         (115.869, 62.276, 92.788)
+                                                                                    (108.84, 63.755, 83.746)
+
+              3           A 21           A 44             24        950.802         (108.84, 63.755, 83.746)         (139.899, 63.4518, 77.0208)
+                                                                                    (115.714, 54.737, 71.35)
+
+              4           A 44           A 45              2        47.5931         (115.714, 54.737, 71.35)
+                                                                                    (113.61, 56.564, 73.976)
+
+              5           A 45           A 70             26        968.012         (113.61, 56.564, 73.976)
+                                                                                    (115.074, 29.961, 102.454)
+
+              6           A 70           A 72              3        93.1491         (115.074, 29.961, 102.454)
+                                                                                    (110.226, 29.571, 104.462)
+

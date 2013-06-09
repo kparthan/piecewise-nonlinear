@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/hf/d1hf8a1.ent
+Number of residues: 132
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 48582.4
+Null Model Fit: 5955.98 bits.
+Bits per residue: 45.4655
+
+Bezier model fit: 5251.83 bits.
+Bits per residue: 40.0903
+
+# of segments: 8
+Internal segmentation:
+0-->10-->36-->44-->73-->79-->108-->110-->131
+
+CPU time used: 6.87 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 150          A 160             11        427.275         (37.202, 26.986, 38.415)
+                                                                                    (33.6, 16.36, 49.566)
+
+              2          A 160          A 186             27        1026.95         (33.6, 16.36, 49.566)         (21.5838, 30.8455, 56.9603)
+                                                                                    (15.192, 52.673, 32.773)
+
+              3          A 186          A 194              9        355.344         (15.192, 52.673, 32.773)
+                                                                                    (25.808, 52.598, 36.643)
+
+              4          A 194          A 223             30        1112.72         (25.808, 52.598, 36.643)         (34.2864, 32.1033, 39.3162)
+                                                                                    (23.045, 8.65, 43.627)
+
+              5          A 223          A 229              7        268.723         (23.045, 8.65, 43.627)
+                                                                                    (21.559, 13.854, 52.347)
+
+              6          A 229          A 258             30        1113.74         (21.559, 13.854, 52.347)         (10.1488, 30.7244, 39.1052)
+                                                                                    (24.239, 47.444, 26.055)
+
+              7          A 258          A 260              3        94.9681         (24.239, 47.444, 26.055)
+                                                                                    (28.983, 43.35, 25.174)
+
+              8          A 260          A 281             22        852.119         (28.983, 43.35, 25.174)
+                                                                                    (12.35, 5.401, 46.684)
+

@@ -1,0 +1,108 @@
+load ../modified_pdb_files/d2zkca1.ent.pdb
+hide
+show cartoon
+set label_font_id, 10
+set_color c1 = [0.788235,0.854902,0.00392157]
+select seg1, chain A and resi 232-256
+select curve1, chain Y and resi C1
+print cmd.distance("chain A and resi 232 and name CA","resi R1 and name A1")
+hide label
+print cmd.distance("resi R1 and name A1","chain A and resi 256 and name CA")
+hide label
+color c1, seg1
+set_color c2 = [0.694118,0.831373,0.254902]
+select seg2, chain A and resi 256-261
+select curve2, chain Y and resi C2
+print cmd.distance("chain A and resi 256 and name CA","chain A and resi 261 and name CA")
+hide label
+color c2, seg2
+set_color c3 = [0.729412,0.4,0.913725]
+select seg3, chain A and resi 261-287
+select curve3, chain Y and resi C3
+print cmd.distance("chain A and resi 261 and name CA","resi R3 and name A1")
+hide label
+print cmd.distance("resi R3 and name A1","chain A and resi 287 and name CA")
+hide label
+color c3, seg3
+set_color c4 = [0.556863,0.823529,0.0745098]
+select seg4, chain A and resi 287-293
+select curve4, chain Y and resi C4
+print cmd.distance("chain A and resi 287 and name CA","chain A and resi 293 and name CA")
+hide label
+color c4, seg4
+set_color c5 = [0.94902,0.952941,0.454902]
+select seg5, chain A and resi 293-319
+select curve5, chain Y and resi C5
+print cmd.distance("chain A and resi 293 and name CA","resi R5 and name A1")
+hide label
+print cmd.distance("resi R5 and name A1","chain A and resi 319 and name CA")
+hide label
+color c5, seg5
+set_color c6 = [0.219608,0.886275,0.537255]
+select seg6, chain A and resi 319-327
+select curve6, chain Y and resi C6
+print cmd.distance("chain A and resi 319 and name CA","resi R6 and name A1")
+hide label
+print cmd.distance("resi R6 and name A1","chain A and resi 327 and name CA")
+hide label
+color c6, seg6
+set_color c7 = [0.243137,0.870588,0.32549]
+select seg7, chain A and resi 327-341
+select curve7, chain Y and resi C7
+print cmd.distance("chain A and resi 327 and name CA","resi R7 and name A1")
+hide label
+print cmd.distance("resi R7 and name A1","chain A and resi 341 and name CA")
+hide label
+color c7, seg7
+set_color c8 = [0.266667,0.784314,0.815686]
+select seg8, chain A and resi 341-360
+select curve8, chain Y and resi C8
+print cmd.distance("chain A and resi 341 and name CA","resi R8 and name A1")
+hide label
+print cmd.distance("resi R8 and name A1","chain A and resi 360 and name CA")
+hide label
+color c8, seg8
+set_color c9 = [0.0352941,0.427451,0.996078]
+select seg9, chain A and resi 360-380
+select curve9, chain Y and resi C9
+print cmd.distance("chain A and resi 360 and name CA","resi R9 and name A1")
+hide label
+print cmd.distance("resi R9 and name A1","chain A and resi 380 and name CA")
+hide label
+color c9, seg9
+set_color c10 = [0.882353,0.741176,0.337255]
+select seg10, chain A and resi 380-384
+select curve10, chain Y and resi C10
+print cmd.distance("chain A and resi 380 and name CA","chain A and resi 384 and name CA")
+hide label
+color c10, seg10
+set_color c11 = [0.552941,0.529412,0.196078]
+select seg11, chain A and resi 384-408
+select curve11, chain Y and resi C11
+print cmd.distance("chain A and resi 384 and name CA","resi R11 and name A1")
+hide label
+print cmd.distance("resi R11 and name A1","chain A and resi 408 and name CA")
+hide label
+color c11, seg11
+set_color c12 = [0.556863,0.227451,0.027451]
+select seg12, chain A and resi 408-412
+select curve12, chain Y and resi C12
+print cmd.distance("chain A and resi 408 and name CA","chain A and resi 412 and name CA")
+hide label
+color c12, seg12
+set_color c13 = [0.815686,0.960784,0.427451]
+select seg13, chain A and resi 412-441
+select curve13, chain Y and resi C13
+print cmd.distance("chain A and resi 412 and name CA","resi R13 and name A1")
+hide label
+print cmd.distance("resi R13 and name A1","chain A and resi 441 and name CA")
+hide label
+color c13, seg13
+set_color c14 = [0.729412,0.517647,0.25098]
+select seg14, chain A and resi 441-457
+select curve14, chain Y and resi C14
+print cmd.distance("chain A and resi 441 and name CA","resi R14 and name A1")
+hide label
+print cmd.distance("resi R14 and name A1","chain A and resi 457 and name CA")
+hide label
+color c14, seg14

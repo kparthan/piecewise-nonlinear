@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/in/d2incc_.ent
+Number of residues: 83
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 18737.3
+Null Model Fit: 3615.46 bits.
+Bits per residue: 44.091
+
+Bezier model fit: 3393.32 bits.
+Bits per residue: 41.382
+
+# of segments: 7
+Internal segmentation:
+0-->8-->23-->38-->45-->54-->67-->82
+
+CPU time used: 3.93 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            C 3           C 11              9        325.703         (43.942, -56.224, 13.724)         (49.2084, -44.7009, 5.26806)
+                                                                                    (36.199, -38.454, 0.32)
+
+              2           C 11           C 26             16        624.387         (36.199, -38.454, 0.32)         (48.5365, -19.6325, 5.52203)
+                                                                                    (33.933, -56.476, 5.367)         (44.967, -69.6365, 19.4672)
+
+              3           C 26           C 41             16        606.991         (33.933, -56.476, 5.367)
+                                                                                    (34.12, -34.153, 12.032)
+
+              4           C 41           C 48              8        295.269         (34.12, -34.153, 12.032)
+                                                                                    (21.48, -40.791, -0.176)
+
+              5           C 48           C 57             10        370.014         (21.48, -40.791, -0.176)         (35.0421, -52.0942, 1.45422)
+                                                                                    (47.33, -46.798, -5.475)
+
+              6           C 57           C 70             14        550.079         (47.33, -46.798, -5.475)         (24.1928, -55.4905, -1.38431)
+                                                                                    (40.964, -61.396, 1.167)
+
+              7           C 70           C 85             16        620.878         (40.964, -61.396, 1.167)         (59.1654, -42.0799, 6.86454)
+                                                                                    (25.042, -45.325, -4.911)
+

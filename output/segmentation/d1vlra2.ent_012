@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/vl/d1vlra2.ent
+Number of residues: 101
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 64877.1
+Null Model Fit: 4588.28 bits.
+Bits per residue: 45.8828
+
+Bezier model fit: 4118.81 bits.
+Bits per residue: 41.1881
+
+# of segments: 6
+Internal segmentation:
+0-->18-->31-->54-->64-->78-->100
+
+CPU time used: 5.05 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 39           A 57             19        752.122         (51.716, 24.449, 2.63)         (23.8368, 37.0586, -9.26116)
+                                                                                    (30.278, 25.221, 23.597)
+
+              2           A 57           A 76             14        533.044         (30.278, 25.221, 23.597)
+                                                                                    (34.108, 30.724, -7.941)
+
+              3           A 76           A 99             24        934.951         (34.108, 30.724, -7.941)         (40.8614, 11.0847, 34.9539)
+                                                                                    (57.614, 28.961, 31.493)
+
+              4           A 99          A 109             11        416.324         (57.614, 28.961, 31.493)         (45.49, 43.6406, 22.7588)
+                                                                                    (39.777, 40.737, 42.578)
+
+              5          A 109          A 123             15        579.902         (39.777, 40.737, 42.578)
+                                                                                    (48.639, 24.965, 22.257)
+
+              6          A 123          A 145             23        902.471         (48.639, 24.965, 22.257)         (29.7041, 17.6976, -17.5429)
+                                                                                    (20.034, 20.295, 12.012)
+

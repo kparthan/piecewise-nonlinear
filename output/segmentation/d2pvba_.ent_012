@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/pv/d2pvba_.ent
+Number of residues: 107
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 23943.7
+Null Model Fit: 4711.14 bits.
+Bits per residue: 44.4447
+
+Bezier model fit: 4410.78 bits.
+Bits per residue: 41.6112
+
+# of segments: 6
+Internal segmentation:
+0-->7-->32-->52-->69-->89-->106
+
+CPU time used: 5.39 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 9              8        308.473         (5.448, 18.37, 18.03)         (10.3236, 24.8669, 29.5317)
+                                                                                    (-2.166, 16.932, 20.185)
+
+              2            A 9           A 34             26        1021.36         (-2.166, 16.932, 20.185)         (-7.20215, 36.5137, -4.80225)
+                                                                                    (-0.499, 26.533, 23.746)
+
+              3           A 34           A 54             21        830.218         (-0.499, 26.533, 23.746)         (9.75844, 40.1759, 41.3217)
+                                                                                    (20.738, 31.618, 14.921)         (9.84927, 24.0694, 11.1)
+
+              4           A 54           A 71             18        711.521         (20.738, 31.618, 14.921)         (6.30151, 41.1055, 3.64854)
+                                                                                    (6.159, 19.522, 11.676)
+
+              5           A 71           A 91             21        823.114         (6.159, 19.522, 11.676)         (-1.92559, 36.6884, -5.53535)
+                                                                                    (6.816, 46.897, 15.992)
+
+              6           A 91          A 108             18        716.101         (6.816, 46.897, 15.992)         (18.9245, 36.1875, 14.5701)
+                                                                                    (-0.696, 40.304, 24.011)
+

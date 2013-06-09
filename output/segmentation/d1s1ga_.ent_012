@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/s1/d1s1ga_.ent
+Number of residues: 107
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 34745.3
+Null Model Fit: 4768.08 bits.
+Bits per residue: 44.9819
+
+Bezier model fit: 4384.02 bits.
+Bits per residue: 41.3586
+
+# of segments: 7
+Internal segmentation:
+0-->8-->24-->39-->48-->71-->91-->106
+
+CPU time used: 5.37 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 39           A 47              9        333.118         (54.643, 56.466, 39.916)
+                                                                                    (53.087, 42.831, 18.694)
+
+              2           A 47           A 63             17        664.594         (53.087, 42.831, 18.694)         (51.7112, 50.7093, 47.9612)
+                                                                                    (71.204, 53.738, 28.948)
+
+              3           A 63           A 78             16        625.612         (71.204, 53.738, 28.948)
+                                                                                    (46.455, 58.313, 20.75)
+
+              4           A 78           A 87             10        381.483         (46.455, 58.313, 20.75)
+                                                                                    (58.829, 39.095, 19.573)
+
+              5           A 87          A 110             24        950.873         (58.829, 39.095, 19.573)         (66.4017, 45.4961, 50.6485)
+                                                                                    (66.557, 30.064, 19.36)
+
+              6          A 110          A 130             21        824.084         (66.557, 30.064, 19.36)         (69.636, 56.3275, 16.8786)
+                                                                                    (74.966, 32.64, 36.217)
+
+              7          A 130          A 145             16        604.252         (74.966, 32.64, 36.217)
+                                                                                    (79.264, 25.174, 14.113)
+

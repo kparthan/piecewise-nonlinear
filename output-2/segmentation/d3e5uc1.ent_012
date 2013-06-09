@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/e5/d3e5uc1.ent
+Number of residues: 80
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 18563.9
+Null Model Fit: 3482.13 bits.
+Bits per residue: 44.0776
+
+Bezier model fit: 3273.28 bits.
+Bits per residue: 41.434
+
+# of segments: 6
+Internal segmentation:
+0-->24-->32-->44-->57-->63-->79
+
+CPU time used: 3.83 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          C 148          C 172             25        980.914         (30.652, -6.526, 21.077)         (21.904, -8.3475, -3.56228)
+                                                                                    (24.763, -0.389, -2.886)
+
+              2          C 172          C 180              9        332.449         (24.763, -0.389, -2.886)         (7.98398, -5.4893, 0.842725)
+                                                                                    (16.068, 0.669, 14.621)
+
+              3          C 180          C 192             13        508.108         (16.068, 0.669, 14.621)         (18.3008, -17.1188, 18.3161)
+                                                                                    (20.988, 4.158, 22.589)
+
+              4          C 192          C 205             14        528.901         (20.988, 4.158, 22.589)
+                                                                                    (29.398, 8.805, 4.688)
+
+              5          C 205          C 211              7        254.232         (29.398, 8.805, 4.688)
+                                                                                    (12.997, 4.08, 6.524)
+
+              6          C 211          C 227             17        668.679         (12.997, 4.08, 6.524)         (37.1281, 2.60657, -4.79705)
+                                                                                    (36.363, -6.358, 11.111)
+

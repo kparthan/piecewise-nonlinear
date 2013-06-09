@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/i8/d1i8fa_.ent
+Number of residues: 71
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 17437.2
+Null Model Fit: 3079.11 bits.
+Bits per residue: 43.9872
+
+Bezier model fit: 2888.48 bits.
+Bits per residue: 41.264
+
+# of segments: 6
+Internal segmentation:
+0-->1-->21-->34-->47-->61-->70
+
+CPU time used: 3.24 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 10           A 11              2        47.0243         (43.721, 53.189, 29.563)
+                                                                                    (42.707, 56.684, 30.629)
+
+              2           A 11           A 31             21        832.511         (42.707, 56.684, 30.629)         (60.9689, 66.1777, 21.915)
+                                                                                    (33.798, 68.745, 8.308)
+
+              3           A 31           A 44             14         529.68         (33.798, 68.745, 8.308)         (63.9922, 69.6107, 19.6668)
+                                                                                    (37.372, 70.363, 27.973)
+
+              4           A 44           A 57             14        532.307         (37.372, 70.363, 27.973)         (59.884, 76.8789, 16.9584)
+                                                                                    (39.82, 69.422, -0.533)
+
+              5           A 57           A 71             15        569.162         (39.82, 69.422, -0.533)         (61.2375, 82.3617, 13.5353)
+                                                                                    (33.275, 72.227, 22.184)
+
+              6           A 71           A 80             10        377.796         (33.275, 72.227, 22.184)
+                                                                                    (50.499, 56.382, 13.323)
+

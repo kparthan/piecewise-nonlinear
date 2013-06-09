@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/oi/d1oi9b2.ent
+Number of residues: 123
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 31338.1
+Null Model Fit: 5469.62 bits.
+Bits per residue: 44.833
+
+Bezier model fit: 4996.32 bits.
+Bits per residue: 40.9534
+
+# of segments: 7
+Internal segmentation:
+0-->21-->43-->68-->92-->106-->107-->122
+
+CPU time used: 6.48 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          B 310          B 331             22        863.673         (22.708, 61.57, 75.094)         (23.8075, 43.5019, 98.5749)
+                                                                                    (17.723, 64.188, 90.013)
+
+              2          B 331          B 353             23        899.448         (17.723, 64.188, 90.013)         (32.4836, 84.775, 72.3055)
+                                                                                    (29.261, 59.149, 78.467)
+
+              3          B 353          B 378             26        1018.32         (29.261, 59.149, 78.467)         (24.8737, 71.0217, 109)
+                                                                                    (34.356, 47.696, 85.063)
+
+              4          B 378          B 402             25        973.288         (34.356, 47.696, 85.063)         (44.8083, 68.7666, 83.425)
+                                                                                    (23.444, 80.777, 90.824)
+
+              5          B 402          B 416             15        582.322         (23.444, 80.777, 90.824)         (19.3974, 81.5366, 77.171)
+                                                                                    (9.195, 68.603, 93.52)
+
+              6          B 416          B 417              2        47.8701         (9.195, 68.603, 93.52)
+                                                                                    (9.256, 66.379, 90.43)
+
+              7          B 417          B 432             16        611.399         (9.256, 66.379, 90.43)         (23.3044, 79.9068, 101.719)
+                                                                                    (40.591, 64.278, 93.895)
+

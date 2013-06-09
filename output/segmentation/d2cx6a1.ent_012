@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/cx/d2cx6a1.ent
+Number of residues: 90
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 19553.6
+Null Model Fit: 3929.57 bits.
+Bits per residue: 44.1525
+
+Bezier model fit: 3668.21 bits.
+Bits per residue: 41.2158
+
+# of segments: 6
+Internal segmentation:
+0-->14-->33-->58-->80-->88-->89
+
+CPU time used: 4.31 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 15             15         582.75         (24.535, 0.696, 85.159)         (36.4749, -3.53323, 57.2231)
+                                                                                    (18.986, -10.28, 61.483)
+
+              2           A 15           A 34             20        793.571         (18.986, -10.28, 61.483)         (25.853, -18.3951, 85.218)
+                                                                                    (11.845, -8.765, 64.514)
+
+              3           A 34           A 59             26        1033.39         (11.845, -8.765, 64.514)         (9.81781, -7.10663, 99.5125)
+                                                                                    (28.636, 5.41, 60.024)
+
+              4           A 59           A 81             23        881.918         (28.636, 5.41, 60.024)         (10.5445, -0.819327, 58.8697)
+                                                                                    (12.449, 6.837, 82.331)
+
+              5           A 81           A 89              9        329.394         (12.449, 6.837, 82.331)
+                                                                                    (29.116, 6.203, 69.18)
+
+              6           A 89           A 90              2        47.1896         (29.116, 6.203, 69.18)
+                                                                                    (30.109, 9.802, 68.319)
+

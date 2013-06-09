@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/f9/d1f9ne1.ent
+Number of residues: 77
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 23825.4
+Null Model Fit: 3377.25 bits.
+Bits per residue: 44.4376
+
+Bezier model fit: 3155.36 bits.
+Bits per residue: 41.5179
+
+# of segments: 6
+Internal segmentation:
+0-->15-->19-->37-->56-->64-->76
+
+CPU time used: 3.61 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            E 2           E 17             16        600.014         (37.097, 40.829, 45.405)
+                                                                                    (41.627, 31.064, 26.463)
+
+              2           E 17           E 21              5        176.477         (41.627, 31.064, 26.463)
+                                                                                    (52.07, 35.32, 29.626)
+
+              3           E 21           E 39             19        746.975         (52.07, 35.32, 29.626)         (28.381, 48.3365, 30.6911)
+                                                                                    (52.43, 42.37, 41.092)
+
+              4           E 39           E 58             20        784.942         (52.43, 42.37, 41.092)         (44.5194, 24.0397, 47.2291)
+                                                                                    (53.979, 23.566, 21.007)
+
+              5           E 58           E 66              9        336.348         (53.979, 23.566, 21.007)         (48.0727, 34.0975, 34.4391)
+                                                                                    (44.761, 19.278, 38.198)
+
+              6           E 66           E 78             13        510.606         (44.761, 19.278, 38.198)         (56.9744, 13.4563, 29.2894)
+                                                                                    (50.51, 8.524, 44.519)
+

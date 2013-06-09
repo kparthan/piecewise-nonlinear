@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ey/d2ey4c1.ent
+Number of residues: 73
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 11186
+Null Model Fit: 3120.97 bits.
+Bits per residue: 43.3468
+
+Bezier model fit: 2951.3 bits.
+Bits per residue: 40.9903
+
+# of segments: 7
+Internal segmentation:
+0-->12-->13-->25-->33-->47-->59-->72
+
+CPU time used: 3.33 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            C 1           C 13             13        489.651         (41.436, -9.481, 49.488)         (31.5109, -7.9687, 29.4674)
+                                                                                    (46.102, 5.935, 27.025)
+
+              2           C 13           C 14              2        46.3838         (46.102, 5.935, 27.025)
+                                                                                    (47.747, 3.171, 29.043)
+
+              3           C 14           C 26             13        495.887         (47.747, 3.171, 29.043)         (21.4103, -5.94494, 45.2127)
+                                                                                    (45.241, 5.824, 45.088)
+
+              4           C 26           C 34              9        333.234         (45.241, 5.824, 45.088)
+                                                                                    (47.08, -15.603, 41.894)
+
+              5           C 34           C 48             15        575.068         (47.08, -15.603, 41.894)         (53.9164, 8.61212, 35.8517)
+                                                                                    (30.245, 7.596, 43.495)
+
+              6           C 48           C 60             13        477.492         (30.245, 7.596, 43.495)
+                                                                                    (55.655, -6.336, 31.023)
+
+              7           C 60           C 73             14        533.583         (55.655, -6.336, 31.023)         (30.9922, -11.4746, 23.9684)
+                                                                                    (45.348, -6.602, 49.057)
+

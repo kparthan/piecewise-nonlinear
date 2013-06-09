@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/vi/d2vi6b_.ent
+Number of residues: 54
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 9805.38
+Null Model Fit: 2287.31 bits.
+Bits per residue: 43.1567
+
+Bezier model fit: 2188.41 bits.
+Bits per residue: 41.2908
+
+# of segments: 7
+Internal segmentation:
+0-->2-->16-->22-->32-->34-->50-->53
+
+CPU time used: 2.15 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            B 7            B 9              3        90.3505         (40.083, 49.201, 41.53)
+                                                                                    (36.385, 52.77, 37.3)
+
+              2            B 9           B 23             15        565.767         (36.385, 52.77, 37.3)
+                                                                                    (48.424, 69.795, 38.762)
+
+              3           B 23           B 29              7         248.77         (48.424, 69.795, 38.762)
+                                                                                    (43.965, 68.94, 51.975)
+
+              4           B 29           B 39             11        417.316         (43.965, 68.94, 51.975)
+                                                                                    (34.585, 58.092, 46.852)
+
+              5           B 39           B 41              3        90.3505         (34.585, 58.092, 46.852)
+                                                                                    (40.337, 56.016, 50.018)
+
+              6           B 41           B 57             17        641.104         (40.337, 56.016, 50.018)
+                                                                                    (61.44, 62.285, 35.277)
+
+              7           B 57           B 60              4        134.757         (61.44, 62.285, 35.277)
+                                                                                    (59.079, 65.857, 38.951)
+

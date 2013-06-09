@@ -1,0 +1,31 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/cr/d1crna_.ent
+Number of residues: 46
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 8972.79
+Null Model Fit: 1936.29 bits.
+Bits per residue: 43.0287
+
+Bezier model fit: 1880.37 bits.
+Bits per residue: 41.786
+
+# of segments: 4
+Internal segmentation:
+0-->5-->30-->41-->45
+
+CPU time used: 1.61 secs.
+Wall clock time elapsed: 1 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 6              6        215.445         (16.967, 12.784, 4.338)
+                                                                                    (8.673, 5.314, 15.279)
+
+              2            A 6           A 31             26        1028.17         (8.673, 5.314, 15.279)         (2.6199, 6.90117, -15.8214)
+                                                                                    (4.769, 12.336, 11.36)
+
+              3           A 31           A 42             12        457.996         (4.769, 12.336, 11.36)         (27.1896, 20.6431, -2.28862)
+                                                                                    (17.334, 10.956, 18.691)
+
+              4           A 42           A 46              5        178.758         (17.334, 10.956, 18.691)
+                                                                                    (13.512, 5.395, 12.878)
+

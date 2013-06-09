@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/k8/d1k82a1.ent
+Number of residues: 88
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 19373.9
+Null Model Fit: 3840.11 bits.
+Bits per residue: 44.1392
+
+Bezier model fit: 3604.55 bits.
+Bits per residue: 41.4316
+
+# of segments: 6
+Internal segmentation:
+0-->19-->38-->50-->61-->83-->87
+
+CPU time used: 4.16 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 129          A 148             20        792.898         (29.403, 6.976, 20.163)         (41.4088, 25.0048, 15.1309)
+                                                                                    (20.835, 14.672, 32.071)
+
+              2          A 148          A 167             20        809.616         (20.835, 14.672, 32.071)         (44.1814, 4.25809, 51.2626)
+                                                                                    (38.981, 3.236, 28.69)         (21.0748, 9.25304, 7.95657)
+
+              3          A 167          A 179             13        493.197         (38.981, 3.236, 28.69)
+                                                                                    (42.297, 19.196, 36.288)
+
+              4          A 179          A 190             12        466.967         (42.297, 19.196, 36.288)         (25.0528, 6.40153, 43.069)
+                                                                                    (30.722, 23.832, 32.943)
+
+              5          A 190          A 212             23         863.21         (30.722, 23.832, 32.943)
+                                                                                    (52.977, 3.267, 20.626)
+
+              6          A 212          A 216              5        178.658         (52.977, 3.267, 20.626)
+                                                                                    (51.141, -2.654, 31.267)
+

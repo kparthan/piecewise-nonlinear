@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/q2/d3q20a_.ent
+Number of residues: 114
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 68651.1
+Null Model Fit: 5193.97 bits.
+Bits per residue: 45.9643
+
+Bezier model fit: 4507.9 bits.
+Bits per residue: 39.8929
+
+# of segments: 7
+Internal segmentation:
+0-->1-->30-->35-->64-->83-->112-->113
+
+CPU time used: 5.65 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 2              2        49.0014         (-6.254, -2.107, 20.91)
+                                                                                    (-3.936, -2.696, 17.977)
+
+              2            A 2           A 31             30        1114.18         (-3.936, -2.696, 17.977)         (17.8439, 1.56491, 16.3057)
+                                                                                    (39.052, 8.241, 18.833)
+
+              3           A 31           A 36              6         227.95         (39.052, 8.241, 18.833)
+                                                                                    (39.815, 13.762, 12.774)
+
+              4           A 36           A 65             30         1190.6         (39.815, 13.762, 12.774)         (4.30497, 14.4104, 13.9858)
+                                                                                    (30.039, 4.783, 3.301)
+
+              5           A 65           A 84             20        754.613         (30.039, 4.783, 3.301)
+                                                                                    (16.904, -10.608, 25.712)
+
+              6           A 84          A 113             30        1122.55         (16.904, -10.608, 25.712)         (5.803, 4.62684, 40.5144)
+                                                                                    (-2.721, 19.772, 53.829)
+
+              7          A 113          A 114              2        49.0014         (-2.721, 19.772, 53.829)
+                                                                                    (0.137, 19.892, 56.329)
+

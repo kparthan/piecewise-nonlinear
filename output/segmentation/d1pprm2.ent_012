@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/pp/d1pprm2.ent
+Number of residues: 156
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 40400.1
+Null Model Fit: 7005.91 bits.
+Bits per residue: 45.1994
+
+Bezier model fit: 6247.36 bits.
+Bits per residue: 40.3056
+
+# of segments: 8
+Internal segmentation:
+0-->7-->30-->52-->81-->86-->105-->133-->155
+
+CPU time used: 8.46 secs.
+Wall clock time elapsed: 8 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          M 157          M 164              8        302.063         (56.201, 23.602, 13.616)
+                                                                                    (40.318, 31.967, 20.075)
+
+              2          M 164          M 187             24        921.765         (40.318, 31.967, 20.075)         (35.5074, 53.3453, 9.45659)
+                                                                                    (63.041, 50.746, 3.584)
+
+              3          M 187          M 209             23        902.586         (63.041, 50.746, 3.584)         (80.0004, 65.1107, 30.8948)
+                                                                                    (63.549, 44.154, 30.38)
+
+              4          M 209          M 238             30           1162         (63.549, 44.154, 30.38)         (51.776, 16.4875, 23.675)
+                                                                                    (58.073, 45.599, -3.768)
+
+              5          M 238          M 243              6        220.687         (58.073, 45.599, -3.768)
+                                                                                    (49.754, 40.712, 2.845)
+
+              6          M 243          M 262             20        753.064         (49.754, 40.712, 2.845)
+                                                                                    (51.973, 38.601, 33.596)
+
+              7          M 262          M 290             29        1112.53         (51.973, 38.601, 33.596)         (72.0914, 64.9841, 29.9725)
+                                                                                    (48.364, 59.83, 6.967)
+
+              8          M 290          M 312             23         872.67         (48.364, 59.83, 6.967)         (37.8736, 50.8711, 20.7309)
+                                                                                    (46.484, 37.552, 30.356)
+

@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/vq/d1vq8x1.ent
+Number of residues: 82
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 18984.7
+Null Model Fit: 3572.9 bits.
+Bits per residue: 44.1099
+
+Bezier model fit: 3317.86 bits.
+Bits per residue: 40.9613
+
+# of segments: 6
+Internal segmentation:
+0-->17-->35-->37-->57-->72-->81
+
+CPU time used: 3.84 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            X 7           X 24             18        709.096         (43.728, 198.742, 106.414)         (61.0509, 171.509, 120.494)
+                                                                                    (61.984, 174.912, 102.123)
+
+              2           X 24           X 42             19        716.234         (61.984, 174.912, 102.123)
+                                                                                    (38.013, 187.377, 107.055)
+
+              3           X 42           X 44              3        92.2569         (38.013, 187.377, 107.055)
+                                                                                    (39.363, 183.677, 101.104)
+
+              4           X 44           X 64             21        822.512         (39.363, 183.677, 101.104)         (62.7121, 200.118, 95.443)
+                                                                                    (66.098, 177.864, 104.398)
+
+              5           X 64           X 79             16        605.159         (66.098, 177.864, 104.398)         (57.6411, 199.919, 117.786)
+                                                                                    (32.547, 193.818, 96.433)
+
+              6           X 79           X 88             10        372.604         (32.547, 193.818, 96.433)
+                                                                                    (56.657, 198.012, 106.386)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/xs/d1xsva_.ent
+Number of residues: 106
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 55966.2
+Null Model Fit: 4795.31 bits.
+Bits per residue: 45.6696
+
+Bezier model fit: 4258.54 bits.
+Bits per residue: 40.5575
+
+# of segments: 7
+Internal segmentation:
+0-->19-->45-->46-->69-->89-->90-->105
+
+CPU time used: 5.19 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 5           A 24             20        775.934         (20.336, 63.564, 11.344)         (32.8142, 46.056, 21.4521)
+                                                                                    (18.789, 42.797, 1.561)
+
+              2           A 24           A 50             27        1074.64         (18.789, 42.797, 1.561)         (34.037, 67.4424, 5.52588)
+                                                                                    (17.204, 54.446, -9.643)
+
+              3           A 50           A 51              2        48.7067         (17.204, 54.446, -9.643)
+                                                                                    (14.539, 56.798, -8.283)
+
+              4           A 51           A 74             24        910.447         (14.539, 56.798, -8.283)
+                                                                                    (20.409, 44.557, 21.95)
+
+              5           A 74           A 94             21        796.847         (20.409, 44.557, 21.95)
+                                                                                    (44.265, 37.554, 41.249)
+
+              6           A 94           A 95              2        48.7067         (44.265, 37.554, 41.249)
+                                                                                    (40.954, 37.955, 43.019)
+
+              7           A 95          A 110             16        603.261         (40.954, 37.955, 43.019)
+                                                                                    (22.802, 36.229, 28.334)
+
