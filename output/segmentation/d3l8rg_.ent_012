@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/l8/d3l8rg_.ent
+Number of residues: 102
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 25511.3
+Null Model Fit: 4498.16 bits.
+Bits per residue: 44.5362
+
+Bezier model fit: 3965.99 bits.
+Bits per residue: 39.2672
+
+# of segments: 6
+Internal segmentation:
+0-->1-->30-->36-->65-->73-->101
+
+CPU time used: 4.97 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            G 1            G 2              2        47.5733         (52.998, -28.05, 7.801)
+                                                                                    (55.77, -25.641, 6.816)
+
+              2            G 2           G 31             30        1114.74         (55.77, -25.641, 6.816)         (60.8285, -19.8191, 28.2388)
+                                                                                    (61.397, -26.253, 49.806)
+
+              3           G 31           G 37              7        264.631         (61.397, -26.253, 49.806)
+                                                                                    (53.157, -23.03, 50.953)
+
+              4           G 37           G 66             30        1129.31         (53.157, -23.03, 50.953)         (55.3609, -22.0866, 27.7989)
+                                                                                    (45.274, -37.712, 9.712)
+
+              5           G 66           G 74              9        333.421         (45.274, -37.712, 9.712)         (56.3187, -33.0619, 4.3887)
+                                                                                    (66.498, -30.967, 15.944)
+
+              6           G 74          G 102             29        1076.31         (66.498, -30.967, 15.944)         (55.2557, -31.9996, 32.8991)
+                                                                                    (58.435, -35.179, 57.804)
+

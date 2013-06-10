@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/bs/d2bs4b1.ent
+Number of residues: 133
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 51232
+Null Model Fit: 6011.56 bits.
+Bits per residue: 45.5421
+
+Bezier model fit: 5426.97 bits.
+Bits per residue: 41.1134
+
+# of segments: 7
+Internal segmentation:
+0-->25-->46-->58-->79-->104-->116-->132
+
+CPU time used: 6.93 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          B 107          B 132             26        1034.35         (33.113, -3.566, 0.702)         (8.22329, -7.09, -2.68828)
+                                                                                    (14.747, -33.433, 16.775)
+
+              2          B 132          B 153             22        858.698         (14.747, -33.433, 16.775)         (25.9187, -38.4622, -13.7783)
+                                                                                    (32.258, -11.382, -0.472)
+
+              3          B 153          B 165             13        511.054         (32.258, -11.382, -0.472)         (35.737, -6.9376, -15.8717)
+                                                                                    (31.248, 0.52, -12.673)
+
+              4          B 165          B 186             22        850.466         (31.248, 0.52, -12.673)
+                                                                                    (15.293, -27.041, -0.439)
+
+              5          B 186          B 211             26        1027.25         (15.293, -27.041, -0.439)         (1.72244, 0.225354, -9.49744)
+                                                                                    (30.88, -9.123, -19.601)
+
+              6          B 211          B 223             13        507.395         (30.88, -9.123, -19.601)         (44.2076, -14.8596, -4.43086)
+                                                                                    (30.275, -21.102, -11.568)
+
+              7          B 223          B 239             17        637.749         (30.275, -21.102, -11.568)
+                                                                                    (4.091, -14.871, -15.852)
+

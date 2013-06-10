@@ -5,6 +5,8 @@
 #include "StandardForm.h"
 #include "Comparison.h"
 
+#include <memory>
+
 /*!
  *  \brief This function checks to see if valid arguments are given to the 
  *  command line output.
@@ -552,8 +554,14 @@ ProteinStructure *parsePDBFile(const char *pdbFile)
   cout << "Parsing PDB file ...";
   BrookhavenPDBParser parser;
   ProteinStructure *structure = parser.getStructure(pdbFile)->select(CASelector());
+  ProteinStructure *one_model = new ProteinStructure(structure->getIdentifier());
+  one_model->select(CASelector());
+  //one_model->setIdentifier(structure->getIdentifier());
+  std::shared_ptr<lcb::Model> newmodel = std::make_shared<lcb::Model>(structure->getDefaultModel());
+  one_model->addModel(newmodel);
+  delete structure;
   cout << " [OK]" << endl;
-  return structure;
+  return one_model;
 }
 
 /*!

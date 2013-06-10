@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ci/d3cirn1.ent
+Number of residues: 138
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 48624.8
+Null Model Fit: 6228.95 bits.
+Bits per residue: 45.4668
+
+Bezier model fit: 5564.72 bits.
+Bits per residue: 40.6184
+
+# of segments: 7
+Internal segmentation:
+0-->22-->44-->56-->78-->101-->109-->137
+
+CPU time used: 7.17 secs.
+Wall clock time elapsed: 7 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          N 106          N 128             23        899.654         (30.383, -29.059, -22.499)         (20.4495, -18.4836, -39.6887)
+                                                                                    (-5.947, -38.096, -33.712)
+
+              2          N 128          N 150             23        890.193         (-5.947, -38.096, -33.712)         (18.635, -48.0111, -59.7158)
+                                                                                    (26.469, -36.433, -28.639)
+
+              3          N 150          N 162             13        512.251         (26.469, -36.433, -28.639)         (41.4413, -34.5578, -36.1525)
+                                                                                    (40.139, -25.966, -32.137)
+
+              4          N 162          N 184             23        894.147         (40.139, -25.966, -32.137)
+                                                                                    (8.162, -34.261, -42.072)
+
+              5          N 184          N 207             24        932.577         (8.162, -34.261, -42.072)         (24.3328, -5.21581, -39.0431)
+                                                                                    (39.779, -32.268, -42.941)
+
+              6          N 207          N 215              9        340.376         (39.779, -32.268, -42.941)
+                                                                                    (32, -44.267, -32.856)
+
+              7          N 215          N 243             29        1095.53         (32, -44.267, -32.856)         (26.457, -26.4822, -53.3413)
+                                                                                    (15.049, -8.373, -56.743)
+

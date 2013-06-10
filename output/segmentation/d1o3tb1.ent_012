@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/o3/d1o3tb1.ent
+Number of residues: 68
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 13332.2
+Null Model Fit: 2921.2 bits.
+Bits per residue: 43.6
+
+Bezier model fit: 2775.71 bits.
+Bits per residue: 41.4285
+
+# of segments: 8
+Internal segmentation:
+0-->16-->22-->30-->39-->41-->56-->62-->67
+
+CPU time used: 3.03 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          B 138          B 154             17        640.924         (36.169, 26.224, 14.758)
+                                                                                    (11.152, 25.436, 5.716)
+
+              2          B 154          B 160              7        255.214         (11.152, 25.436, 5.716)
+                                                                                    (7.468, 34.32, 19.835)
+
+              3          B 160          B 168              9        335.274         (7.468, 34.32, 19.835)
+                                                                                    (19.3, 16.46, 18.024)
+
+              4          B 168          B 177             10        378.614         (19.3, 16.46, 18.024)
+                                                                                    (31.756, 17.729, 12.024)
+
+              5          B 177          B 179              3         91.237         (31.756, 17.729, 12.024)
+                                                                                    (31.203, 15.096, 18.489)
+
+              6          B 179          B 194             16        602.401         (31.203, 15.096, 18.489)
+                                                                                    (21.29, 34.165, 25.503)
+
+              7          B 194          B 200              7        254.538         (21.29, 34.165, 25.503)
+                                                                                    (15.401, 18.563, 22.489)
+
+              8          B 200          B 205              6         217.51         (15.401, 18.563, 22.489)
+                                                                                    (16.522, 33.629, 19.707)
+

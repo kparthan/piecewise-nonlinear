@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/p4/d1p4ad1.ent
+Number of residues: 73
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 17377.6
+Null Model Fit: 3166.73 bits.
+Bits per residue: 43.9823
+
+Bezier model fit: 2957.54 bits.
+Bits per residue: 41.0769
+
+# of segments: 7
+Internal segmentation:
+0-->2-->17-->32-->34-->53-->63-->72
+
+CPU time used: 3.37 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            D 2            D 4              3        92.0017         (30.396, 120.764, -12.718)
+                                                                                    (25.56, 118.639, -16.444)
+
+              2            D 4           D 19             16        602.538         (25.56, 118.639, -16.444)
+                                                                                    (16.657, 110.69, 2.502)
+
+              3           D 19           D 34             16        632.861         (16.657, 110.69, 2.502)         (14.2089, 126.588, 4.45368)
+                                                                                    (26.416, 125.002, -7.941)
+
+              4           D 34           D 36              3        92.0017         (26.416, 125.002, -7.941)
+                                                                                    (20.474, 128.765, -8.711)
+
+              5           D 36           D 55             20        754.161         (20.474, 128.765, -8.711)         (7.93392, 119.07, -13.1601)
+                                                                                    (3.413, 105.895, -7.586)
+
+              6           D 55           D 65             11        411.115         (3.413, 105.895, -7.586)
+                                                                                    (13.093, 131.375, 2.611)
+
+              7           D 65           D 74             10        372.856         (13.093, 131.375, 2.611)         (14.4849, 117.134, 1.77028)
+                                                                                    (3.62, 106.538, -0.628)
+

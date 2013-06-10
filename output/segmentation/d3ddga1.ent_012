@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/dd/d3ddga1.ent
+Number of residues: 111
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 43570.8
+Null Model Fit: 4983.93 bits.
+Bits per residue: 45.3084
+
+Bezier model fit: 4442.18 bits.
+Bits per residue: 40.3834
+
+# of segments: 8
+Internal segmentation:
+0-->12-->33-->37-->59-->68-->97-->108-->110
+
+CPU time used: 5.59 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 412          A 424             13        498.204         (15.101, 64.193, -1.123)
+                                                                                    (38.498, 76.095, -9.472)
+
+              2          A 424          A 445             22        822.701         (38.498, 76.095, -9.472)
+                                                                                    (66.132, 58.777, -13.911)
+
+              3          A 445          A 449              5        181.261         (66.132, 58.777, -13.911)
+                                                                                    (72.732, 64.733, -4.106)
+
+              4          A 449          A 471             23        865.819         (72.732, 64.733, -4.106)
+                                                                                    (36.439, 64.676, 1.9)
+
+              5          A 471          A 480             10        393.061         (36.439, 64.676, 1.9)
+                                                                                    (36.344, 79.985, 2.692)
+
+              6          A 480          A 509             30        1119.84         (36.344, 79.985, 2.692)         (57.8498, 72.709, -2.70737)
+                                                                                    (69.759, 67.288, -21.763)
+
+              7          A 509          A 520             12         466.64         (69.759, 67.288, -21.763)         (88.2026, 66.9668, -19.1129)
+                                                                                    (68.549, 76.93, -6.502)
+
+              8          A 520          A 522              3        94.6539         (68.549, 76.93, -6.502)
+                                                                                    (65.888, 78.232, -12.698)
+

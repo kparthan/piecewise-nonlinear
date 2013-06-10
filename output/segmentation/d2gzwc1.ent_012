@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/gz/d2gzwc1.ent
+Number of residues: 69
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 13823.7
+Null Model Fit: 2968.35 bits.
+Bits per residue: 43.6522
+
+Bezier model fit: 2806.7 bits.
+Bits per residue: 41.275
+
+# of segments: 8
+Internal segmentation:
+0-->16-->22-->30-->39-->41-->56-->62-->68
+
+CPU time used: 3.05 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          C 138          C 154             17        638.316         (24.326, 39.63, -50.014)
+                                                                                    (31.802, 16.889, -61.689)
+
+              2          C 154          C 160              7        254.555         (31.802, 16.889, -61.689)
+                                                                                    (38.149, 28.26, -73.643)
+
+              3          C 160          C 168              9        335.407         (38.149, 28.26, -73.643)
+                                                                                    (18.186, 27.955, -64.947)
+
+              4          C 168          C 177             10        380.122         (18.186, 27.955, -64.947)
+                                                                                    (17.178, 32.446, -51.895)
+
+              5          C 177          C 179              3        91.3415         (17.178, 32.446, -51.895)
+                                                                                    (13.335, 35.446, -57.162)
+
+              6          C 179          C 194             16        598.603         (13.335, 35.446, -57.162)
+                                                                                    (32.541, 40.513, -67.943)
+
+              7          C 194          C 200              7        254.764         (32.541, 40.513, -67.943)
+                                                                                    (20.387, 30.562, -73.346)
+
+              8          C 200          C 206              7        253.594         (20.387, 30.562, -73.346)
+                                                                                    (35.453, 32.48, -66.356)
+

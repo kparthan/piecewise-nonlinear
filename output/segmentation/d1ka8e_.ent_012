@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ka/d1ka8e_.ent
+Number of residues: 100
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 23853.8
+Null Model Fit: 4399.49 bits.
+Bits per residue: 44.4393
+
+Bezier model fit: 4098.79 bits.
+Bits per residue: 41.4019
+
+# of segments: 6
+Internal segmentation:
+0-->24-->36-->56-->70-->79-->99
+
+CPU time used: 5.08 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            E 1           E 25             25        997.514         (70.199, 37.008, 5.91)         (29.6217, 43.3072, -4.74927)
+                                                                                    (62.704, 52.121, -12.423)
+
+              2           E 25           E 37             13        514.258         (62.704, 52.121, -12.423)         (59.6721, 68.4944, -5.56524)
+                                                                                    (56.459, 49.749, -6.908)
+
+              3           E 37           E 57             21        819.887         (56.459, 49.749, -6.908)         (72.0551, 54.926, 17.6654)
+                                                                                    (65.876, 43.375, -12.961)
+
+              4           E 57           E 71             15        570.806         (65.876, 43.375, -12.961)
+                                                                                    (49.595, 33.219, -1.808)
+
+              5           E 71           E 80             10        361.407         (49.595, 33.219, -1.808)         (49.8994, 39.3043, -16.5747)
+                                                                                    (52.388, 53.896, -22.137)
+
+              6           E 80          E 100             21        834.915         (52.388, 53.896, -22.137)         (47.1828, 37.9168, 10.4583)
+                                                                                    (55.308, 61.303, 4.711)
+

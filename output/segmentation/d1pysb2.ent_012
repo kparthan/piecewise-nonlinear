@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/py/d1pysb2.ent
+Number of residues: 75
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 17797.4
+Null Model Fit: 3257.24 bits.
+Bits per residue: 44.0167
+
+Bezier model fit: 3053.75 bits.
+Bits per residue: 41.2668
+
+# of segments: 6
+Internal segmentation:
+0-->8-->20-->39-->49-->73-->74
+
+CPU time used: 3.41 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          B 400          B 408              9        323.665         (27.05, 91.907, 35.328)         (37.6109, 84.9939, 27.9838)
+                                                                                    (36.467, 86.952, 13.783)
+
+              2          B 408          B 420             13        508.016         (36.467, 86.952, 13.783)         (32.977, 68.7695, 8.67491)
+                                                                                    (34.641, 90.539, 7.072)
+
+              3          B 420          B 439             20        786.053         (34.641, 90.539, 7.072)         (14.9618, 97.7619, 26.4846)
+                                                                                    (41.539, 92.938, 17.001)
+
+              4          B 439          B 449             11        404.641         (41.539, 92.938, 17.001)
+                                                                                    (19.406, 89.542, 29.107)
+
+              5          B 449          B 473             25        984.317         (19.406, 89.542, 29.107)         (46.4529, 69.0744, 23.9728)
+                                                                                    (28.626, 77.786, 1.557)         (9.39923, 96.6015, 10.5108)
+
+              6          B 473          B 474              2        47.0538         (28.626, 77.786, 1.557)
+                                                                                    (28.567, 74.04, 0.701)
+

@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/jd/d2jdie1.ent
+Number of residues: 109
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 51707.8
+Null Model Fit: 4919.99 bits.
+Bits per residue: 45.5554
+
+Bezier model fit: 4429.88 bits.
+Bits per residue: 41.0174
+
+# of segments: 8
+Internal segmentation:
+0-->6-->28-->31-->54-->67-->81-->95-->108
+
+CPU time used: 5.56 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          E 358          E 364              7        273.083         (-4.669, 57.951, 91.098)
+                                                                                    (-13.365, 56.907, 88.875)
+
+              2          E 364          E 386             23        851.534         (-13.365, 56.907, 88.875)
+                                                                                    (12.122, 66.313, 68.703)
+
+              3          E 386          E 397              4        141.953         (12.122, 66.313, 68.703)
+                                                                                    (1.52, 62.139, 60.048)
+
+              4          E 397          E 420             24        908.904         (1.52, 62.139, 60.048)
+                                                                                    (-7.384, 84.915, 95.159)
+
+              5          E 420          E 433             14        546.808         (-7.384, 84.915, 95.159)         (-6.07116, 100.419, 83.5237)
+                                                                                    (-16.122, 70.825, 90.218)
+
+              6          E 433          E 447             15        571.986         (-16.122, 70.825, 90.218)
+                                                                                    (-11.444, 65.55, 69.799)
+
+              7          E 447          E 461             15        595.662         (-11.444, 65.55, 69.799)         (-4.4118, 83.8478, 64.1176)
+                                                                                    (-12.869, 77.427, 84.244)
+
+              8          E 461          E 474             14        539.949         (-12.869, 77.427, 84.244)
+                                                                                    (-14.176, 85.561, 65.913)
+

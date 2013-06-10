@@ -1,0 +1,46 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/jd/d2jd7h_.ent
+Number of residues: 167
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 54926.3
+Null Model Fit: 7576.67 bits.
+Bits per residue: 45.6426
+
+Bezier model fit: 6557.84 bits.
+Bits per residue: 39.5051
+
+# of segments: 9
+Internal segmentation:
+0-->2-->31-->35-->64-->81-->110-->114-->143-->166
+
+CPU time used: 9.05 secs.
+Wall clock time elapsed: 9 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            H 1            H 3              3        95.3222         (-17.738, 131.02, 11.539)
+                                                                                    (-11.256, 130.431, 10.428)
+
+              2            H 3           H 32             30         1112.6         (-11.256, 130.431, 10.428)
+                                                                                    (-8.82, 90.985, -7.637)
+
+              3           H 32           H 36              5          184.8         (-8.82, 90.985, -7.637)
+                                                                                    (-9.56, 86.807, -4.166)
+
+              4           H 36           H 65             30        1114.57         (-9.56, 86.807, -4.166)
+                                                                                    (-20.829, 128.622, 5.282)
+
+              5           H 65           H 82             18        665.042         (-20.829, 128.622, 5.282)         (2.44646, 114.41, -15.0978)
+                                                                                    (1.024, 89.368, 0.382)
+
+              6           H 82          H 111             30        1115.93         (1.024, 89.368, 0.382)
+                                                                                    (-9.378, 127.814, 18.401)
+
+              7          H 111          H 115              5        181.672         (-9.378, 127.814, 18.401)
+                                                                                    (-18.863, 123.314, 16.392)
+
+              8          H 115          H 144             30        1129.26         (-18.863, 123.314, 16.392)         (-12.9664, 100.444, 15.4428)
+                                                                                    (-3.556, 81.54, 8.314)
+
+              9          H 144          H 167             24        958.647         (-3.556, 81.54, 8.314)
+                                                                                    (-26.07, 97.548, -8.233)
+

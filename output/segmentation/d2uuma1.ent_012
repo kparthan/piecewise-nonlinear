@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/uu/d2uuma1.ent
+Number of residues: 162
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 73138
+Null Model Fit: 7414.97 bits.
+Bits per residue: 46.0557
+
+Bezier model fit: 6517.85 bits.
+Bits per residue: 40.4835
+
+# of segments: 7
+Internal segmentation:
+0-->19-->48-->76-->101-->122-->142-->161
+
+CPU time used: 8.73 secs.
+Wall clock time elapsed: 8 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 20             20         799.82         (100.844, 54.497, 160.097)         (120.627, 50.4966, 168.829)
+                                                                                    (106.792, 51.089, 179.809)         (76.6606, 54.7875, 175.906)
+
+              2           A 20           A 49             30        1131.24         (106.792, 51.089, 179.809)         (125.715, 51.8219, 164.027)
+                                                                                    (118.082, 59.601, 138.493)
+
+              3           A 49           A 77             29         1165.8         (118.082, 59.601, 138.493)         (104.106, 34.9947, 124.489)
+                                                                                    (105.155, 57.68, 123.243)
+
+              4           A 77          A 102             26        972.992         (105.155, 57.68, 123.243)
+                                                                                    (111.736, 52.806, 159.866)
+
+              5          A 102          A 123             22        858.813         (111.736, 52.806, 159.866)         (90.8546, 53.5204, 148.498)
+                                                                                    (95.171, 48.472, 132.831)
+
+              6          A 123          A 143             21        820.101         (95.171, 48.472, 132.831)         (115.825, 43.9754, 136.649)
+                                                                                    (125.606, 46.963, 151.665)
+
+              7          A 143          A 162             20        769.086         (125.606, 46.963, 151.665)
+                                                                                    (101.848, 39.567, 143.581)
+

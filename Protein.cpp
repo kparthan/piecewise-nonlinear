@@ -83,8 +83,8 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
   vector<Identifier> identifiers = mapToActualSegments(segments);
   protein->undoLastSelection();
   Matrix<double> inverse_transform = transformation.inverse();
-  shared_ptr<Chain> cps_chain = make_shared<Chain>("X");
-  shared_ptr<Chain> curve_chain = make_shared<Chain>("Y");
+  shared_ptr<Chain> cps_chain = make_shared<Chain>("x");
+  shared_ptr<Chain> curve_chain = make_shared<Chain>("y");
 
   int segment_start = 0;
   all_control_points.push_back(original_coordinates[0]);
@@ -199,7 +199,7 @@ void Protein::createPymolScript(string &pdb_file,
                                 vector<Identifier> &identifiers)
 {
   vector<array<double,3>> colors = generateProteinColors(segments.size()-1);
-  Chain chain = protein->getDefaultModel()["X"];
+  Chain chain = protein->getDefaultModel()["x"];
   vector<string> res_ids = chain.getResidueIdentifiers();
   //for (int i=0; i<res_ids.size(); i++){cout << res_ids[i] << endl;}
 
@@ -213,7 +213,7 @@ void Protein::createPymolScript(string &pdb_file,
   script << "show cartoon" << endl;
   script << "set label_font_id, 10" << endl;
 
-  Chain curve_chain = protein->getDefaultModel()["Y"];
+  Chain curve_chain = protein->getDefaultModel()["y"];
   vector<string> curve_ids = curve_chain.getResidueIdentifiers();
 
   string start_atom = identifiers[0].getAtomID();
@@ -248,7 +248,7 @@ void Protein::createPymolScript(string &pdb_file,
     
     // draw the bezier curves
     string curve_index = curve_ids[i-1].substr(1);
-    script << "select curve" << curve_index << ", chain Y and resi " 
+    script << "select curve" << curve_index << ", chain y and resi " 
     << curve_ids[i-1] << endl;
 
     // join the control points by straight lines to visualize

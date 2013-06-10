@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/k6/d3k6ch_.ent
+Number of residues: 91
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 42133
+Null Model Fit: 4073.4 bits.
+Bits per residue: 45.26
+
+Bezier model fit: 3617.24 bits.
+Bits per residue: 40.1915
+
+# of segments: 7
+Internal segmentation:
+0-->10-->38-->42-->70-->71-->85-->90
+
+CPU time used: 4.32 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            H 4           H 14             11        437.788         (14.021, 75.967, 9.679)         (7.45456, 79.0054, 24.5874)
+                                                                                    (3.318, 85.19, 9.628)
+
+              2           H 14           H 42             29        1073.11         (3.318, 85.19, 9.628)         (22.0313, 80.4033, 1.51851)
+                                                                                    (43.075, 74.849, 0.458)
+
+              3           H 42           H 46              5        182.589         (43.075, 74.849, 0.458)
+                                                                                    (43.645, 65.264, -5.105)
+
+              4           H 46           H 74             29        1079.39         (43.645, 65.264, -5.105)         (28.391, 79.7967, -9.94259)
+                                                                                    (11.489, 93.308, 0.481)
+
+              5           H 74           H 75              2        48.2971         (11.489, 93.308, 0.481)
+                                                                                    (13.84, 94.939, 2.99)
+
+              6           H 75           H 89             15        570.528         (13.84, 94.939, 2.99)
+                                                                                    (35.99, 101.983, -3.081)
+
+              7           H 89           H 94              6        225.537         (35.99, 101.983, -3.081)
+                                                                                    (36.456, 104.493, 9.852)
+

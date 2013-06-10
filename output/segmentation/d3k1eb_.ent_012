@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/k1/d3k1eb_.ent
+Number of residues: 116
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 24817.9
+Null Model Fit: 5117.09 bits.
+Bits per residue: 44.4964
+
+Bezier model fit: 4720.02 bits.
+Bits per residue: 41.0437
+
+# of segments: 6
+Internal segmentation:
+0-->21-->39-->53-->71-->92-->115
+
+CPU time used: 5.97 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           B 10           B 31             22        845.351         (33.12, 15.443, 25.259)         (17.3959, 0.643041, 13.8094)
+                                                                                    (31.73, 9.424, -0.921)
+
+              2           B 31           B 49             19        751.961         (31.73, 9.424, -0.921)         (47.1264, 23.7511, 23.9257)
+                                                                                    (32.265, 19.046, -2.005)
+
+              3           B 49           B 63             15        565.428         (32.265, 19.046, -2.005)
+                                                                                    (15.025, 13.571, 10.552)
+
+              4           B 63           B 81             19        755.466         (15.025, 13.571, 10.552)         (10.5871, 30.6379, 2.35834)
+                                                                                    (21.748, 15.226, 23.859)
+
+              5           B 81          B 102             22        862.124         (21.748, 15.226, 23.859)         (26.4836, 40.6206, 27.0856)
+                                                                                    (21.339, 23.915, -2.505)
+
+              6          B 102          B 125             24        939.696         (21.339, 23.915, -2.505)         (25.3829, 18.4551, 3.86616)
+                                                                                    (31.402, 12.802, 13.529)         (39.3437, 42.2831, 28.2447)
+

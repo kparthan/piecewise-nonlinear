@@ -75,5 +75,5 @@ clean:
 	rm -f *.o *~ *.pdb piecewise-nonlinear-fit 
 
 clean_output:
-	rm -f output/segmentation/* output/segmentation_profile/* output/modified_pdb_files/* output/pymol_scripts/* output/alignments/* output/comparison_results
+	rm -f output/segmentation/* output/segmentation_profile/* output/modified_pdb_files/* output/pymol_scripts/* output/alignments/* output/comparison.results
 

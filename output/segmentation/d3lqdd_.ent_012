@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/lq/d3lqdd_.ent
+Number of residues: 146
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 39778.6
+Null Model Fit: 6550.67 bits.
+Bits per residue: 45.1771
+
+Bezier model fit: 5876.47 bits.
+Bits per residue: 40.5274
+
+# of segments: 8
+Internal segmentation:
+0-->5-->34-->49-->78-->98-->118-->143-->145
+
+CPU time used: 7.68 secs.
+Wall clock time elapsed: 7 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            D 1            D 6              6        224.351         (29.569, 21.321, 19.133)
+                                                                                    (41.007, 27.711, 24.255)
+
+              2            D 6           D 35             30        1152.06         (41.007, 27.711, 24.255)         (54.5946, 12.3828, -0.67079)
+                                                                                    (35.508, -4.415, 15.955)
+
+              3           D 35           D 50             16        626.252         (35.508, -4.415, 15.955)         (28.4364, -3.87656, -8.39426)
+                                                                                    (44.173, -10.749, 9.99)
+
+              4           D 50           D 79             30        1158.57         (44.173, -10.749, 9.99)         (46.561, 7.78707, -4.56837)
+                                                                                    (28.565, 25.22, 13.714)
+
+              5           D 79           D 99             21        826.353         (28.565, 25.22, 13.714)         (20.7061, 6.7553, -6.33126)
+                                                                                    (24.268, 1.032, 12.981)
+
+              6           D 99          D 119             21        796.814         (24.268, 1.032, 12.981)
+                                                                                    (51.96, 11.855, 22.993)
+
+              7          D 119          D 144             26        997.681         (51.96, 11.855, 22.993)         (35.6851, 21.0482, 28.0666)
+                                                                                    (18.829, 10.414, 9.012)
+
+              8          D 144          D 146              3        94.3912         (18.829, 10.414, 9.012)
+                                                                                    (14.755, 10.966, 12.306)
+
