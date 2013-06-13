@@ -10,7 +10,7 @@ fw.write('line_number=1\n')
 line = fr.readline()
 line_count = 0;
 cmd_begin = './piecewise-nonlinear-fit --structure protein --compare basic_alignment '
-cmd_begin += '--controls 0 1 2 --constrain sigma length --files '
+cmd_begin += '--controls 0 1 2 --gap 0 --constrain sigma length --files '
 home_path = '/home/pkas7/Research/SCOP/pdbstyle-1.75B/'
 
 while line != '':
