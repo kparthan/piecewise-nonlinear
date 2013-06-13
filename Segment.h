@@ -75,14 +75,14 @@ class Segment
 
                             /* Utility funcitons */
     //! Constructs a plane used along with a Bezier curve 
-    Plane<Point<double>> constructPlane(BezierCurve &);
+    Plane<double> constructPlane(BezierCurve &);
 
     //! Fits a linear model
     void fitLinear();
 
     //! Computes deviations from the line
-    vector<array<double,3>> computeDeviations(Line<Point<double>> &,
-                                              Plane<Point<double>> &);
+    vector<array<double,3>> computeDeviations(Line<double> &,
+                                              Plane<double> &);
 
     //! Computes the message length for the segment described by a 
     //! linear model

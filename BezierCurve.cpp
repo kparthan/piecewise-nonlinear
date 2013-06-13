@@ -287,7 +287,7 @@ double BezierCurve::signedDistance(const Point<double> &p, double t,
 {
   //Vector<double> direction = tangent(t);
   Point<double> pc = getPoint(t);
-  Plane<Point<double>> plane(pc,normal,tangent(t));
+  Plane<double> plane(pc,normal,tangent(t));
   //double d = fabs(distance(p,pc));
   //int point_orientation = plane.orientation(p);
   return fabs(distance(p,pc)) * plane.orientation(p);

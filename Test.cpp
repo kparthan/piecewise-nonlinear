@@ -18,7 +18,7 @@ Test::Test(int numPoints, Point<double> &start, Point<double> &end,
 void Test::generate()
 {
   /* generate points on the line */
-  Line<Point<double>> line(start,end);
+  Line<double> line(start,end);
   vector<Point<double>>::iterator it;
   points = generatePointsOnLine(line,numPoints);
   it = points.begin();
@@ -26,7 +26,7 @@ void Test::generate()
   points.push_back(end);
 
   /* construct a plane */
-  Plane<Point<double>> plane(start,end,third);
+  Plane<double> plane(start,end,third);
   Vector<double> normal = plane.normal();
   Vector<double> dcs = line.directionVector();
   Vector<double> n = Vector<double>::crossProduct(normal,dcs);

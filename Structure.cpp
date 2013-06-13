@@ -138,7 +138,7 @@ void Structure::connectControlPoints()
   start = all_control_points[0];
   for (int i=1; i<all_control_points.size(); i++) {
     end = all_control_points[i];
-    Line<Point<double>> line(start,end);
+    Line<double> line(start,end);
     connecting_lines.push_back(line);
     start = end;
   }
@@ -156,7 +156,7 @@ vector<double> Structure::computePlanarAngles()
   if (connecting_lines.size() < 2) {
     cout << "Planar angles require at least 3 control points ..." << endl;
   } else {
-    Line<Point<double>> line1,line2;
+    Line<double> line1,line2;
     line1 = connecting_lines[0];
     for (int i=1; i<connecting_lines.size(); i++) {
       line2 = connecting_lines[i];
@@ -180,7 +180,7 @@ vector<double> Structure::computeDihedralAngles()
   if (all_control_points.size() < 4) {
     cout << "Dihedral angles require at least 4 control points ..." << endl;
   } else {
-    Plane<Point<double>> plane1,plane2;
+    Plane<double> plane1,plane2;
     Vector<double> p0,p1,p2,p3;
     Vector<double> v1,v2,v3,n1,n2,m1;
     p0 = all_control_points[0].positionVector();

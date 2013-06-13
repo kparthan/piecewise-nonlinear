@@ -307,7 +307,7 @@ Point<double> StandardForm::projectOnXZPlane(Point<double> &p)
   Point<double> origin(0,0,0);
   Point<double> unitVectorX(1,0,0);
   Point<double> unitVectorZ(0,0,1);
-  Plane<Point<double>> xzPlane(origin,unitVectorX,unitVectorZ);
+  Plane<double> xzPlane(origin,unitVectorX,unitVectorZ);
   return project(p,xzPlane);
 }
 
@@ -320,8 +320,8 @@ Point<double> StandardForm::projectOnXZPlane(Point<double> &p)
 Matrix<double> StandardForm::rotateLastOntoXYPlane(Point<double> &projection)
 {
   Point<double> origin(0,0,0);
-  Line<Point<double>> xaxis(Point<double> {0,0,0},Point<double> {1,0,0});
-  Line<Point<double>> projectedLine(origin,projection);
+  Line<double> xaxis(Point<double> {0,0,0},Point<double> {1,0,0});
+  Line<double> projectedLine(origin,projection);
   double angleWithX = angle(xaxis,projectedLine); 
   double theta;
   Vector<double> yaxis(vector<double>{0,1,0});
@@ -342,8 +342,8 @@ Matrix<double> StandardForm::rotateLastOntoXYPlane(Point<double> &projection)
 Matrix<double> StandardForm::rotateInXYPlane(Point<double> &p)
 {
   Point<double> origin(0,0,0);
-  Line<Point<double>> xaxis(Point<double> {0,0,0},Point<double> {1,0,0});
-  Line<Point<double>> projectedLine(origin,p); 
+  Line<double> xaxis(Point<double> {0,0,0},Point<double> {1,0,0});
+  Line<double> projectedLine(origin,p); 
   double angleWithX = angle(xaxis,projectedLine);
   double theta;
   if (p.y() > 0){
@@ -403,7 +403,7 @@ Point<double> StandardForm::projectOnYZPlane(Point<double> &p)
   Point<double> origin(0,0,0);
   Point<double> unitVectorY(0,1,0);
   Point<double> unitVectorZ(0,0,1);
-  Plane<Point<double>> yzPlane(origin,unitVectorZ,unitVectorY);
+  Plane<double> yzPlane(origin,unitVectorZ,unitVectorY);
   return project(p,yzPlane);
 }
 
@@ -416,8 +416,8 @@ Point<double> StandardForm::projectOnYZPlane(Point<double> &p)
 Matrix<double> StandardForm::rotateSecondOntoXYPlane(Point<double> &projection)
 {
   Point<double> origin(0,0,0);
-  Line<Point<double>> yaxis(Point<double> {0,0,0},Point<double> {0,1,0});
-  Line<Point<double>> projectedLine(origin,projection);
+  Line<double> yaxis(Point<double> {0,0,0},Point<double> {0,1,0});
+  Line<double> projectedLine(origin,projection);
   double angleWithY = angle(yaxis,projectedLine); 
   double theta;
   if (projection.z() > 0) {

@@ -147,9 +147,9 @@ void Segment::fitLinear(void)
   vector<array<double,3>> deviations;
   if (numIntermediate > 2) {
     double length = distance(start,end);
-    Line<Point<double>> line(start,end);
+    Line<double> line(start,end);
     Point<double> p(coordinates[1]);
-    Plane<Point<double>> plane(start,p,end); 
+    Plane<double> plane(start,p,end); 
     deviations = computeDeviations(line,plane);
   }
   linearFitMsgLen = messageLength(deviations);
@@ -161,7 +161,7 @@ void Segment::fitLinear(void)
  *  \param curve a reference to a BezierCurve
  *  \return a plane
  */
-Plane<Point<double>> Segment::constructPlane(BezierCurve &curve)
+Plane<double> Segment::constructPlane(BezierCurve &curve)
 {
   Point<double> points[3];
   int degree = curve.getDegree();
@@ -171,28 +171,28 @@ Plane<Point<double>> Segment::constructPlane(BezierCurve &curve)
     case 1:
       /* construct a plane with the two end points and a third point if any */
       if (numIntermediate >= 1) {
-        return Plane<Point<double>>(points[0],coordinates[1],points[2]);
+        return Plane<double>(points[0],coordinates[1],points[2]);
       } else {
-        return Plane<Point<double>>();
+        return Plane<double>();
       }
       
     default:
       /* construct a plane using three control points (two end points
          and the first intermediate control point) */
       points[1] = curve.getControlPoint(1);
-      return Plane<Point<double>> (points[0],points[1],points[2]);
+      return Plane<double> (points[0],points[1],points[2]);
   }
 }
 
 /*!
  *  \brief This module computes the deviations of each of the intermediate
  *  points from the line describing the end points of the segment
- *  \param line a reference to a Line<Point<double>>
- *  \param plane a reference to a Plane<Point<double>> 
+ *  \param line a reference to a Line<double>
+ *  \param plane a reference to a Plane<double> 
  *  \return the set of deviations
  */
-vector<array<double,3>> Segment::computeDeviations(Line<Point<double>> &line,
-                                                  Plane<Point<double>> &plane)
+vector<array<double,3>> Segment::computeDeviations(Line<double> &line,
+                                                  Plane<double> &plane)
 {
   vector<array<double,3>> deviations;
   array<double,3> d;
@@ -461,7 +461,7 @@ vector<array<double,3>> Segment::computeDeviations(BezierCurve &curve)
  */
 vector<array<double,3>> Segment::getDeviations(BezierCurve &curve)
 {
-  Plane<Point<double>> plane = constructPlane(curve);
+  Plane<double> plane = constructPlane(curve);
   Vector<double> normal = plane.normal();
   double tmin_current,tmin_prev = 0;
   int index_start = 0;

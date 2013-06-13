@@ -69,7 +69,7 @@ class Structure
     vector<Point<double>> all_control_points;
 
     //! Lines connecting the control points
-    vector<Line<Point<double>>> connecting_lines;
+    vector<Line<double>> connecting_lines;
 
 };
 
