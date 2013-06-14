@@ -161,7 +161,7 @@ void Segment::fitLinear(void)
  *  \param curve a reference to a BezierCurve
  *  \return a plane
  */
-Plane<double> Segment::constructPlane(BezierCurve &curve)
+Plane<double> Segment::constructPlane(BezierCurve<double> &curve)
 {
   Point<double> points[3];
   int degree = curve.getDegree();
@@ -299,7 +299,7 @@ void Segment::estimateFreeParameters()
  *  \param curve a reference to a Bezier curve
  *  \return the least square fit error
  */
-double Segment::rootMeanSquaredError(BezierCurve &curve)
+double Segment::rootMeanSquaredError(BezierCurve<double> &curve)
 {
   int m = curve.getDegree();
   int N = numPoints;
@@ -380,7 +380,7 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
       }  
     }
   }
-  BezierCurve curve(controlPoints);
+  BezierCurve<double> curve(controlPoints);
   vector<array<double,3>> deviations = computeDeviations(curve);
   double msglen = messageLength(curve,deviations);
   return OptimalFit(controlPoints,msglen);
@@ -392,7 +392,7 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
 OptimalFit Segment::stateUsingCurve(OptimalFit &optimal)
 {
   vector<Point<double>> cps = optimal.getControlPoints();
-  BezierCurve curve(cps);
+  BezierCurve<double> curve(cps);
   vector<array<double,3>> deviations = computeDeviations(curve);
   double msglen = messageLength(curve,deviations);
   return OptimalFit(cps,msglen);
@@ -402,7 +402,7 @@ OptimalFit Segment::stateUsingCurve(OptimalFit &optimal)
  *  \brief This function is used to compute the MML way of fitting 
  *  Bezier curves and the associated message length
  */
-double Segment::messageLengthMML(BezierCurve &curve, double sigma)
+double Segment::messageLengthMML(BezierCurve<double> &curve, double sigma)
 {
   int m = curve.getDegree();
   int N = numPoints;
@@ -434,7 +434,7 @@ double Segment::messageLengthMML(BezierCurve &curve, double sigma)
  *  \param curve a reference to a BezierCurve
  *  \return the set of deviations
  */
-vector<array<double,3>> Segment::computeDeviations(BezierCurve &curve)
+vector<array<double,3>> Segment::computeDeviations(BezierCurve<double> &curve)
 {
   vector<array<double,3>> deviations;
   switch(curve.getDegree()) {
@@ -459,7 +459,7 @@ vector<array<double,3>> Segment::computeDeviations(BezierCurve &curve)
  *  \param curve a reference to a BezierCurve
  *  \return the set of deviations
  */
-vector<array<double,3>> Segment::getDeviations(BezierCurve &curve)
+vector<array<double,3>> Segment::getDeviations(BezierCurve<double> &curve)
 {
   Plane<double> plane = constructPlane(curve);
   Vector<double> normal = plane.normal();
@@ -509,7 +509,7 @@ vector<array<double,3>> Segment::getDeviations(BezierCurve &curve)
  *  \param deviations a reference to a vector<array<double,3>>
  *  \return the message length (in bits)
  */
-double Segment::messageLength(BezierCurve &curve,
+double Segment::messageLength(BezierCurve<double> &curve,
                               vector<array<double,3>> &deviations)
 {
   double part1=0,part2=0;

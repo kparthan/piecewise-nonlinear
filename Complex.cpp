@@ -4,22 +4,25 @@
 /*
  *  \brief Null constructor
  */
-Complex::Complex() : real_part(0), imag_part(0)
+template <typename RealType>
+Complex<RealType>::Complex() : real_part(0), imag_part(0)
 {}
 
 /*!
  *  \brief Constructor
- *  \param r a double
- *  \param i a double
+ *  \param r a RealType
+ *  \param i a RealType
  */
-Complex::Complex(double r, double i) : real_part(r), imag_part(i)
+template <typename RealType>
+Complex<RealType>::Complex(RealType r, RealType i) : real_part(r), imag_part(i)
 {}
 
 /*!
  *  \brief Copy constructor
  *  \param source a reference to a Complex
  */
-Complex::Complex(const Complex &source) : 
+template <typename RealType>
+Complex<RealType>::Complex(const Complex<RealType> &source) : 
          real_part(source.real_part), imag_part(source.imag_part)
 {}
 
@@ -27,7 +30,8 @@ Complex::Complex(const Complex &source) :
  *  \brief This module returns the real part of the complex number
  *  \return the real part
  */
-double Complex::real() const
+template <typename RealType>
+RealType Complex<RealType>::real() const
 {
   return real_part;
 }
@@ -36,7 +40,8 @@ double Complex::real() const
  *  \brief This module returns the imaginary part of the complex number
  *  \return the imaginary part
  */
-double Complex::imag() const
+template <typename RealType>
+RealType Complex<RealType>::imag() const
 {
   return imag_part;
 }
@@ -45,7 +50,8 @@ double Complex::imag() const
  *  \brief This module computes the modulus of the complex number
  *  \return the modulus
  */
-double Complex::modulus() const
+template <typename RealType>
+RealType Complex<RealType>::modulus() const
 {
   return sqrt(real_part * real_part + imag_part * imag_part);
 }
@@ -54,25 +60,28 @@ double Complex::modulus() const
  *  \brief This module prints the real and imaginary parts of the 
  *  complex number
  */
-void Complex::print()
+template <typename RealType>
+void Complex<RealType>::print()
 {
   cout << "(" << real_part << "," << imag_part << ")" << endl;
 }
 
 /*!
  *  \brief This module sets the real part of the complex number
- *  \param r a double
+ *  \param r a RealType
  */
-void Complex::setRealPart(double r) 
+template <typename RealType>
+void Complex<RealType>::setRealPart(RealType r) 
 {
   real_part = r;
 }
 
 /*!
  *  \brief This module sets the imaginary part of the complex number
- *  \param i a double
+ *  \param i a RealType
  */
-void Complex::setImaginaryPart(double i) 
+template <typename RealType>
+void Complex<RealType>::setImaginaryPart(RealType i) 
 {
   imag_part = i;
 }
@@ -80,9 +89,10 @@ void Complex::setImaginaryPart(double i)
 /*!
  *  \brief This module assigns a complex number
  *  \param source a reference to a Complex
- *  \return a Complex number
+ *  \return a Complex<RealType> number
  */
-Complex Complex::operator=(const Complex &source)
+template <typename RealType>
+Complex<RealType> Complex<RealType>::operator=(const Complex<RealType> &source)
 {
   if (this != &source){
     real_part = source.real_part;
@@ -96,7 +106,8 @@ Complex Complex::operator=(const Complex &source)
  *  \param other a reference to a Complex
  *  \return Sum of this number and other
  */
-Complex& Complex::operator+=(const Complex &other)
+template <typename RealType>
+Complex<RealType>& Complex<RealType>::operator+=(const Complex<RealType> &other)
 {
   real_part += other.real();
   imag_part += other.imag();
@@ -108,9 +119,10 @@ Complex& Complex::operator+=(const Complex &other)
  *  \param other a reference to a Complex
  *  \return Sum of two complex numbers
  */
-Complex Complex::operator+(const Complex &other)
+template <typename RealType>
+Complex<RealType> Complex<RealType>::operator+(const Complex<RealType> &other)
 {
-  return Complex(*this)+=other;
+  return Complex<RealType>(*this)+=other;
 }
 
 /*!
@@ -118,7 +130,8 @@ Complex Complex::operator+(const Complex &other)
  *  \param other a reference to a Complex
  *  \return Difference of this number and other
  */
-Complex& Complex::operator-=(const Complex &other)
+template <typename RealType>
+Complex<RealType>& Complex<RealType>::operator-=(const Complex<RealType> &other)
 {
   real_part -= other.real();
   imag_part -= other.imag();
@@ -130,9 +143,10 @@ Complex& Complex::operator-=(const Complex &other)
  *  \param other a reference to a Complex
  *  \return Difference of two complex numbers
  */
-Complex Complex::operator-(const Complex &other)
+template <typename RealType>
+Complex<RealType> Complex<RealType>::operator-(const Complex<RealType> &other)
 {
-  return Complex(*this)-=other;
+  return Complex<RealType>(*this)-=other;
 }
 
 /*!
@@ -140,10 +154,11 @@ Complex Complex::operator-(const Complex &other)
  *  \param other a reference to a Complex
  *  \return Product of this number and other
  */
-Complex& Complex::operator*=(const Complex &other)
+template <typename RealType>
+Complex<RealType>& Complex<RealType>::operator*=(const Complex<RealType> &other)
 {
-  double x = real_part * other.real() - imag_part * other.imag();
-  double y = imag_part * other.real() + real_part * other.imag();
+  RealType x = real_part * other.real() - imag_part * other.imag();
+  RealType y = imag_part * other.real() + real_part * other.imag();
   real_part = x;
   imag_part = y;
   return *this;
@@ -154,17 +169,19 @@ Complex& Complex::operator*=(const Complex &other)
  *  \param other a reference to a Complex
  *  \return Product of two complex numbers
  */
-Complex Complex::operator*(const Complex &other)
+template <typename RealType>
+Complex<RealType> Complex<RealType>::operator*(const Complex<RealType> &other)
 {
-  return Complex(*this)*=other;
+  return Complex<RealType>(*this)*=other;
 }
 
 /*!
  *  \brief This module multiplies the current complex number with a scalar
- *  \param c a double
+ *  \param c a RealType
  *  \return the product
  */
-Complex& Complex::operator*=(double c)
+template <typename RealType>
+Complex<RealType>& Complex<RealType>::operator*=(RealType c)
 {
   real_part *= c;
   imag_part *= c;
@@ -173,12 +190,13 @@ Complex& Complex::operator*=(double c)
 
 /*!
  *  \brief This module multiplies a complex number with a scalar
- *  \param c a double
+ *  \param c a RealType
  *  \return the product
  */
-Complex Complex::operator*(double c)
+template <typename RealType>
+Complex<RealType> Complex<RealType>::operator*(RealType c)
 {
-  return Complex(*this)*=c;
+  return Complex<RealType>(*this)*=c;
 }
 
 /*!
@@ -186,15 +204,16 @@ Complex Complex::operator*(double c)
  *  \param other a reference to a Complex
  *  \return Division of this number and other
  */
-Complex& Complex::operator/=(const Complex &other)
+template <typename RealType>
+Complex<RealType>& Complex<RealType>::operator/=(const Complex<RealType> &other)
 {
   if (fabs(other.real()) < ZERO && fabs(other.imag()) < ZERO) {
     cout << "Error: division by zero" << endl;
     exit(1);
   }
-  double mod = other.modulus();
-  double x = real_part * other.real() + imag_part * other.imag();
-  double y = imag_part * other.real() - real_part * other.imag();
+  RealType mod = other.modulus();
+  RealType x = real_part * other.real() + imag_part * other.imag();
+  RealType y = imag_part * other.real() - real_part * other.imag();
   real_part = x / (mod * mod);
   imag_part = y / (mod * mod);
   return *this;
@@ -205,17 +224,19 @@ Complex& Complex::operator/=(const Complex &other)
  *  \param other a reference to a Complex
  *  \return Division of two complex numbers
  */
-Complex Complex::operator/(const Complex &other)
+template <typename RealType>
+Complex<RealType> Complex<RealType>::operator/(const Complex<RealType> &other)
 {
-  return Complex(*this)/=other;
+  return Complex<RealType>(*this)/=other;
 }
 
 /*!
  *  \brief This module divides the current complex number with a scalar
- *  \param c a double
+ *  \param c a RealType
  *  \return the result of division
  */
-Complex& Complex::operator/=(double c)
+template <typename RealType>
+Complex<RealType>& Complex<RealType>::operator/=(RealType c)
 {
   if (fabs(c) < ZERO) {
     cout << "Error: division by zero" << endl;
@@ -228,33 +249,39 @@ Complex& Complex::operator/=(double c)
 
 /*!
  *  \brief This module divides a complex number with a scalar
- *  \param c a double
+ *  \param c a RealType
  *  \return the result of division
  */
-Complex Complex::operator/(double c)
+template <typename RealType>
+Complex<RealType> Complex<RealType>::operator/(RealType c)
 {
-  return Complex(*this)/=c;
+  return Complex<RealType>(*this)/=c;
 }
 
 /*!
  *  \brief This module computes the square root of the complex number.
  *  \return the square root
  */
-Complex Complex::squareRoot()
+template <typename RealType>
+Complex<RealType> Complex<RealType>::squareRoot()
 {
   if (fabs(imag_part) > ZERO) {
-    double mod = modulus();
-    double x = sqrt((real_part + mod) / 2);
-    double y = sign(imag_part) * sqrt((-real_part + mod) / 2);
-    return Complex(x,y);
+    RealType mod = modulus();
+    RealType x = sqrt((real_part + mod) / 2);
+    RealType y = sign(imag_part) * sqrt((-real_part + mod) / 2);
+    return Complex<RealType>(x,y);
   } else {
     if (real_part >= 0) {
-      double x = sqrt(real_part);
-      return Complex(x,0);
+      RealType x = sqrt(real_part);
+      return Complex<RealType>(x,0);
     } else {
-      double x = sqrt(-real_part);
-      return Complex(0,x);
+      RealType x = sqrt(-real_part);
+      return Complex<RealType>(0,x);
     }
   }
 }
+
+template class Complex<float>;
+template class Complex<double>;
+template class Complex<long double>;
 

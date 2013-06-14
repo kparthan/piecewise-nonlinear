@@ -4,6 +4,7 @@
 #include "Header.h"
 #include "Complex.h"
 
+template <typename RealType>
 class Polynomial
 {
   private:
@@ -12,10 +13,10 @@ class Polynomial
 
     //! Coefficients of the polynomial
     //! # of coefficients = degree + 1
-    vector<double> coefficients, originalCoefficients;
+    vector<RealType> coefficients,originalCoefficients;
 
     //! The real roots
-    vector<double> realRoots;
+    vector<RealType> realRoots;
 
     //! Computes the root of the linear equation
     void solveLinear();
@@ -30,86 +31,86 @@ class Polynomial
     void solveQuartic();
 
     //! Computes a real root using Newton's method
-    double solveNewtonMethod();
+    RealType solveNewtonMethod();
 
     //! Computes a real root using Newton's method
-    double solveBisectionMethod();
+    RealType solveBisectionMethod();
 
     //! Division of the polynomial by a linear expression
-    vector<double> division(const vector<double> &, double);
+    vector<RealType> division(const vector<RealType> &, RealType);
 
     //! Division of the polynomial by a quadratic expression
-    vector<double> division(const vector<double> &, double, double);
+    vector<RealType> division(const vector<RealType> &, RealType, RealType);
 
   public:
     //! Null constructor
     Polynomial();
 
     //! Constructor
-    Polynomial(const vector<double> &);
+    Polynomial(const vector<RealType> &);
 
     //! Copy constructor
-    Polynomial(const Polynomial &);
+    Polynomial(const Polynomial<RealType> &);
 
     //! Assignment operator
-    Polynomial operator=(const Polynomial &);
+    Polynomial operator=(const Polynomial<RealType> &);
  
                             /* Accessor functions */
     //! Gets the degree of the polynomial
     int getDegree();
 
     //! Gets the coefficients of the polynomial
-    double getCoefficients(unsigned);
+    RealType getCoefficients(unsigned);
 
     //! Gets all the coefficients
-    vector<double> getCoefficients();
+    vector<RealType> getCoefficients();
 
     //! Prints the details about the polynomial -- for testing purposes
     void print();
 
                             /* Utility functions */
     //! Computes the value of the polynomial
-    double value(double);
+    RealType value(RealType);
 
     //! Preprocess to normalize and remove trivial roots 
-    Polynomial preprocess();
+    Polynomial<RealType> preprocess();
 
     //! Scales the coefficients so that the modulus of the 
     //! maximum coefficient is 1
     void normalize();
 
     //! Removes trivial roots
-    Polynomial removeTrivialRoots();
+    Polynomial<RealType> removeTrivialRoots();
 
     //! Division by a linear expression
-    vector<double> divide(double, double);
+    vector<RealType> divide(RealType, RealType);
 
     //! Division by a quadratic expression
-    vector<double> divide(double, double, double);
+    vector<RealType> divide(RealType, RealType, RealType);
 
     //! Division by an expression of degree (n-1)
-    vector<double> divide(const vector<double> &);
+    vector<RealType> divide(const vector<RealType> &);
 
     //! Division by a polynomial of any degree
-    vector<double> divide(Polynomial &);
+    vector<RealType> divide(Polynomial<RealType> &);
 
     //! Derivative of the polynomial
-    Polynomial derivative();
+    Polynomial<RealType> derivative();
 
     //! Computes the bound of roots
-    double getBoundOnRoots();
+    RealType getBoundOnRoots();
 
     //! Constructs the Sturm sequence
-    vector<Polynomial> sturmSequence();
+    vector<Polynomial<RealType>> sturmSequence();
 
     //! Computes the number of distinct real roots of the polynomial
     int countDistinctRealRoots();
 
     //! Computes the real roots of lower order polynomials
-    vector<double> solveLowerOrder();
+    vector<RealType> solveLowerOrder();
 
     //! Computes the real roots of the polynomial
-    vector<double> computeRealRoots();
+    vector<RealType> computeRealRoots();
 };
 
 #endif

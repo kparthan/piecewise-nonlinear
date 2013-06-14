@@ -75,7 +75,7 @@ class Segment
 
                             /* Utility funcitons */
     //! Constructs a plane used along with a Bezier curve 
-    Plane<double> constructPlane(BezierCurve &);
+    Plane<double> constructPlane(BezierCurve<double> &);
 
     //! Fits a linear model
     void fitLinear();
@@ -95,20 +95,20 @@ class Segment
     OptimalFit fitBezierCurve(int);
 
     //! Computes deviations from a Bezier curve 
-    vector<array<double,3>> computeDeviations(BezierCurve &);
+    vector<array<double,3>> computeDeviations(BezierCurve<double> &);
 
     //! Computes deviations from a Bezier curve 
-    vector<array<double,3>> getDeviations(BezierCurve &);
+    vector<array<double,3>> getDeviations(BezierCurve<double> &);
 
     //! Computes the message length for the segment described by a 
     //! Bezier curve
-    double messageLength(BezierCurve &, vector<array<double,3>> &);
+    double messageLength(BezierCurve<double> &, vector<array<double,3>> &);
 
     //!
-    double messageLengthMML(BezierCurve &, double);
+    double messageLengthMML(BezierCurve<double> &, double);
 
     //!
-    double rootMeanSquaredError(BezierCurve &);
+    double rootMeanSquaredError(BezierCurve<double> &);
 
     //! 
     OptimalFit stateUsingCurve(OptimalFit &);

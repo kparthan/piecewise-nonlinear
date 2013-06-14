@@ -3,84 +3,85 @@
 
 #include "Header.h"
 
+template <typename RealType>
 class Complex
 {
   private:
-    double real_part, imag_part;
+    RealType real_part, imag_part;
 
   public:
   //! Null constructor
   Complex();
 
   //! Constructor
-  Complex(double, double);
+  Complex(RealType, RealType);
 
   //! Copy constructor
-  Complex(const Complex &);
+  Complex(const Complex<RealType> &);
 
                             /* Accessor functions */
   //! Gets the real part
-  double real() const;
+  RealType real() const;
 
   //! Gets the imaginary part
-  double imag() const;
+  RealType imag() const;
 
   //! Gets the modulus of the complex number
-  double modulus() const;
+  RealType modulus() const;
 
   //! Prints the real and imaginary part
   void print();
 
                             /* Mutator functions */
   //! Sets the real part
-  void setRealPart(double);
+  void setRealPart(RealType);
 
   //! Sets the imaginary part
-  void setImaginaryPart(double);
+  void setImaginaryPart(RealType);
 
                            /* Operator overloading */
   //! Assignment operator
-  Complex operator=(const Complex &);
+  Complex<RealType> operator=(const Complex<RealType> &);
 
   //! Addition operator
-  Complex& operator+=(const Complex &);
+  Complex<RealType>& operator+=(const Complex<RealType> &);
      
   //! Addition operator
-  Complex operator+(const Complex &);
+  Complex<RealType> operator+(const Complex<RealType> &);
   
   //! Subtraction operator
-  Complex& operator-=(const Complex &);
+  Complex<RealType>& operator-=(const Complex<RealType> &);
 
   //! Subtraction operator
-  Complex operator-(const Complex &);
+  Complex<RealType> operator-(const Complex<RealType> &);
   
   //! Product operator
-  Complex& operator*=(const Complex &);
+  Complex<RealType>& operator*=(const Complex<RealType> &);
 
   //! Product operator
-  Complex operator*(const Complex &);
+  Complex<RealType> operator*(const Complex<RealType> &);
 
   //! Product operator
-  Complex& operator*=(double);
+  Complex<RealType>& operator*=(RealType);
   
   //! Product operator
-  Complex operator*(double);
+  Complex<RealType> operator*(RealType);
 
   //! Division operator
-  Complex& operator/=(const Complex &);
+  Complex<RealType>& operator/=(const Complex<RealType> &);
 
   //! Division operator
-  Complex operator/(const Complex &);
+  Complex<RealType> operator/(const Complex<RealType> &);
   
   //! Division operator
-  Complex& operator/=(double);
+  Complex<RealType>& operator/=(RealType);
 
   //! Division operator
-  Complex operator/(double);
+  Complex<RealType> operator/(RealType);
 
                             /* Utility functions */
   //! Computes the square root of the complex number
-  Complex squareRoot();
+  Complex<RealType> squareRoot();
 };
 
 #endif

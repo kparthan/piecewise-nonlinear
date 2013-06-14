@@ -147,7 +147,7 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
     // construct the curve as a protein residue for visualizing in Pymol
     residue_id = "C" + boost::lexical_cast<string>(i);
     shared_ptr<Residue> curve_residue = make_shared<Residue>(residue_id);
-    BezierCurve curve(control_points);
+    BezierCurve<double> curve(control_points);
     double t = 0;
     for (int k=1; k<1.0/DELTA_T; k++) {
       t += DELTA_T;

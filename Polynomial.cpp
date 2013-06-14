@@ -4,18 +4,20 @@
 /*!
  *  \brief This module instantiates a null Polynomial object.
  */
-Polynomial::Polynomial() : degree(-1)
+template <typename RealType>
+Polynomial<RealType>::Polynomial() : degree(-1)
 {}
 
 /*!
  *  \brief This is a constructor function used to instantiate a Polynomial
  *  object. Polynomial represented as: 
  *  a0 + a1 * x + a2 * x^2 + a3 * x^3 + ... + an * x^n
- *  \param coefficients a reference to a vector<double>
+ *  \param coefficients a reference to a vector<RealType>
  */
-Polynomial::Polynomial(const vector<double> &coefficients) : 
-                       coefficients(coefficients), 
-                       originalCoefficients(coefficients)
+template <typename RealType>
+Polynomial<RealType>::Polynomial(const vector<RealType> &coefficients) : 
+                                 coefficients(coefficients), 
+                                 originalCoefficients(coefficients)
 {
   if (coefficients.size() > 0) {
     degree = coefficients.size() - 1;
@@ -33,9 +35,12 @@ Polynomial::Polynomial(const vector<double> &coefficients) :
  *  \brief This module is used to create a copy of a Polynomial object
  *  \param source a reference to a Polynomial
  */
-Polynomial::Polynomial(const Polynomial &source) : degree(source.degree),
-            coefficients(source.coefficients), realRoots(source.realRoots),
-            originalCoefficients(source.originalCoefficients)
+template <typename RealType>
+Polynomial<RealType>::Polynomial(const Polynomial<RealType> &source) : 
+                                 degree(source.degree),
+                                 coefficients(source.coefficients), 
+                                 realRoots(source.realRoots),
+                                 originalCoefficients(source.originalCoefficients)
 {}
 
 /*!
@@ -43,7 +48,9 @@ Polynomial::Polynomial(const Polynomial &source) : degree(source.degree),
  *  \param source a reference to a Polynomial
  *  \return a Polynomial
  */
-Polynomial Polynomial::operator=(const Polynomial &source)
+template <typename RealType>
+Polynomial<RealType> Polynomial<RealType>::operator=
+                                           (const Polynomial<RealType> &source)
 {
   if (this != &source) {
     degree = source.degree;
@@ -57,7 +64,8 @@ Polynomial Polynomial::operator=(const Polynomial &source)
 /*!
  *  \brief This module returns the degree of the polynomial
  */
-int Polynomial::getDegree()
+template <typename RealType>
+int Polynomial<RealType>::getDegree()
 {
   return degree;
 }
@@ -67,7 +75,8 @@ int Polynomial::getDegree()
  *  \param exponent an unsigned integer
  *  \return the coefficient
  */
-double Polynomial::getCoefficients(unsigned exponent)
+template <typename RealType>
+RealType Polynomial<RealType>::getCoefficients(unsigned exponent)
 {
   return coefficients[exponent];
 }
@@ -76,7 +85,8 @@ double Polynomial::getCoefficients(unsigned exponent)
  *  \brief This module returns all the coefficients
  *  \return the coefficients
  */
-vector<double> Polynomial::getCoefficients()
+template <typename RealType>
+vector<RealType> Polynomial<RealType>::getCoefficients()
 {
   return originalCoefficients;
 }
@@ -84,7 +94,8 @@ vector<double> Polynomial::getCoefficients()
 /*!
  *  \brief This module prints the coefficients and the roots of the polynomial.
  */
-void Polynomial::print()
+template <typename RealType>
+void Polynomial<RealType>::print()
 {
   cout << "Degree of the polynomial: " << degree << endl;
   if (coefficients.size() > 0) {
@@ -108,12 +119,13 @@ void Polynomial::print()
 
 /*!
  *  \brief This module computes the function value for a given x
- *  \param x a double
+ *  \param x a RealType
  *  \return the function value
  */
-double Polynomial::value(double x)
+template <typename RealType>
+RealType Polynomial<RealType>::value(RealType x)
 {
-  double val=0,exponent=1;
+  RealType val=0,exponent=1;
   for (int i=0; i<=degree; i++) {
     val += coefficients[i] * exponent;
     exponent *= x;
@@ -126,11 +138,12 @@ double Polynomial::value(double x)
  *  Solve: a x + b = 0
  *  Root x = -b / a
  */
-void Polynomial::solveLinear()
+template <typename RealType>
+void Polynomial<RealType>::solveLinear()
 {
-  double a = coefficients[1];
-  double b = coefficients[0];
-  double val = -b / a;
+  RealType a = coefficients[1];
+  RealType b = coefficients[0];
+  RealType val = -b / a;
   realRoots.push_back(val);
 }
 
@@ -140,17 +153,18 @@ void Polynomial::solveLinear()
  *  Let x1 and x2 be the roots of the equation. Numerically stable
  *  roots are computed as follows:
  */
-void Polynomial::solveQuadratic()
+template <typename RealType>
+void Polynomial<RealType>::solveQuadratic()
 {
-  double a = coefficients[2];
-  double b = coefficients[1];
-  double c = coefficients[0];
+  RealType a = coefficients[2];
+  RealType b = coefficients[1];
+  RealType c = coefficients[0];
 
-  double discriminant = b * b - 4 * a * c;
+  RealType discriminant = b * b - 4 * a * c;
   if (discriminant >= 0){
     /* roots are real */
-    double sqrtDiscriminant = sqrt(discriminant);
-    double x1,x2;
+    RealType sqrtDiscriminant = sqrt(discriminant);
+    RealType x1,x2;
     if (b >= 0) {
       x1 = (-b - sqrtDiscriminant) / (2 * a);
       x2 = (2 * c) / (-b - sqrtDiscriminant);
@@ -171,30 +185,31 @@ void Polynomial::solveQuadratic()
  *  Let x1, x2, and x3 be the roots of the equation. Numerically stable 
  *  roots are computed as follows:
  */
-void Polynomial::solveCubic()
+template <typename RealType>
+void Polynomial<RealType>::solveCubic()
 {
   int i;
   /* form a monic polynomial: x^3 + a x^2 + b x + c = 0 */
-  vector<double> newCoefficients;
+  vector<RealType> newCoefficients;
   for (i=0; i<3; i++) {
     newCoefficients.push_back(coefficients[i]/coefficients[3]);
   }
   newCoefficients.push_back(1);
-  Polynomial monic(newCoefficients);
+  Polynomial<RealType> monic(newCoefficients);
   /* a,b,c are real coefficients */
-  double a = monic.getCoefficients(2);
-  double b = monic.getCoefficients(1);
-  double c = monic.getCoefficients(0);
+  RealType a = monic.getCoefficients(2);
+  RealType b = monic.getCoefficients(1);
+  RealType c = monic.getCoefficients(0);
 
-  double k1 = a / 3.0 ; 
-  double Q = (a * a - 3 * b) / 9.0;
-  double R = (2 * a * a * a - 9 * a * b + 27 * c) / 54.0;
-  double diff = R * R - Q * Q * Q;
+  RealType k1 = a / 3.0 ; 
+  RealType Q = (a * a - 3 * b) / 9.0;
+  RealType R = (2 * a * a * a - 9 * a * b + 27 * c) / 54.0;
+  RealType diff = R * R - Q * Q * Q;
   if (diff < 0) {
     /* all three roots are real */
-    double theta = acos(R / sqrt(Q * Q * Q));
-    double x[3];
-    double k2 = -2 * sqrt(Q);
+    RealType theta = acos(R / sqrt(Q * Q * Q));
+    RealType x[3];
+    RealType k2 = -2 * sqrt(Q);
     x[0] = k2 * cos (theta/3) - k1;
     x[1] = k2 * cos ((theta+2*PI)/3) - k1;
     x[2] = k2 * cos ((theta-2*PI)/3) - k1;
@@ -203,15 +218,15 @@ void Polynomial::solveCubic()
     } 
   } else {
     /* has imaginary roots */
-    double k2 = fabs(R) + sqrt(diff);
-    double A = -sign(R) * cubeRoot(k2); 
-    double B = 0;
+    RealType k2 = fabs(R) + sqrt(diff);
+    RealType A = -sign(R) * cubeRoot(k2); 
+    RealType B = 0;
     if (fabs(A) > ZERO) {
-      B = Q / (double)A;
+      B = Q / (RealType)A;
     }
-    double AplusB = A + B;
-    double AminusB = A - B;
-    double x1 = AplusB - k1;
+    RealType AplusB = A + B;
+    RealType AminusB = A - B;
+    RealType x1 = AplusB - k1;
     realRoots.push_back(x1);
   }
 }
@@ -219,61 +234,62 @@ void Polynomial::solveCubic()
 /*!
  *  \brief This module computes the roots of the quartic analytically
  */
-void Polynomial::solveQuartic()
+template <typename RealType>
+void Polynomial<RealType>::solveQuartic()
 {
   /* form a monic polynomial: x^4 + p x^3 + q x^2 + r x + s = 0 */
-  vector<double> newCoefficients;
+  vector<RealType> newCoefficients;
   for (int i=0; i<4; i++) {
     newCoefficients.push_back(coefficients[i]/coefficients[4]);
   }
   newCoefficients.push_back(1);
-  Polynomial monic(newCoefficients);
+  Polynomial<RealType> monic(newCoefficients);
   /* p,q,r, and s are real coefficients */
-  double p = monic.getCoefficients(3);
-  double q = monic.getCoefficients(2);
-  double r = monic.getCoefficients(1);
-  double s = monic.getCoefficients(0);
+  RealType p = monic.getCoefficients(3);
+  RealType q = monic.getCoefficients(2);
+  RealType r = monic.getCoefficients(1);
+  RealType s = monic.getCoefficients(0);
 
   /* reduction to a cubic */
   /* z^3 - q z^2 + (pr-4s) z + (4qs - r^2 - p^2 s) = 0 */
-  vector<double> transformed(4,0);
+  vector<RealType> transformed(4,0);
   transformed[0] = 4 * q * s - r * r - p * p * s;
   transformed[1] = p * r - 4 * s;
   transformed[2] = -q;
   transformed[3] = 1;
-  Polynomial cubic(transformed);
-  vector<double> z = cubic.solveLowerOrder();
+  Polynomial<RealType> cubic(transformed);
+  vector<RealType> z = cubic.solveLowerOrder();
 
-  double z1 = z[0];
-  double tmp = p * p / 4 - q + z1;
-  Complex T(tmp,0);
-  Complex R = T.squareRoot();
-  Complex D,E;
+  RealType z1 = z[0];
+  RealType tmp = p * p / 4 - q + z1;
+  Complex<RealType> T(tmp,0);
+  Complex<RealType> R = T.squareRoot();
+  Complex<RealType> D,E;
   if (fabs(R.real()) < ZERO && fabs(R.imag()) < ZERO) {
     tmp = p * p * 0.75 - 2 * q;
-    Complex A(tmp,0);
+    Complex<RealType> A(tmp,0);
     tmp = z1 * z1 - 4 * s;
-    T = Complex(tmp,0);
-    Complex B = T.squareRoot();
+    T = Complex<RealType>(tmp,0);
+    Complex<RealType> B = T.squareRoot();
     B *= 2;
-    Complex C = A + B;
+    Complex<RealType> C = A + B;
     D = C.squareRoot();
     C = A - B;
     E = C.squareRoot();
   } else {
     tmp = p * p * 0.75 - 2 * q;
-    T = Complex(tmp,0);
-    Complex A = T - R * R;
+    T = Complex<RealType>(tmp,0);
+    Complex<RealType> A = T - R * R;
     tmp = p * q - 2 * r - p * p * p / 4;
-    T = Complex(tmp,0);
-    Complex B = T / R;
-    Complex C = A + B;
+    T = Complex<RealType>(tmp,0);
+    Complex<RealType> B = T / R;
+    Complex<RealType> C = A + B;
     D = C.squareRoot();
     C = A - B;
     E = C.squareRoot();
   }
-  T = Complex(-p/4.0,0);
-  Complex X[4];
+  T = Complex<RealType>(-p/4.0,0);
+  Complex<RealType> X[4];
   X[0] = T + (R + D) / 2;
   X[1] = T + (R - D) / 2;
   X[2] = T - (R - E) / 2;
@@ -290,9 +306,10 @@ void Polynomial::solveQuartic()
  *  Newton's method.
  *  \return a real root
  */
-double Polynomial::solveNewtonMethod()
+template <typename RealType>
+RealType Polynomial<RealType>::solveNewtonMethod()
 {
-  double x = getBoundOnRoots();
+  RealType x = getBoundOnRoots();
   if (fabs(value(x)) < ZERO) {
     return x;
   }
@@ -300,27 +317,27 @@ double Polynomial::solveNewtonMethod()
     return -x;
   }
   if (degree % 2 == 1) {  // polynomial of odd degree
-    double roots_product = -coefficients[0] / coefficients[degree];
+    RealType roots_product = -coefficients[0] / coefficients[degree];
     if (roots_product < 0) {
       x = -x;
     }
   } else { // polynomial of even degree
-    double roots_sum = -coefficients[degree-1] / coefficients[degree];
-    double roots_product = coefficients[0] / coefficients[degree];
+    RealType roots_sum = -coefficients[degree-1] / coefficients[degree];
+    RealType roots_product = coefficients[0] / coefficients[degree];
     if (roots_product > 0 && roots_sum < 0) {
       x = -x;
     }
   }
   while(1) {
-    vector<double> b = divide(1,-x);
-    vector<double> quotient;
-    double remainder = b[0];
+    vector<RealType> b = divide(1,-x);
+    vector<RealType> quotient;
+    RealType remainder = b[0];
     for (int i=1; i<b.size(); i++) {
       quotient.push_back(b[i]);
     }
-    Polynomial q(quotient);
-    double slope = q.value(x);
-    double diff = remainder / slope;
+    Polynomial<RealType> q(quotient);
+    RealType slope = q.value(x);
+    RealType diff = remainder / slope;
     x -= diff;
     if (fabs(diff) < TOLERANCE) {
       break;
@@ -334,23 +351,24 @@ double Polynomial::solveNewtonMethod()
  *  using the interval bisection method.
  *  \return a real root
  */
-double Polynomial::solveBisectionMethod()
+template <typename RealType>
+RealType Polynomial<RealType>::solveBisectionMethod()
 {
-  double x = getBoundOnRoots();
+  RealType x = getBoundOnRoots();
   
-  double fa = value(-x);
+  RealType fa = value(-x);
   if (fabs(fa) < ZERO) {
     return -x;
   }
-  double fb = value(x);
+  RealType fb = value(x);
   if (fabs(fb) < ZERO) {
     return x;
   }
 
-  double a = -x, b = x;
-  double mid = 0; 
+  RealType a = -x, b = x;
+  RealType mid = 0; 
   while(1) {
-    double fmid = value(mid);
+    RealType fmid = value(mid);
     if (fabs(fmid) < ZERO) {
       break;
     } else if (sign(fa) != sign(fmid)) {
@@ -358,7 +376,7 @@ double Polynomial::solveBisectionMethod()
     } else {
       a = mid;
     }
-    double previous = mid;
+    RealType previous = mid;
     mid = (a + b) / 2;
     if (fabs(mid - previous) < TOLERANCE) {
       break;
@@ -372,33 +390,34 @@ double Polynomial::solveBisectionMethod()
  *  \brief This module computes the real roots of a polynomial
  *  \return the real roots
  */
-vector<double> Polynomial::computeRealRoots()
+template <typename RealType>
+vector<RealType> Polynomial<RealType>::computeRealRoots()
 {
-  //Polynomial p = preprocess();
-  Polynomial p(*this);
-  vector<double> real_roots;
+  //Polynomial<RealType> p = preprocess();
+  Polynomial<RealType> p(*this);
+  vector<RealType> real_roots;
 
   int num_real = p.countDistinctRealRoots();
   while (1) {
     if (p.getDegree() <= 4) {
-      vector<double> roots = p.solveLowerOrder();
+      vector<RealType> roots = p.solveLowerOrder();
       for(int i=0; i<roots.size(); i++) {
         real_roots.push_back(roots[i]);
       }
       break;
     }
-    double x = p.solveBisectionMethod();
-    //double x = p.solveNewtonMethod();
+    RealType x = p.solveBisectionMethod();
+    //RealType x = p.solveNewtonMethod();
     real_roots.push_back(x);
-    vector<double> b = p.divide(1,-x);
-    vector<double> quotient;
+    vector<RealType> b = p.divide(1,-x);
+    vector<RealType> quotient;
     for (int i=1; i<b.size(); i++) {
       quotient.push_back(b[i]);
     }
     if (real_roots.size() == num_real) {
       break;
     }
-    p = Polynomial(quotient);
+    p = Polynomial<RealType>(quotient);
   }
   if (realRoots.size() > 0) {
     real_roots.push_back(0);
@@ -411,7 +430,8 @@ vector<double> Polynomial::computeRealRoots()
  *  using analytical methods
  *  \return the real roots
  */
-vector<double> Polynomial::solveLowerOrder()
+template <typename RealType>
+vector<RealType> Polynomial<RealType>::solveLowerOrder()
 {
   switch(degree) {
     case 1:
@@ -438,7 +458,8 @@ vector<double> Polynomial::solveLowerOrder()
  *  polynomial whose constant term is non-zero.
  *  \return a preprocessed Polynomial
  */
-Polynomial Polynomial::preprocess()
+template <typename RealType>
+Polynomial<RealType> Polynomial<RealType>::preprocess()
 {
   normalize();
 
@@ -454,9 +475,10 @@ Polynomial Polynomial::preprocess()
  *     during the calculation of the value of the polynomial.
  *  2. Gets a more accurate approximation of a zero of the polynomial.
  */
-void Polynomial::normalize()
+template <typename RealType>
+void Polynomial<RealType>::normalize()
 {
-  double max = absoluteMaximum(coefficients);
+  RealType max = absoluteMaximum(coefficients);
   for (int i=0; i<=degree; i++) {
     coefficients[i] /= max;
   }
@@ -467,7 +489,8 @@ void Polynomial::normalize()
  *  polynomial with a non-zero constant term.
  *  \return a Polynomial with no trivial roots
  */
-Polynomial Polynomial::removeTrivialRoots()
+template <typename RealType>
+Polynomial<RealType> Polynomial<RealType>::removeTrivialRoots()
 {
   int i = 0;
   /* check if 0 is a root */
@@ -475,19 +498,19 @@ Polynomial Polynomial::removeTrivialRoots()
     i++;
   }
   if (i == 0) {
-    return Polynomial(*this);
+    return Polynomial<RealType>(*this);
   } else if (i == degree) {
     realRoots.push_back(0);
-    vector<double> residual(2,0);
+    vector<RealType> residual(2,0);
     residual[1] = 1;
-    return Polynomial(residual);
+    return Polynomial<RealType>(residual);
   } else {
     realRoots.push_back(0);
-    vector<double> residual(degree-i+1,0);
+    vector<RealType> residual(degree-i+1,0);
     for (int j=0; j<degree-i+1; j++) {
       residual[j] = coefficients[j+i];
     }
-    return Polynomial(residual);
+    return Polynomial<RealType>(residual);
   }
 }
 
@@ -501,14 +524,16 @@ Polynomial Polynomial::removeTrivialRoots()
  *  following recurrence relations:
  *    bn = an
  *    bi = ai + r b_{i+1}, for i = n-1,n-2,...,0
- *  \param a a reference to a vector<double>
- *  \param r a double
+ *  \param a a reference to a vector<RealType>
+ *  \param r a RealType
  *  \return the coefficients of the quotient and the remainder 
  */
-vector<double> Polynomial::division(const vector<double> &a, double r)
+template <typename RealType>
+vector<RealType> Polynomial<RealType>::division(const vector<RealType> &a,
+                                                RealType r)
 {
   int n = a.size();
-  vector<double> b(n,0);
+  vector<RealType> b(n,0);
   b[n-1] = a[n-1];
   for (int i=n-2; i>=0; i--) {
     b[i] = a[i] + r * b[i+1];
@@ -519,14 +544,15 @@ vector<double> Polynomial::division(const vector<double> &a, double r)
 /*!
  *  \brief This module divides the polynomial f(x) with a linear expression
  *  f(x) = Q(x) (a*x+b) + R(x) 
- *  \param a a double
- *  \param b a double
+ *  \param a a RealType
+ *  \param b a RealType
  *  \return the coefficients of the quotient and the remainder 
  */
-vector<double> Polynomial::divide(double a, double b)
+template <typename RealType>
+vector<RealType> Polynomial<RealType>::divide(RealType a, RealType b)
 {
-  double r = -b / a;
-  vector<double> result = division(coefficients,r);
+  RealType r = -b / a;
+  vector<RealType> result = division(coefficients,r);
   for (int i=0; i<result.size(); i++) {
     result[i] = result[i] / a;
   }
@@ -544,15 +570,17 @@ vector<double> Polynomial::divide(double a, double b)
  *  f(x) = a0 + a1 * x + a2 * x^2 + ... + an * x^n,
  *  Q(x) = b2 + b3 * x + b4 * x^2 + ... + bn * x^(n-2), and
  *  R(x) = b1 * x + b0
- *  \param coefficients a reference to a vector<double>
- *  \param r a double
- *  \param s a double
+ *  \param coefficients a reference to a vector<RealType>
+ *  \param r a RealType
+ *  \param s a RealType
  *  \return the coefficients of the quotient & the remainder polynomial
  */
-vector<double> Polynomial::division(const vector<double> &a, double r, double s)
+template <typename RealType>
+vector<RealType> Polynomial<RealType>::division(const vector<RealType> &a, 
+                                                RealType r, RealType s)
 {
   int n = a.size();
-  vector<double> b(n,0);
+  vector<RealType> b(n,0);
   b[n-1] = a[n-1];
   b[n-2] = a[n-2] + r * b[n-1];
   for (int i=n-3; i>=1; i--) {
@@ -565,15 +593,16 @@ vector<double> Polynomial::division(const vector<double> &a, double r, double s)
 /*!
  *  \brief This module divides the polynomial f(x) with a quadratic expression
  *  f(x) = Q(x) (a*x^2+b*x+c) + R(x) 
- *  \param a a double
- *  \param b a double
+ *  \param a a RealType
+ *  \param b a RealType
  *  \return the coefficients of the quotient and the remainder 
  */
-vector<double> Polynomial::divide(double a, double b, double c)
+template <typename RealType>
+vector<RealType> Polynomial<RealType>::divide(RealType a, RealType b, RealType c)
 {
-  double r = -b / a;
-  double s = -c / a;
-  vector<double> result = division(coefficients,r,s);
+  RealType r = -b / a;
+  RealType s = -c / a;
+  vector<RealType> result = division(coefficients,r,s);
   for (int i=0; i<result.size(); i++) {
     result[i] = result[i] / a;
   }
@@ -593,14 +622,15 @@ vector<double> Polynomial::divide(double a, double b, double c)
  *      b_{n-1} = (a_{n-1} - bn * d_{n-2}) / d_{n-1}
  *      bi = ai - b_{n-1} * di - bn * d_{i-1}, for i = n-2,n-3,...,2,1
  *      b0 = a0 - b_{n-1} * d0
- *  \param d a reference to a vector<double>
+ *  \param d a reference to a vector<RealType>
  *  \return the coefficients of the quotient and the remainder
  */
-vector<double> Polynomial::divide(const vector<double> &d)
+template <typename RealType>
+vector<RealType> Polynomial<RealType>::divide(const vector<RealType> &d)
 {
-  vector<double> a(coefficients);
+  vector<RealType> a(coefficients);
   int n = a.size();
-  vector<double> b(n,0);
+  vector<RealType> b(n,0);
   b[n-1] = a[n-1] / d[n-2];
   b[n-2] = (a[n-2] - b[n-1] * d[n-3]) / d[n-2];
   for (int i=n-3; i>=1; i--) {
@@ -677,13 +707,14 @@ vector<double> Polynomial::divide(const vector<double> &d)
  *  \param p a reference to a Polynomial
  *  \return the coefficients of the quotient and the remainder
  */
-vector<double> Polynomial::divide(Polynomial &p)
+template <typename RealType>
+vector<RealType> Polynomial<RealType>::divide(Polynomial<RealType> &p)
 {
   int n = degree + 1;
   int m = p.getDegree() + 1;
-  vector<double> d = p.getCoefficients();
-  vector<double> a = originalCoefficients;
-  vector<double> b(n,0);
+  vector<RealType> d = p.getCoefficients();
+  vector<RealType> a = originalCoefficients;
+  vector<RealType> b(n,0);
 
   if ((n-1) == (m-1)) {
     //  n = m
@@ -695,14 +726,14 @@ vector<double> Polynomial::divide(Polynomial &p)
     // n < 2m
     b[n-1] = a[n-1] / d[m-1];
     for (int j=n-2; j>=m-1; j--) {
-      double sum = 0;
+      RealType sum = 0;
       for (int k=j+1; k<=n-1; k++) {
         sum += b[k] * d[m-1+j-k];
       }
       b[j] = (a[j] - sum) / d[m-1];
     }
     for (int j=m-2; j>=0; j--) {
-      double sum = 0;
+      RealType sum = 0;
       for (int k=m-1; k<n; k++) {
         sum += b[k] * d[m-1+j-k];
       }
@@ -712,21 +743,21 @@ vector<double> Polynomial::divide(Polynomial &p)
     // n >= 2m
     b[n-1] = a[n-1] / d[m-1];
     for (int j=n-2; j>=n-m; j--) {
-      double sum = 0;
+      RealType sum = 0;
       for (int k=j+1; k<=n-1; k++) {
         sum += b[k] * d[m-1+j-k];
       }
       b[j] = (a[j] - sum) / d[m-1];
     }
     for (int j=n-m-1; j>=m-1; j--) {
-      double sum = 0;
+      RealType sum = 0;
       for (int k=1; k<=m-1; k++) {
         sum += b[j+k] * d[m-1-k];
       }
       b[j] = (a[j] - sum) / d[m-1];
     }
     for (int j=m-2; j>=0; j--) {
-      double sum = 0;
+      RealType sum = 0;
       for (int k=0; k<=j; k++) {
         sum += b[m-1+k] * d[j-k];
       }
@@ -740,18 +771,19 @@ vector<double> Polynomial::divide(Polynomial &p)
  *  \brief This module computes the derivative of the polynomial
  *  \return the polynomial after differentiation
  */
-Polynomial Polynomial::derivative()
+template <typename RealType>
+Polynomial<RealType> Polynomial<RealType>::derivative()
 {
-  vector<double> d;
+  vector<RealType> d;
   if (degree == 0) {
-    d = vector<double> (1,0);
+    d = vector<RealType> (1,0);
   } else {
-    d = vector<double> (degree,0);
+    d = vector<RealType> (degree,0);
     for (int i=0; i<d.size(); i++) {
       d[i] = (i+1) * coefficients[i+1];
     }
   }
-  return Polynomial(d);
+  return Polynomial<RealType>(d);
 }
 
 /*!
@@ -759,9 +791,10 @@ Polynomial Polynomial::derivative()
  *  the zeros of the polynomial lie.
  *  \return the bound
  */
-double Polynomial::getBoundOnRoots()
+template <typename RealType>
+RealType Polynomial<RealType>::getBoundOnRoots()
 {
-  double max = fabs(coefficients[0]);
+  RealType max = fabs(coefficients[0]);
   for (int i=1; i<coefficients.size()-1; i++) {
     if (fabs(coefficients[i]) > max) {
       max = fabs(coefficients[i]);
@@ -788,19 +821,20 @@ double Polynomial::getBoundOnRoots()
  *  of changes of sign in the sequence f0(b),...,fk(b).
  *  \return the Sturm sequence
  */
-vector<Polynomial> Polynomial::sturmSequence()
+template <typename RealType>
+vector<Polynomial<RealType>> Polynomial<RealType>::sturmSequence()
 {
   vector<Polynomial> sturm_sequence;
-  Polynomial current(*this);
+  Polynomial<RealType> current(*this);
   sturm_sequence.push_back(current);
-  Polynomial current_divisor = derivative();
+  Polynomial<RealType> current_divisor = derivative();
   int i;
 
   while(1) {
     sturm_sequence.push_back(current_divisor);
-    vector<double> b = current.divide(current_divisor);
+    vector<RealType> b = current.divide(current_divisor);
     int m = current_divisor.getDegree();
-    vector<double> r;
+    vector<RealType> r;
     for (i=0; i<m; i++) {
       r.push_back(-b[i]);
     }
@@ -819,7 +853,7 @@ vector<Polynomial> Polynomial::sturmSequence()
       break;
     }
     current = current_divisor;
-    current_divisor = Polynomial (r); // remainder
+    current_divisor = Polynomial<RealType>(r); // remainder
     if (r.size() == 1) { // stop
       sturm_sequence.push_back(current_divisor);
       break;
@@ -833,7 +867,8 @@ vector<Polynomial> Polynomial::sturmSequence()
  *  polynomial using Sturm's theorem.
  *  \return the number of distinct real roots
  */
-int Polynomial::countDistinctRealRoots()
+template <typename RealType>
+int Polynomial<RealType>::countDistinctRealRoots()
 {
   int lower = 0,lower_current,lower_previous;
   int upper = 0,upper_current,upper_previous;
@@ -863,4 +898,8 @@ int Polynomial::countDistinctRealRoots()
   }
   return lower - upper;
 }
+
+template class Polynomial<float>;
+template class Polynomial<double>;
+template class Polynomial<long double>;
 

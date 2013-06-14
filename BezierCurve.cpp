@@ -4,16 +4,18 @@
 /*!
  *  \brief Null comstructor
  */
-BezierCurve::BezierCurve() : degree(0), controlPoints(0)
+template <typename RealType>
+BezierCurve<RealType>::BezierCurve() : degree(0), controlPoints(0)
 {}
 
 /*!
  *  \brief This module is the constructor function to instantiate a 
  *  BezierCurve object
- *  \param controlPoints a reference to vector<Point<double>>
+ *  \param controlPoints a reference to vector<Point<RealType>>
  */
-BezierCurve::BezierCurve(vector<Point<double>> &controlPoints) : 
-                         controlPoints(controlPoints)
+template <typename RealType>
+BezierCurve<RealType>::BezierCurve(vector<Point<RealType>> &controlPoints) : 
+                                   controlPoints(controlPoints)
 {
   degree = controlPoints.size() - 1;
 }
@@ -23,7 +25,9 @@ BezierCurve::BezierCurve(vector<Point<double>> &controlPoints) :
  *  \param source a reference to a BezierCurve
  *  \return a BezierCurve
  */
-BezierCurve BezierCurve::operator=(const BezierCurve &source)
+template <typename RealType>
+BezierCurve<RealType> BezierCurve<RealType>::operator=
+                                          (const BezierCurve<RealType> &source)
 {
   if (this != &source) {
    degree = source.degree;
@@ -36,7 +40,8 @@ BezierCurve BezierCurve::operator=(const BezierCurve &source)
  *  \brief This module returns the degree of tbe curve
  *  \return the degree of the polynomial curve
  */
-int BezierCurve::getDegree()
+template <typename RealType>
+int BezierCurve<RealType>::getDegree()
 {
   return degree;
 }
@@ -46,7 +51,8 @@ int BezierCurve::getDegree()
  *  \param index an integer
  *  \return a control point
  */
-Point<double> BezierCurve::getControlPoint(int index)
+template <typename RealType>
+Point<RealType> BezierCurve<RealType>::getControlPoint(int index)
 {
   if (index < 0 || index > degree) {
     cout << "Control point index out of bounds ..." << endl;
@@ -59,25 +65,26 @@ Point<double> BezierCurve::getControlPoint(int index)
 /*!
  *  \brief This module returns a point corresponding to the the parameter
  *  't' on the curve.
- *  \param t a double
+ *  \param t a RealType
  *  \return a Point on the curve
  */
-Point<double> BezierCurve::getPoint(double t)
+template <typename RealType>
+Point<RealType> BezierCurve<RealType>::getPoint(RealType t)
 {
   if (t == 0) {
     return controlPoints[0];
   } else if (t == 1) {
     return controlPoints[degree];
   } else {
-    double c = 1;
-    double a = 1;
-    double b = pow(1-t,degree);
-    double w = c * a * b;
-    Point<double> p = controlPoints[0] * w;
+    RealType c = 1;
+    RealType a = 1;
+    RealType b = pow(1-t,degree);
+    RealType w = c * a * b;
+    Point<RealType> p = controlPoints[0] * w;
     for (int i=1; i<=degree; i++) {
-      c *= (degree - i + 1)/(double)i ;
+      c *= (degree - i + 1)/(RealType)i ;
       a *= t;
-      b /= (double)(1-t);
+      b /= (RealType)(1-t);
       w = c * a * b;
       p += controlPoints[i] * w;
     }
@@ -87,14 +94,15 @@ Point<double> BezierCurve::getPoint(double t)
 
 /*!
  *  \brief This module computes the tangent vector at a point
- *  \param t a double
+ *  \param t a RealType
  *  \return the tangent vector
  */
-Vector<double> BezierCurve::tangent(double t)
+template <typename RealType>
+Vector<RealType> BezierCurve<RealType>::tangentVector(RealType t)
 {
-  Vector<double> direction;
-  Point<double> p0,p1,p2,p3;
-  Point<double> temp1,temp2,temp3,temp4;
+  Vector<RealType> direction;
+  Point<RealType> p0,p1,p2,p3;
+  Point<RealType> temp1,temp2,temp3,temp4;
 
   switch(degree) {
     case 1:
@@ -173,31 +181,32 @@ Vector<double> BezierCurve::tangent(double t)
  *  E = 3 (-p0 + p1) . (-p0 + p1) + 2 (p0 - p) . (p0 - 2p1 + p2)
  *  F = (p1 - p0) . (p0 - p)
  *
- *  \param p a reference to a Point<double>
+ *  \param p a reference to a Point<RealType>
  *  \return the shortest distance
  */
-vector<double> BezierCurve::project(const Point<double> &p)
+template <typename RealType>
+vector<RealType> BezierCurve<RealType>::project(const Point<RealType> &p)
 {
-  vector<double> coefficients;
+  vector<RealType> coefficients;
 
   switch(degree) {
     case 1:
       {
-        Point<double> temp1 = p - controlPoints[0];
-        Point<double> temp2 = controlPoints[1] - controlPoints[0];
-        vector<double> t;
+        Point<RealType> temp1 = p - controlPoints[0];
+        Point<RealType> temp2 = controlPoints[1] - controlPoints[0];
+        vector<RealType> t;
         t.push_back(((temp1 * temp2) / (temp2 * temp2)));
         return t;
       }
 
     case 2:
       {
-        Point<double> temp1 = controlPoints[0] - (controlPoints[1] * 2)
+        Point<RealType> temp1 = controlPoints[0] - (controlPoints[1] * 2)
                               + controlPoints[2]; 
-        Point<double> temp2 = controlPoints[1] - controlPoints[0];
-        Point<double> temp3 = controlPoints[0] - p;
+        Point<RealType> temp2 = controlPoints[1] - controlPoints[0];
+        Point<RealType> temp3 = controlPoints[0] - p;
         /* solve a cubic equation */
-        coefficients = vector<double>(4,0);
+        coefficients = vector<RealType>(4,0);
         coefficients[3] = temp1 * temp1;
         coefficients[2] = 3 * (temp1 * temp2);
         coefficients[1] = (temp1 * temp3) + 2 * (temp2 * temp2); 
@@ -207,14 +216,14 @@ vector<double> BezierCurve::project(const Point<double> &p)
 
     case 3:
       {
-        Point<double> temp1 = (controlPoints[1] * 3) - (controlPoints[2] * 3) 
+        Point<RealType> temp1 = (controlPoints[1] * 3) - (controlPoints[2] * 3) 
                               + controlPoints[3] - controlPoints[0];
-        Point<double> temp2 = controlPoints[0] - (controlPoints[1] * 2) 
+        Point<RealType> temp2 = controlPoints[0] - (controlPoints[1] * 2) 
                               + controlPoints[2]; 
-        Point<double> temp3 = controlPoints[1] - controlPoints[0];
-        Point<double> temp4 = controlPoints[0] - p;
+        Point<RealType> temp3 = controlPoints[1] - controlPoints[0];
+        Point<RealType> temp4 = controlPoints[0] - p;
         /* solve a quintic equation */
-        coefficients = vector<double>(6,0);
+        coefficients = vector<RealType>(6,0);
         coefficients[5] = temp1 * temp1;
         coefficients[4] = 5 * (temp1 * temp2);
         coefficients[3] = 6 * (temp2 * temp2) + 4 * (temp3 * temp1);
@@ -229,27 +238,30 @@ vector<double> BezierCurve::project(const Point<double> &p)
       << endl;
       exit(1); 
   }
-  Polynomial polynomial(coefficients);
+  Polynomial<RealType> polynomial(coefficients);
   return polynomial.computeRealRoots();
 }
 
 /*!
- *  \brief This module computes the nearest point from a list of points
- *  \param from a double
- *  \param set a reference to a vector<double>
+ *  \brief This module computes the parameter of the nearest point from a 
+ *  list of points
+ *  \param from a RealType
+ *  \param set a reference to a vector<RealType>
  *  \return the parameter of the nearest point
  */
-double BezierCurve::nearestPoint(double from, const vector<double> &set)
+template <typename RealType>
+RealType BezierCurve<RealType>::nearestPoint(RealType from, 
+                                             const vector<RealType> &set)
 {
-  /*double tmin = set[0];
-  double delta = fabs(from-tmin);
+  /*RealType tmin = set[0];
+  RealType delta = fabs(from-tmin);
   for (int i=1; i<set.size(); i++) {
     if (fabs(from-set[i]) < delta) {
       tmin = set[i];
       delta = fabs(from-set[i]);
     }
   }*/
-  vector<double> valid_t;
+  vector<RealType> valid_t;
   for (int i=0; i<set.size(); i++){
     if (set[i] >= 0 && set[i] <=1) {
       valid_t.push_back(set[i]);
@@ -258,14 +270,14 @@ double BezierCurve::nearestPoint(double from, const vector<double> &set)
   if (valid_t.size() == 0) {
     valid_t = set;
   }
-  double tmin = valid_t[0];
-  Point<double> prev = getPoint(from);
-  Point<double> p = getPoint(tmin);
-  double dmin = distance(prev,p);
+  RealType tmin = valid_t[0];
+  Point<RealType> prev = getPoint(from);
+  Point<RealType> p = getPoint(tmin);
+  RealType dmin = distance(prev,p);
   for (int i=1; i<valid_t.size(); i++) {
-    double t = valid_t[i];
+    RealType t = valid_t[i];
     p = getPoint(t);
-    double d = distance(prev,p);
+    RealType d = distance(prev,p);
     if (d < dmin) {
       dmin = d;
       tmin = t;
@@ -277,19 +289,24 @@ double BezierCurve::nearestPoint(double from, const vector<double> &set)
 /*!
  *  \brief This module computes the signed distance of a point from a point
  *  on the Bezier curve
- *  \param p a Point<double>
- *  \param t a double
- *  \param normal a Vector<double>
+ *  \param p a Point<RealType>
+ *  \param t a RealType
+ *  \param normal a Vector<RealType>
  *  \return the signed distance
  */
-double BezierCurve::signedDistance(const Point<double> &p, double t,
-                                   Vector<double> &normal)
+template <typename RealType>
+RealType BezierCurve<RealType>::signedDistance(const Point<RealType> &p, 
+                                          RealType t, Vector<RealType> &normal)
 {
-  //Vector<double> direction = tangent(t);
-  Point<double> pc = getPoint(t);
-  Plane<double> plane(pc,normal,tangent(t));
-  //double d = fabs(distance(p,pc));
+  //Vector<RealType> direction = tangentVector(t);
+  Point<RealType> pc = getPoint(t);
+  Plane<RealType> plane(pc,normal,tangentVector(t));
+  //RealType d = fabs(distance(p,pc));
   //int point_orientation = plane.orientation(p);
   return fabs(distance(p,pc)) * plane.orientation(p);
 }
+
+template class BezierCurve<float>;
+template class BezierCurve<double>;
+template class BezierCurve<long double>;
 

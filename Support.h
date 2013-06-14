@@ -48,7 +48,8 @@ double estimateVariance (vector<double> &, double);
 double estimateVariance (vector<double> &);
 int sign(double);
 double cubeRoot(double);
-double absoluteMaximum(vector<double> &);
+template <typename RealType>
+RealType absoluteMaximum(vector<RealType> &);
 double minimum(vector<double> &);
 double minimum(vector<vector<double>> &);
 double bernstein(int, int, double);
