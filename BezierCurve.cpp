@@ -47,6 +47,26 @@ int BezierCurve<RealType>::getDegree()
 }
 
 /*!
+ *  \brief This method returns the start point of the curve segment
+ *  \return the start point (the initial control point)
+ */
+template <typename RealType>
+Point<RealType> BezierCurve<RealType>::startPoint()
+{
+  return controlPoints[0];
+}
+
+/*!
+ *  \brief This method returns the end point of the curve segment
+ *  \return the end point (the last control point)
+ */
+template <typename RealType>
+Point<RealType> BezierCurve<RealType>::endPoint()
+{
+  return controlPoints[degree];
+}
+
+/*!
  *  \brief This module returns a control point
  *  \param index an integer
  *  \return a control point
@@ -90,6 +110,120 @@ Point<RealType> BezierCurve<RealType>::getPoint(RealType t)
     }
     return p;
   }
+}
+
+/*!
+ *  \brief This method is used to express x,y,z coordinates of the Bezier curve
+ *  as a polynomial in t (the parameter)
+ *  \param coordinate an integer
+ *  \return the polynomial of the appropriate degree corresponding to x,y or z
+ *  coordinate
+ */
+template <typename RealType>
+Polynomial<RealType> BezierCurve<RealType>::expressAsPolynomial(int coordinate)
+{
+  vector<RealType> coefficients(degree+1,0);
+  RealType p0,p1,p2,p3;
+
+  switch(degree) {
+    case 1:
+      if (coordinate == 0) {
+        p0 = controlPoints[0].x();
+        p1 = controlPoints[1].x();
+      } else if (coordinate == 1) {
+        p0 = controlPoints[0].y();
+        p1 = controlPoints[1].y();
+      } else if (coordinate == 2) {
+        p0 = controlPoints[0].z();
+        p1 = controlPoints[1].z();
+      } else {
+        cout << "Error: invalid coordinate type ..." << endl;
+        exit(1);
+      }
+      coefficients[0] = p0;
+      coefficients[1] = p1 - p0;
+      break;
+
+    case 2:
+      if (coordinate == 0) {
+        p0 = controlPoints[0].x();
+        p1 = controlPoints[1].x();
+        p2 = controlPoints[2].x();
+      } else if (coordinate == 1) {
+        p0 = controlPoints[0].y();
+        p1 = controlPoints[1].y();
+        p2 = controlPoints[2].y();
+      } else if (coordinate == 2) {
+        p0 = controlPoints[0].z();
+        p1 = controlPoints[1].z();
+        p2 = controlPoints[2].z();
+      } else {
+        cout << "Error: invalid coordinate type ..." << endl;
+        exit(1);
+      }
+      coefficients[0] = p0;
+      coefficients[1] = 2 * (p1 - p0);
+      coefficients[2] = p0 - 2 * p1 + p2;
+      break;
+      
+    case 3:
+      if (coordinate == 0) {
+        p0 = controlPoints[0].x();
+        p1 = controlPoints[1].x();
+        p2 = controlPoints[2].x();
+        p3 = controlPoints[3].x();
+      } else if (coordinate == 1) {
+        p0 = controlPoints[0].y();
+        p1 = controlPoints[1].y();
+        p2 = controlPoints[2].y();
+        p3 = controlPoints[3].y();
+      } else if (coordinate == 2) {
+        p0 = controlPoints[0].z();
+        p1 = controlPoints[1].z();
+        p2 = controlPoints[2].z();
+        p3 = controlPoints[3].z();
+      } else {
+        cout << "Error: invalid coordinate type ..." << endl;
+        exit(1);
+      }
+      coefficients[0] = p0;
+      coefficients[1] = 3 * (p1 - p0);
+      coefficients[2] = 3 * (p0 - 2 * p1 + p2);
+      coefficients[3] = p3 - 3 * p2 + 3 * p1 - p0;
+      break;
+
+    default:
+      cout << "Error: unsupported degree of Bezier polynomial ..." << endl;
+      exit(1);
+  }
+  return Polynomial<RealType>(coefficients);
+}
+
+/*!
+ *  \brief This method computes the length of the Bezier curve segment
+ *  \return the length of the curve
+ */
+template <typename RealType>
+RealType BezierCurve<RealType>::length()
+{
+  Polynomial<RealType> x = expressAsPolynomial(0);
+  Polynomial<RealType> dx_dt = x.derivative();
+  Polynomial<RealType> y = expressAsPolynomial(1);
+  Polynomial<RealType> dy_dt = y.derivative();
+  Polynomial<RealType> z = expressAsPolynomial(2);
+  Polynomial<RealType> dz_dt = z.derivative();
+
+  RealType dt = 0.001;
+  RealType t = dt;
+  RealType approx_length = 0;
+  for (int i=0; i<1/dt; i++) {
+    RealType dx = dx_dt.value(t) * dt;
+    RealType dy = dy_dt.value(t) * dt;
+    RealType dz = dz_dt.value(t) * dt;
+    approx_length += sqrt(dx*dx + dy*dy + dz*dz);
+    t += dt;
+  }
+  return approx_length;
 }
 
 /*!
@@ -168,7 +302,7 @@ Vector<RealType> BezierCurve<RealType>::tangentVector(RealType t)
  *  D = (p1 - p0) . (p0 - p)
  *
  *  Degree: 3 => P(t) = (1-t)^3 p0 + 3t(1-t)^2 p1 + 3t^2(1-t)p2 + t^3 p3, where
- *  p0, p2 are the control points through which the curve passes and p1, p3 are
+ *  p0, p3 are the control points through which the curve passes and p1, p2 are
  *  the intermediate control points
  *  i.e., P(t) = (-p0+3p1-3p2+p3)t^3 + 3(p0-2p1+p2)t^2 + 3(-p0+p1)t + p0
  *   and P'(t) = 3(-p0+3p1-3p2+p3)t^2 + 6(p0-2p1+p2)t + 3(-p0+p1)

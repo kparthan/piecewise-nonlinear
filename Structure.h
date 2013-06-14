@@ -68,9 +68,11 @@ class Structure
     //! List of all control points
     vector<Point<double>> all_control_points;
 
+    //! List of all Bezier curves
+    vector<BezierCurve<double>> all_bezier_curves;
+
     //! Lines connecting the control points
     vector<Line<double>> connecting_lines;
-
 };
 
 #endif

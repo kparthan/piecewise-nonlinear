@@ -2,6 +2,7 @@
 #define SEGMENTATION_H
 
 #include "Header.h"
+#include "BezierCurve.h"
 
 class Segmentation
 {
@@ -15,6 +16,9 @@ class Segmentation
     //! Lengths of lines connecting control points
     vector<double> lengths;
 
+    //! List of all Bezier curves
+    vector<BezierCurve<double>> bezier_curves;
+
     //! Bits per residue for the segmentation
     double null_bpr,bezier_bpr;
 
@@ -26,7 +30,8 @@ class Segmentation
     Segmentation();
 
     //! Constructor
-    Segmentation(vector<double> &, vector<double> &, vector<double> &);
+    Segmentation(vector<double> &, vector<double> &, vector<double> &, 
+                 vector<BezierCurve<double>> &);
 
     //! Copy constructor
     Segmentation(const Segmentation &);

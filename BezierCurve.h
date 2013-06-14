@@ -2,6 +2,7 @@
 #define BEZIER_CURVE_H
 
 #include "Header.h"
+#include "Polynomial.h"
 
 template <typename RealType>
 class BezierCurve : public Curve<RealType>
@@ -13,6 +14,9 @@ class BezierCurve : public Curve<RealType>
     //! Control points of the curve
     //! # of control points = degree + 1
     vector<Point<RealType>> controlPoints;
+
+    //! Express the x,y,z coordinates as polynomial in t
+    Polynomial<RealType> expressAsPolynomial(int);
   
   public:
     //! Null constructor
@@ -28,11 +32,20 @@ class BezierCurve : public Curve<RealType>
     //! Gets the degree of the curve
     int getDegree();
 
+    //! Get the start point of the curve segment
+    Point<RealType> startPoint();
+
+    //! Get the end point of the curve segment
+    Point<RealType> endPoint();
+
     //! Gets a control point
     Point<RealType> getControlPoint(int);
 
     //! Gets a point on the curve 
     Point<RealType> getPoint(RealType);
+
+    //! Computes the length of the curve
+    RealType length();
 
     //! Gets the tangent at a point
     Vector<RealType> tangentVector(RealType);

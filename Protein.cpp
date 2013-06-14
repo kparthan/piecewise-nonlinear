@@ -148,6 +148,7 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
     residue_id = "C" + boost::lexical_cast<string>(i);
     shared_ptr<Residue> curve_residue = make_shared<Residue>(residue_id);
     BezierCurve<double> curve(control_points);
+    all_bezier_curves.push_back(curve);
     double t = 0;
     for (int k=1; k<1.0/DELTA_T; k++) {
       t += DELTA_T;
@@ -182,7 +183,7 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
   vector<double> planar_angles = computePlanarAngles();
   vector<double> dihedral_angles = computeDihedralAngles();
   vector<double> lengths = computeConnectingLinesLengths();
-  return Segmentation(planar_angles,dihedral_angles,lengths);
+  return Segmentation(planar_angles,dihedral_angles,lengths,all_bezier_curves);
 }
 
 /*!

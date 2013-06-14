@@ -11,12 +11,15 @@ Segmentation::Segmentation()
  *  \param planar_angles a reference to a vector<double>
  *  \param dihedral_angles a reference to a vector<double>
  *  \param lengths a reference to a vector<double>
+ *  \param bezier_curves a reference to a vector<BezierCurve<double>>
  */
 Segmentation::Segmentation(vector<double> &planar_angles, 
                            vector<double> &dihedral_angles, 
-                           vector<double> &lengths) : lengths(lengths),
+                           vector<double> &lengths,
+                           vector<BezierCurve<double>> &bezier_curves) : 
                            planar_angles(planar_angles), 
-                           dihedral_angles(dihedral_angles)
+                           dihedral_angles(dihedral_angles),
+                           lengths(lengths), bezier_curves(bezier_curves)
 {}
 
 /*!
@@ -25,7 +28,10 @@ Segmentation::Segmentation(vector<double> &planar_angles,
  */
 Segmentation::Segmentation(const Segmentation &source) : 
               planar_angles(source.planar_angles), 
-              dihedral_angles(source.dihedral_angles), lengths(source.lengths)
+              dihedral_angles(source.dihedral_angles), lengths(source.lengths),
+              bezier_curves(source.bezier_curves), null_bpr(source.null_bpr),
+              bezier_bpr(source.bezier_bpr), cpu_time(source.cpu_time),
+              wall_time(source.wall_time)
 {}
 
 /*!
@@ -39,6 +45,7 @@ Segmentation Segmentation::operator=(const Segmentation &source)
     planar_angles = source.planar_angles;
     dihedral_angles = source.dihedral_angles;
     lengths = source.lengths;
+    bezier_curves = source.bezier_curves;
     null_bpr = source.null_bpr;
     bezier_bpr = source.bezier_bpr;
     cpu_time = source.cpu_time;
@@ -157,6 +164,15 @@ void Segmentation::save(string &pdb_file)
   profile << endl;
   for (int i=0; i<lengths.size(); i++) {
     profile << lengths[i] << " ";
+  }
+  profile << endl;
+  for (int i=0; i<bezier_curves.size(); i++) {
+    for (int j=0; j<=bezier_curves[i].getDegree(); j++) {
+      profile << bezier_curves[i].getControlPoint(j) << " ";
+    }
+    profile << endl;
+    profile << bezier_curves[i].length();
+    profile << endl;
   }
   profile.close();
 }
