@@ -8,10 +8,12 @@
 #include <array>
 #include <cstring>
 #include <fstream>
+#include <sstream>
 #include <cmath>
 #include <limits>
 #include <stdexcept>
 #include <ctime>
+#include <cassert>
 #include <thread>
 #include <chrono>
 #include <omp.h>
@@ -19,6 +21,8 @@
 #include <boost/math/constants/constants.hpp>
 #include <boost/program_options.hpp>
 #include <boost/lexical_cast.hpp>
+#include <boost/foreach.hpp>
+#include <boost/tokenizer.hpp>
 
 #define AOM 0.001
 #define AOPV 0.1
@@ -37,9 +41,10 @@
 
 #define EDIT_DISTANCE 0
 #define BASIC_ALIGNMENT 1
-#define MML_ALIGNMENT 2
+#define DISTANCE_HISTOGRAM 2
 #define GAP_PENALTY -20
 #define MAX_DIFFERENCE_ANGLES 45
+#define POINTS_PER_UNIT 10
 
 #define TEST 0
 #define PROTEIN 1

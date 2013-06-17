@@ -6,24 +6,28 @@
 
 struct Parameters
 {
-  string file;
-  int structure;      // Protein or General or Test
-  int portion_to_fit; // Fit entire protein or a segment
-  int print;          // verbose or not 
-  vector<string> end_points;
-  vector<int> controls;
-  int constrain_sigma;
-  double min_sigma;
-  double max_sigma;
-  int constrain_segment_length;
-  int max_segment_length;
-  int encode_deviations;
-  int comparison;
-  double gap_penalty;
-  double max_angle_diff;
-  int comparison_method;
-  vector<string> comparison_files;
-  int force_segmentation;
+  string file;                      // path to the structure file
+  int structure;                    // Protein or General or Test
+  int portion_to_fit;               // Fit entire protein or a segment
+  int print;                        // verbose or not 
+  vector<string> end_points;        // end points of a segment
+  vector<int> controls;             // # of intermediate control points
+  int constrain_sigma;              // flag to constrain sigma
+  double min_sigma;                 // lower limit of sigma
+  double max_sigma;                 // upper limit of sigma
+  int constrain_segment_length;     // flag to constrain segment length
+  int max_segment_length;           // maximum allowed segment length
+  int encode_deviations;            // mechanism to encode deviations
+  int force_segmentation;           // flag to redo segmentation
+  int comparison;                   // type of structures compared
+  double gap_penalty;               // gap penalty used in basic alignment 
+                                    // method
+  double max_angle_diff;            // maximum allowed angle separation
+                                    // when aligning two dihedral angles
+  int comparison_method;            // method used to compare structures
+  vector<string> comparison_files;  // path to the structure files used
+                                    // in comparison
+  int num_samples_on_curve;         // # of samples for histogram comparison
 };
 
 void segmentStructure(struct Parameters &);

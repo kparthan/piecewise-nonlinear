@@ -1,0 +1,43 @@
+Using structure file: /home/parthan/Research/PDB/ec/pdb1eco.ent.gz
+Number of residues: 136
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 29658.3
+Null Model Fit: 6041.72 bits.
+Bits per residue: 44.7535
+
+Bezier model fit: 5483.97 bits.
+Bits per residue: 40.622
+
+# of segments: 8
+Internal segmentation:
+0-->1-->30-->44-->73-->92-->111-->112-->135
+
+CPU time used: 10.86 secs.
+Wall clock time elapsed: 10 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 2              2        47.7906         (-14.246, 10.697, 26.254)
+                                                                                    (-16.114, 7.5, 25.435)
+
+              2            A 2           A 31             30        1161.26         (-16.114, 7.5, 25.435)         (7.34869, -0.940067, 3.50783)
+                                                                                    (7.218, 27.184, 17.726)
+
+              3           A 31           A 45             15        586.178         (7.218, 27.184, 17.726)         (23.0912, 20.0723, 30.9161)
+                                                                                    (18.509, 25.101, 10.8)
+
+              4           A 45           A 74             30         1176.7         (18.509, 25.101, 10.8)         (19.6353, 3.18634, 16.3978)
+                                                                                    (-8.61, 7.16, 29.044)
+
+              5           A 74           A 93             20        782.899         (-8.61, 7.16, 29.044)         (15.644, 12.4215, 41.2801)
+                                                                                    (4.992, 27.25, 29.373)
+
+              6           A 93          A 112             20        752.585         (4.992, 27.25, 29.373)
+                                                                                    (-4.64, 12.511, 6.739)
+
+              7          A 112          A 113              2        47.7906         (-4.64, 12.511, 6.739)
+                                                                                    (-8.275, 13.169, 5.92)
+
+              8          A 113          A 136             24        928.767         (-8.275, 13.169, 5.92)         (-16.4395, 14.2783, 27.4171)
+                                                                                    (1.684, 22.945, 35.796)
+

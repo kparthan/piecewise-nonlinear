@@ -5,7 +5,7 @@
 #include "Polynomial.h"
 
 template <typename RealType>
-class BezierCurve : public Curve<RealType>
+class BezierCurve //: public Curve<RealType>
 {
   private:
     //! Degree of the curve 
@@ -59,7 +59,6 @@ class BezierCurve : public Curve<RealType>
   
     //! Computes the signed distance from the point to the curve
     RealType signedDistance(const Point<RealType> &, RealType t, Vector<RealType> &); 
-
 };
 
 #endif

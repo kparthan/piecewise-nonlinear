@@ -1,5 +1,6 @@
 #include "Comparison.h"
 #include "Support.h"
+#include "DistanceHistogram.h"
 
 /*!
  *  \brief This is a null constructor module.
@@ -26,13 +27,70 @@ void Comparison::save(vector<string> &comparison_files)
 {
   string file1 = extractName(comparison_files[0]);
   string file2 = extractName(comparison_files[1]);
-  string file_name = "output/alignments/" + file1 + "_" + file2 + ".alignment";
-  ofstream file(file_name.c_str());
-  file << "Alignment score: " << alignment_score << endl;
-  file << "Avg. Alignment score: " << avg_alignment_score << endl;
-  file << "Normalized Alignment score: " << normalized_alignment_score << endl;
-  printAlignment(file,optimal_alignment);
-  file.close();
+  string file_name; 
+  switch(flag) {
+    case BASIC_ALIGNMENT:
+    {
+      file_name = "output/alignments/" + file1 + "_" + file2 + ".alignment";
+      ofstream fp(file_name.c_str());
+      fp << "Alignment score: " << alignment_score << endl;
+      fp << "Avg. Alignment score: " << avg_alignment_score << endl;
+      fp << "Normalized Alignment score: " << normalized_alignment_score << endl;
+      printAlignment(fp,optimal_alignment);
+      fp.close();
+      break;
+    }
+
+    case DISTANCE_HISTOGRAM:
+    {
+      file_name = "output/histograms/" + file1 + "_" + file2 + ".histogram";
+      ofstream fp(file_name.c_str());
+      fp << "Length of curve 1: " << curve_string[0].length() << endl;
+      fp << "Length of curve 2: " << curve_string[1].length() << endl;
+      double diff = 0,diff2=0;
+      string plot_data = file_name + ".data";
+      ofstream plot(plot_data.c_str());
+      double x = 0, y = 0;
+      for (int i=0; i<r_values.size(); i++) {
+        diff += fabs(results1[i]-results2[i]);
+        double a = results1[i]/curve_string[0].length();
+        double b = results2[i]/curve_string[1].length();
+        diff2 += fabs(a-b);
+        plot << r_values[i] << " ";
+        plot << results1[i] << " " << results2[i] << endl;
+        x += results1[i];
+        y += results2[i];
+      }
+      fp << "Score: " << diff << endl;
+      fp << "Normalized score: " << diff2 << endl;
+      plot.close();
+      fp.close();
+      plotDistanceHistograms(file1,file2);
+      ofstream fw("output/histogram_comparison",ios::app);
+      fw << file1 << " " << file2 << " " << x / r_values.size() << " " << y / r_values.size() << " " << diff << " " << diff2 * 100 << endl;
+      fw.close();
+      break;
+    }
+  }
+}
+
+/*!
+ *
+ */
+void Comparison::plotDistanceHistograms(string file1, string file2)
+{
+  string file_name = "output/histograms/" + file1 + "_" + file2 + ".histogram";
+  string plot_data = file_name + ".data";
+  ofstream script("script.plot");
+  script << "set terminal post eps" << endl;
+  script << "set output \"" << file_name << ".eps\"" << endl; 
+  script << "set multiplot" << endl;
+  script << "plot \"" << plot_data << "\" using 1:2 title '" << file1
+         << "' with points lc rgb \"red\", \\" << endl;
+  script << "\"" << plot_data << "\" using 1:3 title '" << file2
+         << "' with points lc rgb \"blue\"" << endl;
+  script.close();
+  system("gnuplot -persist script.plot");
 }
 
 /*!
@@ -222,6 +280,7 @@ void Comparison::printAlignment(ostream &os, vector<array<double,2>> &alignment)
  */
 void Comparison::computeEditDistance(double gap_penalty)
 {
+  flag = EDIT_DISTANCE;
   vector<double> x = profiles[0].getDihedralAngles();
   vector<double> y = profiles[1].getDihedralAngles();
   int i,j;
@@ -273,6 +332,7 @@ void Comparison::computeEditDistance(double gap_penalty)
  */
 void Comparison::computeBasicAlignment(double gap_penalty, double max_diff)
 {
+  flag = BASIC_ALIGNMENT;
   vector<double> x = profiles[0].getDihedralAngles();
   vector<double> y = profiles[1].getDihedralAngles();
   int i,j;
@@ -320,17 +380,44 @@ void Comparison::computeBasicAlignment(double gap_penalty, double max_diff)
 /*!
  *  \brief This method computes the alignment for the MML based approach.
  */
-void Comparison::computeMMLAlignment()
+void Comparison::computeDistanceHistogram(int num_points)
 {
-  vector<double> x = profiles[0].getDihedralAngles();
-  vector<double> y = profiles[1].getDihedralAngles();
-  int i,j;
-  vector<vector<double>> matrix;
-  vector<vector<int>> direction;
-  initialize(matrix,direction,x.size(),y.size());
-  vector<vector<double>> transition_probability;
-  vector<double> state_probability;
+  flag = DISTANCE_HISTOGRAM;
+  vector<BezierCurve<double>> bezier_curves1 = profiles[0].getBezierCurves();
+  vector<double> lengths1 = profiles[0].getBezierCurvesLengths();
+  curve_string[0] = CurveString(bezier_curves1,lengths1);
+  DistanceHistogram histogram1(curve_string[0],num_points);
+
+  vector<BezierCurve<double>> bezier_curves2 = profiles[1].getBezierCurves();
+  vector<double> lengths2 = profiles[1].getBezierCurvesLengths();
+  curve_string[1] = CurveString(bezier_curves2,lengths2);
+  DistanceHistogram histogram2(curve_string[1],num_points);
+
+  double max_length;
+  if (curve_string[0].length() > curve_string[1].length()) {
+    max_length = curve_string[0].length();
+  } else {
+    max_length = curve_string[1].length();
+  }
+  //vector<double> r_values;
+  double dr = 1;
+  double r = dr;
+  while (1) {
+    if (r > max_length) {
+      break;
+    }
+    r_values.push_back(r);
+    r += dr;
+  }
+  results1 = histogram1.computeGlobalHistogramValues(r_values);
+  results2 = histogram2.computeGlobalHistogramValues(r_values);
+  //plotDistanceHistograms(r,results1,results2);
 }
+
+/*!
+ *
+ */
+
 
 /*!
  *

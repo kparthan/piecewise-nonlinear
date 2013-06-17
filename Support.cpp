@@ -46,7 +46,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
                                   "maximum length of the segment considered")
        ("encode",value<string>(&encode), "type of encoding the deviations")
        ("compare",value<string>(&comparison_method),
-                                      "comparison method (basic/mml)")
+                  "comparison method (basic_alignment/distance_histogram)")
        ("gap",value<double>(&parameters.gap_penalty),"gap penalty used in alignment")
        ("diff",value<double>(&parameters.max_angle_diff),
                                       "maximum difference allowed for the angles")
@@ -54,6 +54,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
                                                                 "structure files")
        ("pdbids",value<vector<string>>(&pdb_ids)->multitoken(),"PDB IDs to compare")
        ("force","force segmentation (even though it exists already)")
+       ("n",value<int>(&parameters.num_samples_on_curve),"")
   ;
   variables_map vm;
   store(parse_command_line(argc,argv,desc),vm);
@@ -105,7 +106,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     } else if (vm.count("pdbid")) {
       cout << "Using PDB ID: " << pdb_id << endl;
       parameters.file = getPDBFilePath(pdb_id);
-      parameters.structure = PROTEIN;
+      //parameters.structure = PROTEIN;
     } else {
       cout << "Input protein structure file not provided ..." << endl;
       Usage(argv[0],desc);
@@ -166,8 +167,8 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
       parameters.comparison_method = EDIT_DISTANCE;
     } else if (comparison_method.compare("basic_alignment") == 0) {
       parameters.comparison_method = BASIC_ALIGNMENT;
-    } else if (comparison_method.compare("mml_alignment") == 0) {
-      parameters.comparison_method = MML_ALIGNMENT;
+    } else if (comparison_method.compare("distance_histogram") == 0) {
+      parameters.comparison_method = DISTANCE_HISTOGRAM;
     } else {
       cout << "Unsupported comparison method ..." << endl;
       Usage(argv[0],desc);
@@ -348,7 +349,6 @@ void segmentStructure(struct Parameters &parameters)
       status = checkIfSegmentationExists(pdb_file);
       if (status && parameters.force_segmentation == UNSET) {
         cout << "Segmentation profile of " << pdb_file << " exists ..." << endl;
-        segmentation.load(pdb_file);
       } else {
         segmentation = proteinFit(parameters);
         segmentation.save(pdb_file);
@@ -360,6 +360,7 @@ void segmentStructure(struct Parameters &parameters)
       break;
   }
   if (parameters.print == PRINT_DETAIL) {
+    segmentation.load(pdb_file);
     segmentation.print();
   }
 }
@@ -442,15 +443,29 @@ void compareSegmentations(Segmentation &a, Segmentation &b,
       break;
 
     case BASIC_ALIGNMENT:
+    {
       comparison.computeBasicAlignment(parameters.gap_penalty,
                                        parameters.max_angle_diff);
+      comparison.save(parameters.comparison_files);
+      vector<double> scores = comparison.getAlignmentScores();
+      ofstream file("output/comparison.results",ios::app);
+      file << extractName(parameters.comparison_files[0]) << " "
+           << extractName(parameters.comparison_files[1]) << " "
+           << a.getNullBPR() << " " << a.getBezierBPR() << " " 
+           << a.getNullBPR() - a.getBezierBPR() << " "
+           << b.getNullBPR() << " " << b.getBezierBPR() << " " 
+           << b.getNullBPR() - b.getBezierBPR() << " "
+           << scores[0] << " " << scores[1] << " " << scores[2] << endl;
+      file.close(); 
+    }
       break;
 
-    case MML_ALIGNMENT:
-      comparison.computeMMLAlignment();
+    case DISTANCE_HISTOGRAM:
+      comparison.computeDistanceHistogram(parameters.num_samples_on_curve);
+      comparison.save(parameters.comparison_files);
       break;
   }
-  comparison.save(parameters.comparison_files);
+  /*comparison.save(parameters.comparison_files);
   vector<double> scores = comparison.getAlignmentScores();
   ofstream file("output/comparison.results",ios::app);
   file << extractName(parameters.comparison_files[0]) << " "
@@ -460,7 +475,7 @@ void compareSegmentations(Segmentation &a, Segmentation &b,
        << b.getNullBPR() << " " << b.getBezierBPR() << " " 
        << b.getNullBPR() - b.getBezierBPR() << " "
        << scores[0] << " " << scores[1] << " " << scores[2] << endl;
-  file.close(); 
+  file.close(); */
 }
 
 /*!
@@ -523,7 +538,7 @@ Segmentation generalFit(struct Parameters &parameters)
 string getPDBFilePath(string &pdb_id)
 {
   boost::algorithm::to_lower(pdb_id);
-  string path = "/home/pkas7/Research/PDB/" ;
+  string path = "/home/parthan/Research/PDB/" ;
   string directory(pdb_id,1,2);
   path += directory + "/pdb" + pdb_id + ".ent.gz";
   return path;

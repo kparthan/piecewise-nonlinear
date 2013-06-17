@@ -20,7 +20,12 @@ Segmentation::Segmentation(vector<double> &planar_angles,
                            planar_angles(planar_angles), 
                            dihedral_angles(dihedral_angles),
                            lengths(lengths), bezier_curves(bezier_curves)
-{}
+{
+  for (int i=0; i<bezier_curves.size(); i++) {
+    double length = bezier_curves[i].length();
+    bezier_curves_lengths.push_back(length);
+  }
+}
 
 /*!
  *  \brief This module is used to create a copy of a Segmentation object
@@ -31,7 +36,7 @@ Segmentation::Segmentation(const Segmentation &source) :
               dihedral_angles(source.dihedral_angles), lengths(source.lengths),
               bezier_curves(source.bezier_curves), null_bpr(source.null_bpr),
               bezier_bpr(source.bezier_bpr), cpu_time(source.cpu_time),
-              wall_time(source.wall_time)
+              wall_time(source.wall_time), bezier_curves_lengths(source.bezier_curves_lengths)
 {}
 
 /*!
@@ -46,6 +51,7 @@ Segmentation Segmentation::operator=(const Segmentation &source)
     dihedral_angles = source.dihedral_angles;
     lengths = source.lengths;
     bezier_curves = source.bezier_curves;
+    bezier_curves_lengths = source.bezier_curves_lengths;
     null_bpr = source.null_bpr;
     bezier_bpr = source.bezier_bpr;
     cpu_time = source.cpu_time;
@@ -120,6 +126,22 @@ vector<double> Segmentation::getLengths()
 }
 
 /*!
+ *
+ */
+vector<BezierCurve<double>> Segmentation::getBezierCurves()
+{
+  return bezier_curves;
+}
+
+/*!
+ *
+ */
+vector<double> Segmentation::getBezierCurvesLengths()
+{
+  return bezier_curves_lengths;
+}
+
+/*!
  *  \brief This module prints the segmentation profile (angles & lengths)
  */
 void Segmentation::print()
@@ -183,6 +205,80 @@ void Segmentation::save(string &pdb_file)
  */
 void Segmentation::load(string &pdb_file)
 {
+  const int NULL_BPR_LINE = 1;
+  const int BEZIER_BPR_LINE = 2;
+  const int PLANAR_ANGLES_LINE = 3;
+  const int DIHEDRAL_ANGLES_LINE = 4;
+  const int CONNECTING_LENGTHS_LINE = 5;
+  const int BEZIER_CURVES_LINE = 6;
+
+  planar_angles.clear();
+  dihedral_angles.clear();
+  lengths.clear();
+  bezier_curves.clear();
+  bezier_curves_lengths.clear();
+
+  string output_file = "output/segmentation_profile/" + pdb_file + ".profile";
+  ifstream profile(output_file.c_str());
+  string line;
+  vector<double> numbers;
+  int i = 1;
+
+  while(getline(profile,line)) {
+    boost::char_separator<char> sep(",() ");
+    boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
+    BOOST_FOREACH (const string& t, tokens) {
+      istringstream iss(t);
+      double x;
+      iss >> x;
+      numbers.push_back(x);
+    }
+    switch(i) {
+      case NULL_BPR_LINE:
+        null_bpr = numbers[0];
+        break;
+
+      case BEZIER_BPR_LINE:
+        bezier_bpr = numbers[0];
+        break;
+
+      case PLANAR_ANGLES_LINE:
+        planar_angles = numbers;
+        break;
+
+      case DIHEDRAL_ANGLES_LINE:
+        dihedral_angles = numbers;
+        break;
+
+      case CONNECTING_LENGTHS_LINE:
+        lengths = numbers;
+        break;
+
+      default:
+      if (i%2 == 0) {
+        vector<Point<double>> control_points;
+        for (int j=0; j<numbers.size(); j+=3) {
+          double x = numbers[j];
+          double y = numbers[j+1];
+          double z = numbers[j+2];
+          Point<double> cp(x,y,z);
+          control_points.push_back(cp);
+        }
+        BezierCurve<double> curve(control_points);
+        bezier_curves.push_back(curve);
+      } else {
+        bezier_curves_lengths.push_back(numbers[0]);
+      }
+      break;
+    }
+    i++;
+    numbers.clear();
+  }
+  profile.close();
+}
+
+/*void Segmentation::load(string &pdb_file)
+{
   planar_angles.clear();
   dihedral_angles.clear();
   lengths.clear();
@@ -220,7 +316,6 @@ void Segmentation::load(string &pdb_file)
     }
     i++;
   }
-
   profile.close();
-}
+}*/
 

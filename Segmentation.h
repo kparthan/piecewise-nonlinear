@@ -19,6 +19,9 @@ class Segmentation
     //! List of all Bezier curves
     vector<BezierCurve<double>> bezier_curves;
 
+    //! List of approximate lengths of all bezier curves
+    vector<double> bezier_curves_lengths;
+
     //! Bits per residue for the segmentation
     double null_bpr,bezier_bpr;
 
@@ -48,6 +51,12 @@ class Segmentation
 
     //! Get the lengths of connecting lines
     vector<double> getLengths();
+
+    //! Get the abstracting Bezier curves
+    vector<BezierCurve<double>> getBezierCurves();
+
+    //! Get the lengths of the Bezier segments
+    vector<double> getBezierCurvesLengths();
 
     //! Print the segmentation details
     void print();

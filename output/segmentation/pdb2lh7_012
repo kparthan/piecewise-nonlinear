@@ -1,0 +1,43 @@
+Using structure file: /home/parthan/Research/PDB/lh/pdb2lh7.ent.gz
+Number of residues: 153
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 39976.3
+Null Model Fit: 6868 bits.
+Bits per residue: 45.1842
+
+Bezier model fit: 6160.61 bits.
+Bits per residue: 40.5303
+
+# of segments: 8
+Internal segmentation:
+0-->3-->20-->44-->56-->81-->104-->126-->152
+
+CPU time used: 12.38 secs.
+Wall clock time elapsed: 12 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 4              4        140.839         (36.953, 48.68, 31.23)
+                                                                                    (39.309, 47.719, 24.59)
+
+              2            A 4           A 21             18         665.14         (39.309, 47.719, 24.59)
+                                                                                    (36.168, 20.612, 25.197)
+
+              3           A 21           A 45             25        986.432         (36.168, 20.612, 25.197)         (25.2469, 27.5925, 52.4355)
+                                                                                    (13.943, 16.696, 31.481)
+
+              4           A 45           A 57             13        517.935         (13.943, 16.696, 31.481)         (22.8194, 9.08732, 45.912)
+                                                                                    (23.673, 12.986, 27.237)
+
+              5           A 57           A 82             26        978.515         (23.673, 12.986, 27.237)
+                                                                                    (29.974, 49.275, 21.596)
+
+              6           A 82          A 105             24        946.758         (29.974, 49.275, 21.596)         (-0.583224, 19.7628, 16.8368)
+                                                                                    (17.138, 34.741, 40.513)
+
+              7          A 105          A 127             23         906.54         (17.138, 34.741, 40.513)         (38.2483, 21.4048, 32.0589)
+                                                                                    (43.955, 38.57, 34.891)
+
+              8          A 127          A 153             27        1018.45         (43.955, 38.57, 34.891)         (25.1261, 44.2285, 26.471)
+                                                                                    (5.533, 35.271, 30.68)
+

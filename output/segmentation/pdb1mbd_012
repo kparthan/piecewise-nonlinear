@@ -1,0 +1,43 @@
+Using structure file: /home/parthan/Research/PDB/mb/pdb1mbd.ent.gz
+Number of residues: 153
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 37390.4
+Null Model Fit: 6853.34 bits.
+Bits per residue: 45.0877
+
+Bezier model fit: 6174.25 bits.
+Bits per residue: 40.62
+
+# of segments: 8
+Internal segmentation:
+0-->5-->34-->50-->78-->104-->126-->148-->152
+
+CPU time used: 12.39 secs.
+Wall clock time elapsed: 12 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 6              6        224.442         (0.68, 15.504, 15.876)
+                                                                                    (8.811, 10.896, 18.097)
+
+              2            A 6           A 35             30        1151.51         (8.811, 10.896, 18.097)         (38.1466, 25.4578, 15.0359)
+                                                                                    (18.667, 13.874, -8.391)
+
+              3           A 35           A 51             17        664.594         (18.667, 13.874, -8.391)         (15.2021, 42.3543, -9.69489)
+                                                                                    (29.703, 18.734, -12.118)
+
+              4           A 51           A 79             29         1123.1         (29.703, 18.734, -12.118)         (31.1847, 34.1115, 5.23613)
+                                                                                    (8.377, 20.719, 18.346)
+
+              5           A 79          A 105             27        1071.28         (8.377, 20.719, 18.346)         (6.91195, 48.1736, -7.41066)
+                                                                                    (9.288, 17.09, -0.915)
+
+              6          A 105          A 127             23        898.214         (9.288, 17.09, -0.915)         (32.4628, 5.24533, 7.77013)
+                                                                                    (13.763, 7.489, 13.772)
+
+              7          A 127          A 149             23        860.195         (13.763, 7.489, 13.772)
+                                                                                    (-1.122, 33.656, -0.757)
+
+              8          A 149          A 153              5        180.907         (-1.122, 33.656, -0.757)
+                                                                                    (-2.504, 24.983, -5.413)
+

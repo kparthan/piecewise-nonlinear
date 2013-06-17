@@ -3,6 +3,7 @@
 
 #include "Header.h"
 #include "Segmentation.h"
+#include "CurveString.h"
 
 class Comparison
 {
@@ -13,6 +14,9 @@ class Comparison
       UP,
       DIAGONAL
     };
+
+    //! 
+    int flag;
 
     //! The two segmentation profiles
     Segmentation profiles[2];
@@ -36,6 +40,17 @@ class Comparison
     //! Edit distance
     void computeEditDistance(string &, string &);
 
+    //! 
+    CurveString curve_string[2];
+
+    //!
+    vector<double> r_values;
+
+    vector<double> results1,results2;
+
+    //!
+    void plotDistanceHistograms(string, string);
+
   public:
     //! Null constructor
     Comparison();
@@ -49,8 +64,8 @@ class Comparison
     //! Basic Alignment
     void computeBasicAlignment(double, double);
 
-    //! MML Alignment
-    void computeMMLAlignment();
+    //! Distance histogram 
+    void computeDistanceHistogram(int);
 
     //! Save the alignment to a file
     void save(vector<string> &);
