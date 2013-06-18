@@ -42,9 +42,11 @@
 #define EDIT_DISTANCE 0
 #define BASIC_ALIGNMENT 1
 #define DISTANCE_HISTOGRAM 2
+
 #define GAP_PENALTY -20
 #define MAX_DIFFERENCE_ANGLES 45
 #define POINTS_PER_UNIT 10
+#define INCREMENT_R 5
 
 #define TEST 0
 #define PROTEIN 1

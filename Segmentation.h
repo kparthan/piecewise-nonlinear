@@ -7,6 +7,9 @@
 class Segmentation
 {
   private:
+    //! Number of coordinates
+    int num_coordinates;
+
     //! Planar angles
     vector<double> planar_angles;
 
@@ -33,7 +36,7 @@ class Segmentation
     Segmentation();
 
     //! Constructor
-    Segmentation(vector<double> &, vector<double> &, vector<double> &, 
+    Segmentation(int, vector<double> &, vector<double> &, vector<double> &, 
                  vector<BezierCurve<double>> &);
 
     //! Copy constructor
@@ -78,6 +81,9 @@ class Segmentation
 
     //!
     double getWallTime();
+
+    //!
+    int getNumberOfCoordinates();
 
     //! Write the segmentation details
     void save(string &);

@@ -8,16 +8,19 @@ Segmentation::Segmentation()
 
 /*!
  *  \brief This is a constructor module.
+ *  \param num_coordinates an integer
  *  \param planar_angles a reference to a vector<double>
  *  \param dihedral_angles a reference to a vector<double>
  *  \param lengths a reference to a vector<double>
  *  \param bezier_curves a reference to a vector<BezierCurve<double>>
  */
-Segmentation::Segmentation(vector<double> &planar_angles, 
+Segmentation::Segmentation(int num_coordinates,
+                           vector<double> &planar_angles, 
                            vector<double> &dihedral_angles, 
                            vector<double> &lengths,
                            vector<BezierCurve<double>> &bezier_curves) : 
-                           planar_angles(planar_angles), 
+                           num_coordinates(num_coordinates), 
+                           planar_angles(planar_angles),
                            dihedral_angles(dihedral_angles),
                            lengths(lengths), bezier_curves(bezier_curves)
 {
@@ -32,6 +35,7 @@ Segmentation::Segmentation(vector<double> &planar_angles,
  *  \param source a reference to a Segmentation
  */
 Segmentation::Segmentation(const Segmentation &source) : 
+              num_coordinates(source.num_coordinates), 
               planar_angles(source.planar_angles), 
               dihedral_angles(source.dihedral_angles), lengths(source.lengths),
               bezier_curves(source.bezier_curves), null_bpr(source.null_bpr),
@@ -47,6 +51,7 @@ Segmentation::Segmentation(const Segmentation &source) :
 Segmentation Segmentation::operator=(const Segmentation &source)
 {
   if (this != &source) {
+    num_coordinates = source.num_coordinates; 
     planar_angles = source.planar_angles;
     dihedral_angles = source.dihedral_angles;
     lengths = source.lengths;
@@ -96,6 +101,14 @@ double Segmentation::getCPUTime()
 double Segmentation::getWallTime()
 {
   return wall_time;
+}
+
+/*!
+ *
+ */
+int Segmentation::getNumberOfCoordinates()
+{
+  return num_coordinates;
 }
 
 /*!

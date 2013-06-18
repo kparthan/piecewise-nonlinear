@@ -10,9 +10,6 @@ class CurveString
     //! Vertices of the segments of the curves 
     vector<Point<double>> vertices;
 
-    //! Sample points on the curve string
-    vector<Point<double>> samples;
-
     //! Set of curves
     vector<BezierCurve<double>> curves;
 
@@ -55,9 +52,6 @@ class CurveString
 
     //! Generate random points
     vector<Point<double>> generateRandomPoints(int);
-
-    //! Plots the curve string 
-    void draw(string);
 };
 
 #endif 

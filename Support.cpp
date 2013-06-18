@@ -54,7 +54,10 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
                                                                 "structure files")
        ("pdbids",value<vector<string>>(&pdb_ids)->multitoken(),"PDB IDs to compare")
        ("force","force segmentation (even though it exists already)")
-       ("n",value<int>(&parameters.num_samples_on_curve),"")
+       ("n",value<int>(&parameters.num_samples_on_curve),
+                                 "# of sample points for histogram comparison")
+       ("dr",value<double>(&parameters.increment_r),
+                                 "increment in r used in histogram comparison")
   ;
   variables_map vm;
   store(parse_command_line(argc,argv,desc),vm);
@@ -167,26 +170,38 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
       parameters.comparison_method = EDIT_DISTANCE;
     } else if (comparison_method.compare("basic_alignment") == 0) {
       parameters.comparison_method = BASIC_ALIGNMENT;
+      if (vm.count("gap")) {
+        cout << "Using a gap penalty of " << parameters.gap_penalty 
+             << " ..." << endl;
+      } else {
+        parameters.gap_penalty = GAP_PENALTY;
+        cout << "Using default value of gap penalty: " << GAP_PENALTY << endl;
+      }
+      if (vm.count("diff")) {
+        cout << "Using a maximum allowed difference in aligning angles: "
+             << parameters.max_angle_diff << endl;
+      } else {
+        parameters.max_angle_diff = MAX_DIFFERENCE_ANGLES;
+        cout << "Using default value of maximum allowed angle difference "
+             << " for alignment: " << parameters.max_angle_diff << endl;
+      }
     } else if (comparison_method.compare("distance_histogram") == 0) {
       parameters.comparison_method = DISTANCE_HISTOGRAM;
+      if (vm.count("n")) {
+        cout << "# of random samples generated for comparing distance "
+             << "histograms: " << parameters.num_samples_on_curve << endl;
+      }
+      if (vm.count("dr")) {
+        cout << "Increment in r value used in histogram method: "
+             << parameters.increment_r << endl;
+      } else {
+        parameters.increment_r = INCREMENT_R;
+        cout << "Using default value of r vlaue increment used in histogram "
+             << "method of comparison: " << parameters.increment_r << endl;
+      }
     } else {
       cout << "Unsupported comparison method ..." << endl;
       Usage(argv[0],desc);
-    }
-    if (vm.count("gap")) {
-      cout << "Using a gap penalty of " << parameters.gap_penalty 
-           << " ..." << endl;
-    } else {
-      parameters.gap_penalty = GAP_PENALTY;
-      cout << "Using default value of gap penalty: " << GAP_PENALTY << endl;
-    }
-    if (vm.count("diff")) {
-      cout << "Using a maximum allowed difference in aligning angles: "
-           << parameters.max_angle_diff << endl;
-    } else {
-      parameters.max_angle_diff = MAX_DIFFERENCE_ANGLES;
-      cout << "Using default value of maximum allowed angle difference "
-           << " for alignment: " << parameters.max_angle_diff << endl;
     }
   } else {
     parameters.comparison = -1;
@@ -447,8 +462,8 @@ void compareSegmentations(Segmentation &a, Segmentation &b,
       comparison.computeBasicAlignment(parameters.gap_penalty,
                                        parameters.max_angle_diff);
       comparison.save(parameters.comparison_files);
-      vector<double> scores = comparison.getAlignmentScores();
-      ofstream file("output/comparison.results",ios::app);
+      vector<double> scores = comparison.getScores();
+      ofstream file("output/alignments.comparison",ios::app);
       file << extractName(parameters.comparison_files[0]) << " "
            << extractName(parameters.comparison_files[1]) << " "
            << a.getNullBPR() << " " << a.getBezierBPR() << " " 
@@ -457,25 +472,17 @@ void compareSegmentations(Segmentation &a, Segmentation &b,
            << b.getNullBPR() - b.getBezierBPR() << " "
            << scores[0] << " " << scores[1] << " " << scores[2] << endl;
       file.close(); 
-    }
       break;
+    }
 
     case DISTANCE_HISTOGRAM:
-      comparison.computeDistanceHistogram(parameters.num_samples_on_curve);
+    {
+      comparison.computeDistanceHistogram(parameters.num_samples_on_curve,
+                                          parameters.increment_r);
       comparison.save(parameters.comparison_files);
       break;
+    }
   }
-  /*comparison.save(parameters.comparison_files);
-  vector<double> scores = comparison.getAlignmentScores();
-  ofstream file("output/comparison.results",ios::app);
-  file << extractName(parameters.comparison_files[0]) << " "
-       << extractName(parameters.comparison_files[1]) << " "
-       << a.getNullBPR() << " " << a.getBezierBPR() << " " 
-       << a.getNullBPR() - a.getBezierBPR() << " "
-       << b.getNullBPR() << " " << b.getBezierBPR() << " " 
-       << b.getNullBPR() - b.getBezierBPR() << " "
-       << scores[0] << " " << scores[1] << " " << scores[2] << endl;
-  file.close(); */
 }
 
 /*!

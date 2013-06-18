@@ -28,6 +28,7 @@ struct Parameters
   vector<string> comparison_files;  // path to the structure files used
                                     // in comparison
   int num_samples_on_curve;         // # of samples for histogram comparison
+  double increment_r;               // increment in r used in histogram method
 };
 
 void segmentStructure(struct Parameters &);

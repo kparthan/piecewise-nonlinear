@@ -11,23 +11,26 @@ DistanceHistogram::DistanceHistogram()
  *  \param curve_string a reference to a CurveString
  */
 DistanceHistogram::DistanceHistogram(CurveString &curve_string) : 
-                   curve_string(curve_string), num_points(0)
+                   curve_string(curve_string)
 {}
 
 /*!
- *
+ *  \brief This is a constructor module.
+ *  \param curve_string a reference to a CurveString
+ *  \param num_points an integer
  */
 DistanceHistogram::DistanceHistogram(CurveString &curve_string, int num_points) :
-                   curve_string(curve_string), num_points(num_points)
-{}
+                                     curve_string(curve_string)
+{
+  point_set = vector<Point<double>>(num_points,Point<double>());
+}
 
 /*!
  *  \brief This module is used to create a copy of a DistanceHistogram object
  *  \param source a reference to a DistanceHistogram
  */
 DistanceHistogram::DistanceHistogram(const DistanceHistogram &source) :
-                   curve_string(source.curve_string), point_set(source.point_set),
-                   num_points(source.num_points)
+                   curve_string(source.curve_string), point_set(source.point_set)
 {}
 
 /*!
@@ -40,9 +43,47 @@ DistanceHistogram DistanceHistogram::operator=(const DistanceHistogram &source)
   if (this != &source) {
     curve_string = source.curve_string;
     point_set = source.point_set;
-    num_points = source.num_points;
   }
   return *this;
+}
+
+/*!
+ *  \brief This method returns the number of random samples that constitute
+ *  the representative point set
+ *  \return the number of representative samples
+ */
+int DistanceHistogram::getNumberOfSamples()
+{
+  return point_set.size();
+}
+
+/*!
+ *  \brief This function returns the random samples that are used to calculate
+ *  the histogram functions.
+ *  \return the set of random sample points
+ */
+vector<Point<double>> DistanceHistogram::getSamples()
+{
+  return point_set;
+}
+
+/*!
+ *  \brief This method returns the abstracting curve string.
+ *  \return the curve string
+ */
+CurveString DistanceHistogram::getCurveString()
+{
+  return curve_string;
+}
+
+/*!
+ *  \brief This function returns the list of r values used while constructing
+ *  the histograms.
+ *  \return the list of r values
+ */
+vector<double> DistanceHistogram::getRValues()
+{
+  return r_values;
 }
 
 /*!
@@ -62,16 +103,7 @@ void DistanceHistogram::constructSamples(int num_points)
 void DistanceHistogram::constructSamples()
 {
   int num_points = curve_string.length() * POINTS_PER_UNIT;
-
   constructSamples(num_points);
-}
-
-/*!
- *
- */
-vector<Point<double>> DistanceHistogram::getSamples()
-{
-  return point_set;
 }
 
 /*!
@@ -134,7 +166,6 @@ vector<double> DistanceHistogram::computeGlobalHistogramValues()
 {
   double dr = 0.05;
   double length = curve_string.length();
-  vector<double> r_values;
   double r = dr;
   while (1) {
     if (r > length) {
@@ -154,10 +185,11 @@ vector<double> DistanceHistogram::computeGlobalHistogramValues()
  */
 vector<double> DistanceHistogram::computeGlobalHistogramValues(vector<double> &r)
 {
-  if (num_points == 0) {
+  r_values = r;
+  if (point_set.size() == 0) {
     constructSamples();
   } else {
-    constructSamples(num_points);
+    constructSamples(point_set.size());
   }
   vector<double> values(r.size(),0);
   for (int i=0; i<r.size(); i++) {

@@ -18,10 +18,10 @@ CurveString::CurveString(vector<Point<double>> &vertices) : vertices(vertices)
   }
   // Default behaviour: constructs a polygon when a set of vertices are given
   for (int i=0; i<vertices.size()-1; i++) {
-    vector<Point<double>> cps;
-    cps.push_back(vertices[i]);
-    cps.push_back(vertices[i+1]);
-    BezierCurve<double> curve(cps);
+    vector<Point<double>> control_points(2,Point<double>());
+    control_points[0] = vertices[i];
+    control_points[1] = vertices[i+1];
+    BezierCurve<double> curve(control_points);
     curves.push_back(curve);
     lengths.push_back(curve.length());
   }
@@ -29,7 +29,7 @@ CurveString::CurveString(vector<Point<double>> &vertices) : vertices(vertices)
 
 /*!
  *  \brief This is a constructor function.
- *  \param curves a reference to a vector<Line<Point<double>>>
+ *  \param curves a reference to a vector<BezierCurve<double>>
  */
 CurveString::CurveString(vector<BezierCurve<double>> &curves) : curves(curves)
 {
@@ -50,8 +50,8 @@ CurveString::CurveString(vector<BezierCurve<double>> &curves) : curves(curves)
  *  \param lengths a reference to a vector<double>
  */
 CurveString::CurveString(vector<BezierCurve<double>> &curves,
-                         vector<double> &lengths) : lengths(lengths),
-                         curves(curves)
+                         vector<double> &lengths) : 
+                         curves(curves), lengths(lengths)
 {
   assert(curves.size() == lengths.size());
   if (curves.size() == 0) {
@@ -69,7 +69,7 @@ CurveString::CurveString(vector<BezierCurve<double>> &curves,
  *  \param source a reference to a CurveString
  */
 CurveString::CurveString(const CurveString &source) : vertices(source.vertices),
-curves(source.curves), lengths(source.lengths), samples(source.samples)
+             curves(source.curves), lengths(source.lengths)
 {}
 
 /*!
@@ -83,7 +83,6 @@ CurveString CurveString::operator=(const CurveString &source)
     vertices = source.vertices;
     curves = source.curves;
     lengths = source.lengths;
-    samples = source.samples;
   }
   return *this;
 }
@@ -158,7 +157,7 @@ int CurveString::getCurveIndex(double random, vector<double> &sample_probability
 vector<Point<double>> CurveString::generateRandomPoints(int num_points)
 {
   srand(time(NULL));
-  //vector<Point<double>> samples;
+  vector<Point<double>> samples;
   vector<double> sample_probability = getSampleProbabilities();
   for (int i=0; i<num_points; i++) {
     // randomly choose a side of the curve string
@@ -172,29 +171,5 @@ vector<Point<double>> CurveString::generateRandomPoints(int num_points)
     samples.push_back(point_on_curve);
   }
   return samples;
-}
-
-/*!
- *  \brief This method plots the curve string.
- *  \param file_name a string
- */
-void CurveString::draw(string file_name)
-{
-  string data = "test/" + file_name + ".actual";
-  ofstream data_file(data.c_str());
-  double dt = 0.01;
-  for (int i=0; i<curves.size(); i++) {
-    for (double t=0; t<=1; t+=dt) {
-      Point<double> p = curves[i].getPoint(t);
-      data_file << p.x() << " " << p.y() << endl;
-    }
-  }
-  data_file.close();
-  string sample_data = "test/" + file_name + ".samples";
-  ofstream samples_file(sample_data.c_str());
-  for (int i=0; i<samples.size(); i++) {
-    samples_file << samples[i].x() << " " << samples[i].y() << endl;
-  }
-  samples_file.close();
 }
 

@@ -4,10 +4,14 @@
 #include "Header.h"
 #include "Segmentation.h"
 #include "CurveString.h"
+#include "DistanceHistogram.h"
 
 class Comparison
 {
   private:
+    //! Type of comparison
+    int flag;
+
     //! Direction to choose in the dynamic programming matrix
     enum Direction {
       LEFT,
@@ -15,17 +19,22 @@ class Comparison
       DIAGONAL
     };
 
-    //! 
-    int flag;
-
     //! The two segmentation profiles
     Segmentation profiles[2];
 
-    //! Alignment score
-    double alignment_score,avg_alignment_score,normalized_alignment_score;
+    //! The distance histograms
+    DistanceHistogram histograms[2];
+
+    //! Comparison scores
+    vector<double> scores;
 
     //! Optimal alignment
     vector<array<double,2>> optimal_alignment;
+
+    vector<double> histogram_results[2];
+
+    //! Edit distance
+    void computeEditDistance(string &, string &);
 
     //! Initialize the dynamic programming matrices
     void initialize(vector<vector<double>> &, vector<vector<int>> &, int, int);
@@ -36,17 +45,6 @@ class Comparison
 
     //! Prints the alignment
     void printAlignment(ostream &, vector<array<double,2>> &);
-
-    //! Edit distance
-    void computeEditDistance(string &, string &);
-
-    //! 
-    CurveString curve_string[2];
-
-    //!
-    vector<double> r_values;
-
-    vector<double> results1,results2;
 
     //!
     void plotDistanceHistograms(string, string);
@@ -65,13 +63,13 @@ class Comparison
     void computeBasicAlignment(double, double);
 
     //! Distance histogram 
-    void computeDistanceHistogram(int);
+    void computeDistanceHistogram(int, double);
 
     //! Save the alignment to a file
     void save(vector<string> &);
 
-    //! 
-    vector<double> getAlignmentScores();
+    //! Returns the comparison scores 
+    vector<double> getScores();
 };
 
 #endif

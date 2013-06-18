@@ -1,6 +1,5 @@
 #include "Comparison.h"
 #include "Support.h"
-#include "DistanceHistogram.h"
 
 /*!
  *  \brief This is a null constructor module.
@@ -28,47 +27,50 @@ void Comparison::save(vector<string> &comparison_files)
   string file1 = extractName(comparison_files[0]);
   string file2 = extractName(comparison_files[1]);
   string file_name; 
+
   switch(flag) {
     case BASIC_ALIGNMENT:
     {
       file_name = "output/alignments/" + file1 + "_" + file2 + ".alignment";
-      ofstream fp(file_name.c_str());
-      fp << "Alignment score: " << alignment_score << endl;
-      fp << "Avg. Alignment score: " << avg_alignment_score << endl;
-      fp << "Normalized Alignment score: " << normalized_alignment_score << endl;
-      printAlignment(fp,optimal_alignment);
-      fp.close();
+      ofstream log(file_name.c_str());
+      log << "Alignment score: " << scores[0] << endl;
+      log << "Avg. Alignment score: " << scores[1] << endl;
+      log << "Normalized Alignment score: " << scores[2] << endl;
+      printAlignment(log,optimal_alignment);
+      log.close();
       break;
     }
 
     case DISTANCE_HISTOGRAM:
     {
       file_name = "output/histograms/" + file1 + "_" + file2 + ".histogram";
-      ofstream fp(file_name.c_str());
-      fp << "Length of curve 1: " << curve_string[0].length() << endl;
-      fp << "Length of curve 2: " << curve_string[1].length() << endl;
-      double diff = 0,diff2=0;
-      string plot_data = file_name + ".data";
-      ofstream plot(plot_data.c_str());
-      double x = 0, y = 0;
-      for (int i=0; i<r_values.size(); i++) {
-        diff += fabs(results1[i]-results2[i]);
-        double a = results1[i]/curve_string[0].length();
-        double b = results2[i]/curve_string[1].length();
-        diff2 += fabs(a-b);
-        plot << r_values[i] << " ";
-        plot << results1[i] << " " << results2[i] << endl;
-        x += results1[i];
-        y += results2[i];
+
+      ofstream log(file_name.c_str());
+      for (int i=0; i<2; i++) {
+        log << "Length of curve " << i+1 << ": " << curve_lengths[i] << endl;
       }
-      fp << "Score: " << diff << endl;
-      fp << "Normalized score: " << diff2 << endl;
-      plot.close();
-      fp.close();
+      log << "Score: " << scores[0] << endl;
+      log << "Normalized score: " << scores[1] << endl;
+      log.close();
+
+      string data_file_name = file_name + ".data";
+      ofstream data(data_file_name.c_str());
+      vector<double> r = histograms[0].getRValues();
+      for (int i=0; i<r.size(); i++) {
+        data << r[i] << " ";
+        data << histogram_results[0][i] << " " << histogram_results[1][i] << endl;
+      }
+      data.close();
+
       plotDistanceHistograms(file1,file2);
-      ofstream fw("output/histogram_comparison",ios::app);
-      fw << file1 << " " << file2 << " " << x / r_values.size() << " " << y / r_values.size() << " " << diff << " " << diff2 * 100 << endl;
-      fw.close();
+
+      string results_file = "output/histograms/";
+      int num_samples = histograms[0].getNumberOfSamples();
+      results_file += boost::lexical_cast<string>(num_samples) + "/";
+      ofstream results("output/histograms.comparison",ios::app);
+      results << setw(15) << file1 << setw(15) << file2 << setw(10) << num_samples
+              << setw(10)scores[0] << " " << scores[1] << endl;
+      results.close();
       break;
     }
   }
@@ -318,11 +320,17 @@ void Comparison::computeEditDistance(double gap_penalty)
     }
   }
   //cout << "\nEdit distance: " << matrix[x.size()][y.size()] << endl;
-  alignment_score = matrix[x.size()][y.size()];
+
+  scores = vector<double>(3,0);
+  // alignment score
+  scores[0] = matrix[x.size()][y.size()];  
   vector<array<double,2>> optimal_alignment = traceback(direction,x,y);
-  avg_alignment_score = alignment_score / optimal_alignment.size();
-  normalized_alignment_score = alignment_score / (x.size() + y.size());
-  //printAlignment(cout,optimal_alignment);
+
+  // average alignment score
+  scores[1] = alignment_score / optimal_alignment.size();
+
+  // normalized alignment score
+  scores[2] = alignment_score / (x.size() + y.size());
 }
 
 /*!
@@ -370,37 +378,54 @@ void Comparison::computeBasicAlignment(double gap_penalty, double max_diff)
     }
   }
   //cout << "\nAlignment score: " << matrix[x.size()][y.size()] << endl;
-  alignment_score = matrix[x.size()][y.size()];
+
+  scores = vector<double>(3,0);
+  // alignment score
+  scores[0] = matrix[x.size()][y.size()];  
   vector<array<double,2>> optimal_alignment = traceback(direction,x,y);
-  avg_alignment_score = alignment_score / optimal_alignment.size();
-  normalized_alignment_score = alignment_score / (x.size() + y.size());
-  //printAlignment(cout,optimal_alignment);
+
+  // average alignment score
+  scores[1] = alignment_score / optimal_alignment.size();
+
+  // normalized alignment score
+  scores[2] = alignment_score / (x.size() + y.size());
 }
 
 /*!
- *  \brief This method computes the alignment for the MML based approach.
+ *  \brief This method computes the distance histograms for the two 
+ *  segmentations and compares them.
+ *  \param num_points an integer
+ *  \param dr a double
  */
-void Comparison::computeDistanceHistogram(int num_points)
+void Comparison::computeDistanceHistogram(int num_points, double dr)
 {
   flag = DISTANCE_HISTOGRAM;
-  vector<BezierCurve<double>> bezier_curves1 = profiles[0].getBezierCurves();
-  vector<double> lengths1 = profiles[0].getBezierCurvesLengths();
-  curve_string[0] = CurveString(bezier_curves1,lengths1);
-  DistanceHistogram histogram1(curve_string[0],num_points);
+  vector<BezierCurve<double>> bezier_curves[2];
+  vector<double> lengths[2];
+  DistanceHistogram histogram[2];
 
-  vector<BezierCurve<double>> bezier_curves2 = profiles[1].getBezierCurves();
-  vector<double> lengths2 = profiles[1].getBezierCurvesLengths();
-  curve_string[1] = CurveString(bezier_curves2,lengths2);
-  DistanceHistogram histogram2(curve_string[1],num_points);
-
-  double max_length;
-  if (curve_string[0].length() > curve_string[1].length()) {
-    max_length = curve_string[0].length();
-  } else {
-    max_length = curve_string[1].length();
+  if (num_points == 0) {
+    int max_num_residues = profiles[0].getNumberOfCoordinates();
+    if (max_num_residues < profiles[1].getNumberOfCoordinates()) {
+      max_num_residues = profiles[1].getNumberOfCoordinates();
+    }
+    num_points = max_num_residues * 10;
   }
-  //vector<double> r_values;
-  double dr = 1;
+
+  double max_length = 0;
+  double curve_lengths[2];
+  for (int i=0; i<2; i++) {
+    bezier_curves[i] = profiles[i].getBezierCurves();
+    lengths[i] = profiles[i].getBezierCurvesLengths();
+    CurveString curve_string(bezier_curves[i],lengths[i]);
+    histograms[i] = DistanceHistogram(curve_string,num_points);
+    curve_lengths[i] = curve_string.length();
+    if (max_length < curve_lengths[i]) {
+      max_length = curve_lengths[i];
+    }
+  }
+
+  vector<double> r_values;
   double r = dr;
   while (1) {
     if (r > max_length) {
@@ -409,25 +434,27 @@ void Comparison::computeDistanceHistogram(int num_points)
     r_values.push_back(r);
     r += dr;
   }
-  results1 = histogram1.computeGlobalHistogramValues(r_values);
-  results2 = histogram2.computeGlobalHistogramValues(r_values);
-  //plotDistanceHistograms(r,results1,results2);
+
+  for (int i=0; i<2; i++) {
+    histogram_results[i] = histograms[i].computeGlobalHistogramValues(r_values);
+  }
+  scores = vector<double>(2,0);
+  for (int i=0; i<r_values.size(); i++) {
+    scores[0] += fabs(histogram_results[0][i] - histogram_results[1][i]);
+    double a = histogram_results[0][i]/curve_lengths[0];
+    double b = histogram_results[1][i]/curve_lengths[1];
+    scores[1] += fabs(a-b);
+  }
+  scores[0] /= r_values.size();
+  scores[1] *= num_points;
 }
 
 /*!
- *
+ *  \brief This function returns the comparison scores.
+ *  \return the list of scores
  */
-
-
-/*!
- *
- */
-vector<double> Comparison::getAlignmentScores()
+vector<double> Comparison::getScores()
 {
-  vector<double> scores;
-  scores.push_back(alignment_score);
-  scores.push_back(avg_alignment_score);
-  scores.push_back(normalized_alignment_score);
   return scores;
 }
 

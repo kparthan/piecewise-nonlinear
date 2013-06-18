@@ -7,14 +7,14 @@
 class DistanceHistogram
 {
   private:
-    //! the curve that is abstracted
+    //! Curve that is abstracted
     CurveString curve_string;
 
-    //!
-    int num_points;
-
-    //! list of points
+    //! List of points
     vector<Point<double>> point_set;
+
+    //! List of r values used
+    vector<double> r_values;
 
     //! Sample points on the curve
     void constructSamples(int);
@@ -41,8 +41,17 @@ class DistanceHistogram
     //! Assignment operator
     DistanceHistogram operator=(const DistanceHistogram &);
 
-    //!
+    //! Returns the number of samples
+    int getNumberOfSamples();
+
+    //! Returns the random sample points
     vector<Point<double>> getSamples();
+
+    //! Returns the curve string
+    CurveString getCurveString();
+
+    //! Returns the list of r values used
+    vector<double> getRValues();
 
     //! Compute the local histogram function
     vector<double> computeLocalHistogram(double);
