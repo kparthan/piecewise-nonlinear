@@ -11,8 +11,9 @@ while line != '':
   line = fr.readline()
 fr.close()
 
-cmd = './piecewise-nonlinear-fit --structure protein --compare distance_histogram --controls 0 1 2 --constrain sigma length --n 100 --files '
+cmd = './piecewise-nonlinear-fit --structure protein --compare distance_histogram --dr 1 --controls 0 1 2 --constrain sigma length --files '
 fw = open('histogram_experiments.sh','w')
+fw.write('STARTM=`date -u "+%s"`\n')
 fw.write('line_number=1\n')
 num_files = len(files)
 for i in range(num_files):
@@ -21,5 +22,14 @@ for i in range(num_files):
     fw.write('echo $line_number\n')
     fw.write('line_number=$((line_number+1))\n')
 
+fw.write('STOPM=`date -u "+%s"`\n')
+fw.write('RUNTIMEM=`expr $STOPM - $STARTM`\n')
+fw.write('if (($RUNTIMEM>59)); then\n')
+fw.write('TTIMEM=`printf "%dm%ds\\n" $((RUNTIMEM/60)) $((RUNTIMEM%60))`\n')
+fw.write('else\n')
+fw.write('TTIMEM=`printf "%ds\\n" $((RUNTIMEM))`\n')
+fw.write('fi\n\n')
+fw.write('echo "Executing "script function" took: $TTIMEM"\n')
+fw.close()
 os.system('chmod 755 histogram_experiments.sh')
 

@@ -428,6 +428,22 @@ bool checkIfSegmentationExists(string &pdb_file)
 }
 
 /*!
+ *  \brief This function checks whether the histogram exists or not
+ *  \param pdb_file a reference to a string
+ *  \param num_samples an integer
+ *  \param dr a double
+ *  \retutn the histogram exists or not
+ */
+bool checkIfHistogramExists(string &pdb_file, int num_samples, double dr)
+{
+  string path_to_histogram = "output/histograms/data/" + pdb_file + "_";
+  path_to_histogram += boost::lexical_cast<string>(num_samples) + "_";
+  path_to_histogram += boost::lexical_cast<string>(dr).substr(0,4);
+  path_to_histogram += ".histogram";
+  return checkFile(path_to_histogram.c_str());
+}
+
+/*!
  *  \brief This module compares the segmentation of two generic structures
  *  \param parameters a reference to a struct Parameters
  */
@@ -545,7 +561,7 @@ Segmentation generalFit(struct Parameters &parameters)
 string getPDBFilePath(string &pdb_id)
 {
   boost::algorithm::to_lower(pdb_id);
-  string path = "/home/parthan/Research/PDB/" ;
+  string path = "/home/pkas7/Research/PDB/" ;
   string directory(pdb_id,1,2);
   path += directory + "/pdb" + pdb_id + ".ent.gz";
   return path;

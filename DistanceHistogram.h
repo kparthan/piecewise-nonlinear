@@ -16,6 +16,15 @@ class DistanceHistogram
     //! List of r values used
     vector<double> r_values;
 
+    //! Increment in r
+    double dr;
+
+    //! Times taken to compute the histogram function
+    array<double,2> times;
+
+    //! List of histogram function values
+    vector<double> global_histogram_values;
+
     //! Sample points on the curve
     void constructSamples(int);
  
@@ -35,6 +44,9 @@ class DistanceHistogram
     //! Constructor
     DistanceHistogram(CurveString &, int);
 
+    //! Constructor
+    DistanceHistogram(CurveString &, int, double);
+
     //! Copy constructor
     DistanceHistogram(const DistanceHistogram &);
 
@@ -53,6 +65,12 @@ class DistanceHistogram
     //! Returns the list of r values used
     vector<double> getRValues();
 
+    //! Returns the increment in r
+    double getIncrementInR();
+
+    //! Returns the computation time
+    array<double,2> getComputationTime();
+
     //! Compute the local histogram function
     vector<double> computeLocalHistogram(double);
 
@@ -64,6 +82,12 @@ class DistanceHistogram
 
     //! Compute the global histogram values for given values of r
     vector<double> computeGlobalHistogramValues(vector<double> &);
+
+    //! Saves the function values of a distance histogram
+    void save(string);
+
+    //! Loads the function values of a distance histogram
+    void load(string);
 };
 
 #endif

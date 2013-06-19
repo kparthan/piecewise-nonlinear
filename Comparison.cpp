@@ -24,14 +24,15 @@ Comparison::Comparison(Segmentation &a, Segmentation &b)
  */
 void Comparison::save(vector<string> &comparison_files)
 {
-  string file1 = extractName(comparison_files[0]);
-  string file2 = extractName(comparison_files[1]);
+  string files[2];
+  files[0] = extractName(comparison_files[0]);
+  files[1] = extractName(comparison_files[1]);
   string file_name; 
 
   switch(flag) {
     case BASIC_ALIGNMENT:
     {
-      file_name = "output/alignments/" + file1 + "_" + file2 + ".alignment";
+      file_name = "output/alignments/" + files[0] + "_" + files[1] + ".alignment";
       ofstream log(file_name.c_str());
       log << "Alignment score: " << scores[0] << endl;
       log << "Avg. Alignment score: " << scores[1] << endl;
@@ -43,18 +44,35 @@ void Comparison::save(vector<string> &comparison_files)
 
     case DISTANCE_HISTOGRAM:
     {
-      file_name = "output/histograms/" + file1 + "_" + file2 + ".histogram";
+      int num_samples[2];
+      num_samples[0] = histograms[0].getNumberOfSamples(); 
+      num_samples[1] = histograms[1].getNumberOfSamples(); 
+      double dr = histograms[0].getIncrementInR();
+      string common_string = files[0] + "_" + files[1] + "_" +
+                      boost::lexical_cast<string>(num_samples[0]) + "_" +
+                      boost::lexical_cast<string>(num_samples[1]) + "_" +
+                      boost::lexical_cast<string>(dr).substr(0,4);
 
-      ofstream log(file_name.c_str());
+      string log_file = "output/histograms/logs/" + common_string + ".log";
+      ofstream log(log_file.c_str());
+      ofstream time("output/histograms/histograms.time",ios::app);
       for (int i=0; i<2; i++) {
-        log << "Length of curve " << i+1 << ": " << curve_lengths[i] << endl;
+        log << "CURVE " << i+1 << ":\n";
+        log << "\t# of residues: " << profiles[i].getNumberOfCoordinates() << endl;
+        log << "\tLength: " << histograms[i].getCurveString().length() << endl;
+        log << "\t# of samples: " << num_samples[i] << endl;
+        array<double,2> times = histograms[i].getComputationTime();
+        log << "\tCPU time: " << times[0] << " secs." << endl;
+        //log << "\tWall time: " << times[1] << " secs." << endl << endl;
+        time << setw(15) << files[i] << setw(10) << times[0] << endl << endl;
       }
+      time.close();
       log << "Score: " << scores[0] << endl;
       log << "Normalized score: " << scores[1] << endl;
       log.close();
 
-      string data_file_name = file_name + ".data";
-      ofstream data(data_file_name.c_str());
+      string data_file = "output/histograms/data/" + common_string + ".data";
+      ofstream data(data_file.c_str());
       vector<double> r = histograms[0].getRValues();
       for (int i=0; i<r.size(); i++) {
         data << r[i] << " ";
@@ -62,14 +80,13 @@ void Comparison::save(vector<string> &comparison_files)
       }
       data.close();
 
-      plotDistanceHistograms(file1,file2);
+      plotDistanceHistograms(files[0],files[1],common_string);
 
-      string results_file = "output/histograms/";
-      int num_samples = histograms[0].getNumberOfSamples();
-      results_file += boost::lexical_cast<string>(num_samples) + "/";
-      ofstream results("output/histograms.comparison",ios::app);
-      results << setw(15) << file1 << setw(15) << file2 << setw(10) << num_samples
-              << setw(10)scores[0] << " " << scores[1] << endl;
+      ofstream results("output/histograms/histograms.comparison",ios::app);
+      results << setw(15) << files[0] << setw(15) << files[1]
+              << setw(10) << num_samples[0] << setw(10) << num_samples[1] 
+              << setw(5) << histograms[0].getIncrementInR()
+              << setw(10) << scores[0] << setw(10) << scores[1] << endl;
       results.close();
       break;
     }
@@ -77,19 +94,24 @@ void Comparison::save(vector<string> &comparison_files)
 }
 
 /*!
- *
+ *  \brief This function plots the two histograms against one another
+ *  \param file1 a string
+ *  \param file2 a string
+ *  \param common_string a string
  */
-void Comparison::plotDistanceHistograms(string file1, string file2)
+void Comparison::plotDistanceHistograms(string file1, string file2, 
+                                        string common_string)
 {
-  string file_name = "output/histograms/" + file1 + "_" + file2 + ".histogram";
-  string plot_data = file_name + ".data";
+  string plot_file = "output/histograms/plots/" + common_string + ".histogram";
+  string data_file = "output/histograms/data/" + common_string + ".data";
   ofstream script("script.plot");
   script << "set terminal post eps" << endl;
-  script << "set output \"" << file_name << ".eps\"" << endl; 
+  script << "set output \"" << plot_file << ".eps\"" << endl; 
+  script << "set yr[0:1.5]" << endl;
   script << "set multiplot" << endl;
-  script << "plot \"" << plot_data << "\" using 1:2 title '" << file1
+  script << "plot \"" << data_file << "\" using 1:2 title '" << file1
          << "' with points lc rgb \"red\", \\" << endl;
-  script << "\"" << plot_data << "\" using 1:3 title '" << file2
+  script << "\"" << data_file << "\" using 1:3 title '" << file2
          << "' with points lc rgb \"blue\"" << endl;
   script.close();
   system("gnuplot -persist script.plot");
@@ -327,10 +349,10 @@ void Comparison::computeEditDistance(double gap_penalty)
   vector<array<double,2>> optimal_alignment = traceback(direction,x,y);
 
   // average alignment score
-  scores[1] = alignment_score / optimal_alignment.size();
+  scores[1] = scores[0] / optimal_alignment.size();
 
   // normalized alignment score
-  scores[2] = alignment_score / (x.size() + y.size());
+  scores[2] = scores[0] / (x.size() + y.size());
 }
 
 /*!
@@ -385,10 +407,10 @@ void Comparison::computeBasicAlignment(double gap_penalty, double max_diff)
   vector<array<double,2>> optimal_alignment = traceback(direction,x,y);
 
   // average alignment score
-  scores[1] = alignment_score / optimal_alignment.size();
+  scores[1] = scores[0] / optimal_alignment.size();
 
   // normalized alignment score
-  scores[2] = alignment_score / (x.size() + y.size());
+  scores[2] = scores[0] / (x.size() + y.size());
 }
 
 /*!
@@ -404,49 +426,48 @@ void Comparison::computeDistanceHistogram(int num_points, double dr)
   vector<double> lengths[2];
   DistanceHistogram histogram[2];
 
-  if (num_points == 0) {
-    int max_num_residues = profiles[0].getNumberOfCoordinates();
-    if (max_num_residues < profiles[1].getNumberOfCoordinates()) {
-      max_num_residues = profiles[1].getNumberOfCoordinates();
+  double num_samples[2];
+  for (int i=0; i<2; i++) {
+    if (num_points == 0) {
+      num_samples[i] = profiles[i].getNumberOfCoordinates() * 10;
+    } else {
+      num_samples[i] = num_points;
     }
-    num_points = max_num_residues * 10;
   }
 
-  double max_length = 0;
   double curve_lengths[2];
   for (int i=0; i<2; i++) {
     bezier_curves[i] = profiles[i].getBezierCurves();
     lengths[i] = profiles[i].getBezierCurvesLengths();
     CurveString curve_string(bezier_curves[i],lengths[i]);
-    histograms[i] = DistanceHistogram(curve_string,num_points);
+    histograms[i] = DistanceHistogram(curve_string,num_samples[i],dr);
     curve_lengths[i] = curve_string.length();
-    if (max_length < curve_lengths[i]) {
-      max_length = curve_lengths[i];
-    }
   }
+
+  int curve_with_max_length = ((curve_lengths[0] > curve_lengths[1]) ? 0 : 1 );
+  double max_length = curve_lengths[curve_with_max_length];
 
   vector<double> r_values;
   double r = dr;
   while (1) {
+    r_values.push_back(r);
     if (r > max_length) {
       break;
     }
-    r_values.push_back(r);
     r += dr;
   }
-
   for (int i=0; i<2; i++) {
     histogram_results[i] = histograms[i].computeGlobalHistogramValues(r_values);
   }
+  
   scores = vector<double>(2,0);
   for (int i=0; i<r_values.size(); i++) {
     scores[0] += fabs(histogram_results[0][i] - histogram_results[1][i]);
-    double a = histogram_results[0][i]/curve_lengths[0];
-    double b = histogram_results[1][i]/curve_lengths[1];
+    double a = histogram_results[0][i] * num_samples[0] / curve_lengths[0];
+    double b = histogram_results[1][i] * num_samples[1] / curve_lengths[1];
     scores[1] += fabs(a-b);
   }
   scores[0] /= r_values.size();
-  scores[1] *= num_points;
 }
 
 /*!

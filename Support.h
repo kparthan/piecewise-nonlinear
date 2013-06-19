@@ -36,6 +36,7 @@ void compareProteinStructures(struct Parameters &);
 void compareGenericStructures(struct Parameters &);
 void compareSegmentations(Segmentation &, Segmentation &, struct Parameters &);
 bool checkIfSegmentationExists(string &);
+bool checkIfHistogramExists(string &, int, double);
 
 struct Parameters parseCommandLineInput (int, char **); 
 void Usage (const char *, options_description &);

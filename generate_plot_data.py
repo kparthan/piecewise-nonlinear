@@ -1,3 +1,5 @@
+# this script file is to generate the data required for boxplots
+# for comparison using ALIGNMENTS
 import sys, codecs, os, re
 if sys.stdout.encoding is None:
         sys.stdout = codecs.open('/dev/stdout', 'w', 'utf-8')

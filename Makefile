@@ -80,7 +80,7 @@ DistanceHistogram.o: DistanceHistogram.cpp DistanceHistogram.h
 	g++ -c $(CFLAGS) $< -o $@
 
 clean:
-	rm -f *.o *~ *.pdb piecewise-nonlinear-fit 
+	rm -f *.o *~ *.pdb piecewise-nonlinear-fit script.plot 
 
 clean_output:
 	rm -f output/segmentation/* output/segmentation_profile/* output/modified_pdb_files/* output/pymol_scripts/* output/alignments/* output/comparison.results

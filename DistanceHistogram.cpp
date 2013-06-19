@@ -23,6 +23,23 @@ DistanceHistogram::DistanceHistogram(CurveString &curve_string, int num_points) 
                                      curve_string(curve_string)
 {
   point_set = vector<Point<double>>(num_points,Point<double>());
+  dr = 0.05;
+}
+
+/*!
+ *  \brief This is a constructor module.
+ *  \param curve_string a reference to a CurveString
+ *  \param num_points an integer
+ *  \param dr a double
+ */
+DistanceHistogram::DistanceHistogram(CurveString &curve_string, int num_points,
+                                     double dr) : dr(dr),
+                                     curve_string(curve_string)
+{
+  point_set = vector<Point<double>>(num_points,Point<double>());
+  r_values = vector<double>();
+  global_histogram_values = vector<double>();
+  times[0] = 0; times[1] = 0;
 }
 
 /*!
@@ -30,7 +47,9 @@ DistanceHistogram::DistanceHistogram(CurveString &curve_string, int num_points) 
  *  \param source a reference to a DistanceHistogram
  */
 DistanceHistogram::DistanceHistogram(const DistanceHistogram &source) :
-                   curve_string(source.curve_string), point_set(source.point_set)
+                   curve_string(source.curve_string), point_set(source.point_set),
+                   r_values(source.r_values), dr(source.dr), times(source.times),
+                   global_histogram_values(source.global_histogram_values)
 {}
 
 /*!
@@ -43,6 +62,10 @@ DistanceHistogram DistanceHistogram::operator=(const DistanceHistogram &source)
   if (this != &source) {
     curve_string = source.curve_string;
     point_set = source.point_set;
+    r_values = source.r_values;
+    dr = source.dr;
+    times = source.times;
+    global_histogram_values = source.global_histogram_values;
   }
   return *this;
 }
@@ -84,6 +107,25 @@ CurveString DistanceHistogram::getCurveString()
 vector<double> DistanceHistogram::getRValues()
 {
   return r_values;
+}
+
+/*!
+ *  \brief This function returns the increment in r.
+ *  \return dr
+ */
+double DistanceHistogram::getIncrementInR()
+{
+  return dr;
+}
+
+/*!
+ *  \brief This function returns the time taken to compute the histogram 
+ *  function values.
+ *  \return the time taken
+ */
+array<double,2> DistanceHistogram::getComputationTime()
+{
+  return times;
 }
 
 /*!
@@ -164,7 +206,6 @@ double DistanceHistogram::computeGlobalHistogram(double r)
  */
 vector<double> DistanceHistogram::computeGlobalHistogramValues()
 {
-  double dr = 0.05;
   double length = curve_string.length();
   double r = dr;
   while (1) {
@@ -185,16 +226,77 @@ vector<double> DistanceHistogram::computeGlobalHistogramValues()
  */
 vector<double> DistanceHistogram::computeGlobalHistogramValues(vector<double> &r)
 {
+  clock_t c_start = clock();
+  auto t_start = high_resolution_clock::now();
+
   r_values = r;
   if (point_set.size() == 0) {
     constructSamples();
   } else {
     constructSamples(point_set.size());
   }
-  vector<double> values(r.size(),0);
+  global_histogram_values = vector<double>(r.size(),0);
+  bool compute = 1;
   for (int i=0; i<r.size(); i++) {
-    values[i] = computeGlobalHistogram(r[i]);
+    if (compute) {
+      global_histogram_values[i] = computeGlobalHistogram(r[i]);
+      if (fabs(global_histogram_values[i] - 1) <= ZERO) {
+        compute = 0;
+      }
+    } else {
+      global_histogram_values[i] = 1;
+    }
   }
-  return values;
+
+  clock_t c_end = clock();
+  auto t_end = high_resolution_clock::now();
+  times[0] = double(c_end-c_start)/(double)(CLOCKS_PER_SEC); // cpu time
+  times[1] = duration_cast<seconds>(t_end-t_start).count();  // wall time
+
+  return global_histogram_values;
+}
+
+/*!
+ *  \brief This method saves the distance histogram.
+ *  \param file_name a string
+ */
+void DistanceHistogram::save(string file_name)
+{
+  string data_file = "output/histograms/data/" + file_name + "_";
+  string n = boost::lexical_cast<string>(point_set.size());
+  string increment_r = boost::lexical_cast<string>(dr).substr(0,4);
+  data_file += n + "_" + increment_r + ".histogram";
+  ofstream data(data_file.c_str());
+  for (int i=0; i<r_values.size(); i++) {
+    data << r_values[i] << " " << global_histogram_values[i] << endl;
+  }
+  data.close();
+}
+
+/*!
+ *  \brief This function loads the distance histogram values corresponding 
+ *  to a file
+ *  \param file_path a string
+ */
+void DistanceHistogram::load(string file_path)
+{
+  ifstream data(file_path.c_str());
+  string line;
+  vector<double> numbers;
+
+  while (getline(data,line)) {
+    boost::char_separator<char> sep(" ");
+    boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
+    BOOST_FOREACH(const string &t, tokens) {
+      istringstream iss(t);
+      double x;
+      iss >> x;
+      numbers.push_back(x);
+    }
+    r_values.push_back(numbers[0]);
+    global_histogram_values.push_back(numbers[1]);
+    numbers.clear();
+  }
+  data.close();
 }
 

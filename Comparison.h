@@ -46,8 +46,8 @@ class Comparison
     //! Prints the alignment
     void printAlignment(ostream &, vector<array<double,2>> &);
 
-    //!
-    void plotDistanceHistograms(string, string);
+    //! Plots the two histograms
+    void plotDistanceHistograms(string, string, string);
 
   public:
     //! Null constructor

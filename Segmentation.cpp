@@ -187,6 +187,7 @@ void Segmentation::save(string &pdb_file)
 {
   string output_file = "output/segmentation_profile/" + pdb_file + ".profile";
   ofstream profile(output_file.c_str());
+  profile << num_coordinates << endl;
   profile << null_bpr << endl;
   profile << bezier_bpr << endl;
   for (int i=0; i<planar_angles.size(); i++) {
@@ -218,12 +219,13 @@ void Segmentation::save(string &pdb_file)
  */
 void Segmentation::load(string &pdb_file)
 {
-  const int NULL_BPR_LINE = 1;
-  const int BEZIER_BPR_LINE = 2;
-  const int PLANAR_ANGLES_LINE = 3;
-  const int DIHEDRAL_ANGLES_LINE = 4;
-  const int CONNECTING_LENGTHS_LINE = 5;
-  const int BEZIER_CURVES_LINE = 6;
+  const int NUM_COORDINATES = 1;
+  const int NULL_BPR_LINE = 2;
+  const int BEZIER_BPR_LINE = 3;
+  const int PLANAR_ANGLES_LINE = 4;
+  const int DIHEDRAL_ANGLES_LINE = 5;
+  const int CONNECTING_LENGTHS_LINE = 6;
+  const int BEZIER_CURVES_LINE = 7;
 
   planar_angles.clear();
   dihedral_angles.clear();
@@ -247,6 +249,10 @@ void Segmentation::load(string &pdb_file)
       numbers.push_back(x);
     }
     switch(i) {
+      case NUM_COORDINATES:
+        num_coordinates = numbers[0];
+        break;
+
       case NULL_BPR_LINE:
         null_bpr = numbers[0];
         break;
@@ -268,7 +274,7 @@ void Segmentation::load(string &pdb_file)
         break;
 
       default:
-      if (i%2 == 0) {
+      if (i%2 == 1) {
         vector<Point<double>> control_points;
         for (int j=0; j<numbers.size(); j+=3) {
           double x = numbers[j];
