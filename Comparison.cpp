@@ -62,9 +62,9 @@ void Comparison::save(vector<string> &comparison_files)
         log << "\tLength: " << histograms[i].getCurveString().length() << endl;
         log << "\t# of samples: " << num_samples[i] << endl;
         array<double,2> times = histograms[i].getComputationTime();
-        log << "\tCPU time: " << times[0] << " secs." << endl;
+        log << "\tCPU time: " << times[0] << " secs." << endl << endl;
         //log << "\tWall time: " << times[1] << " secs." << endl << endl;
-        time << setw(15) << files[i] << setw(10) << times[0] << endl << endl;
+        time << setw(15) << files[i] << setw(10) << times[0] << endl;
       }
       time.close();
       log << "Score: " << scores[0] << endl;
@@ -85,7 +85,7 @@ void Comparison::save(vector<string> &comparison_files)
       ofstream results("output/histograms/histograms.comparison",ios::app);
       results << setw(15) << files[0] << setw(15) << files[1]
               << setw(10) << num_samples[0] << setw(10) << num_samples[1] 
-              << setw(5) << histograms[0].getIncrementInR()
+              << setw(5) << histograms[0].getIncrementInR() << " "
               << setw(10) << scores[0] << setw(10) << scores[1] << endl;
       results.close();
       break;
