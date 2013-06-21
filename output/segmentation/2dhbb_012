@@ -1,4 +1,4 @@
-Using structure file: test/2dhbb.pdb
+Using structure file: /home/pkas7/Research/Work/piecewise-nonlinear/test/2dhbb.pdb
 Number of residues: 146
 Doing a BEZIER segmentation ...
 
@@ -13,8 +13,8 @@ Bits per residue: 40.5653
 Internal segmentation:
 0-->5-->34-->49-->78-->98-->122-->143-->145
 
-CPU time used: 11.8 secs.
-Wall clock time elapsed: 11 secs.
+CPU time used: 8.09 secs.
+Wall clock time elapsed: 8 secs.
 
         SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
               1            B 1            B 6              6        221.437         (7.952, -17.288, -5.212)

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/gf/d2gf7b1.ent
+Number of residues: 56
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 28871.8
+Null Model Fit: 2459.31 bits.
+Bits per residue: 44.7147
+
+Bezier model fit: 2281.34 bits.
+Bits per residue: 41.4789
+
+# of segments: 7
+Internal segmentation:
+0-->2-->14-->23-->36-->45-->46-->55
+
+CPU time used: 2.33 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          B 956          B 958              3        93.4665         (48.812, 12.382, 46.625)
+                                                                                    (51.927, 6.621, 47.522)
+
+              2          B 958          B 970             13        504.293         (51.927, 6.621, 47.522)
+                                                                                    (30.111, 12.592, 55.805)
+
+              3          B 970          B 979             10        363.563         (30.111, 12.592, 55.805)         (42.3895, -3.43972, 58.2058)
+                                                                                    (45.929, 6.591, 41.382)
+
+              4          B 979          B 992             14        513.446         (45.929, 6.591, 41.382)         (40.0953, 25.4259, 26.9851)
+                                                                                    (22.075, 34.806, 34.704)
+
+              5          B 992         B 1001             10        373.926         (22.075, 34.806, 34.704)         (35.6513, 24.0676, 41.0142)
+                                                                                    (31.909, 16.126, 26.547)
+
+              6         B 1001         B 1002              2        47.7518         (31.909, 16.126, 26.547)
+                                                                                    (29.313, 18.437, 28.082)
+
+              7         B 1002         B 1011             10        384.894         (29.313, 18.437, 28.082)         (29.7003, 32.0488, 9.51851)
+                                                                                    (22.826, 16.393, 21.755)
+

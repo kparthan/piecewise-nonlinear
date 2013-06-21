@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/n9/d1n9sj_.ent
+Number of residues: 72
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16901.6
+Null Model Fit: 3119.9 bits.
+Bits per residue: 43.9422
+
+Bezier model fit: 2931.93 bits.
+Bits per residue: 41.2948
+
+# of segments: 7
+Internal segmentation:
+0-->18-->19-->33-->46-->47-->55-->71
+
+CPU time used: 3.44 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           J 15           J 33             19        744.635         (30.346, 10.473, 25.001)         (14.7689, -16.2801, 37.0307)
+                                                                                    (23.046, 14.674, 52.492)
+
+              2           J 33           J 34              2        46.9793         (23.046, 14.674, 52.492)
+                                                                                    (21.333, 12.783, 55.382)
+
+              3           J 34           J 48             15        569.136         (21.333, 12.783, 55.382)         (9.03092, -9.88224, 35.3866)
+                                                                                    (24.106, 13.025, 33.49)
+
+              4           J 48           J 61             14        533.066         (24.106, 13.025, 33.49)         (2.00373, -1.29079, 38.1535)
+                                                                                    (19.128, 5.076, 58.388)
+
+              5           J 61           J 62              2        46.9793         (19.128, 5.076, 58.388)
+                                                                                    (18.272, 1.74, 56.824)
+
+              6           J 62           J 70              9        333.261         (18.272, 1.74, 56.824)         (2.60293, 5.23427, 55.932)
+                                                                                    (8.632, 6.02, 39.679)
+
+              7           J 70           J 86             17        657.875         (8.632, 6.02, 39.679)         (35.2812, 24.8402, 44.2595)
+                                                                                    (19.624, -10.343, 44.708)
+

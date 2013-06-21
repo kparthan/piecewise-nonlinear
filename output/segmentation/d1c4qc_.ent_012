@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/c4/d1c4qc_.ent
+Number of residues: 69
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16743.5
+Null Model Fit: 2987.15 bits.
+Bits per residue: 43.9287
+
+Bezier model fit: 2809.04 bits.
+Bits per residue: 41.3094
+
+# of segments: 6
+Internal segmentation:
+0-->16-->24-->32-->46-->58-->68
+
+CPU time used: 3.29 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          C 301          C 317             17        656.941         (14.896, 6.36, 22.774)         (-16.5989, -6.15376, 24.2185)
+                                                                                    (0.038, 19.976, 7.611)
+
+              2          C 317          C 325              9        331.562         (0.038, 19.976, 7.611)
+                                                                                    (-2.676, 4.707, 25.682)
+
+              3          C 325          C 333              9         339.04         (-2.676, 4.707, 25.682)         (-0.881901, 17.3667, 21.3143)
+                                                                                    (7.162, 10.544, 8.456)
+
+              4          C 333          C 347             15        570.417         (7.162, 10.544, 8.456)
+                                                                                    (-5.478, -4.729, 16.01)
+
+              5          C 347          C 359             13        502.015         (-5.478, -4.729, 16.01)         (19.9658, 7.34599, 24.2691)
+                                                                                    (0.097, 14.96, 24.338)
+
+              6          C 359          C 369             11        409.065         (0.097, 14.96, 24.338)         (14.7456, 13.0611, 11.6415)
+                                                                                    (3.999, -6.443, 17.433)
+

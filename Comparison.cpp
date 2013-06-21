@@ -24,6 +24,7 @@ Comparison::Comparison(Segmentation &a, Segmentation &b)
  */
 void Comparison::save(vector<string> &comparison_files)
 {
+  string current_dir = string(CURRENT_DIRECTORY);
   string files[2];
   files[0] = extractName(comparison_files[0]);
   files[1] = extractName(comparison_files[1]);
@@ -32,7 +33,8 @@ void Comparison::save(vector<string> &comparison_files)
   switch(flag) {
     case BASIC_ALIGNMENT:
     {
-      file_name = "output/alignments/" + files[0] + "_" + files[1] + ".alignment";
+      file_name = current_dir + "output/alignments/" + files[0] + "_" 
+                  + files[1] + ".alignment";
       ofstream log(file_name.c_str());
       log << "Alignment score: " << scores[0] << endl;
       log << "Avg. Alignment score: " << scores[1] << endl;
@@ -53,9 +55,10 @@ void Comparison::save(vector<string> &comparison_files)
                       boost::lexical_cast<string>(num_samples[1]) + "_" +
                       boost::lexical_cast<string>(dr).substr(0,4);
 
-      string log_file = "output/histograms/logs/" + common_string + ".log";
+      string log_file = current_dir + "output/histograms/logs/" + common_string 
+                        + ".log";
       ofstream log(log_file.c_str());
-      ofstream time("output/histograms/histograms.time",ios::app);
+      ofstream time("histograms.time",ios::app);
       for (int i=0; i<2; i++) {
         log << "CURVE " << i+1 << ":\n";
         log << "\t# of residues: " << profiles[i].getNumberOfCoordinates() << endl;
@@ -64,14 +67,16 @@ void Comparison::save(vector<string> &comparison_files)
         array<double,2> times = histograms[i].getComputationTime();
         log << "\tCPU time: " << times[0] << " secs." << endl << endl;
         //log << "\tWall time: " << times[1] << " secs." << endl << endl;
-        time << setw(15) << files[i] << setw(10) << times[0] << endl;
+        time << setw(15) << files[i] << setw(10) << num_samples[i] << setw(10) 
+             << histograms[i].getIncrementInR() << setw(10) << times[0] << endl;
       }
       time.close();
       log << "Score: " << scores[0] << endl;
       log << "Normalized score: " << scores[1] << endl;
       log.close();
 
-      string data_file = "output/histograms/data/" + common_string + ".data";
+      string data_file = current_dir + "output/histograms/data/" + common_string
+                         + ".data";
       ofstream data(data_file.c_str());
       vector<double> r = histograms[0].getRValues();
       for (int i=0; i<r.size(); i++) {
@@ -82,7 +87,7 @@ void Comparison::save(vector<string> &comparison_files)
 
       plotDistanceHistograms(files[0],files[1],common_string);
 
-      ofstream results("output/histograms/histograms.comparison",ios::app);
+      ofstream results("histograms.comparison",ios::app);
       results << setw(15) << files[0] << setw(15) << files[1]
               << setw(10) << num_samples[0] << setw(10) << num_samples[1] 
               << setw(5) << histograms[0].getIncrementInR() << " "
@@ -102,8 +107,11 @@ void Comparison::save(vector<string> &comparison_files)
 void Comparison::plotDistanceHistograms(string file1, string file2, 
                                         string common_string)
 {
-  string plot_file = "output/histograms/plots/" + common_string + ".histogram";
-  string data_file = "output/histograms/data/" + common_string + ".data";
+  string current_dir = string(CURRENT_DIRECTORY);
+  string plot_file = current_dir + "output/histograms/plots/" + common_string 
+                     + ".histogram";
+  string data_file = current_dir + "output/histograms/data/" + common_string 
+                     + ".data";
   ofstream script("script.plot");
   script << "set terminal post eps" << endl;
   script << "set output \"" << plot_file << ".eps\"" << endl; 
@@ -429,7 +437,7 @@ void Comparison::computeDistanceHistogram(int num_points, double dr)
   double num_samples[2];
   for (int i=0; i<2; i++) {
     if (num_points == 0) {
-      num_samples[i] = profiles[i].getNumberOfCoordinates() * 10;
+      num_samples[i] = profiles[i].getNumberOfCoordinates() * 5;
     } else {
       num_samples[i] = num_points;
     }

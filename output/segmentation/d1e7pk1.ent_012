@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/e7/d1e7pk1.ent
+Number of residues: 133
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 55475.5
+Null Model Fit: 6026.71 bits.
+Bits per residue: 45.6569
+
+Bezier model fit: 5430.65 bits.
+Bits per residue: 41.1413
+
+# of segments: 7
+Internal segmentation:
+0-->25-->31-->59-->79-->104-->116-->132
+
+CPU time used: 7.08 secs.
+Wall clock time elapsed: 7 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          K 107          K 132             26           1033         (27.562, 66.153, 100.757)         (52.3449, 60.2459, 103.716)
+                                                                                    (44.907, 68.814, 135.989)
+
+              2          K 132          K 138              7        260.765         (44.907, 68.814, 135.989)
+                                                                                    (46.989, 83.682, 123.542)
+
+              3          K 138          K 166             29        1147.46         (46.989, 83.682, 123.542)         (24.9694, 76.8461, 106.434)
+                                                                                    (36.776, 68.818, 85.619)
+
+              4          K 166          K 186             21        813.279         (36.776, 68.818, 85.619)
+                                                                                    (49.316, 75.385, 118.724)
+
+              5          K 186          K 211             26        1028.67         (49.316, 75.385, 118.724)         (59.2855, 55.6902, 94.9028)
+                                                                                    (39.632, 80.871, 90.011)
+
+              6          K 211          K 223             13        509.568         (39.632, 80.871, 90.011)         (22.5638, 81.4315, 103.272)
+                                                                                    (39.442, 83.986, 103.798)
+
+              7          K 223          K 239             17        637.904         (39.442, 83.986, 103.798)
+                                                                                    (62.145, 70.796, 101.044)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/q0/d1q0gd_.ent
+Number of residues: 117
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 33618.4
+Null Model Fit: 5212.38 bits.
+Bits per residue: 44.9343
+
+Bezier model fit: 4646.75 bits.
+Bits per residue: 40.0582
+
+# of segments: 7
+Internal segmentation:
+0-->6-->35-->63-->71-->91-->92-->116
+
+CPU time used: 6.02 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            D 1            D 7              7        269.031         (22.239, 30.926, 23.897)         (17.9535, 41.2191, 18.4724)
+                                                                                    (19.6, 33.695, 29.776)
+
+              2            D 7           D 36             30        1169.39         (19.6, 33.695, 29.776)         (38.4847, -1.98125, 19.7291)
+                                                                                    (28.603, 3.119, 5.981)
+
+              3           D 36           D 64             29        1076.53         (28.603, 3.119, 5.981)
+                                                                                    (31.765, 37.622, 30.18)
+
+              4           D 64           D 72              9        342.999         (31.765, 37.622, 30.18)
+                                                                                    (42.611, 33.004, 32.828)
+
+              5           D 72           D 92             21        802.059         (42.611, 33.004, 32.828)         (37.8365, 24.8424, 16.5209)
+                                                                                    (37.961, 7.582, 13.078)
+
+              6           D 92           D 93              2        47.9714         (37.961, 7.582, 13.078)
+                                                                                    (39.752, 6.892, 16.37)
+
+              7           D 93          D 117             25        938.774         (39.752, 6.892, 16.37)
+                                                                                    (28.842, 32.859, 41.699)
+

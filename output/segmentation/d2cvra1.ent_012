@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/cv/d2cvra1.ent
+Number of residues: 62
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 21557.5
+Null Model Fit: 2701.89 bits.
+Bits per residue: 44.2933
+
+Bezier model fit: 2549.04 bits.
+Bits per residue: 41.7876
+
+# of segments: 7
+Internal segmentation:
+0-->7-->8-->25-->36-->51-->60-->61
+
+CPU time used: 2.73 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 8              8        295.209         (0.712, 2.26, 8.079)
+                                                                                    (-18.851, -0.801, -1.353)
+
+              2            A 8            A 9              2        47.3303         (-18.851, -0.801, -1.353)
+                                                                                    (-20.329, -1.801, 1.987)
+
+              3            A 9           A 26             18        702.407         (-20.329, -1.801, 1.987)         (16.7402, -11.2309, 6.84869)
+                                                                                    (-3.228, 5.42, -16.812)
+
+              4           A 26           A 37             12        449.967         (-3.228, 5.42, -16.812)
+                                                                                    (-1.399, -17.445, -1.334)
+
+              5           A 37           A 52             16        621.139         (-1.399, -17.445, -1.334)         (-15.2364, 5.47165, -16.2011)
+                                                                                    (1.958, 10.633, 1.564)
+
+              6           A 52           A 61             10        385.659         (1.958, 10.633, 1.564)
+                                                                                    (12.93, 12.243, -5.385)
+
+              7           A 61           A 62              2        47.3303         (12.93, 12.243, -5.385)
+                                                                                    (15.372, 13.125, -2.641)
+

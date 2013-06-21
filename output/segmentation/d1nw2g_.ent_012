@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/nw/d1nw2g_.ent
+Number of residues: 105
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 22999.6
+Null Model Fit: 4616.21 bits.
+Bits per residue: 44.3867
+
+Bezier model fit: 4287 bits.
+Bits per residue: 41.2211
+
+# of segments: 8
+Internal segmentation:
+0-->16-->28-->47-->57-->58-->71-->79-->104
+
+CPU time used: 5.64 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            G 1           G 17             17        659.062         (93.584, 53.153, 74.944)         (74.2004, 32.1531, 90.6847)
+                                                                                    (81.301, 60.066, 83.109)
+
+              2           G 17           G 29             13        496.365         (81.301, 60.066, 83.109)
+                                                                                    (86.618, 35.818, 65.664)
+
+              3           G 29           G 48             20        762.171         (86.618, 35.818, 65.664)         (96.8415, 50.2251, 61.4894)
+                                                                                    (88.257, 63.066, 75.504)
+
+              4           G 48           G 58             11         400.44         (88.257, 63.066, 75.504)
+                                                                                    (83.743, 33.607, 75.851)
+
+              5           G 58           G 59              2        47.4237         (83.743, 33.607, 75.851)
+                                                                                    (84.366, 34.471, 79.495)
+
+              6           G 59           G 72             14        547.511         (84.366, 34.471, 79.495)         (62.8288, 43.4314, 80.3206)
+                                                                                    (80.518, 38.849, 66.836)
+
+              7           G 72           G 80              9        329.807         (80.518, 38.849, 66.836)         (79.572, 51.3681, 68.9433)
+                                                                                    (73.641, 57.889, 80.183)
+
+              8           G 80          G 105             26        1044.22         (73.641, 57.889, 80.183)         (86.9911, 39.3493, 47.0621)
+                                                                                    (78.648, 65.554, 70.697)
+

@@ -1,0 +1,25 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/nv/d1nvme1.ent
+Number of residues: 49
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 7790.05
+Null Model Fit: 2055.59 bits.
+Bits per residue: 42.8248
+
+Bezier model fit: 1967.16 bits.
+Bits per residue: 40.9824
+
+# of segments: 2
+Internal segmentation:
+0-->27-->48
+
+CPU time used: 1.84 secs.
+Wall clock time elapsed: 1 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          E 291          E 318             28        1107.75         (54.113, -0.483, 50.129)         (27.4445, -19.2009, 48.021)
+                                                                                    (59.291, -10.714, 54.699)
+
+              2          E 318          E 339             22        859.409         (59.291, -10.714, 54.699)         (49.1364, -0.991139, 33.3458)
+                                                                                    (52.203, -24.12, 51.836)
+

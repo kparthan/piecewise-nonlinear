@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/bv/d1bvld_.ent
+Number of residues: 108
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 26277.6
+Null Model Fit: 4769.94 bits.
+Bits per residue: 44.5789
+
+Bezier model fit: 4415.91 bits.
+Bits per residue: 41.2702
+
+# of segments: 7
+Internal segmentation:
+0-->16-->25-->39-->49-->67-->93-->107
+
+CPU time used: 5.67 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            D 1           D 17             17        671.382         (48.089, 35.294, 31.707)         (68.8255, 60.8793, 39.8733)
+                                                                                    (77.991, 53.229, 31.564)
+
+              2           D 17           D 26             10        358.361         (77.991, 53.229, 31.564)
+                                                                                    (55.239, 35.747, 35.761)
+
+              3           D 26           D 40             15        574.602         (55.239, 35.747, 35.761)         (65.1651, 27.9805, 17.4413)
+                                                                                    (60.687, 61.112, 24.199)
+
+              4           D 40           D 50             11        424.518         (60.687, 61.112, 24.199)
+                                                                                    (63.584, 36.679, 20.687)
+
+              5           D 50           D 68             19        747.818         (63.584, 36.679, 20.687)         (82.5524, 60.478, 10.2237)
+                                                                                    (62.914, 31.177, 31.187)
+
+              6           D 68           D 94             27        1079.49         (62.914, 31.177, 31.187)         (86.0643, 75.1808, 24.3057)
+                                                                                    (48.113, 36.176, 24.69)
+
+              7           D 94          D 108             15        559.736         (48.113, 36.176, 24.69)
+                                                                                    (73.301, 65.183, 35.814)
+

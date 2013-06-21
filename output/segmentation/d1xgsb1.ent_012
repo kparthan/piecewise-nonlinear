@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/xg/d1xgsb1.ent
+Number of residues: 77
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 25209.1
+Null Model Fit: 3383.44 bits.
+Bits per residue: 44.519
+
+Bezier model fit: 3140.91 bits.
+Bits per residue: 41.3278
+
+# of segments: 6
+Internal segmentation:
+0-->9-->21-->50-->65-->66-->76
+
+CPU time used: 3.56 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          B 195          B 204             10        386.051         (8.393, 57.236, 7.216)         (-10.2911, 50.8737, 5.10245)
+                                                                                    (-4.004, 39.972, -1.469)
+
+              2          B 204          B 216             13        488.587         (-4.004, 39.972, -1.469)         (-0.283097, 23.7925, 23.2284)
+                                                                                    (-20.451, 27.16, 7.328)
+
+              3          B 216          B 245             30        1208.69         (-20.451, 27.16, 7.328)         (16.0637, 25.9472, 5.54569)
+                                                                                    (-15.819, 30.989, -7.874)
+
+              4          B 245          B 260             16        601.013         (-15.819, 30.989, -7.874)
+                                                                                    (-9.584, 34.658, 13.56)
+
+              5          B 260          B 261              2        47.5561         (-9.584, 34.658, 13.56)
+                                                                                    (-8.625, 31.449, 11.708)
+
+              6          B 261          B 271             11        409.016         (-8.625, 31.449, 11.708)         (0.468202, 43.663, -1.583)
+                                                                                    (1.205, 57.426, 4.762)
+

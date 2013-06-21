@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/gm/d3gm2a_.ent
+Number of residues: 127
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 49494
+Null Model Fit: 5732.03 bits.
+Bits per residue: 45.4923
+
+Bezier model fit: 5013.22 bits.
+Bits per residue: 39.7875
+
+# of segments: 8
+Internal segmentation:
+0-->5-->27-->54-->61-->90-->95-->124-->126
+
+CPU time used: 6.63 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 875          A 880              6        220.636         (-25.317, 10.072, -106.649)
+                                                                                    (-19.6, 10.671, -98.58)
+
+              2          A 880          A 902             23        888.184         (-19.6, 10.671, -98.58)         (-18.1346, 29.8569, -105.599)
+                                                                                    (-16.787, 41.439, -87.711)
+
+              3          A 902          A 929             28         1043.4         (-16.787, 41.439, -87.711)
+                                                                                    (-13.931, -1.302, -94.047)
+
+              4          A 929          A 936              8        310.677         (-13.931, -1.302, -94.047)
+                                                                                    (-7.041, 2.129, -97.536)
+
+              5          A 936          A 965             30        1115.45         (-7.041, 2.129, -97.536)         (-3.00319, 21.8873, -90.1416)
+                                                                                    (-7.759, 47.147, -88.153)
+
+              6          A 965          A 970              6        227.167         (-7.759, 47.147, -88.153)
+                                                                                    (-6.832, 42.236, -97.047)
+
+              7          A 970          A 999             30        1112.68         (-6.832, 42.236, -97.047)
+                                                                                    (-12.99, -1.164, -107.924)
+
+              8          A 999         A 1001              3        95.0217         (-12.99, -1.164, -107.924)
+                                                                                    (-17.508, -4.369, -105.673)
+

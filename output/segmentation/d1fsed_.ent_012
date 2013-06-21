@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/fs/d1fsed_.ent
+Number of residues: 66
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16077.7
+Null Model Fit: 2851.56 bits.
+Bits per residue: 43.8701
+
+Bezier model fit: 2704.43 bits.
+Bits per residue: 41.6066
+
+# of segments: 7
+Internal segmentation:
+0-->5-->28-->30-->46-->49-->61-->65
+
+CPU time used: 2.87 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            D 9           D 14              6        223.132         (37.129, 18.079, 18.483)
+                                                                                    (25.557, 17.132, 13.057)
+
+              2           D 14           D 37             24        941.727         (25.557, 17.132, 13.057)         (10.8657, 1.18318, 30.7379)
+                                                                                    (12.856, 14.125, 7.789)
+
+              3           D 37           D 39              3        91.7773         (12.856, 14.125, 7.789)
+                                                                                    (14.588, 7.507, 6.428)
+
+              4           D 39           D 55             17        641.136         (14.588, 7.507, 6.428)
+                                                                                    (35.064, 1.776, 18.98)
+
+              5           D 55           D 58              4        136.897         (35.064, 1.776, 18.98)
+                                                                                    (26.522, -1.479, 21.347)
+
+              6           D 58           D 70             13        491.059         (26.522, -1.479, 21.347)
+                                                                                    (31.061, 15.423, 27.379)
+
+              7           D 70           D 74              5        178.701         (31.061, 15.423, 27.379)
+                                                                                    (21.347, 13.959, 29.696)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/uu/d2uumi1.ent
+Number of residues: 162
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 73212.9
+Null Model Fit: 7415.2 bits.
+Bits per residue: 46.0572
+
+Bezier model fit: 6515.33 bits.
+Bits per residue: 40.4679
+
+# of segments: 7
+Internal segmentation:
+0-->19-->48-->76-->101-->122-->142-->161
+
+CPU time used: 8.9 secs.
+Wall clock time elapsed: 8 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            I 1           I 20             20        799.677         (72.83, 34.026, 143.365)         (57.1978, 37.5465, 128.742)
+                                                                                    (52.94, 39.558, 145.568)         (68.3287, 37.8215, 171.742)
+
+              2           I 20           I 49             30        1128.53         (52.94, 39.558, 145.568)         (59.1769, 35.2297, 122.095)
+                                                                                    (84.921, 24.849, 119.738)
+
+              3           I 49           I 77             29        1166.21         (84.921, 24.849, 119.738)         (105.451, 48.48, 123.513)
+                                                                                    (104.194, 25.828, 125.001)
+
+              4           I 77          I 102             26        972.857         (104.194, 25.828, 125.001)
+                                                                                    (68.636, 34.887, 133.24)
+
+              5          I 102          I 123             22        859.336         (68.636, 34.887, 133.24)         (87.8476, 34.2596, 147.7)
+                                                                                    (100.451, 36.922, 136.778)
+
+              6          I 123          I 143             21        819.548         (100.451, 36.922, 136.778)         (88.9049, 40.2512, 119.212)
+                                                                                    (70.874, 38.475, 116.593)
+
+              7          I 143          I 162             20        769.174         (70.874, 38.475, 116.593)
+                                                                                    (88.606, 46.492, 134.048)
+

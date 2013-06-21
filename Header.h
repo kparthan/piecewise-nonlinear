@@ -24,6 +24,8 @@
 #include <boost/foreach.hpp>
 #include <boost/tokenizer.hpp>
 
+#define CURRENT_DIRECTORY "/home/pkas7/Research/Work/piecewise-nonlinear/"
+
 #define AOM 0.001
 #define AOPV 0.1
 #define LARGE_NUMBER 1000000

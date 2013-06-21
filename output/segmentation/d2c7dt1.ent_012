@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/c7/d2c7dt1.ent
+Number of residues: 92
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 40368.8
+Null Model Fit: 4113.05 bits.
+Bits per residue: 45.1983
+
+Bezier model fit: 3797.39 bits.
+Bits per residue: 41.7295
+
+# of segments: 8
+Internal segmentation:
+0-->3-->23-->28-->48-->60-->76-->86-->91
+
+CPU time used: 4.63 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            T 3            T 6              4        140.881         (-23.901, -20.835, -103.249)
+                                                                                    (-17.55, -14.025, -105.22)
+
+              2            T 6           T 26             21        822.108         (-17.55, -14.025, -105.22)
+                                                                                    (1.308, -43.661, -81.226)
+
+              3           T 26           T 31              6         219.19         (1.308, -43.661, -81.226)
+                                                                                    (-1.548, -28.784, -79.281)
+
+              4           T 31           T 51             21        815.877         (-1.548, -28.784, -79.281)         (-19.3042, -32.8866, -108.743)
+                                                                                    (-8.887, -4.205, -115.446)
+
+              5           T 51           T 63             13         495.28         (-8.887, -4.205, -115.446)
+                                                                                    (-8.422, -31.177, -105.331)
+
+              6           T 63           T 79             17        669.615         (-8.422, -31.177, -105.331)         (2.97203, -6.72486, -84.0333)
+                                                                                    (-27.073, -29.522, -93.856)
+
+              7           T 79           T 89             11        411.278         (-27.073, -29.522, -93.856)
+                                                                                    (-3.728, -15.479, -101.405)
+
+              8           T 89           T 94              6         223.16         (-3.728, -15.479, -101.405)
+                                                                                    (-1.175, -29.402, -103.461)
+

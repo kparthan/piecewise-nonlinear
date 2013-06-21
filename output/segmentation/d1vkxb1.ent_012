@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/vk/d1vkxb1.ent
+Number of residues: 104
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 31385.7
+Null Model Fit: 4618.02 bits.
+Bits per residue: 44.8352
+
+Bezier model fit: 4231.42 bits.
+Bits per residue: 41.0817
+
+# of segments: 7
+Internal segmentation:
+0-->14-->30-->40-->52-->76-->88-->103
+
+CPU time used: 5.67 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          B 547          B 561             15        586.713         (7.656, 39.662, 45.161)         (-7.04378, 60.6166, 50.1972)
+                                                                                    (14.42, 67.373, 57.601)
+
+              2          B 561          B 577             17        671.675         (14.42, 67.373, 57.601)         (-7.75887, 41.8304, 53.6985)
+                                                                                    (15.534, 40.679, 56.122)
+
+              3          B 577          B 587             11        404.847         (15.534, 40.679, 56.122)         (11.5806, 58.3043, 50.6911)
+                                                                                    (22.923, 63.142, 36.247)
+
+              4          B 587          B 599             13        486.813         (22.923, 63.142, 36.247)
+                                                                                    (12.958, 47.743, 63.611)
+
+              5          B 599          B 623             25        997.733         (12.958, 47.743, 63.611)         (-17.494, 28.2619, 58.2076)
+                                                                                    (12.542, 73.653, 45.365)         (35.7466, 73.3385, 58.9235)
+
+              6          B 623          B 635             13        488.238         (12.542, 73.653, 45.365)         (7.19713, 51.8372, 45.0972)
+                                                                                    (19.756, 39.112, 51.539)
+
+              7          B 635          B 650             16        595.399         (19.756, 39.112, 51.539)         (2.26171, 50.5801, 33.7857)
+                                                                                    (12.492, 73.089, 54.87)
+

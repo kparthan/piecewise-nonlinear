@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/pj/d2pjhb1.ent
+Number of residues: 86
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16457.5
+Null Model Fit: 3731.82 bits.
+Bits per residue: 43.9038
+
+Bezier model fit: 3548.84 bits.
+Bits per residue: 41.7511
+
+# of segments: 6
+Internal segmentation:
+0-->27-->42-->54-->57-->70-->85
+
+CPU time used: 4.33 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           B 21           B 48             28        1133.79         (5.276, -25.892, 3.478)         (14.2923, 12.0646, -18.606)
+                                                                                    (-4.173, -19.973, -2.842)
+
+              2           B 48           B 63             16        628.181         (-4.173, -19.973, -2.842)         (-12.5941, 0.973527, -6.64736)
+                                                                                    (15.297, -8.454, 10.877)
+
+              3           B 63           B 75             13        474.437         (15.297, -8.454, 10.877)         (-5.04343, 2.94926, 2.0563)
+                                                                                    (1.952, -14.717, -15.597)
+
+              4           B 75           B 78              4        136.998         (1.952, -14.717, -15.597)
+                                                                                    (6.7, -18.483, -10.725)
+
+              5           B 78           B 91             14        550.657         (6.7, -18.483, -10.725)
+                                                                                    (13.839, -2.316, 3.017)
+
+              6           B 91          B 106             16        624.784         (13.839, -2.316, 3.017)         (22.3614, -23.6994, -4.95843)
+                                                                                    (-7.371, -7.844, 7.521)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ey/d2eyqa1.ent
+Number of residues: 80
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 26554.2
+Null Model Fit: 3522.93 bits.
+Bits per residue: 44.594
+
+Bezier model fit: 3263.18 bits.
+Bits per residue: 41.306
+
+# of segments: 7
+Internal segmentation:
+0-->23-->36-->37-->48-->49-->70-->79
+
+CPU time used: 3.9 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 466          A 489             24          981.2         (72.451, 52.785, 57.697)         (76.6042, 70.6936, 50.0496)
+                                                                                    (69.421, 63.064, 34.811)
+
+              2          A 489          A 502             14         520.33         (69.421, 63.064, 34.811)         (82.5429, 76.6221, 54.1538)
+                                                                                    (53.871, 84.827, 44.616)
+
+              3          A 502          A 503              2        47.6311         (53.871, 84.827, 44.616)
+                                                                                    (55.171, 86.796, 47.58)
+
+              4          A 503          A 514             12        431.804         (55.171, 86.796, 47.58)         (66.9009, 70.1489, 53.9955)
+                                                                                    (76.185, 70.602, 31.871)
+
+              5          A 514          A 515              2        47.6311         (76.185, 70.602, 31.871)
+                                                                                    (77.678, 73.995, 30.952)
+
+              6          A 515          A 536             22        860.075         (77.678, 73.995, 30.952)         (44.1166, 69.321, 55.2109)
+                                                                                    (82.795, 55.266, 40.044)
+
+              7          A 536          A 545             10        374.507         (82.795, 55.266, 40.044)
+                                                                                    (69.555, 70.308, 31.124)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ac/d4ac9c2.ent
+Number of residues: 79
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 17755.5
+Null Model Fit: 3433.04 bits.
+Bits per residue: 44.0133
+
+Bezier model fit: 3194.7 bits.
+Bits per residue: 40.9577
+
+# of segments: 7
+Internal segmentation:
+0-->12-->22-->38-->51-->60-->66-->78
+
+CPU time used: 3.96 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          C 390          C 402             13        484.908         (102.869, -53.114, 60.384)         (105.698, -62.6438, 82.3965)
+                                                                                    (118.391, -56.775, 89.88)
+
+              2          C 402          C 412             11        424.231         (118.391, -56.775, 89.88)         (104.778, -56.4582, 72.8287)
+                                                                                    (117.534, -65.752, 70.671)
+
+              3          C 412          C 428             17        655.402         (117.534, -65.752, 70.671)         (126.341, -48.6505, 61.2196)
+                                                                                    (97.91, -48.962, 79.937)
+
+              4          C 428          C 441             14        526.087         (97.91, -48.962, 79.937)         (121.258, -38.8569, 72.2514)
+                                                                                    (121.594, -66.792, 76.913)
+
+              5          C 441          C 450             10        365.066         (121.594, -66.792, 76.913)
+                                                                                    (111.248, -42.637, 80.552)
+
+              6          C 450          C 456              7        260.655         (111.248, -42.637, 80.552)         (108.021, -49.0151, 90.0875)
+                                                                                    (105.204, -58.257, 84.454)
+
+              7          C 456          C 468             13        478.354         (105.204, -58.257, 84.454)         (107.19, -44.7033, 66.1484)
+                                                                                    (107.104, -59.548, 50.011)
+

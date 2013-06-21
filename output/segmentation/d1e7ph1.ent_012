@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/e7/d1e7ph1.ent
+Number of residues: 133
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 55477.8
+Null Model Fit: 6026.72 bits.
+Bits per residue: 45.657
+
+Bezier model fit: 5430.65 bits.
+Bits per residue: 41.1413
+
+# of segments: 7
+Internal segmentation:
+0-->25-->31-->59-->79-->104-->116-->132
+
+CPU time used: 7.06 secs.
+Wall clock time elapsed: 7 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          H 107          H 132             26           1033         (44.888, 41.18, 89.234)         (23.3732, 51.9596, 80.3597)
+                                                                                    (14.829, 19.028, 76.781)
+
+              2          H 132          H 138              7        260.769         (14.829, 19.028, 76.781)
+                                                                                    (27.235, 26.057, 63.475)
+
+              3          H 138          H 166             29        1147.45         (27.235, 26.057, 63.475)         (48.603, 32.1076, 81.6722)
+                                                                                    (48.094, 57.338, 82.177)
+
+              4          H 166          H 186             21        813.277         (48.094, 57.338, 82.177)
+                                                                                    (24.362, 33.588, 69.175)
+
+              5          H 186          H 211             26        1028.67         (24.362, 33.588, 69.175)         (21.2724, 63.8834, 80.46)
+                                                                                    (49.394, 51.476, 70.486)
+
+              6          H 211          H 223             13        509.577         (49.394, 51.476, 70.486)         (54.1609, 32.292, 79.2462)
+                                                                                    (43.425, 38.957, 67.756)
+
+              7          H 223          H 239             17        637.899         (43.425, 38.957, 67.756)
+                                                                                    (23.049, 55.671, 66.195)
+

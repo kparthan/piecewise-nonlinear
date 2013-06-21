@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/kg/d1kgcd2.ent
+Number of residues: 89
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 26226.6
+Null Model Fit: 3922.7 bits.
+Bits per residue: 44.5761
+
+Bezier model fit: 3614.27 bits.
+Bits per residue: 41.0713
+
+# of segments: 8
+Internal segmentation:
+0-->1-->15-->17-->38-->54-->65-->67-->88
+
+CPU time used: 4.48 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          D 118          D 119              2        47.6132         (6.752, 21.773, 47.765)
+                                                                                    (6.773, 24.468, 45.081)
+
+              2          D 119          D 133             15        565.096         (6.773, 24.468, 45.081)         (-4.64605, 33.0656, 65.6054)
+                                                                                    (-18.934, 13.751, 70.851)
+
+              3          D 133          D 135              3        93.1893         (-18.934, 13.751, 70.851)
+                                                                                    (-13.694, 16.572, 74.396)
+
+              4          D 135          D 156             22        860.899         (-13.694, 16.572, 74.396)         (20.2484, 28.1284, 38.1802)
+                                                                                    (1.831, 13.701, 78.149)
+
+              5          D 156          D 172             17        658.936         (1.831, 13.701, 78.149)
+                                                                                    (-1.689, 17.464, 41.268)
+
+              6          D 172          D 183             12        421.327         (-1.689, 17.464, 41.268)         (6.5511, 17.8638, 59.7386)
+                                                                                    (-8.476, 17.939, 76.165)
+
+              7          D 183          D 185              3        93.1893         (-8.476, 17.939, 76.165)
+                                                                                    (-7.703, 23.767, 79.016)
+
+              8          D 185          D 206             22        874.022         (-7.703, 23.767, 79.016)         (21.6278, 21.9189, 58.3941)
+                                                                                    (-6.558, 35.553, 64.299)
+

@@ -422,8 +422,9 @@ void compareProteinStructures(struct Parameters &parameters)
  */
 bool checkIfSegmentationExists(string &pdb_file)
 {
-  string segmentation_profile = "output/segmentation_profile/" + pdb_file 
-                                + ".profile";
+  string segmentation_profile = string(CURRENT_DIRECTORY) 
+                                + "output/segmentation_profile/"
+                                + pdb_file + ".profile";
   return checkFile(segmentation_profile.c_str()); 
 }
 
@@ -479,7 +480,7 @@ void compareSegmentations(Segmentation &a, Segmentation &b,
                                        parameters.max_angle_diff);
       comparison.save(parameters.comparison_files);
       vector<double> scores = comparison.getScores();
-      ofstream file("output/alignments.comparison",ios::app);
+      ofstream file("alignments.comparison",ios::app);
       file << extractName(parameters.comparison_files[0]) << " "
            << extractName(parameters.comparison_files[1]) << " "
            << a.getNullBPR() << " " << a.getBezierBPR() << " " 

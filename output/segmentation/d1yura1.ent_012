@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/yu/d1yura1.ent
+Number of residues: 98
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 32550.3
+Null Model Fit: 4354.11 bits.
+Bits per residue: 44.8877
+
+Bezier model fit: 4015.39 bits.
+Bits per residue: 41.3958
+
+# of segments: 6
+Internal segmentation:
+0-->7-->25-->46-->67-->71-->97
+
+CPU time used: 4.78 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 8              8        296.961         (-8.536, -16.578, 13.173)         (-22.1243, -10.3314, 6.16521)
+                                                                                    (-7.386, -9.883, -1.579)
+
+              2            A 8           A 26             19        730.327         (-7.386, -9.883, -1.579)
+                                                                                    (6.803, -4.373, 18.634)
+
+              3           A 26           A 47             22        875.002         (6.803, -4.373, 18.634)         (9.31054, 17.5041, 9.35177)
+                                                                                    (16.526, -6.867, -0.716)
+
+              4           A 47           A 68             22        863.144         (16.526, -6.867, -0.716)         (11.8149, 19.2372, -17.2878)
+                                                                                    (12.918, 14.132, 12.194)
+
+              5           A 68           A 72              5         179.18         (12.918, 14.132, 12.194)
+                                                                                    (2.194, 7.922, 9.594)
+
+              6           A 72           A 98             27        1070.78         (2.194, 7.922, 9.594)         (4.0881, 3.86022, -12.8568)
+                                                                                    (18.13, -16.591, -10.875)
+

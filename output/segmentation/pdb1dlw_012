@@ -1,4 +1,4 @@
-Using structure file: /home/parthan/Research/PDB/dl/pdb1dlw.ent.gz
+Using structure file: /home/pkas7/Research/PDB/dl/pdb1dlw.ent.gz
 Number of residues: 116
 Doing a BEZIER segmentation ...
 
@@ -13,8 +13,8 @@ Bits per residue: 40.7721
 Internal segmentation:
 0-->27-->55-->73-->92-->94-->114-->115
 
-CPU time used: 8.99 secs.
-Wall clock time elapsed: 9 secs.
+CPU time used: 6.14 secs.
+Wall clock time elapsed: 6 secs.
 
         SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
               1            A 1           A 28             28         1096.7         (17.768, 18.429, -10.842)         (31.4716, 21.3056, 8.61375)

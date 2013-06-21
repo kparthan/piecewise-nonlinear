@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/of/d1ofcx2.ent
+Number of residues: 127
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 61752
+Null Model Fit: 5772.26 bits.
+Bits per residue: 45.8116
+
+Bezier model fit: 5056.54 bits.
+Bits per residue: 40.1312
+
+# of segments: 7
+Internal segmentation:
+0-->1-->30-->37-->50-->71-->97-->126
+
+CPU time used: 6.67 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          X 851          X 852              2        48.8486         (46.295, 9.173, 9.133)
+                                                                                    (46.695, 8.126, 12.801)
+
+              2          X 852          X 881             30        1119.33         (46.695, 8.126, 12.801)
+                                                                                    (65.798, 30.685, 44.421)
+
+              3          X 881          X 888              8        308.608         (65.798, 30.685, 44.421)
+                                                                                    (75.314, 39.419, 41.277)
+
+              4          X 888          X 901             14        535.571         (75.314, 39.419, 41.277)         (80.9149, 10.0901, 35.2197)
+                                                                                    (84.308, 32.278, 24.375)
+
+              5          X 901          X 922             22        869.953         (84.308, 32.278, 24.375)         (68.6361, 38.094, 45.2237)
+                                                                                    (58.001, 35.473, 21.9)
+
+              6          X 922          X 948             27        1065.11         (58.001, 35.473, 21.9)         (87.876, 56.068, 36.0666)
+                                                                                    (73.251, 37.535, 17.331)
+
+              7          X 948          X 977             30        1109.11         (73.251, 37.535, 17.331)         (71.4138, 20.0141, 30.7361)
+                                                                                    (70.098, 11.8, 53.788)
+

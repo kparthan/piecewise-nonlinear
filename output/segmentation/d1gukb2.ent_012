@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/gu/d1gukb2.ent
+Number of residues: 75
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 18063.1
+Null Model Fit: 3258.82 bits.
+Bits per residue: 44.0381
+
+Bezier model fit: 3080.59 bits.
+Bits per residue: 41.6295
+
+# of segments: 7
+Internal segmentation:
+0-->7-->9-->32-->50-->56-->63-->74
+
+CPU time used: 3.61 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            B 5           B 12              8        302.216         (23.057, 6.585, 23.006)         (25.3172, 11.3195, 37.1147)
+                                                                                    (19.569, 20.523, 33.399)
+
+              2           B 12           B 14              3        92.1133         (19.569, 20.523, 33.399)
+                                                                                    (25.184, 22.325, 31.142)
+
+              3           B 14           B 37             24        932.027         (25.184, 22.325, 31.142)         (15.0998, 8.39, -2.57828)
+                                                                                    (22.474, 12.775, 44.022)
+
+              4           B 37           B 55             19        749.536         (22.474, 12.775, 44.022)         (41.22, -3.9501, 37.5918)
+                                                                                    (30.637, 13.856, 33.312)
+
+              5           B 55           B 61              7        254.507         (30.637, 13.856, 33.312)
+                                                                                    (28.488, 2.37, 19.919)
+
+              6           B 61           B 68              8        298.499         (28.488, 2.37, 19.919)         (34.9155, 2.78511, 30.7252)
+                                                                                    (32.81, 16.86, 26.024)
+
+              7           B 68           B 79             12        451.688         (32.81, 16.86, 26.024)
+                                                                                    (26.242, 11.403, 11.443)
+

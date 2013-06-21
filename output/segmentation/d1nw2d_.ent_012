@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/nw/d1nw2d_.ent
+Number of residues: 105
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 22428.7
+Null Model Fit: 4612.44 bits.
+Bits per residue: 44.3504
+
+Bezier model fit: 4291.03 bits.
+Bits per residue: 41.2599
+
+# of segments: 8
+Internal segmentation:
+0-->6-->27-->47-->57-->58-->71-->79-->104
+
+CPU time used: 5.6 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            D 1            D 7              7        251.788         (58.999, 18.602, 40.061)
+                                                                                    (39.873, 22.606, 36.656)
+
+              2            D 7           D 28             22        858.467         (39.873, 22.606, 36.656)         (51.6989, -6.89537, 30.5251)
+                                                                                    (45.871, 31.944, 53.471)
+
+              3           D 28           D 48             21        809.318         (45.871, 31.944, 53.471)         (64.7007, 20.2451, 54.7784)
+                                                                                    (58.915, 6.878, 38.915)
+
+              4           D 48           D 58             11        402.196         (58.915, 6.878, 38.915)
+                                                                                    (40.388, 29.552, 44.956)
+
+              5           D 58           D 59              2        47.3875         (40.388, 29.552, 44.956)
+                                                                                    (41.33, 29.513, 41.254)
+
+              6           D 59           D 72             14         546.55         (41.33, 29.513, 41.254)         (27.01, 11.463, 42.9604)
+                                                                                    (43.654, 23.304, 53.79)
+
+              7           D 72           D 80              9        329.501         (43.654, 23.304, 53.79)         (48.434, 12.1287, 49.5229)
+                                                                                    (43.722, 4.551, 38.596)
+
+              8           D 80          D 105             26        1045.82         (43.722, 4.551, 38.596)         (55.2038, 25.7433, 71.5527)
+                                                                                    (54.732, 0.411, 45.463)
+

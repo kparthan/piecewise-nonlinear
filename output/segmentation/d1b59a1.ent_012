@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/b5/d1b59a1.ent
+Number of residues: 74
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 19566
+Null Model Fit: 3223.2 bits.
+Bits per residue: 44.1534
+
+Bezier model fit: 3029.03 bits.
+Bits per residue: 41.4936
+
+# of segments: 6
+Internal segmentation:
+0-->7-->21-->36-->48-->64-->73
+
+CPU time used: 3.41 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 375          A 382              8        299.015         (18.597, 34.187, 30.994)         (31.0022, 44.6614, 28.2483)
+                                                                                    (23.357, 37.785, 17.103)
+
+              2          A 382          A 396             15        572.058         (23.357, 37.785, 17.103)         (-3.68808, 38.8393, 0.943694)
+                                                                                    (17.944, 58.556, 8.684)
+
+              3          A 396          A 411             16        609.866         (17.944, 58.556, 8.684)
+                                                                                    (17.476, 38.96, 4.169)
+
+              4          A 411          A 423             13        508.217         (17.476, 38.96, 4.169)         (30.1721, 37.2819, 21.1198)
+                                                                                    (31.561, 43.886, 4.772)
+
+              5          A 423          A 439             17        664.667         (31.561, 43.886, 4.772)         (24.8052, 58.5403, 20.8982)
+                                                                                    (11.123, 46.276, 15.699)
+
+              6          A 439          A 448             10        375.209         (11.123, 46.276, 15.699)
+                                                                                    (23.139, 31.396, 30.008)
+

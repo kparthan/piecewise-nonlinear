@@ -185,7 +185,8 @@ void Segmentation::print()
  */
 void Segmentation::save(string &pdb_file)
 {
-  string output_file = "output/segmentation_profile/" + pdb_file + ".profile";
+  string output_file = string(CURRENT_DIRECTORY) + 
+                       "output/segmentation_profile/" + pdb_file + ".profile";
   ofstream profile(output_file.c_str());
   profile << num_coordinates << endl;
   profile << null_bpr << endl;
@@ -233,8 +234,9 @@ void Segmentation::load(string &pdb_file)
   bezier_curves.clear();
   bezier_curves_lengths.clear();
 
-  string output_file = "output/segmentation_profile/" + pdb_file + ".profile";
-  ifstream profile(output_file.c_str());
+  string input_file = string(CURRENT_DIRECTORY) + "output/segmentation_profile/" 
+                       + pdb_file + ".profile";
+  ifstream profile(input_file.c_str());
   string line;
   vector<double> numbers;
   int i = 1;

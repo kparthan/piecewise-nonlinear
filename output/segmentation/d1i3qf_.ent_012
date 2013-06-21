@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/i3/d1i3qf_.ent
+Number of residues: 84
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 29591.9
+Null Model Fit: 3714.27 bits.
+Bits per residue: 44.7503
+
+Bezier model fit: 3436.48 bits.
+Bits per residue: 41.4033
+
+# of segments: 8
+Internal segmentation:
+0-->14-->32-->41-->45-->56-->58-->68-->83
+
+CPU time used: 4.02 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           F 72           F 86             15        600.845         (48.2, 73.074, 61.876)         (58.7116, 93.7905, 64.5878)
+                                                                                    (66.964, 75.62, 50.309)
+
+              2           F 86          F 104             19        714.284         (66.964, 75.62, 50.309)
+                                                                                    (53.092, 73.977, 26.58)
+
+              3          F 104          F 113             10        372.177         (53.092, 73.977, 26.58)         (54.9119, 90.9737, 36.7038)
+                                                                                    (65.693, 83.5, 22.838)
+
+              4          F 113          F 117              5        182.419         (65.693, 83.5, 22.838)
+                                                                                    (62.163, 74.558, 29.692)
+
+              5          F 117          F 128             12        448.863         (62.163, 74.558, 29.692)
+                                                                                    (60.448, 86.143, 40.971)
+
+              6          F 128          F 130              3        93.5376         (60.448, 86.143, 40.971)
+                                                                                    (56.381, 81.819, 39.886)
+
+              7          F 130          F 140             11        402.855         (56.381, 81.819, 39.886)
+                                                                                    (55.229, 68.221, 65.132)
+
+              8          F 140          F 155             16        621.496         (55.229, 68.221, 65.132)         (49.4701, 91.3648, 44.2632)
+                                                                                    (72.836, 79.351, 46.875)
+

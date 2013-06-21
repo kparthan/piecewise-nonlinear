@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ha/d1habb_.ent
+Number of residues: 146
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 33824
+Null Model Fit: 6516.75 bits.
+Bits per residue: 44.9431
+
+Bezier model fit: 5863.07 bits.
+Bits per residue: 40.435
+
+# of segments: 8
+Internal segmentation:
+0-->5-->34-->49-->78-->98-->122-->143-->145
+
+CPU time used: 7.86 secs.
+Wall clock time elapsed: 7 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            B 1            B 6              6        222.862         (38.267, 3.675, 6.173)
+                                                                                    (37.482, -9.269, 10.075)
+
+              2            B 6           B 35             30        1152.93         (37.482, -9.269, 10.075)         (57.919, 1.77372, 33.0861)
+                                                                                    (63.874, 9.989, 4.324)
+
+              3           B 35           B 50             16        623.817         (63.874, 9.989, 4.324)         (61.193, 30.4604, 18.6032)
+                                                                                    (73.102, 9.443, 12.465)
+
+              4           B 50           B 79             30        1154.58         (73.102, 9.443, 12.465)         (58.4241, 11.9592, 29.7319)
+                                                                                    (34.196, 5.903, 10.747)
+
+              5           B 79           B 99             21        823.843         (34.196, 5.903, 10.747)         (47.6911, 30.3201, 16.3943)
+                                                                                    (54.257, 17.713, 1.739)
+
+              6           B 99          B 123             25         974.77         (54.257, 17.713, 1.739)         (49.2067, 5.66921, 0.728213)
+                                                                                    (50.301, -11.227, 7.792)         (65.6567, -9.22425, 23.3751)
+
+              7          B 123          B 144             22        816.341         (50.301, -11.227, 7.792)
+                                                                                    (43.391, 21.096, 4.36)
+
+              8          B 144          B 146              3        93.9233         (43.391, 21.096, 4.36)
+                                                                                    (41.849, 20.343, -0.277)
+

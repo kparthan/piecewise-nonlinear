@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/xf/d1xfup1.ent
+Number of residues: 73
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16427.4
+Null Model Fit: 3160.88 bits.
+Bits per residue: 43.9012
+
+Bezier model fit: 3001.94 bits.
+Bits per residue: 41.6936
+
+# of segments: 7
+Internal segmentation:
+0-->2-->18-->26-->37-->42-->57-->72
+
+CPU time used: 3.38 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            P 3            P 5              3        91.8394         (-7.432, 9.408, -2.279)
+                                                                                    (-11.983, 6.965, 1.514)
+
+              2            P 5           P 21             17        640.988         (-11.983, 6.965, 1.514)
+                                                                                    (-32.867, 19.42, -9.003)
+
+              3           P 21           P 29              9        344.744         (-32.867, 19.42, -9.003)         (-27.298, 7.92361, -17.1555)
+                                                                                    (-22.869, 26.602, -10.608)
+
+              4           P 29           P 40             12         448.66         (-22.869, 26.602, -10.608)
+                                                                                    (-20.043, 22.006, 5.956)
+
+              5           P 40           P 45              6        219.204         (-20.043, 22.006, 5.956)
+                                                                                    (-18.432, 33.967, -4.596)
+
+              6           P 45           P 60             16        624.603         (-18.432, 33.967, -4.596)         (-7.40337, 19.3172, -15.1502)
+                                                                                    (-19.525, 25.516, -20.317)
+
+              7           P 60           P 75             16        631.897         (-19.525, 25.516, -20.317)         (-18.5492, 6.12591, -8.5093)
+                                                                                    (-8.726, 21.105, -1.002)
+

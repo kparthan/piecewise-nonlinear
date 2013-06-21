@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/r5/d1r5ha1.ent
+Number of residues: 74
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 19163.7
+Null Model Fit: 3221.01 bits.
+Bits per residue: 44.1234
+
+Bezier model fit: 3028.28 bits.
+Bits per residue: 41.4832
+
+# of segments: 6
+Internal segmentation:
+0-->7-->21-->36-->48-->64-->73
+
+CPU time used: 3.43 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 375          A 382              8        299.948         (18.939, 34.257, 30.798)         (31.5478, 44.6558, 28.1781)
+                                                                                    (23.686, 37.736, 17.146)
+
+              2          A 382          A 396             15        571.876         (23.686, 37.736, 17.146)         (-3.44849, 38.4392, 1.35366)
+                                                                                    (18.149, 58.291, 8.633)
+
+              3          A 396          A 411             16        609.237         (18.149, 58.291, 8.633)
+                                                                                    (17.774, 38.704, 4.216)
+
+              4          A 411          A 423             13        507.665         (17.774, 38.704, 4.216)         (30.5757, 37.1189, 20.929)
+                                                                                    (31.905, 43.741, 4.781)
+
+              5          A 423          A 439             17        664.299         (31.905, 43.741, 4.781)         (25.0365, 58.3996, 20.7958)
+                                                                                    (11.479, 46.077, 15.666)
+
+              6          A 439          A 448             10        375.252         (11.479, 46.077, 15.666)
+                                                                                    (23.505, 31.41, 30.075)
+

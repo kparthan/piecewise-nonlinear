@@ -1,4 +1,4 @@
-Using structure file: /home/parthan/Research/PDB/vh/pdb4vhb.ent.gz
+Using structure file: /home/pkas7/Research/PDB/vh/pdb4vhb.ent.gz
 Number of residues: 275
 Doing a BEZIER segmentation ...
 
@@ -13,8 +13,8 @@ Bits per residue: 40.5332
 Internal segmentation:
 0-->5-->34-->43-->61-->82-->102-->107-->136-->139-->168-->179-->180-->198-->220-->240-->245-->274
 
-CPU time used: 23.81 secs.
-Wall clock time elapsed: 23 secs.
+CPU time used: 16.43 secs.
+Wall clock time elapsed: 16 secs.
 
         SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
               1            A 1            A 6              6        228.998         (18.569, 6.681, 58.506)

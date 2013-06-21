@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/hv/d1hv4g_.ent
+Number of residues: 141
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 28995.4
+Null Model Fit: 6260.92 bits.
+Bits per residue: 44.7209
+
+Bezier model fit: 5670.95 bits.
+Bits per residue: 40.5068
+
+# of segments: 8
+Internal segmentation:
+0-->19-->34-->50-->51-->73-->93-->111-->140
+
+CPU time used: 7.5 secs.
+Wall clock time elapsed: 7 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            G 1           G 20             20        783.061         (35.079, 72.301, 54.036)         (26.937, 91.781, 55.2097)
+                                                                                    (9.151, 78.16, 57.659)
+
+              2           G 20           G 35             16        596.319         (9.151, 78.16, 57.659)
+                                                                                    (9.84, 66.115, 39.241)
+
+              3           G 35           G 51             17        668.187         (9.84, 66.115, 39.241)         (11.1266, 42.5317, 52.7691)
+                                                                                    (-0.244, 68.409, 51.308)
+
+              4           G 51           G 52              2         47.758         (-0.244, 68.409, 51.308)
+                                                                                    (-0.279, 65.16, 53.313)
+
+              5           G 52           G 74             23        873.047         (-0.279, 65.16, 53.313)
+                                                                                    (31.956, 73.731, 61.666)
+
+              6           G 74           G 94             21        822.907         (31.956, 73.731, 61.666)         (19.8479, 50.1879, 66.4937)
+                                                                                    (21.753, 56.32, 46.23)
+
+              7           G 94          G 112             19        715.943         (21.753, 56.32, 46.23)
+                                                                                    (9.691, 82.671, 48.307)
+
+              8          G 112          G 141             30        1163.72         (9.691, 82.671, 48.307)         (39.7345, 95.988, 39.5632)
+                                                                                    (34.571, 58.228, 52.729)         (15.4929, 57.3496, 57.0792)
+

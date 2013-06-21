@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/wc/d2wcka_.ent
+Number of residues: 141
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 35443.5
+Null Model Fit: 6301.48 bits.
+Bits per residue: 45.0106
+
+Bezier model fit: 5717.9 bits.
+Bits per residue: 40.8422
+
+# of segments: 7
+Internal segmentation:
+0-->20-->37-->57-->80-->105-->124-->140
+
+CPU time used: 7.6 secs.
+Wall clock time elapsed: 7 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 21             21        797.922         (-2.31, -17.802, 21.466)         (-8.15961, -8.10219, 8.85189)
+                                                                                    (8.836, 2.165, -1.139)
+
+              2           A 21           A 38             18        716.393         (8.836, 2.165, -1.139)
+                                                                                    (7.398, -19.378, 7.981)
+
+              3           A 38           A 58             21        822.053         (7.398, -19.378, 7.981)         (24.2038, -1.40184, 7.1886)
+                                                                                    (0.326, 3.768, 10.925)
+
+              4           A 58           A 81             24        954.591         (0.326, 3.768, 10.925)         (14.2527, 7.36194, 30.9371)
+                                                                                    (-11.205, -11.865, 19.304)
+
+              5           A 81          A 106             26        1012.53         (-11.205, -11.865, 19.304)         (12.7432, -12.3068, 36.8525)
+                                                                                    (20.488, 1.937, 13.965)
+
+              6          A 106          A 125             20         754.77         (20.488, 1.937, 13.965)
+                                                                                    (6.145, -20.24, 23.873)
+
+              7          A 125          A 141             17        659.639         (6.145, -20.24, 23.873)         (-2.26192, -24.3632, -0.704672)
+                                                                                    (-11.882, -6.331, 8.763)
+

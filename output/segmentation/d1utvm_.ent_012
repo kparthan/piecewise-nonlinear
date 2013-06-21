@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ut/d1utvm_.ent
+Number of residues: 71
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 27855.2
+Null Model Fit: 3126.41 bits.
+Bits per residue: 44.663
+
+Bezier model fit: 2903.44 bits.
+Bits per residue: 41.4777
+
+# of segments: 8
+Internal segmentation:
+0-->12-->22-->27-->35-->46-->48-->61-->70
+
+CPU time used: 3.36 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            M 5           M 17             13         504.29         (55.935, -6.681, 7.844)         (46.6777, -14.0852, 26.3245)
+                                                                                    (63.102, -25.696, 30.794)
+
+              2           M 17           M 27             11        398.648         (63.102, -25.696, 30.794)
+                                                                                    (52.92, -22.892, 1.33)
+
+              3           M 27           M 32              6        217.104         (52.92, -22.892, 1.33)
+                                                                                    (58.784, -27.679, 10.8)
+
+              4           M 32           M 40              9        327.871         (58.784, -27.679, 10.8)
+                                                                                    (62.324, -21.389, 32.18)
+
+              5           M 40           M 51             12        454.567         (62.324, -21.389, 32.18)         (54.0096, -6.65422, 18.3921)
+                                                                                    (58.013, -18.318, 6.096)
+
+              6           M 51           M 53              3        93.3631         (58.013, -18.318, 6.096)
+                                                                                    (52.042, -19.677, 8.808)
+
+              7           M 53           M 66             14        535.725         (52.042, -19.677, 8.808)         (60.5365, -33.9678, 38.9227)
+                                                                                    (45.034, -11.314, 20.16)
+
+              8           M 66           M 75             10        371.871         (45.034, -11.314, 20.16)
+                                                                                    (54.443, -33.678, 30.873)
+

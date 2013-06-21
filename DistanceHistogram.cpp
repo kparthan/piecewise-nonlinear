@@ -262,7 +262,8 @@ vector<double> DistanceHistogram::computeGlobalHistogramValues(vector<double> &r
  */
 void DistanceHistogram::save(string file_name)
 {
-  string data_file = "output/histograms/data/" + file_name + "_";
+  string data_file = string(CURRENT_DIRECTORY) + "output/histograms/data/" 
+                     + file_name + "_";
   string n = boost::lexical_cast<string>(point_set.size());
   string increment_r = boost::lexical_cast<string>(dr).substr(0,4);
   data_file += n + "_" + increment_r + ".histogram";

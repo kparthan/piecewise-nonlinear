@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/j1/d1j1va_.ent
+Number of residues: 94
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16124.6
+Null Model Fit: 4080.31 bits.
+Bits per residue: 43.8743
+
+Bezier model fit: 3804.14 bits.
+Bits per residue: 40.9048
+
+# of segments: 7
+Internal segmentation:
+0-->1-->14-->26-->45-->57-->78-->93
+
+CPU time used: 4.64 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 374          A 375              2        46.9114         (-19.952, 35.079, 26.543)
+                                                                                    (-18.753, 31.536, 27.258)
+
+              2          A 375          A 388             14        529.173         (-18.753, 31.536, 27.258)
+                                                                                    (-15.53, 25.873, 8.522)
+
+              3          A 388          A 400             13        507.759         (-15.53, 25.873, 8.522)         (-9.06374, 16.0733, 28.7747)
+                                                                                    (-1.069, 23.908, 10.655)
+
+              4          A 400          A 419             20        756.126         (-1.069, 23.908, 10.655)
+                                                                                    (-13.131, 37.481, 32.304)
+
+              5          A 419          A 431             13        509.088         (-13.131, 37.481, 32.304)
+                                                                                    (-4.797, 21.843, 27.992)
+
+              6          A 431          A 452             22        853.475         (-4.797, 21.843, 27.992)         (5.46975, 43.0418, 24.1728)
+                                                                                    (-7.728, 43.585, 6.668)
+
+              7          A 452          A 467             16        601.612         (-7.728, 43.585, 6.668)
+                                                                                    (-25.518, 39.385, 19.953)
+

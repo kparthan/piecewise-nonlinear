@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/i5/d1i5la_.ent
+Number of residues: 71
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 15042.8
+Null Model Fit: 3064.19 bits.
+Bits per residue: 43.7741
+
+Bezier model fit: 2899.5 bits.
+Bits per residue: 41.4215
+
+# of segments: 6
+Internal segmentation:
+0-->2-->20-->34-->47-->62-->70
+
+CPU time used: 3.4 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 3            A 5              3        91.5853         (36.204, 12.039, 10.082)
+                                                                                    (30.244, 8.489, 9.738)
+
+              2            A 5           A 23             19        742.042         (30.244, 8.489, 9.738)         (32.9926, 9.92721, -16.0201)
+                                                                                    (17.61, -10.503, 12.128)
+
+              3           A 23           A 37             15        572.667         (17.61, -10.503, 12.128)         (28.0922, 2.47887, -17.3979)
+                                                                                    (18.011, 8.445, 10.55)
+
+              4           A 37           A 50             14        531.859         (18.011, 8.445, 10.55)         (17.5876, 1.39316, -16.5463)
+                                                                                    (22.281, -17.393, 4.419)
+
+              5           A 50           A 65             16        621.257         (22.281, -17.393, 4.419)         (11.0755, -1.98013, -19.5167)
+                                                                                    (16.406, 1.555, 12.553)
+
+              6           A 65           A 73              9        340.094         (16.406, 1.555, 12.553)
+                                                                                    (32.993, -2.75, -2.364)
+

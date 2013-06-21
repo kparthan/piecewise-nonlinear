@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/wu/d1wuma1.ent
+Number of residues: 118
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 41863.8
+Null Model Fit: 5294.34 bits.
+Bits per residue: 45.2508
+
+Bezier model fit: 4825.06 bits.
+Bits per residue: 41.2398
+
+# of segments: 8
+Internal segmentation:
+0-->9-->27-->48-->70-->89-->93-->111-->117
+
+CPU time used: 6.03 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 715          A 724             10        380.132         (26.236, 0.438, 8.454)         (17.06, 13.9914, -2.92124)
+                                                                                    (19.286, -5.387, -3.739)
+
+              2          A 724          A 742             19        721.937         (19.286, -5.387, -3.739)
+                                                                                    (-0.978, 2.447, 11.405)
+
+              3          A 742          A 763             22         884.09         (-0.978, 2.447, 11.405)         (-22.65, -11.6822, 1.29359)
+                                                                                    (-14.688, 1.733, -10.434)
+
+              4          A 763          A 785             23        920.994         (-14.688, 1.733, -10.434)         (4.97144, -22.5923, 10.806)
+                                                                                    (10.63, -0.342, -6.736)
+
+              5          A 785          A 804             20        760.846         (10.63, -0.342, -6.736)
+                                                                                    (-16.726, 9.372, -2.1)
+
+              6          A 804          A 808              5        182.894         (-16.726, 9.372, -2.1)
+                                                                                    (-13.814, 8.951, 7.329)
+
+              7          A 808          A 826             19        714.244         (-13.814, 8.951, 7.329)
+                                                                                    (13.573, 7.243, 4.535)
+
+              8          A 826          A 832              7        259.917         (13.573, 7.243, 4.535)
+                                                                                    (7.474, 8.644, -9.754)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/yg/d3ygsc_.ent
+Number of residues: 95
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16853.9
+Null Model Fit: 4130.19 bits.
+Bits per residue: 43.9381
+
+Bezier model fit: 3829.31 bits.
+Bits per residue: 40.7373
+
+# of segments: 7
+Internal segmentation:
+0-->1-->30-->47-->48-->77-->78-->94
+
+CPU time used: 4.69 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            C 1            C 2              2        46.9752         (73.647, 27.005, 57.342)
+                                                                                    (73.789, 28.172, 53.692)
+
+              2            C 2           C 31             30        1162.12         (73.789, 28.172, 53.692)         (50.0975, 50.9819, 65.3433)
+                                                                                    (60.223, 16.081, 67.204)
+
+              3           C 31           C 48             18        707.761         (60.223, 16.081, 67.204)         (72.6783, 23.2001, 78.6768)
+                                                                                    (56.957, 38.311, 75.202)
+
+              4           C 48           C 49              2        46.9752         (56.957, 38.311, 75.202)
+                                                                                    (56.234, 36.199, 72.12)
+
+              5           C 49           C 78             30        1143.05         (56.234, 36.199, 72.12)         (84.0016, 22.6608, 56.093)
+                                                                                    (51.087, 25.588, 61.449)
+
+              6           C 78           C 79              2        46.9752         (51.087, 25.588, 61.449)
+                                                                                    (49.309, 27.913, 59.046)
+
+              7           C 79           C 95             17        675.446         (49.309, 27.913, 59.046)         (69.9876, 38.9499, 46.6039)
+                                                                                    (56.995, 20.742, 52.801)
+

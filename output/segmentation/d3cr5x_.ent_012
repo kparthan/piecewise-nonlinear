@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/cr/d3cr5x_.ent
+Number of residues: 91
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 29199.3
+Null Model Fit: 4025.79 bits.
+Bits per residue: 44.731
+
+Bezier model fit: 3684.91 bits.
+Bits per residue: 40.9434
+
+# of segments: 8
+Internal segmentation:
+0-->1-->21-->22-->42-->49-->66-->69-->90
+
+CPU time used: 4.47 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            X 0            X 1              2        47.7681         (-9.588, -3.6, 7.801)
+                                                                                    (-8.661, -4.412, 11.377)
+
+              2            X 1           X 21             21        788.819         (-8.661, -4.412, 11.377)
+                                                                                    (17.802, 6.951, -3.631)
+
+              3           X 21           X 22              2        47.7681         (17.802, 6.951, -3.631)
+                                                                                    (19.601, 4.198, -5.515)
+
+              4           X 22           X 42             21        827.003         (19.601, 4.198, -5.515)
+                                                                                    (9.812, 8.907, 20.203)
+
+              5           X 42           X 49              8        297.219         (9.812, 8.907, 20.203)
+                                                                                    (26.839, 11.052, 13.287)
+
+              6           X 49           X 66             18        703.421         (26.839, 11.052, 13.287)         (21.3855, -10.8637, 13.4658)
+                                                                                    (25.606, -2.35, 3.073)
+
+              7           X 66           X 69              4        139.479         (25.606, -2.35, 3.073)
+                                                                                    (16.191, -4.834, 2.469)
+
+              8           X 69           X 90             22        833.432         (16.191, -4.834, 2.469)
+                                                                                    (7.426, -5.476, 34.537)
+

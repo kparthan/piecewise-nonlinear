@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/xy/d1xyda1.ent
+Number of residues: 92
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 22566.9
+Null Model Fit: 4036.69 bits.
+Bits per residue: 44.3593
+
+Bezier model fit: 3731.61 bits.
+Bits per residue: 41.0067
+
+# of segments: 7
+Internal segmentation:
+0-->21-->22-->42-->49-->62-->63-->91
+
+CPU time used: 4.48 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 0           A 21             22        838.086         (-10.808, 2.415, 15.737)
+                                                                                    (18.392, 9.445, -0.511)
+
+              2           A 21           A 22              2        47.3963         (18.392, 9.445, -0.511)
+                                                                                    (17.061, 11.104, -3.697)
+
+              3           A 22           A 42             21        827.014         (17.061, 11.104, -3.697)
+                                                                                    (11.385, -11.388, 9.675)
+
+              4           A 42           A 49              8        296.829         (11.385, -11.388, 9.675)
+                                                                                    (20.868, -10.7, -4.82)
+
+              5           A 49           A 62             14        532.868         (20.868, -10.7, -4.82)
+                                                                                    (4.373, 0.473, -13.493)
+
+              6           A 62           A 63              2        47.3963         (4.373, 0.473, -13.493)
+                                                                                    (6.16, 3.356, -15.167)
+
+              7           A 63           A 91             29        1142.02         (6.16, 3.356, -15.167)         (8.96957, 2.37356, 6.36385)
+                                                                                    (-8.545, -23.157, 1.067)
+

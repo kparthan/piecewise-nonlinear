@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/tw/d1tw9f1.ent
+Number of residues: 128
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 35782.9
+Null Model Fit: 5718.09 bits.
+Bits per residue: 45.0243
+
+Bezier model fit: 5171.08 bits.
+Bits per residue: 40.7172
+
+# of segments: 8
+Internal segmentation:
+0-->3-->32-->37-->65-->92-->99-->126-->127
+
+CPU time used: 6.7 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           F 78           F 81              4        140.359         (53.137, 56.123, 39.274)
+                                                                                    (54.859, 49.47, 34.343)
+
+              2           F 81          F 110             30        1155.65         (54.859, 49.47, 34.343)         (76.4923, 60.5119, 50.6175)
+                                                                                    (63.101, 78.505, 58.135)
+
+              3          F 110          F 116              6         230.44         (63.101, 78.505, 58.135)
+                                                                                    (73.317, 83.222, 58.879)
+
+              4          F 116          F 144             29        1095.43         (73.317, 83.222, 58.879)         (80.76, 65.0118, 45.0679)
+                                                                                    (62.06, 62.622, 25.349)
+
+              5          F 144          F 171             28        1109.18         (62.06, 62.622, 25.349)         (48.8455, 59.1431, 44.7295)
+                                                                                    (67.971, 81.263, 46.529)
+
+              6          F 171          F 178              8        302.866         (67.971, 81.263, 46.529)
+                                                                                    (70.507, 73.593, 35.326)
+
+              7          F 178          F 205             28        1089.09         (70.507, 73.593, 35.326)         (35.6495, 69.6859, 27.4805)
+                                                                                    (56.104, 80.536, 54.492)
+
+              8          F 205          F 206              2        48.0614         (56.104, 80.536, 54.492)
+                                                                                    (57.074, 76.868, 54.018)
+

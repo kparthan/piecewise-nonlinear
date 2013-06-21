@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/qr/d2qrwe_.ent
+Number of residues: 126
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 31611.1
+Null Model Fit: 5605.69 bits.
+Bits per residue: 44.8455
+
+Bezier model fit: 5116.03 bits.
+Bits per residue: 40.9283
+
+# of segments: 8
+Internal segmentation:
+0-->27-->35-->54-->55-->78-->97-->123-->125
+
+CPU time used: 6.59 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            E 3           E 30             28        1093.73         (-24.625, -33.811, 28.295)         (-34.0304, -36.5886, 9.20903)
+                                                                                    (-60.742, -39.568, 15.582)
+
+              2           E 30           E 38              9        345.689         (-60.742, -39.568, 15.582)
+                                                                                    (-56.009, -26.425, 10.94)
+
+              3           E 38           E 57             20        765.586         (-56.009, -26.425, 10.94)
+                                                                                    (-31.945, -28.354, 26.462)
+
+              4           E 57           E 58              2        47.8826         (-31.945, -28.354, 26.462)
+                                                                                    (-31.593, -28.018, 22.689)
+
+              5           E 58           E 81             24        967.359         (-31.593, -28.018, 22.689)         (-47.4048, -5.91999, 21.8444)
+                                                                                    (-60.902, -33.109, 28.333)
+
+              6           E 81          E 100             20         749.28         (-60.902, -33.109, 28.333)
+                                                                                    (-34.861, -47.51, 19.223)
+
+              7          E 100          E 126             27        1052.78         (-34.861, -47.51, 19.223)         (-31.3523, -39.7611, 37.5767)
+                                                                                    (-62.411, -28.909, 30.117)
+
+              8          E 126          E 128              3        93.7281         (-62.411, -28.909, 30.117)
+                                                                                    (-66.307, -32.264, 28.286)
+

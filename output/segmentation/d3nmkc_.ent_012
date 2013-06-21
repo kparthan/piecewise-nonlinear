@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/nm/d3nmkc_.ent
+Number of residues: 106
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 33602.7
+Null Model Fit: 4718.03 bits.
+Bits per residue: 44.9336
+
+Bezier model fit: 4223.74 bits.
+Bits per residue: 40.2261
+
+# of segments: 7
+Internal segmentation:
+0-->1-->20-->49-->54-->81-->104-->105
+
+CPU time used: 5.37 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            C 1            C 2              2        47.9707         (-27.185, 58.806, -21.321)
+                                                                                    (-30.698, 57.76, -22.41)
+
+              2            C 2           C 21             20        765.058         (-30.698, 57.76, -22.41)         (-32.2641, 62.5077, -37.3691)
+                                                                                    (-16.948, 72.22, -44.824)
+
+              3           C 21           C 50             30        1167.28         (-16.948, 72.22, -44.824)         (-15.0525, 55.586, -27.0327)
+                                                                                    (-41.452, 43.364, -21.964)
+
+              4           C 50           C 55              6        226.598         (-41.452, 43.364, -21.964)
+                                                                                    (-35.253, 37.393, -27.661)
+
+              5           C 55           C 82             28        1046.48         (-35.253, 37.393, -27.661)
+                                                                                    (-9.351, 63.45, -45.699)
+
+              6           C 82          C 105             24        922.378         (-9.351, 63.45, -45.699)         (-30.4965, 56.2522, -50.5877)
+                                                                                    (-38.901, 49.214, -33.011)
+
+              7          C 105          C 106              2        47.9707         (-38.901, 49.214, -33.011)
+                                                                                    (-39.584, 52.947, -32.779)
+

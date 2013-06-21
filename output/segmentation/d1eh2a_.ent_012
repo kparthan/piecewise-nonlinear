@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/eh/d1eh2a_.ent
+Number of residues: 95
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 20287.2
+Null Model Fit: 4155.33 bits.
+Bits per residue: 44.2056
+
+Bezier model fit: 3888.82 bits.
+Bits per residue: 41.3704
+
+# of segments: 6
+Internal segmentation:
+0-->25-->53-->60-->77-->87-->94
+
+CPU time used: 4.65 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 6           A 31             26        1036.75         (-13.445, -3.18, 19.002)         (15.3473, 3.37939, 18.167)
+                                                                                    (3.24, 11.563, 8.182)
+
+              2           A 31           A 59             29        1146.96         (3.24, 11.563, 8.182)         (10.38, -13.7822, -10.4901)
+                                                                                    (-8.83, 8.161, 7.18)
+
+              3           A 59           A 66              8        310.039         (-8.83, 8.161, 7.18)         (-1.32306, 15.3289, -4.84708)
+                                                                                    (-2.033, 10.647, 11.224)
+
+              4           A 66           A 83             18        676.748         (-2.033, 10.647, 11.224)
+                                                                                    (-1.358, -14.019, 3.917)
+
+              5           A 83           A 93             11        408.833         (-1.358, -14.019, 3.917)         (-14.395, 3.54944, -5.70634)
+                                                                                    (-14.279, -2.266, 12.77)
+
+              6           A 93          A 100              8        309.479         (-14.279, -2.266, 12.77)
+                                                                                    (-18.496, 8.205, 12.269)
+

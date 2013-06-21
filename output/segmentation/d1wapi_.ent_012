@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/wa/d1wapi_.ent
+Number of residues: 68
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 19415.3
+Null Model Fit: 2957.53 bits.
+Bits per residue: 44.1423
+
+Bezier model fit: 2771.9 bits.
+Bits per residue: 41.3716
+
+# of segments: 7
+Internal segmentation:
+0-->19-->20-->33-->43-->45-->58-->67
+
+CPU time used: 3.19 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            I 8           I 27             20        772.503         (-13.241, 8.462, 3.511)         (-3.35182, 21.0373, -36.9818)
+                                                                                    (-4.874, 21.35, 12.605)
+
+              2           I 27           I 28              2        47.1793         (-4.874, 21.35, 12.605)
+                                                                                    (-5.031, 24.899, 13.915)
+
+              3           I 28           I 41             14        536.443         (-5.031, 24.899, 13.915)         (5.9141, 22.8932, -6.06143)
+                                                                                    (-7.316, 11.166, -18.477)
+
+              4           I 41           I 51             11        414.822         (-7.316, 11.166, -18.477)         (-10.597, 5.96921, 2.2441)
+                                                                                    (-2.21, 15.344, 7.646)
+
+              5           I 51           I 53              3        92.3216         (-2.21, 15.344, 7.646)
+                                                                                    (-8.461, 17.467, 6.292)
+
+              6           I 53           I 66             14        533.509         (-8.461, 17.467, 6.292)         (-7.59848, 26.3358, -26.9229)
+                                                                                    (-19.984, 9.228, -1.038)
+
+              7           I 66           I 75             10        375.121         (-19.984, 9.228, -1.038)
+                                                                                    (-9.235, 26.56, -15.382)
+

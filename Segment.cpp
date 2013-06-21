@@ -490,7 +490,8 @@ vector<array<double,3>> Segment::getDeviations(BezierCurve<double> &curve)
     tmin_prev = tmin_current;
   }
   if (parameters.print == PRINT_DETAIL && parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-    string file("output/dev_bezier_");
+    string file_name = string(CURRENT_DIRECTORY) + "output/dev_bezier_";
+    string file(file_name.c_str());
     file += boost::lexical_cast<string>(curve.getDegree()-1);
     ofstream dev_bezier(file.c_str());
     for (int i=0; i<deviations.size(); i++){

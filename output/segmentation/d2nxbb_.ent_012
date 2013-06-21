@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/nx/d2nxbb_.ent
+Number of residues: 121
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 43906.7
+Null Model Fit: 5438.34 bits.
+Bits per residue: 45.3195
+
+Bezier model fit: 4938.82 bits.
+Bits per residue: 41.1568
+
+# of segments: 8
+Internal segmentation:
+0-->15-->31-->46-->60-->77-->94-->119-->120
+
+CPU time used: 6.33 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           B 23           B 38             16        632.631         (-0.632, -12.437, 23.906)         (19.8413, 4.68466, 16.9494)
+                                                                                    (-6.616, 11.06, 16.536)
+
+              2           B 38           B 54             17        641.814         (-6.616, 11.06, 16.536)
+                                                                                    (-21.464, -1.61, 32.877)
+
+              3           B 54           B 69             16        628.988         (-21.464, -1.61, 32.877)         (-2.43598, -10.1032, 27.154)
+                                                                                    (-14.341, -23.649, 31)
+
+              4           B 69           B 83             15        583.846         (-14.341, -23.649, 31)         (-3.69589, -26.5141, 8.87978)
+                                                                                    (-9.475, -3.454, 25.834)
+
+              5           B 83          B 100             18        709.336         (-9.475, -3.454, 25.834)         (7.92122, 8.23685, 25.5322)
+                                                                                    (-4.462, 0.346, 14.246)
+
+              6          B 100          B 117             18        685.513         (-4.462, 0.346, 14.246)
+                                                                                    (-23.641, -17.995, 19.976)
+
+              7          B 117          B 142             26        1008.34         (-23.641, -17.995, 19.976)         (-26.8102, -1.38224, 28.4892)
+                                                                                    (-9.807, 14.52, 10.832)
+
+              8          B 142          B 143              2        48.3566         (-9.807, 14.52, 10.832)
+                                                                                    (-5.996, 14.238, 11.028)
+

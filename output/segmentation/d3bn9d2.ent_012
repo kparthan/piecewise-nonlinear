@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/bn/d3bn9d2.ent
+Number of residues: 83
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 21699.3
+Null Model Fit: 3632.82 bits.
+Bits per residue: 44.3027
+
+Bezier model fit: 3355.62 bits.
+Bits per residue: 40.9222
+
+# of segments: 8
+Internal segmentation:
+0-->11-->22-->37-->48-->59-->61-->70-->82
+
+CPU time used: 4.26 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          D 114          D 125             12         435.05         (-2.275, -5.942, 6.307)         (-12.7015, 0.782663, 20.2797)
+                                                                                    (0.402, 9.363, 34.911)
+
+              2          D 125          D 147             12        451.569         (0.402, 9.363, 34.911)
+                                                                                    (-3.719, 2.156, 9.341)
+
+              3          D 147          D 162             16        636.381         (-3.719, 2.156, 9.341)         (-20.1209, 22.1784, 26.8055)
+                                                                                    (-1.549, 23.397, 25.852)
+
+              4          D 162          D 173             12        443.947         (-1.549, 23.397, 25.852)         (5.37799, 10.4087, 11.5917)
+                                                                                    (5.429, -4.844, 15.141)
+
+              5          D 173          D 184             12        434.681         (5.429, -4.844, 15.141)
+                                                                                    (-1.325, 20.536, 32.823)
+
+              6          D 184          D 193              3        92.6425         (-1.325, 20.536, 32.823)
+                                                                                    (-10.252, 15.499, 35.343)
+
+              7          D 193          D 202             10        364.761         (-10.252, 15.499, 35.343)         (-10.2565, 11.1917, 19.9151)
+                                                                                    (-10.741, 2.76, 9.497)
+
+              8          D 202          D 214             13        496.593         (-10.741, 2.76, 9.497)
+                                                                                    (-6.059, 7.115, 41.704)
+

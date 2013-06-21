@@ -48,14 +48,15 @@ string StandardForm::createOutputFile(bool status)
 {
   string filtered = extractName(parameters.file);
   string output_file;
+  string current_dir = string(CURRENT_DIRECTORY);
   if (status) {
-    output_file = "output/segmentation/";
+    output_file = current_dir + "output/segmentation/";
     output_file = output_file + filtered + "_";
     for (int i=0; i<parameters.controls.size(); i++) {
       output_file += boost::lexical_cast<string>(parameters.controls[i]); 
     }
   } else {
-    output_file = "output/segmentation/linear_";
+    output_file = current_dir + "output/segmentation/linear_";
     output_file += filtered;
   }
   return output_file;

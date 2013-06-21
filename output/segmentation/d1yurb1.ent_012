@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/yu/d1yurb1.ent
+Number of residues: 98
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 42678.1
+Null Model Fit: 4392.02 bits.
+Bits per residue: 45.2786
+
+Bezier model fit: 4033.49 bits.
+Bits per residue: 41.5824
+
+# of segments: 6
+Internal segmentation:
+0-->24-->35-->46-->67-->71-->97
+
+CPU time used: 4.82 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            B 1           B 25             25        993.432         (8.327, -13.784, 5.191)         (10.1653, -1.14715, 1.59922)
+                                                                                    (-9.001, -12.175, -14.703)
+
+              2           B 25           B 36             12         464.04         (-9.001, -12.175, -14.703)         (6.24078, -3.4808, -19.7618)
+                                                                                    (-13.71, 5.907, -10.952)
+
+              3           B 36           B 47             12        455.492         (-13.71, 5.907, -10.952)
+                                                                                    (-17.528, -4.203, 2.617)
+
+              4           B 47           B 68             22        864.689         (-17.528, -4.203, 2.617)         (-8.68278, 24.7152, 7.3403)
+                                                                                    (-12.578, 8.185, -16.483)
+
+              5           B 68           B 72              5        181.571         (-12.578, 8.185, -16.483)
+                                                                                    (-1.6, 3.509, -12.476)
+
+              6           B 72           B 98             27        1074.27         (-1.6, 3.509, -12.476)         (-1.80565, 8.59597, 13.2332)
+                                                                                    (-21.628, -7.996, 11.964)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/m0/d1m0ub2.ent
+Number of residues: 76
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 12742.1
+Null Model Fit: 3265.1 bits.
+Bits per residue: 43.5347
+
+Bezier model fit: 3103.13 bits.
+Bits per residue: 41.3751
+
+# of segments: 7
+Internal segmentation:
+0-->8-->12-->36-->49-->56-->62-->75
+
+CPU time used: 3.59 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           B 47           B 55              9        325.939         (57.173, 38.619, -16.808)         (48.5067, 30.1333, -10.6355)
+                                                                                    (37.934, 27.534, -2.319)
+
+              2           B 55           B 59              5        178.988         (37.934, 27.534, -2.319)
+                                                                                    (41.988, 29.225, 5.413)
+
+              3           B 59           B 83             25        972.718         (41.988, 29.225, 5.413)         (65.9484, 54.0053, -8.09792)
+                                                                                    (30.004, 22.376, -7.378)
+
+              4           B 83           B 96             14        546.213         (30.004, 22.376, -7.378)         (46.773, 15.2802, -16.7552)
+                                                                                    (44.262, 19.139, -3.559)
+
+              5           B 96          B 103              8        293.869         (44.262, 19.139, -3.559)
+                                                                                    (53.732, 30.439, -16.041)
+
+              6          B 103          B 109              7        254.613         (53.732, 30.439, -16.041)
+                                                                                    (51.973, 22.354, -0.7)
+
+              7          B 109          B 122             14         530.79         (51.973, 22.354, -0.7)
+                                                                                    (62.781, 39.277, 0.024)
+
