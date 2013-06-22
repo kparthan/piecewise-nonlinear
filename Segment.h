@@ -74,6 +74,10 @@ class Segment
     void printInfo(); 
 
                             /* Utility funcitons */
+    //! Cumulative length of the lines connecting the points constituting
+    //! the segment
+    double length();
+
     //! Constructs a plane used along with a Bezier curve 
     Plane<double> constructPlane(BezierCurve<double> &);
 

@@ -16,6 +16,9 @@ class CurveString
     //! Lengths of the curves
     vector<double> lengths;
 
+    //! Approximate lengthhs of the curves
+    vector<double> approx_lengths;
+
     //! Select a curve
     int getCurveIndex(double, vector<double> &);
 
@@ -30,7 +33,8 @@ class CurveString
     CurveString(vector<BezierCurve<double>> &);
 
     //! Constructor
-    CurveString(vector<BezierCurve<double>> &, vector<double> &);
+    CurveString(vector<BezierCurve<double>> &, vector<double> &,
+                vector<double> &);
 
     //! Copy constructor
     CurveString(const CurveString &);
@@ -46,6 +50,9 @@ class CurveString
 
     //! Cumulative length of the curves forming the curve string
     double length();
+
+    //!
+    double approximateLength();
 
     //! Sampling probabilities of the individual curves
     vector<double> getSampleProbabilities();

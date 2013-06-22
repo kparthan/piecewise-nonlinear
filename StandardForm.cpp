@@ -571,6 +571,7 @@ Segmentation StandardForm::fitBezierCurveModel()
                            codeLength,optimalBezierFit,segmentation.second,
                            transformation);
     segmentation_profile.setBitsPerResidue(null_bpr,bezier_bpr);
+    segmentation_profile.setMaximumRadius(getMaximumDistance(coordinates));
 
     //segmentation_profile.setTime(cpu_time,wall_time);
   } else if (parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
@@ -682,6 +683,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
           }
         }
         //OptimalFit fit = segment.stateUsingCurve(min_fit);
+        min_fit.setSegmentLength(segment.length());
         optimalBezierFit[i][j] = min_fit;
         codeLength[i][j] = optimalBezierFit[i][j].getMessageLength();
         if (parameters.print == PRINT_DETAIL) {

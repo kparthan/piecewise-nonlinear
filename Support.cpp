@@ -869,3 +869,26 @@ double bernstein(int m, int i, double t)
   return y;
 }
 
+/*!
+ *  \brief This function finds the maximum distance between any pair of points
+ *  from a set
+ *  \param coordinates a reference to a vector<array<double,3>>
+ *  \return the overall maximum distance between any pair of points
+ */
+double getMaximumDistance(vector<array<double,3>> &coordinates)
+{
+  double max_distance = 0;
+  Point<double> p1,p2;
+  for (int i=0; i<coordinates.size()-1; i++) {
+    p1 = Point<double>(coordinates[i]);
+    for (int j=i+1; j<coordinates.size(); j++) {
+      p2 = Point<double>(coordinates[j]);
+      double current_distance = lcb::geometry::distance<double>(p1,p2);
+      if (current_distance > max_distance) {
+        max_distance = current_distance;
+      }
+    }
+  }
+  return max_distance;
+}
+

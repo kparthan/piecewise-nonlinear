@@ -15,6 +15,9 @@ class OptimalFit
     //! Length of the encoding
     double messageLength;
 
+    //! Length of the protein segment
+    double segment_length;
+
   public:
     //! Null constructor
     OptimalFit();
@@ -25,6 +28,9 @@ class OptimalFit
     //! Copy constructor
     OptimalFit(const OptimalFit &);
 
+    //! Sets the segment length
+    void setSegmentLength(double);
+
                             /* Accessor functions */
     //! Gets the number of control points
     int getNumberOfControlPoints();
@@ -34,6 +40,9 @@ class OptimalFit
 
     //! Gets the message length
     double getMessageLength() const;
+
+    //! Gets the segments length
+    double getSegmentLength();
 
                             /* Utility functions */
     //! Assignment operator

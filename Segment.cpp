@@ -156,6 +156,24 @@ void Segment::fitLinear(void)
 }
 
 /*!
+ *  \brief This function computes the length of the segment as the cumulative
+ *  length of the lines connecting the points that make up this segment
+ *  \return the length of the segment
+ */
+double Segment::length()
+{
+  double segment_length = 0;
+  Point<double> p1,p2;
+  p1 = Point<double>(coordinates[0]);
+  for (int i=1; i<coordinates.size(); i++) {
+    p2 = Point<double>(coordinates[i]);
+    segment_length += lcb::geometry::distance<double>(p1,p2);
+    p1 = p2;
+  }
+  return segment_length;
+}
+
+/*!
  *  \brief This module constructs a suitable plane based on the number of
  *  control points.
  *  \param curve a reference to a BezierCurve

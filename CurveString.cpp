@@ -50,10 +50,13 @@ CurveString::CurveString(vector<BezierCurve<double>> &curves) : curves(curves)
  *  \param lengths a reference to a vector<double>
  */
 CurveString::CurveString(vector<BezierCurve<double>> &curves,
-                         vector<double> &lengths) : 
-                         curves(curves), lengths(lengths)
+                         vector<double> &lengths, 
+                         vector<double> &approx_lengths) :
+                         curves(curves), lengths(lengths),
+                         approx_lengths(approx_lengths)
 {
   assert(curves.size() == lengths.size());
+  assert(lengths.size() == approx_lengths.size());
   if (curves.size() == 0) {
     cout << "No curves to construct the curve string ...";
     exit(1);
@@ -69,7 +72,8 @@ CurveString::CurveString(vector<BezierCurve<double>> &curves,
  *  \param source a reference to a CurveString
  */
 CurveString::CurveString(const CurveString &source) : vertices(source.vertices),
-             curves(source.curves), lengths(source.lengths)
+             curves(source.curves), lengths(source.lengths),
+             approx_lengths(source.approx_lengths)
 {}
 
 /*!
@@ -83,6 +87,7 @@ CurveString CurveString::operator=(const CurveString &source)
     vertices = source.vertices;
     curves = source.curves;
     lengths = source.lengths;
+    approx_lengths = source.approx_lengths;
   }
   return *this;
 }
@@ -114,6 +119,18 @@ double CurveString::length()
   double total_length = 0;
   for (int i=0; i<lengths.size(); i++) {
     total_length += lengths[i]; 
+  }
+  return total_length;
+}
+
+/*!
+ *
+ */
+double CurveString::approximateLength()
+{
+  double total_length = 0;
+  for (int i=0; i<approx_lengths.size(); i++) {
+    total_length += approx_lengths[i]; 
   }
   return total_length;
 }

@@ -18,6 +18,7 @@ OptimalFit::OptimalFit(vector<Point<double>> &controlPoints,
                        messageLength(messageLength)
 {
   numControlPoints = controlPoints.size();
+  segment_length = 0;
 }
 
 /*
@@ -27,7 +28,8 @@ OptimalFit::OptimalFit(vector<Point<double>> &controlPoints,
 OptimalFit::OptimalFit(const OptimalFit &source) :
                        numControlPoints(source.numControlPoints),
                        controlPoints(source.controlPoints), 
-                       messageLength(source.messageLength)
+                       messageLength(source.messageLength),
+                       segment_length(source.segment_length)
 {}
 
 /*!
@@ -58,6 +60,24 @@ double OptimalFit::getMessageLength() const
 }
 
 /*!
+ *  \brief This function sets the segment length of the fit
+ *  \param length a double
+ */
+void OptimalFit::setSegmentLength(double length)
+{
+  segment_length = length;
+}
+
+/*!
+ *  \brief This function returns the length of the protein segment
+ *  \return the segment length
+ */
+double OptimalFit::getSegmentLength()
+{
+  return segment_length;
+}
+
+/*!
  *  \brief This module assigns an OptimalFit object on the rhs to one
  *  on the lhs
  *  \param source a reference to an OptimalFit object
@@ -68,6 +88,7 @@ OptimalFit OptimalFit::operator=(const OptimalFit &source)
     numControlPoints = source.numControlPoints;
     controlPoints = source.controlPoints;
     messageLength = source.messageLength;
+    segment_length = source.segment_length;
   }
   return *this;
 }

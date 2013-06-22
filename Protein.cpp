@@ -80,6 +80,7 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
                                   vector<int> &segments, 
                                   Matrix<double> &transformation)
 {
+  vector<double> approx_lengths;
   vector<Identifier> identifiers = mapToActualSegments(segments);
   protein->undoLastSelection();
   Matrix<double> inverse_transform = transformation.inverse();
@@ -107,6 +108,7 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
     string residue_id = "R" + boost::lexical_cast<string>(i);
     shared_ptr<Residue> cps_residue = make_shared<Residue>(residue_id);
     OptimalFit fit = optimalBezierFit[segment_start][segment_end];
+    approx_lengths.push_back(fit.getSegmentLength());
     int numIntermediateControls = fit.getNumberOfControlPoints() - 2;
 
     vector<Point<double>> control_points;
@@ -185,7 +187,7 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
   vector<double> dihedral_angles = computeDihedralAngles();
   vector<double> lengths = computeConnectingLinesLengths();
   return Segmentation(coordinates.size(),planar_angles,dihedral_angles,lengths,
-                      all_bezier_curves);
+                      all_bezier_curves,approx_lengths);
 }
 
 /*!

@@ -63,6 +63,8 @@ void Comparison::save(vector<string> &comparison_files)
         log << "CURVE " << i+1 << ":\n";
         log << "\t# of residues: " << profiles[i].getNumberOfCoordinates() << endl;
         log << "\tLength: " << histograms[i].getCurveString().length() << endl;
+        log << "\tApproximate length: " 
+            << histograms[i].getCurveString().approximateLength() << endl;
         log << "\t# of samples: " << num_samples[i] << endl;
         array<double,2> times = histograms[i].getComputationTime();
         log << "\tCPU time: " << times[0] << " secs." << endl << endl;
@@ -73,6 +75,7 @@ void Comparison::save(vector<string> &comparison_files)
       time.close();
       log << "Score: " << scores[0] << endl;
       log << "Normalized score: " << scores[1] << endl;
+      log << "Approx. Normalized score: " << scores[2] << endl;
       log.close();
 
       string data_file = current_dir + "output/histograms/data/" + common_string
@@ -88,10 +91,16 @@ void Comparison::save(vector<string> &comparison_files)
       plotDistanceHistograms(files[0],files[1],common_string);
 
       ofstream results("histograms.comparison",ios::app);
+      assert(histograms[0].getRValues().size() == histograms[1].getRValues().size());
+      int num_r = histograms[0].getRValues().size();
       results << setw(15) << files[0] << setw(15) << files[1]
               << setw(10) << num_samples[0] << setw(10) << num_samples[1] 
               << setw(5) << histograms[0].getIncrementInR() << " "
-              << setw(10) << scores[0] << setw(10) << scores[1] << endl;
+              << setw(10) << scores[0] << setw(10) << scores[1] 
+              << setw(10) << scores[2] << setw(10) << num_r 
+              << setw(10) << scores[0] / num_r
+              << setw(10) << scores[1] / num_r
+              << setw(10) << scores[2] / num_r << endl;
       results.close();
       break;
     }
@@ -431,35 +440,47 @@ void Comparison::computeDistanceHistogram(int num_points, double dr)
 {
   flag = DISTANCE_HISTOGRAM;
   vector<BezierCurve<double>> bezier_curves[2];
-  vector<double> lengths[2];
+  vector<double> lengths[2],approx_lengths[2];
   DistanceHistogram histogram[2];
 
   double num_samples[2];
   for (int i=0; i<2; i++) {
     if (num_points == 0) {
-      num_samples[i] = profiles[i].getNumberOfCoordinates() * 5;
+      num_samples[i] = profiles[i].getNumberOfCoordinates() * 10;
     } else {
       num_samples[i] = num_points;
     }
   }
 
-  double curve_lengths[2];
+  double curve_lengths[2],approx_curve_lengths[2],max_radius[2];
   for (int i=0; i<2; i++) {
+    max_radius[i] = profiles[i].getMaximumRadius();
     bezier_curves[i] = profiles[i].getBezierCurves();
     lengths[i] = profiles[i].getBezierCurvesLengths();
-    CurveString curve_string(bezier_curves[i],lengths[i]);
+    approx_lengths[i] = profiles[i].getApproximateBezierLengths();
+    CurveString curve_string(bezier_curves[i],lengths[i],approx_lengths[i]);
     histograms[i] = DistanceHistogram(curve_string,num_samples[i],dr);
     curve_lengths[i] = curve_string.length();
+    approx_curve_lengths[i] = curve_string.approximateLength();
   }
 
-  int curve_with_max_length = ((curve_lengths[0] > curve_lengths[1]) ? 0 : 1 );
-  double max_length = curve_lengths[curve_with_max_length];
-
-  vector<double> r_values;
+  //int curve_with_max_length = ((curve_lengths[0] > curve_lengths[1]) ? 0 : 1 );
+  //double max_length = curve_lengths[curve_with_max_length];
+  /*vector<double> r_values;
   double r = dr;
   while (1) {
     r_values.push_back(r);
     if (r > max_length) {
+      break;
+    }
+    r += dr;
+  }*/
+  double r_max = ((max_radius[0] < max_radius[1]) ? max_radius[0] : max_radius[1]);
+  vector<double> r_values;
+  double r = dr;
+  while (1) {
+    r_values.push_back(r);
+    if (r > r_max) {
       break;
     }
     r += dr;
@@ -468,14 +489,20 @@ void Comparison::computeDistanceHistogram(int num_points, double dr)
     histogram_results[i] = histograms[i].computeGlobalHistogramValues(r_values);
   }
   
-  scores = vector<double>(2,0);
+  scores = vector<double>(3,0);
+  double a,b;
   for (int i=0; i<r_values.size(); i++) {
     scores[0] += fabs(histogram_results[0][i] - histogram_results[1][i]);
-    double a = histogram_results[0][i] * num_samples[0] / curve_lengths[0];
-    double b = histogram_results[1][i] * num_samples[1] / curve_lengths[1];
+
+    a = histogram_results[0][i] * num_samples[0] / curve_lengths[0];
+    b = histogram_results[1][i] * num_samples[1] / curve_lengths[1];
     scores[1] += fabs(a-b);
+
+    a = histogram_results[0][i] * num_samples[0] / approx_curve_lengths[0];
+    b = histogram_results[1][i] * num_samples[1] / approx_curve_lengths[1];
+    scores[2] += fabs(a-b);
   }
-  scores[0] /= r_values.size();
+  //scores[0] /= r_values.size();
 }
 
 /*!

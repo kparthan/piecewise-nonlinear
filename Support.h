@@ -59,6 +59,7 @@ RealType absoluteMaximum(vector<RealType> &);
 double minimum(vector<double> &);
 double minimum(vector<vector<double>> &);
 double bernstein(int, int, double);
+double getMaximumDistance(vector<array<double,3>> &);
 
 Segmentation testFit (struct Parameters &);
 Segmentation proteinFit (struct Parameters &);

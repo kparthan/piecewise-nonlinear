@@ -13,17 +13,21 @@ Segmentation::Segmentation()
  *  \param dihedral_angles a reference to a vector<double>
  *  \param lengths a reference to a vector<double>
  *  \param bezier_curves a reference to a vector<BezierCurve<double>>
+ *  \param approx_lengths a reference to a vector<double>
  */
 Segmentation::Segmentation(int num_coordinates,
                            vector<double> &planar_angles, 
                            vector<double> &dihedral_angles, 
                            vector<double> &lengths,
-                           vector<BezierCurve<double>> &bezier_curves) : 
+                           vector<BezierCurve<double>> &bezier_curves,
+                           vector<double> &approx_lengths) :  
                            num_coordinates(num_coordinates), 
                            planar_angles(planar_angles),
                            dihedral_angles(dihedral_angles),
-                           lengths(lengths), bezier_curves(bezier_curves)
+                           lengths(lengths), bezier_curves(bezier_curves),
+                           approx_lengths(approx_lengths)
 {
+  assert(bezier_curves.size() == approx_lengths.size());
   for (int i=0; i<bezier_curves.size(); i++) {
     double length = bezier_curves[i].length();
     bezier_curves_lengths.push_back(length);
@@ -40,7 +44,9 @@ Segmentation::Segmentation(const Segmentation &source) :
               dihedral_angles(source.dihedral_angles), lengths(source.lengths),
               bezier_curves(source.bezier_curves), null_bpr(source.null_bpr),
               bezier_bpr(source.bezier_bpr), cpu_time(source.cpu_time),
-              wall_time(source.wall_time), bezier_curves_lengths(source.bezier_curves_lengths)
+              wall_time(source.wall_time), max_radius(source.max_radius),
+              bezier_curves_lengths(source.bezier_curves_lengths),
+              approx_lengths(source.approx_lengths)
 {}
 
 /*!
@@ -61,8 +67,28 @@ Segmentation Segmentation::operator=(const Segmentation &source)
     bezier_bpr = source.bezier_bpr;
     cpu_time = source.cpu_time;
     wall_time = source.wall_time;
+    approx_lengths = source.approx_lengths;
+    max_radius = source.max_radius;
   }
   return *this;
+}
+
+/*!
+ *  \brief This function sets the maximum radius of the parent structure
+ *  \param radius a double
+ */
+void Segmentation::setMaximumRadius(double radius)
+{
+  max_radius = radius;
+}
+
+/*!
+ *  \brief This function returns the maximum radius of the parent structure
+ *  \return the radius
+ */
+double Segmentation::getMaximumRadius()
+{
+  return max_radius;
 }
 
 /*!
@@ -155,6 +181,14 @@ vector<double> Segmentation::getBezierCurvesLengths()
 }
 
 /*!
+ *
+ */
+vector<double> Segmentation::getApproximateBezierLengths()
+{
+  return approx_lengths;
+}
+
+/*!
  *  \brief This module prints the segmentation profile (angles & lengths)
  */
 void Segmentation::print()
@@ -189,6 +223,7 @@ void Segmentation::save(string &pdb_file)
                        "output/segmentation_profile/" + pdb_file + ".profile";
   ofstream profile(output_file.c_str());
   profile << num_coordinates << endl;
+  profile << max_radius << endl;
   profile << null_bpr << endl;
   profile << bezier_bpr << endl;
   for (int i=0; i<planar_angles.size(); i++) {
@@ -208,7 +243,7 @@ void Segmentation::save(string &pdb_file)
       profile << bezier_curves[i].getControlPoint(j) << " ";
     }
     profile << endl;
-    profile << bezier_curves[i].length();
+    profile << bezier_curves[i].length() << " " << approx_lengths[i];
     profile << endl;
   }
   profile.close();
@@ -221,18 +256,20 @@ void Segmentation::save(string &pdb_file)
 void Segmentation::load(string &pdb_file)
 {
   const int NUM_COORDINATES = 1;
-  const int NULL_BPR_LINE = 2;
-  const int BEZIER_BPR_LINE = 3;
-  const int PLANAR_ANGLES_LINE = 4;
-  const int DIHEDRAL_ANGLES_LINE = 5;
-  const int CONNECTING_LENGTHS_LINE = 6;
-  const int BEZIER_CURVES_LINE = 7;
+  const int MAX_RADIUS = 2;
+  const int NULL_BPR_LINE = 3;
+  const int BEZIER_BPR_LINE = 4;
+  const int PLANAR_ANGLES_LINE = 5;
+  const int DIHEDRAL_ANGLES_LINE = 6;
+  const int CONNECTING_LENGTHS_LINE = 7;
+  const int BEZIER_CURVES_LINE = 8;
 
   planar_angles.clear();
   dihedral_angles.clear();
   lengths.clear();
   bezier_curves.clear();
   bezier_curves_lengths.clear();
+  approx_lengths.clear();
 
   string input_file = string(CURRENT_DIRECTORY) + "output/segmentation_profile/" 
                        + pdb_file + ".profile";
@@ -253,6 +290,10 @@ void Segmentation::load(string &pdb_file)
     switch(i) {
       case NUM_COORDINATES:
         num_coordinates = numbers[0];
+        break;
+
+      case MAX_RADIUS:
+        max_radius = numbers[0];
         break;
 
       case NULL_BPR_LINE:
@@ -276,7 +317,7 @@ void Segmentation::load(string &pdb_file)
         break;
 
       default:
-      if (i%2 == 1) {
+      if (i%2 == 0) {
         vector<Point<double>> control_points;
         for (int j=0; j<numbers.size(); j+=3) {
           double x = numbers[j];
@@ -289,6 +330,7 @@ void Segmentation::load(string &pdb_file)
         bezier_curves.push_back(curve);
       } else {
         bezier_curves_lengths.push_back(numbers[0]);
+        approx_lengths.push_back(numbers[1]);
       }
       break;
     }
@@ -297,46 +339,4 @@ void Segmentation::load(string &pdb_file)
   }
   profile.close();
 }
-
-/*void Segmentation::load(string &pdb_file)
-{
-  planar_angles.clear();
-  dihedral_angles.clear();
-  lengths.clear();
-  string output_file = "output/segmentation_profile/" + pdb_file + ".profile";
-  ifstream profile(output_file.c_str());
-  
-  string line;
-  int i = 0;
-  while(getline(profile,line)) {
-    const char *str = line.c_str();
-    vector<string> result;
-    vector<double> numbers;
-    do {
-      const char *begin = str;
-      while (*str != ' ' && *str) 
-        str++;
-      string y = string(begin,str);
-      result.push_back(y);
-
-      istringstream iss(y);
-      double x;
-      iss >> x;
-      numbers.push_back(x);
-    } while (0 != *str++);
-    if (i == 0) {
-      null_bpr = numbers[0];
-    } else if (i == 1) {
-      bezier_bpr = numbers[0];
-    } else if (i == 2) {
-      planar_angles = numbers;
-    } else if (i == 3) {
-      dihedral_angles = numbers;
-    } else if (i == 4) {
-      lengths = numbers;
-    }
-    i++;
-  }
-  profile.close();
-}*/
 
