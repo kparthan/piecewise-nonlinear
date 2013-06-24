@@ -2,7 +2,7 @@ import sys, codecs, os, re
 if sys.stdout.encoding is None:
         sys.stdout = codecs.open('/dev/stdout', 'w', 'utf-8')
 
-fr = open('domains-a.test','r')
+fr = open('domains-part4.test','r')
 fw = open('histogram_experiments.sh','w')
 
 fw.write('STARTM=`date -u "+%s"`\n')
@@ -19,7 +19,7 @@ while line != '':
   pivot_structure = y[0]
   pivot_directory = pivot_structure[2:4]
   pivot_path = home_path + pivot_directory + '/' + pivot_structure
-  for i in range(1,5):
+  for i in range(1,6):
     structure = y[i]
     structure_directory = structure[2:4]
     structure_path = home_path + structure_directory + '/' + structure

@@ -55,7 +55,7 @@ void Comparison::save(vector<string> &comparison_files)
                       boost::lexical_cast<string>(num_samples[1]) + "_" +
                       boost::lexical_cast<string>(dr).substr(0,4);
 
-      string log_file = current_dir + "output/histograms/logs/" + common_string 
+      string log_file = current_dir + "output/histograms/approx/logs/" + common_string 
                         + ".log";
       ofstream log(log_file.c_str());
       ofstream time("histograms.time",ios::app);
@@ -75,10 +75,10 @@ void Comparison::save(vector<string> &comparison_files)
       time.close();
       log << "Score: " << scores[0] << endl;
       log << "Normalized score: " << scores[1] << endl;
-      log << "Approx. Normalized score: " << scores[2] << endl;
+      //log << "Approx. Normalized score: " << scores[2] << endl;
       log.close();
 
-      string data_file = current_dir + "output/histograms/data/" + common_string
+      string data_file = current_dir + "output/histograms/approx/data/" + common_string
                          + ".data";
       ofstream data(data_file.c_str());
       vector<double> r = histograms[0].getRValues();
@@ -97,10 +97,11 @@ void Comparison::save(vector<string> &comparison_files)
               << setw(10) << num_samples[0] << setw(10) << num_samples[1] 
               << setw(5) << histograms[0].getIncrementInR() << " "
               << setw(10) << scores[0] << setw(10) << scores[1] 
-              << setw(10) << scores[2] << setw(10) << num_r 
-              << setw(10) << scores[0] / num_r
-              << setw(10) << scores[1] / num_r
-              << setw(10) << scores[2] / num_r << endl;
+              //<< setw(10) << scores[2] 
+              << setw(10) << num_r 
+              << setw(15) << scores[0] / num_r
+              << setw(15) << scores[1] / num_r << endl;
+              //<< setw(15) << scores[2] / num_r << endl;
       results.close();
       break;
     }
@@ -117,9 +118,9 @@ void Comparison::plotDistanceHistograms(string file1, string file2,
                                         string common_string)
 {
   string current_dir = string(CURRENT_DIRECTORY);
-  string plot_file = current_dir + "output/histograms/plots/" + common_string 
+  string plot_file = current_dir + "output/histograms/approx/plots/" + common_string 
                      + ".histogram";
-  string data_file = current_dir + "output/histograms/data/" + common_string 
+  string data_file = current_dir + "output/histograms/approx/data/" + common_string 
                      + ".data";
   ofstream script("script.plot");
   script << "set terminal post eps" << endl;
@@ -489,18 +490,18 @@ void Comparison::computeDistanceHistogram(int num_points, double dr)
     histogram_results[i] = histograms[i].computeGlobalHistogramValues(r_values);
   }
   
-  scores = vector<double>(3,0);
+  scores = vector<double>(2,0);
   double a,b;
   for (int i=0; i<r_values.size(); i++) {
     scores[0] += fabs(histogram_results[0][i] - histogram_results[1][i]);
 
-    a = histogram_results[0][i] * num_samples[0] / curve_lengths[0];
+    /*a = histogram_results[0][i] * num_samples[0] / curve_lengths[0];
     b = histogram_results[1][i] * num_samples[1] / curve_lengths[1];
-    scores[1] += fabs(a-b);
+    scores[1] += fabs(a-b);*/
 
     a = histogram_results[0][i] * num_samples[0] / approx_curve_lengths[0];
     b = histogram_results[1][i] * num_samples[1] / approx_curve_lengths[1];
-    scores[2] += fabs(a-b);
+    scores[1] += fabs(a-b);
   }
   //scores[0] /= r_values.size();
 }

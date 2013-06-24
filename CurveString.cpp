@@ -141,10 +141,12 @@ double CurveString::approximateLength()
  */
 vector<double> CurveString::getSampleProbabilities()
 {
-  double total_length = length();
+  //double total_length = length();
+  double total_length = approximateLength();
   vector<double> sample_probability(curves.size(),0);
   for (int i=0; i<curves.size(); i++) {
-    sample_probability[i] = lengths[i] / total_length;
+    //sample_probability[i] = lengths[i] / total_length;
+    sample_probability[i] = approx_lengths[i] / total_length;
   }
   return sample_probability;
 }
