@@ -447,7 +447,8 @@ void Comparison::computeDistanceHistogram(int num_points, double dr)
   double num_samples[2];
   for (int i=0; i<2; i++) {
     if (num_points == 0) {
-      num_samples[i] = profiles[i].getNumberOfCoordinates() * 10;
+      //num_samples[i] = profiles[i].getNumberOfCoordinates() * 10;
+      num_samples[i] = profiles[i].getNumberOfCoordinates();
     } else {
       num_samples[i] = num_points;
     }
