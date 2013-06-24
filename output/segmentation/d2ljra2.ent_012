@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/lj/d2ljra2.ent
+Number of residues: 79
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 17399.2
+Null Model Fit: 3430.76 bits.
+Bits per residue: 43.9841
+
+Bezier model fit: 3219.33 bits.
+Bits per residue: 41.2735
+
+# of segments: 7
+Internal segmentation:
+0-->10-->23-->35-->52-->59-->65-->78
+
+CPU time used: 3.85 secs.
+Wall clock time elapsed: 7 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 11             11        418.041         (30.817, 82.489, -11.137)
+                                                                                    (8.841, 72.495, -4.753)
+
+              2           A 11           A 24             14        529.178         (8.841, 72.495, -4.753)
+                                                                                    (16.595, 91.246, -5.013)
+
+              3           A 24           A 36             13         482.19         (16.595, 91.246, -5.013)         (26.2682, 78.7168, -19.5405)
+                                                                                    (7.56, 64.828, -10.577)
+
+              4           A 36           A 53             18        712.423         (7.56, 64.828, -10.577)         (35.0573, 60.6204, -14.2553)
+                                                                                    (17.316, 67.189, -3.64)
+
+              5           A 53           A 60              8         294.06         (17.316, 67.189, -3.64)
+                                                                                    (31.563, 78.312, -8.832)
+
+              6           A 60           A 66              7        254.294         (31.563, 78.312, -8.832)
+                                                                                    (18.998, 73.778, 1.795)
+
+              7           A 66           A 79             14        529.146         (18.998, 73.778, 1.795)
+                                                                                    (24.734, 92.074, 0.339)
+

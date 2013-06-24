@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ag/d3ag3h_.ent
+Number of residues: 79
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 32510.5
+Null Model Fit: 3501.11 bits.
+Bits per residue: 44.886
+
+Bezier model fit: 3189.32 bits.
+Bits per residue: 40.8888
+
+# of segments: 7
+Internal segmentation:
+0-->12-->17-->40-->41-->70-->71-->78
+
+CPU time used: 3.81 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            H 7           H 19             13        496.747         (83.156, 306.671, 139.749)         (65.001, 302.866, 151.367)
+                                                                                    (84.146, 307.619, 164.154)
+
+              2           H 19           H 24              6        223.518         (84.146, 307.619, 164.154)
+                                                                                    (74.149, 311.618, 168.875)
+
+              3           H 24           H 47             24        908.307         (74.149, 311.618, 168.875)         (84.7255, 322.846, 153.639)
+                                                                                    (92.076, 325.21, 140.132)
+
+              4           H 47           H 48              2         47.923         (92.076, 325.21, 140.132)
+                                                                                    (90.995, 321.539, 140.36)
+
+              5           H 48           H 77             30        1166.15         (90.995, 321.539, 140.36)         (60.513, 305.806, 164.339)
+                                                                                    (78.256, 334.332, 153.668)
+
+              6           H 77           H 78              2         47.923         (78.256, 334.332, 153.668)
+                                                                                    (78.123, 336.645, 156.622)
+
+              7           H 78           H 85              8        298.752         (78.123, 336.645, 156.622)         (82.5599, 329.183, 168.295)
+                                                                                    (87.29, 326.331, 156.472)
+

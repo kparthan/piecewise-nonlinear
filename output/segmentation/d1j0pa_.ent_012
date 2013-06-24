@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/j0/d1j0pa_.ent
+Number of residues: 108
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 28650.3
+Null Model Fit: 4783.29 bits.
+Bits per residue: 44.7036
+
+Bezier model fit: 4476.54 bits.
+Bits per residue: 41.8368
+
+# of segments: 6
+Internal segmentation:
+0-->14-->36-->56-->77-->106-->107
+
+CPU time used: 5.76 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 0           A 14             15        581.425         (41.625, 66.076, 33.455)         (28.0654, 48.6117, 44.1815)
+                                                                                    (17.171, 46.042, 24.668)
+
+              2           A 14           A 36             23        914.462         (17.171, 46.042, 24.668)         (44.7409, 43.3076, 48.1381)
+                                                                                    (39.386, 55.167, 18.976)
+
+              3           A 36           A 56             21        846.602         (39.386, 55.167, 18.976)         (30.4331, 64.7414, 24.5792)
+                                                                                    (18.7, 44.408, 14.546)
+
+              4           A 56           A 77             22        883.398         (18.7, 44.408, 14.546)
+                                                                                    (37.094, 42.75, 21.859)
+
+              5           A 77          A 106             30        1202.91         (37.094, 42.75, 21.859)         (37.1335, 19.5027, 36.3084)
+                                                                                    (21.964, 37.803, 31.703)
+
+              6          A 106          A 107              2        47.7407         (21.964, 37.803, 31.703)
+                                                                                    (20.999, 36.939, 35.252)
+

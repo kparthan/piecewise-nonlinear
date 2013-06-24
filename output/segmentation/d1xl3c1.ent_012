@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/xl/d1xl3c1.ent
+Number of residues: 88
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 27442.9
+Null Model Fit: 3883.81 bits.
+Bits per residue: 44.6415
+
+Bezier model fit: 3521.26 bits.
+Bits per residue: 40.4743
+
+# of segments: 7
+Internal segmentation:
+0-->2-->31-->35-->56-->57-->85-->87
+
+CPU time used: 4.45 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            C 2            C 4              3        93.3201         (58.541, 52.676, 75.626)
+                                                                                    (63.606, 52.812, 72.21)
+
+              2            C 4           C 34             30        1173.25         (63.606, 52.812, 72.21)         (65.2966, 77.9283, 45.0064)
+                                                                                    (57.452, 62.973, 77.824)
+
+              3           C 34           C 38              5        182.288         (57.452, 62.973, 77.824)
+                                                                                    (59.017, 73.211, 81.631)
+
+              4           C 38           C 61             22        861.686         (59.017, 73.211, 81.631)         (82.6714, 68.8884, 72.4618)
+                                                                                    (71.071, 67.369, 52.893)
+
+              5           C 61           C 62              2        47.6786         (71.071, 67.369, 52.893)
+                                                                                    (72.379, 70.929, 52.326)
+
+              6           C 62           C 90             29        1069.72         (72.379, 70.929, 52.326)         (65.7902, 77.6295, 70.6268)
+                                                                                    (50.397, 83.949, 87.155)
+
+              7           C 90           C 92              3        93.3201         (50.397, 83.949, 87.155)
+                                                                                    (46.665, 81.342, 90.573)
+

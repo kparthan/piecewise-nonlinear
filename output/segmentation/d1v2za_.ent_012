@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/v2/d1v2za_.ent
+Number of residues: 106
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 38701.2
+Null Model Fit: 4739.43 bits.
+Bits per residue: 45.1374
+
+Bezier model fit: 4242.74 bits.
+Bits per residue: 40.407
+
+# of segments: 7
+Internal segmentation:
+0-->27-->34-->53-->55-->75-->77-->105
+
+CPU time used: 5.54 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 173          A 200             28        1081.45         (24.86, 28.395, 24.307)         (-4.72761, 42.3795, 23.6317)
+                                                                                    (4.133, 12.473, 14.951)
+
+              2          A 200          A 207              8        305.792         (4.133, 12.473, 14.951)
+                                                                                    (6.795, 2.064, 8.482)
+
+              3          A 207          A 226             20        764.236         (6.795, 2.064, 8.482)
+                                                                                    (12.138, 27.135, 25.362)
+
+              4          A 226          A 228              3         94.312         (12.138, 27.135, 25.362)
+                                                                                    (9.022, 23.192, 29.674)
+
+              5          A 228          A 248             21        789.418         (9.022, 23.192, 29.674)
+                                                                                    (-15.406, 8.547, 19.347)
+
+              6          A 248          A 250              3         94.312         (-15.406, 8.547, 19.347)
+                                                                                    (-15.579, 5.061, 24.65)
+
+              7          A 250          A 278             29        1113.21         (-15.579, 5.061, 24.65)         (9.55265, 2.77675, 24.0826)
+                                                                                    (25.002, 21.398, 22.978)
+

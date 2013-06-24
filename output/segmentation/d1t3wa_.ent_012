@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/t3/d1t3wa_.ent
+Number of residues: 134
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 106742
+Null Model Fit: 6197.95 bits.
+Bits per residue: 46.6011
+
+Bezier model fit: 5419.01 bits.
+Bits per residue: 40.7445
+
+# of segments: 6
+Internal segmentation:
+0-->26-->54-->65-->94-->113-->133
+
+CPU time used: 7.37 secs.
+Wall clock time elapsed: 13 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 447          A 473             27        1075.84         (-0.319, 30.965, 7.16)         (26.38, 50.1014, -3.81742)
+                                                                                    (13.832, 15.762, 5.618)
+
+              2          A 473          A 501             29        1150.17         (13.832, 15.762, 5.618)         (-19.5254, 31.4548, -8.5357)
+                                                                                    (19.338, 39.817, -9.976)         (45.684, 20.3032, 4.69093)
+
+              3          A 501          A 512             12        469.066         (19.338, 39.817, -9.976)
+                                                                                    (9.466, 30.299, -15.59)
+
+              4          A 512          A 541             30        1125.33         (9.466, 30.299, -15.59)
+                                                                                    (11.434, 56.254, 19.28)
+
+              5          A 541          A 560             20        765.651         (11.434, 56.254, 19.28)
+                                                                                    (25.301, 68.258, 42.22)
+
+              6          A 560          A 580             21        832.951         (25.301, 68.258, 42.22)         (-1.19996, 60.4237, 41.2374)
+                                                                                    (19.833, 49.924, 26.644)
+

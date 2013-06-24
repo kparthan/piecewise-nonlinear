@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/sx/d1sxea_.ent
+Number of residues: 97
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 30864.6
+Null Model Fit: 4301.86 bits.
+Bits per residue: 44.811
+
+Bezier model fit: 3973.47 bits.
+Bits per residue: 41.3903
+
+# of segments: 6
+Internal segmentation:
+0-->29-->30-->46-->59-->74-->96
+
+CPU time used: 4.99 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 105          A 134             30         1217.5         (16.71, -22.086, -5.644)         (8.23535, 22.6766, 11.7369)
+                                                                                    (5.568, 2.843, -2.317)
+
+              2          A 134          A 135              2        47.8481         (5.568, 2.843, -2.317)
+                                                                                    (7.636, -0.168, -3.282)
+
+              3          A 135          A 151             17         644.85         (7.636, -0.168, -3.282)
+                                                                                    (-9.715, -2.885, 11.804)
+
+              4          A 151          A 164             14        546.634         (-9.715, -2.885, 11.804)         (-6.3911, -18.2152, -3.16895)
+                                                                                    (3.554, -1.44, -5.732)
+
+              5          A 164          A 179             16        614.486         (3.554, -1.44, -5.732)         (-12.9275, 8.85257, -11.9457)
+                                                                                    (-9.484, -8.354, -3.865)
+
+              6          A 179          A 201             23         902.15         (-9.484, -8.354, -3.865)         (-18.3793, 8.02356, 7.50297)
+                                                                                    (8.034, 16.354, -5.019)
+

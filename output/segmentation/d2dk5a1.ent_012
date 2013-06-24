@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/dk/d2dk5a1.ent
+Number of residues: 78
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 26633
+Null Model Fit: 3434.07 bits.
+Bits per residue: 44.5983
+
+Bezier model fit: 3189.72 bits.
+Bits per residue: 41.4249
+
+# of segments: 6
+Internal segmentation:
+0-->9-->26-->55-->65-->66-->77
+
+CPU time used: 3.78 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 8           A 17             10        372.542         (24.029, 20.044, -22.276)         (18.3643, 7.40774, -12.9221)
+                                                                                    (7.043, 14.816, -3.323)
+
+              2           A 17           A 34             18         701.24         (7.043, 14.816, -3.323)         (10.9568, 1.42488, 5.30852)
+                                                                                    (7.709, -11.122, -10.409)
+
+              3           A 34           A 63             30        1196.84         (7.709, -11.122, -10.409)         (-3.58229, 2.63112, 23.8668)
+                                                                                    (1.935, 6.411, -11.763)
+
+              4           A 63           A 73             11        403.196         (1.935, 6.411, -11.763)
+                                                                                    (-4.983, -19.294, -5.443)
+
+              5           A 73           A 74              2        47.6354         (-4.983, -19.294, -5.443)
+                                                                                    (-8.676, -18.43, -5.155)
+
+              6           A 74           A 85             12        468.272         (-8.676, -18.43, -5.155)         (0.822767, -0.306997, -0.309487)
+                                                                                    (6.471, -6.794, -15.573)
+

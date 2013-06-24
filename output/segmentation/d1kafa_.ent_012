@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ka/d1kafa_.ent
+Number of residues: 108
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 29811.9
+Null Model Fit: 4789.42 bits.
+Bits per residue: 44.761
+
+Bezier model fit: 4410.35 bits.
+Bits per residue: 41.2183
+
+# of segments: 8
+Internal segmentation:
+0-->28-->29-->42-->52-->75-->82-->93-->107
+
+CPU time used: 5.87 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 104          A 132             29        1143.19         (22.311, -2.554, 22.859)         (12.356, 7.79737, 45.0335)
+                                                                                    (12.798, -2.968, 16.37)         (-23.8605, -0.53076, 5.95307)
+
+              2          A 132          A 133              2         47.798         (12.798, -2.968, 16.37)
+                                                                                    (15.648, -2.265, 18.746)
+
+              3          A 133          A 146             14        554.355         (15.648, -2.265, 18.746)
+                                                                                    (-1.491, 6.654, 7.984)
+
+              4          A 146          A 156             11        413.415         (-1.491, 6.654, 7.984)
+                                                                                    (17.968, 6.715, 24.022)
+
+              5          A 156          A 179             24        949.268         (17.968, 6.715, 24.022)         (-7.11673, 19.021, -4.91272)
+                                                                                    (4.99, 20.74, 22.401)
+
+              6          A 179          A 186              8        291.578         (4.99, 20.74, 22.401)
+                                                                                    (14.543, 18.685, 1.737)
+
+              7          A 186          A 197             12        445.884         (14.543, 18.685, 1.737)
+                                                                                    (7.302, 11.287, 29.665)
+
+              8          A 197          A 211             15         564.87         (7.302, 11.287, 29.665)
+                                                                                    (-5.814, 13.105, 12.668)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/hp/d3hpwa_.ent
+Number of residues: 101
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 27555.3
+Null Model Fit: 4464.74 bits.
+Bits per residue: 44.6474
+
+Bezier model fit: 4154.28 bits.
+Bits per residue: 41.5428
+
+# of segments: 7
+Internal segmentation:
+0-->14-->27-->49-->57-->73-->97-->100
+
+CPU time used: 5.41 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 15             15        604.117         (6.3, 3.789, -20.816)
+                                                                                    (-0.848, -7.581, -32.045)
+
+              2           A 15           A 28             14         538.05         (-0.848, -7.581, -32.045)         (1.88179, 20.0019, -16.7243)
+                                                                                    (2.733, -1.607, -10.331)
+
+              3           A 28           A 50             23        910.348         (2.733, -1.607, -10.331)         (-10.7801, -2.41064, -57.4441)
+                                                                                    (-10.824, 9.675, -32.797)
+
+              4           A 50           A 58              9        338.251         (-10.824, 9.675, -32.797)
+                                                                                    (7.208, 2.3, -43.73)
+
+              5           A 58           A 74             17        646.113         (7.208, 2.3, -43.73)         (-23.2172, 7.74705, -24.4684)
+                                                                                    (3.066, -10.258, -18.101)
+
+              6           A 74           A 98             25        978.169         (3.066, -10.258, -18.101)         (11.4731, 20.2201, -42.0591)
+                                                                                    (-14.098, 10.905, -22.497)
+
+              7           A 98          A 101              4        139.229         (-14.098, 10.905, -22.497)
+                                                                                    (-16.686, 18.371, -27.839)
+

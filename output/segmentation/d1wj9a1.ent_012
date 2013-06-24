@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/wj/d1wj9a1.ent
+Number of residues: 87
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 21550.4
+Null Model Fit: 3809.18 bits.
+Bits per residue: 44.2928
+
+Bezier model fit: 3527.71 bits.
+Bits per residue: 41.0199
+
+# of segments: 6
+Internal segmentation:
+0-->10-->11-->30-->52-->64-->86
+
+CPU time used: 4.43 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 11             11        404.084         (28.512, 33.2, 2.055)         (21.0269, 47.1228, 10.6123)
+                                                                                    (6.619, 51.113, 12.626)
+
+              2           A 11           A 12              2        47.3299         (6.619, 51.113, 12.626)
+                                                                                    (5.833, 48.112, 10.428)
+
+              3           A 12           A 31             20        771.446         (5.833, 48.112, 10.428)         (8.96341, 29.6116, 22.4794)
+                                                                                    (11.557, 34.874, 0.445)
+
+              4           A 31           A 53             23        904.081         (11.557, 34.874, 0.445)         (25.2842, 12.8147, -8.01235)
+                                                                                    (16.815, 49.906, 24.803)
+
+              5           A 53           A 65             13         485.05         (16.815, 49.906, 24.803)
+                                                                                    (23.557, 32.54, -2.309)
+
+              6           A 65           A 87             23        915.717         (23.557, 32.54, -2.309)         (-4.17985, 61.7126, 3.73318)
+                                                                                    (36.805, 34.168, 5.516)
+

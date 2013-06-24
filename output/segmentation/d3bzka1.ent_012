@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/bz/d3bzka1.ent
+Number of residues: 90
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 26094.4
+Null Model Fit: 3966.62 bits.
+Bits per residue: 44.5688
+
+Bezier model fit: 3690.16 bits.
+Bits per residue: 41.4625
+
+# of segments: 7
+Internal segmentation:
+0-->5-->24-->30-->56-->70-->88-->89
+
+CPU time used: 4.61 secs.
+Wall clock time elapsed: 9 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 474          A 479              6        222.464         (9.142, 5.445, 48.323)
+                                                                                    (12.368, 14.956, 48.753)
+
+              2          A 479          A 498             20        751.083         (12.368, 14.956, 48.753)
+                                                                                    (3.551, 16.257, 21.234)
+
+              3          A 498          A 504              7        264.165         (3.551, 16.257, 21.234)
+                                                                                    (-9.479, 21.662, 21.606)
+
+              4          A 504          A 530             27        1075.91         (-9.479, 21.662, 21.606)         (12.1571, 27.8042, 40.0244)
+                                                                                    (-16.173, 33.927, 23.799)
+
+              5          A 530          A 544             15        579.481         (-16.173, 33.927, 23.799)         (1.69083, 29.0687, 4.14314)
+                                                                                    (-5.328, 38.647, 27.731)
+
+              6          A 544          A 562             19         749.45         (-5.328, 38.647, 27.731)         (19.1528, 31.0097, 26.5265)
+                                                                                    (-7.586, 23.912, 9.397)
+
+              7          A 562          A 563              2        47.6059         (-7.586, 23.912, 9.397)
+                                                                                    (-7.109, 27.678, 9.665)
+

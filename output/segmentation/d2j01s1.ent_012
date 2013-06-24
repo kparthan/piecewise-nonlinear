@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/j0/d2j01s1.ent
+Number of residues: 86
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 23012.2
+Null Model Fit: 3772.93 bits.
+Bits per residue: 44.3875
+
+Bezier model fit: 3516.1 bits.
+Bits per residue: 41.3659
+
+# of segments: 7
+Internal segmentation:
+0-->10-->20-->38-->57-->66-->80-->85
+
+CPU time used: 4.4 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           S 23           S 33             11         411.61         (-105.791, 170.239, 170.374)
+                                                                                    (-129.568, 166.603, 154.134)
+
+              2           S 33           S 43             11            394         (-129.568, 166.603, 154.134)         (-118.846, 174.733, 168.062)
+                                                                                    (-106.397, 163.538, 175.366)
+
+              3           S 43           S 61             19        762.184         (-106.397, 163.538, 175.366)         (-135.489, 174.188, 170.717)
+                                                                                    (-130.715, 174.315, 151.57)
+
+              4           S 61           S 80             20        762.057         (-130.715, 174.315, 151.57)
+                                                                                    (-117.353, 179.865, 176.549)
+
+              5           S 80           S 89             10        367.755         (-117.353, 179.865, 176.549)         (-102.232, 182.041, 166.117)
+                                                                                    (-113.561, 165.958, 159.089)
+
+              6           S 89          S 103             15        594.473         (-113.561, 165.958, 159.089)         (-118.694, 169.001, 140.894)
+                                                                                    (-115.269, 184.319, 165.016)
+
+              7          S 103          S 108              6         224.02         (-115.269, 184.319, 165.016)         (-106.512, 177.885, 167.437)
+                                                                                    (-109.982, 179.122, 156.705)
+

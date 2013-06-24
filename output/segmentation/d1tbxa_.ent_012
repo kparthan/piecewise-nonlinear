@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/tb/d1tbxa_.ent
+Number of residues: 94
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 30890.2
+Null Model Fit: 4167.54 bits.
+Bits per residue: 44.8122
+
+Bezier model fit: 3803.27 bits.
+Bits per residue: 40.8953
+
+# of segments: 7
+Internal segmentation:
+0-->16-->32-->36-->51-->60-->68-->93
+
+CPU time used: 4.83 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 3           A 19             17        668.844         (73.777, 59, 25.001)         (83.6366, 65.3763, 32.8649)
+                                                                                    (96.824, 53.179, 34.076)
+
+              2           A 19           A 35             17        665.406         (96.824, 53.179, 34.076)         (98.6181, 60.1657, 12.1569)
+                                                                                    (83.003, 49.849, 26.05)
+
+              3           A 35           A 39              5        180.465         (83.003, 49.849, 26.05)
+                                                                                    (82.237, 59.148, 17.878)
+
+              4           A 39           A 54             16        599.678         (82.237, 59.148, 17.878)
+                                                                                    (94.829, 70.694, 32.688)
+
+              5           A 54           A 63             10        375.538         (94.829, 70.694, 32.688)
+                                                                                    (106.367, 58.306, 16.179)
+
+              6           A 63           A 71              9        334.731         (106.367, 58.306, 16.179)         (95.4037, 60.143, 24.869)
+                                                                                    (98.808, 65.533, 38.795)
+
+              7           A 71           A 96             26        978.604         (98.808, 65.533, 38.795)         (84.3565, 53.3503, 40.1722)
+                                                                                    (67.195, 41.218, 34.047)
+

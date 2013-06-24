@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/do/d1doqa_.ent
+Number of residues: 69
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 12439.3
+Null Model Fit: 2958 bits.
+Bits per residue: 43.5
+
+Bezier model fit: 2837.22 bits.
+Bits per residue: 41.7238
+
+# of segments: 7
+Internal segmentation:
+0-->27-->29-->46-->48-->63-->65-->68
+
+CPU time used: 3.16 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 247          A 274             28         1137.2         (54, -19.814, 1.146)         (63.1904, 10.3027, -11.1707)
+                                                                                    (63.132, 1.197, 4.042)
+
+              2          A 274          A 276              3         91.037         (63.132, 1.197, 4.042)
+                                                                                    (61.235, -3.949, 2.197)
+
+              3          A 276          A 293             18        691.697         (61.235, -3.949, 2.197)         (45.574, 7.61903, 15.2102)
+                                                                                    (61.15, 11.78, -1.814)
+
+              4          A 293          A 295              3         91.037         (61.15, 11.78, -1.814)
+                                                                                    (54.904, 11.503, -4.135)
+
+              5          A 295          A 310             16         599.43         (54.904, 11.503, -4.135)
+                                                                                    (46.759, -6.86, 2.705)
+
+              6          A 310          A 312              3         91.037         (46.759, -6.86, 2.705)
+                                                                                    (47.685, -2.403, 7.698)
+
+              7          A 312          A 315              4        135.786         (47.685, -2.403, 7.698)
+                                                                                    (45.639, 2.919, 6.124)
+

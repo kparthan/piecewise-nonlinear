@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/i3/d3i35a_.ent
+Number of residues: 57
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 7022.84
+Null Model Fit: 2389.81 bits.
+Bits per residue: 42.6752
+
+Bezier model fit: 2295.56 bits.
+Bits per residue: 40.9922
+
+# of segments: 7
+Internal segmentation:
+0-->12-->13-->20-->31-->41-->51-->56
+
+CPU time used: 2.49 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 205          A 217             13         484.13         (1.075, 16.847, 16.945)         (4.05147, 41.1618, 4.53602)
+                                                                                    (21.331, 21, 4.417)
+
+              2          A 217          A 218              2        45.7123         (21.331, 21, 4.417)
+                                                                                    (19.977, 17.55, 3.636)
+
+              3          A 218          A 225              8        291.001         (19.977, 17.55, 3.636)
+                                                                                    (4.54, 30.558, 5.832)
+
+              4          A 225          A 236             12         442.64         (4.54, 30.558, 5.832)         (-2.68643, 9.16155, 10.9763)
+                                                                                    (16.045, 19.739, 21.379)
+
+              5          A 236          A 246             11        408.327         (16.045, 19.739, 21.379)
+                                                                                    (2.251, 20.124, 1.263)
+
+              6          A 246          A 256             11        409.954         (2.251, 20.124, 1.263)         (18.2074, 10.0842, 6.96175)
+                                                                                    (11.034, 29.371, 16.3)
+
+              7          A 256          A 261              6        213.798         (11.034, 29.371, 16.3)
+                                                                                    (-2.084, 24.678, 16.235)
+

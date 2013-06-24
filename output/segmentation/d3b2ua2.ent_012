@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/b2/d3b2ua2.ent
+Number of residues: 22
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 2169.85
+Null Model Fit: 860.595 bits.
+Bits per residue: 40.9807
+
+Bezier model fit: 893.366 bits.
+Bits per residue: 42.5412
+
+# of segments: 7
+Internal segmentation:
+0-->3-->6-->11-->14-->16-->18-->21
+
+CPU time used: 0.25 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 481          A 484              4        128.229         (-6.052, -51.393, -29.272)
+                                                                                    (-4.581, -60.132, -28.8)
+
+              2          A 484          A 487              4        128.229         (-4.581, -60.132, -28.8)
+                                                                                    (-2.709, -59.332, -20.446)
+
+              3          A 487          A 492              6        208.454         (-2.709, -59.332, -20.446)
+                                                                                    (2.656, -49.071, -25.155)
+
+              4          A 492          A 495              4        128.229         (2.656, -49.071, -25.155)
+                                                                                    (2.853, -54.992, -31.222)
+
+              5          A 495          A 497              3        85.9985         (2.853, -54.992, -31.222)
+                                                                                    (6.747, -56.59, -27.672)
+
+              6          A 497          A 499              3        85.9985         (6.747, -56.59, -27.672)
+                                                                                    (2.488, -55.283, -23.785)
+
+              7          A 499          A 502              4        128.229         (2.488, -55.283, -23.785)
+                                                                                    (2.549, -61.541, -21.149)
+

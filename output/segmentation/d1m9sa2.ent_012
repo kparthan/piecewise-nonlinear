@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/m9/d1m9sa2.ent
+Number of residues: 75
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 12697.1
+Null Model Fit: 3221.19 bits.
+Bits per residue: 43.5296
+
+Bezier model fit: 3043.71 bits.
+Bits per residue: 41.1313
+
+# of segments: 7
+Internal segmentation:
+0-->16-->23-->29-->41-->53-->62-->74
+
+CPU time used: 3.65 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 391          A 407             17        648.333         (46.867, 115.085, 23.572)         (17.622, 127.618, 27.7199)
+                                                                                    (46.67, 140.708, 20.592)
+
+              2          A 407          A 414              8        287.936         (46.67, 140.708, 20.592)
+                                                                                    (46.662, 122.754, 14.204)
+
+              3          A 414          A 420              7        263.106         (46.662, 122.754, 14.204)         (52.0035, 121.565, 27.2845)
+                                                                                    (55.345, 127.936, 13.549)
+
+              4          A 420          A 432             13        497.628         (55.345, 127.936, 13.549)
+                                                                                    (33.884, 140.651, 17.429)
+
+              5          A 432          A 444             13        478.673         (33.884, 140.651, 17.429)         (27.4904, 116.548, 22.3938)
+                                                                                    (53.507, 122.288, 28.675)
+
+              6          A 444          A 453             10        366.308         (53.507, 122.288, 28.675)
+                                                                                    (35.589, 124.983, 12.707)
+
+              7          A 453          A 465             13         501.73         (35.589, 124.983, 12.707)         (56.3837, 129.718, 27.944)
+                                                                                    (33.098, 138.845, 26.435)
+

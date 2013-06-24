@@ -1,0 +1,31 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/om/d1omca_.ent
+Number of residues: 24
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 2818.08
+Null Model Fit: 951.231 bits.
+Bits per residue: 41.3579
+
+Bezier model fit: 980.323 bits.
+Bits per residue: 42.6227
+
+# of segments: 4
+Internal segmentation:
+0-->3-->13-->18-->23
+
+CPU time used: 0.33 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 5              4         129.36         (9.06, -1.378, -0.425)
+                                                                                    (-1.44, -6.878, 1.725)
+
+              2            A 5           A 16             11        423.501         (-1.44, -6.878, 1.725)         (0.210065, 17.0375, 5.22802)
+                                                                                    (5.84, -2.958, -4.445)
+
+              3           A 16           A 22              6        211.925         (5.84, -2.958, -4.445)
+                                                                                    (-9.65, 2.942, 0.385)
+
+              4           A 22           A 27              6        215.537         (-9.65, 2.942, 0.385)
+                                                                                    (-2.41, -4.458, -3.765)
+

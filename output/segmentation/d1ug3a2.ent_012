@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ug/d1ug3a2.ent
+Number of residues: 127
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 40330
+Null Model Fit: 5694.81 bits.
+Bits per residue: 45.1969
+
+Bezier model fit: 5151.45 bits.
+Bits per residue: 40.8845
+
+# of segments: 8
+Internal segmentation:
+0-->2-->31-->33-->59-->80-->99-->101-->126
+
+CPU time used: 6.93 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1         A 1438         A 1440              3        94.4309         (19.701, 19.711, 34.013)
+                                                                                    (22.141, 24.403, 30.509)
+
+              2         A 1440         A 1469             30        1171.44         (22.141, 24.403, 30.509)         (33.3032, 47.4883, 54.3566)
+                                                                                    (29.579, 29.816, 27.655)
+
+              3         A 1469         A 1471              3        94.4309         (29.579, 29.816, 27.655)
+                                                                                    (30.066, 32.126, 21.422)
+
+              4         A 1471         A 1497             27        1062.88         (30.066, 32.126, 21.422)
+                                                                                    (7.617, 46.393, 52.193)
+
+              5         A 1497         A 1518             22        858.743         (7.617, 46.393, 52.193)         (38.5899, 48.2598, 39.4152)
+                                                                                    (20.956, 47.059, 22.045)
+
+              6         A 1518         A 1537             20        751.146         (20.956, 47.059, 22.045)
+                                                                                    (3.183, 39.159, 43.594)
+
+              7         A 1537         A 1539              3        94.4309         (3.183, 39.159, 43.594)
+                                                                                    (4.098, 44.451, 45.146)
+
+              8         A 1539         A 1564             26        1023.94         (4.098, 44.451, 45.146)         (29.6488, 61.5057, 31.4287)
+                                                                                    (8.025, 48.159, 26.477)
+

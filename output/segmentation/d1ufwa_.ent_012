@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/uf/d1ufwa_.ent
+Number of residues: 95
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 35499.3
+Null Model Fit: 4231.21 bits.
+Bits per residue: 45.0129
+
+Bezier model fit: 3854.88 bits.
+Bits per residue: 41.0094
+
+# of segments: 6
+Internal segmentation:
+0-->24-->47-->58-->65-->83-->94
+
+CPU time used: 4.89 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 25             25        979.112         (-11.836, 11.139, -27.237)         (-8.59991, 28.6637, 2.82099)
+                                                                                    (-1.09, -12.783, 3.937)
+
+              2           A 25           A 48             24         953.96         (-1.09, -12.783, 3.937)         (11.1815, -6.52736, 15.0363)
+                                                                                    (4.65, 6.954, -7.405)
+
+              3           A 48           A 59             12        451.679         (4.65, 6.954, -7.405)         (4.46576, 15.0238, 12.9592)
+                                                                                    (-4.391, -5.732, 10.011)
+
+              4           A 59           A 66              8        286.252         (-4.391, -5.732, 10.011)
+                                                                                    (1.32, 14.374, -1.038)
+
+              5           A 66           A 84             19        736.343         (1.32, 14.374, -1.038)         (-10.1033, 4.01364, -14.8529)
+                                                                                    (5.292, -12.189, -4.827)
+
+              6           A 84           A 95             12        447.535         (5.292, -12.189, -4.827)
+                                                                                    (-19.525, 9.822, 4.277)
+

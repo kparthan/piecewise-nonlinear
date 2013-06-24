@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/kp/d1kp6a_.ent
+Number of residues: 79
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16800.7
+Null Model Fit: 3426.82 bits.
+Bits per residue: 43.9336
+
+Bezier model fit: 3225.33 bits.
+Bits per residue: 41.3504
+
+# of segments: 6
+Internal segmentation:
+0-->12-->21-->39-->46-->67-->78
+
+CPU time used: 3.91 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 13             13        517.934         (11.495, 7.642, 26.092)         (2.93695, -7.32633, 28.6763)
+                                                                                    (11.927, 8.027, 17.964)
+
+              2           A 13           A 22             10         366.45         (11.927, 8.027, 17.964)         (15.6568, -7.61485, 9.63787)
+                                                                                    (18.997, -5.517, -4.995)
+
+              3           A 22           A 40             19         750.62         (18.997, -5.517, -4.995)         (9.62635, -14.5052, 15.1458)
+                                                                                    (19.002, -3.279, 24.819)
+
+              4           A 40           A 47              8        290.523         (19.002, -3.279, 24.819)
+                                                                                    (3.119, -6.85, 13.339)
+
+              5           A 47           A 68             22         856.86         (3.119, -6.85, 13.339)         (27.6997, 14.2647, 23.264)
+                                                                                    (24.13, -10.171, 7.515)
+
+              6           A 68           A 79             12        442.943         (24.13, -10.171, 7.515)
+                                                                                    (6.269, 15.212, 15.824)
+

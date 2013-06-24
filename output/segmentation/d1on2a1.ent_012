@@ -13,7 +13,7 @@ Bits per residue: 41.143
 Internal segmentation:
 0-->1-->19-->48-->55-->60
 
-CPU time used: 2.53 secs.
+CPU time used: 2.67 secs.
 Wall clock time elapsed: 2 secs.
 
         SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS

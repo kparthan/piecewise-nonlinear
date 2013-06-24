@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/h3/d1h3da2.ent
+Number of residues: 68
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16006.1
+Null Model Fit: 2938.87 bits.
+Bits per residue: 43.8637
+
+Bezier model fit: 2767.31 bits.
+Bits per residue: 41.3032
+
+# of segments: 6
+Internal segmentation:
+0-->11-->30-->32-->43-->53-->67
+
+CPU time used: 3.19 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 225          A 236             12        442.707         (53.99, 41.751, 68.244)         (70.6587, 45.5135, 83.8916)
+                                                                                    (58.217, 56.942, 92.978)
+
+              2          A 236          A 255             20        791.412         (58.217, 56.942, 92.978)         (39.3639, 42.7018, 67.9731)
+                                                                                    (65.964, 46.574, 93.558)
+
+              3          A 255          A 264              3        91.7644         (65.964, 46.574, 93.558)
+                                                                                    (64.845, 47.272, 87.505)
+
+              4          A 264          A 275             12        445.292         (64.845, 47.272, 87.505)         (46.5498, 35.3588, 71.6489)
+                                                                                    (59.145, 56.435, 69.777)
+
+              5          A 275          A 285             11        414.953         (59.145, 56.435, 69.777)
+                                                                                    (62.577, 59.685, 84.496)
+
+              6          A 285          A 299             15        581.183         (62.577, 59.685, 84.496)         (71.8379, 38.5216, 64.3872)
+                                                                                    (51.056, 32.198, 77.496)
+

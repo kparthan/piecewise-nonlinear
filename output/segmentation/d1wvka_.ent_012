@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/wv/d1wvka_.ent
+Number of residues: 86
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 27755.1
+Null Model Fit: 3795.91 bits.
+Bits per residue: 44.6578
+
+Bezier model fit: 3575.44 bits.
+Bits per residue: 42.064
+
+# of segments: 7
+Internal segmentation:
+0-->9-->18-->35-->49-->55-->72-->85
+
+CPU time used: 4.29 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 10             10        381.728         (38.465, 0.346, 12.58)
+                                                                                    (26.084, 8.11, 0.366)
+
+              2           A 10           A 19             10        385.516         (26.084, 8.11, 0.366)         (24.0732, -8.93413, -12.15)
+                                                                                    (27.411, -6.609, 4.107)
+
+              3           A 19           A 36             18        713.596         (27.411, -6.609, 4.107)
+                                                                                    (2.953, 6.197, -8.144)
+
+              4           A 36           A 50             15        583.565         (2.953, 6.197, -8.144)         (-2.85758, 11.2338, 12.2326)
+                                                                                    (-10.628, -12.224, 1.321)
+
+              5           A 50           A 56              7        258.311         (-10.628, -12.224, 1.321)
+                                                                                    (-6.866, 2.569, -0.761)
+
+              6           A 56           A 73             18        702.617         (-6.866, 2.569, -0.761)         (-27.7942, 12.3886, 9.32749)
+                                                                                    (-26.297, -5.126, -5.894)
+
+              7           A 73           A 86             14        550.104         (-26.297, -5.126, -5.894)         (-5.65737, -8.18566, -1.26766)
+                                                                                    (-25.872, -2.788, 2.415)
+

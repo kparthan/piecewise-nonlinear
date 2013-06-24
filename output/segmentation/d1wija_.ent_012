@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/wi/d1wija_.ent
+Number of residues: 127
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 38055.9
+Null Model Fit: 5684.26 bits.
+Bits per residue: 45.1132
+
+Bezier model fit: 5221.44 bits.
+Bits per residue: 41.44
+
+# of segments: 7
+Internal segmentation:
+0-->24-->46-->57-->69-->86-->109-->126
+
+CPU time used: 6.87 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 162          A 186             25        985.837         (-6.322, 9.019, -17.657)         (-8.12013, 15.8734, 17.8098)
+                                                                                    (1.833, -13.001, 5.264)
+
+              2          A 186          A 208             23        933.155         (1.833, -13.001, 5.264)         (17.9489, -5.89225, 19.4718)
+                                                                                    (10.053, -2.67, -9.292)
+
+              3          A 208          A 219             12        470.523         (10.053, -2.67, -9.292)         (4.70632, 13.7916, -10.8036)
+                                                                                    (18.846, -0.741, -5.639)
+
+              4          A 219          A 231             13         505.73         (18.846, -0.741, -5.639)         (7.50586, 1.06361, 20.8495)
+                                                                                    (8.789, 11.109, 3.405)
+
+              5          A 231          A 248             18        680.502         (8.789, 11.109, 3.405)
+                                                                                    (-2.673, -11.85, -7.159)
+
+              6          A 248          A 271             24        945.438         (-2.673, -11.85, -7.159)         (-23.8472, -2.76191, 15.1573)
+                                                                                    (-12.216, 8.779, -1.574)
+
+              7          A 271          A 288             18         700.25         (-12.216, 8.779, -1.574)         (-9.60969, -4.99286, -10.1657)
+                                                                                    (6.018, -0.013, -18.7)
+

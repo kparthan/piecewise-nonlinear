@@ -1,0 +1,17 @@
+CURVE 1:
+	# of residues: 321
+	Length: 847.334
+	Approximate length: 1215.9
+	# of samples: 3210
+	CPU time: 196.18 secs.
+
+CURVE 2:
+	# of residues: 327
+	Length: 827.281
+	Approximate length: 1237.59
+	# of samples: 3270
+	CPU time: 192.18 secs.
+
+Score: 0.467761
+Normalized score: 7.56172
+Approx. Normalized score: 1.31318

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/n7/d1n7oa2.ent
+Number of residues: 76
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 20875.5
+Null Model Fit: 3318.52 bits.
+Bits per residue: 44.2469
+
+Bezier model fit: 3123.83 bits.
+Bits per residue: 41.6511
+
+# of segments: 7
+Internal segmentation:
+0-->7-->16-->34-->41-->50-->61-->75
+
+CPU time used: 3.75 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 815          A 822              8        296.439         (-9.732, -34.614, 71.395)
+                                                                                    (9.483, -33.789, 67.776)
+
+              2          A 822          A 831             10        367.703         (9.483, -33.789, 67.776)
+                                                                                    (-16.884, -37.607, 62.02)
+
+              3          A 831          A 849             19         747.77         (-16.884, -37.607, 62.02)         (23.7508, -39.5385, 56.8781)
+                                                                                    (-5.477, -48.027, 69.55)
+
+              4          A 849          A 856              8        301.015         (-5.477, -48.027, 69.55)
+                                                                                    (9.163, -41.688, 58.254)
+
+              5          A 856          A 865             10        366.967         (9.163, -41.688, 58.254)         (-5.79731, -36.2868, 52.9738)
+                                                                                    (-16.166, -50.102, 58.523)
+
+              6          A 865          A 876             12        445.408         (-16.166, -50.102, 58.523)
+                                                                                    (12.457, -37.084, 50.242)
+
+              7          A 876          A 890             15        598.529         (12.457, -37.084, 50.242)         (3.39702, -52.9283, 44.2966)
+                                                                                    (-3.971, -53.961, 65.214)
+

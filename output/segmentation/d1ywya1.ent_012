@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/yw/d1ywya1.ent
+Number of residues: 74
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 20610.7
+Null Model Fit: 3228.68 bits.
+Bits per residue: 44.2285
+
+Bezier model fit: 3050.45 bits.
+Bits per residue: 41.787
+
+# of segments: 7
+Internal segmentation:
+0-->8-->16-->35-->44-->61-->71-->73
+
+CPU time used: 3.56 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 23           A 31              9        339.829         (-3.891, 0.183, 0.622)
+                                                                                    (-0.021, 20.744, -4.116)
+
+              2           A 31           A 39              9         329.49         (-0.021, 20.744, -4.116)
+                                                                                    (-10.288, 1.592, 3.095)
+
+              3           A 39           A 58             20          788.4         (-10.288, 1.592, 3.095)         (14.8783, 29.4475, 4.80069)
+                                                                                    (6.727, -10.051, 6.641)
+
+              4           A 58           A 67             10        377.371         (6.727, -10.051, 6.641)
+                                                                                    (4.651, 8.717, 12.3)
+
+              5           A 67           A 84             18        702.584         (4.651, 8.717, 12.3)         (2.86012, -10.4994, -10.9697)
+                                                                                    (10.521, 13.046, -2.523)
+
+              6           A 84           A 94             11        420.287         (10.521, 13.046, -2.523)         (19.4354, -1.69312, 11.3487)
+                                                                                    (15.887, 4.399, -10.44)
+
+              7           A 94           A 96              3         92.494         (15.887, 4.399, -10.44)
+                                                                                    (18.498, -1.664, -12.926)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/dk/d2dk8a1.ent
+Number of residues: 68
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 14639.7
+Null Model Fit: 2930.24 bits.
+Bits per residue: 43.7349
+
+Bezier model fit: 2771.3 bits.
+Bits per residue: 41.3627
+
+# of segments: 7
+Internal segmentation:
+0-->19-->24-->35-->50-->58-->59-->67
+
+CPU time used: 3.12 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 8           A 27             20        775.674         (0.132, 4.177, 13.122)         (-12.005, -2.56709, -0.113934)
+                                                                                    (-11.1, -6.405, -13.733)
+
+              2           A 27           A 32              6         214.15         (-11.1, -6.405, -13.733)
+                                                                                    (1.489, -0.088, -8.785)
+
+              3           A 32           A 43             12        465.815         (1.489, -0.088, -8.785)         (-8.01509, 12.2186, -8.92267)
+                                                                                    (3.869, 4.184, 2.125)
+
+              4           A 43           A 58             16        601.185         (3.869, 4.184, 2.125)
+                                                                                    (-6.469, -14.623, -1.616)
+
+              5           A 58           A 66              9        328.257         (-6.469, -14.623, -1.616)
+                                                                                    (5.22, -6.399, -19.228)
+
+              6           A 66           A 67              2         46.772         (5.22, -6.399, -19.228)
+                                                                                    (7.049, -3.878, -17.078)
+
+              7           A 67           A 75              9        339.445         (7.049, -3.878, -17.078)         (-4.32202, -4.48015, -6.68369)
+                                                                                    (-11.338, -15.412, -9.09)
+

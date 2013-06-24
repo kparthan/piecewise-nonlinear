@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/sd/d1sddb1.ent
+Number of residues: 67
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 26361
+Null Model Fit: 2942.51 bits.
+Bits per residue: 44.5835
+
+Bezier model fit: 2743.9 bits.
+Bits per residue: 41.5743
+
+# of segments: 8
+Internal segmentation:
+0-->5-->16-->24-->35-->43-->55-->60-->66
+
+CPU time used: 3.11 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1         B 1657         B 1662              6        220.501         (29.811, 63.019, 10.459)
+                                                                                    (23.169, 55.716, -0.875)
+
+              2         B 1662         B 1673             12        432.839         (23.169, 55.716, -0.875)         (41.0125, 53.5862, 8.1335)
+                                                                                    (43.218, 46.929, 26.139)
+
+              3         B 1673         B 1681              9        344.327         (43.218, 46.929, 26.139)
+                                                                                    (37.216, 35.802, 34.101)
+
+              4         B 1681         B 1692             12         446.63         (37.216, 35.802, 34.101)
+                                                                                    (24.831, 58.328, 16.42)
+
+              5         B 1692         B 1700              9        345.798         (24.831, 58.328, 16.42)
+                                                                                    (14.506, 53.464, 18.637)
+
+              6         B 1700         B 1712             13        474.918         (14.506, 53.464, 18.637)
+                                                                                    (43.834, 37.169, 22.4)
+
+              7         B 1712         B 1717              6        213.106         (43.834, 37.169, 22.4)
+                                                                                    (40.271, 31.457, 12.279)
+
+              8         B 1717         B 1723              7        265.785         (40.271, 31.457, 12.279)
+                                                                                    (36.046, 27.547, 24.619)
+

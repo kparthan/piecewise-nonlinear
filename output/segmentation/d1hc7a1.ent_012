@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/hc/d1hc7a1.ent
+Number of residues: 127
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 33268.3
+Null Model Fit: 5659.82 bits.
+Bits per residue: 44.9192
+
+Bezier model fit: 5128.61 bits.
+Bits per residue: 40.7032
+
+# of segments: 7
+Internal segmentation:
+0-->20-->42-->66-->79-->89-->98-->126
+
+CPU time used: 7.21 secs.
+Wall clock time elapsed: 14 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 277          A 297             21         829.19         (54.287, 29.781, 142.199)         (66.0743, 22.9481, 110.998)
+                                                                                    (62.333, 57.713, 142.358)
+
+              2          A 297          A 319             23        884.298         (62.333, 57.713, 142.358)         (72.7979, 56.4087, 129.61)
+                                                                                    (69.836, 38.012, 120.172)
+
+              3          A 319          A 343             25        990.973         (69.836, 38.012, 120.172)         (45.0698, 60.121, 150.068)
+                                                                                    (57.367, 32.121, 134.147)
+
+              4          A 343          A 356             14        546.282         (57.367, 32.121, 134.147)
+                                                                                    (75.931, 53.419, 141.531)
+
+              5          A 356          A 366             11        401.881         (75.931, 53.419, 141.531)
+                                                                                    (63.991, 28.61, 139.282)
+
+              6          A 366          A 375             10        373.704         (63.991, 28.61, 139.282)         (74.9579, 41.1638, 149.002)
+                                                                                    (78.43, 45.094, 131.789)
+
+              7          A 375          A 403             29        1102.28         (78.43, 45.094, 131.789)         (69.8968, 21.9491, 127.687)
+                                                                                    (57.662, 7.926, 138.096)
+
