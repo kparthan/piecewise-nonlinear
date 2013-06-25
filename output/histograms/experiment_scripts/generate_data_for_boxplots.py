@@ -4,11 +4,11 @@ import sys, codecs, os, re
 if sys.stdout.encoding is None:
         sys.stdout = codecs.open('/dev/stdout', 'w', 'utf-8')
 
-fr = open('histograms.comparison','r')
-fw1 = open('boxplots.data.score0','w')
-fw2 = open('boxplots.data.score1','w')
-fw3 = open('boxplots.data.avg.score0','w')
-fw4 = open('boxplots.data.avg.score1','w')
+fr = open('../approx/histograms.comparison','r')
+fw1 = open('../approx/boxplots.data.score0','w')
+fw2 = open('../approx/boxplots.data.score1','w')
+fw3 = open('../approx/boxplots.data.avg.score0','w')
+fw4 = open('../approx/boxplots.data.avg.score1','w')
 line = fr.readline()
 line_number = 1
 while line != '':

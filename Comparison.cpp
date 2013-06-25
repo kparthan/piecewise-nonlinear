@@ -447,8 +447,8 @@ void Comparison::computeDistanceHistogram(int num_points, double dr)
   double num_samples[2];
   for (int i=0; i<2; i++) {
     if (num_points == 0) {
-      //num_samples[i] = profiles[i].getNumberOfCoordinates() * 10;
-      num_samples[i] = profiles[i].getNumberOfCoordinates();
+      num_samples[i] = profiles[i].getNumberOfCoordinates() * 5;
+      //num_samples[i] = profiles[i].getNumberOfCoordinates();
     } else {
       num_samples[i] = num_points;
     }
@@ -496,13 +496,13 @@ void Comparison::computeDistanceHistogram(int num_points, double dr)
   for (int i=0; i<r_values.size(); i++) {
     scores[0] += fabs(histogram_results[0][i] - histogram_results[1][i]);
 
-    /*a = histogram_results[0][i] * num_samples[0] / curve_lengths[0];
+    a = histogram_results[0][i] * num_samples[0] / curve_lengths[0];
     b = histogram_results[1][i] * num_samples[1] / curve_lengths[1];
-    scores[1] += fabs(a-b);*/
-
-    a = histogram_results[0][i] * num_samples[0] / approx_curve_lengths[0];
-    b = histogram_results[1][i] * num_samples[1] / approx_curve_lengths[1];
     scores[1] += fabs(a-b);
+
+    /*a = histogram_results[0][i] * num_samples[0] / approx_curve_lengths[0];
+    b = histogram_results[1][i] * num_samples[1] / approx_curve_lengths[1];
+    scores[1] += fabs(a-b);*/
   }
   //scores[0] /= r_values.size();
 }
