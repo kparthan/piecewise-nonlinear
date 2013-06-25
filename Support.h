@@ -27,12 +27,20 @@ struct Parameters
   int comparison_method;            // method used to compare structures
   vector<string> comparison_files;  // path to the structure files used
                                     // in comparison
+  int comparison_matrix;            // flag to generate the comparison matrix
   int num_samples_on_curve;         // # of samples for histogram comparison
   double increment_r;               // increment in r used in histogram method
 };
 
+vector<double> sort(vector<double> &);
+void quicksort(vector<double> &, vector<int> &, int, int);
+int partition(vector<double> &, vector<int> &, int, int);
+double standardDeviation(vector<double> &, double);
+
 void segmentStructure(struct Parameters &);
 void compareProteinStructures(struct Parameters &);
+void compareProteinStructuresList(struct Parameters &);
+void plotMultipleHistograms(vector<double> &, vector<vector<double>> &, vector<string> &);
 void compareGenericStructures(struct Parameters &);
 void compareSegmentations(Segmentation &, Segmentation &, struct Parameters &);
 bool checkIfSegmentationExists(string &);
@@ -41,6 +49,7 @@ bool checkIfHistogramExists(string &, int, double);
 struct Parameters parseCommandLineInput (int, char **); 
 void Usage (const char *, options_description &);
 string getPDBFilePath(string &);
+string getSCOPFilePath(string &);
 bool checkFile (const char *);
 ProteinStructure *parsePDBFile (const char *);
 vector<Point<double>> parseFile (const char *);

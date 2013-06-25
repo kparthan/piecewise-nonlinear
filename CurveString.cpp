@@ -1,4 +1,5 @@
 #include "CurveString.h"
+#include "Support.h"
 
 /*!
  *  \brief This module is a null constructor.
@@ -141,12 +142,12 @@ double CurveString::approximateLength()
  */
 vector<double> CurveString::getSampleProbabilities()
 {
-  //double total_length = length();
-  double total_length = approximateLength();
+  double total_length = length();
+  //double total_length = approximateLength();
   vector<double> sample_probability(curves.size(),0);
   for (int i=0; i<curves.size(); i++) {
-    //sample_probability[i] = lengths[i] / total_length;
-    sample_probability[i] = approx_lengths[i] / total_length;
+    sample_probability[i] = lengths[i] / total_length;
+    //sample_probability[i] = approx_lengths[i] / total_length;
   }
   return sample_probability;
 }
@@ -175,6 +176,7 @@ int CurveString::getCurveIndex(double random, vector<double> &sample_probability
  */
 vector<Point<double>> CurveString::generateRandomPoints(int num_points)
 {
+  vector<vector<double>> params(curves.size(),vector<double>());
   srand(time(NULL));
   vector<Point<double>> samples;
   vector<double> sample_probability = getSampleProbabilities();
@@ -187,7 +189,35 @@ vector<Point<double>> CurveString::generateRandomPoints(int num_points)
     double t = rand() / (double) RAND_MAX;
     Point<double> point_on_curve = curves[curve_index].getPoint(t);
 
+    params[curve_index].push_back(t);
     samples.push_back(point_on_curve);
+  }
+  for (int i=0; i<params.size(); i++) {
+    cout << i+1 << ": ";
+    vector<double> sorted_t = sort(params[i]);
+    cout << "\n# of points: " << sorted_t.size() << endl;
+    cout << "length: " << lengths[i] << endl;
+    Point<double> prev,current;
+    if (sorted_t.size() > 0) {
+      vector<double> distances;
+      prev = curves[i].getPoint(sorted_t[0]);
+      for (int j=1; j<sorted_t.size(); j++) {
+        current = curves[i].getPoint(sorted_t[j]);
+        //cout << sorted_t[j] << ", ";
+        double dist = lcb::geometry::distance<double>(prev,current);
+        distances.push_back(dist);
+        prev = current;
+      }
+      if (distances.size() > 0) {
+        double mean = estimateMean(distances);
+        double stddev = standardDeviation(distances,mean);
+        cout << "Mean: " << mean << endl;
+        cout << "Std. dev.: " << stddev << endl;
+      }
+    } else {
+      cout << "No points samples on this curve";
+    }
+    cout << endl;
   }
   return samples;
 }

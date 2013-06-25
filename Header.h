@@ -24,6 +24,7 @@
 #include <boost/foreach.hpp>
 #include <boost/tokenizer.hpp>
 
+#define HOME_DIRECTORY "/home/pkas7/"
 #define CURRENT_DIRECTORY "/home/pkas7/Research/Work/piecewise-nonlinear/"
 
 #define AOM 0.001

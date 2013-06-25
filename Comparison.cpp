@@ -55,7 +55,7 @@ void Comparison::save(vector<string> &comparison_files)
                       boost::lexical_cast<string>(num_samples[1]) + "_" +
                       boost::lexical_cast<string>(dr).substr(0,4);
 
-      string log_file = current_dir + "output/histograms/approx/logs/" + common_string 
+      string log_file = current_dir + "output/histograms/logs/" + common_string 
                         + ".log";
       ofstream log(log_file.c_str());
       ofstream time("histograms.time",ios::app);
@@ -78,7 +78,7 @@ void Comparison::save(vector<string> &comparison_files)
       //log << "Approx. Normalized score: " << scores[2] << endl;
       log.close();
 
-      string data_file = current_dir + "output/histograms/approx/data/" + common_string
+      string data_file = current_dir + "output/histograms/data/" + common_string
                          + ".data";
       ofstream data(data_file.c_str());
       vector<double> r = histograms[0].getRValues();
@@ -118,9 +118,9 @@ void Comparison::plotDistanceHistograms(string file1, string file2,
                                         string common_string)
 {
   string current_dir = string(CURRENT_DIRECTORY);
-  string plot_file = current_dir + "output/histograms/approx/plots/" + common_string 
+  string plot_file = current_dir + "output/histograms/plots/" + common_string 
                      + ".histogram";
-  string data_file = current_dir + "output/histograms/approx/data/" + common_string 
+  string data_file = current_dir + "output/histograms/data/" + common_string 
                      + ".data";
   ofstream script("script.plot");
   script << "set terminal post eps" << endl;
@@ -447,24 +447,30 @@ void Comparison::computeDistanceHistogram(int num_points, double dr)
   double num_samples[2];
   for (int i=0; i<2; i++) {
     if (num_points == 0) {
-      num_samples[i] = profiles[i].getNumberOfCoordinates() * 5;
-      //num_samples[i] = profiles[i].getNumberOfCoordinates();
+      num_samples[i] = profiles[i].getNumberOfCoordinates() * 10;
     } else {
       num_samples[i] = num_points;
     }
   }
 
   double curve_lengths[2],approx_curve_lengths[2],max_radius[2];
+  CurveString curve_string[2];
   for (int i=0; i<2; i++) {
     max_radius[i] = profiles[i].getMaximumRadius();
     bezier_curves[i] = profiles[i].getBezierCurves();
     lengths[i] = profiles[i].getBezierCurvesLengths();
     approx_lengths[i] = profiles[i].getApproximateBezierLengths();
-    CurveString curve_string(bezier_curves[i],lengths[i],approx_lengths[i]);
-    histograms[i] = DistanceHistogram(curve_string,num_samples[i],dr);
-    curve_lengths[i] = curve_string.length();
-    approx_curve_lengths[i] = curve_string.approximateLength();
+    curve_string[i] = CurveString(bezier_curves[i],lengths[i],approx_lengths[i]);
+    histograms[i] = DistanceHistogram(curve_string[i],num_samples[i],dr);
+    curve_lengths[i] = curve_string[i].length();
+    approx_curve_lengths[i] = curve_string[i].approximateLength();
   }
+
+  /*num_samples[0] = profiles[0].getNumberOfCoordinates();
+  num_samples[1] = num_samples[0] * curve_lengths[1] / curve_lengths[0];
+  for (int i=0; i<2; i++) {
+    histograms[i] = DistanceHistogram(curve_string[i],num_samples[i],dr);
+  }*/
 
   //int curve_with_max_length = ((curve_lengths[0] > curve_lengths[1]) ? 0 : 1 );
   //double max_length = curve_lengths[curve_with_max_length];

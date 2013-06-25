@@ -18,8 +18,8 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
 {
   struct Parameters parameters;
   string structure;
-  vector<string> constrain,pdb_ids;
-  string encode,pdb_id,comparison_method;
+  vector<string> constrain,pdb_ids,scop_ids;
+  string encode,pdb_id,comparison_method,scop_id;
 
   parameters.structure = -1;
   bool noargs = 1;
@@ -33,6 +33,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("structure",value<string>(&structure),"type of structure (protein/general)")
        ("file",value<string>(&parameters.file),"pdb file")
        ("pdbid",value<string>(&pdb_id),"PDB ID")
+       ("scopid",value<string>(&scop_id),"SCOP ID")
        ("segment",value<vector<string>>(&parameters.end_points)->multitoken(),
                                   "segment to be fit")
        // TODO: ("fit",value<string>,"fit an entire protein or just a portion")
@@ -51,13 +52,15 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("diff",value<double>(&parameters.max_angle_diff),
                                       "maximum difference allowed for the angles")
        ("files",value<vector<string>>(&parameters.comparison_files)->multitoken(),
-                                                                "structure files")
+                                                         "path to structure files")
        ("pdbids",value<vector<string>>(&pdb_ids)->multitoken(),"PDB IDs to compare")
+       ("scopids",value<vector<string>>(&scop_ids)->multitoken(),"SCOP IDs to compare")
        ("force","force segmentation (even though it exists already)")
        ("n",value<int>(&parameters.num_samples_on_curve),
                                  "# of sample points for histogram comparison")
        ("dr",value<double>(&parameters.increment_r),
                                  "increment in r used in histogram comparison")
+       ("comparison_matrix","generates a comparison matrix")
   ;
   variables_map vm;
   store(parse_command_line(argc,argv,desc),vm);
@@ -109,7 +112,9 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     } else if (vm.count("pdbid")) {
       cout << "Using PDB ID: " << pdb_id << endl;
       parameters.file = getPDBFilePath(pdb_id);
-      //parameters.structure = PROTEIN;
+    } else if (vm.count("scopid")) {
+      cout << "Using SCOP ID: " << scop_id << endl;
+      parameters.file = getSCOPFilePath(scop_id);
     } else {
       cout << "Input protein structure file not provided ..." << endl;
       Usage(argv[0],desc);
@@ -144,11 +149,23 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
         }
       } else if (vm.count("pdbids")) {
         if (pdb_ids.size() != 2) {
-          cout << "Please input TWO PDB Ids to compare ..." << endl;
+          cout << "Please input TWO PDB IDs to compare ..." << endl;
           Usage(argv[0],desc);
         }
         parameters.comparison_files.push_back(getPDBFilePath(pdb_ids[0]));
         parameters.comparison_files.push_back(getPDBFilePath(pdb_ids[1]));
+      } else if (vm.count("files") && vm.count("scopids")) {
+        cout << "Please use one of --files or --scopids for comparison ..." << endl;
+        Usage(argv[0],desc);
+      } else if (vm.count("scopids")) {
+        if (vm.count("comparison_matrix")) {
+          parameters.comparison_matrix = SET;
+        } else {
+          parameters.comparison_matrix = UNSET;
+        }
+        for (int i=0; i<scop_ids.size(); i++) {
+          parameters.comparison_files.push_back(getSCOPFilePath(scop_ids[i]));
+        }
       }
       parameters.comparison = PROTEIN;
       noargs = 0;
@@ -503,6 +520,99 @@ void compareSegmentations(Segmentation &a, Segmentation &b,
 }
 
 /*!
+ *
+ */
+void compareProteinStructuresList(struct Parameters &parameters)
+{
+  int num_structures = parameters.comparison_files.size();
+  Segmentation profiles[num_structures];
+  double max_radius = 0;
+  for (int i=0; i<num_structures; i++) {
+    parameters.file = parameters.comparison_files[i];
+    string pdb_file = extractName(parameters.file);
+    bool status = checkIfSegmentationExists(pdb_file);
+    if (status && parameters.force_segmentation == UNSET) {
+      cout << "Segmentation profile of " << pdb_file << " exists ..." << endl;
+      profiles[i].load(pdb_file);
+    } else {
+      profiles[i] = proteinFit(parameters);
+      profiles[i].save(pdb_file);
+    }
+    if (profiles[i].getMaximumRadius() > max_radius) {
+      max_radius = profiles[i].getMaximumRadius();
+    }
+  }
+  vector<double> r_values;
+  double r = parameters.increment_r;
+  while (1) {
+    r_values.push_back(r);
+    if (r > max_radius) {
+      break;
+    }
+    r += parameters.increment_r;
+  }
+
+  double num_samples[num_structures];
+  DistanceHistogram histograms[num_structures];
+  vector<BezierCurve<double>> bezier_curves[num_structures];
+  vector<double> lengths[num_structures],approx_lengths[num_structures];
+  CurveString curve_string[num_structures];
+  vector<vector<double>> histogram_results;
+  for (int i=0; i<num_structures; i++) {
+    num_samples[i] = profiles[i].getNumberOfCoordinates() * 10;
+    //num_samples[i] = 500; 
+    bezier_curves[i] = profiles[i].getBezierCurves();
+    lengths[i] = profiles[i].getBezierCurvesLengths();
+    approx_lengths[i] = profiles[i].getApproximateBezierLengths();
+    curve_string[i] = CurveString(bezier_curves[i],lengths[i],approx_lengths[i]);
+    histograms[i] = DistanceHistogram(curve_string[i],num_samples[i],parameters.increment_r);
+    vector<double> results = histograms[i].computeGlobalHistogramValues(r_values);
+    histogram_results.push_back(results);
+  }
+  plotMultipleHistograms(r_values,histogram_results,parameters.comparison_files);
+}
+
+/*!
+ *
+ */
+void plotMultipleHistograms(vector<double> &r, vector<vector<double>> &histogram_results,
+                            vector<string> &files)
+{
+  vector<string> names;
+  ofstream output("multiple_histograms.data");
+  for (int i=0; i<histogram_results.size(); i++) {
+    assert(r.size() == histogram_results[i].size());
+    names.push_back(extractName(files[i]));
+  }
+  for (int i=0; i<r.size(); i++) {
+    output << r[i] << " ";
+    for (int j=0; j<histogram_results.size(); j++) {
+      output << histogram_results[j][i] << " ";
+    }
+    output << endl;
+  }
+  output.close();
+  ofstream script("script.plot");
+  script << "set terminal post eps" << endl;
+  script << "set output \"multiple_histograms.eps\"" << endl;
+  script << "set multiplot" << endl;
+  script << "plot \"multiple_histograms.data\" using 1:2 title '" << names[0] 
+         << "' with lines lc rgb \"red\", \\" << endl;
+  script << "\"multiple_histograms.data\" using 1:3 title '" << names[1] 
+         << "' with lines lc rgb \"blue\", \\" << endl;
+  script << "\"multiple_histograms.data\" using 1:4 title '" << names[2] 
+         << "' with lines lc rgb \"green\", \\" << endl;
+  script << "\"multiple_histograms.data\" using 1:5 title '" << names[3] 
+         << "' with lines lc rgb \"brown\", \\" << endl;
+  script << "\"multiple_histograms.data\" using 1:6 title '" << names[4] 
+         << "' with lines lc rgb \"orange\", \\" << endl;
+  script << "\"multiple_histograms.data\" using 1:7 title '" << names[5] 
+         << "' with lines lc rgb \"black\"" << endl;
+  script.close();
+  system("gnuplot -persist script.plot");
+}
+
+/*!
  *  \brief This module generates test data and fits a model to it.
  *  \param parameters a reference to a struct Parameters
  */
@@ -562,9 +672,22 @@ Segmentation generalFit(struct Parameters &parameters)
 string getPDBFilePath(string &pdb_id)
 {
   boost::algorithm::to_lower(pdb_id);
-  string path = "/home/pkas7/Research/PDB/" ;
+  string path = string(HOME_DIRECTORY) + "Research/PDB/" ;
   string directory(pdb_id,1,2);
   path += directory + "/pdb" + pdb_id + ".ent.gz";
+  return path;
+}
+
+/*!
+ *  \brief This module returns the file path associated with a PDB ID.
+ *  \param scop_id a reference to a string
+ *  \return the file path
+ */
+string getSCOPFilePath(string &scop_id)
+{
+  string path = string(HOME_DIRECTORY) + "Research/SCOP/pdbstyle-1.75B/" ;
+  string directory(scop_id,2,2);
+  path += directory + "/" + scop_id + ".ent";
   return path;
 }
 
@@ -742,6 +865,16 @@ double estimateVariance(vector<double> &samples)
   }
 }
 
+double standardDeviation(vector<double> &samples, double mean)
+{
+  double variance = 0;
+  for (int i=0; i<samples.size(); i++){
+    variance += (samples[i] - mean) * (samples[i] - mean);
+  }
+  variance /= samples.size();
+  return sqrt(variance);
+}
+
 /*!
  *  \brief This module returns the sign of a number.
  *  \param number a double
@@ -879,6 +1012,7 @@ double getMaximumDistance(vector<array<double,3>> &coordinates)
 {
   double max_distance = 0;
   Point<double> p1,p2;
+  int mi,mj;
   for (int i=0; i<coordinates.size()-1; i++) {
     p1 = Point<double>(coordinates[i]);
     for (int j=i+1; j<coordinates.size(); j++) {
@@ -886,9 +1020,86 @@ double getMaximumDistance(vector<array<double,3>> &coordinates)
       double current_distance = lcb::geometry::distance<double>(p1,p2);
       if (current_distance > max_distance) {
         max_distance = current_distance;
+        mi = i; mj = j;
       }
     }
   }
+  cout << "Max distance: " << max_distance << endl;
+  cout << "mi: " << mi + 1 << Point<double>(coordinates[mi]) << endl;
+  cout << "mj: " << mj + 1 << Point<double>(coordinates[mj]) << endl;
   return max_distance;
+}
+
+/*!
+ *  \brief This function sorts the elements in the list
+ *  \param list a reference to a vector<double>
+ *  \return the sorted list
+ */
+vector<double> sort(vector<double> &list)
+{
+  int num_samples = list.size();
+	vector<double> sortedList(list);
+  vector<int> index(num_samples,0);
+	for(int i=0; i<num_samples; i++) {
+			index[i] = i;
+  }
+	quicksort(sortedList,index,0,num_samples-1);
+  return sortedList;
+}
+
+/*!
+ *  This is an implementation of the classic quicksort() algorithm to sort a
+ *  list of data values. The module uses the overloading operator(<) to 
+ *  compare two Point<T> objects. 
+ *  Pivot is chosen as the right most element in the list(default)
+ *  This function is called recursively.
+ *  \param list a reference to a vector<double>
+ *	\param index a reference to a vector<int>
+ *  \param left an integer
+ *  \param right an integer
+ */
+void quicksort(vector<double> &list, vector<int> &index, 
+                              int left, int right)
+{
+	if(left < right)
+	{
+		int pivotNewIndex = partition(list,index,left,right);
+		quicksort(list,index,left,pivotNewIndex-1);
+		quicksort(list,index,pivotNewIndex+1,right);
+	}
+}
+
+/*!
+ *  This function is called from the quicksort() routine to compute the new
+ *  pivot index.
+ *  \param list a reference to a vector<double>
+ *	\param index a reference to a vector<int>
+ *  \param left an integer
+ *  \param right an integer
+ *  \return the new pivot index
+ */
+int partition(vector<double> &list, vector<int> &index,
+                             int left, int right)
+{
+	double temp,pivotPoint = list[right];
+	int storeIndex = left,temp_i;
+	for(int i=left; i<right; i++) {
+		if(list[i] < pivotPoint) {
+			temp = list[i];
+			list[i] = list[storeIndex];
+			list[storeIndex] = temp;
+			temp_i = index[i];
+			index[i] = index[storeIndex];
+			index[storeIndex] = temp_i;
+			storeIndex += 1;	
+		}
+	}
+	temp = list[storeIndex];
+	list[storeIndex] = list[right];
+	list[right] = temp;
+	temp_i = index[storeIndex];
+	index[storeIndex] = index[right];
+	index[right] = temp_i;
+	return storeIndex;
 }
 

@@ -571,7 +571,7 @@ Segmentation StandardForm::fitBezierCurveModel()
                            codeLength,optimalBezierFit,segmentation.second,
                            transformation);
     segmentation_profile.setBitsPerResidue(null_bpr,bezier_bpr);
-    segmentation_profile.setMaximumRadius(getMaximumDistance(coordinates));
+    segmentation_profile.setMaximumRadius(getMaximumDistance(original_coordinates));
 
     //segmentation_profile.setTime(cpu_time,wall_time);
   } else if (parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {

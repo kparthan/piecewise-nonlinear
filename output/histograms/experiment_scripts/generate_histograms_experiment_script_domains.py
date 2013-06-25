@@ -2,7 +2,7 @@ import sys, codecs, os, re
 if sys.stdout.encoding is None:
         sys.stdout = codecs.open('/dev/stdout', 'w', 'utf-8')
 
-fr = open('domains-part4.test','r')
+fr = open('example-domain','r')
 fw = open('histogram_experiments.sh','w')
 
 fw.write('STARTM=`date -u "+%s"`\n')
