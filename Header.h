@@ -50,6 +50,9 @@
 #define MAX_DIFFERENCE_ANGLES 45
 #define POINTS_PER_UNIT 10
 #define INCREMENT_R 5
+#define SCALE_FACTOR 10
+#define UNIFORM_SAMPLING 0
+#define RANDOM_SAMPLING 1
 
 #define TEST 0
 #define PROTEIN 1

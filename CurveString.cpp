@@ -222,3 +222,26 @@ vector<Point<double>> CurveString::generateRandomPoints(int num_points)
   return samples;
 }
 
+/*!
+ *
+ */
+vector<Point<double>> CurveString::generateUniformPoints(double scale_factor)
+{
+  vector<Point<double>> samples;
+  double total_length = length();
+  for (int i=0; i<curves.size(); i++) {
+    int num_points = ceil(curves[i].length() * scale_factor / total_length);
+    double delta_t = 1.0 / num_points;
+    double t = delta_t;
+    while (1) {
+      Point<double> p = curves[i].getPoint(t);
+      samples.push_back(p);
+      if (t >= 1) {
+        break;
+      }
+      t += delta_t;
+    }
+  }
+  return samples;
+}
+

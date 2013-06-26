@@ -2,14 +2,14 @@ import sys, codecs, os, re
 if sys.stdout.encoding is None:
         sys.stdout = codecs.open('/dev/stdout', 'w', 'utf-8')
 
-fr = open('example-domain','r')
+fr = open('example.test','r')
 fw = open('histogram_experiments.sh','w')
 
 fw.write('STARTM=`date -u "+%s"`\n')
 fw.write('line_number=1\n')
 line = fr.readline()
 line_count = 0;
-cmd_begin = './piecewise-nonlinear-fit --structure protein --compare distance_histogram --dr 1 '
+cmd_begin = './piecewise-nonlinear-fit --structure protein --compare distance_histogram --dr 1 --scale 10 '
 cmd_begin += '--controls 0 1 2 --constrain sigma length --files '
 home_path = '/home/pkas7/Research/SCOP/pdbstyle-1.75B/'
 

@@ -63,7 +63,7 @@ class Comparison
     void computeBasicAlignment(double, double);
 
     //! Distance histogram 
-    void computeDistanceHistogram(int, double);
+    void computeDistanceHistogram(int, double, double);
 
     //! Save the alignment to a file
     void save(vector<string> &);

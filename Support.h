@@ -28,7 +28,10 @@ struct Parameters
   vector<string> comparison_files;  // path to the structure files used
                                     // in comparison
   int comparison_matrix;            // flag to generate the comparison matrix
+  double scale;                     // scale the length/coordinates to obtain
+                                    // # of samples
   int num_samples_on_curve;         // # of samples for histogram comparison
+  int sampling_method;              // uniform/random generation of samples
   double increment_r;               // increment in r used in histogram method
 };
 
@@ -36,6 +39,7 @@ vector<double> sort(vector<double> &);
 void quicksort(vector<double> &, vector<int> &, int, int);
 int partition(vector<double> &, vector<int> &, int, int);
 double standardDeviation(vector<double> &, double);
+void visualize(vector<Point<double>> &, string &);
 
 void segmentStructure(struct Parameters &);
 void compareProteinStructures(struct Parameters &);

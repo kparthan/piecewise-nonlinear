@@ -46,6 +46,10 @@ void Comparison::save(vector<string> &comparison_files)
 
     case DISTANCE_HISTOGRAM:
     {
+      for (int i=0; i<2; i++) {
+        vector<Point<double>> point_set = histograms[i].getSamples();
+        visualize(point_set,files[i]);
+      }
       int num_samples[2];
       num_samples[0] = histograms[0].getNumberOfSamples(); 
       num_samples[1] = histograms[1].getNumberOfSamples(); 
@@ -93,7 +97,10 @@ void Comparison::save(vector<string> &comparison_files)
       ofstream results("histograms.comparison",ios::app);
       assert(histograms[0].getRValues().size() == histograms[1].getRValues().size());
       int num_r = histograms[0].getRValues().size();
-      results << setw(15) << files[0] << setw(15) << files[1]
+      results << setw(15) << files[0] << "(" << profiles[0].getNumberOfCoordinates() 
+              << "," << histograms[0].getCurveString().length() << ")"
+              << setw(15) << files[1] << "(" << profiles[1].getNumberOfCoordinates()
+              << "," << histograms[1].getCurveString().length() << ")"
               << setw(10) << num_samples[0] << setw(10) << num_samples[1] 
               << setw(5) << histograms[0].getIncrementInR() << " "
               << setw(10) << scores[0] << setw(10) << scores[1] 
@@ -437,21 +444,23 @@ void Comparison::computeBasicAlignment(double gap_penalty, double max_diff)
  *  \param num_points an integer
  *  \param dr a double
  */
-void Comparison::computeDistanceHistogram(int num_points, double dr)
+void Comparison::computeDistanceHistogram(int num_points, double dr, 
+                                          double scale_factor, 
+                                          int sampling_method)
 {
   flag = DISTANCE_HISTOGRAM;
   vector<BezierCurve<double>> bezier_curves[2];
   vector<double> lengths[2],approx_lengths[2];
   DistanceHistogram histogram[2];
 
-  double num_samples[2];
-  for (int i=0; i<2; i++) {
+  int num_samples[2];
+  /*for (int i=0; i<2; i++) {
     if (num_points == 0) {
       num_samples[i] = profiles[i].getNumberOfCoordinates() * 10;
     } else {
       num_samples[i] = num_points;
     }
-  }
+  }*/
 
   double curve_lengths[2],approx_curve_lengths[2],max_radius[2];
   CurveString curve_string[2];
@@ -461,28 +470,12 @@ void Comparison::computeDistanceHistogram(int num_points, double dr)
     lengths[i] = profiles[i].getBezierCurvesLengths();
     approx_lengths[i] = profiles[i].getApproximateBezierLengths();
     curve_string[i] = CurveString(bezier_curves[i],lengths[i],approx_lengths[i]);
-    histograms[i] = DistanceHistogram(curve_string[i],num_samples[i],dr);
     curve_lengths[i] = curve_string[i].length();
     approx_curve_lengths[i] = curve_string[i].approximateLength();
+    num_samples[i] = ceil(curve_lengths[i] * scale_factor);
+    histograms[i] = DistanceHistogram(curve_string[i],num_samples[i],dr);
   }
 
-  /*num_samples[0] = profiles[0].getNumberOfCoordinates();
-  num_samples[1] = num_samples[0] * curve_lengths[1] / curve_lengths[0];
-  for (int i=0; i<2; i++) {
-    histograms[i] = DistanceHistogram(curve_string[i],num_samples[i],dr);
-  }*/
-
-  //int curve_with_max_length = ((curve_lengths[0] > curve_lengths[1]) ? 0 : 1 );
-  //double max_length = curve_lengths[curve_with_max_length];
-  /*vector<double> r_values;
-  double r = dr;
-  while (1) {
-    r_values.push_back(r);
-    if (r > max_length) {
-      break;
-    }
-    r += dr;
-  }*/
   double r_max = ((max_radius[0] < max_radius[1]) ? max_radius[0] : max_radius[1]);
   vector<double> r_values;
   double r = dr;
@@ -510,7 +503,6 @@ void Comparison::computeDistanceHistogram(int num_points, double dr)
     b = histogram_results[1][i] * num_samples[1] / approx_curve_lengths[1];
     scores[1] += fabs(a-b);*/
   }
-  //scores[0] /= r_values.size();
 }
 
 /*!
