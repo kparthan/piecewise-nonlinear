@@ -125,7 +125,8 @@ double CurveString::length()
 }
 
 /*!
- *
+ *  \brief This function is used to approximate the length of the curve string.
+ *  \return the approximate length
  */
 double CurveString::approximateLength()
 {
@@ -170,18 +171,20 @@ int CurveString::getCurveIndex(double random, vector<double> &sample_probability
 }
 
 /*!
- *  \brief This method is used to sample points on the curve string.
+ *  \brief This method is used to randomly sample points on the curve string
+ *  when the number of sampels is given.
  *  \param num_samples an integer
  *  \return a list of random points
  */
-vector<Point<double>> CurveString::generateRandomPoints(int num_points)
+vector<Point<double>> 
+CurveString::generateRandomlyDistributedPoints(int num_samples)
 {
   vector<vector<double>> params(curves.size(),vector<double>());
   srand(time(NULL));
   vector<Point<double>> samples;
   vector<double> sample_probability = getSampleProbabilities();
-  for (int i=0; i<num_points; i++) {
-    // randomly choose a side of the curve string
+  for (int i=0; i<num_samples; i++) {
+    // randomly choose a curve of the curve string
     double random = rand() / (double) RAND_MAX;
     int curve_index = getCurveIndex(random,sample_probability);
 
@@ -192,8 +195,105 @@ vector<Point<double>> CurveString::generateRandomPoints(int num_points)
     params[curve_index].push_back(t);
     samples.push_back(point_on_curve);
   }
+  analyzeSampleStatistics(params);
+  return samples;
+}
+
+/*!
+ *  \brief This method is used to randomly sample points on the curve string
+ *  when the total number of samples are not given.
+ *  \param num_samples an integer
+ *  \return a list of random points
+ */
+vector<Point<double>> 
+CurveString::generateRandomlyDistributedPoints(double scale_factor)
+{
+  int num_samples = ceil(length() * scale_factor);
+  return generateRandomlyDistributedPoints(num_samples);
+}
+
+/*!
+ *  \brief This functions generates the list of parameters on a curve (a part
+ *  of the curve string) that aree qually spaced
+ *  \param dt a double
+ *  \return the list of curve parameters
+ */
+vector<double>
+CurveString::generateUniformlySpacedParameters(double dt)
+{
+  vector<double> ts;
+  double t = dt;
+  while (1) {
+    if (t >= 1) {
+      break;
+    }
+    ts.push_back(t);
+    t += dt;
+  }
+  return ts;
+}
+
+/*!
+ *  \brief This function generated samples on the curve string (when the numner
+ *  of samples are not given) which are uniformly separated.
+ *  \param scale_factor a double
+ *  \return the list of sample points
+ */
+vector<Point<double>> 
+CurveString::generateUniformlyDistributedPoints(double scale_factor)
+{
+  vector<vector<double>> params;
+  vector<Point<double>> samples;
+  double total_length = length();
+  for (int i=0; i<curves.size(); i++) {
+    int num_samples = ceil(curves[i].length() * scale_factor);
+    double dt = 1.0 / num_samples;
+    vector<double> t = generateUniformlySpacedParameters(dt);
+    for (int j=0; j<t.size(); j++) {
+      Point<double> point_on_curve = curves[i].getPoint(t[j]);
+      samples.push_back(point_on_curve);
+    }
+    params.push_back(t);
+  }
+  analyzeSampleStatistics(params);
+  return samples;
+}
+
+/*!
+ *  \brief This function generated samples on the curve string (when the total
+ *  number of samples are given) which are uniformly separated.
+ *  \param scale_factor a double
+ *  \return the list of sample points
+ */
+vector<Point<double>> 
+CurveString::generateUniformlyDistributedPoints(int num_points)
+{
+  vector<vector<double>> params;
+  vector<Point<double>> samples;
+  double total_length = length();
+  for (int i=0; i<curves.size(); i++) {
+    int num_samples = ceil(curves[i].length() * num_points / total_length);
+    double dt = 1.0 / num_samples;
+    vector<double> t = generateUniformlySpacedParameters(dt);
+    for (int j=0; j<t.size(); j++) {
+      Point<double> point_on_curve = curves[i].getPoint(t[j]);
+      samples.push_back(point_on_curve);
+    }
+    params.push_back(t);
+  }
+  analyzeSampleStatistics(params);
+  return samples;
+}
+
+/*!
+ *  \brief This function calculates the mean and standard deviations of the
+ *  separations between the sampled points on the curve string.
+ *  \param params a reference to a vector<vector<double>>
+ */
+void CurveString::analyzeSampleStatistics(vector<vector<double>> &params)
+{
   for (int i=0; i<params.size(); i++) {
-    cout << i+1 << ": ";
+    cout << "Curve " << i+1 << ": ";
     vector<double> sorted_t = sort(params[i]);
     cout << "\n# of points: " << sorted_t.size() << endl;
     cout << "length: " << lengths[i] << endl;
@@ -219,29 +319,5 @@ vector<Point<double>> CurveString::generateRandomPoints(int num_points)
     }
     cout << endl;
   }
-  return samples;
-}
-
-/*!
- *
- */
-vector<Point<double>> CurveString::generateUniformPoints(double scale_factor)
-{
-  vector<Point<double>> samples;
-  double total_length = length();
-  for (int i=0; i<curves.size(); i++) {
-    int num_points = ceil(curves[i].length() * scale_factor / total_length);
-    double delta_t = 1.0 / num_points;
-    double t = delta_t;
-    while (1) {
-      Point<double> p = curves[i].getPoint(t);
-      samples.push_back(p);
-      if (t >= 1) {
-        break;
-      }
-      t += delta_t;
-    }
-  }
-  return samples;
 }
 

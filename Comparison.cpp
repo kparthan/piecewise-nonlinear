@@ -446,7 +446,8 @@ void Comparison::computeBasicAlignment(double gap_penalty, double max_diff)
  */
 void Comparison::computeDistanceHistogram(int num_points, double dr, 
                                           double scale_factor, 
-                                          int sampling_method)
+                                          int sampling_method,
+                                          vector<string> &files)
 {
   flag = DISTANCE_HISTOGRAM;
   vector<BezierCurve<double>> bezier_curves[2];
@@ -464,16 +465,18 @@ void Comparison::computeDistanceHistogram(int num_points, double dr,
 
   double curve_lengths[2],approx_curve_lengths[2],max_radius[2];
   CurveString curve_string[2];
+  string names[2];
   for (int i=0; i<2; i++) {
+    names[i] = extractName(files[i]);
     max_radius[i] = profiles[i].getMaximumRadius();
     bezier_curves[i] = profiles[i].getBezierCurves();
     lengths[i] = profiles[i].getBezierCurvesLengths();
     approx_lengths[i] = profiles[i].getApproximateBezierLengths();
     curve_string[i] = CurveString(bezier_curves[i],lengths[i],approx_lengths[i]);
     curve_lengths[i] = curve_string[i].length();
-    approx_curve_lengths[i] = curve_string[i].approximateLength();
-    num_samples[i] = ceil(curve_lengths[i] * scale_factor);
-    histograms[i] = DistanceHistogram(curve_string[i],num_samples[i],dr);
+    //approx_curve_lengths[i] = curve_string[i].approximateLength();
+    num_samples[i] = num_points;
+    histograms[i] = DistanceHistogram(curve_string[i],num_samples[i],dr,sampling_method,names[i]);
   }
 
   double r_max = ((max_radius[0] < max_radius[1]) ? max_radius[0] : max_radius[1]);
@@ -487,7 +490,9 @@ void Comparison::computeDistanceHistogram(int num_points, double dr,
     r += dr;
   }
   for (int i=0; i<2; i++) {
-    histogram_results[i] = histograms[i].computeGlobalHistogramValues(r_values);
+    histogram_results[i] = histograms[i].computeGlobalHistogramValues
+                                         (r_values,scale_factor);
+    num_samples[i] = histograms[i].getNumberOfSamples();
   }
   
   scores = vector<double>(2,0);

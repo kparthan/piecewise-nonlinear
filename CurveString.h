@@ -22,6 +22,12 @@ class CurveString
     //! Select a curve
     int getCurveIndex(double, vector<double> &);
 
+    //! Generates equally spaced parameter values
+    vector<double> generateUniformlySpacedParameters(double);
+
+    //! Calculate the mean and standard deviation of the intra sample distances
+    void analyzeSampleStatistics(vector<vector<double>> &);
+
   public:
     //! Null constructor
     CurveString();
@@ -51,14 +57,23 @@ class CurveString
     //! Cumulative length of the curves forming the curve string
     double length();
 
-    //!
+    //! Computes the approximate length of the curve string
     double approximateLength();
 
     //! Sampling probabilities of the individual curves
     vector<double> getSampleProbabilities();
 
     //! Generate random points
-    vector<Point<double>> generateRandomPoints(int);
+    vector<Point<double>> generateRandomlyDistributedPoints(int);
+
+    //! Generate random points when the number of samples is not given
+    vector<Point<double>> generateRandomlyDistributedPoints(double);
+
+    //! Generate samples on the curve which are uniformly separated
+    vector<Point<double>> generateUniformlyDistributedPoints(int);
+
+    //! Generate samples on the curve which are uniformly separated
+    vector<Point<double>> generateUniformlyDistributedPoints(double);
 };
 
 #endif 

@@ -33,8 +33,9 @@ DistanceHistogram::DistanceHistogram(CurveString &curve_string, int num_points) 
  *  \param dr a double
  */
 DistanceHistogram::DistanceHistogram(CurveString &curve_string, int num_points,
-                                     double dr) : dr(dr),
-                                     curve_string(curve_string)
+                                     double dr, int sampling_method, string name) : 
+                                     curve_string(curve_string), dr(dr),
+                                     sampling_method(sampling_method), name(name)
 {
   point_set = vector<Point<double>>(num_points,Point<double>());
   r_values = vector<double>();
@@ -49,7 +50,8 @@ DistanceHistogram::DistanceHistogram(CurveString &curve_string, int num_points,
 DistanceHistogram::DistanceHistogram(const DistanceHistogram &source) :
                    curve_string(source.curve_string), point_set(source.point_set),
                    r_values(source.r_values), dr(source.dr), times(source.times),
-                   global_histogram_values(source.global_histogram_values)
+                   global_histogram_values(source.global_histogram_values),
+                   sampling_method(source.sampling_method), name(source.name)
 {}
 
 /*!
@@ -66,6 +68,8 @@ DistanceHistogram DistanceHistogram::operator=(const DistanceHistogram &source)
     dr = source.dr;
     times = source.times;
     global_histogram_values = source.global_histogram_values;
+    sampling_method = source.sampling_method;
+    name = source.name;
   }
   return *this;
 }
@@ -131,21 +135,24 @@ array<double,2> DistanceHistogram::getComputationTime()
 /*!
  *  \brief This function is used to construct the finite point set
  *  to evaluate the distance histogram function
- *  \param num_points an integer
+ *  \param scale a double 
  */
-void DistanceHistogram::constructSamples(int num_points)
+void DistanceHistogram::constructSamples(double scale)
 {
-  point_set = curve_string.generateRandomPoints(num_points);
-}
-
-/*!
- *  \brief This function is used to construct the finite point set
- *  to evaluate the distance histogram function
- */
-void DistanceHistogram::constructSamples()
-{
-  int num_points = curve_string.length() * POINTS_PER_UNIT;
-  constructSamples(num_points);
+  int num_samples = point_set.size();
+  if (sampling_method == RANDOM_SAMPLING) {
+    if (num_samples == 0) {
+      point_set = curve_string.generateRandomlyDistributedPoints(scale);
+    } else {
+      point_set = curve_string.generateRandomlyDistributedPoints(num_samples);
+    }
+  } else if (sampling_method == UNIFORM_SAMPLING) {
+    if (num_samples == 0) {
+      point_set = curve_string.generateUniformlyDistributedPoints(scale);
+    } else {
+      point_set = curve_string.generateUniformlyDistributedPoints(num_samples);
+    }
+  }
 }
 
 /*!
@@ -177,10 +184,16 @@ int DistanceHistogram::computeNumberOfInternalPoints(Point<double> &centre,
 vector<double> DistanceHistogram::computeLocalHistogram(double r)
 {
   vector<double> local_histogram(point_set.size());
+  string rr = boost::lexical_cast<string>(r).substr(0,2);
+  string fname = "output/histograms/local_histograms/local_histograms_" + name + "_r_" + rr;
+  ofstream lh(fname.c_str());
+  lh << "Point_set size: " << point_set.size() << endl;
   for (int i=0; i<point_set.size(); i++) {
     int num_internal_points = computeNumberOfInternalPoints(point_set[i],r);
     local_histogram[i] = num_internal_points / (double) point_set.size();
+    lh << setw(10) << i << setw(10) << num_internal_points << setw(15) << local_histogram[i] << endl;
   }
+  lh.close();
   return local_histogram;
 }
 
@@ -202,9 +215,10 @@ double DistanceHistogram::computeGlobalHistogram(double r)
 /*!
  *  \brief This function computes the global histogram values for different
  *  values of r
+ *  \param scale a double
  *  \return the list of distance histogram values
  */
-vector<double> DistanceHistogram::computeGlobalHistogramValues()
+vector<double> DistanceHistogram::computeGlobalHistogramValues(double scale)
 {
   double length = curve_string.length();
   double r = dr;
@@ -215,26 +229,25 @@ vector<double> DistanceHistogram::computeGlobalHistogramValues()
     r_values.push_back(r);
     r += dr;
   }
-  return computeGlobalHistogramValues(r_values);
+  return computeGlobalHistogramValues(r_values,scale);
 }
 
 /*!
  *  \brief This function computes the global histogram values for different
  *  values of r in the provided list
  *  \param r a reference to a vector<double>
+ *  \param scale a double
  *  \return the list of distance histogram values
  */
-vector<double> DistanceHistogram::computeGlobalHistogramValues(vector<double> &r)
+vector<double> 
+DistanceHistogram::computeGlobalHistogramValues(vector<double> &r, double scale)
 {
   clock_t c_start = clock();
   auto t_start = high_resolution_clock::now();
 
   r_values = r;
-  if (point_set.size() == 0) {
-    constructSamples();
-  } else {
-    constructSamples(point_set.size());
-  }
+  constructSamples(scale);
+
   global_histogram_values = vector<double>(r.size(),0);
   bool compute = 1;
   for (int i=0; i<r.size(); i++) {

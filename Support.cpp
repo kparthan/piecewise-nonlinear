@@ -61,8 +61,8 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("dr",value<double>(&parameters.increment_r),
                                  "increment in r used in histogram comparison")
        ("scale",value<double>(&parameters.scale),"scale factor")
-       ("sampling",value<string>(&generate),"uniform/random method to generate
-                                             sample points on the curve")
+       ("sampling",value<string>(&generate),
+                  "uniform/random method to generate sample points on the curve")
        ("comparison_matrix","generates a comparison matrix")
   ;
   variables_map vm;
@@ -225,12 +225,12 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
         parameters.scale = SCALE_FACTOR;
         cout << "Using default scale value: " << parameters.scale << endl;
       }
-      if (vm.count("sampling") == 0) {
+      if (vm.count("sampling")) {
         if (generate.compare("uniform") == 0) {
           parameters.sampling_method = UNIFORM_SAMPLING;
           cout << "Using uniform sampling to generate points on the curve ..."
                << endl;
-        } else if (generate.compare("random")) {
+        } else if (generate.compare("random") == 0) {
           parameters.sampling_method = RANDOM_SAMPLING;
           cout << "Using random sampling to generate points on the curve ..."
                << endl;
@@ -540,7 +540,8 @@ void compareSegmentations(Segmentation &a, Segmentation &b,
       comparison.computeDistanceHistogram(parameters.num_samples_on_curve,
                                           parameters.increment_r,
                                           parameters.scale,
-                                          parameters.sampling_method);
+                                          parameters.sampling_method,
+                                          parameters.comparison_files);
       comparison.save(parameters.comparison_files);
       break;
     }
@@ -586,14 +587,20 @@ void compareProteinStructuresList(struct Parameters &parameters)
   vector<double> lengths[num_structures],approx_lengths[num_structures];
   CurveString curve_string[num_structures];
   vector<vector<double>> histogram_results;
+  vector<double> results;
+
   for (int i=0; i<num_structures; i++) {
-    num_samples[i] = profiles[i].getNumberOfCoordinates() * parameters.scale;
+    //num_samples[i] = profiles[i].getNumberOfCoordinates() * parameters.scale;
     bezier_curves[i] = profiles[i].getBezierCurves();
     lengths[i] = profiles[i].getBezierCurvesLengths();
     approx_lengths[i] = profiles[i].getApproximateBezierLengths();
     curve_string[i] = CurveString(bezier_curves[i],lengths[i],approx_lengths[i]);
-    histograms[i] = DistanceHistogram(curve_string[i],num_samples[i],parameters.increment_r);
-    vector<double> results = histograms[i].computeGlobalHistogramValues(r_values);
+    string name = extractName(parameters.comparison_files[i]);
+    histograms[i] = DistanceHistogram(curve_string[i],num_samples[i],
+                                      parameters.increment_r,
+                                      parameters.sampling_method,name);
+    results = histograms[i].computeGlobalHistogramValues(r_values,  
+                                                         parameters.scale);
     histogram_results.push_back(results);
   }
   plotMultipleHistograms(r_values,histogram_results,parameters.comparison_files);
