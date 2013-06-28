@@ -210,6 +210,8 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
       if (vm.count("n")) {
         cout << "# of random samples generated for comparing distance "
              << "histograms: " << parameters.num_samples_on_curve << endl;
+      } else {
+        parameters.num_samples_on_curve = 0;
       }
       if (vm.count("dr")) {
         cout << "Increment in r value used in histogram method: "
@@ -549,13 +551,37 @@ void compareSegmentations(Segmentation &a, Segmentation &b,
 }
 
 /*!
+ *  \brief This function gets the r values list with a uniform increment
+ *  \param maximum_r a double
+ *  \param dr a double
+ *  \return the list of r values
+ */
+vector<double> getRValuesList(double maximum_r, double dr)
+{
+  vector<double> r_values;
+  double r = dr; 
+  while (1) {
+    r_values.push_back(r);
+    if (r > maximum_r) {
+      break;
+    }
+    r += dr;
+  }
+  return r_values;
+}
+
+/*!
  *
  */
 void compareProteinStructuresList(struct Parameters &parameters)
 {
   int num_structures = parameters.comparison_files.size();
   Segmentation profiles[num_structures];
-  double max_radius = 0;
+  vector<double> max_radius(num_structures,0);
+  double overall_max_radius = 0;
+  vector<vector<double>> r_values;
+  int profile_with_max_radius;
+
   for (int i=0; i<num_structures; i++) {
     parameters.file = parameters.comparison_files[i];
     string pdb_file = extractName(parameters.file);
@@ -567,21 +593,20 @@ void compareProteinStructuresList(struct Parameters &parameters)
       profiles[i] = proteinFit(parameters);
       profiles[i].save(pdb_file);
     }
-    if (profiles[i].getMaximumRadius() > max_radius) {
-      max_radius = profiles[i].getMaximumRadius();
-    }
-  }
-  vector<double> r_values;
-  double r = parameters.increment_r;
-  while (1) {
+    max_radius[i] = profiles[0].getMaximumRadius();
+    /*max_radius[i] = profiles[i].getMaximumRadius();
+    if (max_radius[i] > overall_max_radius) {
+      overall_max_radius = max_radius[i];
+      profile_with_max_radius = i;
+    }*/
+    vector<double> r = getRValuesList(max_radius[i],parameters.increment_r);
+    /*vector<double> r;
+    cout << "max_radius " << i << ": " << max_radius[i] << endl;
+    r.push_back(max_radius[i]);*/
     r_values.push_back(r);
-    if (r > max_radius) {
-      break;
-    }
-    r += parameters.increment_r;
   }
 
-  double num_samples[num_structures];
+  double num_samples[num_structures]; 
   DistanceHistogram histograms[num_structures];
   vector<BezierCurve<double>> bezier_curves[num_structures];
   vector<double> lengths[num_structures],approx_lengths[num_structures];
@@ -589,8 +614,10 @@ void compareProteinStructuresList(struct Parameters &parameters)
   vector<vector<double>> histogram_results;
   vector<double> results;
 
+  // compute individual global histograms
+  vector<double> dl(num_structures,0);
   for (int i=0; i<num_structures; i++) {
-    //num_samples[i] = profiles[i].getNumberOfCoordinates() * parameters.scale;
+    num_samples[i] = parameters.num_samples_on_curve;
     bezier_curves[i] = profiles[i].getBezierCurves();
     lengths[i] = profiles[i].getBezierCurvesLengths();
     approx_lengths[i] = profiles[i].getApproximateBezierLengths();
@@ -599,33 +626,160 @@ void compareProteinStructuresList(struct Parameters &parameters)
     histograms[i] = DistanceHistogram(curve_string[i],num_samples[i],
                                       parameters.increment_r,
                                       parameters.sampling_method,name);
-    results = histograms[i].computeGlobalHistogramValues(r_values,  
+    cout << "Constructing histogram for structure " 
+         << parameters.comparison_files[i] << endl;
+    results = histograms[i].computeGlobalHistogramValues(r_values[i],  
                                                          parameters.scale);
+    dl[i] = curve_string[i].length() / histograms[i].getNumberOfSamples();
     histogram_results.push_back(results);
   }
-  plotMultipleHistograms(r_values,histogram_results,parameters.comparison_files);
+  printHistogramResults(r_values[0],histogram_results,dl);
+  //plotMultipleHistograms(profile_with_max_radius,r_values,histogram_results,
+  //                       parameters.comparison_files);
+
+  // construct the comparison matrix
+  /*parameters.sampling_method = RANDOM_SAMPLING;
+  vector<vector<double>> comparison_matrix;
+  vector<double> comparisons[2];
+  vector<vector<double>> comparison_scores;
+
+  for (int i=0; i<1; i++) {
+    string name = extractName(parameters.comparison_files[i]);
+    histograms[i] = DistanceHistogram(curve_string[i],num_samples[i],
+                                      parameters.increment_r,
+                                      parameters.sampling_method,name);
+    comparisons[0] = histograms[i].computeGlobalHistogramValues(r_values[i],
+                                                          parameters.scale);
+    int size1 = comparisons[0].size();
+    //cout << comparisons[0][size1-1] << endl;
+    //assert(fabs(comparisons[0][size1-1]-1) < ZERO);
+    double dl1 = curve_string[i].length() / histograms[i].getNumberOfSamples();
+    vector<double> scores;
+    for (int j=1; j<num_structures; j++) {
+      string name = extractName(parameters.comparison_files[j]);
+      histograms[j] = DistanceHistogram(curve_string[j],num_samples[j],
+                                      parameters.increment_r,
+                                      parameters.sampling_method,name);
+      comparisons[1] = histograms[j].computeGlobalHistogramValues(r_values[j],
+                                                          parameters.scale);
+      double dl2 = curve_string[j].length() / histograms[j].getNumberOfSamples();
+      int size2 = comparisons[1].size();
+      //assert(fabs(comparisons[1][size2-1]-1) < ZERO);
+      int diff = size1 - size2;
+      double score;
+      if (diff > 0) {
+        for (int j=0; j<diff; j++) {
+          comparisons[1].push_back(1);
+        }
+        assert(comparisons[0].size() == comparisons[1].size());
+        score = getComparisonScore(comparisons[0],comparisons[1],dl1,dl2);
+      } else if (diff < 0) {
+        vector<double> tmp(comparisons[0]);
+        for (int j=0; j<diff; j++) {
+          tmp.push_back(1);
+        }
+        assert(tmp.size() == comparisons[1].size());
+        score = getComparisonScore(tmp,comparisons[1],dl1,dl2);
+      } else if (diff == 0) {
+        score = getComparisonScore(comparisons[0],comparisons[1],dl1,dl2);
+      }
+      scores.push_back(score);
+    }
+    comparison_scores.push_back(scores);
+  }
+  ofstream cm("comparison_matrix");
+  for (int i=0; i<num_structures; i++) {
+    for (int j=0; j<num_structures; j++) {
+      cm << setw(15) << comparison_scores[i][j];
+    }
+    cm << endl;
+  }
+  cm.close();*/
+}
+
+void printHistogramResults(vector<double> &r_values, vector<vector<double>> &results, vector<double> &dl)
+{
+  int num_structures = results.size();
+  assert(r_values.size() == results[0].size());
+  for (int i=1; i<num_structures; i++) {
+    assert(results[0].size() == results[i].size());
+  }
+  ofstream fw("results");
+  vector<double> comparison_scores(num_structures-1,0);
+  for (int i=0; i<r_values.size(); i++) {
+    //fw << setw(15) << r_values[i];
+    //fw << fixed << setprecision(2) << r_values[i] << "\t";
+    double h0 = results[0][i];
+    for (int j=1; j<num_structures; j++) {
+      double hj = results[j][i];
+      double score = fabs((h0 / dl[0]) - (hj / dl[j]));
+      //fw << setw(15) << score;
+      fw << fixed << setprecision(3) << score << " "; 
+      comparison_scores[j-1] += score;
+    }
+    fw << endl;
+  }
+  fw << endl << "Aggregate:\n";
+  for (int i=0; i<num_structures-1; i++) {
+    //fw << setw(30) << setprecision(3) << comparison_scores[i];
+    fw << fixed << setprecision(3) << comparison_scores[i] << " ";
+  }
+  fw << endl;
+  fw.close();
 }
 
 /*!
  *
  */
-void plotMultipleHistograms(vector<double> &r, vector<vector<double>> &histogram_results,
+double getComparisonScore(vector<double> &list1, vector<double> &list2,
+                          double dl1, double dl2)
+{
+  int num_r = list1.size();
+  double score = 0;
+  for (int i=0; i<num_r; i++) {
+    score += fabs(list1[i] / dl1 - list2[i] / dl2);
+  }
+  cout << score << endl;
+  return score; 
+}
+
+/*!
+ *
+ */
+void plotMultipleHistograms(int index, vector<vector<double>> &r_values, 
+                            vector<vector<double>> &histogram_results,
                             vector<string> &files)
 {
   vector<string> names;
-  ofstream output("multiple_histograms.data");
-  for (int i=0; i<histogram_results.size(); i++) {
-    assert(r.size() == histogram_results[i].size());
+
+  // modify the individual histogram results so that all are of same length
+  int r_values_max_size = r_values[index].size();
+  for (int i=0; i<r_values.size(); i++) {
+    int current_size = r_values[i].size();
+    int diff = r_values_max_size - current_size; 
+    if (diff > 0) {
+      for (int j=0; j<diff; j++) {
+        double r = r_values[index][current_size+j];
+        r_values[i].push_back(r);
+        histogram_results[i].push_back(1);
+      }
+    }
+    assert(r_values[i].size() == r_values_max_size);
+    assert(histogram_results[i].size() == r_values_max_size);
     names.push_back(extractName(files[i]));
   }
-  for (int i=0; i<r.size(); i++) {
-    output << r[i] << " ";
+
+  ofstream output("multiple_histograms.data");
+  for (int i=0; i<r_values[index].size(); i++) {
+    output << r_values[index][i] << " ";
     for (int j=0; j<histogram_results.size(); j++) {
       output << histogram_results[j][i] << " ";
     }
     output << endl;
   }
   output.close();
+
+  int num_structures = files.size();
   ofstream script("script.plot");
   script << "set terminal post eps" << endl;
   script << "set output \"multiple_histograms.eps\"" << endl;

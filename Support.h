@@ -44,7 +44,11 @@ void visualize(vector<Point<double>> &, string &);
 void segmentStructure(struct Parameters &);
 void compareProteinStructures(struct Parameters &);
 void compareProteinStructuresList(struct Parameters &);
-void plotMultipleHistograms(vector<double> &, vector<vector<double>> &, vector<string> &);
+vector<double> getRValuesList(double, double);
+void plotMultipleHistograms(int, vector<vector<double>> &, vector<vector<double>> &,
+                            vector<string> &);
+double getComparisonScore(vector<double> &, vector<double> &, double, double);
+void printHistogramResults(vector<double> &, vector<vector<double>> &, vector<double> &);
 void compareGenericStructures(struct Parameters &);
 void compareSegmentations(Segmentation &, Segmentation &, struct Parameters &);
 bool checkIfSegmentationExists(string &);

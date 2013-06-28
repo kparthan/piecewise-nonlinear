@@ -195,7 +195,7 @@ CurveString::generateRandomlyDistributedPoints(int num_samples)
     params[curve_index].push_back(t);
     samples.push_back(point_on_curve);
   }
-  analyzeSampleStatistics(params);
+  //analyzeSampleStatistics(params);
   return samples;
 }
 
@@ -255,7 +255,7 @@ CurveString::generateUniformlyDistributedPoints(double scale_factor)
     }
     params.push_back(t);
   }
-  analyzeSampleStatistics(params);
+  //analyzeSampleStatistics(params);
   return samples;
 }
 
@@ -281,7 +281,7 @@ CurveString::generateUniformlyDistributedPoints(int num_points)
     }
     params.push_back(t);
   }
-  analyzeSampleStatistics(params);
+  //analyzeSampleStatistics(params);
   return samples;
 }
 

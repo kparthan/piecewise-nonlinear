@@ -10,6 +10,9 @@ class DistanceHistogram
     //! Curve that is abstracted
     CurveString curve_string;
 
+    //!
+    int num_samples;
+
     //! List of points
     vector<Point<double>> point_set;
 
@@ -35,7 +38,7 @@ class DistanceHistogram
     void constructSamples(double);
  
     //! Compute number of internal points
-    int computeNumberOfInternalPoints(Point<double> &, double);
+    int computeNumberOfInternalPoints(int, double);
 
   public:
     //! Null constructor
@@ -55,6 +58,9 @@ class DistanceHistogram
 
     //! Assignment operator
     DistanceHistogram operator=(const DistanceHistogram &);
+
+    //! 
+    void setSamplingMethod(int);
 
     //! Returns the number of samples
     int getNumberOfSamples();
