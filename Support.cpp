@@ -593,12 +593,12 @@ void compareProteinStructuresList(struct Parameters &parameters)
       profiles[i] = proteinFit(parameters);
       profiles[i].save(pdb_file);
     }
-    max_radius[i] = profiles[0].getMaximumRadius();
-    /*max_radius[i] = profiles[i].getMaximumRadius();
+    //max_radius[i] = profiles[0].getMaximumRadius();
+    max_radius[i] = profiles[i].getMaximumRadius();
     if (max_radius[i] > overall_max_radius) {
       overall_max_radius = max_radius[i];
       profile_with_max_radius = i;
-    }*/
+    }
     vector<double> r = getRValuesList(max_radius[i],parameters.increment_r);
     /*vector<double> r;
     cout << "max_radius " << i << ": " << max_radius[i] << endl;
@@ -607,12 +607,13 @@ void compareProteinStructuresList(struct Parameters &parameters)
   }
 
   double num_samples[num_structures]; 
-  DistanceHistogram histograms[num_structures];
+  vector<DistanceHistogram> histograms(num_structures,DistanceHistogram());
   vector<BezierCurve<double>> bezier_curves[num_structures];
   vector<double> lengths[num_structures],approx_lengths[num_structures];
   CurveString curve_string[num_structures];
-  vector<vector<double>> histogram_results;
+  vector<vector<double>> histogram_results,histogram_results_appended;
   vector<double> results;
+  vector<string> names;
 
   // compute individual global histograms
   vector<double> dl(num_structures,0);
@@ -622,20 +623,18 @@ void compareProteinStructuresList(struct Parameters &parameters)
     lengths[i] = profiles[i].getBezierCurvesLengths();
     approx_lengths[i] = profiles[i].getApproximateBezierLengths();
     curve_string[i] = CurveString(bezier_curves[i],lengths[i],approx_lengths[i]);
-    string name = extractName(parameters.comparison_files[i]);
+    names.push_back(extractName(parameters.comparison_files[i]));
     histograms[i] = DistanceHistogram(curve_string[i],num_samples[i],
                                       parameters.increment_r,
-                                      parameters.sampling_method,name);
-    cout << "Constructing histogram for structure " 
-         << parameters.comparison_files[i] << endl;
+                                      parameters.sampling_method,names[i]);
+    cout << "Constructing histogram for structure " << names[i] << " ..." << endl;
     results = histograms[i].computeGlobalHistogramValues(r_values[i],  
                                                          parameters.scale);
-    dl[i] = curve_string[i].length() / histograms[i].getNumberOfSamples();
     histogram_results.push_back(results);
+    dl[i] = curve_string[i].length() / histograms[i].getNumberOfSamples();
   }
-  printHistogramResults(r_values[0],histogram_results,dl);
-  //plotMultipleHistograms(profile_with_max_radius,r_values,histogram_results,
-  //                       parameters.comparison_files);
+  printHistogramResults(histograms,profile_with_max_radius,r_values,dl);
+  plotMultipleHistograms(histograms,profile_with_max_radius,r_values,names);
 
   // construct the comparison matrix
   /*parameters.sampling_method = RANDOM_SAMPLING;
@@ -697,35 +696,51 @@ void compareProteinStructuresList(struct Parameters &parameters)
   cm.close();*/
 }
 
-void printHistogramResults(vector<double> &r_values, vector<vector<double>> &results, vector<double> &dl)
+/*!
+ *  \brief This function prints the comparison results
+ *  \param histograms a reference to vector<DistanceHistogram>
+ *  \param profile_with_max_radius an integer
+ *  \param r_values a reference to a vector<vector<double>>
+ *  \param dl a reference to a vector<double>
+ */
+void printHistogramResults(vector<DistanceHistogram> &histograms,
+                           int profile_with_max_radius,
+                           vector<vector<double>> &r_values, vector<double> &dl)
 {
-  int num_structures = results.size();
-  assert(r_values.size() == results[0].size());
-  for (int i=1; i<num_structures; i++) {
-    assert(results[0].size() == results[i].size());
+  vector<vector<double>> histogram_results;
+  vector<double> results;
+
+  int num_structures = histograms.size();
+  int base_structure = 0; // pivot
+  int num_r = r_values[base_structure].size();
+  for (int i=0; i<num_structures; i++) {
+    results = histograms[i].modify(num_r);
+    assert(results.size() == num_r);
+    histogram_results.push_back(results);
   }
-  ofstream fw("results");
+
+  string file = string(CURRENT_DIRECTORY) + "output/histograms/results/";
+  file += "histograms_all_r.data";
+  ofstream data(file.c_str());
   vector<double> comparison_scores(num_structures-1,0);
-  for (int i=0; i<r_values.size(); i++) {
-    //fw << setw(15) << r_values[i];
-    //fw << fixed << setprecision(2) << r_values[i] << "\t";
-    double h0 = results[0][i];
-    for (int j=1; j<num_structures; j++) {
-      double hj = results[j][i];
-      double score = fabs((h0 / dl[0]) - (hj / dl[j]));
-      //fw << setw(15) << score;
-      fw << fixed << setprecision(3) << score << " "; 
-      comparison_scores[j-1] += score;
+  for (int i=0; i<r_values[base_structure].size(); i++) {
+    double h_base = histogram_results[base_structure][i];
+    for (int j=0; j<num_structures; j++) {
+      if (j != base_structure) {
+        double hj = histogram_results[j][i];
+        double score = fabs((h_base / dl[base_structure]) - (hj / dl[j]));
+        data << fixed << setprecision(3) << score << " "; 
+        comparison_scores[j-1] += score;
+      }
     }
-    fw << endl;
+    data << endl;
   }
-  fw << endl << "Aggregate:\n";
+  data << endl << "Aggregate:\n";
   for (int i=0; i<num_structures-1; i++) {
-    //fw << setw(30) << setprecision(3) << comparison_scores[i];
-    fw << fixed << setprecision(3) << comparison_scores[i] << " ";
+    data << fixed << setprecision(3) << comparison_scores[i] << " ";
   }
-  fw << endl;
-  fw.close();
+  data << endl;
+  data.close();
 }
 
 /*!
@@ -744,60 +759,66 @@ double getComparisonScore(vector<double> &list1, vector<double> &list2,
 }
 
 /*!
- *
+ *  \brief This function plots the global histogram values for the structures
+ *  that are compared.
+ *  \param histograms a reference to a vector<DistanceHistogram>
+ *  \param profile_with_max_radius an integer
+ *  \param r_values a reference to a vector<vector<double>>
+ *  \param names a reference to a vector<string>
  */
-void plotMultipleHistograms(int index, vector<vector<double>> &r_values, 
-                            vector<vector<double>> &histogram_results,
-                            vector<string> &files)
+void plotMultipleHistograms(vector<DistanceHistogram> &histograms, 
+                            int profile_with_max_radius,
+                            vector<vector<double>> &r_values, 
+                            vector<string> &names)
 {
-  vector<string> names;
+  string color_array[] = {"red","blue","green","brown","orange","black"};
+  vector<string> colors(color_array,color_array+6);
+  int i,j;
+  vector<vector<double>> histogram_results;
+  vector<double> appended_results;
 
   // modify the individual histogram results so that all are of same length
-  int r_values_max_size = r_values[index].size();
-  for (int i=0; i<r_values.size(); i++) {
-    int current_size = r_values[i].size();
-    int diff = r_values_max_size - current_size; 
-    if (diff > 0) {
-      for (int j=0; j<diff; j++) {
-        double r = r_values[index][current_size+j];
-        r_values[i].push_back(r);
-        histogram_results[i].push_back(1);
-      }
-    }
-    assert(r_values[i].size() == r_values_max_size);
-    assert(histogram_results[i].size() == r_values_max_size);
-    names.push_back(extractName(files[i]));
+  int max_num_r = r_values[profile_with_max_radius].size();
+  for (i=0; i<histograms.size(); i++) {
+    appended_results = histograms[i].modify(max_num_r);
+    histogram_results.push_back(appended_results);
+    assert(histogram_results[i].size() == max_num_r);
   }
 
-  ofstream output("multiple_histograms.data");
-  for (int i=0; i<r_values[index].size(); i++) {
-    output << r_values[index][i] << " ";
-    for (int j=0; j<histogram_results.size(); j++) {
-      output << histogram_results[j][i] << " ";
+  string file = string(CURRENT_DIRECTORY) + "output/histograms/results/";
+  string data_file = file + "multiple_histograms.data";
+  ofstream data(data_file.c_str());
+  for (i=0; i<r_values[profile_with_max_radius].size(); i++) {
+    data << r_values[profile_with_max_radius][i] << " ";
+    for (j=0; j<histogram_results.size(); j++) {
+      data << histogram_results[j][i] << " ";
     }
-    output << endl;
+    data << endl;
   }
-  output.close();
+  data.close();
 
-  int num_structures = files.size();
-  ofstream script("script.plot");
+  string script_file = file + "script.plot";
+  ofstream script(script_file.c_str());
   script << "set terminal post eps" << endl;
-  script << "set output \"multiple_histograms.eps\"" << endl;
+  script << "set xlabel \"r\"" << endl;
+  script << "set ylabel \"Global Histogram H(r)\"" << endl;
+  script << "set output \"" << file << "multiple_histograms.eps\"" << endl;
   script << "set multiplot" << endl;
-  script << "plot \"multiple_histograms.data\" using 1:2 title '" << names[0] 
-         << "' with lines lc rgb \"red\", \\" << endl;
-  script << "\"multiple_histograms.data\" using 1:3 title '" << names[1] 
-         << "' with lines lc rgb \"blue\", \\" << endl;
-  script << "\"multiple_histograms.data\" using 1:4 title '" << names[2] 
-         << "' with lines lc rgb \"green\", \\" << endl;
-  script << "\"multiple_histograms.data\" using 1:5 title '" << names[3] 
-         << "' with lines lc rgb \"brown\", \\" << endl;
-  script << "\"multiple_histograms.data\" using 1:6 title '" << names[4] 
-         << "' with lines lc rgb \"orange\", \\" << endl;
-  script << "\"multiple_histograms.data\" using 1:7 title '" << names[5] 
-         << "' with lines lc rgb \"black\"" << endl;
+  for (i=1; i<names.size(); i++) {
+    if (i == 1) {
+      script << "plot ";
+    }
+    script << "\"" << file << "multiple_histograms.data\" using 1:" << i+1
+           << " title '" << names[i-1] << "' with lines lc rgb \"" << colors[i-1]
+           << "\", \\" << endl;
+  }
+  script << "\"" << file << "multiple_histograms.data\" using 1:" << i+1
+         << " title '" << names[i-1] << "' with lines lc rgb \"" << colors[i-1]
+         << "\"" << endl;
   script.close();
-  system("gnuplot -persist script.plot");
+
+  string cmd = "gnuplot -persist " + script_file;
+  system(cmd.c_str());
 }
 
 /*!

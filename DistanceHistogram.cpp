@@ -1,4 +1,4 @@
-#include "DistanceHistogram.h"
+#include "Support.h"
 
 /*!
  *  \brief This is a null constructor module.
@@ -131,6 +131,15 @@ double DistanceHistogram::getIncrementInR()
 }
 
 /*!
+ *  \brief This function is used to return the list of global histogram values.
+ *  \return the global histogram values
+ */
+vector<double> DistanceHistogram::getGlobalHistogramValues()
+{
+  return global_histogram_values;
+}
+
+/*!
  *  \brief This function returns the time taken to compute the histogram 
  *  function values.
  *  \return the time taken
@@ -150,12 +159,14 @@ void DistanceHistogram::constructSamples(double scale)
   if (sampling_method == RANDOM_SAMPLING) {
     if (num_samples == 0) {
       point_set = curve_string.generateRandomlyDistributedPoints(scale);
+      num_samples = point_set.size();
     } else {
       point_set = curve_string.generateRandomlyDistributedPoints(num_samples);
     }
   } else if (sampling_method == UNIFORM_SAMPLING) {
     if (num_samples == 0) {
       point_set = curve_string.generateUniformlyDistributedPoints(scale);
+      num_samples = point_set.size();
     } else {
       point_set = curve_string.generateUniformlyDistributedPoints(num_samples);
     }
@@ -195,17 +206,80 @@ int DistanceHistogram::computeNumberOfInternalPoints(int centre_index,
 vector<double> DistanceHistogram::computeLocalHistogram(double r)
 {
   vector<double> local_histogram(point_set.size());
-  /*string rr = boost::lexical_cast<string>(r).substr(0,2);
-  string fname = "output/histograms/local_histograms/local_histograms_" + name + "_r_" + rr;
-  ofstream lh(fname.c_str());
-  lh << "Point_set size: " << point_set.size() << endl;*/
   for (int i=0; i<point_set.size(); i++) {
     int num_internal_points = computeNumberOfInternalPoints(i,r);
     local_histogram[i] = num_internal_points / (double) point_set.size();
-    //lh << setw(10) << i << setw(10) << num_internal_points << setw(15) << local_histogram[i] << endl;
   }
-  //lh.close();
+  string file = string(CURRENT_DIRECTORY) + "output/histograms/results/";
+  file += "local_histograms/" + name + "_n_";
+  file += boost::lexical_cast<string>(num_samples) + "_dr_";
+  file += boost::lexical_cast<string>(dr).substr(0,3) + ".data";
+  updateLocalHistogramFile(file,local_histogram);
   return local_histogram;
+}
+
+/*!
+ *  \brief This function updates the local histogram data file for a structure
+ *  \param file a reference to a string
+ *  \param local_histogram a reference to a vector<double>
+ */
+void 
+DistanceHistogram::updateLocalHistogramFile(string &file, 
+                                            vector<double> &local_histogram)
+{
+  if (checkFile(file.c_str())) {
+    // create a copy of the existing data file
+    string copy = file + ".copy";
+    string cmd = "mv " + file + " " + copy; 
+    system(cmd.c_str());
+    ifstream tmp(copy.c_str());
+    ofstream data(file.c_str());
+    string line;
+    int count = 0;
+    while (getline(tmp,line)) {
+      boost::char_separator<char> sep(" ");
+      boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
+      BOOST_FOREACH (const string &t, tokens) {
+        data << t << " ";
+      }
+      data << local_histogram[count++] << endl;
+    }
+    data.close();
+    tmp.close();
+
+    // rename the file
+    //cmd = "mv " + copy + " " + file;
+    //system(cmd.c_str());
+  } else {
+    ofstream data(file.c_str());
+    for (int i=0; i<local_histogram.size(); i++) {
+      data << i + 1 << " " << local_histogram[i] << endl;
+    }
+    data.close();
+  }
+}
+
+/*!
+ *  \brief This function plots the local histogram plots of the structure.
+ */
+void DistanceHistogram::plotLocalHistograms()
+{
+  string file = string(CURRENT_DIRECTORY) + "output/histograms/results/";
+  file += "local_histograms/" + name + "_n_";
+  file += boost::lexical_cast<string>(num_samples) + "_dr_";
+  file += boost::lexical_cast<string>(dr).substr(0,3);
+  string data_file = file + ".data";
+  string script_file = file + ".plot";
+  int num_r = r_values.size();
+  ofstream script(script_file.c_str());
+  script << "set terminal post eps" << endl;
+  script << "set output \"" << file << ".eps\"" << endl;
+  script << "set multiplot" << endl;
+  script << "plot \"" << data_file << "\" using 1:2 with lines lc rgb \"red\"" << endl;
+  script.close();
+
+  string cmd = "gnuplot -persist " + script_file;
+  system(cmd.c_str());
 }
 
 /*!
@@ -279,7 +353,73 @@ DistanceHistogram::computeGlobalHistogramValues(vector<double> &r, double scale)
   times[0] = double(c_end-c_start)/(double)(CLOCKS_PER_SEC); // cpu time
   times[1] = duration_cast<seconds>(t_end-t_start).count();  // wall time
 
+  plotLocalHistograms();
+
   return global_histogram_values;
+}
+
+/*!
+ *  \brief This function is to append the global histogram values list
+ *  \param more an integer
+ *  \return the extended list of global histogram values
+ */
+vector<double> DistanceHistogram::append(int more)
+{
+  vector<double> appended_histograms = global_histogram_values;
+  int num_r = r_values.size();
+  double r = r_values[num_r-1];
+  bool compute;
+  if (fabs(appended_histograms[num_r-1] - 1) <= ZERO) {
+    compute = 0;
+  } else {
+    compute = 1;
+  }
+  for (int i=0; i<more; i++) {
+    if (compute) {
+      r += dr;
+      double value = computeGlobalHistogram(r);
+      appended_histograms.push_back(value);
+      if (fabs(value - 1) <= ZERO) {
+        compute = 0;
+      }
+    } else {
+      appended_histograms.push_back(1);
+    }
+  }
+  return appended_histograms;
+}
+
+/*!
+ *  \brief This function returns an abridged version of the global histograms
+ *  list.
+ *  \param less an integer
+ *  \return the condensed list of global histogram values
+ */
+vector<double> DistanceHistogram::shorten(int less)
+{
+  int num_r = r_values.size() - less;
+  vector<double> shortened_histograms;
+  for (int i=0; i<num_r; i++) {
+    shortened_histograms.push_back(global_histogram_values[i]);
+  }
+  return shortened_histograms;
+}
+
+/*!
+ *  \brief This function modifies the length of the global histogram values list.
+ *  \param num_r an integer
+ *  \return the modified list of global histogram values
+ */
+vector<double> DistanceHistogram::modify(int num_r)
+{
+  int num_current_r = r_values.size();
+  if (num_r > num_current_r) {
+    return append(num_r - num_current_r);
+  } else if (num_r < num_current_r) {
+    return shorten(num_current_r - num_r);
+  } else if (num_r == num_current_r) {
+    return global_histogram_values;
+  }
 }
 
 /*!

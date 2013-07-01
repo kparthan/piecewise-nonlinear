@@ -40,6 +40,15 @@ class DistanceHistogram
     //! Compute number of internal points
     int computeNumberOfInternalPoints(int, double);
 
+    //! Appends the existing global histograms list
+    vector<double> append(int);
+
+    //! Shortens the existing global histograms list
+    vector<double> shorten(int);
+
+    //! Updates the local histogram values
+    void updateLocalHistogramFile(string &, vector<double> &);
+
   public:
     //! Null constructor
     DistanceHistogram();
@@ -77,6 +86,9 @@ class DistanceHistogram
     //! Returns the increment in r
     double getIncrementInR();
 
+    //! Returns the list of global histogram values
+    vector<double> getGlobalHistogramValues();
+
     //! Returns the computation time
     array<double,2> getComputationTime();
 
@@ -91,6 +103,12 @@ class DistanceHistogram
 
     //! Compute the global histogram values for given values of r
     vector<double> computeGlobalHistogramValues(vector<double> &, double);
+
+    //! Modify the length of the global histograms list
+    vector<double> modify(int);
+
+    //! Plots the local histograms
+    void plotLocalHistograms();
 
     //! Saves the function values of a distance histogram
     void save(string);

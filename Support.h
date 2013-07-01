@@ -3,6 +3,7 @@
 
 #include "Header.h"
 #include "Segmentation.h"
+#include "DistanceHistogram.h"
 
 struct Parameters
 {
@@ -45,10 +46,11 @@ void segmentStructure(struct Parameters &);
 void compareProteinStructures(struct Parameters &);
 void compareProteinStructuresList(struct Parameters &);
 vector<double> getRValuesList(double, double);
-void plotMultipleHistograms(int, vector<vector<double>> &, vector<vector<double>> &,
-                            vector<string> &);
+void plotMultipleHistograms(vector<DistanceHistogram> &, int, 
+                            vector<vector<double>> &, vector<string> &);
 double getComparisonScore(vector<double> &, vector<double> &, double, double);
-void printHistogramResults(vector<double> &, vector<vector<double>> &, vector<double> &);
+void printHistogramResults(vector<DistanceHistogram> &, int,
+                           vector<vector<double>> &, vector<double> &);
 void compareGenericStructures(struct Parameters &);
 void compareSegmentations(Segmentation &, Segmentation &, struct Parameters &);
 bool checkIfSegmentationExists(string &);
