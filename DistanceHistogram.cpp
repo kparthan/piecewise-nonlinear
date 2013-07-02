@@ -38,6 +38,10 @@ DistanceHistogram::DistanceHistogram(CurveString &curve_string, int num_samples,
                                      num_samples(num_samples),
                                      sampling_method(sampling_method), name(name)
 {
+  /*string local_histograms = string(CURRENT_DIRECTORY) + "output/histograms/";
+  local_histograms += "results/local_histograms/data/";
+  string cmd = "rm " + local_histograms + "*";
+  system(cmd.c_str());*/
   times[0] = 0; times[1] = 0;
 }
 
@@ -211,9 +215,8 @@ vector<double> DistanceHistogram::computeLocalHistogram(double r)
     local_histogram[i] = num_internal_points / (double) point_set.size();
   }
   string file = string(CURRENT_DIRECTORY) + "output/histograms/results/";
-  file += "local_histograms/" + name + "_n_";
-  file += boost::lexical_cast<string>(num_samples) + "_dr_";
-  file += boost::lexical_cast<string>(dr).substr(0,3) + ".data";
+  file += "local_histograms/data/" + name + "_n_";
+  file += boost::lexical_cast<string>(num_samples) + ".data";
   updateLocalHistogramFile(file,local_histogram);
   return local_histogram;
 }
@@ -242,18 +245,17 @@ DistanceHistogram::updateLocalHistogramFile(string &file,
       BOOST_FOREACH (const string &t, tokens) {
         data << t << " ";
       }
-      data << local_histogram[count++] << endl;
+      data << local_histogram[count++] * num_samples << endl;
     }
     data.close();
     tmp.close();
-
-    // rename the file
-    //cmd = "mv " + copy + " " + file;
-    //system(cmd.c_str());
+    // delete the copy
+    cmd = "rm " + copy;
+    system(cmd.c_str());
   } else {
     ofstream data(file.c_str());
     for (int i=0; i<local_histogram.size(); i++) {
-      data << i + 1 << " " << local_histogram[i] << endl;
+      data << i + 1 << " " << local_histogram[i] * num_samples << endl;
     }
     data.close();
   }
@@ -261,25 +263,37 @@ DistanceHistogram::updateLocalHistogramFile(string &file,
 
 /*!
  *  \brief This function plots the local histogram plots of the structure.
+ *  \param index_range a reference to a vector<int>
  */
-void DistanceHistogram::plotLocalHistograms()
+void DistanceHistogram::plotLocalHistograms(vector<int> &index_range)
 {
+  string n = boost::lexical_cast<string>(num_samples);
   string file = string(CURRENT_DIRECTORY) + "output/histograms/results/";
-  file += "local_histograms/" + name + "_n_";
-  file += boost::lexical_cast<string>(num_samples) + "_dr_";
-  file += boost::lexical_cast<string>(dr).substr(0,3);
-  string data_file = file + ".data";
-  string script_file = file + ".plot";
-  int num_r = r_values.size();
-  ofstream script(script_file.c_str());
-  script << "set terminal post eps" << endl;
-  script << "set output \"" << file << ".eps\"" << endl;
-  script << "set multiplot" << endl;
-  script << "plot \"" << data_file << "\" using 1:2 with lines lc rgb \"red\"" << endl;
-  script.close();
+  file += "local_histograms/"; 
+  string data_file = file + "data/" + name + "_n_";
+  data_file += n + ".data";
 
-  string cmd = "gnuplot -persist " + script_file;
-  system(cmd.c_str());
+  for (int i=0; i<index_range.size(); i++) {
+    string r = boost::lexical_cast<string>(r_values[i]).substr(0,3);
+    string script_file = file + "plot_scripts/" + name + "_n_" + n + "_r_";
+    script_file += r + ".plot";
+
+    string eps_file = file + "plots/" + name + "_n_" + n + "_r_";
+    eps_file += r + ".eps";
+
+    ofstream script(script_file.c_str());
+    script << "set terminal post eps" << endl;
+    script << "set output \"" << eps_file << "\"" << endl;
+    script << "set xlabel \"samples\"" << endl;
+    script << "set ylabel \"# of internal points\"" << endl;
+    //script << "set multiplot" << endl;
+    script << "plot \"" << data_file << "\" using 1:" << i+2 << " title '" << name
+           << "' with points lc rgb \"red\"" << endl;
+    script.close();
+
+    string cmd = "gnuplot -persist " + script_file;
+    system(cmd.c_str());
+  }
 }
 
 /*!
@@ -353,9 +367,34 @@ DistanceHistogram::computeGlobalHistogramValues(vector<double> &r, double scale)
   times[0] = double(c_end-c_start)/(double)(CLOCKS_PER_SEC); // cpu time
   times[1] = duration_cast<seconds>(t_end-t_start).count();  // wall time
 
-  plotLocalHistograms();
+  double rmin = 5, rmax = 15;
+  vector<int> index_range = getIndexRange(rmin,rmax);
+  plotLocalHistograms(index_range);
 
   return global_histogram_values;
+}
+
+/*!
+ *
+ */
+vector<int> DistanceHistogram::getIndexRange(double rmin, double rmax)
+{
+  int imin,imax;
+  for (int i=0; i<r_values.size(); i++) {
+    double r = r_values[i];
+    if (fabs(r-rmin) <= ZERO) {
+      imin = i;
+    }
+    if (fabs(r-rmax) <= ZERO) {
+      imax = i;
+      break;
+    }
+  }
+  vector<int> index_range;
+  for (int i=imin; i<=imax; i++) {
+    index_range.push_back(i);
+  }
+  return index_range;
 }
 
 /*!

@@ -49,6 +49,9 @@ class DistanceHistogram
     //! Updates the local histogram values
     void updateLocalHistogramFile(string &, vector<double> &);
 
+    //!
+    vector<int> getIndexRange(double, double);
+
   public:
     //! Null constructor
     DistanceHistogram();
@@ -108,7 +111,7 @@ class DistanceHistogram
     vector<double> modify(int);
 
     //! Plots the local histograms
-    void plotLocalHistograms();
+    void plotLocalHistograms(vector<int> &);
 
     //! Saves the function values of a distance histogram
     void save(string);

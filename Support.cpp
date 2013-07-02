@@ -559,7 +559,8 @@ void compareSegmentations(Segmentation &a, Segmentation &b,
 vector<double> getRValuesList(double maximum_r, double dr)
 {
   vector<double> r_values;
-  double r = dr; 
+  double r = 5; 
+  //double r = dr; 
   while (1) {
     r_values.push_back(r);
     if (r > maximum_r) {
@@ -599,6 +600,7 @@ void compareProteinStructuresList(struct Parameters &parameters)
       overall_max_radius = max_radius[i];
       profile_with_max_radius = i;
     }
+    max_radius[i] = 15;
     vector<double> r = getRValuesList(max_radius[i],parameters.increment_r);
     /*vector<double> r;
     cout << "max_radius " << i << ": " << max_radius[i] << endl;
