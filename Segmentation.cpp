@@ -220,7 +220,7 @@ void Segmentation::print()
 void Segmentation::save(string &pdb_file)
 {
   string output_file = string(CURRENT_DIRECTORY) + 
-                       "output/segmentation_profile/" + pdb_file + ".profile";
+                       "output/segmentation_profiles/" + pdb_file + ".profile";
   ofstream profile(output_file.c_str());
   profile << num_coordinates << endl;
   profile << max_radius << endl;
@@ -271,7 +271,7 @@ void Segmentation::load(string &pdb_file)
   bezier_curves_lengths.clear();
   approx_lengths.clear();
 
-  string input_file = string(CURRENT_DIRECTORY) + "output/segmentation_profile/" 
+  string input_file = string(CURRENT_DIRECTORY) + "output/segmentation_profiles/" 
                        + pdb_file + ".profile";
   ifstream profile(input_file.c_str());
   string line;

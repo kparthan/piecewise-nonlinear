@@ -17,9 +17,8 @@
 struct Parameters parseCommandLineInput(int argc, char **argv)
 {
   struct Parameters parameters;
-  string structure;
   vector<string> constrain,pdb_ids,scop_ids;
-  string encode,pdb_id,comparison_method,scop_id,generate;
+  string structure,encode,pdb_id,comparison_method,scop_id,generate;
 
   parameters.structure = -1;
   bool noargs = 1;
@@ -46,16 +45,20 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("length",value<int>(&parameters.max_segment_length),
                                   "maximum length of the segment considered")
        ("encode",value<string>(&encode), "type of encoding the deviations")
+       ("force","force segmentation (even though it exists already)")
+       // args used for comparison
        ("compare",value<string>(&comparison_method),
                   "comparison method (basic_alignment/distance_histogram)")
-       ("gap",value<double>(&parameters.gap_penalty),"gap penalty used in alignment")
-       ("diff",value<double>(&parameters.max_angle_diff),
-                                      "maximum difference allowed for the angles")
        ("files",value<vector<string>>(&parameters.comparison_files)->multitoken(),
                                                          "path to structure files")
        ("pdbids",value<vector<string>>(&pdb_ids)->multitoken(),"PDB IDs to compare")
        ("scopids",value<vector<string>>(&scop_ids)->multitoken(),"SCOP IDs to compare")
-       ("force","force segmentation (even though it exists already)")
+       ("comparison_matrix","generates a comparison matrix")
+        // arguments for alignment based comparison
+       ("gap",value<double>(&parameters.gap_penalty),"gap penalty used in alignment")
+       ("diff",value<double>(&parameters.max_angle_diff),
+                                      "maximum difference allowed for the angles")
+        // arguments for histogram based comparison
        ("n",value<int>(&parameters.num_samples_on_curve),
                                  "# of sample points for histogram comparison")
        ("dr",value<double>(&parameters.increment_r),
@@ -63,7 +66,6 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("scale",value<double>(&parameters.scale),"scale factor")
        ("sampling",value<string>(&generate),
                   "uniform/random method to generate sample points on the curve")
-       ("comparison_matrix","generates a comparison matrix")
   ;
   variables_map vm;
   store(parse_command_line(argc,argv,desc),vm);
@@ -133,123 +135,6 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
       cout << "Input general structure file not provided ..." << endl;
       Usage(argv[0],desc);
     }
-  }
-
-  if (vm.count("compare")) {
-    noargs = 1;
-    if (parameters.structure == PROTEIN) {
-      if (vm.count("files") && vm.count("pdbids")) {
-        cout << "Please use one of --files or --pdbids for comparison ..." << endl;
-        Usage(argv[0],desc);
-      } else if (vm.count("files")) {
-        if (parameters.comparison_files.size() != 2) {
-          cout << "Please input TWO files to compare ..." << endl;
-          Usage(argv[0],desc);
-        } else {
-          cout << "Comparing protein structure files: "
-               << parameters.comparison_files[0] << " and "
-               << parameters.comparison_files[1] << endl;
-        }
-      } else if (vm.count("pdbids")) {
-        if (pdb_ids.size() != 2) {
-          cout << "Please input TWO PDB IDs to compare ..." << endl;
-          Usage(argv[0],desc);
-        }
-        parameters.comparison_files.push_back(getPDBFilePath(pdb_ids[0]));
-        parameters.comparison_files.push_back(getPDBFilePath(pdb_ids[1]));
-      } else if (vm.count("files") && vm.count("scopids")) {
-        cout << "Please use one of --files or --scopids for comparison ..." << endl;
-        Usage(argv[0],desc);
-      } else if (vm.count("scopids")) {
-        if (vm.count("comparison_matrix")) {
-          parameters.comparison_matrix = SET;
-        } else {
-          parameters.comparison_matrix = UNSET;
-        }
-        for (int i=0; i<scop_ids.size(); i++) {
-          parameters.comparison_files.push_back(getSCOPFilePath(scop_ids[i]));
-        }
-      }
-      parameters.comparison = PROTEIN;
-      noargs = 0;
-    } else if (parameters.structure == GENERAL) {
-      if (vm.count("files")) {
-        if (parameters.comparison_files.size() != 2) {
-          cout << "Please input TWO files to compare ..." << endl;
-          Usage(argv[0],desc);
-        } else {
-          cout << "Comparing structure files: "
-               << parameters.comparison_files[0] << " and "
-               << parameters.comparison_files[1] << endl;
-        }
-        noargs = 0;
-        parameters.comparison = GENERAL;
-      }
-    }
-    if (comparison_method.compare("edit_distance") == 0) {
-      parameters.comparison_method = EDIT_DISTANCE;
-    } else if (comparison_method.compare("basic_alignment") == 0) {
-      parameters.comparison_method = BASIC_ALIGNMENT;
-      if (vm.count("gap")) {
-        cout << "Using a gap penalty of " << parameters.gap_penalty 
-             << " ..." << endl;
-      } else {
-        parameters.gap_penalty = GAP_PENALTY;
-        cout << "Using default value of gap penalty: " << GAP_PENALTY << endl;
-      }
-      if (vm.count("diff")) {
-        cout << "Using a maximum allowed difference in aligning angles: "
-             << parameters.max_angle_diff << endl;
-      } else {
-        parameters.max_angle_diff = MAX_DIFFERENCE_ANGLES;
-        cout << "Using default value of maximum allowed angle difference "
-             << " for alignment: " << parameters.max_angle_diff << endl;
-      }
-    } else if (comparison_method.compare("distance_histogram") == 0) {
-      parameters.comparison_method = DISTANCE_HISTOGRAM;
-      if (vm.count("n")) {
-        cout << "# of random samples generated for comparing distance "
-             << "histograms: " << parameters.num_samples_on_curve << endl;
-      } else {
-        parameters.num_samples_on_curve = 0;
-      }
-      if (vm.count("dr")) {
-        cout << "Increment in r value used in histogram method: "
-             << parameters.increment_r << endl;
-      } else {
-        parameters.increment_r = INCREMENT_R;
-        cout << "Using default value of r vlaue increment used in histogram "
-             << "method of comparison: " << parameters.increment_r << endl;
-      }
-      if (vm.count("scale")) {
-        cout << "Using scale value: " << parameters.scale << endl;
-      } else {
-        parameters.scale = SCALE_FACTOR;
-        cout << "Using default scale value: " << parameters.scale << endl;
-      }
-      if (vm.count("sampling")) {
-        if (generate.compare("uniform") == 0) {
-          parameters.sampling_method = UNIFORM_SAMPLING;
-          cout << "Using uniform sampling to generate points on the curve ..."
-               << endl;
-        } else if (generate.compare("random") == 0) {
-          parameters.sampling_method = RANDOM_SAMPLING;
-          cout << "Using random sampling to generate points on the curve ..."
-               << endl;
-        } else {
-          cout << "Unsupported sampling method ..." << endl;
-          Usage(argv[0],desc);
-        }
-      } else {
-        parameters.sampling_method = UNIFORM_SAMPLING;
-        cout << "Using default uniform sampling ..." << endl;
-      }
-    } else {
-      cout << "Unsupported comparison method ..." << endl;
-      Usage(argv[0],desc);
-    }
-  } else {
-    parameters.comparison = -1;
   }
 
   if (vm.count("segment")) {
@@ -341,6 +226,124 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     parameters.encode_deviations = ENCODE_DEVIATIONS_CUSTOMIZED;
   }
 
+  if (vm.count("compare")) {
+    noargs = 1;
+    if (vm.count("comparison_matrix")) {
+      parameters.comparison_matrix = SET;
+    } else {
+      parameters.comparison_matrix = UNSET;
+    }
+    if (parameters.structure == PROTEIN) {
+      if (vm.count("files") && vm.count("pdbids")) {
+        cout << "Please use one of --files or --pdbids for comparison ..." << endl;
+        Usage(argv[0],desc);
+      } else if (vm.count("files")) {
+        if (parameters.comparison_files.size() < 2) {
+          cout << "Please input at least TWO files to compare ..." << endl;
+          Usage(argv[0],desc);
+        } /*else {
+          cout << "Comparing protein structure files: "
+               << parameters.comparison_files[0] << " and "
+               << parameters.comparison_files[1] << endl;
+        }*/
+      } else if (vm.count("pdbids")) {
+        if (pdb_ids.size() < 2) {
+          cout << "Please input at least TWO PDB IDs to compare ..." << endl;
+          Usage(argv[0],desc);
+        }
+        for (int i=0; i<parameters.comparison_files.size(); i++) {
+          parameters.comparison_files.push_back(getPDBFilePath(pdb_ids[i]));
+        }
+      } else if (vm.count("files") && vm.count("scopids")) {
+        cout << "Please use one of --files or --scopids for comparison ..." << endl;
+        Usage(argv[0],desc);
+      } else if (vm.count("scopids")) {
+        for (int i=0; i<scop_ids.size(); i++) {
+          parameters.comparison_files.push_back(getSCOPFilePath(scop_ids[i]));
+        }
+      }
+      parameters.comparison = PROTEIN;
+      noargs = 0;
+    } else if (parameters.structure == GENERAL) {
+      if (vm.count("files")) {
+        if (parameters.comparison_files.size() < 2) {
+          cout << "Please input at least TWO files to compare ..." << endl;
+          Usage(argv[0],desc);
+        } /*else {
+          cout << "Comparing structure files: "
+               << parameters.comparison_files[0] << " and "
+               << parameters.comparison_files[1] << endl;
+        }*/
+        noargs = 0;
+        parameters.comparison = GENERAL;
+      }
+    }
+    if (comparison_method.compare("edit_distance") == 0) {
+      parameters.comparison_method = EDIT_DISTANCE;
+    } else if (comparison_method.compare("basic_alignment") == 0) {
+      parameters.comparison_method = BASIC_ALIGNMENT;
+      if (vm.count("gap")) {
+        cout << "Using a gap penalty of " << parameters.gap_penalty 
+             << " ..." << endl;
+      } else {
+        parameters.gap_penalty = GAP_PENALTY;
+        cout << "Using default value of gap penalty: " << GAP_PENALTY << endl;
+      }
+      if (vm.count("diff")) {
+        cout << "Using a maximum allowed difference in aligning angles: "
+             << parameters.max_angle_diff << endl;
+      } else {
+        parameters.max_angle_diff = MAX_DIFFERENCE_ANGLES;
+        cout << "Using default value of maximum allowed angle difference "
+             << " for alignment: " << parameters.max_angle_diff << endl;
+      }
+    } else if (comparison_method.compare("distance_histogram") == 0) {
+      parameters.comparison_method = DISTANCE_HISTOGRAM;
+      if (vm.count("n")) {
+        cout << "# of random samples generated for comparing distance "
+             << "histograms: " << parameters.num_samples_on_curve << endl;
+      } else {
+        parameters.num_samples_on_curve = 0;
+      }
+      if (vm.count("dr")) {
+        cout << "Increment in r value used in histogram method: "
+             << parameters.increment_r << endl;
+      } else {
+        parameters.increment_r = INCREMENT_R;
+        cout << "Using default value of r vlaue increment used in histogram "
+             << "method of comparison: " << parameters.increment_r << endl;
+      }
+      if (vm.count("scale")) {
+        cout << "Using scale value: " << parameters.scale << endl;
+      } else {
+        parameters.scale = SCALE_FACTOR;
+        cout << "Using default scale value: " << parameters.scale << endl;
+      }
+      if (vm.count("sampling")) {
+        if (generate.compare("uniform") == 0) {
+          parameters.sampling_method = UNIFORM_SAMPLING;
+          cout << "Using uniform sampling to generate points on the curve ..."
+               << endl;
+        } else if (generate.compare("random") == 0) {
+          parameters.sampling_method = RANDOM_SAMPLING;
+          cout << "Using random sampling to generate points on the curve ..."
+               << endl;
+        } else {
+          cout << "Unsupported sampling method ..." << endl;
+          Usage(argv[0],desc);
+        }
+      } else {
+        parameters.sampling_method = UNIFORM_SAMPLING;
+        cout << "Using default uniform sampling ..." << endl;
+      }
+    } else {
+      cout << "Unsupported comparison method ..." << endl;
+      Usage(argv[0],desc);
+    }
+  } else {
+    parameters.comparison = -1;
+  }
+
   if (noargs) {
     cout << "Not enough arguments supplied..." << endl;
     Usage(argv[0],desc);
@@ -428,7 +431,7 @@ void segmentStructure(struct Parameters &parameters)
 /*!
  *  \brief This module compares the segmentation of two protein structures
  *  \param parameters a reference to a struct Parameters
- */
+ *//*
 void compareProteinStructures(struct Parameters &parameters)
 {
   Segmentation a,b;
@@ -459,7 +462,7 @@ void compareProteinStructures(struct Parameters &parameters)
 
   compareSegmentations(a,b,parameters);
 }
-
+*/
 /*!
  *  \brief This module checks if the segmentation already exists or not.
  *  \param pdb_file a reference to a string
@@ -468,7 +471,7 @@ void compareProteinStructures(struct Parameters &parameters)
 bool checkIfSegmentationExists(string &pdb_file)
 {
   string segmentation_profile = string(CURRENT_DIRECTORY) 
-                                + "output/segmentation_profile/"
+                                + "output/segmentation_profiles/"
                                 + pdb_file + ".profile";
   return checkFile(segmentation_profile.c_str()); 
 }
@@ -572,9 +575,10 @@ vector<double> getRValuesList(double maximum_r, double dr)
 }
 
 /*!
- *
+ *  \brief This function is used to compare a list of protein structures
+ *  \param parameters a reference to a struct Parameters
  */
-void compareProteinStructuresList(struct Parameters &parameters)
+void compareProteinStructures(struct Parameters &parameters)
 {
   int num_structures = parameters.comparison_files.size();
   Segmentation profiles[num_structures];
@@ -602,9 +606,6 @@ void compareProteinStructuresList(struct Parameters &parameters)
     }
     max_radius[i] = 15;
     vector<double> r = getRValuesList(max_radius[i],parameters.increment_r);
-    /*vector<double> r;
-    cout << "max_radius " << i << ": " << max_radius[i] << endl;
-    r.push_back(max_radius[i]);*/
     r_values.push_back(r);
   }
 
@@ -637,65 +638,6 @@ void compareProteinStructuresList(struct Parameters &parameters)
   }
   printHistogramResults(histograms,profile_with_max_radius,r_values,dl);
   plotMultipleHistograms(histograms,profile_with_max_radius,r_values,names);
-
-  // construct the comparison matrix
-  /*parameters.sampling_method = RANDOM_SAMPLING;
-  vector<vector<double>> comparison_matrix;
-  vector<double> comparisons[2];
-  vector<vector<double>> comparison_scores;
-
-  for (int i=0; i<1; i++) {
-    string name = extractName(parameters.comparison_files[i]);
-    histograms[i] = DistanceHistogram(curve_string[i],num_samples[i],
-                                      parameters.increment_r,
-                                      parameters.sampling_method,name);
-    comparisons[0] = histograms[i].computeGlobalHistogramValues(r_values[i],
-                                                          parameters.scale);
-    int size1 = comparisons[0].size();
-    //cout << comparisons[0][size1-1] << endl;
-    //assert(fabs(comparisons[0][size1-1]-1) < ZERO);
-    double dl1 = curve_string[i].length() / histograms[i].getNumberOfSamples();
-    vector<double> scores;
-    for (int j=1; j<num_structures; j++) {
-      string name = extractName(parameters.comparison_files[j]);
-      histograms[j] = DistanceHistogram(curve_string[j],num_samples[j],
-                                      parameters.increment_r,
-                                      parameters.sampling_method,name);
-      comparisons[1] = histograms[j].computeGlobalHistogramValues(r_values[j],
-                                                          parameters.scale);
-      double dl2 = curve_string[j].length() / histograms[j].getNumberOfSamples();
-      int size2 = comparisons[1].size();
-      //assert(fabs(comparisons[1][size2-1]-1) < ZERO);
-      int diff = size1 - size2;
-      double score;
-      if (diff > 0) {
-        for (int j=0; j<diff; j++) {
-          comparisons[1].push_back(1);
-        }
-        assert(comparisons[0].size() == comparisons[1].size());
-        score = getComparisonScore(comparisons[0],comparisons[1],dl1,dl2);
-      } else if (diff < 0) {
-        vector<double> tmp(comparisons[0]);
-        for (int j=0; j<diff; j++) {
-          tmp.push_back(1);
-        }
-        assert(tmp.size() == comparisons[1].size());
-        score = getComparisonScore(tmp,comparisons[1],dl1,dl2);
-      } else if (diff == 0) {
-        score = getComparisonScore(comparisons[0],comparisons[1],dl1,dl2);
-      }
-      scores.push_back(score);
-    }
-    comparison_scores.push_back(scores);
-  }
-  ofstream cm("comparison_matrix");
-  for (int i=0; i<num_structures; i++) {
-    for (int j=0; j<num_structures; j++) {
-      cm << setw(15) << comparison_scores[i][j];
-    }
-    cm << endl;
-  }
-  cm.close();*/
 }
 
 /*!

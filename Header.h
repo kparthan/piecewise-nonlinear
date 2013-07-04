@@ -27,39 +27,31 @@
 #define HOME_DIRECTORY "/home/pkas7/"
 #define CURRENT_DIRECTORY "/home/pkas7/Research/Work/piecewise-nonlinear/"
 
+// numeric constants
 #define AOM 0.001
 #define AOPV 0.1
 #define LARGE_NUMBER 1000000
 #define TOLERANCE 0.0000001
 #define PI boost::math::constants::pi<double>()
 #define ZERO std::numeric_limits<double>::epsilon()
-#define MAX_INTERMEDIATE_CONTROL_POINTS 2 
-#define DELTA_T 0.001
-
-#define FIT_ENTIRE_STRUCTURE 0
-#define FIT_SINGLE_SEGMENT 1
 
 #define SET 1 
 #define UNSET 0
 
-#define EDIT_DISTANCE 0
-#define BASIC_ALIGNMENT 1
-#define DISTANCE_HISTOGRAM 2
-
-#define GAP_PENALTY -20
-#define MAX_DIFFERENCE_ANGLES 45
-#define POINTS_PER_UNIT 10
-#define INCREMENT_R 5
-#define SCALE_FACTOR 10
-#define UNIFORM_SAMPLING 0
-#define RANDOM_SAMPLING 1
+#define PRINT_NON_DETAIL 0
+#define PRINT_DETAIL 1
 
 #define TEST 0
 #define PROTEIN 1
 #define GENERAL 2
 
-#define PRINT_NON_DETAIL 0
-#define PRINT_DETAIL 1
+// segmentation parameters
+#define FIT_ENTIRE_STRUCTURE 0
+#define FIT_SINGLE_SEGMENT 1
+
+#define MAX_INTERMEDIATE_CONTROL_POINTS 2 
+#define DELTA_T 0.001
+
 #define NON_CONSTRAIN 0
 #define CONSTRAIN 1
 
@@ -69,6 +61,22 @@
 
 #define ENCODE_DEVIATIONS_GENERAL 0
 #define ENCODE_DEVIATIONS_CUSTOMIZED 1
+
+// comparison method
+#define EDIT_DISTANCE 0
+#define BASIC_ALIGNMENT 1
+#define DISTANCE_HISTOGRAM 2
+
+// for alignment based comparison
+#define GAP_PENALTY -20
+#define MAX_DIFFERENCE_ANGLES 45
+
+// for histogram based comparison
+#define POINTS_PER_UNIT 10
+#define INCREMENT_R 5
+#define SCALE_FACTOR 10
+#define UNIFORM_SAMPLING 0
+#define RANDOM_SAMPLING 1
 
 using namespace std;
 using namespace std::chrono;

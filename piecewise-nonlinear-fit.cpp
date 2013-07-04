@@ -13,12 +13,7 @@ int main(int argc, char **argv)
       break;
 
     case PROTEIN: // compare proteins
-      if (parameters.comparison_files.size() == 2) {
-        compareProteinStructures(parameters);
-      } else {
-        compareProteinStructuresList(parameters);
-      } 
-      
+      compareProteinStructures(parameters);
       break;
 
     case GENERAL: // compare generic structures

@@ -10,7 +10,7 @@ class DistanceHistogram
     //! Curve that is abstracted
     CurveString curve_string;
 
-    //!
+    //! Number of samples
     int num_samples;
 
     //! List of points
@@ -22,10 +22,10 @@ class DistanceHistogram
     //! Increment in r
     double dr;
 
-    //!
+    //!i Sampling method
     int sampling_method;
 
-    //!
+    //! Name of the file
     string name;
 
     //! Times taken to compute the histogram function
@@ -49,7 +49,7 @@ class DistanceHistogram
     //! Updates the local histogram values
     void updateLocalHistogramFile(string &, vector<double> &);
 
-    //!
+    //! Gets the index range of specific values of r
     vector<int> getIndexRange(double, double);
 
   public:
@@ -71,7 +71,7 @@ class DistanceHistogram
     //! Assignment operator
     DistanceHistogram operator=(const DistanceHistogram &);
 
-    //! 
+    //! Sets the sampling method
     void setSamplingMethod(int);
 
     //! Returns the number of samples

@@ -21,14 +21,14 @@ struct Parameters
   int encode_deviations;            // mechanism to encode deviations
   int force_segmentation;           // flag to redo segmentation
   int comparison;                   // type of structures compared
-  double gap_penalty;               // gap penalty used in basic alignment 
-                                    // method
-  double max_angle_diff;            // maximum allowed angle separation
-                                    // when aligning two dihedral angles
   int comparison_method;            // method used to compare structures
   vector<string> comparison_files;  // path to the structure files used
                                     // in comparison
   int comparison_matrix;            // flag to generate the comparison matrix
+  double gap_penalty;               // gap penalty used in basic alignment 
+                                    // method
+  double max_angle_diff;            // maximum allowed angle separation
+                                    // when aligning two dihedral angles
   double scale;                     // scale the length/coordinates to obtain
                                     // # of samples
   int num_samples_on_curve;         // # of samples for histogram comparison

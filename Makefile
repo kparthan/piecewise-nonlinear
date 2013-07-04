@@ -83,7 +83,7 @@ clean:
 	rm -f *.o *~ *.pdb piecewise-nonlinear-fit script.plot 
 
 clean_output:
-	rm -f output/segmentation/* output/segmentation_profile/* output/modified_pdb_files/* output/pymol_scripts/* output/alignments/* output/comparison.results
+	rm -f output/segmentations/* output/segmentation_profiles/* output/modified_pdb_files/* output/pymol_scripts/* output/alignments/*
 
 clean_histograms:
 	rm -f output/histograms/results/local_histograms/data/* output/histograms/results/local_histograms/plot_scripts/* output/histograms/results/local_histograms/plots/*

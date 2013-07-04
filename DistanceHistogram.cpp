@@ -38,10 +38,6 @@ DistanceHistogram::DistanceHistogram(CurveString &curve_string, int num_samples,
                                      num_samples(num_samples),
                                      sampling_method(sampling_method), name(name)
 {
-  /*string local_histograms = string(CURRENT_DIRECTORY) + "output/histograms/";
-  local_histograms += "results/local_histograms/data/";
-  string cmd = "rm " + local_histograms + "*";
-  system(cmd.c_str());*/
   times[0] = 0; times[1] = 0;
 }
 
@@ -79,7 +75,8 @@ DistanceHistogram DistanceHistogram::operator=(const DistanceHistogram &source)
 }
 
 /*!
- *
+ *  \brief This method resets the sampling method
+ *  \param method an integer
  */
 void DistanceHistogram::setSamplingMethod(int method)
 {
@@ -286,7 +283,6 @@ void DistanceHistogram::plotLocalHistograms(vector<int> &index_range)
     script << "set output \"" << eps_file << "\"" << endl;
     script << "set xlabel \"samples\"" << endl;
     script << "set ylabel \"# of internal points\"" << endl;
-    //script << "set multiplot" << endl;
     script << "plot \"" << data_file << "\" using 1:" << i+2 << " title '" << name
            << "' with points lc rgb \"red\"" << endl;
     script.close();
@@ -375,7 +371,10 @@ DistanceHistogram::computeGlobalHistogramValues(vector<double> &r, double scale)
 }
 
 /*!
- *
+ *  \brief This method gets the range of indexes for given values of r
+ *  \param rmin a double
+ *  \param rmax a double
+ *  \return the range
  */
 vector<int> DistanceHistogram::getIndexRange(double rmin, double rmax)
 {
