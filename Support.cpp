@@ -562,8 +562,7 @@ void compareSegmentations(Segmentation &a, Segmentation &b,
 vector<double> getRValuesList(double maximum_r, double dr)
 {
   vector<double> r_values;
-  double r = 5; 
-  //double r = dr; 
+  double r = dr; 
   while (1) {
     r_values.push_back(r);
     if (r > maximum_r) {
@@ -598,13 +597,13 @@ void compareProteinStructures(struct Parameters &parameters)
       profiles[i] = proteinFit(parameters);
       profiles[i].save(pdb_file);
     }
-    //max_radius[i] = profiles[0].getMaximumRadius();
-    max_radius[i] = profiles[i].getMaximumRadius();
+    max_radius[i] = profiles[0].getMaximumRadius();
+    //max_radius[i] = profiles[i].getMaximumRadius();
     if (max_radius[i] > overall_max_radius) {
       overall_max_radius = max_radius[i];
       profile_with_max_radius = i;
     }
-    max_radius[i] = 15;
+    //max_radius[i] = 15;
     vector<double> r = getRValuesList(max_radius[i],parameters.increment_r);
     r_values.push_back(r);
   }

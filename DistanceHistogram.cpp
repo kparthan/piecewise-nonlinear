@@ -345,6 +345,8 @@ DistanceHistogram::computeGlobalHistogramValues(vector<double> &r, double scale)
     constructSamples(scale);
   }
 
+  visualize(point_set,name);
+
   global_histogram_values = vector<double>(r.size(),0);
   bool compute = 1;
   for (int i=0; i<r.size(); i++) {
