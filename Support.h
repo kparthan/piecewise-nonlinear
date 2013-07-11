@@ -42,7 +42,8 @@ int partition(vector<double> &, vector<int> &, int, int);
 double standardDeviation(vector<double> &, double);
 void visualize(vector<Point<double>> &, string &);
 
-void segmentStructure(struct Parameters &);
+Segmentation buildSegmentationProfile(struct Parameters &);
+DistanceHistogram buildHistogramProfile(struct Parameters &, Segmentation &);
 void compareProteinStructures(struct Parameters &);
 void compareProteinStructuresList(struct Parameters &);
 vector<double> getRValuesList(double, double);

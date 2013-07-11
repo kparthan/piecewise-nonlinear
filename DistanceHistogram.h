@@ -7,6 +7,9 @@
 class DistanceHistogram
 {
   private:
+    //! Name of the file
+    string name;
+
     //! Curve that is abstracted
     CurveString curve_string;
 
@@ -22,17 +25,14 @@ class DistanceHistogram
     //! Increment in r
     double dr;
 
-    //!i Sampling method
+    //! Sampling method
     int sampling_method;
-
-    //! Name of the file
-    string name;
-
-    //! Times taken to compute the histogram function
-    array<double,2> times;
 
     //! List of histogram function values
     vector<double> global_histogram_values;
+
+    //! Times taken to compute the histogram function
+    array<double,2> times;
 
     //! Sample points on the curve
     void constructSamples(double);

@@ -5,8 +5,6 @@
 #include "StandardForm.h"
 #include "Comparison.h"
 
-#include <memory>
-
 /*!
  *  \brief This function checks to see if valid arguments are given to the 
  *  command line output.
@@ -393,10 +391,24 @@ void Usage (const char *exe, options_description &desc)
 }
 
 /*!
- *  \brief This module does the segmentation of a structure
+ *  \brief This function builds the segmentation profile and constructs the
+ *  distance histogram for the structure.
  *  \param parameters a reference to a struct Parameters 
  */
-void segmentStructure(struct Parameters &parameters)
+void build(struct Parameters &parameters)
+{
+  // get the segmentation
+  Segmentation segmentation = buildSegmentationProfile(parameters);
+  // construct the histogram
+  DistanceHistogram histogram = buildHistogramProfile(parameters,segmentation);
+}
+
+/*!
+ *  \brief This module does the segmentation of a structure
+ *  \param parameters a reference to a struct Parameters 
+ *  \return the segmentation profile
+ */
+Segmentation buildSegmentationProfile(struct Parameters &parameters)
 {
   Segmentation segmentation;
   string pdb_file;
@@ -412,7 +424,9 @@ void segmentStructure(struct Parameters &parameters)
       status = checkIfSegmentationExists(pdb_file);
       if (status && parameters.force_segmentation == UNSET) {
         cout << "Segmentation profile of " << pdb_file << " exists ..." << endl;
+        segmentation.load(pdb_file);
       } else {
+        cout << "Building segmentation profile of " << pdb_file << " ..." << endl;
         segmentation = proteinFit(parameters);
         segmentation.save(pdb_file);
       }
@@ -423,46 +437,43 @@ void segmentStructure(struct Parameters &parameters)
       break;
   }
   if (parameters.print == PRINT_DETAIL) {
-    segmentation.load(pdb_file);
     segmentation.print();
   }
+  return segmentation;
 }
 
-/*!
- *  \brief This module compares the segmentation of two protein structures
+/*
+ *  \brief Thus function constructs the histogram profile for the segmentation.
  *  \param parameters a reference to a struct Parameters
- *//*
-void compareProteinStructures(struct Parameters &parameters)
+ *  \param segmentation a reference to Segmentation
+ *  \return the distance histogram
+ */
+DistanceHistogram buildHistogramProfile(struct Parameters &parameters,
+                                        Segmentation &segmentation)
 {
-  Segmentation a,b;
+  string structure_file = parameters.file;
+  int num_samples = parameters.num_samples_on_curve;
+  double dr = parameters.increment_r;
+  bool status = checkIfHistogramExists(structure_file,num_samples,dr);
+  DistanceHistogram histogram;
 
-  parameters.file = parameters.comparison_files[0];
-  string pdb_file = extractName(parameters.file);
-  bool status = checkIfSegmentationExists(pdb_file);
-  if (status && parameters.force_segmentation == UNSET) {
-    cout << "Segmentation profile of " << pdb_file << " exists ..." << endl;
-    a.load(pdb_file);
+  if (status) {
+    cout << "Histogram profile of " << structure_file << " exists ..." << endl;
+    histogram.load(structure_file,num_samples,sr);
   } else {
-    a = proteinFit(parameters);
-    a.save(pdb_file);
+    cout << "Building histogram profile of " << structure_file << " ..." << endl;
+    vector<BezierCurve<double>> bezier_curves = segmentation.getBezierCurves();
+    vector<double> lengths = segmentation.getBezierCurvesLengths();
+    vector<double> approx_lengths = segmentation.getApproximateBezierLengths();
+    CurveString curve_string = CurveString(bezier_curves,lengths,approx_lengths);
+    string name = extractName(parameters.file);
+    histogram = DistanceHistogram(curve_string,num_samples,dr,
+                                  parameters.sampling_method,name);
+    histogram.save();
   }
-  //a.print();
+  return histogram;
+} 
 
-  parameters.file = parameters.comparison_files[1];
-  pdb_file = extractName(parameters.file);
-  status = checkIfSegmentationExists(pdb_file);
-  if (status && parameters.force_segmentation == UNSET) {
-    cout << "Segmentation profile of " << pdb_file << " exists ..." << endl;
-    b.load(pdb_file);
-  } else {
-    b = proteinFit(parameters);
-    b.save(pdb_file);
-  }
-  //b.print();
-
-  compareSegmentations(a,b,parameters);
-}
-*/
 /*!
  *  \brief This module checks if the segmentation already exists or not.
  *  \param pdb_file a reference to a string

@@ -23,7 +23,7 @@ DistanceHistogram::DistanceHistogram(CurveString &curve_string, int num_samples)
                                      curve_string(curve_string), 
                                      num_samples(num_samples)
 {
-  dr = 0.05;
+  dr = INCREMENT_R;
 }
 
 /*!
