@@ -656,15 +656,15 @@ void printHistogramResults(vector<DistanceHistogram> &histograms,
     results = histograms[i].modify(num_r);
     assert(results.size() == num_r);
     histogram_results.push_back(results);
-    dl[i] = histograms[i].getIncrementInLength();
+    dl.push_back(histograms[i].getIncrementInLength());
   }
 
   string all_names = names[0];
   for (int i=1; i<names.size(); i++) {
-    all_names += names[i] + ".";
+    all_names += "." + names[i];
   }
   string file = string(CURRENT_DIRECTORY) + "output/histograms/data/compared/";
-  file += all_names + "each_r";
+  file += all_names + ".each_r";
   ofstream data(file.c_str());
   vector<double> comparison_scores(num_structures-1,0);
   for (int i=0; i<r_values.size(); i++) {
@@ -730,11 +730,7 @@ void plotMultipleHistograms(vector<DistanceHistogram> &histograms,
   string all_names = names[0];
   for (int i=1; i<names.size(); i++) {
     all_names += "." + names[i];
-    /*if (i != names.size()-1) {
-      all_names += ".";
-    }*/
   }
-  cout << "all_names: " << all_names << endl;
   string file = string(CURRENT_DIRECTORY) + "output/histograms/";
   string data_file = file + "data/multiple_global_histograms/" + all_names + 
                      ".histograms";
@@ -1264,66 +1260,4 @@ int partition(vector<double> &list, vector<int> &index,
 	index[right] = temp_i;
 	return storeIndex;
 }
-
-/*void compareProteinStructures(struct Parameters &parameters)
-{
-  int num_structures = parameters.comparison_files.size();
-  Segmentation profiles[num_structures];
-  vector<double> max_radius(num_structures,0);
-  double overall_max_radius = 0;
-  vector<vector<double>> r_values;
-  int profile_with_max_radius;
-
-  for (int i=0; i<num_structures; i++) {
-    parameters.file = parameters.comparison_files[i];
-    string pdb_file = extractName(parameters.file);
-    bool status = checkIfSegmentationExists(pdb_file);
-    if (status && parameters.force_segmentation == UNSET) {
-      cout << "Segmentation profile of " << pdb_file << " exists ..." << endl;
-      profiles[i].load(pdb_file);
-    } else {
-      profiles[i] = proteinFit(parameters);
-      profiles[i].save(pdb_file);
-    }
-    max_radius[i] = profiles[0].getMaximumRadius();
-    //max_radius[i] = profiles[i].getMaximumRadius();
-    if (max_radius[i] > overall_max_radius) {
-      overall_max_radius = max_radius[i];
-      profile_with_max_radius = i;
-    }
-    //max_radius[i] = 15;
-    vector<double> r = getRValuesList(max_radius[i],parameters.increment_r);
-    r_values.push_back(r);
-  }
-
-  double num_samples[num_structures]; 
-  vector<DistanceHistogram> histograms(num_structures,DistanceHistogram());
-  vector<BezierCurve<double>> bezier_curves[num_structures];
-  vector<double> lengths[num_structures],approx_lengths[num_structures];
-  CurveString curve_string[num_structures];
-  vector<vector<double>> histogram_results,histogram_results_appended;
-  vector<double> results;
-  vector<string> names;
-
-  // compute individual global histograms
-  vector<double> dl(num_structures,0);
-  for (int i=0; i<num_structures; i++) {
-    num_samples[i] = parameters.num_samples_on_curve;
-    bezier_curves[i] = profiles[i].getBezierCurves();
-    lengths[i] = profiles[i].getBezierCurvesLengths();
-    approx_lengths[i] = profiles[i].getApproximateBezierLengths();
-    curve_string[i] = CurveString(bezier_curves[i],lengths[i],approx_lengths[i]);
-    names.push_back(extractName(parameters.comparison_files[i]));
-    histograms[i] = DistanceHistogram(curve_string[i],num_samples[i],
-                                      parameters.increment_r,
-                                      parameters.sampling_method,names[i]);
-    cout << "Constructing histogram for structure " << names[i] << " ..." << endl;
-    results = histograms[i].computeGlobalHistogramValues(r_values[i],  
-                                                         parameters.scale);
-    histogram_results.push_back(results);
-    dl[i] = curve_string[i].length() / histograms[i].getNumberOfSamples();
-  }
-  printHistogramResults(histograms,profile_with_max_radius,r_values,dl);
-  plotMultipleHistograms(histograms,profile_with_max_radius,r_values,names);
-}*/
 

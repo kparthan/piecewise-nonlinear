@@ -429,6 +429,7 @@ void DistanceHistogram::load(string file)
     } else {
       curve_string_length = numbers[0];
     }
+    line_num++;
     numbers.clear();
   }
   log.close();
