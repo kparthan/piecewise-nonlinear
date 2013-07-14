@@ -46,6 +46,9 @@ class DistanceHistogram
     //! Shortens the existing global histograms list
     vector<double> shorten(int);
 
+    //! Saves the local histogram data
+    void saveLocalHistogram(vector<double> &, double);
+
     //! Updates the local histogram values
     void updateLocalHistogramFile(string &, vector<double> &);
 
@@ -110,14 +113,14 @@ class DistanceHistogram
     //! Modify the length of the global histograms list
     vector<double> modify(int);
 
-    //! Plots the local histograms
-    void plotLocalHistograms(vector<int> &);
-
-    //! Saves the function values of a distance histogram
-    void save(string);
+    //! Saves the global histogram values
+    void save();
 
     //! Loads the function values of a distance histogram
     void load(string);
+
+    //! Plots the local histograms
+    void plotLocalHistograms(vector<int> &);
 };
 
 #endif

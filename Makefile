@@ -1,5 +1,5 @@
 CFLAGS=-std=c++0x -g $(shell pkg-config --cflags liblcb-experimental) -fopenmp
-LDFLAGS=$(shell pkg-config --libs liblcb-experimental) -lboost_program_options -lgomp
+LDFLAGS=$(shell pkg-config --libs liblcb-experimental) -lboost_program_options -lboost_system -lboost_filesystem -lgomp
 
 OBJECTS = piecewise-nonlinear-fit.o \
   Support.o \

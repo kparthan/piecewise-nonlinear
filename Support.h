@@ -20,6 +20,7 @@ struct Parameters
   int max_segment_length;           // maximum allowed segment length
   int encode_deviations;            // mechanism to encode deviations
   int force_segmentation;           // flag to redo segmentation
+  int force_build;                  // flag to rebuild histograms
   int comparison;                   // type of structures compared
   int comparison_method;            // method used to compare structures
   vector<string> comparison_files;  // path to the structure files used
@@ -42,6 +43,7 @@ int partition(vector<double> &, vector<int> &, int, int);
 double standardDeviation(vector<double> &, double);
 void visualize(vector<Point<double>> &, string &);
 
+void build(struct Parameters &);
 Segmentation buildSegmentationProfile(struct Parameters &);
 DistanceHistogram buildHistogramProfile(struct Parameters &, Segmentation &);
 void compareProteinStructures(struct Parameters &);
@@ -55,15 +57,15 @@ void printHistogramResults(vector<DistanceHistogram> &, int,
 void compareGenericStructures(struct Parameters &);
 void compareSegmentations(Segmentation &, Segmentation &, struct Parameters &);
 bool checkIfSegmentationExists(string &);
-bool checkIfHistogramExists(string &, int, double);
+bool checkIfHistogramExists(string &);
 
 struct Parameters parseCommandLineInput (int, char **); 
 void Usage (const char *, options_description &);
 string getPDBFilePath(string &);
 string getSCOPFilePath(string &);
-bool checkFile (const char *);
-ProteinStructure *parsePDBFile (const char *);
-vector<Point<double>> parseFile (const char *);
+bool checkFile (string &);
+ProteinStructure *parsePDBFile (string &);
+vector<Point<double>> parseFile (string &);
 void printCoordinates (vector<array<double,3>> &);
 void writeToFile (vector<array<double,3>> &, const char*);
 string extractName(string &);

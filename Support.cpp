@@ -15,7 +15,7 @@
 struct Parameters parseCommandLineInput(int argc, char **argv)
 {
   struct Parameters parameters;
-  vector<string> constrain,pdb_ids,scop_ids;
+  vector<string> constrain,force,pdb_ids,scop_ids;
   string structure,encode,pdb_id,comparison_method,scop_id,generate;
 
   parameters.structure = -1;
@@ -43,7 +43,8 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("length",value<int>(&parameters.max_segment_length),
                                   "maximum length of the segment considered")
        ("encode",value<string>(&encode), "type of encoding the deviations")
-       ("force","force segmentation (even though it exists already)")
+       ("force",value<vector<string>>(&force)->multitoken(),
+                                  "force segmentation/histogram construction")
        // args used for comparison
        ("compare",value<string>(&comparison_method),
                   "comparison method (basic_alignment/distance_histogram)")
@@ -79,10 +80,19 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     noargs = 0;
   }
 
+  parameters.force_segmentation = UNSET;
+  parameters.force_build = UNSET;
   if (vm.count("force")) {
-    parameters.force_segmentation = SET;
-  } else {
-    parameters.force_segmentation = UNSET;
+    for (int i=0; i<force.size(); i++) {
+      if (force[i].compare("segmentation") == 0) {
+        parameters.force_segmentation = SET;
+      } else if (force[i].compare("build") == 0) {
+        parameters.force_build = SET;
+      } else {
+        cout << "Invalid force option supplied ..." << endl;
+        Usage(argv[0],desc);
+      }
+    }
   }
 
   if (vm.count("verbose")) {
@@ -442,6 +452,19 @@ Segmentation buildSegmentationProfile(struct Parameters &parameters)
   return segmentation;
 }
 
+/*!
+ *  \brief This module checks if the segmentation already exists or not.
+ *  \param pdb_file a reference to a string
+ *  \return the segmentation exists or not
+ */
+bool checkIfSegmentationExists(string &pdb_file)
+{
+  string segmentation_profile = string(CURRENT_DIRECTORY) 
+                                + "output/segmentations/profiles/"
+                                + pdb_file + ".profile";
+  return checkFile(segmentation_profile); 
+}
+
 /*
  *  \brief Thus function constructs the histogram profile for the segmentation.
  *  \param parameters a reference to a struct Parameters
@@ -451,17 +474,17 @@ Segmentation buildSegmentationProfile(struct Parameters &parameters)
 DistanceHistogram buildHistogramProfile(struct Parameters &parameters,
                                         Segmentation &segmentation)
 {
-  string structure_file = parameters.file;
-  int num_samples = parameters.num_samples_on_curve;
-  double dr = parameters.increment_r;
-  bool status = checkIfHistogramExists(structure_file,num_samples,dr);
+  string file = extractName(parameters.file);
+  bool status = checkIfHistogramExists(file);
   DistanceHistogram histogram;
 
   if (status) {
-    cout << "Histogram profile of " << structure_file << " exists ..." << endl;
-    histogram.load(structure_file,num_samples,sr);
+    cout << "Histogram profile of " << file << " exists ..." << endl;
+    histogram.load(file);
   } else {
-    cout << "Building histogram profile of " << structure_file << " ..." << endl;
+    cout << "Building histogram profile of " << file << " ..." << endl;
+    int num_samples = parameters.num_samples_on_curve;
+    double dr = parameters.increment_r;
     vector<BezierCurve<double>> bezier_curves = segmentation.getBezierCurves();
     vector<double> lengths = segmentation.getBezierCurvesLengths();
     vector<double> approx_lengths = segmentation.getApproximateBezierLengths();
@@ -475,32 +498,17 @@ DistanceHistogram buildHistogramProfile(struct Parameters &parameters,
 } 
 
 /*!
- *  \brief This module checks if the segmentation already exists or not.
- *  \param pdb_file a reference to a string
- *  \return the segmentation exists or not
- */
-bool checkIfSegmentationExists(string &pdb_file)
-{
-  string segmentation_profile = string(CURRENT_DIRECTORY) 
-                                + "output/segmentation_profiles/"
-                                + pdb_file + ".profile";
-  return checkFile(segmentation_profile.c_str()); 
-}
-
-/*!
  *  \brief This function checks whether the histogram exists or not
- *  \param pdb_file a reference to a string
- *  \param num_samples an integer
- *  \param dr a double
- *  \retutn the histogram exists or not
+ *  \param file_name a reference to a string
+ *  \retuxirtn the histogram exists or not
  */
-bool checkIfHistogramExists(string &pdb_file, int num_samples, double dr)
+bool checkIfHistogramExists(string &file_name)
 {
-  string path_to_histogram = "output/histograms/data/" + pdb_file + "_";
-  path_to_histogram += boost::lexical_cast<string>(num_samples) + "_";
+  string path_to_histogram = "output/histograms/global/" + file_name;
+  return checkFile(path_to_histogram);
+  /*path_to_histogram += boost::lexical_cast<string>(num_samples) + "_";
   path_to_histogram += boost::lexical_cast<string>(dr).substr(0,4);
-  path_to_histogram += ".histogram";
-  return checkFile(path_to_histogram.c_str());
+  path_to_histogram += ".histogram";*/
 }
 
 /*!
@@ -804,7 +812,7 @@ Segmentation testFit(struct Parameters &parameters)
 Segmentation proteinFit(struct Parameters &parameters)
 {
   /* Obtain protein coordinates */
-  ProteinStructure *p = parsePDBFile(parameters.file.c_str());
+  ProteinStructure *p = parsePDBFile(parameters.file);
   Protein protein(p);
   Structure *structure = &protein;
 
@@ -819,7 +827,7 @@ Segmentation proteinFit(struct Parameters &parameters)
 Segmentation generalFit(struct Parameters &parameters)
 {
   /* Obtain structure coordinates */
-  vector<Point<double>> coordinates = parseFile(parameters.file.c_str());
+  vector<Point<double>> coordinates = parseFile(parameters.file);
   General general(coordinates);
   Structure *structure = &general;
 
@@ -856,21 +864,22 @@ string getSCOPFilePath(string &scop_id)
 
 /*!
  *  \brief This module checks whether the input file exists or not.
- *  \param fileName a character string
+ *  \param file_name a reference to a string
  *  \return true or false depending on whether the file exists or not.
  */
-bool checkFile(const char *fileName)
+bool checkFile(string &file_name)
 {
-  ifstream file(fileName);
-  return file;
+  /*ifstream file(fileName);
+  return file;*/
+  return boost::filesystem::exists(file_name);
 }
 
 /*!
  *  \brief This module parses the input PDB file.
- *  \param pdbFile a pointer to a character array
+ *  \param pdbFile a reference to a string 
  *  \return a pointer to a ProteinStructure object
  */
-ProteinStructure *parsePDBFile(const char *pdbFile)
+ProteinStructure *parsePDBFile(string &pdbFile)
 {
   if(!checkFile(pdbFile)){
     cout << "\nFile \"" << pdbFile << "\" does not exist ..." << endl;
@@ -878,7 +887,7 @@ ProteinStructure *parsePDBFile(const char *pdbFile)
   }
   cout << "Parsing PDB file ...";
   BrookhavenPDBParser parser;
-  ProteinStructure *structure = parser.getStructure(pdbFile)->select(CASelector());
+  ProteinStructure *structure = parser.getStructure(pdbFile.c_str())->select(CASelector());
   ProteinStructure *one_model = new ProteinStructure(structure->getIdentifier());
   one_model->select(CASelector());
   //one_model->setIdentifier(structure->getIdentifier());
@@ -891,19 +900,19 @@ ProteinStructure *parsePDBFile(const char *pdbFile)
 
 /*!
  *  \brief This module parses the input file.
- *  \param fname a pointer to a character array
+ *  \param file_name a reference to a string
  *  \return the coordinates of the structure
  */
-vector<Point<double>> parseFile(const char *fname)
+vector<Point<double>> parseFile(string &file_name)
 {
-  if(!checkFile(fname)){
-    cout << "\nFile \"" << fname << "\" does not exist ..." << endl;
+  if(!checkFile(file_name)){
+    cout << "\nFile \"" << file_name << "\" does not exist ..." << endl;
     exit(1);
   }
   vector<Point<double>> list;
   Point<double> p;
   double x,y,z;
-  ifstream file(fname);
+  ifstream file(file_name.c_str());
   while (file >> x >> y >> z) {
     p = Point<double>(x,y,z);
     list.push_back(p);

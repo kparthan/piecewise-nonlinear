@@ -206,90 +206,39 @@ int DistanceHistogram::computeNumberOfInternalPoints(int centre_index,
  */
 vector<double> DistanceHistogram::computeLocalHistogram(double r)
 {
-  vector<double> local_histogram(point_set.size());
+  vector<double> local_histogram(num_samples);
   for (int i=0; i<point_set.size(); i++) {
     int num_internal_points = computeNumberOfInternalPoints(i,r);
-    local_histogram[i] = num_internal_points / (double) point_set.size();
+    local_histogram[i] = num_internal_points / (double) num_samples;
   }
-  string file = string(CURRENT_DIRECTORY) + "output/histograms/results/";
-  file += "local_histograms/data/" + name + "_n_";
-  file += boost::lexical_cast<string>(num_samples) + ".data";
-  updateLocalHistogramFile(file,local_histogram);
+  //updateLocalHistogramFile(file,local_histogram);
+  saveLocalHistogram(local_histogram,r);
   return local_histogram;
 }
 
 /*!
- *  \brief This function updates the local histogram data file for a structure
- *  \param file a reference to a string
+ *  \brief This function saves the local histogram file
  *  \param local_histogram a reference to a vector<double>
+ *  \param r a double
  */
-void 
-DistanceHistogram::updateLocalHistogramFile(string &file, 
-                                            vector<double> &local_histogram)
+void
+DistanceHistogram::saveLocalHistogram(vector<double> &local_histogram, double r)
 {
-  if (checkFile(file.c_str())) {
-    // create a copy of the existing data file
-    string copy = file + ".copy";
-    string cmd = "mv " + file + " " + copy; 
-    system(cmd.c_str());
-    ifstream tmp(copy.c_str());
-    ofstream data(file.c_str());
-    string line;
-    int count = 0;
-    while (getline(tmp,line)) {
-      boost::char_separator<char> sep(" ");
-      boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
-      BOOST_FOREACH (const string &t, tokens) {
-        data << t << " ";
-      }
-      data << local_histogram[count++] * num_samples << endl;
-    }
-    data.close();
-    tmp.close();
-    // delete the copy
-    cmd = "rm " + copy;
-    system(cmd.c_str());
-  } else {
-    ofstream data(file.c_str());
-    for (int i=0; i<local_histogram.size(); i++) {
-      data << i + 1 << " " << local_histogram[i] * num_samples << endl;
-    }
-    data.close();
-  }
-}
-
-/*!
- *  \brief This function plots the local histogram plots of the structure.
- *  \param index_range a reference to a vector<int>
- */
-void DistanceHistogram::plotLocalHistograms(vector<int> &index_range)
-{
-  string n = boost::lexical_cast<string>(num_samples);
-  string file = string(CURRENT_DIRECTORY) + "output/histograms/results/";
-  file += "local_histograms/"; 
-  string data_file = file + "data/" + name + "_n_";
-  data_file += n + ".data";
-
-  for (int i=0; i<index_range.size(); i++) {
-    string r = boost::lexical_cast<string>(r_values[i]).substr(0,3);
-    string script_file = file + "plot_scripts/" + name + "_n_" + n + "_r_";
-    script_file += r + ".plot";
-
-    string eps_file = file + "plots/" + name + "_n_" + n + "_r_";
-    eps_file += r + ".eps";
-
-    ofstream script(script_file.c_str());
-    script << "set terminal post eps" << endl;
-    script << "set output \"" << eps_file << "\"" << endl;
-    script << "set xlabel \"samples\"" << endl;
-    script << "set ylabel \"# of internal points\"" << endl;
-    script << "plot \"" << data_file << "\" using 1:" << i+2 << " title '" << name
-           << "' with points lc rgb \"red\"" << endl;
-    script.close();
-
-    string cmd = "gnuplot -persist " + script_file;
+  string local_histogram_directory = string(CURRENT_DIRECTORY); 
+  local_histogram_directory += "output/histograms/local/" + name;
+  if (!checkFile(local_histogram_directory)) {
+    string cmd = "mkdir " + local_histogram_directory;
     system(cmd.c_str());
   }
+  string local_histogram_file = local_histogram_directory + "n_";
+  local_histogram_file += boost::lexical_cast<string>(num_samples) + "_r_";
+  local_histogram_file += boost::lexical_cast<string>(r).substr(0,3);
+  ofstream data(local_histogram_file.c_str());
+  for (int i=0; i<num_samples; i++) {
+    data << setw(10) << i + 1;
+    data << fixed << setw(10) << setprecision(5) << local_histogram[i] << endl;
+  }
+  data.close();
 }
 
 /*!
@@ -365,37 +314,56 @@ DistanceHistogram::computeGlobalHistogramValues(vector<double> &r, double scale)
   times[0] = double(c_end-c_start)/(double)(CLOCKS_PER_SEC); // cpu time
   times[1] = duration_cast<seconds>(t_end-t_start).count();  // wall time
 
-  double rmin = 5, rmax = 15;
+  /*double rmin = 5, rmax = 15;
   vector<int> index_range = getIndexRange(rmin,rmax);
-  plotLocalHistograms(index_range);
+  plotLocalHistograms(index_range);*/
 
   return global_histogram_values;
 }
 
 /*!
- *  \brief This method gets the range of indexes for given values of r
- *  \param rmin a double
- *  \param rmax a double
- *  \return the range
+ *  \brief This function saves the global histogram values
  */
-vector<int> DistanceHistogram::getIndexRange(double rmin, double rmax)
+void DistanceHistogram::save()
 {
-  int imin,imax;
+  string global_histogram_file = string(CURRENT_DIRECTORY) +
+                                 "output/histograms/global/" + name; 
+  ofstream data(global_histogram_file.c_str());
+  assert(r_values.size() == global_histogram_values.size());
   for (int i=0; i<r_values.size(); i++) {
-    double r = r_values[i];
-    if (fabs(r-rmin) <= ZERO) {
-      imin = i;
-    }
-    if (fabs(r-rmax) <= ZERO) {
-      imax = i;
-      break;
-    }
+    data << setw(10) << r_values[i];
+    data << fixed << setw(10) << setprecision(5) 
+         << global_histogram_values[i] << endl;
   }
-  vector<int> index_range;
-  for (int i=imin; i<=imax; i++) {
-    index_range.push_back(i);
+  data.close();
+}
+
+/*!
+ *  \brief This function loads the distance histogram values corresponding 
+ *  to a file
+ *  \param file a string
+ */
+void DistanceHistogram::load(string file)
+{
+  string path = string(CURRENT_DIRECTORY) + "output/histograms/global/" + file;
+  ifstream data(path.c_str());
+  string line;
+  vector<double> numbers;
+
+  while (getline(data,line)) {
+    boost::char_separator<char> sep(" ");
+    boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
+    BOOST_FOREACH(const string &t, tokens) {
+      istringstream iss(t);
+      double x;
+      iss >> x;
+      numbers.push_back(x);
+    }
+    r_values.push_back(numbers[0]);
+    global_histogram_values.push_back(numbers[1]);
+    numbers.clear();
   }
-  return index_range;
+  data.close();
 }
 
 /*!
@@ -463,47 +431,101 @@ vector<double> DistanceHistogram::modify(int num_r)
 }
 
 /*!
- *  \brief This method saves the distance histogram.
- *  \param file_name a string
- */
-void DistanceHistogram::save(string file_name)
+ *  \brief This function plots the local histogram plots of the structure.
+ *  \param index_range a reference to a vector<int>
+ *//*
+void DistanceHistogram::plotLocalHistograms(vector<int> &index_range)
 {
-  string data_file = string(CURRENT_DIRECTORY) + "output/histograms/data/" 
-                     + file_name + "_";
-  string n = boost::lexical_cast<string>(point_set.size());
-  string increment_r = boost::lexical_cast<string>(dr).substr(0,4);
-  data_file += n + "_" + increment_r + ".histogram";
-  ofstream data(data_file.c_str());
-  for (int i=0; i<r_values.size(); i++) {
-    data << r_values[i] << " " << global_histogram_values[i] << endl;
+  string n = boost::lexical_cast<string>(num_samples);
+  string file = string(CURRENT_DIRECTORY) + "output/histograms/results/";
+  file += "local_histograms/"; 
+  string data_file = file + "data/" + name + "_n_";
+  data_file += n + ".data";
+
+  for (int i=0; i<index_range.size(); i++) {
+    string r = boost::lexical_cast<string>(r_values[i]).substr(0,3);
+    string script_file = file + "plot_scripts/" + name + "_n_" + n + "_r_";
+    script_file += r + ".plot";
+
+    string eps_file = file + "plots/" + name + "_n_" + n + "_r_";
+    eps_file += r + ".eps";
+
+    ofstream script(script_file.c_str());
+    script << "set terminal post eps" << endl;
+    script << "set output \"" << eps_file << "\"" << endl;
+    script << "set xlabel \"samples\"" << endl;
+    script << "set ylabel \"# of internal points\"" << endl;
+    script << "plot \"" << data_file << "\" using 1:" << i+2 << " title '" << name
+           << "' with points lc rgb \"red\"" << endl;
+    script.close();
+
+    string cmd = "gnuplot -persist " + script_file;
+    system(cmd.c_str());
   }
-  data.close();
-}
+}*/
 
 /*!
- *  \brief This function loads the distance histogram values corresponding 
- *  to a file
- *  \param file_path a string
- */
-void DistanceHistogram::load(string file_path)
+ *  \brief This method gets the range of indexes for given values of r
+ *  \param rmin a double
+ *  \param rmax a double
+ *  \return the range
+ *//*
+vector<int> DistanceHistogram::getIndexRange(double rmin, double rmax)
 {
-  ifstream data(file_path.c_str());
-  string line;
-  vector<double> numbers;
-
-  while (getline(data,line)) {
-    boost::char_separator<char> sep(" ");
-    boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
-    BOOST_FOREACH(const string &t, tokens) {
-      istringstream iss(t);
-      double x;
-      iss >> x;
-      numbers.push_back(x);
+  int imin,imax;
+  for (int i=0; i<r_values.size(); i++) {
+    double r = r_values[i];
+    if (fabs(r-rmin) <= ZERO) {
+      imin = i;
     }
-    r_values.push_back(numbers[0]);
-    global_histogram_values.push_back(numbers[1]);
-    numbers.clear();
+    if (fabs(r-rmax) <= ZERO) {
+      imax = i;
+      break;
+    }
   }
-  data.close();
-}
+  vector<int> index_range;
+  for (int i=imin; i<=imax; i++) {
+    index_range.push_back(i);
+  }
+  return index_range;
+}*/
 
+/*!
+ *  \brief This function updates the local histogram data file for a structure
+ *  \param file a reference to a string
+ *  \param local_histogram a reference to a vector<double>
+ *//*
+void 
+DistanceHistogram::updateLocalHistogramFile(string &file, 
+                                            vector<double> &local_histogram)
+{
+  if (checkFile(file.c_str())) {
+    // create a copy of the existing data file
+    string copy = file + ".copy";
+    string cmd = "mv " + file + " " + copy; 
+    system(cmd.c_str());
+    ifstream tmp(copy.c_str());
+    ofstream data(file.c_str());
+    string line;
+    int count = 0;
+    while (getline(tmp,line)) {
+      boost::char_separator<char> sep(" ");
+      boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
+      BOOST_FOREACH (const string &t, tokens) {
+        data << t << " ";
+      }
+      data << local_histogram[count++] * num_samples << endl;
+    }
+    data.close();
+    tmp.close();
+    // delete the copy
+    cmd = "rm " + copy;
+    system(cmd.c_str());
+  } else {
+    ofstream data(file.c_str());
+    for (int i=0; i<local_histogram.size(); i++) {
+      data << i + 1 << " " << local_histogram[i] * num_samples << endl;
+    }
+    data.close();
+  }
+}*/
