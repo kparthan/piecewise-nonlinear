@@ -12,7 +12,9 @@ DistanceHistogram::DistanceHistogram()
  */
 DistanceHistogram::DistanceHistogram(CurveString &curve_string) : 
                    curve_string(curve_string)
-{}
+{
+  curve_string_length = curve_string.length();
+}
 
 /*!
  *  \brief This is a constructor module.
@@ -24,6 +26,7 @@ DistanceHistogram::DistanceHistogram(CurveString &curve_string, int num_samples)
                                      num_samples(num_samples)
 {
   dr = INCREMENT_R;
+  curve_string_length = curve_string.length();
 }
 
 /*!
@@ -39,6 +42,7 @@ DistanceHistogram::DistanceHistogram(CurveString &curve_string, int num_samples,
                                      sampling_method(sampling_method), name(name)
 {
   times[0] = 0; times[1] = 0;
+  curve_string_length = curve_string.length();
 }
 
 /*!
@@ -50,7 +54,8 @@ DistanceHistogram::DistanceHistogram(const DistanceHistogram &source) :
                    r_values(source.r_values), dr(source.dr), times(source.times),
                    global_histogram_values(source.global_histogram_values),
                    sampling_method(source.sampling_method), name(source.name),
-                   num_samples(source.num_samples)
+                   num_samples(source.num_samples),
+                   curve_string_length(source.curve_string_length)
 {}
 
 /*!
@@ -70,6 +75,7 @@ DistanceHistogram DistanceHistogram::operator=(const DistanceHistogram &source)
     sampling_method = source.sampling_method;
     name = source.name;
     num_samples = source.num_samples;
+    curve_string_length = source.curve_string_length;
   }
   return *this;
 }
@@ -90,7 +96,8 @@ void DistanceHistogram::setSamplingMethod(int method)
  */
 int DistanceHistogram::getNumberOfSamples()
 {
-  return point_set.size();
+  //return point_set.size();
+  return num_samples;
 }
 
 /*!
@@ -129,6 +136,23 @@ vector<double> DistanceHistogram::getRValues()
 double DistanceHistogram::getIncrementInR()
 {
   return dr;
+}
+
+/*!
+ *  \brief This method returns the length of the underlying curve string
+ *  \return the length of the curve string
+ */
+double DistanceHistogram::getCurveStringLength()
+{
+  return curve_string_length;
+}
+
+/*!
+ *
+ */
+double DistanceHistogram::getIncrementInLength()
+{
+  return curve_string_length / num_samples;
 }
 
 /*!
@@ -207,12 +231,14 @@ int DistanceHistogram::computeNumberOfInternalPoints(int centre_index,
 vector<double> DistanceHistogram::computeLocalHistogram(double r)
 {
   vector<double> local_histogram(num_samples);
-  for (int i=0; i<point_set.size(); i++) {
+  for (int i=0; i<num_samples; i++) {
     int num_internal_points = computeNumberOfInternalPoints(i,r);
     local_histogram[i] = num_internal_points / (double) num_samples;
   }
   //updateLocalHistogramFile(file,local_histogram);
-  saveLocalHistogram(local_histogram,r);
+  if ((int)r % 5 == 0) {
+    saveLocalHistogram(local_histogram,r);
+  }
   return local_histogram;
 }
 
@@ -225,7 +251,7 @@ void
 DistanceHistogram::saveLocalHistogram(vector<double> &local_histogram, double r)
 {
   string local_histogram_directory = string(CURRENT_DIRECTORY); 
-  local_histogram_directory += "output/histograms/local/" + name;
+  local_histogram_directory += "output/histograms/logs/local/" + name + "/";
   if (!checkFile(local_histogram_directory)) {
     string cmd = "mkdir " + local_histogram_directory;
     system(cmd.c_str());
@@ -250,10 +276,10 @@ double DistanceHistogram::computeGlobalHistogram(double r)
 {
   double global_histogram = 0;
   vector<double> local_histogram = computeLocalHistogram(r);
-  for (int i=0; i<point_set.size(); i++) {
+  for (int i=0; i<num_samples; i++) {
     global_histogram += local_histogram[i];
   }
-  return global_histogram / point_set.size();
+  return global_histogram / num_samples;
 }
 
 /*!
@@ -264,16 +290,31 @@ double DistanceHistogram::computeGlobalHistogram(double r)
  */
 vector<double> DistanceHistogram::computeGlobalHistogramValues(double scale)
 {
-  double length = curve_string.length();
+  clock_t c_start = clock();
+  auto t_start = high_resolution_clock::now();
+
+  if (point_set.size() == 0) {
+    constructSamples(scale);
+  }
+  visualize();
+
   double r = dr;
   while (1) {
-    if (r > length) {
+    double global_value = computeGlobalHistogram(r);
+    r_values.push_back(r);
+    cout << r << " " << global_value << endl;
+    global_histogram_values.push_back(global_value);
+    if (fabs(global_value - 1) <= 0.01) {
       break;
     }
-    r_values.push_back(r);
     r += dr;
-  }
-  return computeGlobalHistogramValues(r_values,scale);
+  }  
+  
+  clock_t c_end = clock();
+  auto t_end = high_resolution_clock::now();
+  times[0] = double(c_end-c_start)/(double)(CLOCKS_PER_SEC); // cpu time
+  times[1] = duration_cast<seconds>(t_end-t_start).count();  // wall time
+  return global_histogram_values;
 }
 
 /*!
@@ -293,8 +334,7 @@ DistanceHistogram::computeGlobalHistogramValues(vector<double> &r, double scale)
   if (point_set.size() == 0) {
     constructSamples(scale);
   }
-
-  visualize(point_set,name);
+  visualize();
 
   global_histogram_values = vector<double>(r.size(),0);
   bool compute = 1;
@@ -327,7 +367,7 @@ DistanceHistogram::computeGlobalHistogramValues(vector<double> &r, double scale)
 void DistanceHistogram::save()
 {
   string global_histogram_file = string(CURRENT_DIRECTORY) +
-                                 "output/histograms/global/" + name; 
+                                 "output/histograms/logs/global/" + name; 
   ofstream data(global_histogram_file.c_str());
   assert(r_values.size() == global_histogram_values.size());
   for (int i=0; i<r_values.size(); i++) {
@@ -336,6 +376,12 @@ void DistanceHistogram::save()
          << global_histogram_values[i] << endl;
   }
   data.close();
+  string log_file = string(CURRENT_DIRECTORY) + "output/histograms/logs/profiles/" +
+                    name;
+  ofstream log(log_file.c_str());
+  log << num_samples << endl;
+  log << curve_string_length << endl; 
+  log.close();
 }
 
 /*!
@@ -345,7 +391,7 @@ void DistanceHistogram::save()
  */
 void DistanceHistogram::load(string file)
 {
-  string path = string(CURRENT_DIRECTORY) + "output/histograms/global/" + file;
+  string path = string(CURRENT_DIRECTORY) + "output/histograms/logs/global/" + file;
   ifstream data(path.c_str());
   string line;
   vector<double> numbers;
@@ -364,6 +410,28 @@ void DistanceHistogram::load(string file)
     numbers.clear();
   }
   data.close();
+
+  string log_file = string(CURRENT_DIRECTORY) + "output/histograms/logs/profiles/" +
+                    file;
+  ifstream log(log_file.c_str());
+  int line_num = 0;
+  while (getline(log,line)) {
+    boost::char_separator<char> sep(" ");
+    boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
+    BOOST_FOREACH(const string &t, tokens) {
+      istringstream iss(t);
+      double x;
+      iss >> x;
+      numbers.push_back(x);
+    }
+    if (line_num == 0) {
+      num_samples = numbers[0];
+    } else {
+      curve_string_length = numbers[0];
+    }
+    numbers.clear();
+  }
+  log.close();
 }
 
 /*!
@@ -374,7 +442,7 @@ void DistanceHistogram::load(string file)
 vector<double> DistanceHistogram::append(int more)
 {
   vector<double> appended_histograms = global_histogram_values;
-  int num_r = r_values.size();
+  /*int num_r = r_values.size();
   double r = r_values[num_r-1];
   bool compute;
   if (fabs(appended_histograms[num_r-1] - 1) <= ZERO) {
@@ -393,6 +461,9 @@ vector<double> DistanceHistogram::append(int more)
     } else {
       appended_histograms.push_back(1);
     }
+  }*/
+  for (int i=0; i<more; i++) {
+    appended_histograms.push_back(1);
   }
   return appended_histograms;
 }
@@ -428,6 +499,78 @@ vector<double> DistanceHistogram::modify(int num_r)
   } else if (num_r == num_current_r) {
     return global_histogram_values;
   }
+}
+
+/*!
+ *  \brief This method is used to visualize the sampled points in Pymol
+ */
+void DistanceHistogram::visualize()
+{
+  int res_total = ceil(point_set.size() / 10.0);
+  //cout << "point_set_size: " << point_set.size() << endl;
+  //cout << res_total << endl;
+  ProteinStructure structure("samples");
+  shared_ptr<Chain> chain = make_shared<Chain>("s");
+  int point_set_index = 0;
+  for (int j=0; j<res_total; j++) {
+    string res_id = boost::lexical_cast<string>(j);
+    shared_ptr<Residue> residue = make_shared<Residue>(res_id);
+    for (int i=0; i<10; i++) {
+      string atom_id = boost::lexical_cast<string>(i);
+      shared_ptr<Atom> atom = make_shared<Atom>(atom_id);
+      atom->setAtomicCoordinate(point_set[point_set_index]);
+      residue->addAtom(atom);
+      point_set_index++;
+      if (point_set_index >= point_set.size()) {
+        break;
+      }
+    }
+    chain->addResidue(residue);
+  }
+  structure.addChain(chain);
+
+  vector<Atom> atoms = structure.getAtoms();
+  string path_to_samples_pdb = string(CURRENT_DIRECTORY) + "output/histograms/"
+                               + "samples_pdb/" + name + ".samples.pdb"; 
+  ofstream samples_pdb(path_to_samples_pdb.c_str());
+  for (int i=0; i<atoms.size(); i++) {
+    samples_pdb << atoms[i].formatPDBLine() << endl;
+  }
+  samples_pdb.close();
+}
+
+/*!
+ *  \brief This method compares one histogram against the other
+ *  \param other a reference to a DistanceHistogram
+ *  \return the comparison scores
+ */
+vector<double> DistanceHistogram::compare(DistanceHistogram &other)
+{
+  int r1 = r_values.size();
+  int r2 = other.getRValues().size();
+  vector<double> global_histograms[2];
+
+  if (r1 > r2) {
+    global_histograms[0] = global_histogram_values;
+    global_histograms[1] = other.modify(r1);
+  } else {
+    global_histograms[0] = modify(r2);
+    global_histograms[1] = other.getGlobalHistogramValues();
+  }
+  assert(global_histograms[0].size() == global_histograms[1].size());
+
+  double dl[2];
+  dl[0] = curve_string_length / num_samples;
+  dl[1] = other.getCurveStringLength() / other.getNumberOfSamples();
+  vector<double> scores(2,0);
+  double diff;
+  for (int i=0; i<global_histograms[0].size(); i++) {
+    diff = global_histograms[0][i] - global_histograms[1][i];
+    scores[0] += fabs(diff);
+    diff = (global_histograms[0][i] / dl[0]) - (global_histograms[1][i] / dl[1]);
+    scores[1] += fabs(diff);
+  }
+  return scores;
 }
 
 /*!

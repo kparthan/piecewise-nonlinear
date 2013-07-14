@@ -48,7 +48,7 @@ void Comparison::save(vector<string> &comparison_files)
     {
       for (int i=0; i<2; i++) {
         vector<Point<double>> point_set = histograms[i].getSamples();
-        visualize(point_set,files[i]);
+        histograms[i].visualize();
       }
       int num_samples[2];
       num_samples[0] = histograms[0].getNumberOfSamples(); 

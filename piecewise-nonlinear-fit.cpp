@@ -7,19 +7,11 @@ int main(int argc, char **argv)
   /*clock_t c_start = clock();
   auto t_start = high_resolution_clock::now();*/
 
-  switch (parameters.comparison) {
-    case -1:  // no comparison
-      build(parameters);
-      break;
-
-    case PROTEIN: // compare proteins
-      compareProteinStructures(parameters);
-      break;
-
-    case GENERAL: // compare generic structures
-      compareGenericStructures(parameters);
-      break;
-  } 
+  if (parameters.comparison == SET) {
+    compareStructuresList(parameters);
+  } else if (parameters.comparison == UNSET) {
+    build(parameters);
+  }
 
   /*clock_t c_end = clock();
   auto t_end = high_resolution_clock::now();

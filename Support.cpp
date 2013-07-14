@@ -236,6 +236,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
 
   if (vm.count("compare")) {
     noargs = 1;
+    parameters.comparison = SET;
     if (vm.count("comparison_matrix")) {
       parameters.comparison_matrix = SET;
     } else {
@@ -249,17 +250,13 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
         if (parameters.comparison_files.size() < 2) {
           cout << "Please input at least TWO files to compare ..." << endl;
           Usage(argv[0],desc);
-        } /*else {
-          cout << "Comparing protein structure files: "
-               << parameters.comparison_files[0] << " and "
-               << parameters.comparison_files[1] << endl;
-        }*/
+        } 
       } else if (vm.count("pdbids")) {
         if (pdb_ids.size() < 2) {
           cout << "Please input at least TWO PDB IDs to compare ..." << endl;
           Usage(argv[0],desc);
         }
-        for (int i=0; i<parameters.comparison_files.size(); i++) {
+        for (int i=0; i<pdb_ids.size(); i++) {
           parameters.comparison_files.push_back(getPDBFilePath(pdb_ids[i]));
         }
       } else if (vm.count("files") && vm.count("scopids")) {
@@ -270,20 +267,14 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
           parameters.comparison_files.push_back(getSCOPFilePath(scop_ids[i]));
         }
       }
-      parameters.comparison = PROTEIN;
       noargs = 0;
     } else if (parameters.structure == GENERAL) {
       if (vm.count("files")) {
         if (parameters.comparison_files.size() < 2) {
           cout << "Please input at least TWO files to compare ..." << endl;
           Usage(argv[0],desc);
-        } /*else {
-          cout << "Comparing structure files: "
-               << parameters.comparison_files[0] << " and "
-               << parameters.comparison_files[1] << endl;
-        }*/
+        }
         noargs = 0;
-        parameters.comparison = GENERAL;
       }
     }
     if (comparison_method.compare("edit_distance") == 0) {
@@ -307,6 +298,51 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
       }
     } else if (comparison_method.compare("distance_histogram") == 0) {
       parameters.comparison_method = DISTANCE_HISTOGRAM;
+      /*if (vm.count("n")) {
+        cout << "# of random samples generated for comparing distance "
+             << "histograms: " << parameters.num_samples_on_curve << endl;
+      } else {
+        parameters.num_samples_on_curve = 0;
+      }
+      if (vm.count("dr")) {
+        cout << "Increment in r value used in histogram method: "
+             << parameters.increment_r << endl;
+      } else {
+        parameters.increment_r = INCREMENT_R;
+        cout << "Using default value of r vlaue increment used in histogram "
+             << "method of comparison: " << parameters.increment_r << endl;
+      }
+      if (vm.count("scale")) {
+        cout << "Using scale value: " << parameters.scale << endl;
+      } else {
+        parameters.scale = SCALE_FACTOR;
+        cout << "Using default scale value: " << parameters.scale << endl;
+      }
+      if (vm.count("sampling")) {
+        if (generate.compare("uniform") == 0) {
+          parameters.sampling_method = UNIFORM_SAMPLING;
+          cout << "Using uniform sampling to generate points on the curve ..."
+               << endl;
+        } else if (generate.compare("random") == 0) {
+          parameters.sampling_method = RANDOM_SAMPLING;
+          cout << "Using random sampling to generate points on the curve ..."
+               << endl;
+        } else {
+          cout << "Unsupported sampling method ..." << endl;
+          Usage(argv[0],desc);
+        }
+      } else {
+        parameters.sampling_method = UNIFORM_SAMPLING;
+        cout << "Using default uniform sampling ..." << endl;
+      }*/
+    } else {
+      cout << "Unsupported comparison method ..." << endl;
+      Usage(argv[0],desc);
+    }
+  } else {
+    parameters.comparison = UNSET;
+  }
+
       if (vm.count("n")) {
         cout << "# of random samples generated for comparing distance "
              << "histograms: " << parameters.num_samples_on_curve << endl;
@@ -344,13 +380,6 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
         parameters.sampling_method = UNIFORM_SAMPLING;
         cout << "Using default uniform sampling ..." << endl;
       }
-    } else {
-      cout << "Unsupported comparison method ..." << endl;
-      Usage(argv[0],desc);
-    }
-  } else {
-    parameters.comparison = -1;
-  }
 
   if (noargs) {
     cout << "Not enough arguments supplied..." << endl;
@@ -478,7 +507,7 @@ DistanceHistogram buildHistogramProfile(struct Parameters &parameters,
   bool status = checkIfHistogramExists(file);
   DistanceHistogram histogram;
 
-  if (status) {
+  if (status && parameters.force_build == UNSET) {
     cout << "Histogram profile of " << file << " exists ..." << endl;
     histogram.load(file);
   } else {
@@ -492,6 +521,7 @@ DistanceHistogram buildHistogramProfile(struct Parameters &parameters,
     string name = extractName(parameters.file);
     histogram = DistanceHistogram(curve_string,num_samples,dr,
                                   parameters.sampling_method,name);
+    histogram.computeGlobalHistogramValues(parameters.scale);
     histogram.save();
   }
   return histogram;
@@ -504,26 +534,11 @@ DistanceHistogram buildHistogramProfile(struct Parameters &parameters,
  */
 bool checkIfHistogramExists(string &file_name)
 {
-  string path_to_histogram = "output/histograms/global/" + file_name;
+  string path_to_histogram = "output/histograms/logs/global/" + file_name;
   return checkFile(path_to_histogram);
   /*path_to_histogram += boost::lexical_cast<string>(num_samples) + "_";
   path_to_histogram += boost::lexical_cast<string>(dr).substr(0,4);
   path_to_histogram += ".histogram";*/
-}
-
-/*!
- *  \brief This module compares the segmentation of two generic structures
- *  \param parameters a reference to a struct Parameters
- */
-void compareGenericStructures(struct Parameters &parameters)
-{
-  parameters.file = parameters.comparison_files[0];
-  Segmentation a = generalFit(parameters);
-
-  parameters.file = parameters.comparison_files[1];
-  Segmentation b = generalFit(parameters);
-
-  compareSegmentations(a,b,parameters);
 }
 
 /*!
@@ -596,96 +611,63 @@ vector<double> getRValuesList(double maximum_r, double dr)
  *  \brief This function is used to compare a list of protein structures
  *  \param parameters a reference to a struct Parameters
  */
-void compareProteinStructures(struct Parameters &parameters)
+void compareStructuresList(struct Parameters &parameters)
 {
   int num_structures = parameters.comparison_files.size();
-  Segmentation profiles[num_structures];
-  vector<double> max_radius(num_structures,0);
-  double overall_max_radius = 0;
-  vector<vector<double>> r_values;
-  int profile_with_max_radius;
+  vector<string> names;
+  vector<Segmentation> segmentations;
+  vector<DistanceHistogram> histograms;
+  int profile_with_max_r_values=0,num_r_values=0;
 
   for (int i=0; i<num_structures; i++) {
     parameters.file = parameters.comparison_files[i];
-    string pdb_file = extractName(parameters.file);
-    bool status = checkIfSegmentationExists(pdb_file);
-    if (status && parameters.force_segmentation == UNSET) {
-      cout << "Segmentation profile of " << pdb_file << " exists ..." << endl;
-      profiles[i].load(pdb_file);
-    } else {
-      profiles[i] = proteinFit(parameters);
-      profiles[i].save(pdb_file);
+    string name = extractName(parameters.file);
+    names.push_back(name);
+    Segmentation segmentation = buildSegmentationProfile(parameters);
+    segmentations.push_back(segmentation);
+    DistanceHistogram histogram = buildHistogramProfile(parameters,segmentation);
+    histograms.push_back(histogram);
+    if (num_r_values < histogram.getRValues().size()) {
+      num_r_values = histogram.getRValues().size();
+      profile_with_max_r_values = i;
     }
-    max_radius[i] = profiles[0].getMaximumRadius();
-    //max_radius[i] = profiles[i].getMaximumRadius();
-    if (max_radius[i] > overall_max_radius) {
-      overall_max_radius = max_radius[i];
-      profile_with_max_radius = i;
-    }
-    //max_radius[i] = 15;
-    vector<double> r = getRValuesList(max_radius[i],parameters.increment_r);
-    r_values.push_back(r);
   }
-
-  double num_samples[num_structures]; 
-  vector<DistanceHistogram> histograms(num_structures,DistanceHistogram());
-  vector<BezierCurve<double>> bezier_curves[num_structures];
-  vector<double> lengths[num_structures],approx_lengths[num_structures];
-  CurveString curve_string[num_structures];
-  vector<vector<double>> histogram_results,histogram_results_appended;
-  vector<double> results;
-  vector<string> names;
-
-  // compute individual global histograms
-  vector<double> dl(num_structures,0);
-  for (int i=0; i<num_structures; i++) {
-    num_samples[i] = parameters.num_samples_on_curve;
-    bezier_curves[i] = profiles[i].getBezierCurves();
-    lengths[i] = profiles[i].getBezierCurvesLengths();
-    approx_lengths[i] = profiles[i].getApproximateBezierLengths();
-    curve_string[i] = CurveString(bezier_curves[i],lengths[i],approx_lengths[i]);
-    names.push_back(extractName(parameters.comparison_files[i]));
-    histograms[i] = DistanceHistogram(curve_string[i],num_samples[i],
-                                      parameters.increment_r,
-                                      parameters.sampling_method,names[i]);
-    cout << "Constructing histogram for structure " << names[i] << " ..." << endl;
-    results = histograms[i].computeGlobalHistogramValues(r_values[i],  
-                                                         parameters.scale);
-    histogram_results.push_back(results);
-    dl[i] = curve_string[i].length() / histograms[i].getNumberOfSamples();
-  }
-  printHistogramResults(histograms,profile_with_max_radius,r_values,dl);
-  plotMultipleHistograms(histograms,profile_with_max_radius,r_values,names);
+  vector<double> r_values = histograms[profile_with_max_r_values].getRValues();
+  plotMultipleHistograms(histograms,r_values,names);
+  printHistogramResults(histograms,r_values,names);
 }
 
 /*!
  *  \brief This function prints the comparison results
  *  \param histograms a reference to vector<DistanceHistogram>
- *  \param profile_with_max_radius an integer
- *  \param r_values a reference to a vector<vector<double>>
- *  \param dl a reference to a vector<double>
+ *  \param r_values a reference to a vector<double>
+ *  \param names a reference to a vector<string>
  */
 void printHistogramResults(vector<DistanceHistogram> &histograms,
-                           int profile_with_max_radius,
-                           vector<vector<double>> &r_values, vector<double> &dl)
+                           vector<double> &r_values, vector<string> &names)
 {
   vector<vector<double>> histogram_results;
-  vector<double> results;
+  vector<double> results,dl;
 
   int num_structures = histograms.size();
   int base_structure = 0; // pivot
-  int num_r = r_values[base_structure].size();
+  int num_r = r_values.size();
   for (int i=0; i<num_structures; i++) {
     results = histograms[i].modify(num_r);
     assert(results.size() == num_r);
     histogram_results.push_back(results);
+    dl[i] = histograms[i].getIncrementInLength();
   }
 
-  string file = string(CURRENT_DIRECTORY) + "output/histograms/results/";
-  file += "histograms_all_r.data";
+  string all_names = names[0];
+  for (int i=1; i<names.size(); i++) {
+    all_names += names[i] + ".";
+  }
+  string file = string(CURRENT_DIRECTORY) + "output/histograms/data/compared/";
+  file += all_names + "each_r";
   ofstream data(file.c_str());
   vector<double> comparison_scores(num_structures-1,0);
-  for (int i=0; i<r_values[base_structure].size(); i++) {
+  for (int i=0; i<r_values.size(); i++) {
     double h_base = histogram_results[base_structure][i];
     for (int j=0; j<num_structures; j++) {
       if (j != base_structure) {
@@ -724,34 +706,41 @@ double getComparisonScore(vector<double> &list1, vector<double> &list2,
  *  \brief This function plots the global histogram values for the structures
  *  that are compared.
  *  \param histograms a reference to a vector<DistanceHistogram>
- *  \param profile_with_max_radius an integer
- *  \param r_values a reference to a vector<vector<double>>
+ *  \param r_values a reference to a vector<double>
  *  \param names a reference to a vector<string>
  */
 void plotMultipleHistograms(vector<DistanceHistogram> &histograms, 
-                            int profile_with_max_radius,
-                            vector<vector<double>> &r_values, 
+                            vector<double> &r_values, 
                             vector<string> &names)
 {
   string color_array[] = {"red","blue","green","brown","orange","black"};
   vector<string> colors(color_array,color_array+6);
   int i,j;
   vector<vector<double>> histogram_results;
-  vector<double> appended_results;
+  vector<double> modified_results;
 
   // modify the individual histogram results so that all are of same length
-  int max_num_r = r_values[profile_with_max_radius].size();
+  int max_num_r = r_values.size();
   for (i=0; i<histograms.size(); i++) {
-    appended_results = histograms[i].modify(max_num_r);
-    histogram_results.push_back(appended_results);
+    modified_results = histograms[i].modify(max_num_r);
+    histogram_results.push_back(modified_results);
     assert(histogram_results[i].size() == max_num_r);
   }
 
-  string file = string(CURRENT_DIRECTORY) + "output/histograms/results/";
-  string data_file = file + "multiple_histograms.data";
+  string all_names = names[0];
+  for (int i=1; i<names.size(); i++) {
+    all_names += "." + names[i];
+    /*if (i != names.size()-1) {
+      all_names += ".";
+    }*/
+  }
+  cout << "all_names: " << all_names << endl;
+  string file = string(CURRENT_DIRECTORY) + "output/histograms/";
+  string data_file = file + "data/multiple_global_histograms/" + all_names + 
+                     ".histograms";
   ofstream data(data_file.c_str());
-  for (i=0; i<r_values[profile_with_max_radius].size(); i++) {
-    data << r_values[profile_with_max_radius][i] << " ";
+  for (i=0; i<r_values.size(); i++) {
+    data << r_values[i] << " ";
     for (j=0; j<histogram_results.size(); j++) {
       data << histogram_results[j][i] << " ";
     }
@@ -764,17 +753,18 @@ void plotMultipleHistograms(vector<DistanceHistogram> &histograms,
   script << "set terminal post eps" << endl;
   script << "set xlabel \"r\"" << endl;
   script << "set ylabel \"Global Histogram H(r)\"" << endl;
-  script << "set output \"" << file << "multiple_histograms.eps\"" << endl;
+  script << "set output \"" << file << "plots/" << all_names 
+         << ".histograms.eps\"" << endl;
   script << "set multiplot" << endl;
   for (i=1; i<names.size(); i++) {
     if (i == 1) {
       script << "plot ";
     }
-    script << "\"" << file << "multiple_histograms.data\" using 1:" << i+1
+    script << "\"" << data_file << "\" using 1:" << i+1
            << " title '" << names[i-1] << "' with lines lc rgb \"" << colors[i-1]
            << "\", \\" << endl;
   }
-  script << "\"" << file << "multiple_histograms.data\" using 1:" << i+1
+  script << "\"" << data_file << "\" using 1:" << i+1
          << " title '" << names[i-1] << "' with lines lc rgb \"" << colors[i-1]
          << "\"" << endl;
   script.close();
@@ -1196,9 +1186,9 @@ double getMaximumDistance(vector<array<double,3>> &coordinates)
       }
     }
   }
-  cout << "Max distance: " << max_distance << endl;
+  /*cout << "Max distance: " << max_distance << endl;
   cout << "mi: " << mi + 1 << Point<double>(coordinates[mi]) << endl;
-  cout << "mj: " << mj + 1 << Point<double>(coordinates[mj]) << endl;
+  cout << "mj: " << mj + 1 << Point<double>(coordinates[mj]) << endl;*/
   return max_distance;
 }
 
@@ -1275,41 +1265,65 @@ int partition(vector<double> &list, vector<int> &index,
 	return storeIndex;
 }
 
-/*!
- *
- */
-void visualize(vector<Point<double>> &point_set, string &pdb_file)
+/*void compareProteinStructures(struct Parameters &parameters)
 {
-  int res_total = ceil(point_set.size() / 10.0);
-  cout << "point_set_size: " << point_set.size() << endl;
-  cout << res_total << endl;
-  ProteinStructure structure("samples");
-  shared_ptr<Chain> chain = make_shared<Chain>("s");
-  int point_set_index = 0;
-  for (int j=0; j<res_total; j++) {
-    string res_id = boost::lexical_cast<string>(j);
-    shared_ptr<Residue> residue = make_shared<Residue>(res_id);
-    for (int i=0; i<10; i++) {
-      string atom_id = boost::lexical_cast<string>(i);
-      shared_ptr<Atom> atom = make_shared<Atom>(atom_id);
-      atom->setAtomicCoordinate(point_set[point_set_index]);
-      residue->addAtom(atom);
-      point_set_index++;
-      if (point_set_index >= point_set.size()) {
-        break;
-      }
-    }
-    chain->addResidue(residue);
-  }
-  structure.addChain(chain);
+  int num_structures = parameters.comparison_files.size();
+  Segmentation profiles[num_structures];
+  vector<double> max_radius(num_structures,0);
+  double overall_max_radius = 0;
+  vector<vector<double>> r_values;
+  int profile_with_max_radius;
 
-  vector<Atom> atoms = structure.getAtoms();
-  string path_to_samples_pdb = string(CURRENT_DIRECTORY) + "output/histograms/"
-                               + "/samples_pdb/" + pdb_file + ".samples.pdb"; 
-  ofstream samples_pdb(path_to_samples_pdb.c_str());
-  for (int i=0; i<atoms.size(); i++) {
-    samples_pdb << atoms[i].formatPDBLine() << endl;
+  for (int i=0; i<num_structures; i++) {
+    parameters.file = parameters.comparison_files[i];
+    string pdb_file = extractName(parameters.file);
+    bool status = checkIfSegmentationExists(pdb_file);
+    if (status && parameters.force_segmentation == UNSET) {
+      cout << "Segmentation profile of " << pdb_file << " exists ..." << endl;
+      profiles[i].load(pdb_file);
+    } else {
+      profiles[i] = proteinFit(parameters);
+      profiles[i].save(pdb_file);
+    }
+    max_radius[i] = profiles[0].getMaximumRadius();
+    //max_radius[i] = profiles[i].getMaximumRadius();
+    if (max_radius[i] > overall_max_radius) {
+      overall_max_radius = max_radius[i];
+      profile_with_max_radius = i;
+    }
+    //max_radius[i] = 15;
+    vector<double> r = getRValuesList(max_radius[i],parameters.increment_r);
+    r_values.push_back(r);
   }
-  samples_pdb.close();
-}
+
+  double num_samples[num_structures]; 
+  vector<DistanceHistogram> histograms(num_structures,DistanceHistogram());
+  vector<BezierCurve<double>> bezier_curves[num_structures];
+  vector<double> lengths[num_structures],approx_lengths[num_structures];
+  CurveString curve_string[num_structures];
+  vector<vector<double>> histogram_results,histogram_results_appended;
+  vector<double> results;
+  vector<string> names;
+
+  // compute individual global histograms
+  vector<double> dl(num_structures,0);
+  for (int i=0; i<num_structures; i++) {
+    num_samples[i] = parameters.num_samples_on_curve;
+    bezier_curves[i] = profiles[i].getBezierCurves();
+    lengths[i] = profiles[i].getBezierCurvesLengths();
+    approx_lengths[i] = profiles[i].getApproximateBezierLengths();
+    curve_string[i] = CurveString(bezier_curves[i],lengths[i],approx_lengths[i]);
+    names.push_back(extractName(parameters.comparison_files[i]));
+    histograms[i] = DistanceHistogram(curve_string[i],num_samples[i],
+                                      parameters.increment_r,
+                                      parameters.sampling_method,names[i]);
+    cout << "Constructing histogram for structure " << names[i] << " ..." << endl;
+    results = histograms[i].computeGlobalHistogramValues(r_values[i],  
+                                                         parameters.scale);
+    histogram_results.push_back(results);
+    dl[i] = curve_string[i].length() / histograms[i].getNumberOfSamples();
+  }
+  printHistogramResults(histograms,profile_with_max_radius,r_values,dl);
+  plotMultipleHistograms(histograms,profile_with_max_radius,r_values,names);
+}*/
 

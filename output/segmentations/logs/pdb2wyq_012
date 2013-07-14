@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/PDB/wy/pdb2wyq.ent.gz
+Number of residues: 77
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 14064.6
+Null Model Fit: 3319.46 bits.
+Bits per residue: 43.6771
+
+Bezier model fit: 3133.12 bits.
+Bits per residue: 41.2252
+
+# of segments: 7
+Internal segmentation:
+0-->10-->19-->41-->51-->61-->62-->76
+
+CPU time used: 3.55 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 11             11        401.374         (9.046, 23.111, -2.113)         (-8.56403, 23.6442, 1.40302)
+                                                                                    (-21.297, 27.786, -0.039)
+
+              2           A 11           A 20             10        368.117         (-21.297, 27.786, -0.039)         (-9.77034, 24.0166, -8.90455)
+                                                                                    (5.689, 28.329, 0.475)
+
+              3           A 20           A 42             23        914.191         (5.689, 28.329, 0.475)         (2.83466, 35.6648, 19.6969)
+                                                                                    (-11.591, 40.361, 3.344)         (-17.6346, 36.6627, -18.9365)
+
+              4           A 42           A 52             11        412.088         (-11.591, 40.361, 3.344)
+                                                                                    (-10.231, 21.145, 15.056)
+
+              5           A 52           A 62             11        418.028         (-10.231, 21.145, 15.056)         (-0.14077, 42.7576, 13.2579)
+                                                                                    (3.946, 24.041, 7.68)
+
+              6           A 62           A 63              2        46.7142         (3.946, 24.041, 7.68)
+                                                                                    (3.326, 23.992, 11.44)
+
+              7           A 63           A 77             15        572.605         (3.326, 23.992, 11.44)         (-8.06739, 8.84724, -5.8449)
+                                                                                    (-17.307, 36.846, 10.206)
+

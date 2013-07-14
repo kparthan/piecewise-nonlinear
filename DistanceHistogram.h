@@ -13,6 +13,9 @@ class DistanceHistogram
     //! Curve that is abstracted
     CurveString curve_string;
 
+    //! Length of curve string
+    double curve_string_length;
+
     //! Number of samples
     int num_samples;
 
@@ -86,6 +89,12 @@ class DistanceHistogram
     //! Returns the curve string
     CurveString getCurveString();
 
+    //! Returns the length of the curve string
+    double getCurveStringLength();
+
+    //!
+    double getIncrementInLength();
+
     //! Returns the list of r values used
     vector<double> getRValues();
 
@@ -112,6 +121,12 @@ class DistanceHistogram
 
     //! Modify the length of the global histograms list
     vector<double> modify(int);
+
+    //! Compares against another histogram
+    vector<double> compare(DistanceHistogram &);
+
+    //! Visualize the samples in Pymol
+    void visualize();
 
     //! Saves the global histogram values
     void save();

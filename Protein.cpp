@@ -173,8 +173,9 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
   /* visualize the protein segmentation */
   vector<Atom> atoms = protein->getAtoms();
   string pdb_file = extractName(file);
-  string modified_pdb = string(CURRENT_DIRECTORY) + "output/modified_pdb_files/"
-                        + pdb_file + ".pdb";
+  string modified_pdb = string(CURRENT_DIRECTORY) + 
+                        "output/segmentations/modified_pdb_files/" +
+                        pdb_file + ".pdb";
   ofstream fw(modified_pdb.c_str());
   for (int i=0; i<atoms.size(); i++) {
     fw << atoms[i].formatPDBLine() << endl;
@@ -208,8 +209,9 @@ void Protein::createPymolScript(string &pdb_file,
   vector<string> res_ids = chain.getResidueIdentifiers();
   //for (int i=0; i<res_ids.size(); i++){cout << res_ids[i] << endl;}
 
-  string pymol_file = string(CURRENT_DIRECTORY) + "output/pymol_scripts/" 
-                      + pdb_file + ".pml";
+  string pymol_file = string(CURRENT_DIRECTORY) + 
+                      "output/segmentations/pymol_scripts/" +
+                      pdb_file + ".pml";
   ofstream script(pymol_file.c_str());
 
   string modified_pdb = "modified_pdb_files/" + pdb_file + ".pdb";

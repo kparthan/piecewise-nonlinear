@@ -41,20 +41,17 @@ vector<double> sort(vector<double> &);
 void quicksort(vector<double> &, vector<int> &, int, int);
 int partition(vector<double> &, vector<int> &, int, int);
 double standardDeviation(vector<double> &, double);
-void visualize(vector<Point<double>> &, string &);
 
 void build(struct Parameters &);
 Segmentation buildSegmentationProfile(struct Parameters &);
 DistanceHistogram buildHistogramProfile(struct Parameters &, Segmentation &);
-void compareProteinStructures(struct Parameters &);
-void compareProteinStructuresList(struct Parameters &);
+void compareStructuresList(struct Parameters &);
 vector<double> getRValuesList(double, double);
-void plotMultipleHistograms(vector<DistanceHistogram> &, int, 
-                            vector<vector<double>> &, vector<string> &);
+void plotMultipleHistograms(vector<DistanceHistogram> &, vector<double> &, 
+                            vector<string> &);
 double getComparisonScore(vector<double> &, vector<double> &, double, double);
-void printHistogramResults(vector<DistanceHistogram> &, int,
-                           vector<vector<double>> &, vector<double> &);
-void compareGenericStructures(struct Parameters &);
+void printHistogramResults(vector<DistanceHistogram> &, vector<double> &, 
+                           vector<string> &);
 void compareSegmentations(Segmentation &, Segmentation &, struct Parameters &);
 bool checkIfSegmentationExists(string &);
 bool checkIfHistogramExists(string &);
