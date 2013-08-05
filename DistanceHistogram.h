@@ -58,6 +58,9 @@ class DistanceHistogram
     //! Gets the index range of specific values of r
     vector<int> getIndexRange(double, double);
 
+    //!
+    vector<vector<double>> all_local_histograms;
+
   public:
     //! Null constructor
     DistanceHistogram();
@@ -135,7 +138,7 @@ class DistanceHistogram
     void load(string);
 
     //! Plots the local histograms
-    void plotLocalHistograms(vector<int> &);
+    void plotLocalHistograms();
 };
 
 #endif

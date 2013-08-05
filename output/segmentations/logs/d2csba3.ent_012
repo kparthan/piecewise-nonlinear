@@ -1,4 +1,4 @@
-Using structure file: /home/parthan/Research/SCOP/pdbstyle-1.75B/cs/d2csba3.ent
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/cs/d2csba3.ent
 Number of residues: 55
 Doing a BEZIER segmentation ...
 
@@ -13,8 +13,8 @@ Bits per residue: 41.5927
 Internal segmentation:
 0-->11-->22-->23-->43-->46-->54
 
-CPU time used: 3.38 secs.
-Wall clock time elapsed: 3 secs.
+CPU time used: 2.14 secs.
+Wall clock time elapsed: 2 secs.
 
         SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
               1          A 410          A 421             12        466.667         (34.026, 75.398, 176.052)         (41.4548, 65.4356, 162.186)

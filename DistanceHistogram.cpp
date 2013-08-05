@@ -236,9 +236,10 @@ vector<double> DistanceHistogram::computeLocalHistogram(double r)
     local_histogram[i] = num_internal_points / (double) num_samples;
   }
   //updateLocalHistogramFile(file,local_histogram);
-  if ((int)r % 5 == 0) {
+  //if ((int)r % 5 == 0) {
     saveLocalHistogram(local_histogram,r);
-  }
+  //}
+  all_local_histograms.push_back(local_histogram);
   return local_histogram;
 }
 
@@ -577,36 +578,41 @@ vector<double> DistanceHistogram::compare(DistanceHistogram &other)
 /*!
  *  \brief This function plots the local histogram plots of the structure.
  *  \param index_range a reference to a vector<int>
- *//*
-void DistanceHistogram::plotLocalHistograms(vector<int> &index_range)
+ */
+void DistanceHistogram::plotLocalHistograms()
 {
   string n = boost::lexical_cast<string>(num_samples);
-  string file = string(CURRENT_DIRECTORY) + "output/histograms/results/";
-  file += "local_histograms/"; 
-  string data_file = file + "data/" + name + "_n_";
-  data_file += n + ".data";
+  string file = string(CURRENT_DIRECTORY) + "output/histograms/logs/local/";
+  file += name + "/"; 
+  string data_file = file + "local_histograms";
+  ofstream data(data_file.c_str());
 
-  for (int i=0; i<index_range.size(); i++) {
-    string r = boost::lexical_cast<string>(r_values[i]).substr(0,3);
-    string script_file = file + "plot_scripts/" + name + "_n_" + n + "_r_";
-    script_file += r + ".plot";
-
-    string eps_file = file + "plots/" + name + "_n_" + n + "_r_";
-    eps_file += r + ".eps";
-
-    ofstream script(script_file.c_str());
-    script << "set terminal post eps" << endl;
-    script << "set output \"" << eps_file << "\"" << endl;
-    script << "set xlabel \"samples\"" << endl;
-    script << "set ylabel \"# of internal points\"" << endl;
-    script << "plot \"" << data_file << "\" using 1:" << i+2 << " title '" << name
-           << "' with points lc rgb \"red\"" << endl;
-    script.close();
-
-    string cmd = "gnuplot -persist " + script_file;
-    system(cmd.c_str());
+  for (int i=0; i<num_samples; i++) {
+    for (int j=0; j<r_values.size(); j++) {
+      data << setw(10) << i;
+      data << setw(10) << r_values[j];
+      data << setw(10) << setprecision(5) << all_local_histograms[j][i];
+      data << endl;
+    }
+    data << endl;
   }
-}*/
+
+  string script_file = file + "script.plot";
+  string eps_file = string(CURRENT_DIRECTORY) + "output/histograms/plots/" + name + ".eps";
+  ofstream script(script_file.c_str());
+  script << "set terminal post eps" << endl;
+  script << "set output \"" << eps_file << "\"" << endl;
+  script << "unset key" << endl;
+  script << "set xlabel \"sampled points\"" << endl;
+  script << "set ylabel \"r\"" << endl;
+  script << "set zlabel \"local histogram value\"" << endl;
+  //script << "set title \"" << name << "\"" << endl;
+  script << "splot '" << data_file  << "'" << endl;
+  script.close();
+
+  string cmd = "gnuplot -persist " + script_file;
+  system(cmd.c_str());
+}
 
 /*!
  *  \brief This method gets the range of indexes for given values of r

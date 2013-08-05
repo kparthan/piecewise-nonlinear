@@ -524,6 +524,7 @@ DistanceHistogram buildHistogramProfile(struct Parameters &parameters,
     histogram.computeGlobalHistogramValues(parameters.scale);
     histogram.save();
   }
+  histogram.plotLocalHistograms();
   return histogram;
 } 
 

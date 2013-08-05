@@ -1,4 +1,4 @@
-Using structure file: /home/parthan/Research/SCOP/pdbstyle-1.75B/lp/d1lpva_.ent
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/lp/d1lpva_.ent
 Number of residues: 52
 Doing a BEZIER segmentation ...
 
@@ -13,8 +13,8 @@ Bits per residue: 41.8688
 Internal segmentation:
 0-->16-->26-->45-->51
 
-CPU time used: 3.02 secs.
-Wall clock time elapsed: 3 secs.
+CPU time used: 1.94 secs.
+Wall clock time elapsed: 1 secs.
 
         SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
               1            A 1           A 17             17        663.208         (-21.605, 14.773, 7.728)
