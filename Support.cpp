@@ -1262,3 +1262,32 @@ int partition(vector<double> &list, vector<int> &index,
 	return storeIndex;
 }
 
+vector<Point<double>> read(string name)
+{
+  string file_name = string(CURRENT_DIRECTORY) + "output/histograms/" + name;
+  ifstream file(file_name.c_str());
+  string line;
+  vector<double> numbers;
+  vector<Point<double>> point_set;
+  Point<double> p;
+
+  while (getline(file,line)) {
+    boost::char_separator<char> sep(" ");
+    boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
+    BOOST_FOREACH(const string &t, tokens) {
+      istringstream iss(t);
+      double x;
+      iss >> x;
+      numbers.push_back(x);
+    }
+    p.x(numbers[0]);
+    p.y(numbers[1]);
+    p.z(numbers[2]);
+    point_set.push_back(p);
+    numbers.clear();
+  }
+  file.close();
+  return point_set;
+}
+
+

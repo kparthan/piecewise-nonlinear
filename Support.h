@@ -84,5 +84,7 @@ Segmentation testFit (struct Parameters &);
 Segmentation proteinFit (struct Parameters &);
 Segmentation generalFit (struct Parameters &);
 
+vector<Point<double>> read(string);
+
 #endif
 

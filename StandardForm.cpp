@@ -200,6 +200,7 @@ void StandardForm::transform(void)
   if(parameters.print == PRINT_DETAIL) {
     writeToFile(coordinates,"output/rotate_second_point");
   }
+  //writeToFile(coordinates,"output/histograms/rotate_second_point");
 
   /* overall transformation matrix */
   transformationMatrix();

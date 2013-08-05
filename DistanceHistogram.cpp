@@ -181,7 +181,7 @@ array<double,2> DistanceHistogram::getComputationTime()
  */
 void DistanceHistogram::constructSamples(double scale)
 {
-  if (sampling_method == RANDOM_SAMPLING) {
+  /*if (sampling_method == RANDOM_SAMPLING) {
     if (num_samples == 0) {
       point_set = curve_string.generateRandomlyDistributedPoints(scale);
       num_samples = point_set.size();
@@ -195,7 +195,9 @@ void DistanceHistogram::constructSamples(double scale)
     } else {
       point_set = curve_string.generateUniformlyDistributedPoints(num_samples);
     }
-  }
+  }*/
+  point_set = read(name);
+  num_samples = point_set.size();
 }
 
 /*!
@@ -300,15 +302,17 @@ vector<double> DistanceHistogram::computeGlobalHistogramValues(double scale)
   visualize();
 
   double r = dr;
+  double prev = 1;
   while (1) {
     double global_value = computeGlobalHistogram(r);
     r_values.push_back(r);
     cout << r << " " << global_value << endl;
     global_histogram_values.push_back(global_value);
-    if (fabs(global_value - 1) <= 0.01) {
+    if (fabs(global_value - prev) <= 0.0001 && fabs(global_value) > 0.95) {
       break;
     }
     r += dr;
+    prev = global_value;
   }  
   
   clock_t c_end = clock();
@@ -589,10 +593,13 @@ void DistanceHistogram::plotLocalHistograms()
 
   for (int i=0; i<num_samples; i++) {
     for (int j=0; j<r_values.size(); j++) {
-      data << setw(10) << i;
-      data << setw(10) << r_values[j];
-      data << setw(10) << setprecision(5) << all_local_histograms[j][i];
-      data << endl;
+      int r = r_values[j] * 2;
+      if (r % 5 == 0) {
+        data << setw(10) << i;
+        data << setw(10) << r_values[j];
+        data << setw(10) << setprecision(5) << all_local_histograms[j][i];
+        data << endl;
+      }
     }
     data << endl;
   }
@@ -606,12 +613,39 @@ void DistanceHistogram::plotLocalHistograms()
   script << "set xlabel \"sampled points\"" << endl;
   script << "set ylabel \"r\"" << endl;
   script << "set zlabel \"local histogram value\"" << endl;
-  //script << "set title \"" << name << "\"" << endl;
+  script << "set multiplot" << endl;
+  script << "set title \"" << name << "\"" << endl;
   script << "splot '" << data_file  << "'" << endl;
+  /*int count = 1;
+  for (int i=0; i<r_values.size(); i++) {
+    int r = r_values[i] * 2;
+    if (r % 5 == 0) {
+      string data_file = file + "local_histograms_" + boost::lexical_cast<string>(count);
+      ofstream data(data_file.c_str());
+      for (int j=0; j<num_samples; j++) {
+        data << setw(10) << j;
+        data << setw(10) << r_values[i];
+        data << setw(10) << setprecision(5) << all_local_histograms[i][j];
+        data << endl << endl;
+      }
+      data.close();
+      count++;
+    }
+  }
+  script << "splot ";
+  for (int i=1; i<count; i++) {
+    string data_file = file + "local_histograms_" + boost::lexical_cast<string>(i);
+    if (i != count - 1) {
+      script << "'" << data_file  << "' with linespoints ls 1, \\" << endl;
+    } else {
+      script << "'" << data_file  << "' with linespoints ls 1" << endl;
+    }
+  }*/
   script.close();
 
   string cmd = "gnuplot -persist " + script_file;
   system(cmd.c_str());
+
 }
 
 /*!
