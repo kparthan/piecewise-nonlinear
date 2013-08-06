@@ -16,7 +16,6 @@ OBJECTS = piecewise-nonlinear-fit.o \
   Complex.o \
   Identifier.o \
   Segmentation.o \
-  Comparison.o \
   CurveString.o \
   DistanceHistogram.o
 
@@ -70,9 +69,6 @@ Identifier.o: Identifier.cpp Identifier.h
 Segmentation.o: Segmentation.cpp Segmentation.h
 	g++ -c $(CFLAGS) $< -o $@
 
-Comparison.o: Comparison.cpp Comparison.h
-	g++ -c $(CFLAGS) $< -o $@
-
 CurveString.o: CurveString.cpp CurveString.h
 	g++ -c $(CFLAGS) $< -o $@
 
@@ -86,5 +82,5 @@ clean_segmentations:
 	rm -f output/segmentations/logs/* output/segmentations/modified_pdb_files/* output/segmentations/pymol_scripts/* output/segmentations/profiles/* 
 
 clean_histograms:
-	rm -rf output/histograms/logs/local/* output/histograms/logs/global/* output/histograms/logs/profiles/* output/histograms/data/compared/* output/histograms/data/multiple_global_histograms/* output/histograms/plots/* output/histograms/samples_pdb/*
+	rm -rf output/histograms/logs/local/* output/histograms/logs/global/* output/histograms/logs/profiles/* output/histograms/data/compared/* output/histograms/data/multiple_global_histograms/* output/histograms/plots/* output/histograms/samples_pdb/* output/histograms/script.plot
 

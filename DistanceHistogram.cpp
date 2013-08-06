@@ -181,7 +181,7 @@ array<double,2> DistanceHistogram::getComputationTime()
  */
 void DistanceHistogram::constructSamples(double scale)
 {
-  /*if (sampling_method == RANDOM_SAMPLING) {
+  if (sampling_method == RANDOM_SAMPLING) {
     if (num_samples == 0) {
       point_set = curve_string.generateRandomlyDistributedPoints(scale);
       num_samples = point_set.size();
@@ -195,9 +195,9 @@ void DistanceHistogram::constructSamples(double scale)
     } else {
       point_set = curve_string.generateUniformlyDistributedPoints(num_samples);
     }
-  }*/
-  point_set = read(name);
-  num_samples = point_set.size();
+  }
+  //point_set = read(name);
+  //num_samples = point_set.size();
 }
 
 /*!
@@ -614,7 +614,7 @@ void DistanceHistogram::plotLocalHistograms()
   script << "set ylabel \"r\"" << endl;
   script << "set zlabel \"local histogram value\"" << endl;
   script << "set multiplot" << endl;
-  script << "set title \"" << name << "\"" << endl;
+  //script << "set title \"" << name << "\"" << endl;
   script << "splot '" << data_file  << "'" << endl;
   /*int count = 1;
   for (int i=0; i<r_values.size(); i++) {

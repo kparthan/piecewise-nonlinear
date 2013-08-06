@@ -21,11 +21,10 @@ struct Parameters
   int encode_deviations;            // mechanism to encode deviations
   int force_segmentation;           // flag to redo segmentation
   int force_build;                  // flag to rebuild histograms
+  int profile;                      // distance histogram or knot invariants
   int comparison;                   // type of structures compared
-  int comparison_method;            // method used to compare structures
   vector<string> comparison_files;  // path to the structure files used
                                     // in comparison
-  int comparison_matrix;            // flag to generate the comparison matrix
   double gap_penalty;               // gap penalty used in basic alignment 
                                     // method
   double max_angle_diff;            // maximum allowed angle separation
@@ -52,7 +51,6 @@ void plotMultipleHistograms(vector<DistanceHistogram> &, vector<double> &,
 double getComparisonScore(vector<double> &, vector<double> &, double, double);
 void printHistogramResults(vector<DistanceHistogram> &, vector<double> &, 
                            vector<string> &);
-void compareSegmentations(Segmentation &, Segmentation &, struct Parameters &);
 bool checkIfSegmentationExists(string &);
 bool checkIfHistogramExists(string &);
 

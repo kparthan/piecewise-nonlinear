@@ -22,16 +22,11 @@ class Comparison
     //! The two segmentation profiles
     Segmentation profiles[2];
 
-    //! The distance histograms
-    DistanceHistogram histograms[2];
-
     //! Comparison scores
     vector<double> scores;
 
     //! Optimal alignment
     vector<array<double,2>> optimal_alignment;
-
-    vector<double> histogram_results[2];
 
     //! Edit distance
     void computeEditDistance(string &, string &);
@@ -46,9 +41,6 @@ class Comparison
     //! Prints the alignment
     void printAlignment(ostream &, vector<array<double,2>> &);
 
-    //! Plots the two histograms
-    void plotDistanceHistograms(string, string, string);
-
   public:
     //! Null constructor
     Comparison();
@@ -61,9 +53,6 @@ class Comparison
 
     //! Basic Alignment
     void computeBasicAlignment(double, double);
-
-    //! Distance histogram 
-    void computeDistanceHistogram(int, double, double, int, vector<string> &);
 
     //! Save the alignment to a file
     void save(vector<string> &);
