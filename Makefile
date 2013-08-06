@@ -17,6 +17,7 @@ OBJECTS = piecewise-nonlinear-fit.o \
   Identifier.o \
   Segmentation.o \
   CurveString.o \
+  Polygon.o \
   DistanceHistogram.o
 
 all: piecewise-nonlinear-fit 
@@ -70,6 +71,9 @@ Segmentation.o: Segmentation.cpp Segmentation.h
 	g++ -c $(CFLAGS) $< -o $@
 
 CurveString.o: CurveString.cpp CurveString.h
+	g++ -c $(CFLAGS) $< -o $@
+
+Polygon.o: Polygon.cpp Polygon.h
 	g++ -c $(CFLAGS) $< -o $@
 
 DistanceHistogram.o: DistanceHistogram.cpp DistanceHistogram.h
