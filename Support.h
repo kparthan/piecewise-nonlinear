@@ -22,18 +22,23 @@ struct Parameters
   int force_segmentation;           // flag to redo segmentation
   int force_build;                  // flag to rebuild histograms
   int profile;                      // distance histogram or knot invariants
-  int comparison;                   // type of structures compared
+  int comparison;                   // comparison flag set/unset 
   vector<string> comparison_files;  // path to the structure files used
                                     // in comparison
+  // parameters used for profiling using dihedral angles
   double gap_penalty;               // gap penalty used in basic alignment 
                                     // method
   double max_angle_diff;            // maximum allowed angle separation
                                     // when aligning two dihedral angles
+  // parameters used for profiling using distance histogram 
   double scale;                     // scale the length/coordinates to obtain
                                     // # of samples
   int num_samples_on_curve;         // # of samples for histogram comparison
   int sampling_method;              // uniform/random generation of samples
   double increment_r;               // increment in r used in histogram method
+  // parameters used for profiling using knot invariants
+  int construct_polygon;            // polygon construction heuristic 
+  int num_sides;                    // # of sides in the approximating polygon
 };
 
 vector<double> sort(vector<double> &);

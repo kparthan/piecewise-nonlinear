@@ -80,6 +80,13 @@
 #define UNIFORM_SAMPLING 0
 #define RANDOM_SAMPLING 1
 
+// for knot invariant based comparison
+#define POLYGON_PROJECTIONS 0
+#define POLYGON_CONTROLS 1
+#define POLYGON_SPECIFIC 2
+
+#define POLYGON_SIDES 20
+
 using namespace std;
 using namespace std::chrono;
 using namespace lcb;
