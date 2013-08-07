@@ -15,7 +15,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
 {
   struct Parameters parameters;
   vector<string> constrain,force,pdb_ids,scop_ids;
-  string structure,encode,pdb_id,profile,scop_id,generate;
+  string structure,encode,pdb_id,profile,scop_id,generate,polygon;
 
   parameters.structure = -1;
   bool noargs = 1;
@@ -65,6 +65,8 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("sampling",value<string>(&generate),
                   "uniform/random method to generate sample points on the curve")
         // arguments for knot invariants based profiling 
+       ("polygon",value<string>(&polygon),"polygon construction heuristic")
+       ("sides",value<int>(&parameters.num_sides),"# of sides in a polygon")
   ;
   variables_map vm;
   store(parse_command_line(argc,argv,desc),vm);
@@ -335,6 +337,28 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     }
   } else if (profile.compare("knot_invariants") == 0) {
     parameters.profile = KNOT_INVARIANTS;
+    if (vm.compare("polygon")) {
+      if (polygon.compare("controls") == 0) {
+        parameters.construct_polygon = POLYGON_CONTROLS; 
+      } else if (polygon.compare("projections") == 0) {
+        parameters.construct_polygon = POLYGON_PROJECTIONS;
+      } else if (polygon.compare("specific") == 0) {
+        parameters.construct_polygon = POLYGON_SPECIFIC;
+        if (vm.compare("sides")) {
+          cout << "Each representative polygon constructed with "
+               << parameters.num_sides << " sides ...\n";
+        } else {
+          parameters.num_sides = POLYGON_SIDES; 
+          cout << "Each representative polygon constructed with default "
+               << parameters.num_sides << " sides ...\n";
+        }
+      } else {
+        cout << "Unsupported polygon construction heuristic supplied ...\n";
+        Usage(argv[0],desc);
+      }
+    } else {
+      parameters.construct_polygon = POLYGON_PROJECTIONS; 
+    }
   } else {
     cout << "Unsupported profiling method ..." << endl;
     Usage(argv[0],desc);
@@ -485,7 +509,7 @@ DistanceHistogram buildHistogramProfile(struct Parameters &parameters,
     vector<BezierCurve<double>> bezier_curves = segmentation.getBezierCurves();
     vector<double> lengths = segmentation.getBezierCurvesLengths();
     vector<double> approx_lengths = segmentation.getApproximateBezierLengths();
-    CurveString curve_string = CurveString(bezier_curves,lengths,approx_lengths);
+    CurveString<double> curve_string = CurveString<double>(bezier_curves,lengths,approx_lengths);
     string name = extractName(parameters.file);
     histogram = DistanceHistogram(curve_string,num_samples,dr,
                                   parameters.sampling_method,name);

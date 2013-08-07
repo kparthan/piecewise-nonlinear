@@ -10,7 +10,7 @@ DistanceHistogram::DistanceHistogram()
  *  \brief This is a constructor module.
  *  \param curve_string a reference to a CurveString
  */
-DistanceHistogram::DistanceHistogram(CurveString &curve_string) : 
+DistanceHistogram::DistanceHistogram(CurveString<double> &curve_string) : 
                    curve_string(curve_string)
 {
   curve_string_length = curve_string.length();
@@ -21,7 +21,7 @@ DistanceHistogram::DistanceHistogram(CurveString &curve_string) :
  *  \param curve_string a reference to a CurveString
  *  \param num_samples an integer
  */
-DistanceHistogram::DistanceHistogram(CurveString &curve_string, int num_samples) :
+DistanceHistogram::DistanceHistogram(CurveString<double> &curve_string, int num_samples) :
                                      curve_string(curve_string), 
                                      num_samples(num_samples)
 {
@@ -35,7 +35,7 @@ DistanceHistogram::DistanceHistogram(CurveString &curve_string, int num_samples)
  *  \param num_samples an integer
  *  \param dr a double
  */
-DistanceHistogram::DistanceHistogram(CurveString &curve_string, int num_samples,
+DistanceHistogram::DistanceHistogram(CurveString<double> &curve_string, int num_samples,
                                      double dr, int sampling_method, string name) : 
                                      curve_string(curve_string), dr(dr),
                                      num_samples(num_samples),
@@ -114,7 +114,7 @@ vector<Point<double>> DistanceHistogram::getSamples()
  *  \brief This method returns the abstracting curve string.
  *  \return the curve string
  */
-CurveString DistanceHistogram::getCurveString()
+CurveString<double> DistanceHistogram::getCurveString()
 {
   return curve_string;
 }
@@ -645,7 +645,6 @@ void DistanceHistogram::plotLocalHistograms()
 
   string cmd = "gnuplot -persist " + script_file;
   system(cmd.c_str());
-
 }
 
 /*!
@@ -674,42 +673,3 @@ vector<int> DistanceHistogram::getIndexRange(double rmin, double rmax)
   return index_range;
 }*/
 
-/*!
- *  \brief This function updates the local histogram data file for a structure
- *  \param file a reference to a string
- *  \param local_histogram a reference to a vector<double>
- *//*
-void 
-DistanceHistogram::updateLocalHistogramFile(string &file, 
-                                            vector<double> &local_histogram)
-{
-  if (checkFile(file.c_str())) {
-    // create a copy of the existing data file
-    string copy = file + ".copy";
-    string cmd = "mv " + file + " " + copy; 
-    system(cmd.c_str());
-    ifstream tmp(copy.c_str());
-    ofstream data(file.c_str());
-    string line;
-    int count = 0;
-    while (getline(tmp,line)) {
-      boost::char_separator<char> sep(" ");
-      boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
-      BOOST_FOREACH (const string &t, tokens) {
-        data << t << " ";
-      }
-      data << local_histogram[count++] * num_samples << endl;
-    }
-    data.close();
-    tmp.close();
-    // delete the copy
-    cmd = "rm " + copy;
-    system(cmd.c_str());
-  } else {
-    ofstream data(file.c_str());
-    for (int i=0; i<local_histogram.size(); i++) {
-      data << i + 1 << " " << local_histogram[i] * num_samples << endl;
-    }
-    data.close();
-  }
-}*/

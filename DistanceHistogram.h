@@ -11,7 +11,7 @@ class DistanceHistogram
     string name;
 
     //! Curve that is abstracted
-    CurveString curve_string;
+    CurveString<double> curve_string;
 
     //! Length of curve string
     double curve_string_length;
@@ -52,9 +52,6 @@ class DistanceHistogram
     //! Saves the local histogram data
     void saveLocalHistogram(vector<double> &, double);
 
-    //! Updates the local histogram values
-    void updateLocalHistogramFile(string &, vector<double> &);
-
     //! Gets the index range of specific values of r
     vector<int> getIndexRange(double, double);
 
@@ -66,13 +63,13 @@ class DistanceHistogram
     DistanceHistogram();
 
     //! Constructor
-    DistanceHistogram(CurveString &);
+    DistanceHistogram(CurveString<double> &);
 
     //! Constructor
-    DistanceHistogram(CurveString &, int);
+    DistanceHistogram(CurveString<double> &, int);
 
     //! Constructor
-    DistanceHistogram(CurveString &, int, double, int, string);
+    DistanceHistogram(CurveString<double> &, int, double, int, string);
 
     //! Copy constructor
     DistanceHistogram(const DistanceHistogram &);
@@ -90,7 +87,7 @@ class DistanceHistogram
     vector<Point<double>> getSamples();
 
     //! Returns the curve string
-    CurveString getCurveString();
+    CurveString<double> getCurveString();
 
     //! Returns the length of the curve string
     double getCurveStringLength();

@@ -421,6 +421,42 @@ RealType BezierCurve<RealType>::nearestPoint(RealType from,
 }
 
 /*!
+ *  \brief This module computes the point on the curve which is closest 
+ *  to a given point in space and a set of "nearest" points
+ *  \param from a RealType
+ *  \param set a reference to a vector<RealType>
+ *  \return the parameter of the nearest point
+ */
+template <typename RealType>
+Point<RealType> BezierCurve<RealType>::nearestPoint(Point<RealType> &from,
+                                             const vector<RealType> &set)
+{
+  vector<RealType> valid_t;
+  for (int i=0; i<set.size(); i++){
+    if (set[i] >= 0 && set[i] <=1) {
+      valid_t.push_back(set[i]);
+    }
+  }
+  if (valid_t.size() == 0) {
+    valid_t = set;
+  }
+  RealType t = valid_t[0];
+  Point<RealType> p = getPoint(t);
+  RealType dmin = distance(from,p);
+  Point<RealType> nearest = p;
+  for (int i=1; i<valid_t.size(); i++) {
+    t = valid_t[i];
+    p = getPoint(t);
+    RealType d = distance(from,p);
+    if (d < dmin) {
+      dmin = d;
+      nearest = p;
+    }
+  }
+  return nearest;
+}
+
+/*!
  *  \brief This module computes the signed distance of a point from a point
  *  on the Bezier curve
  *  \param p a Point<RealType>
@@ -438,6 +474,76 @@ RealType BezierCurve<RealType>::signedDistance(const Point<RealType> &p,
   //RealType d = fabs(distance(p,pc));
   //int point_orientation = plane.orientation(p);
   return fabs(distance(p,pc)) * plane.orientation(p);
+}
+
+/*!
+ *  \brief This method generates equally spaced parameter values
+ *  \param n an integer
+ *  \return the set of equally spaced parameters
+ */
+template <typename RealType>
+vector<RealType> BezierCurve<RealType>::generateEquallySpacedParameters(int n)
+{
+  vector<RealType> ts(n+1,0);
+  RealType dt = 1 / (RealType)n;
+  RealType t = dt;
+  for (int i=1; i<n; i++) {
+    ts[i] = t;
+    t += dt;
+  }
+  ts[n] = 1;
+  return ts;
+}
+
+/*!
+ *  \brief This method approximates the Bezier curve with a polygon with a 
+ *  specified number of sides
+ *  \param num_sides an integer
+ *  \return a Polygon
+ */
+template <typename RealType>
+Polygon<RealType> BezierCurve<RealType>::getApproximatingPolygon(int num_sides)
+{
+  if (degree == 1) {
+    return Polygon<RealType>(controlPoints);
+  } else {
+    vector<RealType> t = generateEquallySpacedParameters(num_sides);
+    vector<Point<RealType>> vertices;
+    for (int i=0; i<t.size(); i++) {
+      Point<RealType> p = getPoint(t[i]);
+      vertices.push_back(p);
+    }
+    return Polygon<RealType>(vertices);
+  }
+}
+
+/*!
+ *  \brief This fucntion approximates the Bezier curve with a polygon
+ *  \return a Polygon
+ */
+template <typename RealType>
+Polygon<RealType> BezierCurve<RealType>::getApproximatingPolygon()
+{
+  vector<Point<RealType>> vertices;
+  vertices.push_back(controlPoints[0]);
+  for (int i=1; i<controlPoints.size()-1; i++) {  
+    vector<RealType> nearest_set = project(controlPoints[i]);
+    Point<RealType> nearest = nearestPoint(controlPoints[i],nearest_set);
+    vertices.push_back(nearest);
+  }
+  vertices.push_back(controlPoints[degree]);
+  return Polygon<RealType>(vertices);
+}
+
+/*!
+ *  \brief This fucntion approximates the Bezier curve with a polygon
+ *  made up of lines connecting the control points.
+ *  \return a Polygon
+ */
+template <typename RealType>
+Polygon<RealType> BezierCurve<RealType>::getApproximatingPolygonControls()
+{
+  return Polygon<RealType>(controlPoints);
 }
 
 template class BezierCurve<float>;

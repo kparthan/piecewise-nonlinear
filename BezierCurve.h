@@ -3,6 +3,7 @@
 
 #include "Header.h"
 #include "Polynomial.h"
+#include "Polygon.h"
 
 template <typename RealType>
 class BezierCurve //: public Curve<RealType>
@@ -17,6 +18,9 @@ class BezierCurve //: public Curve<RealType>
 
     //! Express the x,y,z coordinates as polynomial in t
     Polynomial<RealType> expressAsPolynomial(int);
+
+    //! Generates equally spaced parameters
+    vector<RealType> generateEquallySpacedParameters(int);
   
   public:
     //! Null constructor
@@ -56,9 +60,21 @@ class BezierCurve //: public Curve<RealType>
 
     //! Gets the parameter of the nearest point
     RealType nearestPoint(RealType, const vector<RealType> &);
+
+    //! Gets the point which is closest to a point (not on the curve)
+    Point<RealType> nearestPoint(Point<RealType> &, const vector<RealType> &);
   
     //! Computes the signed distance from the point to the curve
     RealType signedDistance(const Point<RealType> &, RealType t, Vector<RealType> &); 
+
+    //! Constructs a representative polygon of the Bezier curve
+    Polygon<RealType> getApproximatingPolygon(int);
+
+    //! Constructs a representative polygon of the Bezier curve
+    Polygon<RealType> getApproximatingPolygon();
+
+    //! Constructs a representative polygon formed by connecting control points
+    Polygon<RealType> getApproximatingPolygonControls();
 };
 
 #endif

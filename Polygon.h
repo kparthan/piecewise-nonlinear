@@ -3,33 +3,34 @@
 
 #include "Header.h"
 
+template <typename RealType>
 class Polygon
 {
   private:
     //! Vertices of the polygon 
-    vector<Point<double>> vertices;
+    vector<Point<RealType>> vertices;
 
     //! Set of line segments
-    vector<Line<double>> sides;
+    vector<Line<RealType>> sides;
 
     //! Lengths of the line segments 
-    vector<double> lengths;
+    vector<RealType> lengths;
 
   public:
     //! Null constructor
     Polygon();
 
     //! Constructor
-    Polygon(vector<Point<double>> &);
+    Polygon(vector<Point<RealType>> &);
 
     //! Constructor
-    Polygon(vector<Line<double>> &);
+    Polygon(vector<Line<RealType>> &);
 
     //! Copy constructor
-    Polygon(const Polygon &);
+    Polygon(const Polygon<RealType> &);
 
     //! Assignment operator
-    Polygon operator=(const Polygon &);
+    Polygon<RealType> operator=(const Polygon<RealType> &);
 
     //! Get number of vertices
     int getNumberOfVertices();
@@ -37,8 +38,14 @@ class Polygon
     //! Get number of sides
     int getNumberOfSegments();
 
+    //! Get the vertices of the polygon
+    vector<Point<RealType>> getVertices();
+
+    //! Get the sides of the polygon
+    vector<Line<RealType>> getSides();
+
     //! Cumulative length of the sides forming the polygon 
-    double length();
+    RealType length();
 };
 
 #endif 

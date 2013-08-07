@@ -4,14 +4,16 @@
 /*!
  *  \brief This module is a null constructor.
  */
-CurveString::CurveString()
+template <typename RealType>
+CurveString<RealType>::CurveString()
 {}
 
 /*!
  *  \brief This is a constructor function.
- *  \param vertices a reference to a vector<Point<double>>
+ *  \param vertices a reference to a vector<Point<RealType>>
  */
-CurveString::CurveString(vector<Point<double>> &vertices) : vertices(vertices)
+template <typename RealType>
+CurveString<RealType>::CurveString(vector<Point<RealType>> &vertices) : vertices(vertices)
 {
   if (vertices.size() == 0) {
     cout << "No vertices to construct the curve string ...";
@@ -19,10 +21,10 @@ CurveString::CurveString(vector<Point<double>> &vertices) : vertices(vertices)
   }
   // Default behaviour: constructs a polygon when a set of vertices are given
   for (int i=0; i<vertices.size()-1; i++) {
-    vector<Point<double>> control_points(2,Point<double>());
+    vector<Point<RealType>> control_points(2,Point<RealType>());
     control_points[0] = vertices[i];
     control_points[1] = vertices[i+1];
-    BezierCurve<double> curve(control_points);
+    BezierCurve<RealType> curve(control_points);
     curves.push_back(curve);
     lengths.push_back(curve.length());
   }
@@ -30,9 +32,10 @@ CurveString::CurveString(vector<Point<double>> &vertices) : vertices(vertices)
 
 /*!
  *  \brief This is a constructor function.
- *  \param curves a reference to a vector<BezierCurve<double>>
+ *  \param curves a reference to a vector<BezierCurve<RealType>>
  */
-CurveString::CurveString(vector<BezierCurve<double>> &curves) : curves(curves)
+template <typename RealType>
+CurveString<RealType>::CurveString(vector<BezierCurve<RealType>> &curves) : curves(curves)
 {
   if (curves.size() == 0) {
     cout << "No curves to construct the curve string ...";
@@ -47,12 +50,13 @@ CurveString::CurveString(vector<BezierCurve<double>> &curves) : curves(curves)
 
 /*!
  *  \brief This is a constructor function.
- *  \param curves a reference to a vector<Line<double>>
- *  \param lengths a reference to a vector<double>
+ *  \param curves a reference to a vector<Line<RealType>>
+ *  \param lengths a reference to a vector<RealType>
  */
-CurveString::CurveString(vector<BezierCurve<double>> &curves,
-                         vector<double> &lengths, 
-                         vector<double> &approx_lengths) :
+template <typename RealType>
+CurveString<RealType>::CurveString(vector<BezierCurve<RealType>> &curves,
+                         vector<RealType> &lengths, 
+                         vector<RealType> &approx_lengths) :
                          curves(curves), lengths(lengths),
                          approx_lengths(approx_lengths)
 {
@@ -69,10 +73,11 @@ CurveString::CurveString(vector<BezierCurve<double>> &curves,
 }
 
 /*!
- *  \brief This module is used to create a copy of a CurveString object
+ *  \brief This module is used to create a copy of a CurveString<RealType> object
  *  \param source a reference to a CurveString
  */
-CurveString::CurveString(const CurveString &source) : vertices(source.vertices),
+template <typename RealType>
+CurveString<RealType>::CurveString(const CurveString<RealType> &source) : vertices(source.vertices),
              curves(source.curves), lengths(source.lengths),
              approx_lengths(source.approx_lengths)
 {}
@@ -82,7 +87,8 @@ CurveString::CurveString(const CurveString &source) : vertices(source.vertices),
  *  \param source a reference to a CurveString
  *  \return a CurveString
  */
-CurveString CurveString::operator=(const CurveString &source)
+template <typename RealType>
+CurveString<RealType> CurveString<RealType>::operator=(const CurveString<RealType> &source)
 {
   if (this != &source) {
     vertices = source.vertices;
@@ -97,7 +103,8 @@ CurveString CurveString::operator=(const CurveString &source)
  *  \brief This method is used to return the number of vertices of the curve string
  *  \return the number of vertices
  */
-int CurveString::getNumberOfVertices()
+template <typename RealType>
+int CurveString<RealType>::getNumberOfVertices()
 {
   return vertices.size();
 }
@@ -106,7 +113,8 @@ int CurveString::getNumberOfVertices()
  *  \brief This method is used to return the number of curves of the curve string
  *  \return the number of curves
  */
-int CurveString::getNumberOfSegments()
+template <typename RealType>
+int CurveString<RealType>::getNumberOfSegments()
 {
   return curves.size();
 }
@@ -115,9 +123,10 @@ int CurveString::getNumberOfSegments()
  *  \brief This method computes the length of the curve string
  *  \return the length of all curves
  */
-double CurveString::length()
+template <typename RealType>
+RealType CurveString<RealType>::length()
 {
-  double total_length = 0;
+  RealType total_length = 0;
   for (int i=0; i<lengths.size(); i++) {
     total_length += lengths[i]; 
   }
@@ -128,9 +137,10 @@ double CurveString::length()
  *  \brief This function is used to approximate the length of the curve string.
  *  \return the approximate length
  */
-double CurveString::approximateLength()
+template <typename RealType>
+RealType CurveString<RealType>::approximateLength()
 {
-  double total_length = 0;
+  RealType total_length = 0;
   for (int i=0; i<approx_lengths.size(); i++) {
     total_length += approx_lengths[i]; 
   }
@@ -141,11 +151,12 @@ double CurveString::approximateLength()
  *  \brief This method computes the sampling probabilities of each curve.
  *  \return the list of sampling probabilities
  */
-vector<double> CurveString::getSampleProbabilities()
+template <typename RealType>
+vector<RealType> CurveString<RealType>::getSampleProbabilities()
 {
-  double total_length = length();
-  //double total_length = approximateLength();
-  vector<double> sample_probability(curves.size(),0);
+  RealType total_length = length();
+  //RealType total_length = approximateLength();
+  vector<RealType> sample_probability(curves.size(),0);
   for (int i=0; i<curves.size(); i++) {
     sample_probability[i] = lengths[i] / total_length;
     //sample_probability[i] = approx_lengths[i] / total_length;
@@ -155,13 +166,14 @@ vector<double> CurveString::getSampleProbabilities()
 
 /*!
  *  \brief This function returns the curve index generated randomly
- *  \param random a double
- *  \param sample_probability a reference to a vector<double>
+ *  \param random a RealType
+ *  \param sample_probability a reference to a vector<RealType>
  *  \return the appropriate curve index
  */
-int CurveString::getCurveIndex(double random, vector<double> &sample_probability)
+template <typename RealType>
+int CurveString<RealType>::getCurveIndex(RealType random, vector<RealType> &sample_probability)
 {
-  double previous = 0;
+  RealType previous = 0;
   for (int i=0; i<sample_probability.size(); i++) {
     if (random <= sample_probability[i] + previous) {
       return i;
@@ -176,21 +188,22 @@ int CurveString::getCurveIndex(double random, vector<double> &sample_probability
  *  \param num_samples an integer
  *  \return a list of random points
  */
-vector<Point<double>> 
-CurveString::generateRandomlyDistributedPoints(int num_samples)
+template <typename RealType>
+vector<Point<RealType>> 
+CurveString<RealType>::generateRandomlyDistributedPoints(int num_samples)
 {
-  vector<vector<double>> params(curves.size(),vector<double>());
+  vector<vector<RealType>> params(curves.size(),vector<RealType>());
   srand(time(NULL));
-  vector<Point<double>> samples;
-  vector<double> sample_probability = getSampleProbabilities();
+  vector<Point<RealType>> samples;
+  vector<RealType> sample_probability = getSampleProbabilities();
   for (int i=0; i<num_samples; i++) {
     // randomly choose a curve of the curve string
-    double random = rand() / (double) RAND_MAX;
+    RealType random = rand() / (RealType) RAND_MAX;
     int curve_index = getCurveIndex(random,sample_probability);
 
     // randomly choose the parameter value \in [0,1]
-    double t = rand() / (double) RAND_MAX;
-    Point<double> point_on_curve = curves[curve_index].getPoint(t);
+    RealType t = rand() / (RealType) RAND_MAX;
+    Point<RealType> point_on_curve = curves[curve_index].getPoint(t);
 
     params[curve_index].push_back(t);
     samples.push_back(point_on_curve);
@@ -205,8 +218,9 @@ CurveString::generateRandomlyDistributedPoints(int num_samples)
  *  \param num_samples an integer
  *  \return a list of random points
  */
-vector<Point<double>> 
-CurveString::generateRandomlyDistributedPoints(double scale_factor)
+template <typename RealType>
+vector<Point<RealType>> 
+CurveString<RealType>::generateRandomlyDistributedPoints(RealType scale_factor)
 {
   int num_samples = ceil(length() * scale_factor);
   return generateRandomlyDistributedPoints(num_samples);
@@ -215,14 +229,15 @@ CurveString::generateRandomlyDistributedPoints(double scale_factor)
 /*!
  *  \brief This functions generates the list of parameters on a curve (a part
  *  of the curve string) that aree qually spaced
- *  \param dt a double
+ *  \param dt a RealType
  *  \return the list of curve parameters
  */
-vector<double>
-CurveString::generateUniformlySpacedParameters(double dt)
+template <typename RealType>
+vector<RealType>
+CurveString<RealType>::generateUniformlySpacedParameters(RealType dt)
 {
-  vector<double> ts;
-  double t = dt;
+  vector<RealType> ts;
+  RealType t = dt;
   while (1) {
     if (t >= 1) {
       break;
@@ -236,21 +251,22 @@ CurveString::generateUniformlySpacedParameters(double dt)
 /*!
  *  \brief This function generated samples on the curve string (when the numner
  *  of samples are not given) which are uniformly separated.
- *  \param scale_factor a double
+ *  \param scale_factor a RealType
  *  \return the list of sample points
  */
-vector<Point<double>> 
-CurveString::generateUniformlyDistributedPoints(double scale_factor)
+template <typename RealType>
+vector<Point<RealType>> 
+CurveString<RealType>::generateUniformlyDistributedPoints(RealType scale_factor)
 {
-  vector<vector<double>> params;
-  vector<Point<double>> samples;
-  double total_length = length();
+  vector<vector<RealType>> params;
+  vector<Point<RealType>> samples;
+  RealType total_length = length();
   for (int i=0; i<curves.size(); i++) {
     int num_samples = ceil(curves[i].length() * scale_factor);
-    double dt = 1.0 / num_samples;
-    vector<double> t = generateUniformlySpacedParameters(dt);
+    RealType dt = 1.0 / num_samples;
+    vector<RealType> t = generateUniformlySpacedParameters(dt);
     for (int j=0; j<t.size(); j++) {
-      Point<double> point_on_curve = curves[i].getPoint(t[j]);
+      Point<RealType> point_on_curve = curves[i].getPoint(t[j]);
       samples.push_back(point_on_curve);
     }
     params.push_back(t);
@@ -262,21 +278,22 @@ CurveString::generateUniformlyDistributedPoints(double scale_factor)
 /*!
  *  \brief This function generated samples on the curve string (when the total
  *  number of samples are given) which are uniformly separated.
- *  \param scale_factor a double
+ *  \param scale_factor a RealType
  *  \return the list of sample points
  */
-vector<Point<double>> 
-CurveString::generateUniformlyDistributedPoints(int num_points)
+template <typename RealType>
+vector<Point<RealType>> 
+CurveString<RealType>::generateUniformlyDistributedPoints(int num_points)
 {
-  vector<vector<double>> params;
-  vector<Point<double>> samples;
-  double total_length = length();
+  vector<vector<RealType>> params;
+  vector<Point<RealType>> samples;
+  RealType total_length = length();
   for (int i=0; i<curves.size(); i++) {
     int num_samples = ceil(curves[i].length() * num_points / total_length);
-    double dt = 1.0 / num_samples;
-    vector<double> t = generateUniformlySpacedParameters(dt);
+    RealType dt = 1.0 / num_samples;
+    vector<RealType> t = generateUniformlySpacedParameters(dt);
     for (int j=0; j<t.size(); j++) {
-      Point<double> point_on_curve = curves[i].getPoint(t[j]);
+      Point<RealType> point_on_curve = curves[i].getPoint(t[j]);
       samples.push_back(point_on_curve);
     }
     params.push_back(t);
@@ -288,29 +305,31 @@ CurveString::generateUniformlyDistributedPoints(int num_points)
 /*!
  *  \brief This function calculates the mean and standard deviations of the
  *  separations between the sampled points on the curve string.
- *  \param params a reference to a vector<vector<double>>
+ *  \param params a reference to a vector<vector<RealType>>
  */
-void CurveString::analyzeSampleStatistics(vector<vector<double>> &params)
+template <typename RealType>
+void
+CurveString<RealType>::analyzeSampleStatistics(vector<vector<RealType>> &params)
 {
   for (int i=0; i<params.size(); i++) {
     cout << "Curve " << i+1 << ": ";
-    vector<double> sorted_t = sort(params[i]);
+    vector<RealType> sorted_t = sort(params[i]);
     cout << "\n# of points: " << sorted_t.size() << endl;
     cout << "length: " << lengths[i] << endl;
-    Point<double> prev,current;
+    Point<RealType> prev,current;
     if (sorted_t.size() > 0) {
-      vector<double> distances;
+      vector<RealType> distances;
       prev = curves[i].getPoint(sorted_t[0]);
       for (int j=1; j<sorted_t.size(); j++) {
         current = curves[i].getPoint(sorted_t[j]);
         //cout << sorted_t[j] << ", ";
-        double dist = lcb::geometry::distance<double>(prev,current);
+        RealType dist = lcb::geometry::distance<RealType>(prev,current);
         distances.push_back(dist);
         prev = current;
       }
       if (distances.size() > 0) {
-        double mean = estimateMean(distances);
-        double stddev = standardDeviation(distances,mean);
+        RealType mean = estimateMean(distances);
+        RealType stddev = standardDeviation(distances,mean);
         cout << "Mean: " << mean << endl;
         cout << "Std. dev.: " << stddev << endl;
       }
@@ -320,4 +339,18 @@ void CurveString::analyzeSampleStatistics(vector<vector<double>> &params)
     cout << endl;
   }
 }
+
+/*!
+ *
+ */
+template <typename RealType>
+Polygon<RealType> CurveString<RealType>::getApproximatingPolygon()
+{
+  for (int i=0; i<curves.size(); i++) {
+  }
+}
+
+template class CurveString<float>;
+template class CurveString<double>;
+template class CurveString<long double>;
 

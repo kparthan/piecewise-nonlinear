@@ -4,49 +4,50 @@
 #include "Header.h"
 #include "BezierCurve.h"
 
+template <typename RealType>
 class CurveString
 {
   private:
     //! Vertices of the segments of the curves 
-    vector<Point<double>> vertices;
+    vector<Point<RealType>> vertices;
 
     //! Set of curves
-    vector<BezierCurve<double>> curves;
+    vector<BezierCurve<RealType>> curves;
 
     //! Lengths of the curves
-    vector<double> lengths;
+    vector<RealType> lengths;
 
     //! Approximate lengthhs of the curves
-    vector<double> approx_lengths;
+    vector<RealType> approx_lengths;
 
     //! Select a curve
-    int getCurveIndex(double, vector<double> &);
+    int getCurveIndex(RealType, vector<RealType> &);
 
     //! Generates equally spaced parameter values
-    vector<double> generateUniformlySpacedParameters(double);
+    vector<RealType> generateUniformlySpacedParameters(RealType);
 
     //! Calculate the mean and standard deviation of the intra sample distances
-    void analyzeSampleStatistics(vector<vector<double>> &);
+    void analyzeSampleStatistics(vector<vector<RealType>> &);
 
   public:
     //! Null constructor
     CurveString();
 
     //! Constructor
-    CurveString(vector<Point<double>> &);
+    CurveString(vector<Point<RealType>> &);
 
     //! Constructor
-    CurveString(vector<BezierCurve<double>> &);
+    CurveString(vector<BezierCurve<RealType>> &);
 
     //! Constructor
-    CurveString(vector<BezierCurve<double>> &, vector<double> &,
-                vector<double> &);
+    CurveString(vector<BezierCurve<RealType>> &, vector<RealType> &,
+                vector<RealType> &);
 
     //! Copy constructor
-    CurveString(const CurveString &);
+    CurveString(const CurveString<RealType> &);
 
     //! Assignment operator
-    CurveString operator=(const CurveString &);
+    CurveString<RealType> operator=(const CurveString<RealType> &);
 
     //! Get number of vertices
     int getNumberOfVertices();
@@ -55,25 +56,28 @@ class CurveString
     int getNumberOfSegments();
 
     //! Cumulative length of the curves forming the curve string
-    double length();
+    RealType length();
 
     //! Computes the approximate length of the curve string
-    double approximateLength();
+    RealType approximateLength();
 
     //! Sampling probabilities of the individual curves
-    vector<double> getSampleProbabilities();
+    vector<RealType> getSampleProbabilities();
 
     //! Generate random points
-    vector<Point<double>> generateRandomlyDistributedPoints(int);
+    vector<Point<RealType>> generateRandomlyDistributedPoints(int);
 
     //! Generate random points when the number of samples is not given
-    vector<Point<double>> generateRandomlyDistributedPoints(double);
+    vector<Point<RealType>> generateRandomlyDistributedPoints(RealType);
 
     //! Generate samples on the curve which are uniformly separated
-    vector<Point<double>> generateUniformlyDistributedPoints(int);
+    vector<Point<RealType>> generateUniformlyDistributedPoints(int);
 
     //! Generate samples on the curve which are uniformly separated
-    vector<Point<double>> generateUniformlyDistributedPoints(double);
+    vector<Point<RealType>> generateUniformlyDistributedPoints(RealType);
+
+    //! Construct the approximating polygon
+    Polygon<RealType> getApproximatingPolygon();
 };
 
 #endif 
