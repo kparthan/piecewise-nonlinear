@@ -9,15 +9,16 @@ OBJECTS = piecewise-nonlinear-fit.o \
   StandardForm.o \
   Segment.o \
   Message.o \
+  Polygon.o \
   BezierCurve.o \
+  CurveString.o \
   Polynomial.o \
   Test.o \
   OptimalFit.o \
   Complex.o \
   Identifier.o \
   Segmentation.o \
-  CurveString.o \
-  Polygon.o \
+  KnotInvariants.o \
   DistanceHistogram.o
 
 all: piecewise-nonlinear-fit 
@@ -49,7 +50,13 @@ Segment.o: Segment.cpp Segment.h Message.h
 Message.o: Message.cpp Message.h Support.h Header.h
 	g++ -c $(CFLAGS) $< -o $@
 
+Polygon.o: Polygon.cpp Polygon.h
+	g++ -c $(CFLAGS) $< -o $@
+
 BezierCurve.o: BezierCurve.cpp BezierCurve.h Polynomial.h
+	g++ -c $(CFLAGS) $< -o $@
+
+CurveString.o: CurveString.cpp CurveString.h
 	g++ -c $(CFLAGS) $< -o $@
 
 Polynomial.o: Polynomial.cpp Polynomial.h
@@ -70,10 +77,7 @@ Identifier.o: Identifier.cpp Identifier.h
 Segmentation.o: Segmentation.cpp Segmentation.h
 	g++ -c $(CFLAGS) $< -o $@
 
-CurveString.o: CurveString.cpp CurveString.h
-	g++ -c $(CFLAGS) $< -o $@
-
-Polygon.o: Polygon.cpp Polygon.h
+KnotInvariants.o: KnotInvariants.cpp KnotInvariants.h
 	g++ -c $(CFLAGS) $< -o $@
 
 DistanceHistogram.o: DistanceHistogram.cpp DistanceHistogram.h

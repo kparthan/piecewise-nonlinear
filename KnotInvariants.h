@@ -1,8 +1,7 @@
 #ifndef KNOT_INVARIANTS_H
 #define KNOT_INVARIANTS_H
 
-#include "Header.h"
-#include "CurveString.h"
+#include "Support.h"
 
 class KnotInvariants
 {
@@ -12,6 +11,9 @@ class KnotInvariants
 
     //! Representative polygon of the curve string
     Polygon<double> polygon;
+
+    //! Writhe matrix
+    vector<vector<double>> writhe;
 
   public:
     //! Null constructor
@@ -25,6 +27,18 @@ class KnotInvariants
 
     //! Overload assignment operator
     KnotInvariants operator=(const KnotInvariants &);
+
+    //! Constructs the representative polygon
+    void constructPolygon(int, int);
+
+    //! Computes the writhe matrix
+    void computeWrithe();
+
+    // Compute order 1 invariants
+    vector<double> orderOne();
+
+    // Compute order 2 invariants
+    vector<double> orderTwo();
 
 };
 

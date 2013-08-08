@@ -77,9 +77,9 @@ CurveString<RealType>::CurveString(vector<BezierCurve<RealType>> &curves,
  *  \param source a reference to a CurveString
  */
 template <typename RealType>
-CurveString<RealType>::CurveString(const CurveString<RealType> &source) : vertices(source.vertices),
-             curves(source.curves), lengths(source.lengths),
-             approx_lengths(source.approx_lengths)
+CurveString<RealType>::CurveString(const CurveString<RealType> &source) : 
+                       vertices(source.vertices), curves(source.curves),
+                       lengths(source.lengths), approx_lengths(source.approx_lengths)
 {}
 
 /*!
@@ -306,7 +306,7 @@ CurveString<RealType>::generateUniformlyDistributedPoints(int num_points)
  *  \brief This function calculates the mean and standard deviations of the
  *  separations between the sampled points on the curve string.
  *  \param params a reference to a vector<vector<RealType>>
- */
+ *//*
 template <typename RealType>
 void
 CurveString<RealType>::analyzeSampleStatistics(vector<vector<RealType>> &params)
@@ -338,16 +338,43 @@ CurveString<RealType>::analyzeSampleStatistics(vector<vector<RealType>> &params)
     }
     cout << endl;
   }
-}
+}*/
 
 /*!
- *
+ *  \brief This function approximates the curve string as a polygon
+ *  \param heuristic an integer
+ *  \param num_sides an integer
+ *  \return the approximating polygon
  */
 template <typename RealType>
-Polygon<RealType> CurveString<RealType>::getApproximatingPolygon()
+Polygon<RealType>
+CurveString<RealType>::getApproximatingPolygon(int heuristic, int num_sides)
 {
-  for (int i=0; i<curves.size(); i++) {
+  vector<Polygon<RealType>> polygons;
+  Polygon<RealType> polygon;
+  switch(heuristic) {
+    case POLYGON_PROJECTIONS:
+      for (int i=0; i<curves.size(); i++) {
+        polygon = curves[i].getApproximatingPolygon();
+        polygons.push_back(polygon);
+      }
+      break;
+
+    case POLYGON_CONTROLS: 
+      for (int i=0; i<curves.size(); i++) {
+        polygon = curves[i].getApproximatingPolygonControls();
+        polygons.push_back(polygon);
+      }
+      break;
+
+    case POLYGON_SPECIFIC:
+      for (int i=0; i<curves.size(); i++) {
+        polygon = curves[i].getApproximatingPolygon(num_sides);
+        polygons.push_back(polygon);
+      }
+      break;
   }
+  return merge(polygons);
 }
 
 template class CurveString<float>;

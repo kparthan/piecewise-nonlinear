@@ -1,5 +1,5 @@
-#ifndef CURVE_STRING_H
-#define CURVE_STRING_H
+#ifndef POLYGON_H
+#define POLYGON_H
 
 #include "Header.h"
 
@@ -36,7 +36,7 @@ class Polygon
     int getNumberOfVertices();
 
     //! Get number of sides
-    int getNumberOfSegments();
+    int getNumberOfSides();
 
     //! Get the vertices of the polygon
     vector<Point<RealType>> getVertices();
@@ -46,6 +46,9 @@ class Polygon
 
     //! Cumulative length of the sides forming the polygon 
     RealType length();
+
+    //! Visualize the polygon in Pymol
+    void visualize();
 };
 
 #endif 

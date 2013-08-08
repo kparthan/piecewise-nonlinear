@@ -3,6 +3,7 @@
 
 #include "Header.h"
 #include "Segmentation.h"
+#include "Polygon.h"
 #include "DistanceHistogram.h"
 
 struct Parameters
@@ -41,9 +42,12 @@ struct Parameters
   int num_sides;                    // # of sides in the approximating polygon
 };
 
-vector<double> sort(vector<double> &);
-void quicksort(vector<double> &, vector<int> &, int, int);
-int partition(vector<double> &, vector<int> &, int, int);
+template <typename RealType>
+vector<RealType> sort(vector<RealType> &);
+template <typename RealType>
+void quicksort(vector<RealType> &, vector<int> &, int, int);
+template <typename RealType>
+int partition(vector<RealType> &, vector<int> &, int, int);
 double standardDeviation(vector<double> &, double);
 
 void build(struct Parameters &);
@@ -88,6 +92,11 @@ Segmentation proteinFit (struct Parameters &);
 Segmentation generalFit (struct Parameters &);
 
 vector<Point<double>> read(string);
+
+template <typename RealType>
+Polygon<RealType> merge(vector<Polygon<RealType>> &);
+double exteriorAngle(Vector<double> &, Vector<double> &, Vector<double> &);
+double sumExteriorAngles(Line<double> &, Line<double> &);
 
 #endif
 

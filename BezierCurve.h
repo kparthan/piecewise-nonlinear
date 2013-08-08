@@ -6,7 +6,7 @@
 #include "Polygon.h"
 
 template <typename RealType>
-class BezierCurve //: public Curve<RealType>
+class BezierCurve 
 {
   private:
     //! Degree of the curve 

@@ -27,7 +27,7 @@ class CurveString
     vector<RealType> generateUniformlySpacedParameters(RealType);
 
     //! Calculate the mean and standard deviation of the intra sample distances
-    void analyzeSampleStatistics(vector<vector<RealType>> &);
+    //void analyzeSampleStatistics(vector<vector<RealType>> &);
 
   public:
     //! Null constructor
@@ -77,7 +77,7 @@ class CurveString
     vector<Point<RealType>> generateUniformlyDistributedPoints(RealType);
 
     //! Construct the approximating polygon
-    Polygon<RealType> getApproximatingPolygon();
+    Polygon<RealType> getApproximatingPolygon(int, int);
 };
 
 #endif 

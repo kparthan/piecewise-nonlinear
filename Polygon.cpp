@@ -1,4 +1,4 @@
-#include "Polygon<RealType>.h"
+#include "Polygon.h"
 
 /*!
  *  \brief This module is a null constructor.
@@ -84,7 +84,7 @@ int Polygon<RealType>::getNumberOfVertices()
  *  \return the number of sides
  */
 template <typename RealType>
-int Polygon<RealType>::getNumberOfSegments()
+int Polygon<RealType>::getNumberOfSides()
 {
   return sides.size();
 }
@@ -121,6 +121,14 @@ RealType Polygon<RealType>::length()
     total_length += lengths[i]; 
   }
   return total_length;
+}
+
+/*!
+ *  \brief This function plots the polygon to be visualized in Pymol.
+ */
+template <typename RealType>
+void Polygon<RealType>::visualize()
+{
 }
 
 template class Polygon<float>;

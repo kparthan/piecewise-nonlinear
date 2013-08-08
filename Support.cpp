@@ -3,6 +3,7 @@
 #include "General.h"
 #include "Test.h"
 #include "StandardForm.h"
+#include "KnotInvariants.h"
 
 /*!
  *  \brief This function checks to see if valid arguments are given to the 
@@ -337,14 +338,14 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     }
   } else if (profile.compare("knot_invariants") == 0) {
     parameters.profile = KNOT_INVARIANTS;
-    if (vm.compare("polygon")) {
+    if (vm.count("polygon")) {
       if (polygon.compare("controls") == 0) {
         parameters.construct_polygon = POLYGON_CONTROLS; 
       } else if (polygon.compare("projections") == 0) {
         parameters.construct_polygon = POLYGON_PROJECTIONS;
       } else if (polygon.compare("specific") == 0) {
         parameters.construct_polygon = POLYGON_SPECIFIC;
-        if (vm.compare("sides")) {
+        if (vm.count("sides")) {
           cout << "Each representative polygon constructed with "
                << parameters.num_sides << " sides ...\n";
         } else {
@@ -430,7 +431,19 @@ void build(struct Parameters &parameters)
     }
 
     case KNOT_INVARIANTS: // compute the knot invariants
+    {
+      vector<BezierCurve<double>> curves = segmentation.getBezierCurves();
+      vector<double> lengths = segmentation.getBezierCurvesLengths();
+      vector<double> approx_lengths = segmentation.getApproximateBezierLengths();
+      CurveString<double> curve_string(curves,lengths,approx_lengths);
+      KnotInvariants knot_invariants(curve_string);
+      knot_invariants.constructPolygon(parameters.construct_polygon,
+                                       parameters.num_sides);
+      knot_invariants.computeWrithe();
+      vector<double> invariants = knot_invariants.orderOne();
+      cout << "Invariants: " << invariants[0] << "\t" << invariants[1] << endl;
       break;
+    }
   }
 }
 
@@ -1042,13 +1055,9 @@ RealType absoluteMaximum(vector<RealType> &list)
   }
   return max;
 }
-
-template 
-float absoluteMaximum(vector<float> &);
-template
-double absoluteMaximum(vector<double> &);
-template
-long double absoluteMaximum(vector<long double> &);
+template float absoluteMaximum(vector<float> &);
+template double absoluteMaximum(vector<double> &);
+template long double absoluteMaximum(vector<long double> &);
 
 /*!
  *  \brief This module finds the minimum value in a list
@@ -1149,10 +1158,11 @@ double getMaximumDistance(vector<array<double,3>> &coordinates)
  *  \param list a reference to a vector<double>
  *  \return the sorted list
  */
-vector<double> sort(vector<double> &list)
+template <typename RealType>
+vector<RealType> sort(vector<RealType> &list)
 {
   int num_samples = list.size();
-	vector<double> sortedList(list);
+	vector<RealType> sortedList(list);
   vector<int> index(num_samples,0);
 	for(int i=0; i<num_samples; i++) {
 			index[i] = i;
@@ -1160,6 +1170,9 @@ vector<double> sort(vector<double> &list)
 	quicksort(sortedList,index,0,num_samples-1);
   return sortedList;
 }
+template vector<float> sort(vector<float> &);
+template vector<double> sort(vector<double> &);
+template vector<long double> sort(vector<long double> &);
 
 /*!
  *  This is an implementation of the classic quicksort() algorithm to sort a
@@ -1172,8 +1185,8 @@ vector<double> sort(vector<double> &list)
  *  \param left an integer
  *  \param right an integer
  */
-void quicksort(vector<double> &list, vector<int> &index, 
-                              int left, int right)
+template <typename RealType>
+void quicksort(vector<RealType> &list, vector<int> &index, int left, int right)
 {
 	if(left < right)
 	{
@@ -1182,6 +1195,9 @@ void quicksort(vector<double> &list, vector<int> &index,
 		quicksort(list,index,pivotNewIndex+1,right);
 	}
 }
+template void quicksort(vector<float> &, vector<int> &, int, int);
+template void quicksort(vector<double> &, vector<int> &, int, int);
+template void quicksort(vector<long double> &, vector<int> &, int, int);
 
 /*!
  *  This function is called from the quicksort() routine to compute the new
@@ -1192,10 +1208,10 @@ void quicksort(vector<double> &list, vector<int> &index,
  *  \param right an integer
  *  \return the new pivot index
  */
-int partition(vector<double> &list, vector<int> &index,
-                             int left, int right)
+template <typename RealType>
+int partition(vector<RealType> &list, vector<int> &index, int left, int right)
 {
-	double temp,pivotPoint = list[right];
+	RealType temp,pivotPoint = list[right];
 	int storeIndex = left,temp_i;
 	for(int i=left; i<right; i++) {
 		if(list[i] < pivotPoint) {
@@ -1216,7 +1232,13 @@ int partition(vector<double> &list, vector<int> &index,
 	index[right] = temp_i;
 	return storeIndex;
 }
+template int partition(vector<float> &, vector<int> &, int, int);
+template int partition(vector<double> &, vector<int> &, int, int);
+template int partition(vector<long double> &, vector<int> &, int, int);
 
+/*!
+ *
+ */
 vector<Point<double>> read(string name)
 {
   string file_name = string(CURRENT_DIRECTORY) + "output/histograms/" + name;
@@ -1243,5 +1265,75 @@ vector<Point<double>> read(string name)
   }
   file.close();
   return point_set;
+}
+
+/*!
+ *  \brief This function joins individual polygons 
+ *  \param polygons a reference to a vector<Polygon<RealType>> 
+ *  \return the merged polygon
+ */
+template <typename RealType>
+Polygon<RealType> merge(vector<Polygon<RealType>> &polygons)
+{
+  vector<Line<RealType>> all_sides;
+  for (int i=0; i<polygons.size(); i++) {
+    vector<Line<RealType>> sides = polygons[i].getSides();
+    for (int j=0; j<sides.size(); j++) {
+      all_sides.push_back(sides[j]);
+    }
+  }
+  return Polygon<RealType>(all_sides);
+}
+template Polygon<float> merge(vector<Polygon<float>> &);
+template Polygon<double> merge(vector<Polygon<double>> &);
+template Polygon<long double> merge(vector<Polygon<long double>> &);
+
+/*!
+ *  \brief This function computes the exterior angle formed by three unit vectors.
+ *  \param a a reference a Vector<double>
+ *  \param b a reference a Vector<double>
+ *  \param c a reference a Vector<double>
+ *  \return the exterior angle
+ */
+double exteriorAngle(Vector<double> &a, Vector<double> &b, Vector<double> &c)
+{
+  Vector<double> aXb = lcb::Vector<double>::crossProduct(a,b);
+  Vector<double> bXc = lcb::Vector<double>::crossProduct(b,c);
+  return lcb::Vector<double>::angleBetween(aXb,bXc);
+}
+
+/*!
+ *  \brief This function computes the sum of the exterior angles formed
+ *  by two line segments.
+ *  \param line1 a reference to a Line<double>
+ *  \param line2 a reference to a Line<double>
+ *  \return the sum of the exterior angles
+ */
+double sumExteriorAngles(Line<double> &line1, Line<double> &line2)
+{
+  Vector<double> s1 = line1.startPoint().positionVector();
+  Vector<double> e1 = line1.endPoint().positionVector();
+  Vector<double> s2 = line2.startPoint().positionVector();
+  Vector<double> e2 = line2.endPoint().positionVector();
+
+  // v1: e(i,j)
+  Vector<double> v1 = s2 - s1;
+  v1.normalize();
+  // v2: e(i+1,j)
+  Vector<double> v2 = s2 - e1;
+  v2.normalize();
+  // v3: e(i+1,j+1)
+  Vector<double> v3 = e2 - e1;
+  v3.normalize();
+  // v4: e(i,j+1)
+  Vector<double> v4 = e2 - s1;
+  v4.normalize();
+
+  double ext1 = exteriorAngle(v1,v2,v3);
+  double ext2 = exteriorAngle(v2,v3,v4);
+  double ext3 = exteriorAngle(v3,v4,v1);
+  double ext4 = exteriorAngle(v4,v1,v2);
+
+  return (ext1+ext2+ext3+ext4);
 }
 
