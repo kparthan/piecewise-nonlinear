@@ -1,4 +1,4 @@
-load ../modified_pdb_files/pdb1ubq.pdb
+load /home/pkas7/Research/Work/piecewise-nonlinear/output/knot-invariants/polygons/pdb1ubq.pdb
 hide
 show cartoon
 set label_font_id, 10
@@ -60,3 +60,42 @@ select curve8, chain y and resi C8
 print cmd.distance("chain A and resi 75 and name CA","chain A and resi 76 and name CA")
 hide label
 color c8, seg8
+distance s1, chain p and resi 0 and name 0, chain p and resi 0 and name 1
+color red, s1
+hide label
+distance s2, chain p and resi 0 and name 1, chain p and resi 0 and name 2
+color red, s2
+hide label
+distance s3, chain p and resi 0 and name 2, chain p and resi 0 and name 3
+color red, s3
+hide label
+distance s4, chain p and resi 0 and name 3, chain p and resi 0 and name 4
+color red, s4
+hide label
+distance s5, chain p and resi 0 and name 4, chain p and resi 0 and name 5
+color red, s5
+hide label
+distance s6, chain p and resi 0 and name 5, chain p and resi 0 and name 6
+color red, s6
+hide label
+distance s7, chain p and resi 0 and name 6, chain p and resi 0 and name 7
+color red, s7
+hide label
+distance s8, chain p and resi 0 and name 7, chain p and resi 0 and name 8
+color red, s8
+hide label
+distance s9, chain p and resi 0 and name 8, chain p and resi 0 and name 9
+color red, s9
+hide label
+distance s10, chain p and resi 0 and name 9, chain p and resi 1 and name 0
+color red, s10
+hide label
+distance s11, chain p and resi 1 and name 0, chain p and resi 1 and name 1
+color red, s11
+hide label
+distance s12, chain p and resi 1 and name 1, chain p and resi 1 and name 2
+color red, s12
+hide label
+distance s13, chain p and resi 1 and name 2, chain p and resi 1 and name 3
+color red, s13
+hide label

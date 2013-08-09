@@ -16,6 +16,10 @@ class Polygon
     //! Lengths of the line segments 
     vector<RealType> lengths;
 
+  protected:
+    //! Generate the Pymol script
+    void createPymolScript(string, ProteinStructure &);
+
   public:
     //! Null constructor
     Polygon();
@@ -48,7 +52,7 @@ class Polygon
     RealType length();
 
     //! Visualize the polygon in Pymol
-    void visualize();
+    void visualize(string);
 };
 
 #endif 

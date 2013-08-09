@@ -436,7 +436,8 @@ void build(struct Parameters &parameters)
       vector<double> lengths = segmentation.getBezierCurvesLengths();
       vector<double> approx_lengths = segmentation.getApproximateBezierLengths();
       CurveString<double> curve_string(curves,lengths,approx_lengths);
-      KnotInvariants knot_invariants(curve_string);
+      string name = extractName(parameters.file);
+      KnotInvariants knot_invariants(curve_string,name);
       knot_invariants.constructPolygon(parameters.construct_polygon,
                                        parameters.num_sides);
       knot_invariants.computeWrithe();

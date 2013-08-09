@@ -125,10 +125,105 @@ RealType Polygon<RealType>::length()
 
 /*!
  *  \brief This function plots the polygon to be visualized in Pymol.
+ *  \param name a string
  */
 template <typename RealType>
-void Polygon<RealType>::visualize()
+void Polygon<RealType>::visualize(string name)
 {
+  int res_total = ceil(vertices.size()/10.0);
+
+  // create a pdb file for the polygon vertices
+  ProteinStructure structure("polygon");
+  shared_ptr<Chain> chain = make_shared<Chain>("p");
+  int vertices_index = 0;
+  for (int j=0; j<res_total; j++) {
+    string res_id = boost::lexical_cast<string>(j);
+    shared_ptr<Residue> residue = make_shared<Residue>(res_id);
+    for (int i=0; i<10; i++) {
+      string atom_id = boost::lexical_cast<string>(i);
+      shared_ptr<Atom> atom = make_shared<Atom>(atom_id);
+      atom->setAtomicCoordinate(vertices[vertices_index]);
+      residue->addAtom(atom);
+      vertices_index++;
+      if (vertices_index >= vertices.size()) {
+        break;
+      }
+    }
+    chain->addResidue(residue);
+  }
+  structure.addChain(chain);
+
+  // copy the existing modified pdb file
+  string modified_pdb = string(CURRENT_DIRECTORY) + "output/segmentations/"
+                        + "modified_pdb_files/" + name + ".pdb";
+  string vertices_pdb = string(CURRENT_DIRECTORY) + "output/knot-invariants/"
+                        + "polygons/" + name + ".pdb"; 
+  string cmd = "cp " + modified_pdb + " " + vertices_pdb;
+  system(cmd.c_str());
+
+  // update the modified pdb file by adding the vertices of the polygon
+  vector<Atom> atoms = structure.getAtoms();
+  ofstream pdb_file(vertices_pdb.c_str(),ios::app);
+  for (int i=0; i<atoms.size(); i++) {
+    pdb_file << atoms[i].formatPDBLine() << endl;
+  }
+  pdb_file.close();
+
+  createPymolScript(name,structure);
+}
+
+/*!
+ *  \brief This function generates the Pymol script file
+ *  \param name a string
+ *  \param structure a reference to a ProteinStructure
+ */
+template <typename RealType>
+void Polygon<RealType>::createPymolScript(string name, ProteinStructure &structure)
+{
+  string pymol_script = string(CURRENT_DIRECTORY) + "output/segmentations/"
+                        + "pymol_scripts/" + name + ".pml";
+  string polygon_script = string(CURRENT_DIRECTORY) + "output/knot-invariants/"
+                        + "polygons/" + name + ".pml"; 
+  string pdb_file = string(CURRENT_DIRECTORY) + "output/knot-invariants/"
+                    + "polygons/" + name + ".pdb";
+  ifstream pymol(pymol_script.c_str());
+  ofstream polygon(polygon_script.c_str());
+
+  // copy the existing .pml file
+  string line;
+  getline(pymol,line);
+  polygon << "load " << pdb_file << endl;
+  while (getline(pymol,line)) {
+    polygon << line << endl;
+  }
+  pymol.close();
+
+  // update the .pml file
+  Chain polygon_chain = structure.getDefaultModel()["p"];
+  vector<string> res_ids = polygon_chain.getResidueIdentifiers();
+  string sel1,sel2,tmp;
+  int start;
+  int side = 1;
+  for (int i=0; i<res_ids.size(); i++) {
+    tmp = "chain p and resi " + res_ids[i] + " and name ";
+    Residue residue = polygon_chain[res_ids[i]];
+    vector<string> atom_ids = residue.getAtomIdentifiers();
+    if (i == 0) {
+      sel1 = tmp + atom_ids[0];
+      start = 1;
+    } else {
+      start = 0;
+    }
+    for (int j=start; j<atom_ids.size(); j++) {
+      sel2 = tmp + atom_ids[j];
+      polygon << "distance s" << side << ", " << sel1 << ", " << sel2 << endl;
+      polygon << "color red, s" << side << endl;
+      polygon << "hide label" << endl;
+      sel1 = sel2;
+      side++;
+    }
+  }
+  polygon.close();
 }
 
 template class Polygon<float>;

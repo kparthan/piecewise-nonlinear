@@ -9,9 +9,10 @@ KnotInvariants::KnotInvariants()
 /*!
  *  \brief Constructor
  *  \param curve_string a reference to a CurveString
+ *  \param name a string
  */
-KnotInvariants::KnotInvariants(CurveString<double> &curve_string) : 
-                               curve_string(curve_string)
+KnotInvariants::KnotInvariants(CurveString<double> &curve_string, string name):
+                               curve_string(curve_string), name(name)
 {}
 
 /*!
@@ -20,7 +21,7 @@ KnotInvariants::KnotInvariants(CurveString<double> &curve_string) :
  */
 KnotInvariants::KnotInvariants(const KnotInvariants &source) :
                 curve_string(source.curve_string), polygon(source.polygon),
-                writhe(source.writhe)
+                writhe(source.writhe), name(source.name)
 {}
 
 /*!
@@ -35,6 +36,7 @@ KnotInvariants KnotInvariants::operator=(const KnotInvariants &source)
     curve_string = source.curve_string;
     polygon = source.polygon;
     writhe = source.writhe;
+    name = source.name;
   }
   return *this;
 }
@@ -47,6 +49,7 @@ KnotInvariants KnotInvariants::operator=(const KnotInvariants &source)
 void KnotInvariants::constructPolygon(int heuristic, int num_sides)
 {
   polygon = curve_string.getApproximatingPolygon(heuristic,num_sides);
+  polygon.visualize(name);
   int sides = polygon.getNumberOfSides();
   for (int i=0; i<sides; i++) {
     vector<double> tmp(sides,0);

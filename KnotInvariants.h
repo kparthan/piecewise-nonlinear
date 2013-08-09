@@ -6,6 +6,9 @@
 class KnotInvariants
 {
   private:
+    //! Name of the structure
+    string name;
+
     //! Representative curve string
     CurveString<double> curve_string;
 
@@ -20,7 +23,7 @@ class KnotInvariants
     KnotInvariants();
 
     //! Constructor
-    KnotInvariants(CurveString<double> &);
+    KnotInvariants(CurveString<double> &, string);
 
     //! Copy constructor
     KnotInvariants(const KnotInvariants &);
