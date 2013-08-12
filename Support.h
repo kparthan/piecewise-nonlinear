@@ -21,7 +21,7 @@ struct Parameters
   int max_segment_length;           // maximum allowed segment length
   int encode_deviations;            // mechanism to encode deviations
   int force_segmentation;           // flag to redo segmentation
-  int force_build;                  // flag to rebuild histograms
+  int force_build;                  // flag to rebuild profile 
   int profile;                      // distance histogram or knot invariants
   int comparison;                   // comparison flag set/unset 
   vector<string> comparison_files;  // path to the structure files used

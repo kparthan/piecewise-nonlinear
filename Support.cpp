@@ -1300,7 +1300,12 @@ double exteriorAngle(Vector<double> &a, Vector<double> &b, Vector<double> &c)
 {
   Vector<double> aXb = lcb::Vector<double>::crossProduct(a,b);
   Vector<double> bXc = lcb::Vector<double>::crossProduct(b,c);
-  return lcb::Vector<double>::angleBetween(aXb,bXc);
+  //return lcb::Vector<double>::angleBetween(aXb,bXc);
+  aXb.normalize();
+  bXc.normalize();
+  Vector<double> bXbXc = lcb::Vector<double>::crossProduct(b,bXc); 
+  double dot_product = aXb * bXbXc;
+  return asin(dot_product);
 }
 
 /*!
