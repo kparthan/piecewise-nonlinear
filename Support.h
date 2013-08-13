@@ -21,7 +21,7 @@ struct Parameters
   int max_segment_length;           // maximum allowed segment length
   int encode_deviations;            // mechanism to encode deviations
   int force_segmentation;           // flag to redo segmentation
-  int force_build;                  // flag to rebuild histograms
+  int force_build;                  // flag to rebuild profile 
   int profile;                      // distance histogram or knot invariants
   int comparison;                   // comparison flag set/unset 
   vector<string> comparison_files;  // path to the structure files used
@@ -40,10 +40,13 @@ struct Parameters
   // parameters used for profiling using knot invariants
   int construct_polygon;            // polygon construction heuristic 
   int num_sides;                    // # of sides in the approximating polygon
+  int max_order;                    // maximum order of knot invariants
 };
 
 template <typename RealType>
 vector<RealType> sort(vector<RealType> &);
+template <typename RealType>
+vector<int> sortedListIndex(vector<RealType> &);
 template <typename RealType>
 void quicksort(vector<RealType> &, vector<int> &, int, int);
 template <typename RealType>

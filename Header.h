@@ -86,6 +86,7 @@
 #define POLYGON_SPECIFIC 2
 
 #define POLYGON_SIDES 20
+#define MAX_ORDER_INVARIANTS 3 
 
 using namespace std;
 using namespace std::chrono;
