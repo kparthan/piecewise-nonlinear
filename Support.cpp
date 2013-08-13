@@ -68,6 +68,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
         // arguments for knot invariants based profiling 
        ("polygon",value<string>(&polygon),"polygon construction heuristic")
        ("sides",value<int>(&parameters.num_sides),"# of sides in a polygon")
+       ("order",value<int>(&parameters.max_order),"maximum order of knot invariants")
   ;
   variables_map vm;
   store(parse_command_line(argc,argv,desc),vm);
@@ -338,6 +339,14 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     }
   } else if (profile.compare("knot_invariants") == 0) {
     parameters.profile = KNOT_INVARIANTS;
+    if (vm.count("order")) {
+      cout << "Maximum order of knot invariants: " 
+           << parameters.max_order << endl;
+    } else {
+      parameters.max_order = MAX_ORDER_INVARIANTS;
+      cout << "Using default maximum order of knot invariants: " 
+           << parameters.max_order << endl;
+    }
     if (vm.count("polygon")) {
       if (polygon.compare("controls") == 0) {
         parameters.construct_polygon = POLYGON_CONTROLS; 
@@ -437,12 +446,10 @@ void build(struct Parameters &parameters)
       vector<double> approx_lengths = segmentation.getApproximateBezierLengths();
       CurveString<double> curve_string(curves,lengths,approx_lengths);
       string name = extractName(parameters.file);
-      KnotInvariants knot_invariants(curve_string,name);
+      KnotInvariants knot_invariants(curve_string,name,parameters.max_order);
       knot_invariants.constructPolygon(parameters.construct_polygon,
                                        parameters.num_sides);
-      knot_invariants.computeWrithe();
-      vector<double> invariants = knot_invariants.orderOne();
-      cout << "Invariants: " << invariants[0] << "\t" << invariants[1] << endl;
+      vector<double> invariants = knot_invariants.computeInvariants();
       break;
     }
   }
@@ -1171,9 +1178,32 @@ vector<RealType> sort(vector<RealType> &list)
 	quicksort(sortedList,index,0,num_samples-1);
   return sortedList;
 }
+template vector<int> sort(vector<int> &);
 template vector<float> sort(vector<float> &);
 template vector<double> sort(vector<double> &);
 template vector<long double> sort(vector<long double> &);
+
+/*!
+ *  \brief This function sorts the elements in the list
+ *  \param list a reference to a vector<double>
+ *  \return the sorted list
+ */
+template <typename RealType>
+vector<int> sortedListIndex(vector<RealType> &list)
+{
+  int num_samples = list.size();
+	vector<RealType> sortedList(list);
+  vector<int> index(num_samples,0);
+	for(int i=0; i<num_samples; i++) {
+			index[i] = i;
+  }
+	quicksort(sortedList,index,0,num_samples-1);
+  return index;
+}
+template vector<int> sortedListIndex(vector<int> &);
+template vector<int> sortedListIndex(vector<float> &);
+template vector<int> sortedListIndex(vector<double> &);
+template vector<int> sortedListIndex(vector<long double> &);
 
 /*!
  *  This is an implementation of the classic quicksort() algorithm to sort a

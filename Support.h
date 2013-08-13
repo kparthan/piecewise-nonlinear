@@ -40,10 +40,13 @@ struct Parameters
   // parameters used for profiling using knot invariants
   int construct_polygon;            // polygon construction heuristic 
   int num_sides;                    // # of sides in the approximating polygon
+  int max_order;                    // maximum order of knot invariants
 };
 
 template <typename RealType>
 vector<RealType> sort(vector<RealType> &);
+template <typename RealType>
+vector<int> sortedListIndex(vector<RealType> &);
 template <typename RealType>
 void quicksort(vector<RealType> &, vector<int> &, int, int);
 template <typename RealType>
