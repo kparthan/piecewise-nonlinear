@@ -25,8 +25,8 @@
 #include <boost/tokenizer.hpp>
 #include <boost/filesystem.hpp>
 
-#define HOME_DIRECTORY "/home/parthan/"
-#define CURRENT_DIRECTORY "/home/parthan/Research/Work/piecewise-nonlinear/"
+#define HOME_DIRECTORY "/home/pkas7/"
+#define CURRENT_DIRECTORY "/home/pkas7/Research/Work/piecewise-nonlinear/"
 //#define CURRENT_DIRECTORY boost::filesystem::current_path().native()
 
 // numeric constants

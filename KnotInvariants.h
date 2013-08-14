@@ -3,6 +3,12 @@
 
 #include "Support.h"
 
+// Define a structure for a signed invariant pair
+struct SignedPair {
+  array<int,2> pair;
+  int sign; // =1 if absolute, =0 otherwise
+};
+
 class KnotInvariants
 {
   private:
@@ -40,8 +46,17 @@ class KnotInvariants
     //! Construct the invariant pairs
     vector<vector<array<int,2>>> constructInvariantPairs(int);
 
+    //! Converts invariant pairs into 'struct SignedPair' format
+    vector<struct SignedPair>
+    generateSignedPrimaryInvariants(vector<array<int,2>> &);
+
+    //! Construct the secondary invariant pairs
+    vector<vector<struct SignedPair>>
+    constructSecondaryInvariantPairs(int, vector<struct SignedPair> &);
+
     //! Get the list of combinations corresponding to the invariant pairs
-    vector<vector<array<int,2>>> getCombinations(int, int, vector<array<int,2>> &);
+    vector<vector<array<int,2>>>
+    getCombinations(int, int, vector<array<int,2>> &);
 
   public:
     //! Null constructor
