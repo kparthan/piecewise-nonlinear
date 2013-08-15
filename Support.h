@@ -52,6 +52,8 @@ void quicksort(vector<RealType> &, vector<int> &, int, int);
 template <typename RealType>
 int partition(vector<RealType> &, vector<int> &, int, int);
 double standardDeviation(vector<double> &, double);
+double computeEuclideanDistance(Vector<double> &, Vector<double> &);
+void updateResults(vector<double> &, vector<double> &);
 
 void build(struct Parameters &);
 Segmentation buildSegmentationProfile(struct Parameters &);

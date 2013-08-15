@@ -37,6 +37,9 @@ class KnotInvariants
     //! Computes the writhe matrix
     void computeWrithe();
 
+    //! Computes the writhe of combination of pairs
+    double computeCombinedWrithe(vector<struct SignedPair> &);
+
     //! Computes the invariants of specified order
     vector<double> computeInvariants(int);
 
@@ -58,6 +61,9 @@ class KnotInvariants
     vector<vector<array<int,2>>>
     getCombinations(int, int, vector<array<int,2>> &);
 
+    //! Updates the log file
+    void updateLogFile(ostream &, vector<struct SignedPair> &, double , int);
+                                   
   public:
     //! Null constructor
     KnotInvariants();
@@ -75,7 +81,10 @@ class KnotInvariants
     void constructPolygon(int, int);
 
     //! Computes the list of all invariants
-    vector<double> computeInvariants();
+    void computeInvariants();
+
+    //! Gets the list of all invariants
+    vector<double> getInvariants();
 
 };
 

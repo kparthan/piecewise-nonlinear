@@ -449,7 +449,7 @@ void build(struct Parameters &parameters)
       KnotInvariants knot_invariants(curve_string,name,parameters.max_order);
       knot_invariants.constructPolygon(parameters.construct_polygon,
                                        parameters.num_sides);
-      vector<double> invariants = knot_invariants.computeInvariants();
+      knot_invariants.computeInvariants();
       break;
     }
   }
@@ -610,8 +610,75 @@ void compareStructuresList(struct Parameters &parameters)
     }
 
     case KNOT_INVARIANTS:
+    {
+      vector<KnotInvariants> profiles;
+      for (int i=0; i<num_structures; i++) {
+        parameters.file = parameters.comparison_files[i];
+        string name = extractName(parameters.file);
+        names.push_back(name);
+        Segmentation segmentation = buildSegmentationProfile(parameters);
+        segmentations.push_back(segmentation);
+        vector<BezierCurve<double>> 
+        bezier_curves = segmentation.getBezierCurves();
+        CurveString<double> curve_string(bezier_curves);
+        KnotInvariants knot_invariants(curve_string,name,parameters.max_order);
+        knot_invariants.constructPolygon(parameters.construct_polygon,
+                                         parameters.num_sides);
+        knot_invariants.computeInvariants();
+        profiles.push_back(knot_invariants);
+      }
+      vector<double> pivot_invariants = profiles[0].getInvariants();
+      Vector<double> pivot(pivot_invariants);
+      vector<double> dot_products,distances;
+      for (int i=1; i<num_structures; i++) {
+        vector<double> invariants = profiles[i].getInvariants();
+        Vector<double> another(invariants);
+        double dot_product = pivot * another;
+        dot_products.push_back(dot_product);
+        double d = computeEuclideanDistance(pivot,another);
+        distances.push_back(d);
+        cout << dot_product << "\t" << d << endl;
+      }
+      updateResults(dot_products,distances);
       break;
+    }
   }
+}
+
+/*!
+ *
+ */
+void updateResults(vector<double> &dot_products, vector<double> &distances)
+{
+  string path = string(CURRENT_DIRECTORY) + "output/knot-invariants/results/";
+  string log_file = path + "dot_products";
+  ofstream log1(log_file.c_str(),ios::app);
+  log_file = path + "distances";
+  ofstream log2(log_file.c_str(),ios::app);
+  for (int i=0; i<dot_products.size(); i++) {
+    log1 << dot_products[i] << " ";
+    log2 << distances[i] << " ";
+  }
+  log1 << endl;
+  log2 << endl;
+  log2.close();
+  log1.close();
+}
+
+/*!
+ *  \brief This function computes the Euclidean distance between two vectors.
+ *  \param vec1 a reference to a Vector<double>
+ *  \param vec2 a reference to a Vector<double>
+ *  \return the distance
+ */
+double computeEuclideanDistance(Vector<double> &vec1, Vector<double> &vec2)
+{
+  assert(vec1.size() == vec2.size());
+  double d = 0;
+  for (int i=0; i<vec1.size(); i++) {
+    d += (vec1[i] - vec2[i]) * (vec1[i] - vec2[i]);
+  }
+  return sqrt(d);
 }
 
 /*!

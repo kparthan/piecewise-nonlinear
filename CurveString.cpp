@@ -55,10 +55,10 @@ CurveString<RealType>::CurveString(vector<BezierCurve<RealType>> &curves) : curv
  */
 template <typename RealType>
 CurveString<RealType>::CurveString(vector<BezierCurve<RealType>> &curves,
-                         vector<RealType> &lengths, 
-                         vector<RealType> &approx_lengths) :
-                         curves(curves), lengths(lengths),
-                         approx_lengths(approx_lengths)
+                                   vector<RealType> &lengths, 
+                                   vector<RealType> &approx_lengths) :
+                                   curves(curves), lengths(lengths),
+                                   approx_lengths(approx_lengths)
 {
   assert(curves.size() == lengths.size());
   assert(lengths.size() == approx_lengths.size());

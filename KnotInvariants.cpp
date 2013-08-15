@@ -100,26 +100,39 @@ void KnotInvariants::computeWrithe()
  *  \brief This module computes the invariants upto order 3
  *  \return the list of all invariants
  */
-vector<double> KnotInvariants::computeInvariants()
+void KnotInvariants::computeInvariants()
 {
   computeWrithe();
-  for(int i=0; i<max_order; i++) {
+  int n = polygon.getNumberOfSides();
+  all_invariants.push_back(n);
+
+  double normalization_factor = n;
+  for(int i=0; i<max_order; i++) {  // i = order
     invariants[i] = computeInvariants(i+1);
-    if (invariants[i].size() > 0) {
-      cout << "Invariants of order " << i+1 << ": [";
-    }
     for (int j=0; j<invariants[i].size(); j++) {
-      cout << invariants[i][j];
-      if (j == invariants[i].size()-1) {
-        cout << "]" << endl;
-      } else {
-        cout << ", ";
-      }
-      all_invariants.push_back(invariants[i][j]);
+      all_invariants.push_back(invariants[i][j]/normalization_factor);
+    }
+    normalization_factor *= n;
+  }
+  cout << "All invariants (" << all_invariants.size() << "): [";
+  for (int i=0; i<all_invariants.size(); i++) {
+    cout << all_invariants[i];
+    if (i == all_invariants.size()-1) {
+      cout << "]" << endl;
+    } else {
+      cout << ", ";
     }
   }
-  return all_invariants;
 }
+
+/*!
+ *  \brief This function returns the list of all invariants.
+ *  \return the list of all invariants
+ */
+vector<double> KnotInvariants::getInvariants()
+{
+  return all_invariants;
+} 
 
 /*!
  *  \brief This function converts the simple invariant pairs into signed
@@ -147,16 +160,7 @@ KnotInvariants::generateSignedPrimaryInvariants(vector<array<int,2>> &list)
  */
 vector<double> KnotInvariants::computeInvariants(int order)
 {
-  if (order == 1) {
-    invariants[0] = vector<double>(2,0);
-    for (int i=0; i<writhe.size()-1; i++) {
-      for (int j=i+1; j<writhe.size(); j++) {
-        invariants[0][0] += writhe[i][j];
-        invariants[0][1] += fabs(writhe[i][j]);
-      }
-    }
-    return invariants[0];
-  } else if (order == 2 || order == 3) {
+  if (!(order < 1 || order > 3)) {
     // concise log file
     string log_file = "invariants-concise-" 
                       + boost::lexical_cast<string>(order) + ".log";
@@ -175,27 +179,60 @@ vector<double> KnotInvariants::computeInvariants(int order)
       // primary invariant pair combinations
       vector<struct SignedPair> primary_invariant_names = 
                   generateSignedPrimaryInvariants(invariant_pairs[i]);
-      vector<vector<struct SignedPair>> secondary_invariant_names = 
+      
+      vector<vector<struct SignedPair>> secondary_invariant_names;
+      if (order == 3) {
+        secondary_invariant_names.push_back(primary_invariant_names);
+      } else {
+        secondary_invariant_names = 
             constructSecondaryInvariantPairs(order,primary_invariant_names);
+      }
       vector<vector<array<int,2>>> combinations = 
-          getCombinations(polygon.getNumberOfSides(),order,invariant_pairs[i]);
+        getCombinations(polygon.getNumberOfSides(),order,invariant_pairs[i]);
 
       int num_invariants_per_name = secondary_invariant_names.size();
       vector<vector<struct SignedPair>> 
       secondary_invariants_list[num_invariants_per_name];
       for (int j=0; j<combinations.size(); j++) {
         // construct 'signed_pair' (primary invariants) of combinations
-        vector<struct SignedPair> primary_invariants = ;
+        vector<struct SignedPair> primary_invariants = 
                   generateSignedPrimaryInvariants(combinations[j]);
-        vector<vector<struct SignedPair>> secondary_invariants = 
+
+        vector<vector<struct SignedPair>> secondary_invariants;
+        if (order == 3) {
+          secondary_invariants.push_back(primary_invariants);
+        } else {
+          secondary_invariants =
               constructSecondaryInvariantPairs(order,primary_invariants);
+        }
         assert(secondary_invariants.size() == num_invariants_per_name);
-        for (int k=0; k<num_invariants_per_name; k++) {
+        for (int k=0; k<secondary_invariants.size(); k++) {
           secondary_invariants_list[k].push_back(secondary_invariants[k]);
         }
       }
+      for (int j=0; j<num_invariants_per_name; j++) {
+        double writhe_combinations = 0;
+        updateLogFile(logd,secondary_invariant_names[j],0,0);
+        for (int k=0; k<secondary_invariants_list[j].size(); k++) {
+          double score = computeCombinedWrithe(secondary_invariants_list[j][k]);
+          updateLogFile(logd,secondary_invariants_list[j][k],score,1);
+          writhe_combinations += score;
+        }
+        logd << endl;
+        updateLogFile(logc,secondary_invariant_names[j],writhe_combinations,0);
+        invariants[order-1].push_back(writhe_combinations);
+      }
     }
-    
+    logc << endl << "Invariants of order " << order << " (" 
+         << invariants[order-1].size() << "): [";
+    for (int j=0; j<invariants[order-1].size(); j++) {
+      logc << invariants[order-1][j];
+      if (j == invariants[order-1].size()-1) {
+        logc << "]" << endl;
+      } else {
+        logc << ", ";
+      }
+    }
     logd.close();
     logc.close();
     return invariants[order-1];
@@ -203,6 +240,49 @@ vector<double> KnotInvariants::computeInvariants(int order)
     cout << "Unsupported order of knot invariants ..." << endl;
     exit(1);
   }
+}
+
+/*!
+ *  \brief This function computes the writhe of a combination of pairs.
+ *  \param set a reference to a vector<struct SignedPair>
+ *  \return the value of the combined writhe
+ */
+double KnotInvariants::computeCombinedWrithe(vector<struct SignedPair> &set)
+{
+  double writhe_pairs = 1;
+  for (int i=0; i<set.size(); i++) {
+    int index1 = set[i].pair[0] - 1;
+    int index2 = set[i].pair[1] - 1;
+    if (set[i].sign == 1) {
+      writhe_pairs *= fabs(writhe[index1][index2]);
+    } else if (set[i].sign == 0) {
+      writhe_pairs *= writhe[index1][index2];
+    }
+  }
+  return writhe_pairs;
+}
+
+/*!
+ *  \brief This function updates the log file.
+ *  \param log a reference to an output stream
+ *  \param set a reference to a vector<struct SignedPair>
+ *  \param score a double
+ *  \param indent an integer
+ */
+void KnotInvariants::updateLogFile(ostream &log, vector<struct SignedPair> &set,
+                                   double score, int indent)
+{
+  for (int i=0; i<indent; i++) {
+    log << "\t";
+  }
+  for (int i=0; i<set.size(); i++) {
+    if (set[i].sign == 1) {
+      log << "|(" << set[i].pair[0] << "," << set[i].pair[1] << ")| ";
+    } else {
+      log << " (" << set[i].pair[0] << "," << set[i].pair[1] << ") ";
+    }
+  }
+  log << ": " << score << endl;
 }
 
 /*!
@@ -217,7 +297,6 @@ KnotInvariants::constructInvariantPairs(int order)
   for (int i=1; i<=2*order; i++) {
     indexes.push_back(i);
   }
-  // primary invariants
   vector<vector<array<int,2>>> 
   invariant_pairs = constructInvariantPairs(order,indexes);
   /*cout << "ORDER " << order << ":" << endl;
@@ -228,35 +307,6 @@ KnotInvariants::constructInvariantPairs(int order)
     }
     cout << endl;
   }*/
-
-  // secondary invariants
-  vector<vector<struct SignedPair>> secondary_invariants;
-  for (int i=0; i<invariant_pairs.size(); i++) {
-    vector<struct SignedPair> primary_invariants;
-    for (int j=0; j<invariant_pairs[i].size(); j++) {
-      struct SignedPair signed_pair;
-      signed_pair.pair = invariant_pairs[i][j];
-      signed_pair.sign = 0;
-      primary_invariants.push_back(signed_pair);
-    }
-    vector<vector<struct SignedPair>> 
-    invariants = constructSecondaryInvariantPairs(order,primary_invariants);
-    for (int j=0; j<invariants.size(); j++) {
-      secondary_invariants.push_back(invariants[j]);
-    }
-  }
-  for(int i=0; i<secondary_invariants.size(); i++) {
-    for (int j=0; j<secondary_invariants[i].size(); j++) {
-      if (secondary_invariants[i][j].sign == 1) {
-        cout << "|(" << secondary_invariants[i][j].pair[0] << ","
-             << secondary_invariants[i][j].pair[1] << ")| ";
-      } else if (secondary_invariants[i][j].sign == 0) {
-        cout << "(" << secondary_invariants[i][j].pair[0] << ","
-             << secondary_invariants[i][j].pair[1] << ") ";
-      }
-    }
-    cout << endl;
-  }
 
   return invariant_pairs;
 }
@@ -377,6 +427,24 @@ KnotInvariants::getCombinations(int n, int order, vector<array<int,2>> &invarian
   vector<int> tmp(c+1,0);
   array<int,2> pairs[order];
   switch(order) {
+    case 1:
+    {
+      for (int i1=1; i1<=n-c; i1++) {
+        for (int i2=i1+1; i2<=n-c+1; i2++) {
+          tmp[sorted_index[0]] = i1;
+          tmp[sorted_index[1]] = i2;
+          for (int j=0; j<order; j++) {
+            for(int k=0; k<2; k++) {
+              pairs[j][k] = tmp[2*j+k];
+            }
+            combination[j] = pairs[j];
+          }
+          combinations.push_back(combination);
+        }
+      } 
+      break;
+    }
+
     case 2:
     {
       for (int i1=1; i1<=n-c; i1++) {
