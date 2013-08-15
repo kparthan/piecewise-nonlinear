@@ -27,7 +27,8 @@ KnotInvariants::KnotInvariants(const KnotInvariants &source) :
                 curve_string(source.curve_string), polygon(source.polygon),
                 writhe(source.writhe), name(source.name), 
                 max_order(source.max_order), invariants(source.invariants),
-                all_invariants(source.all_invariants)
+                all_invariants(source.all_invariants), cpu_time(source.cpu_time),
+                wall_time(source.wall_time)
 {}
 
 /*!
@@ -46,6 +47,8 @@ KnotInvariants KnotInvariants::operator=(const KnotInvariants &source)
     max_order = source.max_order;
     invariants = source.invariants;
     all_invariants = source.all_invariants;
+    cpu_time = source.cpu_time;
+    wall_time = source.wall_time;
   }
   return *this;
 }
@@ -86,14 +89,14 @@ void KnotInvariants::computeWrithe()
       }
     }
   }
-  ofstream file("writhe");
+  /*ofstream file("writhe");
   for (int i=0; i<sides.size(); i++) {
     for (int j=0; j<sides.size(); j++) {
       file << fixed << setw(10) << setprecision(4) << writhe[i][j];
     }
     file << endl;
   }
-  file.close();
+  file.close();*/
 }
 
 /*!
@@ -102,6 +105,9 @@ void KnotInvariants::computeWrithe()
  */
 void KnotInvariants::computeInvariants()
 {
+  clock_t c_start = clock();
+  auto t_start = high_resolution_clock::now();
+
   computeWrithe();
   int n = polygon.getNumberOfSides();
   all_invariants.push_back(n);
@@ -114,7 +120,7 @@ void KnotInvariants::computeInvariants()
     }
     normalization_factor *= n;
   }
-  cout << "All invariants (" << all_invariants.size() << "): [";
+  /*cout << "All invariants (" << all_invariants.size() << "): [";
   for (int i=0; i<all_invariants.size(); i++) {
     cout << all_invariants[i];
     if (i == all_invariants.size()-1) {
@@ -122,7 +128,11 @@ void KnotInvariants::computeInvariants()
     } else {
       cout << ", ";
     }
-  }
+  }*/
+  clock_t c_end = clock();
+  auto t_end = high_resolution_clock::now();
+  cpu_time = double(c_end-c_start)/(double)(CLOCKS_PER_SEC);
+  wall_time = duration_cast<seconds>(t_end-t_start).count();
 }
 
 /*!
@@ -162,14 +172,14 @@ vector<double> KnotInvariants::computeInvariants(int order)
 {
   if (!(order < 1 || order > 3)) {
     // concise log file
-    string log_file = "invariants-concise-" 
+    /*string log_file = "invariants-concise-" 
                       + boost::lexical_cast<string>(order) + ".log";
     ofstream logc(log_file.c_str());
     logc << "# of sides: " << polygon.getNumberOfSides() << endl;
     // detailed log file
     log_file = "invariants-detailed-" 
                + boost::lexical_cast<string>(order) + ".log";
-    ofstream logd(log_file.c_str());
+    ofstream logd(log_file.c_str());*/
 
     // get the list of invariant pairs
     vector<vector<array<int,2>>>
@@ -212,18 +222,18 @@ vector<double> KnotInvariants::computeInvariants(int order)
       }
       for (int j=0; j<num_invariants_per_name; j++) {
         double writhe_combinations = 0;
-        updateLogFile(logd,secondary_invariant_names[j],0,0);
+        //updateLogFile(logd,secondary_invariant_names[j],0,0);
         for (int k=0; k<secondary_invariants_list[j].size(); k++) {
           double score = computeCombinedWrithe(secondary_invariants_list[j][k]);
-          updateLogFile(logd,secondary_invariants_list[j][k],score,1);
+          //updateLogFile(logd,secondary_invariants_list[j][k],score,1);
           writhe_combinations += score;
         }
-        logd << endl;
-        updateLogFile(logc,secondary_invariant_names[j],writhe_combinations,0);
+        /*logd << endl;
+        updateLogFile(logc,secondary_invariant_names[j],writhe_combinations,0);*/
         invariants[order-1].push_back(writhe_combinations);
       }
     }
-    logc << endl << "Invariants of order " << order << " (" 
+    /*logc << endl << "Invariants of order " << order << " (" 
          << invariants[order-1].size() << "): [";
     for (int j=0; j<invariants[order-1].size(); j++) {
       logc << invariants[order-1][j];
@@ -234,7 +244,7 @@ vector<double> KnotInvariants::computeInvariants(int order)
       }
     }
     logd.close();
-    logc.close();
+    logc.close();*/
     return invariants[order-1];
   } else {
     cout << "Unsupported order of knot invariants ..." << endl;
@@ -508,5 +518,20 @@ KnotInvariants::getCombinations(int n, int order, vector<array<int,2>> &invarian
     cout << endl;
   }*/
   return combinations;
+}
+
+double KnotInvariants::getCPUTime()
+{
+  return cpu_time;
+}
+
+double KnotInvariants::getWallTime()
+{
+  return wall_time;
+}
+
+int KnotInvariants::getPolygonSides()
+{
+  return polygon.getNumberOfSides();
 }
 

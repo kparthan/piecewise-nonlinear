@@ -26,7 +26,7 @@
 #include <boost/filesystem.hpp>
 
 #define HOME_DIRECTORY "/home/pkas7/"
-#define CURRENT_DIRECTORY "/home/pkas7/Research/Work/piecewise-nonlinear/"
+#define CURRENT_DIRECTORY "/home/pkas7/Desktop/pkas7/"
 //#define CURRENT_DIRECTORY boost::filesystem::current_path().native()
 
 // numeric constants

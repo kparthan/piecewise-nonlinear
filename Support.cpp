@@ -624,8 +624,11 @@ void compareStructuresList(struct Parameters &parameters)
         KnotInvariants knot_invariants(curve_string,name,parameters.max_order);
         knot_invariants.constructPolygon(parameters.construct_polygon,
                                          parameters.num_sides);
+        cout << "Computing knot invariants for structure " << name << " ..." << endl;
         knot_invariants.computeInvariants();
         profiles.push_back(knot_invariants);
+        updateRuntime(name,segmentation,knot_invariants.getPolygonSides(),
+                      knot_invariants.getCPUTime());
       }
       vector<double> pivot_invariants = profiles[0].getInvariants();
       Vector<double> pivot(pivot_invariants);
@@ -637,7 +640,7 @@ void compareStructuresList(struct Parameters &parameters)
         dot_products.push_back(dot_product);
         double d = computeEuclideanDistance(pivot,another);
         distances.push_back(d);
-        cout << dot_product << "\t" << d << endl;
+        //cout << dot_product << "\t" << d << endl;
       }
       updateResults(dot_products,distances);
       break;
@@ -663,6 +666,23 @@ void updateResults(vector<double> &dot_products, vector<double> &distances)
   log2 << endl;
   log2.close();
   log1.close();
+}
+
+/*!
+ *
+ */
+void updateRuntime(string name, Segmentation &segmentation, int n, double time) 
+{
+  string path = string(CURRENT_DIRECTORY) + "output/knot-invariants/results/";
+  string time_file = path + "runtime";
+  ofstream log(time_file.c_str(),ios::app);
+  log << setw(10) << name;
+  log << setw(10) << segmentation.getNumberOfCoordinates() << "\t";
+  log << setw(10) << setprecision(4) << segmentation.getCPUTime();
+  log << setw(10) << n << "\t"; 
+  log << setw(10) << setprecision(4) << time;
+  log << endl;
+  log.close();
 }
 
 /*!

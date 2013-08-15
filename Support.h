@@ -54,6 +54,7 @@ int partition(vector<RealType> &, vector<int> &, int, int);
 double standardDeviation(vector<double> &, double);
 double computeEuclideanDistance(Vector<double> &, Vector<double> &);
 void updateResults(vector<double> &, vector<double> &);
+void updateRuntime(string, Segmentation &, int, double); 
 
 void build(struct Parameters &);
 Segmentation buildSegmentationProfile(struct Parameters &);

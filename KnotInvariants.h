@@ -33,6 +33,9 @@ class KnotInvariants
     //! The list of invariants
     vector<double> all_invariants;
 
+    //! Runtime
+    double cpu_time,wall_time;
+
   protected:
     //! Computes the writhe matrix
     void computeWrithe();
@@ -86,6 +89,9 @@ class KnotInvariants
     //! Gets the list of all invariants
     vector<double> getInvariants();
 
+    int getPolygonSides();
+    double getCPUTime();
+    double getWallTime();
 };
 
 #endif 
