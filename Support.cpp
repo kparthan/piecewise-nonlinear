@@ -448,8 +448,11 @@ void build(struct Parameters &parameters)
       string name = extractName(parameters.file);
       KnotInvariants knot_invariants(curve_string,name,parameters.max_order);
       knot_invariants.constructPolygon(parameters.construct_polygon,
-                                       parameters.num_sides);
+                                       parameters.num_sides,parameters.controls);
+      cout << "Computing knot invariants for structure " << name << " ..." << endl;
       knot_invariants.computeInvariants();
+      updateRuntime(name,segmentation,knot_invariants.getPolygonSides(),
+                    knot_invariants.getCPUTime());
       break;
     }
   }
@@ -473,14 +476,14 @@ Segmentation buildSegmentationProfile(struct Parameters &parameters)
 
     case PROTEIN:   // protein file
       pdb_file = extractName(parameters.file);
-      status = checkIfSegmentationExists(pdb_file);
+      status = checkIfSegmentationExists(pdb_file,parameters.controls);
       if (status && parameters.force_segmentation == UNSET) {
         cout << "Segmentation profile of " << pdb_file << " exists ..." << endl;
-        segmentation.load(pdb_file);
+        segmentation.load(pdb_file,parameters.controls);
       } else {
         cout << "Building segmentation profile of " << pdb_file << " ..." << endl;
         segmentation = proteinFit(parameters);
-        segmentation.save(pdb_file);
+        segmentation.save(pdb_file,parameters.controls);
       }
       break;
 
@@ -497,13 +500,18 @@ Segmentation buildSegmentationProfile(struct Parameters &parameters)
 /*!
  *  \brief This module checks if the segmentation already exists or not.
  *  \param pdb_file a reference to a string
+ *  \param controls a reference to a vector<int>
  *  \return the segmentation exists or not
  */
-bool checkIfSegmentationExists(string &pdb_file)
+bool checkIfSegmentationExists(string &pdb_file, vector<int> &controls)
 {
+  string c;
+  for (int i=0; i<controls.size(); i++) {
+    c += boost::lexical_cast<string>(controls[i]);
+  }
   string segmentation_profile = string(CURRENT_DIRECTORY) 
                                 + "output/segmentations/profiles/"
-                                + pdb_file + ".profile";
+                                + c + "/" + pdb_file + ".profile";
   return checkFile(segmentation_profile); 
 }
 
@@ -623,7 +631,7 @@ void compareStructuresList(struct Parameters &parameters)
         CurveString<double> curve_string(bezier_curves);
         KnotInvariants knot_invariants(curve_string,name,parameters.max_order);
         knot_invariants.constructPolygon(parameters.construct_polygon,
-                                         parameters.num_sides);
+                                         parameters.num_sides,parameters.controls);
         cout << "Computing knot invariants for structure " << name << " ..." << endl;
         knot_invariants.computeInvariants();
         profiles.push_back(knot_invariants);
@@ -640,7 +648,7 @@ void compareStructuresList(struct Parameters &parameters)
         dot_products.push_back(dot_product);
         double d = computeEuclideanDistance(pivot,another);
         distances.push_back(d);
-        //cout << dot_product << "\t" << d << endl;
+        cout << dot_product << "\t" << d << endl;
       }
       updateResults(dot_products,distances);
       break;
@@ -673,7 +681,7 @@ void updateResults(vector<double> &dot_products, vector<double> &distances)
  */
 void updateRuntime(string name, Segmentation &segmentation, int n, double time) 
 {
-  string path = string(CURRENT_DIRECTORY) + "output/knot-invariants/results/";
+  string path = string(CURRENT_DIRECTORY) + "output/knot-invariants/";
   string time_file = path + "runtime";
   ofstream log(time_file.c_str(),ios::app);
   log << setw(10) << name;

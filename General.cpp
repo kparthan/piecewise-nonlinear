@@ -16,12 +16,13 @@ General::General(vector<Point<double>> &coordinates) : Structure(coordinates)
  *  \param file a reference to a string
  *  \param optimalBezierFit a reference to a vector<vector<OptimalFit>>
  *  \param segments a reference to a vector<int>
+ *  \param controls a reference to a vector<int>
  *  \param transformation a reference to a Matrix<double>
  */
 Segmentation General::reconstruct(string &file, string &output_file, 
                                   vector<vector<double>> &codeLength,
                                   vector<vector<OptimalFit>> &optimalBezierFit,
-                                  vector<int> &segments, 
+                                  vector<int> &segments, vector<int> &controls,
                                   Matrix<double> &transformation)
 {
   int segment_start = 0;

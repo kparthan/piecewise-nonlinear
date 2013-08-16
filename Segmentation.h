@@ -102,10 +102,10 @@ class Segmentation
     int getNumberOfCoordinates();
 
     //! Write the segmentation details
-    void save(string &);
+    void save(string &, vector<int> &);
 
     //! Read the segmentation
-    void load(string &);
+    void load(string &, vector<int> &);
 };
 
 #endif

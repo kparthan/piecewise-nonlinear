@@ -57,11 +57,13 @@ KnotInvariants KnotInvariants::operator=(const KnotInvariants &source)
  *  \brief This function constructs the representative polygon
  *  \param heuristic an integer
  *  \param num_sides an integer
+ *  \param controls a reference to a vector<int>
  */
-void KnotInvariants::constructPolygon(int heuristic, int num_sides)
+void KnotInvariants::constructPolygon(int heuristic, int num_sides,
+                                      vector<int> &controls)
 {
   polygon = curve_string.getApproximatingPolygon(heuristic,num_sides);
-  polygon.visualize(name);
+  polygon.visualize(name,controls);
   int sides = polygon.getNumberOfSides();
   for (int i=0; i<sides; i++) {
     vector<double> tmp(sides,0);
@@ -133,6 +135,16 @@ void KnotInvariants::computeInvariants()
   auto t_end = high_resolution_clock::now();
   cpu_time = double(c_end-c_start)/(double)(CLOCKS_PER_SEC);
   wall_time = duration_cast<seconds>(t_end-t_start).count();
+
+  string log_file = string(CURRENT_DIRECTORY) + "output/knot-invariants/";
+  log_file += "vectors";
+  ofstream log(log_file.c_str(),ios::app);
+  log << setw(10) << name << "\t";
+  for (int i=0; i<all_invariants.size(); i++) {
+    log << setw(10) << setprecision(4) << all_invariants[i];
+  }
+  log << endl;
+  log.close();
 }
 
 /*!
@@ -228,8 +240,8 @@ vector<double> KnotInvariants::computeInvariants(int order)
           //updateLogFile(logd,secondary_invariants_list[j][k],score,1);
           writhe_combinations += score;
         }
-        /*logd << endl;
-        updateLogFile(logc,secondary_invariant_names[j],writhe_combinations,0);*/
+        //logd << endl;
+        //updateLogFile(logc,secondary_invariant_names[j],writhe_combinations,0);
         invariants[order-1].push_back(writhe_combinations);
       }
     }

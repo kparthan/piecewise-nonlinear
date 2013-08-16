@@ -51,10 +51,10 @@ string StandardForm::createOutputFile(bool status)
   string current_dir = string(CURRENT_DIRECTORY);
   if (status) {
     output_file = current_dir + "output/segmentations/logs/";
-    output_file = output_file + filtered + "_";
     for (int i=0; i<parameters.controls.size(); i++) {
       output_file += boost::lexical_cast<string>(parameters.controls[i]); 
     }
+    output_file += "/" + filtered + ".log";
   } else {
     output_file = current_dir + "output/segmentations/logs/linear_";
     output_file += filtered;
@@ -570,7 +570,7 @@ Segmentation StandardForm::fitBezierCurveModel()
     printBezierSegmentation(segmentation,cpu_time,wall_time);
     segmentation_profile = structure->reconstruct(parameters.file,output_file,
                            codeLength,optimalBezierFit,segmentation.second,
-                           transformation);
+                           parameters.controls,transformation);
     segmentation_profile.setBitsPerResidue(null_bpr,bezier_bpr);
     segmentation_profile.setMaximumRadius(getMaximumDistance(original_coordinates));
 
@@ -815,10 +815,12 @@ void StandardForm::printLinearSegmentation(pair<double,
  *  \brief This module prints the segmentation details for the 
  *  Bezier curve fit.
  *  \param segmentation a reference to a pair<double,vector<int>>
+ *  \param cpu_time a double
+ *  \param wall_time a double
  */
-void StandardForm::printBezierSegmentation(pair<double,vector<int>>
-                                           &segmentation, double cpu_time,
-                                           double wall_time)
+void
+StandardForm::printBezierSegmentation(pair<double,vector<int>> &segmentation,
+                                      double cpu_time, double wall_time)
 {
   ofstream log_file(output_file.c_str(),ios::app);
   int i;

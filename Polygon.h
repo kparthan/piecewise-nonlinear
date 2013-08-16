@@ -18,7 +18,7 @@ class Polygon
 
   protected:
     //! Generate the Pymol script
-    void createPymolScript(string, ProteinStructure &);
+    void createPymolScript(string, ProteinStructure &, string);
 
   public:
     //! Null constructor
@@ -52,7 +52,7 @@ class Polygon
     RealType length();
 
     //! Visualize the polygon in Pymol
-    void visualize(string);
+    void visualize(string, vector<int> &);
 };
 
 #endif 

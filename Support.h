@@ -66,7 +66,7 @@ void plotMultipleHistograms(vector<DistanceHistogram> &, vector<double> &,
 double getComparisonScore(vector<double> &, vector<double> &, double, double);
 void printHistogramResults(vector<DistanceHistogram> &, vector<double> &, 
                            vector<string> &);
-bool checkIfSegmentationExists(string &);
+bool checkIfSegmentationExists(string &, vector<int> &);
 bool checkIfHistogramExists(string &);
 
 struct Parameters parseCommandLineInput (int, char **); 

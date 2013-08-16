@@ -126,9 +126,10 @@ RealType Polygon<RealType>::length()
 /*!
  *  \brief This function plots the polygon to be visualized in Pymol.
  *  \param name a string
+ *  \param controls a reference to a vector<int>
  */
 template <typename RealType>
-void Polygon<RealType>::visualize(string name)
+void Polygon<RealType>::visualize(string name, vector<int> &controls)
 {
   int res_total = ceil(vertices.size()/10.0);
 
@@ -153,11 +154,15 @@ void Polygon<RealType>::visualize(string name)
   }
   structure.addChain(chain);
 
+  string c;
+  for (int i=0; i<controls.size(); i++) {
+    c += boost::lexical_cast<string>(controls[i]);
+  }
   // copy the existing modified pdb file
   string modified_pdb = string(CURRENT_DIRECTORY) + "output/segmentations/"
-                        + "modified_pdb_files/" + name + ".pdb";
+                        + "modified_pdb_files/" + c + "/" + name + ".pdb";
   string vertices_pdb = string(CURRENT_DIRECTORY) + "output/knot-invariants/"
-                        + "polygons/" + name + ".pdb"; 
+                        + "polygons/" + c + "/" + name + ".pdb"; 
   string cmd = "cp " + modified_pdb + " " + vertices_pdb;
   system(cmd.c_str());
 
@@ -169,23 +174,25 @@ void Polygon<RealType>::visualize(string name)
   }
   pdb_file.close();
 
-  createPymolScript(name,structure);
+  createPymolScript(name,structure,c);
 }
 
 /*!
  *  \brief This function generates the Pymol script file
  *  \param name a string
  *  \param structure a reference to a ProteinStructure
+ *  \param c a string
  */
 template <typename RealType>
-void Polygon<RealType>::createPymolScript(string name, ProteinStructure &structure)
+void Polygon<RealType>::createPymolScript(string name, ProteinStructure &structure,
+                                          string c)
 {
   string pymol_script = string(CURRENT_DIRECTORY) + "output/segmentations/"
-                        + "pymol_scripts/" + name + ".pml";
+                        + "pymol_scripts/" + c + "/" + name + ".pml";
   string polygon_script = string(CURRENT_DIRECTORY) + "output/knot-invariants/"
-                        + "polygons/" + name + ".pml"; 
+                        + "polygons/" + c + "/" + name + ".pml"; 
   string pdb_file = string(CURRENT_DIRECTORY) + "output/knot-invariants/"
-                    + "polygons/" + name + ".pdb";
+                    + "polygons/" + c + "/" + name + ".pdb";
   ifstream pymol(pymol_script.c_str());
   ofstream polygon(polygon_script.c_str());
 

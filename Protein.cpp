@@ -71,13 +71,14 @@ vector<array<double,3>> Protein::generateProteinColors(int num_segments)
  *  \param codeLength a reference to a vector<vector<double>>
  *  \param optimalBezierFit a reference to a vector<vector<OptimalFit>>
  *  \param segments a reference to a vector<int>
+ *  \param controls a reference to a vector<int>
  *  \param transformation a reference to a Matrix<double>
  *  \return the segmentation profile of the protein
  */
 Segmentation Protein::reconstruct(string &file, string &output_file, 
                                   vector<vector<double>> &codeLength,
                                   vector<vector<OptimalFit>> &optimalBezierFit,
-                                  vector<int> &segments, 
+                                  vector<int> &segments, vector<int> &controls, 
                                   Matrix<double> &transformation)
 {
   vector<double> approx_lengths;
@@ -171,17 +172,21 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
   log_file.close();
 
   /* visualize the protein segmentation */
+  string c;
+  for (int i=0; i<controls.size(); i++) {
+    c += boost::lexical_cast<string>(controls[i]);
+  }
   vector<Atom> atoms = protein->getAtoms();
   string pdb_file = extractName(file);
   string modified_pdb = string(CURRENT_DIRECTORY) + 
-                        "output/segmentations/modified_pdb_files/" +
+                        "output/segmentations/modified_pdb_files/" + c + "/" +
                         pdb_file + ".pdb";
   ofstream fw(modified_pdb.c_str());
   for (int i=0; i<atoms.size(); i++) {
     fw << atoms[i].formatPDBLine() << endl;
   }
   fw.close();
-  createPymolScript(pdb_file,optimalBezierFit,segments,identifiers);
+  createPymolScript(pdb_file,optimalBezierFit,segments,controls,identifiers);
 
   /* compute planar angles, dihedral angles, and lengths of connecting lines */
   vector<double> planar_angles = computePlanarAngles();
@@ -196,12 +201,13 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
  *  \param pdb_file a reference to a string
  *  \param optimalBezierFit a reference to a vector<vector<OptimalFit>>
  *  \param segments a reference to a vector<int>
+ *  \param controls a reference to a vector<int>
  *  \param identifiers a reference to vector<Identifier>
  *  \param colors a reference to a vector<array<double,3>>
  */
 void Protein::createPymolScript(string &pdb_file,
                                 vector<vector<OptimalFit>> &optimalBezierFit,
-                                vector<int> &segments, 
+                                vector<int> &segments, vector<int> &controls,
                                 vector<Identifier> &identifiers)
 {
   vector<array<double,3>> colors = generateProteinColors(segments.size()-1);
@@ -209,13 +215,19 @@ void Protein::createPymolScript(string &pdb_file,
   vector<string> res_ids = chain.getResidueIdentifiers();
   //for (int i=0; i<res_ids.size(); i++){cout << res_ids[i] << endl;}
 
+  string c;
+  for (int i=0; i<controls.size(); i++) {
+    c += boost::lexical_cast<string>(controls[i]);
+  }
   string pymol_file = string(CURRENT_DIRECTORY) + 
-                      "output/segmentations/pymol_scripts/" +
+                      "output/segmentations/pymol_scripts/" + c + "/" +
                       pdb_file + ".pml";
   ofstream script(pymol_file.c_str());
 
-  string modified_pdb = "modified_pdb_files/" + pdb_file + ".pdb";
-  script << "load ../" << modified_pdb << endl;
+  string modified_pdb = string(CURRENT_DIRECTORY) + 
+                        "output/segmentations/modified_pdb_files/" + c + "/" +
+                        pdb_file + ".pdb";
+  script << "load " << modified_pdb << endl;
   //script << "bg_color white" << endl;
   script << "hide" << endl;
   script << "show cartoon" << endl;

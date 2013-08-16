@@ -81,7 +81,7 @@ class KnotInvariants
     KnotInvariants operator=(const KnotInvariants &);
 
     //! Constructs the representative polygon
-    void constructPolygon(int, int);
+    void constructPolygon(int, int, vector<int> &);
 
     //! Computes the list of all invariants
     void computeInvariants();
