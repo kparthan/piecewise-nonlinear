@@ -431,7 +431,7 @@ void build(struct Parameters &parameters)
 {
   // get the segmentation
   Segmentation segmentation = buildSegmentationProfile(parameters);
-
+/*
   switch(parameters.profile) {
     case DISTANCE_HISTOGRAM:  // construct the histogram
     {
@@ -456,6 +456,7 @@ void build(struct Parameters &parameters)
       break;
     }
   }
+*/
 }
 
 /*!
