@@ -136,8 +136,8 @@ void KnotInvariants::computeInvariants()
   cpu_time = double(c_end-c_start)/(double)(CLOCKS_PER_SEC);
   wall_time = duration_cast<seconds>(t_end-t_start).count();
 
-  string log_file = string(CURRENT_DIRECTORY) + "output/knot-invariants/";
-  log_file += "vectors";
+  string log_file = string(CURRENT_DIRECTORY); 
+  log_file += "vectors4";
   ofstream log(log_file.c_str(),ios::app);
   log << setw(10) << name << "\t";
   for (int i=0; i<all_invariants.size(); i++) {

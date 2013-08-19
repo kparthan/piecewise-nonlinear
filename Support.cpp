@@ -431,7 +431,7 @@ void build(struct Parameters &parameters)
 {
   // get the segmentation
   Segmentation segmentation = buildSegmentationProfile(parameters);
-/*
+
   switch(parameters.profile) {
     case DISTANCE_HISTOGRAM:  // construct the histogram
     {
@@ -451,12 +451,11 @@ void build(struct Parameters &parameters)
                                        parameters.num_sides,parameters.controls);
       cout << "Computing knot invariants for structure " << name << " ..." << endl;
       knot_invariants.computeInvariants();
-      updateRuntime(name,segmentation,knot_invariants.getPolygonSides(),
+      updateRuntime(name,knot_invariants.getPolygonSides(),
                     knot_invariants.getCPUTime());
       break;
     }
   }
-*/
 }
 
 /*!
@@ -485,6 +484,8 @@ Segmentation buildSegmentationProfile(struct Parameters &parameters)
         cout << "Building segmentation profile of " << pdb_file << " ..." << endl;
         segmentation = proteinFit(parameters);
         segmentation.save(pdb_file,parameters.controls);
+        string name = extractName(parameters.file);
+        updateRuntime(name,segmentation);
       }
       break;
 
@@ -636,8 +637,6 @@ void compareStructuresList(struct Parameters &parameters)
         cout << "Computing knot invariants for structure " << name << " ..." << endl;
         knot_invariants.computeInvariants();
         profiles.push_back(knot_invariants);
-        updateRuntime(name,segmentation,knot_invariants.getPolygonSides(),
-                      knot_invariants.getCPUTime());
       }
       vector<double> pivot_invariants = profiles[0].getInvariants();
       Vector<double> pivot(pivot_invariants);
@@ -680,16 +679,29 @@ void updateResults(vector<double> &dot_products, vector<double> &distances)
 /*!
  *
  */
-void updateRuntime(string name, Segmentation &segmentation, int n, double time) 
+void updateRuntime(string name, int n, double time) 
 {
-  string path = string(CURRENT_DIRECTORY) + "output/knot-invariants/";
-  string time_file = path + "runtime";
+  string path = string(CURRENT_DIRECTORY); 
+  string time_file = path + "runtime4";
+  ofstream log(time_file.c_str(),ios::app);
+  log << setw(10) << name;
+  log << setw(10) << n << "\t"; 
+  log << setw(10) << setprecision(4) << time;
+  log << endl;
+  log.close();
+}
+
+/*!
+ *
+ */
+void updateRuntime(string name, Segmentation &segmentation)
+{
+  string path = string(CURRENT_DIRECTORY); 
+  string time_file = path + "runtime4";
   ofstream log(time_file.c_str(),ios::app);
   log << setw(10) << name;
   log << setw(10) << segmentation.getNumberOfCoordinates() << "\t";
   log << setw(10) << setprecision(4) << segmentation.getCPUTime();
-  log << setw(10) << n << "\t"; 
-  log << setw(10) << setprecision(4) << time;
   log << endl;
   log.close();
 }
