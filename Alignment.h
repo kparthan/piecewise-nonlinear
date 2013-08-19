@@ -1,17 +1,11 @@
-#ifndef COMPARISON_H
-#define COMPARISON_H
+#ifndef ALIGNMENT_H
+#define ALIGNMENT_H
 
 #include "Header.h"
-#include "Segmentation.h"
-#include "CurveString.h"
-#include "DistanceHistogram.h"
 
-class Comparison
+class Alignment
 {
   private:
-    //! Type of comparison
-    int flag;
-
     //! Direction to choose in the dynamic programming matrix
     enum Direction {
       LEFT,
@@ -22,7 +16,7 @@ class Comparison
     //! The two segmentation profiles
     Segmentation profiles[2];
 
-    //! Comparison scores
+    //! Alignment scores
     vector<double> scores;
 
     //! Optimal alignment
@@ -43,10 +37,10 @@ class Comparison
 
   public:
     //! Null constructor
-    Comparison();
+    Alignment();
 
     //! Constructor
-    Comparison(Segmentation &, Segmentation &);
+    Alignment(Segmentation &, Segmentation &);
 
     //! Edit distance
     void computeEditDistance(double);
