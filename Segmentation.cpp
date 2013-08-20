@@ -16,6 +16,18 @@ Segmentation::Segmentation()
  *  \param approx_lengths a reference to a vector<double>
  */
 Segmentation::Segmentation(int num_coordinates,
+                           vector<BezierCurve<double>> &bezier_curves) :
+                           num_coordinates(num_coordinates), 
+                           bezier_curves(bezier_curves)
+{
+  //assert(bezier_curves.size() == approx_lengths.size());
+  for (int i=0; i<bezier_curves.size(); i++) {
+    double length = bezier_curves[i].length();
+    bezier_curves_lengths.push_back(length);
+  }
+}
+
+/*Segmentation::Segmentation(int num_coordinates,
                            vector<double> &planar_angles, 
                            vector<double> &dihedral_angles, 
                            vector<double> &lengths,
@@ -32,7 +44,7 @@ Segmentation::Segmentation(int num_coordinates,
     double length = bezier_curves[i].length();
     bezier_curves_lengths.push_back(length);
   }
-}
+}*/
 
 /*!
  *  \brief This module is used to create a copy of a Segmentation object
@@ -40,13 +52,10 @@ Segmentation::Segmentation(int num_coordinates,
  */
 Segmentation::Segmentation(const Segmentation &source) : 
               num_coordinates(source.num_coordinates), 
-              planar_angles(source.planar_angles), 
-              dihedral_angles(source.dihedral_angles), lengths(source.lengths),
               bezier_curves(source.bezier_curves), null_bpr(source.null_bpr),
               bezier_bpr(source.bezier_bpr), cpu_time(source.cpu_time),
-              wall_time(source.wall_time), max_radius(source.max_radius),
-              bezier_curves_lengths(source.bezier_curves_lengths),
-              approx_lengths(source.approx_lengths)
+              wall_time(source.wall_time), 
+              bezier_curves_lengths(source.bezier_curves_lengths)
 {}
 
 /*!
@@ -58,17 +67,17 @@ Segmentation Segmentation::operator=(const Segmentation &source)
 {
   if (this != &source) {
     num_coordinates = source.num_coordinates; 
-    planar_angles = source.planar_angles;
+    /*planar_angles = source.planar_angles;
     dihedral_angles = source.dihedral_angles;
-    lengths = source.lengths;
+    lengths = source.lengths;*/
     bezier_curves = source.bezier_curves;
     bezier_curves_lengths = source.bezier_curves_lengths;
     null_bpr = source.null_bpr;
     bezier_bpr = source.bezier_bpr;
     cpu_time = source.cpu_time;
     wall_time = source.wall_time;
-    approx_lengths = source.approx_lengths;
-    max_radius = source.max_radius;
+    /*approx_lengths = source.approx_lengths;
+    max_radius = source.max_radius;*/
   }
   return *this;
 }
@@ -77,19 +86,19 @@ Segmentation Segmentation::operator=(const Segmentation &source)
  *  \brief This function sets the maximum radius of the parent structure
  *  \param radius a double
  */
-void Segmentation::setMaximumRadius(double radius)
+/*void Segmentation::setMaximumRadius(double radius)
 {
   max_radius = radius;
-}
+}*/
 
 /*!
  *  \brief This function returns the maximum radius of the parent structure
  *  \return the radius
  */
-double Segmentation::getMaximumRadius()
+/*double Segmentation::getMaximumRadius()
 {
   return max_radius;
-}
+}*/
 
 /*!
  *
@@ -141,28 +150,28 @@ int Segmentation::getNumberOfCoordinates()
  *  \brief This function returns the list of planar angles
  *  \return the planar angles
  */
-vector<double> Segmentation::getPlanarAngles()
+/*vector<double> Segmentation::getPlanarAngles()
 {
   return planar_angles;
-}
+}*/
 
 /*!
  *  \brief This function returns the list of dihedral angles
  *  \return the dihedral angles
  */
-vector<double> Segmentation::getDihedralAngles()
+/*vector<double> Segmentation::getDihedralAngles()
 {
   return dihedral_angles;
-}
+}*/
 
 /*!
  *  \brief This function returns the list of lengths of connecting lines
  *  \return the lengths
  */
-vector<double> Segmentation::getLengths()
+/*vector<double> Segmentation::getLengths()
 {
   return lengths;
-}
+}*/
 
 /*!
  *
@@ -183,15 +192,15 @@ vector<double> Segmentation::getBezierCurvesLengths()
 /*!
  *
  */
-vector<double> Segmentation::getApproximateBezierLengths()
+/*vector<double> Segmentation::getApproximateBezierLengths()
 {
   return approx_lengths;
-}
+}*/
 
 /*!
  *  \brief This module prints the segmentation profile (angles & lengths)
  */
-void Segmentation::print()
+/*void Segmentation::print()
 {
   cout << fixed << setw(25) << "Planar angles [" << planar_angles.size() << "] : ";
   for (int i=0; i<planar_angles.size(); i++) {
@@ -211,7 +220,7 @@ void Segmentation::print()
     cout << setprecision(2) << lengths[i] << " ";
   }
   cout << endl;
-}
+}*/
 
 /*!
  *  \brief This function is used to save the segmentation to a file
@@ -228,10 +237,10 @@ void Segmentation::save(string &pdb_file, vector<int> &controls)
                        + c + "/" +  pdb_file + ".profile";
   ofstream profile(output_file.c_str());
   profile << num_coordinates << endl;
-  profile << max_radius << endl;
+  //profile << max_radius << endl;
   profile << null_bpr << endl;
   profile << bezier_bpr << endl;
-  for (int i=0; i<planar_angles.size(); i++) {
+  /*for (int i=0; i<planar_angles.size(); i++) {
     profile << planar_angles[i] << " ";
   }
   profile << endl;
@@ -242,13 +251,13 @@ void Segmentation::save(string &pdb_file, vector<int> &controls)
   for (int i=0; i<lengths.size(); i++) {
     profile << lengths[i] << " ";
   }
-  profile << endl;
+  profile << endl;*/
   for (int i=0; i<bezier_curves.size(); i++) {
     for (int j=0; j<=bezier_curves[i].getDegree(); j++) {
       profile << bezier_curves[i].getControlPoint(j) << " ";
     }
     profile << endl;
-    profile << bezier_curves[i].length() << " " << approx_lengths[i];
+    profile << bezier_curves[i].length() << " "; 
     profile << endl;
   }
   profile.close();
@@ -261,21 +270,22 @@ void Segmentation::save(string &pdb_file, vector<int> &controls)
  */
 void Segmentation::load(string &pdb_file, vector<int> &controls)
 {
-  const int NUM_COORDINATES = 1;
+  /*const int NUM_COORDINATES = 1;
   const int MAX_RADIUS = 2;
   const int NULL_BPR_LINE = 3;
   const int BEZIER_BPR_LINE = 4;
   const int PLANAR_ANGLES_LINE = 5;
   const int DIHEDRAL_ANGLES_LINE = 6;
   const int CONNECTING_LENGTHS_LINE = 7;
-  const int BEZIER_CURVES_LINE = 8;
+  const int BEZIER_CURVES_LINE = 8;*/
 
-  planar_angles.clear();
-  dihedral_angles.clear();
-  lengths.clear();
+  const int NUM_COORDINATES = 1;
+  const int NULL_BPR_LINE = 2;
+  const int BEZIER_BPR_LINE = 3;
+  const int BEZIER_CURVES_LINE = 4;
+
   bezier_curves.clear();
   bezier_curves_lengths.clear();
-  approx_lengths.clear();
 
   string c;
   for (int i=0; i<controls.size(); i++) {
@@ -302,9 +312,9 @@ void Segmentation::load(string &pdb_file, vector<int> &controls)
         num_coordinates = numbers[0];
         break;
 
-      case MAX_RADIUS:
+      /*case MAX_RADIUS:
         max_radius = numbers[0];
-        break;
+        break;*/
 
       case NULL_BPR_LINE:
         null_bpr = numbers[0];
@@ -314,7 +324,7 @@ void Segmentation::load(string &pdb_file, vector<int> &controls)
         bezier_bpr = numbers[0];
         break;
 
-      case PLANAR_ANGLES_LINE:
+      /*case PLANAR_ANGLES_LINE:
         planar_angles = numbers;
         break;
 
@@ -324,7 +334,7 @@ void Segmentation::load(string &pdb_file, vector<int> &controls)
 
       case CONNECTING_LENGTHS_LINE:
         lengths = numbers;
-        break;
+        break;*/
 
       default:
       if (i%2 == 0) {
@@ -340,7 +350,7 @@ void Segmentation::load(string &pdb_file, vector<int> &controls)
         bezier_curves.push_back(curve);
       } else {
         bezier_curves_lengths.push_back(numbers[0]);
-        approx_lengths.push_back(numbers[1]);
+        //approx_lengths.push_back(numbers[1]);
       }
       break;
     }

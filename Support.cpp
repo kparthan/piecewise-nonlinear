@@ -431,7 +431,7 @@ void build(struct Parameters &parameters)
 {
   // get the segmentation
   Segmentation segmentation = buildSegmentationProfile(parameters);
-
+/*
   switch(parameters.profile) {
     case DISTANCE_HISTOGRAM:  // construct the histogram
     {
@@ -443,8 +443,9 @@ void build(struct Parameters &parameters)
     {
       vector<BezierCurve<double>> curves = segmentation.getBezierCurves();
       vector<double> lengths = segmentation.getBezierCurvesLengths();
-      vector<double> approx_lengths = segmentation.getApproximateBezierLengths();
-      CurveString<double> curve_string(curves,lengths,approx_lengths);
+      //vector<double> approx_lengths = segmentation.getApproximateBezierLengths();
+      CurveString<double> curve_string(curves,lengths);
+      //CurveString<double> curve_string(curves,lengths,approx_lengths);
       string name = extractName(parameters.file);
       KnotInvariants knot_invariants(curve_string,name,parameters.max_order);
       knot_invariants.constructPolygon(parameters.construct_polygon,
@@ -456,6 +457,7 @@ void build(struct Parameters &parameters)
       break;
     }
   }
+*/
 }
 
 /*!
@@ -493,9 +495,9 @@ Segmentation buildSegmentationProfile(struct Parameters &parameters)
       segmentation = generalFit(parameters);
       break;
   }
-  if (parameters.print == PRINT_DETAIL) {
+  /*if (parameters.print == PRINT_DETAIL) {
     segmentation.print();
-  }
+  }*/
   return segmentation;
 }
 
@@ -539,8 +541,8 @@ DistanceHistogram buildHistogramProfile(struct Parameters &parameters,
     double dr = parameters.increment_r;
     vector<BezierCurve<double>> bezier_curves = segmentation.getBezierCurves();
     vector<double> lengths = segmentation.getBezierCurvesLengths();
-    vector<double> approx_lengths = segmentation.getApproximateBezierLengths();
-    CurveString<double> curve_string = CurveString<double>(bezier_curves,lengths,approx_lengths);
+    //vector<double> approx_lengths = segmentation.getApproximateBezierLengths();
+    CurveString<double> curve_string = CurveString<double>(bezier_curves,lengths);
     string name = extractName(parameters.file);
     histogram = DistanceHistogram(curve_string,num_samples,dr,
                                   parameters.sampling_method,name);

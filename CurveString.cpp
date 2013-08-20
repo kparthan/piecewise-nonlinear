@@ -55,13 +55,11 @@ CurveString<RealType>::CurveString(vector<BezierCurve<RealType>> &curves) : curv
  */
 template <typename RealType>
 CurveString<RealType>::CurveString(vector<BezierCurve<RealType>> &curves,
-                                   vector<RealType> &lengths, 
-                                   vector<RealType> &approx_lengths) :
-                                   curves(curves), lengths(lengths),
-                                   approx_lengths(approx_lengths)
+                                   vector<RealType> &lengths) : 
+                                   curves(curves), lengths(lengths)
 {
   assert(curves.size() == lengths.size());
-  assert(lengths.size() == approx_lengths.size());
+  //assert(lengths.size() == approx_lengths.size());
   if (curves.size() == 0) {
     cout << "No curves to construct the curve string ...";
     exit(1);
@@ -79,7 +77,7 @@ CurveString<RealType>::CurveString(vector<BezierCurve<RealType>> &curves,
 template <typename RealType>
 CurveString<RealType>::CurveString(const CurveString<RealType> &source) : 
                        vertices(source.vertices), curves(source.curves),
-                       lengths(source.lengths), approx_lengths(source.approx_lengths)
+                       lengths(source.lengths) 
 {}
 
 /*!
@@ -94,7 +92,7 @@ CurveString<RealType> CurveString<RealType>::operator=(const CurveString<RealTyp
     vertices = source.vertices;
     curves = source.curves;
     lengths = source.lengths;
-    approx_lengths = source.approx_lengths;
+    //approx_lengths = source.approx_lengths;
   }
   return *this;
 }
@@ -137,7 +135,7 @@ RealType CurveString<RealType>::length()
  *  \brief This function is used to approximate the length of the curve string.
  *  \return the approximate length
  */
-template <typename RealType>
+/*template <typename RealType>
 RealType CurveString<RealType>::approximateLength()
 {
   RealType total_length = 0;
@@ -145,7 +143,7 @@ RealType CurveString<RealType>::approximateLength()
     total_length += approx_lengths[i]; 
   }
   return total_length;
-}
+}*/
 
 /*!
  *  \brief This method computes the sampling probabilities of each curve.

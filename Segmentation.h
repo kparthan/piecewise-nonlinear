@@ -11,13 +11,13 @@ class Segmentation
     int num_coordinates;
 
     //! Planar angles
-    vector<double> planar_angles;
+    //vector<double> planar_angles;
 
     //! Dihedral angles
-    vector<double> dihedral_angles;
+    //vector<double> dihedral_angles;
 
     //! Lengths of lines connecting control points
-    vector<double> lengths;
+    //vector<double> lengths;
 
     //! List of all Bezier curves
     vector<BezierCurve<double>> bezier_curves;
@@ -27,10 +27,10 @@ class Segmentation
 
     //! Approximate lengths of the segments forming the 
     //! segmentation profile
-    vector<double> approx_lengths;
+    //vector<double> approx_lengths;
 
     // Maximum radius of the parent structure
-    double max_radius;
+    //double max_radius;
 
     //! Bits per residue for the segmentation
     double null_bpr,bezier_bpr;
@@ -43,9 +43,11 @@ class Segmentation
     Segmentation();
 
     //! Constructor
-    Segmentation(int, vector<double> &, vector<double> &, vector<double> &, 
-                 vector<BezierCurve<double>> &, vector<double> &);
+    //Segmentation(int, vector<double> &, vector<double> &, vector<double> &, 
+    //             vector<BezierCurve<double>> &, vector<double> &);
 
+    Segmentation(int, vector<BezierCurve<double>> &); 
+                 
     //! Copy constructor
     Segmentation(const Segmentation &);
 
@@ -54,13 +56,13 @@ class Segmentation
 
                             /* Accessor functions */
     //! Get the planar angles
-    vector<double> getPlanarAngles();
+    //vector<double> getPlanarAngles();
 
     //! Get the dihedral angles
-    vector<double> getDihedralAngles();
+    //vector<double> getDihedralAngles();
 
     //! Get the lengths of connecting lines
-    vector<double> getLengths();
+    //vector<double> getLengths();
 
     //! Get the abstracting Bezier curves
     vector<BezierCurve<double>> getBezierCurves();
@@ -69,13 +71,13 @@ class Segmentation
     vector<double> getBezierCurvesLengths();
 
     //! Get the approximate lengths of the constituent curves
-    vector<double> getApproximateBezierLengths();
+    //vector<double> getApproximateBezierLengths();
 
     //! Print the segmentation details
-    void print();
+    //void print();
 
     //!
-    void setMaximumRadius(double);
+    //void setMaximumRadius(double);
 
     //!
     void setBitsPerResidue(double, double);
@@ -87,7 +89,7 @@ class Segmentation
     double getBezierBPR();
 
     //!
-    double getMaximumRadius();
+    //double getMaximumRadius();
 
     //!
     void setTime(double, double);

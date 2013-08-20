@@ -81,7 +81,7 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
                                   vector<int> &segments, vector<int> &controls, 
                                   Matrix<double> &transformation)
 {
-  vector<double> approx_lengths;
+  //vector<double> approx_lengths;
   vector<Identifier> identifiers = mapToActualSegments(segments);
   protein->undoLastSelection();
   Matrix<double> inverse_transform = transformation.inverse();
@@ -109,7 +109,7 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
     string residue_id = "R" + boost::lexical_cast<string>(i);
     shared_ptr<Residue> cps_residue = make_shared<Residue>(residue_id);
     OptimalFit fit = optimalBezierFit[segment_start][segment_end];
-    approx_lengths.push_back(fit.getSegmentLength());
+    //approx_lengths.push_back(fit.getSegmentLength());
     int numIntermediateControls = fit.getNumberOfControlPoints() - 2;
 
     vector<Point<double>> control_points;
@@ -189,11 +189,12 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
   createPymolScript(pdb_file,optimalBezierFit,segments,controls,identifiers);
 
   /* compute planar angles, dihedral angles, and lengths of connecting lines */
-  vector<double> planar_angles = computePlanarAngles();
+  /*vector<double> planar_angles = computePlanarAngles();
   vector<double> dihedral_angles = computeDihedralAngles();
   vector<double> lengths = computeConnectingLinesLengths();
   return Segmentation(coordinates.size(),planar_angles,dihedral_angles,lengths,
-                      all_bezier_curves,approx_lengths);
+                      all_bezier_curves,approx_lengths);*/
+  return Segmentation(coordinates.size(),all_bezier_curves);
 }
 
 /*!
