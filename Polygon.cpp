@@ -54,7 +54,7 @@ Polygon<RealType>::Polygon(const Polygon<RealType> &source) :
 {}
 
 /*!
- *  \brief This module assigns a source curve string to a target curve string.
+ *  \brief This module assigns a source Polygon to a target Polygon.
  *  \param source a reference to a Polygon<RealType>
  *  \return a Polygon<RealType>
  */
@@ -80,7 +80,7 @@ int Polygon<RealType>::getNumberOfVertices()
 }
 
 /*!
- *  \brief This method is used to return the number of sides of the curve string
+ *  \brief This method is used to return the number of sides of the polygon. 
  *  \return the number of sides
  */
 template <typename RealType>
@@ -161,8 +161,8 @@ void Polygon<RealType>::visualize(string name, vector<int> &controls)
   // copy the existing modified pdb file
   string modified_pdb = string(CURRENT_DIRECTORY) + "output/segmentations/"
                         + "modified_pdb_files/" + c + "/" + name + ".pdb";
-  string vertices_pdb = string(CURRENT_DIRECTORY) + "output/knot-invariants/"
-                        + "polygons/" + c + "/" + name + ".pdb"; 
+  string vertices_pdb = string(CURRENT_DIRECTORY) + "output/polygons/"
+                        + c + "/" + name + ".pdb"; 
   string cmd = "cp " + modified_pdb + " " + vertices_pdb;
   system(cmd.c_str());
 
@@ -189,10 +189,10 @@ void Polygon<RealType>::createPymolScript(string name, ProteinStructure &structu
 {
   string pymol_script = string(CURRENT_DIRECTORY) + "output/segmentations/"
                         + "pymol_scripts/" + c + "/" + name + ".pml";
-  string polygon_script = string(CURRENT_DIRECTORY) + "output/knot-invariants/"
-                        + "polygons/" + c + "/" + name + ".pml"; 
-  string pdb_file = string(CURRENT_DIRECTORY) + "output/knot-invariants/"
-                    + "polygons/" + c + "/" + name + ".pdb";
+  string polygon_script = string(CURRENT_DIRECTORY) + "output/polygons/"
+                          + c + "/" + name + ".pml"; 
+  string pdb_file = string(CURRENT_DIRECTORY) + "output/polygons/"
+                    + c + "/" + name + ".pdb";
   ifstream pymol(pymol_script.c_str());
   ofstream polygon(polygon_script.c_str());
 
@@ -231,6 +231,22 @@ void Polygon<RealType>::createPymolScript(string name, ProteinStructure &structu
     }
   }
   polygon.close();
+}
+
+/*!
+ *  \brief This function joins individual polygons 
+ *  \param polygons a reference to a vector<Polygon<RealType>> 
+ *  \return the merged polygon
+ */
+template <typename RealType>
+Polygon<RealType> Polygon<RealType>::merge(Polygon<RealType> &other)
+{
+  vector<Line<RealType>> all_sides = sides;
+  vector<Line<RealType>> other_sides = other.getSides();
+  for (int i=0; i<other_sides.size(); i++) {
+    all_sides.push_back(other_sides[i]);
+  }
+  return Polygon<RealType>(all_sides);
 }
 
 template class Polygon<float>;

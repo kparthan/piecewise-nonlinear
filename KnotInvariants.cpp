@@ -15,8 +15,34 @@ KnotInvariants::KnotInvariants()
 KnotInvariants::KnotInvariants(CurveString<double> &curve_string, string name,
                                int max_order): curve_string(curve_string), 
                                name(name), max_order(max_order)
+{}
+
+/*!
+ *  \brief Constructor
+ *  \param polygon a reference to a Polygon 
+ *  \param name a string
+ *  \param max_order an integer
+ */
+KnotInvariants::KnotInvariants(Polygon<double> &polygon, string name,
+                               int max_order, vector<int> &controls): 
+                               polygon(polygon), name(name), max_order(max_order)
+{
+  initialize(controls);
+}
+
+/*!
+ *  \brief This function is used to initialize the object.
+ *  \param controls a reference to a vector<int>
+ */
+void KnotInvariants::initialize(vector<int> &controls)
 {
   invariants = vector<vector<double>>(max_order,vector<double>());
+  polygon.visualize(name,controls);
+  int sides = polygon.getNumberOfSides();
+  for (int i=0; i<sides; i++) {
+    vector<double> tmp(sides,0);
+    writhe.push_back(tmp);
+  }
 }
 
 /*!
@@ -63,12 +89,7 @@ void KnotInvariants::constructPolygon(int heuristic, int num_sides,
                                       vector<int> &controls)
 {
   polygon = curve_string.getApproximatingPolygon(heuristic,num_sides);
-  polygon.visualize(name,controls);
-  int sides = polygon.getNumberOfSides();
-  for (int i=0; i<sides; i++) {
-    vector<double> tmp(sides,0);
-    writhe.push_back(tmp);
-  }
+  initialize(controls);
 }
 
 /*!
@@ -114,13 +135,13 @@ void KnotInvariants::computeInvariants()
   int n = polygon.getNumberOfSides();
   all_invariants.push_back(n);
 
-  double normalization_factor = n;
+  double normalization_factor = n * 2 * PI;
   for(int i=0; i<max_order; i++) {  // i = order
     invariants[i] = computeInvariants(i+1);
     for (int j=0; j<invariants[i].size(); j++) {
       all_invariants.push_back(invariants[i][j]/normalization_factor);
     }
-    normalization_factor *= n;
+    normalization_factor *= (n * 2 * PI);
   }
   /*cout << "All invariants (" << all_invariants.size() << "): [";
   for (int i=0; i<all_invariants.size(); i++) {
@@ -137,11 +158,11 @@ void KnotInvariants::computeInvariants()
   wall_time = duration_cast<seconds>(t_end-t_start).count();
 
   string log_file = string(CURRENT_DIRECTORY); 
-  log_file += "vectors4";
+  log_file += "vectors";
   ofstream log(log_file.c_str(),ios::app);
   log << setw(10) << name << "\t";
   for (int i=0; i<all_invariants.size(); i++) {
-    log << setw(10) << setprecision(4) << all_invariants[i];
+    log << fixed << setw(10) << setprecision(4) << all_invariants[i];
   }
   log << endl;
   log.close();
@@ -532,16 +553,28 @@ KnotInvariants::getCombinations(int n, int order, vector<array<int,2>> &invarian
   return combinations;
 }
 
+/*!
+ *  \brief This function returns the CPU time.
+ *  \return CPU time
+ */
 double KnotInvariants::getCPUTime()
 {
   return cpu_time;
 }
 
+/*!
+ *  \brief This function returns the Wall time.
+ *  \return Wall time
+ */
 double KnotInvariants::getWallTime()
 {
   return wall_time;
 }
 
+/*!
+ *  \brief This method is used to return the number of sides of the polygon.
+ *  \return the number of sides
+ */
 int KnotInvariants::getPolygonSides()
 {
   return polygon.getNumberOfSides();

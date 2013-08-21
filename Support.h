@@ -5,6 +5,7 @@
 #include "Segmentation.h"
 #include "Polygon.h"
 #include "DistanceHistogram.h"
+#include "Angles.h"
 
 struct Parameters
 {
@@ -69,6 +70,7 @@ void printHistogramResults(vector<DistanceHistogram> &, vector<double> &,
                            vector<string> &);
 bool checkIfSegmentationExists(string &, vector<int> &);
 bool checkIfHistogramExists(string &);
+bool checkIfAnglesExist(string &);
 
 struct Parameters parseCommandLineInput (int, char **); 
 void Usage (const char *, options_description &);
@@ -101,9 +103,12 @@ Segmentation generalFit (struct Parameters &);
 vector<Point<double>> read(string);
 
 template <typename RealType>
-Polygon<RealType> merge(vector<Polygon<RealType>> &);
 double exteriorAngle(Vector<double> &, Vector<double> &, Vector<double> &);
 double sumExteriorAngles(Line<double> &, Line<double> &);
+
+Polygon<double> getRepresentativePolygon(struct Parameters &, Segmentation &);
+Angles buildAnglesProfile(struct Parameters &, Segmentation &);
+double computeDihedralAngle(Line<double> &, Line<double> &);
 
 #endif
 

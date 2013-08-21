@@ -36,6 +36,9 @@ class KnotInvariants
     //! Runtime
     double cpu_time,wall_time;
 
+    //! Initialize
+    void initialize(vector<int> &);
+
   protected:
     //! Computes the writhe matrix
     void computeWrithe();
@@ -74,6 +77,9 @@ class KnotInvariants
     //! Constructor
     KnotInvariants(CurveString<double> &, string, int);
 
+    //! Constructor
+    KnotInvariants(Polygon<double> &, string, int, vector<int> &);
+
     //! Copy constructor
     KnotInvariants(const KnotInvariants &);
 
@@ -89,8 +95,13 @@ class KnotInvariants
     //! Gets the list of all invariants
     vector<double> getInvariants();
 
+    //! Return the number of sides in the representative polygon 
     int getPolygonSides();
+
+    //! Returns the CPU time
     double getCPUTime();
+
+    //! Returns the Wall time
     double getWallTime();
 };
 

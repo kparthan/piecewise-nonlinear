@@ -280,8 +280,8 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     parameters.comparison = UNSET;
   }
 
-  /*if (parameters.profile.compare("dihedral_angles") == 0) {
-    parameters.parameters.profile = DIHEDRAL_ANGLES;
+  if (profile.compare("dihedral_angles") == 0) {
+    parameters.profile = DIHEDRAL_ANGLES;
     if (vm.count("gap")) {
       cout << "Using a gap penalty of " << parameters.gap_penalty 
            << " ..." << endl;
@@ -297,8 +297,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
       cout << "Using default value of maximum allowed angle difference "
            << " for alignment: " << parameters.max_angle_diff << endl;
     }
-  } else*/ 
-  if (profile.compare("distance_histogram") == 0) {
+  } else if (profile.compare("distance_histogram") == 0) {
     parameters.profile = DISTANCE_HISTOGRAM;
     if (vm.count("n")) {
       cout << "# of random samples generated for comparing distance "
@@ -347,6 +346,13 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
       cout << "Using default maximum order of knot invariants: " 
            << parameters.max_order << endl;
     }
+  } else {
+    cout << "Unsupported profiling method ..." << endl;
+    Usage(argv[0],desc);
+  }
+
+  if (parameters.profile == DIHEDRAL_ANGLES || 
+      parameters.profile == KNOT_INVARIANTS) {
     if (vm.count("polygon")) {
       if (polygon.compare("controls") == 0) {
         parameters.construct_polygon = POLYGON_CONTROLS; 
@@ -369,9 +375,6 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     } else {
       parameters.construct_polygon = POLYGON_PROJECTIONS; 
     }
-  } else {
-    cout << "Unsupported profiling method ..." << endl;
-    Usage(argv[0],desc);
   }
 
   if (noargs) {
@@ -431,7 +434,9 @@ void build(struct Parameters &parameters)
 {
   // get the segmentation
   Segmentation segmentation = buildSegmentationProfile(parameters);
-/*
+  /*
+  string name = extractName(parameters.file);
+
   switch(parameters.profile) {
     case DISTANCE_HISTOGRAM:  // construct the histogram
     {
@@ -439,17 +444,17 @@ void build(struct Parameters &parameters)
       break;
     }
 
+    case DIHEDRAL_ANGLES: // compute the dihedral angles 
+    {
+      Angles angles = buildAnglesProfile(parameters,segmentation);
+      break;
+    }
+
     case KNOT_INVARIANTS: // compute the knot invariants
     {
-      vector<BezierCurve<double>> curves = segmentation.getBezierCurves();
-      vector<double> lengths = segmentation.getBezierCurvesLengths();
-      //vector<double> approx_lengths = segmentation.getApproximateBezierLengths();
-      CurveString<double> curve_string(curves,lengths);
-      //CurveString<double> curve_string(curves,lengths,approx_lengths);
-      string name = extractName(parameters.file);
-      KnotInvariants knot_invariants(curve_string,name,parameters.max_order);
-      knot_invariants.constructPolygon(parameters.construct_polygon,
-                                       parameters.num_sides,parameters.controls);
+      Polygon<double> polygon = getRepresentativePolygon(parameters,segmentation);
+      KnotInvariants knot_invariants(polygon,name,parameters.max_order,
+                                     parameters.controls);
       cout << "Computing knot invariants for structure " << name << " ..." << endl;
       knot_invariants.computeInvariants();
       updateRuntime(name,knot_invariants.getPolygonSides(),
@@ -458,6 +463,102 @@ void build(struct Parameters &parameters)
     }
   }
 */
+}
+
+/*!
+ *  \brief This function is used to obtain the representative polygon of
+ *  the segmentation.
+ *  \param parameters a reference to a struct Parameters 
+ *  \param segmentation a reference to a Segmentation 
+ *  \return the representative polygon
+ */
+Polygon<double> getRepresentativePolygon(struct Parameters &parameters,
+                                        Segmentation &segmentation)
+{
+  vector<BezierCurve<double>> curves = segmentation.getBezierCurves();
+  vector<double> lengths = segmentation.getBezierCurvesLengths();
+  CurveString<double> curve_string(curves,lengths);
+  Polygon<double> polygon = 
+  curve_string.getApproximatingPolygon(parameters.construct_polygon,
+                                       parameters.num_sides);
+  return polygon;  
+}
+
+/*!
+ *  \brief This function is used to compute the dihedral angles between the
+ *  sides that constitute the polygon.
+ *  \param parameters a reference to a struct Parameters 
+ *  \param segmentation a reference to a Segmentation 
+ *  \return the list of dihedral angles
+ */
+Angles buildAnglesProfile(struct Parameters &parameters,
+                                  Segmentation &segmentation)
+{
+  string name = extractName(parameters.file);
+  bool status = checkIfAnglesExist(name);
+  Angles angles;
+
+  if (status && parameters.force_build == UNSET) {
+    cout << "Angles profile of " << name << " exists ..." << endl;
+    angles.load(name);
+  } else {
+    Polygon<double> polygon = getRepresentativePolygon(parameters,segmentation);
+    vector<Line<double>> sides = polygon.getSides();
+    vector<double> dihedral_angles;
+    for (int i=0; i<sides.size(); i++) {
+      for (int j=i+2; j<sides.size(); j++) {
+        double angle = computeDihedralAngle(sides[i],sides[j]);
+        dihedral_angles.push_back(angle);
+      }
+    }
+    angles = Angles(name,dihedral_angles);
+    angles.save();
+  }
+  return angles;
+}
+
+/*!
+ *  \brief This function checks whether the angles exists or not
+ *  \param file_name a reference to a string
+ *  \return the angles exists or not
+ */
+bool checkIfAnglesExist(string &file_name)
+{
+  string path_to_angles = string(CURRENT_DIRECTORY) +
+                          "output/angles/" + file_name;
+  return checkFile(path_to_angles);
+}
+
+/*!
+ *  \brief This function computes the dihedral angle between two skew lines.
+ *  \param line1 a reference to a Line
+ *  \param line2 a reference to a Line
+ *  \return the dihedral angle
+ */
+double computeDihedralAngle(Line<double> &line1, Line<double> &line2)
+{
+  Vector<double> p0 = line1.startPoint().positionVector();
+  Vector<double> p1 = line1.endPoint().positionVector();
+  Vector<double> p2 = line2.startPoint().positionVector();
+  Vector<double> p3 = line2.endPoint().positionVector();
+  Vector<double> v1,v2,v3,n1,n2,m;
+  v1 = p1 - p0;
+  v2 = p2 - p1;
+  n1 = Vector<double>::crossProduct(v1,v2);
+  n1.normalize();
+  v3 = p3 - p2;
+  n2 = Vector<double>::crossProduct(v2,v3);
+  n2.normalize();
+  m = Vector<double>::crossProduct(n1,v2);
+  m.normalize();
+  double x = n1 * n2;
+  double y = m * n2;
+  double theta = atan2(y,x);
+  double theta_degrees = theta * 180 / PI;
+  if (theta_degrees < 0) {
+     theta_degrees += 360;
+  } 
+  return theta_degrees;
 }
 
 /*!
@@ -495,9 +596,6 @@ Segmentation buildSegmentationProfile(struct Parameters &parameters)
       segmentation = generalFit(parameters);
       break;
   }
-  /*if (parameters.print == PRINT_DETAIL) {
-    segmentation.print();
-  }*/
   return segmentation;
 }
 
@@ -541,7 +639,6 @@ DistanceHistogram buildHistogramProfile(struct Parameters &parameters,
     double dr = parameters.increment_r;
     vector<BezierCurve<double>> bezier_curves = segmentation.getBezierCurves();
     vector<double> lengths = segmentation.getBezierCurvesLengths();
-    //vector<double> approx_lengths = segmentation.getApproximateBezierLengths();
     CurveString<double> curve_string = CurveString<double>(bezier_curves,lengths);
     string name = extractName(parameters.file);
     histogram = DistanceHistogram(curve_string,num_samples,dr,
@@ -684,7 +781,7 @@ void updateResults(vector<double> &dot_products, vector<double> &distances)
 void updateRuntime(string name, int n, double time) 
 {
   string path = string(CURRENT_DIRECTORY); 
-  string time_file = path + "runtime4";
+  string time_file = path + "runtime";
   ofstream log(time_file.c_str(),ios::app);
   log << setw(10) << name;
   log << setw(10) << n << "\t"; 
@@ -1407,27 +1504,6 @@ vector<Point<double>> read(string name)
   file.close();
   return point_set;
 }
-
-/*!
- *  \brief This function joins individual polygons 
- *  \param polygons a reference to a vector<Polygon<RealType>> 
- *  \return the merged polygon
- */
-template <typename RealType>
-Polygon<RealType> merge(vector<Polygon<RealType>> &polygons)
-{
-  vector<Line<RealType>> all_sides;
-  for (int i=0; i<polygons.size(); i++) {
-    vector<Line<RealType>> sides = polygons[i].getSides();
-    for (int j=0; j<sides.size(); j++) {
-      all_sides.push_back(sides[j]);
-    }
-  }
-  return Polygon<RealType>(all_sides);
-}
-template Polygon<float> merge(vector<Polygon<float>> &);
-template Polygon<double> merge(vector<Polygon<double>> &);
-template Polygon<long double> merge(vector<Polygon<long double>> &);
 
 /*!
  *  \brief This function computes the exterior angle formed by three unit vectors.

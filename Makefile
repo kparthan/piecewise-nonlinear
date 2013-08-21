@@ -18,6 +18,7 @@ OBJECTS = piecewise-nonlinear-fit.o \
   Complex.o \
   Identifier.o \
   Segmentation.o \
+  Angles.o \
   KnotInvariants.o \
   DistanceHistogram.o
 
@@ -75,6 +76,9 @@ Identifier.o: Identifier.cpp Identifier.h
 	g++ -c $(CFLAGS) $< -o $@
 
 Segmentation.o: Segmentation.cpp Segmentation.h
+	g++ -c $(CFLAGS) $< -o $@
+
+Angles.o: Angles.cpp Angles.h
 	g++ -c $(CFLAGS) $< -o $@
 
 KnotInvariants.o: KnotInvariants.cpp KnotInvariants.h
