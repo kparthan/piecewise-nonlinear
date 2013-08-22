@@ -1,7 +1,7 @@
 #ifndef KNOT_INVARIANTS_H
 #define KNOT_INVARIANTS_H
 
-#include "Support.h"
+#include "Header.h"
 
 // Define a structure for a signed invariant pair
 struct SignedPair {
@@ -103,6 +103,12 @@ class KnotInvariants
 
     //! Returns the Wall time
     double getWallTime();
+
+    //! Saves the invariants to a file
+    void save();
+
+    //! Loads the precomputes invariants
+    void load(string &);
 };
 
 #endif 

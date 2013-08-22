@@ -25,17 +25,23 @@ class Angles
     //! Assignment operator
     Angles operator=(const Angles &);
 
-    // return i^{th} angle 
+    //! return i^{th} angle 
     inline double & operator [](unsigned);
 
-    // return i^{th} angle 
+    //! return i^{th} angle 
     inline const double & operator [](unsigned) const;
+
+    //! Returns the number of angles
+    int size();
+
+    //! Returns the angles
+    vector<double> getAngles();
 
     //! Saves the profile
     void save();
 
     //! Loads the profile
-    void load(string);
+    void load(string &);
 };
 
 #endif

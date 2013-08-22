@@ -177,7 +177,7 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
   vector<Atom> atoms = protein->getAtoms();
   string pdb_file = extractName(file);
   string modified_pdb = string(CURRENT_DIRECTORY) + 
-                        "output/segmentations/modified_pdb_files/" + c + "/" +
+                        "experiments/segmentations/modified_pdb_files/" + c + "/" +
                         pdb_file + ".pdb";
   ofstream fw(modified_pdb.c_str());
   for (int i=0; i<atoms.size(); i++) {
@@ -213,12 +213,12 @@ void Protein::createPymolScript(string &pdb_file,
     c += boost::lexical_cast<string>(controls[i]);
   }
   string pymol_file = string(CURRENT_DIRECTORY) + 
-                      "output/segmentations/pymol_scripts/" + c + "/" +
+                      "experiments/segmentations/pymol_scripts/" + c + "/" +
                       pdb_file + ".pml";
   ofstream script(pymol_file.c_str());
 
   string modified_pdb = string(CURRENT_DIRECTORY) + 
-                        "output/segmentations/modified_pdb_files/" + c + "/" +
+                        "experiments/segmentations/modified_pdb_files/" + c + "/" +
                         pdb_file + ".pdb";
   script << "load " << modified_pdb << endl;
   //script << "bg_color white" << endl;

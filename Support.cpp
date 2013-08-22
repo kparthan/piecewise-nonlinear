@@ -3,7 +3,8 @@
 #include "General.h"
 #include "Test.h"
 #include "StandardForm.h"
-#include "KnotInvariants.h"
+
+//////////////////////// GENERAL PURPOSE FUNCTIONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 /*!
  *  \brief This function checks to see if valid arguments are given to the 
@@ -44,19 +45,20 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("encode",value<string>(&encode), "type of encoding the deviations")
        ("force",value<vector<string>>(&force)->multitoken(),
                                   "force segmentation/histogram construction")
+
        // args used for comparison
        ("compare","flag to initiate comparison")
        ("files",value<vector<string>>(&parameters.comparison_files)->multitoken(),
                                                          "path to structure files")
        ("pdbids",value<vector<string>>(&pdb_ids)->multitoken(),"PDB IDs to compare")
        ("scopids",value<vector<string>>(&scop_ids)->multitoken(),"SCOP IDs to compare")
-       ("profile",value<string>(&profile),
-                                   "profile constructed from the segmentation")
-                           // distance_histogram or knot_invariants
+       ("profile",value<string>(&profile),"profile constructed from the segmentation")
+                                   
+          // dihedral_angles or distance_histogram or knot_invariants
         // arguments for alignment based profiling
-       /*("gap",value<double>(&parameters.gap_penalty),"gap penalty used in alignment")
+       ("gap",value<double>(&parameters.gap_penalty),"gap penalty used in alignment")
        ("diff",value<double>(&parameters.max_angle_diff),
-                                      "maximum difference allowed for the angles")*/
+                                      "maximum difference allowed for the angles")
         // arguments for histogram based profiling 
        ("n",value<int>(&parameters.num_samples_on_curve),
                                  "# of sample points for histogram comparison")
@@ -85,13 +87,13 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
   }
 
   parameters.force_segmentation = UNSET;
-  parameters.force_build = UNSET;
+  parameters.force_profile = UNSET;
   if (vm.count("force")) {
     for (int i=0; i<force.size(); i++) {
       if (force[i].compare("segmentation") == 0) {
         parameters.force_segmentation = SET;
-      } else if (force[i].compare("build") == 0) {
-        parameters.force_build = SET;
+      } else if (force[i].compare("profile") == 0) {
+        parameters.force_profile = SET;
       } else {
         cout << "Invalid force option supplied ..." << endl;
         Usage(argv[0],desc);
@@ -295,7 +297,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     } else {
       parameters.max_angle_diff = MAX_DIFFERENCE_ANGLES;
       cout << "Using default value of maximum allowed angle difference "
-           << " for alignment: " << parameters.max_angle_diff << endl;
+           << "for alignment: " << parameters.max_angle_diff << endl;
     }
   } else if (profile.compare("distance_histogram") == 0) {
     parameters.profile = DISTANCE_HISTOGRAM;
@@ -418,7 +420,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
  *  \param exe a reference to a const char
  *  \param desc a reference to a options_description object
  */
-void Usage (const char *exe, options_description &desc)
+void Usage(const char *exe, options_description &desc)
 {
   cout << "Usage: " << exe << " [options]" << endl;
   cout << desc << endl;
@@ -434,7 +436,6 @@ void build(struct Parameters &parameters)
 {
   // get the segmentation
   Segmentation segmentation = buildSegmentationProfile(parameters);
-  /*
   string name = extractName(parameters.file);
 
   switch(parameters.profile) {
@@ -452,236 +453,53 @@ void build(struct Parameters &parameters)
 
     case KNOT_INVARIANTS: // compute the knot invariants
     {
-      Polygon<double> polygon = getRepresentativePolygon(parameters,segmentation);
-      KnotInvariants knot_invariants(polygon,name,parameters.max_order,
-                                     parameters.controls);
-      cout << "Computing knot invariants for structure " << name << " ..." << endl;
-      knot_invariants.computeInvariants();
-      updateRuntime(name,knot_invariants.getPolygonSides(),
-                    knot_invariants.getCPUTime());
+      KnotInvariants knot_invariants = 
+            buildKnotInvariantsProfile(parameters,segmentation);
       break;
     }
   }
-*/
 }
 
 /*!
- *  \brief This function is used to obtain the representative polygon of
- *  the segmentation.
- *  \param parameters a reference to a struct Parameters 
- *  \param segmentation a reference to a Segmentation 
- *  \return the representative polygon
- */
-Polygon<double> getRepresentativePolygon(struct Parameters &parameters,
-                                        Segmentation &segmentation)
-{
-  vector<BezierCurve<double>> curves = segmentation.getBezierCurves();
-  vector<double> lengths = segmentation.getBezierCurvesLengths();
-  CurveString<double> curve_string(curves,lengths);
-  Polygon<double> polygon = 
-  curve_string.getApproximatingPolygon(parameters.construct_polygon,
-                                       parameters.num_sides);
-  return polygon;  
-}
-
-/*!
- *  \brief This function is used to compute the dihedral angles between the
- *  sides that constitute the polygon.
- *  \param parameters a reference to a struct Parameters 
- *  \param segmentation a reference to a Segmentation 
- *  \return the list of dihedral angles
- */
-Angles buildAnglesProfile(struct Parameters &parameters,
-                                  Segmentation &segmentation)
-{
-  string name = extractName(parameters.file);
-  bool status = checkIfAnglesExist(name);
-  Angles angles;
-
-  if (status && parameters.force_build == UNSET) {
-    cout << "Angles profile of " << name << " exists ..." << endl;
-    angles.load(name);
-  } else {
-    Polygon<double> polygon = getRepresentativePolygon(parameters,segmentation);
-    vector<Line<double>> sides = polygon.getSides();
-    vector<double> dihedral_angles;
-    for (int i=0; i<sides.size(); i++) {
-      for (int j=i+2; j<sides.size(); j++) {
-        double angle = computeDihedralAngle(sides[i],sides[j]);
-        dihedral_angles.push_back(angle);
-      }
-    }
-    angles = Angles(name,dihedral_angles);
-    angles.save();
-  }
-  return angles;
-}
-
-/*!
- *  \brief This function checks whether the angles exists or not
+ *  \brief This module checks whether the input file exists or not.
  *  \param file_name a reference to a string
- *  \return the angles exists or not
+ *  \return true or false depending on whether the file exists or not.
  */
-bool checkIfAnglesExist(string &file_name)
+bool checkFile(string &file_name)
 {
-  string path_to_angles = string(CURRENT_DIRECTORY) +
-                          "output/angles/" + file_name;
-  return checkFile(path_to_angles);
+  /*ifstream file(fileName);
+  return file;*/
+  return boost::filesystem::exists(file_name);
 }
 
 /*!
- *  \brief This function computes the dihedral angle between two skew lines.
- *  \param line1 a reference to a Line
- *  \param line2 a reference to a Line
- *  \return the dihedral angle
+ *  \brief This module extracts the file name from the path
+ *  \param file a reference to a string
+ *  \return the extracted portion of the file name
  */
-double computeDihedralAngle(Line<double> &line1, Line<double> &line2)
+string extractName(string &file)
 {
-  Vector<double> p0 = line1.startPoint().positionVector();
-  Vector<double> p1 = line1.endPoint().positionVector();
-  Vector<double> p2 = line2.startPoint().positionVector();
-  Vector<double> p3 = line2.endPoint().positionVector();
-  Vector<double> v1,v2,v3,n1,n2,m;
-  v1 = p1 - p0;
-  v2 = p2 - p1;
-  n1 = Vector<double>::crossProduct(v1,v2);
-  n1.normalize();
-  v3 = p3 - p2;
-  n2 = Vector<double>::crossProduct(v2,v3);
-  n2.normalize();
-  m = Vector<double>::crossProduct(n1,v2);
-  m.normalize();
-  double x = n1 * n2;
-  double y = m * n2;
-  double theta = atan2(y,x);
-  double theta_degrees = theta * 180 / PI;
-  if (theta_degrees < 0) {
-     theta_degrees += 360;
-  } 
-  return theta_degrees;
+  unsigned pos1 = file.find_last_of("/");
+  unsigned pos2 = file.find(".");
+  int length = pos2 - pos1 - 1;
+  string sub = file.substr(pos1+1,length);
+  return sub;
 }
 
 /*!
- *  \brief This module does the segmentation of a structure
- *  \param parameters a reference to a struct Parameters 
- *  \return the segmentation profile
+ *  \brief This module prints the list of coordinates to a file
+ *  \param coordinates a reference to std::vector of std::array<double,3>
  */
-Segmentation buildSegmentationProfile(struct Parameters &parameters)
+void writeToFile(vector<array<double,3>> &coordinates, const char *fileName)
 {
-  Segmentation segmentation;
-  string pdb_file;
-  bool status;
-
-  switch(parameters.structure) {
-    case TEST:   // test
-      segmentation = testFit(parameters);
-      break;
-
-    case PROTEIN:   // protein file
-      pdb_file = extractName(parameters.file);
-      status = checkIfSegmentationExists(pdb_file,parameters.controls);
-      if (status && parameters.force_segmentation == UNSET) {
-        cout << "Segmentation profile of " << pdb_file << " exists ..." << endl;
-        segmentation.load(pdb_file,parameters.controls);
-      } else {
-        cout << "Building segmentation profile of " << pdb_file << " ..." << endl;
-        segmentation = proteinFit(parameters);
-        segmentation.save(pdb_file,parameters.controls);
-        string name = extractName(parameters.file);
-        updateRuntime(name,segmentation);
-      }
-      break;
-
-    case GENERAL:   // general 3D structure
-      segmentation = generalFit(parameters);
-      break;
-  }
-  return segmentation;
-}
-
-/*!
- *  \brief This module checks if the segmentation already exists or not.
- *  \param pdb_file a reference to a string
- *  \param controls a reference to a vector<int>
- *  \return the segmentation exists or not
- */
-bool checkIfSegmentationExists(string &pdb_file, vector<int> &controls)
-{
-  string c;
-  for (int i=0; i<controls.size(); i++) {
-    c += boost::lexical_cast<string>(controls[i]);
-  }
-  string segmentation_profile = string(CURRENT_DIRECTORY) 
-                                + "output/segmentations/profiles/"
-                                + c + "/" + pdb_file + ".profile";
-  return checkFile(segmentation_profile); 
-}
-
-/*
- *  \brief Thus function constructs the histogram profile for the segmentation.
- *  \param parameters a reference to a struct Parameters
- *  \param segmentation a reference to Segmentation
- *  \return the distance histogram
- */
-DistanceHistogram buildHistogramProfile(struct Parameters &parameters,
-                                        Segmentation &segmentation)
-{
-  string file = extractName(parameters.file);
-  bool status = checkIfHistogramExists(file);
-  DistanceHistogram histogram;
-
-  if (status && parameters.force_build == UNSET) {
-    cout << "Histogram profile of " << file << " exists ..." << endl;
-    histogram.load(file);
-  } else {
-    cout << "Building histogram profile of " << file << " ..." << endl;
-    int num_samples = parameters.num_samples_on_curve;
-    double dr = parameters.increment_r;
-    vector<BezierCurve<double>> bezier_curves = segmentation.getBezierCurves();
-    vector<double> lengths = segmentation.getBezierCurvesLengths();
-    CurveString<double> curve_string = CurveString<double>(bezier_curves,lengths);
-    string name = extractName(parameters.file);
-    histogram = DistanceHistogram(curve_string,num_samples,dr,
-                                  parameters.sampling_method,name);
-    histogram.computeGlobalHistogramValues(parameters.scale);
-    histogram.save();
-  }
-  histogram.plotLocalHistograms();
-  return histogram;
-} 
-
-/*!
- *  \brief This function checks whether the histogram exists or not
- *  \param file_name a reference to a string
- *  \retuxirtn the histogram exists or not
- */
-bool checkIfHistogramExists(string &file_name)
-{
-  string path_to_histogram = "output/histograms/logs/global/" + file_name;
-  return checkFile(path_to_histogram);
-  /*path_to_histogram += boost::lexical_cast<string>(num_samples) + "_";
-  path_to_histogram += boost::lexical_cast<string>(dr).substr(0,4);
-  path_to_histogram += ".histogram";*/
-}
-
-/*!
- *  \brief This function gets the r values list with a uniform increment
- *  \param maximum_r a double
- *  \param dr a double
- *  \return the list of r values
- */
-vector<double> getRValuesList(double maximum_r, double dr)
-{
-  vector<double> r_values;
-  double r = dr; 
-  while (1) {
-    r_values.push_back(r);
-    if (r > maximum_r) {
-      break;
+  ofstream file(fileName);
+  for (int i=0; i<coordinates.size(); i++){
+    for (int j=0; j<3; j++){
+      file << coordinates[i][j] << " ";
     }
-    r += dr;
+    file << endl;
   }
-  return r_values;
+ file.close(); 
 }
 
 /*!
@@ -715,6 +533,14 @@ void compareStructuresList(struct Parameters &parameters)
       vector<double> r_values = histograms[profile_with_max_r_values].getRValues();
       plotMultipleHistograms(histograms,r_values,names);
       printHistogramResults(histograms,r_values,names);
+      break;
+    }
+
+    case DIHEDRAL_ANGLES:
+    {
+      vector<Angles> profiles;
+      for (int i=0; i<num_structures; i++) {
+      }
       break;
     }
 
@@ -756,400 +582,110 @@ void compareStructuresList(struct Parameters &parameters)
 }
 
 /*!
- *
+ *  \brief This function sorts the elements in the list
+ *  \param list a reference to a vector<double>
+ *  \return the sorted list
  */
-void updateResults(vector<double> &dot_products, vector<double> &distances)
+template <typename RealType>
+vector<RealType> sort(vector<RealType> &list)
 {
-  string path = string(CURRENT_DIRECTORY) + "output/knot-invariants/results/";
-  string log_file = path + "dot_products";
-  ofstream log1(log_file.c_str(),ios::app);
-  log_file = path + "distances";
-  ofstream log2(log_file.c_str(),ios::app);
-  for (int i=0; i<dot_products.size(); i++) {
-    log1 << dot_products[i] << " ";
-    log2 << distances[i] << " ";
+  int num_samples = list.size();
+	vector<RealType> sortedList(list);
+  vector<int> index(num_samples,0);
+	for(int i=0; i<num_samples; i++) {
+			index[i] = i;
   }
-  log1 << endl;
-  log2 << endl;
-  log2.close();
-  log1.close();
+	quicksort(sortedList,index,0,num_samples-1);
+  return sortedList;
 }
+template vector<int> sort(vector<int> &);
+template vector<float> sort(vector<float> &);
+template vector<double> sort(vector<double> &);
+template vector<long double> sort(vector<long double> &);
 
 /*!
- *
+ *  \brief This function sorts the elements in the list
+ *  \param list a reference to a vector<double>
+ *  \return the sorted list
  */
-void updateRuntime(string name, int n, double time) 
+template <typename RealType>
+vector<int> sortedListIndex(vector<RealType> &list)
 {
-  string path = string(CURRENT_DIRECTORY); 
-  string time_file = path + "runtime";
-  ofstream log(time_file.c_str(),ios::app);
-  log << setw(10) << name;
-  log << setw(10) << n << "\t"; 
-  log << setw(10) << setprecision(4) << time;
-  log << endl;
-  log.close();
-}
-
-/*!
- *
- */
-void updateRuntime(string name, Segmentation &segmentation)
-{
-  string path = string(CURRENT_DIRECTORY); 
-  string time_file = path + "runtime4";
-  ofstream log(time_file.c_str(),ios::app);
-  log << setw(10) << name;
-  log << setw(10) << segmentation.getNumberOfCoordinates() << "\t";
-  log << setw(10) << setprecision(4) << segmentation.getCPUTime();
-  log << endl;
-  log.close();
-}
-
-/*!
- *  \brief This function computes the Euclidean distance between two vectors.
- *  \param vec1 a reference to a Vector<double>
- *  \param vec2 a reference to a Vector<double>
- *  \return the distance
- */
-double computeEuclideanDistance(Vector<double> &vec1, Vector<double> &vec2)
-{
-  assert(vec1.size() == vec2.size());
-  double d = 0;
-  for (int i=0; i<vec1.size(); i++) {
-    d += (vec1[i] - vec2[i]) * (vec1[i] - vec2[i]);
+  int num_samples = list.size();
+	vector<RealType> sortedList(list);
+  vector<int> index(num_samples,0);
+	for(int i=0; i<num_samples; i++) {
+			index[i] = i;
   }
-  return sqrt(d);
+	quicksort(sortedList,index,0,num_samples-1);
+  return index;
 }
+template vector<int> sortedListIndex(vector<int> &);
+template vector<int> sortedListIndex(vector<float> &);
+template vector<int> sortedListIndex(vector<double> &);
+template vector<int> sortedListIndex(vector<long double> &);
 
 /*!
- *  \brief This function prints the comparison results
- *  \param histograms a reference to vector<DistanceHistogram>
- *  \param r_values a reference to a vector<double>
- *  \param names a reference to a vector<string>
+ *  This is an implementation of the classic quicksort() algorithm to sort a
+ *  list of data values. The module uses the overloading operator(<) to 
+ *  compare two Point<T> objects. 
+ *  Pivot is chosen as the right most element in the list(default)
+ *  This function is called recursively.
+ *  \param list a reference to a vector<double>
+ *	\param index a reference to a vector<int>
+ *  \param left an integer
+ *  \param right an integer
  */
-void printHistogramResults(vector<DistanceHistogram> &histograms,
-                           vector<double> &r_values, vector<string> &names)
+template <typename RealType>
+void quicksort(vector<RealType> &list, vector<int> &index, int left, int right)
 {
-  vector<vector<double>> histogram_results;
-  vector<double> results,dl;
-
-  int num_structures = histograms.size();
-  int base_structure = 0; // pivot
-  int num_r = r_values.size();
-  for (int i=0; i<num_structures; i++) {
-    results = histograms[i].modify(num_r);
-    assert(results.size() == num_r);
-    histogram_results.push_back(results);
-    dl.push_back(histograms[i].getIncrementInLength());
-  }
-
-  string all_names = names[0];
-  for (int i=1; i<names.size(); i++) {
-    all_names += "." + names[i];
-  }
-  string file = string(CURRENT_DIRECTORY) + "output/histograms/data/compared/";
-  file += all_names + ".each_r";
-  ofstream data(file.c_str());
-  vector<double> comparison_scores(num_structures-1,0);
-  for (int i=0; i<r_values.size(); i++) {
-    double h_base = histogram_results[base_structure][i];
-    for (int j=0; j<num_structures; j++) {
-      if (j != base_structure) {
-        double hj = histogram_results[j][i];
-        double score = fabs((h_base / dl[base_structure]) - (hj / dl[j]));
-        data << fixed << setprecision(3) << score << " "; 
-        comparison_scores[j-1] += score;
-      }
-    }
-    data << endl;
-  }
-  data << endl << "Aggregate:\n";
-  for (int i=0; i<num_structures-1; i++) {
-    data << fixed << setprecision(3) << comparison_scores[i] << " ";
-  }
-  data << endl;
-  data.close();
+	if(left < right)
+	{
+		int pivotNewIndex = partition(list,index,left,right);
+		quicksort(list,index,left,pivotNewIndex-1);
+		quicksort(list,index,pivotNewIndex+1,right);
+	}
 }
+template void quicksort(vector<float> &, vector<int> &, int, int);
+template void quicksort(vector<double> &, vector<int> &, int, int);
+template void quicksort(vector<long double> &, vector<int> &, int, int);
 
 /*!
- *
+ *  This function is called from the quicksort() routine to compute the new
+ *  pivot index.
+ *  \param list a reference to a vector<double>
+ *	\param index a reference to a vector<int>
+ *  \param left an integer
+ *  \param right an integer
+ *  \return the new pivot index
  */
-double getComparisonScore(vector<double> &list1, vector<double> &list2,
-                          double dl1, double dl2)
+template <typename RealType>
+int partition(vector<RealType> &list, vector<int> &index, int left, int right)
 {
-  int num_r = list1.size();
-  double score = 0;
-  for (int i=0; i<num_r; i++) {
-    score += fabs(list1[i] / dl1 - list2[i] / dl2);
-  }
-  cout << score << endl;
-  return score; 
+	RealType temp,pivotPoint = list[right];
+	int storeIndex = left,temp_i;
+	for(int i=left; i<right; i++) {
+		if(list[i] < pivotPoint) {
+			temp = list[i];
+			list[i] = list[storeIndex];
+			list[storeIndex] = temp;
+			temp_i = index[i];
+			index[i] = index[storeIndex];
+			index[storeIndex] = temp_i;
+			storeIndex += 1;	
+		}
+	}
+	temp = list[storeIndex];
+	list[storeIndex] = list[right];
+	list[right] = temp;
+	temp_i = index[storeIndex];
+	index[storeIndex] = index[right];
+	index[right] = temp_i;
+	return storeIndex;
 }
-
-/*!
- *  \brief This function plots the global histogram values for the structures
- *  that are compared.
- *  \param histograms a reference to a vector<DistanceHistogram>
- *  \param r_values a reference to a vector<double>
- *  \param names a reference to a vector<string>
- */
-void plotMultipleHistograms(vector<DistanceHistogram> &histograms, 
-                            vector<double> &r_values, 
-                            vector<string> &names)
-{
-  string color_array[] = {"red","blue","green","brown","orange","black"};
-  vector<string> colors(color_array,color_array+6);
-  int i,j;
-  vector<vector<double>> histogram_results;
-  vector<double> modified_results;
-
-  // modify the individual histogram results so that all are of same length
-  int max_num_r = r_values.size();
-  for (i=0; i<histograms.size(); i++) {
-    modified_results = histograms[i].modify(max_num_r);
-    histogram_results.push_back(modified_results);
-    assert(histogram_results[i].size() == max_num_r);
-  }
-
-  string all_names = names[0];
-  for (int i=1; i<names.size(); i++) {
-    all_names += "." + names[i];
-  }
-  string file = string(CURRENT_DIRECTORY) + "output/histograms/";
-  string data_file = file + "data/multiple_global_histograms/" + all_names + 
-                     ".histograms";
-  ofstream data(data_file.c_str());
-  for (i=0; i<r_values.size(); i++) {
-    data << r_values[i] << " ";
-    for (j=0; j<histogram_results.size(); j++) {
-      data << histogram_results[j][i] << " ";
-    }
-    data << endl;
-  }
-  data.close();
-
-  string script_file = file + "script.plot";
-  ofstream script(script_file.c_str());
-  script << "set terminal post eps" << endl;
-  script << "set xlabel \"r\"" << endl;
-  script << "set ylabel \"Global Histogram H(r)\"" << endl;
-  script << "set output \"" << file << "plots/" << all_names 
-         << ".histograms.eps\"" << endl;
-  script << "set multiplot" << endl;
-  for (i=1; i<names.size(); i++) {
-    if (i == 1) {
-      script << "plot ";
-    }
-    script << "\"" << data_file << "\" using 1:" << i+1
-           << " title '" << names[i-1] << "' with lines lc rgb \"" << colors[i-1]
-           << "\", \\" << endl;
-  }
-  script << "\"" << data_file << "\" using 1:" << i+1
-         << " title '" << names[i-1] << "' with lines lc rgb \"" << colors[i-1]
-         << "\"" << endl;
-  script.close();
-
-  string cmd = "gnuplot -persist " + script_file;
-  system(cmd.c_str());
-}
-
-/*!
- *  \brief This module generates test data and fits a model to it.
- *  \param parameters a reference to a struct Parameters
- */
-Segmentation testFit(struct Parameters &parameters)
-{
-  string file;
-  Point<double> sp(10,-3,30);
-  Point<double> ep(50,-5,143);
-  Point<double> p(1,200,-1);
-  Test test(50,sp,ep,p);
-  test.generate();
-  test.print();
-
-  /* Obtain structure coordinates */
-  vector<Point<double>> data = test.testData();
-  General general(data);
-  Structure *structure = &general;
-  StandardForm shape(parameters,structure);
-  return shape.fitModels();
-}
-
-/*!
- *  \brief This module fits a model to a protein structure
- *  \param parameters a reference to a struct Parameters
- */
-Segmentation proteinFit(struct Parameters &parameters)
-{
-  /* Obtain protein coordinates */
-  ProteinStructure *p = parsePDBFile(parameters.file);
-  Protein protein(p);
-  Structure *structure = &protein;
-
-  StandardForm shape(parameters,structure);
-  return shape.fitModels();
-}
-
-/*!
- *  \brief This module fits a model to a general 3D structure
- *  \param parameters a reference to a struct Parameters
- */
-Segmentation generalFit(struct Parameters &parameters)
-{
-  /* Obtain structure coordinates */
-  vector<Point<double>> coordinates = parseFile(parameters.file);
-  General general(coordinates);
-  Structure *structure = &general;
-
-  StandardForm shape(parameters,structure);
-  return shape.fitModels();
-}
-
-/*!
- *  \brief This module returns the file path associated with a PDB ID.
- *  \param pdb_id a reference to a string
- *  \return the file path
- */
-string getPDBFilePath(string &pdb_id)
-{
-  boost::algorithm::to_lower(pdb_id);
-  string path = string(HOME_DIRECTORY) + "Research/PDB/" ;
-  string directory(pdb_id,1,2);
-  path += directory + "/pdb" + pdb_id + ".ent.gz";
-  return path;
-}
-
-/*!
- *  \brief This module returns the file path associated with a PDB ID.
- *  \param scop_id a reference to a string
- *  \return the file path
- */
-string getSCOPFilePath(string &scop_id)
-{
-  string path = string(HOME_DIRECTORY) + "Research/SCOP/pdbstyle-1.75B/" ;
-  string directory(scop_id,2,2);
-  path += directory + "/" + scop_id + ".ent";
-  return path;
-}
-
-/*!
- *  \brief This module checks whether the input file exists or not.
- *  \param file_name a reference to a string
- *  \return true or false depending on whether the file exists or not.
- */
-bool checkFile(string &file_name)
-{
-  /*ifstream file(fileName);
-  return file;*/
-  return boost::filesystem::exists(file_name);
-}
-
-/*!
- *  \brief This module parses the input PDB file.
- *  \param pdbFile a reference to a string 
- *  \return a pointer to a ProteinStructure object
- */
-ProteinStructure *parsePDBFile(string &pdbFile)
-{
-  if(!checkFile(pdbFile)){
-    cout << "\nFile \"" << pdbFile << "\" does not exist ..." << endl;
-    exit(1);
-  }
-  cout << "Parsing PDB file ...";
-  BrookhavenPDBParser parser;
-  ProteinStructure *structure = parser.getStructure(pdbFile.c_str())->select(CASelector());
-  ProteinStructure *one_model = new ProteinStructure(structure->getIdentifier());
-  one_model->select(CASelector());
-  //one_model->setIdentifier(structure->getIdentifier());
-  std::shared_ptr<lcb::Model> newmodel = std::make_shared<lcb::Model>(structure->getDefaultModel());
-  one_model->addModel(newmodel);
-  delete structure;
-  cout << " [OK]" << endl;
-  return one_model;
-}
-
-/*!
- *  \brief This module parses the input file.
- *  \param file_name a reference to a string
- *  \return the coordinates of the structure
- */
-vector<Point<double>> parseFile(string &file_name)
-{
-  if(!checkFile(file_name)){
-    cout << "\nFile \"" << file_name << "\" does not exist ..." << endl;
-    exit(1);
-  }
-  vector<Point<double>> list;
-  Point<double> p;
-  double x,y,z;
-  ifstream file(file_name.c_str());
-  while (file >> x >> y >> z) {
-    p = Point<double>(x,y,z);
-    list.push_back(p);
-  }
-  return list;
-}
-
-/*!
- *  \brief This module prints the list of coordinates to std::cout
- *  \param coordinates a reference to std::vector of std::array<double,3>
- */
-void printCoordinates(vector<array<double,3>> &coordinates)
-{
-  for (int i=0; i<coordinates.size(); i++){
-    for (int j=0; j<3; j++){
-      cout << coordinates[i][j] << " ";
-    }
-    cout << endl;
-  }
-}
-
-/*!
- *  \brief This module prints the list of coordinates to a file
- *  \param coordinates a reference to std::vector of std::array<double,3>
- */
-void writeToFile(vector<array<double,3>> &coordinates, const char *fileName)
-{
-  ofstream file(fileName);
-  for (int i=0; i<coordinates.size(); i++){
-    for (int j=0; j<3; j++){
-      file << coordinates[i][j] << " ";
-    }
-    file << endl;
-  }
- file.close(); 
-}
-
-/*!
- *  \brief This module extracts the file name from the path
- *  \param file a reference to a string
- *  \return the extracted portion of the file name
- */
-string extractName(string &file)
-{
-  unsigned pos1 = file.find_last_of("/");
-  unsigned pos2 = file.find(".");
-  int length = pos2 - pos1 - 1;
-  string sub = file.substr(pos1+1,length);
-  return sub;
-}
-
-/*!
- *  \brief This module computes the message length associated with a normal
- *  distribution.
- *  \param x a double
- *  \param mean a double
- *  \param variance a double
- *  \return the message length
- */
-double msglenNormal(double x, double mean, double variance)
-{
-  double prob,c,expnt;
-  c = 1.0 / sqrt(2 * PI * variance);
-  expnt = -((x-mean)*(x-mean))/(2 * variance);
-  prob = AOM * c * exp(expnt);
-  return -log2(prob);
-}
+template int partition(vector<float> &, vector<int> &, int, int);
+template int partition(vector<double> &, vector<int> &, int, int);
+template int partition(vector<long double> &, vector<int> &, int, int);
 
 /*!
  *  \brief This module computes the mean of a set of samples
@@ -1163,6 +699,23 @@ double estimateMean(vector<double> &samples)
     mean += samples[i];
   }
   return mean/samples.size();
+}
+
+/*!
+ *  \brief This function computes the standard deviation of a set of samples
+ *  when the mean is known.
+ *  \param samples a reference to a vector<double>
+ *  \param mean a double
+ *  \return the standard deviation
+ */
+double standardDeviation(vector<double> &samples, double mean)
+{
+  double variance = 0;
+  for (int i=0; i<samples.size(); i++){
+    variance += (samples[i] - mean) * (samples[i] - mean);
+  }
+  variance /= samples.size();
+  return sqrt(variance);
 }
 
 /*!
@@ -1205,16 +758,6 @@ double estimateVariance(vector<double> &samples)
   } else {
     return variance;
   }
-}
-
-double standardDeviation(vector<double> &samples, double mean)
-{
-  double variance = 0;
-  for (int i=0; i<samples.size(); i++){
-    variance += (samples[i] - mean) * (samples[i] - mean);
-  }
-  variance /= samples.size();
-  return sqrt(variance);
 }
 
 /*!
@@ -1368,141 +911,564 @@ double getMaximumDistance(vector<array<double,3>> &coordinates)
   return max_distance;
 }
 
+///////////////////////// SEGMENTATION FUNCTIONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 /*!
- *  \brief This function sorts the elements in the list
- *  \param list a reference to a vector<double>
- *  \return the sorted list
+ *  \brief This module checks if the segmentation already exists or not.
+ *  \param pdb_file a reference to a string
+ *  \param controls a reference to a vector<int>
+ *  \return the segmentation exists or not
  */
-template <typename RealType>
-vector<RealType> sort(vector<RealType> &list)
+bool checkIfSegmentationExists(string &pdb_file, vector<int> &controls)
 {
-  int num_samples = list.size();
-	vector<RealType> sortedList(list);
-  vector<int> index(num_samples,0);
-	for(int i=0; i<num_samples; i++) {
-			index[i] = i;
+  string c;
+  for (int i=0; i<controls.size(); i++) {
+    c += boost::lexical_cast<string>(controls[i]);
   }
-	quicksort(sortedList,index,0,num_samples-1);
-  return sortedList;
+  string segmentation_profile = string(CURRENT_DIRECTORY) 
+                                + "experiments/segmentations/profiles/"
+                                + c + "/" + pdb_file + ".profile";
+  return checkFile(segmentation_profile); 
 }
-template vector<int> sort(vector<int> &);
-template vector<float> sort(vector<float> &);
-template vector<double> sort(vector<double> &);
-template vector<long double> sort(vector<long double> &);
 
 /*!
- *  \brief This function sorts the elements in the list
- *  \param list a reference to a vector<double>
- *  \return the sorted list
+ *  \brief This module does the segmentation of a structure
+ *  \param parameters a reference to a struct Parameters 
+ *  \return the segmentation profile
  */
-template <typename RealType>
-vector<int> sortedListIndex(vector<RealType> &list)
+Segmentation buildSegmentationProfile(struct Parameters &parameters)
 {
-  int num_samples = list.size();
-	vector<RealType> sortedList(list);
-  vector<int> index(num_samples,0);
-	for(int i=0; i<num_samples; i++) {
-			index[i] = i;
+  Segmentation segmentation;
+  string pdb_file;
+  bool status;
+
+  switch(parameters.structure) {
+    case TEST:   // test
+      segmentation = testFit(parameters);
+      break;
+
+    case PROTEIN:   // protein file
+      pdb_file = extractName(parameters.file);
+      status = checkIfSegmentationExists(pdb_file,parameters.controls);
+      if (status && parameters.force_segmentation == UNSET) {
+        cout << "Segmentation profile of " << pdb_file << " exists ..." << endl;
+        segmentation.load(pdb_file,parameters.controls);
+      } else {
+        cout << "Building segmentation profile of " << pdb_file << " ..." << endl;
+        segmentation = proteinFit(parameters);
+        segmentation.save(pdb_file,parameters.controls);
+        string name = extractName(parameters.file);
+        updateRuntime(name,segmentation);
+      }
+      break;
+
+    case GENERAL:   // general 3D structure
+      segmentation = generalFit(parameters);
+      break;
   }
-	quicksort(sortedList,index,0,num_samples-1);
-  return index;
+  return segmentation;
 }
-template vector<int> sortedListIndex(vector<int> &);
-template vector<int> sortedListIndex(vector<float> &);
-template vector<int> sortedListIndex(vector<double> &);
-template vector<int> sortedListIndex(vector<long double> &);
 
 /*!
- *  This is an implementation of the classic quicksort() algorithm to sort a
- *  list of data values. The module uses the overloading operator(<) to 
- *  compare two Point<T> objects. 
- *  Pivot is chosen as the right most element in the list(default)
- *  This function is called recursively.
- *  \param list a reference to a vector<double>
- *	\param index a reference to a vector<int>
- *  \param left an integer
- *  \param right an integer
+ *  \brief This module returns the file path associated with a PDB ID.
+ *  \param pdb_id a reference to a string
+ *  \return the file path
  */
-template <typename RealType>
-void quicksort(vector<RealType> &list, vector<int> &index, int left, int right)
+string getPDBFilePath(string &pdb_id)
 {
-	if(left < right)
-	{
-		int pivotNewIndex = partition(list,index,left,right);
-		quicksort(list,index,left,pivotNewIndex-1);
-		quicksort(list,index,pivotNewIndex+1,right);
-	}
+  boost::algorithm::to_lower(pdb_id);
+  string path = string(HOME_DIRECTORY) + "Research/PDB/" ;
+  string directory(pdb_id,1,2);
+  path += directory + "/pdb" + pdb_id + ".ent.gz";
+  return path;
 }
-template void quicksort(vector<float> &, vector<int> &, int, int);
-template void quicksort(vector<double> &, vector<int> &, int, int);
-template void quicksort(vector<long double> &, vector<int> &, int, int);
 
 /*!
- *  This function is called from the quicksort() routine to compute the new
- *  pivot index.
- *  \param list a reference to a vector<double>
- *	\param index a reference to a vector<int>
- *  \param left an integer
- *  \param right an integer
- *  \return the new pivot index
+ *  \brief This module returns the file path associated with a PDB ID.
+ *  \param scop_id a reference to a string
+ *  \return the file path
  */
-template <typename RealType>
-int partition(vector<RealType> &list, vector<int> &index, int left, int right)
+string getSCOPFilePath(string &scop_id)
 {
-	RealType temp,pivotPoint = list[right];
-	int storeIndex = left,temp_i;
-	for(int i=left; i<right; i++) {
-		if(list[i] < pivotPoint) {
-			temp = list[i];
-			list[i] = list[storeIndex];
-			list[storeIndex] = temp;
-			temp_i = index[i];
-			index[i] = index[storeIndex];
-			index[storeIndex] = temp_i;
-			storeIndex += 1;	
-		}
-	}
-	temp = list[storeIndex];
-	list[storeIndex] = list[right];
-	list[right] = temp;
-	temp_i = index[storeIndex];
-	index[storeIndex] = index[right];
-	index[right] = temp_i;
-	return storeIndex;
+  string path = string(HOME_DIRECTORY) + "Research/SCOP/pdbstyle-1.75B/" ;
+  string directory(scop_id,2,2);
+  path += directory + "/" + scop_id + ".ent";
+  return path;
 }
-template int partition(vector<float> &, vector<int> &, int, int);
-template int partition(vector<double> &, vector<int> &, int, int);
-template int partition(vector<long double> &, vector<int> &, int, int);
 
 /*!
- *
+ *  \brief This module parses the input PDB file.
+ *  \param pdbFile a reference to a string 
+ *  \return a pointer to a ProteinStructure object
  */
-vector<Point<double>> read(string name)
+ProteinStructure *parsePDBFile(string &pdbFile)
 {
-  string file_name = string(CURRENT_DIRECTORY) + "output/histograms/" + name;
-  ifstream file(file_name.c_str());
-  string line;
-  vector<double> numbers;
-  vector<Point<double>> point_set;
+  if(!checkFile(pdbFile)){
+    cout << "\nFile \"" << pdbFile << "\" does not exist ..." << endl;
+    exit(1);
+  }
+  cout << "Parsing PDB file ...";
+  BrookhavenPDBParser parser;
+  ProteinStructure *structure = 
+      parser.getStructure(pdbFile.c_str())->select(CASelector());
+  ProteinStructure *one_model = 
+      new ProteinStructure(structure->getIdentifier());
+  one_model->select(CASelector());
+  //one_model->setIdentifier(structure->getIdentifier());
+  std::shared_ptr<lcb::Model> newmodel = 
+      std::make_shared<lcb::Model>(structure->getDefaultModel());
+  one_model->addModel(newmodel);
+  delete structure;
+  cout << " [OK]" << endl;
+  return one_model;
+}
+
+/*!
+ *  \brief This module parses the input file.
+ *  \param file_name a reference to a string
+ *  \return the coordinates of the structure
+ */
+vector<Point<double>> parseFile(string &file_name)
+{
+  if(!checkFile(file_name)){
+    cout << "\nFile \"" << file_name << "\" does not exist ..." << endl;
+    exit(1);
+  }
+  vector<Point<double>> list;
   Point<double> p;
-
-  while (getline(file,line)) {
-    boost::char_separator<char> sep(" ");
-    boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
-    BOOST_FOREACH(const string &t, tokens) {
-      istringstream iss(t);
-      double x;
-      iss >> x;
-      numbers.push_back(x);
-    }
-    p.x(numbers[0]);
-    p.y(numbers[1]);
-    p.z(numbers[2]);
-    point_set.push_back(p);
-    numbers.clear();
+  double x,y,z;
+  ifstream file(file_name.c_str());
+  while (file >> x >> y >> z) {
+    p = Point<double>(x,y,z);
+    list.push_back(p);
   }
-  file.close();
-  return point_set;
+  return list;
+}
+
+/*!
+ *  \brief This module generates test data and fits a model to it.
+ *  \param parameters a reference to a struct Parameters
+ */
+Segmentation testFit(struct Parameters &parameters)
+{
+  string file;
+  Point<double> sp(10,-3,30);
+  Point<double> ep(50,-5,143);
+  Point<double> p(1,200,-1);
+  Test test(50,sp,ep,p);
+  test.generate();
+  test.print();
+
+  /* Obtain structure coordinates */
+  vector<Point<double>> data = test.testData();
+  General general(data);
+  Structure *structure = &general;
+  StandardForm shape(parameters,structure);
+  return shape.fitModels();
+}
+
+/*!
+ *  \brief This module fits a model to a protein structure
+ *  \param parameters a reference to a struct Parameters
+ */
+Segmentation proteinFit(struct Parameters &parameters)
+{
+  /* Obtain protein coordinates */
+  ProteinStructure *p = parsePDBFile(parameters.file);
+  Protein protein(p);
+  Structure *structure = &protein;
+
+  StandardForm shape(parameters,structure);
+  return shape.fitModels();
+}
+
+/*!
+ *  \brief This module fits a model to a general 3D structure
+ *  \param parameters a reference to a struct Parameters
+ */
+Segmentation generalFit(struct Parameters &parameters)
+{
+  /* Obtain structure coordinates */
+  vector<Point<double>> coordinates = parseFile(parameters.file);
+  General general(coordinates);
+  Structure *structure = &general;
+
+  StandardForm shape(parameters,structure);
+  return shape.fitModels();
+}
+
+/*!
+ *  \brief This method updates the run time of segmenting each structure. 
+ *  \param name a string
+ *  \param segmentation a reference to a Segmentation 
+ */
+void updateRuntime(string name, Segmentation &segmentation)
+{
+  string path = string(CURRENT_DIRECTORY); 
+  string time_file = path + "runtime-segmentation";
+  ofstream log(time_file.c_str(),ios::app);
+  log << setw(10) << name;
+  log << setw(10) << segmentation.getNumberOfCoordinates() << "\t";
+  log << setw(10) << setprecision(4) << segmentation.getCPUTime();
+  log << endl;
+  log.close();
+}
+
+//////////////////////// ANGLES FUNCTIONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+/*!
+ *  \brief This function checks whether the angles exists or not
+ *  \param file_name a reference to a string
+ *  \return the angles exists or not
+ */
+bool checkIfAnglesExist(string &file_name)
+{
+  string path_to_angles = string(CURRENT_DIRECTORY) +
+                          "experiments/angles/" + file_name;
+  return checkFile(path_to_angles);
+}
+
+/*!
+ *  \brief This function is used to obtain the representative polygon of
+ *  the segmentation.
+ *  \param parameters a reference to a struct Parameters 
+ *  \param segmentation a reference to a Segmentation 
+ *  \return the representative polygon
+ */
+Polygon<double> getRepresentativePolygon(struct Parameters &parameters,
+                                        Segmentation &segmentation)
+{
+  vector<BezierCurve<double>> curves = segmentation.getBezierCurves();
+  vector<double> lengths = segmentation.getBezierCurvesLengths();
+  CurveString<double> curve_string(curves,lengths);
+  Polygon<double> polygon = 
+  curve_string.getApproximatingPolygon(parameters.construct_polygon,
+                                       parameters.num_sides);
+  return polygon;  
+}
+
+/*!
+ *  \brief This function is used to compute the dihedral angles between the
+ *  sides that constitute the polygon.
+ *  \param parameters a reference to a struct Parameters 
+ *  \param segmentation a reference to a Segmentation 
+ *  \return the list of dihedral angles
+ */
+Angles buildAnglesProfile(struct Parameters &parameters,
+                          Segmentation &segmentation)
+{
+  string name = extractName(parameters.file);
+  bool status = checkIfAnglesExist(name);
+  Angles angles;
+
+  if (status && parameters.force_profile == UNSET) {
+    cout << "Angles profile of " << name << " exists ..." << endl;
+    angles.load(name);
+  } else {
+    cout << "Computing dihedral angles of " << name << " ..." << endl;
+    clock_t c_start = clock();
+    auto t_start = high_resolution_clock::now();
+    Polygon<double> polygon = getRepresentativePolygon(parameters,segmentation);
+    polygon.visualize(name,parameters.controls);
+    vector<Line<double>> sides = polygon.getSides();
+    vector<double> dihedral_angles;
+    for (int i=0; i<sides.size(); i++) {
+      for (int j=i+2; j<sides.size(); j++) {
+        double angle = computeDihedralAngle(sides[i],sides[j]);
+        dihedral_angles.push_back(angle);
+      }
+    }
+    clock_t c_end = clock();
+    auto t_end = high_resolution_clock::now();
+    double cpu_time = double(c_end-c_start)/(double)(CLOCKS_PER_SEC);
+    double wall_time = duration_cast<seconds>(t_end-t_start).count();
+
+    angles = Angles(name,dihedral_angles);
+    angles.save();
+    //updateRuntime(name,angles,cpu_time);
+  }
+  cout << angles.size() << endl;
+  return angles;
+}
+
+/*!
+ *  \brief This function computes the dihedral angle between two skew lines.
+ *  \param line1 a reference to a Line
+ *  \param line2 a reference to a Line
+ *  \return the dihedral angle
+ */
+double computeDihedralAngle(Line<double> &line1, Line<double> &line2)
+{
+  Vector<double> p0 = line1.startPoint().positionVector();
+  Vector<double> p1 = line1.endPoint().positionVector();
+  Vector<double> p2 = line2.startPoint().positionVector();
+  Vector<double> p3 = line2.endPoint().positionVector();
+  Vector<double> v1,v2,v3,n1,n2,m;
+  v1 = p1 - p0;
+  v2 = p2 - p1;
+  n1 = Vector<double>::crossProduct(v1,v2);
+  n1.normalize();
+  v3 = p3 - p2;
+  n2 = Vector<double>::crossProduct(v2,v3);
+  n2.normalize();
+  m = Vector<double>::crossProduct(n1,v2);
+  m.normalize();
+  double x = n1 * n2;
+  double y = m * n2;
+  double theta = atan2(y,x);
+  double theta_degrees = theta * 180 / PI;
+  if (theta_degrees < 0) {
+     theta_degrees += 360;
+  } 
+  return theta_degrees;
+}
+
+/*!
+ *  \brief This method updates the run time of computing dihedral angles
+ *  for each structure. 
+ *  \param name a string
+ *  \param angles a reference to an Angles object
+ */
+void updateRuntime(string name, Angles &angles, double time) 
+{
+  string path = string(CURRENT_DIRECTORY); 
+  string time_file = path + "runtime-angles-astral-4";
+  ofstream log(time_file.c_str(),ios::app);
+  log << fixed << setw(10) << name;
+  log << fixed << setw(10) << angles.size(); 
+  log << fixed << setw(10) << setprecision(4) << time; 
+  log << endl;
+  log.close();
+}
+
+//////////////////////// HISTOGRAMS FUNCTIONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+/*!
+ *  \brief This function checks whether the histogram exists or not
+ *  \param file_name a reference to a string
+ *  \retuxirtn the histogram exists or not
+ */
+bool checkIfHistogramExists(string &file_name)
+{
+  string path_to_histogram = "experiments/histograms/logs/global/" + file_name;
+  return checkFile(path_to_histogram);
+  /*path_to_histogram += boost::lexical_cast<string>(num_samples) + "_";
+  path_to_histogram += boost::lexical_cast<string>(dr).substr(0,4);
+  path_to_histogram += ".histogram";*/
+}
+
+/*
+ *  \brief Thus function constructs the histogram profile for the segmentation.
+ *  \param parameters a reference to a struct Parameters
+ *  \param segmentation a reference to Segmentation
+ *  \return the distance histogram
+ */
+DistanceHistogram buildHistogramProfile(struct Parameters &parameters,
+                                        Segmentation &segmentation)
+{
+  string file = extractName(parameters.file);
+  bool status = checkIfHistogramExists(file);
+  DistanceHistogram histogram;
+
+  if (status && parameters.force_profile == UNSET) {
+    cout << "Histogram profile of " << file << " exists ..." << endl;
+    histogram.load(file);
+  } else {
+    cout << "Building histogram profile of " << file << " ..." << endl;
+    int num_samples = parameters.num_samples_on_curve;
+    double dr = parameters.increment_r;
+    vector<BezierCurve<double>> bezier_curves = segmentation.getBezierCurves();
+    vector<double> lengths = segmentation.getBezierCurvesLengths();
+    CurveString<double> curve_string = CurveString<double>(bezier_curves,lengths);
+    string name = extractName(parameters.file);
+    histogram = DistanceHistogram(curve_string,num_samples,dr,
+                                  parameters.sampling_method,name);
+    histogram.computeGlobalHistogramValues(parameters.scale);
+    histogram.save();
+  }
+  histogram.plotLocalHistograms();
+  return histogram;
+} 
+
+/*!
+ *  \brief This function gets the r values list with a uniform increment
+ *  \param maximum_r a double
+ *  \param dr a double
+ *  \return the list of r values
+ */
+vector<double> getRValuesList(double maximum_r, double dr)
+{
+  vector<double> r_values;
+  double r = dr; 
+  while (1) {
+    r_values.push_back(r);
+    if (r > maximum_r) {
+      break;
+    }
+    r += dr;
+  }
+  return r_values;
+}
+
+/*!
+ *  \brief This function plots the global histogram values for the structures
+ *  that are compared.
+ *  \param histograms a reference to a vector<DistanceHistogram>
+ *  \param r_values a reference to a vector<double>
+ *  \param names a reference to a vector<string>
+ */
+void plotMultipleHistograms(vector<DistanceHistogram> &histograms, 
+                            vector<double> &r_values, 
+                            vector<string> &names)
+{
+  string color_array[] = {"red","blue","green","brown","orange","black"};
+  vector<string> colors(color_array,color_array+6);
+  int i,j;
+  vector<vector<double>> histogram_results;
+  vector<double> modified_results;
+
+  // modify the individual histogram results so that all are of same length
+  int max_num_r = r_values.size();
+  for (i=0; i<histograms.size(); i++) {
+    modified_results = histograms[i].modify(max_num_r);
+    histogram_results.push_back(modified_results);
+    assert(histogram_results[i].size() == max_num_r);
+  }
+
+  string all_names = names[0];
+  for (int i=1; i<names.size(); i++) {
+    all_names += "." + names[i];
+  }
+  string file = string(CURRENT_DIRECTORY) + "experiments/histograms/";
+  string data_file = file + "data/multiple_global_histograms/" + all_names + 
+                     ".histograms";
+  ofstream data(data_file.c_str());
+  for (i=0; i<r_values.size(); i++) {
+    data << r_values[i] << " ";
+    for (j=0; j<histogram_results.size(); j++) {
+      data << histogram_results[j][i] << " ";
+    }
+    data << endl;
+  }
+  data.close();
+
+  string script_file = file + "script.plot";
+  ofstream script(script_file.c_str());
+  script << "set terminal post eps" << endl;
+  script << "set xlabel \"r\"" << endl;
+  script << "set ylabel \"Global Histogram H(r)\"" << endl;
+  script << "set output \"" << file << "plots/" << all_names 
+         << ".histograms.eps\"" << endl;
+  script << "set multiplot" << endl;
+  for (i=1; i<names.size(); i++) {
+    if (i == 1) {
+      script << "plot ";
+    }
+    script << "\"" << data_file << "\" using 1:" << i+1
+           << " title '" << names[i-1] << "' with lines lc rgb \"" << colors[i-1]
+           << "\", \\" << endl;
+  }
+  script << "\"" << data_file << "\" using 1:" << i+1
+         << " title '" << names[i-1] << "' with lines lc rgb \"" << colors[i-1]
+         << "\"" << endl;
+  script.close();
+
+  string cmd = "gnuplot -persist " + script_file;
+  system(cmd.c_str());
+}
+
+/*!
+ *  \brief This function prints the comparison results
+ *  \param histograms a reference to vector<DistanceHistogram>
+ *  \param r_values a reference to a vector<double>
+ *  \param names a reference to a vector<string>
+ */
+void printHistogramResults(vector<DistanceHistogram> &histograms,
+                           vector<double> &r_values, vector<string> &names)
+{
+  vector<vector<double>> histogram_results;
+  vector<double> results,dl;
+
+  int num_structures = histograms.size();
+  int base_structure = 0; // pivot
+  int num_r = r_values.size();
+  for (int i=0; i<num_structures; i++) {
+    results = histograms[i].modify(num_r);
+    assert(results.size() == num_r);
+    histogram_results.push_back(results);
+    dl.push_back(histograms[i].getIncrementInLength());
+  }
+
+  string all_names = names[0];
+  for (int i=1; i<names.size(); i++) {
+    all_names += "." + names[i];
+  }
+  string file = string(CURRENT_DIRECTORY) + "experiments/histograms/data/compared/";
+  file += all_names + ".each_r";
+  ofstream data(file.c_str());
+  vector<double> comparison_scores(num_structures-1,0);
+  for (int i=0; i<r_values.size(); i++) {
+    double h_base = histogram_results[base_structure][i];
+    for (int j=0; j<num_structures; j++) {
+      if (j != base_structure) {
+        double hj = histogram_results[j][i];
+        double score = fabs((h_base / dl[base_structure]) - (hj / dl[j]));
+        data << fixed << setprecision(3) << score << " "; 
+        comparison_scores[j-1] += score;
+      }
+    }
+    data << endl;
+  }
+  data << endl << "Aggregate:\n";
+  for (int i=0; i<num_structures-1; i++) {
+    data << fixed << setprecision(3) << comparison_scores[i] << " ";
+  }
+  data << endl;
+  data.close();
+}
+
+//////////////////////// KNOT INVARIANTS FUNCTIONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+/*!
+ *  \brief This function checks whether the knot invariants are precomputed.
+ *  \param file_name a reference to a string
+ *  \return whether the knot invariants are precomputed
+ */
+bool checkIfKnotInvariantsExist(string &file_name)
+{
+  string path_to_angles = string(CURRENT_DIRECTORY) +
+                          "experiments/knot-invariants/profiles/" + file_name;
+  return checkFile(path_to_angles);
+}
+
+/*!
+ *  \brief This function is used to compute the knot invariants for a 
+ *  given segmentation. 
+ *  \param parameters a reference to a struct Parameters 
+ *  \param segmentation a reference to a Segmentation 
+ *  \return a KnotInvariants object
+ */
+KnotInvariants buildKnotInvariantsProfile(struct Parameters &parameters,
+                                          Segmentation &segmentation)
+{
+  string name = extractName(parameters.file);
+  bool status = checkIfKnotInvariantsExist(name);
+  KnotInvariants knot_invariants;
+
+  if (status && parameters.force_profile == UNSET) {
+    cout << "Knot invariants of " << name << " exists ..." << endl;
+    knot_invariants.load(name);
+  } else {
+    Polygon<double> polygon = getRepresentativePolygon(parameters,segmentation);
+    KnotInvariants knot_invariants(polygon,name,parameters.max_order,
+                                   parameters.controls);
+    cout << "Computing knot invariants for structure " << name << " ..." << endl;
+    knot_invariants.computeInvariants();
+    knot_invariants.save();
+    updateRuntime(name,knot_invariants.getPolygonSides(),
+                  knot_invariants.getCPUTime());
+  }
+  return knot_invariants;
 }
 
 /*!
@@ -1557,5 +1523,60 @@ double sumExteriorAngles(Line<double> &line1, Line<double> &line2)
   double ext4 = exteriorAngle(v4,v1,v2);
 
   return (ext1+ext2+ext3+ext4);
+}
+
+/*!
+ *  \brief This function computes the Euclidean distance between two vectors.
+ *  \param vec1 a reference to a Vector<double>
+ *  \param vec2 a reference to a Vector<double>
+ *  \return the distance
+ */
+double computeEuclideanDistance(Vector<double> &vec1, Vector<double> &vec2)
+{
+  assert(vec1.size() == vec2.size());
+  double d = 0;
+  for (int i=0; i<vec1.size(); i++) {
+    d += (vec1[i] - vec2[i]) * (vec1[i] - vec2[i]);
+  }
+  return sqrt(d);
+}
+
+/*!
+ *  \brief This method updates the run time of computing knot invariants
+ *  for each structure.
+ *  \param name a string
+ *  \param n an integer
+ *  \param time a double
+ */
+void updateRuntime(string name, int n, double time) 
+{
+  string path = string(CURRENT_DIRECTORY); 
+  string time_file = path + "runtime-knot-invariants";
+  ofstream log(time_file.c_str(),ios::app);
+  log << setw(10) << name;
+  log << setw(10) << n << "\t"; 
+  log << setw(10) << setprecision(4) << time;
+  log << endl;
+  log.close();
+}
+
+/*!
+ *
+ */
+void updateResults(vector<double> &dot_products, vector<double> &distances)
+{
+  string path = string(CURRENT_DIRECTORY) + "experiments/knot-invariants/results/";
+  string log_file = path + "dot_products";
+  ofstream log1(log_file.c_str(),ios::app);
+  log_file = path + "distances";
+  ofstream log2(log_file.c_str(),ios::app);
+  for (int i=0; i<dot_products.size(); i++) {
+    log1 << dot_products[i] << " ";
+    log2 << distances[i] << " ";
+  }
+  log1 << endl;
+  log2 << endl;
+  log2.close();
+  log1.close();
 }
 

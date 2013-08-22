@@ -154,7 +154,7 @@ void Segmentation::save(string &pdb_file, vector<int> &controls)
   for (int i=0; i<controls.size(); i++) {
     c += boost::lexical_cast<string>(controls[i]);
   }
-  string output_file = string(CURRENT_DIRECTORY) + "output/segmentations/profiles/"
+  string output_file = string(CURRENT_DIRECTORY) + "experiments/segmentations/profiles/"
                        + c + "/" +  pdb_file + ".profile";
   ofstream profile(output_file.c_str());
   profile << num_coordinates << endl;
@@ -190,7 +190,7 @@ void Segmentation::load(string &pdb_file, vector<int> &controls)
   for (int i=0; i<controls.size(); i++) {
     c += boost::lexical_cast<string>(controls[i]);
   }
-  string input_file = string(CURRENT_DIRECTORY) + "output/segmentations/profiles/" 
+  string input_file = string(CURRENT_DIRECTORY) + "experiments/segmentations/profiles/" 
                       + c + "/" + pdb_file + ".profile";
   ifstream profile(input_file.c_str());
   string line;

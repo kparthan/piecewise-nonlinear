@@ -9,41 +9,13 @@ Alignment::Alignment()
 
 /*!
  *  \brief This constructor module instantiates a Alignment object
- *  \param a a reference to a Segmentation
- *  \param b a reference to a Segmentation
+ *  \param a a reference to a Angles
+ *  \param b a reference to a Angles
  */
-Alignment::Alignment(Segmentation &a, Segmentation &b) 
+Alignment::Alignment(Angles &a, Angles &b) 
 {
-  profiles[0] = a;
-  profiles[1] = b;
-}
-
-/*!
- *  \brief This method writes the optimal alignment to a file
- *  \param comparison_files a reference to a vector<string>
- */
-void Alignment::save(vector<string> &comparison_files)
-{
-  string current_dir = string(CURRENT_DIRECTORY);
-  string files[2];
-  files[0] = extractName(comparison_files[0]);
-  files[1] = extractName(comparison_files[1]);
-  string file_name; 
-
-  switch(flag) {
-    case BASIC_ALIGNMENT:
-    {
-      file_name = current_dir + "output/alignments/" + files[0] + "_" 
-                  + files[1] + ".alignment";
-      ofstream log(file_name.c_str());
-      log << "Alignment score: " << scores[0] << endl;
-      log << "Avg. Alignment score: " << scores[1] << endl;
-      log << "Normalized Alignment score: " << scores[2] << endl;
-      printAlignment(log,optimal_alignment);
-      log.close();
-      break;
-    }
-  }
+  angles[0] = a;
+  angles[1] = b;
 }
 
 /*!
@@ -67,8 +39,8 @@ void Alignment::save(vector<string> &comparison_files)
  *  \param length2 an integer
  */
 void Alignment::initialize(vector<vector<double>> &matrix, 
-                            vector<vector<int>> &direction, 
-                            int length1, int length2)
+                           vector<vector<int>> &direction, 
+                           int length1, int length2)
 {
   for (int i=0; i<=length1; i++) {
     vector<double> temp(length2+1,0);
@@ -166,8 +138,9 @@ void Alignment::computeEditDistance(string &x, string &y)
  *  \param x a reference to a vector<double>
  *  \param y a reference to a vector<double>
  */
-vector<array<double,2>> Alignment::traceback(vector<vector<int>> &direction,
-                                    vector<double> &x, vector<double> &y)
+vector<array<double,2>>
+Alignment::traceback(vector<vector<int>> &direction,
+                     vector<double> &x, vector<double> &y)
 {
   vector<array<double,2>> alignment;
   int i = x.size(); 
@@ -233,9 +206,9 @@ void Alignment::printAlignment(ostream &os, vector<array<double,2>> &alignment)
  */
 void Alignment::computeEditDistance(double gap_penalty)
 {
-  flag = EDIT_DISTANCE;
-  vector<double> x = profiles[0].getDihedralAngles();
-  vector<double> y = profiles[1].getDihedralAngles();
+  //flag = EDIT_DISTANCE;
+  vector<double> x = angles[0].getAngles();
+  vector<double> y = angles[1].getAngles();
   int i,j;
   vector<vector<double>> matrix;
   vector<vector<int>> direction;
@@ -291,9 +264,9 @@ void Alignment::computeEditDistance(double gap_penalty)
  */
 void Alignment::computeBasicAlignment(double gap_penalty, double max_diff)
 {
-  flag = BASIC_ALIGNMENT;
-  vector<double> x = profiles[0].getDihedralAngles();
-  vector<double> y = profiles[1].getDihedralAngles();
+  //flag = BASIC_ALIGNMENT;
+  vector<double> x = angles[0].getAngles();
+  vector<double> y = angles[1].getAngles();
   int i,j;
   vector<vector<double>> matrix;
   vector<vector<int>> direction;
@@ -340,6 +313,23 @@ void Alignment::computeBasicAlignment(double gap_penalty, double max_diff)
 
   // normalized alignment score
   scores[2] = scores[0] / (x.size() + y.size());
+}
+
+/*!
+ *  \brief This method writes the optimal alignment to a file
+ *  \param name1 a reference to a string 
+ *  \param name2 a reference to a string 
+ */
+void Alignment::save(string &name1, string &name2)
+{
+  string file_name = string(CURRENT_DIRECTORY)
+                     + "experiments/angles/alignments/" + name1 + "_" + name2;
+  ofstream log(file_name.c_str());
+  log << "Alignment score: " << scores[0] << endl;
+  log << "Avg. Alignment score: " << scores[1] << endl;
+  log << "Normalized Alignment score: " << scores[2] << endl;
+  printAlignment(log,optimal_alignment);
+  log.close();
 }
 
 /*!

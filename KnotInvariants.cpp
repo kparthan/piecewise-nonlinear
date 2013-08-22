@@ -1,4 +1,4 @@
-#include "KnotInvariants.h"
+#include "Support.h"
 
 /*!
  *  \brief Null constructor
@@ -156,16 +156,6 @@ void KnotInvariants::computeInvariants()
   auto t_end = high_resolution_clock::now();
   cpu_time = double(c_end-c_start)/(double)(CLOCKS_PER_SEC);
   wall_time = duration_cast<seconds>(t_end-t_start).count();
-
-  string log_file = string(CURRENT_DIRECTORY); 
-  log_file += "vectors";
-  ofstream log(log_file.c_str(),ios::app);
-  log << setw(10) << name << "\t";
-  for (int i=0; i<all_invariants.size(); i++) {
-    log << fixed << setw(10) << setprecision(4) << all_invariants[i];
-  }
-  log << endl;
-  log.close();
 }
 
 /*!
@@ -578,5 +568,45 @@ double KnotInvariants::getWallTime()
 int KnotInvariants::getPolygonSides()
 {
   return polygon.getNumberOfSides();
+}
+
+/*!
+ *  \brief This function saves the knot invariants.
+ */
+void KnotInvariants::save()
+{
+  string file_name = string(CURRENT_DIRECTORY) 
+                    + "experiments/knot-invariants/profiles/" + name; 
+  ofstream log(file_name.c_str());
+  for (int i=0; i<all_invariants.size(); i++) {
+    log << fixed << setw(10) << setprecision(4) << all_invariants[i];
+  }
+  log.close();
+}
+
+/*!
+ *  \brief This function loads the precomputed knot invariants.
+ *  \param file a reference to a string
+ */
+void KnotInvariants::load(string &file)
+{
+  name = file;
+  string file_name = string(CURRENT_DIRECTORY) 
+                    + "experiments/knot-invariants/profiles/" + name; 
+  ifstream log(file_name.c_str());
+  string line;
+  all_invariants.clear();
+
+  while(getline(log,line)) {
+    boost::char_separator<char> sep(",() ");
+    boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
+    BOOST_FOREACH (const string& t, tokens) {
+      istringstream iss(t);
+      double x;
+      iss >> x;
+      all_invariants.push_back(x);
+    }
+  }
+  log.close();
 }
 

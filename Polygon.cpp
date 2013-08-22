@@ -159,9 +159,9 @@ void Polygon<RealType>::visualize(string name, vector<int> &controls)
     c += boost::lexical_cast<string>(controls[i]);
   }
   // copy the existing modified pdb file
-  string modified_pdb = string(CURRENT_DIRECTORY) + "output/segmentations/"
+  string modified_pdb = string(CURRENT_DIRECTORY) + "experiments/segmentations/"
                         + "modified_pdb_files/" + c + "/" + name + ".pdb";
-  string vertices_pdb = string(CURRENT_DIRECTORY) + "output/polygons/"
+  string vertices_pdb = string(CURRENT_DIRECTORY) + "experiments/polygons/"
                         + c + "/" + name + ".pdb"; 
   string cmd = "cp " + modified_pdb + " " + vertices_pdb;
   system(cmd.c_str());
@@ -187,11 +187,11 @@ template <typename RealType>
 void Polygon<RealType>::createPymolScript(string name, ProteinStructure &structure,
                                           string c)
 {
-  string pymol_script = string(CURRENT_DIRECTORY) + "output/segmentations/"
+  string pymol_script = string(CURRENT_DIRECTORY) + "experiments/segmentations/"
                         + "pymol_scripts/" + c + "/" + name + ".pml";
-  string polygon_script = string(CURRENT_DIRECTORY) + "output/polygons/"
+  string polygon_script = string(CURRENT_DIRECTORY) + "experiments/polygons/"
                           + c + "/" + name + ".pml"; 
-  string pdb_file = string(CURRENT_DIRECTORY) + "output/polygons/"
+  string pdb_file = string(CURRENT_DIRECTORY) + "experiments/polygons/"
                     + c + "/" + name + ".pdb";
   ifstream pymol(pymol_script.c_str());
   ofstream polygon(polygon_script.c_str());

@@ -1,7 +1,7 @@
 #ifndef ALIGNMENT_H
 #define ALIGNMENT_H
 
-#include "Header.h"
+#include "Angles.h"
 
 class Alignment
 {
@@ -13,8 +13,8 @@ class Alignment
       DIAGONAL
     };
 
-    //! The two segmentation profiles
-    Segmentation profiles[2];
+    //! The two angular profiles
+    Angles angles[2];
 
     //! Alignment scores
     vector<double> scores;
@@ -40,7 +40,7 @@ class Alignment
     Alignment();
 
     //! Constructor
-    Alignment(Segmentation &, Segmentation &);
+    Alignment(Angles &, Angles &);
 
     //! Edit distance
     void computeEditDistance(double);
@@ -49,7 +49,7 @@ class Alignment
     void computeBasicAlignment(double, double);
 
     //! Save the alignment to a file
-    void save(vector<string> &);
+    void save(string &, string &);
 
     //! Returns the comparison scores 
     vector<double> getScores();
