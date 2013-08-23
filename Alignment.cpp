@@ -1,55 +1,27 @@
-#include "Comparison.h"
+#include "Alignment.h"
 #include "Support.h"
 
 /*!
  *  \brief This is a null constructor module.
  */
-Comparison::Comparison()
+Alignment::Alignment()
 {}
 
 /*!
- *  \brief This constructor module instantiates a Comparison object
- *  \param a a reference to a Segmentation
- *  \param b a reference to a Segmentation
+ *  \brief This constructor module instantiates a Alignment object
+ *  \param a a reference to a Angles
+ *  \param b a reference to a Angles
  */
-Comparison::Comparison(Segmentation &a, Segmentation &b) 
+Alignment::Alignment(Angles &a, Angles &b) 
 {
-  profiles[0] = a;
-  profiles[1] = b;
-}
-
-/*!
- *  \brief This method writes the optimal alignment to a file
- *  \param comparison_files a reference to a vector<string>
- */
-void Comparison::save(vector<string> &comparison_files)
-{
-  string current_dir = string(CURRENT_DIRECTORY);
-  string files[2];
-  files[0] = extractName(comparison_files[0]);
-  files[1] = extractName(comparison_files[1]);
-  string file_name; 
-
-  switch(flag) {
-    case BASIC_ALIGNMENT:
-    {
-      file_name = current_dir + "output/alignments/" + files[0] + "_" 
-                  + files[1] + ".alignment";
-      ofstream log(file_name.c_str());
-      log << "Alignment score: " << scores[0] << endl;
-      log << "Avg. Alignment score: " << scores[1] << endl;
-      log << "Normalized Alignment score: " << scores[2] << endl;
-      printAlignment(log,optimal_alignment);
-      log.close();
-      break;
-    }
-  }
+  angles[0] = a;
+  angles[1] = b;
 }
 
 /*!
  *  \brief This module implements the basic alignment of two strings 
  */
-/*void Comparison::computeBasicAlignment()
+/*void Alignment::computeBasicAlignment()
 {
   string x = "vintner";
   string y = "writers";
@@ -66,9 +38,9 @@ void Comparison::save(vector<string> &comparison_files)
  *  \param length1 an integer
  *  \param length2 an integer
  */
-void Comparison::initialize(vector<vector<double>> &matrix, 
-                            vector<vector<int>> &direction, 
-                            int length1, int length2)
+void Alignment::initialize(vector<vector<double>> &matrix, 
+                           vector<vector<int>> &direction, 
+                           int length1, int length2)
 {
   for (int i=0; i<=length1; i++) {
     vector<double> temp(length2+1,0);
@@ -84,7 +56,7 @@ void Comparison::initialize(vector<vector<double>> &matrix,
  *  \param x a reference to a string
  *  \param y a reference to a string
  */
-void Comparison::computeEditDistance(string &x, string &y)
+void Alignment::computeEditDistance(string &x, string &y)
 {
   int i,j;
   vector<vector<double>> matrix;
@@ -166,8 +138,9 @@ void Comparison::computeEditDistance(string &x, string &y)
  *  \param x a reference to a vector<double>
  *  \param y a reference to a vector<double>
  */
-vector<array<double,2>> Comparison::traceback(vector<vector<int>> &direction,
-                                    vector<double> &x, vector<double> &y)
+vector<array<double,2>>
+Alignment::traceback(vector<vector<int>> &direction,
+                     vector<double> &x, vector<double> &y)
 {
   vector<array<double,2>> alignment;
   int i = x.size(); 
@@ -206,9 +179,9 @@ vector<array<double,2>> Comparison::traceback(vector<vector<int>> &direction,
  *  \param os a reference to a ostream
  *  \param alignment a reference to a vector<array<double,2>>
  */
-void Comparison::printAlignment(ostream &os, vector<array<double,2>> &alignment)
+void Alignment::printAlignment(ostream &os, vector<array<double,2>> &alignment)
 {
-  os << "\nAlignment:\n";
+  os << "\nOptimal Alignment:\n";
   for (int i=0; i < alignment.size(); i++) {
     if (alignment[i][0] == 1000) {
       os << fixed << setw(6) << "-" << "  ";
@@ -231,11 +204,11 @@ void Comparison::printAlignment(ostream &os, vector<array<double,2>> &alignment)
  *  \brief This module implements the edit distance of dihedral angles
  *  \param gap_penalty a double
  */
-void Comparison::computeEditDistance(double gap_penalty)
+void Alignment::computeEditDistance(double gap_penalty)
 {
-  flag = EDIT_DISTANCE;
-  vector<double> x = profiles[0].getDihedralAngles();
-  vector<double> y = profiles[1].getDihedralAngles();
+  //flag = EDIT_DISTANCE;
+  vector<double> x = angles[0].getAngles();
+  vector<double> y = angles[1].getAngles();
   int i,j;
   vector<vector<double>> matrix;
   vector<vector<int>> direction;
@@ -275,7 +248,7 @@ void Comparison::computeEditDistance(double gap_penalty)
   scores = vector<double>(3,0);
   // alignment score
   scores[0] = matrix[x.size()][y.size()];  
-  vector<array<double,2>> optimal_alignment = traceback(direction,x,y);
+  optimal_alignment = traceback(direction,x,y);
 
   // average alignment score
   scores[1] = scores[0] / optimal_alignment.size();
@@ -289,11 +262,11 @@ void Comparison::computeEditDistance(double gap_penalty)
  *  \param gap_penalty a double
  *  \param max_diff a double
  */
-void Comparison::computeBasicAlignment(double gap_penalty, double max_diff)
+void Alignment::computeBasicAlignment(double gap_penalty, double max_diff)
 {
-  flag = BASIC_ALIGNMENT;
-  vector<double> x = profiles[0].getDihedralAngles();
-  vector<double> y = profiles[1].getDihedralAngles();
+  //flag = BASIC_ALIGNMENT;
+  vector<double> x = angles[0].getAngles();
+  vector<double> y = angles[1].getAngles();
   int i,j;
   vector<vector<double>> matrix;
   vector<vector<int>> direction;
@@ -333,7 +306,7 @@ void Comparison::computeBasicAlignment(double gap_penalty, double max_diff)
   scores = vector<double>(3,0);
   // alignment score
   scores[0] = matrix[x.size()][y.size()];  
-  vector<array<double,2>> optimal_alignment = traceback(direction,x,y);
+  optimal_alignment = traceback(direction,x,y);
 
   // average alignment score
   scores[1] = scores[0] / optimal_alignment.size();
@@ -343,10 +316,30 @@ void Comparison::computeBasicAlignment(double gap_penalty, double max_diff)
 }
 
 /*!
+ *  \brief This method writes the optimal alignment to a file
+ *  \param name1 a reference to a string 
+ *  \param name2 a reference to a string 
+ */
+void Alignment::save(string &name1, string &name2)
+{
+  string file_name = string(CURRENT_DIRECTORY)
+                     + "experiments/angles/alignments/" + name1 + "_" + name2;
+  ofstream log(file_name.c_str());
+  log << "# of angles in " << name1 << ": " << angles[0].size() << endl;
+  log << "# of angles in " << name1 << ": " << angles[1].size() << endl;
+  log << "Length of optimal alignment: " << optimal_alignment.size() << endl;
+  log << "Alignment score: " << scores[0] << endl;
+  log << "Avg. Alignment score: " << scores[1] << endl;
+  log << "Normalized Alignment score: " << scores[2] << endl;
+  printAlignment(log,optimal_alignment);
+  log.close();
+}
+
+/*!
  *  \brief This function returns the comparison scores.
  *  \return the list of scores
  */
-vector<double> Comparison::getScores()
+vector<double> Alignment::getScores()
 {
   return scores;
 }

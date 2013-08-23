@@ -10,32 +10,16 @@ class Segmentation
     //! Number of coordinates
     int num_coordinates;
 
-    //! Planar angles
-    vector<double> planar_angles;
-
-    //! Dihedral angles
-    vector<double> dihedral_angles;
-
-    //! Lengths of lines connecting control points
-    vector<double> lengths;
-
     //! List of all Bezier curves
     vector<BezierCurve<double>> bezier_curves;
 
     //! List of approximate lengths of all bezier curves
     vector<double> bezier_curves_lengths;
 
-    //! Approximate lengths of the segments forming the 
-    //! segmentation profile
-    vector<double> approx_lengths;
-
-    // Maximum radius of the parent structure
-    double max_radius;
-
     //! Bits per residue for the segmentation
     double null_bpr,bezier_bpr;
 
-    //!
+    //! Time taken to compute segmentation
     double cpu_time,wall_time;
 
   public:
@@ -43,9 +27,8 @@ class Segmentation
     Segmentation();
 
     //! Constructor
-    Segmentation(int, vector<double> &, vector<double> &, vector<double> &, 
-                 vector<BezierCurve<double>> &, vector<double> &);
-
+    Segmentation(int, vector<BezierCurve<double>> &); 
+                 
     //! Copy constructor
     Segmentation(const Segmentation &);
 
@@ -53,52 +36,31 @@ class Segmentation
     Segmentation operator=(const Segmentation &);
 
                             /* Accessor functions */
-    //! Get the planar angles
-    vector<double> getPlanarAngles();
-
-    //! Get the dihedral angles
-    vector<double> getDihedralAngles();
-
-    //! Get the lengths of connecting lines
-    vector<double> getLengths();
-
     //! Get the abstracting Bezier curves
     vector<BezierCurve<double>> getBezierCurves();
 
     //! Get the lengths of the Bezier segments
     vector<double> getBezierCurvesLengths();
 
-    //! Get the approximate lengths of the constituent curves
-    vector<double> getApproximateBezierLengths();
-
-    //! Print the segmentation details
-    void print();
-
-    //!
-    void setMaximumRadius(double);
-
-    //!
+    //! Sets the bpr
     void setBitsPerResidue(double, double);
 
-    //!
+    //! Returns the msglen/bit for null model transmission
     double getNullBPR();
 
-    //!
+    //! Returns the msglen/bit for bezier model transmission
     double getBezierBPR();
 
-    //!
-    double getMaximumRadius();
-
-    //!
+    //! Sets the time taken for segmentation
     void setTime(double, double);
 
-    //!
+    //! Returns the CPU time
     double getCPUTime();
 
-    //!
+    //! Returns the Wall time
     double getWallTime();
 
-    //!
+    //! Gets the number of coordinates
     int getNumberOfCoordinates();
 
     //! Write the segmentation details

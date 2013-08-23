@@ -20,6 +20,9 @@ class Message
     //! two parameters
     double encodeWallaceFreeman(int, double, double, double); 
 
+    //! msglen to encode a datum assuming a Normal distribution
+    double msglenNormal(double, double, double);
+
   public:
     //! Constructor
     Message() ;

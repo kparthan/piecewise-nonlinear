@@ -90,9 +90,9 @@ void Structure::printTransformation(vector<Point<double>> &coordinates,
 void Structure::validateTransformation(Matrix<double> &transformation)
 {
   printTransformation(original_coordinates,transformation,
-                      "output/original_data_transform");
+                      "experiments/original_data_transform");
   Matrix<double> inverseTransform = transformation.inverse();
-  ofstream fw("output/transformation_matrices",ios::app);
+  ofstream fw("experiments/transformation_matrices",ios::app);
   fw << "\nInverse transformation matrix:" << endl;
   for (int i=0; i<4; i++) {
     for (int j=0; j<4; j++) {
@@ -100,7 +100,7 @@ void Structure::validateTransformation(Matrix<double> &transformation)
     }
     fw << endl;
   }
-  printTransformation(coordinates,inverseTransform,"output/inverse_transform");
+  printTransformation(coordinates,inverseTransform,"experiments/inverse_transform");
 }
 
 /*

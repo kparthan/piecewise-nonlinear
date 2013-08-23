@@ -55,13 +55,10 @@ CurveString<RealType>::CurveString(vector<BezierCurve<RealType>> &curves) : curv
  */
 template <typename RealType>
 CurveString<RealType>::CurveString(vector<BezierCurve<RealType>> &curves,
-                                   vector<RealType> &lengths, 
-                                   vector<RealType> &approx_lengths) :
-                                   curves(curves), lengths(lengths),
-                                   approx_lengths(approx_lengths)
+                                   vector<RealType> &lengths) : 
+                                   curves(curves), lengths(lengths)
 {
   assert(curves.size() == lengths.size());
-  assert(lengths.size() == approx_lengths.size());
   if (curves.size() == 0) {
     cout << "No curves to construct the curve string ...";
     exit(1);
@@ -79,7 +76,7 @@ CurveString<RealType>::CurveString(vector<BezierCurve<RealType>> &curves,
 template <typename RealType>
 CurveString<RealType>::CurveString(const CurveString<RealType> &source) : 
                        vertices(source.vertices), curves(source.curves),
-                       lengths(source.lengths), approx_lengths(source.approx_lengths)
+                       lengths(source.lengths) 
 {}
 
 /*!
@@ -94,7 +91,6 @@ CurveString<RealType> CurveString<RealType>::operator=(const CurveString<RealTyp
     vertices = source.vertices;
     curves = source.curves;
     lengths = source.lengths;
-    approx_lengths = source.approx_lengths;
   }
   return *this;
 }
@@ -134,20 +130,6 @@ RealType CurveString<RealType>::length()
 }
 
 /*!
- *  \brief This function is used to approximate the length of the curve string.
- *  \return the approximate length
- */
-template <typename RealType>
-RealType CurveString<RealType>::approximateLength()
-{
-  RealType total_length = 0;
-  for (int i=0; i<approx_lengths.size(); i++) {
-    total_length += approx_lengths[i]; 
-  }
-  return total_length;
-}
-
-/*!
  *  \brief This method computes the sampling probabilities of each curve.
  *  \return the list of sampling probabilities
  */
@@ -155,11 +137,9 @@ template <typename RealType>
 vector<RealType> CurveString<RealType>::getSampleProbabilities()
 {
   RealType total_length = length();
-  //RealType total_length = approximateLength();
   vector<RealType> sample_probability(curves.size(),0);
   for (int i=0; i<curves.size(); i++) {
     sample_probability[i] = lengths[i] / total_length;
-    //sample_probability[i] = approx_lengths[i] / total_length;
   }
   return sample_probability;
 }
@@ -374,7 +354,13 @@ CurveString<RealType>::getApproximatingPolygon(int heuristic, int num_sides)
       }
       break;
   }
-  return merge(polygons);
+  Polygon<RealType> merged_polygon;
+  polygon = polygons[0];
+  for (int i=1; i<polygons.size(); i++) {
+    merged_polygon = polygon.merge(polygons[i]);
+    polygon = merged_polygon;
+  }
+  return merged_polygon;
 }
 
 template class CurveString<float>;

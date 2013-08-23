@@ -17,9 +17,6 @@ class CurveString
     //! Lengths of the curves
     vector<RealType> lengths;
 
-    //! Approximate lengthhs of the curves
-    vector<RealType> approx_lengths;
-
     //! Select a curve
     int getCurveIndex(RealType, vector<RealType> &);
 
@@ -40,8 +37,7 @@ class CurveString
     CurveString(vector<BezierCurve<RealType>> &);
 
     //! Constructor
-    CurveString(vector<BezierCurve<RealType>> &, vector<RealType> &,
-                vector<RealType> &);
+    CurveString(vector<BezierCurve<RealType>> &, vector<RealType> &);
 
     //! Copy constructor
     CurveString(const CurveString<RealType> &);
@@ -57,9 +53,6 @@ class CurveString
 
     //! Cumulative length of the curves forming the curve string
     RealType length();
-
-    //! Computes the approximate length of the curve string
-    RealType approximateLength();
 
     //! Sampling probabilities of the individual curves
     vector<RealType> getSampleProbabilities();

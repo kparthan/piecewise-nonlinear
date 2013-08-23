@@ -65,13 +65,13 @@
 #define ENCODE_DEVIATIONS_CUSTOMIZED 1
 
 // type of profile constructed from the segmentation
-//#define DIHEDRAL_ANGLES 1
+#define DIHEDRAL_ANGLES 1
 #define DISTANCE_HISTOGRAM 2
 #define KNOT_INVARIANTS 3
 
 // for alignment based comparison
-//#define GAP_PENALTY -20
-//#define MAX_DIFFERENCE_ANGLES 45
+#define GAP_PENALTY -20
+#define MAX_DIFFERENCE_ANGLES 45
 
 // for histogram based comparison
 #define POINTS_PER_UNIT 10

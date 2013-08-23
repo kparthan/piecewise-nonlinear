@@ -53,6 +53,9 @@ class Polygon
 
     //! Visualize the polygon in Pymol
     void visualize(string, vector<int> &);
+
+    //! Merge with another polygon
+    Polygon<RealType> merge(Polygon<RealType> &);
 };
 
 #endif 

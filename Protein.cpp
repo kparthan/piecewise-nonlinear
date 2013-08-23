@@ -81,7 +81,6 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
                                   vector<int> &segments, vector<int> &controls, 
                                   Matrix<double> &transformation)
 {
-  vector<double> approx_lengths;
   vector<Identifier> identifiers = mapToActualSegments(segments);
   protein->undoLastSelection();
   Matrix<double> inverse_transform = transformation.inverse();
@@ -109,7 +108,6 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
     string residue_id = "R" + boost::lexical_cast<string>(i);
     shared_ptr<Residue> cps_residue = make_shared<Residue>(residue_id);
     OptimalFit fit = optimalBezierFit[segment_start][segment_end];
-    approx_lengths.push_back(fit.getSegmentLength());
     int numIntermediateControls = fit.getNumberOfControlPoints() - 2;
 
     vector<Point<double>> control_points;
@@ -179,7 +177,7 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
   vector<Atom> atoms = protein->getAtoms();
   string pdb_file = extractName(file);
   string modified_pdb = string(CURRENT_DIRECTORY) + 
-                        "output/segmentations/modified_pdb_files/" + c + "/" +
+                        "experiments/segmentations/modified_pdb_files/" + c + "/" +
                         pdb_file + ".pdb";
   ofstream fw(modified_pdb.c_str());
   for (int i=0; i<atoms.size(); i++) {
@@ -188,12 +186,7 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
   fw.close();
   createPymolScript(pdb_file,optimalBezierFit,segments,controls,identifiers);
 
-  /* compute planar angles, dihedral angles, and lengths of connecting lines */
-  vector<double> planar_angles = computePlanarAngles();
-  vector<double> dihedral_angles = computeDihedralAngles();
-  vector<double> lengths = computeConnectingLinesLengths();
-  return Segmentation(coordinates.size(),planar_angles,dihedral_angles,lengths,
-                      all_bezier_curves,approx_lengths);
+  return Segmentation(coordinates.size(),all_bezier_curves);
 }
 
 /*!
@@ -220,12 +213,12 @@ void Protein::createPymolScript(string &pdb_file,
     c += boost::lexical_cast<string>(controls[i]);
   }
   string pymol_file = string(CURRENT_DIRECTORY) + 
-                      "output/segmentations/pymol_scripts/" + c + "/" +
+                      "experiments/segmentations/pymol_scripts/" + c + "/" +
                       pdb_file + ".pml";
   ofstream script(pymol_file.c_str());
 
   string modified_pdb = string(CURRENT_DIRECTORY) + 
-                        "output/segmentations/modified_pdb_files/" + c + "/" +
+                        "experiments/segmentations/modified_pdb_files/" + c + "/" +
                         pdb_file + ".pdb";
   script << "load " << modified_pdb << endl;
   //script << "bg_color white" << endl;
@@ -281,9 +274,6 @@ void Protein::createPymolScript(string &pdb_file,
       sel2 = "resi " + res_ids[non_lin_seg-1] + " and name A" + boost::lexical_cast<string>(j);
       p2 = "\"" + sel2 + "\""; 
       script << "print cmd.distance(" << p1 << "," << p2 << ")" << endl;
-      /*if (count < planar_angles.size()) {
-        script << "label " << sel2 << ", \"" << planar_angles[count++] << "\"" << endl;
-      }*/
       script << "hide label" << endl;
       p1 = p2;
     }

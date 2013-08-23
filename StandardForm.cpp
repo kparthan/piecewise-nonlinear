@@ -50,13 +50,13 @@ string StandardForm::createOutputFile(bool status)
   string output_file;
   string current_dir = string(CURRENT_DIRECTORY);
   if (status) {
-    output_file = current_dir + "output/segmentations/logs/";
+    output_file = current_dir + "experiments/segmentations/logs/";
     for (int i=0; i<parameters.controls.size(); i++) {
       output_file += boost::lexical_cast<string>(parameters.controls[i]); 
     }
     output_file += "/" + filtered + ".log";
   } else {
-    output_file = current_dir + "output/segmentations/logs/linear_";
+    output_file = current_dir + "experiments/segmentations/logs/linear_";
     output_file += filtered;
   }
   return output_file;
@@ -177,30 +177,30 @@ void StandardForm::transform(void)
   updateCoordinates();
   if(parameters.print == PRINT_DETAIL) {
     cout << "Transforming the protein to a standard canonical form ...\n";
-    writeToFile(coordinates,"output/before_translation");
+    writeToFile(coordinates,"experiments/before_translation");
   }
 
   /* translate the protein so that first point is at origin */
   translateToOrigin();
   updateCoordinates();
   if(parameters.print == PRINT_DETAIL) {
-    writeToFile(coordinates,"output/after_translation");
+    writeToFile(coordinates,"experiments/after_translation");
   }
 
   /* move the last point onto the X-axis */
   rotateLastPoint();
   updateCoordinates();
   if(parameters.print == PRINT_DETAIL) {
-    writeToFile(coordinates,"output/rotate_last_point");
+    writeToFile(coordinates,"experiments/rotate_last_point");
   }
 
   /* rotate second point of the protein onto the XY plane */
   rotateSecondPoint();
   updateCoordinates();
   if(parameters.print == PRINT_DETAIL) {
-    writeToFile(coordinates,"output/rotate_second_point");
+    writeToFile(coordinates,"experiments/rotate_second_point");
   }
-  //writeToFile(coordinates,"output/histograms/rotate_second_point");
+  //writeToFile(coordinates,"experiments/histograms/rotate_second_point");
 
   /* overall transformation matrix */
   transformationMatrix();
@@ -222,7 +222,7 @@ void StandardForm::transformationMatrix()
   rotation[3][3] = 1;
   transformation = rotation * translation;
   if(parameters.print == PRINT_DETAIL) {
-    ofstream log_file("output/transformation_matrices");
+    ofstream log_file("experiments/transformation_matrices");
     log_file << "Transformation matrix:" << endl;
     for (int i=0; i<4; i++) {
       for (int j=0; j<4; j++) {
@@ -572,7 +572,7 @@ Segmentation StandardForm::fitBezierCurveModel()
                            codeLength,optimalBezierFit,segmentation.second,
                            parameters.controls,transformation);
     segmentation_profile.setBitsPerResidue(null_bpr,bezier_bpr);
-    segmentation_profile.setMaximumRadius(getMaximumDistance(original_coordinates));
+    //segmentation_profile.setMaximumRadius(getMaximumDistance(original_coordinates));
 
     segmentation_profile.setTime(cpu_time,wall_time);
   } else if (parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
@@ -684,7 +684,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
           }
         }
         //OptimalFit fit = segment.stateUsingCurve(min_fit);
-        min_fit.setSegmentLength(segment.length());
+        //min_fit.setSegmentLength(segment.length());
         optimalBezierFit[i][j] = min_fit;
         codeLength[i][j] = optimalBezierFit[i][j].getMessageLength();
         if (parameters.print == PRINT_DETAIL) {

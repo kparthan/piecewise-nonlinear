@@ -187,3 +187,20 @@ double Message::encodeWallaceFreeman(int N, double variance, double range_mu,
   return msglen/log(2);
 }
 
+/*!
+ *  \brief This module computes the message length associated with a normal
+ *  distribution.
+ *  \param x a double
+ *  \param mean a double
+ *  \param variance a double
+ *  \return the message length
+ */
+double Message::msglenNormal(double x, double mean, double variance)
+{
+  double prob,c,expnt;
+  c = 1.0 / sqrt(2 * PI * variance);
+  expnt = -((x-mean)*(x-mean))/(2 * variance);
+  prob = AOM * c * exp(expnt);
+  return -log2(prob);
+}
+

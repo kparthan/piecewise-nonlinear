@@ -1,4 +1,4 @@
-#include "KnotInvariants.h"
+#include "Support.h"
 
 /*!
  *  \brief Null constructor
@@ -15,8 +15,34 @@ KnotInvariants::KnotInvariants()
 KnotInvariants::KnotInvariants(CurveString<double> &curve_string, string name,
                                int max_order): curve_string(curve_string), 
                                name(name), max_order(max_order)
+{}
+
+/*!
+ *  \brief Constructor
+ *  \param polygon a reference to a Polygon 
+ *  \param name a string
+ *  \param max_order an integer
+ */
+KnotInvariants::KnotInvariants(Polygon<double> &polygon, string name,
+                               int max_order, vector<int> &controls): 
+                               polygon(polygon), name(name), max_order(max_order)
+{
+  initialize(controls);
+}
+
+/*!
+ *  \brief This function is used to initialize the object.
+ *  \param controls a reference to a vector<int>
+ */
+void KnotInvariants::initialize(vector<int> &controls)
 {
   invariants = vector<vector<double>>(max_order,vector<double>());
+  polygon.visualize(name,controls);
+  int sides = polygon.getNumberOfSides();
+  for (int i=0; i<sides; i++) {
+    vector<double> tmp(sides,0);
+    writhe.push_back(tmp);
+  }
 }
 
 /*!
@@ -63,12 +89,7 @@ void KnotInvariants::constructPolygon(int heuristic, int num_sides,
                                       vector<int> &controls)
 {
   polygon = curve_string.getApproximatingPolygon(heuristic,num_sides);
-  polygon.visualize(name,controls);
-  int sides = polygon.getNumberOfSides();
-  for (int i=0; i<sides; i++) {
-    vector<double> tmp(sides,0);
-    writhe.push_back(tmp);
-  }
+  initialize(controls);
 }
 
 /*!
@@ -91,14 +112,14 @@ void KnotInvariants::computeWrithe()
       }
     }
   }
-  /*ofstream file("writhe");
+  ofstream file("writhe");
   for (int i=0; i<sides.size(); i++) {
     for (int j=0; j<sides.size(); j++) {
       file << fixed << setw(10) << setprecision(4) << writhe[i][j];
     }
     file << endl;
   }
-  file.close();*/
+  file.close();
 }
 
 /*!
@@ -114,13 +135,13 @@ void KnotInvariants::computeInvariants()
   int n = polygon.getNumberOfSides();
   all_invariants.push_back(n);
 
-  double normalization_factor = n;
+  double normalization_factor = (n+1) * 2 * PI;
   for(int i=0; i<max_order; i++) {  // i = order
     invariants[i] = computeInvariants(i+1);
     for (int j=0; j<invariants[i].size(); j++) {
       all_invariants.push_back(invariants[i][j]/normalization_factor);
     }
-    normalization_factor *= n;
+    normalization_factor *= ((n+1) * 2 * PI);
   }
   /*cout << "All invariants (" << all_invariants.size() << "): [";
   for (int i=0; i<all_invariants.size(); i++) {
@@ -135,16 +156,6 @@ void KnotInvariants::computeInvariants()
   auto t_end = high_resolution_clock::now();
   cpu_time = double(c_end-c_start)/(double)(CLOCKS_PER_SEC);
   wall_time = duration_cast<seconds>(t_end-t_start).count();
-
-  string log_file = string(CURRENT_DIRECTORY) + "output/knot-invariants/";
-  log_file += "vectors";
-  ofstream log(log_file.c_str(),ios::app);
-  log << setw(10) << name << "\t";
-  for (int i=0; i<all_invariants.size(); i++) {
-    log << setw(10) << setprecision(4) << all_invariants[i];
-  }
-  log << endl;
-  log.close();
 }
 
 /*!
@@ -532,18 +543,70 @@ KnotInvariants::getCombinations(int n, int order, vector<array<int,2>> &invarian
   return combinations;
 }
 
+/*!
+ *  \brief This function returns the CPU time.
+ *  \return CPU time
+ */
 double KnotInvariants::getCPUTime()
 {
   return cpu_time;
 }
 
+/*!
+ *  \brief This function returns the Wall time.
+ *  \return Wall time
+ */
 double KnotInvariants::getWallTime()
 {
   return wall_time;
 }
 
+/*!
+ *  \brief This method is used to return the number of sides of the polygon.
+ *  \return the number of sides
+ */
 int KnotInvariants::getPolygonSides()
 {
   return polygon.getNumberOfSides();
+}
+
+/*!
+ *  \brief This function saves the knot invariants.
+ */
+void KnotInvariants::save()
+{
+  string file_name = string(CURRENT_DIRECTORY) 
+                    + "experiments/knot-invariants/profiles/" + name; 
+  ofstream log(file_name.c_str());
+  for (int i=0; i<all_invariants.size(); i++) {
+    log << fixed << setw(10) << setprecision(4) << all_invariants[i];
+  }
+  log.close();
+}
+
+/*!
+ *  \brief This function loads the precomputed knot invariants.
+ *  \param file a reference to a string
+ */
+void KnotInvariants::load(string &file)
+{
+  name = file;
+  string file_name = string(CURRENT_DIRECTORY) 
+                    + "experiments/knot-invariants/profiles/" + name; 
+  ifstream log(file_name.c_str());
+  string line;
+  all_invariants.clear();
+
+  while(getline(log,line)) {
+    boost::char_separator<char> sep(",() ");
+    boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
+    BOOST_FOREACH (const string& t, tokens) {
+      istringstream iss(t);
+      double x;
+      iss >> x;
+      all_invariants.push_back(x);
+    }
+  }
+  log.close();
 }
 
