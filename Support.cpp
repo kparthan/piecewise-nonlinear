@@ -595,9 +595,15 @@ void compareStructuresList(struct Parameters &parameters)
         dot_products.push_back(dot_product);
         double d = computeEuclideanDistance(pivot,another);
         distances.push_back(d);
-        cout << dot_product << "\t" << d << endl;
       }
-      updateResults(dot_products,distances);
+      if (parameters.record == SET) {
+        if (distances.size() == num_structures - 1 
+            && dot_products.size() == num_structures - 1) {
+          updateResults(dot_products,distances);
+        } else {
+          errorLog(names);
+        }
+      }
       break;
     }
   }
@@ -1296,9 +1302,9 @@ void updateResults(vector<vector<double>> &scores)
   ofstream file3(file_name.c_str(),ios::app);
   int num_comparisons = scores.size();
   for (int i=0; i<scores.size(); i++) {
-    file1 << fixed << setw(10) << setprecision(3) << scores[i][0];
-    file2 << fixed << setw(10) << setprecision(3) << scores[i][1];
-    file3 << fixed << setw(10) << setprecision(3) << scores[i][2];
+    file1 << fixed << setw(20) << setprecision(3) << scores[i][0];
+    file2 << fixed << setw(20) << setprecision(3) << scores[i][1];
+    file3 << fixed << setw(20) << setprecision(3) << scores[i][2];
   }
   file1 << endl;
   file2 << endl;
@@ -1548,13 +1554,12 @@ KnotInvariants buildKnotInvariantsProfile(struct Parameters &parameters,
 double exteriorAngle(Vector<double> &a, Vector<double> &b, Vector<double> &c)
 {
   Vector<double> aXb = lcb::Vector<double>::crossProduct(a,b);
-  Vector<double> bXc = lcb::Vector<double>::crossProduct(b,c);
-  //return lcb::Vector<double>::angleBetween(aXb,bXc);
-  aXb.normalize();
-  bXc.normalize();
-  Vector<double> bXbXc = lcb::Vector<double>::crossProduct(b,bXc); 
-  double dot_product = aXb * bXbXc;
-  return asin(dot_product);
+  double aXb_dot_c = aXb * c;
+  double a_dot_b = a * b;
+  double b_dot_c = b * c;
+  double c_dot_a = c * a;
+  double denom = a_dot_b * b_dot_c - c_dot_a;
+  return atan2(aXb_dot_c,denom);
 }
 
 /*!
@@ -1628,18 +1633,21 @@ void updateRuntime(string name, int n, double time)
 }
 
 /*!
- *
+ *  \brief This function is used to update the results of comparisons using
+ *  knot invariants.
+ *  \param dot_products a reference to a vector<double>
+ *  \param distances a reference to a vector<double>
  */
 void updateResults(vector<double> &dot_products, vector<double> &distances)
 {
-  string path = string(CURRENT_DIRECTORY) + "experiments/knot-invariants/results/";
-  string log_file = path + "dot_products";
+  string path = string(CURRENT_DIRECTORY) + "experiments/knot-invariants/";
+  string log_file = path + "dot-products";
   ofstream log1(log_file.c_str(),ios::app);
   log_file = path + "distances";
   ofstream log2(log_file.c_str(),ios::app);
   for (int i=0; i<dot_products.size(); i++) {
-    log1 << dot_products[i] << " ";
-    log2 << distances[i] << " ";
+    log1 << fixed << setw(20) << setprecision(3) << dot_products[i];
+    log2 << fixed << setw(20) << setprecision(3) << distances[i];
   }
   log1 << endl;
   log2 << endl;

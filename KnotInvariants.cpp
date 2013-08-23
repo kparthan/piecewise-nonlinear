@@ -112,14 +112,14 @@ void KnotInvariants::computeWrithe()
       }
     }
   }
-  /*ofstream file("writhe");
+  ofstream file("writhe");
   for (int i=0; i<sides.size(); i++) {
     for (int j=0; j<sides.size(); j++) {
       file << fixed << setw(10) << setprecision(4) << writhe[i][j];
     }
     file << endl;
   }
-  file.close();*/
+  file.close();
 }
 
 /*!
@@ -135,13 +135,13 @@ void KnotInvariants::computeInvariants()
   int n = polygon.getNumberOfSides();
   all_invariants.push_back(n);
 
-  double normalization_factor = n * 2 * PI;
+  double normalization_factor = (n+1) * 2 * PI;
   for(int i=0; i<max_order; i++) {  // i = order
     invariants[i] = computeInvariants(i+1);
     for (int j=0; j<invariants[i].size(); j++) {
       all_invariants.push_back(invariants[i][j]/normalization_factor);
     }
-    normalization_factor *= (n * 2 * PI);
+    normalization_factor *= ((n+1) * 2 * PI);
   }
   /*cout << "All invariants (" << all_invariants.size() << "): [";
   for (int i=0; i<all_invariants.size(); i++) {
