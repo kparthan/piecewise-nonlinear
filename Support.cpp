@@ -3,6 +3,7 @@
 #include "General.h"
 #include "Test.h"
 #include "StandardForm.h"
+#include "Alignment.h"
 
 //////////////////////// GENERAL PURPOSE FUNCTIONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -53,6 +54,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("pdbids",value<vector<string>>(&pdb_ids)->multitoken(),"PDB IDs to compare")
        ("scopids",value<vector<string>>(&scop_ids)->multitoken(),"SCOP IDs to compare")
        ("profile",value<string>(&profile),"profile constructed from the segmentation")
+       ("record","save all the comparison results")
                                    
           // dihedral_angles or distance_histogram or knot_invariants
         // arguments for alignment based profiling
@@ -240,6 +242,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     parameters.encode_deviations = ENCODE_DEVIATIONS_CUSTOMIZED;
   }
 
+  parameters.record = UNSET;
   if (vm.count("compare")) {
     noargs = 1;
     parameters.comparison = SET;
@@ -277,6 +280,9 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
         }
         noargs = 0;
       }
+    }
+    if (vm.count("record")) {
+      parameters.record = SET;
     }
   } else {
     parameters.comparison = UNSET;
@@ -511,6 +517,13 @@ void compareStructuresList(struct Parameters &parameters)
   int num_structures = parameters.comparison_files.size();
   vector<string> names;
   vector<Segmentation> segmentations;
+  for (int i=0; i<num_structures; i++) {
+    parameters.file = parameters.comparison_files[i];
+    string name = extractName(parameters.file);
+    names.push_back(name);
+    Segmentation segmentation = buildSegmentationProfile(parameters);
+    segmentations.push_back(segmentation);
+  }
 
   switch(parameters.profile) {
     case DISTANCE_HISTOGRAM:
@@ -519,11 +532,7 @@ void compareStructuresList(struct Parameters &parameters)
       int profile_with_max_r_values=0,num_r_values=0;
       for (int i=0; i<num_structures; i++) {
         parameters.file = parameters.comparison_files[i];
-        string name = extractName(parameters.file);
-        names.push_back(name);
-        Segmentation segmentation = buildSegmentationProfile(parameters);
-        segmentations.push_back(segmentation);
-        DistanceHistogram histogram = buildHistogramProfile(parameters,segmentation);
+        DistanceHistogram histogram = buildHistogramProfile(parameters,segmentations[i]);
         histograms.push_back(histogram);
         if (num_r_values < histogram.getRValues().size()) {
           num_r_values = histogram.getRValues().size();
@@ -539,7 +548,29 @@ void compareStructuresList(struct Parameters &parameters)
     case DIHEDRAL_ANGLES:
     {
       vector<Angles> profiles;
+      vector<vector<double>> all_scores;
       for (int i=0; i<num_structures; i++) {
+        parameters.file = parameters.comparison_files[i];
+        Angles angles = buildAnglesProfile(parameters,segmentations[i]);
+        profiles.push_back(angles);
+        if (i != 0) {
+          cout << "Aligning " << names[0] << " and " << names[i] << " ...\n";
+          Alignment alignment(profiles[0],profiles[i]);
+          alignment.computeBasicAlignment(parameters.gap_penalty,
+                                          parameters.max_angle_diff);
+          alignment.save(names[0],names[i]);
+          if (parameters.record == SET) {
+            vector<double> scores = alignment.getScores();
+            all_scores.push_back(scores);
+          }
+        }
+      }
+      if (parameters.record == SET) {
+        if (all_scores.size() == num_structures - 1) {
+          updateResults(all_scores);
+        } else {
+          errorLog(names);
+        }
       }
       break;
     }
@@ -549,17 +580,8 @@ void compareStructuresList(struct Parameters &parameters)
       vector<KnotInvariants> profiles;
       for (int i=0; i<num_structures; i++) {
         parameters.file = parameters.comparison_files[i];
-        string name = extractName(parameters.file);
-        names.push_back(name);
-        Segmentation segmentation = buildSegmentationProfile(parameters);
-        segmentations.push_back(segmentation);
-        vector<BezierCurve<double>> 
-        bezier_curves = segmentation.getBezierCurves();
-        CurveString<double> curve_string(bezier_curves);
-        KnotInvariants knot_invariants(curve_string,name,parameters.max_order);
-        knot_invariants.constructPolygon(parameters.construct_polygon,
-                                         parameters.num_sides,parameters.controls);
-        cout << "Computing knot invariants for structure " << name << " ..." << endl;
+        KnotInvariants knot_invariants = 
+          buildKnotInvariantsProfile(parameters,segmentations[i]);
         knot_invariants.computeInvariants();
         profiles.push_back(knot_invariants);
       }
@@ -579,6 +601,23 @@ void compareStructuresList(struct Parameters &parameters)
       break;
     }
   }
+}
+
+/*!
+ *  \brief This function logs the names of structures for whom profiles coould
+ *  not be constructed.
+ *  \param names a reference to a vector<string>
+ */
+void errorLog(vector<string> &names)
+{
+  string file_name = string(CURRENT_DIRECTORY) + "experiments/angles/";
+  file_name += "errors.log";
+  ofstream log(file_name.c_str(),ios::app);
+  for (int i=0; i<names.size(); i++) {
+    log << names[i] << "\t";
+  }
+  log << endl;
+  log.close();
 }
 
 /*!
@@ -1187,7 +1226,7 @@ Angles buildAnglesProfile(struct Parameters &parameters,
     angles.save();
     //updateRuntime(name,angles,cpu_time);
   }
-  cout << angles.size() << endl;
+  //cout << angles.size() << endl;
   return angles;
 }
 
@@ -1239,6 +1278,34 @@ void updateRuntime(string name, Angles &angles, double time)
   log << fixed << setw(10) << setprecision(4) << time; 
   log << endl;
   log.close();
+}
+
+/*!
+ *  \brief This function records the experimental results of aligning 
+ *  several structures.
+ *  \param scores a reference to a vector<vector<double>>
+ */
+void updateResults(vector<vector<double>> &scores)
+{
+  string path = string(CURRENT_DIRECTORY) + "experiments/angles/";
+  string file_name = path + "alignments-scores0";
+  ofstream file1(file_name.c_str(),ios::app);
+  file_name = path + "alignments-scores1";
+  ofstream file2(file_name.c_str(),ios::app);
+  file_name = path + "alignments-scores2";
+  ofstream file3(file_name.c_str(),ios::app);
+  int num_comparisons = scores.size();
+  for (int i=0; i<scores.size(); i++) {
+    file1 << fixed << setw(10) << setprecision(3) << scores[i][0];
+    file2 << fixed << setw(10) << setprecision(3) << scores[i][1];
+    file3 << fixed << setw(10) << setprecision(3) << scores[i][2];
+  }
+  file1 << endl;
+  file2 << endl;
+  file3 << endl;
+  file1.close();
+  file2.close();
+  file3.close();
 }
 
 //////////////////////// HISTOGRAMS FUNCTIONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\

@@ -85,6 +85,7 @@ void Angles::save()
   for (int i=0; i<angles.size(); i++) {
     log << fixed << setw(10) << setprecision(4) << angles[i];
   }
+  log << endl;
   log.close();
 }
 

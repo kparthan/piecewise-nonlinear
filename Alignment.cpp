@@ -181,7 +181,7 @@ Alignment::traceback(vector<vector<int>> &direction,
  */
 void Alignment::printAlignment(ostream &os, vector<array<double,2>> &alignment)
 {
-  os << "\nAlignment:\n";
+  os << "\nOptimal Alignment:\n";
   for (int i=0; i < alignment.size(); i++) {
     if (alignment[i][0] == 1000) {
       os << fixed << setw(6) << "-" << "  ";
@@ -248,7 +248,7 @@ void Alignment::computeEditDistance(double gap_penalty)
   scores = vector<double>(3,0);
   // alignment score
   scores[0] = matrix[x.size()][y.size()];  
-  vector<array<double,2>> optimal_alignment = traceback(direction,x,y);
+  optimal_alignment = traceback(direction,x,y);
 
   // average alignment score
   scores[1] = scores[0] / optimal_alignment.size();
@@ -306,7 +306,7 @@ void Alignment::computeBasicAlignment(double gap_penalty, double max_diff)
   scores = vector<double>(3,0);
   // alignment score
   scores[0] = matrix[x.size()][y.size()];  
-  vector<array<double,2>> optimal_alignment = traceback(direction,x,y);
+  optimal_alignment = traceback(direction,x,y);
 
   // average alignment score
   scores[1] = scores[0] / optimal_alignment.size();
@@ -325,6 +325,9 @@ void Alignment::save(string &name1, string &name2)
   string file_name = string(CURRENT_DIRECTORY)
                      + "experiments/angles/alignments/" + name1 + "_" + name2;
   ofstream log(file_name.c_str());
+  log << "# of angles in " << name1 << ": " << angles[0].size() << endl;
+  log << "# of angles in " << name1 << ": " << angles[1].size() << endl;
+  log << "Length of optimal alignment: " << optimal_alignment.size() << endl;
   log << "Alignment score: " << scores[0] << endl;
   log << "Avg. Alignment score: " << scores[1] << endl;
   log << "Normalized Alignment score: " << scores[2] << endl;

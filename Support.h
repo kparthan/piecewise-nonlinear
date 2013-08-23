@@ -28,6 +28,7 @@ struct Parameters
   int comparison;                   // comparison flag set/unset 
   vector<string> comparison_files;  // path to the structure files used
                                     // in comparison
+  int record;                       // flag to record all experimental results
   // parameters used for profiling using dihedral angles
   double gap_penalty;               // gap penalty used in basic alignment 
                                     // method
@@ -63,6 +64,7 @@ Polygon<double> getRepresentativePolygon(struct Parameters &, Segmentation &);
 Angles buildAnglesProfile(struct Parameters &, Segmentation &);
 double computeDihedralAngle(Line<double> &, Line<double> &);
 void updateRuntime(string, Angles &, double);
+void updateResults(vector<vector<double>> &);
 
 // histograms functions
 bool checkIfHistogramExists(string &);
@@ -91,6 +93,7 @@ bool checkFile(string &);
 string extractName(string &);
 void writeToFile(vector<array<double,3>> &, const char*);
 void compareStructuresList(struct Parameters &);
+void errorLog(vector<string> &);
 
 template <typename RealType>
 vector<RealType> sort(vector<RealType> &);
