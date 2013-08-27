@@ -629,11 +629,13 @@ void KnotInvariants::save()
                     + "experiments/knot-invariants/profiles/" + name; 
   ofstream log(file_name.c_str());
   for (int i=0; i<all_invariants.size(); i++) {
-    log << fixed << setw(10) << setprecision(4) << all_invariants[i];
+    //log << fixed << setw(10) << setprecision(4) << all_invariants[i];
+    log << scientific << all_invariants[i] << "\t";
   }
   log << endl;
   for (int i=0; i<premeasures.size(); i++) {
-    log << fixed << setw(10) << setprecision(4) << premeasures[i];
+    //log << fixed << setw(10) << setprecision(4) << premeasures[i];
+    log << scientific << premeasures[i] << "\t";
   }
   log << endl;
   log.close();

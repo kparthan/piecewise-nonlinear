@@ -1629,7 +1629,7 @@ double computeEuclideanDistance(Vector<double> &vec1, Vector<double> &vec2)
 void updateRuntime(string name, int n, double time) 
 {
   string path = string(CURRENT_DIRECTORY) + "experiments/knot-invariants/"; 
-  string time_file = path + "runtime-part1";
+  string time_file = path + "runtime-part4";
   ofstream log(time_file.c_str(),ios::app);
   log << setw(10) << name;
   log << setw(10) << n << "\t"; 
