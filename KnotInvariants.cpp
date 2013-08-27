@@ -115,14 +115,14 @@ void KnotInvariants::computeWrithe()
       }
     }
   }
-  ofstream file("writhe");
+  /*ofstream file("writhe");
   for (int i=0; i<sides.size(); i++) {
     for (int j=0; j<sides.size(); j++) {
       file << fixed << setw(10) << setprecision(4) << writhe[i][j];
     }
     file << endl;
   }
-  file.close();
+  file.close();*/
 }
 
 /*!

@@ -1544,8 +1544,8 @@ KnotInvariants buildKnotInvariantsProfile(struct Parameters &parameters,
     cout << "Computing knot invariants for structure " << name << " ..." << endl;
     knot_invariants.computeInvariants(parameters.method);
     knot_invariants.save();
-    updateRuntime(name,knot_invariants.getPolygonSides(),
-                  knot_invariants.getCPUTime());
+    //updateRuntime(name,knot_invariants.getPolygonSides(),
+    //              knot_invariants.getCPUTime());
   }
   return knot_invariants;
 }
