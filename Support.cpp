@@ -446,7 +446,6 @@ void build(struct Parameters &parameters)
 {
   // get the segmentation
   Segmentation segmentation = buildSegmentationProfile(parameters);
-  string name = extractName(parameters.file);
 
   switch(parameters.profile) {
     case DISTANCE_HISTOGRAM:  // construct the histogram
