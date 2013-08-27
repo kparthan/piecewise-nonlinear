@@ -1647,9 +1647,9 @@ void updateRuntime(string name, int n, double time)
 void updateResults(vector<double> &dot_products, vector<double> &distances)
 {
   string path = string(CURRENT_DIRECTORY) + "experiments/knot-invariants/";
-  string log_file = path + "dot-products";
+  string log_file = path + "dot-products-part1";
   ofstream log1(log_file.c_str(),ios::app);
-  log_file = path + "distances";
+  log_file = path + "distances-part1";
   ofstream log2(log_file.c_str(),ios::app);
   for (int i=0; i<dot_products.size(); i++) {
     log1 << fixed << setw(20) << setprecision(3) << dot_products[i];

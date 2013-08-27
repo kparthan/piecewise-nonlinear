@@ -647,12 +647,18 @@ void KnotInvariants::save()
  */
 void KnotInvariants::load(string &file)
 {
+  const int INVARIANTS = 1;
+  const int PREMEASURES = 2;
+
   name = file;
   string file_name = string(CURRENT_DIRECTORY) 
                     + "experiments/knot-invariants/profiles/" + name; 
   ifstream log(file_name.c_str());
   string line;
+  vector<double> numbers;
+  int i = 1;
   all_invariants.clear();
+  premeasures.clear();
 
   while(getline(log,line)) {
     boost::char_separator<char> sep(",() ");
@@ -661,8 +667,19 @@ void KnotInvariants::load(string &file)
       istringstream iss(t);
       double x;
       iss >> x;
-      all_invariants.push_back(x);
+      numbers.push_back(x);
     }
+    switch(i) {
+      case INVARIANTS:
+        all_invariants = numbers;
+        break;
+
+      case PREMEASURES:
+        premeasures = numbers;
+        break;
+    }
+    i++;
+    numbers.clear();
   }
   log.close();
 }
