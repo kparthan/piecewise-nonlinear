@@ -41,6 +41,7 @@ struct Parameters
   int sampling_method;              // uniform/random generation of samples
   double increment_r;               // increment in r used in histogram method
   // parameters used for profiling using knot invariants
+  string method;                    // general/specific
   int construct_polygon;            // polygon construction heuristic 
   int num_sides;                    // # of sides in the approximating polygon
   int max_order;                    // maximum order of knot invariants

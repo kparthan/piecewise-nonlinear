@@ -31,13 +31,56 @@ class KnotInvariants
     vector<vector<double>> invariants;
 
     //! The list of invariants
-    vector<double> all_invariants;
+    vector<double> all_invariants,premeasures;
 
     //! Runtime
     double cpu_time,wall_time;
 
     //! Initialize
     void initialize(vector<int> &);
+
+    //
+    vector<vector<double>> omega,absomega,partsum,abspartsum;
+
+    //
+    int nres;
+    void createOmega();
+    void createPartialSums();
+    double mixedsum(int a, int b, int c, int d);
+    double absmixedsum(int a, int b, int c, int d);
+    double int12(void);
+    double inta12(void);
+
+    double int12_34(void);
+    double inta12_34(void);
+    double int12_a34(void);
+    double inta12_a34(void);
+
+    double int13_24(void);
+    double inta13_24(void);
+    double int13_a24(void);
+    double inta13_a24(void);
+
+    double int14_23(void);
+    double inta14_23(void);
+    double int14_a23(void);
+    double inta14_a23(void);
+
+    double int12_34_56(void);
+    double int12_35_46(void);
+    double int12_36_45(void);
+    double int13_24_56(void);
+    double int13_25_46(void);
+    double int13_26_45(void);
+    double int14_23_56(void);
+    double int14_25_36(void);
+    double int14_26_35(void);
+    double int15_23_46(void);
+    double int15_24_36(void);
+    double int15_26_34(void);
+    double int16_23_45(void);
+    double int16_24_35(void);
+    double int16_25_34(void);
 
   protected:
     //! Computes the writhe matrix
@@ -90,7 +133,7 @@ class KnotInvariants
     void constructPolygon(int, int, vector<int> &);
 
     //! Computes the list of all invariants
-    void computeInvariants();
+    void computeInvariants(string);
 
     //! Gets the list of all invariants
     vector<double> getInvariants();

@@ -43,6 +43,7 @@ void KnotInvariants::initialize(vector<int> &controls)
     vector<double> tmp(sides,0);
     writhe.push_back(tmp);
   }
+  nres = sides + 1;
 }
 
 /*!
@@ -51,10 +52,10 @@ void KnotInvariants::initialize(vector<int> &controls)
  */
 KnotInvariants::KnotInvariants(const KnotInvariants &source) :
                 curve_string(source.curve_string), polygon(source.polygon),
-                writhe(source.writhe), name(source.name), 
+                writhe(source.writhe), name(source.name), nres(source.nres),
                 max_order(source.max_order), invariants(source.invariants),
                 all_invariants(source.all_invariants), cpu_time(source.cpu_time),
-                wall_time(source.wall_time)
+                wall_time(source.wall_time), premeasures(source.premeasures)
 {}
 
 /*!
@@ -71,8 +72,10 @@ KnotInvariants KnotInvariants::operator=(const KnotInvariants &source)
     writhe = source.writhe;
     name = source.name;
     max_order = source.max_order;
+    nres = source.nres;
     invariants = source.invariants;
     all_invariants = source.all_invariants;
+    premeasures = source.premeasures;
     cpu_time = source.cpu_time;
     wall_time = source.wall_time;
   }
@@ -124,24 +127,70 @@ void KnotInvariants::computeWrithe()
 
 /*!
  *  \brief This module computes the invariants upto order 3
+ *  \param method a string
  *  \return the list of all invariants
  */
-void KnotInvariants::computeInvariants()
+void KnotInvariants::computeInvariants(string method)
 {
   clock_t c_start = clock();
   auto t_start = high_resolution_clock::now();
 
   computeWrithe();
   int n = polygon.getNumberOfSides();
-  all_invariants.push_back(n);
-
-  double normalization_factor = (n+1) * 2 * PI;
-  for(int i=0; i<max_order; i++) {  // i = order
-    invariants[i] = computeInvariants(i+1);
-    for (int j=0; j<invariants[i].size(); j++) {
-      all_invariants.push_back(invariants[i][j]/normalization_factor);
+  double normalization_factor;
+  all_invariants.push_back(n+1);
+  premeasures.push_back(n+1);
+  if (method.compare("general") == 0) {
+    normalization_factor = 2 * PI;
+    for(int i=0; i<max_order; i++) {  // i = order
+      invariants[i] = computeInvariants(i+1);
+      for (int j=0; j<invariants[i].size(); j++) {
+        all_invariants.push_back(invariants[i][j]/normalization_factor);
+      }
+      normalization_factor *= (2 * PI);
     }
-    normalization_factor *= ((n+1) * 2 * PI);
+  } else if (method.compare("specific") == 0) {
+    createOmega();
+    createPartialSums();
+    all_invariants.push_back(int12());
+    all_invariants.push_back(inta12());
+    all_invariants.push_back(int12_34());
+    all_invariants.push_back(inta12_34());
+    all_invariants.push_back(int12_a34());
+    all_invariants.push_back(inta12_a34());
+    all_invariants.push_back(int13_24());
+    all_invariants.push_back(inta13_24());
+    all_invariants.push_back(int13_a24());
+    all_invariants.push_back(inta13_a24());
+    all_invariants.push_back(int14_23());
+    all_invariants.push_back(inta14_23());
+    all_invariants.push_back(int14_a23());
+    all_invariants.push_back(inta14_a23());
+    all_invariants.push_back(int12_34_56());
+    all_invariants.push_back(int12_35_46());
+    all_invariants.push_back(int12_36_45());
+    all_invariants.push_back(int13_24_56());
+    all_invariants.push_back(int13_25_46());
+    all_invariants.push_back(int13_26_45());
+    all_invariants.push_back(int14_23_56());
+    all_invariants.push_back(int14_25_36());
+    all_invariants.push_back(int14_26_35());
+    all_invariants.push_back(int15_23_46());
+    all_invariants.push_back(int15_24_36());
+    all_invariants.push_back(int15_26_34());
+    all_invariants.push_back(int16_23_45());
+    all_invariants.push_back(int16_24_35());
+    all_invariants.push_back(int16_25_34());
+  }
+  for (int i=1; i<all_invariants.size(); i++) {
+    if (i <= 2) {
+      normalization_factor = nres;
+    } else if (i > 2 && i <= 14) {
+      normalization_factor = nres * nres;
+    } else {
+      normalization_factor = nres * nres * nres;
+    }
+    premeasures.push_back(all_invariants[i]/normalization_factor);
   }
   /*cout << "All invariants (" << all_invariants.size() << "): [";
   for (int i=0; i<all_invariants.size(); i++) {
@@ -164,7 +213,8 @@ void KnotInvariants::computeInvariants()
  */
 vector<double> KnotInvariants::getInvariants()
 {
-  return all_invariants;
+  //return all_invariants;
+  return premeasures;
 } 
 
 /*!
@@ -581,6 +631,11 @@ void KnotInvariants::save()
   for (int i=0; i<all_invariants.size(); i++) {
     log << fixed << setw(10) << setprecision(4) << all_invariants[i];
   }
+  log << endl;
+  for (int i=0; i<premeasures.size(); i++) {
+    log << fixed << setw(10) << setprecision(4) << premeasures[i];
+  }
+  log << endl;
   log.close();
 }
 
@@ -609,4 +664,481 @@ void KnotInvariants::load(string &file)
   }
   log.close();
 }
+
+void KnotInvariants::createOmega()
+{
+  int n = polygon.getNumberOfSides() + 1;
+  vector<double> tmp(n,0);
+  omega.push_back(tmp);
+  for (int i=0; i<writhe.size(); i++) {
+    for (int j=0; j<writhe[i].size(); j++) {
+      tmp[j+1] = writhe[i][j];
+    }
+    omega.push_back(tmp);
+  }
+  for (int i=0; i<omega.size(); i++) {
+    for (int j=0; j<omega[i].size(); j++) {
+      tmp[j] = fabs(omega[i][j]);
+    }
+    absomega.push_back(tmp);
+  }
+}
+
+void KnotInvariants::createPartialSums()
+{
+  for (int i=0; i<nres+1; i++) {
+    vector<double> tmp(nres,0);
+    partsum.push_back(tmp);
+    abspartsum.push_back(tmp);
+  }
+  int a, k;
+  for (k=-1;k<2;k++)
+    for (a=1;a<nres -k;a++)
+      partsum[a][a+k]=0;
+  for (a=1;a<nres-2;a++)
+    partsum[a][a+2]=omega[a][a+2];
+  for (k=3;k<nres-1;k++)
+    for (a=1; a<nres-k;a++)
+      partsum[a][a+k]=partsum[a][a+k-1]+partsum[a+1][a+k]+omega[a][a+k]-partsum[a+1][a+k-1];
+  for (k=-1;k<2;k++)
+    for (a=1;a<nres -k;a++)
+      abspartsum[a][a+k]=0;
+  for (a=1;a<nres-2;a++)
+    abspartsum[a][a+2]=absomega[a][a+2];
+  for (k=3;k<nres-1;k++)
+    for (a=1; a<nres-k;a++)
+      abspartsum[a][a+k]=abspartsum[a][a+k-1]+abspartsum[a+1][a+k]+absomega[a][a+k]-abspartsum[a+1][a+k-1];
+}
+
+double KnotInvariants::mixedsum(int a,int b,int c,int d)
+{
+  double tempm, tempp;
+  tempm=partsum[a][c-1]+partsum[b+1][d];
+  tempp=partsum[a][d]+partsum[b+1][c-1];
+  return tempp-tempm;
+}
+
+double KnotInvariants::absmixedsum(int a,int b,int c,int d)
+{
+  double tempm, tempp;
+  tempm=abspartsum[a][c-1]+abspartsum[b+1][d];
+  tempp=abspartsum[a][d]+abspartsum[b+1][c-1];
+  return tempp-tempm;
+}
+
+
+/*            CALCULATION OF THE GAUSS INTEGRALS
+ */
+
+/******** FIRST ORDER GAUSS INTEGRALS **********************/
+
+double KnotInvariants::int12(void)
+{
+  return partsum[1][nres-1]/(twoPI);
+}
+
+double KnotInvariants::inta12(void)
+{
+  return abspartsum[1][nres-1]/(twoPI);
+}
+
+/********* SECOND ORDER GAUSS INTEGRALS ***********************/
+
+
+double KnotInvariants::int12_34(void)
+{
+  int b;
+  double temp;
+  temp=0;
+  for(b=4;b<nres-2; b++)
+    temp=temp+partsum[1][b-1]*mixedsum(b,b,b+2,nres-1);
+  return temp/(twoPI*twoPI);
+}
+
+double KnotInvariants::inta12_34(void)
+{
+  int b;
+  double temp;
+  temp=0;
+  for(b=4;b<nres-2; b++)
+    temp=temp+abspartsum[1][b-1]*mixedsum(b,b,b+2,nres-1);
+  return temp/(twoPI*twoPI);
+}
+
+double KnotInvariants::int12_a34(void)
+{
+  int b;
+  double temp;
+  temp=0;
+  for(b=4;b<nres-2; b++)
+    temp=temp+partsum[1][b-1]*absmixedsum(b,b,b+2,nres-1);
+  return temp/(twoPI*twoPI);
+}
+
+double KnotInvariants::inta12_a34(void)
+{
+  int b;
+  double temp;
+  temp=0;
+  for(b=4;b<nres-2; b++)
+    temp=temp+abspartsum[1][b-1]*absmixedsum(b,b,b+2,nres-1);
+  return temp/(twoPI*twoPI);
+}
+
+/*************************************************************/
+
+
+double KnotInvariants::int13_24(void)
+{
+  int a, b;
+  double temp;
+  temp=0;
+  for(a=2;a<nres-2; a++)
+    for(b=a+2;b<nres;b++)
+      temp=temp+mixedsum(1,a-1,a+1,b-1)*omega[a][b];
+  return temp/(twoPI*twoPI);
+}
+
+double KnotInvariants::inta13_24(void)
+{
+  int a, b;
+  double temp;
+  temp=0;
+  for(a=2;a<nres-2; a++)
+    for(b=a+2;b<nres;b++)
+      temp=temp+absmixedsum(1,a-1,a+1,b-1)*omega[a][b];
+  return temp/(twoPI*twoPI);
+}
+
+double KnotInvariants::int13_a24(void)
+{
+  int a, b;
+  double temp;
+  temp=0;
+  for(a=2;a<nres-2; a++)
+    for(b=a+2;b<nres;b++)
+      temp=temp+mixedsum(1,a-1,a+1,b-1)*absomega[a][b];
+  return temp/(twoPI*twoPI);
+}
+
+double KnotInvariants::inta13_a24(void)
+{
+  int a, b;
+  double temp;
+  temp=0;
+  for(a=2;a<nres-2; a++)
+    for(b=a+2;b<nres;b++)
+      temp=temp+absmixedsum(1,a-1,a+1,b-1)*absomega[a][b];
+  return temp/(twoPI*twoPI);
+}
+
+/***************************************************************/
+
+double KnotInvariants::int14_23(void)
+{
+  int a, b;
+  double temp;
+  temp=0;
+  for(a=1;a<nres-4; a++)
+    for(b=a+4;b<nres;b++)
+      temp=temp+partsum[a+1][b-1]*omega[a][b];
+  return temp/(twoPI*twoPI);
+}
+
+double KnotInvariants::inta14_23(void)
+{
+  int a, b;
+  double temp;
+  temp=0;
+  for(a=1;a<nres-4; a++)
+    for(b=a+4;b<nres;b++)
+      temp=temp+partsum[a+1][b-1]*absomega[a][b];
+  return temp/(twoPI*twoPI);
+}
+
+double KnotInvariants::int14_a23(void)
+{
+  int a, b;
+  double temp;
+  temp=0;
+  for(a=1;a<nres-4; a++)
+    for(b=a+4;b<nres;b++)
+      temp=temp+abspartsum[a+1][b-1]*omega[a][b];
+  return temp/(twoPI*twoPI);
+}
+
+double KnotInvariants::inta14_a23(void)
+{
+  int a, b;
+  double temp;
+  temp=0;
+  for(a=1;a<nres-4; a++)
+    for(b=a+4;b<nres;b++)
+      temp=temp+abspartsum[a+1][b-1]*absomega[a][b];
+  return temp/(twoPI*twoPI);
+}
+
+/**************THIRD ORDER GAUSS INTEGRALS********************/
+
+
+double KnotInvariants::int12_34_56(void)
+{
+  int a, b;
+  double temp1, temp2;
+  temp1=0;
+  for(a=4;a<nres-5;a++)
+    {
+      temp2=0;
+      for(b=a+3;b<nres-2;b++)
+	temp2=temp2+mixedsum(a,a,a+2,b-1)*mixedsum(b,b,b+2,nres-1);
+      temp1=temp1+temp2*partsum[1][a-1];
+    }
+  return temp1/(twoPI*twoPI*twoPI);
+}
+
+
+
+double KnotInvariants::int12_35_46(void)
+{
+  int a, b;
+  double temp1, temp2;
+  temp1=0;
+  for(a=4;a<nres-3;a++)
+    {
+      temp2=0;
+      for(b=a+2;b<nres-1;b++)
+	temp2=temp2+omega[a][b]*mixedsum(a+1,b-1,b+1,nres-1);
+      temp1=temp1+temp2*partsum[1][a-1];
+    }
+  return temp1/(twoPI*twoPI*twoPI);
+}
+
+
+double KnotInvariants::int12_36_45(void)
+{
+  int a, b;
+  double temp1, temp2;
+  temp1=0;
+  for(a=4;a<nres-4;a++)
+    {
+      temp2=0;
+      for(b=a+4; b<nres; b++)
+	temp2=temp2+omega[a][b]*partsum[a+1][b-1];
+      temp1=temp1+temp2*partsum[1][a-1];
+    }
+  return temp1/(twoPI*twoPI*twoPI);
+}
+
+
+double KnotInvariants::int13_24_56(void)
+{
+  int a, b;
+  double temp1, temp2;
+  temp1=0;
+  for(a=4;a<nres-3;a++)
+    {
+      temp2=0;
+      for(b=2;b<a-1;b++)
+	temp2=temp2+omega[b][a]*mixedsum(1,b-1,b+1,a-1);
+      temp1=temp1+temp2*partsum[a+1][nres-1];
+    }
+  return temp1/(twoPI*twoPI*twoPI);
+}
+
+
+double KnotInvariants::int13_25_46(void)
+{
+  int a, b, c;
+  double temp1, temp2;
+  temp1=0;
+  for(a=2;a<nres-4;a++)
+    {
+      for(b=a+2;b<nres-2;b++)
+	{
+	  temp2=0;
+	  for(c=b+1;c<nres-1;c++)
+	    temp2=temp2+omega[a][c]*mixedsum(b,b,c+1,nres-1);
+	  temp1=temp1+temp2*mixedsum(1,a-1,a+1,b-1);
+	}
+    }
+  return temp1/(twoPI*twoPI*twoPI);
+}
+
+
+double KnotInvariants::int13_26_45(void)
+{
+  int a, b, c;
+  double temp1, temp2;
+  temp1=0;
+  for(a=2;a<nres-5;a++)
+    {
+      for(b=a+5; b<nres; b++)
+	{
+	  temp2=0;
+	  for(c=a+1;c<b-3;c++)
+	    temp2=temp2+partsum[c+1][b-1]*mixedsum(1,a-1,c,c);
+	  temp1=temp1+temp2*omega[a][b];
+	}
+    }
+  return temp1/(twoPI*twoPI*twoPI);
+}
+
+double KnotInvariants::int14_23_56(void)
+{
+  int a, b;
+  double temp1, temp2;
+  temp1=0;
+  for(a=5;a<nres-3;a++)
+    {
+      temp2=0;
+      for(b=1; b<a-3; b++)
+	temp2=temp2+omega[b][a]*partsum[b+1][a-1];
+      temp1=temp1+temp2*partsum[a+1][nres-1];
+    }
+  return temp1/(twoPI*twoPI*twoPI);
+}
+
+
+double KnotInvariants::int14_25_36(void)
+{
+  int a, b, c;
+  double temp1, temp2;
+  temp1=0;
+  for(a=2;a<nres-4;a++)
+    {
+      for(b=a+3; b<nres-1; b++)
+	{
+	  temp2=0;
+	  for(c=a+1; c<b-1; c++)
+	    temp2=temp2+mixedsum(1,a-1,c+1,b-1)*mixedsum(c,c,b+1,nres-1);
+	  temp1=temp1+temp2*omega[a][b];
+	}
+    }
+  return temp1/(twoPI*twoPI*twoPI);
+}
+
+
+double KnotInvariants::int14_26_35(void)
+{
+  int a, b, c;
+  double temp1, temp2;
+  temp1=0;
+  for(a=5;a<nres-1;a++)
+    {
+      for(b=3; b<a-1; b++)
+	{
+	  temp2=0;
+	  for(c=1; c<b-1; c++)
+	    temp2=temp2+mixedsum(c+1,b-1,a+1,nres-1)*mixedsum(c,c,b+1,a-1);
+	  temp1=temp1+temp2*omega[b][a];
+	}
+    }
+  return temp1/(twoPI*twoPI*twoPI);
+}
+
+double KnotInvariants::int15_23_46(void)
+{
+  int a, b, c;
+  double temp1, temp2;
+  temp1=0;
+  for(a=1;a<nres-6;a++)
+    {
+      for(b=a+5; b<nres-1; b++)
+	{
+	  temp2=0;
+	  for(c=a+4; c<b; c++)
+	    temp2=temp2+partsum[a+1][c-1]*mixedsum(c,c,b+1,nres-1);
+	  temp1=temp1+temp2*omega[a][b];
+	}
+    }
+  return temp1/(twoPI*twoPI*twoPI);
+}
+
+
+
+double KnotInvariants::int15_24_36(void)
+{
+  int a, b, c;
+  double temp1, temp2;
+  temp1=0;
+  for(a=2;a<nres-4;a++)
+    {
+      for(b=a+2; b<nres-2; b++)
+	{
+	  temp2=0;
+	  for(c=b+2; c<nres; c++)
+	    temp2=temp2+mixedsum(1,a-1,b+1,c-1)*mixedsum(a+1,b-1,c,c);
+	  temp1=temp1+temp2*omega[a][b];
+	}
+    }
+  return temp1/(twoPI*twoPI*twoPI);
+}
+
+double KnotInvariants::int15_26_34(void)
+{
+  int a, b, c;
+  double temp1, temp2;
+  temp1=0;
+  for(a=2; a<nres-5; a++)
+    {
+      for(b=a+5; b<nres; b++)
+	{
+	  temp2=0;
+	  for(c=a+4; c<b; c++)
+	    temp2=temp2+partsum[a+1][c-1]*mixedsum(1,a-1,c,c);
+	  temp1=temp1+temp2*omega[a][b];
+	}
+    }
+  return temp1/(twoPI*twoPI*twoPI);
+}
+
+double KnotInvariants::int16_23_45(void)
+{
+  int a, b, c;
+  double temp1, temp2;
+  temp1=0;
+  for(a=1; a<nres-7; a++)
+    {
+      for(b=a+7; b<nres; b++)
+	{
+	  temp2=0;
+	  for(c=a+4; c<b-2; c++)
+	    temp2=temp2+partsum[a+1][c-1]*mixedsum(c,c,c+2,b-1);
+	  temp1=temp1+temp2*omega[a][b];
+	}
+    }
+  return temp1/(twoPI*twoPI*twoPI);
+}
+
+
+double KnotInvariants::int16_24_35(void)
+{
+  int a, b, c;
+  double temp1, temp2;
+  temp1=0;
+  for(a=3; a<nres-3; a++)
+    {
+      for(b=a+2; b<nres-1; b++)
+	{
+	  temp2=0;
+	  for(c=1; c<a-1; c++)
+	    temp2+=mixedsum(c,c,b+1,nres-1)*mixedsum(c+1,a-1,a+1,b-1);
+	  temp1+=temp2*omega[a][b];
+	}
+    }
+  return temp1/(twoPI*twoPI*twoPI);
+}
+
+
+double KnotInvariants::int16_25_34(void)
+{
+  int a, b;
+  double temp1;
+  temp1=0;
+  for(a=2; a<nres-5; a++)
+    for(b=a+4; b<nres-1; b++)
+      temp1=temp1+mixedsum(1,a-1,b+1,nres-1)*omega[a][b]*partsum[a+1][b-1];
+  return temp1/(twoPI*twoPI*twoPI);
+}
+
 

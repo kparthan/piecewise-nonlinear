@@ -35,6 +35,7 @@
 #define LARGE_NUMBER 1000000
 #define TOLERANCE 0.0000001
 #define PI boost::math::constants::pi<double>()
+#define twoPI 2 * PI
 #define ZERO std::numeric_limits<double>::epsilon()
 
 #define SET 1 

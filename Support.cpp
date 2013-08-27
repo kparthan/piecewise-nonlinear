@@ -70,6 +70,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("sampling",value<string>(&generate),
                   "uniform/random method to generate sample points on the curve")
         // arguments for knot invariants based profiling 
+       ("method",value<string>(&parameters.method),"general/specific")
        ("polygon",value<string>(&polygon),"polygon construction heuristic")
        ("sides",value<int>(&parameters.num_sides),"# of sides in a polygon")
        ("order",value<int>(&parameters.max_order),"maximum order of knot invariants")
@@ -346,6 +347,9 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     }
   } else if (profile.compare("knot_invariants") == 0) {
     parameters.profile = KNOT_INVARIANTS;
+    if (!vm.count("method")) {
+      parameters.method = "general";
+    }
     if (vm.count("order")) {
       cout << "Maximum order of knot invariants: " 
            << parameters.max_order << endl;
@@ -559,9 +563,14 @@ void compareStructuresList(struct Parameters &parameters)
           alignment.computeBasicAlignment(parameters.gap_penalty,
                                           parameters.max_angle_diff);
           alignment.save(names[0],names[i]);
+          vector<double> scores = alignment.getScores();
           if (parameters.record == SET) {
-            vector<double> scores = alignment.getScores();
             all_scores.push_back(scores);
+          } else {
+            for (int j=0; j<scores.size(); j++) {
+              cout << fixed << setw(10) << setprecision(2) << scores[j];
+            }
+            cout << endl;
           }
         }
       }
@@ -582,8 +591,6 @@ void compareStructuresList(struct Parameters &parameters)
         parameters.file = parameters.comparison_files[i];
         KnotInvariants knot_invariants = 
           buildKnotInvariantsProfile(parameters,segmentations[i]);
-        knot_invariants.computeInvariants();
-        profiles.push_back(knot_invariants);
       }
       vector<double> pivot_invariants = profiles[0].getInvariants();
       Vector<double> pivot(pivot_invariants);
@@ -1169,7 +1176,7 @@ void updateRuntime(string name, Segmentation &segmentation)
 bool checkIfAnglesExist(string &file_name)
 {
   string path_to_angles = string(CURRENT_DIRECTORY) +
-                          "experiments/angles/" + file_name;
+                          "experiments/angles/profiles/" + file_name;
   return checkFile(path_to_angles);
 }
 
@@ -1536,7 +1543,7 @@ KnotInvariants buildKnotInvariantsProfile(struct Parameters &parameters,
     KnotInvariants knot_invariants(polygon,name,parameters.max_order,
                                    parameters.controls);
     cout << "Computing knot invariants for structure " << name << " ..." << endl;
-    knot_invariants.computeInvariants();
+    knot_invariants.computeInvariants(parameters.method);
     knot_invariants.save();
     updateRuntime(name,knot_invariants.getPolygonSides(),
                   knot_invariants.getCPUTime());
@@ -1622,8 +1629,8 @@ double computeEuclideanDistance(Vector<double> &vec1, Vector<double> &vec2)
  */
 void updateRuntime(string name, int n, double time) 
 {
-  string path = string(CURRENT_DIRECTORY); 
-  string time_file = path + "runtime-knot-invariants";
+  string path = string(CURRENT_DIRECTORY) + "experiments/knot-invariants/"; 
+  string time_file = path + "runtime-part1";
   ofstream log(time_file.c_str(),ios::app);
   log << setw(10) << name;
   log << setw(10) << n << "\t"; 
