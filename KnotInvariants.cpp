@@ -213,8 +213,8 @@ void KnotInvariants::computeInvariants(string method)
  */
 vector<double> KnotInvariants::getInvariants()
 {
-  //return all_invariants;
-  return premeasures;
+  return all_invariants;
+  //return premeasures;
 } 
 
 /*!
@@ -661,7 +661,7 @@ void KnotInvariants::load(string &file)
   premeasures.clear();
 
   while(getline(log,line)) {
-    boost::char_separator<char> sep(",() ");
+    boost::char_separator<char> sep(",() \t");
     boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
     BOOST_FOREACH (const string& t, tokens) {
       istringstream iss(t);

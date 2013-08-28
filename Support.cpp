@@ -49,6 +49,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
 
        // args used for comparison
        ("compare","flag to initiate comparison")
+       ("database",value<string>(&parameters.database),"for database comparison")
        ("files",value<vector<string>>(&parameters.comparison_files)->multitoken(),
                                                          "path to structure files")
        ("pdbids",value<vector<string>>(&pdb_ids)->multitoken(),"PDB IDs to compare")
@@ -247,40 +248,47 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
   if (vm.count("compare")) {
     noargs = 1;
     parameters.comparison = SET;
-    if (parameters.structure == PROTEIN) {
-      if (vm.count("files") && vm.count("pdbids")) {
-        cout << "Please use one of --files or --pdbids for comparison ..." << endl;
-        Usage(argv[0],desc);
-      } else if (vm.count("files")) {
-        if (parameters.comparison_files.size() < 2) {
-          cout << "Please input at least TWO files to compare ..." << endl;
+    if (!vm.count("database")) {
+      parameters.database_comparison = UNSET;
+      if (parameters.structure == PROTEIN) {
+        if (vm.count("files") && vm.count("pdbids")) {
+          cout << "Please use one of --files or --pdbids for comparison ..." << endl;
           Usage(argv[0],desc);
-        } 
-      } else if (vm.count("pdbids")) {
-        if (pdb_ids.size() < 2) {
-          cout << "Please input at least TWO PDB IDs to compare ..." << endl;
+        } else if (vm.count("files")) {
+          if (parameters.comparison_files.size() < 2) {
+            cout << "Please input at least TWO files to compare ..." << endl;
+            Usage(argv[0],desc);
+          } 
+        } else if (vm.count("pdbids")) {
+          if (pdb_ids.size() < 2) {
+            cout << "Please input at least TWO PDB IDs to compare ..." << endl;
+            Usage(argv[0],desc);
+          }
+          for (int i=0; i<pdb_ids.size(); i++) {
+            parameters.comparison_files.push_back(getPDBFilePath(pdb_ids[i]));
+          }
+        } else if (vm.count("files") && vm.count("scopids")) {
+          cout << "Please use one of --files or --scopids for comparison ..." << endl;
           Usage(argv[0],desc);
-        }
-        for (int i=0; i<pdb_ids.size(); i++) {
-          parameters.comparison_files.push_back(getPDBFilePath(pdb_ids[i]));
-        }
-      } else if (vm.count("files") && vm.count("scopids")) {
-        cout << "Please use one of --files or --scopids for comparison ..." << endl;
-        Usage(argv[0],desc);
-      } else if (vm.count("scopids")) {
-        for (int i=0; i<scop_ids.size(); i++) {
-          parameters.comparison_files.push_back(getSCOPFilePath(scop_ids[i]));
-        }
-      }
-      noargs = 0;
-    } else if (parameters.structure == GENERAL) {
-      if (vm.count("files")) {
-        if (parameters.comparison_files.size() < 2) {
-          cout << "Please input at least TWO files to compare ..." << endl;
-          Usage(argv[0],desc);
+        } else if (vm.count("scopids")) {
+          for (int i=0; i<scop_ids.size(); i++) {
+            parameters.comparison_files.push_back(getSCOPFilePath(scop_ids[i]));
+          }
         }
         noargs = 0;
+      } else if (parameters.structure == GENERAL) {
+        if (vm.count("files")) {
+          if (parameters.comparison_files.size() < 2) {
+            cout << "Please input at least TWO files to compare ..." << endl;
+            Usage(argv[0],desc);
+          }
+          noargs = 0;
+        }
       }
+    } else if (vm.count("database")) {
+      parameters.database_comparison = SET;
+      cout << "Comparing database structures from ..." << endl;
+      noargs = 0;
     }
     if (vm.count("record")) {
       parameters.record = SET;
@@ -438,7 +446,7 @@ void Usage(const char *exe, options_description &desc)
 }
 
 /*!
- *  \brief This function builds the segmentation profile and constructs the
+ *  \brief This function uilds the segmentation profile and constructs the
  *  distance histogram for the structure.
  *  \param parameters a reference to a struct Parameters 
  */
@@ -517,102 +525,185 @@ void writeToFile(vector<array<double,3>> &coordinates, const char *fileName)
  */
 void compareStructuresList(struct Parameters &parameters)
 {
-  int num_structures = parameters.comparison_files.size();
-  vector<string> names;
-  vector<Segmentation> segmentations;
-  for (int i=0; i<num_structures; i++) {
-    parameters.file = parameters.comparison_files[i];
-    string name = extractName(parameters.file);
-    names.push_back(name);
-    Segmentation segmentation = buildSegmentationProfile(parameters);
-    segmentations.push_back(segmentation);
-  }
-
-  switch(parameters.profile) {
-    case DISTANCE_HISTOGRAM:
-    {
-      vector<DistanceHistogram> histograms;
-      int profile_with_max_r_values=0,num_r_values=0;
-      for (int i=0; i<num_structures; i++) {
-        parameters.file = parameters.comparison_files[i];
-        DistanceHistogram histogram = buildHistogramProfile(parameters,segmentations[i]);
-        histograms.push_back(histogram);
-        if (num_r_values < histogram.getRValues().size()) {
-          num_r_values = histogram.getRValues().size();
-          profile_with_max_r_values = i;
-        }
-      }
-      vector<double> r_values = histograms[profile_with_max_r_values].getRValues();
-      plotMultipleHistograms(histograms,r_values,names);
-      printHistogramResults(histograms,r_values,names);
-      break;
+  if (parameters.database_comparison == UNSET) {
+    int num_structures = parameters.comparison_files.size();
+    vector<string> names;
+    vector<Segmentation> segmentations;
+    for (int i=0; i<num_structures; i++) {
+      parameters.file = parameters.comparison_files[i];
+      string name = extractName(parameters.file);
+      names.push_back(name);
+      Segmentation segmentation = buildSegmentationProfile(parameters);
+      segmentations.push_back(segmentation);
     }
 
-    case DIHEDRAL_ANGLES:
-    {
-      vector<Angles> profiles;
-      vector<vector<double>> all_scores;
-      for (int i=0; i<num_structures; i++) {
-        parameters.file = parameters.comparison_files[i];
-        Angles angles = buildAnglesProfile(parameters,segmentations[i]);
-        profiles.push_back(angles);
-        if (i != 0) {
-          cout << "Aligning " << names[0] << " and " << names[i] << " ...\n";
-          Alignment alignment(profiles[0],profiles[i]);
-          alignment.computeBasicAlignment(parameters.gap_penalty,
-                                          parameters.max_angle_diff);
-          alignment.save(names[0],names[i]);
-          vector<double> scores = alignment.getScores();
-          if (parameters.record == SET) {
-            all_scores.push_back(scores);
-          } else {
-            for (int j=0; j<scores.size(); j++) {
-              cout << fixed << setw(10) << setprecision(2) << scores[j];
-            }
-            cout << endl;
+    switch(parameters.profile) {
+      case DISTANCE_HISTOGRAM:
+      {
+        vector<DistanceHistogram> histograms;
+        int profile_with_max_r_values=0,num_r_values=0;
+        for (int i=0; i<num_structures; i++) {
+          parameters.file = parameters.comparison_files[i];
+          DistanceHistogram histogram = buildHistogramProfile(parameters,segmentations[i]);
+          histograms.push_back(histogram);
+          if (num_r_values < histogram.getRValues().size()) {
+            num_r_values = histogram.getRValues().size();
+            profile_with_max_r_values = i;
           }
         }
+        vector<double> r_values = histograms[profile_with_max_r_values].getRValues();
+        plotMultipleHistograms(histograms,r_values,names);
+        printHistogramResults(histograms,r_values,names);
+        break;
       }
-      if (parameters.record == SET) {
-        if (all_scores.size() == num_structures - 1) {
-          updateResults(all_scores);
-        } else {
-          errorLog(names);
-        }
-      }
-      break;
-    }
 
+      case DIHEDRAL_ANGLES:
+      {
+        vector<Angles> profiles;
+        vector<vector<double>> all_scores;
+        for (int i=0; i<num_structures; i++) {
+          parameters.file = parameters.comparison_files[i];
+          Angles angles = buildAnglesProfile(parameters,segmentations[i]);
+          profiles.push_back(angles);
+          if (i != 0) {
+            cout << "Aligning " << names[0] << " and " << names[i] << " ...\n";
+            Alignment alignment(profiles[0],profiles[i]);
+            alignment.computeBasicAlignment(parameters.gap_penalty,
+                                            parameters.max_angle_diff);
+            alignment.save(names[0],names[i]);
+            vector<double> scores = alignment.getScores();
+            if (parameters.record == SET) {
+              all_scores.push_back(scores);
+            } else {
+              for (int j=0; j<scores.size(); j++) {
+                cout << fixed << setw(10) << setprecision(2) << scores[j];
+              }
+              cout << endl;
+            }
+          }
+        }
+        if (parameters.record == SET) {
+          if (all_scores.size() == num_structures - 1) {
+            updateResults(all_scores);
+          } else {
+            errorLog(names);
+          }
+        }
+        break;
+      }
+
+      case KNOT_INVARIANTS:
+      {
+        vector<KnotInvariants> profiles;
+        for (int i=0; i<num_structures; i++) {
+          parameters.file = parameters.comparison_files[i];
+          KnotInvariants knot_invariants = 
+            buildKnotInvariantsProfile(parameters,segmentations[i]);
+          profiles.push_back(knot_invariants);
+        }
+        vector<double> pivot_invariants = profiles[0].getInvariants();
+        Vector<double> pivot(pivot_invariants);
+        vector<double> dot_products,distances;
+        for (int i=1; i<num_structures; i++) {
+          vector<double> invariants = profiles[i].getInvariants();
+          Vector<double> another(invariants);
+          double dot_product = pivot * another;
+          double d = computeEuclideanDistance(pivot,another);
+          if (parameters.record == SET) {
+            dot_products.push_back(dot_product);
+            distances.push_back(d);
+          } else {
+            cout << fixed << setw(20) << setprecision(2) << dot_product;
+            cout << fixed << setw(20) << setprecision(2) << d << endl;
+          }
+        }
+        if (parameters.record == SET) {
+          if (distances.size() == num_structures - 1 
+              && dot_products.size() == num_structures - 1) {
+            updateResults(dot_products,distances);
+          } else {
+            errorLog(names);
+          }
+        }
+        break;
+      }
+    }
+  } else if (parameters.database_comparison == SET) {
+    compareDatabaseStructures(parameters);
+  }
+}
+
+/*!
+ *  \brief This function is used to compare the list of database structures.
+ *  \param parameters a reference to a struct Parameters
+ */
+void compareDatabaseStructures(struct Parameters &parameters)
+{
+  clock_t c_start = clock();
+  auto t_start = high_resolution_clock::now();
+
+  vector<string> structures = parseDatabase(parameters.database);
+  int num_structures = structures.size();
+  ofstream results("database-comparison");
+  switch(parameters.profile) {
     case KNOT_INVARIANTS:
     {
-      vector<KnotInvariants> profiles;
       for (int i=0; i<num_structures; i++) {
-        parameters.file = parameters.comparison_files[i];
-        KnotInvariants knot_invariants = 
-          buildKnotInvariantsProfile(parameters,segmentations[i]);
-      }
-      vector<double> pivot_invariants = profiles[0].getInvariants();
-      Vector<double> pivot(pivot_invariants);
-      vector<double> dot_products,distances;
-      for (int i=1; i<num_structures; i++) {
-        vector<double> invariants = profiles[i].getInvariants();
-        Vector<double> another(invariants);
-        double dot_product = pivot * another;
-        dot_products.push_back(dot_product);
-        double d = computeEuclideanDistance(pivot,another);
-        distances.push_back(d);
-      }
-      if (parameters.record == SET) {
-        if (distances.size() == num_structures - 1 
-            && dot_products.size() == num_structures - 1) {
-          updateResults(dot_products,distances);
-        } else {
-          errorLog(names);
+        parameters.file = getSCOPFilePath(structures[i]);
+        Segmentation segmentation = buildSegmentationProfile(parameters);
+        KnotInvariants profile = buildKnotInvariantsProfile(parameters,segmentation);
+        vector<double> invariants = profile.getInvariants();
+        Vector<double> pivot(invariants);
+        results << structures[i] << ":\t";
+        for (int j=0; j<num_structures; j++) {
+          if (j != i) {
+            parameters.file = getSCOPFilePath(structures[j]);
+            segmentation = buildSegmentationProfile(parameters);
+            profile = buildKnotInvariantsProfile(parameters,segmentation);
+            invariants = profile.getInvariants();
+            Vector<double> another(invariants);
+            double d = computeEuclideanDistance(pivot,another);
+            results << "(" << structures[j] << ",";
+            results << scientific << d << ") ";
+          }
         }
+        results << endl;
       }
       break;
     }
   }
+  results.close();
+
+  clock_t c_end = clock();
+  auto t_end = high_resolution_clock::now();
+  double cpu_time = double(c_end-c_start)/(double)(CLOCKS_PER_SEC);
+  double wall_time = duration_cast<seconds>(t_end-t_start).count();
+  cout << "Database comparison took " << cpu_time << " secs." << endl;
+}
+
+/*!
+ *  \brief This function returns the list of all structures in the database.
+ *  \param filename a reference to a string
+ *  \return the list of structure names
+ */
+vector<string> parseDatabase(string &filename)
+{
+  vector<string> structures;
+  ifstream file(filename.c_str());
+  string line;
+  while (getline(file,line)) {
+    boost::char_separator<char> sep(",() \t");
+    boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
+    int count = 0;
+    BOOST_FOREACH (const string& t, tokens) {
+      if (count == 0) {
+        structures.push_back(t);
+        count = 1;
+      }
+    }
+  }
+  file.close();
+  return structures;
 }
 
 /*!
@@ -1629,7 +1720,7 @@ double computeEuclideanDistance(Vector<double> &vec1, Vector<double> &vec2)
 void updateRuntime(string name, int n, double time) 
 {
   string path = string(CURRENT_DIRECTORY) + "experiments/knot-invariants/"; 
-  string time_file = path + "runtime-part4";
+  string time_file = path + "runtime-part1";
   ofstream log(time_file.c_str(),ios::app);
   log << setw(10) << name;
   log << setw(10) << n << "\t"; 
@@ -1647,7 +1738,7 @@ void updateRuntime(string name, int n, double time)
 void updateResults(vector<double> &dot_products, vector<double> &distances)
 {
   string path = string(CURRENT_DIRECTORY) + "experiments/knot-invariants/";
-  string log_file = path + "dot-products-part1";
+  string log_file = path + "dotproducts-part1";
   ofstream log1(log_file.c_str(),ios::app);
   log_file = path + "distances-part1";
   ofstream log2(log_file.c_str(),ios::app);

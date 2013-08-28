@@ -28,6 +28,8 @@ struct Parameters
   int comparison;                   // comparison flag set/unset 
   vector<string> comparison_files;  // path to the structure files used
                                     // in comparison
+  int database_comparison;          // flag for database comparison
+  string database;                  // database file
   int record;                       // flag to record all experimental results
   // parameters used for profiling using dihedral angles
   double gap_penalty;               // gap penalty used in basic alignment 
@@ -94,6 +96,8 @@ bool checkFile(string &);
 string extractName(string &);
 void writeToFile(vector<array<double,3>> &, const char*);
 void compareStructuresList(struct Parameters &);
+void compareDatabaseStructures(struct Parameters &);
+vector<string> parseDatabase(string &);
 void errorLog(vector<string> &);
 
 template <typename RealType>
