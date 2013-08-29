@@ -213,8 +213,8 @@ void KnotInvariants::computeInvariants(string method)
  */
 vector<double> KnotInvariants::getInvariants()
 {
-  return all_invariants;
-  //return premeasures;
+  //return all_invariants;
+  return premeasures;
 } 
 
 /*!

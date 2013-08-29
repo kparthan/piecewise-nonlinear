@@ -648,6 +648,9 @@ void compareDatabaseStructures(struct Parameters &parameters)
   switch(parameters.profile) {
     case KNOT_INVARIANTS:
     {
+      //for (int i=0; i<3715; i++) {
+      //for (int i=3715; i<7430; i++) {
+      //for (int i=7430; i<num_structures; i++) {
       for (int i=0; i<num_structures; i++) {
         parameters.file = getSCOPFilePath(structures[i]);
         Segmentation segmentation = buildSegmentationProfile(parameters);
