@@ -646,8 +646,48 @@ void compareDatabaseStructures(struct Parameters &parameters)
 
   vector<string> structures = parseDatabase(parameters.database);
   int num_structures = structures.size();
-  ofstream results("database-comparison");
+  ofstream results1("experiments/angles/database-comparison-scores0-part4");
+  ofstream results2("experiments/angles/database-comparison-scores1-part4");
+  ofstream results3("experiments/angles/database-comparison-scores2-part4");
   switch(parameters.profile) {
+    case DIHEDRAL_ANGLES:
+    {
+      //for (int i=0; i<2780; i++) {
+      //for (int i=2780; i<5560; i++) {
+      //for (int i=5560; i<8340; i++) {
+      for (int i=8340; i<num_structures; i++) {
+      //for (int i=0; i<num_structures; i++) {
+        parameters.file = getSCOPFilePath(structures[i]);
+        Segmentation segmentation = buildSegmentationProfile(parameters);
+        Angles pivot = buildAnglesProfile(parameters,segmentation);
+        results1 << structures[i] << ":\t";
+        results2 << structures[i] << ":\t";
+        results3 << structures[i] << ":\t";
+        for (int j=0; j<num_structures; j++) {
+          if (j != i) {
+            parameters.file = getSCOPFilePath(structures[j]);
+            segmentation = buildSegmentationProfile(parameters);
+            Angles another = buildAnglesProfile(parameters,segmentation);
+            Alignment alignment(pivot,another);
+            alignment.computeBasicAlignment(parameters.gap_penalty,
+                                            parameters.max_angle_diff);
+            alignment.save(parameters.gap_penalty,structures[i],structures[j]);
+            vector<double> scores = alignment.getScores();
+            results1 << "(" << structures[j] << ",";
+            results1 << scientific << scores[0] << ") ";
+            results2 << "(" << structures[j] << ",";
+            results2 << scientific << scores[1] << ") ";
+            results3 << "(" << structures[j] << ",";
+            results3 << scientific << scores[2] << ") ";
+          } 
+        }
+        results1 << endl;
+        results2 << endl;
+        results3 << endl;
+      }      
+      break;
+    }
+
     case KNOT_INVARIANTS:
     {
       //for (int i=0; i<3715; i++) {
@@ -659,7 +699,7 @@ void compareDatabaseStructures(struct Parameters &parameters)
         KnotInvariants profile = buildKnotInvariantsProfile(parameters,segmentation);
         vector<double> invariants = profile.getInvariants();
         Vector<double> pivot(invariants);
-        results << structures[i] << ":\t";
+        results1 << structures[i] << ":\t";
         for (int j=0; j<num_structures; j++) {
           if (j != i) {
             parameters.file = getSCOPFilePath(structures[j]);
@@ -668,16 +708,18 @@ void compareDatabaseStructures(struct Parameters &parameters)
             invariants = profile.getInvariants();
             Vector<double> another(invariants);
             double d = computeEuclideanDistance(pivot,another);
-            results << "(" << structures[j] << ",";
-            results << scientific << d << ") ";
+            results1 << "(" << structures[j] << ",";
+            results1 << scientific << d << ") ";
           }
         }
-        results << endl;
+        results1 << endl;
       }
       break;
     }
   }
-  results.close();
+  results1.close();
+  results2.close();
+  results3.close();
 
   clock_t c_end = clock();
   auto t_end = high_resolution_clock::now();

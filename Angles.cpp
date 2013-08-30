@@ -19,7 +19,7 @@ Angles::Angles(string name, vector<double> &angles) : name(name), angles(angles)
  *  \param source a reference to a Angles object
  */
 Angles::Angles(const Angles &source) : name(source.name), 
-                                                 angles(source.angles)
+                                       angles(source.angles)
 {}
 
 /*!
