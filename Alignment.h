@@ -49,7 +49,7 @@ class Alignment
     void computeBasicAlignment(double, double);
 
     //! Save the alignment to a file
-    void save(string &, string &);
+    void save(double, string &, string &);
 
     //! Returns the comparison scores 
     vector<double> getScores();

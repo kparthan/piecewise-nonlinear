@@ -68,7 +68,7 @@ Polygon<double> getRepresentativePolygon(struct Parameters &, Segmentation &);
 Angles buildAnglesProfile(struct Parameters &, Segmentation &);
 double computeDihedralAngle(Line<double> &, Line<double> &);
 void updateRuntime(string, Angles &, double);
-void updateResults(vector<vector<double>> &);
+void updateResults(double, vector<vector<double>> &);
 
 // histograms functions
 bool checkIfHistogramExists(string &);

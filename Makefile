@@ -94,9 +94,3 @@ DistanceHistogram.o: DistanceHistogram.cpp DistanceHistogram.h
 clean:
 	rm -f *.o *~ *.pdb piecewise-nonlinear-fit 
 
-clean_segmentations:
-	rm -f output/segmentations/logs/* output/segmentations/modified_pdb_files/* output/segmentations/pymol_scripts/* output/segmentations/profiles/* 
-
-clean_histograms:
-	rm -rf output/histograms/logs/local/* output/histograms/logs/global/* output/histograms/logs/profiles/* output/histograms/data/compared/* output/histograms/data/multiple_global_histograms/* output/histograms/plots/* output/histograms/samples_pdb/* output/histograms/script.plot
-

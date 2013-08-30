@@ -572,7 +572,7 @@ void compareStructuresList(struct Parameters &parameters)
             Alignment alignment(profiles[0],profiles[i]);
             alignment.computeBasicAlignment(parameters.gap_penalty,
                                             parameters.max_angle_diff);
-            alignment.save(names[0],names[i]);
+            alignment.save(parameters.gap_penalty,names[0],names[i]);
             vector<double> scores = alignment.getScores();
             if (parameters.record == SET) {
               all_scores.push_back(scores);
@@ -586,7 +586,7 @@ void compareStructuresList(struct Parameters &parameters)
         }
         if (parameters.record == SET) {
           if (all_scores.size() == num_structures - 1) {
-            updateResults(all_scores);
+            updateResults(parameters.gap_penalty,all_scores);
           } else {
             errorLog(names);
           }
@@ -1414,16 +1414,19 @@ void updateRuntime(string name, Angles &angles, double time)
 /*!
  *  \brief This function records the experimental results of aligning 
  *  several structures.
+ *  \param gap_penalty a double
  *  \param scores a reference to a vector<vector<double>>
  */
-void updateResults(vector<vector<double>> &scores)
+void updateResults(double gap_penalty, vector<vector<double>> &scores)
 {
-  string path = string(CURRENT_DIRECTORY) + "experiments/angles/";
-  string file_name = path + "alignments-scores0";
+  string path = string(CURRENT_DIRECTORY) + "experiments/angles/comparisons/";
+  string gap = "gap-penalty" 
+               + boost::lexical_cast<string>(gap_penalty).substr(0,3) + "/";
+  string file_name = path + gap + "alignments-scores0";
   ofstream file1(file_name.c_str(),ios::app);
-  file_name = path + "alignments-scores1";
+  file_name = path + gap + "alignments-scores1";
   ofstream file2(file_name.c_str(),ios::app);
-  file_name = path + "alignments-scores2";
+  file_name = path + gap + "alignments-scores2";
   ofstream file3(file_name.c_str(),ios::app);
   int num_comparisons = scores.size();
   for (int i=0; i<scores.size(); i++) {

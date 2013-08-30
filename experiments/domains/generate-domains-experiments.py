@@ -2,16 +2,16 @@ import sys, codecs, os, re
 if sys.stdout.encoding is None:
         sys.stdout = codecs.open('/dev/stdout', 'w', 'utf-8')
 
-fr = open('domains-part4.test','r')
-fw = open('domains-experiments-part4.sh','w')
+fr = open('domains.test','r')
+fw = open('domains-experiments-part1.sh','w')
 
 fw.write('STARTM=`date -u "+%s"`\n')
 fw.write('line_number=1\n')
 line = fr.readline()
 line_count = 0;
 
-cmd = './piecewise-nonlinear-fit-part4 --structure protein --profile knot_invariants --method specific --polygon backbone '
-cmd += '--controls 0 1 2 --constrain sigma length '
+cmd = './piecewise-nonlinear-fit-part1 --structure protein --profile dihedral_angles --polygon projections '
+cmd += '--controls 0 1 2 --constrain sigma length --gap 0 '
 
 # for single structure
 #cmd += '--scopid '
@@ -57,5 +57,5 @@ fw.write('')
 fw.close()
 fr.close()
 print '# of lines: ', line_count
-os.system('chmod 755 domains-experiments-part4.sh')
+os.system('chmod 755 domains-experiments-part1.sh')
 

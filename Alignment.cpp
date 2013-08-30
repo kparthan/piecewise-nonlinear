@@ -317,13 +317,15 @@ void Alignment::computeBasicAlignment(double gap_penalty, double max_diff)
 
 /*!
  *  \brief This method writes the optimal alignment to a file
+ *  \param gap_penalty a double
  *  \param name1 a reference to a string 
  *  \param name2 a reference to a string 
  */
-void Alignment::save(string &name1, string &name2)
+void Alignment::save(double gap_penalty, string &name1, string &name2)
 {
-  string file_name = string(CURRENT_DIRECTORY)
-                     + "experiments/angles/alignments/" + name1 + "_" + name2;
+  string file_name = string(CURRENT_DIRECTORY) + "experiments/angles/alignments/";
+  file_name += "gap-penalty" + boost::lexical_cast<string>(gap_penalty).substr(0,3);
+  file_name += "/" + name1 + "_" + name2;
   ofstream log(file_name.c_str());
   log << "# of angles in " << name1 << ": " << angles[0].size() << endl;
   log << "# of angles in " << name1 << ": " << angles[1].size() << endl;
