@@ -10,7 +10,7 @@ fw.write('line_number=1\n')
 line = fr.readline()
 line_count = 0;
 
-cmd = './piecewise-nonlinear-fit-part4 --structure protein --profile knot_invariants --method specific --polygon projections '
+cmd = './piecewise-nonlinear-fit-part4 --structure protein --profile knot_invariants --method specific --polygon backbone '
 cmd += '--controls 0 1 2 --constrain sigma length '
 
 # for single structure
@@ -58,3 +58,4 @@ fw.close()
 fr.close()
 print '# of lines: ', line_count
 os.system('chmod 755 domains-experiments-part4.sh')
+

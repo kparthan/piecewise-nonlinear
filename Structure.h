@@ -24,6 +24,9 @@ class Structure
     //! Gets the coordinates
     vector<array<double,3>> getCoordinates();
 
+    //! Gets the coordinates
+    vector<Point<double>> getCoordinatesPoints();
+
     //! Transforms the structure
     void transform(Matrix<double> &);
 

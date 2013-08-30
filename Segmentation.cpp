@@ -34,7 +34,7 @@ Segmentation::Segmentation(const Segmentation &source) :
               num_coordinates(source.num_coordinates), 
               bezier_curves(source.bezier_curves), null_bpr(source.null_bpr),
               bezier_bpr(source.bezier_bpr), cpu_time(source.cpu_time),
-              wall_time(source.wall_time), 
+              wall_time(source.wall_time), coordinates(source.coordinates),
               bezier_curves_lengths(source.bezier_curves_lengths)
 {}
 
@@ -53,6 +53,7 @@ Segmentation Segmentation::operator=(const Segmentation &source)
     bezier_bpr = source.bezier_bpr;
     cpu_time = source.cpu_time;
     wall_time = source.wall_time;
+    coordinates = source.coordinates;
   }
   return *this;
 }
@@ -99,6 +100,15 @@ void Segmentation::setTime(double cpu, double wall)
 }
 
 /*!
+ *  \brief This function sets the coordinates of the structure.
+ *  \param coords a reference to a vector<array<double,3>>
+ */
+void Segmentation::setCoordinates(vector<Point<double>> &coords)
+{
+  coordinates = coords;
+}
+
+/*!
  *  \brief This function returns the CPU time.
  *  \return CPU time
  */
@@ -123,6 +133,15 @@ double Segmentation::getWallTime()
 int Segmentation::getNumberOfCoordinates()
 {
   return num_coordinates;
+}
+
+/*!
+ *  \brief This function returns the protein coordinates.
+ *  \return the protein coordinates
+ */
+vector<Point<double>> Segmentation::getCoordinates()
+{
+  return coordinates;
 }
 
 /*!

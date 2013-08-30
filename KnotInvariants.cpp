@@ -37,7 +37,7 @@ KnotInvariants::KnotInvariants(Polygon<double> &polygon, string name,
 void KnotInvariants::initialize(vector<int> &controls)
 {
   invariants = vector<vector<double>>(max_order,vector<double>());
-  polygon.visualize(name,controls);
+  //polygon.visualize(name,controls);
   int sides = polygon.getNumberOfSides();
   for (int i=0; i<sides; i++) {
     vector<double> tmp(sides,0);
@@ -622,11 +622,13 @@ int KnotInvariants::getPolygonSides()
 
 /*!
  *  \brief This function saves the knot invariants.
+ *  \param type a reference to a string 
  */
-void KnotInvariants::save()
+void KnotInvariants::save(string &type)
 {
   string file_name = string(CURRENT_DIRECTORY) 
-                    + "experiments/knot-invariants/profiles/" + name; 
+                    + "experiments/knot-invariants/profiles/"; 
+  file_name += type + "/" + name;
   ofstream log(file_name.c_str());
   for (int i=0; i<all_invariants.size(); i++) {
     //log << fixed << setw(10) << setprecision(4) << all_invariants[i];
@@ -644,15 +646,17 @@ void KnotInvariants::save()
 /*!
  *  \brief This function loads the precomputed knot invariants.
  *  \param file a reference to a string
+ *  \param type a reference to a string 
  */
-void KnotInvariants::load(string &file)
+void KnotInvariants::load(string &file, string &type)
 {
   const int INVARIANTS = 1;
   const int PREMEASURES = 2;
 
   name = file;
   string file_name = string(CURRENT_DIRECTORY) 
-                    + "experiments/knot-invariants/profiles/" + name; 
+                    + "experiments/knot-invariants/profiles/";
+  file_name += type + "/" + name;
   ifstream log(file_name.c_str());
   string line;
   vector<double> numbers;

@@ -57,6 +57,7 @@ string getSCOPFilePath(string &);
 ProteinStructure *parsePDBFile(string &);
 vector<Point<double>> parseFile(string &);
 Segmentation testFit(struct Parameters &);
+vector<Point<double>> getProteinCoordinates(struct Parameters &);
 Segmentation proteinFit(struct Parameters &);
 Segmentation generalFit(struct Parameters &);
 void updateRuntime(string, Segmentation &);
@@ -79,7 +80,7 @@ void printHistogramResults(vector<DistanceHistogram> &, vector<double> &,
                            vector<string> &);
 
 // knot invariants functions
-bool checkIfKnotInvariantsExist(string &);
+bool checkIfKnotInvariantsExist(string &, string &);
 KnotInvariants buildKnotInvariantsProfile(struct Parameters &, Segmentation &);
 template <typename RealType>
 double exteriorAngle(Vector<double> &, Vector<double> &, Vector<double> &);

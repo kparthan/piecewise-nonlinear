@@ -378,6 +378,8 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
         parameters.construct_polygon = POLYGON_CONTROLS; 
       } else if (polygon.compare("projections") == 0) {
         parameters.construct_polygon = POLYGON_PROJECTIONS;
+      } else if (polygon.compare("backbone") == 0) {
+        parameters.construct_polygon = POLYGON_BACKBONE;
       } else if (polygon.compare("specific") == 0) {
         parameters.construct_polygon = POLYGON_SPECIFIC;
         if (vm.count("sides")) {
@@ -1098,6 +1100,8 @@ Segmentation buildSegmentationProfile(struct Parameters &parameters)
       if (status && parameters.force_segmentation == UNSET) {
         cout << "Segmentation profile of " << pdb_file << " exists ..." << endl;
         segmentation.load(pdb_file,parameters.controls);
+        vector<Point<double>> coordinates = getProteinCoordinates(parameters);
+        segmentation.setCoordinates(coordinates);
       } else {
         cout << "Building segmentation profile of " << pdb_file << " ..." << endl;
         segmentation = proteinFit(parameters);
@@ -1213,6 +1217,20 @@ Segmentation testFit(struct Parameters &parameters)
 }
 
 /*!
+ *  \brief This function returns the list of original protein coordinates.
+ *  \param parameters a reference to a struct Parameters
+ *  \return the list of protein coordinates
+ */
+vector<Point<double>> getProteinCoordinates(struct Parameters &parameters)
+{
+  /* Obtain protein coordinates */
+  ProteinStructure *p = parsePDBFile(parameters.file);
+  Protein protein(p);
+  Structure *structure = &protein;
+  return structure->getCoordinatesPoints();
+}
+
+/*!
  *  \brief This module fits a model to a protein structure
  *  \param parameters a reference to a struct Parameters
  */
@@ -1281,15 +1299,22 @@ bool checkIfAnglesExist(string &file_name)
  *  \return the representative polygon
  */
 Polygon<double> getRepresentativePolygon(struct Parameters &parameters,
-                                        Segmentation &segmentation)
+                                         Segmentation &segmentation)
 {
-  vector<BezierCurve<double>> curves = segmentation.getBezierCurves();
-  vector<double> lengths = segmentation.getBezierCurvesLengths();
-  CurveString<double> curve_string(curves,lengths);
-  Polygon<double> polygon = 
-  curve_string.getApproximatingPolygon(parameters.construct_polygon,
-                                       parameters.num_sides);
-  return polygon;  
+  Polygon<double> polygon;
+  if (parameters.construct_polygon != POLYGON_BACKBONE) {
+    vector<BezierCurve<double>> curves = segmentation.getBezierCurves();
+    vector<double> lengths = segmentation.getBezierCurvesLengths();
+    CurveString<double> curve_string(curves,lengths);
+    polygon = curve_string.getApproximatingPolygon(parameters.construct_polygon,
+                                                   parameters.num_sides);
+  } else {
+    vector<Point<double>> coordinates = segmentation.getCoordinates();
+    polygon = Polygon<double>(coordinates);
+  }
+  string name = extractName(parameters.file);
+  polygon.visualize(name,parameters.controls,parameters.construct_polygon);
+  return polygon;
 }
 
 /*!
@@ -1314,7 +1339,7 @@ Angles buildAnglesProfile(struct Parameters &parameters,
     clock_t c_start = clock();
     auto t_start = high_resolution_clock::now();
     Polygon<double> polygon = getRepresentativePolygon(parameters,segmentation);
-    polygon.visualize(name,parameters.controls);
+    //polygon.visualize(name,parameters.controls);
     vector<Line<double>> sides = polygon.getSides();
     vector<double> dihedral_angles;
     for (int i=0; i<sides.size(); i++) {
@@ -1605,13 +1630,15 @@ void printHistogramResults(vector<DistanceHistogram> &histograms,
 /*!
  *  \brief This function checks whether the knot invariants are precomputed.
  *  \param file_name a reference to a string
+ *  \param type a reference to a string
  *  \return whether the knot invariants are precomputed
  */
-bool checkIfKnotInvariantsExist(string &file_name)
+bool checkIfKnotInvariantsExist(string &file_name, string &type)
 {
-  string path_to_angles = string(CURRENT_DIRECTORY) +
-                          "experiments/knot-invariants/profiles/" + file_name;
-  return checkFile(path_to_angles);
+  string path_to_invariants = string(CURRENT_DIRECTORY) +
+                              "experiments/knot-invariants/profiles/" +
+                              type + "/" + file_name;
+  return checkFile(path_to_invariants);
 }
 
 /*!
@@ -1625,21 +1652,27 @@ KnotInvariants buildKnotInvariantsProfile(struct Parameters &parameters,
                                           Segmentation &segmentation)
 {
   string name = extractName(parameters.file);
-  bool status = checkIfKnotInvariantsExist(name);
+  string type;
+  if (parameters.construct_polygon == POLYGON_PROJECTIONS) {
+    type = "projections";
+  } else if (parameters.construct_polygon == POLYGON_BACKBONE) {
+    type = "backbone";
+  }
+  bool status = checkIfKnotInvariantsExist(name,type);
   KnotInvariants knot_invariants;
 
   if (status && parameters.force_profile == UNSET) {
     cout << "Knot invariants of " << name << " exists ..." << endl;
-    knot_invariants.load(name);
+    knot_invariants.load(name,type);
   } else {
     Polygon<double> polygon = getRepresentativePolygon(parameters,segmentation);
     KnotInvariants knot_invariants(polygon,name,parameters.max_order,
                                    parameters.controls);
     cout << "Computing knot invariants for structure " << name << " ..." << endl;
     knot_invariants.computeInvariants(parameters.method);
-    knot_invariants.save();
-    //updateRuntime(name,knot_invariants.getPolygonSides(),
-    //              knot_invariants.getCPUTime());
+    knot_invariants.save(type);
+    updateRuntime(name,knot_invariants.getPolygonSides(),
+                  knot_invariants.getCPUTime());
   }
   return knot_invariants;
 }
@@ -1723,7 +1756,7 @@ double computeEuclideanDistance(Vector<double> &vec1, Vector<double> &vec2)
 void updateRuntime(string name, int n, double time) 
 {
   string path = string(CURRENT_DIRECTORY) + "experiments/knot-invariants/"; 
-  string time_file = path + "runtime-part1";
+  string time_file = path + "runtime-part4";
   ofstream log(time_file.c_str(),ios::app);
   log << setw(10) << name;
   log << setw(10) << n << "\t"; 
@@ -1741,9 +1774,9 @@ void updateRuntime(string name, int n, double time)
 void updateResults(vector<double> &dot_products, vector<double> &distances)
 {
   string path = string(CURRENT_DIRECTORY) + "experiments/knot-invariants/";
-  string log_file = path + "dotproducts-part1";
+  string log_file = path + "dotproducts-part4";
   ofstream log1(log_file.c_str(),ios::app);
-  log_file = path + "distances-part1";
+  log_file = path + "distances-part4";
   ofstream log2(log_file.c_str(),ios::app);
   for (int i=0; i<dot_products.size(); i++) {
     log1 << fixed << setw(20) << setprecision(3) << dot_products[i];

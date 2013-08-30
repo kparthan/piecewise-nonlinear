@@ -433,6 +433,7 @@ Matrix<double> StandardForm::rotateSecondOntoXYPlane(Point<double> &projection)
 
 /*!
  *  \brief This module fits the different models to the StandardForm object
+ *  \return a Segmentation
  */
 Segmentation StandardForm::fitModels()
 {
@@ -573,7 +574,8 @@ Segmentation StandardForm::fitBezierCurveModel()
                            parameters.controls,transformation);
     segmentation_profile.setBitsPerResidue(null_bpr,bezier_bpr);
     //segmentation_profile.setMaximumRadius(getMaximumDistance(original_coordinates));
-
+    vector<Point<double>> coords = structure->getCoordinatesPoints();
+    segmentation_profile.setCoordinates(coords);
     segmentation_profile.setTime(cpu_time,wall_time);
   } else if (parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
     fitOneSegment();

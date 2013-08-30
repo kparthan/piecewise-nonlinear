@@ -10,6 +10,9 @@ class Segmentation
     //! Number of coordinates
     int num_coordinates;
 
+    //! Structure coordinates
+    vector<Point<double>> coordinates;
+
     //! List of all Bezier curves
     vector<BezierCurve<double>> bezier_curves;
 
@@ -54,6 +57,9 @@ class Segmentation
     //! Sets the time taken for segmentation
     void setTime(double, double);
 
+    //! Sets the coordinates
+    void setCoordinates(vector<Point<double>> &);
+
     //! Returns the CPU time
     double getCPUTime();
 
@@ -62,6 +68,9 @@ class Segmentation
 
     //! Gets the number of coordinates
     int getNumberOfCoordinates();
+
+    //! Gets the coordinates
+    vector<Point<double>> getCoordinates();
 
     //! Write the segmentation details
     void save(string &, vector<int> &);

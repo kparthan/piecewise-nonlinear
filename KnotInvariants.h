@@ -148,10 +148,10 @@ class KnotInvariants
     double getWallTime();
 
     //! Saves the invariants to a file
-    void save();
+    void save(string &);
 
     //! Loads the precomputes invariants
-    void load(string &);
+    void load(string &, string &);
 };
 
 #endif 

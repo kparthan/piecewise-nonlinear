@@ -46,6 +46,15 @@ vector<array<double,3>> Structure::getCoordinates()
 }
 
 /*!
+ *  \brief This module returns the coordinates of the structure as Points.
+ *  \return the coordinates of the structure
+ */
+vector<Point<double>> Structure::getCoordinatesPoints()
+{
+  return original_coordinates;
+}
+
+/*!
  *  \brief This module transforms the structure using a transformation matrix
  *  \param m a reference to a Matrix
  */
