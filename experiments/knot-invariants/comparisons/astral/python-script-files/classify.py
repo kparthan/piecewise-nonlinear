@@ -97,7 +97,9 @@ for i in range(len(results)):
     num_elements[i] += results[i][j]
     fw.write('%5s' % results[i][j])
   sensitivity[i] = results[i][i]*100/float(num_elements[i])
-  fw.write('\t\t(%d) %.2f %%\n' % num_elements[i] % sensitivity[i])
+  #fw.write('\t\t(%d) %.2f %%\n' % num_elements[i] , sensitivity[i])
+  fw.write('\t\t(%d) ' % num_elements[i])
+  fw.write('\t\t%.2f %%\n' % sensitivity[i])
 fw.close()
 print '# of lines: ', num_lines
 

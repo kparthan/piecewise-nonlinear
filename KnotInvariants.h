@@ -31,7 +31,7 @@ class KnotInvariants
     vector<vector<double>> invariants;
 
     //! The list of invariants
-    vector<double> all_invariants,premeasures;
+    vector<double> all_invariants,premeasures,standardized;
 
     //! Runtime
     double cpu_time,wall_time;

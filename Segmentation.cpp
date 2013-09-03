@@ -145,6 +145,39 @@ vector<Point<double>> Segmentation::getCoordinates()
 }
 
 /*!
+ *  \brief This function prints the number of segments of each kind present
+ *  and the corresponding number of approximating polygon sides
+ *  \param name a reference to a string
+ *  \param controls a reference to a vector<int>
+ */
+void Segmentation::printNumberOfSegments(string &name, vector<int> &controls)
+{
+  int num_segments[3] = {0};
+  int order;
+  for (int i=0; i<bezier_curves.size(); i++) {
+    order = bezier_curves[i].getDegree() - 1;
+    num_segments[order]++;
+  }
+  int num_polygon_sides = 0;
+  for (int i=0; i<3; i++) {
+    num_polygon_sides += num_segments[i] * (i+1);
+  }
+  string c;
+  for (int i=0; i<controls.size(); i++) {
+    c += boost::lexical_cast<string>(i);
+  }
+  string file_name = string(CURRENT_DIRECTORY) + "experiments/segmentations/";
+  file_name += "stats-part4-" + c;
+  ofstream stats(file_name.c_str(),ios::app);
+  stats << setw(10) << name << setw(10) << num_coordinates;
+  for (int i=0; i<3; i++) {
+    stats << setw(10) << num_segments[i];
+  }
+  stats <<  setw(10) << num_polygon_sides << endl;
+  stats.close();
+}
+
+/*!
  *  \brief This function returns the list of abstracting Bezier curves.
  *  \return the list of Bezier segments
  */

@@ -37,7 +37,7 @@ BezierCurve<RealType> BezierCurve<RealType>::operator=
 }
 
 /*!
- *  \brief This module returns the degree of tbe curve
+ *  \brief This module returns the degree of the curve
  *  \return the degree of the polynomial curve
  */
 template <typename RealType>

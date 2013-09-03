@@ -72,6 +72,8 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
                   "uniform/random method to generate sample points on the curve")
         // arguments for knot invariants based profiling 
        ("method",value<string>(&parameters.method),"general/specific")
+       ("standardize",value<string>(&parameters.standardize),
+                      "structure file to standardize premeasures")
        ("polygon",value<string>(&polygon),"polygon construction heuristic")
        ("sides",value<int>(&parameters.num_sides),"# of sides in a polygon")
        ("order",value<int>(&parameters.max_order),"maximum order of knot invariants")
@@ -596,6 +598,7 @@ void compareStructuresList(struct Parameters &parameters)
 
       case KNOT_INVARIANTS:
       {
+        pair<vector<double>,vector<double>> = standardizePremeasures(parameters);
         vector<KnotInvariants> profiles;
         for (int i=0; i<num_structures; i++) {
           parameters.file = parameters.comparison_files[i];
@@ -603,11 +606,11 @@ void compareStructuresList(struct Parameters &parameters)
             buildKnotInvariantsProfile(parameters,segmentations[i]);
           profiles.push_back(knot_invariants);
         }
-        vector<double> pivot_invariants = profiles[0].getInvariants();
+        vector<double> pivot_invariants = profiles[0].getPremeasures();
         Vector<double> pivot(pivot_invariants);
         vector<double> dot_products,distances;
         for (int i=1; i<num_structures; i++) {
-          vector<double> invariants = profiles[i].getInvariants();
+          vector<double> invariants = profiles[i].getPremeasures();
           Vector<double> another(invariants);
           double dot_product = pivot * another;
           double d = computeEuclideanDistance(pivot,another);
@@ -646,9 +649,9 @@ void compareDatabaseStructures(struct Parameters &parameters)
 
   vector<string> structures = parseDatabase(parameters.database);
   int num_structures = structures.size();
-  ofstream results1("experiments/angles/database-comparison-scores0-part4");
-  ofstream results2("experiments/angles/database-comparison-scores1-part4");
-  ofstream results3("experiments/angles/database-comparison-scores2-part4");
+  ofstream results1("experiments/angles/database-comparison-scores1-part4");
+  //ofstream results2("experiments/angles/database-comparison-scores1-part4");
+  //ofstream results3("experiments/angles/database-comparison-scores2-part4");
   switch(parameters.profile) {
     case DIHEDRAL_ANGLES:
     {
@@ -661,8 +664,8 @@ void compareDatabaseStructures(struct Parameters &parameters)
         Segmentation segmentation = buildSegmentationProfile(parameters);
         Angles pivot = buildAnglesProfile(parameters,segmentation);
         results1 << structures[i] << ":\t";
-        results2 << structures[i] << ":\t";
-        results3 << structures[i] << ":\t";
+        //results2 << structures[i] << ":\t";
+        //results3 << structures[i] << ":\t";
         for (int j=0; j<num_structures; j++) {
           if (j != i) {
             parameters.file = getSCOPFilePath(structures[j]);
@@ -674,16 +677,16 @@ void compareDatabaseStructures(struct Parameters &parameters)
             alignment.save(parameters.gap_penalty,structures[i],structures[j]);
             vector<double> scores = alignment.getScores();
             results1 << "(" << structures[j] << ",";
-            results1 << scientific << scores[0] << ") ";
-            results2 << "(" << structures[j] << ",";
+            results1 << scientific << scores[1] << ") ";
+            /*results2 << "(" << structures[j] << ",";
             results2 << scientific << scores[1] << ") ";
             results3 << "(" << structures[j] << ",";
-            results3 << scientific << scores[2] << ") ";
+            results3 << scientific << scores[2] << ") ";*/
           } 
         }
         results1 << endl;
-        results2 << endl;
-        results3 << endl;
+        //results2 << endl;
+        //results3 << endl;
       }      
       break;
     }
@@ -697,7 +700,7 @@ void compareDatabaseStructures(struct Parameters &parameters)
         parameters.file = getSCOPFilePath(structures[i]);
         Segmentation segmentation = buildSegmentationProfile(parameters);
         KnotInvariants profile = buildKnotInvariantsProfile(parameters,segmentation);
-        vector<double> invariants = profile.getInvariants();
+        vector<double> invariants = profile.getPremeasures();
         Vector<double> pivot(invariants);
         results1 << structures[i] << ":\t";
         for (int j=0; j<num_structures; j++) {
@@ -705,7 +708,7 @@ void compareDatabaseStructures(struct Parameters &parameters)
             parameters.file = getSCOPFilePath(structures[j]);
             segmentation = buildSegmentationProfile(parameters);
             profile = buildKnotInvariantsProfile(parameters,segmentation);
-            invariants = profile.getInvariants();
+            invariants = profile.getPremeasures();
             Vector<double> another(invariants);
             double d = computeEuclideanDistance(pivot,another);
             results1 << "(" << structures[j] << ",";
@@ -718,8 +721,8 @@ void compareDatabaseStructures(struct Parameters &parameters)
     }
   }
   results1.close();
-  results2.close();
-  results3.close();
+  //results2.close();
+  //results3.close();
 
   clock_t c_end = clock();
   auto t_end = high_resolution_clock::now();
@@ -1157,6 +1160,7 @@ Segmentation buildSegmentationProfile(struct Parameters &parameters)
       segmentation = generalFit(parameters);
       break;
   }
+  segmentation.printNumberOfSegments(pdb_file,parameters.controls);
   return segmentation;
 }
 
@@ -1720,6 +1724,67 @@ KnotInvariants buildKnotInvariantsProfile(struct Parameters &parameters,
                   knot_invariants.getCPUTime());
   }
   return knot_invariants;
+}
+
+/*!
+ *  \brief This function is used to obtain the parameters (mean,sigma) used in
+ *  standardizing the knot invariants.
+ *  \param parameters a reference to a struct Parameters 
+ *  \return the mean and sigma
+ */
+pair<vector<double>,vector<double>>
+standardizePremeasures(struct Parameters &parameters)
+{
+  vector<double> ex,exsq;
+  ifstream file(parameters.standardize.c_str());
+  string line,name;
+  int count = 1;
+  
+  while(getline(file,line)) {
+    boost::char_separator<char> sep(",() \t");
+    boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
+    BOOST_FOREACH (const string& t, tokens) {
+      name = t;
+      parameters.file = getSCOPFilePath(name);
+      Segmentation segmentation = buildSegmentationProfile(parameters);
+      KnotInvariants knot_invariants = 
+            buildKnotInvariantsProfile(parameters,segmentation);
+      vector<double> premeasures = knot_invariants.getPremeasures();
+      updateExpectations(count,ex,exsq,premeasures);
+    }
+  }
+  file.close();
+  vector<double> sigma(exsq);
+  for (int i=0; i<sigma.size(); i++) {
+    sigma[i] -= ex[i] * ex[i];
+    sigma[i] = sqrt(sigma[i]);
+  }
+  return make_pair(ex,sigma);
+}
+
+/*!
+ *  \brief This function updates the sufficient statistics required to compute
+ *  the mean and sigma of the premeasures.
+ *  \param count a reference to an integer
+ *  \param ex a reference to a vector<double>
+ *  \param exsq a reference to a vector<double>
+ *  \param premeasures a reference to a vector<double>
+ */
+void updateExpectations(int &count, vector<double> &ex, vector<double> &exsq,
+                        vector<double> &premeasures)
+{
+  if (count != 1) {
+    for (int i=0; i<premeasures.size(); i++) {
+      ex[i] = ((count-1)*ex[i]+premeasures[i])/(double)count;
+      exsq[i] = ((count-1)*exsq[i]+premeasures[i]*premeasures[i])/(double)count;
+    }
+  } else if (count == 1) {
+    ex = premeasures;
+    for (int i=0; i<premeasures.size(); i++) {
+      exsq.push_back(premeasures[i]*premeasures[i]);
+    }
+  }
+  count++;
 }
 
 /*!

@@ -55,7 +55,8 @@ KnotInvariants::KnotInvariants(const KnotInvariants &source) :
                 writhe(source.writhe), name(source.name), nres(source.nres),
                 max_order(source.max_order), invariants(source.invariants),
                 all_invariants(source.all_invariants), cpu_time(source.cpu_time),
-                wall_time(source.wall_time), premeasures(source.premeasures)
+                wall_time(source.wall_time), premeasures(source.premeasures),
+                standardized(source.standardized)
 {}
 
 /*!
@@ -76,6 +77,7 @@ KnotInvariants KnotInvariants::operator=(const KnotInvariants &source)
     invariants = source.invariants;
     all_invariants = source.all_invariants;
     premeasures = source.premeasures;
+    standardized = source.standardized;
     cpu_time = source.cpu_time;
     wall_time = source.wall_time;
   }
@@ -213,8 +215,31 @@ void KnotInvariants::computeInvariants(string method)
  */
 vector<double> KnotInvariants::getInvariants()
 {
-  //return all_invariants;
+  return all_invariants;
+} 
+
+/*!
+ *  \brief This function returns the list of all invariants.
+ *  \return the list of all premeasures -- normalized invariants
+ */
+vector<double> KnotInvariants::getPremeasures()
+{
   return premeasures;
+} 
+
+/*!
+ *  \brief This function returns the list of all invariants.
+ *  \return the list of all standardized premeasures 
+ */
+vector<double> 
+KnotInvariants::getStandardizedPremeasures(vector<double> &mean,
+                                           vector<double> &sigma)
+{
+  standardized = vector<double>(premeasures.size(),0);
+  for (int i=0; i<premeasures.size(); i++) {
+    standardized[i] = (premeasures[i] - mean[i]) / (double)sigma[i];
+  }
+  return standardized;
 } 
 
 /*!
