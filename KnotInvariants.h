@@ -138,6 +138,13 @@ class KnotInvariants
     //! Gets the list of all invariants
     vector<double> getInvariants();
 
+    //! Gets the list of all premeasures
+    vector<double> getPremeasures();
+
+    //! Gets the standardized premeasures
+    vector<double> 
+    getStandardizedPremeasures(vector<double> &, vector<double> &);
+
     //! Return the number of sides in the representative polygon 
     int getPolygonSides();
 

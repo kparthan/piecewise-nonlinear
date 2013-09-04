@@ -10,39 +10,39 @@ fw.write('line_number=1\n')
 line = fr.readline()
 line_count = 0;
 
-cmd = './piecewise-nonlinear-fit-part4 --structure protein --profile knot_invariants --polygon projections '
-cmd += '--controls 0 --constrain sigma length '
+cmd = './piecewise-nonlinear-fit-part4 --structure protein --profile knot_invariants --polygon projections --method specific '
+cmd += '--controls 0 1 2 --constrain sigma length --standardize exists --fparams standardize.params '
 
 # for single structure
-cmd += '--scopid '
-while line != '':
-  x = line.strip('\n')
-  y = line.split()
-  for i in range(0,6):
-    structure = y[i]
-    structure_id = y[i][:-4]
-    current = cmd + structure_id
-    fw.write(current+'\n')
-    fw.write('echo $line_number\n')
-    fw.write('line_number=$((line_number+1))\n')
-  line_count += 1
-  line = fr.readline()
-
-# comparison script
-#cmd += '--record --compare --scopids '
+#cmd += '--scopid '
 #while line != '':
 #  x = line.strip('\n')
 #  y = line.split()
-#  current = cmd
 #  for i in range(0,6):
 #    structure = y[i]
 #    structure_id = y[i][:-4]
-#    current += structure_id + " "
-#  fw.write(current+'\n')
-#  fw.write('echo $line_number\n')
-#  fw.write('line_number=$((line_number+1))\n')
+#    current = cmd + structure_id
+#    fw.write(current+'\n')
+#    fw.write('echo $line_number\n')
+#    fw.write('line_number=$((line_number+1))\n')
 #  line_count += 1
 #  line = fr.readline()
+
+# comparison script
+cmd += '--record --compare --scopids '
+while line != '':
+  x = line.strip('\n')
+  y = line.split()
+  current = cmd
+  for i in range(0,6):
+    structure = y[i]
+    structure_id = y[i][:-4]
+    current += structure_id + " "
+  fw.write(current+'\n')
+  fw.write('echo $line_number\n')
+  fw.write('line_number=$((line_number+1))\n')
+  line_count += 1
+  line = fr.readline()
 
 fw.write('STOPM=`date -u "+%s"`\n')
 fw.write('RUNTIMEM=`expr $STOPM - $STARTM`\n')

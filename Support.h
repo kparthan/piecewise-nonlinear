@@ -44,7 +44,10 @@ struct Parameters
   double increment_r;               // increment in r used in histogram method
   // parameters used for profiling using knot invariants
   string method;                    // general/specific
-  string standardize;               // structure file to standardize premeasures
+  int standardize;                  // flag for standardizing the invariants
+  int standardize_status;           // whether the standardization exists or not
+  string standardize_names;         // structure file to standardize premeasures
+  string standardize_parameters;    // file to which the parameters are saved
   int construct_polygon;            // polygon construction heuristic 
   int num_sides;                    // # of sides in the approximating polygon
   int max_order;                    // maximum order of knot invariants
@@ -83,7 +86,8 @@ void printHistogramResults(vector<DistanceHistogram> &, vector<double> &,
 // knot invariants functions
 bool checkIfKnotInvariantsExist(string &, string &);
 KnotInvariants buildKnotInvariantsProfile(struct Parameters &, Segmentation &);
-pair<vector<double>,vector<double>> standardizePremeasures(struct Parameters &);
+void standardizePremeasures(struct Parameters &);
+pair<vector<double>,vector<double>> loadStandardizedParameters(string &);
 void
 updateExpectations(int &, vector<double> &, vector<double> &, vector<double> &);
 template <typename RealType>

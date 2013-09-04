@@ -18,7 +18,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
 {
   struct Parameters parameters;
   vector<string> constrain,force,pdb_ids,scop_ids;
-  string structure,encode,pdb_id,profile,scop_id,generate,polygon;
+  string structure,encode,pdb_id,profile,scop_id,generate,polygon,standardization;
 
   parameters.structure = -1;
   bool noargs = 1;
@@ -72,8 +72,9 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
                   "uniform/random method to generate sample points on the curve")
         // arguments for knot invariants based profiling 
        ("method",value<string>(&parameters.method),"general/specific")
-       ("standardize",value<string>(&parameters.standardize),
-                      "structure file to standardize premeasures")
+       ("standardize",value<string>(&standardization),"standardization status")
+       ("fnames",value<string>(&parameters.standardize_names),"structure names file")
+       ("fparams",value<string>(&parameters.standardize_parameters),"parameters file")
        ("polygon",value<string>(&polygon),"polygon construction heuristic")
        ("sides",value<int>(&parameters.num_sides),"# of sides in a polygon")
        ("order",value<int>(&parameters.max_order),"maximum order of knot invariants")
@@ -291,6 +292,8 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
       parameters.database_comparison = SET;
       cout << "Comparing database structures from ..." << endl;
       noargs = 0;
+    } else if (vm.count("standardize")) {
+      noargs = 0;
     }
     if (vm.count("record")) {
       parameters.record = SET;
@@ -358,7 +361,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
   } else if (profile.compare("knot_invariants") == 0) {
     parameters.profile = KNOT_INVARIANTS;
     if (!vm.count("method")) {
-      parameters.method = "general";
+      parameters.method = "specific";
     }
     if (vm.count("order")) {
       cout << "Maximum order of knot invariants: " 
@@ -367,6 +370,16 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
       parameters.max_order = MAX_ORDER_INVARIANTS;
       cout << "Using default maximum order of knot invariants: " 
            << parameters.max_order << endl;
+    }
+    if (vm.count("standardize")) {
+      parameters.standardize = SET;
+      if (standardization.compare("exists") == 0) {
+        parameters.standardize_status = SET;
+      } else if (standardization.compare("create") == 0) {
+        parameters.standardize_status = UNSET;
+      }
+    } else {
+      parameters.standardize = UNSET;
     }
   } else {
     cout << "Unsupported profiling method ..." << endl;
@@ -598,7 +611,15 @@ void compareStructuresList(struct Parameters &parameters)
 
       case KNOT_INVARIANTS:
       {
-        pair<vector<double>,vector<double>> = standardizePremeasures(parameters);
+        // standardize premeasures
+        vector<double> mean,sigma;
+        if (parameters.standardize == SET) {
+          pair<vector<double>,vector<double>> 
+          stats = loadStandardizedParameters(parameters.standardize_parameters);
+          mean = stats.first;
+          sigma = stats.second;
+        }
+
         vector<KnotInvariants> profiles;
         for (int i=0; i<num_structures; i++) {
           parameters.file = parameters.comparison_files[i];
@@ -606,11 +627,21 @@ void compareStructuresList(struct Parameters &parameters)
             buildKnotInvariantsProfile(parameters,segmentations[i]);
           profiles.push_back(knot_invariants);
         }
-        vector<double> pivot_invariants = profiles[0].getPremeasures();
+        vector<double> pivot_invariants;
+        if (parameters.standardize == SET) {
+          pivot_invariants = profiles[0].getStandardizedPremeasures(mean,sigma);
+        } else {
+          pivot_invariants = profiles[0].getPremeasures();
+        }
         Vector<double> pivot(pivot_invariants);
         vector<double> dot_products,distances;
         for (int i=1; i<num_structures; i++) {
-          vector<double> invariants = profiles[i].getPremeasures();
+          vector<double> invariants;
+          if (parameters.standardize == SET) {
+            invariants = profiles[i].getStandardizedPremeasures(mean,sigma);
+          } else {
+            invariants = profiles[i].getPremeasures();
+          }
           Vector<double> another(invariants);
           double dot_product = pivot * another;
           double d = computeEuclideanDistance(pivot,another);
@@ -1730,17 +1761,15 @@ KnotInvariants buildKnotInvariantsProfile(struct Parameters &parameters,
  *  \brief This function is used to obtain the parameters (mean,sigma) used in
  *  standardizing the knot invariants.
  *  \param parameters a reference to a struct Parameters 
- *  \return the mean and sigma
  */
-pair<vector<double>,vector<double>>
-standardizePremeasures(struct Parameters &parameters)
+void standardizePremeasures(struct Parameters &parameters)
 {
   vector<double> ex,exsq;
-  ifstream file(parameters.standardize.c_str());
+  ifstream in(parameters.standardize_names.c_str());
   string line,name;
   int count = 1;
   
-  while(getline(file,line)) {
+  while(getline(in,line)) {
     boost::char_separator<char> sep(",() \t");
     boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
     BOOST_FOREACH (const string& t, tokens) {
@@ -1753,13 +1782,56 @@ standardizePremeasures(struct Parameters &parameters)
       updateExpectations(count,ex,exsq,premeasures);
     }
   }
-  file.close();
+  in.close();
   vector<double> sigma(exsq);
   for (int i=0; i<sigma.size(); i++) {
     sigma[i] -= ex[i] * ex[i];
     sigma[i] = sqrt(sigma[i]);
   }
-  return make_pair(ex,sigma);
+  ofstream out(parameters.standardize_parameters.c_str());
+  for (int i=0; i<ex.size(); i++) {
+    out << scientific << ex[i] << " ";
+  }
+  out << endl;
+  for (int i=0; i<sigma.size(); i++) {
+    out << scientific << sigma[i] << " ";
+  }
+  out.close();
+}
+
+/*!
+ *  \brief This function is used to load the standardized pararameters.
+ *  \param fparams a reference to a string
+ *  \return the parameters used in standardization
+ */
+pair<vector<double>,vector<double>>
+loadStandardizedParameters(string &fparams)
+{
+  pair<vector<double>,vector<double>> stats;
+  string line;
+  int count = 1;
+  ifstream in(fparams.c_str());
+  vector<double> numbers;
+  
+  while(getline(in,line)) {
+    boost::char_separator<char> sep(",() \t");
+    boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
+    BOOST_FOREACH (const string& t, tokens) {
+      istringstream iss(t);
+      double x;
+      iss >> x;
+      numbers.push_back(x);
+    }
+    if (count == 1) {
+      stats.first = numbers;
+    } else if (count == 2) {
+      stats.second = numbers;
+    }
+    count++;
+    numbers.clear();
+  }
+  in.close();
+  return stats;
 }
 
 /*!
