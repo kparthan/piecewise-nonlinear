@@ -45,8 +45,14 @@ class Alignment
     //! Edit distance
     void computeEditDistance(double);
 
-    //! Basic Alignment
+    //! Basic alignment
     void computeBasicAlignment(double, double);
+
+    //! Affine gap alignment
+    void computeAffineGapAlignment(double, double, double);
+
+    //! Computes the score of match
+    double getMatchingScore(double, double, double);
 
     //! Save the alignment to a file
     void save(double, string &, string &);

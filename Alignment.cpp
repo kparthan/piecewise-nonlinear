@@ -258,7 +258,7 @@ void Alignment::computeEditDistance(double gap_penalty)
 }
 
 /*!
- *  \brief This module implements the basic alignment of dihedral angles
+ *  \brief This module implements the basic alignment of dihedral angles.
  *  \param gap_penalty a double
  *  \param max_diff a double
  */
@@ -279,17 +279,11 @@ void Alignment::computeBasicAlignment(double gap_penalty, double max_diff)
     matrix[0][j] = j * gap_penalty;
     direction[0][j] = LEFT;
   }
-  double t;
   for (i=1; i<=x.size(); i++) {
     for (j=1; j<=y.size(); j++) {
       /* cost of matching the angles */
-      double diff_angles = fabs(x[i-1] - y[j-1]);
-      if (diff_angles > 180) {
-        t = 360 - diff_angles;
-      } else {
-        t = diff_angles;
-      }
-      matrix[i][j] = matrix[i-1][j-1] + max_diff - t;
+      double score = getMatchingScore(x[i-1],y[j-1],max_diff);
+      matrix[i][j] = matrix[i-1][j-1] + score;
       direction[i][j] = DIAGONAL;
       if (matrix[i][j] < matrix[i-1][j] + gap_penalty) {
         matrix[i][j] = matrix[i-1][j] + gap_penalty;
@@ -313,6 +307,74 @@ void Alignment::computeBasicAlignment(double gap_penalty, double max_diff)
 
   // normalized alignment score
   scores[2] = scores[0] / (x.size() + y.size());
+}
+
+/*!
+ *  \brief This function computes the score for matching two angles.
+ *  \param xi a double
+ *  \param yj a double
+ *  \param max_diff a double
+ *  \return match score
+ */
+double Alignment::getMatchingScore(double xi, double yj, double max_diff)
+{
+  double t;
+  double diff_angles = fabs(xi - yj);
+  if (diff_angles > 180) {
+    t = 360 - diff_angles;
+  } else {
+    t = diff_angles;
+  }
+  return (max_diff - t);
+}
+
+/*!
+ *  \brief This module implements the affine gap alignment of dihedral angles.
+ *  \param go a double
+ *  \param ge a double
+ *  \param max_diff a double
+ */
+void Alignment::computeAffineGapAlignment(double go, double ge, double max_diff)
+{
+  vector<double> x = angles[0].getAngles();
+  vector<double> y = angles[1].getAngles();
+  // matrix[0]: M
+  // matrix[1]: I
+  // matrix[2]: D
+  vector<vector<double>> matrix[3];
+  vector<vector<int>> direction[3];
+  for (int i=0; i<3; i++) { 
+    initialize(matrix[i],direction[i],x.size(),y.size());
+  }
+  // populate the boundary row
+  for (int i=1; i<=x.size(); i++) {
+    matrix[0][i][0] = -LARGE_NUMBER;
+    matrix[2][i][0] = -LARGE_NUMBER;
+    direction[0][i][0] = 9;
+    direction[2][i][0] = 9 ;
+    matrix[1][i][0] = go+(i-1)*ge;
+    direction[1][i][0] = 4;
+  }
+  // populate the boundary col 
+  for (int j = 1; j<=y.size(); j++) {
+    matrix[0][0][j] = -LARGE_NUMBER;
+    matrix[1][0][j] = -LARGE_NUMBER;
+    direction[0][0][j] = 9;
+    direction[1][0][j] = 9 ;
+    matrix[2][0][j] = go+(j-1)*ge;
+    direction[2][0][j] = 8;
+  }
+  // dynamic programming
+  array<double,3> score;
+  for (int i=1; i<=x.size(); i++) {
+    for (int j=1; j<=y.size(); j++) {
+      // come to a match state
+      for (int k=0; k<3; k++) {
+        score[k] = matrix[k][i-1][j-1] + getMatchingScore(x[i-1],y[j-1],max_diff);
+      }
+      direction[0][i][j] = maxIndex(score);
+    }
+  }
 }
 
 /*!
