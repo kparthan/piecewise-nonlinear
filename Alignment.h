@@ -35,6 +35,9 @@ class Alignment
     //! Prints the alignment
     void printAlignment(ostream &, vector<array<double,2>> &);
 
+    //! Returns the index with maximum value
+    int maxIndex(array<double,3> &);
+
   public:
     //! Null constructor
     Alignment();

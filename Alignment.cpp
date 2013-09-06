@@ -366,15 +366,62 @@ void Alignment::computeAffineGapAlignment(double go, double ge, double max_diff)
   }
   // dynamic programming
   array<double,3> score;
+  int max_index;
   for (int i=1; i<=x.size(); i++) {
     for (int j=1; j<=y.size(); j++) {
       // come to a match state
       for (int k=0; k<3; k++) {
         score[k] = matrix[k][i-1][j-1] + getMatchingScore(x[i-1],y[j-1],max_diff);
       }
-      direction[0][i][j] = maxIndex(score);
+      max_index = maxIndex(score);
+      direction[0][i][j] = max_index;
+      matrix[0][i][j] = score[max_index];
+      
+      // come to an insert state
+      for (int k=0; k<3; k++) {
+        if (k != 1) {
+          score[k] = matrix[k][i-1][j] + go;
+        } else {
+          score[k] = matrix[k][i-1][j] + ge;
+        }
+      }
+      max_index = maxIndex(score);
+      direction[1][i][j] = max_index;
+      matrix[1][i][j] = score[max_index];
+      
+      // come to a delete state
+      for (int k=0; k<3; k++) {
+        if (k != 2) {
+          score[k] = matrix[k][i][j-1] + go;
+        } else {
+          score[k] = matrix[k][i][j-1] + ge;
+        }
+      }
+      max_index = maxIndex(score);
+      direction[2][i][j] = max_index;
+      matrix[2][i][j] = score[max_index];
     }
   }
+}
+
+/*!
+ *  \brief This function returns the index which has the maximum value.
+ *  \param score a reference to an array<double,3>
+ *  \return the index with max value
+ */
+int Alignment::maxIndex(array<double,3> &score)
+{
+  int max_index = 0;
+  double max_val = score[0];
+  if (score[1] > max_val) {
+    max_index = 1;
+    max_val = score[1];
+  }
+  if (score[2] > max_val) {
+    max_index = 2;
+    max_val = score[2];
+  }
+  return max_index;
 }
 
 /*!
