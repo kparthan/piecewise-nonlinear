@@ -32,6 +32,9 @@ struct Parameters
   string database;                  // database file
   int record;                       // flag to record all experimental results
   // parameters used for profiling using dihedral angles
+  int align_type;                   // alignment type
+  double gap_open_penalty;          // gap open penalty
+  double gap_extension_penalty;     // gap extension penalty
   double gap_penalty;               // gap penalty used in basic alignment 
                                     // method
   double max_angle_diff;            // maximum allowed angle separation
@@ -72,7 +75,7 @@ Polygon<double> getRepresentativePolygon(struct Parameters &, Segmentation &);
 Angles buildAnglesProfile(struct Parameters &, Segmentation &);
 double computeDihedralAngle(Line<double> &, Line<double> &);
 void updateRuntime(string, Angles &, double);
-void updateResults(double, vector<vector<double>> &);
+void updateResults(struct Parameters &, vector<vector<double>> &);
 
 // histograms functions
 bool checkIfHistogramExists(string &);

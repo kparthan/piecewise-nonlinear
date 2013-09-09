@@ -10,8 +10,9 @@ fw.write('line_number=1\n')
 line = fr.readline()
 line_count = 0;
 
-cmd = './piecewise-nonlinear-fit-part4 --structure protein --profile knot_invariants --polygon projections --method specific '
-cmd += '--controls 0 1 2 --constrain sigma length --standardize exists --fparams standardize.params '
+cmd = './piecewise-nonlinear-fit-part4 --structure protein --profile dihedral_angles --polygon projections --type affine --go -20 --ge -5 '
+cmd += '--controls 0 1 2 --constrain sigma length '
+#cmd += '--controls 0 1 2 --constrain sigma length --standardize exists --fparams standardize.params '
 
 # for single structure
 #cmd += '--scopid '

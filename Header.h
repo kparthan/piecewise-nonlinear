@@ -71,7 +71,11 @@
 #define KNOT_INVARIANTS 3
 
 // for alignment based comparison
+#define BASIC_ALIGNMENT 1
+#define AFFINE_GAP_ALIGNMENT 2
 #define GAP_PENALTY -20
+#define GAP_OPEN_PENALTY -20
+#define GAP_EXTENSION_PENALTY -10
 #define MAX_DIFFERENCE_ANGLES 45
 
 // for histogram based comparison

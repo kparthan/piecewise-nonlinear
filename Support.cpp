@@ -18,7 +18,8 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
 {
   struct Parameters parameters;
   vector<string> constrain,force,pdb_ids,scop_ids;
-  string structure,encode,pdb_id,profile,scop_id,generate,polygon,standardization;
+  string structure,encode,pdb_id,profile,scop_id,align_type,generate,polygon,
+         standardization;
 
   parameters.structure = -1;
   bool noargs = 1;
@@ -59,6 +60,9 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
                                    
           // dihedral_angles or distance_histogram or knot_invariants
         // arguments for alignment based profiling
+       ("type",value<string>(&align_type),"alignment type")
+       ("go",value<double>(&parameters.gap_open_penalty),"gap open penalty")
+       ("ge",value<double>(&parameters.gap_extension_penalty),"gap extension penalty")
        ("gap",value<double>(&parameters.gap_penalty),"gap penalty used in alignment")
        ("diff",value<double>(&parameters.max_angle_diff),
                                       "maximum difference allowed for the angles")
@@ -304,12 +308,38 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
 
   if (profile.compare("dihedral_angles") == 0) {
     parameters.profile = DIHEDRAL_ANGLES;
-    if (vm.count("gap")) {
-      cout << "Using a gap penalty of " << parameters.gap_penalty 
-           << " ..." << endl;
+    if (vm.count("type")) {
+      if (align_type.compare("basic") == 0) {
+        parameters.align_type = BASIC_ALIGNMENT;
+        if (vm.count("gap")) {
+          cout << "Using a gap penalty of " << parameters.gap_penalty 
+               << " ..." << endl;
+        } else {
+          parameters.gap_penalty = GAP_PENALTY;
+          cout << "Using default value of gap penalty: " << GAP_PENALTY << endl;
+        }
+      } else if (align_type.compare("affine") == 0) {
+        parameters.align_type = AFFINE_GAP_ALIGNMENT;
+        if (vm.count("go")) {
+          cout << "Using a gap open penalty of " << parameters.gap_open_penalty
+               << " ..." << endl;
+        } else {
+          parameters.gap_open_penalty = GAP_OPEN_PENALTY;
+          cout << "Using default value of gap open penalty: " 
+               << GAP_OPEN_PENALTY << endl;
+        }
+        if (vm.count("ge")) {
+          cout << "Using a gap extension penalty of "
+               << parameters.gap_extension_penalty << " ..." << endl;
+        } else {
+          parameters.gap_extension_penalty = GAP_EXTENSION_PENALTY;
+          cout << "Using default value of gap extension penalty: " 
+               << GAP_EXTENSION_PENALTY << endl;
+        }
+      }
     } else {
+      parameters.align_type = BASIC_ALIGNMENT;
       parameters.gap_penalty = GAP_PENALTY;
-      cout << "Using default value of gap penalty: " << GAP_PENALTY << endl;
     }
     if (vm.count("diff")) {
       cout << "Using a maximum allowed difference in aligning angles: "
@@ -585,9 +615,16 @@ void compareStructuresList(struct Parameters &parameters)
           if (i != 0) {
             cout << "Aligning " << names[0] << " and " << names[i] << " ...\n";
             Alignment alignment(profiles[0],profiles[i]);
-            alignment.computeBasicAlignment(parameters.gap_penalty,
-                                            parameters.max_angle_diff);
-            alignment.save(parameters.gap_penalty,names[0],names[i]);
+            if (parameters.align_type == BASIC_ALIGNMENT) {
+              alignment.computeBasicAlignment(parameters.gap_penalty,
+                                              parameters.max_angle_diff);
+              alignment.save(parameters.gap_penalty,names[0],names[i]);
+            } else if (parameters.align_type == AFFINE_GAP_ALIGNMENT) {
+              alignment.computeAffineGapAlignment(parameters.gap_open_penalty,
+                  parameters.gap_extension_penalty,parameters.max_angle_diff);
+              alignment.save(parameters.gap_open_penalty,
+                           parameters.gap_extension_penalty,names[0],names[i]);
+            }
             vector<double> scores = alignment.getScores();
             if (parameters.record == SET) {
               all_scores.push_back(scores);
@@ -601,7 +638,7 @@ void compareStructuresList(struct Parameters &parameters)
         }
         if (parameters.record == SET) {
           if (all_scores.size() == num_structures - 1) {
-            updateResults(parameters.gap_penalty,all_scores);
+            updateResults(parameters,all_scores);
           } else {
             errorLog(names);
           }
@@ -1491,19 +1528,28 @@ void updateRuntime(string name, Angles &angles, double time)
 /*!
  *  \brief This function records the experimental results of aligning 
  *  several structures.
- *  \param gap_penalty a double
+ *  \param parameters a reference to a struct Parameters 
  *  \param scores a reference to a vector<vector<double>>
  */
-void updateResults(double gap_penalty, vector<vector<double>> &scores)
+void updateResults(struct Parameters &parameters, vector<vector<double>> &scores)
 {
-  string path = string(CURRENT_DIRECTORY) + "experiments/angles/comparisons/";
-  string gap = "gap-penalty" 
-               + boost::lexical_cast<string>(gap_penalty).substr(0,3) + "/";
-  string file_name = path + gap + "alignments-scores0";
+  string path,gap;
+  if (parameters.align_type == BASIC_ALIGNMENT) {
+    path = string(CURRENT_DIRECTORY) + "experiments/angles/comparisons/domains/basic/";
+    gap = "gap-penalty" 
+          + boost::lexical_cast<string>(parameters.gap_penalty).substr(0,3) + "/";
+  } else if (parameters.align_type == AFFINE_GAP_ALIGNMENT) {
+    double go = parameters.gap_open_penalty;
+    double ge = parameters.gap_extension_penalty;
+    path = string(CURRENT_DIRECTORY) + "experiments/angles/comparisons/domains/affine/";
+    gap = "go" + boost::lexical_cast<string>(go).substr(0,3) + "-";
+    gap += "ge" + boost::lexical_cast<string>(ge).substr(0,3) + "/";
+  }
+  string file_name = path + gap + "alignments-scores0-part4";
   ofstream file1(file_name.c_str(),ios::app);
-  file_name = path + gap + "alignments-scores1";
+  file_name = path + gap + "alignments-scores1-part4";
   ofstream file2(file_name.c_str(),ios::app);
-  file_name = path + gap + "alignments-scores2";
+  file_name = path + gap + "alignments-scores2-part4";
   ofstream file3(file_name.c_str(),ios::app);
   int num_comparisons = scores.size();
   for (int i=0; i<scores.size(); i++) {

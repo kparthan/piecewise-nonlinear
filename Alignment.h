@@ -32,6 +32,10 @@ class Alignment
     vector<array<double,2>> traceback(vector<vector<int>> &, vector<double> &, 
                                       vector<double> &);
 
+    //! Construct the optimal alignment
+    vector<array<double,2>> traceback(int, vector<vector<vector<int>>> &,
+                                      vector<double> &, vector<double> &);
+
     //! Prints the alignment
     void printAlignment(ostream &, vector<array<double,2>> &);
 
@@ -59,6 +63,9 @@ class Alignment
 
     //! Save the alignment to a file
     void save(double, string &, string &);
+
+    //! Save the alignment to a file
+    void save(double, double, string &, string &);
 
     //! Returns the comparison scores 
     vector<double> getScores();

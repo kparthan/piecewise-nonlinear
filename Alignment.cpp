@@ -175,6 +175,49 @@ Alignment::traceback(vector<vector<int>> &direction,
 }
 
 /*!
+ *  \brief This module constructs the optimal alignment by traversing through
+ *  the dynamic programming scoring matrix.
+ *  \param index an integer
+ *  \param direction a reference to a vector<vector<vector<int>>>
+ *  \param x a reference to a vector<double>
+ *  \param y a reference to a vector<double>
+ */
+vector<array<double,2>>
+Alignment::traceback(int index, vector<vector<vector<int>>> &direction,
+                     vector<double> &x, vector<double> &y)
+{
+  vector<array<double,2>> alignment;
+  int i = x.size(); 
+  int j = y.size();
+  while (i != 0 || j != 0) {
+    array<double,2> angles;
+    if (index  == 0 || index == 1 || index == 2) {
+      angles[0] = x[--i];
+      angles[1] = y[--j];
+      index = direction[index][i][j];
+    }
+    else if (index == 3 || index == 4 || index == 5) {
+      angles[0] = x[--i];
+      angles[1] = 1000;
+      index = direction[index-3][i][j];
+    }
+    else if (index == 6 || index == 7 || index == 8) {
+      angles[0] = 1000;
+      angles[1] = y[--j];
+      index = direction[index-6][i][j];
+    } else {
+      cout << "Error in backtracking... " << endl;
+      exit(1);
+    }
+    alignment.push_back(angles);
+  }
+  for (int i=alignment.size()-1; i>=0; i--) {
+    optimal_alignment.push_back(alignment[i]);
+  }
+  return optimal_alignment;
+}
+
+/*!
  *  \brief This module prints the optimal alignment to the screen
  *  \param os a reference to a ostream
  *  \param alignment a reference to a vector<array<double,2>>
@@ -341,9 +384,13 @@ void Alignment::computeAffineGapAlignment(double go, double ge, double max_diff)
   // matrix[0]: M
   // matrix[1]: I
   // matrix[2]: D
-  vector<vector<double>> matrix[3];
-  vector<vector<int>> direction[3];
-  for (int i=0; i<3; i++) { 
+  vector<vector<vector<double>>> matrix;
+  vector<vector<vector<int>>> direction;
+  for (int i=0; i<3; i++) {
+    vector<vector<double>> tmp1;
+    matrix.push_back(tmp1);
+    vector<vector<int>> tmp2;
+    direction.push_back(tmp2);
     initialize(matrix[i],direction[i],x.size(),y.size());
   }
   // populate the boundary row
@@ -386,7 +433,7 @@ void Alignment::computeAffineGapAlignment(double go, double ge, double max_diff)
         }
       }
       max_index = maxIndex(score);
-      direction[1][i][j] = max_index;
+      direction[1][i][j] = max_index + 3;
       matrix[1][i][j] = score[max_index];
       
       // come to a delete state
@@ -398,10 +445,26 @@ void Alignment::computeAffineGapAlignment(double go, double ge, double max_diff)
         }
       }
       max_index = maxIndex(score);
-      direction[2][i][j] = max_index;
+      direction[2][i][j] = max_index + 6;
       matrix[2][i][j] = score[max_index];
     }
   }
+ 
+  // optimal alignment score
+  scores = vector<double>(3,0);
+  for (int i=0; i<3; i++) {
+    score[i] = matrix[i][x.size()][y.size()];
+  }
+  max_index = maxIndex(score);
+  scores[0] = score[max_index];
+  int dir = direction[max_index][x.size()][y.size()];
+  optimal_alignment = traceback(dir,direction,x,y); 
+
+  // average alignment score
+  scores[1] = scores[0] / optimal_alignment.size();
+
+  // normalized alignment score
+  scores[2] = scores[0] / (x.size() + y.size());
 }
 
 /*!
@@ -432,8 +495,32 @@ int Alignment::maxIndex(array<double,3> &score)
  */
 void Alignment::save(double gap_penalty, string &name1, string &name2)
 {
-  string file_name = string(CURRENT_DIRECTORY) + "experiments/angles/alignments/";
+  string file_name = string(CURRENT_DIRECTORY) + "experiments/angles/alignments/basic/";
   file_name += "gap-penalty" + boost::lexical_cast<string>(gap_penalty).substr(0,3);
+  file_name += "/" + name1 + "_" + name2;
+  ofstream log(file_name.c_str());
+  log << "# of angles in " << name1 << ": " << angles[0].size() << endl;
+  log << "# of angles in " << name1 << ": " << angles[1].size() << endl;
+  log << "Length of optimal alignment: " << optimal_alignment.size() << endl;
+  log << "Alignment score: " << scores[0] << endl;
+  log << "Avg. Alignment score: " << scores[1] << endl;
+  log << "Normalized Alignment score: " << scores[2] << endl;
+  printAlignment(log,optimal_alignment);
+  log.close();
+}
+
+/*!
+ *  \brief This method writes the optimal alignment to a file
+ *  \param go a double
+ *  \param ge a double
+ *  \param name1 a reference to a string 
+ *  \param name2 a reference to a string 
+ */
+void Alignment::save(double go, double ge, string &name1, string &name2)
+{
+  string file_name = string(CURRENT_DIRECTORY) + "experiments/angles/alignments/affine/";
+  file_name += "go" + boost::lexical_cast<string>(go).substr(0,3) + "-";
+  file_name += "ge" + boost::lexical_cast<string>(ge).substr(0,3);
   file_name += "/" + name1 + "_" + name2;
   ofstream log(file_name.c_str());
   log << "# of angles in " << name1 << ": " << angles[0].size() << endl;
