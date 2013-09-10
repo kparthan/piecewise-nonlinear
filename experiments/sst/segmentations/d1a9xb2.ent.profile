@@ -1,0 +1,327 @@
+===== SST (v1.6): Secondary structural assignment using MML inference =====
+=====            A. S. Konagurthu, A. M. Lesk, L. Allison             =====
+===== Reference:   Bioinformatics  28(12):i97-i105 (2012)             =====
+===== =============================================================== =====
+..........................................................................
+. PDB file : struct.pdb
+. Timestamp:  Tue Sep 10 17:32:34 2013
+..........................................................................
+..........SEGMENTATION AND SECONDARY STRUCTURE ASSIGNMENT SUMMARY.........
+.
+. TITLE:    ...
+.
+.                     .         .         .         .         .
++B(LEU1653)  LNGMDLAKEVTTAEAYSWTQGSWTLTGGLPQAKKEDELPFHVVAYDFGAK  (LYS1702)B
+-            CCCCC4444CCCCCCEEECCCCC5555CCCCCCHHHHHEEEEEEEECCCC
+*            | C  | 4 |  C  |E | C  | 5 |  C  | H  |   E   | C 
+.                     .         .         .         .         .
++B(ARG1703)  RNILRMLVDRGCRLTIVPAQTSAEDVLKMNPDGIFLSNGPGDPAPCDYAI  (ILE1752)B
+-            CHHHHHHHHHEEEEEEE333CCHHHHHHHCCCEEEECCCCC333CCHHHH
+*             |   H    |  E   |3 |C|  H   |C | E | C  |3 |C|   
+.                     .         .         .         .         .
++B(THR1753)  TAIQKFLETDIPVFGILGHQLLALASGAKTVKMKFGHHGGNHPVKDVEKN  (ASN1803)B
+-            HHHHHHCCCCCEEEECHHHHHHHHHHCCEEECCCCEEE333EEEE4444C
+*             H    | C  | E ||    H    |C|E | C |E |3 | E | 4 |
+.                     .         .         .         .         .
++B(VAL1804)  VVMITAQNHGFAVDEATLPANLRVTHKSLFDGTLQGIHRTDKPAFSFQGN  (ASN1853)B
+-            EEECEEECCEEEC4444CCCEEECEEE5555CCCEEEE5555EEEEECCG
+*            |E ||E |C|E || 4 |C |E ||E | 5 |C | E | 5 | E  |C|
+.                     .         .       
++B(PRO1854)  PEASPGPHDAAPLFDHFIELIEQYRKT                         (THR1880)B
+-            GGIIIICCC3333CHHHHHHHHHHHCC                       
+*            G : I |C | 3 ||    H     ||                       
+.
+.
+..........................................................................
+...........................SEGMENTATION DETAILS...........................
+# Chain/SegNum  Len SSE   | Seg Start resi|| Seg End resi   |
+      B/1       6   C      1653 L (LEU1653)  1658 L (LEU1658)
+      B/2       5   4      1658 L (LEU1658)  1662 V (VAL1662)
+      B/3       7   C      1662 V (VAL1662)  1668 Y (TYR1668)
+      B/4       4   E      1668 Y (TYR1668)  1671 T (THR1671)
+      B/5       6   C      1671 T (THR1671)  1676 T (THR1676)
+      B/6       5   5      1676 T (THR1676)  1680 G (GLY1680)
+      B/7       7   C      1680 G (GLY1680)  1686 K (LYS1686)
+      B/8       6   H      1686 K (LYS1686)  1691 P (PRO1691)
+      B/9       9   E      1691 P (PRO1691)  1699 F (PHE1699)
+      B/10      6   C      1699 F (PHE1699)  1704 N (ASN1704)
+      B/11      10  H      1704 N (ASN1704)  1713 G (GLY1713)
+      B/12      8   E      1713 G (GLY1713)  1720 P (PRO1720)
+      B/13      4   3      1720 P (PRO1720)  1723 T (THR1723)
+      B/14      3   C      1723 T (THR1723)  1725 A (ALA1725)
+      B/15      8   H      1725 A (ALA1725)  1732 N (ASN1732)
+      B/16      4   C      1732 N (ASN1732)  1735 G (GLY1735)
+      B/17      5   E      1735 G (GLY1735)  1739 S (SER1739)
+      B/18      6   C      1739 S (SER1739)  1744 D (ASP1744)
+      B/19      4   3      1744 D (ASP1744)  1747 P (PRO1747)
+      B/20      3   C      1747 P (PRO1747)  1749 D (ASP1749)
+      B/21      11  H      1749 D (ASP1749)  1759 L (LEU1759)
+      B/22      6   C      1759 L (LEU1759)  1764 P (PRO1764)
+      B/23      5   E      1764 P (PRO1764)  1768 I (ILE1768)
+      B/24      2   C      1768 I (ILE1768)  1770 L (LEU1770)
+      B/25      11  H      1770 L (LEU1770)  1780 G (GLY1780)
+      B/26      3   C      1780 G (GLY1780)  1782 K (LYS1782)
+      B/27      4   E      1782 K (LYS1782)  1785 K (LYS1785)
+      B/28      5   C      1785 K (LYS1785)  1789 G (GLY1789)
+      B/29      4   E      1789 G (GLY1789)  1792 G (GLY1792)
+      B/30      4   3      1792 G (GLY1792)  1795 H (HIS1795)
+      B/31      5   E      1795 H (HIS1795)  1799 D (ASP1799)
+      B/32      5   4      1799 D (ASP1799)  1803 N (ASN1803)
+      B/33      2   C      1803 N (ASN1803)  1804 V (VAL1804)
+      B/34      4   E      1804 V (VAL1804)  1807 I (ILE1807)
+      B/35      2   C      1807 I (ILE1807)  1808 T (THR1808)
+      B/36      4   E      1808 T (THR1808)  1811 N (ASN1811)
+      B/37      3   C      1811 N (ASN1811)  1813 G (GLY1813)
+      B/38      4   E      1813 G (GLY1813)  1816 V (VAL1816)
+      B/39      2   C      1816 V (VAL1816)  1817 D (ASP1817)
+      B/40      5   4      1817 D (ASP1817)  1821 L (LEU1821)
+      B/41      4   C      1821 L (LEU1821)  1824 N (ASN1824)
+      B/42      4   E      1824 N (ASN1824)  1827 V (VAL1827)
+      B/43      2   C      1827 V (VAL1827)  1828 T (THR1828)
+      B/44      4   E      1828 T (THR1828)  1831 S (SER1831)
+      B/45      5   5      1831 S (SER1831)  1835 G (GLY1835)
+      B/46      4   C      1835 G (GLY1835)  1838 Q (GLN1838)
+      B/47      5   E      1838 Q (GLN1838)  1842 R (ARG1842)
+      B/48      5   5      1842 R (ARG1842)  1846 P (PRO1846)
+      B/49      6   E      1846 P (PRO1846)  1851 Q (GLN1851)
+      B/50      3   C      1851 Q (GLN1851)  1853 N (ASN1853)
+      B/51      4   G      1853 N (ASN1853)  1856 A (ALA1856)
+                5   I      1856 A (ALA1856)  1860 P (PRO1860)
+      B/52      4   C      1860 P (PRO1860)  1863 A (ALA1863)
+      B/53      5   3      1863 A (ALA1863)  1867 F (PHE1867)
+      B/54      2   C      1867 F (PHE1867)  1868 D (ASP1868)
+      B/55      12  H      1868 D (ASP1868)  1879 K (LYS1879)
+      B/56      2   C      1879 K (LYS1879)  1880 T (THR1880)
+
+.
+..........................................................................
+..........RESIDUE LEVEL SECONDARY STRUCTURE ASSIGNMENT DETAILS............
+! Chain | Residue  | SSType
+  B  1653 L(LEU1653) C
+  B  1654 N(ASN1654) C
+  B  1655 G(GLY1655) C
+  B  1656 M(MET1656) C
+  B  1657 D(ASP1657) C
+  B  1658 L(LEU1658) 4
+  B  1659 A(ALA1659) 4
+  B  1660 K(LYS1660) 4
+  B  1661 E(GLU1661) 4
+  B  1662 V(VAL1662) C
+  B  1663 T(THR1663) C
+  B  1664 T(THR1664) C
+  B  1665 A(ALA1665) C
+  B  1666 E(GLU1666) C
+  B  1667 A(ALA1667) C
+  B  1668 Y(TYR1668) E
+  B  1669 S(SER1669) E
+  B  1670 W(TRP1670) E
+  B  1671 T(THR1671) C
+  B  1672 Q(GLN1672) C
+  B  1673 G(GLY1673) C
+  B  1674 S(SER1674) C
+  B  1675 W(TRP1675) C
+  B  1676 T(THR1676) 5
+  B  1677 L(LEU1677) 5
+  B  1678 T(THR1678) 5
+  B  1679 G(GLY1679) 5
+  B  1680 G(GLY1680) C
+  B  1681 L(LEU1681) C
+  B  1682 P(PRO1682) C
+  B  1683 Q(GLN1683) C
+  B  1684 A(ALA1684) C
+  B  1685 K(LYS1685) C
+  B  1686 K(LYS1686) H
+  B  1687 E(GLU1687) H
+  B  1688 D(ASP1688) H
+  B  1689 E(GLU1689) H
+  B  1690 L(LEU1690) H
+  B  1691 P(PRO1691) E
+  B  1692 F(PHE1692) E
+  B  1693 H(HIS1693) E
+  B  1694 V(VAL1694) E
+  B  1695 V(VAL1695) E
+  B  1696 A(ALA1696) E
+  B  1697 Y(TYR1697) E
+  B  1698 D(ASP1698) E
+  B  1699 F(PHE1699) C
+  B  1700 G(GLY1700) C
+  B  1701 A(ALA1701) C
+  B  1702 K(LYS1702) C
+  B  1703 R(ARG1703) C
+  B  1704 N(ASN1704) H
+  B  1705 I(ILE1705) H
+  B  1706 L(LEU1706) H
+  B  1707 R(ARG1707) H
+  B  1708 M(MET1708) H
+  B  1709 L(LEU1709) H
+  B  1710 V(VAL1710) H
+  B  1711 D(ASP1711) H
+  B  1712 R(ARG1712) H
+  B  1713 G(GLY1713) E
+  B  1714 C(CYS1714) E
+  B  1715 R(ARG1715) E
+  B  1716 L(LEU1716) E
+  B  1717 T(THR1717) E
+  B  1718 I(ILE1718) E
+  B  1719 V(VAL1719) E
+  B  1720 P(PRO1720) 3
+  B  1721 A(ALA1721) 3
+  B  1722 Q(GLN1722) 3
+  B  1723 T(THR1723) C
+  B  1724 S(SER1724) C
+  B  1725 A(ALA1725) H
+  B  1726 E(GLU1726) H
+  B  1727 D(ASP1727) H
+  B  1728 V(VAL1728) H
+  B  1729 L(LEU1729) H
+  B  1730 K(LYS1730) H
+  B  1731 M(MET1731) H
+  B  1732 N(ASN1732) C
+  B  1733 P(PRO1733) C
+  B  1734 D(ASP1734) C
+  B  1735 G(GLY1735) E
+  B  1736 I(ILE1736) E
+  B  1737 F(PHE1737) E
+  B  1738 L(LEU1738) E
+  B  1739 S(SER1739) C
+  B  1740 N(ASN1740) C
+  B  1741 G(GLY1741) C
+  B  1742 P(PRO1742) C
+  B  1743 G(GLY1743) C
+  B  1744 D(ASP1744) 3
+  B  1745 P(PRO1745) 3
+  B  1746 A(ALA1746) 3
+  B  1747 P(PRO1747) C
+  B  1748 C(CYS1748) C
+  B  1749 D(ASP1749) H
+  B  1750 Y(TYR1750) H
+  B  1751 A(ALA1751) H
+  B  1752 I(ILE1752) H
+  B  1753 T(THR1753) H
+  B  1754 A(ALA1754) H
+  B  1755 I(ILE1755) H
+  B  1756 Q(GLN1756) H
+  B  1757 K(LYS1757) H
+  B  1758 F(PHE1758) H
+  B  1759 L(LEU1759) C
+  B  1760 E(GLU1760) C
+  B  1761 T(THR1761) C
+  B  1762 D(ASP1762) C
+  B  1763 I(ILE1763) C
+  B  1764 P(PRO1764) E
+  B  1765 V(VAL1765) E
+  B  1766 F(PHE1766) E
+  B  1767 G(GLY1767) E
+  B  1768 I(ILE1768) C
+  B  1770 L(LEU1770) H
+  B  1771 G(GLY1771) H
+  B  1772 H(HIS1772) H
+  B  1773 Q(GLN1773) H
+  B  1774 L(LEU1774) H
+  B  1775 L(LEU1775) H
+  B  1776 A(ALA1776) H
+  B  1777 L(LEU1777) H
+  B  1778 A(ALA1778) H
+  B  1779 S(SER1779) H
+  B  1780 G(GLY1780) C
+  B  1781 A(ALA1781) C
+  B  1782 K(LYS1782) E
+  B  1783 T(THR1783) E
+  B  1784 V(VAL1784) E
+  B  1785 K(LYS1785) C
+  B  1786 M(MET1786) C
+  B  1787 K(LYS1787) C
+  B  1788 F(PHE1788) C
+  B  1789 G(GLY1789) E
+  B  1790 H(HIS1790) E
+  B  1791 H(HIS1791) E
+  B  1792 G(GLY1792) 3
+  B  1793 G(GLY1793) 3
+  B  1794 N(ASN1794) 3
+  B  1795 H(HIS1795) E
+  B  1796 P(PRO1796) E
+  B  1797 V(VAL1797) E
+  B  1798 K(LYS1798) E
+  B  1799 D(ASP1799) 4
+  B  1800 V(VAL1800) 4
+  B  1801 E(GLU1801) 4
+  B  1802 K(LYS1802) 4
+  B  1803 N(ASN1803) C
+  B  1804 V(VAL1804) E
+  B  1805 V(VAL1805) E
+  B  1806 M(MET1806) E
+  B  1807 I(ILE1807) C
+  B  1808 T(THR1808) E
+  B  1809 A(ALA1809) E
+  B  1810 Q(GLN1810) E
+  B  1811 N(ASN1811) C
+  B  1812 H(HIS1812) C
+  B  1813 G(GLY1813) E
+  B  1814 F(PHE1814) E
+  B  1815 A(ALA1815) E
+  B  1816 V(VAL1816) C
+  B  1817 D(ASP1817) 4
+  B  1818 E(GLU1818) 4
+  B  1819 A(ALA1819) 4
+  B  1820 T(THR1820) 4
+  B  1821 L(LEU1821) C
+  B  1822 P(PRO1822) C
+  B  1823 A(ALA1823) C
+  B  1824 N(ASN1824) E
+  B  1825 L(LEU1825) E
+  B  1826 R(ARG1826) E
+  B  1827 V(VAL1827) C
+  B  1828 T(THR1828) E
+  B  1829 H(HIS1829) E
+  B  1830 K(LYS1830) E
+  B  1831 S(SER1831) 5
+  B  1832 L(LEU1832) 5
+  B  1833 F(PHE1833) 5
+  B  1834 D(ASP1834) 5
+  B  1835 G(GLY1835) C
+  B  1836 T(THR1836) C
+  B  1837 L(LEU1837) C
+  B  1838 Q(GLN1838) E
+  B  1839 G(GLY1839) E
+  B  1840 I(ILE1840) E
+  B  1841 H(HIS1841) E
+  B  1842 R(ARG1842) 5
+  B  1843 T(THR1843) 5
+  B  1844 D(ASP1844) 5
+  B  1845 K(LYS1845) 5
+  B  1846 P(PRO1846) E
+  B  1847 A(ALA1847) E
+  B  1848 F(PHE1848) E
+  B  1849 S(SER1849) E
+  B  1850 F(PHE1850) E
+  B  1851 Q(GLN1851) C
+  B  1852 G(GLY1852) C
+  B  1853 N(ASN1853) G
+  B  1854 P(PRO1854) G
+  B  1855 E(GLU1855) G
+  B  1856 A(ALA1856) I
+  B  1857 S(SER1857) I
+  B  1858 P(PRO1858) I
+  B  1859 G(GLY1859) I
+  B  1860 P(PRO1860) C
+  B  1861 H(HIS1861) C
+  B  1862 D(ASP1862) C
+  B  1863 A(ALA1863) 3
+  B  1864 A(ALA1864) 3
+  B  1865 P(PRO1865) 3
+  B  1866 L(LEU1866) 3
+  B  1867 F(PHE1867) C
+  B  1868 D(ASP1868) H
+  B  1869 H(HIS1869) H
+  B  1870 F(PHE1870) H
+  B  1871 I(ILE1871) H
+  B  1872 E(GLU1872) H
+  B  1873 L(LEU1873) H
+  B  1874 I(ILE1874) H
+  B  1875 E(GLU1875) H
+  B  1876 Q(GLN1876) H
+  B  1877 Y(TYR1877) H
+  B  1878 R(ARG1878) H
+  B  1879 K(LYS1879) C
+  B  1880 T(THR1880) C
+...................................END....................................

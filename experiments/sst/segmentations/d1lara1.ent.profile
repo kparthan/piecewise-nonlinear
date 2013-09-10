@@ -1,0 +1,418 @@
+===== SST (v1.6): Secondary structural assignment using MML inference =====
+=====            A. S. Konagurthu, A. M. Lesk, L. Allison             =====
+===== Reference:   Bioinformatics  28(12):i97-i105 (2012)             =====
+===== =============================================================== =====
+..........................................................................
+. PDB file : struct.pdb
+. Timestamp:  Tue Sep 10 17:16:12 2013
+..........................................................................
+..........SEGMENTATION AND SECONDARY STRUCTURE ASSIGNMENT SUMMARY.........
+.
+. TITLE:    ...
+.
+.                     .         .         .         .         .
++A(MET1307)  MITDLADNIERLKANDGLKFSQEYESIDPGQQFTWENSNLEVNKPKNRYA  (ALA1356)A
+-            HHHHHHHHHHHHHhhhhHHHHHHHHHCCCCCCCCC4444HHHHGGGCC44
+*            |     H      | h :   H    |   C    | 4 | H :G |C| 
+.                     .         .         .         .         .
++A(ASN1357)  NVIAYDHSRVILTSIDGVPGSDYINANYIDGYRKQNAYIATQGPLPETMG  (GLY1406)A
+-            44CC4444CCCCCCCCCCC333CCEEECEEECCCCCEEEEECCCHHHHHH
+*            4 |C| 4 |    C     |3 |C|E ||E | C  | E  |C |     
+.                     .         .         .         .         .
++A(ASP1407)  DFWRMVWEQRTATVVMMTRLEEKSRVKCDQYWPARGTETCGLIQVTLLDT  (THR1456)A
+-            HHHHHHHHHCCEEEEEECCCCCCCCCCCCCCCCCCEEECCCCCEEECCEE
+*             H       |C|  E  |        C        |E | C  |E |C| 
+.                     .         .         .         .         .
++A(VAL1457)  VELATYTVRTFALHKSGSSEKRELRQFQFMAWPDHGVPEYPTPILAFLRR  (ARG1506)A
+-            EECCEEEEEEEEEECCCCEEEEEEEEEE333CCCCCCCCCCHHHHHHHHH
+*            E |C|  E   |E | C |    E    |3 |    C    |     H  
+.                     .         .         .         .         .
++A(VAL1507)  VKACNPLDAGPMVVHCSAGVGRTGCFIVIDAMLERMKHEKTVDIYGHVTC  (CYS1556)A
+-            HHHCCCCCCCCEEEEECCCCHHHHHHHHHHHHHHHHHCCCCCCCHHHHHH
+*               |   C   | E  | C |       H        |  C   |    H
+.                     .         .         .         .         .
++A(MET1557)  MRSQRNYMVQTEDQYVFIHEALLEAATCGHTEVPARNLYAHIQKLGQVPP  (PRO1606)A
+-            HHHHCCCCCCCCHHHHHHHHHHHHHHCCCCCCC4444HHHHHHHHCCCCC
+*                |   C   |      H      |  C   | 4 |   H   |   C
+.                     .       
++A(GLY1607)  GESVTAMELEFKLLASS                                   (SER1623)A
+-            CCCCHHHHHHHHHHHHH                                 
+*                |     H     |                                 
+.
+.
+..........................................................................
+...........................SEGMENTATION DETAILS...........................
+# Chain/SegNum  Len SSE   | Seg Start resi|| Seg End resi   |
+      A/1       14  H      1307 M (MET1307)  1320 A (ALA1320)
+      A/2       5   h      1320 A (ALA1320)  1324 L (LEU1324)
+                10  H      1324 L (LEU1324)  1333 I (ILE1333)
+      A/3       10  C      1333 I (ILE1333)  1342 E (GLU1342)
+      A/4       5   4      1342 E (GLU1342)  1346 L (LEU1346)
+      A/5       5   H      1346 L (LEU1346)  1350 K (LYS1350)
+                4   G      1350 K (LYS1350)  1353 N (ASN1353)
+      A/6       3   C      1353 N (ASN1353)  1355 Y (TYR1355)
+      A/7       5   4      1355 Y (TYR1355)  1359 I (ILE1359)
+      A/8       3   C      1359 I (ILE1359)  1361 Y (TYR1361)
+      A/9       5   4      1361 Y (TYR1361)  1365 R (ARG1365)
+      A/10      12  C      1365 R (ARG1365)  1376 G (GLY1376)
+      A/11      4   3      1376 G (GLY1376)  1379 Y (TYR1379)
+      A/12      3   C      1379 Y (TYR1379)  1381 N (ASN1381)
+      A/13      4   E      1381 N (ASN1381)  1384 Y (TYR1384)
+      A/14      2   C      1384 Y (TYR1384)  1385 I (ILE1385)
+      A/15      4   E      1385 I (ILE1385)  1388 Y (TYR1388)
+      A/16      6   C      1388 Y (TYR1388)  1393 A (ALA1393)
+      A/17      6   E      1393 A (ALA1393)  1398 Q (GLN1398)
+      A/18      4   C      1398 Q (GLN1398)  1401 L (LEU1401)
+      A/19      16  H      1401 L (LEU1401)  1416 R (ARG1416)
+      A/20      3   C      1416 R (ARG1416)  1418 A (ALA1418)
+      A/21      7   E      1418 A (ALA1418)  1424 T (THR1424)
+      A/22      19  C      1424 T (THR1424)  1442 G (GLY1442)
+      A/23      4   E      1442 G (GLY1442)  1445 T (THR1445)
+      A/24      6   C      1445 T (THR1445)  1450 Q (GLN1450)
+      A/25      4   E      1450 Q (GLN1450)  1453 L (LEU1453)
+      A/26      3   C      1453 L (LEU1453)  1455 D (ASP1455)
+      A/27      5   E      1455 D (ASP1455)  1459 L (LEU1459)
+      A/28      3   C      1459 L (LEU1459)  1461 T (THR1461)
+      A/29      8   E      1461 T (THR1461)  1468 A (ALA1468)
+      A/30      4   E      1468 A (ALA1468)  1471 K (LYS1471)
+      A/31      5   C      1471 K (LYS1471)  1475 S (SER1475)
+      A/32      11  E      1475 S (SER1475)  1485 F (PHE1485)
+      A/33      4   3      1485 F (PHE1485)  1488 W (TRP1488)
+      A/34      11  C      1488 W (TRP1488)  1498 T (THR1498)
+      A/35      13  H      1498 T (THR1498)  1510 C (CYS1510)
+      A/36      9   C      1510 C (CYS1510)  1518 M (MET1518)
+      A/37      6   E      1518 M (MET1518)  1523 S (SER1523)
+      A/38      5   C      1523 S (SER1523)  1527 G (GLY1527)
+      A/39      18  H      1527 G (GLY1527)  1544 H (HIS1544)
+      A/40      8   C      1544 H (HIS1544)  1551 Y (TYR1551)
+      A/41      11  H      1551 Y (TYR1551)  1561 R (ARG1561)
+      A/42      9   C      1561 R (ARG1561)  1569 D (ASP1569)
+      A/43      15  H      1569 D (ASP1569)  1583 T (THR1583)
+      A/44      8   C      1583 T (THR1583)  1590 P (PRO1590)
+      A/45      5   4      1590 P (PRO1590)  1594 L (LEU1594)
+      A/46      9   H      1594 L (LEU1594)  1602 G (GLY1602)
+      A/47      10  C      1602 G (GLY1602)  1611 T (THR1611)
+      A/48      13  H      1611 T (THR1611)  1623 S (SER1623)
+
+.
+..........................................................................
+..........RESIDUE LEVEL SECONDARY STRUCTURE ASSIGNMENT DETAILS............
+! Chain | Residue  | SSType
+  A  1307 M(MET1307) H
+  A  1308 I(ILE1308) H
+  A  1309 T(THR1309) H
+  A  1310 D(ASP1310) H
+  A  1311 L(LEU1311) H
+  A  1312 A(ALA1312) H
+  A  1313 D(ASP1313) H
+  A  1314 N(ASN1314) H
+  A  1315 I(ILE1315) H
+  A  1316 E(GLU1316) H
+  A  1317 R(ARG1317) H
+  A  1318 L(LEU1318) H
+  A  1319 K(LYS1319) H
+  A  1320 A(ALA1320) h
+  A  1321 N(ASN1321) h
+  A  1322 D(ASP1322) h
+  A  1323 G(GLY1323) h
+  A  1324 L(LEU1324) H
+  A  1325 K(LYS1325) H
+  A  1326 F(PHE1326) H
+  A  1327 S(SER1327) H
+  A  1328 Q(GLN1328) H
+  A  1329 E(GLU1329) H
+  A  1330 Y(TYR1330) H
+  A  1331 E(GLU1331) H
+  A  1332 S(SER1332) H
+  A  1333 I(ILE1333) C
+  A  1334 D(ASP1334) C
+  A  1335 P(PRO1335) C
+  A  1336 G(GLY1336) C
+  A  1337 Q(GLN1337) C
+  A  1338 Q(GLN1338) C
+  A  1339 F(PHE1339) C
+  A  1340 T(THR1340) C
+  A  1341 W(TRP1341) C
+  A  1342 E(GLU1342) 4
+  A  1343 N(ASN1343) 4
+  A  1344 S(SER1344) 4
+  A  1345 N(ASN1345) 4
+  A  1346 L(LEU1346) H
+  A  1347 E(GLU1347) H
+  A  1348 V(VAL1348) H
+  A  1349 N(ASN1349) H
+  A  1350 K(LYS1350) G
+  A  1351 P(PRO1351) G
+  A  1352 K(LYS1352) G
+  A  1353 N(ASN1353) C
+  A  1354 R(ARG1354) C
+  A  1355 Y(TYR1355) 4
+  A  1356 A(ALA1356) 4
+  A  1357 N(ASN1357) 4
+  A  1358 V(VAL1358) 4
+  A  1359 I(ILE1359) C
+  A  1360 A(ALA1360) C
+  A  1361 Y(TYR1361) 4
+  A  1362 D(ASP1362) 4
+  A  1363 H(HIS1363) 4
+  A  1364 S(SER1364) 4
+  A  1365 R(ARG1365) C
+  A  1366 V(VAL1366) C
+  A  1367 I(ILE1367) C
+  A  1368 L(LEU1368) C
+  A  1369 T(THR1369) C
+  A  1370 S(SER1370) C
+  A  1371 I(ILE1371) C
+  A  1372 D(ASP1372) C
+  A  1373 G(GLY1373) C
+  A  1374 V(VAL1374) C
+  A  1375 P(PRO1375) C
+  A  1376 G(GLY1376) 3
+  A  1377 S(SER1377) 3
+  A  1378 D(ASP1378) 3
+  A  1379 Y(TYR1379) C
+  A  1380 I(ILE1380) C
+  A  1381 N(ASN1381) E
+  A  1382 A(ALA1382) E
+  A  1383 N(ASN1383) E
+  A  1384 Y(TYR1384) C
+  A  1385 I(ILE1385) E
+  A  1386 D(ASP1386) E
+  A  1387 G(GLY1387) E
+  A  1388 Y(TYR1388) C
+  A  1389 R(ARG1389) C
+  A  1390 K(LYS1390) C
+  A  1391 Q(GLN1391) C
+  A  1392 N(ASN1392) C
+  A  1393 A(ALA1393) E
+  A  1394 Y(TYR1394) E
+  A  1395 I(ILE1395) E
+  A  1396 A(ALA1396) E
+  A  1397 T(THR1397) E
+  A  1398 Q(GLN1398) C
+  A  1399 G(GLY1399) C
+  A  1400 P(PRO1400) C
+  A  1401 L(LEU1401) H
+  A  1402 P(PRO1402) H
+  A  1403 E(GLU1403) H
+  A  1404 T(THR1404) H
+  A  1405 M(MET1405) H
+  A  1406 G(GLY1406) H
+  A  1407 D(ASP1407) H
+  A  1408 F(PHE1408) H
+  A  1409 W(TRP1409) H
+  A  1410 R(ARG1410) H
+  A  1411 M(MET1411) H
+  A  1412 V(VAL1412) H
+  A  1413 W(TRP1413) H
+  A  1414 E(GLU1414) H
+  A  1415 Q(GLN1415) H
+  A  1416 R(ARG1416) C
+  A  1417 T(THR1417) C
+  A  1418 A(ALA1418) E
+  A  1419 T(THR1419) E
+  A  1420 V(VAL1420) E
+  A  1421 V(VAL1421) E
+  A  1422 M(MET1422) E
+  A  1423 M(MET1423) E
+  A  1424 T(THR1424) C
+  A  1425 R(ARG1425) C
+  A  1426 L(LEU1426) C
+  A  1427 E(GLU1427) C
+  A  1428 E(GLU1428) C
+  A  1429 K(LYS1429) C
+  A  1430 S(SER1430) C
+  A  1431 R(ARG1431) C
+  A  1432 V(VAL1432) C
+  A  1433 K(LYS1433) C
+  A  1434 C(CYS1434) C
+  A  1435 D(ASP1435) C
+  A  1436 Q(GLN1436) C
+  A  1437 Y(TYR1437) C
+  A  1438 W(TRP1438) C
+  A  1439 P(PRO1439) C
+  A  1440 A(ALA1440) C
+  A  1441 R(ARG1441) C
+  A  1442 G(GLY1442) E
+  A  1443 T(THR1443) E
+  A  1444 E(GLU1444) E
+  A  1445 T(THR1445) C
+  A  1446 C(CYS1446) C
+  A  1447 G(GLY1447) C
+  A  1448 L(LEU1448) C
+  A  1449 I(ILE1449) C
+  A  1450 Q(GLN1450) E
+  A  1451 V(VAL1451) E
+  A  1452 T(THR1452) E
+  A  1453 L(LEU1453) C
+  A  1454 L(LEU1454) C
+  A  1455 D(ASP1455) E
+  A  1456 T(THR1456) E
+  A  1457 V(VAL1457) E
+  A  1458 E(GLU1458) E
+  A  1459 L(LEU1459) C
+  A  1460 A(ALA1460) C
+  A  1461 T(THR1461) E
+  A  1462 Y(TYR1462) E
+  A  1463 T(THR1463) E
+  A  1464 V(VAL1464) E
+  A  1465 R(ARG1465) E
+  A  1466 T(THR1466) E
+  A  1467 F(PHE1467) E
+  A  1468 A(ALA1468) E
+  A  1469 L(LEU1469) E
+  A  1470 H(HIS1470) E
+  A  1471 K(LYS1471) C
+  A  1472 S(SER1472) C
+  A  1473 G(GLY1473) C
+  A  1474 S(SER1474) C
+  A  1475 S(SER1475) E
+  A  1476 E(GLU1476) E
+  A  1477 K(LYS1477) E
+  A  1478 R(ARG1478) E
+  A  1479 E(GLU1479) E
+  A  1480 L(LEU1480) E
+  A  1481 R(ARG1481) E
+  A  1482 Q(GLN1482) E
+  A  1483 F(PHE1483) E
+  A  1484 Q(GLN1484) E
+  A  1485 F(PHE1485) 3
+  A  1486 M(MET1486) 3
+  A  1487 A(ALA1487) 3
+  A  1488 W(TRP1488) C
+  A  1489 P(PRO1489) C
+  A  1490 D(ASP1490) C
+  A  1491 H(HIS1491) C
+  A  1492 G(GLY1492) C
+  A  1493 V(VAL1493) C
+  A  1494 P(PRO1494) C
+  A  1495 E(GLU1495) C
+  A  1496 Y(TYR1496) C
+  A  1497 P(PRO1497) C
+  A  1498 T(THR1498) H
+  A  1499 P(PRO1499) H
+  A  1500 I(ILE1500) H
+  A  1501 L(LEU1501) H
+  A  1502 A(ALA1502) H
+  A  1503 F(PHE1503) H
+  A  1504 L(LEU1504) H
+  A  1505 R(ARG1505) H
+  A  1506 R(ARG1506) H
+  A  1507 V(VAL1507) H
+  A  1508 K(LYS1508) H
+  A  1509 A(ALA1509) H
+  A  1510 C(CYS1510) C
+  A  1511 N(ASN1511) C
+  A  1512 P(PRO1512) C
+  A  1513 L(LEU1513) C
+  A  1514 D(ASP1514) C
+  A  1515 A(ALA1515) C
+  A  1516 G(GLY1516) C
+  A  1517 P(PRO1517) C
+  A  1518 M(MET1518) E
+  A  1519 V(VAL1519) E
+  A  1520 V(VAL1520) E
+  A  1521 H(HIS1521) E
+  A  1522 C(CYS1522) E
+  A  1523 S(SER1523) C
+  A  1524 A(ALA1524) C
+  A  1525 G(GLY1525) C
+  A  1526 V(VAL1526) C
+  A  1527 G(GLY1527) H
+  A  1528 R(ARG1528) H
+  A  1529 T(THR1529) H
+  A  1530 G(GLY1530) H
+  A  1531 C(CYS1531) H
+  A  1532 F(PHE1532) H
+  A  1533 I(ILE1533) H
+  A  1534 V(VAL1534) H
+  A  1535 I(ILE1535) H
+  A  1536 D(ASP1536) H
+  A  1537 A(ALA1537) H
+  A  1538 M(MET1538) H
+  A  1539 L(LEU1539) H
+  A  1540 E(GLU1540) H
+  A  1541 R(ARG1541) H
+  A  1542 M(MET1542) H
+  A  1543 K(LYS1543) H
+  A  1544 H(HIS1544) C
+  A  1545 E(GLU1545) C
+  A  1546 K(LYS1546) C
+  A  1547 T(THR1547) C
+  A  1548 V(VAL1548) C
+  A  1549 D(ASP1549) C
+  A  1550 I(ILE1550) C
+  A  1551 Y(TYR1551) H
+  A  1552 G(GLY1552) H
+  A  1553 H(HIS1553) H
+  A  1554 V(VAL1554) H
+  A  1555 T(THR1555) H
+  A  1556 C(CYS1556) H
+  A  1557 M(MET1557) H
+  A  1558 R(ARG1558) H
+  A  1559 S(SER1559) H
+  A  1560 Q(GLN1560) H
+  A  1561 R(ARG1561) C
+  A  1562 N(ASN1562) C
+  A  1563 Y(TYR1563) C
+  A  1564 M(MET1564) C
+  A  1565 V(VAL1565) C
+  A  1566 Q(GLN1566) C
+  A  1567 T(THR1567) C
+  A  1568 E(GLU1568) C
+  A  1569 D(ASP1569) H
+  A  1570 Q(GLN1570) H
+  A  1571 Y(TYR1571) H
+  A  1572 V(VAL1572) H
+  A  1573 F(PHE1573) H
+  A  1574 I(ILE1574) H
+  A  1575 H(HIS1575) H
+  A  1576 E(GLU1576) H
+  A  1577 A(ALA1577) H
+  A  1578 L(LEU1578) H
+  A  1579 L(LEU1579) H
+  A  1580 E(GLU1580) H
+  A  1581 A(ALA1581) H
+  A  1582 A(ALA1582) H
+  A  1583 T(THR1583) C
+  A  1584 C(CYS1584) C
+  A  1585 G(GLY1585) C
+  A  1586 H(HIS1586) C
+  A  1587 T(THR1587) C
+  A  1588 E(GLU1588) C
+  A  1589 V(VAL1589) C
+  A  1590 P(PRO1590) 4
+  A  1591 A(ALA1591) 4
+  A  1592 R(ARG1592) 4
+  A  1593 N(ASN1593) 4
+  A  1594 L(LEU1594) H
+  A  1595 Y(TYR1595) H
+  A  1596 A(ALA1596) H
+  A  1597 H(HIS1597) H
+  A  1598 I(ILE1598) H
+  A  1599 Q(GLN1599) H
+  A  1600 K(LYS1600) H
+  A  1601 L(LEU1601) H
+  A  1602 G(GLY1602) C
+  A  1603 Q(GLN1603) C
+  A  1604 V(VAL1604) C
+  A  1605 P(PRO1605) C
+  A  1606 P(PRO1606) C
+  A  1607 G(GLY1607) C
+  A  1608 E(GLU1608) C
+  A  1609 S(SER1609) C
+  A  1610 V(VAL1610) C
+  A  1611 T(THR1611) H
+  A  1612 A(ALA1612) H
+  A  1613 M(MET1613) H
+  A  1614 E(GLU1614) H
+  A  1615 L(LEU1615) H
+  A  1616 E(GLU1616) H
+  A  1617 F(PHE1617) H
+  A  1618 K(LYS1618) H
+  A  1619 L(LEU1619) H
+  A  1620 L(LEU1620) H
+  A  1621 A(ALA1621) H
+  A  1622 S(SER1622) H
+  A  1623 S(SER1623) H
+...................................END....................................

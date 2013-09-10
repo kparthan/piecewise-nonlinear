@@ -1,0 +1,346 @@
+===== SST (v1.6): Secondary structural assignment using MML inference =====
+=====            A. S. Konagurthu, A. M. Lesk, L. Allison             =====
+===== Reference:   Bioinformatics  28(12):i97-i105 (2012)             =====
+===== =============================================================== =====
+..........................................................................
+. PDB file : struct.pdb
+. Timestamp:  Tue Sep 10 17:19:47 2013
+..........................................................................
+..........SEGMENTATION AND SECONDARY STRUCTURE ASSIGNMENT SUMMARY.........
+.
+. TITLE:    ...
+.
+.                     .         .         .         .         .
++A(MET1001)  MKHLGQTRSALHGSHAVITPETFVRTALAEWPGSAIVLHIAPVVGLGARF  (PHE1050)A
+-            4444CCCEEEECCEEEEEECCEEECCC4444CCCEEEEEEECCCCCCCCE
+*            | 4 |C | E |C|  E  |C|E |C | 4 |C |  E   |   C   |
+.                     .         .         .         .         .
++A(VAL1051)  VQFTAEMPAGAQATESVYQRFAFVLSGEVDVAVGGETRTLREYDYVYLPA  (ALA1100)A
+-            EEEEEEECCCEEEEEECCEEEEEEECEEEEEEECEEEEEEECCEEEEECC
+*               E   |C |  E  |C|  E   ||  E   ||  E   |C| E  | 
+.                     .         .         .         .         .
++A(GLY1101)  GEKHMLTAKTDARVSVFEKPYQTVEGVQAPGVYWGNERENPGYPFEGDDH  (HIS1150)A
+-            CCEEEEE5555EEEEEEEEEEEECCEEEEEEEEEC4444CCCC5555444
+*            C | E  | 5 |E |   E    |C|  E  |E || 4 | C | 5 | 4
+.                     .         .         .         .         .
++A(LEU1151)  LIARKLLPDEPAFDFMVSTMSFAPGASLPYAEVHYMEHGLLMLEGEGLYK  (LYS1200)A
+-            4EEEEECCC333CEEEEEEEEECCEEECCCCCCCCCEEECEEECCCEEEE
+*             | E  |C |3 ||   E    |C|E |   C    |E ||E |C | E 
+.                     .         .         .         .     
++A(LEU1201)  LEENYYPVTAGDIIWMGAHCPQWYGALGRNWSKYLLYKDMNRHPL       (LEU1245)A
+-            ECCEEECCCCCEEEEECCCCEEEEEEECCCEEEEEEEECCCCCCC     
+*             |C|E | C  | E  | C |  E   |C |   E   |  C  |     
+.
+.
+..........................................................................
+...........................SEGMENTATION DETAILS...........................
+# Chain/SegNum  Len SSE   | Seg Start resi|| Seg End resi   |
+      A/1       5   4      1001 M (MET1001)  1005 G (GLY1005)
+      A/2       4   C      1005 G (GLY1005)  1008 R (ARG1008)
+      A/3       5   E      1008 R (ARG1008)  1012 H (HIS1012)
+      A/4       3   C      1012 H (HIS1012)  1014 S (SER1014)
+      A/5       7   E      1014 S (SER1014)  1020 P (PRO1020)
+      A/6       3   C      1020 P (PRO1020)  1022 T (THR1022)
+      A/7       4   E      1022 T (THR1022)  1025 R (ARG1025)
+      A/8       4   C      1025 R (ARG1025)  1028 L (LEU1028)
+      A/9       5   4      1028 L (LEU1028)  1032 P (PRO1032)
+      A/10      4   C      1032 P (PRO1032)  1035 A (ALA1035)
+      A/11      8   E      1035 A (ALA1035)  1042 P (PRO1042)
+      A/12      9   C      1042 P (PRO1042)  1050 F (PHE1050)
+      A/13      9   E      1050 F (PHE1050)  1058 P (PRO1058)
+      A/14      4   C      1058 P (PRO1058)  1061 A (ALA1061)
+      A/15      7   E      1061 A (ALA1061)  1067 V (VAL1067)
+      A/16      3   C      1067 V (VAL1067)  1069 Q (GLN1069)
+      A/17      8   E      1069 Q (GLN1069)  1076 S (SER1076)
+      A/18      2   C      1076 S (SER1076)  1077 G (GLY1077)
+      A/19      8   E      1077 G (GLY1077)  1084 G (GLY1084)
+      A/20      2   C      1084 G (GLY1084)  1085 G (GLY1085)
+      A/21      8   E      1085 G (GLY1085)  1092 E (GLU1092)
+      A/22      3   C      1092 E (GLU1092)  1094 D (ASP1094)
+      A/23      6   E      1094 D (ASP1094)  1099 P (PRO1099)
+      A/24      5   C      1099 P (PRO1099)  1103 K (LYS1103)
+      A/25      6   E      1103 K (LYS1103)  1108 A (ALA1108)
+      A/26      5   5      1108 A (ALA1108)  1112 A (ALA1112)
+      A/27      4   E      1112 A (ALA1112)  1115 S (SER1115)
+      A/28      10  E      1115 S (SER1115)  1124 V (VAL1124)
+      A/29      3   C      1124 V (VAL1124)  1126 G (GLY1126)
+      A/30      7   E      1126 G (GLY1126)  1132 V (VAL1132)
+      A/31      4   E      1132 V (VAL1132)  1135 G (GLY1135)
+      A/32      2   C      1135 G (GLY1135)  1136 N (ASN1136)
+      A/33      5   4      1136 N (ASN1136)  1140 N (ASN1140)
+      A/34      5   C      1140 N (ASN1140)  1144 P (PRO1144)
+      A/35      5   5      1144 P (PRO1144)  1148 D (ASP1148)
+      A/36      5   4      1148 D (ASP1148)  1152 I (ILE1152)
+      A/37      6   E      1152 I (ILE1152)  1157 L (LEU1157)
+      A/38      4   C      1157 L (LEU1157)  1160 E (GLU1160)
+      A/39      4   3      1160 E (GLU1160)  1163 F (PHE1163)
+      A/40      2   C      1163 F (PHE1163)  1164 D (ASP1164)
+      A/41      10  E      1164 D (ASP1164)  1173 A (ALA1173)
+      A/42      3   C      1173 A (ALA1173)  1175 G (GLY1175)
+      A/43      4   E      1175 G (GLY1175)  1178 L (LEU1178)
+      A/44      10  C      1178 L (LEU1178)  1187 E (GLU1187)
+      A/45      4   E      1187 E (GLU1187)  1190 L (LEU1190)
+      A/46      2   C      1190 L (LEU1190)  1191 L (LEU1191)
+      A/47      4   E      1191 L (LEU1191)  1194 E (GLU1194)
+      A/48      4   C      1194 E (GLU1194)  1197 G (GLY1197)
+      A/49      6   E      1197 G (GLY1197)  1202 E (GLU1202)
+      A/50      3   C      1202 E (GLU1202)  1204 N (ASN1204)
+      A/51      4   E      1204 N (ASN1204)  1207 P (PRO1207)
+      A/52      6   C      1207 P (PRO1207)  1212 D (ASP1212)
+      A/53      6   E      1212 D (ASP1212)  1217 G (GLY1217)
+      A/54      5   C      1217 G (GLY1217)  1221 P (PRO1221)
+      A/55      8   E      1221 P (PRO1221)  1228 G (GLY1228)
+      A/56      4   C      1228 G (GLY1228)  1231 W (TRP1231)
+      A/57      9   E      1231 W (TRP1231)  1239 D (ASP1239)
+      A/58      7   C      1239 D (ASP1239)  1245 L (LEU1245)
+
+.
+..........................................................................
+..........RESIDUE LEVEL SECONDARY STRUCTURE ASSIGNMENT DETAILS............
+! Chain | Residue  | SSType
+  A  1001 M(MET1001) 4
+  A  1002 K(LYS1002) 4
+  A  1003 H(HIS1003) 4
+  A  1004 L(LEU1004) 4
+  A  1005 G(GLY1005) C
+  A  1006 Q(GLN1006) C
+  A  1007 T(THR1007) C
+  A  1008 R(ARG1008) E
+  A  1009 S(SER1009) E
+  A  1010 A(ALA1010) E
+  A  1011 L(LEU1011) E
+  A  1012 H(HIS1012) C
+  A  1013 G(GLY1013) C
+  A  1014 S(SER1014) E
+  A  1015 H(HIS1015) E
+  A  1016 A(ALA1016) E
+  A  1017 V(VAL1017) E
+  A  1018 I(ILE1018) E
+  A  1019 T(THR1019) E
+  A  1020 P(PRO1020) C
+  A  1021 E(GLU1021) C
+  A  1022 T(THR1022) E
+  A  1023 F(PHE1023) E
+  A  1024 V(VAL1024) E
+  A  1025 R(ARG1025) C
+  A  1026 T(THR1026) C
+  A  1027 A(ALA1027) C
+  A  1028 L(LEU1028) 4
+  A  1029 A(ALA1029) 4
+  A  1030 E(GLU1030) 4
+  A  1031 W(TRP1031) 4
+  A  1032 P(PRO1032) C
+  A  1033 G(GLY1033) C
+  A  1034 S(SER1034) C
+  A  1035 A(ALA1035) E
+  A  1036 I(ILE1036) E
+  A  1037 V(VAL1037) E
+  A  1038 L(LEU1038) E
+  A  1039 H(HIS1039) E
+  A  1040 I(ILE1040) E
+  A  1041 A(ALA1041) E
+  A  1042 P(PRO1042) C
+  A  1043 V(VAL1043) C
+  A  1044 V(VAL1044) C
+  A  1045 G(GLY1045) C
+  A  1046 L(LEU1046) C
+  A  1047 G(GLY1047) C
+  A  1048 A(ALA1048) C
+  A  1049 R(ARG1049) C
+  A  1050 F(PHE1050) E
+  A  1051 V(VAL1051) E
+  A  1052 Q(GLN1052) E
+  A  1053 F(PHE1053) E
+  A  1054 T(THR1054) E
+  A  1055 A(ALA1055) E
+  A  1056 E(GLU1056) E
+  A  1057 M(MET1057) E
+  A  1058 P(PRO1058) C
+  A  1059 A(ALA1059) C
+  A  1060 G(GLY1060) C
+  A  1061 A(ALA1061) E
+  A  1062 Q(GLN1062) E
+  A  1063 A(ALA1063) E
+  A  1064 T(THR1064) E
+  A  1065 E(GLU1065) E
+  A  1066 S(SER1066) E
+  A  1067 V(VAL1067) C
+  A  1068 Y(TYR1068) C
+  A  1069 Q(GLN1069) E
+  A  1070 R(ARG1070) E
+  A  1071 F(PHE1071) E
+  A  1072 A(ALA1072) E
+  A  1073 F(PHE1073) E
+  A  1074 V(VAL1074) E
+  A  1075 L(LEU1075) E
+  A  1076 S(SER1076) C
+  A  1077 G(GLY1077) E
+  A  1078 E(GLU1078) E
+  A  1079 V(VAL1079) E
+  A  1080 D(ASP1080) E
+  A  1081 V(VAL1081) E
+  A  1082 A(ALA1082) E
+  A  1083 V(VAL1083) E
+  A  1084 G(GLY1084) C
+  A  1085 G(GLY1085) E
+  A  1086 E(GLU1086) E
+  A  1087 T(THR1087) E
+  A  1088 R(ARG1088) E
+  A  1089 T(THR1089) E
+  A  1090 L(LEU1090) E
+  A  1091 R(ARG1091) E
+  A  1092 E(GLU1092) C
+  A  1093 Y(TYR1093) C
+  A  1094 D(ASP1094) E
+  A  1095 Y(TYR1095) E
+  A  1096 V(VAL1096) E
+  A  1097 Y(TYR1097) E
+  A  1098 L(LEU1098) E
+  A  1099 P(PRO1099) C
+  A  1100 A(ALA1100) C
+  A  1101 G(GLY1101) C
+  A  1102 E(GLU1102) C
+  A  1103 K(LYS1103) E
+  A  1104 H(HIS1104) E
+  A  1105 M(MET1105) E
+  A  1106 L(LEU1106) E
+  A  1107 T(THR1107) E
+  A  1108 A(ALA1108) 5
+  A  1109 K(LYS1109) 5
+  A  1110 T(THR1110) 5
+  A  1111 D(ASP1111) 5
+  A  1112 A(ALA1112) E
+  A  1113 R(ARG1113) E
+  A  1114 V(VAL1114) E
+  A  1115 S(SER1115) E
+  A  1116 V(VAL1116) E
+  A  1117 F(PHE1117) E
+  A  1118 E(GLU1118) E
+  A  1119 K(LYS1119) E
+  A  1120 P(PRO1120) E
+  A  1121 Y(TYR1121) E
+  A  1122 Q(GLN1122) E
+  A  1123 T(THR1123) E
+  A  1124 V(VAL1124) C
+  A  1125 E(GLU1125) C
+  A  1126 G(GLY1126) E
+  A  1127 V(VAL1127) E
+  A  1128 Q(GLN1128) E
+  A  1129 A(ALA1129) E
+  A  1130 P(PRO1130) E
+  A  1131 G(GLY1131) E
+  A  1132 V(VAL1132) E
+  A  1133 Y(TYR1133) E
+  A  1134 W(TRP1134) E
+  A  1135 G(GLY1135) C
+  A  1136 N(ASN1136) 4
+  A  1137 E(GLU1137) 4
+  A  1138 R(ARG1138) 4
+  A  1139 E(GLU1139) 4
+  A  1140 N(ASN1140) C
+  A  1141 P(PRO1141) C
+  A  1142 G(GLY1142) C
+  A  1143 Y(TYR1143) C
+  A  1144 P(PRO1144) 5
+  A  1145 F(PHE1145) 5
+  A  1146 E(GLU1146) 5
+  A  1147 G(GLY1147) 5
+  A  1148 D(ASP1148) 4
+  A  1149 D(ASP1149) 4
+  A  1150 H(HIS1150) 4
+  A  1151 L(LEU1151) 4
+  A  1152 I(ILE1152) E
+  A  1153 A(ALA1153) E
+  A  1154 R(ARG1154) E
+  A  1155 K(LYS1155) E
+  A  1156 L(LEU1156) E
+  A  1157 L(LEU1157) C
+  A  1158 P(PRO1158) C
+  A  1159 D(ASP1159) C
+  A  1160 E(GLU1160) 3
+  A  1161 P(PRO1161) 3
+  A  1162 A(ALA1162) 3
+  A  1163 F(PHE1163) C
+  A  1164 D(ASP1164) E
+  A  1165 F(PHE1165) E
+  A  1166 M(MET1166) E
+  A  1167 V(VAL1167) E
+  A  1168 S(SER1168) E
+  A  1169 T(THR1169) E
+  A  1170 M(MET1170) E
+  A  1171 S(SER1171) E
+  A  1172 F(PHE1172) E
+  A  1173 A(ALA1173) C
+  A  1174 P(PRO1174) C
+  A  1175 G(GLY1175) E
+  A  1176 A(ALA1176) E
+  A  1177 S(SER1177) E
+  A  1178 L(LEU1178) C
+  A  1179 P(PRO1179) C
+  A  1180 Y(TYR1180) C
+  A  1181 A(ALA1181) C
+  A  1182 E(GLU1182) C
+  A  1183 V(VAL1183) C
+  A  1184 H(HIS1184) C
+  A  1185 Y(TYR1185) C
+  A  1186 M(MET1186) C
+  A  1187 E(GLU1187) E
+  A  1188 H(HIS1188) E
+  A  1189 G(GLY1189) E
+  A  1190 L(LEU1190) C
+  A  1191 L(LEU1191) E
+  A  1192 M(MET1192) E
+  A  1193 L(LEU1193) E
+  A  1194 E(GLU1194) C
+  A  1195 G(GLY1195) C
+  A  1196 E(GLU1196) C
+  A  1197 G(GLY1197) E
+  A  1198 L(LEU1198) E
+  A  1199 Y(TYR1199) E
+  A  1200 K(LYS1200) E
+  A  1201 L(LEU1201) E
+  A  1202 E(GLU1202) C
+  A  1203 E(GLU1203) C
+  A  1204 N(ASN1204) E
+  A  1205 Y(TYR1205) E
+  A  1206 Y(TYR1206) E
+  A  1207 P(PRO1207) C
+  A  1208 V(VAL1208) C
+  A  1209 T(THR1209) C
+  A  1210 A(ALA1210) C
+  A  1211 G(GLY1211) C
+  A  1212 D(ASP1212) E
+  A  1213 I(ILE1213) E
+  A  1214 I(ILE1214) E
+  A  1215 W(TRP1215) E
+  A  1216 M(MET1216) E
+  A  1217 G(GLY1217) C
+  A  1218 A(ALA1218) C
+  A  1219 H(HIS1219) C
+  A  1220 C(CYS1220) C
+  A  1221 P(PRO1221) E
+  A  1222 Q(GLN1222) E
+  A  1223 W(TRP1223) E
+  A  1224 Y(TYR1224) E
+  A  1225 G(GLY1225) E
+  A  1226 A(ALA1226) E
+  A  1227 L(LEU1227) E
+  A  1228 G(GLY1228) C
+  A  1229 R(ARG1229) C
+  A  1230 N(ASN1230) C
+  A  1231 W(TRP1231) E
+  A  1232 S(SER1232) E
+  A  1233 K(LYS1233) E
+  A  1234 Y(TYR1234) E
+  A  1235 L(LEU1235) E
+  A  1236 L(LEU1236) E
+  A  1237 Y(TYR1237) E
+  A  1238 K(LYS1238) E
+  A  1239 D(ASP1239) C
+  A  1240 M(MET1240) C
+  A  1241 N(ASN1241) C
+  A  1242 R(ARG1242) C
+  A  1243 H(HIS1243) C
+  A  1244 P(PRO1244) C
+  A  1245 L(LEU1245) C
+...................................END....................................
