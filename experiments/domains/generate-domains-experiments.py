@@ -33,16 +33,32 @@ line_count = 0;
 #  line = fr.readline()
 
 # sst experiment scripts
-scop_path = '/home/pkas7/Research/SCOP/pdbstyle-1.75B/'
-cmd = './sst-script.sh --file '
+#scop_path = '/home/pkas7/Research/SCOP/pdbstyle-1.75B/'
+#cmd = './sst-script.sh --file '
+#while line != '':
+#  x = line.strip('\n')
+#  y = line.split()
+#  for i in range(0,6):
+#    structure = y[i]
+#    structure_dir = structure[2:4] + '/'
+#    structure_path = scop_path + structure_dir + structure
+#    current = cmd + structure_path + ' > segmentations/' + structure + '.profile'
+#    fw.write(current+'\n')
+#    fw.write('echo $line_number\n')
+#    fw.write('line_number=$((line_number+1))\n')
+#  line_count += 1
+#  line = fr.readline()
+
+# sst parsing scripts
+cmd = 'python parse-sst-part4.py '
 while line != '':
   x = line.strip('\n')
   y = line.split()
   for i in range(0,6):
     structure = y[i]
-    structure_dir = structure[2:4] + '/'
-    structure_path = scop_path + structure_dir + structure
-    current = cmd + structure_path + ' > segmentations/' + structure + '.profile'
+    current = cmd + 'segmentations/' + structure + '.profile '
+    current += 'parsed/' + structure + ' '
+    current += 'logs/' + structure + ' '
     fw.write(current+'\n')
     fw.write('echo $line_number\n')
     fw.write('line_number=$((line_number+1))\n')

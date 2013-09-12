@@ -1228,7 +1228,7 @@ Segmentation buildSegmentationProfile(struct Parameters &parameters)
       segmentation = generalFit(parameters);
       break;
   }
-  segmentation.printNumberOfSegments(pdb_file,parameters.controls);
+  //segmentation.printNumberOfSegments(pdb_file,parameters.controls);
   return segmentation;
 }
 
