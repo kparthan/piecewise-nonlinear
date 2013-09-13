@@ -411,6 +411,8 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     } else {
       parameters.standardize = UNSET;
     }
+  } else if (profile.compare("sst") == 0) {
+    parameters.profile = SST;
   } else {
     cout << "Unsupported profiling method ..." << endl;
     Usage(argv[0],desc);
@@ -499,26 +501,32 @@ void Usage(const char *exe, options_description &desc)
  */
 void build(struct Parameters &parameters)
 {
-  // get the segmentation
-  Segmentation segmentation = buildSegmentationProfile(parameters);
-
   switch(parameters.profile) {
     case DISTANCE_HISTOGRAM:  // construct the histogram
     {
+      Segmentation segmentation = buildSegmentationProfile(parameters);
       DistanceHistogram histogram = buildHistogramProfile(parameters,segmentation);
       break;
     }
 
     case DIHEDRAL_ANGLES: // compute the dihedral angles 
     {
+      Segmentation segmentation = buildSegmentationProfile(parameters);
       Angles angles = buildAnglesProfile(parameters,segmentation);
       break;
     }
 
     case KNOT_INVARIANTS: // compute the knot invariants
     {
+      Segmentation segmentation = buildSegmentationProfile(parameters);
       KnotInvariants knot_invariants = 
             buildKnotInvariantsProfile(parameters,segmentation);
+      break;
+    }
+
+    case SST: // sst assignment
+    {
+      SST sst = buildSSTProfile(parameters);
       break;
     }
   }
@@ -2014,5 +2022,41 @@ void updateResults(vector<double> &dot_products, vector<double> &distances)
   log2 << endl;
   log2.close();
   log1.close();
+}
+
+///////////////////////// SST FUNCTIONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+/*!
+ *
+ */
+void buildSSTProfile(struct Parameters &parameters)
+{
+  ProteinStructure *p = parsePDBFile(parameters.file);
+  string name = extractName(parameters.file);
+  string path = string(CURRENT_DIRECTORY) + "experiments/sst/parsed/";
+  string file_name = path + name;
+
+  // construct all segments
+  vector<vector<string>> segments;
+  ifstream file(file_name.c_str());
+  while (getline(file,line)) {
+    boost::char_separator<char> sep(",() ");
+    boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
+    vector<string> seg;
+    BOOST_FOREACH (const string& t, tokens) {
+      seg.push_back(t);
+    }
+    segments.push_back(seg);
+    seg.clear();
+  }
+  file.close();
+
+  // get all lines
+  vector<Line<double>> lines;
+  string ch = segments[0][0];
+  Chain chain = p->getDefaultModel()[ch];
+  for (int i=0; i<segments.size(); i++) {
+    
+  }
 }
 

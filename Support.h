@@ -100,6 +100,8 @@ double computeEuclideanDistance(Vector<double> &, Vector<double> &);
 void updateRuntime(string, int, double); 
 void updateResults(vector<double> &, vector<double> &);
 
+// sst functions
+
 // general functions
 struct Parameters parseCommandLineInput (int, char **); 
 void Usage (const char *, options_description &);

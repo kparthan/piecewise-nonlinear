@@ -69,6 +69,7 @@
 #define DIHEDRAL_ANGLES 1
 #define DISTANCE_HISTOGRAM 2
 #define KNOT_INVARIANTS 3
+#define SST 4
 
 // for alignment based comparison
 #define BASIC_ALIGNMENT 1
