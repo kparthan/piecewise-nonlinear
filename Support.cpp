@@ -422,8 +422,6 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     } else {
       parameters.standardize = UNSET;
     }
-  } else if (profile.compare("sst") == 0) {
-    parameters.profile = SST;
   } else {
     cout << "Unsupported profiling method ..." << endl;
     Usage(argv[0],desc);

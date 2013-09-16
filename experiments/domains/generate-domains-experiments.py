@@ -66,8 +66,8 @@ line_count = 0;
 #  line = fr.readline()
   
 
-cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation sst --profile dihedral_angles --polygon projections --type affine --go -20 --ge -5 '
-cmd += '--controls 0 1 2 --constrain sigma length '
+cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation sst --profile dihedral_angles --type basic --gap -20 '
+#cmd += '--controls 0 1 2 --constrain sigma length '
 #cmd += '--controls 0 1 2 --constrain sigma length --standardize exists --fparams standardize.params '
 
 # for single structure

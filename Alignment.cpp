@@ -495,7 +495,7 @@ int Alignment::maxIndex(array<double,3> &score)
  */
 void Alignment::save(double gap_penalty, string &name1, string &name2)
 {
-  string file_name = string(CURRENT_DIRECTORY) + "experiments/angles/alignments/basic/";
+  string file_name = string(CURRENT_DIRECTORY) + "experiments/sst/angles/alignments/basic/";
   file_name += "gap-penalty" + boost::lexical_cast<string>(gap_penalty).substr(0,3);
   file_name += "/" + name1 + "_" + name2;
   ofstream log(file_name.c_str());
