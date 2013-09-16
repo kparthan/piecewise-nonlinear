@@ -13,8 +13,14 @@ class Alignment
       DIAGONAL
     };
 
+    //! Scoring function
+    int scoring_function;
+
     //! The two angular profiles
     Angles angles[2];
+
+    //! Lists of lengths
+    vector<vector<double>> lengths;
 
     //! Alignment scores
     vector<double> scores;
@@ -47,7 +53,7 @@ class Alignment
     Alignment();
 
     //! Constructor
-    Alignment(Angles &, Angles &);
+    Alignment(Angles &, Angles &, int);
 
     //! Edit distance
     void computeEditDistance(double);
@@ -58,8 +64,17 @@ class Alignment
     //! Affine gap alignment
     void computeAffineGapAlignment(double, double, double);
 
-    //! Computes the score of match
+    //! Computes the matching score depending on the scoring fucntion
+    double getMatchingScore(int, int, double);
+
+    //! Computes the score of matching angles
     double getMatchingScore(double, double, double);
+
+    //! Computes the score of matching lengths
+    double getMatchingScore(double, double);
+
+    //! Computes the score of matching angles and lengths
+    double getMatchingScore(double, double, double, double, double);
 
     //! Save the alignment to a file
     void save(double, string &, string &);

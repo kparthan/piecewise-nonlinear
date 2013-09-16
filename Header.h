@@ -73,7 +73,6 @@
 #define DIHEDRAL_ANGLES 1
 #define DISTANCE_HISTOGRAM 2
 #define KNOT_INVARIANTS 3
-#define SST 4
 
 // for alignment based comparison
 #define BASIC_ALIGNMENT 1
@@ -82,6 +81,10 @@
 #define GAP_OPEN_PENALTY -20
 #define GAP_EXTENSION_PENALTY -10
 #define MAX_DIFFERENCE_ANGLES 45
+
+#define SCORE_ANGLES 0
+#define SCORE_LENGTHS 1
+#define SCORE_ANGLES_LENGTHS 2
 
 // for histogram based comparison
 #define POINTS_PER_UNIT 10

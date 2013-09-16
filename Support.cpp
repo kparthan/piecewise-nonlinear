@@ -19,7 +19,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
   struct Parameters parameters;
   vector<string> constrain,force,pdb_ids,scop_ids;
   string structure,encode,pdb_id,profile,scop_id,align_type,generate,polygon,
-         standardization,segmentation;
+         standardization,segmentation,scoring_function;
 
   parameters.structure = -1;
   bool noargs = 1;
@@ -62,6 +62,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
           // dihedral_angles or distance_histogram or knot_invariants
         // arguments for alignment based profiling
        ("type",value<string>(&align_type),"alignment type")
+       ("score",value<string>(&scoring_function),"scoring function")
        ("go",value<double>(&parameters.gap_open_penalty),"gap open penalty")
        ("ge",value<double>(&parameters.gap_extension_penalty),"gap extension penalty")
        ("gap",value<double>(&parameters.gap_penalty),"gap penalty used in alignment")
@@ -360,6 +361,17 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
       cout << "Using default value of maximum allowed angle difference "
            << "for alignment: " << parameters.max_angle_diff << endl;
     }
+    if (vm.count("scoring")) {
+      if (scoring_function.compare("angles") == 0) {
+        parameters.scoring_function = SCORE_ANGLES;
+      } else if (scoring_function.compare("lengths") == 0) {
+        parameters.scoring_function = SCORE_LENGTHS;
+      } else if (scoring_function.compare("anglen") == 0) {
+        parameters.scoring_function = SCORE_ANGLES_LENGTHS;
+      }
+    } else {
+      parameters.scoring_function = SCORE_ANGLES;
+    }
   } else if (profile.compare("distance_histogram") == 0) {
     parameters.profile = DISTANCE_HISTOGRAM;
     if (vm.count("n")) {
@@ -640,7 +652,7 @@ void compareStructuresList(struct Parameters &parameters)
           profiles.push_back(angles);
           if (i != 0) {
             cout << "Aligning " << names[0] << " and " << names[i] << " ...\n";
-            Alignment alignment(profiles[0],profiles[i]);
+            Alignment alignment(profiles[0],profiles[i],parameters.scoring_function);
             if (parameters.align_type == BASIC_ALIGNMENT) {
               alignment.computeBasicAlignment(parameters.gap_penalty,
                                               parameters.max_angle_diff);
@@ -765,7 +777,7 @@ void compareDatabaseStructures(struct Parameters &parameters)
             parameters.file = getSCOPFilePath(structures[j]);
             segmentation = buildSegmentationProfile(parameters);
             Angles another = buildAnglesProfile(parameters,segmentation);
-            Alignment alignment(pivot,another);
+            Alignment alignment(pivot,another,parameters.scoring_function);
             alignment.computeBasicAlignment(parameters.gap_penalty,
                                             parameters.max_angle_diff);
             alignment.save(parameters.gap_penalty,structures[i],structures[j]);
@@ -1481,11 +1493,15 @@ Angles buildAnglesProfile(struct Parameters &parameters,
     Polygon<double> polygon = getRepresentativePolygon(parameters,segmentation);
     //polygon.visualize(name,parameters.controls);
     vector<Line<double>> sides = polygon.getSides();
-    vector<double> dihedral_angles;
+    vector<double> dihedral_angles,lengths;
     for (int i=0; i<sides.size(); i++) {
+      double len1 = lcb::geometry::length<double>(sides[i]);
       for (int j=i+2; j<sides.size(); j++) {
         double angle = computeDihedralAngle(sides[i],sides[j]);
         dihedral_angles.push_back(angle);
+        double len2 = lcb::geometry::length<double>(sides[i]);
+        double len = fabs(len1 - len2);
+        lengths.push_back(len);
       }
     }
     clock_t c_end = clock();
@@ -1493,11 +1509,14 @@ Angles buildAnglesProfile(struct Parameters &parameters,
     double cpu_time = double(c_end-c_start)/(double)(CLOCKS_PER_SEC);
     double wall_time = duration_cast<seconds>(t_end-t_start).count();
 
-    angles = Angles(name,dihedral_angles);
+    angles = Angles(name,dihedral_angles,lengths);
     angles.save();
     //updateRuntime(name,angles,cpu_time);
   }
-  //cout << angles.size() << endl;
+  /*cout << "size: " << angles.size() << endl;
+  for (int i=0; i<angles.size(); i++) {
+    cout << angles[i] << " ";
+  } cout << endl;*/
   return angles;
 }
 

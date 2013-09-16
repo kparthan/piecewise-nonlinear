@@ -41,7 +41,7 @@ Angles Angles::operator=(const Angles &source)
  *  \param i Index of the element to access (zero based).
  *  \return The ith angle 
  */
-inline double &Angles::operator [](unsigned i) 
+double Angles::operator [](int i) 
 {
   return angles[i];
 }
@@ -51,7 +51,7 @@ inline double &Angles::operator [](unsigned i)
  *  \param i Index of the element to access (zero based).
  *  \return The ith angle 
  */
-inline const double & Angles::operator [](unsigned i) const
+const double Angles::operator [](int i) const
 {
   return angles[i];
 }

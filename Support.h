@@ -34,6 +34,7 @@ struct Parameters
   int record;                       // flag to record all experimental results
   // parameters used for profiling using dihedral angles
   int align_type;                   // alignment type
+  int scoring_function;             // scoring function
   double gap_open_penalty;          // gap open penalty
   double gap_extension_penalty;     // gap extension penalty
   double gap_penalty;               // gap penalty used in basic alignment 

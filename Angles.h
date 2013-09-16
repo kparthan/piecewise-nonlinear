@@ -26,10 +26,10 @@ class Angles
     Angles operator=(const Angles &);
 
     //! return i^{th} angle 
-    inline double & operator [](unsigned);
+    double operator [](int);
 
     //! return i^{th} angle 
-    inline const double & operator [](unsigned) const;
+    const double operator [](int) const;
 
     //! Returns the number of angles
     int size();

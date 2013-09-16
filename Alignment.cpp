@@ -11,8 +11,10 @@ Alignment::Alignment()
  *  \brief This constructor module instantiates a Alignment object
  *  \param a a reference to a Angles
  *  \param b a reference to a Angles
+ *  \param scoring_function an integer
  */
-Alignment::Alignment(Angles &a, Angles &b) 
+Alignment::Alignment(Angles &a, Angles &b, int scoring_function) : 
+                     scoring_function(scoring_function)
 {
   angles[0] = a;
   angles[1] = b;
@@ -325,7 +327,7 @@ void Alignment::computeBasicAlignment(double gap_penalty, double max_diff)
   for (i=1; i<=x.size(); i++) {
     for (j=1; j<=y.size(); j++) {
       /* cost of matching the angles */
-      double score = getMatchingScore(x[i-1],y[j-1],max_diff);
+      double score = getMatchingScore(i-1,j-1,max_diff);
       matrix[i][j] = matrix[i-1][j-1] + score;
       direction[i][j] = DIAGONAL;
       if (matrix[i][j] < matrix[i-1][j] + gap_penalty) {
@@ -354,6 +356,30 @@ void Alignment::computeBasicAlignment(double gap_penalty, double max_diff)
 
 /*!
  *  \brief This function computes the score for matching two angles.
+ *  \param len1 a double
+ *  \param len2 a double
+ *  \return match score
+ */
+double Alignment::getMatchingScore(int i, int j, double max_diff)
+{
+  switch(scoring_function) {
+    case SCORE_ANGLES:
+      return getMatchingScore(angles[0][i],angles[1][j],max_diff);
+      break;
+
+    case SCORE_LENGTHS:
+      return getMatchingScore(lengths[0][i],lengths[1][j]);
+      break;
+
+    case SCORE_ANGLES_LENGTHS:
+      return getMatchingScore(angles[0][i],angles[1][j],max_diff,
+                              lengths[0][i],lengths[1][j]);
+      break;
+  }
+}
+
+/*!
+ *  \brief This function computes the score for matching two angles.
  *  \param xi a double
  *  \param yj a double
  *  \param max_diff a double
@@ -369,6 +395,37 @@ double Alignment::getMatchingScore(double xi, double yj, double max_diff)
     t = diff_angles;
   }
   return (max_diff - t);
+}
+
+/*!
+ *  \brief This function computes the score for matching two angles.
+ *  \param len1 a double
+ *  \param len2 a double
+ *  \return match score
+ */
+double Alignment::getMatchingScore(double li, double lj) 
+{
+  double K = 20;
+  double diff = fabs(li - lj);
+  double ratio = (diff * diff) / (K * K);
+  return exp(-ratio);
+}
+
+/*!
+ *  \brief This function computes the score for matching two angles.
+ *  \param xi a double
+ *  \param yj a double
+ *  \param max_diff a double
+ *  \param li a double
+ *  \param lj a double
+ *  \return the similarity score
+ */
+double Alignment::getMatchingScore(double xi, double yj, double max_diff,
+                                   double li, double lj)
+{
+  double angle_similarity = getMatchingScore(xi,yj,max_diff);
+  double length_similarity = getMatchingScore(li,lj);
+  return (angle_similarity * length_similarity);
 }
 
 /*!
@@ -418,7 +475,7 @@ void Alignment::computeAffineGapAlignment(double go, double ge, double max_diff)
     for (int j=1; j<=y.size(); j++) {
       // come to a match state
       for (int k=0; k<3; k++) {
-        score[k] = matrix[k][i-1][j-1] + getMatchingScore(x[i-1],y[j-1],max_diff);
+        score[k] = matrix[k][i-1][j-1] + getMatchingScore(i-1,j-1,max_diff);
       }
       max_index = maxIndex(score);
       direction[0][i][j] = max_index;
