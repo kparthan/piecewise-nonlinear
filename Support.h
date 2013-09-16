@@ -24,6 +24,7 @@ struct Parameters
   int encode_deviations;            // mechanism to encode deviations
   int force_segmentation;           // flag to redo segmentation
   int force_profile;                // flag to rebuild profile 
+  int segmentation;                 // type of segmentation
   int profile;                      // distance histogram or knot invariants
   int comparison;                   // comparison flag set/unset 
   vector<string> comparison_files;  // path to the structure files used
@@ -101,6 +102,7 @@ void updateRuntime(string, int, double);
 void updateResults(vector<double> &, vector<double> &);
 
 // sst functions
+Angles buildSSTProfile(struct Parameters &);
 
 // general functions
 struct Parameters parseCommandLineInput (int, char **); 

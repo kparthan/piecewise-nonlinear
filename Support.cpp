@@ -19,7 +19,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
   struct Parameters parameters;
   vector<string> constrain,force,pdb_ids,scop_ids;
   string structure,encode,pdb_id,profile,scop_id,align_type,generate,polygon,
-         standardization;
+         standardization,segmentation;
 
   parameters.structure = -1;
   bool noargs = 1;
@@ -47,6 +47,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("encode",value<string>(&encode), "type of encoding the deviations")
        ("force",value<vector<string>>(&force)->multitoken(),
                                   "force segmentation/histogram construction")
+       ("segmentation",value<string>(&segmentation),"type of segmentation")
 
        // args used for comparison
        ("compare","flag to initiate comparison")
@@ -249,6 +250,16 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     }
   } else {
     parameters.encode_deviations = ENCODE_DEVIATIONS_CUSTOMIZED;
+  }
+
+  if (vm.count("segmentation")) {
+    if (segmentation.compare("bezier") == 0) {
+      parameters.segmentation = BEZIER_SEGMENTATION;
+    } else if (segmentation.compare("sst") == 0) {
+      parameters.segmentation = SST_SEGMENTATION;
+    }
+  } else {
+    parameters.segmentation = BEZIER_SEGMENTATION;
   }
 
   parameters.record = UNSET;
@@ -511,8 +522,12 @@ void build(struct Parameters &parameters)
 
     case DIHEDRAL_ANGLES: // compute the dihedral angles 
     {
-      Segmentation segmentation = buildSegmentationProfile(parameters);
-      Angles angles = buildAnglesProfile(parameters,segmentation);
+      if (parameters.segmentation == BEZIER_SEGMENTATION) {
+        Segmentation segmentation = buildSegmentationProfile(parameters);
+        Angles angles = buildAnglesProfile(parameters,segmentation);
+      } else if (parameters.segmentation == SST_SEGMENTATION) {
+        Angles angles = buildSSTProfile(parameters);
+      }
       break;
     }
 
@@ -521,12 +536,6 @@ void build(struct Parameters &parameters)
       Segmentation segmentation = buildSegmentationProfile(parameters);
       KnotInvariants knot_invariants = 
             buildKnotInvariantsProfile(parameters,segmentation);
-      break;
-    }
-
-    case SST: // sst assignment
-    {
-      SST sst = buildSSTProfile(parameters);
       break;
     }
   }
@@ -588,8 +597,10 @@ void compareStructuresList(struct Parameters &parameters)
       parameters.file = parameters.comparison_files[i];
       string name = extractName(parameters.file);
       names.push_back(name);
-      Segmentation segmentation = buildSegmentationProfile(parameters);
-      segmentations.push_back(segmentation);
+      if (parameters.segmentation == BEZIER_SEGMENTATION) {
+        Segmentation segmentation = buildSegmentationProfile(parameters);
+        segmentations.push_back(segmentation);
+      }
     }
 
     switch(parameters.profile) {
@@ -615,10 +626,19 @@ void compareStructuresList(struct Parameters &parameters)
       case DIHEDRAL_ANGLES:
       {
         vector<Angles> profiles;
+        Angles angles;
         vector<vector<double>> all_scores;
         for (int i=0; i<num_structures; i++) {
           parameters.file = parameters.comparison_files[i];
-          Angles angles = buildAnglesProfile(parameters,segmentations[i]);
+          if (parameters.segmentation == BEZIER_SEGMENTATION) {
+            angles = buildAnglesProfile(parameters,segmentations[i]);
+          } else if (parameters.segmentation == SST_SEGMENTATION) {
+            angles = buildSSTProfile(parameters);
+            if (angles.size() == 0) {
+              errorLog(names);
+              exit(1);
+            }
+          }
           profiles.push_back(angles);
           if (i != 0) {
             cout << "Aligning " << names[0] << " and " << names[i] << " ...\n";
@@ -839,8 +859,8 @@ vector<string> parseDatabase(string &filename)
  */
 void errorLog(vector<string> &names)
 {
-  string file_name = string(CURRENT_DIRECTORY) + "experiments/angles/";
-  file_name += "errors.log";
+  string file_name = string(CURRENT_DIRECTORY); 
+  file_name += "errors-part4.log";
   ofstream log(file_name.c_str(),ios::app);
   for (int i=0; i<names.size(); i++) {
     log << names[i] << "\t";
@@ -1491,28 +1511,32 @@ Angles buildAnglesProfile(struct Parameters &parameters,
  */
 double computeDihedralAngle(Line<double> &line1, Line<double> &line2)
 {
-  Vector<double> p0 = line1.startPoint().positionVector();
-  Vector<double> p1 = line1.endPoint().positionVector();
-  Vector<double> p2 = line2.startPoint().positionVector();
-  Vector<double> p3 = line2.endPoint().positionVector();
-  Vector<double> v1,v2,v3,n1,n2,m;
-  v1 = p1 - p0;
-  v2 = p2 - p1;
-  n1 = Vector<double>::crossProduct(v1,v2);
-  n1.normalize();
-  v3 = p3 - p2;
-  n2 = Vector<double>::crossProduct(v2,v3);
-  n2.normalize();
-  m = Vector<double>::crossProduct(n1,v2);
-  m.normalize();
-  double x = n1 * n2;
-  double y = m * n2;
-  double theta = atan2(y,x);
-  double theta_degrees = theta * 180 / PI;
-  if (theta_degrees < 0) {
-     theta_degrees += 360;
-  } 
-  return theta_degrees;
+  if (line1.endPoint() != line2.startPoint()) {
+    Vector<double> p0 = line1.startPoint().positionVector();
+    Vector<double> p1 = line1.endPoint().positionVector();
+    Vector<double> p2 = line2.startPoint().positionVector();
+    Vector<double> p3 = line2.endPoint().positionVector();
+    Vector<double> v1,v2,v3,n1,n2,m;
+    v1 = p1 - p0;
+    v2 = p2 - p1;
+    n1 = Vector<double>::crossProduct(v1,v2);
+    n1.normalize();
+    v3 = p3 - p2;
+    n2 = Vector<double>::crossProduct(v2,v3);
+    n2.normalize();
+    m = Vector<double>::crossProduct(n1,v2);
+    m.normalize();
+    double x = n1 * n2;
+    double y = m * n2;
+    double theta = atan2(y,x);
+    double theta_degrees = theta * 180 / PI;
+    if (theta_degrees < 0) {
+       theta_degrees += 360;
+    } 
+    return theta_degrees;
+  } else {
+    return 1000;
+  }
 }
 
 /*!
@@ -1543,13 +1567,13 @@ void updateResults(struct Parameters &parameters, vector<vector<double>> &scores
 {
   string path,gap;
   if (parameters.align_type == BASIC_ALIGNMENT) {
-    path = string(CURRENT_DIRECTORY) + "experiments/angles/comparisons/domains/basic/";
+    path = string(CURRENT_DIRECTORY) + "experiments/sst/angles/comparisons/domains/basic/";
     gap = "gap-penalty" 
           + boost::lexical_cast<string>(parameters.gap_penalty).substr(0,3) + "/";
   } else if (parameters.align_type == AFFINE_GAP_ALIGNMENT) {
     double go = parameters.gap_open_penalty;
     double ge = parameters.gap_extension_penalty;
-    path = string(CURRENT_DIRECTORY) + "experiments/angles/comparisons/domains/affine/";
+    path = string(CURRENT_DIRECTORY) + "experiments/sst/angles/comparisons/domains/affine/";
     gap = "go" + boost::lexical_cast<string>(go).substr(0,3) + "-";
     gap += "ge" + boost::lexical_cast<string>(ge).substr(0,3) + "/";
   }
@@ -2029,19 +2053,20 @@ void updateResults(vector<double> &dot_products, vector<double> &distances)
 /*!
  *
  */
-void buildSSTProfile(struct Parameters &parameters)
+Angles buildSSTProfile(struct Parameters &parameters)
 {
   ProteinStructure *p = parsePDBFile(parameters.file);
   string name = extractName(parameters.file);
   string path = string(CURRENT_DIRECTORY) + "experiments/sst/parsed/";
   string file_name = path + name;
+  string each_line;
 
   // construct all segments
   vector<vector<string>> segments;
   ifstream file(file_name.c_str());
-  while (getline(file,line)) {
+  while (getline(file,each_line)) {
     boost::char_separator<char> sep(",() ");
-    boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
+    boost::tokenizer<boost::char_separator<char> > tokens(each_line,sep);
     vector<string> seg;
     BOOST_FOREACH (const string& t, tokens) {
       seg.push_back(t);
@@ -2053,10 +2078,38 @@ void buildSSTProfile(struct Parameters &parameters)
 
   // get all lines
   vector<Line<double>> lines;
-  string ch = segments[0][0];
-  Chain chain = p->getDefaultModel()[ch];
   for (int i=0; i<segments.size(); i++) {
-    
+    // get lcb::chain
+    string ch = segments[i][0];
+    Chain chain = p->getDefaultModel()[ch];
+    string res_id = segments[i][1];
+    // get start lcb::residue
+    Residue residue = chain[res_id];
+    vector<array<double,3>> coords = residue.getAtomicCoordinates<double>();
+    Point<double> start(coords[0]);
+    // get end lcb::residue
+    res_id = segments[i][2];
+    residue = chain[res_id];
+    coords = residue.getAtomicCoordinates<double>();
+    Point<double> end(coords[0]);
+    // get lcb::line
+    Line<double> line(start,end);
+    lines.push_back(line);
   }
+
+  // compute dihedral angles
+  vector<double> dihedral_angles;
+  for (int i=0; i<lines.size(); i++) {
+    for (int j=i+1; j<lines.size(); j++) {
+      double angle = computeDihedralAngle(lines[i],lines[j]);
+      if (angle != 1000) {
+        dihedral_angles.push_back(angle);
+      }
+    }
+  }
+        /*for (unsigned int i=0; i<dihedral_angles.size(); i++) {
+          cout << dihedral_angles[i] << " ";
+        } cout << endl;*/
+  return Angles(name,dihedral_angles);
 }
 

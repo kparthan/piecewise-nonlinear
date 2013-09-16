@@ -50,24 +50,24 @@ line_count = 0;
 #  line = fr.readline()
 
 # sst parsing scripts
-cmd = 'python parse-sst-part4.py '
-while line != '':
-  x = line.strip('\n')
-  y = line.split()
-  for i in range(0,6):
-    structure = y[i]
-    current = cmd + 'segmentations/' + structure + '.profile '
-    current += 'parsed/' + structure + ' '
-    current += 'logs/' + structure + ' '
-    fw.write(current+'\n')
-    fw.write('echo $line_number\n')
-    fw.write('line_number=$((line_number+1))\n')
-  line_count += 1
-  line = fr.readline()
+#cmd = 'python parse-sst-part4.py '
+#while line != '':
+#  x = line.strip('\n')
+#  y = line.split()
+#  for i in range(0,6):
+#    structure = y[i]
+#    current = cmd + 'segmentations/' + structure + '.profile '
+#    current += 'parsed/' + structure + ' '
+#    current += 'logs/' + structure + ' '
+#    fw.write(current+'\n')
+#    fw.write('echo $line_number\n')
+#    fw.write('line_number=$((line_number+1))\n')
+#  line_count += 1
+#  line = fr.readline()
   
 
-#cmd += '--controls 0 1 2 --constrain sigma length '
-#cmd = './piecewise-nonlinear-fit-part4 --structure protein --profile dihedral_angles --polygon projections --type affine --go -20 --ge -5 '
+cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation sst --profile dihedral_angles --polygon projections --type affine --go -20 --ge -5 '
+cmd += '--controls 0 1 2 --constrain sigma length '
 #cmd += '--controls 0 1 2 --constrain sigma length --standardize exists --fparams standardize.params '
 
 # for single structure
@@ -86,20 +86,20 @@ while line != '':
 #  line = fr.readline()
 
 # comparison script
-#cmd += '--record --compare --scopids '
-#while line != '':
-#  x = line.strip('\n')
-#  y = line.split()
-#  current = cmd
-#  for i in range(0,6):
-#    structure = y[i]
-#    structure_id = y[i][:-4]
-#    current += structure_id + " "
-#  fw.write(current+'\n')
-#  fw.write('echo $line_number\n')
-#  fw.write('line_number=$((line_number+1))\n')
-#  line_count += 1
-#  line = fr.readline()
+cmd += '--record --compare --scopids '
+while line != '':
+  x = line.strip('\n')
+  y = line.split()
+  current = cmd
+  for i in range(0,6):
+    structure = y[i]
+    structure_id = y[i][:-4]
+    current += structure_id + " "
+  fw.write(current+'\n')
+  fw.write('echo $line_number\n')
+  fw.write('line_number=$((line_number+1))\n')
+  line_count += 1
+  line = fr.readline()
 
 fw.write('STOPM=`date -u "+%s"`\n')
 fw.write('RUNTIMEM=`expr $STOPM - $STARTM`\n')

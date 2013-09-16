@@ -518,7 +518,7 @@ void Alignment::save(double gap_penalty, string &name1, string &name2)
  */
 void Alignment::save(double go, double ge, string &name1, string &name2)
 {
-  string file_name = string(CURRENT_DIRECTORY) + "experiments/angles/alignments/affine/";
+  string file_name = string(CURRENT_DIRECTORY) + "experiments/sst/angles/alignments/affine/";
   file_name += "go" + boost::lexical_cast<string>(go).substr(0,3) + "-";
   file_name += "ge" + boost::lexical_cast<string>(ge).substr(0,3);
   file_name += "/" + name1 + "_" + name2;

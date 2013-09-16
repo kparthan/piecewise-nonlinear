@@ -65,6 +65,10 @@
 #define ENCODE_DEVIATIONS_GENERAL 0
 #define ENCODE_DEVIATIONS_CUSTOMIZED 1
 
+// type of segmentation
+#define BEZIER_SEGMENTATION 0
+#define SST_SEGMENTATION 1
+
 // type of profile constructed from the segmentation
 #define DIHEDRAL_ANGLES 1
 #define DISTANCE_HISTOGRAM 2
