@@ -37,7 +37,7 @@ class KnotInvariants
     double cpu_time,wall_time;
 
     //! Initialize
-    void initialize(vector<int> &);
+    void initialize();
 
     //
     vector<vector<double>> omega,absomega,partsum,abspartsum;
@@ -121,7 +121,7 @@ class KnotInvariants
     KnotInvariants(CurveString<double> &, string, int);
 
     //! Constructor
-    KnotInvariants(Polygon<double> &, string, int, vector<int> &);
+    KnotInvariants(Polygon<double> &, string, int);
 
     //! Copy constructor
     KnotInvariants(const KnotInvariants &);
@@ -130,7 +130,7 @@ class KnotInvariants
     KnotInvariants operator=(const KnotInvariants &);
 
     //! Constructs the representative polygon
-    void constructPolygon(int, int, vector<int> &);
+    void constructPolygon(int, int);
 
     //! Computes the list of all invariants
     void computeInvariants(string);

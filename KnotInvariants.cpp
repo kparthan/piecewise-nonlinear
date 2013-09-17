@@ -24,20 +24,18 @@ KnotInvariants::KnotInvariants(CurveString<double> &curve_string, string name,
  *  \param max_order an integer
  */
 KnotInvariants::KnotInvariants(Polygon<double> &polygon, string name,
-                               int max_order, vector<int> &controls): 
+                               int max_order): 
                                polygon(polygon), name(name), max_order(max_order)
 {
-  initialize(controls);
+  initialize();
 }
 
 /*!
  *  \brief This function is used to initialize the object.
- *  \param controls a reference to a vector<int>
  */
-void KnotInvariants::initialize(vector<int> &controls)
+void KnotInvariants::initialize()
 {
   invariants = vector<vector<double>>(max_order,vector<double>());
-  //polygon.visualize(name,controls);
   int sides = polygon.getNumberOfSides();
   for (int i=0; i<sides; i++) {
     vector<double> tmp(sides,0);
@@ -88,13 +86,11 @@ KnotInvariants KnotInvariants::operator=(const KnotInvariants &source)
  *  \brief This function constructs the representative polygon
  *  \param heuristic an integer
  *  \param num_sides an integer
- *  \param controls a reference to a vector<int>
  */
-void KnotInvariants::constructPolygon(int heuristic, int num_sides,
-                                      vector<int> &controls)
+void KnotInvariants::constructPolygon(int heuristic, int num_sides)
 {
   polygon = curve_string.getApproximatingPolygon(heuristic,num_sides);
-  initialize(controls);
+  initialize();
 }
 
 /*!

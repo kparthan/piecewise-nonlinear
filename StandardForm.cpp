@@ -571,7 +571,7 @@ Segmentation StandardForm::fitBezierCurveModel()
     printBezierSegmentation(segmentation,cpu_time,wall_time);
     segmentation_profile = structure->reconstruct(parameters.file,output_file,
                            codeLength,optimalBezierFit,segmentation.second,
-                           parameters.controls,transformation);
+                           parameters.control_string,transformation);
     segmentation_profile.setBitsPerResidue(null_bpr,bezier_bpr);
     //segmentation_profile.setMaximumRadius(getMaximumDistance(original_coordinates));
     vector<Point<double>> coords = structure->getCoordinatesPoints();

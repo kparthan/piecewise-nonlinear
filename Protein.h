@@ -18,7 +18,7 @@ class Protein : public Structure
 
     //! Generates the Pymol script for coloring the individual segments
     void createPymolScript(string &, vector<vector<OptimalFit>> &, vector<int> &,
-                           vector<int> &, vector<Identifier> &);
+                           string &, vector<Identifier> &);
 
   public: 
     //! Constructor
@@ -27,7 +27,7 @@ class Protein : public Structure
     //! Reconstruct the protein back with the control points added
     Segmentation reconstruct(string &, string &, vector<vector<double>> &,
                              vector<vector<OptimalFit>> &, vector<int> &, 
-                             vector<int> &, Matrix<double> &);
+                             string &, Matrix<double> &);
 
     //! Gets the indexes of the end points to be internally used
     array<int,2> getEndPoints(vector<string> &);

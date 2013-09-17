@@ -126,11 +126,11 @@ RealType Polygon<RealType>::length()
 /*!
  *  \brief This function plots the polygon to be visualized in Pymol.
  *  \param name a string
- *  \param controls a reference to a vector<int>
+ *  \param controls a reference to a string 
  *  \param construct_polygon an integer
  */
 template <typename RealType>
-void Polygon<RealType>::visualize(string name, vector<int> &controls,
+void Polygon<RealType>::visualize(string name, string &controls,
                                   int construct_polygon)
 {
   int res_total = ceil(vertices.size()/10.0);
@@ -156,17 +156,13 @@ void Polygon<RealType>::visualize(string name, vector<int> &controls,
   }
   structure.addChain(chain);
 
-  string c;
-  for (int i=0; i<controls.size(); i++) {
-    c += boost::lexical_cast<string>(controls[i]);
-  }
   // copy the existing modified pdb file
   string modified_pdb = string(CURRENT_DIRECTORY) + "experiments/segmentations/"
-                        + "modified_pdb_files/" + c + "/" + name + ".pdb";
+                        + "modified_pdb_files/" + controls + "/" + name + ".pdb";
   string vertices_pdb;
   if (construct_polygon == POLYGON_PROJECTIONS) {
     vertices_pdb = string(CURRENT_DIRECTORY) + "experiments/polygons/"
-                   + "projections/" + c + "/" + name + ".pdb"; 
+                   + "projections/" + controls + "/" + name + ".pdb";
   } else if (construct_polygon == POLYGON_BACKBONE) {
     vertices_pdb = string(CURRENT_DIRECTORY) + "experiments/polygons/"
                    + "backbone/" + name + ".pdb"; 
@@ -182,7 +178,7 @@ void Polygon<RealType>::visualize(string name, vector<int> &controls,
   }
   pdb_file.close();
 
-  createPymolScript(name,structure,c,construct_polygon);
+  createPymolScript(name,structure,controls,construct_polygon);
 }
 
 /*!

@@ -76,11 +76,12 @@ vector<double> Angles::getAngles()
 
 /*!
  *  \brief Saves the angles profile.
+ *  \param controls a reference to a string 
  */
-void Angles::save()
+void Angles::save(string &controls)
 {
-  string file_name = string(CURRENT_DIRECTORY) 
-                     + "experiments/angles/profiles/" + name;
+  string file_name = string(CURRENT_DIRECTORY) + "experiments/angles/profiles/" 
+                     + controls + "/" + name + ".profile";
   ofstream log(file_name.c_str());
   for (int i=0; i<angles.size(); i++) {
     log << fixed << setw(10) << setprecision(4) << angles[i];
@@ -92,12 +93,13 @@ void Angles::save()
 /*!
  *  \brief Loads the profile from an existing file.
  *  \param name a string
+ *  \param controls a reference to a string 
  */
-void Angles::load(string &file)
+void Angles::load(string &file, string &controls)
 {
   name = file;
-  string file_name = string(CURRENT_DIRECTORY)
-                     + "experiments/angles/profiles/" + name;
+  string file_name = string(CURRENT_DIRECTORY) + "experiments/angles/profiles/"
+                     + controls + "/" + name + ".profile";
   ifstream log(file_name.c_str());
   string line;
   angles.clear();

@@ -6,6 +6,7 @@
 #include "Polygon.h"
 #include "DistanceHistogram.h"
 #include "Angles.h"
+#include "Lengths.h"
 #include "KnotInvariants.h"
 
 struct Parameters
@@ -16,12 +17,14 @@ struct Parameters
   int print;                        // verbose or not 
   vector<string> end_points;        // end points of a segment
   vector<int> controls;             // # of intermediate control points
+  string control_string;            // controls string
   int constrain_sigma;              // flag to constrain sigma
   double min_sigma;                 // lower limit of sigma
   double max_sigma;                 // upper limit of sigma
   int constrain_segment_length;     // flag to constrain segment length
   int max_segment_length;           // maximum allowed segment length
   int encode_deviations;            // mechanism to encode deviations
+  int segmentation_only;            // flag to only do the segmentation
   int force_segmentation;           // flag to redo segmentation
   int force_profile;                // flag to rebuild profile 
   int segmentation;                 // type of segmentation
@@ -59,7 +62,7 @@ struct Parameters
 };
 
 // segmentation functions
-bool checkIfSegmentationExists(string &, vector<int> &);
+bool checkIfSegmentationExists(string &, string &);
 Segmentation buildSegmentationProfile(struct Parameters &);
 string getPDBFilePath(string &);
 string getSCOPFilePath(string &);
@@ -72,12 +75,19 @@ Segmentation generalFit(struct Parameters &);
 void updateRuntime(string, Segmentation &);
 
 // angles functions
-bool checkIfAnglesExist(string &);
+bool checkIfAnglesExist(string &, string &);
 Polygon<double> getRepresentativePolygon(struct Parameters &, Segmentation &);
 Angles buildAnglesProfile(struct Parameters &, Segmentation &);
 double computeDihedralAngle(Line<double> &, Line<double> &);
 void updateRuntime(string, Angles &, double);
 void updateResults(struct Parameters &, vector<vector<double>> &);
+
+// lengths functions
+bool checkIfLengthsExist(string &, string &);
+Lengths buildLengthsProfile(struct Parameters &, Segmentation &);
+double computeMidPointsDistance(Line<double> &, Line<double> &);
+void updateRuntime(string, Lengths &);
+//void updateResults(struct Parameters &, vector<vector<double>> &);
 
 // histograms functions
 bool checkIfHistogramExists(string &);
@@ -109,6 +119,7 @@ Angles buildSSTProfile(struct Parameters &);
 struct Parameters parseCommandLineInput (int, char **); 
 void Usage (const char *, options_description &);
 void build(struct Parameters &);
+string getControlString(vector<int> &);
 bool checkFile(string &);
 string extractName(string &);
 void writeToFile(vector<array<double,3>> &, const char*);

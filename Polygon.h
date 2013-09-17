@@ -52,7 +52,7 @@ class Polygon
     RealType length();
 
     //! Visualize the polygon in Pymol
-    void visualize(string, vector<int> &, int);
+    void visualize(string, string &, int);
 
     //! Merge with another polygon
     Polygon<RealType> merge(Polygon<RealType> &);

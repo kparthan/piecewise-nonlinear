@@ -48,6 +48,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("force",value<vector<string>>(&force)->multitoken(),
                                   "force segmentation/histogram construction")
        ("segmentation",value<string>(&segmentation),"type of segmentation")
+       ("only","to perform the segmentation alone")
 
        // args used for comparison
        ("compare","flag to initiate comparison")
@@ -135,6 +136,12 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     }
   }
 
+  if (vm.count("only")) {
+    parameters.segmentation_only = SET;
+  } else {
+    parameters.segmentation_only = UNSET;
+  }
+
   if (parameters.structure == PROTEIN && !vm.count("compare")) {
     if (vm.count("file") && vm.count("pdbid")) {
       cout << "Please use one of --file or --pdbid ..." << endl;
@@ -182,6 +189,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
         Usage(argv[0],desc);
       }
     } 
+    parameters.control_string = getControlString(parameters.controls);
   }
 
   parameters.constrain_sigma = NON_CONSTRAIN;
@@ -434,10 +442,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     } else {
       parameters.standardize = UNSET;
     }
-  } else {
-    cout << "Unsupported profiling method ..." << endl;
-    Usage(argv[0],desc);
-  }
+  } 
 
   if (parameters.profile == DIHEDRAL_ANGLES || 
       parameters.profile == KNOT_INVARIANTS) {
@@ -522,33 +527,56 @@ void Usage(const char *exe, options_description &desc)
  */
 void build(struct Parameters &parameters)
 {
-  switch(parameters.profile) {
-    case DISTANCE_HISTOGRAM:  // construct the histogram
-    {
-      Segmentation segmentation = buildSegmentationProfile(parameters);
-      DistanceHistogram histogram = buildHistogramProfile(parameters,segmentation);
-      break;
-    }
+  Segmentation segmentation;
+  if (parameters.segmentation == BEZIER_SEGMENTATION) {
+    segmentation = buildSegmentationProfile(parameters);
+  }
 
-    case DIHEDRAL_ANGLES: // compute the dihedral angles 
-    {
-      if (parameters.segmentation == BEZIER_SEGMENTATION) {
-        Segmentation segmentation = buildSegmentationProfile(parameters);
-        Angles angles = buildAnglesProfile(parameters,segmentation);
-      } else if (parameters.segmentation == SST_SEGMENTATION) {
-        Angles angles = buildSSTProfile(parameters);
+  if (parameters.segmentation_only == UNSET) {
+    switch(parameters.profile) {
+      case DISTANCE_HISTOGRAM:  // construct the histogram
+      {
+        DistanceHistogram histogram = buildHistogramProfile(parameters,segmentation);
+        break;
       }
-      break;
-    }
 
-    case KNOT_INVARIANTS: // compute the knot invariants
-    {
-      Segmentation segmentation = buildSegmentationProfile(parameters);
-      KnotInvariants knot_invariants = 
-            buildKnotInvariantsProfile(parameters,segmentation);
-      break;
+      case DIHEDRAL_ANGLES: // compute the dihedral angles 
+      {
+        if (parameters.segmentation == BEZIER_SEGMENTATION) {
+          Angles angles = buildAnglesProfile(parameters,segmentation);
+          if (parameters.scoring_function == SCORE_ANGLES ||
+              parameters.scoring_function == SCORE_ANGLES_LENGTHS) {
+            Lengths lengths = buildLengthsProfile(parameters,segmentation);
+          }
+        } else if (parameters.segmentation == SST_SEGMENTATION) {
+          Angles angles = buildSSTProfile(parameters);
+        }
+        break;
+      }
+
+      case KNOT_INVARIANTS: // compute the knot invariants
+      {
+        KnotInvariants knot_invariants = 
+              buildKnotInvariantsProfile(parameters,segmentation);
+        break;
+      }
     }
   }
+}
+
+/*!
+ *  \brief This function is used to construct the string of the maximum 
+ *  number of intermediate controls used.
+ *  \param controls a reference to a vector<int>
+ *  \return the control string
+ */
+string getControlString(vector<int> &controls)
+{
+  string c;
+  for (int i=0; i<controls.size(); i++) {
+    c += boost::lexical_cast<string>(controls[i]);
+  }
+  return c;
 }
 
 /*!
@@ -1214,18 +1242,14 @@ double getMaximumDistance(vector<array<double,3>> &coordinates)
 /*!
  *  \brief This module checks if the segmentation already exists or not.
  *  \param pdb_file a reference to a string
- *  \param controls a reference to a vector<int>
+ *  \param controls a reference to a string 
  *  \return the segmentation exists or not
  */
-bool checkIfSegmentationExists(string &pdb_file, vector<int> &controls)
+bool checkIfSegmentationExists(string &pdb_file, string &controls)
 {
-  string c;
-  for (int i=0; i<controls.size(); i++) {
-    c += boost::lexical_cast<string>(controls[i]);
-  }
   string segmentation_profile = string(CURRENT_DIRECTORY) 
                                 + "experiments/segmentations/profiles/"
-                                + c + "/" + pdb_file + ".profile";
+                                + controls + "/" + pdb_file + ".profile";
   return checkFile(segmentation_profile); 
 }
 
@@ -1247,16 +1271,16 @@ Segmentation buildSegmentationProfile(struct Parameters &parameters)
 
     case PROTEIN:   // protein file
       pdb_file = extractName(parameters.file);
-      status = checkIfSegmentationExists(pdb_file,parameters.controls);
+      status = checkIfSegmentationExists(pdb_file,parameters.control_string);
       if (status && parameters.force_segmentation == UNSET) {
         cout << "Segmentation profile of " << pdb_file << " exists ..." << endl;
-        segmentation.load(pdb_file,parameters.controls);
+        segmentation.load(pdb_file,parameters.control_string);
         vector<Point<double>> coordinates = getProteinCoordinates(parameters);
         segmentation.setCoordinates(coordinates);
       } else {
         cout << "Building segmentation profile of " << pdb_file << " ..." << endl;
         segmentation = proteinFit(parameters);
-        segmentation.save(pdb_file,parameters.controls);
+        segmentation.save(pdb_file,parameters.control_string);
         string name = extractName(parameters.file);
         updateRuntime(name,segmentation);
       }
@@ -1266,7 +1290,7 @@ Segmentation buildSegmentationProfile(struct Parameters &parameters)
       segmentation = generalFit(parameters);
       break;
   }
-  //segmentation.printNumberOfSegments(pdb_file,parameters.controls);
+  //segmentation.printNumberOfSegments(pdb_file,parameters.control_string);
   return segmentation;
 }
 
@@ -1420,7 +1444,7 @@ Segmentation generalFit(struct Parameters &parameters)
 void updateRuntime(string name, Segmentation &segmentation)
 {
   string path = string(CURRENT_DIRECTORY); 
-  string time_file = path + "runtime-segmentation";
+  string time_file = path + "runtime-segmentation-part1";
   ofstream log(time_file.c_str(),ios::app);
   log << setw(10) << name;
   log << setw(10) << segmentation.getNumberOfCoordinates() << "\t";
@@ -1434,12 +1458,14 @@ void updateRuntime(string name, Segmentation &segmentation)
 /*!
  *  \brief This function checks whether the angles exists or not
  *  \param file_name a reference to a string
+ *  \param controls a reference to a string 
  *  \return the angles exists or not
  */
-bool checkIfAnglesExist(string &file_name)
+bool checkIfAnglesExist(string &file_name, string &controls)
 {
-  string path_to_angles = string(CURRENT_DIRECTORY) +
-                          "experiments/angles/profiles/" + file_name;
+  string path_to_angles = string(CURRENT_DIRECTORY)
+                          + "experiments/angles/profiles/" + controls + "/"
+                          + file_name + ".profile";
   return checkFile(path_to_angles);
 }
 
@@ -1465,7 +1491,7 @@ Polygon<double> getRepresentativePolygon(struct Parameters &parameters,
     polygon = Polygon<double>(coordinates);
   }
   string name = extractName(parameters.file);
-  polygon.visualize(name,parameters.controls,parameters.construct_polygon);
+  polygon.visualize(name,parameters.control_string,parameters.construct_polygon);
   return polygon;
 }
 
@@ -1480,28 +1506,23 @@ Angles buildAnglesProfile(struct Parameters &parameters,
                           Segmentation &segmentation)
 {
   string name = extractName(parameters.file);
-  bool status = checkIfAnglesExist(name);
+  bool status = checkIfAnglesExist(name,parameters.control_string);
   Angles angles;
 
   if (status && parameters.force_profile == UNSET) {
     cout << "Angles profile of " << name << " exists ..." << endl;
-    angles.load(name);
+    angles.load(name,parameters.control_string);
   } else {
     cout << "Computing dihedral angles of " << name << " ..." << endl;
     clock_t c_start = clock();
     auto t_start = high_resolution_clock::now();
     Polygon<double> polygon = getRepresentativePolygon(parameters,segmentation);
-    //polygon.visualize(name,parameters.controls);
     vector<Line<double>> sides = polygon.getSides();
-    vector<double> dihedral_angles,lengths;
+    vector<double> dihedral_angles;
     for (int i=0; i<sides.size(); i++) {
-      double len1 = lcb::geometry::length<double>(sides[i]);
       for (int j=i+2; j<sides.size(); j++) {
         double angle = computeDihedralAngle(sides[i],sides[j]);
         dihedral_angles.push_back(angle);
-        double len2 = lcb::geometry::length<double>(sides[i]);
-        double len = fabs(len1 - len2);
-        lengths.push_back(len);
       }
     }
     clock_t c_end = clock();
@@ -1509,8 +1530,8 @@ Angles buildAnglesProfile(struct Parameters &parameters,
     double cpu_time = double(c_end-c_start)/(double)(CLOCKS_PER_SEC);
     double wall_time = duration_cast<seconds>(t_end-t_start).count();
 
-    angles = Angles(name,dihedral_angles,lengths);
-    angles.save();
+    angles = Angles(name,dihedral_angles);
+    angles.save(parameters.control_string);
     //updateRuntime(name,angles,cpu_time);
   }
   /*cout << "size: " << angles.size() << endl;
@@ -1612,6 +1633,88 @@ void updateResults(struct Parameters &parameters, vector<vector<double>> &scores
   file1.close();
   file2.close();
   file3.close();
+}
+
+//////////////////////// LENGTHS FUNCTIONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+/*!
+ *  \brief This module checks if the lengths already exists or not.
+ *  \param pdb_file a reference to a string
+ *  \param controls a reference to a string 
+ *  \return the lengths exists or not
+ */
+bool checkIfLengthsExist(string &pdb_file, string &controls) 
+{
+  string lengths_profile = string(CURRENT_DIRECTORY)
+                           + "experiments/lengths/profiles/"
+                           + controls + "/" + pdb_file + ".profile";
+  return checkFile(lengths_profile); 
+}
+
+/*!
+ *  \brief This module constructs the lengths profile 
+ *  \param parameters a reference to a struct Parameters 
+ *  \param segmentation a reference to a Segmentation 
+ *  \return the lengths object
+ */
+Lengths buildLengthsProfile(struct Parameters &parameters,
+                            Segmentation &segmentation)
+{
+  string name = extractName(parameters.file);
+  bool status = checkIfLengthsExist(name,parameters.control_string);
+  Lengths lengths;
+
+  if (status && parameters.force_profile == UNSET) {
+    cout << "Lengths profile of " << name << " exists ..." << endl;
+    lengths.load(name,parameters.control_string);
+  } else {
+    cout << "Computing lengths of " << name << " ..." << endl;
+    clock_t c_start = clock();
+    auto t_start = high_resolution_clock::now();
+    Polygon<double> polygon = getRepresentativePolygon(parameters,segmentation);
+    vector<Line<double>> sides = polygon.getSides();
+    vector<double> all_lengths;
+    for (int i=0; i<sides.size(); i++) {
+      for (int j=i+2; j<sides.size(); j++) {
+        double len = computeMidPointsDistance(sides[i],sides[j]);
+        all_lengths.push_back(len);
+      }
+    }
+    clock_t c_end = clock();
+    auto t_end = high_resolution_clock::now();
+    double cpu_time = double(c_end-c_start)/(double)(CLOCKS_PER_SEC);
+    double wall_time = duration_cast<seconds>(t_end-t_start).count();
+
+    lengths = Lengths(name,all_lengths);
+    lengths.save(parameters.control_string);
+    //updateRuntime(name,lengths,cpu_time);
+  }
+  /*cout << "size: " << lengths.size() << endl;
+  for (int i=0; i<lengths.size(); i++) {
+    cout << lengths[i] << " ";
+  } cout << endl;*/
+  return lengths;
+}
+
+/*!
+ *  \brief This function computes the distanc between mid-points of two lines.
+ *  \param line1 a reference to a Line
+ *  \param line2 a reference to a Line
+ *  \return the distance between mid-points 
+ */
+double computeMidPointsDistance(Line<double> &line1, Line<double> &line2)
+{
+  Point<double> start = line1.startPoint();
+  Point<double> end = line1.endPoint();
+  Point<double> mid1 = (start + end) * 0.5;
+  start = line2.startPoint();
+  end = line2.endPoint();
+  Point<double> mid2 = (start + end) * 0.5;
+  return lcb::geometry::distance<double>(mid1,mid2);
+}
+
+void updateRuntime(string , Lengths &lengths)
+{
 }
 
 //////////////////////// HISTOGRAMS FUNCTIONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -1841,8 +1944,7 @@ KnotInvariants buildKnotInvariantsProfile(struct Parameters &parameters,
     knot_invariants.load(name,type);
   } else {
     Polygon<double> polygon = getRepresentativePolygon(parameters,segmentation);
-    KnotInvariants knot_invariants(polygon,name,parameters.max_order,
-                                   parameters.controls);
+    KnotInvariants knot_invariants(polygon,name,parameters.max_order);
     cout << "Computing knot invariants for structure " << name << " ..." << endl;
     knot_invariants.computeInvariants(parameters.method);
     knot_invariants.save(type);
@@ -1895,7 +1997,7 @@ void standardizePremeasures(struct Parameters &parameters)
 }
 
 /*!
- *  \brief This function is used to load the standardized pararameters.
+ *  \brief This function is used to load the standardized parameters.
  *  \param fparams a reference to a string
  *  \return the parameters used in standardization
  */
@@ -2124,9 +2226,6 @@ Angles buildSSTProfile(struct Parameters &parameters)
       }
     }
   }
-        /*for (unsigned int i=0; i<dihedral_angles.size(); i++) {
-          cout << dihedral_angles[i] << " ";
-        } cout << endl;*/
   return Angles(name,dihedral_angles);
 }
 

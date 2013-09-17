@@ -148,9 +148,9 @@ vector<Point<double>> Segmentation::getCoordinates()
  *  \brief This function prints the number of segments of each kind present
  *  and the corresponding number of approximating polygon sides
  *  \param name a reference to a string
- *  \param controls a reference to a vector<int>
+ *  \param controls a reference to a string 
  */
-void Segmentation::printNumberOfSegments(string &name, vector<int> &controls)
+void Segmentation::printNumberOfSegments(string &name, string &controls)
 {
   int num_segments[3] = {0};
   int order;
@@ -162,12 +162,8 @@ void Segmentation::printNumberOfSegments(string &name, vector<int> &controls)
   for (int i=0; i<3; i++) {
     num_polygon_sides += num_segments[i] * (i+1);
   }
-  string c;
-  for (int i=0; i<controls.size(); i++) {
-    c += boost::lexical_cast<string>(i);
-  }
   string file_name = string(CURRENT_DIRECTORY) + "experiments/segmentations/";
-  file_name += "stats-part4-" + c;
+  file_name += "stats-part4-" + controls;
   ofstream stats(file_name.c_str(),ios::app);
   stats << setw(10) << name << setw(10) << num_coordinates;
   for (int i=0; i<3; i++) {
@@ -198,16 +194,12 @@ vector<double> Segmentation::getBezierCurvesLengths()
 /*!
  *  \brief This function is used to save the segmentation to a file
  *  \param pdb_file a reference to a string
- *  \param controls a reference to a vector<int>
+ *  \param controls a reference to a string 
  */
-void Segmentation::save(string &pdb_file, vector<int> &controls)
+void Segmentation::save(string &pdb_file, string &controls)
 {
-  string c;
-  for (int i=0; i<controls.size(); i++) {
-    c += boost::lexical_cast<string>(controls[i]);
-  }
   string output_file = string(CURRENT_DIRECTORY) + "experiments/segmentations/profiles/"
-                       + c + "/" +  pdb_file + ".profile";
+                       + controls + "/" +  pdb_file + ".profile";
   ofstream profile(output_file.c_str());
   profile << num_coordinates << endl;
   profile << null_bpr << endl;
@@ -226,9 +218,9 @@ void Segmentation::save(string &pdb_file, vector<int> &controls)
 /*!
  *  \brief This function is used to read the segmentation from a file
  *  \param pdb_file a reference to a string
- *  \param controls a reference to a vector<int>
+ *  \param controls a reference to a string 
  */
-void Segmentation::load(string &pdb_file, vector<int> &controls)
+void Segmentation::load(string &pdb_file, string &controls)
 {
   const int NUM_COORDINATES = 1;
   const int NULL_BPR_LINE = 2;
@@ -238,12 +230,8 @@ void Segmentation::load(string &pdb_file, vector<int> &controls)
   bezier_curves.clear();
   bezier_curves_lengths.clear();
 
-  string c;
-  for (int i=0; i<controls.size(); i++) {
-    c += boost::lexical_cast<string>(controls[i]);
-  }
   string input_file = string(CURRENT_DIRECTORY) + "experiments/segmentations/profiles/" 
-                      + c + "/" + pdb_file + ".profile";
+                      + controls + "/" + pdb_file + ".profile";
   ifstream profile(input_file.c_str());
   string line;
   vector<double> numbers;

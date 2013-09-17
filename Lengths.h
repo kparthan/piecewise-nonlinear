@@ -1,29 +1,29 @@
-#ifndef ANGLES_H
-#define ANGLES_H
+#ifndef LENGTHS_H
+#define LENGTHS_H
 
 #include "Header.h"
 
-class Angles
+class Lengths
 {
   private:
     //! Structure file
     string name;
 
-    //! The constituent angles
-    vector<double> angles;
+    //! The constituent lengths
+    vector<double> lengths;
 
   public:
     //! Null constructor
-    Angles();
+    Lengths();
 
     //! Null constructor
-    Angles(string, vector<double> &);
+    Lengths(string, vector<double> &);
 
     //! Copy constructor    
-    Angles(const Angles &);
+    Lengths(const Lengths &);
 
     //! Assignment operator
-    Angles operator=(const Angles &);
+    Lengths operator=(const Lengths &);
 
     //! return i^{th} angle 
     double operator [](int);
@@ -31,11 +31,11 @@ class Angles
     //! return i^{th} angle 
     const double operator [](int) const;
 
-    //! Returns the number of angles
+    //! Returns the number of lengths
     int size();
 
-    //! Returns the angles
-    vector<double> getAngles();
+    //! Returns the lengths
+    vector<double> getLengths();
 
     //! Saves the profile
     void save(string &);

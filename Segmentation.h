@@ -73,13 +73,13 @@ class Segmentation
     vector<Point<double>> getCoordinates();
 
     //! prints the number of segments
-    void printNumberOfSegments(string &, vector<int> &);
+    void printNumberOfSegments(string &, string &);
 
     //! Write the segmentation details
-    void save(string &, vector<int> &);
+    void save(string &, string &);
 
     //! Read the segmentation
-    void load(string &, vector<int> &);
+    void load(string &, string &);
 };
 
 #endif

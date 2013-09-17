@@ -12,7 +12,7 @@ class General : public Structure
     //! Reconstruct the generic structure back with the control points added
     Segmentation reconstruct(string &, string &, vector<vector<double>> &,
                              vector<vector<OptimalFit>> &, vector<int> &, 
-                             vector<int> &, Matrix<double> &);
+                             string &, Matrix<double> &);
 };
 
 #endif
