@@ -439,7 +439,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
       cout << "Using default value of maximum allowed angle difference "
            << "for alignment: " << parameters.max_angle_diff << endl;
     }
-    if (vm.count("scoring")) {
+    if (vm.count("score")) {
       if (scoring_function.compare("angles") == 0) {
         parameters.scoring_function = SCORE_ANGLES;
       } else if (scoring_function.compare("lengths") == 0) {
@@ -1698,16 +1698,21 @@ void updateRuntime(string name, Angles &angles, double time)
 void updateResults(struct Parameters &parameters, vector<vector<double>> &scores)
 {
   string path,gap;
+  if (parameters.scoring_function == SCORE_ANGLES) {
+    path = string(CURRENT_DIRECTORY) + "experiments/angles/";
+  } else if (parameters.scoring_function == SCORE_ANGLES_LENGTHS) {
+    path = string(CURRENT_DIRECTORY) + "experiments/angles-lengths/";
+  }
   if (parameters.align_type == BASIC_ALIGNMENT) {
-    path = string(CURRENT_DIRECTORY) + "experiments/angles/comparisons/domains/basic/";
+    path += "comparisons/domains/basic/";
     path += parameters.control_string + "/";
     gap = "gap-penalty" 
           + boost::lexical_cast<string>(parameters.gap_penalty).substr(0,3) + "/";
   } else if (parameters.align_type == AFFINE_GAP_ALIGNMENT) {
+    path += "comparisons/domains/affine/";
+    path += parameters.control_string + "/";
     double go = parameters.gap_open_penalty;
     double ge = parameters.gap_extension_penalty;
-    path = string(CURRENT_DIRECTORY) + "experiments/angles/comparisons/domains/affine/";
-    path += parameters.control_string + "/";
     gap = "go" + boost::lexical_cast<string>(go).substr(0,3) + "-";
     gap += "ge" + boost::lexical_cast<string>(ge).substr(0,3) + "/";
   }

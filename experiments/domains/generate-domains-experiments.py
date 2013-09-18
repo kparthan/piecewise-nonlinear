@@ -69,11 +69,15 @@ line_count = 0;
 #cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation bezier --only --force segmentation --controls 0 --constrain sigma length '
 
 # for constructing angular profiles
-cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation bezier --controls 0 --constrain sigma length --profile dihedral_angles --polygon projections '
-cmd += '--type affine --score angles --go -20 --ge 0 '
+#cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation bezier --controls 0 --constrain sigma length --profile dihedral_angles --polygon projections '
+#cmd += '--type affine --score angles --go -20 --ge 0 '
 
 # for constructing length profiles
 #cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation bezier --controls 0 --constrain sigma length --profile lengths --polygon projections '
+
+# for constructing angular profiles
+cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation bezier --controls 0 --constrain sigma length --profile angles_lengths --polygon projections '
+cmd += '--type affine --score anglen --go -20 --ge -5 '
 
 #cmd += '--controls 0 --constrain sigma length --standardize exists --fparams standardize.params '
 
