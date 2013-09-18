@@ -21,6 +21,36 @@ Alignment::Alignment(Angles &a, Angles &b, int scoring_function) :
 }
 
 /*!
+ *  \brief This constructor module instantiates a Alignment object
+ *  \param a a reference to a Lengths
+ *  \param b a reference to a Lengths
+ *  \param scoring_function an integer
+ */
+Alignment::Alignment(Lengths &a, Lengths &b, int scoring_function) : 
+                     scoring_function(scoring_function)
+{
+  lengths[0] = a;
+  lengths[1] = b;
+}
+
+/*!
+ *  \brief This constructor module instantiates a Alignment object
+ *  \param ang1 a reference to a Angles
+ *  \param ang2 a reference to a Angles
+ *  \param len1 a reference to a Lengths
+ *  \param len2 a reference to a Lengths
+ *  \param scoring_function an integer
+ */
+Alignment::Alignment(Angles &ang1, Angles &ang2, Lengths &len1, Lengths &len2,
+                     int scoring_function) : scoring_function(scoring_function)
+{
+  angles[0] = ang1;
+  angles[1] = ang2;
+  lengths[0] = len1;
+  lengths[1] = len2;
+}
+
+/*!
  *  \brief This module implements the basic alignment of two strings 
  */
 /*void Alignment::computeBasicAlignment()
@@ -547,12 +577,20 @@ int Alignment::maxIndex(array<double,3> &score)
 /*!
  *  \brief This method writes the optimal alignment to a file
  *  \param gap_penalty a double
+ *  \param controls a reference to a string
  *  \param name1 a reference to a string 
  *  \param name2 a reference to a string 
  */
-void Alignment::save(double gap_penalty, string &name1, string &name2)
+void Alignment::save(double gap_penalty, string &controls, 
+                     string &name1, string &name2)
 {
-  string file_name = string(CURRENT_DIRECTORY) + "experiments/sst/angles/alignments/basic/";
+  string file_name;
+  if (scoring_function == SCORE_ANGLES) {
+    file_name = string(CURRENT_DIRECTORY) + "experiments/angles/alignments/basic/";
+  } else if (scoring_function == SCORE_ANGLES_LENGTHS) {
+    file_name = string(CURRENT_DIRECTORY) + "experiments/angles-lengths/alignments/basic/";
+  }
+  file_name += controls + "/";
   file_name += "gap-penalty" + boost::lexical_cast<string>(gap_penalty).substr(0,3);
   file_name += "/" + name1 + "_" + name2;
   ofstream log(file_name.c_str());
@@ -570,12 +608,20 @@ void Alignment::save(double gap_penalty, string &name1, string &name2)
  *  \brief This method writes the optimal alignment to a file
  *  \param go a double
  *  \param ge a double
+ *  \param controls a reference to a string
  *  \param name1 a reference to a string 
  *  \param name2 a reference to a string 
  */
-void Alignment::save(double go, double ge, string &name1, string &name2)
+void Alignment::save(double go, double ge, string &controls, 
+                     string &name1, string &name2)
 {
-  string file_name = string(CURRENT_DIRECTORY) + "experiments/sst/angles/alignments/affine/";
+  string file_name;
+  if (scoring_function == SCORE_ANGLES) {
+    file_name = string(CURRENT_DIRECTORY) + "experiments/angles/alignments/affine/";
+  } else if (scoring_function == SCORE_ANGLES_LENGTHS) {
+    file_name = string(CURRENT_DIRECTORY) + "experiments/angles-lengths/alignments/affine/";
+  }
+  file_name += controls + "/";
   file_name += "go" + boost::lexical_cast<string>(go).substr(0,3) + "-";
   file_name += "ge" + boost::lexical_cast<string>(ge).substr(0,3);
   file_name += "/" + name1 + "_" + name2;

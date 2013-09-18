@@ -328,58 +328,10 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
 
   if (profile.compare("dihedral_angles") == 0) {
     parameters.profile = DIHEDRAL_ANGLES;
-    if (vm.count("type")) {
-      if (align_type.compare("basic") == 0) {
-        parameters.align_type = BASIC_ALIGNMENT;
-        if (vm.count("gap")) {
-          cout << "Using a gap penalty of " << parameters.gap_penalty 
-               << " ..." << endl;
-        } else {
-          parameters.gap_penalty = GAP_PENALTY;
-          cout << "Using default value of gap penalty: " << GAP_PENALTY << endl;
-        }
-      } else if (align_type.compare("affine") == 0) {
-        parameters.align_type = AFFINE_GAP_ALIGNMENT;
-        if (vm.count("go")) {
-          cout << "Using a gap open penalty of " << parameters.gap_open_penalty
-               << " ..." << endl;
-        } else {
-          parameters.gap_open_penalty = GAP_OPEN_PENALTY;
-          cout << "Using default value of gap open penalty: " 
-               << GAP_OPEN_PENALTY << endl;
-        }
-        if (vm.count("ge")) {
-          cout << "Using a gap extension penalty of "
-               << parameters.gap_extension_penalty << " ..." << endl;
-        } else {
-          parameters.gap_extension_penalty = GAP_EXTENSION_PENALTY;
-          cout << "Using default value of gap extension penalty: " 
-               << GAP_EXTENSION_PENALTY << endl;
-        }
-      }
-    } else {
-      parameters.align_type = BASIC_ALIGNMENT;
-      parameters.gap_penalty = GAP_PENALTY;
-    }
-    if (vm.count("diff")) {
-      cout << "Using a maximum allowed difference in aligning angles: "
-           << parameters.max_angle_diff << endl;
-    } else {
-      parameters.max_angle_diff = MAX_DIFFERENCE_ANGLES;
-      cout << "Using default value of maximum allowed angle difference "
-           << "for alignment: " << parameters.max_angle_diff << endl;
-    }
-    if (vm.count("scoring")) {
-      if (scoring_function.compare("angles") == 0) {
-        parameters.scoring_function = SCORE_ANGLES;
-      } else if (scoring_function.compare("lengths") == 0) {
-        parameters.scoring_function = SCORE_LENGTHS;
-      } else if (scoring_function.compare("anglen") == 0) {
-        parameters.scoring_function = SCORE_ANGLES_LENGTHS;
-      }
-    } else {
-      parameters.scoring_function = SCORE_ANGLES;
-    }
+  } else if (profile.compare("lengths") == 0) {
+    parameters.profile = LENGTHS; 
+  } else if (profile.compare("angles_lengths") == 0) {
+    parameters.profile = ANGLES_LENGTHS; 
   } else if (profile.compare("distance_histogram") == 0) {
     parameters.profile = DISTANCE_HISTOGRAM;
     if (vm.count("n")) {
@@ -444,8 +396,66 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     }
   } 
 
+  if (vm.count("compare") && (parameters.profile == DIHEDRAL_ANGLES ||
+      parameters.profile == ANGLES_LENGTHS)) {
+    if (vm.count("type")) {
+      if (align_type.compare("basic") == 0) {
+        parameters.align_type = BASIC_ALIGNMENT;
+        if (vm.count("gap")) {
+          cout << "Using a gap penalty of " << parameters.gap_penalty 
+               << " ..." << endl;
+        } else {
+          parameters.gap_penalty = GAP_PENALTY;
+          cout << "Using default value of gap penalty: " << GAP_PENALTY << endl;
+        }
+      } else if (align_type.compare("affine") == 0) {
+        parameters.align_type = AFFINE_GAP_ALIGNMENT;
+        if (vm.count("go")) {
+          cout << "Using a gap open penalty of " << parameters.gap_open_penalty
+               << " ..." << endl;
+        } else {
+          parameters.gap_open_penalty = GAP_OPEN_PENALTY;
+          cout << "Using default value of gap open penalty: " 
+               << GAP_OPEN_PENALTY << endl;
+        }
+        if (vm.count("ge")) {
+          cout << "Using a gap extension penalty of "
+               << parameters.gap_extension_penalty << " ..." << endl;
+        } else {
+          parameters.gap_extension_penalty = GAP_EXTENSION_PENALTY;
+          cout << "Using default value of gap extension penalty: " 
+               << GAP_EXTENSION_PENALTY << endl;
+        }
+      }
+    } else {
+      parameters.align_type = BASIC_ALIGNMENT;
+      parameters.gap_penalty = GAP_PENALTY;
+    }
+    if (vm.count("diff")) {
+      cout << "Using a maximum allowed difference in aligning angles: "
+           << parameters.max_angle_diff << endl;
+    } else {
+      parameters.max_angle_diff = MAX_DIFFERENCE_ANGLES;
+      cout << "Using default value of maximum allowed angle difference "
+           << "for alignment: " << parameters.max_angle_diff << endl;
+    }
+    if (vm.count("scoring")) {
+      if (scoring_function.compare("angles") == 0) {
+        parameters.scoring_function = SCORE_ANGLES;
+      } else if (scoring_function.compare("lengths") == 0) {
+        parameters.scoring_function = SCORE_LENGTHS;
+      } else if (scoring_function.compare("anglen") == 0) {
+        parameters.scoring_function = SCORE_ANGLES_LENGTHS;
+      }
+    } else {
+      parameters.scoring_function = SCORE_ANGLES;
+    }
+  }
+
   if (parameters.profile == DIHEDRAL_ANGLES || 
-      parameters.profile == KNOT_INVARIANTS) {
+      parameters.profile == KNOT_INVARIANTS ||
+      parameters.profile == LENGTHS ||
+      parameters.profile == ANGLES_LENGTHS) {
     if (vm.count("polygon")) {
       if (polygon.compare("controls") == 0) {
         parameters.construct_polygon = POLYGON_CONTROLS; 
@@ -544,13 +554,26 @@ void build(struct Parameters &parameters)
       {
         if (parameters.segmentation == BEZIER_SEGMENTATION) {
           Angles angles = buildAnglesProfile(parameters,segmentation);
-          if (parameters.scoring_function == SCORE_ANGLES ||
-              parameters.scoring_function == SCORE_ANGLES_LENGTHS) {
-            Lengths lengths = buildLengthsProfile(parameters,segmentation);
-          }
         } else if (parameters.segmentation == SST_SEGMENTATION) {
           Angles angles = buildSSTProfile(parameters);
         }
+        break;
+      }
+
+      case LENGTHS:
+      {
+        Lengths lengths = buildLengthsProfile(parameters,segmentation);
+        break;
+      }
+
+      case ANGLES_LENGTHS:
+      {
+        if (parameters.segmentation == BEZIER_SEGMENTATION) {
+          Angles angles = buildAnglesProfile(parameters,segmentation);
+        } else if (parameters.segmentation == SST_SEGMENTATION) {
+          Angles angles = buildSSTProfile(parameters);
+        }
+        Lengths lengths = buildLengthsProfile(parameters,segmentation);
         break;
       }
 
@@ -664,9 +687,8 @@ void compareStructuresList(struct Parameters &parameters)
       case DIHEDRAL_ANGLES:
       {
         vector<Angles> profiles;
-        Angles angles;
-        vector<vector<double>> all_scores;
         for (int i=0; i<num_structures; i++) {
+          Angles angles;
           parameters.file = parameters.comparison_files[i];
           if (parameters.segmentation == BEZIER_SEGMENTATION) {
             angles = buildAnglesProfile(parameters,segmentations[i]);
@@ -678,18 +700,23 @@ void compareStructuresList(struct Parameters &parameters)
             }
           }
           profiles.push_back(angles);
-          if (i != 0) {
+        }
+        
+        vector<vector<double>> all_scores;
+        for (int i=1; i<num_structures; i++) {
             cout << "Aligning " << names[0] << " and " << names[i] << " ...\n";
             Alignment alignment(profiles[0],profiles[i],parameters.scoring_function);
             if (parameters.align_type == BASIC_ALIGNMENT) {
               alignment.computeBasicAlignment(parameters.gap_penalty,
                                               parameters.max_angle_diff);
-              alignment.save(parameters.gap_penalty,names[0],names[i]);
+              alignment.save(parameters.gap_penalty,parameters.control_string,
+                             names[0],names[i]);
             } else if (parameters.align_type == AFFINE_GAP_ALIGNMENT) {
               alignment.computeAffineGapAlignment(parameters.gap_open_penalty,
                   parameters.gap_extension_penalty,parameters.max_angle_diff);
               alignment.save(parameters.gap_open_penalty,
-                           parameters.gap_extension_penalty,names[0],names[i]);
+                             parameters.gap_extension_penalty,
+                             parameters.control_string,names[0],names[i]);
             }
             vector<double> scores = alignment.getScores();
             if (parameters.record == SET) {
@@ -700,7 +727,6 @@ void compareStructuresList(struct Parameters &parameters)
               }
               cout << endl;
             }
-          }
         }
         if (parameters.record == SET) {
           if (all_scores.size() == num_structures - 1) {
@@ -711,6 +737,72 @@ void compareStructuresList(struct Parameters &parameters)
         }
         break;
       }
+
+      case ANGLES_LENGTHS:
+      {
+        vector<Angles> angles_profiles;
+        for (int i=0; i<num_structures; i++) {
+          Angles angles;
+          parameters.file = parameters.comparison_files[i];
+          if (parameters.segmentation == BEZIER_SEGMENTATION) {
+            angles = buildAnglesProfile(parameters,segmentations[i]);
+          } else if (parameters.segmentation == SST_SEGMENTATION) {
+            angles = buildSSTProfile(parameters);
+            if (angles.size() == 0) {
+              errorLog(names);
+              exit(1);
+            }
+          }
+          angles_profiles.push_back(angles);
+        }
+        
+        vector<Lengths> lengths_profiles;
+        if (parameters.scoring_function == SCORE_ANGLES_LENGTHS) {
+          for (int i=0; i<num_structures; i++) {
+            parameters.file = parameters.comparison_files[i];
+            Lengths lengths = buildLengthsProfile(parameters,segmentations[i]);
+            lengths_profiles.push_back(lengths);
+          }
+        }
+
+        vector<vector<double>> all_scores;
+        for (int i=1; i<num_structures; i++) {
+            cout << "Aligning " << names[0] << " and " << names[i] << " ...\n";
+            Alignment alignment(angles_profiles[0],angles_profiles[i],
+                                lengths_profiles[0],lengths_profiles[i],
+                                parameters.scoring_function);
+            if (parameters.align_type == BASIC_ALIGNMENT) {
+              alignment.computeBasicAlignment(parameters.gap_penalty,
+                                              parameters.max_angle_diff);
+              alignment.save(parameters.gap_penalty,parameters.control_string,
+                             names[0],names[i]);
+            } else if (parameters.align_type == AFFINE_GAP_ALIGNMENT) {
+              alignment.computeAffineGapAlignment(parameters.gap_open_penalty,
+                  parameters.gap_extension_penalty,parameters.max_angle_diff);
+              alignment.save(parameters.gap_open_penalty,
+                             parameters.gap_extension_penalty,
+                             parameters.control_string,names[0],names[i]);
+            }
+            vector<double> scores = alignment.getScores();
+            if (parameters.record == SET) {
+              all_scores.push_back(scores);
+            } else {
+              for (int j=0; j<scores.size(); j++) {
+                cout << fixed << setw(10) << setprecision(2) << scores[j];
+              }
+              cout << endl;
+            }
+        }
+        if (parameters.record == SET) {
+          if (all_scores.size() == num_structures - 1) {
+            updateResults(parameters,all_scores);
+          } else {
+            errorLog(names);
+          }
+        }
+        break;
+      }
+
 
       case KNOT_INVARIANTS:
       {
@@ -808,7 +900,8 @@ void compareDatabaseStructures(struct Parameters &parameters)
             Alignment alignment(pivot,another,parameters.scoring_function);
             alignment.computeBasicAlignment(parameters.gap_penalty,
                                             parameters.max_angle_diff);
-            alignment.save(parameters.gap_penalty,structures[i],structures[j]);
+            alignment.save(parameters.gap_penalty,parameters.control_string,
+                           structures[i],structures[j]);
             vector<double> scores = alignment.getScores();
             results1 << "(" << structures[j] << ",";
             results1 << scientific << scores[1] << ") ";
@@ -1444,7 +1537,7 @@ Segmentation generalFit(struct Parameters &parameters)
 void updateRuntime(string name, Segmentation &segmentation)
 {
   string path = string(CURRENT_DIRECTORY); 
-  string time_file = path + "runtime-segmentation-part1";
+  string time_file = path + "runtime-segmentation-part4";
   ofstream log(time_file.c_str(),ios::app);
   log << setw(10) << name;
   log << setw(10) << segmentation.getNumberOfCoordinates() << "\t";
@@ -1532,7 +1625,7 @@ Angles buildAnglesProfile(struct Parameters &parameters,
 
     angles = Angles(name,dihedral_angles);
     angles.save(parameters.control_string);
-    //updateRuntime(name,angles,cpu_time);
+    updateRuntime(name,angles,cpu_time);
   }
   /*cout << "size: " << angles.size() << endl;
   for (int i=0; i<angles.size(); i++) {
@@ -1582,11 +1675,12 @@ double computeDihedralAngle(Line<double> &line1, Line<double> &line2)
  *  for each structure. 
  *  \param name a string
  *  \param angles a reference to an Angles object
+ *  \param time a double
  */
 void updateRuntime(string name, Angles &angles, double time) 
 {
   string path = string(CURRENT_DIRECTORY); 
-  string time_file = path + "runtime-angles-astral-4";
+  string time_file = path + "runtime-angles-part4";
   ofstream log(time_file.c_str(),ios::app);
   log << fixed << setw(10) << name;
   log << fixed << setw(10) << angles.size(); 
@@ -1605,13 +1699,15 @@ void updateResults(struct Parameters &parameters, vector<vector<double>> &scores
 {
   string path,gap;
   if (parameters.align_type == BASIC_ALIGNMENT) {
-    path = string(CURRENT_DIRECTORY) + "experiments/sst/angles/comparisons/domains/basic/";
+    path = string(CURRENT_DIRECTORY) + "experiments/angles/comparisons/domains/basic/";
+    path += parameters.control_string + "/";
     gap = "gap-penalty" 
           + boost::lexical_cast<string>(parameters.gap_penalty).substr(0,3) + "/";
   } else if (parameters.align_type == AFFINE_GAP_ALIGNMENT) {
     double go = parameters.gap_open_penalty;
     double ge = parameters.gap_extension_penalty;
-    path = string(CURRENT_DIRECTORY) + "experiments/sst/angles/comparisons/domains/affine/";
+    path = string(CURRENT_DIRECTORY) + "experiments/angles/comparisons/domains/affine/";
+    path += parameters.control_string + "/";
     gap = "go" + boost::lexical_cast<string>(go).substr(0,3) + "-";
     gap += "ge" + boost::lexical_cast<string>(ge).substr(0,3) + "/";
   }
@@ -1687,7 +1783,7 @@ Lengths buildLengthsProfile(struct Parameters &parameters,
 
     lengths = Lengths(name,all_lengths);
     lengths.save(parameters.control_string);
-    //updateRuntime(name,lengths,cpu_time);
+    updateRuntime(name,lengths,cpu_time);
   }
   /*cout << "size: " << lengths.size() << endl;
   for (int i=0; i<lengths.size(); i++) {
@@ -1713,8 +1809,23 @@ double computeMidPointsDistance(Line<double> &line1, Line<double> &line2)
   return lcb::geometry::distance<double>(mid1,mid2);
 }
 
-void updateRuntime(string , Lengths &lengths)
+/*!
+ *  \brief This method updates the run time of computing lengths 
+ *  for each structure. 
+ *  \param name a string
+ *  \param lengths a reference to a Lengths object
+ *  \param time a double
+ */
+void updateRuntime(string name, Lengths &lengths, double time)
 {
+  string path = string(CURRENT_DIRECTORY); 
+  string time_file = path + "runtime-lengths-part4";
+  ofstream log(time_file.c_str(),ios::app);
+  log << fixed << setw(10) << name;
+  log << fixed << setw(10) << lengths.size(); 
+  log << fixed << setw(10) << setprecision(4) << time; 
+  log << endl;
+  log.close();
 }
 
 //////////////////////// HISTOGRAMS FUNCTIONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\

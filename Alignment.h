@@ -2,6 +2,7 @@
 #define ALIGNMENT_H
 
 #include "Angles.h"
+#include "Lengths.h"
 
 class Alignment
 {
@@ -19,8 +20,8 @@ class Alignment
     //! The two angular profiles
     Angles angles[2];
 
-    //! Lists of lengths
-    vector<vector<double>> lengths;
+    //! The two lengths profiles
+    Lengths lengths[2];
 
     //! Alignment scores
     vector<double> scores;
@@ -55,6 +56,12 @@ class Alignment
     //! Constructor
     Alignment(Angles &, Angles &, int);
 
+    //! Constructor
+    Alignment(Lengths &, Lengths &, int);
+
+    //! Constructor
+    Alignment(Angles &, Angles &, Lengths &, Lengths &, int);
+
     //! Edit distance
     void computeEditDistance(double);
 
@@ -77,10 +84,10 @@ class Alignment
     double getMatchingScore(double, double, double, double, double);
 
     //! Save the alignment to a file
-    void save(double, string &, string &);
+    void save(double, string &, string &, string &);
 
     //! Save the alignment to a file
-    void save(double, double, string &, string &);
+    void save(double, double, string &, string &, string &);
 
     //! Returns the comparison scores 
     vector<double> getScores();

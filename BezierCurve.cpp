@@ -196,6 +196,9 @@ Polynomial<RealType> BezierCurve<RealType>::expressAsPolynomial(int coordinate)
       cout << "Error: unsupported degree of Bezier polynomial ..." << endl;
       exit(1);
   }
+  if (fabs(coefficients[degree]) <= ZERO) {
+    coefficients[degree] = 10 * ZERO;
+  }
   return Polynomial<RealType>(coefficients);
 }
 

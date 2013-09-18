@@ -22,6 +22,7 @@ Segmentation::Segmentation(int num_coordinates,
 {
   for (int i=0; i<bezier_curves.size(); i++) {
     double length = bezier_curves[i].length();
+    //cout << i << " : " << length << endl;
     bezier_curves_lengths.push_back(length);
   }
 }

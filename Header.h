@@ -73,6 +73,8 @@
 #define DIHEDRAL_ANGLES 1
 #define DISTANCE_HISTOGRAM 2
 #define KNOT_INVARIANTS 3
+#define LENGTHS 4
+#define ANGLES_LENGTHS 5
 
 // for alignment based comparison
 #define BASIC_ALIGNMENT 1

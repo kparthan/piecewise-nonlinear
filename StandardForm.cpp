@@ -667,6 +667,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
   if (parameters.constrain_segment_length == CONSTRAIN) {
     window_size = parameters.max_segment_length;
     //#pragma omp parallel for private(j)
+    //cout << "#residues: " << numResidues << endl;
     for (i=0; i<numResidues; i++) {
       if (i + window_size <= numResidues) {
         limit = i + window_size - 1;

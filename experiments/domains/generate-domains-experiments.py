@@ -2,8 +2,8 @@ import sys, codecs, os, re
 if sys.stdout.encoding is None:
         sys.stdout = codecs.open('/dev/stdout', 'w', 'utf-8')
 
-fr = open('domains-part1.test','r')
-fw = open('domains-experiments-part1.sh','w')
+fr = open('domains-part4.test','r')
+fw = open('domains-experiments-part4.sh','w')
 
 fw.write('STARTM=`date -u "+%s"`\n')
 fw.write('line_number=1\n')
@@ -13,7 +13,7 @@ line_count = 0;
 # dali experiment scripts
 #scop_path = '/home/pkas7/Research/SCOP/pdbstyle-1.75B/'
 #fasta_path = '/home/pkas7/Research/Work/piecewise-nonlinear/experiments/dali/fasta/'
-#cmd = '/home/pkas7/Research/Work/pdb-utils/pdb-superimpose-part1'
+#cmd = '/home/pkas7/Research/Work/pdb-utils/pdb-superimpose-part4'
 #while line != '':
 #  x = line.strip('\n')
 #  y = line.split()
@@ -50,7 +50,7 @@ line_count = 0;
 #  line = fr.readline()
 
 # sst parsing scripts
-#cmd = 'python parse-sst-part1.py '
+#cmd = 'python parse-sst-part4.py '
 #while line != '':
 #  x = line.strip('\n')
 #  y = line.split()
@@ -65,10 +65,17 @@ line_count = 0;
 #  line_count += 1
 #  line = fr.readline()
   
+# for standalone segmentation
+#cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation bezier --only --force segmentation --controls 0 --constrain sigma length '
 
-cmd = './piecewise-nonlinear-fit-part1 --structure protein --segmentation bezier --profile dihedral_angles --polygon projections --type affine --go -20 --ge -5 --score anglen '
-#cmd += '--controls 0 1 2 --constrain sigma length '
-#cmd += '--controls 0 1 2 --constrain sigma length --standardize exists --fparams standardize.params '
+# for constructing angular profiles
+cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation bezier --controls 0 --constrain sigma length --profile dihedral_angles --polygon projections '
+cmd += '--type affine --score angles --go -20 --ge 0 '
+
+# for constructing length profiles
+#cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation bezier --controls 0 --constrain sigma length --profile lengths --polygon projections '
+
+#cmd += '--controls 0 --constrain sigma length --standardize exists --fparams standardize.params '
 
 # for single structure
 #cmd += '--scopid '
@@ -114,5 +121,5 @@ fw.write('')
 fw.close()
 fr.close()
 print '# of lines: ', line_count
-os.system('chmod 755 domains-experiments-part1.sh')
+os.system('chmod 755 domains-experiments-part4.sh')
 

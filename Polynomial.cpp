@@ -49,8 +49,8 @@ Polynomial<RealType>::Polynomial(const Polynomial<RealType> &source) :
  *  \return a Polynomial
  */
 template <typename RealType>
-Polynomial<RealType> Polynomial<RealType>::operator=
-                                           (const Polynomial<RealType> &source)
+Polynomial<RealType>
+Polynomial<RealType>::operator=(const Polynomial<RealType> &source)
 {
   if (this != &source) {
     degree = source.degree;

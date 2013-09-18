@@ -86,7 +86,7 @@ void updateResults(struct Parameters &, vector<vector<double>> &);
 bool checkIfLengthsExist(string &, string &);
 Lengths buildLengthsProfile(struct Parameters &, Segmentation &);
 double computeMidPointsDistance(Line<double> &, Line<double> &);
-void updateRuntime(string, Lengths &);
+void updateRuntime(string, Lengths &, double);
 //void updateResults(struct Parameters &, vector<vector<double>> &);
 
 // histograms functions
