@@ -70,7 +70,7 @@ line_count = 0;
 
 # for constructing angular profiles
 cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation bezier --controls 0 1 2 --constrain sigma length --profile dihedral_angles --polygon projections '
-cmd += '--type basic --score angles --gap 0 '
+cmd += '--type basic --score angles --gap -20 '
 
 # for constructing length profiles
 #cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation bezier --controls 0 1 2 --constrain sigma length --profile lengths --polygon projections '
