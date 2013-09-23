@@ -87,7 +87,6 @@ bool checkIfLengthsExist(string &, string &);
 Lengths buildLengthsProfile(struct Parameters &, Segmentation &);
 double computeMidPointsDistance(Line<double> &, Line<double> &);
 void updateRuntime(string, Lengths &, double);
-//void updateResults(struct Parameters &, vector<vector<double>> &);
 
 // histograms functions
 bool checkIfHistogramExists(string &);
@@ -149,6 +148,10 @@ double minimum(vector<double> &);
 double minimum(vector<vector<double>> &);
 double bernstein(int, int, double);
 double getMaximumDistance(vector<array<double,3>> &);
+
+double getSelfAlignmentScore(Angles &, struct Parameters &);
+double getSelfAlignmentScore(Angles &, Lengths &, struct Parameters &);
+pair<double,double> computeNormalizedAlignmentScore(double, double, double);
 
 #endif
 

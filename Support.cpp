@@ -687,6 +687,7 @@ void compareStructuresList(struct Parameters &parameters)
       case DIHEDRAL_ANGLES:
       {
         vector<Angles> profiles;
+        vector<double> self_align;
         for (int i=0; i<num_structures; i++) {
           Angles angles;
           parameters.file = parameters.comparison_files[i];
@@ -700,6 +701,8 @@ void compareStructuresList(struct Parameters &parameters)
             }
           }
           profiles.push_back(angles);
+          double self = getSelfAlignmentScore(angles,parameters);
+          self_align.push_back(self);
         }
         
         vector<vector<double>> all_scores;
@@ -719,11 +722,15 @@ void compareStructuresList(struct Parameters &parameters)
                              parameters.control_string,names[0],names[i]);
             }
             vector<double> scores = alignment.getScores();
+            pair<double,double> normalized_scores
+            = computeNormalizedAlignmentScore(self_align[0],self_align[i],scores[0]);
+            scores.push_back(normalized_scores.first);
+            scores.push_back(normalized_scores.second);
             if (parameters.record == SET) {
               all_scores.push_back(scores);
             } else {
               for (int j=0; j<scores.size(); j++) {
-                cout << fixed << setw(10) << setprecision(2) << scores[j];
+                cout << fixed << setw(10) << setprecision(4) << scores[j];
               }
               cout << endl;
             }
@@ -757,11 +764,14 @@ void compareStructuresList(struct Parameters &parameters)
         }
         
         vector<Lengths> lengths_profiles;
+        vector<double> self_align;
         if (parameters.scoring_function == SCORE_ANGLES_LENGTHS) {
           for (int i=0; i<num_structures; i++) {
             parameters.file = parameters.comparison_files[i];
             Lengths lengths = buildLengthsProfile(parameters,segmentations[i]);
             lengths_profiles.push_back(lengths);
+            double self = getSelfAlignmentScore(angles_profiles[i],lengths,parameters);
+            self_align.push_back(self);
           }
         }
 
@@ -784,6 +794,10 @@ void compareStructuresList(struct Parameters &parameters)
                              parameters.control_string,names[0],names[i]);
             }
             vector<double> scores = alignment.getScores();
+            pair<double,double> normalized_scores
+            = computeNormalizedAlignmentScore(self_align[0],self_align[i],scores[0]);
+            scores.push_back(normalized_scores.first);
+            scores.push_back(normalized_scores.second);
             if (parameters.record == SET) {
               all_scores.push_back(scores);
             } else {
@@ -1330,6 +1344,68 @@ double getMaximumDistance(vector<array<double,3>> &coordinates)
   return max_distance;
 }
 
+/*!
+ *  \brief This function returns the self alignment score for angular profiles.
+ *  \param angles a reference to an Angles object
+ *  \param parameters a reference to a struct Parameters 
+ *  \return the self aligninment score
+ */
+double getSelfAlignmentScore(Angles &angles, struct Parameters &parameters)
+{
+  Alignment alignment(angles,angles,parameters.scoring_function);
+  if (parameters.align_type == BASIC_ALIGNMENT) {
+    alignment.computeBasicAlignment(parameters.gap_penalty,
+                                    parameters.max_angle_diff);
+  } else if (parameters.align_type == AFFINE_GAP_ALIGNMENT) {
+    alignment.computeAffineGapAlignment(parameters.gap_open_penalty,
+        parameters.gap_extension_penalty,parameters.max_angle_diff);
+  }
+  vector<double> scores = alignment.getScores();
+  return scores[0];
+}
+
+/*!
+ *  \brief This function returns the self alignment score for angular profiles.
+ *  \param angles a reference to an Angles object
+ *  \param lengths a reference to a Lengths object
+ *  \param parameters a reference to a struct Parameters 
+ *  \return the self aligninment score
+ */
+double getSelfAlignmentScore(Angles &angles, Lengths &lengths,
+                             struct Parameters &parameters)
+{
+  Alignment alignment(angles,angles,lengths,lengths,
+                      parameters.scoring_function);
+  if (parameters.align_type == BASIC_ALIGNMENT) {
+    alignment.computeBasicAlignment(parameters.gap_penalty,
+                                    parameters.max_angle_diff);
+  } else if (parameters.align_type == AFFINE_GAP_ALIGNMENT) {
+    alignment.computeAffineGapAlignment(parameters.gap_open_penalty,
+        parameters.gap_extension_penalty,parameters.max_angle_diff);
+  }
+  vector<double> scores = alignment.getScores();
+  return scores[0];
+}
+
+/*!
+ *  \brief This function returns the normalized alignment score which uses
+ *  self alignment scores.
+ *  \param self1 a double
+ *  \param self2 a double
+ *  \param mutual a double
+ *  \return the pair of normalized scores
+ */
+pair<double,double> computeNormalizedAlignmentScore(double self1, double self2,
+                                                    double mutual)
+{
+  pair<double,double> scores;
+  double mean = (self1 + self2) * 0.5;
+  scores.first = mutual / (double) mean;
+  mean = sqrt(self1 * self2);
+  scores.second= mutual / (double) mean;
+  return scores;
+}
+
 ///////////////////////// SEGMENTATION FUNCTIONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 /*!
@@ -1722,18 +1798,27 @@ void updateResults(struct Parameters &parameters, vector<vector<double>> &scores
   ofstream file2(file_name.c_str(),ios::app);
   file_name = path + gap + "alignments-scores2-part4";
   ofstream file3(file_name.c_str(),ios::app);
-  int num_comparisons = scores.size();
+  file_name = path + gap + "alignments-scores3-part4";
+  ofstream file4(file_name.c_str(),ios::app);
+  file_name = path + gap + "alignments-scores4-part4";
+  ofstream file5(file_name.c_str(),ios::app);
   for (int i=0; i<scores.size(); i++) {
-    file1 << fixed << setw(20) << setprecision(3) << scores[i][0];
-    file2 << fixed << setw(20) << setprecision(3) << scores[i][1];
-    file3 << fixed << setw(20) << setprecision(3) << scores[i][2];
+    file1 << fixed << setw(20) << setprecision(4) << scores[i][0];
+    file2 << fixed << setw(20) << setprecision(4) << scores[i][1];
+    file3 << fixed << setw(20) << setprecision(4) << scores[i][2];
+    file4 << fixed << setw(20) << setprecision(4) << scores[i][3];
+    file5 << fixed << setw(20) << setprecision(4) << scores[i][4];
   }
   file1 << endl;
   file2 << endl;
   file3 << endl;
+  file4 << endl;
+  file5 << endl;
   file1.close();
   file2.close();
   file3.close();
+  file4.close();
+  file5.close();
 }
 
 //////////////////////// LENGTHS FUNCTIONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\
