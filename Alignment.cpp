@@ -321,15 +321,17 @@ void Alignment::computeEditDistance(double gap_penalty)
   //cout << "\nEdit distance: " << matrix[x.size()][y.size()] << endl;
 
   scores = vector<double>(3,0);
-  // alignment score
-  scores[0] = matrix[x.size()][y.size()];  
-  optimal_alignment = traceback(direction,x,y);
+  if (!(x.size() == 0 && y.size() == 0)) {
+    // alignment score
+    scores[0] = matrix[x.size()][y.size()];  
+    optimal_alignment = traceback(direction,x,y);
 
-  // average alignment score
-  scores[1] = scores[0] / optimal_alignment.size();
+    // average alignment score
+    scores[1] = scores[0] / optimal_alignment.size();
 
-  // normalized alignment score
-  scores[2] = scores[0] / (x.size() + y.size());
+    // normalized alignment score
+    scores[2] = scores[0] / (x.size() + y.size());
+  }
 }
 
 /*!
@@ -373,15 +375,17 @@ void Alignment::computeBasicAlignment(double gap_penalty, double max_diff)
   //cout << "\nAlignment score: " << matrix[x.size()][y.size()] << endl;
 
   scores = vector<double>(3,0);
-  // alignment score
-  scores[0] = matrix[x.size()][y.size()];  
-  optimal_alignment = traceback(direction,x,y);
+  if (!(x.size() == 0 && y.size() == 0)) {
+    // alignment score
+    scores[0] = matrix[x.size()][y.size()];  
+    optimal_alignment = traceback(direction,x,y);
 
-  // average alignment score
-  scores[1] = scores[0] / optimal_alignment.size();
+    // average alignment score
+    scores[1] = scores[0] / optimal_alignment.size();
 
-  // normalized alignment score
-  scores[2] = scores[0] / (x.size() + y.size());
+    // normalized alignment score
+    scores[2] = scores[0] / (x.size() + y.size());
+  }
 }
 
 /*!
@@ -537,21 +541,23 @@ void Alignment::computeAffineGapAlignment(double go, double ge, double max_diff)
     }
   }
  
-  // optimal alignment score
   scores = vector<double>(3,0);
-  for (int i=0; i<3; i++) {
-    score[i] = matrix[i][x.size()][y.size()];
+  if (!(x.size() == 0 && y.size() == 0)) {
+    // optimal alignment score
+    for (int i=0; i<3; i++) {
+      score[i] = matrix[i][x.size()][y.size()];
+    }
+    max_index = maxIndex(score);
+    scores[0] = score[max_index];
+    int dir = direction[max_index][x.size()][y.size()];
+    optimal_alignment = traceback(dir,direction,x,y); 
+
+    // average alignment score
+    scores[1] = scores[0] / optimal_alignment.size();
+
+    // normalized alignment score
+    scores[2] = scores[0] / (x.size() + y.size());
   }
-  max_index = maxIndex(score);
-  scores[0] = score[max_index];
-  int dir = direction[max_index][x.size()][y.size()];
-  optimal_alignment = traceback(dir,direction,x,y); 
-
-  // average alignment score
-  scores[1] = scores[0] / optimal_alignment.size();
-
-  // normalized alignment score
-  scores[2] = scores[0] / (x.size() + y.size());
 }
 
 /*!

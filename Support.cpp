@@ -1401,8 +1401,12 @@ pair<double,double> computeNormalizedAlignmentScore(double self1, double self2,
   pair<double,double> scores;
   double mean = (self1 + self2) * 0.5;
   scores.first = mutual / (double) mean;
-  mean = sqrt(self1 * self2);
-  scores.second= mutual / (double) mean;
+  if (self1 == 0 || self2 == 0) {
+    scores.second = 0;
+  } else {
+    mean = sqrt(self1 * self2);
+    scores.second = mutual / (double) mean;
+  }
   return scores;
 }
 
