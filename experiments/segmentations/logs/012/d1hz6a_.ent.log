@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/hz/d1hz6a_.ent
+Number of residues: 67
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 12727.2
+Null Model Fit: 2873.18 bits.
+Bits per residue: 43.533
+
+Bezier model fit: 2660.21 bits.
+Bits per residue: 40.3062
+
+# of segments: 7
+Internal segmentation:
+0-->15-->17-->27-->45-->55-->56-->66
+
+CPU time used: 3.18 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A -2           A 13             16        603.891         (5.661, 1.89, -1.4)         (2.41404, -14.7667, 14.8463)
+                                                                                    (28.617, -8.662, 29.578)
+
+              2           A 13           A 15              3         91.103         (28.617, -8.662, 29.578)
+                                                                                    (28.005, -13.891, 28.036)
+
+              3           A 15           A 25             11        395.871         (28.005, -13.891, 28.036)         (8.60243, -14.5236, 25.905)
+                                                                                    (5.11, -2.712, 11.136)
+
+              4           A 25           A 43             19        717.036         (5.11, -2.712, 11.136)
+                                                                                    (21.497, -2.972, 35.3)
+
+              5           A 43           A 53             11        401.859         (21.497, -2.972, 35.3)         (30.4705, 3.10219, 20.1247)
+                                                                                    (18.893, -11.084, 8.777)
+
+              6           A 53           A 54              2        46.5701         (18.893, -11.084, 8.777)
+                                                                                    (18.048, -8.082, 6.579)
+
+              7           A 54           A 64             11        403.879         (18.048, -8.082, 6.579)
+                                                                                    (30.635, -3.712, 31.386)
+

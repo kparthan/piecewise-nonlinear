@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/cq/d2cq1a1.ent
+Number of residues: 88
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 24903.2
+Null Model Fit: 3871.62 bits.
+Bits per residue: 44.5014
+
+Bezier model fit: 3572.66 bits.
+Bits per residue: 41.065
+
+# of segments: 6
+Internal segmentation:
+0-->14-->31-->42-->52-->72-->87
+
+CPU time used: 4.34 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 51           A 65             15        573.516         (-16.661, 8.006, 4.949)         (6.26917, 23.4268, -1.08309)
+                                                                                    (-3.539, -9.447, 3.702)
+
+              2           A 65           A 82             18        708.431         (-3.539, -9.447, 3.702)         (15.3639, -14.9008, -5.83397)
+                                                                                    (1.286, 4.214, -11.02)
+
+              3           A 82           A 93             12        456.005         (1.286, 4.214, -11.02)         (17.1114, 5.62511, 0.10686)
+                                                                                    (4.09, -11.213, 10.967)
+
+              4           A 93          A 103             11        396.819         (4.09, -11.213, 10.967)
+                                                                                    (5.259, 11.419, -5.122)
+
+              5          A 103          A 123             21         819.81         (5.259, 11.419, -5.122)         (-16.5922, 7.66238, -8.13791)
+                                                                                    (-4.813, -16.261, -6.276)
+
+              6          A 123          A 138             16        618.075         (-4.813, -16.261, -6.276)         (-9.90055, 15.678, 8.18115)
+                                                                                    (11.819, 4.278, 8.964)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/m0/d1m0ua2.ent
+Number of residues: 76
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 14465.7
+Null Model Fit: 3278.83 bits.
+Bits per residue: 43.7177
+
+Bezier model fit: 3107.53 bits.
+Bits per residue: 41.4337
+
+# of segments: 7
+Internal segmentation:
+0-->10-->12-->36-->49-->56-->62-->75
+
+CPU time used: 3.69 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 47           A 57             11        413.675         (85.714, 24.168, 11.174)         (69.608, 17.22, 22.0042)
+                                                                                    (67.644, 4.283, 15.885)
+
+              2           A 57           A 59              3        91.4725         (67.644, 4.283, 15.885)
+                                                                                    (63.897, 6.612, 11.936)
+
+              3           A 59           A 83             25        973.265         (63.897, 6.612, 11.936)         (91.2429, 22.8189, -7.29899)
+                                                                                    (66.814, 5.354, 29.993)
+
+              4           A 83           A 96             14        547.643         (66.814, 5.354, 29.993)         (66.1108, 25.453, 30.3611)
+                                                                                    (61.85, 16.662, 21.017)
+
+              5           A 96          A 103              8        294.169         (61.85, 16.662, 21.017)
+                                                                                    (78.452, 25.714, 17.04)
+
+              6          A 103          A 109              7        255.818         (78.452, 25.714, 17.04)
+                                                                                    (62.3, 20.2, 12.975)
+
+              7          A 109          A 122             14        531.484         (62.3, 20.2, 12.975)
+                                                                                    (75.09, 21.096, -2.394)
+

@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/kq/d1kq1a_.ent
+Number of residues: 60
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 12416.5
+Null Model Fit: 2566.34 bits.
+Bits per residue: 43.4973
+
+Bezier model fit: 2469.08 bits.
+Bits per residue: 41.8489
+
+# of segments: 8
+Internal segmentation:
+0-->12-->22-->29-->30-->35-->44-->52-->59
+
+CPU time used: 0.43 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 6           A 18             13        492.867         (46.809, 4.572, 28.552)
+                                                                                    (41.855, 1.565, 11.471)
+
+              2           A 18           A 28             11        411.034         (41.855, 1.565, 11.471)
+                                                                                    (48.093, 28.01, 17.219)
+
+              3           A 28           A 35              8         297.85         (48.093, 28.01, 17.219)
+                                                                                    (45.503, 9.553, 8.387)
+
+              4           A 35           A 36              2        46.5344         (45.503, 9.553, 8.387)
+                                                                                    (48.005, 8.707, 11.096)
+
+              5           A 36           A 41              6         206.46         (48.005, 8.707, 11.096)
+                                                                                    (56.079, 8.68, 22.11)
+
+              6           A 41           A 50             10        373.102         (56.079, 8.68, 22.11)
+                                                                                    (49.126, 13.552, -0.546)
+
+              7           A 50           A 58              9        340.876         (49.126, 13.552, -0.546)
+                                                                                    (54.149, 19.131, 21.91)
+
+              8           A 58           A 65              8        300.359         (54.149, 19.131, 21.91)
+                                                                                    (37.701, 12.092, 15.035)
+

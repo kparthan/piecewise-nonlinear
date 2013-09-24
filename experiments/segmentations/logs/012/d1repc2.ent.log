@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/re/d1repc2.ent
+Number of residues: 103
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 30998.4
+Null Model Fit: 4571.36 bits.
+Bits per residue: 44.8173
+
+Bezier model fit: 4182.95 bits.
+Bits per residue: 41.0093
+
+# of segments: 7
+Internal segmentation:
+0-->15-->33-->40-->56-->77-->87-->102
+
+CPU time used: 5.5 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          C 144          C 159             16        625.169         (30.425, 55.538, 40.344)         (5.04282, 45.4819, 27.8989)
+                                                                                    (12.557, 32.249, 41.799)
+
+              2          C 159          C 177             19        736.805         (12.557, 32.249, 41.799)         (29.6846, 43.9269, 41.2846)
+                                                                                    (24.158, 44.62, 26.813)
+
+              3          C 177          C 184              8        289.379         (24.158, 44.62, 26.813)         (34.0942, 36.4741, 30.6949)
+                                                                                    (32.918, 32.019, 43.386)
+
+              4          C 184          C 200             17        665.312         (32.918, 32.019, 43.386)         (16.5735, 37.1816, 55.2781)
+                                                                                    (26.486, 19.667, 47.949)
+
+              5          C 200          C 221             22         846.59         (26.486, 19.667, 47.949)
+                                                                                    (15.894, 39.768, 27.501)
+
+              6          C 221          C 231             11        394.934         (15.894, 39.768, 27.501)         (27.9727, 26.7405, 28.3341)
+                                                                                    (40.254, 22.914, 41.259)
+
+              7          C 231          C 246             16         624.76         (40.254, 22.914, 41.259)
+                                                                                    (17.976, 42.384, 21.403)
+

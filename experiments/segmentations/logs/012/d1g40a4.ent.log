@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/g4/d1g40a4.ent
+Number of residues: 59
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 8541
+Null Model Fit: 2491.54 bits.
+Bits per residue: 42.9575
+
+Bezier model fit: 2398.03 bits.
+Bits per residue: 41.3453
+
+# of segments: 6
+Internal segmentation:
+0-->9-->18-->26-->38-->46-->58
+
+CPU time used: 2.54 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 185          A 194             10        375.857         (31.687, 34.429, 96.237)
+                                                                                    (46.036, 48.345, 113.137)
+
+              2          A 194          A 203             10        375.532         (46.036, 48.345, 113.137)         (39.7312, 58.4537, 95.5483)
+                                                                                    (29.523, 45.789, 103.968)
+
+              3          A 203          A 211              9         324.76         (29.523, 45.789, 103.968)         (34.2736, 37.2952, 86.6201)
+                                                                                    (41.159, 49.046, 99.448)
+
+              4          A 211          A 223             13        495.617         (41.159, 49.046, 99.448)         (54.7018, 62.1972, 121.951)
+                                                                                    (52.343, 42.575, 103.8)
+
+              5          A 223          A 231              9        335.305         (52.343, 42.575, 103.8)         (42.7365, 52.183, 96.6142)
+                                                                                    (37.453, 33.136, 94.436)
+
+              6          A 231          A 243             13        490.955         (37.453, 33.136, 94.436)
+                                                                                    (52.804, 46.875, 112.686)
+

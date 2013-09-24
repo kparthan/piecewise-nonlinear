@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/gh/d1ghha_.ent
+Number of residues: 81
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 20394.5
+Null Model Fit: 3537.06 bits.
+Bits per residue: 44.2132
+
+Bezier model fit: 3262.67 bits.
+Bits per residue: 40.7834
+
+# of segments: 7
+Internal segmentation:
+0-->9-->13-->33-->44-->55-->74-->80
+
+CPU time used: 0.65 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 10             10        363.042         (-12.862, 2.581, -0.869)
+                                                                                    (9.067, -10.329, 12.265)
+
+              2           A 10           A 14              5        177.429         (9.067, -10.329, 12.265)
+                                                                                    (13.615, 1.518, 9.715)
+
+              3           A 14           A 34             21        794.641         (13.615, 1.518, 9.715)
+                                                                                    (-9.412, 9.841, -9.319)
+
+              4           A 34           A 45             12        454.392         (-9.412, 9.841, -9.319)
+                                                                                    (0.423, -7.385, 12.874)
+
+              5           A 45           A 56             12        462.984         (0.423, -7.385, 12.874)
+                                                                                    (-14.209, -4.779, -7.245)
+
+              6           A 56           A 75             20        748.906         (-14.209, -4.779, -7.245)
+                                                                                    (15.314, 2.492, -4.457)
+
+              7           A 75           A 81              7        261.281         (15.314, 2.492, -4.457)
+                                                                                    (17.729, 10.336, 6.557)
+

@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/gy/d2gyqa1.ent
+Number of residues: 160
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 42866
+Null Model Fit: 7200.3 bits.
+Bits per residue: 45.2849
+
+Bezier model fit: 6319.06 bits.
+Bits per residue: 39.7425
+
+# of segments: 8
+Internal segmentation:
+0-->11-->40-->41-->70-->97-->126-->133-->159
+
+CPU time used: 8.52 secs.
+Wall clock time elapsed: 8 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 12             12        467.761         (-4.379, -5.148, 0.501)
+                                                                                    (5.521, 14.266, 6.381)
+
+              2           A 12           A 41             30        1136.75         (5.521, 14.266, 6.381)         (-5.78482, 2.72062, 23.4723)
+                                                                                    (7.432, -7.726, 44.441)
+
+              3           A 41           A 42              2         48.322         (7.432, -7.726, 44.441)
+                                                                                    (10.594, -5.671, 44.931)
+
+              4           A 42           A 71             30        1125.01         (10.594, -5.671, 44.931)         (5.26593, 13.7, 33.4475)
+                                                                                    (-2.755, 20.181, 13.139)
+
+              5           A 71           A 98             28        1095.83         (-2.755, 20.181, 13.139)         (1.25626, -16.5962, 16.7393)
+                                                                                    (8.787, -17.572, 41.841)
+
+              6           A 98          A 127             30        1114.35         (8.787, -17.572, 41.841)
+                                                                                    (12.637, 12.725, 10.398)
+
+              7          A 127          A 134              8        311.306         (12.637, 12.725, 10.398)
+                                                                                    (12.356, 22.385, 15.614)
+
+              8          A 134          A 160             27        1019.73         (12.356, 22.385, 15.614)
+                                                                                    (19.261, -10.047, 43.687)
+

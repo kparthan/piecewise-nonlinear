@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/qu/d1quba4.ent
+Number of residues: 60
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 10429.8
+Null Model Fit: 2551.5 bits.
+Bits per residue: 43.2458
+
+Bezier model fit: 2428.75 bits.
+Bits per residue: 41.1653
+
+# of segments: 7
+Internal segmentation:
+0-->10-->18-->23-->33-->40-->47-->59
+
+CPU time used: 2.7 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 184          A 194             11        406.425         (28.853, 40.264, 67.842)         (39.9724, 32.9721, 56.7859)
+                                                                                    (53.904, 26.187, 58.895)
+
+              2          A 194          A 202              9        334.169         (53.904, 26.187, 58.895)         (39.8448, 23.9928, 68.542)
+                                                                                    (29.824, 26.578, 62.559)
+
+              3          A 202          A 207              6        212.023         (29.824, 26.578, 62.559)
+                                                                                    (31.65, 36.554, 70.646)
+
+              4          A 207          A 217             11        399.356         (31.65, 36.554, 70.646)
+                                                                                    (57.878, 20.591, 64.099)
+
+              5          A 217          A 224              8        295.899         (57.878, 20.591, 64.099)
+                                                                                    (49.087, 32.688, 72.567)
+
+              6          A 224          A 231              8        293.988         (49.087, 32.688, 72.567)
+                                                                                    (33.261, 42.224, 71.842)
+
+              7          A 231          A 243             13        486.893         (33.261, 42.224, 71.842)
+                                                                                    (61.131, 29.172, 62.657)
+

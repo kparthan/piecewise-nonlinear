@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/k8/d1k8wa3.ent
+Number of residues: 62
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 14363.4
+Null Model Fit: 2666.16 bits.
+Bits per residue: 43.7075
+
+Bezier model fit: 2538.25 bits.
+Bits per residue: 41.6106
+
+# of segments: 6
+Internal segmentation:
+0-->16-->28-->36-->48-->60-->61
+
+CPU time used: 2.84 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 251          A 267             17        657.776         (-10.788, 30.544, 53.262)         (-41.2049, 21.3812, 59.5346)
+                                                                                    (-24.008, 18.818, 42.919)
+
+              2          A 267          A 279             13        504.069         (-24.008, 18.818, 42.919)         (-32.2333, 42.2075, 56.5638)
+                                                                                    (-13.342, 32.711, 45.557)
+
+              3          A 279          A 287              9        337.743         (-13.342, 32.711, 45.557)         (-17.9911, 20.6743, 53.7658)
+                                                                                    (-26.429, 24.32, 63.572)
+
+              4          A 287          A 299             13        487.171         (-26.429, 24.32, 63.572)         (-10.08, 15.0647, 54.4994)
+                                                                                    (-21.378, 33.729, 38.22)
+
+              5          A 299          A 311             13        504.742         (-21.378, 33.729, 38.22)
+                                                                                    (-21.566, 11, 52.891)
+
+              6          A 311          A 312              2        46.7445         (-21.566, 11, 52.891)
+                                                                                    (-22.848, 7.66, 54.201)
+

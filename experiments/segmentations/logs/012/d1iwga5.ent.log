@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/iw/d1iwga5.ent
+Number of residues: 92
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 66925.3
+Null Model Fit: 4179.41 bits.
+Bits per residue: 45.9276
+
+Bezier model fit: 3772.58 bits.
+Bits per residue: 41.4569
+
+# of segments: 6
+Internal segmentation:
+0-->17-->44-->60-->73-->90-->91
+
+CPU time used: 4.73 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 182          A 199             18        720.848         (50.3, 26.613, 345.866)         (43.1154, 35.4507, 380.003)
+                                                                                    (54.85, 38.282, 367.725)
+
+              2          A 199          A 226             28        1092.54         (54.85, 38.282, 367.725)         (64.3536, 24.4155, 352.47)
+                                                                                    (97.046, 10.002, 353.082)
+
+              3          A 226          A 242             17        660.773         (97.046, 10.002, 353.082)         (82.0244, -3.51313, 348.91)
+                                                                                    (54.362, 18.561, 354.303)         (72.0117, 32.057, 359.067)
+
+              4          A 242          A 255             14        537.058         (54.362, 18.561, 354.303)
+                                                                                    (57.993, 27.253, 382.098)
+
+              5          A 255          A 272             18        712.402         (57.993, 27.253, 382.098)
+                                                                                    (47.105, 29.574, 346.994)
+
+              6          A 272          A 273              2        48.9647         (47.105, 29.574, 346.994)
+                                                                                    (50.122, 31.857, 346.78)
+

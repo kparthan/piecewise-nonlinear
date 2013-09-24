@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/op/d2opga_.ent
+Number of residues: 98
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 30754.4
+Null Model Fit: 4346.17 bits.
+Bits per residue: 44.8059
+
+Bezier model fit: 3980.7 bits.
+Bits per residue: 41.0381
+
+# of segments: 7
+Internal segmentation:
+0-->12-->26-->44-->58-->78-->79-->97
+
+CPU time used: 5.17 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1         A 1623         A 1635             13        470.912         (24.377, 16.101, -8.423)         (47.3695, 24.4107, -11.2203)
+                                                                                    (44.762, 42.049, 2.358)
+
+              2         A 1635         A 1649             15        577.915         (44.762, 42.049, 2.358)
+                                                                                    (32.859, 18.187, 13.884)
+
+              3         A 1649         A 1667             19         759.21         (32.859, 18.187, 13.884)
+                                                                                    (36.87, 41.172, -4.148)
+
+              4         A 1667         A 1681             15        584.977         (36.87, 41.172, -4.148)         (22.8341, 19.7108, 1.77301)
+                                                                                    (49.576, 25.614, -0.878)
+
+              5         A 1681         A 1701             21        821.179         (49.576, 25.614, -0.878)         (33.7223, 12.503, 21.7964)
+                                                                                    (52.256, 33.26, 2.752)
+
+              6         A 1701         A 1702              2        47.8429         (52.256, 33.26, 2.752)
+                                                                                    (50.847, 36.384, 1.071)
+
+              7         A 1702         A 1720             19        718.662         (50.847, 36.384, 1.071)         (27.8449, 9.17151, -13.3195)
+                                                                                    (16.863, 36.469, 13.464)
+

@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/iw/d1iwga3.ent
+Number of residues: 107
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 29951.4
+Null Model Fit: 4745.38 bits.
+Bits per residue: 44.7677
+
+Bezier model fit: 4355.91 bits.
+Bits per residue: 41.0935
+
+# of segments: 8
+Internal segmentation:
+0-->16-->36-->53-->54-->68-->92-->104-->106
+
+CPU time used: 5.73 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 567          A 583             17        662.641         (34.967, 42.244, 311.723)         (34.6813, 19.9244, 317.071)
+                                                                                    (35.111, 43.792, 347.377)         (33.0925, 68.3916, 346.943)
+
+              2          A 583          A 603             21        798.152         (35.111, 43.792, 347.377)
+                                                                                    (22.705, 30.175, 323.7)
+
+              3          A 603          A 620             18        715.899         (22.705, 30.175, 323.7)
+                                                                                    (44.51, 44.644, 338.984)
+
+              4          A 620          A 621              2        47.8048         (44.51, 44.644, 338.984)
+                                                                                    (42.067, 45.011, 341.858)
+
+              5          A 621          A 635             15        563.183         (42.067, 45.011, 341.858)
+                                                                                    (27.804, 28.894, 310.574)
+
+              6          A 635          A 659             25        988.659         (27.804, 28.894, 310.574)         (23.5105, 48.3938, 315.126)
+                                                                                    (23.797, 46.704, 336.713)
+
+              7          A 659          A 671             13        485.998         (23.797, 46.704, 336.713)
+                                                                                    (43.412, 46.161, 313.412)
+
+              8          A 671          A 673              3        93.5724         (43.412, 46.161, 313.412)
+                                                                                    (45.694, 48.03, 319.779)
+

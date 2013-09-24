@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/tp/d1tpga2.ent
+Number of residues: 50
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 13880.9
+Null Model Fit: 2139.25 bits.
+Bits per residue: 43.6582
+
+Bezier model fit: 2057.83 bits.
+Bits per residue: 41.9965
+
+# of segments: 7
+Internal segmentation:
+0-->9-->15-->27-->36-->37-->45-->49
+
+CPU time used: 0.32 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 10             10        376.571         (23.053, -18.25, -5.041)
+                                                                                    (1.389, -5.712, 7.303)
+
+              2           A 10           A 16              7        257.849         (1.389, -5.712, 7.303)
+                                                                                    (11.048, -10.062, -5.196)
+
+              3           A 16           A 28             13        498.244         (11.048, -10.062, -5.196)
+                                                                                    (1.251, 11.321, 11.091)
+
+              4           A 28           A 37             10        371.911         (1.251, 11.321, 11.091)
+                                                                                    (17.353, -2.797, -2.789)
+
+              5           A 37           A 38              2        46.6952         (17.353, -2.797, -2.789)
+                                                                                    (19.282, -6.018, -2.015)
+
+              6           A 38           A 46              9        333.516         (19.282, -6.018, -2.015)
+                                                                                    (5.942, 11.272, 0.968)
+
+              7           A 46           A 50              5        173.044         (5.942, 11.272, 0.968)
+                                                                                    (-7.217, 9.677, -1.552)
+

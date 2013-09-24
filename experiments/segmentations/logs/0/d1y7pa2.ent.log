@@ -1,0 +1,46 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/y7/d1y7pa2.ent
+Number of residues: 73
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 18794.3
+Null Model Fit: 3174.87 bits.
+Bits per residue: 44.0954
+
+Bezier model fit: 3021.07 bits.
+Bits per residue: 41.9593
+
+# of segments: 9
+Internal segmentation:
+0-->8-->10-->22-->24-->38-->48-->51-->63-->72
+
+CPU time used: 0.57 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 2           A 10              9        341.295         (42.828, 23.999, 55.788)
+                                                                                    (18.119, 18.584, 51.439)
+
+              2           A 10           A 12              3        92.2278         (18.119, 18.584, 51.439)
+                                                                                    (16.372, 18.096, 56.739)
+
+              3           A 12           A 24             13         494.14         (16.372, 18.096, 56.739)
+                                                                                    (35.404, 12.81, 63.749)
+
+              4           A 24           A 30              3        92.2278         (35.404, 12.81, 63.749)
+                                                                                    (36.727, 22.541, 61.393)
+
+              5           A 30           A 44             15        594.408         (36.727, 22.541, 61.393)
+                                                                                    (15.951, 26.992, 46.105)
+
+              6           A 44           A 54             11        402.244         (15.951, 26.992, 46.105)
+                                                                                    (42.457, 21.607, 58.367)
+
+              7           A 54           A 57              4        137.573         (42.457, 21.607, 58.367)
+                                                                                    (41.15, 12.709, 55.898)
+
+              8           A 57           A 69             13        486.022         (41.15, 12.709, 55.898)
+                                                                                    (20.916, 10.223, 49.952)
+
+              9           A 69           A 78             10        380.932         (20.916, 10.223, 49.952)
+                                                                                    (39.29, 27.989, 48.095)
+

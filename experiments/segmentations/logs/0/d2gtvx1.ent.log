@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/gt/d2gtvx1.ent
+Number of residues: 93
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 30652.2
+Null Model Fit: 4121.7 bits.
+Bits per residue: 44.8011
+
+Bezier model fit: 3769.52 bits.
+Bits per residue: 40.973
+
+# of segments: 8
+Internal segmentation:
+0-->2-->24-->29-->46-->54-->72-->74-->92
+
+CPU time used: 0.78 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            X 1            X 3              3        93.6392         (-17.488, -12.602, -4.105)
+                                                                                    (-11.409, -13.125, -0.295)
+
+              2            X 3           X 25             23         885.83         (-11.409, -13.125, -0.295)
+                                                                                    (19.03, -0.895, -7.304)
+
+              3           X 25           X 30              6        221.659         (19.03, -0.895, -7.304)
+                                                                                    (3.861, 4.33, -8.765)
+
+              4           X 30           X 47             18        682.562         (3.861, 4.33, -8.765)
+                                                                                    (-20.313, -4.419, 0.461)
+
+              5           X 47           X 55              9        347.519         (-20.313, -4.419, 0.461)
+                                                                                    (-5.868, 2.055, 10.862)
+
+              6           X 55           X 73             19        720.274         (-5.868, 2.055, 10.862)
+                                                                                    (19.05, -2.362, 4.934)
+
+              7           X 73           X 75              3        93.6392         (19.05, -2.362, 4.934)
+                                                                                    (16.881, 2.8, 5.114)
+
+              8           X 75           X 93             19        724.397         (16.881, 2.8, 5.114)
+                                                                                    (-9.442, 9.302, -3.183)
+

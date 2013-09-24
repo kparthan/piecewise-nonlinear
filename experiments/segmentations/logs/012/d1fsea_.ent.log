@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/fs/d1fsea_.ent
+Number of residues: 67
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 14404.1
+Null Model Fit: 2884.96 bits.
+Bits per residue: 43.7115
+
+Bezier model fit: 2736.14 bits.
+Bits per residue: 41.4566
+
+# of segments: 7
+Internal segmentation:
+0-->6-->29-->31-->47-->50-->61-->66
+
+CPU time used: 3.07 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 8           A 14              7        256.289         (68.861, -3.26, 11.036)
+                                                                                    (76.28, 13.726, 15.718)
+
+              2           A 14           A 37             24        941.199         (76.28, 13.726, 15.718)         (49.8531, 18.8307, 23.4844)
+                                                                                    (73.092, 27.808, 15.795)
+
+              3           A 37           A 39              3        91.4602         (73.092, 27.808, 15.795)
+                                                                                    (69.19, 27.525, 9.891)
+
+              4           A 39           A 55             17        639.701         (69.19, 27.525, 9.891)
+                                                                                    (63.524, 3.798, 6.485)
+
+              5           A 55           A 58              4        136.421         (63.524, 3.798, 6.485)
+                                                                                    (57.522, 10.806, 9.399)
+
+              6           A 58           A 69             12        452.425         (57.522, 10.806, 9.399)
+                                                                                    (67.331, 0.768, 18.765)
+
+              7           A 69           A 74              6        218.641         (67.331, 0.768, 18.765)
+                                                                                    (63.103, 9.656, 27.328)
+

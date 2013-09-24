@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/xm/d2xmwa_.ent
+Number of residues: 67
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 10703.3
+Null Model Fit: 2856.69 bits.
+Bits per residue: 43.2831
+
+Bezier model fit: 2688.46 bits.
+Bits per residue: 40.7343
+
+# of segments: 7
+Internal segmentation:
+0-->12-->27-->37-->46-->47-->58-->66
+
+CPU time used: 3.1 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 2           A 14             13        489.212         (3.089, 6.307, 21.903)         (17.3033, 7.61811, -1.19193)
+                                                                                    (18.17, -12.621, 4.077)
+
+              2           A 14           A 29             16        595.652         (18.17, -12.621, 4.077)
+                                                                                    (15.81, 2.031, 25.119)
+
+              3           A 29           A 39             11        414.243         (15.81, 2.031, 25.119)         (2.65468, -3.40275, 19.0147)
+                                                                                    (10.496, -7.784, 0.693)
+
+              4           A 39           A 48             10        365.215         (10.496, -7.784, 0.693)
+                                                                                    (8.738, 6.451, 23.88)
+
+              5           A 48           A 52              2        46.3202         (8.738, 6.451, 23.88)
+                                                                                    (15.076, 9.507, 19.067)
+
+              6           A 52           A 63             12         447.29         (15.076, 9.507, 19.067)
+                                                                                    (24.075, -2.867, 12.79)
+
+              7           A 63           A 71              9        330.531         (24.075, -2.867, 12.79)
+                                                                                    (6.97, 10.931, 6.352)
+

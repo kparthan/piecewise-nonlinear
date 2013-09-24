@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/g4/d1g4us1.ent
+Number of residues: 130
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 35583.6
+Null Model Fit: 5807.1 bits.
+Bits per residue: 45.0163
+
+Bezier model fit: 5213.02 bits.
+Bits per residue: 40.411
+
+# of segments: 6
+Internal segmentation:
+0-->23-->42-->71-->95-->124-->129
+
+CPU time used: 7.12 secs.
+Wall clock time elapsed: 7 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          S 167          S 190             24         908.24         (-45.734, 46.586, -55.882)         (-37.7464, 59.2324, -44.7036)
+                                                                                    (-49.751, 62.691, -22.897)
+
+              2          S 190          S 209             20        801.837         (-49.751, 62.691, -22.897)         (-65.7895, 60.6929, -32.8989)
+                                                                                    (-54.277, 53.264, -36.64)
+
+              3          S 209          S 238             30        1164.98         (-54.277, 53.264, -36.64)         (-30.1107, 32.9567, -57.7912)
+                                                                                    (-48.758, 43.899, -23.507)
+
+              4          S 238          S 262             25        991.659         (-48.758, 43.899, -23.507)         (-65.3097, 47.8463, -40.5842)
+                                                                                    (-57.308, 55.507, -13.566)
+
+              5          S 262          S 291             30        1117.82         (-57.308, 55.507, -13.566)         (-35.595, 51.7409, -25.7031)
+                                                                                    (-33.72, 52.98, -50.328)
+
+              6          S 291          S 296              6        228.483         (-33.72, 52.98, -50.328)         (-24.9166, 49.5817, -53.8465)
+                                                                                    (-32.756, 42.691, -47.738)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/kf/d1kfwa2.ent
+Number of residues: 61
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 12722
+Null Model Fit: 2611.94 bits.
+Bits per residue: 43.5324
+
+Bezier model fit: 2520.47 bits.
+Bits per residue: 42.0079
+
+# of segments: 7
+Internal segmentation:
+0-->11-->23-->25-->31-->45-->54-->60
+
+CPU time used: 2.64 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 328          A 339             12        460.948         (18.477, 62.151, 8.032)         (9.09998, 60.7612, -17.1956)
+                                                                                    (1.418, 67.09, 0.257)
+
+              2          A 339          A 351             13         496.55         (1.418, 67.09, 0.257)         (3.60755, 51.8295, -12.9912)
+                                                                                    (25.099, 62.456, -1.182)
+
+              3          A 351          A 353              3        91.1018         (25.099, 62.456, -1.182)
+                                                                                    (23.432, 56.742, -0.079)
+
+              4          A 353          A 359              7        255.117         (23.432, 56.742, -0.079)
+                                                                                    (19.754, 66.704, 7.971)
+
+              5          A 359          A 373             15        581.448         (19.754, 66.704, 7.971)         (19.1112, 79.4423, -5.78096)
+                                                                                    (-1.055, 67.401, 13.677)
+
+              6          A 373          A 382             10        377.105         (-1.055, 67.401, 13.677)         (14.188, 65.2206, 10.6554)
+                                                                                    (9.118, 70.775, -6.817)
+
+              7          A 382          A 388              7        258.204         (9.118, 70.775, -6.817)
+                                                                                    (12.947, 64.104, 7.887)
+

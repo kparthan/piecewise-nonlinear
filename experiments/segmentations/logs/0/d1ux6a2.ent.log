@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ux/d1ux6a2.ent
+Number of residues: 124
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 47865
+Null Model Fit: 5589.62 bits.
+Bits per residue: 45.444
+
+Bezier model fit: 5257.13 bits.
+Bits per residue: 42.7409
+
+# of segments: 8
+Internal segmentation:
+0-->11-->15-->44-->48-->69-->92-->96-->123
+
+CPU time used: 1.13 secs.
+Wall clock time elapsed: 1 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 813          A 824             12         471.75         (-34.57, 11.665, 11.239)
+                                                                                    (-20.859, 6.274, 15.34)
+
+              2          A 824          A 828              5        180.142         (-20.859, 6.274, 15.34)
+                                                                                    (-17.242, 12.113, 9.513)
+
+              3          A 828          A 857             30         1227.5         (-17.242, 12.113, 9.513)
+                                                                                    (-30.041, 28.87, 14.196)
+
+              4          A 857          A 861              5        183.768         (-30.041, 28.87, 14.196)
+                                                                                    (-25.105, 28.756, 21.505)
+
+              5          A 861          A 882             22        893.357         (-25.105, 28.756, 21.505)
+                                                                                    (-41.744, 26.017, 30.226)
+
+              6          A 882          A 905             24        979.531         (-41.744, 26.017, 30.226)
+                                                                                    (-36.732, 35.488, 50.158)
+
+              7          A 905          A 909              5         183.27         (-36.732, 35.488, 50.158)
+                                                                                    (-36.765, 29.445, 44.508)
+
+              8          A 909          A 936             28        1137.82         (-36.765, 29.445, 44.508)
+                                                                                    (-18.158, 16.646, 36.303)
+

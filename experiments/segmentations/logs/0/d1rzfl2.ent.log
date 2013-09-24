@@ -1,0 +1,46 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/rz/d1rzfl2.ent
+Number of residues: 102
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 25633
+Null Model Fit: 4498.85 bits.
+Bits per residue: 44.5431
+
+Bezier model fit: 4147.4 bits.
+Bits per residue: 41.0634
+
+# of segments: 9
+Internal segmentation:
+0-->18-->33-->43-->49-->61-->73-->80-->90-->101
+
+CPU time used: 0.87 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          L 109          L 127             19        743.719         (35.859, 108.007, -4.75)
+                                                                                    (24.229, 75.63, -36.807)
+
+              2          L 127          L 142             16        617.008         (24.229, 75.63, -36.807)
+                                                                                    (31.158, 101.422, -7.91)
+
+              3          L 142          L 152             11        414.649         (31.158, 101.422, -7.91)
+                                                                                    (16.288, 97.118, -33.065)
+
+              4          L 152          L 158              7        257.436         (16.288, 97.118, -33.065)
+                                                                                    (12.714, 87.804, -22.003)
+
+              5          L 158          L 170             13        500.244         (12.714, 87.804, -22.003)
+                                                                                    (42.094, 95.572, -9.432)
+
+              6          L 170          L 182             13        468.586         (42.094, 95.572, -9.432)
+                                                                                    (16.126, 81.61, -31.736)
+
+              7          L 182          L 189              8         301.82         (16.126, 81.61, -31.736)
+                                                                                    (16.114, 92.037, -36.821)
+
+              8          L 189          L 199             11        404.536         (16.114, 92.037, -36.821)
+                                                                                    (26.056, 105.925, -12.321)
+
+              9          L 199          L 210             12        439.405         (26.056, 105.925, -12.321)
+                                                                                    (25.133, 91.1, -41.303)
+

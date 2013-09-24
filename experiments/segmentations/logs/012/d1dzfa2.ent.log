@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/dz/d1dzfa2.ent
+Number of residues: 72
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 14722
+Null Model Fit: 3105.76 bits.
+Bits per residue: 43.743
+
+Bezier model fit: 2951.53 bits.
+Bits per residue: 41.5708
+
+# of segments: 8
+Internal segmentation:
+0-->4-->13-->37-->38-->48-->59-->61-->71
+
+CPU time used: 3.41 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 144          A 148              5        179.588         (23.004, 53.224, 93.392)
+                                                                                    (16.205, 55.158, 100.28)
+
+              2          A 148          A 157             10        364.275         (16.205, 55.158, 100.28)
+                                                                                    (19.279, 75.109, 83.937)
+
+              3          A 157          A 181             25        981.756         (19.279, 75.109, 83.937)         (20.444, 99.5883, 103.245)
+                                                                                    (34.04, 62.304, 91.137)
+
+              4          A 181          A 182              2        46.7801         (34.04, 62.304, 91.137)
+                                                                                    (31.121, 62.105, 93.61)
+
+              5          A 182          A 192             11        428.776         (31.121, 62.105, 93.61)         (20.5336, 55.2302, 84.3299)
+                                                                                    (32.178, 71.943, 86.56)
+
+              6          A 192          A 203             12        449.791         (32.178, 71.943, 86.56)
+                                                                                    (10.239, 65.559, 102.258)
+
+              7          A 203          A 205              3        91.5232         (10.239, 65.559, 102.258)
+                                                                                    (7.734, 68.996, 98.125)
+
+              8          A 205          A 215             11         409.04         (7.734, 68.996, 98.125)
+                                                                                    (33.719, 71.17, 90.961)
+

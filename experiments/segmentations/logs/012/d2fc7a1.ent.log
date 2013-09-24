@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/fc/d2fc7a1.ent
+Number of residues: 69
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16878.9
+Null Model Fit: 2987.94 bits.
+Bits per residue: 43.9403
+
+Bezier model fit: 2861.25 bits.
+Bits per residue: 42.0772
+
+# of segments: 6
+Internal segmentation:
+0-->17-->18-->26-->37-->54-->68
+
+CPU time used: 3.34 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 8           A 25             18        719.294         (18.198, -1.137, 7.623)         (8.60836, 22.2686, 12.861)
+                                                                                    (2.25, -7.555, 2.525)
+
+              2           A 25           A 26              2        46.9774         (2.25, -7.555, 2.525)
+                                                                                    (4.947, -8.497, 0.013)
+
+              3           A 26           A 34              9        341.657         (4.947, -8.497, 0.013)         (9.37524, -4.91036, 14.4024)
+                                                                                    (8.697, 6.344, 2.043)
+
+              4           A 34           A 45             12        460.045         (8.697, 6.344, 2.043)         (-11.2345, -2.54879, -9.84798)
+                                                                                    (-11.165, -3.691, 6.395)
+
+              5           A 45           A 62             18        707.064         (-11.165, -3.691, 6.395)         (23.2466, 4.36153, -11.8639)
+                                                                                    (-8.281, -14.432, -0.915)
+
+              6           A 62           A 76             15         586.21         (-8.281, -14.432, -0.915)         (-2.5935, 0.397623, -17.7992)
+                                                                                    (0.501, 9.895, 6.151)
+

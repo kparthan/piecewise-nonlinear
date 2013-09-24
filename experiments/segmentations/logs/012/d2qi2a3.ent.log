@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/qi/d2qi2a3.ent
+Number of residues: 95
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 17998.2
+Null Model Fit: 4139.09 bits.
+Bits per residue: 44.0329
+
+Bezier model fit: 3876.56 bits.
+Bits per residue: 41.24
+
+# of segments: 7
+Internal segmentation:
+0-->1-->19-->26-->44-->64-->73-->94
+
+CPU time used: 5.2 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 244          A 245              2          47.07         (-3.547, 64.71, 7.044)
+                                                                                    (-0.97, 66.443, 4.906)
+
+              2          A 245          A 263             19        712.967         (-0.97, 66.443, 4.906)
+                                                                                    (-22.565, 83.393, 5.526)
+
+              3          A 263          A 270              8        290.594         (-22.565, 83.393, 5.526)
+                                                                                    (-5.136, 92.29, 11.056)
+
+              4          A 270          A 288             19        750.889         (-5.136, 92.29, 11.056)         (-23.4527, 86.4576, 30.7008)
+                                                                                    (-0.416, 82.947, 7.443)
+
+              5          A 288          A 308             21         820.63         (-0.416, 82.947, 7.443)         (9.80979, 92.1564, 19.5597)
+                                                                                    (-9.954, 79.412, 23.878)
+
+              6          A 308          A 317             10        367.273         (-9.954, 79.412, 23.878)
+                                                                                    (3.164, 77.952, -0.406)
+
+              7          A 317          A 338             22        887.139         (3.164, 77.952, -0.406)         (-7.55587, 91.4408, -3.36281)
+                                                                                    (-17.042, 83.839, 24.889)
+

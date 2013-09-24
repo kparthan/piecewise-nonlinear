@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ka/d1ka8a_.ent
+Number of residues: 100
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 26592.5
+Null Model Fit: 4415.01 bits.
+Bits per residue: 44.5961
+
+Bezier model fit: 4136.61 bits.
+Bits per residue: 41.7839
+
+# of segments: 8
+Internal segmentation:
+0-->14-->35-->48-->56-->70-->78-->91-->99
+
+CPU time used: 0.86 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 15             15        579.717         (28.168, 61.035, 37.206)
+                                                                                    (38.858, 49.135, 11.379)
+
+              2           A 15           A 36             22         889.67         (38.858, 49.135, 11.379)
+                                                                                    (46.375, 60.377, 18.497)
+
+              3           A 36           A 49             14        530.578         (46.375, 60.377, 18.497)
+                                                                                    (33.955, 70.534, 30.822)
+
+              4           A 49           A 57              9        340.017         (33.955, 70.534, 30.822)
+                                                                                    (48.139, 54.5, 31.636)
+
+              5           A 57           A 71             15        571.326         (48.139, 54.5, 31.636)
+                                                                                    (30.684, 45.347, 21.458)
+
+              6           A 71           A 79              9        336.642         (30.684, 45.347, 21.458)
+                                                                                    (55.243, 50.39, 15.283)
+
+              7           A 79           A 92             14        537.947         (55.243, 50.39, 15.283)
+                                                                                    (29.41, 62.745, 14.618)
+
+              8           A 92          A 100              9         350.71         (29.41, 62.745, 14.618)
+                                                                                    (37.828, 72.877, 14.017)
+

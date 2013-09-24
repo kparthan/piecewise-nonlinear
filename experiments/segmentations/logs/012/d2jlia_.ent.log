@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/jl/d2jlia_.ent
+Number of residues: 100
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 29580.2
+Null Model Fit: 4430.22 bits.
+Bits per residue: 44.7497
+
+Bezier model fit: 4059.48 bits.
+Bits per residue: 41.0049
+
+# of segments: 7
+Internal segmentation:
+0-->18-->23-->25-->36-->63-->83-->99
+
+CPU time used: 5.24 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 240          A 258             19         711.75         (-1.839, -37.956, -6.157)
+                                                                                    (-4.705, -12.624, 8.439)
+
+              2          A 258          A 263              6        209.745         (-4.705, -12.624, 8.439)
+                                                                                    (2.368, -9.805, -7.023)
+
+              3          A 263          A 265              3        93.5365         (2.368, -9.805, -7.023)
+                                                                                    (7.134, -13.787, -11.734)
+
+              4          A 265          A 276             12        433.557         (7.134, -13.787, -11.734)         (-2.09716, -15.4272, 5.66363)
+                                                                                    (-1.532, -9.946, 22.106)
+
+              5          A 276          A 303             28        1110.51         (-1.532, -9.946, 22.106)         (10.896, -25.7822, -20.9458)
+                                                                                    (-12.625, -15.001, 2.793)
+
+              6          A 303          A 323             21        827.824         (-12.625, -15.001, 2.793)         (18.5254, 3.26507, -11.6282)
+                                                                                    (7.561, -18.908, 10.372)
+
+              7          A 323          A 339             17        672.557         (7.561, -18.908, 10.372)         (13.949, 4.91463, 5.56934)
+                                                                                    (-5.175, -2.104, 9.349)
+

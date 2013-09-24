@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/cg/d2cg5b_.ent
+Number of residues: 71
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 13652.2
+Null Model Fit: 3054.39 bits.
+Bits per residue: 43.6342
+
+Bezier model fit: 2921.71 bits.
+Bits per residue: 41.7386
+
+# of segments: 8
+Internal segmentation:
+0-->10-->18-->20-->31-->46-->51-->59-->70
+
+CPU time used: 0.56 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1         B 2124         B 2134             11        416.449         (-34.153, -18.062, 22.043)
+                                                                                    (-33.937, -6.562, 13.663)
+
+              2         B 2134         B 2142              9        344.246         (-33.937, -6.562, 13.663)
+                                                                                    (-22.242, -12.489, 4.634)
+
+              3         B 2142         B 2144              3        91.3055         (-22.242, -12.489, 4.634)
+                                                                                    (-18.424, -10.417, 10.004)
+
+              4         B 2144         B 2155             12        468.486         (-18.424, -10.417, 10.004)
+                                                                                    (-31.16, 2.628, 14.295)
+
+              5         B 2155         B 2170             16        600.316         (-31.16, 2.628, 14.295)
+                                                                                    (-31.583, -13.301, 27.979)
+
+              6         B 2170         B 2175              6        215.297         (-31.583, -13.301, 27.979)
+                                                                                    (-26.803, 0.252, 28.222)
+
+              7         B 2175         B 2183              9        335.652         (-26.803, 0.252, 28.222)
+                                                                                    (-20.945, -8.03, 18.241)
+
+              8         B 2183         B 2194             12        449.953         (-20.945, -8.03, 18.241)
+                                                                                    (-27.259, -21.153, 29.699)
+

@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/jb/d1jb0l_.ent
+Number of residues: 151
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 91923.8
+Null Model Fit: 6957.83 bits.
+Bits per residue: 46.3855
+
+Bezier model fit: 6099.45 bits.
+Bits per residue: 40.663
+
+# of segments: 8
+Internal segmentation:
+0-->9-->38-->60-->70-->99-->110-->139-->150
+
+CPU time used: 8.48 secs.
+Wall clock time elapsed: 8 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            L 4           L 13             10        398.763         (143.59, 123.384, 55.148)
+                                                                                    (130.61, 116.768, 45.389)
+
+              2           L 13           L 42             30         1202.4         (130.61, 116.768, 45.389)         (153.373, 116.334, 71.5566)
+                                                                                    (143.069, 87.869, 59.239)
+
+              3           L 42           L 64             23        871.309         (143.069, 87.869, 59.239)
+                                                                                    (133.747, 100.7, 91.412)
+
+              4           L 64           L 74             11        441.024         (133.747, 100.7, 91.412)
+                                                                                    (133.159, 93.869, 94.322)
+
+              5           L 74          L 103             30        1115.82         (133.159, 93.869, 94.322)         (127.032, 87.0031, 76.0604)
+                                                                                    (122.994, 89.464, 49.384)
+
+              6          L 103          L 114             12        474.242         (122.994, 89.464, 49.384)         (147.054, 95.437, 49.107)
+                                                                                    (129.73, 86.349, 56.731)
+
+              7          L 114          L 143             30        1123.84         (129.73, 86.349, 56.731)         (137.388, 86.2873, 75.5527)
+                                                                                    (148.121, 92.554, 97.259)
+
+              8          L 143          L 154             12        472.044         (148.121, 92.554, 97.259)
+                                                                                    (162.801, 90.645, 98.086)
+

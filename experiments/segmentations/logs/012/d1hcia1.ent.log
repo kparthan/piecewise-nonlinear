@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/hc/d1hcia1.ent
+Number of residues: 125
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 30522
+Null Model Fit: 5554.57 bits.
+Bits per residue: 44.7949
+
+Bezier model fit: 4940.15 bits.
+Bits per residue: 39.8399
+
+# of segments: 7
+Internal segmentation:
+0-->28-->40-->55-->84-->93-->95-->124
+
+CPU time used: 6.76 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 272          A 300             29        1088.07         (50.409, -23.218, 45.528)
+                                                                                    (66.14, -33.575, 6.565)
+
+              2          A 300          A 312             13        505.642         (66.14, -33.575, 6.565)         (78.5499, -36.4267, 1.08841)
+                                                                                    (67.118, -35.951, -18.323)
+
+              3          A 312          A 327             16        605.679         (67.118, -35.951, -18.323)
+                                                                                    (63.019, -23.783, 1.213)
+
+              4          A 327          A 356             30        1130.55         (63.019, -23.783, 1.213)
+                                                                                    (62.319, -19.026, 42.962)
+
+              5          A 356          A 365             10        370.834         (62.319, -19.026, 42.962)
+                                                                                    (69.03, -35.873, 24.333)
+
+              6          A 365          A 367              3        93.6269         (69.03, -35.873, 24.333)
+                                                                                    (70.126, -29.907, 24.568)
+
+              7          A 367          A 396             30        1145.74         (70.126, -29.907, 24.568)         (76.0783, -21.7702, 3.20687)
+                                                                                    (71.381, -30.902, -19.345)
+

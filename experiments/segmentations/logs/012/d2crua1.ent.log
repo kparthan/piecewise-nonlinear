@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/cr/d2crua1.ent
+Number of residues: 105
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 46178.5
+Null Model Fit: 4720.8 bits.
+Bits per residue: 45.3923
+
+Bezier model fit: 4210.09 bits.
+Bits per residue: 40.4817
+
+# of segments: 7
+Internal segmentation:
+0-->11-->17-->40-->69-->71-->92-->104
+
+CPU time used: 5.41 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 8           A 19             12        443.346         (18.343, 17.217, 8.078)         (17.8871, 27.1787, -11.2974)
+                                                                                    (35.112, 9.504, -5.282)
+
+              2           A 19           A 25              7        257.428         (35.112, 9.504, -5.282)
+                                                                                    (31.721, -3.767, 1.55)
+
+              3           A 25           A 48             24        912.252         (31.721, -3.767, 1.55)
+                                                                                    (-1.442, -0.376, 10.989)
+
+              4           A 48           A 77             30        1140.21         (-1.442, -0.376, 10.989)         (12.5621, -31.3465, 9.06183)
+                                                                                    (3.364, 2.727, -1.593)
+
+              5           A 77           A 79              3        94.8216         (3.364, 2.727, -1.593)
+                                                                                    (3.407, 3.681, -6.969)
+
+              6           A 79          A 100             22        862.924         (3.407, 3.681, -6.969)         (-12.27, -5.96074, 18.889)
+                                                                                    (-0.318, -15.315, -7.6)
+
+              7          A 100          A 112             13        499.113         (-0.318, -15.315, -7.6)         (20.8969, -10.3493, -12.2421)
+                                                                                    (20.537, 8.122, -4.912)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/oz/d2oz4a3.ent
+Number of residues: 84
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 17677.1
+Null Model Fit: 3652.58 bits.
+Bits per residue: 44.0069
+
+Bezier model fit: 3387.67 bits.
+Bits per residue: 40.8153
+
+# of segments: 7
+Internal segmentation:
+0-->19-->20-->30-->41-->56-->69-->83
+
+CPU time used: 4.36 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 367          A 386             20         796.54         (-37.859, -2.209, 62.837)         (-56.2278, 5.12874, 81.6142)
+                                                                                    (-61.7, -12.985, 89.8)
+
+              2          A 386          A 387              2         47.044         (-61.7, -12.985, 89.8)
+                                                                                    (-60.373, -14.817, 86.735)
+
+              3          A 387          A 397             11        395.018         (-60.373, -14.817, 86.735)         (-50.0013, -4.46351, 76.3951)
+                                                                                    (-39.12, -7.416, 63.044)
+
+              4          A 397          A 408             12        452.294         (-39.12, -7.416, 63.044)
+                                                                                    (-37.674, -6.673, 90.931)
+
+              5          A 408          A 423             16        624.746         (-37.674, -6.673, 90.931)         (-61.9614, -22.0269, 73.3223)
+                                                                                    (-50.148, -9.852, 95.293)
+
+              6          A 423          A 436             14         529.36         (-50.148, -9.852, 95.293)
+                                                                                    (-33.111, -3.834, 66.669)
+
+              7          A 436          A 450             15         542.67         (-33.111, -3.834, 66.669)         (-46.5273, 4.01102, 86.5387)
+                                                                                    (-64.949, -6.838, 97.26)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ah/d1ahoa_.ent
+Number of residues: 64
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 12632
+Null Model Fit: 2741.9 bits.
+Bits per residue: 43.5221
+
+Bezier model fit: 2642.61 bits.
+Bits per residue: 41.9461
+
+# of segments: 7
+Internal segmentation:
+0-->8-->17-->29-->41-->42-->60-->63
+
+CPU time used: 2.81 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 9              9        337.938         (-4.754, 0.599, 11.939)         (5.3653, 11.0887, 1.31703)
+                                                                                    (9.454, -7.193, 1.726)
+
+              2            A 9           A 18             10        374.561         (9.454, -7.193, 1.726)
+                                                                                    (0.163, 10.3, -9.501)
+
+              3           A 18           A 30             13        492.535         (0.163, 10.3, -9.501)
+                                                                                    (-6.779, -2.805, 2.562)
+
+              4           A 30           A 42             13        505.732         (-6.779, -2.805, 2.562)         (-0.588273, 20.1397, -4.49107)
+                                                                                    (12.893, 8.438, -0.118)
+
+              5           A 42           A 43              2        46.5592         (12.893, 8.438, -0.118)
+                                                                                    (12.054, 10.317, -3.316)
+
+              6           A 43           A 61             19        749.427         (12.054, 10.317, -3.316)         (-20.0672, -6.38176, 13.0315)
+                                                                                    (17.676, 1.218, 6.461)
+
+              7           A 61           A 64              4        135.853         (17.676, 1.218, 6.461)
+                                                                                    (16.335, 2.912, -3.371)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/y0/d1y0na_.ent
+Number of residues: 71
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 21115.7
+Null Model Fit: 3098.44 bits.
+Bits per residue: 44.2634
+
+Bezier model fit: 2904.76 bits.
+Bits per residue: 41.4966
+
+# of segments: 7
+Internal segmentation:
+0-->10-->24-->27-->41-->51-->59-->70
+
+CPU time used: 3.37 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A -1            A 9             11          424.7         (-22.362, -24.37, -6.598)         (-12.0291, -35.3793, 8.03296)
+                                                                                    (-7.406, -39.192, -5.335)
+
+              2            A 9           A 23             15        569.826         (-7.406, -39.192, -5.335)
+                                                                                    (-2.982, -18.944, -8.035)
+
+              3           A 23           A 33              4        138.077         (-2.982, -18.944, -8.035)
+                                                                                    (9.862, -23.065, -2.029)
+
+              4           A 33           A 47             15        566.524         (9.862, -23.065, -2.029)
+                                                                                    (-7.586, -27.137, 9.87)
+
+              5           A 47           A 57             11        400.888         (-7.586, -27.137, 9.87)
+                                                                                    (-21.035, -30.366, -14.405)
+
+              6           A 57           A 65              9        338.647         (-21.035, -30.366, -14.405)         (-9.09951, -31.98, -12.1698)
+                                                                                    (-9.752, -20.386, 1.332)
+
+              7           A 65           A 76             12        466.101         (-9.752, -20.386, 1.332)         (-22.6078, -12.6288, -0.271513)
+                                                                                    (-23.359, -28.196, 2.904)
+

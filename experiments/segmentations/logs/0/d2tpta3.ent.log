@@ -1,0 +1,49 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/tp/d2tpta3.ent
+Number of residues: 105
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 46649.4
+Null Model Fit: 4722.32 bits.
+Bits per residue: 45.4069
+
+Bezier model fit: 4355.49 bits.
+Bits per residue: 41.8797
+
+# of segments: 10
+Internal segmentation:
+0-->11-->15-->39-->42-->55-->56-->70-->86-->90-->104
+
+CPU time used: 0.92 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 336          A 347             12         456.96         (5.246, 62.276, 17.181)
+                                                                                    (-18.638, 50.921, 3.427)
+
+              2          A 347          A 351              5        184.289         (-18.638, 50.921, 3.427)
+                                                                                    (-14.669, 43.684, 10.483)
+
+              3          A 351          A 375             25        990.633         (-14.669, 43.684, 10.483)
+                                                                                    (17.51, 50.805, 6.685)
+
+              4          A 375          A 378              4        141.507         (17.51, 50.805, 6.685)
+                                                                                    (10.967, 56.286, 11.467)
+
+              5          A 378          A 391             14        535.614         (10.967, 56.286, 11.467)
+                                                                                    (-16.292, 45.93, 15.358)
+
+              6          A 391          A 392              2         48.444         (-16.292, 45.93, 15.358)
+                                                                                    (-19.099, 47.718, 13.539)
+
+              7          A 392          A 406             15        597.378         (-19.099, 47.718, 13.539)
+                                                                                    (3.757, 63.004, 4.928)
+
+              8          A 406          A 422             17        642.532         (3.757, 63.004, 4.928)
+                                                                                    (-12.383, 42.695, 5.032)
+
+              9          A 422          A 426              5        183.817         (-12.383, 42.695, 5.032)
+                                                                                    (-22.883, 39.838, 9.921)
+
+             10          A 426          A 440             15        574.312         (-22.883, 39.838, 9.921)
+                                                                                    (6.269, 17.979, 28.68)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ww/d1wwha1.ent
+Number of residues: 81
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 17846.2
+Null Model Fit: 3521.65 bits.
+Bits per residue: 44.0207
+
+Bezier model fit: 3295.04 bits.
+Bits per residue: 41.188
+
+# of segments: 7
+Internal segmentation:
+0-->27-->28-->37-->47-->65-->77-->80
+
+CPU time used: 3.97 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 169          A 196             28        1108.79         (48.504, 50.183, 54.216)         (29.2968, 24.2855, 89.516)
+                                                                                    (54.981, 44.088, 70.096)
+
+              2          A 196          A 197              2        47.0578         (54.981, 44.088, 70.096)
+                                                                                    (53.559, 47.407, 71.171)
+
+              3          A 197          A 206             10        368.976         (53.559, 47.407, 71.171)
+                                                                                    (29.051, 39.972, 72.01)
+
+              4          A 206          A 216             11        408.668         (29.051, 39.972, 72.01)
+                                                                                    (54.455, 48.053, 63.102)
+
+              5          A 216          A 234             19        743.067         (54.455, 48.053, 63.102)         (52.1664, 31.6792, 60.1832)
+                                                                                    (43.46, 24.599, 76.524)
+
+              6          A 234          A 246             13        481.132         (43.46, 24.599, 76.524)         (47.0312, 37.0558, 55.0859)
+                                                                                    (34.32, 50.704, 61.39)
+
+              7          A 246          A 249              4        137.349         (34.32, 50.704, 61.39)
+                                                                                    (37.89, 53.966, 61.933)
+

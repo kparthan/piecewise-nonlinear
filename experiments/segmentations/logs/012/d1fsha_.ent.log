@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/fs/d1fsha_.ent
+Number of residues: 94
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 28106.5
+Null Model Fit: 4154.87 bits.
+Bits per residue: 44.676
+
+Bezier model fit: 3885.17 bits.
+Bits per residue: 41.776
+
+# of segments: 6
+Internal segmentation:
+0-->18-->32-->42-->59-->86-->93
+
+CPU time used: 4.82 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 12           A 30             19        745.766         (0.448, 10.807, -9.196)         (17.8075, -5.09278, -0.424109)
+                                                                                    (0.198, 8.494, 6.925)
+
+              2           A 30           A 44             15        586.166         (0.198, 8.494, 6.925)
+                                                                                    (-19.02, -6.934, 8.161)
+
+              3           A 44           A 54             11        421.709         (-19.02, -6.934, 8.161)         (-1.99596, 1.11221, 19.441)
+                                                                                    (-4.807, -6.406, -0.329)
+
+              4           A 54           A 71             18        704.514         (-4.807, -6.406, -0.329)         (0.0969349, 15.0501, -8.94534)
+                                                                                    (0.617, -8.696, -11.299)
+
+              5           A 71           A 98             28        1129.53         (0.617, -8.696, -11.299)         (16.7959, -6.85855, 16.6799)
+                                                                                    (-6.196, -12.81, 2.445)
+
+              6           A 98          A 105              8        297.479         (-6.196, -12.81, 2.445)         (-5.57689, -5.20246, 10.9698)
+                                                                                    (8.669, -3.239, 12.547)
+

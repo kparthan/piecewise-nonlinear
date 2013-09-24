@@ -1,0 +1,49 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/bm/d1bmlc3.ent
+Number of residues: 88
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 28752.5
+Null Model Fit: 3889.66 bits.
+Bits per residue: 44.7088
+
+Bezier model fit: 3661.92 bits.
+Bits per residue: 42.091
+
+# of segments: 10
+Internal segmentation:
+0-->5-->19-->21-->31-->33-->46-->60-->66-->75-->87
+
+CPU time used: 0.73 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          C 285          C 290              6        221.988         (64.92, 72.121, 14.511)
+                                                                                    (69.853, 65.638, 9.282)
+
+              2          C 290          C 304             15        563.121         (69.853, 65.638, 9.282)
+                                                                                    (54.286, 58.839, -23.199)
+
+              3          C 304          C 306              3        93.4546         (54.286, 58.839, -23.199)
+                                                                                    (57.445, 61.855, -20.436)
+
+              4          C 306          C 316             11        418.921         (57.445, 61.855, -20.436)
+                                                                                    (60.176, 65.155, 8.728)
+
+              5          C 316          C 318              3        93.4546         (60.176, 65.155, 8.728)
+                                                                                    (58.18, 58.904, 5.862)
+
+              6          C 318          C 331             14        555.103         (58.18, 58.904, 5.862)
+                                                                                    (47.562, 67.399, 2.762)
+
+              7          C 331          C 345             15         594.91         (47.562, 67.399, 2.762)
+                                                                                    (50.146, 70.76, -16.535)
+
+              8          C 345          C 351              7        262.644         (50.146, 70.76, -16.535)
+                                                                                    (47.136, 56.7, -12.173)
+
+              9          C 351          C 360             10        374.922         (47.136, 56.7, -12.173)
+                                                                                    (67.15, 54.717, 1.061)
+
+             10          C 360          C 372             13        483.398         (67.15, 54.717, 1.061)
+                                                                                    (41.137, 62.317, -18.442)
+

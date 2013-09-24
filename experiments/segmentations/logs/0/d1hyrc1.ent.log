@@ -1,0 +1,49 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/hy/d1hyrc1.ent
+Number of residues: 94
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 25015.9
+Null Model Fit: 4139.24 bits.
+Bits per residue: 44.5079
+
+Bezier model fit: 3832.84 bits.
+Bits per residue: 41.2133
+
+# of segments: 10
+Internal segmentation:
+0-->14-->26-->28-->38-->45-->57-->67-->70-->84-->93
+
+CPU time used: 0.79 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          C 181          C 195             15        581.042         (60.447, 21.01, 2.867)
+                                                                                    (85.079, 1.431, -24.871)
+
+              2          C 195          C 207             13        479.205         (85.079, 1.431, -24.871)
+                                                                                    (64.064, 15.014, -0.16)
+
+              3          C 207          C 209              3        93.0529         (64.064, 15.014, -0.16)
+                                                                                    (58.004, 16.745, -0.878)
+
+              4          C 209          C 219             11        413.065         (58.004, 16.745, -0.878)
+                                                                                    (75.173, 22.137, -23.719)
+
+              5          C 219          C 226              8        296.726         (75.173, 22.137, -23.719)
+                                                                                    (64.524, 7.65, -24.478)
+
+              6          C 226          C 238             13        490.525         (64.524, 7.65, -24.478)
+                                                                                    (63.011, 8.366, 7.199)
+
+              7          C 238          C 248             11        389.315         (63.011, 8.366, 7.199)
+                                                                                    (75.708, 7.386, -21.686)
+
+              8          C 248          C 251              4         138.81         (75.708, 7.386, -21.686)
+                                                                                    (84.374, 9.986, -22.67)
+
+              9          C 251          C 265             15        574.094         (84.374, 9.986, -22.67)
+                                                                                    (61.067, 26.331, -6.025)
+
+             10          C 265          C 274             10        377.003         (61.067, 26.331, -6.025)
+                                                                                    (86.477, 16.06, -13.055)
+

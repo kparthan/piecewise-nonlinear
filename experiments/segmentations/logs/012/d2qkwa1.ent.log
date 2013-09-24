@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/qk/d2qkwa1.ent
+Number of residues: 101
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 21067.1
+Null Model Fit: 4426.01 bits.
+Bits per residue: 44.2601
+
+Bezier model fit: 3978.05 bits.
+Bits per residue: 39.7805
+
+# of segments: 7
+Internal segmentation:
+0-->3-->32-->34-->63-->64-->73-->100
+
+CPU time used: 5.41 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 29           A 32              4        138.067         (24.789, 60.439, 24.26)
+                                                                                    (19.26, 67.636, 27.25)
+
+              2           A 32           A 61             30        1167.61         (19.26, 67.636, 27.25)         (-9.27516, 57.9909, 26.7838)
+                                                                                    (-7.891, 39.699, 37.126)
+
+              3           A 61           A 63              3        92.5572         (-7.891, 39.699, 37.126)
+                                                                                    (-4.423, 35.079, 37.34)
+
+              4           A 63           A 92             30        1117.74         (-4.423, 35.079, 37.34)         (9.04601, 56.7074, 39.2861)
+                                                                                    (18.956, 74.733, 38.164)
+
+              5           A 92           A 93              2        47.2971         (18.956, 74.733, 38.164)
+                                                                                    (15.542, 74.63, 39.861)
+
+              6           A 93          A 102             10        385.004         (15.542, 74.63, 39.861)         (24.8648, 59.1884, 49.959)
+                                                                                    (20.231, 62.178, 32.556)
+
+              7          A 102          A 129             28        1029.78         (20.231, 62.178, 32.556)         (5.6525, 49.0604, 26.6395)
+                                                                                    (-10.07, 33.672, 26.485)
+

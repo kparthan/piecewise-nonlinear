@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/tc/d3tcoa_.ent
+Number of residues: 106
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 20554.6
+Null Model Fit: 4643.58 bits.
+Bits per residue: 44.2245
+
+Bezier model fit: 4312 bits.
+Bits per residue: 41.0667
+
+# of segments: 8
+Internal segmentation:
+0-->18-->30-->49-->59-->60-->73-->81-->105
+
+CPU time used: 5.75 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 27           A 45             19         744.02         (53.617, 43.643, 34.682)         (30.9375, 16.9958, 25.4311)
+                                                                                    (42.137, 28.653, 44.611)
+
+              2           A 45           A 57             13        482.876         (42.137, 28.653, 44.611)
+                                                                                    (34.273, 46.224, 23.562)
+
+              3           A 57           A 76             20        765.674         (34.273, 46.224, 23.562)         (43.9079, 54.4231, 37.1604)
+                                                                                    (50.067, 35.731, 44.729)
+
+              4           A 76           A 86             11        399.137         (50.067, 35.731, 44.729)
+                                                                                    (34.147, 35.085, 21.802)
+
+              5           A 86           A 87              2        47.2616         (34.147, 35.085, 21.802)
+                                                                                    (36.466, 32.112, 22.347)
+
+              6           A 87          A 100             14        546.616         (36.466, 32.112, 22.347)         (20.0217, 24.6599, 35.3481)
+                                                                                    (30.535, 42.883, 29.023)
+
+              7          A 100          A 108              9        327.366         (30.535, 42.883, 29.023)
+                                                                                    (35.85, 28.434, 47.643)
+
+              8          A 108          A 132             25        999.053         (35.85, 28.434, 47.643)         (28.5359, 62.2841, 30.5026)
+                                                                                    (40.438, 37.397, 51.404)
+

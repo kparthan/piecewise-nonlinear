@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ks/d1ksqa_.ent
+Number of residues: 75
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 18594.6
+Null Model Fit: 3261.92 bits.
+Bits per residue: 44.08
+
+Bezier model fit: 3120.84 bits.
+Bits per residue: 42.1735
+
+# of segments: 7
+Internal segmentation:
+0-->9-->19-->30-->44-->45-->56-->74
+
+CPU time used: 3.53 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 10             10        388.367         (13.155, -7.446, 7.537)
+                                                                                    (2.378, 4.319, 6.952)
+
+              2           A 10           A 20             11        424.419         (2.378, 4.319, 6.952)         (-10.4043, 5.49, -9.8926)
+                                                                                    (7.463, 12.951, -4.763)
+
+              3           A 20           A 31             12        453.472         (7.463, 12.951, -4.763)         (-16.3589, 14.4224, 1.67483)
+                                                                                    (0.929, -1.654, 6.438)
+
+              4           A 31           A 45             15        586.455         (0.929, -1.654, 6.438)         (-11.233, -8.18704, -10.7654)
+                                                                                    (4.971, 8.459, 4.15)
+
+              5           A 45           A 46              2         47.117         (4.971, 8.459, 4.15)
+                                                                                    (3.396, 11.419, 2.321)
+
+              6           A 46           A 57             12        452.326         (3.396, 11.419, 2.321)
+                                                                                    (2.405, -9.225, -10.249)
+
+              7           A 57           A 75             19        768.684         (2.405, -9.225, -10.249)         (-2.16215, -10.8574, 4.97242)
+                                                                                    (-12.942, -5.193, 0.129)
+

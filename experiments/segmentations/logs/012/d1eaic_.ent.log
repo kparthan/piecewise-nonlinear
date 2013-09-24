@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ea/d1eaic_.ent
+Number of residues: 61
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 14483.7
+Null Model Fit: 2623.17 bits.
+Bits per residue: 43.7195
+
+Bezier model fit: 2512.99 bits.
+Bits per residue: 41.8832
+
+# of segments: 8
+Internal segmentation:
+0-->1-->6-->20-->31-->41-->42-->50-->60
+
+CPU time used: 2.66 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            C 1            C 2              2        46.7566         (44.56, -2.28, 91.609)
+                                                                                    (43.564, -3.549, 88.169)
+
+              2            C 2            C 7              6        221.445         (43.564, -3.549, 88.169)
+                                                                                    (48.312, -9.025, 96.613)
+
+              3            C 7           C 21             15        575.436         (48.312, -9.025, 96.613)         (50.8511, 16.7351, 77.8795)
+                                                                                    (63.416, -5.573, 102.746)
+
+              4           C 21           C 32             12        460.024         (63.416, -5.573, 102.746)         (74.2786, 10.2724, 104.217)
+                                                                                    (60.188, 11.531, 86.66)
+
+              5           C 32           C 42             11         409.76         (60.188, 11.531, 86.66)         (47.1042, -8.02437, 80.1378)
+                                                                                    (56.76, 2.259, 100.077)
+
+              6           C 42           C 43              2        46.7566         (56.76, 2.259, 100.077)
+                                                                                    (54.43, 5.176, 100.606)
+
+              7           C 43           C 51              9         329.79         (54.43, 5.176, 100.606)
+                                                                                    (61.195, -14.011, 95.318)
+
+              8           C 51           C 61             11        423.026         (61.195, -14.011, 95.318)         (46.9618, 0.259405, 104.802)
+                                                                                    (63.308, -9.656, 108.965)
+

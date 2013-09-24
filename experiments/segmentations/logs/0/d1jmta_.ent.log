@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/jm/d1jmta_.ent
+Number of residues: 98
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 34842.4
+Null Model Fit: 4363.63 bits.
+Bits per residue: 44.9859
+
+Bezier model fit: 3956.38 bits.
+Bits per residue: 40.7874
+
+# of segments: 8
+Internal segmentation:
+0-->13-->14-->43-->48-->58-->70-->90-->97
+
+CPU time used: 0.84 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 43           A 56             14        537.777         (-7.429, 12.619, 32.066)
+                                                                                    (18.469, 30.453, 16.155)
+
+              2           A 56           A 63              2         48.023         (18.469, 30.453, 16.155)
+                                                                                    (17.201, 35.014, 1.159)
+
+              3           A 63           A 92             30        1115.21         (17.201, 35.014, 1.159)
+                                                                                    (8.243, 3.271, 28.601)
+
+              4           A 92           A 97              6         220.96         (8.243, 3.271, 28.601)
+                                                                                    (-3.54, 7.6, 20.907)
+
+              5           A 97          A 107             11         423.19         (-3.54, 7.6, 20.907)
+                                                                                    (7.349, 32.012, 16.581)
+
+              6          A 107          A 119             13        483.913         (7.349, 32.012, 16.581)
+                                                                                    (-5.076, 4.572, 29.087)
+
+              7          A 119          A 139             21        832.696         (-5.076, 4.572, 29.087)
+                                                                                    (14.26, 19.125, 33.973)
+
+              8          A 139          A 146              8        294.615         (14.26, 19.125, 33.973)
+                                                                                    (-7.719, 18.246, 31.547)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/rf/d1rf8b_.ent
+Number of residues: 100
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 57253.4
+Null Model Fit: 4524.54 bits.
+Bits per residue: 45.7024
+
+Bezier model fit: 4090.06 bits.
+Bits per residue: 41.3138
+
+# of segments: 7
+Internal segmentation:
+0-->2-->31-->45-->57-->73-->98-->99
+
+CPU time used: 5.19 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          B 215          B 217              3        95.4419         (-57.46, -16.719, -7.109)
+                                                                                    (-56.905, -13.94, -0.935)
+
+              2          B 217          B 246             30        1187.13         (-56.905, -13.94, -0.935)         (-8.38385, 15.3138, 0.535701)
+                                                                                    (-20.321, -6.654, 17.864)
+
+              3          B 246          B 260             15        588.182         (-20.321, -6.654, 17.864)         (-4.18319, -30.9378, 8.22811)
+                                                                                    (-21.299, -12.004, -2.75)
+
+              4          B 260          B 272             13        499.367         (-21.299, -12.004, -2.75)
+                                                                                    (0.729, -26.099, 0.864)
+
+              5          B 272          B 288             17        658.053         (0.729, -26.099, 0.864)
+                                                                                    (-12.649, -2.431, -2.139)
+
+              6          B 288          B 313             26        1013.15         (-12.649, -2.431, -2.139)         (-2.50866, 14.9364, 28.0971)
+                                                                                    (-12.19, -32.536, 12.684)
+
+              7          B 313          B 314              2        48.7395         (-12.19, -32.536, 12.684)
+                                                                                    (-8.858, -33.975, 13.792)
+

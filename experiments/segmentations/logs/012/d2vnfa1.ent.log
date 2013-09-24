@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/vn/d2vnfa1.ent
+Number of residues: 50
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 14149.9
+Null Model Fit: 2140.61 bits.
+Bits per residue: 43.6859
+
+Bezier model fit: 2081.58 bits.
+Bits per residue: 42.4812
+
+# of segments: 6
+Internal segmentation:
+0-->5-->12-->24-->35-->46-->49
+
+CPU time used: 2.04 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 195          A 200              6        218.935         (8.937, -25.02, -5.982)
+                                                                                    (6.557, -10.047, -0.349)
+
+              2          A 200          A 207              8        296.407         (6.557, -10.047, -0.349)         (11.5353, -21.1223, -8.08351)
+                                                                                    (11.776, -21.208, 8.35)
+
+              3          A 207          A 219             13        502.774         (11.776, -21.208, 8.35)         (-17.6033, -10.8367, 6.84791)
+                                                                                    (0.029, -13.685, -1.225)
+
+              4          A 219          A 230             12        471.336         (0.029, -13.685, -1.225)
+                                                                                    (10.064, -13.307, 15.708)
+
+              5          A 230          A 241             12        455.783         (10.064, -13.307, 15.708)         (-11.4312, -17.5717, 21.1547)
+                                                                                    (-0.862, -5.368, 2.01)
+
+              6          A 241          A 244              4        136.344         (-0.862, -5.368, 2.01)
+                                                                                    (-2.618, -1.245, 4.807)
+

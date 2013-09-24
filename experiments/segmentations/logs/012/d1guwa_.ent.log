@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/gu/d1guwa_.ent
+Number of residues: 73
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 42869.9
+Null Model Fit: 3260.52 bits.
+Bits per residue: 45.285
+
+Bezier model fit: 2999.59 bits.
+Bits per residue: 41.661
+
+# of segments: 6
+Internal segmentation:
+0-->14-->25-->26-->36-->51-->72
+
+CPU time used: 3.42 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 8           A 22             15         582.21         (-26.019, -13.632, 13.071)         (-27.2401, 5.04725, 7.36094)
+                                                                                    (-1.876, -9.454, -2.634)
+
+              2           A 22           A 33             12        448.044         (-1.876, -9.454, -2.634)         (15.7621, 2.83871, -6.23464)
+                                                                                    (-2.951, 16.279, 5.269)
+
+              3           A 33           A 34              2        48.3221         (-2.951, 16.279, 5.269)
+                                                                                    (-1.236, 14.334, 8.046)
+
+              4           A 34           A 44             11          409.4         (-1.236, 14.334, 8.046)         (5.46979, 0.919528, -2.14737)
+                                                                                    (-3.802, -8.97, -11.834)
+
+              5           A 44           A 59             16        637.269         (-3.802, -8.97, -11.834)         (-3.21204, 15.4558, -5.24921)
+                                                                                    (-0.734, -5.565, 6.576)
+
+              6           A 59           A 80             22        874.342         (-0.734, -5.565, 6.576)         (25.7423, 5.98391, -4.12195)
+                                                                                    (16.172, 4.898, 13.017)
+

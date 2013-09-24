@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/e7/d1e7la2.ent
+Number of residues: 103
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 48258.5
+Null Model Fit: 4636.5 bits.
+Bits per residue: 45.4558
+
+Bezier model fit: 4227.99 bits.
+Bits per residue: 41.4509
+
+# of segments: 6
+Internal segmentation:
+0-->4-->26-->41-->57-->79-->102
+
+CPU time used: 5.36 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 5              5        182.628         (-16.66, 22.256, -0.464)
+                                                                                    (-12.847, 11.817, -4.601)
+
+              2            A 5           A 27             23         906.58         (-12.847, 11.817, -4.601)         (1.96596, 28.7693, -6.78548)
+                                                                                    (10.132, 25.348, 5.687)
+
+              3           A 27           A 42             16        622.984         (10.132, 25.348, 5.687)         (7.73712, 5.61399, -15.0799)
+                                                                                    (-8.43, 20.523, 12.063)
+
+              4           A 42           A 58             17        684.643         (-8.43, 20.523, 12.063)
+                                                                                    (5.861, 17.066, 4.822)
+
+              5           A 58           A 80             23        888.283         (5.861, 17.066, 4.822)         (3.00122, 10.328, 22.9765)
+                                                                                    (-5.99, 21.478, 34.744)
+
+              6           A 80          A 103             24        942.872         (-5.99, 21.478, 34.744)         (6.14811, 34.9931, 11.1208)
+                                                                                    (23.898, 29.974, 38.3)
+

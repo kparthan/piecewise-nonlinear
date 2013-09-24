@@ -1,0 +1,31 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/lm/d1lmra_.ent
+Number of residues: 35
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 6246.71
+Null Model Fit: 1445.21 bits.
+Bits per residue: 42.5062
+
+Bezier model fit: 1421.23 bits.
+Bits per residue: 41.8009
+
+# of segments: 4
+Internal segmentation:
+0-->7-->20-->27-->34
+
+CPU time used: 0.99 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 8              8        293.671         (-2.875, -11.912, -4.863)
+                                                                                    (1.31, 7.32, -3.515)
+
+              2            A 8           A 21             14        539.929         (1.31, 7.32, -3.515)         (-17.9239, -10.3507, 4.17866)
+                                                                                    (10.167, -2.824, -2.374)
+
+              3           A 21           A 28              8        288.032         (10.167, -2.824, -2.374)
+                                                                                    (-6.055, 3.333, 8.76)
+
+              4           A 28           A 35              8        299.599         (-6.055, 3.333, 8.76)         (-4.29409, 4.27243, -4.47524)
+                                                                                    (9.612, 5.286, 3.811)
+

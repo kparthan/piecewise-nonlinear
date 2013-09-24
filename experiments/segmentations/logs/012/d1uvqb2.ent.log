@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/uv/d1uvqb2.ent
+Number of residues: 92
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 37267.4
+Null Model Fit: 4102.55 bits.
+Bits per residue: 45.083
+
+Bezier model fit: 3691.08 bits.
+Bits per residue: 40.5613
+
+# of segments: 6
+Internal segmentation:
+0-->16-->19-->30-->42-->62-->91
+
+CPU time used: 4.57 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            B 3           B 19             17        619.101         (55.982, 49.959, 14.177)         (83.3798, 52.4285, 8.93752)
+                                                                                    (93.786, 22.343, 7.686)
+
+              2           B 19           B 22              4        140.535         (93.786, 22.343, 7.686)
+                                                                                    (97.626, 26.245, 6.613)
+
+              3           B 22           B 33             12        439.497         (97.626, 26.245, 6.613)         (87.4687, 43.9786, 3.52454)
+                                                                                    (70.222, 46.126, 6.957)
+
+              4           B 33           B 45             13        506.854         (70.222, 46.126, 6.957)
+                                                                                    (93.701, 41.723, -1.656)
+
+              5           B 45           B 65             21         822.32         (93.701, 41.723, -1.656)         (64.9341, 55.9692, -6.76188)
+                                                                                    (97.705, 53.249, 2.318)
+
+              6           B 65           B 94             30        1162.77         (97.705, 53.249, 2.318)         (98.9267, 36.3879, 14.0181)
+                                                                                    (85.597, 18.15, 24.98)
+

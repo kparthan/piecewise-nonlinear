@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/fj/d1fjca_.ent
+Number of residues: 96
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 31426.2
+Null Model Fit: 4259.52 bits.
+Bits per residue: 44.837
+
+Bezier model fit: 3944.15 bits.
+Bits per residue: 41.5173
+
+# of segments: 7
+Internal segmentation:
+0-->26-->49-->50-->61-->78-->89-->95
+
+CPU time used: 4.89 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 27             27        1086.36         (90.12, 20.762, 16.175)         (83.824, 16.5406, -2.74006)
+                                                                                    (63.076, -13.447, -0.293)
+
+              2           A 27           A 50             24        956.474         (63.076, -13.447, -0.293)         (98.098, -6.20925, 2.24364)
+                                                                                    (55.365, -1.592, 6.786)
+
+              3           A 50           A 51              2        47.8741         (55.365, -1.592, 6.786)
+                                                                                    (55.955, -4.124, 3.983)
+
+              4           A 51           A 62             12        449.141         (55.955, -4.124, 3.983)
+                                                                                    (85.739, 2.39, 2.58)
+
+              5           A 62           A 79             18        703.221         (85.739, 2.39, 2.58)         (85.4505, -0.419038, -13.48)
+                                                                                    (66.075, -13.697, -6.448)
+
+              6           A 79           A 90             12        437.251         (66.075, -13.697, -6.448)
+                                                                                    (77.539, 12.352, -3.045)
+
+              7           A 90           A 96              7        263.826         (77.539, 12.352, -3.045)
+                                                                                    (66.728, 15.901, 7.247)
+

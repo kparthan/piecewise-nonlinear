@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/bb/d1bbga_.ent
+Number of residues: 40
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 4822.1
+Null Model Fit: 1643.18 bits.
+Bits per residue: 42.1328
+
+Bezier model fit: 1630.13 bits.
+Bits per residue: 41.7981
+
+# of segments: 7
+Internal segmentation:
+0-->7-->14-->20-->22-->29-->30-->39
+
+CPU time used: 1.32 secs.
+Wall clock time elapsed: 1 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 8              8        282.582         (9.141, 2.853, 5.98)         (16.1737, -6.00129, -2.77632)
+                                                                                    (6.03, -14.21, -8.476)
+
+              2            A 8           A 15              8        303.581         (6.03, -14.21, -8.476)         (-2.91766, -14.2533, 3.4298)
+                                                                                    (0.977, -10.925, -12.708)
+
+              3           A 15           A 21              7        247.969         (0.977, -10.925, -12.708)         (4.31495, -5.57791, -3.81638)
+                                                                                    (11.158, -8.212, 4.4)
+
+              4           A 21           A 23              3        88.3027         (11.158, -8.212, 4.4)
+                                                                                    (6.87, -12.437, 4.525)
+
+              5           A 23           A 30              8        289.385         (6.87, -12.437, 4.525)
+                                                                                    (0.489, -4.163, -10.09)
+
+              6           A 30           A 31              2        45.1699         (0.489, -4.163, -10.09)
+                                                                                    (3.255, -1.546, -10.486)
+
+              7           A 31           A 40             10        373.137         (3.255, -1.546, -10.486)
+                                                                                    (6.641, 1.362, 1.973)
+

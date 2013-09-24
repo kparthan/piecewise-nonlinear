@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/vw/d2vwra_.ent
+Number of residues: 95
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 28975.6
+Null Model Fit: 4203.67 bits.
+Bits per residue: 44.7199
+
+Bezier model fit: 3888.76 bits.
+Bits per residue: 41.3698
+
+# of segments: 6
+Internal segmentation:
+0-->12-->25-->43-->57-->77-->94
+
+CPU time used: 5.07 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A -1          A 346             13        477.012         (20.938, 12.899, 23.283)         (22.3937, 14.0487, 1.15702)
+                                                                                    (7.475, 18.241, -10.404)
+
+              2          A 346          A 359             14        535.578         (7.475, 18.241, -10.404)
+                                                                                    (2.064, 22.292, 23.024)
+
+              3          A 359          A 377             19        766.571         (2.064, 22.292, 23.024)
+                                                                                    (10.08, 6.208, -0.242)
+
+              4          A 377          A 391             15        583.944         (10.08, 6.208, -0.242)         (10.0295, 12.2907, 26.2045)
+                                                                                    (17.202, 24.406, 2.311)
+
+              5          A 391          A 411             21        825.316         (17.202, 24.406, 2.311)         (-1.56298, 30.3476, 21.9627)
+                                                                                    (13.221, 24.044, -6.296)
+
+              6          A 411          A 428             18        700.338         (13.221, 24.044, -6.296)         (21.7923, 15.1524, 15.698)
+                                                                                    (11.677, -0.524, 31.139)
+

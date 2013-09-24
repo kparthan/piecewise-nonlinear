@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/qa/d2qalp1.ent
+Number of residues: 82
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 21066.8
+Null Model Fit: 3585.06 bits.
+Bits per residue: 44.26
+
+Bezier model fit: 3369.58 bits.
+Bits per residue: 41.5997
+
+# of segments: 6
+Internal segmentation:
+0-->13-->24-->26-->43-->63-->81
+
+CPU time used: 4.18 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            P 1           P 14             14        547.759         (51.768, -41.31, 21.328)
+                                                                                    (76.7, -30.787, 32.869)
+
+              2           P 14           P 25             12        447.853         (76.7, -30.787, 32.869)         (51.0806, -27.9025, 31.5411)
+                                                                                    (57.916, -40.743, 17.528)
+
+              3           P 25           P 27              3        92.5571         (57.916, -40.743, 17.528)
+                                                                                    (63.362, -37.569, 18.694)
+
+              4           P 27           P 44             18        717.572         (63.362, -37.569, 18.694)         (49.5026, -26.5044, 24.4923)
+                                                                                    (73.67, -26.079, 44.493)
+
+              5           P 44           P 64             21        814.946         (73.67, -26.079, 44.493)         (46.5487, -24.0151, 37.5926)
+                                                                                    (45.737, -39.562, 27.017)
+
+              6           P 64           P 82             19        748.889         (45.737, -39.562, 27.017)         (71.5987, -43.095, 40.6254)
+                                                                                    (50.679, -28.847, 47.505)
+

@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/az/d1azsc1.ent
+Number of residues: 116
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 33819.8
+Null Model Fit: 5168.44 bits.
+Bits per residue: 44.9429
+
+Bezier model fit: 4670.27 bits.
+Bits per residue: 40.611
+
+# of segments: 8
+Internal segmentation:
+0-->28-->35-->51-->57-->84-->86-->102-->115
+
+CPU time used: 6.26 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           C 86          C 114             29        1094.48         (5.863, 11.707, 43.782)         (21.4347, 24.8936, 29.1709)
+                                                                                    (33.303, 21.701, 7.896)
+
+              2          C 114          C 121              8         289.45         (33.303, 21.701, 7.896)
+                                                                                    (19.536, 35.596, 11.609)
+
+              3          C 121          C 137             17        654.008         (19.536, 35.596, 11.609)
+                                                                                    (27.857, 26.152, 34.865)
+
+              4          C 137          C 143              7        262.053         (27.857, 26.152, 34.865)
+                                                                                    (16.034, 31.244, 34.721)
+
+              5          C 143          C 170             28        1081.85         (16.034, 31.244, 34.721)         (13.0429, 31.011, 0.297004)
+                                                                                    (27.713, 13.56, 19.528)
+
+              6          C 170          C 172              3        93.9229         (27.713, 13.56, 19.528)
+                                                                                    (21.594, 12.9, 22.639)
+
+              7          C 172          C 188             17        654.389         (21.594, 12.9, 22.639)         (6.10111, 22.3619, 15.7471)
+                                                                                    (6.941, 25.631, 37.18)
+
+              8          C 188          C 201             14        540.106         (6.941, 25.631, 37.18)         (-0.341829, 4.27039, 27.3955)
+                                                                                    (18.502, 10.282, 28.884)
+

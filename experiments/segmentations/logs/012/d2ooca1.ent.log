@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/oo/d2ooca1.ent
+Number of residues: 104
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 35862.2
+Null Model Fit: 4637.84 bits.
+Bits per residue: 45.0275
+
+Bezier model fit: 4162.14 bits.
+Bits per residue: 40.4091
+
+# of segments: 7
+Internal segmentation:
+0-->12-->39-->58-->72-->75-->102-->103
+
+CPU time used: 5.76 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 8           A 20             13        495.027         (33.167, 39.977, 2.489)
+                                                                                    (14.603, 30.661, 4.657)
+
+              2           A 20           A 47             28        1088.97         (14.603, 30.661, 4.657)         (30.5104, 20.5761, 15.117)
+                                                                                    (51.789, 17.677, -6.703)
+
+              3           A 47           A 66             20        774.478         (51.789, 17.677, -6.703)         (31.2275, 16.9461, -8.89318)
+                                                                                    (27.35, 32.019, -1.149)
+
+              4           A 66           A 80             15        574.505         (27.35, 32.019, -1.149)
+                                                                                    (44.27, 27.883, -16.301)
+
+              5           A 80           A 83              4        140.369         (44.27, 27.883, -16.301)
+                                                                                    (46.892, 29.152, -9.565)
+
+              6           A 83          A 110             28        1040.72         (46.892, 29.152, -9.565)         (34.2438, 32.7186, 6.76053)
+                                                                                    (25.571, 35.657, 25.057)
+
+              7          A 110          A 111              2        48.0646         (25.571, 35.657, 25.057)
+                                                                                    (24.866, 39.439, 25.103)
+

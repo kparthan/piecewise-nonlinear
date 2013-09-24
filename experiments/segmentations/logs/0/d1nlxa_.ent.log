@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/nl/d1nlxa_.ent
+Number of residues: 104
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 26102.3
+Null Model Fit: 4590.63 bits.
+Bits per residue: 44.5692
+
+Bezier model fit: 4137.64 bits.
+Bits per residue: 40.1713
+
+# of segments: 8
+Internal segmentation:
+0-->24-->26-->51-->55-->75-->76-->96-->103
+
+CPU time used: 0.9 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 404          A 428             25        927.092         (-2.883, 17.477, 26.521)
+                                                                                    (8.018, -16.622, 8.861)
+
+              2          A 428          A 430              3        93.1756         (8.018, -16.622, 8.861)
+                                                                                    (14.358, -17.525, 9.411)
+
+              3          A 430          A 455             26        997.333         (14.358, -17.525, 9.411)
+                                                                                    (3.604, 18.387, 16.488)
+
+              4          A 455          A 459              5        176.137         (3.604, 18.387, 16.488)
+                                                                                    (7.879, 16.709, 25.313)
+
+              5          A 459          A 479             21        791.523         (7.879, 16.709, 25.313)
+                                                                                    (25.393, -11.627, 19.375)
+
+              6          A 479          A 480              2        47.6063         (25.393, -11.627, 19.375)
+                                                                                    (23.541, -11.918, 16.009)
+
+              7          A 480          A 500             21        796.872         (23.541, -11.918, 16.009)
+                                                                                    (4.229, 4.972, 33.705)
+
+              8          A 500          A 507              8        307.903         (4.229, 4.972, 33.705)
+                                                                                    (2.647, -11.708, 33.304)
+

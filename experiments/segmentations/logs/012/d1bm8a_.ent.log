@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/bm/d1bm8a_.ent
+Number of residues: 99
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 22379.7
+Null Model Fit: 4346.03 bits.
+Bits per residue: 44.3473
+
+Bezier model fit: 4040.44 bits.
+Bits per residue: 41.2289
+
+# of segments: 7
+Internal segmentation:
+0-->7-->17-->27-->56-->66-->77-->98
+
+CPU time used: 5.26 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 4           A 11              8        294.962         (-0.575, 5.127, 16.398)         (8.42335, 9.29008, 24.4054)
+                                                                                    (17.751, 16.893, 17.349)
+
+              2           A 11           A 21             11        409.058         (17.751, 16.893, 17.349)         (2.69272, 15.2936, 26.4689)
+                                                                                    (1.057, 5.528, 5.265)
+
+              3           A 21           A 31             11        412.096         (1.057, 5.528, 5.265)
+                                                                                    (4.499, 24.232, 21.794)
+
+              4           A 31           A 60             30        1181.75         (4.499, 24.232, 21.794)         (3.75762, 5.66587, -18.0901)
+                                                                                    (3.9, 34.14, 4.604)
+
+              5           A 60           A 70             11        423.056         (3.9, 34.14, 4.604)
+                                                                                    (19.106, 16.92, 10.08)
+
+              6           A 70           A 81             12        464.247         (19.106, 16.92, 10.08)
+                                                                                    (-3.989, 26.411, 14.305)
+
+              7           A 81          A 102             22        855.265         (-3.989, 26.411, 14.305)         (-9.60933, 14.4399, -5.99709)
+                                                                                    (-3.676, 14.272, 20.835)
+

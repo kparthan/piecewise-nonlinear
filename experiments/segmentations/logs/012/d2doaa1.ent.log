@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/do/d2doaa1.ent
+Number of residues: 91
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 25520.2
+Null Model Fit: 4008.3 bits.
+Bits per residue: 44.5367
+
+Bezier model fit: 3748.72 bits.
+Bits per residue: 41.6524
+
+# of segments: 6
+Internal segmentation:
+0-->4-->30-->34-->55-->72-->90
+
+CPU time used: 4.65 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 8           A 12              5        182.284         (-2.585, -11.816, 0.092)
+                                                                                    (-0.813, -7.91, -6.956)
+
+              2           A 12           A 38             27        1079.12         (-0.813, -7.91, -6.956)         (3.32678, 15.9298, 13.489)
+                                                                                    (4.434, -12.188, 3.274)
+
+              3           A 38           A 42              5        173.462         (4.434, -12.188, 3.274)
+                                                                                    (14.89, -6.984, -4.523)
+
+              4           A 42           A 63             22        869.649         (14.89, -6.984, -4.523)         (-1.23242, 11.7116, -9.01525)
+                                                                                    (9.954, 9.995, 7.087)
+
+              5           A 63           A 80             18        696.897         (9.954, 9.995, 7.087)         (-19.0296, 12.2418, -11.6723)
+                                                                                    (-7.715, -10.453, 3.016)
+
+              6           A 80           A 98             19        747.301         (-7.715, -10.453, 3.016)         (-13.0948, 2.74682, 19.1749)
+                                                                                    (-13.745, 9.993, -0.102)
+

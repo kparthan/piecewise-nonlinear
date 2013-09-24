@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/he/d2heyr3.ent
+Number of residues: 54
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 9613.98
+Null Model Fit: 2285.8 bits.
+Bits per residue: 43.1283
+
+Bezier model fit: 2209.49 bits.
+Bits per residue: 41.6885
+
+# of segments: 6
+Internal segmentation:
+0-->10-->19-->29-->41-->51-->53
+
+CPU time used: 2.21 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           R 29           R 39             11        422.234         (27.939, 104.381, 150.031)         (19.2431, 100.398, 172.403)
+                                                                                    (30.86, 95.366, 148.651)
+
+              2           R 39           R 48             10        366.955         (30.86, 95.366, 148.651)
+                                                                                    (20.495, 88.774, 169.63)
+
+              3           R 48           R 58             11        420.639         (20.495, 88.774, 169.63)         (32.9297, 81.619, 165.312)
+                                                                                    (31.01, 89.749, 146.975)
+
+              4           R 58           R 70             13         490.99         (31.01, 89.749, 146.975)         (20.5523, 82.2592, 159.484)
+                                                                                    (26.398, 77.686, 177.239)
+
+              5           R 70           R 80             11        418.379         (26.398, 77.686, 177.239)         (19.6454, 102.005, 167.372)
+                                                                                    (30.776, 85.246, 168.01)
+
+              6           R 80           R 82              3        90.2936         (30.776, 85.246, 168.01)
+                                                                                    (29.849, 84.883, 174.45)
+

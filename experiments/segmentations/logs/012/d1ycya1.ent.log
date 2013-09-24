@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/yc/d1ycya1.ent
+Number of residues: 62
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16433.8
+Null Model Fit: 2678.01 bits.
+Bits per residue: 43.9017
+
+Bezier model fit: 2539.38 bits.
+Bits per residue: 41.6291
+
+# of segments: 7
+Internal segmentation:
+0-->11-->19-->20-->28-->42-->46-->61
+
+CPU time used: 2.79 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 5           A 16             12        450.741         (56.008, -0.405, 126.733)
+                                                                                    (42.553, 4.518, 114.143)
+
+              2           A 16           A 24              9         330.06         (42.553, 4.518, 114.143)         (42.1296, 16.7253, 121.126)
+                                                                                    (57.364, 21.906, 121.665)
+
+              3           A 24           A 29              2        46.9388         (57.364, 21.906, 121.665)
+                                                                                    (47.311, 20.262, 115.879)
+
+              4           A 29           A 37              9        340.098         (47.311, 20.262, 115.879)         (39.6269, 5.31687, 109.785)
+                                                                                    (56.946, 3.392, 116.029)
+
+              5           A 37           A 51             15         577.63         (56.946, 3.392, 116.029)
+                                                                                    (40.813, 24.209, 109.313)
+
+              6           A 51           A 55              5        175.227         (40.813, 24.209, 109.313)
+                                                                                    (46.98, 14.974, 104.052)
+
+              7           A 55           A 70             16         618.68         (46.98, 14.974, 104.052)         (73.69, 14.3954, 128.81)
+                                                                                    (39.688, 12.414, 122.125)
+

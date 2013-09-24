@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/n7/d1n7da7.ent
+Number of residues: 50
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 15680.6
+Null Model Fit: 2147.87 bits.
+Bits per residue: 43.834
+
+Bezier model fit: 2119.5 bits.
+Bits per residue: 43.2551
+
+# of segments: 7
+Internal segmentation:
+0-->6-->8-->16-->23-->27-->45-->49
+
+CPU time used: 0.32 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 125          A 131              7        261.229         (23.396, 86.163, 27.06)
+                                                                                    (27.346, 91.925, 36.909)
+
+              2          A 131          A 133              3        91.7052         (27.346, 91.925, 36.909)
+                                                                                    (32.506, 87.258, 36.51)
+
+              3          A 133          A 141              9        344.154         (32.506, 87.258, 36.51)
+                                                                                    (25.181, 92.355, 41.584)
+
+              4          A 141          A 148              8        301.243         (25.181, 92.355, 41.584)
+                                                                                    (36.227, 91.677, 50.86)
+
+              5          A 148          A 152              5        179.697         (36.227, 91.677, 50.86)
+                                                                                    (33.349, 84.484, 43.694)
+
+              6          A 152          A 170             19        761.151         (33.349, 84.484, 43.694)
+                                                                                    (58.987, 103.911, 45.644)
+
+              7          A 170          A 174              5        180.319         (58.987, 103.911, 45.644)
+                                                                                    (52.473, 96.234, 50.055)
+

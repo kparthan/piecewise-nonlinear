@@ -1,0 +1,49 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ge/d3ge3c_.ent
+Number of residues: 83
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 20767
+Null Model Fit: 3627.63 bits.
+Bits per residue: 44.2394
+
+Bezier model fit: 3494.24 bits.
+Bits per residue: 42.6127
+
+# of segments: 10
+Internal segmentation:
+0-->11-->13-->23-->39-->46-->55-->62-->71-->72-->82
+
+CPU time used: 0.67 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            C 2           C 13             12        468.047         (-15.903, 50.567, 30.803)
+                                                                                    (-20.943, 23.873, 29.7)
+
+              2           C 13           C 15              3        92.5158         (-20.943, 23.873, 29.7)
+                                                                                    (-15.2, 25.203, 29.39)
+
+              3           C 15           C 25             11        429.499         (-15.2, 25.203, 29.39)
+                                                                                    (-23.232, 45.915, 34.769)
+
+              4           C 25           C 41             17        653.324         (-23.232, 45.915, 34.769)
+                                                                                    (-24.754, 26.818, 21.69)
+
+              5           C 41           C 48              8        303.005         (-24.754, 26.818, 21.69)
+                                                                                    (-34.933, 29.555, 36.405)
+
+              6           C 48           C 57             10        392.918         (-34.933, 29.555, 36.405)
+                                                                                    (-17.726, 29.765, 45.807)
+
+              7           C 57           C 64              8        295.917         (-17.726, 29.765, 45.807)
+                                                                                    (-28.639, 43.91, 41.261)
+
+              8           C 64           C 73             10        390.542         (-28.639, 43.91, 41.261)
+                                                                                    (-10.892, 42.113, 39.862)
+
+              9           C 73           C 74              2        47.2764         (-10.892, 42.113, 39.862)
+                                                                                    (-10.421, 41.967, 36.084)
+
+             10           C 74           C 84             11        421.193         (-10.421, 41.967, 36.084)
+                                                                                    (-31.199, 25.915, 43.372)
+

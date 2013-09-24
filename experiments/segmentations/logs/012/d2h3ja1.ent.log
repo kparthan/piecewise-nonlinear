@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/h3/d2h3ja1.ent
+Number of residues: 75
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 24016.3
+Null Model Fit: 3289.23 bits.
+Bits per residue: 44.4491
+
+Bezier model fit: 3069.17 bits.
+Bits per residue: 41.4753
+
+# of segments: 7
+Internal segmentation:
+0-->11-->29-->33-->45-->54-->61-->74
+
+CPU time used: 3.56 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 12             12        457.353         (4.163, -7.06, -19.575)         (19.5087, -11.199, -7.59342)
+                                                                                    (-0.573, -5.339, 3.006)
+
+              2           A 12           A 30             19        746.189         (-0.573, -5.339, 3.006)         (-10.9627, 15.9254, 17.4468)
+                                                                                    (-9.26, 2.205, -4.368)
+
+              3           A 30           A 34              5        174.312         (-9.26, 2.205, -4.368)
+                                                                                    (-5.322, -6.107, 4.343)
+
+              4           A 34           A 46             13        484.522         (-5.322, -6.107, 4.343)         (8.77291, -11.7162, -13.3783)
+                                                                                    (13.708, 10.955, -6.831)
+
+              5           A 46           A 55             10        373.034         (13.708, 10.955, -6.831)
+                                                                                    (-1.785, -10.629, -10.433)
+
+              6           A 55           A 62              8        290.438         (-1.785, -10.629, -10.433)
+                                                                                    (2.508, 7.548, -3.782)
+
+              7           A 62           A 75             14        543.323         (2.508, 7.548, -3.782)         (-5.84651, 6.43569, 9.13416)
+                                                                                    (10.993, -11.842, 3.844)
+

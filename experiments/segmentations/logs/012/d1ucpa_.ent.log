@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/uc/d1ucpa_.ent
+Number of residues: 91
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 19043.9
+Null Model Fit: 3970.3 bits.
+Bits per residue: 44.1144
+
+Bezier model fit: 3667.94 bits.
+Bits per residue: 40.7549
+
+# of segments: 7
+Internal segmentation:
+0-->1-->30-->39-->59-->60-->88-->90
+
+CPU time used: 4.61 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 2              2        47.1515         (-6.221, 14.494, 3.524)
+                                                                                    (-8.132, 13.425, 0.365)
+
+              2            A 2           A 31             30        1159.99         (-8.132, 13.425, 0.365)         (-9.12156, -17.9267, 15.9)
+                                                                                    (11.178, -3.101, -7.084)
+
+              3           A 31           A 40             10        385.684         (11.178, -3.101, -7.084)         (11.3184, 16.5416, -10.967)
+                                                                                    (11.866, -0.536, 4.159)
+
+              4           A 40           A 60             21        809.193         (11.866, -0.536, 4.159)         (-6.29412, 1.74596, 17.9719)
+                                                                                    (4.98, 9.906, -2.81)
+
+              5           A 60           A 61              2        47.1515         (4.98, 9.906, -2.81)
+                                                                                    (1.668, 11.778, -3.706)
+
+              6           A 61           A 89             29         1126.5         (1.668, 11.778, -3.706)         (-4.33396, -21.6768, -7.10377)
+                                                                                    (-9.634, 7.212, -4.921)
+
+              7           A 89           A 91              3        92.2659         (-9.634, 7.212, -4.921)
+                                                                                    (-14.174, 6.57, -9.606)
+

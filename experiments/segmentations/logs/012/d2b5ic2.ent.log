@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/b5/d2b5ic2.ent
+Number of residues: 96
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 24850.1
+Null Model Fit: 4227.34 bits.
+Bits per residue: 44.4983
+
+Bezier model fit: 3927.07 bits.
+Bits per residue: 41.3375
+
+# of segments: 8
+Internal segmentation:
+0-->10-->25-->37-->53-->64-->80-->93-->95
+
+CPU time used: 5.09 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           C 34           C 44             11        401.394         (15.393, -15.131, 62.697)
+                                                                                    (-9.3, -9.519, 44.004)
+
+              2           C 44           C 59             16        619.495         (-9.3, -9.519, 44.004)
+                                                                                    (12.362, -4.887, 72.444)
+
+              3           C 59           C 71             13        478.104         (12.362, -4.887, 72.444)         (5.94865, 1.02986, 54.4726)
+                                                                                    (14.561, -8.459, 36.526)
+
+              4           C 71           C 87             17        674.395         (14.561, -8.459, 36.526)         (9.18543, 8.65536, 42.8663)
+                                                                                    (-0.321, -2.4, 68.931)
+
+              5           C 87           C 98             12        459.803         (-0.321, -2.4, 68.931)
+                                                                                    (-0.77, 0.473, 40.724)
+
+              6           C 98          C 114             17        662.967         (-0.77, 0.473, 40.724)         (7.32137, -20.1129, 35.8257)
+                                                                                    (18.841, -1.124, 64.376)
+
+              7          C 114          C 127             14        537.874         (18.841, -1.124, 64.376)         (21.9074, -14.9916, 53.1874)
+                                                                                    (-0.4, -14.354, 40.526)
+
+              8          C 127          C 129              3        93.0337         (-0.4, -14.354, 40.526)
+                                                                                    (-1.341, -15.112, 45.719)
+

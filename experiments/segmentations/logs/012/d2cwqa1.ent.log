@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/cw/d2cwqa1.ent
+Number of residues: 117
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 57046.7
+Null Model Fit: 5300.88 bits.
+Bits per residue: 45.6972
+
+Bezier model fit: 4726.81 bits.
+Bits per residue: 40.7484
+
+# of segments: 7
+Internal segmentation:
+0-->2-->29-->54-->83-->86-->110-->116
+
+CPU time used: 6.37 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 3              3        95.4315         (48.521, 27.758, -0.703)
+                                                                                    (53.677, 27.537, -4.959)
+
+              2            A 3           A 30             28        1097.88         (53.677, 27.537, -4.959)         (21.6421, 40.2258, -22.3072)
+                                                                                    (54.479, 42.231, -10.352)
+
+              3           A 30           A 55             26        1029.38         (54.479, 42.231, -10.352)         (39.1149, 27.622, 12.7282)
+                                                                                    (24.203, 33.98, -4.899)
+
+              4           A 55           A 84             30        1165.79         (24.203, 33.98, -4.899)         (37.5518, 64.6993, -6.68947)
+                                                                                    (26.541, 31.883, -11.954)
+
+              5           A 84           A 87              4        142.378         (26.541, 31.883, -11.954)
+                                                                                    (18.383, 36.051, -12.521)
+
+              6           A 87          A 111             25        930.202         (18.383, 36.051, -12.521)         (20.87, 52.8736, -6.04756)
+                                                                                    (19.765, 64.711, 11.879)
+
+              7          A 111          A 117              7        265.758         (19.765, 64.711, 11.879)
+                                                                                    (14.231, 73.332, 11.331)
+

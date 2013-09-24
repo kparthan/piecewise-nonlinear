@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/pc/d3pc7a_.ent
+Number of residues: 81
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 24205
+Null Model Fit: 3556.83 bits.
+Bits per residue: 44.4604
+
+Bezier model fit: 3394.21 bits.
+Bits per residue: 42.4276
+
+# of segments: 8
+Internal segmentation:
+0-->11-->19-->32-->42-->49-->72-->73-->80
+
+CPU time used: 0.65 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 842          A 853             12        461.185         (32.73, 23.661, 3.169)
+                                                                                    (4.613, 19.712, 10.271)
+
+              2          A 853          A 861              9        337.218         (4.613, 19.712, 10.271)
+                                                                                    (-1.783, 13.049, -11.153)
+
+              3          A 861          A 874             14         545.85         (-1.783, 13.049, -11.153)
+                                                                                    (13.898, 16.48, 1.238)
+
+              4          A 874          A 884             11        417.242         (13.898, 16.48, 1.238)
+                                                                                    (-4.827, 9.087, 5.538)
+
+              5          A 884          A 891              8         309.43         (-4.827, 9.087, 5.538)
+                                                                                    (-4.259, 20.067, 0.374)
+
+              6          A 891          A 914             24        967.432         (-4.259, 20.067, 0.374)
+                                                                                    (13.17, 29.375, -2.913)
+
+              7          A 914          A 915              2        47.4974         (13.17, 29.375, -2.913)
+                                                                                    (12.63, 31.341, 0.311)
+
+              8          A 915          A 922              8        308.352         (12.63, 31.341, 0.311)
+                                                                                    (-1.011, 30.251, -2.609)
+

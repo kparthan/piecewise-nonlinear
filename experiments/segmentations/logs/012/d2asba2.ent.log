@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/as/d2asba2.ent
+Number of residues: 79
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16063.8
+Null Model Fit: 3421.77 bits.
+Bits per residue: 43.8689
+
+Bezier model fit: 3208.72 bits.
+Bits per residue: 41.1375
+
+# of segments: 7
+Internal segmentation:
+0-->1-->19-->20-->31-->41-->67-->78
+
+CPU time used: 3.83 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 184          A 185              2        46.9059         (69.433, 28.351, 48.117)
+                                                                                    (71.623, 31.163, 46.8)
+
+              2          A 185          A 203             19        743.508         (71.623, 31.163, 46.8)         (59.5724, 34.8711, 29.4588)
+                                                                                    (70.184, 46.024, 31.408)
+
+              3          A 203          A 204              2        46.9059         (70.184, 46.024, 31.408)
+                                                                                    (67.06, 48.208, 31.146)
+
+              4          A 204          A 215             12        446.794         (67.06, 48.208, 31.146)         (70.2163, 45.7038, 53.5526)
+                                                                                    (61.683, 27.464, 50.097)
+
+              5          A 215          A 225             11        402.633         (61.683, 27.464, 50.097)         (59.2488, 44.4092, 49.762)
+                                                                                    (67.395, 52.324, 34.189)
+
+              6          A 225          A 251             27        1072.67         (67.395, 52.324, 34.189)         (45.9844, 41.822, 30.1441)
+                                                                                    (59.102, 24.81, 43.545)
+
+              7          A 251          A 262             12        449.302         (59.102, 24.81, 43.545)         (53.2868, 41.0409, 45.2399)
+                                                                                    (65.564, 56.385, 46.747)
+

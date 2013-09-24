@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/qn/d2qn6b1.ent
+Number of residues: 89
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 21868.3
+Null Model Fit: 3899.62 bits.
+Bits per residue: 44.3139
+
+Bezier model fit: 3535.94 bits.
+Bits per residue: 40.1812
+
+# of segments: 7
+Internal segmentation:
+0-->14-->36-->48-->58-->59-->82-->88
+
+CPU time used: 4.74 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          B 176          B 190             15        543.159         (-12.96, -33.819, -76.653)         (2.34334, -14.4009, -60.9994)
+                                                                                    (-19.493, -1.926, -53.243)
+
+              2          B 190          B 212             23        887.848         (-19.493, -1.926, -53.243)
+                                                                                    (-19.093, -23.541, -82.761)
+
+              3          B 212          B 224             13        505.916         (-19.093, -23.541, -82.761)         (-17.6949, -28.6874, -64.5634)
+                                                                                    (-10.151, -16.628, -54.053)
+
+              4          B 224          B 234             11        388.268         (-10.151, -16.628, -54.053)
+                                                                                    (-14.134, -30.817, -80.106)
+
+              5          B 234          B 235              2         47.351         (-14.134, -30.817, -80.106)
+                                                                                    (-11.525, -28.598, -81.74)
+
+              6          B 235          B 258             24        908.175         (-11.525, -28.598, -81.74)
+                                                                                    (-13.134, -1.858, -61.528)
+
+              7          B 258          B 264              7        255.226         (-13.134, -1.858, -61.528)
+                                                                                    (-1.205, -16.274, -63.098)
+

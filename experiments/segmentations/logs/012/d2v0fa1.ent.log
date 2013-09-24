@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/v0/d2v0fa1.ent
+Number of residues: 87
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 26625
+Null Model Fit: 3835.41 bits.
+Bits per residue: 44.5978
+
+Bezier model fit: 3582.18 bits.
+Bits per residue: 41.6533
+
+# of segments: 7
+Internal segmentation:
+0-->15-->24-->38-->55-->75-->85-->86
+
+CPU time used: 4.4 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1         A 2629         A 2644             16        629.416         (-4.699, -17.246, 1.808)         (18.671, -3.06441, 9.17535)
+                                                                                    (9.396, -0.792, -7.375)
+
+              2         A 2644         A 2653             10        371.423         (9.396, -0.792, -7.375)         (-1.31055, -6.26667, 1.03807)
+                                                                                    (-15.923, -3.625, 2.19)
+
+              3         A 2653         A 2667             15        595.285         (-15.923, -3.625, 2.19)         (1.11272, -17.4408, -7.56408)
+                                                                                    (6.081, 4.904, -6.548)
+
+              4         A 2667         A 2684             18        696.201         (6.081, 4.904, -6.548)         (-21.9485, 7.80019, -9.64599)
+                                                                                    (2.394, -3.931, 7.897)
+
+              5         A 2684         A 2704             21        826.487         (2.394, -3.931, 7.897)         (8.64315, 19.4954, -3.09439)
+                                                                                    (-5.001, 0.771, 7.742)
+
+              6         A 2704         A 2714             11        415.733         (-5.001, 0.771, 7.742)
+                                                                                    (-10.604, -20.864, 7.457)
+
+              7         A 2714         A 2715              2        47.6349         (-10.604, -20.864, 7.457)
+                                                                                    (-14.127, -21.802, 8.544)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/g9/d3g9ma_.ent
+Number of residues: 78
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16059.7
+Null Model Fit: 3377.88 bits.
+Bits per residue: 43.8685
+
+Bezier model fit: 3221.81 bits.
+Bits per residue: 41.8417
+
+# of segments: 7
+Internal segmentation:
+0-->5-->15-->20-->33-->49-->57-->77
+
+CPU time used: 3.69 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 437          A 442              6        219.193         (19.404, 10.097, 51.25)
+                                                                                    (11.471, 16.833, 43.412)
+
+              2          A 442          A 452             11        420.084         (11.471, 16.833, 43.412)         (23.7693, 2.07676, 40.7006)
+                                                                                    (20.361, 24.795, 46.063)
+
+              3          A 452          A 457              6        222.799         (20.361, 24.795, 46.063)         (17.0205, 17.7535, 53.3012)
+                                                                                    (19.065, 14.933, 40.454)
+
+              4          A 457          A 470             14         529.22         (19.065, 14.933, 40.454)
+                                                                                    (14.664, 33.657, 34.204)
+
+              5          A 470          A 486             17        667.386         (14.664, 33.657, 34.204)         (-18.3142, 22.7572, 38.6265)
+                                                                                    (11.227, 10.707, 36.165)
+
+              6          A 486          A 494              9        342.329         (11.227, 10.707, 36.165)
+                                                                                    (4.512, 24.787, 36.688)
+
+              7          A 494          A 514             21        820.801         (4.512, 24.787, 36.688)
+                                                                                    (27.445, 30.006, 55.892)
+

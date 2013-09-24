@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/l4/d1l4db_.ent
+Number of residues: 112
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 47695.4
+Null Model Fit: 5043.72 bits.
+Bits per residue: 45.4389
+
+Bezier model fit: 4524.33 bits.
+Bits per residue: 40.7597
+
+# of segments: 8
+Internal segmentation:
+0-->15-->30-->39-->57-->76-->85-->96-->111
+
+CPU time used: 6.1 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           B 14           B 29             16        611.151         (54.967, 1.515, 15.642)
+                                                                                    (44.178, 37.07, 33.218)
+
+              2           B 29           B 44             16        589.587         (44.178, 37.07, 33.218)         (53.2299, 26.1919, 9.8479)
+                                                                                    (57.821, -0.161, 28.577)
+
+              3           B 44           B 75             10        398.406         (57.821, -0.161, 28.577)
+                                                                                    (53.21, 11.795, 35.683)
+
+              4           B 75           B 93             19        727.776         (53.21, 11.795, 35.683)
+                                                                                    (60.743, 36.98, 18.442)
+
+              5           B 93          B 112             20         778.21         (60.743, 36.98, 18.442)         (47.1402, 27.6721, 49.7375)
+                                                                                    (39.795, 7.718, 19.938)
+
+              6          B 112          B 121             10        371.059         (39.795, 7.718, 19.938)
+                                                                                    (45.653, 10.424, 44.035)
+
+              7          B 121          B 132             12        452.808         (45.653, 10.424, 44.035)
+                                                                                    (48.872, 0.293, 20.373)
+
+              8          B 132          B 147             16        595.333         (48.872, 0.293, 20.373)         (37.187, 25.5969, 28.6298)
+                                                                                    (60.235, 38.111, 35.092)
+

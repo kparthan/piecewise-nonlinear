@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/yv/d1yvwa1.ent
+Number of residues: 92
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 34758.4
+Null Model Fit: 4093.4 bits.
+Bits per residue: 44.9824
+
+Bezier model fit: 3676.9 bits.
+Bits per residue: 40.4055
+
+# of segments: 7
+Internal segmentation:
+0-->15-->16-->28-->50-->51-->74-->91
+
+CPU time used: 4.63 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 4           A 19             16         606.15         (-30.244, 60.165, 156.922)
+                                                                                    (-11.526, 49.94, 162.584)
+
+              2           A 19           A 20              2        48.0195         (-11.526, 49.94, 162.584)
+                                                                                    (-11.088, 48.412, 159.159)
+
+              3           A 20           A 32             13         509.32         (-11.088, 48.412, 159.159)
+                                                                                    (-6.24, 62.601, 162.032)
+
+              4           A 32           A 54             23        865.976         (-6.24, 62.601, 162.032)         (-10.9298, 75.6973, 148.872)
+                                                                                    (-23.693, 74.895, 136.683)
+
+              5           A 54           A 55              2        48.0195         (-23.693, 74.895, 136.683)
+                                                                                    (-23.242, 71.137, 137.153)
+
+              6           A 55           A 78             24        901.003         (-23.242, 71.137, 137.153)
+                                                                                    (-15.601, 63.926, 169.951)
+
+              7           A 78           A 95             18        698.407         (-15.601, 63.926, 169.951)         (-33.5236, 71.6111, 167.792)
+                                                                                    (-35.125, 82.64, 161.009)
+

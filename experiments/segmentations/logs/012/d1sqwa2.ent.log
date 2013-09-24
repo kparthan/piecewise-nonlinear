@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/sq/d1sqwa2.ent
+Number of residues: 94
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 30338.8
+Null Model Fit: 4165.12 bits.
+Bits per residue: 44.7862
+
+Bezier model fit: 3850.88 bits.
+Bits per residue: 41.4073
+
+# of segments: 7
+Internal segmentation:
+0-->4-->32-->40-->47-->67-->75-->93
+
+CPU time used: 4.76 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 5              5        182.423         (15.263, 3.407, 29.115)
+                                                                                    (18.881, 14.102, 33.845)
+
+              2            A 5           A 33             29         1131.3         (18.881, 14.102, 33.845)         (-3.92433, 34.8139, 27.05)
+                                                                                    (0.542, 4.762, 42.044)
+
+              3           A 33           A 41              9        333.267         (0.542, 4.762, 42.044)         (11.0893, 10.9407, 34.6947)
+                                                                                    (16.368, 6.9, 21.935)
+
+              4           A 41           A 48              8        301.608         (16.368, 6.9, 21.935)
+                                                                                    (4.204, 3.555, 35.901)
+
+              5           A 48           A 68             21        822.848         (4.204, 3.555, 35.901)         (21.8123, -15.3589, 31.0562)
+                                                                                    (3.411, 6.235, 26.27)
+
+              6           A 68           A 76              9        334.648         (3.411, 6.235, 26.27)
+                                                                                    (18.637, 22.26, 19.836)
+
+              7           A 76           A 94             19         744.78         (18.637, 22.26, 19.836)         (-7.26049, 3.06954, 23.5979)
+                                                                                    (-6.741, 25.046, 31.731)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/kk/d1kk8a1.ent
+Number of residues: 48
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 7093.57
+Null Model Fit: 2006.41 bits.
+Bits per residue: 42.6896
+
+Bezier model fit: 1949.14 bits.
+Bits per residue: 41.4712
+
+# of segments: 7
+Internal segmentation:
+0-->1-->10-->13-->23-->24-->34-->47
+
+CPU time used: 1.92 secs.
+Wall clock time elapsed: 1 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 29           A 30              2        45.7267         (11.534, 5.648, -38.916)
+                                                                                    (10.431, 2.4, -37.238)
+
+              2           A 30           A 39             10        366.988         (10.431, 2.4, -37.238)
+                                                                                    (23.434, 2.028, -17.825)
+
+              3           A 39           A 42              4        133.355         (23.434, 2.028, -17.825)
+                                                                                    (17.744, 2.766, -18.423)
+
+              4           A 42           A 52             11         405.65         (17.744, 2.766, -18.423)         (17.5161, 11.5048, -39.8118)
+                                                                                    (26.708, -7.73, -38.609)
+
+              5           A 52           A 53              2        45.7267         (26.708, -7.73, -38.609)
+                                                                                    (24.627, -10.694, -37.465)
+
+              6           A 53           A 63             11        407.246         (24.627, -10.694, -37.465)
+                                                                                    (25.566, 12.838, -28.371)
+
+              7           A 63           A 76             14        544.452         (25.566, 12.838, -28.371)         (30.5619, -15.1251, -30.1048)
+                                                                                    (10.883, -1.26, -30.272)
+

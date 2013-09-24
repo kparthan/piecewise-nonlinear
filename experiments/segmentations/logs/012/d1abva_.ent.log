@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ab/d1abva_.ent
+Number of residues: 105
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 21768.9
+Null Model Fit: 4607.96 bits.
+Bits per residue: 44.3073
+
+Bezier model fit: 4204.49 bits.
+Bits per residue: 40.4278
+
+# of segments: 7
+Internal segmentation:
+0-->21-->22-->40-->64-->68-->82-->104
+
+CPU time used: 5.4 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 22             22        846.154         (-4.552, 15.675, -3.697)         (11.4645, 2.5713, 12.4782)
+                                                                                    (14.001, -10.591, 0.963)
+
+              2           A 22           A 23              2        47.3444         (14.001, -10.591, 0.963)
+                                                                                    (10.396, -9.896, -0.219)
+
+              3           A 23           A 41             19        712.011         (10.396, -9.896, -0.219)
+                                                                                    (-13.01, 4.4, -9.857)
+
+              4           A 41           A 65             25         966.47         (-13.01, 4.4, -9.857)         (-19.7984, 6.0425, 16.0457)
+                                                                                    (-6.499, -10.952, -3.319)
+
+              5           A 65           A 69              5        178.519         (-6.499, -10.952, -3.319)
+                                                                                    (2.225, -10.235, 3)
+
+              6           A 69           A 83             15         565.45         (2.225, -10.235, 3)
+                                                                                    (-8.488, 7.087, 6.394)
+
+              7           A 83          A 105             23        888.543         (-8.488, 7.087, 6.394)         (7.79482, 2.92616, -11.7333)
+                                                                                    (23.318, 2.21, -1.323)
+

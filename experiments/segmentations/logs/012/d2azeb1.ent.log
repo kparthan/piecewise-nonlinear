@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/az/d2azeb1.ent
+Number of residues: 101
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 85101.9
+Null Model Fit: 4627.43 bits.
+Bits per residue: 46.2743
+
+Bezier model fit: 4042.85 bits.
+Bits per residue: 40.4285
+
+# of segments: 7
+Internal segmentation:
+0-->8-->37-->58-->68-->79-->88-->100
+
+CPU time used: 5.31 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          B 201          B 209              9        345.045         (-3.223, 39.653, 44.344)
+                                                                                    (8.503, 37.973, 39.959)
+
+              2          B 209          B 238             30        1108.12         (8.503, 37.973, 39.959)         (24.9946, 37.495, 28.1156)
+                                                                                    (48.819, 30.217, 20.149)
+
+              3          B 238          B 259             22        874.553         (48.819, 30.217, 20.149)         (55.7741, 31.9109, 41.5694)
+                                                                                    (59.253, 20.407, 53.512)
+
+              4          B 259          B 269             11        405.454         (59.253, 20.407, 53.512)         (53.54, 13.8088, 37.3054)
+                                                                                    (40.28, 16.103, 28.94)
+
+              5          B 269          B 280             12        456.363         (40.28, 16.103, 28.94)
+                                                                                    (42.862, 2.43, 56.685)
+
+              6          B 280          B 289             10        365.242         (42.862, 2.43, 56.685)         (46.1136, 11.1941, 42.6601)
+                                                                                    (39.427, 6.878, 28.382)
+
+              7          B 289          B 301             13        488.073         (39.427, 6.878, 28.382)
+                                                                                    (64.349, 18.887, 47.318)
+

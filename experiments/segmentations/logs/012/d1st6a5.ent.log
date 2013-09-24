@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/st/d1st6a5.ent
+Number of residues: 158
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 87362.9
+Null Model Fit: 7271 bits.
+Bits per residue: 46.3121
+
+Bezier model fit: 6330.55 bits.
+Bits per residue: 40.322
+
+# of segments: 7
+Internal segmentation:
+0-->18-->45-->72-->77-->104-->132-->157
+
+CPU time used: 8.94 secs.
+Wall clock time elapsed: 8 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 489          A 507             19        757.168         (31.917, 143.26, 131.972)         (27.682, 159.236, 123.733)
+                                                                                    (45.187, 156.751, 138.797)
+
+              2          A 507          A 534             28         1099.6         (45.187, 156.751, 138.797)         (34.7231, 138.492, 128.616)
+                                                                                    (34.982, 151.276, 101.827)
+
+              3          A 534          A 561             28        1062.23         (34.982, 151.276, 101.827)         (44.5708, 159.171, 118.022)
+                                                                                    (55.566, 154.209, 137.861)
+
+              4          A 561          A 566              6        224.215         (55.566, 154.209, 137.861)
+                                                                                    (51.579, 166.143, 136.521)
+
+              5          A 566          A 593             28        1057.39         (51.579, 166.143, 136.521)
+                                                                                    (24.447, 154.908, 108.053)
+
+              6          A 593          A 621             29        1153.47         (24.447, 154.908, 108.053)         (-1.23709, 131.867, 102.31)
+                                                                                    (15.204, 124.006, 87.077)
+
+              7          A 621          A 646             26        976.471         (15.204, 124.006, 87.077)
+                                                                                    (26.664, 145.436, 115.813)
+

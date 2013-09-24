@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/je/d2je6i3.ent
+Number of residues: 61
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 17586.7
+Null Model Fit: 2639.97 bits.
+Bits per residue: 43.9995
+
+Bezier model fit: 2489.15 bits.
+Bits per residue: 41.4858
+
+# of segments: 7
+Internal segmentation:
+0-->7-->29-->30-->34-->41-->42-->60
+
+CPU time used: 2.75 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          I 153          I 160              8        296.266         (-0.624, 41.187, 62.04)         (10.0178, 36.8998, 62.2162)
+                                                                                    (16.388, 29.781, 71.63)
+
+              2          I 160          I 182             23        890.164         (16.388, 29.781, 71.63)         (20.6934, 49.1849, 88.671)
+                                                                                    (13.023, 49.962, 63.791)
+
+              3          I 182          I 186              2        47.0366         (13.023, 49.962, 63.791)
+                                                                                    (8.97, 43.766, 69.194)
+
+              4          I 186          I 190              5         176.25         (8.97, 43.766, 69.194)
+                                                                                    (9.457, 33.817, 77.666)
+
+              5          I 190          I 202              8        298.543         (9.457, 33.817, 77.666)
+                                                                                    (8.263, 49.86, 60.132)
+
+              6          I 202          I 203              2        47.0366         (8.263, 49.86, 60.132)
+                                                                                    (8.599, 48.583, 56.551)
+
+              7          I 203          I 221             19        733.853         (8.599, 48.583, 56.551)         (21.9667, 29.229, 65.8252)
+                                                                                    (31.394, 41.107, 76.325)
+

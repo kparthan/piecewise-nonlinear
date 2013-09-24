@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/fa/d1fada_.ent
+Number of residues: 95
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 20530.3
+Null Model Fit: 4156.94 bits.
+Bits per residue: 44.2228
+
+Bezier model fit: 3843.18 bits.
+Bits per residue: 40.8849
+
+# of segments: 6
+Internal segmentation:
+0-->4-->31-->33-->62-->79-->94
+
+CPU time used: 5 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 89           A 93              5         180.28         (9.72, 10.804, 11.599)
+                                                                                    (1.962, 3.842, 14.492)
+
+              2           A 93          A 120             28        1067.65         (1.962, 3.842, 14.492)         (-6.36439, -19.8811, -6.63721)
+                                                                                    (3.668, 10.535, -6.968)
+
+              3          A 120          A 122              3        92.4827         (3.668, 10.535, -6.968)
+                                                                                    (9.935, 8.798, -5.996)
+
+              4          A 122          A 151             30         1167.3         (9.935, 8.798, -5.996)         (12.3462, -21.9793, -12.801)
+                                                                                    (4.268, 11.212, 3.871)
+
+              5          A 151          A 168             18        709.135         (4.268, 11.212, 3.871)         (-9.97271, 1.69278, 14.1195)
+                                                                                    (-11.793, 4.44, -6.097)
+
+              6          A 168          A 183             16        626.337         (-11.793, 4.44, -6.097)         (-6.3977, -13.5782, 3.3294)
+                                                                                    (-16.278, -2.976, 14.006)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/tw/d1twfi2.ent
+Number of residues: 72
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 20044.1
+Null Model Fit: 3137.37 bits.
+Bits per residue: 44.1882
+
+Bezier model fit: 2962.81 bits.
+Bits per residue: 41.7298
+
+# of segments: 7
+Internal segmentation:
+0-->17-->27-->40-->55-->57-->70-->71
+
+CPU time used: 3.44 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           I 50           I 67             18         705.58         (101.008, 21.755, 89.294)         (116.785, 0.0167712, 76.2174)
+                                                                                    (111.233, 15.917, 65.091)
+
+              2           I 67           I 77             11        409.815         (111.233, 15.917, 65.091)         (127.508, 27.3808, 72.949)
+                                                                                    (126.198, 14.354, 84.876)
+
+              3           I 77           I 90             14         542.79         (126.198, 14.354, 84.876)         (126.186, 18.5731, 64.6684)
+                                                                                    (101.856, 20.25, 80.203)
+
+              4           I 90          I 105             16        624.586         (101.856, 20.25, 80.203)         (103.562, 38.2801, 80.5563)
+                                                                                    (124.081, 9.262, 76.776)
+
+              5          I 105          I 107              3        92.4136         (124.081, 9.262, 76.776)
+                                                                                    (119.217, 10.022, 79.671)
+
+              6          I 107          I 120             14        540.405         (119.217, 10.022, 79.671)         (115.048, 41.5249, 87.8497)
+                                                                                    (113.622, 15.127, 90.237)
+
+              7          I 120          I 121              2        47.2253         (113.622, 15.127, 90.237)
+                                                                                    (111.266, 16.744, 87.697)
+

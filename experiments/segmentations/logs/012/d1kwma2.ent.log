@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/kw/d1kwma2.ent
+Number of residues: 95
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 34814
+Null Model Fit: 4228.56 bits.
+Bits per residue: 44.9847
+
+Bezier model fit: 3888.18 bits.
+Bits per residue: 41.3636
+
+# of segments: 8
+Internal segmentation:
+0-->8-->18-->31-->43-->48-->57-->71-->94
+
+CPU time used: 4.84 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 1A           A 9A              9         341.77         (15.999, -17.073, -14.177)
+                                                                                    (16.959, -4.453, -22.269)
+
+              2           A 9A          A 19A             11        404.454         (16.959, -4.453, -22.269)         (18.9201, 8.89429, -9.58384)
+                                                                                    (11.187, 23.6, -13.33)
+
+              3          A 19A          A 32A             14        529.937         (11.187, 23.6, -13.33)
+                                                                                    (3.224, 8.582, -25.34)
+
+              4          A 32A          A 44A             13        508.224         (3.224, 8.582, -25.34)         (13.6762, -1.59836, -3.34557)
+                                                                                    (1.606, 14.299, -10.654)
+
+              5          A 44A          A 49A              6        219.933         (1.606, 14.299, -10.654)
+                                                                                    (14.239, 20.778, -7.98)
+
+              6          A 49A          A 58A             10         364.83         (14.239, 20.778, -7.98)         (10.4246, 3.74517, -9.52408)
+                                                                                    (13.294, -2.101, -23.881)
+
+              7          A 58A          A 72A             15         569.31         (13.294, -2.101, -23.881)
+                                                                                    (19.307, 18.637, -22.491)
+
+              8          A 72A          A 95A             24        949.724         (19.307, 18.637, -22.491)         (18.0961, -8.99126, -15.1908)
+                                                                                    (22.302, -23.024, 1.923)
+

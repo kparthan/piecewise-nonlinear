@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/sx/d1sxjd1.ent
+Number of residues: 91
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 22262.8
+Null Model Fit: 3990.57 bits.
+Bits per residue: 44.3397
+
+Bezier model fit: 3626.55 bits.
+Bits per residue: 40.295
+
+# of segments: 7
+Internal segmentation:
+0-->1-->30-->50-->52-->73-->75-->90
+
+CPU time used: 4.75 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          D 263          D 264              2        47.3768         (10.522, 14.234, 10.844)
+                                                                                    (10.113, 11.17, 8.555)
+
+              2          D 264          D 293             30        1147.54         (10.113, 11.17, 8.555)         (-7.27766, -7.8569, 34.6871)
+                                                                                    (19.571, 11.228, 18.888)
+
+              3          D 293          D 313             21        817.289         (19.571, 11.228, 18.888)         (-1.62377, 26.374, 14.347)
+                                                                                    (-10.267, 4.941, 11.855)
+
+              4          D 313          D 315              3        92.7165         (-10.267, 4.941, 11.855)
+                                                                                    (-13.757, 7.573, 16.819)
+
+              5          D 315          D 336             22        827.098         (-13.757, 7.573, 16.819)         (-7.55259, 19.8919, 25.5894)
+                                                                                    (10.814, 26.205, 28.26)
+
+              6          D 336          D 338              3        92.7165         (10.814, 26.205, 28.26)
+                                                                                    (12.144, 19.622, 29.402)
+
+              7          D 338          D 353             16        601.808         (12.144, 19.622, 29.402)
+                                                                                    (-7.227, 6.639, 25.723)
+

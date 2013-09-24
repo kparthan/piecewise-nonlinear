@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/fd/d2fdna_.ent
+Number of residues: 55
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 9928
+Null Model Fit: 2331.43 bits.
+Bits per residue: 43.1746
+
+Bezier model fit: 2272.35 bits.
+Bits per residue: 42.0806
+
+# of segments: 7
+Internal segmentation:
+0-->5-->10-->19-->26-->37-->47-->54
+
+CPU time used: 0.36 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 6              6        214.165         (8.069, 23.677, 64.576)
+                                                                                    (0.527, 9.55, 66.692)
+
+              2            A 6           A 11              6        216.818         (0.527, 9.55, 66.692)
+                                                                                    (-3.888, 13.275, 77.864)
+
+              3           A 11           A 20             10        378.984         (-3.888, 13.275, 77.864)
+                                                                                    (2.968, 30.512, 73.198)
+
+              4           A 20           A 27              8         288.69         (2.968, 30.512, 73.198)
+                                                                                    (-9.158, 13.917, 66.624)
+
+              5           A 27           A 38             12        462.884         (-9.158, 13.917, 66.624)
+                                                                                    (9.321, 28.327, 68.628)
+
+              6           A 38           A 48             11         416.54         (9.321, 28.327, 68.628)
+                                                                                    (4.704, 10.789, 79.026)
+
+              7           A 48           A 55              8         294.27         (4.704, 10.789, 79.026)
+                                                                                    (10.589, 18.786, 62.625)
+

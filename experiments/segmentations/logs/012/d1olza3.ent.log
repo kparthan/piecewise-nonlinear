@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ol/d1olza3.ent
+Number of residues: 56
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 12295.2
+Null Model Fit: 2391.57 bits.
+Bits per residue: 43.4832
+
+Bezier model fit: 2315.51 bits.
+Bits per residue: 42.1002
+
+# of segments: 7
+Internal segmentation:
+0-->14-->15-->23-->31-->36-->46-->55
+
+CPU time used: 2.34 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 481          A 495             15        580.993         (15.262, -15.368, -28.575)         (22.9154, -34.6908, -26.3333)
+                                                                                    (7.386, -22.655, -22.302)
+
+              2          A 495          A 496              2        46.5202         (7.386, -22.655, -22.302)
+                                                                                    (7.503, -19.796, -24.814)
+
+              3          A 496          A 504              9        326.987         (7.503, -19.796, -24.814)
+                                                                                    (16.252, -31.566, -38.803)
+
+              4          A 504          A 512              9        337.583         (16.252, -31.566, -38.803)         (20.444, -22.4654, -27.4157)
+                                                                                    (5.245, -18.397, -37.71)
+
+              5          A 512          A 517              6        218.853         (5.245, -18.397, -37.71)
+                                                                                    (9.406, -29.145, -40.294)
+
+              6          A 517          A 527             11        416.431         (9.406, -29.145, -40.294)
+                                                                                    (7.074, -27.996, -20.1)
+
+              7          A 527          A 536             10        388.141         (7.074, -27.996, -20.1)         (8.99213, -41.2545, -29.9774)
+                                                                                    (21.403, -34.088, -23.878)
+

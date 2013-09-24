@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/cu/d2cu2a1.ent
+Number of residues: 67
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 18892.1
+Null Model Fit: 2910.79 bits.
+Bits per residue: 44.1028
+
+Bezier model fit: 2729.7 bits.
+Bits per residue: 41.3591
+
+# of segments: 8
+Internal segmentation:
+0-->2-->15-->25-->32-->43-->50-->51-->66
+
+CPU time used: 3.14 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 269          A 271              3        92.2428         (53.369, 5.073, 42.829)
+                                                                                    (51.658, 4.276, 48.108)
+
+              2          A 271          A 284             14        531.657         (51.658, 4.276, 48.108)         (46.8499, 37.275, 45.796)
+                                                                                    (54.962, 10.504, 59.69)
+
+              3          A 284          A 294             11        408.919         (54.962, 10.504, 59.69)         (45.2757, 1.06325, 46.5973)
+                                                                                    (45.522, 25.756, 51.333)
+
+              4          A 294          A 301              8        289.314         (45.522, 25.756, 51.333)
+                                                                                    (50.698, 10.323, 61.76)
+
+              5          A 301          A 312             12        452.633         (50.698, 10.323, 61.76)         (41.4812, 1.12444, 47.6735)
+                                                                                    (40.228, 28.019, 55.545)
+
+              6          A 312          A 319              8        291.514         (40.228, 28.019, 55.545)
+                                                                                    (39.096, 7.327, 53.079)
+
+              7          A 319          A 320              2        47.1399         (39.096, 7.327, 53.079)
+                                                                                    (39.943, 7.977, 49.485)
+
+              8          A 320          A 335             16        616.282         (39.943, 7.977, 49.485)
+                                                                                    (20.392, 21.067, 56.491)
+

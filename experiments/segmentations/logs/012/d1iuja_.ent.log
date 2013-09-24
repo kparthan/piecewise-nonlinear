@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/iu/d1iuja_.ent
+Number of residues: 102
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 26592.7
+Null Model Fit: 4504.21 bits.
+Bits per residue: 44.5961
+
+Bezier model fit: 4097.12 bits.
+Bits per residue: 40.5656
+
+# of segments: 6
+Internal segmentation:
+0-->11-->32-->45-->57-->84-->101
+
+CPU time used: 5.38 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 12             12        439.758         (3.658, -1.681, 7.354)         (-2.39761, -9.22441, 27.2013)
+                                                                                    (-10.345, 3.285, 35.725)
+
+              2           A 12           A 33             22        837.486         (-10.345, 3.285, 35.725)         (7.03002, 13.2137, 36.4393)
+                                                                                    (15.124, 1.509, 13.344)
+
+              3           A 33           A 46             14        538.789         (15.124, 1.509, 13.344)         (-5.55498, 8.95691, 17.5209)
+                                                                                    (-13.821, 3.167, 31.215)
+
+              4           A 46           A 58             13        485.486         (-13.821, 3.167, 31.215)
+                                                                                    (8.386, -4.418, 9.368)
+
+              5           A 58           A 85             28         1091.5         (8.386, -4.418, 9.368)         (25.4981, -0.354001, 31.8911)
+                                                                                    (-4.209, -2.192, 38.687)
+
+              6           A 85          A 102             18        704.107         (-4.209, -2.192, 38.687)         (-1.75934, -19.8808, 12.3671)
+                                                                                    (-2.527, 7.885, 3.462)
+

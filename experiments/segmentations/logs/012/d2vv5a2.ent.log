@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/vv/d2vv5a2.ent
+Number of residues: 101
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 37730.6
+Null Model Fit: 4510.08 bits.
+Bits per residue: 45.1008
+
+Bezier model fit: 4069.51 bits.
+Bits per residue: 40.6951
+
+# of segments: 7
+Internal segmentation:
+0-->13-->17-->33-->51-->62-->83-->100
+
+CPU time used: 5.16 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 180          A 193             14        516.185         (66.465, -44.524, 63.4)
+                                                                                    (32.987, -29.851, 77.932)
+
+              2          A 193          A 197              5        183.496         (32.987, -29.851, 77.932)
+                                                                                    (36.99, -28.349, 86.038)
+
+              3          A 197          A 213             17        637.033         (36.99, -28.349, 86.038)
+                                                                                    (55.662, -47.153, 83.179)
+
+              4          A 213          A 231             19        757.156         (55.662, -47.153, 83.179)         (64.001, -25.3271, 79.7312)
+                                                                                    (32.207, -27.013, 71.2)
+
+              5          A 231          A 242             12        432.275         (32.207, -27.013, 71.2)         (49.8646, -28.6407, 79.796)
+                                                                                    (60.584, -46.008, 73.495)
+
+              6          A 242          A 263             22        847.612         (60.584, -46.008, 73.495)         (43.9707, -47.109, 69.9958)
+                                                                                    (33.946, -42.569, 86.125)
+
+              7          A 263          A 280             18        695.751         (33.946, -42.569, 86.125)         (33.8953, -26.7227, 69.8849)
+                                                                                    (6.393, -17.257, 62.282)
+

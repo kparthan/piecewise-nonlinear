@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ak/d2akja1.ent
+Number of residues: 85
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 29460.4
+Null Model Fit: 3758.48 bits.
+Bits per residue: 44.7438
+
+Bezier model fit: 3481.05 bits.
+Bits per residue: 41.4411
+
+# of segments: 7
+Internal segmentation:
+0-->16-->26-->32-->47-->54-->66-->84
+
+CPU time used: 4.31 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 346          A 362             17        671.207         (118.741, 15.619, 44.032)         (139.067, 27.2505, 25.143)
+                                                                                    (115.962, 18.495, 16.986)
+
+              2          A 362          A 372             11        400.278         (115.962, 18.495, 16.986)
+                                                                                    (137.65, 35.799, 30.327)
+
+              3          A 372          A 378              7        255.078         (137.65, 35.799, 30.327)
+                                                                                    (132.909, 47.395, 22.143)
+
+              4          A 378          A 393             16        614.579         (132.909, 47.395, 22.143)
+                                                                                    (118.408, 33.03, 16.199)
+
+              5          A 393          A 400              8        289.029         (118.408, 33.03, 16.199)
+                                                                                    (126.053, 33.578, 36.285)
+
+              6          A 400          A 412             13        505.647         (126.053, 33.578, 36.285)
+                                                                                    (125.355, 22.274, 9.868)
+
+              7          A 412          A 430             19        745.231         (125.355, 22.274, 9.868)         (142.623, 41.4747, 15.3918)
+                                                                                    (136.902, 25.187, 24.907)
+

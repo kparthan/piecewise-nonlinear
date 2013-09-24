@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/zg/d1zgha1.ent
+Number of residues: 62
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 19983.8
+Null Model Fit: 2695.22 bits.
+Bits per residue: 44.1839
+
+Bezier model fit: 2544.09 bits.
+Bits per residue: 41.7064
+
+# of segments: 8
+Internal segmentation:
+0-->1-->12-->26-->36-->45-->48-->60-->61
+
+CPU time used: 0.44 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 165          A 166              2         47.221         (43.453, 20.073, 36.061)
+                                                                                    (43.41, 18.449, 39.549)
+
+              2          A 166          A 177             12        470.625         (43.41, 18.449, 39.549)
+                                                                                    (58.623, 33.965, 38.091)
+
+              3          A 177          A 191             15        566.549         (58.623, 33.965, 38.091)
+                                                                                    (33.584, 30.597, 42.84)
+
+              4          A 191          A 201             11        423.281         (33.584, 30.597, 42.84)
+                                                                                    (55.247, 22.649, 57.119)
+
+              5          A 201          A 210             10        361.094         (55.247, 22.649, 57.119)
+                                                                                    (46.243, 39.416, 43.728)
+
+              6          A 210          A 213              4        137.838         (46.243, 39.416, 43.728)
+                                                                                    (52.915, 46.33, 42.093)
+
+              7          A 213          A 225             13        490.263         (52.915, 46.33, 42.093)
+                                                                                    (46.157, 24.63, 59.801)
+
+              8          A 225          A 226              2         47.221         (46.157, 24.63, 59.801)
+                                                                                    (46.381, 20.955, 58.834)
+

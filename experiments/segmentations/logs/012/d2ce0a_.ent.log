@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ce/d2ce0a_.ent
+Number of residues: 99
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 22427.7
+Null Model Fit: 4346.33 bits.
+Bits per residue: 44.3503
+
+Bezier model fit: 4092.22 bits.
+Bits per residue: 41.7574
+
+# of segments: 6
+Internal segmentation:
+0-->27-->56-->66-->77-->95-->98
+
+CPU time used: 5.11 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 3           A 30             28        1117.35         (16.573, 39.417, -3.65)         (9.50397, 57.5371, 15.8342)
+                                                                                    (-5.706, 35.331, 11.398)
+
+              2           A 30           A 59             30        1222.16         (-5.706, 35.331, 11.398)         (8.35603, 29.0767, -13.6725)
+                                                                                    (-8.426, 47.547, 6.765)
+
+              3           A 59           A 69             11        421.983         (-8.426, 47.547, 6.765)         (8.83226, 51.8154, -10.8096)
+                                                                                    (-10.205, 54.704, -5.215)
+
+              4           A 69           A 80             12        478.613         (-10.205, 54.704, -5.215)         (-4.09418, 59.2116, 9.57427)
+                                                                                    (6.836, 52.286, -6.845)
+
+              5           A 80           A 98             19        713.783         (6.836, 52.286, -6.845)
+                                                                                    (9.253, 31.227, 9.452)
+
+              6           A 98          A 101              4        138.338         (9.253, 31.227, 9.452)
+                                                                                    (14.335, 36.524, 15.043)
+

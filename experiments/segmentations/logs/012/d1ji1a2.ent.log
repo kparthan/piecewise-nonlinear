@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ji/d1ji1a2.ent
+Number of residues: 83
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 18326.3
+Null Model Fit: 3612.84 bits.
+Bits per residue: 44.059
+
+Bezier model fit: 3368.35 bits.
+Bits per residue: 41.0775
+
+# of segments: 8
+Internal segmentation:
+0-->9-->20-->32-->33-->57-->66-->75-->82
+
+CPU time used: 4.22 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 555          A 564             10         377.23         (68.209, 10.138, 27.987)
+                                                                                    (88.88, 22.509, 16.64)
+
+              2          A 564          A 575             12        438.494         (88.88, 22.509, 16.64)
+                                                                                    (65.353, 0.729, 26.521)
+
+              3          A 575          A 587             13        483.154         (65.353, 0.729, 26.521)
+                                                                                    (82.19, 25.634, 7.151)
+
+              4          A 587          A 588              2         47.096         (82.19, 25.634, 7.151)
+                                                                                    (83.931, 22.543, 5.779)
+
+              5          A 588          A 612             25        990.972         (83.931, 22.543, 5.779)         (78.8254, -16.8549, 35.8364)
+                                                                                    (70.88, 10.714, 4.199)
+
+              6          A 612          A 621             10        378.837         (70.88, 10.714, 4.199)
+                                                                                    (82.91, 0.815, 19.336)
+
+              7          A 621          A 630             10        366.753         (82.91, 0.815, 19.336)         (82.4827, 10.1362, 2.32845)
+                                                                                    (76.674, 23.139, 8.747)
+
+              8          A 630          A 637              8        285.816         (76.674, 23.139, 8.747)
+                                                                                    (69.407, 1.764, 15.662)
+

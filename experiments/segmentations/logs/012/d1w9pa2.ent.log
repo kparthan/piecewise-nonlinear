@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/w9/d1w9pa2.ent
+Number of residues: 62
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 14336.9
+Null Model Fit: 2665.99 bits.
+Bits per residue: 43.7048
+
+Bezier model fit: 2549.93 bits.
+Bits per residue: 41.8022
+
+# of segments: 7
+Internal segmentation:
+0-->11-->21-->23-->29-->44-->54-->61
+
+CPU time used: 2.82 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 299          A 310             12        473.206         (101.928, 69.454, 1.686)         (118.11, 87.3315, -7.29999)
+                                                                                    (102.661, 88.722, 0.87)
+
+              2          A 310          A 320             11        407.678         (102.661, 88.722, 0.87)         (113.034, 86.2539, -15.5178)
+                                                                                    (107.82, 66.493, -5.058)
+
+              3          A 320          A 322              3        91.4467         (107.82, 66.493, -5.058)
+                                                                                    (104.505, 68.613, -9.583)
+
+              4          A 322          A 328              7        253.107         (104.505, 68.613, -9.583)
+                                                                                    (104.956, 67.465, 4.068)
+
+              5          A 328          A 343             16        614.842         (104.956, 67.465, 4.068)         (127.467, 73.567, 4.03837)
+                                                                                    (97.551, 84.735, 15.255)
+
+              6          A 343          A 353             11        415.106         (97.551, 84.735, 15.255)         (102.654, 73.6495, 6.28284)
+                                                                                    (120.02, 82.346, 1.186)
+
+              7          A 353          A 360              8        294.549         (120.02, 82.346, 1.186)
+                                                                                    (102.641, 74.251, 4.96)
+

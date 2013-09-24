@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/dl/d2dlba1.ent
+Number of residues: 70
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 32655.1
+Null Model Fit: 3097.57 bits.
+Bits per residue: 44.8924
+
+Bezier model fit: 2865.68 bits.
+Bits per residue: 41.5316
+
+# of segments: 8
+Internal segmentation:
+0-->10-->18-->20-->37-->47-->55-->62-->69
+
+CPU time used: 0.54 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1         A 2002         A 2012             11        420.105         (-1.299, 40.136, 9.567)
+                                                                                    (-2.3, 9.54, 13.566)
+
+              2         A 2012         A 2020              9        341.656         (-2.3, 9.54, 13.566)
+                                                                                    (7.933, -12.581, 10.341)
+
+              3         A 2020         A 2022              3        93.8218         (7.933, -12.581, 10.341)
+                                                                                    (7.562, -13.766, 15.763)
+
+              4         A 2022         A 2039             18        676.033         (7.562, -13.766, 15.763)
+                                                                                    (13.661, 13.543, 9.969)
+
+              5         A 2039         A 2049             11        411.718         (13.661, 13.543, 9.969)
+                                                                                    (-12.006, 13.369, -2.083)
+
+              6         A 2049         A 2057              9        339.716         (-12.006, 13.369, -2.083)
+                                                                                    (6.672, 18.566, 9.002)
+
+              7         A 2057         A 2064              8        284.106         (6.672, 18.566, 9.002)
+                                                                                    (3.863, 0.779, 18.153)
+
+              8         A 2064         A 2071              8        298.525         (3.863, 0.779, 18.153)
+                                                                                    (-4.826, -16.021, 10.517)
+

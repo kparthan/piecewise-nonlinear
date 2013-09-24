@@ -1,0 +1,46 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/fn/d1fnoa3.ent
+Number of residues: 113
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 36297.6
+Null Model Fit: 5045.03 bits.
+Bits per residue: 45.0449
+
+Bezier model fit: 4541.18 bits.
+Bits per residue: 40.5463
+
+# of segments: 9
+Internal segmentation:
+0-->16-->19-->48-->63-->75-->96-->98-->111-->112
+
+CPU time used: 6.15 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 208          A 224             17        627.049         (-43.855, 6.99, 29.391)         (-34.3353, 14.7025, 57.7181)
+                                                                                    (-10.117, 9.233, 58.902)
+
+              2          A 224          A 227              4        140.421         (-10.117, 9.233, 58.902)
+                                                                                    (-12.953, 6.47, 62.203)
+
+              3          A 227          A 256             30        1191.29         (-12.953, 6.47, 62.203)
+                                                                                    (-38.94, 0.689, 22.131)
+
+              4          A 256          A 271             16        624.202         (-38.94, 0.689, 22.131)
+                                                                                    (-21.121, 13.417, 55.665)
+
+              5          A 271          A 283             13        470.009         (-21.121, 13.417, 55.665)         (-32.8543, 12.5877, 34.421)
+                                                                                    (-46.932, 0.187, 31.908)
+
+              6          A 283          A 304             22        829.038         (-46.932, 0.187, 31.908)
+                                                                                    (-28.461, -0.782, 60.568)
+
+              7          A 304          A 306              3         94.127         (-28.461, -0.782, 60.568)
+                                                                                    (-26.811, 4.764, 64.029)
+
+              8          A 306          A 319             14        516.966         (-26.811, 4.764, 64.029)
+                                                                                    (-46.383, 12.626, 33.939)
+
+              9          A 319          A 320              2         48.082         (-46.383, 12.626, 33.939)
+                                                                                    (-48.444, 9.678, 32.7)
+

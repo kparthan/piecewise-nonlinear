@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/cq/d2cq0a1.ent
+Number of residues: 90
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 28116.2
+Null Model Fit: 3976.21 bits.
+Bits per residue: 44.6765
+
+Bezier model fit: 3701.96 bits.
+Bits per residue: 41.5951
+
+# of segments: 7
+Internal segmentation:
+0-->8-->18-->44-->49-->58-->75-->89
+
+CPU time used: 4.49 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 231          A 239              9        346.268         (10.423, 7.215, -8.013)         (4.68221, -5.21999, -19.6867)
+                                                                                    (2.275, -7.235, -6.469)
+
+              2          A 239          A 249             11        410.577         (2.275, -7.235, -6.469)         (-9.09062, 12.2822, 0.3214)
+                                                                                    (0.228, 6.696, 14.401)
+
+              3          A 249          A 275             27        1075.42         (0.228, 6.696, 14.401)         (-1.83861, -30.8691, -0.958882)
+                                                                                    (11.217, 19.155, 5.609)
+
+              4          A 275          A 280              6        219.226         (11.217, 19.155, 5.609)
+                                                                                    (2.536, 12.15, 4.193)
+
+              5          A 280          A 289             10        369.426         (2.536, 12.15, 4.193)
+                                                                                    (1.894, -13.265, -4.89)
+
+              6          A 289          A 306             18        702.006         (1.894, -13.265, -4.89)         (-14.9381, -8.507, -3.93837)
+                                                                                    (-8.16, 5.288, 13.241)
+
+              7          A 306          A 320             15        579.035         (-8.16, 5.288, 13.241)
+                                                                                    (-5.129, -4.956, -19.487)
+

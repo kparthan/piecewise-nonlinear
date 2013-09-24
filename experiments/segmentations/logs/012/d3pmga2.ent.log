@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/pm/d3pmga2.ent
+Number of residues: 113
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 33110.4
+Null Model Fit: 5030.18 bits.
+Bits per residue: 44.9124
+
+Bezier model fit: 4648.53 bits.
+Bits per residue: 41.5047
+
+# of segments: 8
+Internal segmentation:
+0-->23-->35-->36-->64-->76-->98-->107-->112
+
+CPU time used: 6.26 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 191          A 214             24        939.391         (37.037, 64.982, 50.136)         (36.119, 86.0552, 49.069)
+                                                                                    (62.089, 75.782, 41.818)
+
+              2          A 214          A 226             13        492.521         (62.089, 75.782, 41.818)         (57.8309, 67.1889, 60.5841)
+                                                                                    (43.397, 58.829, 61.089)
+
+              3          A 226          A 227              2        47.9494         (43.397, 58.829, 61.089)
+                                                                                    (40.654, 60.413, 59.023)
+
+              4          A 227          A 255             29         1157.1         (40.654, 60.413, 59.023)         (60.4398, 76.9879, 31.3515)
+                                                                                    (43.025, 50.903, 65.057)
+
+              5          A 255          A 267             13        510.347         (43.025, 50.903, 65.057)
+                                                                                    (52.117, 61.138, 70.777)
+
+              6          A 267          A 289             23         908.53         (52.117, 61.138, 70.777)         (81.2768, 74.1854, 51.6847)
+                                                                                    (38.735, 63.196, 63.343)
+
+              7          A 289          A 298             10        371.534         (38.735, 63.196, 63.343)
+                                                                                    (62.776, 73.229, 60.331)
+
+              8          A 298          A 303              6        221.157         (62.776, 73.229, 60.331)
+                                                                                    (55.294, 76.456, 67.303)
+

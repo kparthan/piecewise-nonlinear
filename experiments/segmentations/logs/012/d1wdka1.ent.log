@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/wd/d1wdka1.ent
+Number of residues: 117
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 39194.8
+Null Model Fit: 5238.06 bits.
+Bits per residue: 45.1557
+
+Bezier model fit: 4786.76 bits.
+Bits per residue: 41.2652
+
+# of segments: 7
+Internal segmentation:
+0-->1-->21-->34-->63-->87-->101-->116
+
+CPU time used: 6.3 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 497          A 498              2        48.1928         (-46.184, 30.679, 101.393)
+                                                                                    (-45.958, 34.075, 103.115)
+
+              2          A 498          A 518             21        799.886         (-45.958, 34.075, 103.115)
+                                                                                    (-40.463, 19.884, 75.806)
+
+              3          A 518          A 531             14        548.177         (-40.463, 19.884, 75.806)         (-25.7031, 25.7185, 83.7855)
+                                                                                    (-30.749, 36.784, 83.259)
+
+              4          A 531          A 560             30         1167.3         (-30.749, 36.784, 83.259)         (-31.5655, 6.80875, 103.052)
+                                                                                    (-54.661, 29.409, 95.981)
+
+              5          A 560          A 584             25        1001.84         (-54.661, 29.409, 95.981)         (-48.8548, 7.60091, 78.0784)
+                                                                                    (-29.067, 15.757, 98.957)
+
+              6          A 584          A 605             15         604.06         (-29.067, 15.757, 98.957)
+                                                                                    (-27.106, 12.693, 83.128)
+
+              7          A 605          A 620             16         617.31         (-27.106, 12.693, 83.128)         (-46.517, 4.95084, 84.4965)
+                                                                                    (-43.51, 23.6, 71.779)
+

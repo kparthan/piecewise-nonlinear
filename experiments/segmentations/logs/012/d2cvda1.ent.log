@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/cv/d2cvda1.ent
+Number of residues: 124
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 43238.2
+Null Model Fit: 5571.58 bits.
+Bits per residue: 45.2974
+
+Bezier model fit: 4979.52 bits.
+Bits per residue: 40.4839
+
+# of segments: 7
+Internal segmentation:
+0-->5-->32-->60-->71-->95-->122-->123
+
+CPU time used: 6.77 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 76           A 81              6         223.43         (30.07, 21.537, 28.591)
+                                                                                    (31.821, 15.311, 19.776)
+
+              2           A 81          A 108             28        1071.95         (31.821, 15.311, 19.776)
+                                                                                    (-9.73, 2.792, 33.79)
+
+              3          A 108          A 136             29        1096.43         (-9.73, 2.792, 33.79)         (9.18212, -7.32799, 37.7452)
+                                                                                    (30.233, -0.158, 33.249)
+
+              4          A 136          A 147             12        474.479         (30.233, -0.158, 33.249)
+                                                                                    (26.435, 15.694, 30.636)
+
+              5          A 147          A 171             25        975.223         (26.435, 15.694, 30.636)         (-0.284414, 7.40606, 47.2548)
+                                                                                    (23.317, -1.599, 41.182)
+
+              6          A 171          A 198             28        1089.67         (23.317, -1.599, 41.182)         (35.3595, 33.1545, 43.7924)
+                                                                                    (6.187, 13.986, 45.7)
+
+              7          A 198          A 199              2        48.3344         (6.187, 13.986, 45.7)
+                                                                                    (6.663, 14.026, 41.924)
+

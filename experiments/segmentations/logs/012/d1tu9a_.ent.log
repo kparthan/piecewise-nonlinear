@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/tu/d1tu9a_.ent
+Number of residues: 131
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 32190.7
+Null Model Fit: 5833.32 bits.
+Bits per residue: 44.8717
+
+Bezier model fit: 5239.31 bits.
+Bits per residue: 40.3024
+
+# of segments: 8
+Internal segmentation:
+0-->16-->41-->62-->83-->103-->107-->129-->130
+
+CPU time used: 7.47 secs.
+Wall clock time elapsed: 7 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 2           A 18             17        642.239         (29.369, 8.976, 10.311)
+                                                                                    (22.076, 21.934, -11.654)
+
+              2           A 18           A 43             26        1012.51         (22.076, 21.934, -11.654)         (-6.55343, -1.01787, -6.79197)
+                                                                                    (4.598, 27.245, -6.844)
+
+              3           A 43           A 64             22        831.368         (4.598, 27.245, -6.844)
+                                                                                    (21.546, 15.862, 17.293)
+
+              4           A 64           A 85             22        869.325         (21.546, 15.862, 17.293)         (-5.32636, 26.5961, 12.2942)
+                                                                                    (-0.546, 9.847, 4.347)
+
+              5           A 85          A 105             21        797.159         (-0.546, 9.847, 4.347)
+                                                                                    (28.966, 11.605, -9.175)
+
+              6          A 105          A 109              5        176.111         (28.966, 11.605, -9.175)
+                                                                                    (25.763, 1.743, -2.119)
+
+              7          A 109          A 131             23         862.68         (25.763, 1.743, -2.119)         (19.861, 12.6532, 11.2313)
+                                                                                    (-3.14, 10.811, 13.06)
+
+              8          A 131          A 132              2        47.9088         (-3.14, 10.811, 13.06)
+                                                                                    (-2.406, 12.991, 16.094)
+

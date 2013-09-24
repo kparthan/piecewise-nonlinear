@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/j0/d2j01u1.ent
+Number of residues: 117
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 65445.3
+Null Model Fit: 5323.86 bits.
+Bits per residue: 45.8954
+
+Bezier model fit: 4767.37 bits.
+Bits per residue: 41.098
+
+# of segments: 8
+Internal segmentation:
+0-->21-->31-->49-->69-->83-->90-->101-->116
+
+CPU time used: 1.05 secs.
+Wall clock time elapsed: 1 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            U 2           U 23             22        854.842         (-16.81, 165.708, 200.192)
+                                                                                    (-21.502, 128.022, 215.663)
+
+              2           U 23           U 33             11         438.47         (-21.502, 128.022, 215.663)
+                                                                                    (-23.542, 136.221, 203.341)
+
+              3           U 33           U 51             19        713.879         (-23.542, 136.221, 203.341)
+                                                                                    (-46.286, 128.999, 217.06)
+
+              4           U 51           U 71             21        792.879         (-46.286, 128.999, 217.06)
+                                                                                    (-55.986, 103.292, 233.481)
+
+              5           U 71           U 85             15        594.759         (-55.986, 103.292, 233.481)
+                                                                                    (-70.947, 119.16, 230.959)
+
+              6           U 85           U 92              8        308.334         (-70.947, 119.16, 230.959)
+                                                                                    (-55.872, 123.067, 231.765)
+
+              7           U 92          U 103             12        457.422         (-55.872, 123.067, 231.765)
+                                                                                    (-52.485, 111.092, 241.155)
+
+              8          U 103          U 118             16        606.781         (-52.485, 111.092, 241.155)
+                                                                                    (-74.444, 108.751, 235.365)
+

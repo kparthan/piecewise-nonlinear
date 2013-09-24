@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/gp/d1gpsa_.ent
+Number of residues: 47
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 6914.24
+Null Model Fit: 1962.02 bits.
+Bits per residue: 42.6527
+
+Bezier model fit: 1902.48 bits.
+Bits per residue: 41.3583
+
+# of segments: 7
+Internal segmentation:
+0-->8-->15-->27-->28-->37-->38-->46
+
+CPU time used: 1.78 secs.
+Wall clock time elapsed: 1 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 9              9         330.12         (11.59, 4.51, 10.66)         (-1.57212, 0.584958, 6.76865)
+                                                                                    (-6.27, 7.02, -3.65)
+
+              2            A 9           A 16              8        290.747         (-6.27, 7.02, -3.65)         (-15.3473, -3.60437, -2.7025)
+                                                                                    (-2.43, -8.48, -5.11)
+
+              3           A 16           A 28             13        493.119         (-2.43, -8.48, -5.11)
+                                                                                    (5.51, 8.5, -3.05)
+
+              4           A 28           A 29              2        45.6898         (5.51, 8.5, -3.05)
+                                                                                    (5.98, 5.11, -1.27)
+
+              5           A 29           A 38             10        376.683         (5.98, 5.11, -1.27)
+                                                                                    (-6.84, -8.16, -0.05)
+
+              6           A 38           A 39              2        45.6898         (-6.84, -8.16, -0.05)
+                                                                                    (-8.82, -4.89, 0.16)
+
+              7           A 39           A 47              9        320.433         (-8.82, -4.89, 0.16)         (4.76906, -0.341575, 0.889793)
+                                                                                    (10.8, 7.73, 7.29)
+

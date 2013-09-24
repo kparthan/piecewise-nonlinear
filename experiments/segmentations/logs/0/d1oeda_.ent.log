@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/oe/d1oeda_.ent
+Number of residues: 127
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 44947.7
+Null Model Fit: 5714.52 bits.
+Bits per residue: 45.3533
+
+Bezier model fit: 5018.13 bits.
+Bits per residue: 39.8264
+
+# of segments: 8
+Internal segmentation:
+0-->26-->33-->59-->64-->91-->92-->98-->126
+
+CPU time used: 1.15 secs.
+Wall clock time elapsed: 1 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 211          A 237             27        1026.15         (61.342, 88.071, 101.763)
+                                                                                    (56.533, 83.048, 62.148)
+
+              2          A 237          A 244              8        305.557         (56.533, 83.048, 62.148)
+                                                                                    (59.22, 69.757, 66.346)
+
+              3          A 244          A 270             27        1001.05         (59.22, 69.757, 66.346)
+                                                                                    (56.366, 75.533, 104.714)
+
+              4          A 270          A 275              6        223.996         (56.366, 75.533, 104.714)
+                                                                                    (45.639, 81.518, 98.917)
+
+              5          A 275          A 302             28        1060.73         (45.639, 81.518, 98.917)
+                                                                                    (50.094, 76.268, 61.933)
+
+              6          A 302          A 403              2        48.3904         (50.094, 76.268, 61.933)
+                                                                                    (52.642, 85.19, 57.734)
+
+              7          A 403          A 409              7        265.781         (52.642, 85.19, 57.734)
+                                                                                    (48.143, 83.89, 67.018)
+
+              8          A 409          A 437             29        1086.46         (48.143, 83.89, 67.018)
+                                                                                    (49.037, 101.613, 102.803)
+

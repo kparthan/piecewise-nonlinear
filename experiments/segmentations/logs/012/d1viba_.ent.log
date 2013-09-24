@@ -1,0 +1,31 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/vi/d1viba_.ent
+Number of residues: 54
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 13233.3
+Null Model Fit: 2310.23 bits.
+Bits per residue: 43.5892
+
+Bezier model fit: 2158.45 bits.
+Bits per residue: 40.7255
+
+# of segments: 4
+Internal segmentation:
+0-->1-->30-->52-->53
+
+CPU time used: 2.12 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 2              2        46.6263         (-4.951, -0.066, -11.161)
+                                                                                    (-3.675, 3.123, -9.504)
+
+              2            A 2           A 32             30        1182.89         (-3.675, 3.123, -9.504)         (-24.9532, 7.54259, 19.0842)
+                                                                                    (-38.573, 27.57, 7.969)
+
+              3           A 32           A 54             23        882.311         (-38.573, 27.57, 7.969)
+                                                                                    (-9.862, 11.842, -4.686)
+
+              4           A 54           A 55              2        46.6263         (-9.862, 11.842, -4.686)
+                                                                                    (-12.805, 11.271, -7.081)
+

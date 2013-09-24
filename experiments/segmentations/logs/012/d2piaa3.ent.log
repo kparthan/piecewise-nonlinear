@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/pi/d2piaa3.ent
+Number of residues: 98
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 25541
+Null Model Fit: 4320.17 bits.
+Bits per residue: 44.5379
+
+Bezier model fit: 4030.66 bits.
+Bits per residue: 41.5532
+
+# of segments: 7
+Internal segmentation:
+0-->20-->29-->52-->69-->70-->84-->97
+
+CPU time used: 5.15 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 224          A 244             21        799.652         (9.38, 35.438, 7.54)         (-11.3635, 27.599, -24.861)
+                                                                                    (9.311, 2.321, 5.598)
+
+              2          A 244          A 253             10         376.35         (9.311, 2.321, 5.598)         (-3.49937, 1.42396, -0.0795075)
+                                                                                    (-5.038, 19.458, -5.549)
+
+              3          A 253          A 276             24        970.012         (-5.038, 19.458, -5.549)         (-1.62917, 3.18034, 20.2908)
+                                                                                    (9.819, 28.608, 6.968)
+
+              4          A 276          A 293             18        707.656         (9.819, 28.608, 6.968)         (14.5894, 9.09548, 20.8994)
+                                                                                    (9.557, 26.439, 0.911)         (10.1751, 6.41828, -26.3023)
+
+              5          A 293          A 294              2         47.575         (9.557, 26.439, 0.911)
+                                                                                    (12.212, 28.779, 2.351)
+
+              6          A 294          A 308             15        585.997         (12.212, 28.779, 2.351)         (29.1235, 12.2751, -7.63808)
+                                                                                    (3.807, 21.309, 4.672)
+
+              7          A 308          A 321             14        543.413         (3.807, 21.309, 4.672)         (6.192, 13.3895, -23.1421)
+                                                                                    (8.58, 7.559, 6.179)
+

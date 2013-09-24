@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/wd/d1wdcb_.ent
+Number of residues: 142
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 65506.8
+Null Model Fit: 6471.44 bits.
+Bits per residue: 45.8967
+
+Bezier model fit: 5859.89 bits.
+Bits per residue: 41.5595
+
+# of segments: 8
+Internal segmentation:
+0-->1-->17-->34-->59-->86-->104-->123-->141
+
+CPU time used: 8.02 secs.
+Wall clock time elapsed: 8 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           B 12           B 13              2        48.9338         (17.67, 46.606, 49.078)
+                                                                                    (18.039, 49.753, 51.342)
+
+              2           B 13           B 29             17        644.152         (18.039, 49.753, 51.342)
+                                                                                    (39.978, 42.556, 41.253)
+
+              3           B 29           B 46             18          711.6         (39.978, 42.556, 41.253)         (30.3356, 37.0824, 30.425)
+                                                                                    (43.201, 35.875, 48.843)
+
+              4           B 46           B 71             26        1049.95         (43.201, 35.875, 48.843)         (25.3374, 20.2132, 32.7528)
+                                                                                    (23.495, 42.659, 37.496)
+
+              5           B 71           B 98             28        1093.44         (23.495, 42.659, 37.496)
+                                                                                    (3.79, 35.403, 77.154)
+
+              6           B 98          B 116             19        752.892         (3.79, 35.403, 77.154)         (23.2287, 26.7051, 76.4651)
+                                                                                    (5.708, 20.382, 65.202)
+
+              7          B 116          B 135             20        794.374         (5.708, 20.382, 65.202)         (26.4545, 18.684, 51.0562)
+                                                                                    (22.889, 30.912, 77.829)
+
+              8          B 135          B 153             19        764.538         (22.889, 30.912, 77.829)         (10.5473, 38.9358, 63.8298)
+                                                                                    (24.873, 38.783, 61.675)
+

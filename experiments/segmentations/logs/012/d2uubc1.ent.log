@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/uu/d2uubc1.ent
+Number of residues: 105
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 43057.5
+Null Model Fit: 4710.3 bits.
+Bits per residue: 45.2913
+
+Bezier model fit: 4242.34 bits.
+Bits per residue: 40.7917
+
+# of segments: 6
+Internal segmentation:
+0-->26-->47-->59-->69-->93-->104
+
+CPU time used: 5.42 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            C 2           C 28             27        1082.72         (201.912, 126.238, 8.029)         (200.201, 160.168, 19.8227)
+                                                                                    (222.576, 139.477, 32.933)
+
+              2           C 28           C 49             22        833.124         (222.576, 139.477, 32.933)         (209.228, 131.054, 35.233)
+                                                                                    (190.085, 133.581, 37.18)
+
+              3           C 49           C 61             13        489.769         (190.085, 133.581, 37.18)         (198.502, 144.524, 23.0742)
+                                                                                    (217.58, 147.439, 39.284)
+
+              4           C 61           C 71             11        396.101         (217.58, 147.439, 39.284)
+                                                                                    (188.988, 142.555, 33.224)
+
+              5           C 71           C 95             25        979.447         (188.988, 142.555, 33.224)         (190.476, 141.351, 59.8053)
+                                                                                    (212.732, 136.833, 42.808)
+
+              6           C 95          C 106             12        461.179         (212.732, 136.833, 42.808)         (207.097, 150.894, 48.2662)
+                                                                                    (190.777, 146.063, 30.595)
+

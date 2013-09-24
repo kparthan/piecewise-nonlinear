@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/wt/d1wtya_.ent
+Number of residues: 116
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 36915.6
+Null Model Fit: 5182.97 bits.
+Bits per residue: 45.0693
+
+Bezier model fit: 4624.93 bits.
+Bits per residue: 40.2168
+
+# of segments: 6
+Internal segmentation:
+0-->20-->48-->70-->87-->88-->115
+
+CPU time used: 6.28 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 2           A 22             21        832.087         (32.654, 57.485, 79.389)         (53.3979, 48.4352, 92.4105)
+                                                                                    (37.765, 35.014, 88.896)
+
+              2           A 22           A 50             29        1080.15         (37.765, 35.014, 88.896)
+                                                                                    (40.712, 66.324, 60.36)
+
+              3           A 50           A 72             23        922.248         (40.712, 66.324, 60.36)         (34.8489, 26.9793, 62.5689)
+                                                                                    (54.623, 50.493, 69.054)         (54.2055, 80.2941, 65.2651)
+
+              4           A 72           A 89             18        682.104         (54.623, 50.493, 69.054)         (40.8763, 43.3104, 67.0272)
+                                                                                    (35.876, 29.285, 76.888)
+
+              5           A 89           A 90              2        48.1064         (35.876, 29.285, 76.888)
+                                                                                    (39.344, 27.886, 76.217)
+
+              6           A 90          A 117             28        1060.23         (39.344, 27.886, 76.217)         (54.102, 43.3493, 82.9952)
+                                                                                    (48.852, 67.609, 76.364)
+

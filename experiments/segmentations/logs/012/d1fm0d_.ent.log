@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/fm/d1fm0d_.ent
+Number of residues: 81
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 17618
+Null Model Fit: 3520.17 bits.
+Bits per residue: 44.0021
+
+Bezier model fit: 3312.78 bits.
+Bits per residue: 41.4098
+
+# of segments: 7
+Internal segmentation:
+0-->7-->14-->28-->48-->56-->68-->80
+
+CPU time used: 3.91 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            D 1            D 8              8        284.263         (24.908, 26.524, -9.32)
+                                                                                    (8.26, 24.524, 7.821)
+
+              2            D 8           D 15              8        301.399         (8.26, 24.524, 7.821)
+                                                                                    (5.47, 24.344, -2.689)
+
+              3           D 15           D 29             15         591.49         (5.47, 24.344, -2.689)         (32.5966, 28.0414, -15.2557)
+                                                                                    (19.211, 39.504, -0.067)
+
+              4           D 29           D 49             21        810.647         (19.211, 39.504, -0.067)         (-0.435046, 29.2784, -16.0023)
+                                                                                    (10.235, 40.514, 8.458)
+
+              5           D 49           D 57              9        332.685         (10.235, 40.514, 8.458)
+                                                                                    (24.754, 25.488, 7.45)
+
+              6           D 57           D 69             13        506.364         (24.754, 25.488, 7.45)         (22.8284, 51.7461, 6.52682)
+                                                                                    (28.399, 25.897, -4.986)
+
+              7           D 69           D 81             13        485.933         (28.399, 25.897, -4.986)         (6.87606, 35.2996, 6.44476)
+                                                                                    (13.951, 22.989, 23.063)
+

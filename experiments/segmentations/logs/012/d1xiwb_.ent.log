@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/xi/d1xiwb_.ent
+Number of residues: 66
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 13784
+Null Model Fit: 2837.12 bits.
+Bits per residue: 43.6481
+
+Bezier model fit: 2684.44 bits.
+Bits per residue: 41.2991
+
+# of segments: 8
+Internal segmentation:
+0-->8-->16-->17-->32-->42-->52-->64-->65
+
+CPU time used: 3.1 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            B 1            B 9              9        328.849         (47.595, 3.146, 11.181)         (43.5493, -7.51062, 15.6964)
+                                                                                    (34.84, -15.371, 22.272)
+
+              2            B 9           B 17              9        332.669         (34.84, -15.371, 22.272)         (47.1014, -15.3606, 17.0421)
+                                                                                    (40.351, -3.904, 4.908)
+
+              3           B 17           B 18              2        46.6851         (40.351, -3.904, 4.908)
+                                                                                    (42.133, -5.787, 2.156)
+
+              4           B 18           B 33             16        623.636         (42.133, -5.787, 2.156)         (65.3998, -24.7577, 18.6738)
+                                                                                    (35.127, -13.276, 2.743)
+
+              5           B 33           B 43             11        413.908         (35.127, -13.276, 2.743)
+                                                                                    (44.917, -19.947, 25.097)
+
+              6           B 43           B 53             11        406.645         (44.917, -19.947, 25.097)         (57.996, -14.8715, 16.3441)
+                                                                                    (48.251, -3.24, 2.542)
+
+              7           B 53           B 73             13        485.365         (48.251, -3.24, 2.542)         (55.9348, -4.44008, 20.7345)
+                                                                                    (47.284, -21.828, 29.813)
+
+              8           B 73           B 74              2        46.6851         (47.284, -21.828, 29.813)
+                                                                                    (43.743, -20.412, 29.62)
+

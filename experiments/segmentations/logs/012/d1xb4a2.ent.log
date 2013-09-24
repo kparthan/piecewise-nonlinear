@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/xb/d1xb4a2.ent
+Number of residues: 72
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 21874.3
+Null Model Fit: 3146.32 bits.
+Bits per residue: 44.3143
+
+Bezier model fit: 2949.43 bits.
+Bits per residue: 41.5413
+
+# of segments: 7
+Internal segmentation:
+0-->1-->16-->26-->41-->56-->64-->71
+
+CPU time used: 3.4 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 126          A 127              2        47.3514         (3.292, 77.8, 72.896)
+                                                                                    (3.525, 81.057, 70.938)
+
+              2          A 127          A 142             16        600.104         (3.525, 81.057, 70.938)
+                                                                                    (-17.85, 78.971, 76.754)
+
+              3          A 142          A 152             11        421.699         (-17.85, 78.971, 76.754)         (-21.5514, 95.8111, 74.8077)
+                                                                                    (-7.284, 86.091, 87.989)
+
+              4          A 152          A 169             16         636.33         (-7.284, 86.091, 87.989)         (-15.0238, 66.486, 79.0267)
+                                                                                    (0.525, 84.131, 86.021)
+
+              5          A 169          A 184             16        611.113         (0.525, 84.131, 86.021)
+                                                                                    (-9.457, 93.897, 67.442)
+
+              6          A 184          A 192              9        327.069         (-9.457, 93.897, 67.442)
+                                                                                    (-7.175, 102.756, 89.428)
+
+              7          A 192          A 199              8        305.764         (-7.175, 102.756, 89.428)
+                                                                                    (-10.827, 91.873, 79.709)
+

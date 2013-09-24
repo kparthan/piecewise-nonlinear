@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/nk/d1nkla_.ent
+Number of residues: 78
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 15701.7
+Null Model Fit: 3375.37 bits.
+Bits per residue: 43.836
+
+Bezier model fit: 3147.22 bits.
+Bits per residue: 40.873
+
+# of segments: 7
+Internal segmentation:
+0-->18-->22-->38-->39-->62-->76-->77
+
+CPU time used: 3.73 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 19             19        723.336         (-16.539, -2.251, 4.37)         (-0.730491, 1.5013, 7.72131)
+                                                                                    (9.04, 8.256, 1.753)
+
+              2           A 19           A 23              5        173.627         (9.04, 8.256, 1.753)
+                                                                                    (10.44, 3.804, -7.509)
+
+              3           A 23           A 39             17        646.037         (10.44, 3.804, -7.509)
+                                                                                    (1.222, -7.055, 12.718)
+
+              4           A 39           A 40              2        46.8731         (1.222, -7.055, 12.718)
+                                                                                    (-2.44, -8.131, 13.293)
+
+              5           A 40           A 63             24        917.896         (-2.44, -8.131, 13.293)         (-1.88422, -12.6795, -15.0461)
+                                                                                    (1.559, 9.92, -4.528)
+
+              6           A 63           A 77             15        592.579         (1.559, 9.92, -4.528)
+                                                                                    (-17.233, 2.096, 0.248)
+
+              7           A 77           A 78              2        46.8731         (-17.233, 2.096, 0.248)
+                                                                                    (-17.269, 4.215, -2.927)
+

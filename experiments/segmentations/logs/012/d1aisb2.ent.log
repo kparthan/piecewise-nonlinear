@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ai/d1aisb2.ent
+Number of residues: 95
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 23223.9
+Null Model Fit: 4173.66 bits.
+Bits per residue: 44.4007
+
+Bezier model fit: 3856.84 bits.
+Bits per residue: 41.0302
+
+# of segments: 8
+Internal segmentation:
+0-->14-->16-->34-->40-->57-->85-->86-->94
+
+CPU time used: 4.95 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1         B 1206         B 1220             15        577.745         (-24.962, 21.392, 68.671)
+                                                                                    (-10.404, 3.873, 68.147)
+
+              2         B 1220         B 1222              3        92.8384         (-10.404, 3.873, 68.147)
+                                                                                    (-12.778, 4.178, 61.611)
+
+              3         B 1222         B 1240             19        712.041         (-12.778, 4.178, 61.611)
+                                                                                    (-38.618, 11.782, 65.708)
+
+              4         B 1240         B 1246              7         263.84         (-38.618, 11.782, 65.708)
+                                                                                    (-29.527, 13.901, 76.081)
+
+              5         B 1246         B 1263             18        679.245         (-29.527, 13.901, 76.081)
+                                                                                    (-17.599, -5.36, 62.801)
+
+              6         B 1263         B 1291             29        1147.64         (-17.599, -5.36, 62.801)         (-18.526, 13.9717, 95.2869)
+                                                                                    (-36.355, -1.477, 67.541)
+
+              7         B 1291         B 1292              2        47.4377         (-36.355, -1.477, 67.541)
+                                                                                    (-37.719, 1.826, 66.225)
+
+              8         B 1292         B 1300              9        336.045         (-37.719, 1.826, 66.225)         (-31.0636, -4.50172, 58.2438)
+                                                                                    (-20.61, -12.004, 68.305)
+

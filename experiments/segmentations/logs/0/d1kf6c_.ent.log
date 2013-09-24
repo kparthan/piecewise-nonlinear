@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/kf/d1kf6c_.ent
+Number of residues: 130
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 163135
+Null Model Fit: 6090.48 bits.
+Bits per residue: 47.2131
+
+Bezier model fit: 5183.86 bits.
+Bits per residue: 40.185
+
+# of segments: 7
+Internal segmentation:
+0-->22-->51-->65-->91-->98-->103-->129
+
+CPU time used: 1.2 secs.
+Wall clock time elapsed: 1 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            C 1           C 23             23        929.024         (-6.644, -1.982, -28.625)
+                                                                                    (12.908, 22.278, -58.946)
+
+              2           C 23           C 52             30        1127.03         (12.908, 22.278, -58.946)
+                                                                                    (43.01, 9.492, -89.491)
+
+              3           C 52           C 66             15        564.477         (43.01, 9.492, -89.491)
+                                                                                    (23.936, 22.543, -86.542)
+
+              4           C 66           C 92             27        1026.82         (23.936, 22.543, -86.542)
+                                                                                    (30.327, 23.771, -46.669)
+
+              5           C 92           C 99              8        299.527         (30.327, 23.771, -46.669)
+                                                                                    (40.248, 34.106, -35.091)
+
+              6           C 99          C 104              6        224.625         (40.248, 34.106, -35.091)
+                                                                                    (33.489, 31.14, -45.416)
+
+              7          C 104          C 130             27        1012.37         (33.489, 31.14, -45.416)
+                                                                                    (50.204, 28.77, -81.13)
+

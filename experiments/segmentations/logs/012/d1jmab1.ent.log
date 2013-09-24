@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/jm/d1jmab1.ent
+Number of residues: 56
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 10609.4
+Null Model Fit: 2379.87 bits.
+Bits per residue: 43.2704
+
+Bezier model fit: 2290.13 bits.
+Bits per residue: 41.6387
+
+# of segments: 7
+Internal segmentation:
+0-->2-->9-->17-->27-->38-->44-->55
+
+CPU time used: 2.37 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            B 4            B 6              3        90.5779         (-47.248, 56.691, -1.357)
+                                                                                    (-44.928, 56.937, -7.514)
+
+              2            B 6           B 13              8        301.571         (-44.928, 56.937, -7.514)
+                                                                                    (-48.567, 53.05, 7.37)
+
+              3           B 13           B 21              9        331.039         (-48.567, 53.05, 7.37)         (-36.0508, 56.9331, 0.344305)
+                                                                                    (-33.106, 49.34, -11.583)
+
+              4           B 21           B 31             11        414.042         (-33.106, 49.34, -11.583)         (-33.1813, 37.2342, 2.15413)
+                                                                                    (-37.452, 57.608, 9.928)
+
+              5           B 31           B 42             12        442.148         (-37.452, 57.608, 9.928)
+                                                                                    (-28.367, 35.84, -10.959)
+
+              6           B 42           B 48              7        254.329         (-28.367, 35.84, -10.959)
+                                                                                    (-37.552, 50.302, -13.094)
+
+              7           B 48           B 59             12        456.422         (-37.552, 50.302, -13.094)         (-39.8334, 42.2538, 6.03902)
+                                                                                    (-36.195, 35.327, -20.484)
+

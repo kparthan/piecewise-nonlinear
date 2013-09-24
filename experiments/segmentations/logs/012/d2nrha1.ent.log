@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/nr/d2nrha1.ent
+Number of residues: 75
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 20336.2
+Null Model Fit: 3271.47 bits.
+Bits per residue: 44.2091
+
+Bezier model fit: 3092.51 bits.
+Bits per residue: 41.7907
+
+# of segments: 6
+Internal segmentation:
+0-->15-->27-->28-->36-->59-->74
+
+CPU time used: 3.66 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 18             16        626.728         (71.026, 17.93, 8.194)         (72.632, 7.40578, 41.1758)
+                                                                                    (77.163, 24.651, 13.698)
+
+              2           A 18           A 30             13        504.478         (77.163, 24.651, 13.698)         (68.5388, 17.0862, 39.1448)
+                                                                                    (64.012, 22.921, 22.877)
+
+              3           A 30           A 36              2        47.2462         (64.012, 22.921, 22.877)
+                                                                                    (66.825, 15.324, 13.619)
+
+              4           A 36           A 44              9        338.522         (66.825, 15.324, 13.619)         (77.1404, 4.07954, 22.6764)
+                                                                                    (65.01, 8.853, 31.398)
+
+              5           A 44           A 67             24        949.247         (65.01, 8.853, 31.398)         (53.4557, 17.9129, 3.01076)
+                                                                                    (83.45, -8.866, 21.529)
+
+              6           A 67           A 82             16         626.29         (83.45, -8.866, 21.529)         (69.6684, 10.0486, 25.698)
+                                                                                    (88.588, 4.77, 13.86)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/tv/d1tvfa1.ent
+Number of residues: 68
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 18536
+Null Model Fit: 2953.05 bits.
+Bits per residue: 44.0754
+
+Bezier model fit: 2769.95 bits.
+Bits per residue: 41.3425
+
+# of segments: 7
+Internal segmentation:
+0-->14-->28-->34-->42-->43-->55-->67
+
+CPU time used: 3.24 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 316          A 330             15        583.637         (2.893, 26.286, 25.816)         (2.9187, 0.5779, 36.0641)
+                                                                                    (21.455, 8.145, 31.374)
+
+              2          A 330          A 344             15        559.876         (21.455, 8.145, 31.374)         (-4.1477, 3.18564, 45.5089)
+                                                                                    (8.552, 28.928, 25.658)
+
+              3          A 344          A 350              7        258.851         (8.552, 28.928, 25.658)
+                                                                                    (17.446, 20.647, 23.394)
+
+              4          A 350          A 358              9        325.774         (17.446, 20.647, 23.394)
+                                                                                    (15.592, 14.295, 46.523)
+
+              5          A 358          A 359              2        47.1125         (15.592, 14.295, 46.523)
+                                                                                    (13.278, 11.912, 44.855)
+
+              6          A 359          A 371             13        493.639         (13.278, 11.912, 44.855)         (16.8537, 30.3122, 21.6246)
+                                                                                    (8.012, 33.902, 44.949)
+
+              7          A 371          A 383             13        501.055         (8.012, 33.902, 44.949)
+                                                                                    (14.446, 2.945, 41.876)
+

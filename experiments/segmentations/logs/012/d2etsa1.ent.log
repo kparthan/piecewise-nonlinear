@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/et/d2etsa1.ent
+Number of residues: 110
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 34988.1
+Null Model Fit: 4904.12 bits.
+Bits per residue: 44.9919
+
+Bezier model fit: 4369.55 bits.
+Bits per residue: 40.0876
+
+# of segments: 7
+Internal segmentation:
+0-->24-->32-->61-->62-->81-->86-->109
+
+CPU time used: 6 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 25             25        938.023         (28.472, 43.443, 33.974)         (17.1581, 58.1007, 34.1932)
+                                                                                    (13.416, 75.661, 29.235)
+
+              2           A 25           A 33              9        334.894         (13.416, 75.661, 29.235)
+                                                                                    (29.432, 71.345, 23.758)
+
+              3           A 33           A 62             30        1168.71         (29.432, 71.345, 23.758)         (34.9753, 39.5496, 26.0186)
+                                                                                    (16.615, 38.517, 26.487)
+
+              4           A 62           A 63              2         48.029         (16.615, 38.517, 26.487)
+                                                                                    (17.575, 37.387, 23.01)
+
+              5           A 63           A 82             20        754.042         (17.575, 37.387, 23.01)
+                                                                                    (18.623, 67.134, 24.237)
+
+              6           A 82           A 87              6        226.928         (18.623, 67.134, 24.237)
+                                                                                    (7.799, 64.023, 21.63)
+
+              7           A 87          A 110             24        898.918         (7.799, 64.023, 21.63)
+                                                                                    (23.194, 38.859, 39.542)
+

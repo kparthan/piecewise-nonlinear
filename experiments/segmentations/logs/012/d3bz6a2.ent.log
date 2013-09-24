@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/bz/d3bz6a2.ent
+Number of residues: 84
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 19999.9
+Null Model Fit: 3667.36 bits.
+Bits per residue: 44.1851
+
+Bezier model fit: 3441.8 bits.
+Bits per residue: 41.4675
+
+# of segments: 7
+Internal segmentation:
+0-->19-->34-->40-->54-->64-->67-->83
+
+CPU time used: 4.23 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 97          A 116             20        797.143         (-5.789, 38.847, 1.65)         (8.64184, 32.8052, 0.724055)
+                                                                                    (-12.76, 28.546, 8.701)
+
+              2          A 116          A 131             16        621.332         (-12.76, 28.546, 8.701)         (3.64298, 16.6754, 20.936)
+                                                                                    (-5.914, 19.976, -2.099)
+
+              3          A 131          A 137              7        261.818         (-5.914, 19.976, -2.099)
+                                                                                    (5.851, 18.139, 5.142)
+
+              4          A 137          A 151             15        565.613         (5.851, 18.139, 5.142)
+                                                                                    (3.627, 39.123, 11.712)
+
+              5          A 151          A 161             11        400.777         (3.627, 39.123, 11.712)
+                                                                                    (-3.703, 18.221, 29.596)
+
+              6          A 161          A 164              4        137.842         (-3.703, 18.221, 29.596)
+                                                                                    (-0.245, 16.87, 23.74)
+
+              7          A 164          A 180             17        657.278         (-0.245, 16.87, 23.74)         (-10.0055, 47.7726, 4.151)
+                                                                                    (-11.331, 33.648, 29.054)
+

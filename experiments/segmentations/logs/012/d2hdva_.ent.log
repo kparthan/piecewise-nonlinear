@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/hd/d2hdva_.ent
+Number of residues: 103
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 23765.7
+Null Model Fit: 4532.26 bits.
+Bits per residue: 44.4339
+
+Bezier model fit: 4258.14 bits.
+Bits per residue: 41.7465
+
+# of segments: 7
+Internal segmentation:
+0-->17-->43-->54-->66-->72-->80-->102
+
+CPU time used: 5.74 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 518          A 535             18        722.109         (8.167, -10.581, 14.536)         (-0.416325, 1.37577, 20.7732)
+                                                                                    (9.383, 19.85, 17.873)
+
+              2          A 535          A 561             27        1080.08         (9.383, 19.85, 17.873)         (19.542, 12.1656, 46.9016)
+                                                                                    (9.796, 8.472, 3.538)
+
+              3          A 561          A 572             12        457.553         (9.796, 8.472, 3.538)
+                                                                                    (19.4, 18.804, 28.23)
+
+              4          A 572          A 584             13        477.322         (19.4, 18.804, 28.23)         (18.7481, 11.3812, 6.97072)
+                                                                                    (13.007, -6.034, 5.592)
+
+              5          A 584          A 590              7        255.778         (13.007, -6.034, 5.592)
+                                                                                    (25.173, 6.58, 11.963)
+
+              6          A 590          A 598              9        348.815         (25.173, 6.58, 11.963)         (22.7001, -8.54217, 8.76009)
+                                                                                    (14.131, -3.092, 18.667)
+
+              7          A 598          A 627             23        916.484         (14.131, -3.092, 18.667)         (42.912, 6.66217, 30.2219)
+                                                                                    (3.105, 6.935, 23.439)
+

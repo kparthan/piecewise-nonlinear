@@ -1,0 +1,49 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ry/d3ryce_.ent
+Number of residues: 136
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 224283
+Null Model Fit: 6435.76 bits.
+Bits per residue: 47.6723
+
+Bezier model fit: 5436.99 bits.
+Bits per residue: 40.274
+
+# of segments: 10
+Internal segmentation:
+0-->5-->11-->21-->30-->31-->36-->65-->91-->120-->135
+
+CPU time used: 1.25 secs.
+Wall clock time elapsed: 1 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            E 4            E 9              6        223.491         (20.983, -0.74, 85.719)
+                                                                                    (15.468, 4.054, 70.963)
+
+              2            E 9           E 15              7        262.337         (15.468, 4.054, 70.963)
+                                                                                    (23.918, 16.436, 58.956)
+
+              3           E 15           E 25             11        406.846         (23.918, 16.436, 58.956)
+                                                                                    (10.65, 3.314, 83.264)
+
+              4           E 25           E 34             10         400.37         (10.65, 3.314, 83.264)
+                                                                                    (-6.494, 9.245, 80.997)
+
+              5           E 34           E 41              2        50.7094         (-6.494, 9.245, 80.997)
+                                                                                    (-11.144, 21.712, 71.45)
+
+              6           E 41           E 46              6        224.387         (-11.144, 21.712, 71.45)
+                                                                                    (-14.869, 33.837, 63.61)
+
+              7           E 46           E 75             30        1119.95         (-14.869, 33.837, 63.61)
+                                                                                    (-21.672, 73.15, 83.012)
+
+              8           E 75          E 101             27        1014.24         (-21.672, 73.15, 83.012)
+                                                                                    (-36.578, 107.733, 93.726)
+
+              9          E 101          E 130             30         1118.6         (-36.578, 107.733, 93.726)
+                                                                                    (-58.786, 143.538, 106.491)
+
+             10          E 130          E 145             16        616.058         (-58.786, 143.538, 106.491)
+                                                                                    (-71.609, 162.718, 113.534)
+

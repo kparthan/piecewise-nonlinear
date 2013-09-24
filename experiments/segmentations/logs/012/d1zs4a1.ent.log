@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/zs/d1zs4a1.ent
+Number of residues: 78
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 37694.2
+Null Model Fit: 3472.65 bits.
+Bits per residue: 45.0994
+
+Bezier model fit: 3124.38 bits.
+Bits per residue: 40.5764
+
+# of segments: 7
+Internal segmentation:
+0-->1-->21-->30-->32-->57-->59-->77
+
+CPU time used: 3.73 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 4            A 5              2        48.1365         (19.43, -27.488, -19.882)
+                                                                                    (18.353, -26.421, -16.407)
+
+              2            A 5           A 25             21        792.514         (18.353, -26.421, -16.407)
+                                                                                    (47.617, -20.874, -12.629)
+
+              3           A 25           A 34             10        382.152         (47.617, -20.874, -12.629)
+                                                                                    (45.435, -8.006, -7.905)
+
+              4           A 34           A 36              3        94.2359         (45.435, -8.006, -7.905)
+                                                                                    (47.037, -12.778, -3.017)
+
+              5           A 36           A 61             26        985.962         (47.037, -12.778, -3.017)         (30.2309, -26.5907, -1.01203)
+                                                                                    (17.698, -13.826, -20.089)
+
+              6           A 61           A 63              3        94.2359         (17.698, -13.826, -20.089)
+                                                                                    (11.109, -13.307, -20.954)
+
+              7           A 63           A 81             19        727.146         (11.109, -13.307, -20.954)
+                                                                                    (5.767, 15.625, -14.835)
+

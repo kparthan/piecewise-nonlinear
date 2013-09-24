@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/cf/d2cfxa2.ent
+Number of residues: 77
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 24375.5
+Null Model Fit: 3379.76 bits.
+Bits per residue: 44.4705
+
+Bezier model fit: 3114 bits.
+Bits per residue: 40.9737
+
+# of segments: 7
+Internal segmentation:
+0-->11-->13-->34-->47-->60-->62-->76
+
+CPU time used: 3.72 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 64           A 75             12        431.797         (99.507, 62.876, 60.766)         (89.517, 44.3308, 61.8463)
+                                                                                    (85.558, 39.343, 42.173)
+
+              2           A 75           A 77              3        92.9781         (85.558, 39.343, 42.173)
+                                                                                    (90.563, 38.76, 42.423)
+
+              3           A 77           A 98             22        858.652         (90.563, 38.76, 42.423)         (112.176, 64.3491, 45.7026)
+                                                                                    (91.84, 34.274, 58.311)
+
+              4           A 98          A 111             14        546.289         (91.84, 34.274, 58.311)
+                                                                                    (94.418, 64.115, 56.383)
+
+              5          A 111          A 124             14        524.969         (94.418, 64.115, 56.383)
+                                                                                    (86.73, 48.709, 42.557)
+
+              6          A 124          A 126              3        92.9781         (86.73, 48.709, 42.557)
+                                                                                    (88.094, 45.575, 47.573)
+
+              7          A 126          A 140             15        566.341         (88.094, 45.575, 47.573)         (86.0551, 62.8939, 70.9742)
+                                                                                    (108.017, 47.698, 73.266)
+

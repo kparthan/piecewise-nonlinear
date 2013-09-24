@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/h1/d1h1oa1.ent
+Number of residues: 82
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 19702.1
+Null Model Fit: 3577.24 bits.
+Bits per residue: 44.1634
+
+Bezier model fit: 3363.63 bits.
+Bits per residue: 41.5262
+
+# of segments: 7
+Internal segmentation:
+0-->14-->17-->41-->42-->60-->75-->81
+
+CPU time used: 4.05 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 12           A 26             15        587.992         (11.439, 43.501, -39.961)
+                                                                                    (1.72, 47.159, -24.913)
+
+              2           A 26           A 29              4        137.777         (1.72, 47.159, -24.913)
+                                                                                    (-1.569, 39.736, -24.077)
+
+              3           A 29           A 53             25        982.479         (-1.569, 39.736, -24.077)         (30.245, 47.929, -22.7873)
+                                                                                    (13.673, 24.474, -29.074)
+
+              4           A 53           A 54              2        47.2005         (13.673, 24.474, -29.074)
+                                                                                    (15.716, 24.352, -25.864)
+
+              5           A 54           A 72             19        747.033         (15.716, 24.352, -25.864)         (-7.30842, 30.0114, -27.7093)
+                                                                                    (19.642, 33.42, -38.176)
+
+              6           A 72           A 87             16        603.246         (19.642, 33.42, -38.176)
+                                                                                    (12.653, 53.372, -25.296)
+
+              7           A 87           A 93              7        257.899         (12.653, 53.372, -25.296)
+                                                                                    (1.171, 49.682, -17.611)
+

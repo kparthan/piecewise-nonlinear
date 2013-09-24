@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/nl/d1nlta1.ent
+Number of residues: 74
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 21236.6
+Null Model Fit: 3231.83 bits.
+Bits per residue: 44.2716
+
+Bezier model fit: 2941.42 bits.
+Bits per residue: 40.2934
+
+# of segments: 6
+Internal segmentation:
+0-->13-->28-->39-->56-->57-->73
+
+CPU time used: 3.61 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 110          A 123             14        493.191         (-5.698, 49.326, 76.123)         (12.9355, 40.6041, 73.1683)
+                                                                                    (24.764, 33.436, 54.297)
+
+              2          A 123          A 138             16        622.573         (24.764, 33.436, 54.297)         (15.1509, 26.1771, 41.0262)
+                                                                                    (10.007, 30.723, 74.975)
+
+              3          A 138          A 223             12         447.78         (10.007, 30.723, 74.975)         (4.60182, 23.244, 60.7899)
+                                                                                    (16.175, 37.231, 47.506)
+
+              4          A 223          A 240             18        707.078         (16.175, 37.231, 47.506)
+                                                                                    (-3.693, 39.553, 82.005)
+
+              5          A 240          A 241              2        47.3087         (-3.693, 39.553, 82.005)
+                                                                                    (-4.88, 42.898, 80.549)
+
+              6          A 241          A 257             17        623.489         (-4.88, 42.898, 80.549)         (9.4197, 40.4159, 59.6268)
+                                                                                    (34.266, 35.909, 51.936)
+

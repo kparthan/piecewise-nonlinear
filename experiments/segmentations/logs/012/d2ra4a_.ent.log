@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ra/d2ra4a_.ent
+Number of residues: 65
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 18997.9
+Null Model Fit: 2823.1 bits.
+Bits per residue: 44.1109
+
+Bezier model fit: 2645.55 bits.
+Bits per residue: 41.3367
+
+# of segments: 7
+Internal segmentation:
+0-->14-->31-->33-->43-->52-->53-->64
+
+CPU time used: 2.92 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 3           A 17             15        570.145         (27.291, 12.035, 10.866)
+                                                                                    (62.351, 31.691, 22.164)
+
+              2           A 17           A 34             18         697.89         (62.351, 31.691, 22.164)         (43.0795, 48.8236, 39.2317)
+                                                                                    (46.287, 14.222, 20.315)
+
+              3           A 34           A 36              3        92.2589         (46.287, 14.222, 20.315)
+                                                                                    (52.602, 14.792, 18.922)
+
+              4           A 36           A 46             11        408.731         (52.602, 14.792, 18.922)         (51.769, 28.4522, 31.502)
+                                                                                    (44.975, 41.189, 22.543)
+
+              5           A 46           A 55             10         375.23         (44.975, 41.189, 22.543)         (51.7966, 28.2317, 17.309)
+                                                                                    (59.596, 22.345, 30.509)
+
+              6           A 55           A 56              2         47.148         (59.596, 22.345, 30.509)
+                                                                                    (60.989, 25.943, 30.665)
+
+              7           A 56           A 67             12        454.145         (60.989, 25.943, 30.665)
+                                                                                    (46.083, 29.809, 37.106)
+

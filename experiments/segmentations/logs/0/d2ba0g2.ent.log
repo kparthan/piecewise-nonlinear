@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ba/d2ba0g2.ent
+Number of residues: 79
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 26665
+Null Model Fit: 3478.8 bits.
+Bits per residue: 44.6
+
+Bezier model fit: 3211.58 bits.
+Bits per residue: 41.1741
+
+# of segments: 8
+Internal segmentation:
+0-->14-->20-->22-->29-->40-->51-->57-->78
+
+CPU time used: 0.65 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          G 179          G 193             15        564.947         (101.264, 81.634, -2.112)
+                                                                                    (68.545, 107.335, -10.616)
+
+              2          G 193          G 199              7        254.077         (68.545, 107.335, -10.616)
+                                                                                    (83.985, 105.242, -5.941)
+
+              3          G 199          G 201              3        93.2371         (83.985, 105.242, -5.941)
+                                                                                    (82.57, 109.563, -0.989)
+
+              4          G 201          G 208              8        298.345         (82.57, 109.563, -0.989)
+                                                                                    (71.353, 107.238, 0.183)
+
+              5          G 208          G 219             12        451.651         (71.353, 107.238, 0.183)
+                                                                                    (91.934, 87.77, -16.263)
+
+              6          G 219          G 230             12        461.653         (91.934, 87.77, -16.263)
+                                                                                    (66.558, 99.731, -1.609)
+
+              7          G 230          G 236              7        260.088         (66.558, 99.731, -1.609)
+                                                                                    (70.925, 99.317, -19.309)
+
+              8          G 236          G 257             22        827.584         (70.925, 99.317, -19.309)
+                                                                                    (102.898, 96.157, -9.496)
+

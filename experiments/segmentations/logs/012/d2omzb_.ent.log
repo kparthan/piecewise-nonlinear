@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/om/d2omzb_.ent
+Number of residues: 104
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 21686.2
+Null Model Fit: 4563.09 bits.
+Bits per residue: 44.3018
+
+Bezier model fit: 4255.49 bits.
+Bits per residue: 41.3154
+
+# of segments: 7
+Internal segmentation:
+0-->6-->19-->35-->60-->75-->86-->103
+
+CPU time used: 5.65 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           B -3            B 3              7        263.561         (29.471, 16.124, 84.392)
+                                                                                    (42.57, 19.778, 85.938)
+
+              2            B 3           B 16             14        534.384         (42.57, 19.778, 85.938)         (45.3753, 49.3002, 76.7229)
+                                                                                    (61.679, 31.67, 72.442)
+
+              3           B 16           B 32             17        658.253         (61.679, 31.67, 72.442)         (38.9663, 21.023, 87.6136)
+                                                                                    (45.998, 4.31, 81.622)
+
+              4           B 32           B 57             26        1035.93         (45.998, 4.31, 81.622)         (37.801, 45.1811, 48.6439)
+                                                                                    (52.418, 16.09, 78.54)
+
+              5           B 57           B 72             16        632.826         (52.418, 16.09, 78.54)         (54.0952, 43.4429, 64.8521)
+                                                                                    (41.11, 39.908, 71.4)
+
+              6           B 72           B 83             12        437.712         (41.11, 39.908, 71.4)         (35.1283, 20.7101, 75.4447)
+                                                                                    (45.643, 4.649, 73.781)
+
+              7           B 83          B 100             18        692.817         (45.643, 4.649, 73.781)         (24.9542, 15.4873, 77.4197)
+                                                                                    (48.166, 43.969, 78.06)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/fx/d1fxka_.ent
+Number of residues: 107
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 57794.2
+Null Model Fit: 4845.89 bits.
+Bits per residue: 45.716
+
+Bezier model fit: 4201.67 bits.
+Bits per residue: 39.6384
+
+# of segments: 7
+Internal segmentation:
+0-->1-->15-->44-->54-->61-->78-->106
+
+CPU time used: 5.54 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 5            A 6              2        48.7531         (59.82, -11.671, -5.43)
+                                                                                    (61.442, -13.285, -2.401)
+
+              2            A 6           A 20             15        567.836         (61.442, -13.285, -2.401)
+                                                                                    (71.241, -20.742, -19.767)
+
+              3           A 20           A 49             30        1117.97         (71.241, -20.742, -19.767)         (87.1752, -24.9106, -33.4609)
+                                                                                    (91.694, -28.619, -59.792)
+
+              4           A 49           A 59             11        414.612         (91.694, -28.619, -59.792)
+                                                                                    (73.169, -37.003, -43.802)
+
+              5           A 59           A 66              8        297.059         (73.169, -37.003, -43.802)
+                                                                                    (81.537, -29.771, -58.933)
+
+              6           A 66           A 83             18        679.682         (81.537, -29.771, -58.933)
+                                                                                    (76.977, -14.67, -38.039)
+
+              7           A 83          A 111             29        1075.76         (76.977, -14.67, -38.039)
+                                                                                    (70.631, -7.344, 4.323)
+

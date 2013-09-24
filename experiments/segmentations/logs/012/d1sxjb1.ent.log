@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/sx/d1sxjb1.ent
+Number of residues: 92
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 22390.4
+Null Model Fit: 4035.66 bits.
+Bits per residue: 44.3479
+
+Bezier model fit: 3675.27 bits.
+Bits per residue: 40.3875
+
+# of segments: 8
+Internal segmentation:
+0-->1-->28-->31-->47-->50-->71-->74-->91
+
+CPU time used: 4.87 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          B 231          B 232              2         47.385         (-19.143, 46.836, 41.541)
+                                                                                    (-21.622, 47.103, 44.419)
+
+              2          B 232          B 259             28        1072.27         (-21.622, 47.103, 44.419)         (-29.0918, 17.3602, 39.2395)
+                                                                                    (-22.847, 48.208, 33.112)
+
+              3          B 259          B 262              4         138.33         (-22.847, 48.208, 33.112)
+                                                                                    (-13.535, 46.793, 34.686)
+
+              4          B 262          B 278             17        637.322         (-13.535, 46.793, 34.686)
+                                                                                    (-19.333, 34.05, 56.439)
+
+              5          B 278          B 281              4         138.33         (-19.333, 34.05, 56.439)
+                                                                                    (-17.176, 27.555, 54.83)
+
+              6          B 281          B 302             22        823.103         (-17.176, 27.555, 54.83)
+                                                                                    (-3.727, 40.641, 29.261)
+
+              7          B 302          B 305              4         138.33         (-3.727, 40.641, 29.261)
+                                                                                    (-12.061, 38.856, 28.607)
+
+              8          B 305          B 322             18        680.193         (-12.061, 38.856, 28.607)
+                                                                                    (-19.148, 19.171, 44.829)
+

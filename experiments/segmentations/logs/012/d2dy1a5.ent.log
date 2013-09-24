@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/dy/d2dy1a5.ent
+Number of residues: 96
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 28605.2
+Null Model Fit: 4246.63 bits.
+Bits per residue: 44.7013
+
+Bezier model fit: 3859.24 bits.
+Bits per residue: 40.6236
+
+# of segments: 7
+Internal segmentation:
+0-->14-->28-->38-->46-->64-->80-->95
+
+CPU time used: 4.82 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 570          A 584             15        554.594         (-27.169, 31.058, 38.163)         (-0.582628, 28.8615, 32.001)
+                                                                                    (5.126, 50.886, 25.991)
+
+              2          A 584          A 598             15        568.312         (5.126, 50.886, 25.991)
+                                                                                    (-14.38, 42.473, 29.73)
+
+              3          A 598          A 608             11        407.237         (-14.38, 42.473, 29.73)         (-1.76609, 45.7625, 43.7557)
+                                                                                    (12.572, 48.354, 29.869)
+
+              4          A 608          A 616              9        322.458         (12.572, 48.354, 29.869)
+                                                                                    (-8.363, 38.747, 34.773)
+
+              5          A 616          A 634             19        748.104         (-8.363, 38.747, 34.773)         (-13.2925, 28.3824, 16.1363)
+                                                                                    (3.353, 45.022, 16.376)
+
+              6          A 634          A 650             17        651.238         (3.353, 45.022, 16.376)         (0.864259, 21.407, 41.7189)
+                                                                                    (-23.271, 39.079, 33.738)
+
+              7          A 650          A 665             16        607.299         (-23.271, 39.079, 33.738)
+                                                                                    (-30.042, 21.163, 22.204)
+

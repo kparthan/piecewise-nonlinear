@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/xa/d1xaka_.ent
+Number of residues: 68
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16506.3
+Null Model Fit: 2941.84 bits.
+Bits per residue: 43.9081
+
+Bezier model fit: 2724.74 bits.
+Bits per residue: 40.6677
+
+# of segments: 6
+Internal segmentation:
+0-->9-->21-->35-->45-->54-->67
+
+CPU time used: 3.18 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A -1            A 9             10        351.556         (-8.626, 29.006, 12.165)         (-0.274625, 16.6733, 6.6415)
+                                                                                    (12.765, 8.34, 12.114)
+
+              2            A 9           A 21             13        504.249         (12.765, 8.34, 12.114)
+                                                                                    (5.475, 33.828, 17.873)
+
+              3           A 21           A 35             15        582.221         (5.475, 33.828, 17.873)         (-4.5023, 6.03146, 32.4161)
+                                                                                    (16.705, 29.649, 19.639)
+
+              4           A 35           A 45             11        412.551         (16.705, 29.649, 19.639)
+                                                                                    (4.017, 8.808, 16.769)
+
+              5           A 45           A 54             10        368.045         (4.017, 8.808, 16.769)         (-1.76615, 25.0872, 23.3407)
+                                                                                    (-4.377, 35.389, 15.681)
+
+              6           A 54           A 67             14        506.117         (-4.377, 35.389, 15.681)         (-4.98897, 13.9321, 16.0224)
+                                                                                    (15.1, 2.854, 9.654)
+

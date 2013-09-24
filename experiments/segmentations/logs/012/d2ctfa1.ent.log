@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ct/d2ctfa1.ent
+Number of residues: 90
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 46400.4
+Null Model Fit: 4040.53 bits.
+Bits per residue: 45.3992
+
+Bezier model fit: 3627.72 bits.
+Bits per residue: 40.7609
+
+# of segments: 7
+Internal segmentation:
+0-->12-->25-->49-->50-->59-->68-->89
+
+CPU time used: 4.45 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 7           A 19             13        506.287         (-20.169, -11.648, -10.43)
+                                                                                    (-7.593, 17.97, -8.33)
+
+              2           A 19           A 32             14        527.289         (-7.593, 17.97, -8.33)         (8.71188, 29.3906, 12.6261)
+                                                                                    (-5.7, -1.159, 3.796)
+
+              3           A 32           A 56             25        989.302         (-5.7, -1.159, 3.796)         (19.2609, -21.4363, 5.65767)
+                                                                                    (11.458, 7.986, 0.225)
+
+              4           A 56           A 57              2        48.4363         (11.458, 7.986, 0.225)
+                                                                                    (12.975, 8.623, 3.681)
+
+              5           A 57           A 66             10        362.563         (12.975, 8.623, 3.681)
+                                                                                    (-4.575, -5.65, 14.965)
+
+              6           A 66           A 75             10        372.505         (-4.575, -5.65, 14.965)
+                                                                                    (4.3, 15.086, 2.402)
+
+              7           A 75           A 96             22        821.337         (4.3, 15.086, 2.402)
+                                                                                    (-0.648, -15.022, -6.439)
+

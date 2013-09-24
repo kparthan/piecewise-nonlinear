@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ri/d1ri9a_.ent
+Number of residues: 77
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16982.2
+Null Model Fit: 3340.13 bits.
+Bits per residue: 43.9491
+
+Bezier model fit: 3175.94 bits.
+Bits per residue: 41.7887
+
+# of segments: 8
+Internal segmentation:
+0-->17-->35-->43-->53-->54-->63-->72-->76
+
+CPU time used: 4.29 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 7           A 24             18        712.057         (8.399, -4.493, 13.96)         (4.4533, -24.9152, 0.85641)
+                                                                                    (9.465, 1.595, -1.254)
+
+              2           A 24           A 42             19        742.352         (9.465, 1.595, -1.254)         (-25.6011, 11.6855, -6.43879)
+                                                                                    (-5.336, -12.964, 6.018)
+
+              3           A 42           A 50              9        337.078         (-5.336, -12.964, 6.018)
+                                                                                    (-12.058, 6.353, 1.288)
+
+              4           A 50           A 60             11        409.933         (-12.058, 6.353, 1.288)         (9.69293, 5.86619, 1.72265)
+                                                                                    (1.807, -9.638, -9.614)
+
+              5           A 60           A 61              2        46.9862         (1.807, -9.638, -9.614)
+                                                                                    (0.22, -7.683, -12.44)
+
+              6           A 61           A 70             10         372.02         (0.22, -7.683, -12.44)
+                                                                                    (2.032, 0.749, 12.001)
+
+              7           A 70           A 79             10        376.155         (2.032, 0.749, 12.001)
+                                                                                    (-10.627, -5.056, -7.91)
+
+              8           A 79           A 83              5         179.36         (-10.627, -5.056, -7.91)
+                                                                                    (-5.678, 3.579, -10.111)
+

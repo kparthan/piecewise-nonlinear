@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/e3/d1e32a1.ent
+Number of residues: 86
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16911.7
+Null Model Fit: 3735.16 bits.
+Bits per residue: 43.9431
+
+Bezier model fit: 3544.34 bits.
+Bits per residue: 41.6981
+
+# of segments: 6
+Internal segmentation:
+0-->27-->42-->55-->64-->76-->85
+
+CPU time used: 4.48 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 21           A 48             28        1132.78         (46.816, 51.703, 22.795)         (53.6623, 7.82619, 16.1895)
+                                                                                    (57.206, 48.187, 15.576)
+
+              2           A 48           A 63             16        629.899         (57.206, 48.187, 15.576)         (73.0667, 31.6344, 15.8956)
+                                                                                    (46.538, 35.896, 37.246)
+
+              3           A 63           A 76             14        518.819         (46.538, 35.896, 37.246)         (71.3676, 31.9421, 22.924)
+                                                                                    (49.456, 34.787, 7.897)
+
+              4           A 76           A 85             10        381.206         (49.456, 34.787, 7.897)         (47.2133, 49.6695, 17.7783)
+                                                                                    (50.107, 26.874, 21.371)
+
+              5           A 85           A 97             13          510.3         (50.107, 26.874, 21.371)         (51.9462, 27.5129, 38.9068)
+                                                                                    (40.818, 35.916, 22.173)
+
+              6           A 97          A 106             10        371.337         (40.818, 35.916, 22.173)         (52.2962, 45.1121, 28.3823)
+                                                                                    (67.771, 39.585, 25.96)
+

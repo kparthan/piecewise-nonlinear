@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/h3/d1h3fa2.ent
+Number of residues: 81
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 18841.6
+Null Model Fit: 3527.92 bits.
+Bits per residue: 44.099
+
+Bezier model fit: 3324.3 bits.
+Bits per residue: 41.5537
+
+# of segments: 6
+Internal segmentation:
+0-->10-->27-->47-->55-->69-->80
+
+CPU time used: 4.06 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 352          A 362             11          405.3         (-18.227, 68.064, 49.544)
+                                                                                    (6.249, 72.825, 58.774)
+
+              2          A 362          A 379             18        710.053         (6.249, 72.825, 58.774)         (-0.965188, 64.8642, 74.7529)
+                                                                                    (-9.935, 80.066, 60.339)
+
+              3          A 379          A 399             21        846.538         (-9.935, 80.066, 60.339)         (-11.2938, 85.951, 87.459)
+                                                                                    (-13.929, 64.39, 64.682)
+
+              4          A 399          A 407              9        341.361         (-13.929, 64.39, 64.682)         (-18.9381, 68.6364, 78.075)
+                                                                                    (-3.321, 71.477, 75.259)
+
+              5          A 407          A 421             15        569.304         (-3.321, 71.477, 75.259)         (0.469229, 53.385, 48.6673)
+                                                                                    (-20.707, 75.628, 67.393)
+
+              6          A 421          A 432             12        451.744         (-20.707, 75.628, 67.393)
+                                                                                    (-1.7, 69.165, 48.888)
+

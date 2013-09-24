@@ -1,0 +1,46 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/qk/d2qklb1.ent
+Number of residues: 90
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 24146.9
+Null Model Fit: 3956.66 bits.
+Bits per residue: 44.4569
+
+Bezier model fit: 3684.16 bits.
+Bits per residue: 41.3951
+
+# of segments: 9
+Internal segmentation:
+0-->5-->22-->28-->49-->51-->58-->70-->75-->89
+
+CPU time used: 0.74 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            B 2            B 7              6         221.46         (45.33, 5.441, 17.055)
+                                                                                    (47.546, 0.338, 26.04)
+
+              2            B 7           B 24             18        682.014         (47.546, 0.338, 26.04)
+                                                                                    (70.905, 15.115, 19.376)
+
+              3           B 24           B 30              7        262.323         (70.905, 15.115, 19.376)
+                                                                                    (72.034, 17.11, 30.437)
+
+              4           B 30           B 51             22        827.245         (72.034, 17.11, 30.437)
+                                                                                    (41.53, 13.341, 25.314)
+
+              5           B 51           B 53              3        92.9509         (41.53, 13.341, 25.314)
+                                                                                    (41.568, 7.5, 25.636)
+
+              6           B 53           B 60              8        300.025         (41.568, 7.5, 25.636)
+                                                                                    (51.27, 14.412, 38.312)
+
+              7           B 60           B 72             13        492.961         (51.27, 14.412, 38.312)
+                                                                                    (62.367, 1.595, 30.184)
+
+              8           B 72           B 77              6        222.151         (62.367, 1.595, 30.184)
+                                                                                    (71.599, 5.347, 28.83)
+
+              9           B 77           B 91             15        583.034         (71.599, 5.347, 28.83)
+                                                                                    (64.531, 16.483, 44.631)
+

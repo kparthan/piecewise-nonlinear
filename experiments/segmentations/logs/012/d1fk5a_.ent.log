@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/fk/d1fk5a_.ent
+Number of residues: 93
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16715.9
+Null Model Fit: 4041.22 bits.
+Bits per residue: 43.9263
+
+Bezier model fit: 3778.9 bits.
+Bits per residue: 41.075
+
+# of segments: 6
+Internal segmentation:
+0-->2-->19-->41-->60-->75-->92
+
+CPU time used: 4.97 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 3              3        91.8896         (11.291, 45.107, 19.893)
+                                                                                    (11.437, 41.194, 25.282)
+
+              2            A 3           A 20             18        694.076         (11.437, 41.194, 25.282)         (14.8912, 26.1584, 22.946)
+                                                                                    (28.562, 22.605, 32.872)
+
+              3           A 20           A 42             23        896.686         (28.562, 22.605, 32.872)         (18.9546, 20.5449, 10.9849)
+                                                                                    (18.828, 48.628, 16.629)
+
+              4           A 42           A 61             20         749.71         (18.828, 48.628, 16.629)
+                                                                                    (22.196, 27.992, 39.426)
+
+              5           A 61           A 76             16        630.696         (22.196, 27.992, 39.426)         (37.2532, 30.4392, 28.5848)
+                                                                                    (30.018, 31.4, 15.561)
+
+              6           A 76           A 93             18        715.845         (30.018, 31.4, 15.561)         (28.8812, 46.2483, 44.17)
+                                                                                    (25.411, 50.158, 20.812)
+

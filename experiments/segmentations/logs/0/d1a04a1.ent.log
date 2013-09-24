@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/a0/d1a04a1.ent
+Number of residues: 67
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 14707.5
+Null Model Fit: 2886.95 bits.
+Bits per residue: 43.7416
+
+Bezier model fit: 2754.33 bits.
+Bits per residue: 41.7323
+
+# of segments: 8
+Internal segmentation:
+0-->7-->20-->31-->33-->49-->52-->64-->66
+
+CPU time used: 0.5 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 150          A 157              8        301.214         (-1.16, 9.203, 25.522)
+                                                                                    (2.24, -0.071, 40.228)
+
+              2          A 157          A 170             14        529.068         (2.24, -0.071, 40.228)
+                                                                                    (20.055, 6.944, 33.661)
+
+              3          A 170          A 181             12          470.4         (20.055, 6.944, 33.661)
+                                                                                    (16.594, -3.688, 47.477)
+
+              4          A 181          A 183              3        91.5203         (16.594, -3.688, 47.477)
+                                                                                    (17.492, -8.442, 42.437)
+
+              5          A 183          A 199             17        641.208         (17.492, -8.442, 42.437)
+                                                                                    (4.456, 2.707, 25.466)
+
+              6          A 199          A 202              4        136.511         (4.456, 2.707, 25.466)
+                                                                                    (13.472, 2.497, 25.3)
+
+              7          A 202          A 214             13         492.89         (13.472, 2.497, 25.3)
+                                                                                    (8.218, 16.207, 35.243)
+
+              8          A 214          A 216              3        91.5203         (8.218, 16.207, 35.243)
+                                                                                    (8.337, 13.262, 39.409)
+

@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/di/d1diva1.ent
+Number of residues: 94
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 23867.7
+Null Model Fit: 4132.93 bits.
+Bits per residue: 44.4401
+
+Bezier model fit: 3772.1 bits.
+Bits per residue: 40.5603
+
+# of segments: 6
+Internal segmentation:
+0-->18-->30-->49-->67-->80-->93
+
+CPU time used: 4.88 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 56           A 74             19        708.985         (55.812, 6.385, 54.012)
+                                                                                    (72.259, 13.117, 75.874)
+
+              2           A 74           A 86             13        478.032         (72.259, 13.117, 75.874)         (56.7141, 18.1339, 98.6522)
+                                                                                    (70.858, 4.791, 104.103)
+
+              3           A 86          A 105             20        781.872         (70.858, 4.791, 104.103)         (47.2504, 4.94359, 83.4778)
+                                                                                    (63.009, 19.824, 82.229)
+
+              4          A 105          A 123             19        751.169         (63.009, 19.824, 82.229)         (48.6875, -4.88039, 68.9811)
+                                                                                    (66.902, 4.641, 96.503)
+
+              5          A 123          A 136             14        545.425         (66.902, 4.641, 96.503)
+                                                                                    (63.088, -1.837, 66.966)
+
+              6          A 136          A 149             14         506.62         (63.088, -1.837, 66.966)         (73.7685, 8.43133, 84.3909)
+                                                                                    (64.651, 18.901, 101.897)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/g8/d2g81i1.ent
+Number of residues: 56
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 12930.1
+Null Model Fit: 2395.57 bits.
+Bits per residue: 43.5558
+
+Bezier model fit: 2287.72 bits.
+Bits per residue: 41.5948
+
+# of segments: 7
+Internal segmentation:
+0-->2-->10-->22-->29-->37-->48-->55
+
+CPU time used: 0.39 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           I 17           I 19              3        91.1487         (10.842, -17.076, -14.636)
+                                                                                    (15.589, -12.071, -16.04)
+
+              2           I 19           I 27              9         335.03         (15.589, -12.071, -16.04)
+                                                                                    (34.653, -19.132, -16.211)
+
+              3           I 27           I 39             13        486.187         (34.653, -19.132, -16.211)
+                                                                                    (9.469, -4.384, -6.224)
+
+              4           I 39           I 46              8        300.154         (9.469, -4.384, -6.224)
+                                                                                    (14.404, -17.641, -7.269)
+
+              5           I 46           I 54              9         333.11         (14.404, -17.641, -7.269)
+                                                                                    (11.636, -0.629, 2.62)
+
+              6           I 54           I 65             12        450.133         (11.636, -0.629, 2.62)
+                                                                                    (23.38, -20.633, -11.764)
+
+              7           I 65           I 72              8        291.952         (23.38, -20.633, -11.764)
+                                                                                    (11.259, -10.664, -19.344)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ld/d1ldda_.ent
+Number of residues: 74
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 13248.3
+Null Model Fit: 3182.13 bits.
+Bits per residue: 43.5909
+
+Bezier model fit: 2997.06 bits.
+Bits per residue: 41.0556
+
+# of segments: 7
+Internal segmentation:
+0-->1-->20-->25-->45-->60-->67-->73
+
+CPU time used: 3.52 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 773          A 774              2        46.6279         (54.097, 37.275, 48.351)
+                                                                                    (56.159, 39.629, 46.216)
+
+              2          A 774          A 793             20         766.88         (56.159, 39.629, 46.216)         (47.3113, 42.2545, 29.3803)
+                                                                                    (33.502, 48.87, 37.256)
+
+              3          A 793          A 798              6         219.58         (33.502, 48.87, 37.256)
+                                                                                    (38.007, 40.949, 48.717)
+
+              4          A 798          A 818             21        813.006         (38.007, 40.949, 48.717)         (49.7267, 26.2209, 26.1569)
+                                                                                    (47.701, 37.657, 50.983)
+
+              5          A 818          A 833             16        600.452         (47.701, 37.657, 50.983)
+                                                                                    (46.991, 58.078, 39.866)
+
+              6          A 833          A 840              8        293.143         (46.991, 58.078, 39.866)
+                                                                                    (33.144, 52.9, 51.471)
+
+              7          A 840          A 846              7        257.366         (33.144, 52.9, 51.471)         (38.3236, 46.456, 43.3581)
+                                                                                    (41.326, 55.82, 36.212)
+

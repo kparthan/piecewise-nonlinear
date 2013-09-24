@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ck/d1ckma1.ent
+Number of residues: 89
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 39167.5
+Null Model Fit: 3973.62 bits.
+Bits per residue: 45.1547
+
+Bezier model fit: 3641.61 bits.
+Bits per residue: 41.3819
+
+# of segments: 7
+Internal segmentation:
+0-->12-->21-->22-->38-->47-->66-->88
+
+CPU time used: 4.61 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 239          A 251             13        499.189         (29.921, 48.816, 42.997)         (45.3169, 33.1593, 28.8919)
+                                                                                    (47.241, 28.636, 47.196)
+
+              2          A 251          A 260             10        372.978         (47.241, 28.636, 47.196)         (43.3483, 40.6724, 37.7923)
+                                                                                    (53.009, 43.623, 26.382)
+
+              3          A 260          A 261              2        48.1918         (53.009, 43.623, 26.382)
+                                                                                    (55.131, 41.54, 28.635)
+
+              4          A 261          A 277             17        669.712         (55.131, 41.54, 28.635)         (39.4127, 33.826, 60.0934)
+                                                                                    (45.94, 28.316, 35.545)
+
+              5          A 277          A 286             10        361.953         (45.94, 28.316, 35.545)         (30.6267, 37.5407, 36.2391)
+                                                                                    (36.749, 45.191, 52.089)
+
+              6          A 286          A 305             20          793.4         (36.749, 45.191, 52.089)         (33.3102, 14.5274, 27.6456)
+                                                                                    (44.549, 48.534, 32.296)
+
+              7          A 305          A 327             23        896.185         (44.549, 48.534, 32.296)         (31.8655, 50.0267, 50.0541)
+                                                                                    (20.239, 67.366, 37.582)
+

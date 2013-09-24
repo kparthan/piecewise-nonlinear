@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/d8/d2d8qa1.ent
+Number of residues: 57
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 23325.9
+Null Model Fit: 2486.79 bits.
+Bits per residue: 44.407
+
+Bezier model fit: 2314.14 bits.
+Bits per residue: 41.3238
+
+# of segments: 6
+Internal segmentation:
+0-->1-->12-->23-->31-->52-->56
+
+CPU time used: 2.46 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 8            A 9              2        47.4441         (-15.499, -27.198, 20.797)
+                                                                                    (-17.387, -24.751, 18.579)
+
+              2            A 9           A 20             12         440.88         (-17.387, -24.751, 18.579)         (-9.98718, -21.1496, -0.956786)
+                                                                                    (-14.433, -2.541, -3.974)
+
+              3           A 20           A 31             12        455.114         (-14.433, -2.541, -3.974)         (-13.2636, -21.8123, -7.71224)
+                                                                                    (3.266, -3.631, -2.232)
+
+              4           A 31           A 39              9        344.172         (3.266, -3.631, -2.232)         (-7.08618, -11.4714, 7.71652)
+                                                                                    (-8.029, -7.001, -10.324)
+
+              5           A 39           A 60             22        849.742         (-8.029, -7.001, -10.324)         (-9.56375, 18.0962, 1.62145)
+                                                                                    (7.914, -13.401, 5.821)
+
+              6           A 60           A 64              5        176.784         (7.914, -13.401, 5.821)
+                                                                                    (3.436, -25.063, 1.86)
+

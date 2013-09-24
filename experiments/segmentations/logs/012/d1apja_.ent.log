@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ap/d1apja_.ent
+Number of residues: 74
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 21043.7
+Null Model Fit: 3230.87 bits.
+Bits per residue: 44.2585
+
+Bezier model fit: 3087.61 bits.
+Bits per residue: 42.2961
+
+# of segments: 6
+Internal segmentation:
+0-->3-->15-->28-->43-->52-->73
+
+CPU time used: 3.44 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1         A 2055              4        138.062         (-32.499, 18.323, 4.907)
+                                                                                    (-39.889, 15.552, 1.703)
+
+              2         A 2055         A 2067             13        503.065         (-39.889, 15.552, 1.703)         (-46.5316, 22.4061, 24.0032)
+                                                                                    (-46.135, 0.914, 21.652)
+
+              3         A 2067         A 2080             14        553.749         (-46.135, 0.914, 21.652)         (-53.1582, 29.1737, 23.4475)
+                                                                                    (-39.644, 13.639, 11.746)
+
+              4         A 2080         A 2095             16        629.988         (-39.644, 13.639, 11.746)         (-29.0203, 16.5457, 26.6466)
+                                                                                    (-49.948, 8.977, 12.892)
+
+              5         A 2095         A 2104             10        380.326         (-49.948, 8.977, 12.892)
+                                                                                    (-29.552, 2.616, 15.804)
+
+              6         A 2104         A 2125             22        882.425         (-29.552, 2.616, 15.804)         (-28.0984, 18.4226, 5.88395)
+                                                                                    (-34.468, 26.727, 28.143)
+

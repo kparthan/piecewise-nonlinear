@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/hf/d2hfqa1.ent
+Number of residues: 85
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 22220.3
+Null Model Fit: 3724.3 bits.
+Bits per residue: 44.3369
+
+Bezier model fit: 3436.1 bits.
+Bits per residue: 40.906
+
+# of segments: 6
+Internal segmentation:
+0-->13-->24-->27-->42-->65-->84
+
+CPU time used: 4.26 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 14             14        511.644         (12.866, -0.201, -9.543)         (-3.28977, 10.0597, 2.84121)
+                                                                                    (-11.223, -1.674, 18.67)
+
+              2           A 14           A 25             12        442.306         (-11.223, -1.674, 18.67)         (2.18366, 1.46938, 10.8878)
+                                                                                    (5.119, 0.588, -8.727)
+
+              3           A 25           A 28              4        138.297         (5.119, 0.588, -8.727)
+                                                                                    (-1.802, 6.483, -8.751)
+
+              4           A 28           A 43             16        602.589         (-1.802, 6.483, -8.751)
+                                                                                    (-7.687, -10.374, 4.864)
+
+              5           A 43           A 66             24         948.29         (-7.687, -10.374, 4.864)         (-33.172, 11.501, 10.3661)
+                                                                                    (12.49, -8.983, -1.858)         (23.4061, 19.7447, -6.57904)
+
+              6           A 66           A 85             20        792.977         (12.49, -8.983, -1.858)         (-2.80842, -3.85488, -15.9165)
+                                                                                    (4.045, -5.716, 18.092)
+

@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/kj/d1kjqa1.ent
+Number of residues: 74
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 14736
+Null Model Fit: 3193.34 bits.
+Bits per residue: 43.7444
+
+Bezier model fit: 2971.85 bits.
+Bits per residue: 40.7103
+
+# of segments: 6
+Internal segmentation:
+0-->14-->28-->41-->54-->72-->73
+
+CPU time used: 3.48 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 319          A 333             15        562.835         (-5.468, 39.561, 36.245)         (13.4058, 56.8023, 20.5779)
+                                                                                    (24.833, 41.486, 13.533)
+
+              2          A 333          A 347             15        574.227         (24.833, 41.486, 13.533)         (24.7038, 44.5668, 40.0935)
+                                                                                    (5.686, 39.216, 38.39)
+
+              3          A 347          A 360             14        531.835         (5.686, 39.216, 38.39)         (20.7814, 29.3876, 13.4292)
+                                                                                    (17.776, 50.778, 12.533)
+
+              4          A 360          A 373             14        536.202         (17.776, 50.778, 12.533)         (10.1983, 34.1345, 29.4877)
+                                                                                    (-3.88, 47.287, 37.99)
+
+              5          A 373          A 391             19        719.974         (-3.88, 47.287, 37.99)
+                                                                                    (24.699, 46.714, 22.619)
+
+              6          A 391          A 392              2        46.7815         (24.699, 46.714, 22.619)
+                                                                                    (26.128, 45.438, 19.407)
+

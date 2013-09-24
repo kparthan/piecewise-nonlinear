@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/hy/d2hyja2.ent
+Number of residues: 118
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 36191.9
+Null Model Fit: 5269.77 bits.
+Bits per residue: 45.0407
+
+Bezier model fit: 4721.86 bits.
+Bits per residue: 40.3577
+
+# of segments: 8
+Internal segmentation:
+0-->1-->20-->37-->40-->68-->73-->98-->117
+
+CPU time used: 6.37 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 83           A 84              2        48.0778         (7.081, 18.457, 48.422)
+                                                                                    (5.372, 21.743, 47.439)
+
+              2           A 84          A 103             20        757.729         (5.372, 21.743, 47.439)
+                                                                                    (22.811, 26.854, 29.299)
+
+              3          A 103          A 120             18        695.016         (22.811, 26.854, 29.299)
+                                                                                    (7.612, 45.757, 21.618)
+
+              4          A 120          A 123              4        140.409         (7.612, 45.757, 21.618)
+                                                                                    (1.471, 39.71, 17.549)
+
+              5          A 123          A 151             29        1086.37         (1.471, 39.71, 17.549)         (7.22636, 27.1193, 35.45)
+                                                                                    (3.56, 27.803, 57.688)
+
+              6          A 151          A 156              6        221.708         (3.56, 27.803, 57.688)
+                                                                                    (1.922, 38.065, 56.254)
+
+              7          A 156          A 181             26        999.812         (1.922, 38.065, 56.254)         (14.9285, 38.9266, 31.5738)
+                                                                                    (30.743, 35.897, 31.107)
+
+              8          A 181          A 200             20        772.732         (30.743, 35.897, 31.107)         (23.0976, 30.9419, 51.6148)
+                                                                                    (9.341, 39.582, 51.005)
+

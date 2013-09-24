@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/fc/d2fcfa1.ent
+Number of residues: 82
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 18556.5
+Null Model Fit: 3570.24 bits.
+Bits per residue: 44.077
+
+Bezier model fit: 3338.61 bits.
+Bits per residue: 41.2174
+
+# of segments: 7
+Internal segmentation:
+0-->10-->21-->22-->37-->50-->70-->81
+
+CPU time used: 4.15 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1         A 1148         A 1158             11        386.849         (12.205, -8.226, 8.896)         (8.5671, -2.08651, -6.16927)
+                                                                                    (2.44, 11.229, -14.204)
+
+              2         A 1158         A 1170             12        456.173         (2.44, 11.229, -14.204)         (-7.63763, 3.0094, 2.005)
+                                                                                    (6.907, 12.397, 16.713)
+
+              3         A 1170         A 1184              2        47.1141         (6.907, 12.397, 16.713)
+                                                                                    (6.21, 5.538, 13.919)
+
+              4         A 1184         A 1199             16        636.595         (6.21, 5.538, 13.919)         (-13.8975, 5.59252, -9.70657)
+                                                                                    (1.313, -3.18, -5.931)
+
+              5         A 1199         A 1212             14        540.303         (1.313, -3.18, -5.931)         (-5.26339, -2.1216, 19.1883)
+                                                                                    (14.901, 5.235, -0.364)
+
+              6         A 1212         A 1232             21        820.554         (14.901, 5.235, -0.364)         (3.3457, 17.6233, 23.3697)
+                                                                                    (12.424, 9.75, -7.134)
+
+              7         A 1232         A 1243             12        451.021         (12.424, 9.75, -7.134)
+                                                                                    (2.858, -7.341, 13.996)
+

@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/pr/d1prtb2.ent
+Number of residues: 86
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 20164.5
+Null Model Fit: 3756.73 bits.
+Bits per residue: 44.1969
+
+Bezier model fit: 3524.85 bits.
+Bits per residue: 41.4689
+
+# of segments: 8
+Internal segmentation:
+0-->16-->28-->46-->47-->54-->62-->72-->85
+
+CPU time used: 4.4 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            B 4           B 20             17        660.423         (-17.824, 42.69, 16.154)         (-16.1056, 15.337, 33.6488)
+                                                                                    (7.932, 27.828, 20.508)
+
+              2           B 20           B 32             13        496.665         (7.932, 27.828, 20.508)         (-8.47622, 13.5095, 11.6763)
+                                                                                    (-5.393, 39.498, 21.777)
+
+              3           B 32           B 50             19        734.455         (-5.393, 39.498, 21.777)         (-22.5744, 34.5245, 30.719)
+                                                                                    (0.881, 31.346, 38.696)
+
+              4           B 50           B 51              2         47.234         (0.881, 31.346, 38.696)
+                                                                                    (4.023, 33.398, 39.159)
+
+              5           B 51           B 58              8        291.394         (4.023, 33.398, 39.159)
+                                                                                    (-0.681, 35.191, 18.352)
+
+              6           B 58           B 66              9        331.766         (-0.681, 35.191, 18.352)
+                                                                                    (1.531, 38.266, 40.096)
+
+              7           B 66           B 76             11        421.423         (1.531, 38.266, 40.096)         (-5.78905, 47.0458, 29.6376)
+                                                                                    (2.118, 38.751, 14.923)
+
+              8           B 76           B 89             14        541.494         (2.118, 38.751, 14.923)         (16.6128, 32.4944, 31.2461)
+                                                                                    (-8.91, 24.23, 19.555)
+

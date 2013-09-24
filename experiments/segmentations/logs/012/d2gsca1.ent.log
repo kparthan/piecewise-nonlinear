@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/gs/d2gsca1.ent
+Number of residues: 113
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 34277.3
+Null Model Fit: 5035.78 bits.
+Bits per residue: 44.9623
+
+Bezier model fit: 4455.1 bits.
+Bits per residue: 39.7777
+
+# of segments: 7
+Internal segmentation:
+0-->5-->26-->54-->55-->81-->84-->112
+
+CPU time used: 5.95 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 9           A 14              6        224.002         (32.57, 90.232, 34.492)
+                                                                                    (27.91, 84.107, 41.077)
+
+              2           A 14           A 35             22        833.845         (27.91, 84.107, 41.077)         (37.0031, 71.8957, 40.0108)
+                                                                                    (41.09, 54.691, 28.721)
+
+              3           A 35           A 63             29        1125.36         (41.09, 54.691, 28.721)
+                                                                                    (21.364, 90.052, 29.729)
+
+              4           A 63           A 68              2        47.9994         (21.364, 90.052, 29.729)
+                                                                                    (15.953, 85.495, 28.717)
+
+              5           A 68           A 94             27        1002.41         (15.953, 85.495, 28.717)         (21.6253, 66.2725, 33.7888)
+                                                                                    (34.484, 50.948, 35.402)
+
+              6           A 94           A 97              4        140.173         (34.484, 50.948, 35.402)
+                                                                                    (36.729, 54.665, 41.227)
+
+              7           A 97          A 125             29        1081.31         (36.729, 54.665, 41.227)         (24.0064, 71.9299, 45.279)
+                                                                                    (12.477, 89.066, 39.956)
+

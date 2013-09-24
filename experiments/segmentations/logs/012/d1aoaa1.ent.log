@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ao/d1aoaa1.ent
+Number of residues: 131
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 38561.9
+Null Model Fit: 5867.19 bits.
+Bits per residue: 45.1322
+
+Bezier model fit: 5318.56 bits.
+Bits per residue: 40.912
+
+# of segments: 7
+Internal segmentation:
+0-->21-->40-->68-->87-->102-->128-->130
+
+CPU time used: 7.26 secs.
+Wall clock time elapsed: 7 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 121          A 142             22        862.761         (10.781, 41.282, 44.576)         (24.5607, 57.1408, 30.7839)
+                                                                                    (35.779, 35.967, 32.557)
+
+              2          A 142          A 161             20        785.586         (35.779, 35.967, 32.557)         (6.59351, 45.8688, 27.0296)
+                                                                                    (24.71, 31.067, 40.209)
+
+              3          A 161          A 189             29        1162.48         (24.71, 31.067, 40.209)         (50.0588, 58.9158, 48.3858)
+                                                                                    (31.692, 21.357, 38.645)
+
+              4          A 189          A 208             20        753.501         (31.692, 21.357, 38.645)
+                                                                                    (30.636, 44.904, 55.588)
+
+              5          A 208          A 223             16        637.458         (30.636, 44.904, 55.588)         (21.9089, 22.461, 51.1479)
+                                                                                    (16.421, 33.47, 45.304)
+
+              6          A 223          A 249             27        1022.47         (16.421, 33.47, 45.304)
+                                                                                    (41.1, 69.496, 48.864)
+
+              7          A 249          A 251              3        94.3016         (41.1, 69.496, 48.864)
+                                                                                    (35.668, 70.212, 50.603)
+

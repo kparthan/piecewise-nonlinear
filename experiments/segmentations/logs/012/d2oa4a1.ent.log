@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/oa/d2oa4a1.ent
+Number of residues: 93
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 34801.3
+Null Model Fit: 4138.55 bits.
+Bits per residue: 44.9842
+
+Bezier model fit: 3838.16 bits.
+Bits per residue: 41.7191
+
+# of segments: 7
+Internal segmentation:
+0-->8-->15-->28-->35-->61-->76-->92
+
+CPU time used: 4.67 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 9              9        347.193         (8.899, 21.492, 4.816)         (16.403, 8.70807, 0.446614)
+                                                                                    (8.359, 15.887, -11.631)
+
+              2            A 9           A 16              8        291.557         (8.359, 15.887, -11.631)
+                                                                                    (7.925, -3.524, -7.717)
+
+              3           A 16           A 29             14        549.138         (7.925, -3.524, -7.717)         (-1.52654, 12.4011, -17.6552)
+                                                                                    (-10.419, 6.05, 2.041)
+
+              4           A 29           A 36              8        299.472         (-10.419, 6.05, 2.041)         (-21.7953, 4.08, -6.20276)
+                                                                                    (-8.674, -6.5, -5.806)
+
+              5           A 36           A 62             27        1057.49         (-8.674, -6.5, -5.806)         (15.1217, 12.3065, 3.1205)
+                                                                                    (-9.982, 2.164, 6.915)
+
+              6           A 62           A 77             16         622.67         (-9.982, 2.164, 6.915)
+                                                                                    (4.189, -17.039, 1.369)
+
+              7           A 77           A 93             17        670.639         (4.189, -17.039, 1.369)
+                                                                                    (14.955, 0.469, 4.082)
+

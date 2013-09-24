@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/cy/d2cy3a_.ent
+Number of residues: 118
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 49113.4
+Null Model Fit: 5321.3 bits.
+Bits per residue: 45.4812
+
+Bezier model fit: 4860.21 bits.
+Bits per residue: 41.5403
+
+# of segments: 7
+Internal segmentation:
+0-->12-->22-->40-->56-->82-->101-->117
+
+CPU time used: 6.42 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 13             13        498.217         (18.875, 40.09, 16.091)         (14.8319, 39.2883, -9.18173)
+                                                                                    (22.307, 19.928, 7.633)
+
+              2           A 13           A 23             11        420.795         (22.307, 19.928, 7.633)
+                                                                                    (17.883, -0.527, -3.8)
+
+              3           A 23           A 41             19        723.775         (17.883, -0.527, -3.8)         (20.7198, 34.0631, -3.65546)
+                                                                                    (3.691, 40.038, 9.314)
+
+              4           A 41           A 57             17        679.279         (3.691, 40.038, 9.314)         (11.5888, 24.7431, 26.5735)
+                                                                                    (19.912, 34.871, 20.013)
+
+              5           A 57           A 83             27        1098.88         (19.912, 34.871, 20.013)
+                                                                                    (13.402, 15.027, 12.252)
+
+              6           A 83          A 102             20        765.659         (13.402, 15.027, 12.252)
+                                                                                    (-8.873, 31.449, 3.632)
+
+              7          A 102          A 118             17        673.608         (-8.873, 31.449, 3.632)
+                                                                                    (18.997, 23.62, -8.791)
+

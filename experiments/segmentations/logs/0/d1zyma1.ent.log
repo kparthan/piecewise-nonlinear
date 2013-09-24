@@ -1,0 +1,49 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/zy/d1zyma1.ent
+Number of residues: 123
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 43321.4
+Null Model Fit: 5526.62 bits.
+Bits per residue: 45.3001
+
+Bezier model fit: 4921.3 bits.
+Bits per residue: 40.3385
+
+# of segments: 10
+Internal segmentation:
+0-->6-->12-->41-->45-->73-->78-->96-->98-->121-->122
+
+CPU time used: 1.11 secs.
+Wall clock time elapsed: 1 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 22           A 28              7        257.312         (11.776, 13.521, 84.496)
+                                                                                    (2.544, 19.717, 69.907)
+
+              2           A 28           A 34              7        261.328         (2.544, 19.717, 69.907)
+                                                                                    (9.852, 16.133, 55.133)
+
+              3           A 34           A 63             30        1127.39         (9.852, 16.133, 55.133)
+                                                                                    (11.584, -14.772, 89.795)
+
+              4           A 63           A 67              5        182.054         (11.584, -14.772, 89.795)
+                                                                                    (3.83, -16.311, 87.546)
+
+              5           A 67           A 95             29        1111.92         (3.83, -16.311, 87.546)
+                                                                                    (-2.173, 11.964, 58.327)
+
+              6           A 95          A 100              6        222.911         (-2.173, 11.964, 58.327)
+                                                                                    (5.791, 10.789, 67.58)
+
+              7          A 100          A 118             19          710.8         (5.791, 10.789, 67.58)
+                                                                                    (-16.839, 3.654, 84.43)
+
+              8          A 118          A 120              3        94.6374         (-16.839, 3.654, 84.43)
+                                                                                    (-15.021, 0.637, 88.312)
+
+              9          A 120          A 143             24        904.615         (-15.021, 0.637, 88.312)
+                                                                                    (15.328, 10.007, 74.873)
+
+             10          A 143          A 144              2        48.3372         (15.328, 10.007, 74.873)
+                                                                                    (14.568, 11.107, 78.516)
+

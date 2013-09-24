@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ht/d1ht6a1.ent
+Number of residues: 57
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 12137.4
+Null Model Fit: 2434.01 bits.
+Bits per residue: 43.4645
+
+Bezier model fit: 2324.82 bits.
+Bits per residue: 41.5147
+
+# of segments: 6
+Internal segmentation:
+0-->2-->13-->21-->40-->50-->56
+
+CPU time used: 2.48 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 348          A 350              3        90.9661         (27.876, 16.695, -4.678)
+                                                                                    (26.253, 14.62, 1.921)
+
+              2          A 350          A 361             12        450.536         (26.253, 14.62, 1.921)         (35.7533, 0.959297, -10.4561)
+                                                                                    (51.765, 9.537, 3.929)
+
+              3          A 361          A 369              9        328.367         (51.765, 9.537, 3.929)
+                                                                                    (30.496, 10.653, -7.573)
+
+              4          A 369          A 388             20        795.429         (30.496, 10.653, -7.573)         (64.4916, 20.1296, 3.34445)
+                                                                                    (41.221, 9.294, -17.654)
+
+              5          A 388          A 398             11        408.769         (41.221, 9.294, -17.654)         (37.9987, 29.8788, -13.1267)
+                                                                                    (49.339, 21.131, -1.277)
+
+              6          A 398          A 404              7        250.755         (49.339, 21.131, -1.277)         (40.8553, 20.209, -8.17638)
+                                                                                    (35.337, 15.169, -15.423)
+

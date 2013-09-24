@@ -1,0 +1,46 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ml/d1mlia_.ent
+Number of residues: 96
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 41537.5
+Null Model Fit: 4297.75 bits.
+Bits per residue: 45.2395
+
+Bezier model fit: 3955.37 bits.
+Bits per residue: 41.6355
+
+# of segments: 9
+Internal segmentation:
+0-->13-->17-->37-->47-->58-->74-->88-->93-->95
+
+CPU time used: 0.82 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 14             14        541.517         (15.625, 13.63, 47.431)
+                                                                                    (-11.529, 10.332, 21.363)
+
+              2           A 14           A 18              5        179.552         (-11.529, 10.332, 21.363)
+                                                                                    (-15.041, 16.303, 29.881)
+
+              3           A 18           A 38             21        796.928         (-15.041, 16.303, 29.881)
+                                                                                    (7.07, 21.391, 47.596)
+
+              4           A 38           A 48             11        414.592         (7.07, 21.391, 47.596)
+                                                                                    (7.721, 21.768, 21.385)
+
+              5           A 48           A 59             12         447.82         (7.721, 21.768, 21.385)
+                                                                                    (11.867, 12.101, 51.334)
+
+              6           A 59           A 75             17         668.71         (11.867, 12.101, 51.334)
+                                                                                    (-3.188, 5.866, 34.216)
+
+              7           A 75           A 89             15        584.724         (-3.188, 5.866, 34.216)
+                                                                                    (31.233, 21.246, 40.651)
+
+              8           A 89           A 94              6         227.01         (31.233, 21.246, 40.651)
+                                                                                    (22.39, 22.616, 48.998)
+
+              9           A 94           A 96              3         94.516         (22.39, 22.616, 48.998)
+                                                                                    (20.171, 22.477, 43.777)
+

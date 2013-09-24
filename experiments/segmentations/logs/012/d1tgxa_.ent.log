@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/tg/d1tgxa_.ent
+Number of residues: 60
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 14335.1
+Null Model Fit: 2578.57 bits.
+Bits per residue: 43.7046
+
+Bezier model fit: 2472.78 bits.
+Bits per residue: 41.9115
+
+# of segments: 8
+Internal segmentation:
+0-->6-->7-->16-->28-->35-->46-->55-->59
+
+CPU time used: 2.83 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 7              7        259.528         (24.271, 20.923, 23.442)
+                                                                                    (23.974, 27.735, 7.168)
+
+              2            A 7            A 8              2        46.7417         (23.974, 27.735, 7.168)
+                                                                                    (27.395, 29.335, 8.06)
+
+              3            A 8           A 17             10        373.491         (27.395, 29.335, 8.06)
+                                                                                    (13.758, 21.865, 25.499)
+
+              4           A 17           A 29             13        494.685         (13.758, 21.865, 25.499)
+                                                                                    (21.18, 10.111, -1.606)
+
+              5           A 29           A 36              8        302.119         (21.18, 10.111, -1.606)
+                                                                                    (20.085, 19.432, 9.969)
+
+              6           A 36           A 47             12        449.381         (20.085, 19.432, 9.969)         (8.95622, 16.8297, 29.4746)
+                                                                                    (10.593, 4.095, 2.796)
+
+              7           A 47           A 56             10        365.478         (10.593, 4.095, 2.796)
+                                                                                    (26.553, 14.515, 21.903)
+
+              8           A 56           A 60              5        181.358         (26.553, 14.515, 21.903)
+                                                                                    (24.784, 14.945, 13.224)
+

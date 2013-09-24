@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/lo/d3loca1.ent
+Number of residues: 75
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 27290.4
+Null Model Fit: 3302.88 bits.
+Bits per residue: 44.6335
+
+Bezier model fit: 3060.55 bits.
+Bits per residue: 41.3588
+
+# of segments: 6
+Internal segmentation:
+0-->1-->23-->38-->49-->68-->74
+
+CPU time used: 0.59 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 11           A 12              2        47.6705         (7.358, 53.425, -4.137)
+                                                                                    (7.518, 51.03, -1.108)
+
+              2           A 12           A 34             23        879.717         (7.518, 51.03, -1.108)
+                                                                                    (-13.864, 28.722, -6.099)
+
+              3           A 34           A 49             16        636.077         (-13.864, 28.722, -6.099)
+                                                                                    (1.467, 36.751, 5.168)
+
+              4           A 49           A 60             12        477.567         (1.467, 36.751, 5.168)
+                                                                                    (-12.741, 41.044, 2.792)
+
+              5           A 60           A 79             20        758.579         (-12.741, 41.044, 2.792)
+                                                                                    (-7.235, 48.14, -26.248)
+
+              6           A 79           A 85              7        260.942         (-7.235, 48.14, -26.248)
+                                                                                    (-13.888, 58.216, -33.53)
+

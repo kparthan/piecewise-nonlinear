@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/du/d1duga1.ent
+Number of residues: 140
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 53897.9
+Null Model Fit: 6340.53 bits.
+Bits per residue: 45.6153
+
+Bezier model fit: 5684.59 bits.
+Bits per residue: 40.8964
+
+# of segments: 7
+Internal segmentation:
+0-->3-->31-->57-->84-->98-->125-->139
+
+CPU time used: 7.8 secs.
+Wall clock time elapsed: 7 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 81           A 84              4        142.132         (18.22, 47.955, 7.863)
+                                                                                    (24.414, 43.137, 3.515)
+
+              2           A 84          A 112             29        1097.38         (24.414, 43.137, 3.515)         (26.2253, 59.6599, 14.1169)
+                                                                                    (22.042, 70.353, 38.889)
+
+              3          A 112          A 138             27        1035.17         (22.042, 70.353, 38.889)         (37.9504, 71.665, 20.9733)
+                                                                                    (26.182, 64.683, -2.234)
+
+              4          A 138          A 165             28        1109.27         (26.182, 64.683, -2.234)         (8.59079, 48.5716, 12.466)
+                                                                                    (22.252, 76.054, 21.56)
+
+              5          A 165          A 179             15        584.845         (22.252, 76.054, 21.56)         (30.3841, 76.2698, 2.09086)
+                                                                                    (16.345, 69.143, 8.76)
+
+              6          A 179          A 206             28        1112.73         (16.345, 69.143, 8.76)         (-9.18936, 64.471, 1.35536)
+                                                                                    (12.182, 66.9, 36.33)
+
+              7          A 206          A 220             15        603.068         (12.182, 66.9, 36.33)
+                                                                                    (13.589, 77.822, 21.572)
+

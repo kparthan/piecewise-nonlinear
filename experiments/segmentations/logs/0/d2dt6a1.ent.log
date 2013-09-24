@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/dt/d2dt6a1.ent
+Number of residues: 63
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 10756.4
+Null Model Fit: 2684 bits.
+Bits per residue: 43.2903
+
+Bezier model fit: 2551.63 bits.
+Bits per residue: 41.1554
+
+# of segments: 7
+Internal segmentation:
+0-->16-->29-->30-->38-->40-->55-->62
+
+CPU time used: 0.46 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 48           A 64             17        646.062         (0.56, 10.559, -5.797)
+                                                                                    (-3.025, -10.959, 0.783)
+
+              2           A 64           A 77             14        528.868         (-3.025, -10.959, 0.783)
+                                                                                    (15.742, 0.976, -2.257)
+
+              3           A 77           A 78              2        46.3273         (15.742, 0.976, -2.257)
+                                                                                    (13.146, 2.776, -4.424)
+
+              4           A 78           A 86              9        339.092         (13.146, 2.776, -4.424)
+                                                                                    (7.213, 2.269, 9.076)
+
+              5           A 86           A 88              3        90.6176         (7.213, 2.269, 9.076)
+                                                                                    (7.26, 6.898, 6.21)
+
+              6           A 88          A 103             16        606.752         (7.26, 6.898, 6.21)
+                                                                                    (-13.873, -5.273, 3.793)
+
+              7          A 103          A 110              8        293.915         (-13.873, -5.273, 3.793)
+                                                                                    (-9.995, 8.118, -9.9)
+

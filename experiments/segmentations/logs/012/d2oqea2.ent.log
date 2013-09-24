@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/oq/d2oqea2.ent
+Number of residues: 98
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 33595.7
+Null Model Fit: 4358.53 bits.
+Bits per residue: 44.9333
+
+Bezier model fit: 4016.56 bits.
+Bits per residue: 41.4079
+
+# of segments: 7
+Internal segmentation:
+0-->12-->28-->42-->53-->69-->81-->97
+
+CPU time used: 5.07 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 18           A 30             13         510.45         (76.819, -39.379, -1.475)         (75.5334, -16.5884, 11.0496)
+                                                                                    (70.7, -34.937, -7.751)
+
+              2           A 30           A 46             17        651.747         (70.7, -34.937, -7.751)
+                                                                                    (58.666, -55.985, -3.239)
+
+              3           A 46           A 60             15        578.702         (58.666, -55.985, -3.239)         (56.2629, -31.7587, -11.1479)
+                                                                                    (67.084, -28.495, 13.93)
+
+              4           A 60           A 71             12        461.953         (67.084, -28.495, 13.93)
+                                                                                    (81.828, -25.3, 17.134)
+
+              5           A 71           A 87             17        645.724         (81.828, -25.3, 17.134)         (67.4241, -36.232, 2.29363)
+                                                                                    (46.423, -50.212, -3.501)
+
+              6           A 87           A 99             13        494.401         (46.423, -50.212, -3.501)         (51.8046, -36.1719, 9.06981)
+                                                                                    (75.571, -41.024, 5.313)
+
+              7           A 99          A 115             17        673.587         (75.571, -41.024, 5.313)         (46.0402, -52.1433, 15.4531)
+                                                                                    (51.073, -32.12, -2.786)
+

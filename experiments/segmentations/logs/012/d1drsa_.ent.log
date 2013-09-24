@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/dr/d1drsa_.ent
+Number of residues: 59
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16192
+Null Model Fit: 2545.06 bits.
+Bits per residue: 43.8803
+
+Bezier model fit: 2442.91 bits.
+Bits per residue: 42.1192
+
+# of segments: 7
+Internal segmentation:
+0-->8-->19-->28-->31-->44-->54-->58
+
+CPU time used: 2.63 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 9              9         335.33         (38.175, 24.127, 66.361)
+                                                                                    (40.455, 35.106, 44.823)
+
+              2            A 9           A 20             12        456.393         (40.455, 35.106, 44.823)         (37.8709, 17.3227, 55.0845)
+                                                                                    (43.87, 27.443, 71.838)
+
+              3           A 20           A 29             10        373.835         (43.87, 27.443, 71.838)         (35.002, 40.419, 60.3218)
+                                                                                    (44.989, 45.335, 52.327)
+
+              4           A 29           A 32              4        136.928         (44.989, 45.335, 52.327)
+                                                                                    (38.952, 41.092, 52.381)
+
+              5           A 32           A 45             14        534.656         (38.952, 41.092, 52.381)         (50.0209, 22.2878, 73.1861)
+                                                                                    (43.444, 47.952, 70.233)
+
+              6           A 45           A 55             11        425.773         (43.444, 47.952, 70.233)
+                                                                                    (34.587, 27.458, 67.377)
+
+              7           A 55           A 59              5        179.998         (34.587, 27.458, 67.377)
+                                                                                    (31.289, 33.885, 61.46)
+

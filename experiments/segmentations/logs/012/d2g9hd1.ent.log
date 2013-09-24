@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/g9/d2g9hd1.ent
+Number of residues: 83
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 32952.4
+Null Model Fit: 3682.25 bits.
+Bits per residue: 44.9054
+
+Bezier model fit: 3403.62 bits.
+Bits per residue: 41.5076
+
+# of segments: 7
+Internal segmentation:
+0-->12-->26-->28-->37-->56-->69-->82
+
+CPU time used: 4.13 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            D 4           D 16             13        499.196         (0.327, 1.679, 6.628)
+                                                                                    (7.52, 15.703, 3.025)
+
+              2           D 16           D 30             15        570.794         (7.52, 15.703, 3.025)         (23.39, 37.9316, 13.4991)
+                                                                                    (5.841, 25.31, 31.933)
+
+              3           D 30           D 32              3         93.848         (5.841, 25.31, 31.933)
+                                                                                    (9.18, 19.897, 30.781)
+
+              4           D 32           D 41             10        379.362         (9.18, 19.897, 30.781)
+                                                                                    (1.647, 32.931, 12.067)
+
+              5           D 41           D 60             20        780.147         (1.647, 32.931, 12.067)         (18.8487, 1.41792, 37.1792)
+                                                                                    (16.796, 30.423, 24.314)
+
+              6           D 60           D 73             14        547.317         (16.796, 30.423, 24.314)         (16.179, 10.21, 8.21061)
+                                                                                    (-3.399, 20.248, 7.753)
+
+              7           D 73           D 86             14        532.958         (-3.399, 20.248, 7.753)         (11.6516, 11.0148, 24.2753)
+                                                                                    (25.113, 30.544, 17.334)
+

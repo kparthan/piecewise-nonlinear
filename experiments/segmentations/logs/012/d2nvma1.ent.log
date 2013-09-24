@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/nv/d2nvma1.ent
+Number of residues: 104
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 39766
+Null Model Fit: 4653.19 bits.
+Bits per residue: 45.1766
+
+Bezier model fit: 4238.04 bits.
+Bits per residue: 41.146
+
+# of segments: 7
+Internal segmentation:
+0-->22-->23-->38-->49-->65-->86-->103
+
+CPU time used: 5.57 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 2           A 24             23        873.167         (34.638, 55.353, -48.426)
+                                                                                    (54.862, 77.812, -37.153)
+
+              2           A 24           A 38              2        48.2137         (54.862, 77.812, -37.153)
+                                                                                    (71.628, 72.598, -36.542)
+
+              3           A 38           A 53             16        627.838         (71.628, 72.598, -36.542)
+                                                                                    (47.41, 53.716, -41.451)
+
+              4           A 53           A 64             12        452.684         (47.41, 53.716, -41.451)
+                                                                                    (72.976, 69.479, -24.143)
+
+              5           A 64           A 80             17         648.46         (72.976, 69.479, -24.143)
+                                                                                    (37.804, 50.554, -39.148)
+
+              6           A 80          A 101             22        863.201         (37.804, 50.554, -39.148)         (53.8092, 74.9402, -16.4729)
+                                                                                    (31.308, 63.523, -38.544)
+
+              7          A 101          A 118             18        724.473         (31.308, 63.523, -38.544)         (49.8143, 51.7203, -21.393)
+                                                                                    (33.523, 48.897, -21.55)
+

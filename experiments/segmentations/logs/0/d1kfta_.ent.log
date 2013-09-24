@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/kf/d1kfta_.ent
+Number of residues: 56
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 8270.8
+Null Model Fit: 2360.11 bits.
+Bits per residue: 42.9112
+
+Bezier model fit: 2295.64 bits.
+Bits per residue: 41.7389
+
+# of segments: 7
+Internal segmentation:
+0-->9-->22-->23-->31-->39-->40-->55
+
+CPU time used: 0.39 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 23           A 32             10        381.839         (-3.914, 9.812, 12.862)
+                                                                                    (-7.748, -0.671, 3.32)
+
+              2           A 32           A 45             14        538.628         (-7.748, -0.671, 3.32)
+                                                                                    (5.816, -10.942, -0.17)
+
+              3           A 45           A 46              2        45.9482         (5.816, -10.942, -0.17)
+                                                                                    (7.505, -8.892, 2.486)
+
+              4           A 46           A 54              9        335.043         (7.505, -8.892, 2.486)
+                                                                                    (7.609, 4.135, -1.617)
+
+              5           A 54           A 62              9        329.084         (7.609, 4.135, -1.617)
+                                                                                    (-5.067, -2.325, -7.02)
+
+              6           A 62           A 63              2        45.9482         (-5.067, -2.325, -7.02)
+                                                                                    (-6.101, 1.306, -7.001)
+
+              7           A 63           A 78             16        619.149         (-6.101, 1.306, -7.001)
+                                                                                    (8.176, 7.646, 6.58)
+

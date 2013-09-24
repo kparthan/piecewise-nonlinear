@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/fa/d1faoa_.ent
+Number of residues: 100
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 24644.2
+Null Model Fit: 4404.14 bits.
+Bits per residue: 44.4863
+
+Bezier model fit: 4062.05 bits.
+Bits per residue: 41.0308
+
+# of segments: 7
+Internal segmentation:
+0-->17-->28-->38-->63-->71-->81-->99
+
+CPU time used: 5.36 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 162          A 179             18        702.858         (1.557, 11.545, 26.76)
+                                                                                    (30.907, 8.146, 12.711)
+
+              2          A 179          A 190             12        439.681         (30.907, 8.146, 12.711)         (12.6327, 18.8429, 11.3873)
+                                                                                    (7.765, -0.414, 26.687)
+
+              3          A 190          A 200             11        425.024         (7.765, -0.414, 26.687)         (22.0552, 5.46711, 13.1181)
+                                                                                    (6.969, 11.093, 9.927)
+
+              4          A 200          A 225             26        1049.26         (6.969, 11.093, 9.927)         (25.9918, -16.5198, 33.7542)
+                                                                                    (27.976, 19.38, 24.9)
+
+              5          A 225          A 233              9        326.391         (27.976, 19.38, 24.9)         (21.0599, 7.33299, 27.6239)
+                                                                                    (27.16, -5.743, 23.895)
+
+              6          A 233          A 243             11        407.953         (27.16, -5.743, 23.895)
+                                                                                    (20.214, 20.834, 26.277)
+
+              7          A 243          A 261             19        710.887         (20.214, 20.834, 26.277)
+                                                                                    (14.441, -4.831, 34.009)
+

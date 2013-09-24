@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ld/d3ldqb_.ent
+Number of residues: 111
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 34754.3
+Null Model Fit: 4948.05 bits.
+Bits per residue: 44.9823
+
+Bezier model fit: 4358.38 bits.
+Bits per residue: 39.6216
+
+# of segments: 6
+Internal segmentation:
+0-->2-->30-->46-->75-->81-->110
+
+CPU time used: 6.06 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          B 150          B 152              3        94.0016         (43.514, -31.431, 0.032)
+                                                                                    (43.635, -25.161, 0.636)
+
+              2          B 152          B 180             29        1077.78         (43.635, -25.161, 0.636)         (35.7735, -11.0217, 18.1914)
+                                                                                    (25.091, -17.134, 37.57)
+
+              3          B 180          B 196             17        670.808         (25.091, -17.134, 37.57)         (18.5955, -12.1077, 56.1859)
+                                                                                    (15.917, -9.052, 46.104)
+
+              4          B 196          B 225             30        1111.89         (15.917, -9.052, 46.104)         (20.2639, -7.97034, 26.1802)
+                                                                                    (29.125, -21.106, 2.848)
+
+              5          B 225          B 231              7        270.875         (29.125, -21.106, 2.848)
+                                                                                    (35.84, -30.7, 6.362)
+
+              6          B 231          B 260             30        1133.02         (35.84, -30.7, 6.362)         (26.8849, -24.1463, 25.8983)
+                                                                                    (8.565, -14.047, 36.403)
+

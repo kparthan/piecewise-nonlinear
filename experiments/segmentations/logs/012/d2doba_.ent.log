@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/do/d2doba_.ent
+Number of residues: 82
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 18219.7
+Null Model Fit: 3568.1 bits.
+Bits per residue: 44.0506
+
+Bezier model fit: 3282.86 bits.
+Bits per residue: 40.5291
+
+# of segments: 7
+Internal segmentation:
+0-->21-->23-->39-->40-->64-->80-->81
+
+CPU time used: 4.2 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 0           A 21             22        833.437         (30.539, 2.637, 34.874)
+                                                                                    (38.874, 0.483, 5.532)
+
+              2           A 21           A 23              3        92.1382         (38.874, 0.483, 5.532)
+                                                                                    (36.827, -5.192, 8.037)
+
+              3           A 23           A 39             17        635.303         (36.827, -5.192, 8.037)
+                                                                                    (48.172, -3.398, 33.01)
+
+              4           A 39           A 40              2        47.0876         (48.172, -3.398, 33.01)
+                                                                                    (46.362, -6.053, 35.058)
+
+              5           A 40           A 64             25        945.893         (46.362, -6.053, 35.058)         (30.1945, -13.5022, 23.0919)
+                                                                                    (23.673, 5.598, 11.986)
+
+              6           A 64           A 80             17        681.911         (23.673, 5.598, 11.986)
+                                                                                    (26.133, 7.411, 33.014)
+
+              7           A 80           A 81              2        47.0876         (26.133, 7.411, 33.014)
+                                                                                    (23.162, 8.597, 30.935)
+

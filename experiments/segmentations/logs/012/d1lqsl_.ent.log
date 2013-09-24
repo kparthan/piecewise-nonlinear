@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/lq/d1lqsl_.ent
+Number of residues: 142
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 94913
+Null Model Fit: 6546.87 bits.
+Bits per residue: 46.4317
+
+Bezier model fit: 5692.14 bits.
+Bits per residue: 40.3698
+
+# of segments: 7
+Internal segmentation:
+0-->22-->45-->71-->72-->95-->119-->141
+
+CPU time used: 7.92 secs.
+Wall clock time elapsed: 7 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            L 8           L 32             23         891.16         (-0.559, -11.9, 7.235)
+                                                                                    (17.734, -2.813, 37.113)
+
+              2           L 32           L 59             24        952.509         (17.734, -2.813, 37.113)         (3.87637, 15.7996, 52.2981)
+                                                                                    (-11.795, 4.375, 20.05)
+
+              3           L 59           L 85             27        1036.23         (-11.795, 4.375, 20.05)         (11.4641, 13.9744, 19.7321)
+                                                                                    (23.362, 11.187, 34.405)
+
+              4           L 85           L 86              2        49.4687         (23.362, 11.187, 34.405)
+                                                                                    (24.213, 7.822, 35.955)
+
+              5           L 86          L 109             24         909.44         (24.213, 7.822, 35.955)         (16.8335, -1.17307, 18.7612)
+                                                                                    (-1.984, -0.376, 9.466)
+
+              6          L 109          L 135             25        979.136         (-1.984, -0.376, 9.466)         (-13.1929, 8.43574, 23.299)
+                                                                                    (-12.977, 11.659, -9.83)         (-4.29295, 4.72637, -22.2168)
+
+              7          L 135          L 157             23        874.205         (-12.977, 11.659, -9.83)         (-32.2278, 13.5293, -4.46859)
+                                                                                    (-23.258, 10.459, 18.051)
+

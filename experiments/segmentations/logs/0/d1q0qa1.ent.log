@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/q0/d1q0qa1.ent
+Number of residues: 98
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 49659.5
+Null Model Fit: 4413.22 bits.
+Bits per residue: 45.4971
+
+Bezier model fit: 3977.14 bits.
+Bits per residue: 41.0015
+
+# of segments: 8
+Internal segmentation:
+0-->8-->12-->27-->47-->51-->67-->73-->97
+
+CPU time used: 0.82 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 301          A 309              9        341.121         (10.823, 3.457, 55.677)
+                                                                                    (6.541, -7.058, 32.889)
+
+              2          A 309          A 313              5        182.579         (6.541, -7.058, 32.889)
+                                                                                    (5.935, -0.771, 22.956)
+
+              3          A 313          A 328             16        616.721         (5.935, -0.771, 22.956)
+                                                                                    (25.333, -10.064, 15.94)
+
+              4          A 328          A 348             21         791.59         (25.333, -10.064, 15.94)
+                                                                                    (22.492, 19.498, 23.292)
+
+              5          A 348          A 352              5        181.309         (22.492, 19.498, 23.292)
+                                                                                    (13.763, 15.672, 20.565)
+
+              6          A 352          A 368             17        651.092         (13.763, 15.672, 20.565)
+                                                                                    (25.491, -3.263, 6.741)
+
+              7          A 368          A 374              7        263.631         (25.491, -3.263, 6.741)
+                                                                                    (39.493, -7.796, 15.98)
+
+              8          A 374          A 398             25        949.098         (39.493, -7.796, 15.98)
+                                                                                    (16.276, 23.749, 12.686)
+

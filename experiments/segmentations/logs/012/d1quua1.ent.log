@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/qu/d1quua1.ent
+Number of residues: 124
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 24885.7
+Null Model Fit: 5473.55 bits.
+Bits per residue: 44.5004
+
+Bezier model fit: 4841.84 bits.
+Bits per residue: 39.3645
+
+# of segments: 6
+Internal segmentation:
+0-->1-->28-->45-->74-->94-->123
+
+CPU time used: 6.66 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 2              2        47.5375         (46.277, 4.848, 26.604)
+                                                                                    (43.258, 6.946, 27.49)
+
+              2            A 2           A 29             28         1043.5         (43.258, 6.946, 27.49)
+                                                                                    (36.187, 13.528, 66.378)
+
+              3           A 29           A 46             18         697.94         (36.187, 13.528, 66.378)         (51.0002, 20.9365, 79.8237)
+                                                                                    (36.155, 11.886, 96.359)
+
+              4           A 46           A 75             30        1114.25         (36.155, 11.886, 96.359)         (28.9316, 0.228812, 75.1902)
+                                                                                    (45.66, 4.014, 56.497)
+
+              5           A 75           A 95             21        821.998         (45.66, 4.014, 56.497)         (53.1668, 6.11621, 32.8155)
+                                                                                    (47.633, 13.57, 56.504)
+
+              6           A 95          A 124             30        1116.61         (47.633, 13.57, 56.504)         (49.2956, 2.63923, 77.3893)
+                                                                                    (40.726, 7.23, 98.298)
+

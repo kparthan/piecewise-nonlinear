@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/vz/d1vz0a2.ent
+Number of residues: 93
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 54367.4
+Null Model Fit: 4197.76 bits.
+Bits per residue: 45.6278
+
+Bezier model fit: 3763.22 bits.
+Bits per residue: 40.9046
+
+# of segments: 6
+Internal segmentation:
+0-->15-->33-->47-->65-->77-->92
+
+CPU time used: 4.77 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 23           A 38             16        627.215         (26.177, 4.229, 22.018)         (16.2858, 9.45571, -2.18914)
+                                                                                    (32.201, -16.648, 7.676)
+
+              2           A 38           A 56             19        709.681         (32.201, -16.648, 7.676)
+                                                                                    (37.356, -40.302, -5.105)
+
+              3           A 56           A 70             15        579.787         (37.356, -40.302, -5.105)         (15.7673, -45.0841, 10.5825)
+                                                                                    (8.291, -38.943, -12.86)
+
+              4           A 70           A 88             19        748.788         (8.291, -38.943, -12.86)         (25.7219, -31.6281, 14.4788)
+                                                                                    (29.651, -34.597, -11.314)
+
+              5           A 88          A 100             13         495.99         (29.651, -34.597, -11.314)         (21.8952, -54.0727, -3.57461)
+                                                                                    (3.592, -39.725, 2.814)
+
+              6          A 100          A 115             16        601.759         (3.592, -39.725, 2.814)
+                                                                                    (22.374, -32.494, 14.397)
+

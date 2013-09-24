@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/nf/d3nfka_.ent
+Number of residues: 92
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 20102.1
+Null Model Fit: 4021.51 bits.
+Bits per residue: 44.1924
+
+Bezier model fit: 3787.7 bits.
+Bits per residue: 41.6231
+
+# of segments: 7
+Internal segmentation:
+0-->1-->11-->26-->52-->57-->67-->91
+
+CPU time used: 4.78 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 513          A 514              2        47.2295         (48.245, -25.792, 19.826)
+                                                                                    (45.363, -28.292, 20.47)
+
+              2          A 514          A 524             11        399.342         (45.363, -28.292, 20.47)         (34.0371, -26.25, 7.33859)
+                                                                                    (18.481, -21.458, 5.211)
+
+              3          A 524          A 539             16        624.694         (18.481, -21.458, 5.211)
+                                                                                    (39.969, -6.899, 26.396)
+
+              4          A 539          A 565             27        1090.72         (39.969, -6.899, 26.396)         (10.5073, -43.0475, 9.75403)
+                                                                                    (38.221, -19.659, 21.936)
+
+              5          A 565          A 570              6        220.105         (38.221, -19.659, 21.936)
+                                                                                    (37.829, -18.088, 7.422)
+
+              6          A 570          A 580             11        418.187         (37.829, -18.088, 7.422)         (50.6976, -8.25308, 20.0735)
+                                                                                    (31.639, -6.218, 15.976)
+
+              7          A 580          A 604             25        987.423         (31.639, -6.218, 15.976)         (29.89, -20.9975, -15.4943)
+                                                                                    (38.602, -24.751, 26.993)
+

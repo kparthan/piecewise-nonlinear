@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/vq/d1vqza1.ent
+Number of residues: 88
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 23139.7
+Null Model Fit: 3862.4 bits.
+Bits per residue: 44.3954
+
+Bezier model fit: 3613.71 bits.
+Bits per residue: 41.5369
+
+# of segments: 7
+Internal segmentation:
+0-->13-->14-->25-->29-->40-->59-->87
+
+CPU time used: 4.49 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 242          A 255             14        540.676         (25.97, 20.181, 29.032)         (31.3127, 24.6137, 52.0767)
+                                                                                    (6.627, 38.034, 36.9)
+
+              2          A 255          A 256              2        47.4325         (6.627, 38.034, 36.9)
+                                                                                    (8.669, 38.657, 33.76)
+
+              3          A 256          A 267             12        433.886         (8.669, 38.657, 33.76)         (22.692, 22.8745, 36.0277)
+                                                                                    (37.624, 31.616, 47.583)
+
+              4          A 267          A 271              5        179.538         (37.624, 31.616, 47.583)
+                                                                                    (34.775, 31.46, 39.532)
+
+              5          A 271          A 282             12        462.996         (34.775, 31.46, 39.532)         (8.80391, 26.5214, 33.2563)
+                                                                                    (17.336, 41.294, 23.169)
+
+              6          A 282          A 301             20        787.704         (17.336, 41.294, 23.169)         (38.4726, 32.0472, 39.596)
+                                                                                    (29.178, 43.359, 45.137)
+
+              7          A 301          A 329             29        1161.48         (29.178, 43.359, 45.137)         (10.6805, 50.1719, 18.646)
+                                                                                    (21.336, 34.997, 48.962)
+

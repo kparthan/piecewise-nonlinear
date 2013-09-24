@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/mh/d1mhna_.ent
+Number of residues: 59
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 11054.9
+Null Model Fit: 2513.13 bits.
+Bits per residue: 43.3298
+
+Bezier model fit: 2416.8 bits.
+Bits per residue: 41.669
+
+# of segments: 7
+Internal segmentation:
+0-->6-->17-->30-->41-->42-->56-->58
+
+CPU time used: 2.6 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 89           A 95              7        260.062         (-7.921, -18.919, 5.918)
+                                                                                    (-4.823, -9.38, -7.744)
+
+              2           A 95          A 106             12        461.216         (-4.823, -9.38, -7.744)
+                                                                                    (4.97, -4.148, 12.39)
+
+              3          A 106          A 119             14        539.967         (4.97, -4.148, 12.39)         (-5.81888, 0.0863063, -11.6504)
+                                                                                    (0.701, -25.889, -1.252)
+
+              4          A 119          A 130             12        445.354         (0.701, -25.889, -1.252)
+                                                                                    (5.247, 1.571, -1.106)
+
+              5          A 130          A 131              2        46.3668         (5.247, 1.571, -1.106)
+                                                                                    (7.235, -0.212, -3.85)
+
+              6          A 131          A 145             15        573.138         (7.235, -0.212, -3.85)         (1.28851, -29.2193, 9.72306)
+                                                                                    (-10.532, -1.95, 5.065)
+
+              7          A 145          A 147              3        90.6966         (-10.532, -1.95, 5.065)
+                                                                                    (-5.281, 0.615, 7.237)
+

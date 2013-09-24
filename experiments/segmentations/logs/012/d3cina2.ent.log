@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ci/d3cina2.ent
+Number of residues: 107
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 39604.9
+Null Model Fit: 4788.1 bits.
+Bits per residue: 45.1707
+
+Bezier model fit: 4318.61 bits.
+Bits per residue: 40.7416
+
+# of segments: 8
+Internal segmentation:
+0-->1-->17-->31-->58-->59-->77-->93-->106
+
+CPU time used: 5.8 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 210          A 211              2        48.2078         (26.276, 17.83, 46.945)
+                                                                                    (25.25, 14.494, 48.342)
+
+              2          A 211          A 227             17        650.797         (25.25, 14.494, 48.342)
+                                                                                    (46.707, 20.002, 60.14)
+
+              3          A 227          A 241             15        560.801         (46.707, 20.002, 60.14)         (52.3207, 6.02901, 45.1874)
+                                                                                    (20.353, 0.15, 43.254)
+
+              4          A 241          A 268             28        1098.68         (20.353, 0.15, 43.254)         (33.336, 8.79396, 12.4835)
+                                                                                    (40.653, 21.288, 48.859)
+
+              5          A 268          A 269              2        48.2078         (40.653, 21.288, 48.859)
+                                                                                    (44.27, 20.166, 49.277)
+
+              6          A 269          A 287             19        761.495         (44.27, 20.166, 49.277)         (56.9793, 16.0278, 39.5179)
+                                                                                    (17.709, 0.421, 46.217)         (16.2848, -8.80991, 38.4892)
+
+              7          A 287          A 303             17        636.727         (17.709, 0.421, 46.217)
+                                                                                    (57.228, 10.406, 59.336)
+
+              8          A 303          A 316             14        513.693         (57.228, 10.406, 59.336)         (33.5688, -0.850575, 60.7066)
+                                                                                    (20.244, 9.067, 48.038)
+

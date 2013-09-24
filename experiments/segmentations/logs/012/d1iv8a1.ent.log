@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/iv/d1iv8a1.ent
+Number of residues: 67
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 15369.6
+Null Model Fit: 2891.14 bits.
+Bits per residue: 43.8051
+
+Bezier model fit: 2718.87 bits.
+Bits per residue: 41.195
+
+# of segments: 7
+Internal segmentation:
+0-->8-->16-->28-->45-->47-->58-->66
+
+CPU time used: 3.16 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 654          A 662              9        337.066         (-23.784, 46.348, 33.045)         (-16.1745, 34.725, 25.9845)
+                                                                                    (-7.369, 37.881, 17.889)
+
+              2          A 662          A 670              9         325.01         (-7.369, 37.881, 17.889)
+                                                                                    (-26.981, 45.564, 30.14)
+
+              3          A 670          A 682             13        495.258         (-26.981, 45.564, 30.14)
+                                                                                    (-7.43, 43.704, 6.817)
+
+              4          A 682          A 699             18        689.167         (-7.43, 43.704, 6.817)         (-37.5348, 17.1146, 26.1382)
+                                                                                    (-26.993, 49.818, 11.375)
+
+              5          A 699          A 701              3        91.6474         (-26.993, 49.818, 11.375)
+                                                                                    (-31.514, 46.51, 9.72)
+
+              6          A 701          A 712             12        450.225         (-31.514, 46.51, 9.72)         (-26.6116, 21.9201, 16.4371)
+                                                                                    (-16.494, 46.646, 6.741)
+
+              7          A 712          A 720              9        330.497         (-16.494, 46.646, 6.741)         (-22.7072, 47.1081, 20.7242)
+                                                                                    (-34.845, 40.214, 19.816)
+

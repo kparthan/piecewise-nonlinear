@@ -1,0 +1,46 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ev/d1ev2e2.ent
+Number of residues: 93
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 27131.4
+Null Model Fit: 4105.5 bits.
+Bits per residue: 44.625
+
+Bezier model fit: 3821.5 bits.
+Bits per residue: 41.538
+
+# of segments: 9
+Internal segmentation:
+0-->1-->16-->27-->38-->49-->55-->65-->81-->92
+
+CPU time used: 0.8 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          E 251          E 252              2        47.6621         (65.887, 4.452, 4.41)
+                                                                                    (65.943, 4.546, 8.227)
+
+              2          E 252          E 267             16        619.565         (65.943, 4.546, 8.227)
+                                                                                    (68.538, -19.29, 36.212)
+
+              3          E 267          E 283             12        450.769         (68.538, -19.29, 36.212)
+                                                                                    (69.186, -0.203, 8.043)
+
+              4          E 283          E 294             12        457.825         (69.186, -0.203, 8.043)
+                                                                                    (83.319, -8.401, 35.115)
+
+              5          E 294          E 317             12        458.066         (83.319, -8.401, 35.115)
+                                                                                    (84.013, -12.449, 8.86)
+
+              6          E 317          E 323              7         262.49         (84.013, -12.449, 8.86)
+                                                                                    (74.304, -17.172, 14.486)
+
+              7          E 323          E 333             11        422.112         (74.304, -17.172, 14.486)
+                                                                                    (79.963, -22.634, 37.001)
+
+              8          E 333          E 349             17        658.955         (79.963, -22.634, 37.001)
+                                                                                    (74.871, 5.074, 17.388)
+
+              9          E 349          E 360             12        444.052         (74.871, 5.074, 17.388)
+                                                                                    (72.118, -22.014, 42.095)
+

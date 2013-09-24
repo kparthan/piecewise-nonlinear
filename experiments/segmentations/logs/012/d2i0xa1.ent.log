@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/i0/d2i0xa1.ent
+Number of residues: 84
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 20825.9
+Null Model Fit: 3672.21 bits.
+Bits per residue: 44.2434
+
+Bezier model fit: 3421.04 bits.
+Bits per residue: 41.2173
+
+# of segments: 6
+Internal segmentation:
+0-->10-->28-->37-->57-->74-->83
+
+CPU time used: 4.22 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 11             11        408.747         (27.89, 54.485, 18.45)         (45.12, 49.9567, 24.4067)
+                                                                                    (50.151, 35.227, 21.735)
+
+              2           A 11           A 29             19         747.65         (50.151, 35.227, 21.735)         (25.6986, 36.31, 11.6436)
+                                                                                    (46.935, 48.751, 13.25)
+
+              3           A 29           A 38             10        372.385         (46.935, 48.751, 13.25)
+                                                                                    (24.622, 48.793, 17.277)
+
+              4           A 38           A 58             21         819.13         (24.622, 48.793, 17.277)         (31.5064, 31.8436, 26.1694)
+                                                                                    (44.764, 39.794, 29.182)
+
+              5           A 58           A 75             18        687.525         (44.764, 39.794, 29.182)         (18.4353, 69.8738, 17.2951)
+                                                                                    (54.823, 55.926, 10.272)
+
+              6           A 75           A 84             10          385.6         (54.823, 55.926, 10.272)
+                                                                                    (37.737, 51.303, 5.574)
+

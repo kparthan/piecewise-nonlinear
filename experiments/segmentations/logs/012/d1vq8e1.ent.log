@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/vq/d1vq8e1.ent
+Number of residues: 79
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 17847.9
+Null Model Fit: 3433.62 bits.
+Bits per residue: 44.0208
+
+Bezier model fit: 3144.11 bits.
+Bits per residue: 40.3091
+
+# of segments: 7
+Internal segmentation:
+0-->16-->24-->35-->43-->54-->76-->78
+
+CPU time used: 3.95 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            E 1           E 17             17        643.775         (23.37, 94.008, 160.446)         (23.6376, 110.629, 198.481)
+                                                                                    (18.786, 113.632, 160.212)
+
+              2           E 17           E 25              9        326.282         (18.786, 113.632, 160.212)
+                                                                                    (26.809, 116.508, 183.121)
+
+              3           E 25           E 36             12        443.669         (26.809, 116.508, 183.121)         (30.3171, 119.965, 166.704)
+                                                                                    (25.65, 104.768, 152.405)
+
+              4           E 36           E 44              9        329.101         (25.65, 104.768, 152.405)
+                                                                                    (13.907, 104.818, 173.37)
+
+              5           E 44           E 55             12        453.855         (13.907, 104.818, 173.37)
+                                                                                    (29.949, 93.863, 152.973)
+
+              6           E 55           E 77             23        855.353         (29.949, 93.863, 152.973)
+                                                                                    (30.122, 111.825, 181.692)
+
+              7           E 77           E 79              3        92.0787         (30.122, 111.825, 181.692)
+                                                                                    (35.175, 113.186, 180.142)
+

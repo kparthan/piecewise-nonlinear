@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/f7/d2f76x1.ent
+Number of residues: 94
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 27127.6
+Null Model Fit: 4150.11 bits.
+Bits per residue: 44.6248
+
+Bezier model fit: 3790.04 bits.
+Bits per residue: 40.7532
+
+# of segments: 7
+Internal segmentation:
+0-->1-->22-->26-->41-->48-->69-->93
+
+CPU time used: 4.82 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            X 1            X 2              2        47.6619         (64.724, -1.205, -0.956)
+                                                                                    (62.02, 1.003, -2.464)
+
+              2            X 2           X 23             22        851.698         (62.02, 1.003, -2.464)         (81.703, 1.92218, -16.5645)
+                                                                                    (91.982, -11.075, -7.141)
+
+              3           X 23           X 27              5        179.362         (91.982, -11.075, -7.141)
+                                                                                    (79.183, -10.98, -3.876)
+
+              4           X 27           X 42             16         607.99         (79.183, -10.98, -3.876)
+                                                                                    (77.715, 7.944, 7.623)
+
+              5           X 42           X 49              8        291.538         (77.715, 7.944, 7.623)
+                                                                                    (94.681, 12.737, -1.998)
+
+              6           X 49           X 70             22        845.816         (94.681, 12.737, -1.998)
+                                                                                    (76.835, -8.334, 18.297)
+
+              7           X 70           X 94             25        965.978         (76.835, -8.334, 18.297)         (91.2719, -12.4336, -4.20983)
+                                                                                    (98.229, 6.973, -8.272)
+

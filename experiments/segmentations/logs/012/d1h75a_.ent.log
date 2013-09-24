@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/h7/d1h75a_.ent
+Number of residues: 76
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 18484.1
+Null Model Fit: 3305.35 bits.
+Bits per residue: 44.0713
+
+Bezier model fit: 3093.83 bits.
+Bits per residue: 41.2511
+
+# of segments: 6
+Internal segmentation:
+0-->9-->10-->35-->46-->56-->75
+
+CPU time used: 3.67 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 10             10        373.933         (-10.025, 15.35, 8.126)         (2.85856, 22.4103, 0.675723)
+                                                                                    (16.722, 17.512, 1.864)
+
+              2           A 10           A 11              2        47.1084         (16.722, 17.512, 1.864)
+                                                                                    (14.549, 18.999, 4.622)
+
+              3           A 11           A 36             26        1019.07         (14.549, 18.999, 4.622)         (-4.93282, -1.32206, 20.5989)
+                                                                                    (4.465, 23.676, -6.909)
+
+              4           A 36           A 47             12        451.788         (4.465, 23.676, -6.909)
+                                                                                    (3.404, 34.286, 6.859)
+
+              5           A 47           A 57             11        415.738         (3.404, 34.286, 6.859)         (16.2356, 19.4914, 5.53412)
+                                                                                    (-8.573, 21.414, 9.675)
+
+              6           A 57           A 76             20        786.194         (-8.573, 21.414, 9.675)         (20.7466, 24.921, 16.899)
+                                                                                    (-13.919, 8.568, 18.878)
+

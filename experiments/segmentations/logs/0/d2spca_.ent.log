@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/sp/d2spca_.ent
+Number of residues: 107
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 78137.7
+Null Model Fit: 4892.01 bits.
+Bits per residue: 46.1511
+
+Bezier model fit: 4156.73 bits.
+Bits per residue: 39.2145
+
+# of segments: 7
+Internal segmentation:
+0-->1-->30-->36-->61-->90-->105-->106
+
+CPU time used: 0.92 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 0            A 1              2        49.1882         (9.907, 11.72, 54.535)
+                                                                                    (12.788, 14.14, 53.949)
+
+              2            A 1           A 30             30        1115.73         (12.788, 14.14, 53.949)
+                                                                                    (1.71, -5.1, 15.512)
+
+              3           A 30           A 36              7        261.689         (1.71, -5.1, 15.512)
+                                                                                    (13.967, -1.043, 3.216)
+
+              4           A 36           A 61             26        970.782         (13.967, -1.043, 3.216)
+                                                                                    (19.069, 7.939, 39.585)
+
+              5           A 61           A 90             30        1109.69         (19.069, 7.939, 39.585)
+                                                                                    (29.249, 6.529, 82.085)
+
+              6           A 90          A 105             16        600.472         (29.249, 6.529, 82.085)
+                                                                                    (34.731, 2.184, 104.901)
+
+              7          A 105          A 106              2        49.1882         (34.731, 2.184, 104.901)
+                                                                                    (35.966, -1.307, 103.936)
+

@@ -1,0 +1,46 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/sm/d1smpi_.ent
+Number of residues: 100
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 35200.1
+Null Model Fit: 4455.06 bits.
+Bits per residue: 45.0006
+
+Bezier model fit: 4184.3 bits.
+Bits per residue: 42.2657
+
+# of segments: 9
+Internal segmentation:
+0-->8-->20-->31-->45-->47-->65-->81-->89-->99
+
+CPU time used: 0.86 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            I 1            I 9              9        336.088         (29.95, 45.263, -2.879)
+                                                                                    (24.115, 38.847, -25.329)
+
+              2            I 9           I 21             13        495.246         (24.115, 38.847, -25.329)
+                                                                                    (51.446, 39.27, -34.338)
+
+              3           I 21           I 32             12        467.058         (51.446, 39.27, -34.338)
+                                                                                    (24.014, 27.637, -26.371)
+
+              4           I 32           I 46             15        599.566         (24.014, 27.637, -26.371)
+                                                                                    (44.402, 30.119, -36.319)
+
+              5           I 46           I 48              3        94.0384         (44.402, 30.119, -36.319)
+                                                                                    (45.631, 26.535, -32.281)
+
+              6           I 48           I 66             19        766.821         (45.631, 26.535, -32.281)
+                                                                                    (36.427, 32.411, -20.487)
+
+              7           I 66           I 82             17        678.905         (36.427, 32.411, -20.487)
+                                                                                    (39.81, 48.497, -19.191)
+
+              8           I 82           I 90              9        332.146         (39.81, 48.497, -19.191)
+                                                                                    (52.368, 29.153, -19.352)
+
+              9           I 90          I 100             11        414.434         (52.368, 29.153, -19.352)
+                                                                                    (35.846, 44.59, -33.148)
+

@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/t4/d1t4aa_.ent
+Number of residues: 80
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 44024.4
+Null Model Fit: 3580.55 bits.
+Bits per residue: 45.3234
+
+Bezier model fit: 3227.68 bits.
+Bits per residue: 40.8567
+
+# of segments: 6
+Internal segmentation:
+0-->12-->29-->39-->50-->70-->79
+
+CPU time used: 3.98 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 13             13        484.587         (29.4, -18.684, -8.218)         (47.7126, -29.6196, -11.7833)
+                                                                                    (51.652, -46.527, -13.235)
+
+              2           A 13           A 30             18        701.133         (51.652, -46.527, -13.235)         (65.5304, -29.8263, -22.6042)
+                                                                                    (73.728, -30.173, -8.287)
+
+              3           A 30           A 40             11        422.644         (73.728, -30.173, -8.287)         (65.2907, -41.7496, -2.34491)
+                                                                                    (51.042, -32.157, -14.372)
+
+              4           A 40           A 51             12        434.202         (51.042, -32.157, -14.372)         (36.362, -12.9335, -10.4434)
+                                                                                    (20.368, -27.348, -13.747)
+
+              5           A 51           A 71             21        834.236         (20.368, -27.348, -13.747)
+                                                                                    (46.954, -41.623, -18.698)
+
+              6           A 71           A 80             10        350.874         (46.954, -41.623, -18.698)         (40.4748, -34.4358, -5.08112)
+                                                                                    (32.327, -20.329, -3.312)
+

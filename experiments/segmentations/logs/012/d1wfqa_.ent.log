@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/wf/d1wfqa_.ent
+Number of residues: 89
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 36721
+Null Model Fit: 3965.43 bits.
+Bits per residue: 45.0617
+
+Bezier model fit: 3683.43 bits.
+Bits per residue: 41.8572
+
+# of segments: 6
+Internal segmentation:
+0-->12-->28-->40-->58-->70-->88
+
+CPU time used: 4.58 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 13             13         504.72         (13.376, -8.523, 31.183)         (8.65317, 8.38864, 15.3934)
+                                                                                    (19.221, -8.49, 7.993)
+
+              2           A 13           A 29             17        657.146         (19.221, -8.49, 7.993)         (0.17706, 12.5577, -16.3081)
+                                                                                    (-13.86, -2.603, 0.041)
+
+              3           A 29           A 41             13        512.924         (-13.86, -2.603, 0.041)         (14.2641, 4.40749, -15.1202)
+                                                                                    (-1.032, -3.32, -10.87)
+
+              4           A 41           A 59             19        759.472         (-1.032, -3.32, -10.87)         (-12.3091, 4.63612, 21.9699)
+                                                                                    (-5.155, 8.905, -9.732)
+
+              5           A 59           A 71             13         491.56         (-5.155, 8.905, -9.732)         (13.2217, 1.24702, 4.83565)
+                                                                                    (-3.351, -17.674, 1.349)
+
+              6           A 71           A 89             19        757.613         (-3.351, -17.674, 1.349)         (4.58443, 9.13251, -7.28571)
+                                                                                    (-0.35, 14.381, 12.82)
+

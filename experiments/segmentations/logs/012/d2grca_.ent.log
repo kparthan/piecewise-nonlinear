@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/gr/d2grca_.ent
+Number of residues: 121
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 34930.1
+Null Model Fit: 5398.74 bits.
+Bits per residue: 44.9895
+
+Bezier model fit: 4875.82 bits.
+Bits per residue: 40.6318
+
+# of segments: 7
+Internal segmentation:
+0-->6-->28-->44-->59-->73-->92-->120
+
+CPU time used: 6.57 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1         A 1449         A 1455              7         257.42         (0.822, 20.925, 8.647)
+                                                                                    (-4.242, 11.209, 23.46)
+
+              2         A 1455         A 1477             23        871.672         (-4.242, 11.209, 23.46)
+                                                                                    (28.037, -9.376, 26.212)
+
+              3         A 1477         A 1493             17        660.241         (28.037, -9.376, 26.212)         (12.7743, 7.0174, 14.4246)
+                                                                                    (28.599, 6.471, 2.87)
+
+              4         A 1493         A 1508             16        620.855         (28.599, 6.471, 2.87)         (11.0478, -7.54416, -9.41402)
+                                                                                    (15.624, 8.446, 15.302)
+
+              5         A 1508         A 1522             15        602.918         (15.624, 8.446, 15.302)         (1.49929, 18.2526, 13.8824)
+                                                                                    (0.501, 0.948, 18.749)
+
+              6         A 1522         A 1541             20        750.563         (0.501, 0.948, 18.749)
+                                                                                    (22.936, -11.892, 5.949)
+
+              7         A 1541         A 1569             29        1112.15         (22.936, -11.892, 5.949)
+                                                                                    (-4.795, -3.153, 32.564)
+

@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/fp/d1fp1d1.ent
+Number of residues: 110
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 51954.5
+Null Model Fit: 4966.29 bits.
+Bits per residue: 45.5623
+
+Bezier model fit: 4469.62 bits.
+Bits per residue: 41.0057
+
+# of segments: 8
+Internal segmentation:
+0-->1-->29-->40-->59-->77-->89-->99-->109
+
+CPU time used: 5.96 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           D 19           D 20              2        48.5994         (33.308, 8.312, 56.695)
+                                                                                    (36.128, 7.257, 58.288)
+
+              2           D 20           D 48             29        1094.25         (36.128, 7.257, 58.288)         (27.9731, -17.2636, 58.5524)
+                                                                                    (8.201, -14.696, 75.39)
+
+              3           D 48           D 59             12        460.311         (8.201, -14.696, 75.39)
+                                                                                    (1.265, 0.129, 82.041)
+
+              4           D 59           D 78             20        799.082         (1.265, 0.129, 82.041)         (31.65, 0.202171, 87.1903)
+                                                                                    (19.433, -20.098, 87.861)         (-5.30581, -27.109, 82.4937)
+
+              5           D 78           D 96             19        731.535         (19.433, -20.098, 87.861)
+                                                                                    (15.763, -0.353, 68.323)
+
+              6           D 96          D 108             13        491.445         (15.763, -0.353, 68.323)
+                                                                                    (20.664, 4.746, 95.851)
+
+              7          D 108          D 118             11         413.16         (20.664, 4.746, 95.851)         (18.4922, -6.85166, 81.9514)
+                                                                                    (7.213, 1.927, 69.005)
+
+              8          D 118          D 128             11        431.238         (7.213, 1.927, 69.005)         (8.17225, -14.5782, 70.6798)
+                                                                                    (-3.722, -4.363, 68.466)
+

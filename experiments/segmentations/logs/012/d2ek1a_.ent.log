@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ek/d2ek1a_.ent
+Number of residues: 79
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 17396.3
+Null Model Fit: 3430.74 bits.
+Bits per residue: 43.9838
+
+Bezier model fit: 3216.84 bits.
+Bits per residue: 41.2416
+
+# of segments: 6
+Internal segmentation:
+0-->11-->38-->41-->51-->69-->78
+
+CPU time used: 3.75 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 875          A 886             12        448.882         (-11.93, 61.584, 53.122)         (-0.577797, 73.8135, 34.8631)
+                                                                                    (-0.203, 55.872, 29.281)
+
+              2          A 886          A 913             28        1119.16         (-0.203, 55.872, 29.281)         (2.19956, 51.7534, 70.876)
+                                                                                    (-13.977, 62.067, 22.516)
+
+              3          A 913          A 916              4        137.238         (-13.977, 62.067, 22.516)
+                                                                                    (-7.816, 60.427, 28.693)
+
+              4          A 916          A 926             11        402.312         (-7.816, 60.427, 28.693)
+                                                                                    (-7.817, 62.461, 56.25)
+
+              5          A 926          A 944             19        738.849         (-7.817, 62.461, 56.25)         (4.78976, 71.7523, 52.6696)
+                                                                                    (8.542, 61.788, 31.791)
+
+              6          A 944          A 953             10        370.398         (8.542, 61.788, 31.791)         (1.45299, 70.4728, 43.0317)
+                                                                                    (-11.655, 71.512, 48.134)
+

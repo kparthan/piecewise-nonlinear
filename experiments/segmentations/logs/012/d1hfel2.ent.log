@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/hf/d1hfel2.ent
+Number of residues: 85
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 21654.5
+Null Model Fit: 3721.18 bits.
+Bits per residue: 44.2997
+
+Bezier model fit: 3514.34 bits.
+Bits per residue: 41.8374
+
+# of segments: 8
+Internal segmentation:
+0-->6-->17-->19-->44-->53-->62-->76-->84
+
+CPU time used: 4.23 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            L 2            L 8              7        264.782         (25.705, 21.969, 14.23)
+                                                                                    (20.523, 33.711, 20.314)
+
+              2            L 8           L 19             12        455.885         (20.523, 33.711, 20.314)         (17.688, 16.7608, 11.8527)
+                                                                                    (2.142, 10.857, 16.6)
+
+              3           L 19           L 21              3        92.6365         (2.142, 10.857, 16.6)
+                                                                                    (4.514, 10.93, 22.759)
+
+              4           L 21           L 46             26        1023.19         (4.514, 10.93, 22.759)         (43.984, 31.2273, 30.1501)
+                                                                                    (10.982, 24.175, 39.849)
+
+              5           L 46           L 55             10        384.132         (10.982, 24.175, 39.849)         (20.0478, 12.3321, 37.6493)
+                                                                                    (31.442, 24.585, 38.807)
+
+              6           L 55           L 64             10        383.615         (31.442, 24.585, 38.807)
+                                                                                    (10.057, 12.911, 33.681)
+
+              7           L 64           L 78             15        577.653         (10.057, 12.911, 33.681)         (7.759, 34.0958, 31.1546)
+                                                                                    (26.694, 31.088, 28.842)
+
+              8           L 78           L 86              9        332.449         (26.694, 31.088, 28.842)
+                                                                                    (11.789, 22.717, 15.849)
+

@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/iq/d1iq8a3.ent
+Number of residues: 77
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 14171.2
+Null Model Fit: 3320.29 bits.
+Bits per residue: 43.688
+
+Bezier model fit: 3190.13 bits.
+Bits per residue: 41.9754
+
+# of segments: 8
+Internal segmentation:
+0-->9-->23-->24-->35-->44-->56-->64-->76
+
+CPU time used: 3.8 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 506          A 515             10         378.86         (2.852, 43.381, 101.051)
+                                                                                    (18.563, 51.033, 111.443)
+
+              2          A 515          A 529             15        581.955         (18.563, 51.033, 111.443)         (5.4804, 70.3855, 105.097)
+                                                                                    (21.16, 48.015, 101.563)
+
+              3          A 529          A 530              2        46.7251         (21.16, 48.015, 101.563)
+                                                                                    (18.526, 48.637, 104.283)
+
+              4          A 530          A 541             12        462.932         (18.526, 48.637, 104.283)         (1.70603, 34.3973, 94.6823)
+                                                                                    (9.217, 54.677, 89.309)
+
+              5          A 541          A 550             10        380.423         (9.217, 54.677, 89.309)
+                                                                                    (5.402, 45.645, 111.696)
+
+              6          A 550          A 562             13        500.148         (5.402, 45.645, 111.696)         (6.39156, 67.8379, 99.9913)
+                                                                                    (11.967, 46.737, 90.9)
+
+              7          A 562          A 570              9        336.681         (11.967, 46.737, 90.9)
+                                                                                    (23.512, 46.588, 98.4)
+
+              8          A 570          A 582             13        502.408         (23.512, 46.588, 98.4)         (10.1328, 61.5097, 90.277)
+                                                                                    (7.035, 62.67, 110.661)
+

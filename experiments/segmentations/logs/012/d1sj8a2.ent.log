@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/sj/d1sj8a2.ent
+Number of residues: 125
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 39486.6
+Null Model Fit: 5600.64 bits.
+Bits per residue: 45.1664
+
+Bezier model fit: 4875.08 bits.
+Bits per residue: 39.3152
+
+# of segments: 8
+Internal segmentation:
+0-->5-->34-->40-->67-->71-->99-->102-->124
+
+CPU time used: 6.99 secs.
+Wall clock time elapsed: 7 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 658          A 663              6        223.807         (-37.708, 36.117, 21.174)
+                                                                                    (-42.717, 43.9, 13.927)
+
+              2          A 663          A 692             30         1101.2         (-42.717, 43.9, 13.927)         (-32.5613, 60.4797, 7.90339)
+                                                                                    (-21.198, 77.324, -4.463)
+
+              3          A 692          A 698              7        265.749         (-21.198, 77.324, -4.463)
+                                                                                    (-13.139, 73.351, 2.248)
+
+              4          A 698          A 725             28        1026.24         (-13.139, 73.351, 2.248)         (-23.8431, 58.3316, 5.31702)
+                                                                                    (-34.025, 41.136, 17.722)
+
+              5          A 725          A 729              5        184.961         (-34.025, 41.136, 17.722)
+                                                                                    (-30.869, 43.818, 26.381)
+
+              6          A 729          A 757             29        1076.42         (-30.869, 43.818, 26.381)         (-23.3921, 62.1753, 16.961)
+                                                                                    (-18.683, 78.481, 3.575)
+
+              7          A 757          A 760              4        140.786         (-18.683, 78.481, 3.575)
+                                                                                    (-27.337, 82.828, 1.605)
+
+              8          A 760          A 782             23        855.927         (-27.337, 82.828, 1.605)         (-33.5424, 67.2527, 9.05845)
+                                                                                    (-37.33, 55.705, 22.105)
+

@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/h4/d1h4vb1.ent
+Number of residues: 96
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 17877.8
+Null Model Fit: 4182.21 bits.
+Bits per residue: 44.0232
+
+Bezier model fit: 3922.33 bits.
+Bits per residue: 41.2877
+
+# of segments: 8
+Internal segmentation:
+0-->11-->27-->38-->39-->64-->74-->82-->95
+
+CPU time used: 4.91 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          B 326          B 337             12        457.427         (-12.64, 1.665, 13.132)         (-20.4269, -9.53416, 23.8969)
+                                                                                    (-38.862, -1.608, 26.318)
+
+              2          B 337          B 353             17        650.044         (-38.862, -1.608, 26.318)
+                                                                                    (-13.899, -1.85, 30.526)
+
+              3          B 353          B 364             12        458.617         (-13.899, -1.85, 30.526)
+                                                                                    (-36.743, -0.161, 19.038)
+
+              4          B 364          B 365              2        47.0603         (-36.743, -0.161, 19.038)
+                                                                                    (-37.85, -3.313, 17.231)
+
+              5          B 365          B 390             26        1034.59         (-37.85, -3.313, 17.231)         (-11.3632, -3.1704, 6.57085)
+                                                                                    (-38.276, -10.802, 34.408)
+
+              6          B 390          B 400             11        407.305         (-38.276, -10.802, 34.408)
+                                                                                    (-20.867, -13.085, 12.166)
+
+              7          B 400          B 408              9        333.118         (-20.867, -13.085, 12.166)         (-31.0908, -21.1512, 15.933)
+                                                                                    (-28.284, -15.29, 32.641)
+
+              8          B 408          B 421             14        534.175         (-28.284, -15.29, 32.641)
+                                                                                    (-10.724, -14.984, 23.1)
+

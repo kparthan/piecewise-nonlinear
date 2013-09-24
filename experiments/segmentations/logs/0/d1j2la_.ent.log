@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/j2/d1j2la_.ent
+Number of residues: 68
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16197
+Null Model Fit: 2940.01 bits.
+Bits per residue: 43.8808
+
+Bezier model fit: 2849.77 bits.
+Bits per residue: 42.5339
+
+# of segments: 7
+Internal segmentation:
+0-->10-->13-->42-->49-->59-->61-->67
+
+CPU time used: 0.51 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 11             11        431.019         (-3.464, 27.852, 7.253)
+                                                                                    (7.263, 41.312, 15.413)
+
+              2           A 11           A 14              4        136.929         (7.263, 41.312, 15.413)
+                                                                                    (1.456, 42.349, 13.389)
+
+              3           A 14           A 43             30        1213.83         (1.456, 42.349, 13.389)
+                                                                                    (16.103, 56.517, 0.934)
+
+              4           A 43           A 50              8         300.03         (16.103, 56.517, 0.934)
+                                                                                    (29.288, 48.654, -11.009)
+
+              5           A 50           A 60             11        415.144         (29.288, 48.654, -11.009)
+                                                                                    (5.014, 53.757, -1.025)
+
+              6           A 60           A 62              3        91.7986         (5.014, 53.757, -1.025)
+                                                                                    (8.586, 48.092, 1.6)
+
+              7           A 62           A 68              7        261.025         (8.586, 48.092, 1.6)
+                                                                                    (15.245, 51.555, -14.51)
+

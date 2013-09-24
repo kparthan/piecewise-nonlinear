@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/xp/d1xpaa1.ent
+Number of residues: 77
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 30946.6
+Null Model Fit: 3405.93 bits.
+Bits per residue: 44.8148
+
+Bezier model fit: 3171.43 bits.
+Bits per residue: 41.7294
+
+# of segments: 7
+Internal segmentation:
+0-->6-->25-->38-->50-->61-->62-->76
+
+CPU time used: 3.71 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 134          A 140              7        263.914         (91.509, 1.7, 10.731)
+                                                                                    (86.039, -1.614, -0.347)
+
+              2          A 140          A 159             20        790.793         (86.039, -1.614, -0.347)         (80.1042, 14.9297, -7.04662)
+                                                                                    (100.465, 2.758, -11.048)
+
+              3          A 159          A 172             14         537.81         (100.465, 2.758, -11.048)         (92.9267, -13.4051, 3.58414)
+                                                                                    (74.036, -6.985, -0.181)
+
+              4          A 172          A 184             13        504.741         (74.036, -6.985, -0.181)         (87.3751, -16.3499, -10.8961)
+                                                                                    (95.279, 3.99, 4.238)
+
+              5          A 184          A 195             12        459.137         (95.279, 3.99, 4.238)
+                                                                                    (91.42, 18.385, -1.362)
+
+              6          A 195          A 196              2        47.8519         (91.42, 18.385, -1.362)
+                                                                                    (91.123, 16.724, 2.066)
+
+              7          A 196          A 210             15        567.186         (91.123, 16.724, 2.066)
+                                                                                    (74.003, 16.036, -10.124)
+

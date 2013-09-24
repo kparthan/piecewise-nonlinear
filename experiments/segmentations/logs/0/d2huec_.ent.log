@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/hu/d2huec_.ent
+Number of residues: 82
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 56111.2
+Null Model Fit: 3699.54 bits.
+Bits per residue: 45.6734
+
+Bezier model fit: 3346.19 bits.
+Bits per residue: 41.3109
+
+# of segments: 7
+Internal segmentation:
+0-->2-->22-->27-->55-->60-->80-->81
+
+CPU time used: 0.66 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           C 20           C 22              3        95.3838         (-79.834, 18.345, 19.602)
+                                                                                    (-79.211, 24.453, 23.048)
+
+              2           C 22           C 42             21        831.933         (-79.211, 24.453, 23.048)
+                                                                                    (-53.219, 30.726, 4.033)
+
+              3           C 42           C 47              6        223.586         (-53.219, 30.726, 4.033)
+                                                                                    (-66.587, 24.683, 1.646)
+
+              4           C 47           C 75             29        1093.49         (-66.587, 24.683, 1.646)
+                                                                                    (-54.411, 17.755, 42.636)
+
+              5           C 75           C 80              6        223.071         (-54.411, 17.755, 42.636)
+                                                                                    (-59.55, 27.814, 40.246)
+
+              6           C 80          C 100             21         830.01         (-59.55, 27.814, 40.246)
+                                                                                    (-36.439, 17.205, 11.001)
+
+              7          C 100          C 101              2        48.7104         (-36.439, 17.205, 11.001)
+                                                                                    (-34.651, 20.163, 12.645)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/a3/d1a32a_.ent
+Number of residues: 85
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 46597.8
+Null Model Fit: 3814.05 bits.
+Bits per residue: 45.4053
+
+Bezier model fit: 3416.8 bits.
+Bits per residue: 40.6762
+
+# of segments: 7
+Internal segmentation:
+0-->1-->21-->42-->46-->71-->83-->84
+
+CPU time used: 4.16 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 2            A 3              2        48.4424         (-9.711, -13.341, 53.419)
+                                                                                    (-10.405, -9.634, 52.826)
+
+              2            A 3           A 23             21        835.118         (-10.405, -9.634, 52.826)         (-1.07449, -17.5846, 37.6601)
+                                                                                    (14.352, 1.433, 37.402)
+
+              3           A 23           A 44             22        819.503         (14.352, 1.433, 37.402)
+                                                                                    (10.637, 3.983, 5.442)
+
+              4           A 44           A 48              5        183.423         (10.637, 3.983, 5.442)
+                                                                                    (4.175, 10.326, 8.072)
+
+              5           A 48           A 73             26         986.73         (4.175, 10.326, 8.072)         (9.5268, 16.342, 29.7622)
+                                                                                    (24.704, 8.787, 40.263)
+
+              6           A 73           A 85             13        495.142         (24.704, 8.787, 40.263)
+                                                                                    (25.013, 3.568, 22.598)
+
+              7           A 85           A 86              2        48.4424         (25.013, 3.568, 22.598)
+                                                                                    (23.705, 7.068, 23.281)
+

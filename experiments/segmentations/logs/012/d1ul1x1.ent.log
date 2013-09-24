@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ul/d1ul1x1.ent
+Number of residues: 140
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 188129
+Null Model Fit: 6591.2 bits.
+Bits per residue: 47.4187
+
+Bezier model fit: 5754.91 bits.
+Bits per residue: 41.4023
+
+# of segments: 7
+Internal segmentation:
+0-->27-->48-->74-->95-->99-->119-->139
+
+CPU time used: 7.87 secs.
+Wall clock time elapsed: 7 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          X 218          X 245             28        1138.99         (50.732, -48.587, 14.306)         (35.5288, -73.7923, 5.94097)
+                                                                                    (58.232, -60.984, 15.037)
+
+              2          X 245          X 266             22        876.498         (58.232, -60.984, 15.037)         (49.9099, -42.4395, 1.91033)
+                                                                                    (61.128, -70.363, 1.636)
+
+              3          X 266          X 292             27         1075.7         (61.128, -70.363, 1.636)         (38.4633, -64.1196, -0.271646)
+                                                                                    (22.125, -43.119, 14.574)
+
+              4          X 292          X 313             22        862.931         (22.125, -43.119, 14.574)         (3.55907, -58.8349, 45.059)
+                                                                                    (7.723, -73.518, 30.101)
+
+              5          X 313          X 317              5        186.381         (7.723, -73.518, 30.101)
+                                                                                    (13.19, -73.325, 40.269)
+
+              6          X 317          X 337             21        795.515         (13.19, -73.325, 40.269)
+                                                                                    (19.782, -38.311, 39.535)
+
+              7          X 337          X 357             21        818.901         (19.782, -38.311, 39.535)         (40.5339, -52.4327, 45.0024)
+                                                                                    (41.513, -27.124, 74.586)
+

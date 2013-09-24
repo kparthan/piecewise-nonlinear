@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/i6/d2i6va1.ent
+Number of residues: 87
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 19142.7
+Null Model Fit: 3794.48 bits.
+Bits per residue: 44.1219
+
+Bezier model fit: 3574.25 bits.
+Bits per residue: 41.561
+
+# of segments: 7
+Internal segmentation:
+0-->14-->31-->33-->46-->65-->77-->86
+
+CPU time used: 4.59 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 219          A 233             15        585.412         (5.677, 20.432, -4.417)         (8.44995, 2.95536, -1.96389)
+                                                                                    (-11.381, 5.697, 17.518)
+
+              2          A 233          A 250             18         712.15         (-11.381, 5.697, 17.518)
+                                                                                    (12.048, 7.066, -0.613)
+
+              3          A 250          A 252              3        92.2808         (12.048, 7.066, -0.613)
+                                                                                    (17.717, 8.138, -0.478)
+
+              4          A 252          A 265             14         538.28         (17.717, 8.138, -0.478)         (0.351337, -5.75269, 14.0646)
+                                                                                    (8.797, 20.499, 10.201)
+
+              5          A 265          A 284             20         787.96         (8.797, 20.499, 10.201)         (-14.7331, 18.3084, 14.8982)
+                                                                                    (7.664, 28.544, -0.958)
+
+              6          A 284          A 296             13        488.289         (7.664, 28.544, -0.958)
+                                                                                    (10.528, 2.972, 19.51)
+
+              7          A 296          A 305             10        369.878         (10.528, 2.972, 19.51)         (17.6573, 14.6516, 11.1171)
+                                                                                    (12.492, 19.672, -2.961)
+

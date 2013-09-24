@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/co/d2co5a1.ent
+Number of residues: 89
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 23638.3
+Null Model Fit: 3909.5 bits.
+Bits per residue: 44.4262
+
+Bezier model fit: 3611.26 bits.
+Bits per residue: 41.0371
+
+# of segments: 7
+Internal segmentation:
+0-->2-->17-->23-->39-->53-->61-->88
+
+CPU time used: 4.59 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 5            A 7              3        92.8895         (8.046, 32.629, 71.13)
+                                                                                    (7.097, 36.292, 65.19)
+
+              2            A 7           A 22             16        605.344         (7.097, 36.292, 65.19)
+                                                                                    (15.735, 19.918, 49.311)
+
+              3           A 22           A 28              7         259.27         (15.735, 19.918, 49.311)
+                                                                                    (25.488, 26.784, 60.35)
+
+              4           A 28           A 44             17        664.803         (25.488, 26.784, 60.35)         (13.3685, 42.0434, 40.7496)
+                                                                                    (21.137, 33.438, 65.671)
+
+              5           A 44           A 58             15        560.268         (21.137, 33.438, 65.671)
+                                                                                    (8.981, 17.026, 65.405)
+
+              6           A 58           A 66              9        328.461         (8.981, 17.026, 65.405)
+                                                                                    (31.102, 16.845, 60.507)
+
+              7           A 66           A 93             28        1100.23         (31.102, 16.845, 60.507)         (-8.46449, 17.2495, 59.7136)
+                                                                                    (-0.013, 36.333, 45.608)
+

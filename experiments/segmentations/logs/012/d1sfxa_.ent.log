@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/sf/d1sfxa_.ent
+Number of residues: 109
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 60703.4
+Null Model Fit: 4944.98 bits.
+Bits per residue: 45.7868
+
+Bezier model fit: 4437.26 bits.
+Bits per residue: 41.0858
+
+# of segments: 7
+Internal segmentation:
+0-->4-->32-->60-->71-->81-->103-->108
+
+CPU time used: 5.75 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 0            A 4              5        180.634         (30.826, 35.768, 22.711)
+                                                                                    (24.294, 27.152, 15.971)
+
+              2            A 4           A 32             29        1134.67         (24.294, 27.152, 15.971)         (18.2947, 38.0623, -7.82869)
+                                                                                    (15.465, 21.692, -23.37)
+
+              3           A 32           A 60             29        1160.66         (15.465, 21.692, -23.37)         (23.045, 52.3476, -25.5912)
+                                                                                    (26.582, 23.465, -8.151)
+
+              4           A 60           A 71             12        454.491         (26.582, 23.465, -8.151)
+                                                                                    (26.498, 24.593, -38.644)
+
+              5           A 71           A 81             11        422.082         (26.498, 24.593, -38.644)         (29.1365, 29.0968, -22.1236)
+                                                                                    (16.844, 16.434, -13.704)
+
+              6           A 81          A 103             23        860.323         (16.844, 16.434, -13.704)
+                                                                                    (32.182, 23.858, 16.37)
+
+              7          A 103          A 108              6        224.399         (32.182, 23.858, 16.37)
+                                                                                    (36.783, 15.45, 24.09)
+

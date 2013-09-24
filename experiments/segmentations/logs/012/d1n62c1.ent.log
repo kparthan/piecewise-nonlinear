@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/n6/d1n62c1.ent
+Number of residues: 109
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 30115.6
+Null Model Fit: 4835.76 bits.
+Bits per residue: 44.7756
+
+Bezier model fit: 4412.33 bits.
+Bits per residue: 40.8549
+
+# of segments: 7
+Internal segmentation:
+0-->11-->18-->28-->43-->61-->85-->108
+
+CPU time used: 5.85 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          C 178          C 189             12        446.771         (63.344, 139.767, 98.439)         (82.4015, 133.439, 106.617)
+                                                                                    (85.136, 140.382, 120.775)
+
+              2          C 189          C 196              8         308.43         (85.136, 140.382, 120.775)
+                                                                                    (86.854, 134.993, 109.353)
+
+              3          C 196          C 206             11        384.454         (86.854, 134.993, 109.353)         (73.3465, 142.011, 96.448)
+                                                                                    (60.964, 127.779, 93.998)
+
+              4          C 206          C 221             16        625.609         (60.964, 127.779, 93.998)
+                                                                                    (95.946, 139.509, 102.527)
+
+              5          C 221          C 239             19        745.608         (95.946, 139.509, 102.527)         (73.3417, 129.657, 83.5646)
+                                                                                    (71.496, 122.119, 101.627)
+
+              6          C 239          C 263             25        994.896         (71.496, 122.119, 101.627)         (94.3407, 132.026, 95.4428)
+                                                                                    (96.47, 129.57, 112.975)
+
+              7          C 263          C 286             24        906.562         (96.47, 129.57, 112.975)         (79.1077, 126.534, 106.913)
+                                                                                    (65.397, 135.086, 100.675)
+

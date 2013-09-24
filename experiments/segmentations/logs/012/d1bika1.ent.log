@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/bi/d1bika1.ent
+Number of residues: 54
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 8705.96
+Null Model Fit: 2278.21 bits.
+Bits per residue: 42.9851
+
+Bezier model fit: 2222.42 bits.
+Bits per residue: 41.9325
+
+# of segments: 7
+Internal segmentation:
+0-->1-->11-->22-->24-->33-->43-->53
+
+CPU time used: 2.2 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 25           A 26              2        46.0222         (13.819, 32.972, -4.199)
+                                                                                    (12.824, 34.074, -0.69)
+
+              2           A 26           A 36             11        418.705         (12.824, 34.074, -0.69)
+                                                                                    (4.988, 12.173, -5.692)
+
+              3           A 36           A 47             12         454.35         (4.988, 12.173, -5.692)         (16.1046, 20.5188, 7.75644)
+                                                                                    (4.22, 37.645, 5.272)
+
+              4           A 47           A 49              3        90.0074         (4.22, 37.645, 5.272)
+                                                                                    (8.509, 36.455, 8.348)
+
+              5           A 49           A 58             10        374.136         (8.509, 36.455, 8.348)         (3.37369, 19.9145, 6.99638)
+                                                                                    (10.995, 15.299, -4.709)
+
+              6           A 58           A 68             11        420.762         (10.995, 15.299, -4.709)         (11.5587, 33.1406, -11.7583)
+                                                                                    (16.392, 23.036, 7.882)
+
+              7           A 68           A 78             11        418.438         (16.392, 23.036, 7.882)
+                                                                                    (15.449, 40.458, 6.896)
+

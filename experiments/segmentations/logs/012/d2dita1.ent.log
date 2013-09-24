@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/di/d2dita1.ent
+Number of residues: 99
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 31187.8
+Null Model Fit: 4392.95 bits.
+Bits per residue: 44.826
+
+Bezier model fit: 3996.91 bits.
+Bits per residue: 40.7848
+
+# of segments: 6
+Internal segmentation:
+0-->13-->42-->55-->64-->83-->98
+
+CPU time used: 5.03 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 8           A 21             14        522.678         (26.72, 15.922, -17.677)
+                                                                                    (-1.727, 7.878, 7.819)
+
+              2           A 21           A 50             30        1167.36         (-1.727, 7.878, 7.819)         (-6.975, -24.7413, 11.7127)
+                                                                                    (-0.872, 9.408, -11.911)
+
+              3           A 50           A 63             14        539.549         (-0.872, 9.408, -11.911)         (14.7968, -6.1508, -2.52122)
+                                                                                    (-0.638, 1.334, 15.122)
+
+              4           A 63           A 72             10        360.617         (-0.638, 1.334, 15.122)
+                                                                                    (10.123, 8.191, -10.019)
+
+              5           A 72           A 91             20        776.057         (10.123, 8.191, -10.019)         (-1.26964, 23.928, -5.09711)
+                                                                                    (-13.43, 2.423, 4.838)
+
+              6           A 91          A 106             16        630.649         (-13.43, 2.423, 4.838)         (14.8068, 25.4239, 2.84324)
+                                                                                    (11.268, 1.503, 8.668)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/j0/d2j0151.ent
+Number of residues: 59
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 31274.4
+Null Model Fit: 2600.14 bits.
+Bits per residue: 44.83
+
+Bezier model fit: 2424.82 bits.
+Bits per residue: 41.8073
+
+# of segments: 7
+Internal segmentation:
+0-->2-->18-->32-->33-->41-->51-->58
+
+CPU time used: 2.52 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            5 2            5 4              3        93.6972         (-9.206, 122.99, 181.619)
+                                                                                    (-13.929, 117.682, 179.927)
+
+              2            5 4           5 20             17        660.856         (-13.929, 117.682, 179.927)         (-20.3801, 125.659, 208.597)
+                                                                                    (-6.104, 112.784, 204.199)
+
+              3           5 20           5 34             15        550.429         (-6.104, 112.784, 204.199)
+                                                                                    (25.743, 95.917, 218.597)
+
+              4           5 34           5 35              2        47.8671         (25.743, 95.917, 218.597)
+                                                                                    (29.04, 97.726, 219.109)
+
+              5           5 35           5 43              9        344.583         (29.04, 97.726, 219.109)         (17.886, 110.229, 218.204)
+                                                                                    (19.143, 94.167, 208.268)
+
+              6           5 43           5 53             11        434.209         (19.143, 94.167, 208.268)         (31.8536, 110.689, 213.275)
+                                                                                    (33.302, 89.254, 208.041)
+
+              7           5 53           5 60              8        293.179         (33.302, 89.254, 208.041)         (30.6358, 106.266, 201.921)
+                                                                                    (40.489, 99.621, 215.519)
+

@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ns/d2nsza1.ent
+Number of residues: 129
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 36162.2
+Null Model Fit: 5765.06 bits.
+Bits per residue: 45.0395
+
+Bezier model fit: 5202.62 bits.
+Bits per residue: 40.6455
+
+# of segments: 8
+Internal segmentation:
+0-->5-->33-->35-->53-->72-->98-->126-->128
+
+CPU time used: 7.09 secs.
+Wall clock time elapsed: 7 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 322          A 327              6        221.521         (-45.242, 13.512, -9.451)
+                                                                                    (-37.011, 23.024, -16.275)
+
+              2          A 327          A 355             29        1117.27         (-37.011, 23.024, -16.275)         (-12.2216, 9.09765, -35.0314)
+                                                                                    (-33.207, 32.144, -19.844)
+
+              3          A 355          A 357              3        94.1162         (-33.207, 32.144, -19.844)
+                                                                                    (-29.861, 32.516, -14.737)
+
+              4          A 357          A 375             19         718.69         (-29.861, 32.516, -14.737)
+                                                                                    (-18.236, 5.437, -16.924)
+
+              5          A 375          A 394             20        763.808         (-18.236, 5.437, -16.924)
+                                                                                    (-19.77, 35.14, -17.44)
+
+              6          A 394          A 420             27        1052.39         (-19.77, 35.14, -17.44)         (-29.2503, 21.8555, 5.87719)
+                                                                                    (-19.587, 3.703, -4.853)
+
+              7          A 420          A 448             29        1140.71         (-19.587, 3.703, -4.853)         (-3.04804, 38.7205, -17.6443)
+                                                                                    (-16.217, 16.639, 1.836)
+
+              8          A 448          A 450              3        94.1162         (-16.217, 16.639, 1.836)
+                                                                                    (-11.025, 16.107, 1.69)
+

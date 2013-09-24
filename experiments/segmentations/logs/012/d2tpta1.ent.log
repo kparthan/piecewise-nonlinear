@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/tp/d2tpta1.ent
+Number of residues: 70
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 18879.7
+Null Model Fit: 3043.03 bits.
+Bits per residue: 44.1019
+
+Bezier model fit: 2845.71 bits.
+Bits per residue: 41.2422
+
+# of segments: 7
+Internal segmentation:
+0-->2-->13-->18-->47-->51-->66-->69
+
+CPU time used: 3.22 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 3              3        92.2409         (33.595, 12.355, 13.237)
+                                                                                    (34.656, 15.049, 7.723)
+
+              2            A 3           A 14             12        452.724         (34.656, 15.049, 7.723)
+                                                                                    (18.664, 9.359, 6.079)
+
+              3           A 14           A 19              6        217.478         (18.664, 9.359, 6.079)
+                                                                                    (26.215, 14.311, 19.04)
+
+              4           A 19           A 48             30         1169.9         (26.215, 14.311, 19.04)         (42.5381, 36.9709, 4.33323)
+                                                                                    (14.217, 16.469, 3.612)
+
+              5           A 48           A 52              5        177.844         (14.217, 16.469, 3.612)
+                                                                                    (15.149, 12.873, 15.811)
+
+              6           A 52           A 67             16         597.93         (15.149, 12.873, 15.811)
+                                                                                    (29.588, 31.156, 22.162)
+
+              7           A 67           A 70              4        137.592         (29.588, 31.156, 22.162)
+                                                                                    (25.431, 33.594, 30.816)
+

@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/wu/d1wuda1.ent
+Number of residues: 77
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 15650.4
+Null Model Fit: 3331.18 bits.
+Bits per residue: 43.8313
+
+Bezier model fit: 3120.4 bits.
+Bits per residue: 41.0579
+
+# of segments: 7
+Internal segmentation:
+0-->2-->21-->42-->43-->59-->75-->76
+
+CPU time used: 3.88 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 530          A 532              3        91.6996         (38.656, -23.16, 28.645)
+                                                                                    (36.435, -19.254, 23.311)
+
+              2          A 532          A 551             20        751.416         (36.435, -19.254, 23.311)
+                                                                                    (16.548, -0.631, 29.276)
+
+              3          A 551          A 572             22        873.348         (16.548, -0.631, 29.276)         (36.1508, -20.5468, 39.4211)
+                                                                                    (23.059, -24.261, 19.315)
+
+              4          A 572          A 573              2        46.8683         (23.059, -24.261, 19.315)
+                                                                                    (19.583, -25.718, 20.053)
+
+              5          A 573          A 589             17        666.339         (19.583, -25.718, 20.053)         (23.2519, -24.0771, 40.79)
+                                                                                    (11.753, -17.466, 24.685)
+
+              6          A 589          A 605             17         643.86         (11.753, -17.466, 24.685)
+                                                                                    (33.121, -19.486, 11.091)
+
+              7          A 605          A 606              2        46.8683         (33.121, -19.486, 11.091)
+                                                                                    (30.352, -17.469, 9.435)
+

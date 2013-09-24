@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/cs/d3cs0a1.ent
+Number of residues: 99
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 18432.8
+Null Model Fit: 4318.6 bits.
+Bits per residue: 44.0673
+
+Bezier model fit: 4057.87 bits.
+Bits per residue: 41.4069
+
+# of segments: 7
+Internal segmentation:
+0-->13-->26-->42-->54-->72-->85-->98
+
+CPU time used: 5.23 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 260          A 273             14        542.205         (69.541, 35.123, 19.413)         (80.2076, 14.6151, 25.9114)
+                                                                                    (62.128, 16.698, 43.516)
+
+              2          A 273          A 286             14        551.941         (62.128, 16.698, 43.516)         (73.1079, 2.09619, 51.3321)
+                                                                                    (65.296, 21.486, 44.685)
+
+              3          A 286          A 302             17        675.834         (65.296, 21.486, 44.685)         (79.6455, 9.74818, 16.9376)
+                                                                                    (84.417, 21.151, 32.645)
+
+              4          A 302          A 314             13        500.619         (84.417, 21.151, 32.645)         (67.6178, 5.14855, 42.9989)
+                                                                                    (76.983, 32.401, 39.05)
+
+              5          A 314          A 332             19        743.944         (76.983, 32.401, 39.05)         (55.358, 20.0499, 40.6039)
+                                                                                    (75.06, 34.292, 24.176)
+
+              6          A 332          A 345             14        540.121         (75.06, 34.292, 24.176)
+                                                                                    (77.342, 15.044, 49.206)
+
+              7          A 345          A 358             14         503.21         (77.342, 15.044, 49.206)         (91.1469, 34.8024, 34.188)
+                                                                                    (71.563, 23.218, 17.113)
+

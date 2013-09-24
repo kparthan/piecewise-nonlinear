@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/iq/d3iqla_.ent
+Number of residues: 66
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 16542.2
+Null Model Fit: 2854.23 bits.
+Bits per residue: 43.9112
+
+Bezier model fit: 2706.15 bits.
+Bits per residue: 41.633
+
+# of segments: 7
+Internal segmentation:
+0-->4-->19-->27-->37-->46-->55-->65
+
+CPU time used: 3.08 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 287          A 291              5        179.418         (-12.657, 9.316, 20.832)
+                                                                                    (-16.849, -0.953, 21.258)
+
+              2          A 291          A 306             16        618.107         (-16.849, -0.953, 21.258)         (-8.89251, -7.08316, -9.11673)
+                                                                                    (-28.588, 9.474, -2.923)
+
+              3          A 306          A 314              9        333.471         (-28.588, 9.474, -2.923)
+                                                                                    (-9.788, -0.062, 3.334)
+
+              4          A 314          A 324             11        403.664         (-9.788, -0.062, 3.334)         (-23.3103, 7.19406, 18.5616)
+                                                                                    (-32.29, -6.545, 5.814)
+
+              5          A 324          A 333             10        371.389         (-32.29, -6.545, 5.814)
+                                                                                    (-16.569, 11.094, 7.249)
+
+              6          A 333          A 342             10        379.248         (-16.569, 11.094, 7.249)         (-32.5874, 7.52323, 3.92717)
+                                                                                    (-21.169, -8.283, 1.267)
+
+              7          A 342          A 352             11        420.848         (-21.169, -8.283, 1.267)         (-9.25834, -1.25518, 14.54)
+                                                                                    (-27.731, -9.588, 18.161)
+

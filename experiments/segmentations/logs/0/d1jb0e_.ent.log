@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/jb/d1jb0e_.ent
+Number of residues: 69
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 20666.4
+Null Model Fit: 3007.8 bits.
+Bits per residue: 44.2324
+
+Bezier model fit: 2885.35 bits.
+Bits per residue: 42.4316
+
+# of segments: 7
+Internal segmentation:
+0-->16-->22-->29-->39-->50-->62-->68
+
+CPU time used: 0.52 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            E 1           E 17             17        685.032         (72.478, 127.118, 27.736)
+                                                                                    (77.035, 121.511, 43.739)
+
+              2           E 17           E 23              7        261.872         (77.035, 121.511, 43.739)
+                                                                                    (77.779, 130.843, 31.922)
+
+              3           E 23           E 30              8        294.587         (77.779, 130.843, 31.922)
+                                                                                    (84.617, 119.896, 18.381)
+
+              4           E 30           E 40             11        419.169         (84.617, 119.896, 18.381)
+                                                                                    (80.521, 131.875, 40.549)
+
+              5           E 40           E 51             12        472.092         (80.521, 131.875, 40.549)
+                                                                                    (95.958, 131.861, 50.856)
+
+              6           E 51           E 63             13        497.407         (95.958, 131.861, 50.856)
+                                                                                    (74.593, 117.18, 31.341)
+
+              7           E 63           E 69              7        255.187         (74.593, 117.18, 31.341)
+                                                                                    (66.138, 131.604, 35.191)
+

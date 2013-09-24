@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/se/d1seda_.ent
+Number of residues: 112
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 44563.5
+Null Model Fit: 5032.84 bits.
+Bits per residue: 45.3409
+
+Bezier model fit: 4526.65 bits.
+Bits per residue: 40.7806
+
+# of segments: 8
+Internal segmentation:
+0-->21-->37-->62-->79-->82-->94-->96-->111
+
+CPU time used: 0.99 secs.
+Wall clock time elapsed: 1 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 2           A 23             22         835.62         (2.028, 48.64, 28.873)
+                                                                                    (36.277, 47.535, 19.413)
+
+              2           A 23           A 39             17        680.726         (36.277, 47.535, 19.413)
+                                                                                    (16.995, 46.709, 10.45)
+
+              3           A 39           A 64             26         973.45         (16.995, 46.709, 10.45)
+                                                                                    (40.674, 40.413, -18.487)
+
+              4           A 64           A 81             18        704.248         (40.674, 40.413, -18.487)
+                                                                                    (20.911, 56.196, 2.148)
+
+              5           A 81           A 84              4        141.309         (20.911, 56.196, 2.148)
+                                                                                    (27.799, 57.128, 4.05)
+
+              6           A 84           A 96             13        494.233         (27.799, 57.128, 4.05)
+                                                                                    (37.856, 42.145, 7.113)
+
+              7           A 96           A 98              3        94.7189         (37.856, 42.145, 7.113)
+                                                                                    (34.697, 41.75, 1.056)
+
+              8           A 98          A 113             16        602.342         (34.697, 41.75, 1.056)
+                                                                                    (39.091, 62.024, -4.036)
+

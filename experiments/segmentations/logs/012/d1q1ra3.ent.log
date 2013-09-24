@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/q1/d1q1ra3.ent
+Number of residues: 103
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 33333
+Null Model Fit: 4582.05 bits.
+Bits per residue: 44.922
+
+Bezier model fit: 4239.62 bits.
+Bits per residue: 41.5649
+
+# of segments: 7
+Internal segmentation:
+0-->14-->26-->39-->47-->59-->83-->102
+
+CPU time used: 5.59 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 320          A 334             15        574.251         (57.418, 85.164, 117.202)         (37.2568, 89.4687, 121.159)
+                                                                                    (24.441, 68.968, 133.906)
+
+              2          A 334          A 346             13        498.191         (24.441, 68.968, 133.906)         (37.4651, 77.2299, 119.759)
+                                                                                    (28.362, 96.53, 124.175)
+
+              3          A 346          A 359             14         550.59         (28.362, 96.53, 124.175)         (11.1733, 81.0752, 112.334)
+                                                                                    (19.999, 72.704, 125.2)
+
+              4          A 359          A 367              9        331.626         (19.999, 72.704, 125.2)
+                                                                                    (26.629, 95.592, 117.906)
+
+              5          A 367          A 379             13        510.023         (26.629, 95.592, 117.906)
+                                                                                    (27.148, 73.07, 119.474)
+
+              6          A 379          A 403             25        989.191         (27.148, 73.07, 119.474)         (46.1903, 95.982, 108.984)
+                                                                                    (18.224, 80.702, 109.951)
+
+              7          A 403          A 422             20        785.744         (18.224, 80.702, 109.951)         (35.2792, 75.8651, 105.4)
+                                                                                    (34.239, 93.288, 96.013)
+

@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/ge/d2gena2.ent
+Number of residues: 118
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 36683.3
+Null Model Fit: 5272.04 bits.
+Bits per residue: 45.0602
+
+Bezier model fit: 4761.73 bits.
+Bits per residue: 40.6986
+
+# of segments: 8
+Internal segmentation:
+0-->1-->21-->38-->65-->71-->92-->100-->117
+
+CPU time used: 6.29 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 76           A 77              2        48.0973         (16.869, 20.941, 38.896)
+                                                                                    (15.495, 17.409, 38.236)
+
+              2           A 77           A 97             21        800.574         (15.495, 17.409, 38.236)
+                                                                                    (29.539, 11.021, 63.472)
+
+              3           A 97          A 114             18        697.319         (29.539, 11.021, 63.472)         (17.5966, 0.299974, 68.3861)
+                                                                                    (7.579, 12.956, 77.121)
+
+              4          A 114          A 141             28        1067.74         (7.579, 12.956, 77.121)         (6.76801, 20.5427, 52.8341)
+                                                                                    (6.173, 8.556, 35.343)
+
+              5          A 141          A 147              7        265.791         (6.173, 8.556, 35.343)
+                                                                                    (4.719, 1.876, 47.194)
+
+              6          A 147          A 168             22        842.338         (4.719, 1.876, 47.194)         (22.2113, 5.79072, 49.4733)
+                                                                                    (30.341, 0.746, 64.44)
+
+              7          A 168          A 176              9         346.26         (30.341, 0.746, 64.44)         (38.9146, -5.89929, 53.548)
+                                                                                    (32.655, 9.697, 52.299)
+
+              8          A 176          A 193             18        693.608         (32.655, 9.697, 52.299)
+                                                                                    (13.129, 1.773, 32.851)
+

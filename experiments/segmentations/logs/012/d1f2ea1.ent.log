@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/f2/d1f2ea1.ent
+Number of residues: 121
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 42931.5
+Null Model Fit: 5434.45 bits.
+Bits per residue: 45.2871
+
+Bezier model fit: 4837.58 bits.
+Bits per residue: 40.3132
+
+# of segments: 7
+Internal segmentation:
+0-->7-->34-->37-->61-->88-->94-->120
+
+CPU time used: 6.55 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1           A 81           A 88              8        304.189         (41.4, 7.597, -8.696)
+                                                                                    (31.06, 5.977, -16.697)
+
+              2           A 88          A 115             28         1061.6         (31.06, 5.977, -16.697)         (25.8058, -8.65, -2.11744)
+                                                                                    (25.011, -8.854, 23.003)
+
+              3          A 115          A 118              4        141.148         (25.011, -8.854, 23.003)
+                                                                                    (20.946, -16.141, 21.192)
+
+              4          A 118          A 142             25        926.698         (20.946, -16.141, 21.192)         (27.5809, -18.6653, 4.81745)
+                                                                                    (39.658, -14.617, -10.229)
+
+              5          A 142          A 169             28        1105.34         (39.658, -14.617, -10.229)         (38.5648, 13.9631, -4.00079)
+                                                                                    (35.006, -17.455, 15.447)
+
+              6          A 169          A 175              7        267.047         (35.006, -17.455, 15.447)
+                                                                                    (39.48, -18.39, 2.412)
+
+              7          A 175          A 201             27        1031.55         (39.48, -18.39, 2.412)         (54.0865, 5.51199, -5.55842)
+                                                                                    (43.769, 3.33, 23.45)
+

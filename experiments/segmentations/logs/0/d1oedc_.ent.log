@@ -1,0 +1,46 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/oe/d1oedc_.ent
+Number of residues: 127
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 52315.6
+Null Model Fit: 5742.11 bits.
+Bits per residue: 45.5723
+
+Bezier model fit: 5024.43 bits.
+Bits per residue: 39.8764
+
+# of segments: 9
+Internal segmentation:
+0-->29-->31-->59-->64-->89-->94-->95-->124-->126
+
+CPU time used: 1.16 secs.
+Wall clock time elapsed: 1 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          C 225          C 254             30        1148.54         (82.525, 48.757, 100.489)
+                                                                                    (77.428, 59.36, 60.677)
+
+              2          C 254          C 256              3        95.1817         (77.428, 59.36, 60.677)
+                                                                                    (72.303, 60.554, 63.017)
+
+              3          C 256          C 284             29        1090.38         (72.303, 60.554, 63.017)
+                                                                                    (77.694, 62.588, 104.728)
+
+              4          C 284          C 289              6        225.212         (77.694, 62.588, 104.728)
+                                                                                    (90.042, 64.01, 97.81)
+
+              5          C 289          C 314             26        978.411         (90.042, 64.01, 97.81)
+                                                                                    (80.31, 68.187, 63.27)
+
+              6          C 314          C 452              6        223.092         (80.31, 68.187, 63.27)
+                                                                                    (91.307, 59.663, 60.522)
+
+              7          C 452          C 453              2        48.6094         (91.307, 59.663, 60.522)
+                                                                                    (88.188, 57.921, 61.949)
+
+              8          C 453          C 482             30        1119.83         (88.188, 57.921, 61.949)
+                                                                                    (99.624, 49.064, 101.316)
+
+              9          C 482          C 484              3        95.1817         (99.624, 49.064, 101.316)
+                                                                                    (103.865, 45.586, 101.049)
+

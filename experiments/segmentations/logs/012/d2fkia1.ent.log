@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/fk/d2fkia1.ent
+Number of residues: 118
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 37800.7
+Null Model Fit: 5277.11 bits.
+Bits per residue: 45.1035
+
+Bezier model fit: 4836.32 bits.
+Bits per residue: 41.3361
+
+# of segments: 8
+Internal segmentation:
+0-->1-->23-->42-->52-->71-->87-->107-->117
+
+CPU time used: 6.43 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1            A 2              2        48.1405         (-1.501, -12.534, 9.822)
+                                                                                    (-5.012, -11.966, 8.473)
+
+              2            A 2           A 24             23        901.283         (-5.012, -11.966, 8.473)         (-12.0245, 19.7505, 11.5587)
+                                                                                    (-9.926, -9.808, -10.206)
+
+              3           A 24           A 43             20         793.16         (-9.926, -9.808, -10.206)         (-4.53102, 27.7825, 2.91031)
+                                                                                    (-1.933, -17.095, -6.321)
+
+              4           A 43           A 53             11        419.471         (-1.933, -17.095, -6.321)
+                                                                                    (8.616, 4.562, -1.595)
+
+              5           A 53           A 72             20        791.057         (8.616, 4.562, -1.595)         (26.5435, -12.5831, 5.95401)
+                                                                                    (3.415, -8.107, -12.388)
+
+              6           A 72           A 88             17        679.106         (3.415, -8.107, -12.388)         (16.682, 19.2496, -13.0182)
+                                                                                    (4.528, -10.973, 10.388)         (-5.52063, -26.8357, 1.65841)
+
+              7           A 88          A 108             21        786.608         (4.528, -10.973, 10.388)
+                                                                                    (-2.093, 20.027, -1.478)
+
+              8          A 108          A 118             11        417.495         (-2.093, 20.027, -1.478)
+                                                                                    (-10.36, 14.049, 11.262)
+

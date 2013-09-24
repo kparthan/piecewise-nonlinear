@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/nq/d2nqwa1.ent
+Number of residues: 87
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 17820.1
+Null Model Fit: 3785.6 bits.
+Bits per residue: 44.0186
+
+Bezier model fit: 3593.78 bits.
+Bits per residue: 41.7881
+
+# of segments: 7
+Internal segmentation:
+0-->7-->26-->41-->51-->63-->74-->86
+
+CPU time used: 4.49 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 4           A 11              8        293.356         (-4.338, 25.112, 3.646)
+                                                                                    (11.82, 26.369, -6.045)
+
+              2           A 11           A 30             20        782.445         (11.82, 26.369, -6.045)         (-4.16481, 20.5624, 24.9423)
+                                                                                    (1.946, 12.585, -0.432)
+
+              3           A 30           A 45             16        632.817         (1.946, 12.585, -0.432)         (15.7674, -0.307185, 18.9567)
+                                                                                    (3.443, 18.187, 14.914)
+
+              4           A 45           A 55             11        420.431         (3.443, 18.187, 14.914)
+                                                                                    (16.535, 18.942, 21.738)
+
+              5           A 55           A 67             13        506.065         (16.535, 18.942, 21.738)         (15.9326, 41.0164, 14.5892)
+                                                                                    (16.844, 12.346, 5.745)
+
+              6           A 67           A 78             12        461.333         (16.844, 12.346, 5.745)
+                                                                                    (7.786, 35.404, 20.999)
+
+              7           A 78           A 90             13        497.332         (7.786, 35.404, 20.999)
+                                                                                    (13.764, 13.403, -3.709)
+

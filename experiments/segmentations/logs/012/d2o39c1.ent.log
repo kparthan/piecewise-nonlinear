@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/o3/d2o39c1.ent
+Number of residues: 62
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 10886.7
+Null Model Fit: 2641.77 bits.
+Bits per residue: 43.3076
+
+Bezier model fit: 2519.85 bits.
+Bits per residue: 41.309
+
+# of segments: 6
+Internal segmentation:
+0-->1-->13-->22-->38-->47-->61
+
+CPU time used: 2.8 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            C 1            C 2              2        46.3447         (-26.053, 16.033, 7.623)
+                                                                                    (-24.606, 15.354, 4.199)
+
+              2            C 2           C 14             13        500.519         (-24.606, 15.354, 4.199)         (-33.1907, 37.4477, -11.8902)
+                                                                                    (-14.217, 26.137, 1.298)
+
+              3           C 14           C 23             10        367.506         (-14.217, 26.137, 1.298)         (-20.3142, 6.21287, 1.91418)
+                                                                                    (-23.336, 21.747, 15.697)
+
+              4           C 23           C 39             17        654.219         (-23.336, 21.747, 15.697)         (-15.1023, 40.3683, -20.6159)
+                                                                                    (-30.728, 40.495, 7.027)
+
+              5           C 39           C 48             10        372.952         (-30.728, 40.495, 7.027)         (-21.3568, 27.6744, 3.13712)
+                                                                                    (-29.615, 17.44, 16.174)
+
+              6           C 48           C 62             15        578.307         (-29.615, 17.44, 16.174)
+                                                                                    (-27.537, 40.453, -8.956)
+

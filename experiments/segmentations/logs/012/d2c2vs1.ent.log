@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/c2/d2c2vs1.ent
+Number of residues: 74
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 14932.5
+Null Model Fit: 3194.74 bits.
+Bits per residue: 43.7635
+
+Bezier model fit: 3050.55 bits.
+Bits per residue: 41.7884
+
+# of segments: 6
+Internal segmentation:
+0-->11-->21-->27-->45-->53-->73
+
+CPU time used: 3.5 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          S 227          S 238             12        474.985         (-32.899, -33.935, -10.385)
+                                                                                    (-21.097, -37.945, -5.43)
+
+              2          S 238          S 248             11        418.604         (-21.097, -37.945, -5.43)         (-19.4081, -41.169, -23.7369)
+                                                                                    (-18.651, -58.316, -5.475)
+
+              3          S 248          S 254              7        258.356         (-18.651, -58.316, -5.475)
+                                                                                    (-17.336, -44.464, -10.681)
+
+              4          S 254          S 272             19        747.212         (-17.336, -44.464, -10.681)         (4.34292, -45.7984, -2.22975)
+                                                                                    (-18.954, -52.914, 2.982)
+
+              5          S 272          S 280              9        337.777         (-18.954, -52.914, 2.982)
+                                                                                    (-12.282, -57.691, -9.095)
+
+              6          S 280          S 300             21         813.62         (-12.282, -57.691, -9.095)         (-37.1267, -45.7037, -26.8809)
+                                                                                    (-26.493, -31.523, -17.443)
+

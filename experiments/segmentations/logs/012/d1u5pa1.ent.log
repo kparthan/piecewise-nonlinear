@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/u5/d1u5pa1.ent
+Number of residues: 110
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 28624.4
+Null Model Fit: 4872.55 bits.
+Bits per residue: 44.7023
+
+Bezier model fit: 4287.8 bits.
+Bits per residue: 39.3376
+
+# of segments: 6
+Internal segmentation:
+0-->1-->27-->32-->61-->81-->109
+
+CPU time used: 5.7 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1         A 1662         A 1663              2        47.7394         (-70.124, 54.323, -2.348)
+                                                                                    (-67.654, 56.349, -4.479)
+
+              2         A 1663         A 1689             27         1000.8         (-67.654, 56.349, -4.479)         (-58.2436, 49.3938, 9.22346)
+                                                                                    (-40.556, 38.168, 22.591)
+
+              3         A 1689         A 1694              6        218.337         (-40.556, 38.168, 22.591)
+                                                                                    (-39.876, 24.03, 26.241)
+
+              4         A 1694         A 1723             30        1124.29         (-39.876, 24.03, 26.241)         (-53.5365, 28.8472, 6.54954)
+                                                                                    (-52.588, 50.274, -3.989)
+
+              5         A 1723         A 1743             21        822.039         (-52.588, 50.274, -3.989)         (-62.8348, 72.9876, -14.2606)
+                                                                                    (-51.971, 56.801, 3.301)
+
+              6         A 1743         A 1771             29        1074.59         (-51.971, 56.801, 3.301)         (-39.7153, 39.433, 6.62634)
+                                                                                    (-32.18, 25.306, 21.611)
+

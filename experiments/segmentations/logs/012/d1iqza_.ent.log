@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/iq/d1iqza_.ent
+Number of residues: 81
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 14897.3
+Null Model Fit: 3500.81 bits.
+Bits per residue: 43.7601
+
+Bezier model fit: 3338.97 bits.
+Bits per residue: 41.7372
+
+# of segments: 6
+Internal segmentation:
+0-->20-->28-->41-->65-->74-->80
+
+CPU time used: 3.81 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 21             21        827.743         (50.112, 7.203, -11.839)         (40.8184, 43.4719, 9.58073)
+                                                                                    (53.212, 24.204, -13.983)
+
+              2           A 21           A 29              9        340.989         (53.212, 24.204, -13.983)
+                                                                                    (38.987, 35.297, -9.46)
+
+              3           A 29           A 42             14        556.883         (38.987, 35.297, -9.46)
+                                                                                    (42.005, 14.904, -8.072)
+
+              4           A 42           A 66             25         975.66         (42.005, 14.904, -8.072)         (58.8279, 4.12159, -36.8206)
+                                                                                    (49.222, 21.272, -3.327)         (61.3353, 34.9662, 10.4039)
+
+              5           A 66           A 75             10        375.321         (49.222, 21.272, -3.327)         (50.2028, -0.729578, -7.77502)
+                                                                                    (37.264, 15.546, -4.415)
+
+              6           A 75           A 81              7        262.377         (37.264, 15.546, -4.415)
+                                                                                    (45.902, 12.652, 5.922)
+

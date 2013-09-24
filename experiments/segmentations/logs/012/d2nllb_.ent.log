@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/nl/d2nllb_.ent
+Number of residues: 103
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 47054.6
+Null Model Fit: 4632.78 bits.
+Bits per residue: 45.4194
+
+Bezier model fit: 4206.7 bits.
+Bits per residue: 41.2422
+
+# of segments: 7
+Internal segmentation:
+0-->6-->15-->20-->44-->57-->78-->102
+
+CPU time used: 5.35 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          B 300          B 306              7        263.507         (14.136, -15.955, 87.2)
+                                                                                    (17.257, -14.871, 100.58)
+
+              2          B 306          B 315             10        384.814         (17.257, -14.871, 100.58)         (3.05111, -16.4502, 88.3402)
+                                                                                    (19.732, -3.807, 90.44)
+
+              3          B 315          B 320              6        226.774         (19.732, -3.807, 90.44)         (21.6929, -13.5826, 87.0795)
+                                                                                    (12.23, -10.406, 95.853)
+
+              4          B 320          B 344             25        986.526         (12.23, -10.406, 95.853)         (19.9817, 18.2897, 101.361)
+                                                                                    (30.649, -12.536, 113.539)
+
+              5          B 344          B 357             14        549.633         (30.649, -12.536, 113.539)         (7.33993, -20.6726, 99.5668)
+                                                                                    (20.895, -8.918, 110.886)
+
+              6          B 357          B 378             22        865.637         (20.895, -8.918, 110.886)         (30.8759, -16.7923, 88.6608)
+                                                                                    (19.559, 12.873, 94.157)
+
+              7          B 378          B 402             25        929.811         (19.559, 12.873, 94.157)
+                                                                                    (-12.883, 20.094, 74.361)
+

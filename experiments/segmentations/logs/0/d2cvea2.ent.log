@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/cv/d2cvea2.ent
+Number of residues: 67
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 12618.9
+Null Model Fit: 2872.36 bits.
+Bits per residue: 43.5206
+
+Bezier model fit: 2724.8 bits.
+Bits per residue: 41.2849
+
+# of segments: 7
+Internal segmentation:
+0-->1-->11-->25-->34-->44-->60-->66
+
+CPU time used: 0.5 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 125          A 126              2        46.5577         (17.531, 8.021, 11.468)
+                                                                                    (14.435, 7.981, 9.308)
+
+              2          A 126          A 136             11        416.636         (14.435, 7.981, 9.308)
+                                                                                    (20.957, 6.936, -21.174)
+
+              3          A 136          A 150             15        565.592         (20.957, 6.936, -21.174)
+                                                                                    (27.966, 3.534, -1.253)
+
+              4          A 150          A 159             10        386.799         (27.966, 3.534, -1.253)
+                                                                                    (13.012, 3.535, -23.651)
+
+              5          A 159          A 169             11        405.803         (13.012, 3.535, -23.651)
+                                                                                    (18.819, 8.359, 5.565)
+
+              6          A 169          A 185             17        649.581         (18.819, 8.359, 5.565)
+                                                                                    (24.4, 18.924, -14.838)
+
+              7          A 185          A 191              7        253.834         (24.4, 18.924, -14.838)
+                                                                                    (9.992, 11.776, -9.566)
+

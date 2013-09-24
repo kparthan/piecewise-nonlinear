@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/fm/d2fmla1.ent
+Number of residues: 57
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 13760.2
+Null Model Fit: 2444.15 bits.
+Bits per residue: 43.6456
+
+Bezier model fit: 2374.24 bits.
+Bits per residue: 42.3972
+
+# of segments: 8
+Internal segmentation:
+0-->7-->11-->24-->31-->41-->48-->49-->56
+
+CPU time used: 0.39 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 205          A 212              8        298.674         (15.371, 18.578, 19.105)
+                                                                                    (11.025, 7.815, 12.986)
+
+              2          A 212          A 216              5        177.854         (11.025, 7.815, 12.986)
+                                                                                    (11.371, 6.365, 24.238)
+
+              3          A 216          A 229             14        531.247         (11.371, 6.365, 24.238)
+                                                                                    (30.252, 11.401, 21.983)
+
+              4          A 229          A 236              8         307.54         (30.252, 11.401, 21.983)
+                                                                                    (20.556, 10.822, 33.523)
+
+              5          A 236          A 246             11        413.879         (20.556, 10.822, 33.523)
+                                                                                    (8.284, 20.339, 26.646)
+
+              6          A 246          A 253              8        301.909         (8.284, 20.339, 26.646)
+                                                                                    (3.435, 2.693, 26.157)
+
+              7          A 253          A 261              2        46.6826         (3.435, 2.693, 26.157)
+                                                                                    (6.44, -0.551, 30.419)
+
+              8          A 261          A 268              8        296.454         (6.44, -0.551, 30.419)
+                                                                                    (5.103, 18.298, 18.575)
+

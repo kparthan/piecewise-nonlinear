@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/fe/d2fe5a1.ent
+Number of residues: 92
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 21779.1
+Null Model Fit: 4032.03 bits.
+Bits per residue: 44.308
+
+Bezier model fit: 3765.64 bits.
+Bits per residue: 41.3807
+
+# of segments: 7
+Internal segmentation:
+0-->10-->27-->42-->46-->59-->79-->91
+
+CPU time used: 4.81 secs.
+Wall clock time elapsed: 4 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 223          A 233             11        398.354         (9.833, 4.402, 8.702)         (-2.35575, 15.0922, 19.3145)
+                                                                                    (3.344, 32.074, 18.77)
+
+              2          A 233          A 250             18        715.654         (3.344, 32.074, 18.77)
+                                                                                    (12.069, 12.882, -10.768)
+
+              3          A 250          A 265             16        622.804         (12.069, 12.882, -10.768)         (-5.78511, 4.51753, -3.2943)
+                                                                                    (7.013, 24.572, 16.948)         (27.4151, 38.5011, 13.0392)
+
+              4          A 265          A 269              5        183.155         (7.013, 24.572, 16.948)
+                                                                                    (9.72, 19.728, 19.484)
+
+              5          A 269          A 282             14        537.228         (9.72, 19.728, 19.484)         (19.6073, 11.5209, -3.73963)
+                                                                                    (-4.759, 15.391, 10.334)
+
+              6          A 282          A 302             21        820.516         (-4.759, 15.391, 10.334)         (4.54342, 19.5442, -17.5442)
+                                                                                    (-6.22, 24.522, 14.34)
+
+              7          A 302          A 314             13        487.934         (-6.22, 24.522, 14.34)
+                                                                                    (17.345, 5.534, 0.846)
+

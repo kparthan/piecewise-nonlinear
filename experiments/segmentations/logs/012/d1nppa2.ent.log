@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/np/d1nppa2.ent
+Number of residues: 58
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 12584
+Null Model Fit: 2480.45 bits.
+Bits per residue: 43.5167
+
+Bezier model fit: 2384.32 bits.
+Bits per residue: 41.8302
+
+# of segments: 7
+Internal segmentation:
+0-->5-->17-->19-->30-->42-->52-->57
+
+CPU time used: 2.55 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 191          A 196              6        222.211         (15.404, 19.032, 59.65)
+                                                                                    (5.42, 13.24, 52.677)
+
+              2          A 196          A 208             13        506.649         (5.42, 13.24, 52.677)
+                                                                                    (4.642, 14.285, 32.539)
+
+              3          A 208          A 210              3        91.0704         (4.642, 14.285, 32.539)
+                                                                                    (1.686, 19.776, 33.995)
+
+              4          A 210          A 221             12        450.778         (1.686, 19.776, 33.995)         (-4.36136, 5.82745, 50.7354)
+                                                                                    (17.498, 7.891, 50.13)
+
+              5          A 221          A 233             13        487.957         (17.498, 7.891, 50.13)
+                                                                                    (-8.569, 7.56, 34.369)
+
+              6          A 233          A 243             11         410.29         (-8.569, 7.56, 34.369)         (8.50773, 0.740031, 40.6873)
+                                                                                    (13.213, 18.376, 41.645)
+
+              7          A 243          A 248              6        215.366         (13.213, 18.376, 41.645)
+                                                                                    (0.375, 22.474, 45.182)
+

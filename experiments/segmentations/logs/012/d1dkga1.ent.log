@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/dk/d1dkga1.ent
+Number of residues: 59
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 9871.25
+Null Model Fit: 2503.65 bits.
+Bits per residue: 43.1664
+
+Bezier model fit: 2409.56 bits.
+Bits per residue: 41.5441
+
+# of segments: 7
+Internal segmentation:
+0-->13-->14-->24-->28-->43-->45-->58
+
+CPU time used: 2.62 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 139          A 152             14        540.433         (55.931, 27.372, -10.54)         (35.3237, 49.0714, -21.2043)
+                                                                                    (40.984, 25.038, -13.583)
+
+              2          A 152          A 153              2        46.2034         (40.984, 25.038, -13.583)
+                                                                                    (42.988, 27.808, -12.017)
+
+              3          A 153          A 163             11        405.866         (42.988, 27.808, -12.017)         (26.8319, 38.0372, -0.147374)
+                                                                                    (32.28, 47.181, -18.49)
+
+              4          A 163          A 167              5         176.02         (32.28, 47.181, -18.49)
+                                                                                    (31.183, 39.661, -19.214)
+
+              5          A 167          A 182             16         622.47         (31.183, 39.661, -19.214)         (49.2031, 42.323, 1.0856)
+                                                                                    (50.606, 21.586, -14.464)
+
+              6          A 182          A 184              3        90.3698         (50.606, 21.586, -14.464)
+                                                                                    (47.121, 23.722, -9.433)
+
+              7          A 184          A 197             14        528.192         (47.121, 23.722, -9.433)
+                                                                                    (23.672, 47.283, -15.659)
+

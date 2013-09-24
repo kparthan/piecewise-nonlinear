@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/rl/d1rl6a1.ent
+Number of residues: 75
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 18427.7
+Null Model Fit: 3260.95 bits.
+Bits per residue: 44.0669
+
+Bezier model fit: 3001.62 bits.
+Bits per residue: 40.5624
+
+# of segments: 7
+Internal segmentation:
+0-->13-->22-->30-->31-->39-->50-->74
+
+CPU time used: 3.64 secs.
+Wall clock time elapsed: 3 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 7           A 20             14        530.038         (64.061, 13.461, 81.186)         (77.3972, 32.8764, 97.0236)
+                                                                                    (55.709, 26.214, 71.997)
+
+              2           A 20           A 29             10        370.705         (55.709, 26.214, 71.997)
+                                                                                    (77.623, 30.529, 82.251)
+
+              3           A 29           A 37              9        319.908         (77.623, 30.529, 82.251)         (66.4989, 33.7049, 72.3339)
+                                                                                    (61.075, 20.149, 65.651)
+
+              4           A 37           A 38              2         47.104         (61.075, 20.149, 65.651)
+                                                                                    (57.318, 20.947, 65.887)
+
+              5           A 38           A 46              9        326.982         (57.318, 20.947, 65.887)
+                                                                                    (58.858, 20.438, 87.983)
+
+              6           A 46           A 57             12         456.43         (58.858, 20.438, 87.983)
+                                                                                    (57.672, 5.208, 64.278)
+
+              7           A 57           A 81             25        950.451         (57.672, 5.208, 64.278)
+                                                                                    (80.108, 26.25, 80.026)
+

@@ -1,0 +1,37 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/i5/d2i53a2.ent
+Number of residues: 110
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 29079.6
+Null Model Fit: 4875.03 bits.
+Bits per residue: 44.7251
+
+Bezier model fit: 4486.32 bits.
+Bits per residue: 41.1589
+
+# of segments: 6
+Internal segmentation:
+0-->28-->44-->59-->84-->102-->109
+
+CPU time used: 5.84 secs.
+Wall clock time elapsed: 5 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1          A 158          A 186             29         1138.6         (21.512, 20.143, 54.005)         (-10.3405, 4.68925, 72.9295)
+                                                                                    (7.667, 15.553, 50.674)
+
+              2          A 186          A 202             17        659.712         (7.667, 15.553, 50.674)         (11.9719, 31.3065, 35.9814)
+                                                                                    (17.046, 27.365, 56.224)
+
+              3          A 202          A 217             16        603.983         (17.046, 27.365, 56.224)
+                                                                                    (-4.714, 21.693, 52.716)
+
+              4          A 217          A 242             26        1056.05         (-4.714, 21.693, 52.716)         (2.78404, 14.6424, 85.4072)
+                                                                                    (9.577, 31.694, 63.419)
+
+              5          A 242          A 260             19        727.678         (9.577, 31.694, 63.419)
+                                                                                    (-0.76, 28.58, 36.33)
+
+              6          A 260          A 267              8        300.299         (-0.76, 28.58, 36.33)         (10.011, 31.7444, 37.1745)
+                                                                                    (10.766, 41.028, 45.443)
+

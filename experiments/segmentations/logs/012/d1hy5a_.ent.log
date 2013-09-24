@@ -1,0 +1,40 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/hy/d1hy5a_.ent
+Number of residues: 120
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 27496.7
+Null Model Fit: 5312.67 bits.
+Bits per residue: 44.6443
+
+Bezier model fit: 4835.97 bits.
+Bits per residue: 40.6384
+
+# of segments: 7
+Internal segmentation:
+0-->1-->25-->41-->58-->74-->95-->119
+
+CPU time used: 6.49 secs.
+Wall clock time elapsed: 6 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1         A 1100         A 1101              2        47.6814         (8.848, -13.493, 39.425)
+                                                                                    (9.556, -15.894, 36.584)
+
+              2         A 1101         A 1125             25        955.531         (9.556, -15.894, 36.584)         (7.76978, 0.358872, 30.1136)
+                                                                                    (15.084, 11.407, 10.149)
+
+              3         A 1125         A 1141             17        665.192         (15.084, 11.407, 10.149)         (31.7584, 6.9975, 14.9604)
+                                                                                    (20.768, 3.937, 22.419)
+
+              4         A 1141         A 1158             18        688.877         (20.768, 3.937, 22.419)
+                                                                                    (7.871, -18.679, 22.54)
+
+              5         A 1158         A 1174             17        650.768         (7.871, -18.679, 22.54)
+                                                                                    (17.69, -0.887, 2.754)
+
+              6         A 1174         A 1195             22        875.963         (17.69, -0.887, 2.754)         (30.3486, -9.91334, 22.8081)
+                                                                                    (26.485, 9.429, 1.287)
+
+              7         A 1195         A 1219             25        951.956         (26.485, 9.429, 1.287)         (3.34132, 2.79953, 10.0504)
+                                                                                    (2.501, -8.998, 25.885)
+

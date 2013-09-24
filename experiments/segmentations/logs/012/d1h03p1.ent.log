@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/h0/d1h03p1.ent
+Number of residues: 62
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 12235.8
+Null Model Fit: 2652.05 bits.
+Bits per residue: 43.4762
+
+Bezier model fit: 2523.8 bits.
+Bits per residue: 41.3738
+
+# of segments: 8
+Internal segmentation:
+0-->10-->20-->21-->31-->37-->47-->48-->61
+
+CPU time used: 2.74 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            P 5           P 15             11         406.43         (-14.725, -23.521, -11.138)         (-7.14909, -19.8154, -25.3375)
+                                                                                    (8.288, -18.287, -29.192)
+
+              2           P 15           P 25             11         419.66         (8.288, -18.287, -29.192)         (3.32602, -31.9572, -12.7323)
+                                                                                    (-9.153, -25.424, -12.328)
+
+              3           P 25           P 26              2        46.5132         (-9.153, -25.424, -12.328)
+                                                                                    (-9.5, -22.99, -9.46)
+
+              4           P 26           P 36             11        403.652         (-9.5, -22.99, -9.46)
+                                                                                    (16.456, -19.743, -26.484)
+
+              5           P 36           P 42              7        252.639         (16.456, -19.743, -26.484)
+                                                                                    (5.611, -10.027, -18.149)
+
+              6           P 42           P 52             11        415.264         (5.611, -10.027, -18.149)         (-0.249736, -27.4431, -9.25556)
+                                                                                    (-14.973, -9.842, -7.926)
+
+              7           P 52           P 53              2        46.5132         (-14.973, -9.842, -7.926)
+                                                                                    (-17.036, -13.017, -8.098)
+
+              8           P 53           P 66             14        533.133         (-17.036, -13.017, -8.098)
+                                                                                    (13.977, -11.093, -28.711)
+

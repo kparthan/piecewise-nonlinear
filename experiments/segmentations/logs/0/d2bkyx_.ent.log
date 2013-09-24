@@ -1,0 +1,43 @@
+Using structure file: /home/pkas7/Research/SCOP/pdbstyle-1.75B/bk/d2bkyx_.ent
+Number of residues: 86
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 26768.6
+Null Model Fit: 3791.48 bits.
+Bits per residue: 44.6056
+
+Bezier model fit: 3497.73 bits.
+Bits per residue: 41.1498
+
+# of segments: 8
+Internal segmentation:
+0-->8-->11-->26-->37-->54-->60-->71-->85
+
+CPU time used: 0.71 secs.
+Wall clock time elapsed: 0 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            X 4           X 12              9        334.251         (-9.079, 63.833, 22.688)
+                                                                                    (-8.561, 49.44, 43.184)
+
+              2           X 12           X 15              4        139.103         (-8.561, 49.44, 43.184)
+                                                                                    (-15.818, 49.616, 43.298)
+
+              3           X 15           X 30             16        603.623         (-15.818, 49.616, 43.298)
+                                                                                    (-21.562, 64.265, 25.581)
+
+              4           X 30           X 41             12        449.465         (-21.562, 64.265, 25.581)
+                                                                                    (-5.637, 42.08, 38.869)
+
+              5           X 41           X 58             18        686.009         (-5.637, 42.08, 38.869)
+                                                                                    (-28.349, 47.621, 26.619)
+
+              6           X 58           X 64              7        255.864         (-28.349, 47.621, 26.619)
+                                                                                    (-16.341, 48.24, 19.553)
+
+              7           X 64           X 75             12         459.79         (-16.341, 48.24, 19.553)
+                                                                                    (11.324, 46.768, 34.992)
+
+              8           X 75           X 89             15        569.628         (11.324, 46.768, 34.992)
+                                                                                    (-28.312, 56.033, 19.496)
+
