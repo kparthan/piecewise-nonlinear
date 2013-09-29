@@ -13,6 +13,7 @@
 
 using namespace std;
 
+/*
 #define SET 1
 #define UNSET 0
 
@@ -22,6 +23,26 @@ struct Parameters
   string path;
   string normalize_wrt_each_column;
 };
+*/
+
+double estimateMean(vector<double> &samples)
+{
+  double mean = 0;
+  for (int i=0; i<samples.size(); i++) {
+    mean += samples[i];
+  }
+  return mean/samples.size();
+}
+
+double standardDeviation(vector<double> &samples, double mean)
+{
+  double variance = 0;
+  for (int i=0; i<samples.size(); i++){
+    variance += (samples[i] - mean) * (samples[i] - mean);
+  }
+  variance /= samples.size();
+  return sqrt(variance);
+}
 
 int main(int argc, char **argv)
 {
@@ -31,7 +52,7 @@ int main(int argc, char **argv)
   }
   string path = argv[1];
   string file_name;
-  for (i=0; i<5; i++) {
+  for (int i=0; i<3; i++) {
     // read alignment scores from the file
     file_name = path + "alignment_scores" + boost::lexical_cast<string>(i);
     ifstream file(file_name.c_str());
@@ -53,6 +74,25 @@ int main(int argc, char **argv)
     file.close();
 
     // compute mean and sigma
+    vector<double> list;
+    for (int j=0; j<scores.size(); j++) {
+      for (int k=0; k<3; k++) {
+        list.push_back(scores[j][k]);
+      }
+    }
+    double mean = estimateMean(list);
+    double sigma = standardDeviation(list,mean);
+    file_name += ".standardized";
+    ofstream stdfile(file_name.c_str());
+    for (int j=0; j<scores.size(); j++) {
+      for (int k=0; k<3; k++) {
+        double x = (scores[j][k]-mean)/(double)sigma;
+        stdfile << fixed << setw(10) << setprecision(4) << x;
+      }
+      stdfile << fixed << setw(10) << setprecision(4) << scores[j][3];
+      stdfile << fixed << setw(10) << setprecision(4) << scores[j][4] << endl;
+    }
+    stdfile.close();
   }
 }
 
