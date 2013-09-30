@@ -54,7 +54,7 @@ int main(int argc, char **argv)
   string file_name;
   for (int i=0; i<3; i++) {
     // read alignment scores from the file
-    file_name = path + "alignment_scores" + boost::lexical_cast<string>(i);
+    file_name = path + "alignments-scores" + boost::lexical_cast<string>(i);
     ifstream file(file_name.c_str());
     string line;
     vector<vector<double>> scores;
@@ -74,23 +74,23 @@ int main(int argc, char **argv)
     file.close();
 
     // compute mean and sigma
-    vector<double> list;
-    for (int j=0; j<scores.size(); j++) {
-      for (int k=0; k<3; k++) {
-        list.push_back(scores[j][k]);
+    vector<double> means,sigmas;
+    for (int j=0; j<5; j++) {
+      vector<double> list;
+      for (int k=0; k<scores.size(); k++) {
+        list.push_back(scores[k][j]);
       }
+      means.push_back(estimateMean(list));
+      sigmas.push_back(standardDeviation(list,means[j]));
     }
-    double mean = estimateMean(list);
-    double sigma = standardDeviation(list,mean);
     file_name += ".standardized";
     ofstream stdfile(file_name.c_str());
     for (int j=0; j<scores.size(); j++) {
-      for (int k=0; k<3; k++) {
-        double x = (scores[j][k]-mean)/(double)sigma;
+      for (int k=0; k<5; k++) {
+        double x = (scores[j][k]-means[k])/(double)sigmas[k];
         stdfile << fixed << setw(10) << setprecision(4) << x;
       }
-      stdfile << fixed << setw(10) << setprecision(4) << scores[j][3];
-      stdfile << fixed << setw(10) << setprecision(4) << scores[j][4] << endl;
+      stdfile << endl;
     }
     stdfile.close();
   }

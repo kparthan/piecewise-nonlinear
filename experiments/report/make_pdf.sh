@@ -1,4 +1,4 @@
-latex main.tex
-latex main.tex
-dvipdf main.dvi
+latex main-normalized.tex
+latex main-normalized.tex
+dvipdf main-normalized.dvi
 

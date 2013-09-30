@@ -18,3 +18,4 @@ set output "gap-penalty-20/alignments.boxplot.score1.eps"
 plot "gap-penalty-20/alignments-scores1" using (1):1, "gap-penalty-20/alignments-scores1" using (2):2, "gap-penalty-20/alignments-scores1" using (3):3, "gap-penalty-20/alignments-scores1" using (4):4, "gap-penalty-20/alignments-scores1" using (5):5
 set output "gap-penalty-20/alignments.boxplot.score2.eps" 
 plot "gap-penalty-20/alignments-scores2" using (1):1, "gap-penalty-20/alignments-scores2" using (2):2, "gap-penalty-20/alignments-scores2" using (3):3, "gap-penalty-20/alignments-scores2" using (4):4, "gap-penalty-20/alignments-scores2" using (5):5
+set yrange [-1:1]
