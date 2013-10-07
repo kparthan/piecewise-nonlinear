@@ -592,9 +592,9 @@ void Alignment::save(double gap_penalty, string &controls,
 {
   string file_name;
   if (scoring_function == SCORE_ANGLES) {
-    file_name = string(CURRENT_DIRECTORY) + "experiments/angles/alignments/basic/";
+    file_name = string(CURRENT_DIRECTORY) + "experiments/sst/angles/alignments/basic/";
   } else if (scoring_function == SCORE_ANGLES_LENGTHS) {
-    file_name = string(CURRENT_DIRECTORY) + "experiments/angles-lengths/alignments/basic/";
+    file_name = string(CURRENT_DIRECTORY) + "experiments/sst/angles-lengths/alignments/basic/";
   }
   file_name += controls + "/";
   file_name += "gap-penalty" + boost::lexical_cast<string>(gap_penalty).substr(0,3);
@@ -623,9 +623,9 @@ void Alignment::save(double go, double ge, string &controls,
 {
   string file_name;
   if (scoring_function == SCORE_ANGLES) {
-    file_name = string(CURRENT_DIRECTORY) + "experiments/angles/alignments/affine/";
+    file_name = string(CURRENT_DIRECTORY) + "experiments/sst/angles/alignments/affine/";
   } else if (scoring_function == SCORE_ANGLES_LENGTHS) {
-    file_name = string(CURRENT_DIRECTORY) + "experiments/angles-lengths/alignments/affine/";
+    file_name = string(CURRENT_DIRECTORY) + "experiments/sst/angles-lengths/alignments/affine/";
   }
   file_name += controls + "/";
   file_name += "go" + boost::lexical_cast<string>(go).substr(0,3) + "-";
