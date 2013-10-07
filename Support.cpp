@@ -1779,9 +1779,9 @@ void updateResults(struct Parameters &parameters, vector<vector<double>> &scores
 {
   string path,gap;
   if (parameters.scoring_function == SCORE_ANGLES) {
-    path = string(CURRENT_DIRECTORY) + "experiments/angles/";
+    path = string(CURRENT_DIRECTORY) + "experiments/sst/angles/";
   } else if (parameters.scoring_function == SCORE_ANGLES_LENGTHS) {
-    path = string(CURRENT_DIRECTORY) + "experiments/angles-lengths/";
+    path = string(CURRENT_DIRECTORY) + "experiments/sst/angles-lengths/";
   }
   if (parameters.align_type == BASIC_ALIGNMENT) {
     path += "comparisons/domains/basic/";

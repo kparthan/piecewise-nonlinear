@@ -66,17 +66,17 @@ line_count = 0;
 #  line = fr.readline()
   
 # for standalone segmentation
-#cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation bezier --only --force segmentation --controls 0 1 2 --constrain sigma length '
+#cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation sst --only --force segmentation --controls 0 1 2 --constrain sigma length '
 
 # for constructing angular profiles
-cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation bezier --controls 0 1 2 --constrain sigma length --profile dihedral_angles --polygon projections '
+cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation sst --profile dihedral_angles --polygon projections '
 cmd += '--type basic --score angles --gap -20 '
 
 # for constructing length profiles
-#cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation bezier --controls 0 1 2 --constrain sigma length --profile lengths --polygon projections '
+#cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation sst --controls 0 1 2 --constrain sigma length --profile lengths --polygon projections '
 
 # for constructing angular-lengths profiles
-#cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation bezier --controls 0 1 2 --constrain sigma length --profile angles_lengths --polygon projections '
+#cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation sst --controls 0 1 2 --constrain sigma length --profile angles_lengths --polygon projections '
 #cmd += '--type basic --score anglen --go -15 --ge 0 '
 
 #cmd += '--controls 0 1 2 --constrain sigma length --standardize exists --fparams standardize.params '
