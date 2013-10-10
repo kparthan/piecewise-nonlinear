@@ -25,8 +25,8 @@
 #include <boost/tokenizer.hpp>
 #include <boost/filesystem.hpp>
 
-#define HOME_DIRECTORY "/home/parthan/"
-#define CURRENT_DIRECTORY "/home/parthan/Research/Work/piecewise-nonlinear/"
+#define HOME_DIRECTORY "/home/pkas7/"
+#define CURRENT_DIRECTORY "/home/pkas7/Research/Work/piecewise-nonlinear/"
 //#define CURRENT_DIRECTORY boost::filesystem::current_path().native()
 
 // numeric constants
@@ -68,6 +68,7 @@
 // type of segmentation
 #define BEZIER_SEGMENTATION 0
 #define SST_SEGMENTATION 1
+#define DSSP_SEGMENTATION 2 
 
 // type of profile constructed from the segmentation
 #define DIHEDRAL_ANGLES 1

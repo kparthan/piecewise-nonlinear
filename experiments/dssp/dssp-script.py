@@ -16,9 +16,10 @@ while line != '':
   y = x.split()
   for i in range(len(y)):
     domain = y[i]
-    domain_dir = domain[2:4] + '/'
-    path = scop_path + domain_dir + domain
-    cmd = './dssp ' + path + ' segmentations/' + domain
+    #domain_dir = domain[2:4] + '/'
+    #path = scop_path + domain_dir + domain
+    #cmd = './dssp ' + path + ' segmentations/' + domain
+    cmd = 'python parse-dssp.py segmentations/' + domain + ' parsed/' + domain
     fw.write(cmd+'\n')
     fw.write('echo $line_number\n')
     fw.write('line_number=$((line_number+1))\n')

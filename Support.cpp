@@ -266,7 +266,8 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
       parameters.segmentation = BEZIER_SEGMENTATION;
     } else if (segmentation.compare("sst") == 0) {
       parameters.segmentation = SST_SEGMENTATION;
-    }
+    } else if (segmentation.compare("dssp") == 0) {
+      parameters.segmentation = DSSP_SEGMENTATION;
   } else {
     parameters.segmentation = BEZIER_SEGMENTATION;
   }
@@ -556,6 +557,8 @@ void build(struct Parameters &parameters)
           Angles angles = buildAnglesProfile(parameters,segmentation);
         } else if (parameters.segmentation == SST_SEGMENTATION) {
           Angles angles = buildSSTProfile(parameters);
+        } else if (parameters.segmentation == DSSP_SEGMENTATION) {
+          Angles angles = buildDSSPProfile(parameters);
         }
         break;
       }
@@ -693,8 +696,12 @@ void compareStructuresList(struct Parameters &parameters)
           parameters.file = parameters.comparison_files[i];
           if (parameters.segmentation == BEZIER_SEGMENTATION) {
             angles = buildAnglesProfile(parameters,segmentations[i]);
-          } else if (parameters.segmentation == SST_SEGMENTATION) {
-            angles = buildSSTProfile(parameters);
+          } else {
+            if (parameters.segmentation == SST_SEGMENTATION) {
+              angles = buildSSTProfile(parameters);
+            } else if (parameters.segmentation == SST_SEGMENTATION) {
+              angles = buildDSSProfile(parameters);
+            }
             if (angles.size() == 0) {
               errorLog(names);
               exit(1);
@@ -2375,7 +2382,9 @@ void updateResults(vector<double> &dot_products, vector<double> &distances)
 ///////////////////////// SST FUNCTIONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 /*!
- *
+ *  \brief This method constructs the angular profile using SST segmentation
+ *  \param parameters a reference to a struct Parameters
+ *  \return the angular profile
  */
 Angles buildSSTProfile(struct Parameters &parameters)
 {
@@ -2383,8 +2392,33 @@ Angles buildSSTProfile(struct Parameters &parameters)
   string name = extractName(parameters.file);
   string path = string(CURRENT_DIRECTORY) + "experiments/sst/parsed/";
   string file_name = path + name;
-  string each_line;
+  return read_segmentation(name,file_name);
+}
 
+/*!
+ *  \brief This method constructs the angular profile using DSSP segmentation
+ *  \param parameters a reference to a struct Parameters
+ *  \return the angular profile
+ */
+Angles buildDSSPProfile(struct Parameters &parameters)
+{
+  ProteinStructure *p = parsePDBFile(parameters.file);
+  string name = extractName(parameters.file);
+  string path = string(CURRENT_DIRECTORY) + "experiments/dssp/parsed/";
+  string file_name = path + name;
+  return read_segmentation(name,file_name);
+}
+
+/*!
+ *  \brief This method reads the segmentation from a file and constructs the
+ *  angular profile
+ *  \param name a reference to a string
+ *  \param file_name a reference to a string
+ *  \return the angular profile
+ */
+Angles read_segmentation(string &name, string &file_name)
+{
+  string each_line;
   // construct all segments
   vector<vector<string>> segments;
   ifstream file(file_name.c_str());

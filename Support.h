@@ -113,6 +113,10 @@ void updateResults(vector<double> &, vector<double> &);
 
 // sst functions
 Angles buildSSTProfile(struct Parameters &);
+Angles read_segmentation(string &, string &);
+
+// dssp functions
+Angles buildDSSPProfile(struct Parameters &);
 
 // general functions
 struct Parameters parseCommandLineInput (int, char **); 
