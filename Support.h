@@ -113,7 +113,7 @@ void updateResults(vector<double> &, vector<double> &);
 
 // sst functions
 Angles buildSSTProfile(struct Parameters &);
-Angles read_segmentation(string &, string &);
+Angles read_segmentation(ProteinStructure *, string &, string &);
 
 // dssp functions
 Angles buildDSSPProfile(struct Parameters &);

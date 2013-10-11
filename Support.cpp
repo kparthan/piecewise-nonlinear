@@ -268,6 +268,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
       parameters.segmentation = SST_SEGMENTATION;
     } else if (segmentation.compare("dssp") == 0) {
       parameters.segmentation = DSSP_SEGMENTATION;
+    }
   } else {
     parameters.segmentation = BEZIER_SEGMENTATION;
   }
@@ -699,8 +700,8 @@ void compareStructuresList(struct Parameters &parameters)
           } else {
             if (parameters.segmentation == SST_SEGMENTATION) {
               angles = buildSSTProfile(parameters);
-            } else if (parameters.segmentation == SST_SEGMENTATION) {
-              angles = buildDSSProfile(parameters);
+            } else if (parameters.segmentation == DSSP_SEGMENTATION) {
+              angles = buildDSSPProfile(parameters);
             }
             if (angles.size() == 0) {
               errorLog(names);
@@ -1786,9 +1787,9 @@ void updateResults(struct Parameters &parameters, vector<vector<double>> &scores
 {
   string path,gap;
   if (parameters.scoring_function == SCORE_ANGLES) {
-    path = string(CURRENT_DIRECTORY) + "experiments/sst/angles/";
+    path = string(CURRENT_DIRECTORY) + "experiments/dssp/angles/";
   } else if (parameters.scoring_function == SCORE_ANGLES_LENGTHS) {
-    path = string(CURRENT_DIRECTORY) + "experiments/sst/angles-lengths/";
+    path = string(CURRENT_DIRECTORY) + "experiments/dssp/angles-lengths/";
   }
   if (parameters.align_type == BASIC_ALIGNMENT) {
     path += "comparisons/domains/basic/";
@@ -1803,15 +1804,15 @@ void updateResults(struct Parameters &parameters, vector<vector<double>> &scores
     gap = "go" + boost::lexical_cast<string>(go).substr(0,3) + "-";
     gap += "ge" + boost::lexical_cast<string>(ge).substr(0,3) + "/";
   }
-  string file_name = path + gap + "alignments-scores0-part4";
+  string file_name = path + gap + "alignments-scores0";
   ofstream file1(file_name.c_str(),ios::app);
-  file_name = path + gap + "alignments-scores1-part4";
+  file_name = path + gap + "alignments-scores1";
   ofstream file2(file_name.c_str(),ios::app);
-  file_name = path + gap + "alignments-scores2-part4";
+  file_name = path + gap + "alignments-scores2";
   ofstream file3(file_name.c_str(),ios::app);
-  file_name = path + gap + "alignments-scores3-part4";
+  file_name = path + gap + "alignments-scores3";
   ofstream file4(file_name.c_str(),ios::app);
-  file_name = path + gap + "alignments-scores4-part4";
+  file_name = path + gap + "alignments-scores4";
   ofstream file5(file_name.c_str(),ios::app);
   for (int i=0; i<scores.size(); i++) {
     file1 << fixed << setw(20) << setprecision(4) << scores[i][0];
@@ -2392,7 +2393,7 @@ Angles buildSSTProfile(struct Parameters &parameters)
   string name = extractName(parameters.file);
   string path = string(CURRENT_DIRECTORY) + "experiments/sst/parsed/";
   string file_name = path + name;
-  return read_segmentation(name,file_name);
+  return read_segmentation(p,name,file_name);
 }
 
 /*!
@@ -2406,17 +2407,18 @@ Angles buildDSSPProfile(struct Parameters &parameters)
   string name = extractName(parameters.file);
   string path = string(CURRENT_DIRECTORY) + "experiments/dssp/parsed/";
   string file_name = path + name;
-  return read_segmentation(name,file_name);
+  return read_segmentation(p,name,file_name);
 }
 
 /*!
  *  \brief This method reads the segmentation from a file and constructs the
  *  angular profile
+ *  \param p a pointe to a ProteinStructure object
  *  \param name a reference to a string
  *  \param file_name a reference to a string
  *  \return the angular profile
  */
-Angles read_segmentation(string &name, string &file_name)
+Angles read_segmentation(ProteinStructure *p, string &name, string &file_name)
 {
   string each_line;
   // construct all segments
@@ -2440,14 +2442,19 @@ Angles read_segmentation(string &name, string &file_name)
     // get lcb::chain
     string ch = segments[i][0];
     Chain chain = p->getDefaultModel()[ch];
-    string res_id = segments[i][1];
+    string start_res_id = segments[i][1];
     // get start lcb::residue
-    Residue residue = chain[res_id];
+    Residue residue = chain[start_res_id];
     vector<array<double,3>> coords = residue.getAtomicCoordinates<double>();
     Point<double> start(coords[0]);
     // get end lcb::residue
-    res_id = segments[i][2];
-    residue = chain[res_id];
+    string end_res_id = segments[i][2];
+    if (start_res_id.compare(end_res_id) == 0) {
+      ofstream log("error_log",ios::app);
+      log << name << endl;
+      exit(1);
+    }
+    residue = chain[end_res_id];
     coords = residue.getAtomicCoordinates<double>();
     Point<double> end(coords[0]);
     // get lcb::line

@@ -1,5 +1,5 @@
-# Usage: python parse-dssp.py <input-sst-file> <output-parsed-file> <log-file>
-#               argv[0]      argv[1]          argv[2]              argv[3]
+# Usage: python parse-dssp.py <input-sst-file> <output-parsed-file> 
+#               argv[0]      argv[1]          argv[2]              
 import sys, codecs, os, re
 if sys.stdout.encoding is None:
         sys.stdout = codecs.open('/dev/stdout', 'w', 'utf-8')
@@ -14,7 +14,16 @@ residue_annotations = []
 line = fr.readline()
 while line != '':
   x = line.strip('\n')
-  y = x.split()
+
+  if seg_flag == 0:
+    y = x.split()
+  else:
+    y = []
+    y.append(x[0:5])    # y[0]
+    y.append(x[5:11])   # y[1]
+    y.append(x[11])  # y[2]
+    y.append(x[13])     # y[3]
+    y.append(x[16])     # y[4]
 
   if y[0] == '#':
     seg_flag = 1
