@@ -1,0 +1,125 @@
+===== =============================================================== =====
+===== SST (v1.6): Secondary structural assignment using MML inference =====
+=====            A. S. Konagurthu, A. M. Lesk, L. Allison             =====
+===== Reference:   Bioinformatics  28(12):i97-i105 (2012)             =====
+===== =============================================================== =====
+..........................................................................
+. PDB file : struct.pdb
+. Timestamp:  Fri Oct  4 13:07:58 2013
+..........................................................................
+..........SEGMENTATION AND SECONDARY STRUCTURE ASSIGNMENT SUMMARY.........
+.
+. TITLE:    THE CRYSTAL STRUCTURE OF THE UBIQUITIN-LIKE (UBL) DOMAIN OF ...
+.
+.                     .         .         .         .         .
++   A(MET1)  MAVTITLKTLQQQTFKIRMEPDETVKVLKEKIEAEKGRDAFPVAGQKLIY  (TYR50)A
+-            EEEEEEEE333CCCEEEECCCCCCHHHHHHHHIIIIIIIIIHHHHEEEE3
+*            |   E   |3 |C | E |  C  |   H   : I | I  : H | E |
+.                     .         .       
++  A(ALA51)  AGKILSDDVPIRDYRIDEKNFVVVMVT                         (THR77)A
+-            33CCCCCCCC4444CC333EEEEEEEE                       
+*            3 |   C   | 4 |C|3 |  E   |                       
+.
+.
+..........................................................................
+...........................SEGMENTATION DETAILS...........................
+# Chain/SegNum  Len SSE   | Seg Start resi|| Seg End resi   |
+      A/1       9   E         1 M    (MET1)     9 T    (THR9)
+      A/2       4   3         9 T    (THR9)    12 Q   (GLN12)
+      A/3       4   C        12 Q   (GLN12)    15 F   (PHE15)
+      A/4       5   E        15 F   (PHE15)    19 M   (MET19)
+      A/5       7   C        19 M   (MET19)    25 V   (VAL25)
+      A/6       9   H        25 V   (VAL25)    33 E   (GLU33)
+                5   I        33 E   (GLU33)    37 G   (GLY37)
+      A/7       6   I        37 G   (GLY37)    42 P   (PRO42)
+                5   H        42 P   (PRO42)    46 Q   (GLN46)
+      A/8       5   E        46 Q   (GLN46)    50 Y   (TYR50)
+      A/9       4   3        50 Y   (TYR50)    53 K   (LYS53)
+      A/10      9   C        53 K   (LYS53)    61 I   (ILE61)
+      A/11      5   4        61 I   (ILE61)    65 R   (ARG65)
+      A/12      3   C        65 R   (ARG65)    67 D   (ASP67)
+      A/13      4   3        67 D   (ASP67)    70 N   (ASN70)
+      A/14      8   E        70 N   (ASN70)    77 T   (THR77)
+
+.
+..........................................................................
+..........RESIDUE LEVEL SECONDARY STRUCTURE ASSIGNMENT DETAILS............
+! Chain | Residue  | SSType
+  A     1 M   (MET1) E
+  A     2 A   (ALA2) E
+  A     3 V   (VAL3) E
+  A     4 T   (THR4) E
+  A     5 I   (ILE5) E
+  A     6 T   (THR6) E
+  A     7 L   (LEU7) E
+  A     8 K   (LYS8) E
+  A     9 T   (THR9) 3
+  A    10 L  (LEU10) 3
+  A    11 Q  (GLN11) 3
+  A    12 Q  (GLN12) C
+  A    13 Q  (GLN13) C
+  A    14 T  (THR14) C
+  A    15 F  (PHE15) E
+  A    16 K  (LYS16) E
+  A    17 I  (ILE17) E
+  A    18 R  (ARG18) E
+  A    19 M  (MET19) C
+  A    20 E  (GLU20) C
+  A    21 P  (PRO21) C
+  A    22 D  (ASP22) C
+  A    23 E  (GLU23) C
+  A    24 T  (THR24) C
+  A    25 V  (VAL25) H
+  A    26 K  (LYS26) H
+  A    27 V  (VAL27) H
+  A    28 L  (LEU28) H
+  A    29 K  (LYS29) H
+  A    30 E  (GLU30) H
+  A    31 K  (LYS31) H
+  A    32 I  (ILE32) H
+  A    33 E  (GLU33) I
+  A    34 A  (ALA34) I
+  A    35 E  (GLU35) I
+  A    36 K  (LYS36) I
+  A    37 G  (GLY37) I
+  A    38 R  (ARG38) I
+  A    39 D  (ASP39) I
+  A    40 A  (ALA40) I
+  A    41 F  (PHE41) I
+  A    42 P  (PRO42) H
+  A    43 V  (VAL43) H
+  A    44 A  (ALA44) H
+  A    45 G  (GLY45) H
+  A    46 Q  (GLN46) E
+  A    47 K  (LYS47) E
+  A    48 L  (LEU48) E
+  A    49 I  (ILE49) E
+  A    50 Y  (TYR50) 3
+  A    51 A  (ALA51) 3
+  A    52 G  (GLY52) 3
+  A    53 K  (LYS53) C
+  A    54 I  (ILE54) C
+  A    55 L  (LEU55) C
+  A    56 S  (SER56) C
+  A    57 D  (ASP57) C
+  A    58 D  (ASP58) C
+  A    59 V  (VAL59) C
+  A    60 P  (PRO60) C
+  A    61 I  (ILE61) 4
+  A    62 R  (ARG62) 4
+  A    63 D  (ASP63) 4
+  A    64 Y  (TYR64) 4
+  A    65 R  (ARG65) C
+  A    66 I  (ILE66) C
+  A    67 D  (ASP67) 3
+  A    68 E  (GLU68) 3
+  A    69 K  (LYS69) 3
+  A    70 N  (ASN70) E
+  A    71 F  (PHE71) E
+  A    72 V  (VAL72) E
+  A    73 V  (VAL73) E
+  A    74 V  (VAL74) E
+  A    75 M  (MET75) E
+  A    76 V  (VAL76) E
+  A    77 T  (THR77) E
+...................................END....................................
