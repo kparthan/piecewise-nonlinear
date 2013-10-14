@@ -69,8 +69,8 @@ line_count = 0;
 #cmd = './piecewise-nonlinear-fit-part1 --structure protein --segmentation sst --only --force segmentation --controls 0 1 2 --constrain sigma length '
 
 # for constructing angular profiles
-cmd = './piecewise-nonlinear-fit-part1 --structure protein --segmentation sst --profile dihedral_angles --polygon projections '
-cmd += '--type basic --score angles --gap -20 '
+#cmd = './piecewise-nonlinear-fit-part1 --structure protein --segmentation sst --profile dihedral_angles --polygon projections '
+#cmd += '--type basic --score angles --gap -20 '
 
 # for constructing length profiles
 #cmd = './piecewise-nonlinear-fit-part1 --structure protein --segmentation sst --controls 0 1 2 --constrain sigma length --profile lengths --polygon projections '
@@ -81,36 +81,37 @@ cmd += '--type basic --score angles --gap -20 '
 
 #cmd += '--controls 0 1 2 --constrain sigma length --standardize exists --fparams standardize.params '
 
+cmd = './piecewise-nonlinear-fit-part1 --structure protein --segmentation dssp --profile knot_invariants --method specific '
 # for single structure
-#cmd += '--scopid '
-#while line != '':
-#  x = line.strip('\n')
-#  y = line.split()
-#  for i in range(0,6):
-#    structure = y[i]
-#    structure_id = y[i][:-4]
-#    current = cmd + structure_id
-#    fw.write(current+'\n')
-#    fw.write('echo $line_number\n')
-#    fw.write('line_number=$((line_number+1))\n')
-#  line_count += 1
-#  line = fr.readline()
-
-# comparison script
-cmd += '--record --compare --scopids '
+cmd += '--scopid '
 while line != '':
   x = line.strip('\n')
   y = line.split()
-  current = cmd
   for i in range(0,6):
     structure = y[i]
     structure_id = y[i][:-4]
-    current += structure_id + " "
-  fw.write(current+'\n')
-  fw.write('echo $line_number\n')
-  fw.write('line_number=$((line_number+1))\n')
+    current = cmd + structure_id
+    fw.write(current+'\n')
+    fw.write('echo $line_number\n')
+    fw.write('line_number=$((line_number+1))\n')
   line_count += 1
   line = fr.readline()
+
+# comparison script
+#cmd += '--record --compare --scopids '
+#while line != '':
+#  x = line.strip('\n')
+#  y = line.split()
+#  current = cmd
+#  for i in range(0,6):
+#    structure = y[i]
+#    structure_id = y[i][:-4]
+#    current += structure_id + " "
+#  fw.write(current+'\n')
+#  fw.write('echo $line_number\n')
+#  fw.write('line_number=$((line_number+1))\n')
+#  line_count += 1
+#  line = fr.readline()
 
 fw.write('STOPM=`date -u "+%s"`\n')
 fw.write('RUNTIMEM=`expr $STOPM - $STARTM`\n')
