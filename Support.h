@@ -113,10 +113,14 @@ void updateResults(vector<double> &, vector<double> &);
 
 // sst functions
 Angles buildSSTProfile(struct Parameters &);
-Angles read_segmentation(ProteinStructure *, string &, string &);
+vector<vector<string>> parse_segmentation(ProteinStructure *, string &);
+Angles 
+construct_angular_profiles(ProteinStructure *, vector<vector<string>> &, string &);
 
 // dssp functions
 Angles buildDSSPProfile(struct Parameters &);
+vector<pair<string,string>> split_segments(vector<vector<string>> &);
+KnotInvariants build_DSSP_KnotInvariants(struct Parameters &);
 
 // general functions
 struct Parameters parseCommandLineInput (int, char **); 

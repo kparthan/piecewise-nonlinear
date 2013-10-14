@@ -7,7 +7,7 @@ set sphere_color, green
 show cartoon
 set label_font_id, 10
 set dash_gap, 0
-set dash_color, yellow 
+set dash_color, green 
 select seg1, chain A and resi 1-11
 color blue, seg1
 select seg2, chain A and resi 11-20

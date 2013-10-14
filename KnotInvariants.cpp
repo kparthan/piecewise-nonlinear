@@ -665,6 +665,28 @@ void KnotInvariants::save(string &type)
 }
 
 /*!
+ *  \brief This functionds saves the knot invariants generated using the DSSP
+ *  segmentation.
+ */
+void KnotInvariants::save_dssp()
+{
+  string file_name = string(CURRENT_DIRECTORY) 
+                    + "experiments/dssp/knot-invariants-profiles/" + name; 
+  ofstream log(file_name.c_str());
+  for (int i=0; i<all_invariants.size(); i++) {
+    //log << fixed << setw(10) << setprecision(4) << all_invariants[i];
+    log << scientific << all_invariants[i] << "\t";
+  }
+  log << endl;
+  for (int i=0; i<premeasures.size(); i++) {
+    //log << fixed << setw(10) << setprecision(4) << premeasures[i];
+    log << scientific << premeasures[i] << "\t";
+  }
+  log << endl;
+  log.close();
+}
+
+/*!
  *  \brief This function loads the precomputed knot invariants.
  *  \param file a reference to a string
  *  \param type a reference to a string 
@@ -678,6 +700,50 @@ void KnotInvariants::load(string &file, string &type)
   string file_name = string(CURRENT_DIRECTORY) 
                     + "experiments/knot-invariants/profiles/";
   file_name += type + "/" + name;
+  ifstream log(file_name.c_str());
+  string line;
+  vector<double> numbers;
+  int i = 1;
+  all_invariants.clear();
+  premeasures.clear();
+
+  while(getline(log,line)) {
+    boost::char_separator<char> sep(",() \t");
+    boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
+    BOOST_FOREACH (const string& t, tokens) {
+      istringstream iss(t);
+      double x;
+      iss >> x;
+      numbers.push_back(x);
+    }
+    switch(i) {
+      case INVARIANTS:
+        all_invariants = numbers;
+        break;
+
+      case PREMEASURES:
+        premeasures = numbers;
+        break;
+    }
+    i++;
+    numbers.clear();
+  }
+  log.close();
+}
+
+/*!
+ *  \brief This function loads the precomputed knot invariants for DSSP
+ *  segmentations.
+ *  \param file a reference to a string
+ */
+void KnotInvariants::load_dssp(string &file)
+{
+  const int INVARIANTS = 1;
+  const int PREMEASURES = 2;
+
+  name = file;
+  string file_name = string(CURRENT_DIRECTORY) 
+                    + "experiments/dssp/knot-invariants-profiles/" + name;
   ifstream log(file_name.c_str());
   string line;
   vector<double> numbers;

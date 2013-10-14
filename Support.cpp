@@ -583,8 +583,12 @@ void build(struct Parameters &parameters)
 
       case KNOT_INVARIANTS: // compute the knot invariants
       {
-        KnotInvariants knot_invariants = 
-              buildKnotInvariantsProfile(parameters,segmentation);
+        if (parameters.segmentation == BEZIER_SEGMENTATION) {
+          KnotInvariants knot_invariants = 
+                buildKnotInvariantsProfile(parameters,segmentation);
+        } else if (parameters.segmentation == DSSP_SEGMENTATION) {
+          KnotInvariants knot_invariants = build_DSSP_KnotInvariants(parameters);
+        }
         break;
       }
     }
@@ -840,8 +844,13 @@ void compareStructuresList(struct Parameters &parameters)
         vector<KnotInvariants> profiles;
         for (int i=0; i<num_structures; i++) {
           parameters.file = parameters.comparison_files[i];
-          KnotInvariants knot_invariants = 
+          KnotInvariants knot_invariants;
+          if (parameters.segmentation == BEZIER_SEGMENTATION) {
+            knot_invariants = 
             buildKnotInvariantsProfile(parameters,segmentations[i]);
+          } else if (parameters.segmentation == DSSP_SEGMENTATION) {
+            knot_invariants.load_dssp(names[i]);
+          }
           profiles.push_back(knot_invariants);
         }
         vector<double> pivot_invariants;
@@ -2347,8 +2356,9 @@ double computeEuclideanDistance(Vector<double> &vec1, Vector<double> &vec2)
  */
 void updateRuntime(string name, int n, double time) 
 {
-  string path = string(CURRENT_DIRECTORY) + "experiments/knot-invariants/"; 
-  string time_file = path + "runtime-part4";
+  //string path = string(CURRENT_DIRECTORY) + "experiments/knot-invariants/"; 
+  string path = string(CURRENT_DIRECTORY) + "experiments/dssp/"; 
+  string time_file = path + "runtime-part1";
   ofstream log(time_file.c_str(),ios::app);
   log << setw(10) << name;
   log << setw(10) << n << "\t"; 
@@ -2393,8 +2403,11 @@ Angles buildSSTProfile(struct Parameters &parameters)
   string name = extractName(parameters.file);
   string path = string(CURRENT_DIRECTORY) + "experiments/sst/parsed/";
   string file_name = path + name;
-  return read_segmentation(p,name,file_name);
+  vector<vector<string>> segments = parse_segmentation(p,file_name);
+  return construct_angular_profiles(p,segments,name);
 }
+
+///////////////////////// DSSP FUNCTIONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 /*!
  *  \brief This method constructs the angular profile using DSSP segmentation
@@ -2407,18 +2420,97 @@ Angles buildDSSPProfile(struct Parameters &parameters)
   string name = extractName(parameters.file);
   string path = string(CURRENT_DIRECTORY) + "experiments/dssp/parsed/";
   string file_name = path + name;
-  return read_segmentation(p,name,file_name);
+  vector<vector<string>> segments = parse_segmentation(p,file_name);
+  return construct_angular_profiles(p,segments,name);
+}
+
+/*
+ *  \brief This function computes the knot invariants using DSSP segmentation.
+ *  \param parameters a reference to a struct Parameters
+ *  \return the knot invariants
+ */
+KnotInvariants build_DSSP_KnotInvariants(struct Parameters &parameters)
+{
+  ProteinStructure *p = parsePDBFile(parameters.file);
+  string name = extractName(parameters.file);
+  string path = string(CURRENT_DIRECTORY) + "experiments/dssp/parsed/";
+  string file_name = path + name;
+  vector<vector<string>> segments = parse_segmentation(p,file_name);
+  vector<pair<string,string>> residues = split_segments(segments);
+  /*for (int i=0; i<residues.size(); i++) {
+    cout << residues[i].first << " " << residues[i].second << endl;
+  }*/
+  pair<string,string> prev_res,current_res; 
+  prev_res = residues[0];
+  vector<Line<double>> lines;
+  for (int i=1; i<residues.size(); i++) {
+    current_res = residues[i];
+    if (current_res.first.compare(prev_res.first) != 0 ||
+        current_res.second.compare(prev_res.second) != 0) {
+      string start_ch,end_ch,start_res_id,end_res_id;
+      // get start point
+      start_ch = prev_res.first;
+      start_res_id = prev_res.second;
+      Chain chain1 = p->getDefaultModel()[start_ch];
+      Residue residue1 = chain1[start_res_id];
+      vector<array<double,3>> coords1 = residue1.getAtomicCoordinates<double>();
+      Point<double> start(coords1[0]);
+      //cout << start << endl;
+      // get end point
+      end_ch = current_res.first;
+      end_res_id = current_res.second;
+      Chain chain2 = p->getDefaultModel()[end_ch];
+      Residue residue2 = chain2[end_res_id];
+      vector<array<double,3>> coords2 = residue2.getAtomicCoordinates<double>();
+      Point<double> end(coords2[0]);
+      //cout << end << endl;
+      Line<double> line(start,end);
+      lines.push_back(line);
+    }
+    prev_res = current_res;
+  }
+  Polygon<double> polygon(lines);
+  KnotInvariants knot_invariants(polygon,name,parameters.max_order);
+  cout << "Computing knot invariants for structure " << name << " ..." << endl;
+  knot_invariants.computeInvariants(parameters.method);
+  knot_invariants.save_dssp();
+  updateRuntime(name,knot_invariants.getPolygonSides(),
+                knot_invariants.getCPUTime());
+  return knot_invariants;
 }
 
 /*!
- *  \brief This method reads the segmentation from a file and constructs the
- *  angular profile
- *  \param p a pointe to a ProteinStructure object
- *  \param name a reference to a string
- *  \param file_name a reference to a string
- *  \return the angular profile
+ *  \brief This function splits the segments into individual chain-residue
+ *  pairs.
+ *  \param segments a reference to a vector<vector<string>>
+ *  \return a list of chain-residue pairs
  */
-Angles read_segmentation(ProteinStructure *p, string &name, string &file_name)
+vector<pair<string,string>> split_segments(vector<vector<string>> &segments)
+{
+  vector<pair<string,string>> residues;
+  pair<string,string> split_pairs;
+  for (int i=0; i<segments.size(); i++) {
+    string ch = segments[i][0];
+    split_pairs.first = ch;
+    string start_res_id = segments[i][1];
+    split_pairs.second = start_res_id;
+    residues.push_back(split_pairs);
+    string end_res_id = segments[i][2];
+    split_pairs.second = end_res_id;
+    residues.push_back(split_pairs);
+  }
+  return residues;
+}
+
+/*!
+ *  \brief This function parses the segmentation file and constructs the list of
+ *  all segments.
+ *  \param p a pointer to a ProteinStructure object
+ *  \param file_name a reference to a string
+ *  \return the list of all segments
+ */
+vector<vector<string>>
+parse_segmentation(ProteinStructure *p, string &file_name)
 {
   string each_line;
   // construct all segments
@@ -2435,7 +2527,20 @@ Angles read_segmentation(ProteinStructure *p, string &name, string &file_name)
     seg.clear();
   }
   file.close();
+  return segments;
+}
 
+/*!
+ *  \brief This method reads the segmentation from a file and constructs the
+ *  angular profile
+ *  \param p a pointer to a ProteinStructure object
+ *  \param segments a reference to a vector<vector<string>>
+ *  \param name a reference to a string
+ *  \return the angular profile
+ */
+Angles construct_angular_profiles(ProteinStructure *p,
+                                  vector<vector<string>> &segments, string &name)
+{
   // get all lines
   vector<Line<double>> lines;
   for (int i=0; i<segments.size(); i++) {

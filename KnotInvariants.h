@@ -157,8 +157,14 @@ class KnotInvariants
     //! Saves the invariants to a file
     void save(string &);
 
+    //! Saves the DSSP invariants to a file
+    void save_dssp();
+
     //! Loads the precomputes invariants
     void load(string &, string &);
+
+    //! Loads the precomputes invariants
+    void load_dssp(string &);
 };
 
 #endif 
