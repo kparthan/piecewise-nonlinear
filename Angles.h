@@ -40,8 +40,14 @@ class Angles
     //! Saves the profile
     void save(string &);
 
+    //! Saves the profile
+    void save_dssp();
+
     //! Loads the profile
     void load(string &, string &);
+
+    //! Loads the profile
+    void load_dssp(string &);
 };
 
 #endif

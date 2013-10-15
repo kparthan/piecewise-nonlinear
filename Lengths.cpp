@@ -92,6 +92,21 @@ void Lengths::save(string &controls)
 }
 
 /*!
+ *  \brief Saves the lengths profile.
+ */
+void Lengths::save_dssp()
+{
+  string file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/lengths/profiles/"
+                     + name + ".profile";
+  ofstream log(file_name.c_str());
+  for (int i=0; i<lengths.size(); i++) {
+    log << fixed << setw(10) << setprecision(4) << lengths[i];
+  }
+  log << endl;
+  log.close();
+}
+
+/*!
  *  \brief Loads the profile from an existing file.
  *  \param name a string
  *  \param controls a reference to a string 
@@ -101,6 +116,32 @@ void Lengths::load(string &file, string &controls)
   name = file;
   string file_name = string(CURRENT_DIRECTORY) + "experiments/lengths/profiles/"
                      + controls + "/" + name + ".profile";
+  ifstream log(file_name.c_str());
+  string line;
+  lengths.clear();
+
+  while(getline(log,line)) {
+    boost::char_separator<char> sep(",() ");
+    boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
+    BOOST_FOREACH (const string& t, tokens) {
+      istringstream iss(t);
+      double x;
+      iss >> x;
+      lengths.push_back(x);
+    }
+  }
+  log.close();
+}
+
+/*!
+ *  \brief Loads the profile from an existing file.
+ *  \param name a string
+ */
+void Lengths::load_dssp(string &file)
+{
+  name = file;
+  string file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/lengths/profiles/"
+                     + name + ".profile";
   ifstream log(file_name.c_str());
   string line;
   lengths.clear();

@@ -117,3 +117,43 @@ void Angles::load(string &file, string &controls)
   log.close();
 }
 
+/*!
+ *  \brief Saves the angles profile resulting from a DSSP segmentation.
+ */
+void Angles::save_dssp()
+{
+  string file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/angles/profiles/" 
+                     + name + ".profile";
+  ofstream log(file_name.c_str());
+  for (int i=0; i<angles.size(); i++) {
+    log << fixed << setw(10) << setprecision(4) << angles[i];
+  }
+  log << endl;
+  log.close();
+}
+
+/*!
+ *  \brief Loads the profile from an existing file.
+ *  \param name a string
+ */
+void Angles::load_dssp(string &file)
+{
+  name = file;
+  string file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/angles/profiles/"
+                     + name + ".profile";
+  ifstream log(file_name.c_str());
+  string line;
+  angles.clear();
+
+  while(getline(log,line)) {
+    boost::char_separator<char> sep(",() ");
+    boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
+    BOOST_FOREACH (const string& t, tokens) {
+      istringstream iss(t);
+      double x;
+      iss >> x;
+      angles.push_back(x);
+    }
+  }
+  log.close();
+}

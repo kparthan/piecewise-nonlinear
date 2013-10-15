@@ -559,14 +559,18 @@ void build(struct Parameters &parameters)
         } else if (parameters.segmentation == SST_SEGMENTATION) {
           Angles angles = buildSSTProfile(parameters);
         } else if (parameters.segmentation == DSSP_SEGMENTATION) {
-          Angles angles = buildDSSPProfile(parameters);
+          Angles angles = buildDSSPProfile_Angles(parameters);
         }
         break;
       }
 
       case LENGTHS:
       {
-        Lengths lengths = buildLengthsProfile(parameters,segmentation);
+        if(parameters.segmentation == BEZIER_SEGMENTATION) {
+          Lengths lengths = buildLengthsProfile(parameters,segmentation);
+        } else if(parameters.segmentation == DSSP_SEGMENTATION) {
+          Lengths lengths = buildDSSPProfile_Lengths(parameters);
+        }
         break;
       }
 
@@ -574,10 +578,13 @@ void build(struct Parameters &parameters)
       {
         if (parameters.segmentation == BEZIER_SEGMENTATION) {
           Angles angles = buildAnglesProfile(parameters,segmentation);
+          Lengths lengths = buildLengthsProfile(parameters,segmentation);
         } else if (parameters.segmentation == SST_SEGMENTATION) {
           Angles angles = buildSSTProfile(parameters);
+        } else if (parameters.segmentation == DSSP_SEGMENTATION) {
+          Angles angles = buildDSSPProfile_Angles(parameters); 
+          Lengths lengths = buildDSSPProfile_Lengths(parameters); 
         }
-        Lengths lengths = buildLengthsProfile(parameters,segmentation);
         break;
       }
 
@@ -705,7 +712,7 @@ void compareStructuresList(struct Parameters &parameters)
             if (parameters.segmentation == SST_SEGMENTATION) {
               angles = buildSSTProfile(parameters);
             } else if (parameters.segmentation == DSSP_SEGMENTATION) {
-              angles = buildDSSPProfile(parameters);
+              angles = buildDSSPProfile_Angles(parameters);
             }
             if (angles.size() == 0) {
               errorLog(names);
@@ -765,8 +772,12 @@ void compareStructuresList(struct Parameters &parameters)
           parameters.file = parameters.comparison_files[i];
           if (parameters.segmentation == BEZIER_SEGMENTATION) {
             angles = buildAnglesProfile(parameters,segmentations[i]);
-          } else if (parameters.segmentation == SST_SEGMENTATION) {
-            angles = buildSSTProfile(parameters);
+          } else {
+            if (parameters.segmentation == SST_SEGMENTATION) {
+              angles = buildSSTProfile(parameters);
+            } else if (parameters.segmentation == DSSP_SEGMENTATION) {
+              angles.load_dssp(names[i]);
+            }
             if (angles.size() == 0) {
               errorLog(names);
               exit(1);
@@ -780,7 +791,12 @@ void compareStructuresList(struct Parameters &parameters)
         if (parameters.scoring_function == SCORE_ANGLES_LENGTHS) {
           for (int i=0; i<num_structures; i++) {
             parameters.file = parameters.comparison_files[i];
-            Lengths lengths = buildLengthsProfile(parameters,segmentations[i]);
+            Lengths lengths;
+            if (parameters.segmentation == BEZIER_SEGMENTATION) {
+              lengths = buildLengthsProfile(parameters,segmentations[i]);
+            } else if (parameters.segmentation == DSSP_SEGMENTATION) {
+              lengths.load_dssp(names[i]);
+            }
             lengths_profiles.push_back(lengths);
             double self = getSelfAlignmentScore(angles_profiles[i],lengths,parameters);
             self_align.push_back(self);
@@ -801,9 +817,15 @@ void compareStructuresList(struct Parameters &parameters)
             } else if (parameters.align_type == AFFINE_GAP_ALIGNMENT) {
               alignment.computeAffineGapAlignment(parameters.gap_open_penalty,
                   parameters.gap_extension_penalty,parameters.max_angle_diff);
-              alignment.save(parameters.gap_open_penalty,
-                             parameters.gap_extension_penalty,
-                             parameters.control_string,names[0],names[i]);
+              if (parameters.segmentation == BEZIER_SEGMENTATION) {
+                alignment.save(parameters.gap_open_penalty,
+                               parameters.gap_extension_penalty,
+                               parameters.control_string,names[0],names[i]);
+              } else if (parameters.segmentation == DSSP_SEGMENTATION) {
+                alignment.save_dssp(parameters.gap_open_penalty,
+                               parameters.gap_extension_penalty,
+                               names[0],names[i]);
+              }
             }
             vector<double> scores = alignment.getScores();
             pair<double,double> normalized_scores
@@ -1022,7 +1044,7 @@ vector<string> parseDatabase(string &filename)
 void errorLog(vector<string> &names)
 {
   string file_name = string(CURRENT_DIRECTORY); 
-  file_name += "errors-part4.log";
+  file_name += "errors.log";
   ofstream log(file_name.c_str(),ios::app);
   for (int i=0; i<names.size(); i++) {
     log << names[i] << "\t";
@@ -2358,7 +2380,7 @@ void updateRuntime(string name, int n, double time)
 {
   //string path = string(CURRENT_DIRECTORY) + "experiments/knot-invariants/"; 
   string path = string(CURRENT_DIRECTORY) + "experiments/dssp/"; 
-  string time_file = path + "runtime-part1";
+  string time_file = path + "runtime-part4";
   ofstream log(time_file.c_str(),ios::app);
   log << setw(10) << name;
   log << setw(10) << n << "\t"; 
@@ -2414,14 +2436,33 @@ Angles buildSSTProfile(struct Parameters &parameters)
  *  \param parameters a reference to a struct Parameters
  *  \return the angular profile
  */
-Angles buildDSSPProfile(struct Parameters &parameters)
+Angles buildDSSPProfile_Angles(struct Parameters &parameters)
 {
   ProteinStructure *p = parsePDBFile(parameters.file);
   string name = extractName(parameters.file);
   string path = string(CURRENT_DIRECTORY) + "experiments/dssp/parsed/";
   string file_name = path + name;
   vector<vector<string>> segments = parse_segmentation(p,file_name);
-  return construct_angular_profiles(p,segments,name);
+  Angles angles = construct_angular_profiles(p,segments,name);
+  angles.save_dssp();
+  return angles;
+}
+
+/*!
+ *  \brief This method constructs the lengths profile using DSSP segmentation
+ *  \param parameters a reference to a struct Parameters
+ *  \return the lengths profile
+ */
+Lengths buildDSSPProfile_Lengths(struct Parameters &parameters)
+{
+  ProteinStructure *p = parsePDBFile(parameters.file);
+  string name = extractName(parameters.file);
+  string path = string(CURRENT_DIRECTORY) + "experiments/dssp/parsed/";
+  string file_name = path + name;
+  vector<vector<string>> segments = parse_segmentation(p,file_name);
+  Lengths lengths = construct_lengths_profiles(p,segments,name);
+  lengths.save_dssp();
+  return lengths;
 }
 
 /*
@@ -2437,9 +2478,9 @@ KnotInvariants build_DSSP_KnotInvariants(struct Parameters &parameters)
   string file_name = path + name;
   vector<vector<string>> segments = parse_segmentation(p,file_name);
   vector<pair<string,string>> residues = split_segments(segments);
-  /*for (int i=0; i<residues.size(); i++) {
+  for (int i=0; i<residues.size(); i++) {
     cout << residues[i].first << " " << residues[i].second << endl;
-  }*/
+  }
   pair<string,string> prev_res,current_res; 
   prev_res = residues[0];
   vector<Line<double>> lines;
@@ -2455,7 +2496,7 @@ KnotInvariants build_DSSP_KnotInvariants(struct Parameters &parameters)
       Residue residue1 = chain1[start_res_id];
       vector<array<double,3>> coords1 = residue1.getAtomicCoordinates<double>();
       Point<double> start(coords1[0]);
-      //cout << start << endl;
+      cout << start << endl;
       // get end point
       end_ch = current_res.first;
       end_res_id = current_res.second;
@@ -2463,7 +2504,7 @@ KnotInvariants build_DSSP_KnotInvariants(struct Parameters &parameters)
       Residue residue2 = chain2[end_res_id];
       vector<array<double,3>> coords2 = residue2.getAtomicCoordinates<double>();
       Point<double> end(coords2[0]);
-      //cout << end << endl;
+      cout << end << endl;
       Line<double> line(start,end);
       lines.push_back(line);
     }
@@ -2531,15 +2572,15 @@ parse_segmentation(ProteinStructure *p, string &file_name)
 }
 
 /*!
- *  \brief This method reads the segmentation from a file and constructs the
- *  angular profile
+ *  \brief This function gets the list of lines that make up the DSSP
+ *  segmentation.
  *  \param p a pointer to a ProteinStructure object
  *  \param segments a reference to a vector<vector<string>>
  *  \param name a reference to a string
- *  \return the angular profile
+ *  \return the list of lines
  */
-Angles construct_angular_profiles(ProteinStructure *p,
-                                  vector<vector<string>> &segments, string &name)
+vector<Line<double>> get_list_of_lines(ProteinStructure *p,
+                                       vector<vector<string>> &segments, string &name)
 {
   // get all lines
   vector<Line<double>> lines;
@@ -2566,7 +2607,46 @@ Angles construct_angular_profiles(ProteinStructure *p,
     Line<double> line(start,end);
     lines.push_back(line);
   }
+  return lines;
+}
 
+/*!
+ *  \brief This method reads the segmentation from a file and constructs the
+ *  lengths profile
+ *  \param p a pointer to a ProteinStructure object
+ *  \param segments a reference to a vector<vector<string>>
+ *  \param name a reference to a string
+ *  \return the lengths profile
+ */
+Lengths construct_lengths_profiles(ProteinStructure *p,
+                                  vector<vector<string>> &segments, string &name)
+{
+  // get all lines
+  vector<Line<double>> lines = get_list_of_lines(p,segments,name);
+  // compute pairwise lengths
+  vector<double> all_lengths;
+  for (int i=0; i<lines.size(); i++) {
+    for (int j=i+1; j<lines.size(); j++) {
+      double len = computeMidPointsDistance(lines[i],lines[j]);
+      all_lengths.push_back(len);
+    }
+  }
+  return Lengths(name,all_lengths);
+}
+
+/*!
+ *  \brief This method reads the segmentation from a file and constructs the
+ *  angular profile
+ *  \param p a pointer to a ProteinStructure object
+ *  \param segments a reference to a vector<vector<string>>
+ *  \param name a reference to a string
+ *  \return the angular profile
+ */
+Angles construct_angular_profiles(ProteinStructure *p,
+                                  vector<vector<string>> &segments, string &name)
+{
+  // get all lines
+  vector<Line<double>> lines = get_list_of_lines(p,segments,name);
   // compute dihedral angles
   vector<double> dihedral_angles;
   for (int i=0; i<lines.size(); i++) {

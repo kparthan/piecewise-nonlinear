@@ -643,6 +643,36 @@ void Alignment::save(double go, double ge, string &controls,
 }
 
 /*!
+ *  \brief This method writes the optimal alignment to a file
+ *  \param go a double
+ *  \param ge a double
+ *  \param name1 a reference to a string 
+ *  \param name2 a reference to a string 
+ */
+void Alignment::save_dssp(double go, double ge, 
+                     string &name1, string &name2)
+{
+  string file_name;
+  if (scoring_function == SCORE_ANGLES) {
+    file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/angles/alignments/affine/";
+  } else if (scoring_function == SCORE_ANGLES_LENGTHS) {
+    file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/angles-lengths/alignments/affine/";
+  }
+  file_name += "go" + boost::lexical_cast<string>(go).substr(0,3) + "-";
+  file_name += "ge" + boost::lexical_cast<string>(ge).substr(0,3);
+  file_name += "/" + name1 + "_" + name2;
+  ofstream log(file_name.c_str());
+  log << "# of angles in " << name1 << ": " << angles[0].size() << endl;
+  log << "# of angles in " << name1 << ": " << angles[1].size() << endl;
+  log << "Length of optimal alignment: " << optimal_alignment.size() << endl;
+  log << "Alignment score: " << scores[0] << endl;
+  log << "Avg. Alignment score: " << scores[1] << endl;
+  log << "Normalized Alignment score: " << scores[2] << endl;
+  printAlignment(log,optimal_alignment);
+  log.close();
+}
+
+/*!
  *  \brief This function returns the comparison scores.
  *  \return the list of scores
  */

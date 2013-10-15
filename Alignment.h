@@ -89,6 +89,9 @@ class Alignment
     //! Save the alignment to a file
     void save(double, double, string &, string &, string &);
 
+    //! Save the alignment to a file
+    void save_dssp(double, double, string &, string &);
+
     //! Returns the comparison scores 
     vector<double> getScores();
 };

@@ -671,7 +671,7 @@ void KnotInvariants::save(string &type)
 void KnotInvariants::save_dssp()
 {
   string file_name = string(CURRENT_DIRECTORY) 
-                    + "experiments/dssp/knot-invariants-profiles/" + name; 
+                    + "experiments/dssp/knot-invariants/profiles/" + name; 
   ofstream log(file_name.c_str());
   for (int i=0; i<all_invariants.size(); i++) {
     //log << fixed << setw(10) << setprecision(4) << all_invariants[i];
@@ -743,7 +743,7 @@ void KnotInvariants::load_dssp(string &file)
 
   name = file;
   string file_name = string(CURRENT_DIRECTORY) 
-                    + "experiments/dssp/knot-invariants-profiles/" + name;
+                    + "experiments/dssp/knot-invariants/profiles/" + name;
   ifstream log(file_name.c_str());
   string line;
   vector<double> numbers;

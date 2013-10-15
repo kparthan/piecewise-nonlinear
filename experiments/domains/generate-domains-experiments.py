@@ -2,8 +2,8 @@ import sys, codecs, os, re
 if sys.stdout.encoding is None:
         sys.stdout = codecs.open('/dev/stdout', 'w', 'utf-8')
 
-fr = open('domains-part1.test','r')
-fw = open('domains-experiments-part1.sh','w')
+fr = open('domains.test','r')
+fw = open('domains-experiments.sh','w')
 
 fw.write('STARTM=`date -u "+%s"`\n')
 fw.write('line_number=1\n')
@@ -13,7 +13,7 @@ line_count = 0;
 # dali experiment scripts
 #scop_path = '/home/pkas7/Research/SCOP/pdbstyle-1.75B/'
 #fasta_path = '/home/pkas7/Research/Work/piecewise-nonlinear/experiments/dali/fasta/'
-#cmd = '/home/pkas7/Research/Work/pdb-utils/pdb-superimpose-part1'
+#cmd = '/home/pkas7/Research/Work/pdb-utils/pdb-superimpose'
 #while line != '':
 #  x = line.strip('\n')
 #  y = line.split()
@@ -50,7 +50,7 @@ line_count = 0;
 #  line = fr.readline()
 
 # sst parsing scripts
-#cmd = 'python parse-sst-part1.py '
+#cmd = 'python parse-sst.py '
 #while line != '':
 #  x = line.strip('\n')
 #  y = line.split()
@@ -66,52 +66,55 @@ line_count = 0;
 #  line = fr.readline()
   
 # for standalone segmentation
-#cmd = './piecewise-nonlinear-fit-part1 --structure protein --segmentation sst --only --force segmentation --controls 0 1 2 --constrain sigma length '
+#cmd = './piecewise-nonlinear-fit --structure protein --segmentation sst --only --force segmentation --controls 0 1 2 --constrain sigma length '
 
 # for constructing angular profiles
-#cmd = './piecewise-nonlinear-fit-part1 --structure protein --segmentation sst --profile dihedral_angles --polygon projections '
+#cmd = './piecewise-nonlinear-fit --structure protein --segmentation sst --profile dihedral_angles --polygon projections '
 #cmd += '--type basic --score angles --gap -20 '
 
 # for constructing length profiles
-#cmd = './piecewise-nonlinear-fit-part1 --structure protein --segmentation sst --controls 0 1 2 --constrain sigma length --profile lengths --polygon projections '
+#cmd = './piecewise-nonlinear-fit --structure protein --segmentation sst --controls 0 1 2 --constrain sigma length --profile lengths --polygon projections '
 
 # for constructing angular-lengths profiles
-#cmd = './piecewise-nonlinear-fit-part1 --structure protein --segmentation sst --controls 0 1 2 --constrain sigma length --profile angles_lengths --polygon projections '
+#cmd = './piecewise-nonlinear-fit --structure protein --segmentation sst --controls 0 1 2 --constrain sigma length --profile angles_lengths --polygon projections '
 #cmd += '--type basic --score anglen --go -15 --ge 0 '
 
 #cmd += '--controls 0 1 2 --constrain sigma length --standardize exists --fparams standardize.params '
 
-cmd = './piecewise-nonlinear-fit-part1 --structure protein --segmentation dssp --profile knot_invariants --method specific '
-# for single structure
-cmd += '--scopid '
-while line != '':
-  x = line.strip('\n')
-  y = line.split()
-  for i in range(0,6):
-    structure = y[i]
-    structure_id = y[i][:-4]
-    current = cmd + structure_id
-    fw.write(current+'\n')
-    fw.write('echo $line_number\n')
-    fw.write('line_number=$((line_number+1))\n')
-  line_count += 1
-  line = fr.readline()
+#cmd = './piecewise-nonlinear-fit --structure protein --segmentation bezier --controls 0 1 2 --constrain sigma length --profile knot_invariants --method specific '
 
-# comparison script
-#cmd += '--record --compare --scopids '
+cmd = './piecewise-nonlinear-fit --structure protein --segmentation dssp --profile angles_lengths --type affine --score anglen --go -20 --ge -5 '
+#cmd = './piecewise-nonlinear-fit --structure protein --segmentation dssp --profile angles_lengths '
+# for single structure
+#cmd += '--scopid '
 #while line != '':
 #  x = line.strip('\n')
 #  y = line.split()
-#  current = cmd
 #  for i in range(0,6):
 #    structure = y[i]
 #    structure_id = y[i][:-4]
-#    current += structure_id + " "
-#  fw.write(current+'\n')
-#  fw.write('echo $line_number\n')
-#  fw.write('line_number=$((line_number+1))\n')
+#    current = cmd + structure_id
+#    fw.write(current+'\n')
+#    fw.write('echo $line_number\n')
+#    fw.write('line_number=$((line_number+1))\n')
 #  line_count += 1
 #  line = fr.readline()
+
+# comparison script
+cmd += '--record --compare --scopids '
+while line != '':
+  x = line.strip('\n')
+  y = line.split()
+  current = cmd
+  for i in range(0,6):
+    structure = y[i]
+    structure_id = y[i][:-4]
+    current += structure_id + " "
+  fw.write(current+'\n')
+  fw.write('echo $line_number\n')
+  fw.write('line_number=$((line_number+1))\n')
+  line_count += 1
+  line = fr.readline()
 
 fw.write('STOPM=`date -u "+%s"`\n')
 fw.write('RUNTIMEM=`expr $STOPM - $STARTM`\n')
@@ -126,5 +129,5 @@ fw.write('')
 fw.close()
 fr.close()
 print '# of lines: ', line_count
-os.system('chmod 755 domains-experiments-part1.sh')
+os.system('chmod 755 domains-experiments.sh')
 

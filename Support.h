@@ -116,9 +116,14 @@ Angles buildSSTProfile(struct Parameters &);
 vector<vector<string>> parse_segmentation(ProteinStructure *, string &);
 Angles 
 construct_angular_profiles(ProteinStructure *, vector<vector<string>> &, string &);
+Lengths
+construct_lengths_profiles(ProteinStructure *, vector<vector<string>> &, string &);
+vector<Line<double>>
+get_list_of_lines(ProteinStructure *, vector<vector<string>> &, string &);
 
 // dssp functions
-Angles buildDSSPProfile(struct Parameters &);
+Angles buildDSSPProfile_Angles(struct Parameters &);
+Lengths buildDSSPProfile_Lengths(struct Parameters &);
 vector<pair<string,string>> split_segments(vector<vector<string>> &);
 KnotInvariants build_DSSP_KnotInvariants(struct Parameters &);
 
