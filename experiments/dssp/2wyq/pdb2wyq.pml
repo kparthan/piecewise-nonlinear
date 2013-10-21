@@ -1,4 +1,4 @@
-load pdb2wyq.ent.gz
+load pdb2wyq.pdb
 hide
 bg_color white
 alter pdb2wyq, vdw = 0.2
