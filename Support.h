@@ -3,7 +3,6 @@
 
 #include "Header.h"
 #include "Segmentation.h"
-#include "Polygon.h"
 
 struct Parameters
 {
@@ -11,16 +10,14 @@ struct Parameters
   int structure;                    // Protein or General or Test
   vector<int> controls;             // # of intermediate control points
   string control_string;            // controls string
+  int print;                        // verbose output
 };
 
 // segmentation functions
 Segmentation buildSegmentationProfile(struct Parameters &);
 ProteinStructure *parsePDBFile(string &);
-vector<Point<double>> parseFile(string &);
 vector<Point<double>> getProteinCoordinates(struct Parameters &);
 Segmentation proteinFit(struct Parameters &);
-Segmentation generalFit(struct Parameters &);
-void updateRuntime(string, Segmentation &);
 
 // general functions
 struct Parameters parseCommandLineInput (int, char **); 

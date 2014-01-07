@@ -72,60 +72,41 @@ double Message::encodeUsingNormalModel()
   int i; 
   double x;
 
-  if (parameters.encode_deviations == ENCODE_DEVIATIONS_CUSTOMIZED) {
-    /* state the first two deviations using mean of 0 */
-    for (i=0; i<2; i++){
-      mean = 0;
-      variance = estimateVariance(samples[i],mean);
-      if (parameters.constrain_sigma == CONSTRAIN &&
-          (variance > parameters.max_sigma * parameters.max_sigma)) {
-          x = LARGE_NUMBER;
-      } else {
-        x = encodeWallaceFreeman(samples[i].size(),variance,range_log_sigma);
-      }
-      if (parameters.print == PRINT_DETAIL &&
-          parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-        cout << "mean(" << i + 1 << "): " << mean << endl;
-        cout << "sigma(" << i + 1 << "): " << sqrt(variance) << endl;
-        cout << "msglen (dev " << i+1 << "): " << x << endl;
-      }
-      msglen += x;
+  // custom encoding
+  /* state the first two deviations using mean of 0 */
+  for (i=0; i<2; i++){
+    mean = 0;
+    variance = estimateVariance(samples[i],mean);
+    if (variance > parameters.max_sigma * parameters.max_sigma) {
+        x = LARGE_NUMBER;
+    } else {
+      x = encodeWallaceFreeman(samples[i].size(),variance,range_log_sigma);
     }
-    /* state the third deviation by estimating the mean */
+    msglen += x;
+  }
+  /* state the third deviation by estimating the mean */
+  mean = estimateMean(samples[i]);
+  variance = estimateVariance(samples[i]);
+  if (variance > parameters.max_sigma * parameters.max_sigma) {
+      x = LARGE_NUMBER;
+  } else {
+    x = encodeWallaceFreeman(samples[i].size(),variance,range_mu,range_log_sigma);
+  }
+  msglen += x;
+
+  // general encoding
+  /*
+  for (i=0; i<3; i++) {
     mean = estimateMean(samples[i]);
     variance = estimateVariance(samples[i]);
-    if (parameters.constrain_sigma == CONSTRAIN &&
-        (variance > parameters.max_sigma * parameters.max_sigma)) {
+    if (variance > parameters.max_sigma * parameters.max_sigma) {
         x = LARGE_NUMBER;
     } else {
       x = encodeWallaceFreeman(samples[i].size(),variance,range_mu,range_log_sigma);
     }
-    if (parameters.print == PRINT_DETAIL &&
-        parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-      cout << "mean(" << i + 1 << "): " << mean << endl;
-      cout << "sigma(" << i + 1 << "): " << sqrt(variance) << endl;
-      cout << "msglen (dev " << i+1 << "): " << x << endl;
-    }
     msglen += x;
-  } else if (parameters.encode_deviations == ENCODE_DEVIATIONS_GENERAL) {
-    for (i=0; i<3; i++) {
-      mean = estimateMean(samples[i]);
-      variance = estimateVariance(samples[i]);
-      if (parameters.constrain_sigma == CONSTRAIN &&
-          (variance > parameters.max_sigma * parameters.max_sigma)) {
-          x = LARGE_NUMBER;
-      } else {
-        x = encodeWallaceFreeman(samples[i].size(),variance,range_mu,range_log_sigma);
-      }
-      if (parameters.print == PRINT_DETAIL &&
-          parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-        cout << "mean(" << i + 1 << "): " << mean << endl;
-        cout << "sigma(" << i + 1 << "): " << sqrt(variance) << endl;
-        cout << "msglen (dev " << i+1 << "): " << x << endl;
-      }
-      msglen += x;
-    }
   }
+  */
   return msglen;
 }
 

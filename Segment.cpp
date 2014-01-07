@@ -507,17 +507,6 @@ vector<array<double,3>> Segment::getDeviations(BezierCurve<double> &curve)
     deviations.push_back(d);
     tmin_prev = tmin_current;
   }
-  if (parameters.print == PRINT_DETAIL && parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-    string file_name = string(CURRENT_DIRECTORY) + "experiments/dev_bezier_";
-    string file(file_name.c_str());
-    file += boost::lexical_cast<string>(curve.getDegree()-1);
-    ofstream dev_bezier(file.c_str());
-    for (int i=0; i<deviations.size(); i++){
-      dev_bezier << deviations[i][0] << " ";
-      dev_bezier << deviations[i][1] << " ";
-      dev_bezier << deviations[i][2] << endl;
-    }
-  }
   return deviations;
 }
 
@@ -539,10 +528,6 @@ double Segment::messageLength(BezierCurve<double> &curve,
   Message msg1;
   x = msg1.encodeUsingNullModel(volume,AOM); 
   part1 += x;
-  if (parameters.print == PRINT_DETAIL && 
-      parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-    cout << "\nmsglen(end point): " << x << endl;
-  }
 
   /* message length to describe the intermediate control points */
   int numIntermediateControlPoints;
@@ -552,15 +537,6 @@ double Segment::messageLength(BezierCurve<double> &curve,
       numIntermediateControlPoints = 0;
       x = msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
       part1 += x; 
-      if (parameters.print == PRINT_DETAIL && 
-          parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-        cout << "msglen(#int cps): " << x << endl;
-      }
-      /* message length to state the control points */
-      if (parameters.print == PRINT_DETAIL && 
-          parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-        cout << "msglen(int cps): 0" << endl;
-      }
       break;
 
     default:
@@ -569,40 +545,19 @@ double Segment::messageLength(BezierCurve<double> &curve,
         numIntermediateControlPoints = curve.getDegree() - 1;
         x = msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
         part1 += x; 
-        if (parameters.print == PRINT_DETAIL && 
-            parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-          cout << "msglen(# of int cps): " << x << endl;
-        }
         /* message length to state the control points */
         x = numIntermediateControlPoints * msg1.encodeUsingNullModel(volume,AOPV);
         part1 += x; 
-        if (parameters.print == PRINT_DETAIL && 
-            parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-          cout << "msglen(int cps): " << x << endl;
-        }
       } else {
         /* message length to state the number of control points */
         numIntermediateControlPoints = 0;
         x = msg1.encodeUsingLogStarModel(numIntermediateControlPoints+1); 
         part1 += x; 
-        if (parameters.print == PRINT_DETAIL && 
-            parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-          cout << "msglen(# of int cps): " << x << endl;
-        }
-        /* message length to state the control points */
-        if (parameters.print == PRINT_DETAIL && 
-            parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-          cout << "msglen(int cps): 0" << endl;
-        }
       }
       break;
   }
 
   /* first part description ends */
-  if (parameters.print == PRINT_DETAIL && 
-      parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-    cout << "\tmsglen(first part): " << part1 << endl;
-  }
   
   // SECOND PART
   /* message length to state the number of intermediate deviations if any */  
@@ -612,34 +567,17 @@ double Segment::messageLength(BezierCurve<double> &curve,
       /* message length to state the number of intermediate points */
       x = msg1.encodeUsingLogStarModel(numIntermediate+1);
       part2 += x; 
-      if (parameters.print == PRINT_DETAIL && 
-          parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-        cout << "msglen(# of int points): " << x << endl;
-      }
  
       if (numIntermediate < 3) {
         x = numIntermediate * msg1.encodeUsingNullModel(volume,AOM);
         part2 += x;
-        if (parameters.print == PRINT_DETAIL && 
-            parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-          cout << "msglen(int points): " << x << endl;
-        }
       } else { 
         /* state the first intermediate point to construct the plane */
         x = msg1.encodeUsingNullModel(volume,AOM);
         part2 += x;
-        if (parameters.print == PRINT_DETAIL && 
-            parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-          cout << "msglen(int point for plane): " << x << endl;
-        }
         /* state the deviations */
         x = msg2.encodeUsingNormalModel();
         part2 += x;
-        if (parameters.print == PRINT_DETAIL && 
-            parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-          cout << "msglen(deviations): " << x << endl;
-          cout << "msglen(deviations)/residue: " << x/(numIntermediate-1) << endl;
-        }
       }
       break;
 
@@ -647,36 +585,19 @@ double Segment::messageLength(BezierCurve<double> &curve,
       /* message length to state the number of intermediate points */
       x = msg1.encodeUsingLogStarModel(numIntermediate+1);
       part2 += x; 
-      if (parameters.print == PRINT_DETAIL && 
-          parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-        cout << "msglen(# of int points): " << x << endl;
-      }
 
       if (numIntermediate < 2) {
         x = numIntermediate * msg1.encodeUsingNullModel(volume,AOM);
         part2 += x;
-        if (parameters.print == PRINT_DETAIL && 
-            parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-          cout << "msglen(int points): " << x << endl;
-        }
       } else {
         /* state the deviations */
         x = msg2.encodeUsingNormalModel();
         part2 += x;
-        if (parameters.print == PRINT_DETAIL && 
-            parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-          cout << "msglen(deviations): " << x << endl;
-          cout << "msglen(deviations)/residue: " << x/numIntermediate << endl;
-        }
       }
       break;
   }
 
   /* second part description ends */
-  if (parameters.print == PRINT_DETAIL && 
-      parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-    cout << "\tmsglen(second part): " << part2 << endl << endl;
-  }
 
   return part1 + part2;
 }

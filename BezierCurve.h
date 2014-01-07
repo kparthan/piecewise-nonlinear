@@ -3,7 +3,6 @@
 
 #include "Header.h"
 #include "Polynomial.h"
-#include "Polygon.h"
 
 template <typename RealType>
 class BezierCurve 
@@ -66,15 +65,6 @@ class BezierCurve
   
     //! Computes the signed distance from the point to the curve
     RealType signedDistance(const Point<RealType> &, RealType t, Vector<RealType> &); 
-
-    //! Constructs a representative polygon of the Bezier curve
-    Polygon<RealType> getApproximatingPolygon(int);
-
-    //! Constructs a representative polygon of the Bezier curve
-    Polygon<RealType> getApproximatingPolygon();
-
-    //! Constructs a representative polygon formed by connecting control points
-    Polygon<RealType> getApproximatingPolygonControls();
 };
 
 #endif

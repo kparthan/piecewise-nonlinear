@@ -8,9 +8,7 @@ OBJECTS = piecewise-nonlinear-fit.o \
   StandardForm.o \
   Segment.o \
   Message.o \
-  Polygon.o \
   BezierCurve.o \
-  CurveString.o \
   Polynomial.o \
   OptimalFit.o \
   Complex.o \
@@ -25,7 +23,7 @@ piecewise-nonlinear-fit: $(OBJECTS)
 piecewise-nonlinear-fit.o: piecewise-nonlinear-fit.cpp Support.h 
 	g++ -c $(CFLAGS) $< -o $@
 
-Support.o: Support.cpp Support.h Test.h StandardForm.h Header.h
+Support.o: Support.cpp Support.h StandardForm.h Header.h
 	g++ -c $(CFLAGS) $< -o $@
 
 Structure.o: Structure.cpp Structure.h 
@@ -43,13 +41,7 @@ Segment.o: Segment.cpp Segment.h Message.h
 Message.o: Message.cpp Message.h Support.h Header.h
 	g++ -c $(CFLAGS) $< -o $@
 
-Polygon.o: Polygon.cpp Polygon.h
-	g++ -c $(CFLAGS) $< -o $@
-
 BezierCurve.o: BezierCurve.cpp BezierCurve.h Polynomial.h
-	g++ -c $(CFLAGS) $< -o $@
-
-CurveString.o: CurveString.cpp CurveString.h
 	g++ -c $(CFLAGS) $< -o $@
 
 Polynomial.o: Polynomial.cpp Polynomial.h
@@ -67,9 +59,6 @@ Identifier.o: Identifier.cpp Identifier.h
 Segmentation.o: Segmentation.cpp Segmentation.h
 	g++ -c $(CFLAGS) $< -o $@
 
-Angles.o: Angles.cpp Angles.h
-	g++ -c $(CFLAGS) $< -o $@
-
 clean:
-	rm -f *.o *~ *.pdb piecewise-nonlinear-fit 
+	rm -f *.o *~ piecewise-nonlinear-fit 
 

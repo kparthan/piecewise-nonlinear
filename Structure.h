@@ -53,15 +53,6 @@ class Structure
     //! Connect the successive control points
     void connectControlPoints();
 
-    //! Calculate the planar angles
-    vector<double> computePlanarAngles(); 
-
-    //! Calculate the dihedral angles
-    vector<double> computeDihedralAngles();
-
-    //! Calculate the lengths of the lines joining the control points
-    vector<double> computeConnectingLinesLengths();
-
   protected:
     //! The structure type
     StructureType type;

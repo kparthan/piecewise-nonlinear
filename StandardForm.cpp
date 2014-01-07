@@ -47,16 +47,17 @@ StandardForm::StandardForm(struct Parameters &parameters, Structure *s) :
 string StandardForm::createOutputFile(bool status)
 {
   string filtered = extractName(parameters.file);
-  string output_file;
   string current_dir = string(CURRENT_DIRECTORY);
+  string output_file = current_dir;
   if (status) {
-    output_file = current_dir + "experiments/segmentations/logs/";
+    filtered += "-nonlinear-fit";
+    output_file = current_dir;
     for (int i=0; i<parameters.controls.size(); i++) {
       output_file += boost::lexical_cast<string>(parameters.controls[i]); 
     }
     output_file += "/" + filtered + ".log";
   } else {
-    output_file = current_dir + "experiments/segmentations/logs/linear_";
+    filtered += "-linear-fit";
     output_file += filtered;
   }
   return output_file;
@@ -175,7 +176,7 @@ void StandardForm::updateCoordinates(void)
 void StandardForm::transform(void)
 {
   updateCoordinates();
-  if(parameters.print == PRINT_DETAIL) {
+  if(parameters.print == SET) {
     cout << "Transforming the protein to a standard canonical form ...\n";
     writeToFile(coordinates,"experiments/before_translation");
   }
@@ -183,21 +184,21 @@ void StandardForm::transform(void)
   /* translate the protein so that first point is at origin */
   translateToOrigin();
   updateCoordinates();
-  if(parameters.print == PRINT_DETAIL) {
+  if(parameters.print == SET) {
     writeToFile(coordinates,"experiments/after_translation");
   }
 
   /* move the last point onto the X-axis */
   rotateLastPoint();
   updateCoordinates();
-  if(parameters.print == PRINT_DETAIL) {
+  if(parameters.print == SET) {
     writeToFile(coordinates,"experiments/rotate_last_point");
   }
 
   /* rotate second point of the protein onto the XY plane */
   rotateSecondPoint();
   updateCoordinates();
-  if(parameters.print == PRINT_DETAIL) {
+  if(parameters.print == SET) {
     writeToFile(coordinates,"experiments/rotate_second_point");
   }
   //writeToFile(coordinates,"experiments/histograms/rotate_second_point");
@@ -205,7 +206,7 @@ void StandardForm::transform(void)
   /* overall transformation matrix */
   transformationMatrix();
 
-  if(parameters.print == PRINT_DETAIL) {
+  if(parameters.print == SET) {
     /* validate transformation */
     structure->validateTransformation(transformation);
     cout << "Transformation to standard form done ..." << endl;
@@ -221,7 +222,7 @@ void StandardForm::transformationMatrix()
   rotation.changeDimensions(4,4);
   rotation[3][3] = 1;
   transformation = rotation * translation;
-  if(parameters.print == PRINT_DETAIL) {
+  if(parameters.print == SET) {
     ofstream log_file("experiments/transformation_matrices");
     log_file << "Transformation matrix:" << endl;
     for (int i=0; i<4; i++) {
@@ -239,7 +240,7 @@ void StandardForm::transformationMatrix()
  */
 void StandardForm::translateToOrigin()
 {
-  if(parameters.print == PRINT_DETAIL) {
+  if(parameters.print == SET) {
     cout << "Translation to origin ... ";
   }
   updateCoordinates();
@@ -249,7 +250,7 @@ void StandardForm::translateToOrigin()
   offsetz = -coordinates[0][2];
   translation = translationMatrix(offsetx,offsety,offsetz);
   structure->transform(translation);
-  if(parameters.print == PRINT_DETAIL) {
+  if(parameters.print == SET) {
     cout << "[OK]" << endl;
   }
 }
@@ -260,7 +261,7 @@ void StandardForm::translateToOrigin()
  */
 void StandardForm::rotateLastPoint()
 {
-  if(parameters.print == PRINT_DETAIL) {
+  if(parameters.print == SET) {
     cout << "Rotating protein so that last point lies on X-axis ... ";
   }
   Point<double> end(coordinates[coordinates.size()-1]);
@@ -278,7 +279,7 @@ void StandardForm::rotateLastPoint()
   structure->transform(rotate);
   rotation = rotate* rotation;
 
-  if(parameters.print == PRINT_DETAIL) {
+  if(parameters.print == SET) {
     cout << "[OK]" << endl;
   }
 }
@@ -363,7 +364,7 @@ Matrix<double> StandardForm::rotateInXYPlane(Point<double> &p)
  */
 void StandardForm::rotateSecondPoint()
 {
-  if(parameters.print == PRINT_DETAIL) {
+  if(parameters.print == SET) {
     cout << "Rotating protein so that second point lies on XY plane ... ";
   }
   updateCoordinates();
@@ -374,7 +375,7 @@ void StandardForm::rotateSecondPoint()
   structure->transform(rotate);
   rotation = rotate * rotation;
 
-  if(parameters.print == PRINT_DETAIL) {
+  if(parameters.print == SET) {
     cout << "[OK]" << endl;
   }
 }
@@ -473,7 +474,7 @@ void StandardForm::boundingBox()
   double zmin = getMinimum(2);
   double zmax = getMaximum(2);
   volume = (xmax-xmin) * (ymax-ymin) * (zmax-zmin); 
-  if(parameters.print == PRINT_DETAIL) {
+  if(parameters.print == SET) {
     cout << "boundary values:\n";
     cout << xmin << " " << xmax << endl;
     cout << ymin << " " << ymax << endl;
@@ -498,7 +499,7 @@ void StandardForm::fitSphereModel(void)
     Message msg;
     msglen += msg.encodeUsingSphereModel(r);
   }
-  if(parameters.print == PRINT_DETAIL) {
+  if(parameters.print == SET) {
     cout << "*** SPHERE FIT ***" << endl;
     cout << "Sphere Model Fit: " << msglen << " bits." << endl;
     cout << "Bits per residue: " << msglen/(numResidues-1) << endl << endl;
@@ -517,7 +518,7 @@ void StandardForm::fitNullModel(void)
   double msglen = 0;
   Message msg;
   msglen = (numResidues-1) * msg.encodeUsingNullModel(volume,AOM);
-  if(parameters.print == PRINT_DETAIL) {
+  if(parameters.print == SET) {
     cout << "*** NULL MODEL ***" << endl;
     cout << "Null Model Fit: " << msglen << " bits." << endl;
     cout << "Bits per residue: " << msglen/(numResidues-1) << endl << endl;
@@ -534,7 +535,7 @@ void StandardForm::fitNullModel(void)
  */
 Segmentation StandardForm::fitLinearModel(void)
 {
-  if(parameters.print == PRINT_DETAIL) {
+  if(parameters.print == SET) {
     cout << "*** LINEAR FIT ***" << endl;
   }
   /* compute the code length matrix */
@@ -551,63 +552,28 @@ Segmentation StandardForm::fitLinearModel(void)
  */
 Segmentation StandardForm::fitBezierCurveModel()
 {
-  if(parameters.print == PRINT_DETAIL) {
-    cout << "*** BEZIER CURVE FIT ***" << endl;
-  }
   Segmentation segmentation_profile;
-  if (parameters.portion_to_fit == FIT_ENTIRE_STRUCTURE) {
-    clock_t c_start = clock();
-    auto t_start = high_resolution_clock::now();
+  clock_t c_start = clock();
+  auto t_start = high_resolution_clock::now();
 
-    /* compute the code length matrix for the Bezier curve fit */
-    computeCodeLengthMatrixBezier();
+  /* compute the code length matrix for the Bezier curve fit */
+  computeCodeLengthMatrixBezier();
 
-    /* compute the optimal segmentation using dynamic programming */
-    pair<double,vector<int>> segmentation = optimalSegmentation();
-    clock_t c_end = clock();
-    auto t_end = high_resolution_clock::now();
-    double cpu_time = double(c_end-c_start)/(double)(CLOCKS_PER_SEC);
-    double wall_time = duration_cast<seconds>(t_end-t_start).count();
-    printBezierSegmentation(segmentation,cpu_time,wall_time);
-    segmentation_profile = structure->reconstruct(parameters.file,output_file,
-                           codeLength,optimalBezierFit,segmentation.second,
-                           parameters.control_string,transformation);
-    segmentation_profile.setBitsPerResidue(null_bpr,bezier_bpr);
-    //segmentation_profile.setMaximumRadius(getMaximumDistance(original_coordinates));
-    vector<Point<double>> coords = structure->getCoordinatesPoints();
-    segmentation_profile.setCoordinates(coords);
-    segmentation_profile.setTime(cpu_time,wall_time);
-  } else if (parameters.portion_to_fit == FIT_SINGLE_SEGMENT) {
-    fitOneSegment();
-  }
+  /* compute the optimal segmentation using dynamic programming */
+  pair<double,vector<int>> segmentation = optimalSegmentation();
+  clock_t c_end = clock();
+  auto t_end = high_resolution_clock::now();
+  double cpu_time = double(c_end-c_start)/(double)(CLOCKS_PER_SEC);
+  double wall_time = duration_cast<seconds>(t_end-t_start).count();
+  printBezierSegmentation(segmentation,cpu_time,wall_time);
+  segmentation_profile = structure->reconstruct(parameters.file,output_file,
+                         codeLength,optimalBezierFit,segmentation.second,
+                         parameters.control_string,transformation);
+  segmentation_profile.setBitsPerResidue(null_bpr,bezier_bpr);
+  vector<Point<double>> coords = structure->getCoordinatesPoints();
+  segmentation_profile.setCoordinates(coords);
+  segmentation_profile.setTime(cpu_time,wall_time);
   return segmentation_profile;
-}
-
-/*
- *  \brief This function fits Bezier curves to just this segment
- */
-void StandardForm::fitOneSegment()
-{
-  array<int,2> indexes = structure->getEndPoints(parameters.end_points);
-  Segment segment = getSegment(indexes[0],indexes[1]);
-  segment.estimateFreeParameters();
-  OptimalFit min_fit, current_fit;
-  cout << "\nFit (" << parameters.controls[0] << " intermediate control points):- ";
-  min_fit = segment.fitBezierCurve(parameters.controls[0]);
-  min_fit.printFitInfo();
-  cout << "------------------------------------------------" << endl;
-  for (int k=1; k<parameters.controls.size(); k++) {
-    cout << "\nFit (" << parameters.controls[k] << " intermediate control points):- "; 
-    current_fit = segment.fitBezierCurve(parameters.controls[k]);
-    current_fit.printFitInfo();
-    cout << "------------------------------------------------" << endl;
-    if (current_fit < min_fit) {
-      min_fit = current_fit;
-    }
-  }
-
-  cout << "\nOPTIMAL BEZIER FIT:" << endl;
-  min_fit.printFitInfo();
 }
 
 /*!
@@ -615,12 +581,8 @@ void StandardForm::fitOneSegment()
  */
 void StandardForm::computeCodeLengthMatrix(void)
 {
-  int procs = omp_get_num_procs();
-  omp_set_num_threads(procs);
   int j;
-  //#pragma omp parallel for private(j)
   for (int i=0; i<numResidues; i++){
-    //#pragma omp parallel for 
     for (j=i+1; j<numResidues; j++){
       cout << "Segment: " << i << " " << j <<endl;
       Segment segment = getSegment(i,j);
@@ -628,31 +590,6 @@ void StandardForm::computeCodeLengthMatrix(void)
       codeLength[i][j] = segment.getLinearFit(); 
     }
   }
-  /*ofstream codeLengthFile("codeLengthLinear");
-  codeLengthFile << "# of residues: " << numResidues << endl; 
-  for (int i=0; i<numResidues; i++){
-    for (int j=0; j<numResidues; j++){
-      codeLengthFile << fixed << setw(9) << setprecision(3) << codeLength[i][j];
-    }
-    codeLengthFile << endl;
-  }*/
-
-  /*
-  ofstream log_file("test_linear");
-  for (int i=0; i<numResidues; i++) {
-    for (int j=0; j<numResidues; j++) {
-      if (j > i) {
-        Segment segment = getSegment(i,j);
-        segment.fitLinear();
-        log_file << "[" << i << ", " << j << "]: " << segment.getLinearFit() << endl;
-      }
-    }
-  }
-
-  Segment segment = getSegment(4,60);
-  segment.fitLinear();
-  cout << "linear fit: " << segment.getLinearFit() << endl;
-  */
 }
 
 /*!
@@ -661,70 +598,39 @@ void StandardForm::computeCodeLengthMatrix(void)
  */
 void StandardForm::computeCodeLengthMatrixBezier(void)
 {
-  int procs = omp_get_num_procs();
-  omp_set_num_threads(procs);
   int i,j,k,window_size,limit;
-  if (parameters.constrain_segment_length == CONSTRAIN) {
-    window_size = parameters.max_segment_length;
-    //#pragma omp parallel for private(j)
-    //cout << "#residues: " << numResidues << endl;
-    for (i=0; i<numResidues; i++) {
-      if (i + window_size <= numResidues) {
-        limit = i + window_size - 1;
-      } else {
-        limit = numResidues - 1;
-      }
-      //#pragma omp parallel for
-      for (j=i+1; j<=limit; j++) {
-        Segment segment = getSegment(i,j);
-        segment.estimateFreeParameters();
-        OptimalFit min_fit,current_fit;
-        min_fit = segment.fitBezierCurve(parameters.controls[0]);
-        for (k=1; k<parameters.controls.size(); k++) {
-          current_fit = segment.fitBezierCurve(parameters.controls[k]);
-          if (current_fit < min_fit) {
-            min_fit = current_fit;
-          }
-        }
-        //OptimalFit fit = segment.stateUsingCurve(min_fit);
-        //min_fit.setSegmentLength(segment.length());
-        optimalBezierFit[i][j] = min_fit;
-        codeLength[i][j] = optimalBezierFit[i][j].getMessageLength();
-        if (parameters.print == PRINT_DETAIL) {
-          cout << "Segment: " << i << " " << j << " ";
-          cout << optimalBezierFit[i][j].getMessageLength() << endl;
+  window_size = MAX_SEGMENT_LENGTH; 
+  for (i=0; i<numResidues; i++) {
+    if (i + window_size <= numResidues) {
+      limit = i + window_size - 1;
+    } else {
+      limit = numResidues - 1;
+    }
+    for (j=i+1; j<=limit; j++) {
+      Segment segment = getSegment(i,j);
+      segment.estimateFreeParameters();
+      OptimalFit min_fit,current_fit;
+      min_fit = segment.fitBezierCurve(parameters.controls[0]);
+      for (k=1; k<parameters.controls.size(); k++) {
+        current_fit = segment.fitBezierCurve(parameters.controls[k]);
+        if (current_fit < min_fit) {
+          min_fit = current_fit;
         }
       }
-      if (limit != numResidues - 1) {
-        for (k=limit+1; k<numResidues; k++) {
-          codeLength[i][k] = LARGE_NUMBER;
-        }
+      optimalBezierFit[i][j] = min_fit;
+      codeLength[i][j] = optimalBezierFit[i][j].getMessageLength();
+      if (parameters.print == SET) {
+        cout << "Segment: " << i << " " << j << " ";
+        cout << optimalBezierFit[i][j].getMessageLength() << endl;
       }
     }
-  } else {
-    for (i=0; i<numResidues; i++) {
-      //#pragma omp parallel for
-      for (j=i+1; j<numResidues; j++) {
-        Segment segment = getSegment(i,j);
-        segment.estimateFreeParameters();
-        OptimalFit min_fit,current_fit;
-        min_fit = segment.fitBezierCurve(parameters.controls[0]);
-        for (k=1; k<parameters.controls.size(); k++) {
-          current_fit = segment.fitBezierCurve(parameters.controls[k]);
-          if (current_fit < min_fit) {
-            min_fit = current_fit;
-          }
-        }
-        optimalBezierFit[i][j] = min_fit;
-        codeLength[i][j] = optimalBezierFit[i][j].getMessageLength();
-        if (parameters.print == PRINT_DETAIL) {
-          cout << "Segment: " << i << " " << j << " ";
-          cout << optimalBezierFit[i][j].getMessageLength() << endl;
-        }
+    if (limit != numResidues - 1) {
+      for (k=limit+1; k<numResidues; k++) {
+        codeLength[i][k] = LARGE_NUMBER;
       }
     }
   }
-  if(parameters.print == PRINT_DETAIL) {
+  if(parameters.print == SET) {
     ofstream codeLengthFile("codeLengthBezier");
     codeLengthFile << "# of residues: " << numResidues << endl; 
     for (int i=0; i<numResidues; i++){
@@ -759,7 +665,7 @@ pair<double,vector<int>> StandardForm::optimalSegmentation(void)
   }
   segmentation.first = optimal[numResidues-1];
   bezier_bpr = segmentation.first / (numResidues - 1);
-  if(parameters.print == PRINT_DETAIL) {
+  if(parameters.print == SET) {
     cout << "Best fit: " << segmentation.first << " bits." << endl;
     cout << "Bits per residue: " << bezier_bpr << endl;
   }
