@@ -1,0 +1,25 @@
+Using structure file: test/2.pdb
+Number of residues: 49
+Doing a BEZIER segmentation ...
+
+Bounding box volume: 3199.02
+Null Model Fit: 1993.96 bits.
+Bits per residue: 41.5408
+
+Bezier model fit: 1846.14 bits.
+Bits per residue: 38.4614
+
+# of segments: 2
+Internal segmentation:
+0-->27-->48
+
+CPU time used: 2.66 secs.
+Wall clock time elapsed: 2 secs.
+
+        SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
+              1            A 1           A 28             28         1031.3         (-4.557, 1.808, 0)         (-13.6577, -15.4251, 5.04834)
+                                                                                    (-22.202, -33.174, 9.32)
+
+              2           A 28           A 49             22        814.849         (-22.202, -33.174, 9.32)
+                                                                                    (-39.796, -58.186, 15.443)
+
