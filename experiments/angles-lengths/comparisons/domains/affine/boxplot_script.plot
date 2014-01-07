@@ -11,7 +11,7 @@ set ytics nomirror
 set grid ytics
 set xtics ("Family" 1, "SuperFamily" 2, "Fold" 3, "Class" 4, "Decoy" 5) scale 0.0
 set yrange [-20:40]
-set title "go: -20, ge: -5"
+#set title "go: -20, ge: -5"
 set output "012/go-20-ge-5/alignments.boxplot.score0.eps" 
 plot "012/go-20-ge-5/alignments-scores0" using (1):1, "012/go-20-ge-5/alignments-scores0" using (2):2, "012/go-20-ge-5/alignments-scores0" using (3):3, "012/go-20-ge-5/alignments-scores0" using (4):4, "012/go-20-ge-5/alignments-scores0" using (5):5
 set output "012/go-20-ge-5/alignments.boxplot.score1.eps" 
