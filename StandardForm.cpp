@@ -16,18 +16,20 @@ StandardForm::StandardForm(struct Parameters &parameters, Structure *s) :
   for (int i=0; i<numResidues; i++) {
     vector<double> tmp(numResidues,0);
     codeLength.push_back(tmp);
+    vector<OptimalFit> tmp2(numResidues,OptimalFit());
+    optimalBezierFit.push_back(tmp2);
   }
-  if (parameters.controls.size() > 0) {
+  if (parameters.controls.size() > 1) {
     output_file = createOutputFile(1);
     ofstream log_file(output_file.c_str());
     log_file << "Using structure file: " << parameters.file << endl;
     log_file << "Number of residues: " << numResidues << endl;
     log_file << "Doing a BEZIER segmentation ..." << endl << endl;
     log_file.close();
-    for (int i=0; i<numResidues; i++) {
+    /*for (int i=0; i<numResidues; i++) {
       vector<OptimalFit> tmp(numResidues,OptimalFit());
       optimalBezierFit.push_back(tmp);
-    }
+    }*/
   } else {
     output_file = createOutputFile(0);
     ofstream log_file(output_file.c_str(),ios::app);
@@ -48,18 +50,13 @@ string StandardForm::createOutputFile(bool status)
 {
   string filtered = extractName(parameters.file);
   string current_dir = string(CURRENT_DIRECTORY);
-  string output_file = current_dir;
+  string output_file = current_dir + "output/";
   if (status) {
     filtered += "-nonlinear-fit";
-    output_file = current_dir;
-    for (int i=0; i<parameters.controls.size(); i++) {
-      output_file += boost::lexical_cast<string>(parameters.controls[i]); 
-    }
-    output_file += "/" + filtered + ".log";
   } else {
     filtered += "-linear-fit";
-    output_file += filtered;
   }
+  output_file += filtered + ".log";
   return output_file;
 }
 
@@ -552,6 +549,9 @@ Segmentation StandardForm::fitLinearModel(void)
  */
 Segmentation StandardForm::fitBezierCurveModel()
 {
+  if(parameters.print == SET) {
+    cout << "*** BEZIER CURVE FIT ***" << endl;
+  }
   Segmentation segmentation_profile;
   clock_t c_start = clock();
   auto t_start = high_resolution_clock::now();
@@ -631,7 +631,7 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
     }
   }
   if(parameters.print == SET) {
-    ofstream codeLengthFile("codeLengthBezier");
+    ofstream codeLengthFile("output/codeLengthBezier");
     codeLengthFile << "# of residues: " << numResidues << endl; 
     for (int i=0; i<numResidues; i++){
       for (int j=0; j<numResidues; j++){

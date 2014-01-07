@@ -20,7 +20,7 @@ all: piecewise-nonlinear-fit
 piecewise-nonlinear-fit: $(OBJECTS)
 	g++ $(OBJECTS) -o $@ $(LDFLAGS) 
 
-piecewise-nonlinear-fit.o: piecewise-nonlinear-fit.cpp Support.h 
+piecewise-nonlinear-fit.o: piecewise-nonlinear-fit.cpp Support.h Header.h 
 	g++ -c $(CFLAGS) $< -o $@
 
 Support.o: Support.cpp Support.h StandardForm.h Header.h

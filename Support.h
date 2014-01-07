@@ -7,9 +7,9 @@
 struct Parameters
 {
   string file;                      // path to the structure file
-  int structure;                    // Protein or General or Test
   vector<int> controls;             // # of intermediate control points
   string control_string;            // controls string
+  int maxdegree;                    // maximum degree of Bezier curve
   int print;                        // verbose output
 };
 

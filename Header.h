@@ -24,7 +24,8 @@
 #include <boost/tokenizer.hpp>
 #include <boost/filesystem.hpp>
 
-#define CURRENT_DIRECTORY "/home/pkas7/Research/Work/piecewise-nonlinear/"
+//#define CURRENT_DIRECTORY "/home/parthan/Research/Work/piecewise-nonlinear/"
+#define CURRENT_DIRECTORY "./"
 
 // numeric constants
 #define AOM 0.001

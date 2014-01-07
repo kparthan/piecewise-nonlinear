@@ -68,7 +68,7 @@ double Message::encodeUsingNormalModel()
   double msglen = 0;
   double mean,variance;
   double range_mu = 10.0;
-  double range_log_sigma = log(parameters.max_sigma/parameters.min_sigma);
+  double range_log_sigma = log(MAX_SIGMA/MIN_SIGMA);
   int i; 
   double x;
 
@@ -77,7 +77,7 @@ double Message::encodeUsingNormalModel()
   for (i=0; i<2; i++){
     mean = 0;
     variance = estimateVariance(samples[i],mean);
-    if (variance > parameters.max_sigma * parameters.max_sigma) {
+    if (variance > MAX_SIGMA * MAX_SIGMA) {
         x = LARGE_NUMBER;
     } else {
       x = encodeWallaceFreeman(samples[i].size(),variance,range_log_sigma);
@@ -87,7 +87,7 @@ double Message::encodeUsingNormalModel()
   /* state the third deviation by estimating the mean */
   mean = estimateMean(samples[i]);
   variance = estimateVariance(samples[i]);
-  if (variance > parameters.max_sigma * parameters.max_sigma) {
+  if (variance > MAX_SIGMA * MAX_SIGMA) {
       x = LARGE_NUMBER;
   } else {
     x = encodeWallaceFreeman(samples[i].size(),variance,range_mu,range_log_sigma);
@@ -99,7 +99,7 @@ double Message::encodeUsingNormalModel()
   for (i=0; i<3; i++) {
     mean = estimateMean(samples[i]);
     variance = estimateVariance(samples[i]);
-    if (variance > parameters.max_sigma * parameters.max_sigma) {
+    if (variance > MAX_SIGMA * MAX_SIGMA) {
         x = LARGE_NUMBER;
     } else {
       x = encodeWallaceFreeman(samples[i].size(),variance,range_mu,range_log_sigma);

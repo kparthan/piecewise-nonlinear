@@ -14,14 +14,14 @@
 struct Parameters parseCommandLineInput(int argc, char **argv)
 {
   struct Parameters parameters;
-  bool noargs = 1;
 
   cout << "Checking command-line input ..." << endl;
   options_description desc("Allowed options");
   desc.add_options()
        ("help","produce help message")
-       ("file",value<string>(&parameters.file),"path to pdb file")
-       ("controls",value<vector<int>>(&parameters.controls),"")
+       ("pdbfile",value<string>(&parameters.file),"path to pdb file")
+       ("maxdegree",value<int>(&parameters.maxdegree),
+                    "maximum degree of the Bezier curve [1, 2 or 3]")
        ("verbose","detailed output")
   ;
   variables_map vm;
@@ -38,30 +38,35 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     parameters.print = UNSET;
   }
 
-  if (vm.count("controls")) {
-    for (int i=0; i<parameters.controls.size(); i++) {
-      if (parameters.controls[i] < 0 || 
-          parameters.controls[i] > MAX_INTERMEDIATE_CONTROL_POINTS) {
-        cout << "# of intermediate control points: " << parameters.controls[i]
-        << " not supported" << endl;
-        Usage(argv[0],desc);
-      }
-    } 
-    parameters.control_string = getControlString(parameters.controls);
+  if (!vm.count("pdbfile")) {
+    cout << "PDB file not specified ...\n";
+    Usage(argv[0],desc);
+  } else {
+    cout << "Using PDB file: " << parameters.file << endl;
   }
 
-  if (noargs) {
+  if (!vm.count("maxdegree")) {
+    parameters.maxdegree = 1;
+    cout << "Degree of Bezier curve unspecified ...\n";
+    cout << "Fitting default linear model ...\n";
+  } else {
+    if (parameters.maxdegree > MAX_INTERMEDIATE_CONTROL_POINTS+1 ||
+        parameters.maxdegree < 1) {
+      cout << "Unsupported degree specified ...\n";
+      Usage(argv[0],desc);
+    }
+    cout << "Fitting the protein structure using a Bezier curve of "
+         << "maximum degree " << parameters.maxdegree << endl; 
+  }
+  for (int i=0; i<parameters.maxdegree; i++) {
+    parameters.controls.push_back(i);
+  }
+  parameters.control_string = getControlString(parameters.controls);
+
+  if (argc < 2) {
     cout << "Not enough arguments supplied..." << endl;
     Usage(argv[0],desc);
   }
-
-  cout << "FILE: " <<parameters.file << endl; 
-  cout << endl;
-  cout << "CONTROLS: ";
-  for (int i=0; i<parameters.controls.size(); i++) {  
-    cout << parameters.controls[i] << " ";
-  }
-  cout << endl;
 
   return parameters;
 }

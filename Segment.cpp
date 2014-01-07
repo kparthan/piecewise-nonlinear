@@ -312,32 +312,6 @@ void Segment::estimateFreeParameters()
 }
 
 /*!
- *  \brief This function returns the error of fitting a Bezier curve
- *  to a segment
- *  \param curve a reference to a Bezier curve
- *  \return the least square fit error
- */
-double Segment::rootMeanSquaredError(BezierCurve<double> &curve)
-{
-  int m = curve.getDegree();
-  int N = numPoints;
-  double variance = 0;
-  for (int n=0; n<N; n++) {
-    Point<double> xn(coordinates[n]);
-    Point<double> pt = curve.getPoint(t[n]);
-    Point<double> diff = xn - pt;
-    variance += diff * diff;
-  }
-  double sigma = sqrt(variance / (N+1-m));
-  if (sigma < ZERO) {
-    sigma = 3 * AOM;
-  }
-  return sigma;
-  //double error = sqrt(variance/N);
-  //return error;
-}
-
-/*!
  *  \brief This module computes the message length to encode the segment
  *  based on the number of intermediate control points
  *  \param numIntermediateControlPoints an integer
@@ -402,48 +376,6 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
   vector<array<double,3>> deviations = computeDeviations(curve);
   double msglen = messageLength(curve,deviations);
   return OptimalFit(controlPoints,msglen);
-}
-
-/*!
- *
- */
-OptimalFit Segment::stateUsingCurve(OptimalFit &optimal)
-{
-  vector<Point<double>> cps = optimal.getControlPoints();
-  BezierCurve<double> curve(cps);
-  vector<array<double,3>> deviations = computeDeviations(curve);
-  double msglen = messageLength(curve,deviations);
-  return OptimalFit(cps,msglen);
-}
-
-/*!
- *  \brief This function is used to compute the MML way of fitting 
- *  Bezier curves and the associated message length
- */
-double Segment::messageLengthMML(BezierCurve<double> &curve, double sigma)
-{
-  int m = curve.getDegree();
-  int N = numPoints;
-  double msglen = 0;
-  msglen += -0.5 * m * log(2*PI);
-  msglen += 0.5 * log (m*PI);
-  msglen += 0.5 * m * log(N);
-  msglen += -0.5 * (m-1) * log(2*m+1);
-  msglen += (N-m+1) * log(sigma);
-  msglen += -N * log(AOM);
-  msglen += 0.5 * N * log(2*PI);
-  msglen += (m-1) * log(volume);
-  msglen += 0.5 * (N-m+1);
-  double c;
-  if (m == 1) {
-    c = 1;
-  } else if (m == 2) {
-    c = 2 / 3.0;
-  } else if (m == 3) {
-    c = 63 / 400.0;
-  }
-  msglen += 0.5 * log(c);
-  return msglen/log(2);
 }
 
 /*!

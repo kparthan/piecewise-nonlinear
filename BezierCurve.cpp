@@ -1,5 +1,4 @@
 #include "BezierCurve.h"
-#include "Polynomial.h"
 
 /*!
  *  \brief Null comstructor
@@ -497,4 +496,8 @@ vector<RealType> BezierCurve<RealType>::generateEquallySpacedParameters(int n)
   ts[n] = 1;
   return ts;
 }
+
+template class BezierCurve<float>;
+template class BezierCurve<double>;
+template class BezierCurve<long double>;
 
