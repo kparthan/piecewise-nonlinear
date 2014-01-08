@@ -206,13 +206,16 @@ void Protein::createPymolScript(string &pdb_file,
   string pymol_file = string(CURRENT_DIRECTORY)
                       + "output/" + pdb_file + ".pml";
   ofstream script(pymol_file.c_str());
+  cout << "Generating Pymol visualization \"" << pymol_file << "\" ...";
+  fflush(stdout);
 
   string modified_pdb = pdb_file + ".modified.pdb";
   script << "load " << modified_pdb << endl;
-  //script << "bg_color white" << endl;
+  script << "bg_color white" << endl;
   script << "hide" << endl;
   script << "show cartoon" << endl;
   script << "set label_font_id, 10" << endl;
+  script << "set sphere_color, yellow" << endl;
 
   Chain curve_chain = protein->getDefaultModel()["y"];
   vector<string> curve_ids = curve_chain.getResidueIdentifiers();
@@ -251,6 +254,10 @@ void Protein::createPymolScript(string &pdb_file,
     string curve_index = curve_ids[i-1].substr(1);
     script << "select curve" << curve_index << ", chain y and resi " 
     << curve_ids[i-1] << endl;
+    string curve_sel = "curve" + curve_index;
+    script << "show spheres, " << curve_sel << endl;
+    script << "alter " << curve_sel << ", vdw=0.2" << endl;
+    script << "rebuild" << endl;
 
     // join the control points by straight lines to visualize
     OptimalFit fit = optimalBezierFit[segment_start-1][segment_end-1];
@@ -261,8 +268,8 @@ void Protein::createPymolScript(string &pdb_file,
     for (int j=1; j<=numIntermediateControls; j++) {
       sel2 = "resi " + res_ids[non_lin_seg-1] + " and name A" + boost::lexical_cast<string>(j);
       p2 = "\"" + sel2 + "\""; 
-      script << "print cmd.distance(" << p1 << "," << p2 << ")" << endl;
-      script << "hide label" << endl;
+      //script << "print cmd.distance(" << p1 << "," << p2 << ")" << endl;
+      //script << "hide label" << endl;
       p1 = p2;
     }
     if (numIntermediateControls > 0) {
@@ -270,8 +277,8 @@ void Protein::createPymolScript(string &pdb_file,
     }
     sel2 = "chain " + end_chain + " and resi " + end_residue + " and name CA";
     p2 = "\"" + sel2 + "\"";
-    script << "print cmd.distance(" << p1 << "," << p2 << ")" << endl;
-    script << "hide label" << endl;
+    //script << "print cmd.distance(" << p1 << "," << p2 << ")" << endl;
+    //script << "hide label" << endl;
 
     // color the segment
     script << "color c" << i << ", seg" << i << endl;  
@@ -281,6 +288,7 @@ void Protein::createPymolScript(string &pdb_file,
     start_chain = end_chain;
     segment_start = segment_end;
   }
+  cout << " done\n";
   script.close();
 }
 

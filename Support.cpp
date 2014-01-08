@@ -48,7 +48,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
   if (!vm.count("maxdegree")) {
     parameters.maxdegree = 1;
     cout << "Degree of Bezier curve unspecified ...\n";
-    cout << "Fitting default linear model ...\n";
+    cout << "Fitting default linear model ...\n\n";
   } else {
     if (parameters.maxdegree > MAX_INTERMEDIATE_CONTROL_POINTS+1 ||
         parameters.maxdegree < 1) {
@@ -56,7 +56,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
       Usage(argv[0],desc);
     }
     cout << "Fitting the protein structure using a Bezier curve of "
-         << "maximum degree " << parameters.maxdegree << endl; 
+         << "maximum degree " << parameters.maxdegree << endl << endl; 
   }
   for (int i=0; i<parameters.maxdegree; i++) {
     parameters.controls.push_back(i);
@@ -475,7 +475,6 @@ Segmentation buildSegmentationProfile(struct Parameters &parameters)
   pdb_file = extractName(parameters.file);
   cout << "Building segmentation profile of " << pdb_file << " ..." << endl;
   segmentation = proteinFit(parameters);
-  segmentation.save(pdb_file,parameters.control_string);
   //segmentation.printNumberOfSegments(pdb_file,parameters.control_string);
   return segmentation;
 }
@@ -503,7 +502,7 @@ ProteinStructure *parsePDBFile(string &pdbFile)
       std::make_shared<lcb::Model>(structure->getDefaultModel());
   one_model->addModel(newmodel);
   delete structure;
-  cout << " [OK]" << endl;
+  cout << " done" << endl;
   return one_model;
 }
 

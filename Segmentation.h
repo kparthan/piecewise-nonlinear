@@ -74,12 +74,6 @@ class Segmentation
 
     //! prints the number of segments
     void printNumberOfSegments(string &, string &);
-
-    //! Write the segmentation details
-    void save(string &, string &);
-
-    //! Read the segmentation
-    void load(string &, string &);
 };
 
 #endif

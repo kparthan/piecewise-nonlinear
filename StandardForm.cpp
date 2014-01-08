@@ -32,7 +32,7 @@ StandardForm::StandardForm(struct Parameters &parameters, Structure *s) :
     }*/
   } else {
     output_file = createOutputFile(0);
-    ofstream log_file(output_file.c_str(),ios::app);
+    ofstream log_file(output_file.c_str());
     log_file << "Using structure file: " << parameters.file << endl;
     log_file << "Number of residues: " << numResidues << endl;
     log_file << "Doing a LINEAR segmentation ..." << endl << endl;
@@ -557,15 +557,22 @@ Segmentation StandardForm::fitBezierCurveModel()
   auto t_start = high_resolution_clock::now();
 
   /* compute the code length matrix for the Bezier curve fit */
+  cout << "Computing code length matrix ...";
+  fflush(stdout);
   computeCodeLengthMatrixBezier();
+  cout << " done\n";
 
   /* compute the optimal segmentation using dynamic programming */
+  cout << "Computing the optimal segmentation ...";
   pair<double,vector<int>> segmentation = optimalSegmentation();
+  cout << " done\n";
   clock_t c_end = clock();
   auto t_end = high_resolution_clock::now();
   double cpu_time = double(c_end-c_start)/(double)(CLOCKS_PER_SEC);
   double wall_time = duration_cast<seconds>(t_end-t_start).count();
+  cout << "Writing segmentation results to \"" << output_file << "\" ...";
   printBezierSegmentation(segmentation,cpu_time,wall_time);
+  cout << " done\n";
   segmentation_profile = structure->reconstruct(parameters.file,output_file,
                          codeLength,optimalBezierFit,segmentation.second,
                          parameters.control_string,transformation);
@@ -701,12 +708,12 @@ void StandardForm::printLinearSegmentation(pair<double,
   log_file << "Linear model fit: " << segmentation.first << " bits." << endl;
   log_file << "Bits per residue: " << segmentation.first / (numResidues-1) 
            << endl << endl; 
-  log_file << "# of linear segments: " << segments.size()-1 << endl;
-  log_file << "Internal segmentation:" << endl;
+  log_file << "# of linear segments: " << segments.size()-1 << endl << endl;
+  /*log_file << "Internal segmentation:" << endl;
   for (i=0; i<segments.size()-1; i++) {
     log_file << segments[i] << "-->";
   }
-  log_file << segments[i] << endl << endl;
+  log_file << segments[i] << endl << endl;*/
   for (i=0; i<segments.size()-1; i++) {
     int segment_start = segments[i];
     int segment_end = segments[i+1];
@@ -737,12 +744,12 @@ StandardForm::printBezierSegmentation(pair<double,vector<int>> &segmentation,
   log_file << "Bezier model fit: " << segmentation.first << " bits." << endl;
   log_file << "Bits per residue: " << segmentation.first / (numResidues-1) 
            << endl << endl; 
-  log_file << "# of segments: " << segments.size()-1 << endl;
-  log_file << "Internal segmentation:" << endl;
+  log_file << "# of segments: " << segments.size()-1 << endl << endl;
+  /*log_file << "Internal segmentation:" << endl;
   for (i=0; i<segments.size()-1; i++) {
     log_file << segments[i] << "-->";
   }
-  log_file << segments[i] << endl << endl;
+  log_file << segments[i] << endl << endl;*/
   log_file << "CPU time used: " << cpu_time << " secs." << endl;
   log_file << "Wall clock time elapsed: " << wall_time << " secs." << endl << endl;
   log_file << setw(15) << "SEGMENT"
