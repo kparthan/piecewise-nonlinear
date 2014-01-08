@@ -16,7 +16,7 @@ Segmentation::Segmentation()
  *  \param approx_lengths a reference to a vector<double>
  */
 Segmentation::Segmentation(int num_coordinates,
-                           vector<BezierCurve<double>> &bezier_curves) :
+                           vector<BezierCurve<double> > &bezier_curves) :
                            num_coordinates(num_coordinates), 
                            bezier_curves(bezier_curves)
 {
@@ -104,7 +104,7 @@ void Segmentation::setTime(double cpu, double wall)
  *  \brief This function sets the coordinates of the structure.
  *  \param coords a reference to a vector<array<double,3>>
  */
-void Segmentation::setCoordinates(vector<Point<double>> &coords)
+void Segmentation::setCoordinates(vector<Point<double> > &coords)
 {
   coordinates = coords;
 }
@@ -140,7 +140,7 @@ int Segmentation::getNumberOfCoordinates()
  *  \brief This function returns the protein coordinates.
  *  \return the protein coordinates
  */
-vector<Point<double>> Segmentation::getCoordinates()
+vector<Point<double> > Segmentation::getCoordinates()
 {
   return coordinates;
 }
@@ -178,7 +178,7 @@ void Segmentation::printNumberOfSegments(string &name, string &controls)
  *  \brief This function returns the list of abstracting Bezier curves.
  *  \return the list of Bezier segments
  */
-vector<BezierCurve<double>> Segmentation::getBezierCurves()
+vector<BezierCurve<double> > Segmentation::getBezierCurves()
 {
   return bezier_curves;
 }

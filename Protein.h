@@ -14,10 +14,10 @@ class Protein : public Structure
     vector<Identifier> mapToActualSegments(vector<int> &);
 
     //! Obtain random RGB indexes between 0 and 1
-    vector<array<double,3>> generateProteinColors(int);
+    vector<stdtl::array<double,3> > generateProteinColors(int);
 
     //! Generates the Pymol script for coloring the individual segments
-    void createPymolScript(string &, vector<vector<OptimalFit>> &, vector<int> &,
+    void createPymolScript(string &, vector<vector<OptimalFit> > &, vector<int> &,
                            string &, vector<Identifier> &);
 
   public: 
@@ -25,12 +25,12 @@ class Protein : public Structure
     Protein(ProteinStructure *);
 
     //! Reconstruct the protein back with the control points added
-    Segmentation reconstruct(string &, string &, vector<vector<double>> &,
-                             vector<vector<OptimalFit>> &, vector<int> &, 
+    Segmentation reconstruct(string &, string &, vector<vector<double> > &,
+                             vector<vector<OptimalFit> > &, vector<int> &, 
                              string &, Matrix<double> &);
 
     //! Gets the indexes of the end points to be internally used
-    array<int,2> getEndPoints(vector<string> &);
+    stdtl::array<int,2> getEndPoints(vector<string> &);
 
 };
 

@@ -10,7 +10,7 @@ Structure::Structure() : type(DEFAULT_TYPE)
  *  \brief This is a constructor function
  *  \param coordinates a reference to a vector<Point<double>>
  */
-Structure::Structure(vector<Point<double>> &coordinates) : type(DEFAULT_TYPE),
+Structure::Structure(vector<Point<double> > &coordinates) : type(DEFAULT_TYPE),
            coordinates(coordinates), original_coordinates(coordinates)
 {}
 
@@ -20,9 +20,9 @@ Structure::Structure(vector<Point<double>> &coordinates) : type(DEFAULT_TYPE),
  *  \param end_points a reference to a string
  *  \return the indexes of the end points to be internally used
  */
-array<int,2> Structure::getEndPoints(vector<string> &end_points)
+stdtl::array<int,2> Structure::getEndPoints(vector<string> &end_points)
 {
-  array<int,2> indexes;
+  stdtl::array<int,2> indexes;
   indexes[0] = boost::lexical_cast<int>(end_points[0]) - 1;
   indexes[1] = boost::lexical_cast<int>(end_points[1]) - 1;
   return indexes;
@@ -32,11 +32,11 @@ array<int,2> Structure::getEndPoints(vector<string> &end_points)
  *  \brief This module returns the coordinates of the structure
  *  \return the coordinates of the structure
  */
-vector<array<double,3>> Structure::getCoordinates()
+vector<stdtl::array<double,3> > Structure::getCoordinates()
 {
-  vector<array<double,3>> list;
+  vector<stdtl::array<double,3> > list;
   for (int i=0; i<coordinates.size(); i++){
-    array<double,3> a;
+    stdtl::array<double,3> a;
     a[0] = coordinates[i].x();
     a[1] = coordinates[i].y();
     a[2] = coordinates[i].z();
@@ -49,7 +49,7 @@ vector<array<double,3>> Structure::getCoordinates()
  *  \brief This module returns the coordinates of the structure as Points.
  *  \return the coordinates of the structure
  */
-vector<Point<double>> Structure::getCoordinatesPoints()
+vector<Point<double> > Structure::getCoordinatesPoints()
 {
   return original_coordinates;
 }
@@ -76,7 +76,7 @@ void Structure::transform(Matrix<double> &m)
  *  \param transformation a reference to a Matrix<double>
  *  \param file_name a character string
  */
-void Structure::printTransformation(vector<Point<double>> &coordinates,
+void Structure::printTransformation(vector<Point<double> > &coordinates,
                                     Matrix<double> &transformation, 
                                     const char *file_name)
 {
@@ -117,12 +117,12 @@ void Structure::validateTransformation(Matrix<double> &transformation)
  *  \param num_segments an integer
  *  \return the list of RGB values (0-255) corresponding to each segment 
  */
-vector<array<int,3>> Structure::generateSegmentColors(int num_segments)
+vector<stdtl::array<int,3> > Structure::generateSegmentColors(int num_segments)
 {
   srand(time(NULL));
-  vector<array<int,3>> rgb;
+  vector<stdtl::array<int,3> > rgb;
   for (int i=0; i<num_segments; i++) {
-    array<int,3> a;
+    stdtl::array<int,3> a;
     for (int j=0; j<3; j++) {
       a[j] = (int)( (double)rand() * 255 / (double)RAND_MAX);
     }

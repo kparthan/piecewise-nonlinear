@@ -11,10 +11,10 @@ class Segmentation
     int num_coordinates;
 
     //! Structure coordinates
-    vector<Point<double>> coordinates;
+    vector<Point<double> > coordinates;
 
     //! List of all Bezier curves
-    vector<BezierCurve<double>> bezier_curves;
+    vector<BezierCurve<double> > bezier_curves;
 
     //! List of approximate lengths of all bezier curves
     vector<double> bezier_curves_lengths;
@@ -30,7 +30,7 @@ class Segmentation
     Segmentation();
 
     //! Constructor
-    Segmentation(int, vector<BezierCurve<double>> &); 
+    Segmentation(int, vector<BezierCurve<double> > &); 
                  
     //! Copy constructor
     Segmentation(const Segmentation &);
@@ -40,7 +40,7 @@ class Segmentation
 
                             /* Accessor functions */
     //! Get the abstracting Bezier curves
-    vector<BezierCurve<double>> getBezierCurves();
+    vector<BezierCurve<double> > getBezierCurves();
 
     //! Get the lengths of the Bezier segments
     vector<double> getBezierCurvesLengths();
@@ -58,7 +58,7 @@ class Segmentation
     void setTime(double, double);
 
     //! Sets the coordinates
-    void setCoordinates(vector<Point<double>> &);
+    void setCoordinates(vector<Point<double> > &);
 
     //! Returns the CPU time
     double getCPUTime();
@@ -70,7 +70,7 @@ class Segmentation
     int getNumberOfCoordinates();
 
     //! Gets the coordinates
-    vector<Point<double>> getCoordinates();
+    vector<Point<double> > getCoordinates();
 
     //! prints the number of segments
     void printNumberOfSegments(string &, string &);

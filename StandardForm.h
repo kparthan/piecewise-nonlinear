@@ -27,7 +27,7 @@ class StandardForm
     string output_file;
 
     //! Cartesian coordinates of the protein structure
-    vector<array<double,3>> original_coordinates,coordinates;
+    vector<stdtl::array<double,3> > original_coordinates,coordinates;
 
     //! Stores the number of residues
     int numResidues;
@@ -39,10 +39,10 @@ class StandardForm
     double null_bpr,bezier_bpr;
 
     //! Code length matrix
-    vector<vector<double>> codeLength;
+    vector<vector<double> > codeLength;
 
     //! Code length matrix for Bezier curve fit
-    vector<vector<OptimalFit>> optimalBezierFit;
+    vector<vector<OptimalFit> > optimalBezierFit;
 
     //! Constructs the overall transformation matrix
     void transformationMatrix();
@@ -56,7 +56,7 @@ class StandardForm
     int getNumberOfResidues();
 
     //! Gets the coordinates of the structure
-    array<double,3> getCoordinates(int);
+    stdtl::array<double,3> getCoordinates(int);
 
     //! Gets the minimum coordinate value
     double getMinimum(unsigned);
@@ -139,16 +139,16 @@ class StandardForm
     void computeCodeLengthMatrixBezier();
 
     //! Computes the optimal segmentation
-    pair<double,vector<int>> optimalSegmentation();
+    pair<double,vector<int> > optimalSegmentation();
 
     //! Creates a suitable output file
     string createOutputFile(bool);
 
     //! Prints the segmentation details for the linear fit
-    void printLinearSegmentation(pair<double,vector<int>> &);
+    void printLinearSegmentation(pair<double,vector<int> > &);
 
     //! Prints the segmentation details for the Bezier curve fit
-    void printBezierSegmentation(pair<double,vector<int>> &, double, double);
+    void printBezierSegmentation(pair<double,vector<int> > &, double, double);
 };
 
 #endif

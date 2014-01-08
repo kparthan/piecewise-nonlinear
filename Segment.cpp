@@ -3,11 +3,11 @@
 
 /*!
  *  \brief constructor function used for instantiation
- *  \param coordinates a vector<array<double,3>>
+ *  \param coordinates a vector<stdtl::array<double,3> >
  *  \param parameters a reference to a struct Parameters
  *  \param volume a double
  */
-Segment::Segment(vector<array<double,3>> &coordinates, 
+Segment::Segment(vector<stdtl::array<double,3> > &coordinates, 
                  struct Parameters &parameters, double volume): 
                  coordinates(coordinates), parameters(parameters), 
                  volume(volume)
@@ -47,7 +47,7 @@ int Segment::getNumberOfPoints(void)
  *  \param index an integer
  *  \return the coordinates at the given index
  */
-array<double,3> Segment::getCoordinates(int index)
+stdtl::array<double,3> Segment::getCoordinates(int index)
 {
   return coordinates[index];
 }
@@ -110,7 +110,7 @@ void Segment::printInfo(void)
   cout << "# of points: " << getNumberOfPoints() << endl;
   for (int i=0; i<numPoints; i++){
     cout << "coordinate[" << i << "]: " ;
-    array<double,3> c = getCoordinates(i);
+    stdtl::array<double,3> c = getCoordinates(i);
     for (int j=0; j<3; j++){
       cout << c[j] << " ";
     }
@@ -144,9 +144,9 @@ void Segment::printInfo(void)
  */
 void Segment::fitLinear(void)
 {
-  vector<array<double,3>> deviations;
+  vector<stdtl::array<double,3> > deviations;
   if (numIntermediate > 2) {
-    double length = distance(start,end);
+    double length = lcb::geometry::distance<double>(start,end);
     Line<double> line(start,end);
     Point<double> p(coordinates[1]);
     Plane<double> plane(start,p,end); 
@@ -209,12 +209,12 @@ Plane<double> Segment::constructPlane(BezierCurve<double> &curve)
  *  \param plane a reference to a Plane<double> 
  *  \return the set of deviations
  */
-vector<array<double,3>> Segment::computeDeviations(Line<double> &line,
+vector<stdtl::array<double,3> > Segment::computeDeviations(Line<double> &line,
                                                   Plane<double> &plane)
 {
-  vector<array<double,3>> deviations;
-  array<double,3> d;
-  array<double,3> d2;
+  vector<stdtl::array<double,3> > deviations;
+  stdtl::array<double,3> d;
+  stdtl::array<double,3> d2;
   Vector<double> normal = plane.normal();
   Point<double> p,projection,previous;
   previous = line.startPoint();
@@ -253,10 +253,10 @@ vector<array<double,3>> Segment::computeDeviations(Line<double> &line,
 /*!
  *  \brief This module computes the message length for the segment with
  *  more than one intermediate points.
- *  \param deviations a reference to a vector<array<double,3>>
+ *  \param deviations a reference to a vector<stdtl::array<double,3> >
  *  \return the message length(in bits)
  */
-double Segment::messageLength(vector<array<double,3>> &deviations)
+double Segment::messageLength(vector<stdtl::array<double,3> > &deviations)
 {
   double msglen = 0;
 
@@ -293,10 +293,10 @@ void Segment::estimateFreeParameters()
     vector<double> length(numPoints-1,0);
     Point<double> x1(coordinates[0]);
     Point<double> x2(coordinates[1]);
-    length[0] = distance(x1,x2);
+    length[0] = lcb::geometry::distance<double>(x1,x2);
     for (int i=1; i<numPoints-1; i++) {
       x1 = Point<double>(coordinates[i+1]);
-      length[i] = length[i-1] + distance(x1,x2);
+      length[i] = length[i-1] + lcb::geometry::distance<double>(x1,x2);
       x2 = x1;
     }
     for (int i=1; i<numPoints-1; i++) {
@@ -319,14 +319,14 @@ void Segment::estimateFreeParameters()
 OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
 {
   estimateFreeParameters();
-  vector<Point<double>> controlPoints;
+  vector<Point<double> > controlPoints;
   if (numPoints == 2) {
-      controlPoints = vector<Point<double>>(2,Point<double>());
+      controlPoints = vector<Point<double> >(2,Point<double>());
       controlPoints[0] = start;
       controlPoints[1] = end;
   } else {
     int m = numIntermediateControlPoints + 1; // degree of curve
-    controlPoints = vector<Point<double>>(m+1,Point<double>());
+    controlPoints = vector<Point<double> >(m+1,Point<double>());
     controlPoints[0] = start;
     controlPoints[m] = end;
     if (numIntermediateControlPoints != 0) {
@@ -373,7 +373,7 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
     }
   }
   BezierCurve<double> curve(controlPoints);
-  vector<array<double,3>> deviations = computeDeviations(curve);
+  vector<stdtl::array<double,3> > deviations = computeDeviations(curve);
   double msglen = messageLength(curve,deviations);
   return OptimalFit(controlPoints,msglen);
 }
@@ -384,9 +384,9 @@ OptimalFit Segment::fitBezierCurve(int numIntermediateControlPoints)
  *  \param curve a reference to a BezierCurve
  *  \return the set of deviations
  */
-vector<array<double,3>> Segment::computeDeviations(BezierCurve<double> &curve)
+vector<stdtl::array<double,3> > Segment::computeDeviations(BezierCurve<double> &curve)
 {
-  vector<array<double,3>> deviations;
+  vector<stdtl::array<double,3> > deviations;
   switch(curve.getDegree()) {
     case 1:
       if (numIntermediate >= 3) {
@@ -409,7 +409,7 @@ vector<array<double,3>> Segment::computeDeviations(BezierCurve<double> &curve)
  *  \param curve a reference to a BezierCurve
  *  \return the set of deviations
  */
-vector<array<double,3>> Segment::getDeviations(BezierCurve<double> &curve)
+vector<stdtl::array<double,3> > Segment::getDeviations(BezierCurve<double> &curve)
 {
   Plane<double> plane = constructPlane(curve);
   Vector<double> normal = plane.normal();
@@ -418,8 +418,8 @@ vector<array<double,3>> Segment::getDeviations(BezierCurve<double> &curve)
   if (curve.getDegree() == 1) {
     index_start = 1;
   }
-  array<double,3> d;
-  vector<array<double,3>> deviations;
+  stdtl::array<double,3> d;
+  vector<stdtl::array<double,3> > deviations;
   for (int i=index_start; i<numIntermediate; i++) {
     Point<double> p(coordinates[i+1]);
     d[0] = signedDistance(plane,p);
@@ -432,9 +432,9 @@ vector<array<double,3>> Segment::getDeviations(BezierCurve<double> &curve)
     Point<double> p1 = curve.getPoint(tmin_prev);
     Point<double> p2 = curve.getPoint(tmin_current);
     if (tmin_current < tmin_prev) {
-      d[2] = -distance(p1,p2);
+      d[2] = -lcb::geometry::distance<double>(p1,p2);
     } else {
-      d[2] = distance(p1,p2);
+      d[2] = lcb::geometry::distance<double>(p1,p2);
     }
     deviations.push_back(d);
     tmin_prev = tmin_current;
@@ -446,11 +446,11 @@ vector<array<double,3>> Segment::getDeviations(BezierCurve<double> &curve)
  *  \brief The module computes the length of the message used to encode a
  *  segment using a Bezier curve model
  *  \param curve a reference to a BezierCurve
- *  \param deviations a reference to a vector<array<double,3>>
+ *  \param deviations a reference to a vector<stdtl::array<double,3> >
  *  \return the message length (in bits)
  */
 double Segment::messageLength(BezierCurve<double> &curve,
-                              vector<array<double,3>> &deviations)
+                              vector<stdtl::array<double,3> > &deviations)
 {
   double part1=0,part2=0;
   double x;

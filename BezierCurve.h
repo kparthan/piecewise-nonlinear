@@ -13,7 +13,7 @@ class BezierCurve
 
     //! Control points of the curve
     //! # of control points = degree + 1
-    vector<Point<RealType>> controlPoints;
+    vector<Point<RealType> > controlPoints;
 
     //! Express the x,y,z coordinates as polynomial in t
     Polynomial<RealType> expressAsPolynomial(int);
@@ -26,7 +26,7 @@ class BezierCurve
     BezierCurve();
 
     //! Constructor
-    BezierCurve(vector<Point<RealType>> &);
+    BezierCurve(vector<Point<RealType> > &);
 
     //! Assignment operator
     BezierCurve<RealType> operator=(const BezierCurve<RealType> &);

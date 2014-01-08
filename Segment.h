@@ -24,7 +24,7 @@ class Segment
     Point<double> start,end;
 
     //! Coordinates of the points
-    vector<array<double,3>> coordinates;
+    vector<stdtl::array<double,3> > coordinates;
 
     //! Free parameters of the points with respect to a
     //! Bezier curve
@@ -48,7 +48,7 @@ class Segment
 
   public:
     //! Constructor
-    Segment(vector<array<double,3>> &, struct Parameters &, double);
+    Segment(vector<stdtl::array<double,3> > &, struct Parameters &, double);
 
                             /* Accessor functions */
     //! Gets number of intermediate points
@@ -58,7 +58,7 @@ class Segment
     int getNumberOfPoints();
 
     //! Gets the coordinates given the index
-    array<double,3> getCoordinates(int);
+    stdtl::array<double,3> getCoordinates(int);
 
     //! Gets the message length for the linear fit 
     //! does not use the Bezier definition
@@ -85,12 +85,12 @@ class Segment
     void fitLinear();
 
     //! Computes deviations from the line
-    vector<array<double,3>> computeDeviations(Line<double> &,
+    vector<stdtl::array<double,3> > computeDeviations(Line<double> &,
                                               Plane<double> &);
 
     //! Computes the message length for the segment described by a 
     //! linear model
-    double messageLength(vector<array<double,3>> &);
+    double messageLength(vector<stdtl::array<double,3> > &);
 
     //! Estimates the free parameters of the intermediate points
     void estimateFreeParameters();
@@ -99,14 +99,14 @@ class Segment
     OptimalFit fitBezierCurve(int);
 
     //! Computes deviations from a Bezier curve 
-    vector<array<double,3>> computeDeviations(BezierCurve<double> &);
+    vector<stdtl::array<double,3> > computeDeviations(BezierCurve<double> &);
 
     //! Computes deviations from a Bezier curve 
-    vector<array<double,3>> getDeviations(BezierCurve<double> &);
+    vector<stdtl::array<double,3> > getDeviations(BezierCurve<double> &);
 
     //! Computes the message length for the segment described by a 
     //! Bezier curve
-    double messageLength(BezierCurve<double> &, vector<array<double,3>> &);
+    double messageLength(BezierCurve<double> &, vector<stdtl::array<double,3> > &);
 };
 
 #endif

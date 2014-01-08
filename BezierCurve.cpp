@@ -13,7 +13,7 @@ BezierCurve<RealType>::BezierCurve() : degree(0), controlPoints(0)
  *  \param controlPoints a reference to vector<Point<RealType>>
  */
 template <typename RealType>
-BezierCurve<RealType>::BezierCurve(vector<Point<RealType>> &controlPoints) : 
+BezierCurve<RealType>::BezierCurve(vector<Point<RealType> > &controlPoints) : 
                                    controlPoints(controlPoints)
 {
   degree = controlPoints.size() - 1;
@@ -409,11 +409,11 @@ RealType BezierCurve<RealType>::nearestPoint(RealType from,
   RealType tmin = valid_t[0];
   Point<RealType> prev = getPoint(from);
   Point<RealType> p = getPoint(tmin);
-  RealType dmin = distance(prev,p);
+  RealType dmin = lcb::geometry::distance<RealType>(prev,p);
   for (int i=1; i<valid_t.size(); i++) {
     RealType t = valid_t[i];
     p = getPoint(t);
-    RealType d = distance(prev,p);
+    RealType d = lcb::geometry::distance<RealType>(prev,p);
     if (d < dmin) {
       dmin = d;
       tmin = t;
@@ -444,12 +444,12 @@ Point<RealType> BezierCurve<RealType>::nearestPoint(Point<RealType> &from,
   }
   RealType t = valid_t[0];
   Point<RealType> p = getPoint(t);
-  RealType dmin = distance(from,p);
+  RealType dmin = lcb::geometry::distance<RealType>(from,p);
   Point<RealType> nearest = p;
   for (int i=1; i<valid_t.size(); i++) {
     t = valid_t[i];
     p = getPoint(t);
-    RealType d = distance(from,p);
+    RealType d = lcb::geometry::distance<RealType>(from,p);
     if (d < dmin) {
       dmin = d;
       nearest = p;
@@ -473,9 +473,9 @@ RealType BezierCurve<RealType>::signedDistance(const Point<RealType> &p,
   //Vector<RealType> direction = tangentVector(t);
   Point<RealType> pc = getPoint(t);
   Plane<RealType> plane(pc,normal,tangentVector(t));
-  //RealType d = fabs(distance(p,pc));
+  //RealType d = fabs(lcb::geometry::distance<RealType>(p,pc));
   //int point_orientation = plane.orientation(p);
-  return fabs(distance(p,pc)) * plane.orientation(p);
+  return fabs(lcb::geometry::distance<RealType>(p,pc)) * plane.orientation(p);
 }
 
 /*!

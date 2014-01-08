@@ -101,7 +101,7 @@ class Polynomial
     RealType getBoundOnRoots();
 
     //! Constructs the Sturm sequence
-    vector<Polynomial<RealType>> sturmSequence();
+    vector<Polynomial<RealType> > sturmSequence();
 
     //! Computes the number of distinct real roots of the polynomial
     int countDistinctRealRoots();

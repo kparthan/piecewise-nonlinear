@@ -16,7 +16,7 @@ struct Parameters
 // segmentation functions
 Segmentation buildSegmentationProfile(struct Parameters &);
 ProteinStructure *parsePDBFile(string &);
-vector<Point<double>> getProteinCoordinates(struct Parameters &);
+vector<Point<double> > getProteinCoordinates(struct Parameters &);
 Segmentation proteinFit(struct Parameters &);
 
 // general functions
@@ -25,7 +25,7 @@ void Usage (const char *, options_description &);
 string getControlString(vector<int> &);
 bool checkFile(string &);
 string extractName(string &);
-void writeToFile(vector<array<double,3>> &, const char*);
+void writeToFile(vector<stdtl::array<double,3> > &, const char*);
 
 template <typename RealType>
 vector<RealType> sort(vector<RealType> &);
@@ -45,7 +45,7 @@ double cubeRoot(double);
 template <typename RealType>
 RealType absoluteMaximum(vector<RealType> &);
 double minimum(vector<double> &);
-double minimum(vector<vector<double>> &);
+double minimum(vector<vector<double> > &);
 double bernstein(int, int, double);
 
 #endif

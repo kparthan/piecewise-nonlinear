@@ -12,7 +12,7 @@ OptimalFit::OptimalFit()
  *  \param controlPoints a reference to a vector<Point<double>>
  *  \param messageLength a double
  */
-OptimalFit::OptimalFit(vector<Point<double>> &controlPoints, 
+OptimalFit::OptimalFit(vector<Point<double> > &controlPoints, 
                        double messageLength) : 
                        controlPoints(controlPoints), 
                        messageLength(messageLength)
@@ -45,7 +45,7 @@ int OptimalFit::getNumberOfControlPoints()
  *  \brief This module returns the control points
  *  \return the control points
  */
-vector<Point<double>> OptimalFit::getControlPoints() const
+vector<Point<double> > OptimalFit::getControlPoints() const
 {
   return controlPoints;
 }

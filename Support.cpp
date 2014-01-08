@@ -128,7 +128,7 @@ string extractName(string &file)
  *  \brief This module prints the list of coordinates to a file
  *  \param coordinates a reference to std::vector of std::array<double,3>
  */
-void writeToFile(vector<array<double,3>> &coordinates, const char *fileName)
+void writeToFile(vector<stdtl::array<double,3> > &coordinates, const char *fileName)
 {
   ofstream file(fileName);
   for (int i=0; i<coordinates.size(); i++){
@@ -417,7 +417,7 @@ double minimum(vector<double> &list)
  *  \param list a reference to a vector<vector<double>>
  *  \return the minimum value
  */
-double minimum(vector<vector<double>> &list)
+double minimum(vector<vector<double> > &list)
 {
   double current_min;
   double min;
@@ -498,8 +498,13 @@ ProteinStructure *parsePDBFile(string &pdbFile)
       new ProteinStructure(structure->getIdentifier());
   one_model->select(CASelector());
   //one_model->setIdentifier(structure->getIdentifier());
+#if CXX_VERSION == 11
   std::shared_ptr<lcb::Model> newmodel = 
       std::make_shared<lcb::Model>(structure->getDefaultModel());
+#else //CXX_VERSION != 11
+  std::tr1::shared_ptr<lcb::Model> newmodel = 
+    std::tr1::shared_ptr<lcb::Model>(new lcb::Model(structure->getDefaultModel()));
+#endif //CXX_VERSION == 11
   one_model->addModel(newmodel);
   delete structure;
   cout << " done" << endl;
@@ -511,7 +516,7 @@ ProteinStructure *parsePDBFile(string &pdbFile)
  *  \param parameters a reference to a struct Parameters
  *  \return the list of protein coordinates
  */
-vector<Point<double>> getProteinCoordinates(struct Parameters &parameters)
+vector<Point<double> > getProteinCoordinates(struct Parameters &parameters)
 {
   /* Obtain protein coordinates */
   ProteinStructure *p = parsePDBFile(parameters.file);

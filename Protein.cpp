@@ -2,6 +2,8 @@
 #include "BezierCurve.h"
 #include "Support.h"
 
+#include <iomanip>
+
 /*!
  *  \brief This is a constructor function used to instantiate the Protein
  *  object from a ProteinProtein
@@ -49,12 +51,12 @@ vector<Identifier> Protein::mapToActualSegments(vector<int> &segments)
  *  \param num_segments an integer
  *  \return the list of RGB values (0.0-1.0) corresponding to each segment 
  */
-vector<array<double,3>> Protein::generateProteinColors(int num_segments)
+vector<stdtl::array<double,3> > Protein::generateProteinColors(int num_segments)
 {
-  vector<array<int,3>> rgb_temp = generateSegmentColors(num_segments);
-  vector<array<double,3>> rgb;
+  vector<stdtl::array<int,3> > rgb_temp = generateSegmentColors(num_segments);
+  vector<stdtl::array<double,3> > rgb;
   for (int i=0; i<num_segments; i++) {
-    array<double,3> a;
+    stdtl::array<double,3> a;
     for (int j=0; j<3; j++) {
       a[j] = ((double)rgb_temp[i][j]) / 255;
     }
@@ -76,16 +78,23 @@ vector<array<double,3>> Protein::generateProteinColors(int num_segments)
  *  \return the segmentation profile of the protein
  */
 Segmentation Protein::reconstruct(string &file, string &output_file, 
-                                  vector<vector<double>> &codeLength,
-                                  vector<vector<OptimalFit>> &optimalBezierFit,
+                                  vector<vector<double> > &codeLength,
+                                  vector<vector<OptimalFit> > &optimalBezierFit,
                                   vector<int> &segments, string &controls, 
                                   Matrix<double> &transformation)
 {
   vector<Identifier> identifiers = mapToActualSegments(segments);
   protein->undoLastSelection();
   Matrix<double> inverse_transform = transformation.inverse();
+#if CXX_VERSION == 11
   shared_ptr<Chain> cps_chain = make_shared<Chain>("x");
   shared_ptr<Chain> curve_chain = make_shared<Chain>("y");
+#else //CXX_VERSION != 11
+  stdtl::shared_ptr<Chain> cps_chain =
+    stdtl::shared_ptr<Chain>(new Chain("x"));
+  stdtl::shared_ptr<Chain> curve_chain =
+    stdtl::shared_ptr<Chain>(new Chain("y"));
+#endif //CXX_VERSION == 11
 
   int segment_start = 0;
   all_control_points.push_back(original_coordinates[0]);
@@ -106,16 +115,27 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
 
     // construct the control points of the segment as residues
     string residue_id = "R" + boost::lexical_cast<string>(i);
+#if CXX_VERSION == 11
     shared_ptr<Residue> cps_residue = make_shared<Residue>(residue_id);
+#else //CXX_VERSION != 11
+    stdtl::shared_ptr<Residue> cps_residue =
+      stdtl::shared_ptr<Residue>(new Residue(residue_id));
+#endif //CXX_VERSION == 11
     OptimalFit fit = optimalBezierFit[segment_start][segment_end];
     int numIntermediateControls = fit.getNumberOfControlPoints() - 2;
 
-    vector<Point<double>> control_points;
+    vector<Point<double> > control_points;
     control_points.push_back(original_coordinates[segment_start]);
-    vector<Point<double>> cps = fit.getControlPoints();
+    vector<Point<double> > cps = fit.getControlPoints();
     for (int j=1; j<=numIntermediateControls; j++) {
       string atom_id = "A" + boost::lexical_cast<string>(j);
+#if CXX_VERSION == 11
       shared_ptr<Atom> cps_atom = make_shared<Atom>(atom_id);
+#else //CXX_VERSION != 11
+      stdtl::shared_ptr<Atom> cps_atom =
+	stdtl::shared_ptr<Atom>(new Atom(atom_id));
+#endif //CXX_VERSION == 11
+      cps_atom->setSerialNumber(0);
       Point<double> p = lcb::geometry::transform<double>(cps[j],inverse_transform);
       control_points.push_back(p);
       all_control_points.push_back(p);
@@ -147,7 +167,12 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
 
     // construct the curve as a protein residue for visualizing in Pymol
     residue_id = "C" + boost::lexical_cast<string>(i);
+#if CXX_VERSION == 11
     shared_ptr<Residue> curve_residue = make_shared<Residue>(residue_id);
+#else //CXX_VERSION != 11
+    stdtl::shared_ptr<Residue> curve_residue =
+      stdtl::shared_ptr<Residue>(new Residue(residue_id));
+#endif //CXX_VERSION == 11
     BezierCurve<double> curve(control_points);
     all_bezier_curves.push_back(curve);
     double t = 0;
@@ -155,7 +180,13 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
       t += DELTA_T;
       Point<double> p = curve.getPoint(t);
       string atom_id = boost::lexical_cast<string>(k);
+#if CXX_VERSION == 11
       shared_ptr<Atom> curve_atom = make_shared<Atom>(atom_id);
+#else // CXX_VERSION != 11
+	stdtl::shared_ptr<Atom> curve_atom = 
+	  stdtl::shared_ptr<Atom>(new Atom(atom_id));
+#endif
+      curve_atom->setSerialNumber(0);
       curve_atom->setAtomicCoordinate(p);
       curve_residue->addAtom(curve_atom);
     } 
@@ -194,11 +225,11 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
  *  \param colors a reference to a vector<array<double,3>>
  */
 void Protein::createPymolScript(string &pdb_file,
-                                vector<vector<OptimalFit>> &optimalBezierFit,
+                                vector<vector<OptimalFit> > &optimalBezierFit,
                                 vector<int> &segments, string &controls,
                                 vector<Identifier> &identifiers)
 {
-  vector<array<double,3>> colors = generateProteinColors(segments.size()-1);
+  vector<stdtl::array<double,3> > colors = generateProteinColors(segments.size()-1);
   Chain chain = protein->getDefaultModel()["x"];
   vector<string> res_ids = chain.getResidueIdentifiers();
   //for (int i=0; i<res_ids.size(); i++){cout << res_ids[i] << endl;}
@@ -298,9 +329,9 @@ void Protein::createPymolScript(string &pdb_file,
  *  \param end_points a reference to a string
  *  \return the indexes of the end points to be internally used
  */
-array<int,2> Protein::getEndPoints(vector<string> &end_points)
+stdtl::array<int,2> Protein::getEndPoints(vector<string> &end_points)
 {
-  array<int,2> indexes;
+  stdtl::array<int,2> indexes;
   int lower = boost::lexical_cast<int>(end_points[1]);
   int upper = boost::lexical_cast<int>(end_points[2]);
   bool stop = 0;

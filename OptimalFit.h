@@ -10,7 +10,7 @@ class OptimalFit
     int numControlPoints;
 
     //! The control points
-    vector<Point<double>> controlPoints;
+    vector<Point<double> > controlPoints;
 
     //! Length of the encoding
     double messageLength;
@@ -23,7 +23,7 @@ class OptimalFit
     OptimalFit();
 
     //! Constructor
-    OptimalFit(vector<Point<double>> &, double);
+    OptimalFit(vector<Point<double> > &, double);
 
     //! Copy constructor
     OptimalFit(const OptimalFit &);
@@ -36,7 +36,7 @@ class OptimalFit
     int getNumberOfControlPoints();
 
     //! Gets the control points
-    vector<Point<double>> getControlPoints() const;
+    vector<Point<double> > getControlPoints() const;
 
     //! Gets the message length
     double getMessageLength() const;

@@ -822,7 +822,7 @@ RealType Polynomial<RealType>::getBoundOnRoots()
  *  \return the Sturm sequence
  */
 template <typename RealType>
-vector<Polynomial<RealType>> Polynomial<RealType>::sturmSequence()
+vector<Polynomial<RealType> > Polynomial<RealType>::sturmSequence()
 {
   vector<Polynomial> sturm_sequence;
   Polynomial<RealType> current(*this);

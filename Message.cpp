@@ -9,10 +9,10 @@ Message::Message()
 
 /*!
  *  \brief This is a constructor function used to instantiate the object
- *  \param deviations a reference to a vector<array<double,3>>
+ *  \param deviations a reference to a vector<stdtl::array<double,3> >
  *  \param parameters a reference to a struct Parameters
  */
-Message::Message(vector<array<double,3>> &deviations, 
+Message::Message(vector<stdtl::array<double,3> > &deviations, 
                  struct Parameters &parameters) : parameters(parameters)
 {
   vector<double> tmp;

@@ -74,7 +74,7 @@ int StandardForm::getNumberOfResidues(void)
  *  \param index an integer
  *  \return the coordinates at an index
  */
-array<double,3> StandardForm::getCoordinates(int index)
+stdtl::array<double,3> StandardForm::getCoordinates(int index)
 {
   return coordinates[index];
 }
@@ -147,7 +147,7 @@ Segment StandardForm::getSegment(unsigned i, unsigned j)
     exit(1);
   }
   int numPoints = j - i + 1;
-  vector<array<double,3>> coordinates;
+  vector<stdtl::array<double,3> > coordinates;
   for (int k=0; k<numPoints; k++){
     coordinates.push_back(getCoordinates(i+k));
   }
@@ -320,11 +320,22 @@ Point<double> StandardForm::projectOnXZPlane(Point<double> &p)
 Matrix<double> StandardForm::rotateLastOntoXYPlane(Point<double> &projection)
 {
   Point<double> origin(0,0,0);
+#if CXX_VERSION == 11 
   Line<double> xaxis(Point<double> {0,0,0},Point<double> {1,0,0});
+#else //CXX_VERSION != 11
+  Point<double> p1(0,0,0);
+  Point<double> p2(1,0,0);
+  Line<double> xaxis(p1,p2);
+#endif //
   Line<double> projectedLine(origin,projection);
   double angleWithX = angle(xaxis,projectedLine); 
   double theta;
+#if CXX_VERSION == 11
   Vector<double> yaxis(vector<double>{0,1,0});
+#else // CXX_VERSION != 11
+  vector<double> v(3,0); v[1] = 1;
+  Vector<double> yaxis(v);
+#endif //
   if (projection.z() > 0) {
     theta = angleWithX;
   } else {
@@ -342,7 +353,13 @@ Matrix<double> StandardForm::rotateLastOntoXYPlane(Point<double> &projection)
 Matrix<double> StandardForm::rotateInXYPlane(Point<double> &p)
 {
   Point<double> origin(0,0,0);
+#if CXX_VERSION == 11
   Line<double> xaxis(Point<double> {0,0,0},Point<double> {1,0,0});
+#else
+  Point<double> p1(0,0,0);
+  Point<double> p2(1,0,0);
+  Line<double> xaxis(p1,p2);		
+#endif
   Line<double> projectedLine(origin,p); 
   double angleWithX = angle(xaxis,projectedLine);
   double theta;
@@ -351,7 +368,12 @@ Matrix<double> StandardForm::rotateInXYPlane(Point<double> &p)
   } else {
     theta = angleWithX;
   }
+#if CXX_VERSION == 11
   Vector<double> zaxis(vector<double>{0,0,1});
+#else
+  vector<double> v(3,0); v[2] = 1;
+  Vector<double> zaxis(v);
+#endif
   return rotationMatrix(zaxis,theta);
 }
 
@@ -416,7 +438,13 @@ Point<double> StandardForm::projectOnYZPlane(Point<double> &p)
 Matrix<double> StandardForm::rotateSecondOntoXYPlane(Point<double> &projection)
 {
   Point<double> origin(0,0,0);
+#if CXX_VERSION == 11
   Line<double> yaxis(Point<double> {0,0,0},Point<double> {0,1,0});
+#else
+  Point<double> p1(0,0,0);
+  Point<double> p2(0,1,0);
+  Line<double> yaxis(p1,p2);
+#endif
   Line<double> projectedLine(origin,projection);
   double angleWithY = angle(yaxis,projectedLine); 
   double theta;
@@ -425,7 +453,12 @@ Matrix<double> StandardForm::rotateSecondOntoXYPlane(Point<double> &projection)
   } else {
     theta = angleWithY;
   }
+#if CXX_VERSION == 11
   Vector<double> xaxis(vector<double>{1,0,0});
+#else
+  vector<double> v(3,0); v[0] = 1;
+  Vector<double> xaxis(v);
+#endif
   return rotationMatrix(xaxis,theta);
 }
 
@@ -492,7 +525,7 @@ void StandardForm::fitSphereModel(void)
   for (int i=1; i<numResidues; i++){
     Point<double> previous = Point<double>(coordinates[i-1]);
     Point<double> current = Point<double>(coordinates[i]);
-    double r = distance(previous,current);
+    double r = lcb::geometry::distance<double>(previous,current);
     Message msg;
     msglen += msg.encodeUsingSphereModel(r);
   }
@@ -539,7 +572,7 @@ Segmentation StandardForm::fitLinearModel(void)
   computeCodeLengthMatrix();
 
   /* compute the optimal segmentation using dynamic programming */
-  pair<double,vector<int>> segmentation = optimalSegmentation();
+  pair<double,vector<int> > segmentation = optimalSegmentation();
   printLinearSegmentation(segmentation);
   return Segmentation();
 }
@@ -554,7 +587,9 @@ Segmentation StandardForm::fitBezierCurveModel()
   }
   Segmentation segmentation_profile;
   clock_t c_start = clock();
-  auto t_start = high_resolution_clock::now();
+#if CXX_VERSION == 11
+  auto t_start = std::chrono::high_resolution_clock::now();
+#endif
 
   /* compute the code length matrix for the Bezier curve fit */
   cout << "Computing code length matrix ...";
@@ -564,12 +599,16 @@ Segmentation StandardForm::fitBezierCurveModel()
 
   /* compute the optimal segmentation using dynamic programming */
   cout << "Computing the optimal segmentation ...";
-  pair<double,vector<int>> segmentation = optimalSegmentation();
+  pair<double,vector<int> > segmentation = optimalSegmentation();
   cout << " done\n";
   clock_t c_end = clock();
-  auto t_end = high_resolution_clock::now();
   double cpu_time = double(c_end-c_start)/(double)(CLOCKS_PER_SEC);
-  double wall_time = duration_cast<seconds>(t_end-t_start).count();
+#if CXX_VERSION == 11
+  auto t_end = std::chrono::high_resolution_clock::now();
+  double wall_time = std::chrono::duration_cast<std::chrono::seconds>(t_end-t_start).count();
+#else
+  double wall_time = 0;
+#endif
   cout << "Writing segmentation results to \"" << output_file << "\" ...";
   printBezierSegmentation(segmentation,cpu_time,wall_time);
   cout << " done\n";
@@ -577,7 +616,7 @@ Segmentation StandardForm::fitBezierCurveModel()
                          codeLength,optimalBezierFit,segmentation.second,
                          parameters.control_string,transformation);
   segmentation_profile.setBitsPerResidue(null_bpr,bezier_bpr);
-  vector<Point<double>> coords = structure->getCoordinatesPoints();
+  vector<Point<double> > coords = structure->getCoordinatesPoints();
   segmentation_profile.setCoordinates(coords);
   segmentation_profile.setTime(cpu_time,wall_time);
   return segmentation_profile;
@@ -654,9 +693,9 @@ void StandardForm::computeCodeLengthMatrixBezier(void)
  *  dynamic programming
  *  \return the indices of the segments
  */
-pair<double,vector<int>> StandardForm::optimalSegmentation(void)
+pair<double,vector<int> > StandardForm::optimalSegmentation(void)
 {
-  pair <double,vector<int>> segmentation;
+  pair <double,vector<int> > segmentation;
   vector<double> optimal(numResidues,100000);
   vector<int> optimalIndex(numResidues,-1);
 
@@ -700,7 +739,7 @@ pair<double,vector<int>> StandardForm::optimalSegmentation(void)
  *  \param segmentation a reference to a pair<double,vector<int>>
  */
 void StandardForm::printLinearSegmentation(pair<double,
-                                           vector<int>> &segmentation)
+                                           vector<int> > &segmentation)
 {
   ofstream log_file(output_file.c_str(),ios::app);
   int i;
@@ -735,7 +774,7 @@ void StandardForm::printLinearSegmentation(pair<double,
  *  \param wall_time a double
  */
 void
-StandardForm::printBezierSegmentation(pair<double,vector<int>> &segmentation,
+StandardForm::printBezierSegmentation(pair<double,vector<int> > &segmentation,
                                       double cpu_time, double wall_time)
 {
   ofstream log_file(output_file.c_str(),ios::app);
@@ -751,7 +790,10 @@ StandardForm::printBezierSegmentation(pair<double,vector<int>> &segmentation,
   }
   log_file << segments[i] << endl << endl;*/
   log_file << "CPU time used: " << cpu_time << " secs." << endl;
-  log_file << "Wall clock time elapsed: " << wall_time << " secs." << endl << endl;
+#if CXX_VERSION == 11 // wall times is difficult to measure in earlier versions
+  log_file << "Wall clock time elapsed: " << wall_time << " secs." << endl;
+#endif
+  log_file << endl;
   log_file << setw(15) << "SEGMENT"
            << setw(15) << "START"
            << setw(15) << "END"

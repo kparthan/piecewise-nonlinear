@@ -1,11 +1,13 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//Include this forst for compatibility
+#include <liblcb/liblcb.h>
+
 #include <iostream>
-#include <memory>
+#include <iomanip>
 #include <cstdlib>
 #include <vector>
-#include <array>
 #include <cstring>
 #include <fstream>
 #include <sstream>
@@ -14,10 +16,10 @@
 #include <stdexcept>
 #include <ctime>
 #include <cassert>
-#include <thread>
-#include <chrono>
-#include <liblcb/liblcb.h>
-#include <boost/math/constants/constants.hpp>
+#if CXX_VERSION == 11
+  #include <thread>
+  #include <chrono>
+#endif
 #include <boost/program_options.hpp>
 #include <boost/lexical_cast.hpp>
 #include <boost/foreach.hpp>
@@ -33,7 +35,7 @@
 #define LARGE_NUMBER 1000000
 #define TOLERANCE 0.0000001
 #define DELTA_T 0.001
-#define PI boost::math::constants::pi<double>()
+#define PI LIBLCB_PI
 #define ZERO std::numeric_limits<double>::epsilon()
 
 #define SET 1 
@@ -46,7 +48,7 @@
 #define MAX_SEGMENT_LENGTH 30
 
 using namespace std;
-using namespace std::chrono;
+//using namespace std::chrono;
 using namespace lcb;
 using namespace lcb::geometry;
 using namespace boost::program_options;

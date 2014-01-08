@@ -10,7 +10,7 @@ class Message
     struct Parameters parameters;
 
     //! Deviations as data samples
-    vector<vector<double>> samples;
+    vector<vector<double> > samples;
 
     //! Wallace Freeman formulation of message length (in bits)
     //! one parameter
@@ -28,7 +28,7 @@ class Message
     Message() ;
 
     //! Constructor
-    Message(vector<array<double,3>> &, struct Parameters &);
+    Message(vector<stdtl::array<double,3> > &, struct Parameters &);
 
     //! Computes the length of encoding (in bits) for encoding using a
     //! null model (bounding box)
