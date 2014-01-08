@@ -1,4 +1,4 @@
-CFLAGS=-std=c++0x -g $(shell pkg-config --cflags liblcb-experimental)
+CFLAGS=-std=c++11 -g $(shell pkg-config --cflags liblcb-experimental)
 LDFLAGS=$(shell pkg-config --libs liblcb-experimental) -lboost_program_options -lboost_system -lboost_filesystem 
 
 OBJECTS = piecewise-nonlinear-fit.o \
