@@ -10,11 +10,9 @@ Bezier model fit: 3133.12 bits.
 Bits per residue: 41.2252
 
 # of segments: 7
-Internal segmentation:
-0-->10-->19-->41-->51-->61-->62-->76
 
-CPU time used: 5.42 secs.
-Wall clock time elapsed: 5 secs.
+CPU time used: 3.54 secs.
+Wall clock time elapsed: 3 secs.
 
         SEGMENT          START            END   NUM_RESIDUES MESSAGE_LENGTH                    END_POINTS        INTERMEDIATE_CONTROL_POINTS
               1            A 1           A 11             11        401.374         (9.046, 23.111, -2.113)         (-8.56403, 23.6442, 1.40302)
