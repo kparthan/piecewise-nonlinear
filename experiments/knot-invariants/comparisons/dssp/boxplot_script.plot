@@ -11,6 +11,8 @@ set xtics nomirror
 set ytics nomirror
 set grid ytics
 set xtics ("Family" 1, "SuperFamily" 2, "Fold" 3, "Class" 4, "Decoy" 5) scale 0.0
+set xtics font "Times-Roman, 25"
+set ytics font "Times-Roman, 30"
 set output "dotproducts-dssp.boxplot.eps" 
 plot "dotproducts-dssp" using (1):1, "dotproducts-dssp" using (2):2, "dotproducts-dssp" using (3):3, "dotproducts-dssp" using (4):4, "dotproducts-dssp" using (5):5 
 set yrange[0:25]
