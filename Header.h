@@ -2,6 +2,7 @@
 #define HEADER_H
 
 #include <iostream>
+#include <pwd.h>
 #include <memory>
 #include <cstdlib>
 #include <vector>
@@ -24,10 +25,6 @@
 #include <boost/foreach.hpp>
 #include <boost/tokenizer.hpp>
 #include <boost/filesystem.hpp>
-
-#define HOME_DIRECTORY "/home/parthan/"
-#define CURRENT_DIRECTORY "/home/parthan/Research/Work/piecewise-nonlinear/"
-//#define CURRENT_DIRECTORY boost::filesystem::current_path().native()
 
 // numeric constants
 #define AOM 0.001

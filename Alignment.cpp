@@ -1,6 +1,8 @@
 #include "Alignment.h"
 #include "Support.h"
 
+extern string CURRENT_DIRECTORY;
+
 /*!
  *  \brief This is a null constructor module.
  */
@@ -592,9 +594,9 @@ void Alignment::save(double gap_penalty, string &controls,
 {
   string file_name;
   if (scoring_function == SCORE_ANGLES) {
-    file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/angles/alignments/basic/";
+    file_name = string(CURRENT_DIRECTORY) + "/experiments/dssp/angles/alignments/basic/";
   } else if (scoring_function == SCORE_ANGLES_LENGTHS) {
-    file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/angles-lengths/alignments/basic/";
+    file_name = string(CURRENT_DIRECTORY) + "/experiments/dssp/angles-lengths/alignments/basic/";
   }
   file_name += controls + "/";
   file_name += "gap-penalty" + boost::lexical_cast<string>(gap_penalty).substr(0,3);
@@ -623,9 +625,9 @@ void Alignment::save(double go, double ge, string &controls,
 {
   string file_name;
   if (scoring_function == SCORE_ANGLES) {
-    file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/angles/alignments/affine/";
+    file_name = string(CURRENT_DIRECTORY) + "/experiments/dssp/angles/alignments/affine/";
   } else if (scoring_function == SCORE_ANGLES_LENGTHS) {
-    file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/angles-lengths/alignments/affine/";
+    file_name = string(CURRENT_DIRECTORY) + "/experiments/dssp/angles-lengths/alignments/affine/";
   }
   file_name += controls + "/";
   file_name += "go" + boost::lexical_cast<string>(go).substr(0,3) + "-";
@@ -654,9 +656,9 @@ void Alignment::save_dssp(double go, double ge,
 {
   string file_name;
   if (scoring_function == SCORE_ANGLES) {
-    file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/angles/alignments/affine/";
+    file_name = string(CURRENT_DIRECTORY) + "/experiments/dssp/angles/alignments/affine/";
   } else if (scoring_function == SCORE_ANGLES_LENGTHS) {
-    file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/angles-lengths/alignments/affine/";
+    file_name = string(CURRENT_DIRECTORY) + "/experiments/dssp/angles-lengths/alignments/affine/";
   }
   file_name += "go" + boost::lexical_cast<string>(go).substr(0,3) + "-";
   file_name += "ge" + boost::lexical_cast<string>(ge).substr(0,3);

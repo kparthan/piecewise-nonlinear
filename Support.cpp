@@ -5,7 +5,21 @@
 #include "StandardForm.h"
 #include "Alignment.h"
 
+string HOME_DIRECTORY,CURRENT_DIRECTORY;
+
 //////////////////////// GENERAL PURPOSE FUNCTIONS \\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+/*!
+ *  \brief This function sets the home and current working directory variables.
+ */
+void getHomeAndCurrentDirectory()
+{
+  struct passwd *pw = getpwuid(getuid());
+  HOME_DIRECTORY = pw->pw_dir;
+
+  char current_dir[256];
+  CURRENT_DIRECTORY = getcwd(current_dir,255);
+}
 
 /*!
  *  \brief This function checks to see if valid arguments are given to the 
@@ -928,9 +942,9 @@ void compareDatabaseStructures(struct Parameters &parameters)
 
   vector<string> structures = parseDatabase(parameters.database);
   int num_structures = structures.size();
-  ofstream results1("experiments/angles/database-comparison-scores1-part4");
-  //ofstream results2("experiments/angles/database-comparison-scores1-part4");
-  //ofstream results3("experiments/angles/database-comparison-scores2-part4");
+  ofstream results1("/experiments/angles/database-comparison-scores1-part4");
+  //ofstream results2("/experiments/angles/database-comparison-scores1-part4");
+  //ofstream results3("/experiments/angles/database-comparison-scores2-part4");
   switch(parameters.profile) {
     case DIHEDRAL_ANGLES:
     {
@@ -1460,7 +1474,7 @@ pair<double,double> computeNormalizedAlignmentScore(double self1, double self2,
 bool checkIfSegmentationExists(string &pdb_file, string &controls)
 {
   string segmentation_profile = string(CURRENT_DIRECTORY) 
-                                + "experiments/segmentations/profiles/"
+                                + "/experiments/segmentations/profiles/"
                                 + controls + "/" + pdb_file + ".profile";
   return checkFile(segmentation_profile); 
 }
@@ -1514,7 +1528,7 @@ Segmentation buildSegmentationProfile(struct Parameters &parameters)
 string getPDBFilePath(string &pdb_id)
 {
   boost::algorithm::to_lower(pdb_id);
-  string path = string(HOME_DIRECTORY) + "Research/PDB/" ;
+  string path = string(HOME_DIRECTORY) + "/Research/PDB/" ;
   string directory(pdb_id,1,2);
   path += directory + "/pdb" + pdb_id + ".ent.gz";
   return path;
@@ -1527,7 +1541,7 @@ string getPDBFilePath(string &pdb_id)
  */
 string getSCOPFilePath(string &scop_id)
 {
-  string path = string(HOME_DIRECTORY) + "Research/SCOP/pdbstyle-1.75B/" ;
+  string path = string(HOME_DIRECTORY) + "/Research/SCOP/pdbstyle-1.75B/" ;
   string directory(scop_id,2,2);
   path += directory + "/" + scop_id + ".ent";
   return path;
@@ -1676,7 +1690,7 @@ void updateRuntime(string name, Segmentation &segmentation)
 bool checkIfAnglesExist(string &file_name, string &controls)
 {
   string path_to_angles = string(CURRENT_DIRECTORY)
-                          + "experiments/angles/profiles/" + controls + "/"
+                          + "/experiments/angles/profiles/" + controls + "/"
                           + file_name + ".profile";
   return checkFile(path_to_angles);
 }
@@ -1818,9 +1832,9 @@ void updateResults(struct Parameters &parameters, vector<vector<double>> &scores
 {
   string path,gap;
   if (parameters.scoring_function == SCORE_ANGLES) {
-    path = string(CURRENT_DIRECTORY) + "experiments/dssp/angles/";
+    path = string(CURRENT_DIRECTORY) + "/experiments/dssp/angles/";
   } else if (parameters.scoring_function == SCORE_ANGLES_LENGTHS) {
-    path = string(CURRENT_DIRECTORY) + "experiments/dssp/angles-lengths/";
+    path = string(CURRENT_DIRECTORY) + "/experiments/dssp/angles-lengths/";
   }
   if (parameters.align_type == BASIC_ALIGNMENT) {
     path += "comparisons/domains/basic/";
@@ -1875,7 +1889,7 @@ void updateResults(struct Parameters &parameters, vector<vector<double>> &scores
 bool checkIfLengthsExist(string &pdb_file, string &controls) 
 {
   string lengths_profile = string(CURRENT_DIRECTORY)
-                           + "experiments/lengths/profiles/"
+                           + "/experiments/lengths/profiles/"
                            + controls + "/" + pdb_file + ".profile";
   return checkFile(lengths_profile); 
 }
@@ -1970,7 +1984,7 @@ void updateRuntime(string name, Lengths &lengths, double time)
  */
 bool checkIfHistogramExists(string &file_name)
 {
-  string path_to_histogram = "experiments/histograms/logs/global/" + file_name;
+  string path_to_histogram = "/experiments/histograms/logs/global/" + file_name;
   return checkFile(path_to_histogram);
   /*path_to_histogram += boost::lexical_cast<string>(num_samples) + "_";
   path_to_histogram += boost::lexical_cast<string>(dr).substr(0,4);
@@ -2059,7 +2073,7 @@ void plotMultipleHistograms(vector<DistanceHistogram> &histograms,
   for (int i=1; i<names.size(); i++) {
     all_names += "." + names[i];
   }
-  string file = string(CURRENT_DIRECTORY) + "experiments/histograms/";
+  string file = string(CURRENT_DIRECTORY) + "/experiments/histograms/";
   string data_file = file + "data/multiple_global_histograms/" + all_names + 
                      ".histograms";
   ofstream data(data_file.c_str());
@@ -2123,7 +2137,7 @@ void printHistogramResults(vector<DistanceHistogram> &histograms,
   for (int i=1; i<names.size(); i++) {
     all_names += "." + names[i];
   }
-  string file = string(CURRENT_DIRECTORY) + "experiments/histograms/data/compared/";
+  string file = string(CURRENT_DIRECTORY) + "/experiments/histograms/data/compared/";
   file += all_names + ".each_r";
   ofstream data(file.c_str());
   vector<double> comparison_scores(num_structures-1,0);
@@ -2158,7 +2172,7 @@ void printHistogramResults(vector<DistanceHistogram> &histograms,
 bool checkIfKnotInvariantsExist(string &file_name, string &type)
 {
   string path_to_invariants = string(CURRENT_DIRECTORY) +
-                              "experiments/knot-invariants/profiles/" +
+                              "/experiments/knot-invariants/profiles/" +
                               type + "/" + file_name;
   return checkFile(path_to_invariants);
 }
@@ -2378,8 +2392,8 @@ double computeEuclideanDistance(Vector<double> &vec1, Vector<double> &vec2)
  */
 void updateRuntime(string name, int n, double time) 
 {
-  //string path = string(CURRENT_DIRECTORY) + "experiments/knot-invariants/"; 
-  string path = string(CURRENT_DIRECTORY) + "experiments/dssp/"; 
+  //string path = string(CURRENT_DIRECTORY) + "/experiments/knot-invariants/"; 
+  string path = string(CURRENT_DIRECTORY) + "/experiments/dssp/"; 
   string time_file = path + "runtime-part4";
   ofstream log(time_file.c_str(),ios::app);
   log << setw(10) << name;
@@ -2397,7 +2411,7 @@ void updateRuntime(string name, int n, double time)
  */
 void updateResults(vector<double> &dot_products, vector<double> &distances)
 {
-  string path = string(CURRENT_DIRECTORY) + "experiments/knot-invariants/";
+  string path = string(CURRENT_DIRECTORY) + "/experiments/knot-invariants/";
   string log_file = path + "dotproducts-part4";
   ofstream log1(log_file.c_str(),ios::app);
   log_file = path + "distances-part4";
@@ -2423,7 +2437,7 @@ Angles buildSSTProfile(struct Parameters &parameters)
 {
   ProteinStructure *p = parsePDBFile(parameters.file);
   string name = extractName(parameters.file);
-  string path = string(CURRENT_DIRECTORY) + "experiments/sst/parsed/";
+  string path = string(CURRENT_DIRECTORY) + "/experiments/sst/parsed/";
   string file_name = path + name;
   vector<vector<string>> segments = parse_segmentation(p,file_name);
   return construct_angular_profiles(p,segments,name);
@@ -2440,7 +2454,7 @@ Angles buildDSSPProfile_Angles(struct Parameters &parameters)
 {
   ProteinStructure *p = parsePDBFile(parameters.file);
   string name = extractName(parameters.file);
-  string path = string(CURRENT_DIRECTORY) + "experiments/dssp/parsed/";
+  string path = string(CURRENT_DIRECTORY) + "/experiments/dssp/parsed/";
   string file_name = path + name;
   vector<vector<string>> segments = parse_segmentation(p,file_name);
   Angles angles = construct_angular_profiles(p,segments,name);
@@ -2457,7 +2471,7 @@ Lengths buildDSSPProfile_Lengths(struct Parameters &parameters)
 {
   ProteinStructure *p = parsePDBFile(parameters.file);
   string name = extractName(parameters.file);
-  string path = string(CURRENT_DIRECTORY) + "experiments/dssp/parsed/";
+  string path = string(CURRENT_DIRECTORY) + "/experiments/dssp/parsed/";
   string file_name = path + name;
   vector<vector<string>> segments = parse_segmentation(p,file_name);
   Lengths lengths = construct_lengths_profiles(p,segments,name);
@@ -2474,7 +2488,7 @@ KnotInvariants build_DSSP_KnotInvariants(struct Parameters &parameters)
 {
   ProteinStructure *p = parsePDBFile(parameters.file);
   string name = extractName(parameters.file);
-  string path = string(CURRENT_DIRECTORY) + "experiments/dssp/parsed/";
+  string path = string(CURRENT_DIRECTORY) + "/experiments/dssp/parsed/";
   string file_name = path + name;
   vector<vector<string>> segments = parse_segmentation(p,file_name);
   vector<pair<string,string>> residues = split_segments(segments);

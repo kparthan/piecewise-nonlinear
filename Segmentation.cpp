@@ -1,5 +1,7 @@
 #include "Segmentation.h"
 
+extern string CURRENT_DIRECTORY;
+
 /*!
  *  \brief This is a null constructor to instantiate a Segmentation object
  */
@@ -163,7 +165,7 @@ void Segmentation::printNumberOfSegments(string &name, string &controls)
   for (int i=0; i<3; i++) {
     num_polygon_sides += num_segments[i] * (i+1);
   }
-  string file_name = string(CURRENT_DIRECTORY) + "experiments/segmentations/";
+  string file_name = string(CURRENT_DIRECTORY) + "/experiments/segmentations/";
   file_name += "stats-part4-" + controls;
   ofstream stats(file_name.c_str(),ios::app);
   stats << setw(10) << name << setw(10) << num_coordinates;
@@ -199,7 +201,7 @@ vector<double> Segmentation::getBezierCurvesLengths()
  */
 void Segmentation::save(string &pdb_file, string &controls)
 {
-  string output_file = string(CURRENT_DIRECTORY) + "experiments/segmentations/profiles/"
+  string output_file = string(CURRENT_DIRECTORY) + "/experiments/segmentations/profiles/"
                        + controls + "/" +  pdb_file + ".profile";
   ofstream profile(output_file.c_str());
   profile << num_coordinates << endl;
@@ -231,7 +233,7 @@ void Segmentation::load(string &pdb_file, string &controls)
   bezier_curves.clear();
   bezier_curves_lengths.clear();
 
-  string input_file = string(CURRENT_DIRECTORY) + "experiments/segmentations/profiles/" 
+  string input_file = string(CURRENT_DIRECTORY) + "/experiments/segmentations/profiles/" 
                       + controls + "/" + pdb_file + ".profile";
   ifstream profile(input_file.c_str());
   string line;

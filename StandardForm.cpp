@@ -1,6 +1,8 @@
 #include "StandardForm.h"
 #include "Message.h"
 
+extern string CURRENT_DIRECTORY;
+
 /*!
  *  \brief This is a constructor function which is used to instantiate the
  *  object
@@ -50,13 +52,13 @@ string StandardForm::createOutputFile(bool status)
   string output_file;
   string current_dir = string(CURRENT_DIRECTORY);
   if (status) {
-    output_file = current_dir + "experiments/segmentations/logs/";
+    output_file = current_dir + "/experiments/segmentations/logs/";
     for (int i=0; i<parameters.controls.size(); i++) {
       output_file += boost::lexical_cast<string>(parameters.controls[i]); 
     }
     output_file += "/" + filtered + ".log";
   } else {
-    output_file = current_dir + "experiments/segmentations/logs/linear_";
+    output_file = current_dir + "/experiments/segmentations/logs/linear_";
     output_file += filtered;
   }
   return output_file;

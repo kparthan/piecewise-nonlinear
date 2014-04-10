@@ -2,6 +2,8 @@
 #include "BezierCurve.h"
 #include "Support.h"
 
+extern string CURRENT_DIRECTORY;
+
 /*!
  *  \brief This is a constructor function used to instantiate the Protein
  *  object from a ProteinProtein
@@ -173,7 +175,7 @@ Segmentation Protein::reconstruct(string &file, string &output_file,
   vector<Atom> atoms = protein->getAtoms();
   string pdb_file = extractName(file);
   string modified_pdb = string(CURRENT_DIRECTORY)
-                        + "experiments/segmentations/modified_pdb_files/" 
+                        + "/experiments/segmentations/modified_pdb_files/" 
                         + controls + "/" + pdb_file + ".pdb";
   ofstream fw(modified_pdb.c_str());
   for (int i=0; i<atoms.size(); i++) {
@@ -205,12 +207,12 @@ void Protein::createPymolScript(string &pdb_file,
   //for (int i=0; i<res_ids.size(); i++){cout << res_ids[i] << endl;}
 
   string pymol_file = string(CURRENT_DIRECTORY)
-                      + "experiments/segmentations/pymol_scripts/" 
+                      + "/experiments/segmentations/pymol_scripts/" 
                       + controls + "/" + pdb_file + ".pml";
   ofstream script(pymol_file.c_str());
 
   string modified_pdb = string(CURRENT_DIRECTORY)
-                        + "experiments/segmentations/modified_pdb_files/" 
+                        + "/experiments/segmentations/modified_pdb_files/" 
                         + controls + "/" + pdb_file + ".pdb";
   script << "load " << modified_pdb << endl;
   //script << "bg_color white" << endl;

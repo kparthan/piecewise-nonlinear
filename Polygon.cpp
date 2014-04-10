@@ -1,5 +1,7 @@
 #include "Polygon.h"
 
+extern string CURRENT_DIRECTORY;
+
 /*!
  *  \brief This module is a null constructor.
  */
@@ -157,14 +159,14 @@ void Polygon<RealType>::visualize(string name, string &controls,
   structure.addChain(chain);
 
   // copy the existing modified pdb file
-  string modified_pdb = string(CURRENT_DIRECTORY) + "experiments/segmentations/"
+  string modified_pdb = string(CURRENT_DIRECTORY) + "/experiments/segmentations/"
                         + "modified_pdb_files/" + controls + "/" + name + ".pdb";
   string vertices_pdb;
   if (construct_polygon == POLYGON_PROJECTIONS) {
-    vertices_pdb = string(CURRENT_DIRECTORY) + "experiments/polygons/"
+    vertices_pdb = string(CURRENT_DIRECTORY) + "/experiments/polygons/"
                    + "projections/" + controls + "/" + name + ".pdb";
   } else if (construct_polygon == POLYGON_BACKBONE) {
-    vertices_pdb = string(CURRENT_DIRECTORY) + "experiments/polygons/"
+    vertices_pdb = string(CURRENT_DIRECTORY) + "/experiments/polygons/"
                    + "backbone/" + name + ".pdb"; 
   }
   string cmd = "cp " + modified_pdb + " " + vertices_pdb;
@@ -192,18 +194,18 @@ template <typename RealType>
 void Polygon<RealType>::createPymolScript(string name, ProteinStructure &structure,
                                           string c, int construct_polygon)
 {
-  string pymol_script = string(CURRENT_DIRECTORY) + "experiments/segmentations/"
+  string pymol_script = string(CURRENT_DIRECTORY) + "/experiments/segmentations/"
                         + "pymol_scripts/" + c + "/" + name + ".pml";
   string polygon_script,pdb_file;
   if (construct_polygon == POLYGON_PROJECTIONS) {
-    polygon_script = string(CURRENT_DIRECTORY) + "experiments/polygons/"
+    polygon_script = string(CURRENT_DIRECTORY) + "/experiments/polygons/"
                      + "projections/" + c + "/" + name + ".pml"; 
-    pdb_file = string(CURRENT_DIRECTORY) + "experiments/polygons/"
+    pdb_file = string(CURRENT_DIRECTORY) + "/experiments/polygons/"
                + "projections/" + c + "/" + name + ".pdb";
   } else if (construct_polygon == POLYGON_BACKBONE) {
-    polygon_script = string(CURRENT_DIRECTORY) + "experiments/polygons/"
+    polygon_script = string(CURRENT_DIRECTORY) + "/experiments/polygons/"
                      + "backbone/" + name + ".pml"; 
-    pdb_file = string(CURRENT_DIRECTORY) + "experiments/polygons/"
+    pdb_file = string(CURRENT_DIRECTORY) + "/experiments/polygons/"
                + "backbone/" + name + ".pdb";
   }
   ifstream pymol(pymol_script.c_str());

@@ -1,5 +1,7 @@
 #include "Support.h"
 
+extern string CURRENT_DIRECTORY;
+
 /*!
  *  \brief This is a null constructor module.
  */
@@ -254,7 +256,7 @@ void
 DistanceHistogram::saveLocalHistogram(vector<double> &local_histogram, double r)
 {
   string local_histogram_directory = string(CURRENT_DIRECTORY); 
-  local_histogram_directory += "experiments/histograms/logs/local/" + name + "/";
+  local_histogram_directory += "/experiments/histograms/logs/local/" + name + "/";
   if (!checkFile(local_histogram_directory)) {
     string cmd = "mkdir " + local_histogram_directory;
     system(cmd.c_str());
@@ -372,7 +374,7 @@ DistanceHistogram::computeGlobalHistogramValues(vector<double> &r, double scale)
 void DistanceHistogram::save()
 {
   string global_histogram_file = string(CURRENT_DIRECTORY) +
-                                 "experiments/histograms/logs/global/" + name; 
+                                 "/experiments/histograms/logs/global/" + name; 
   ofstream data(global_histogram_file.c_str());
   assert(r_values.size() == global_histogram_values.size());
   for (int i=0; i<r_values.size(); i++) {
@@ -381,7 +383,7 @@ void DistanceHistogram::save()
          << global_histogram_values[i] << endl;
   }
   data.close();
-  string log_file = string(CURRENT_DIRECTORY) + "experiments/histograms/logs/profiles/" +
+  string log_file = string(CURRENT_DIRECTORY) + "/experiments/histograms/logs/profiles/" +
                     name;
   ofstream log(log_file.c_str());
   log << num_samples << endl;
@@ -396,7 +398,7 @@ void DistanceHistogram::save()
  */
 void DistanceHistogram::load(string file)
 {
-  string path = string(CURRENT_DIRECTORY) + "experiments/histograms/logs/global/" + file;
+  string path = string(CURRENT_DIRECTORY) + "/experiments/histograms/logs/global/" + file;
   ifstream data(path.c_str());
   string line;
   vector<double> numbers;
@@ -416,7 +418,7 @@ void DistanceHistogram::load(string file)
   }
   data.close();
 
-  string log_file = string(CURRENT_DIRECTORY) + "experiments/histograms/logs/profiles/" +
+  string log_file = string(CURRENT_DIRECTORY) + "/experiments/histograms/logs/profiles/" +
                     file;
   ifstream log(log_file.c_str());
   int line_num = 0;
@@ -536,7 +538,7 @@ void DistanceHistogram::visualize()
   structure.addChain(chain);
 
   vector<Atom> atoms = structure.getAtoms();
-  string path_to_samples_pdb = string(CURRENT_DIRECTORY) + "experiments/histograms/"
+  string path_to_samples_pdb = string(CURRENT_DIRECTORY) + "/experiments/histograms/"
                                + "samples_pdb/" + name + ".samples.pdb"; 
   ofstream samples_pdb(path_to_samples_pdb.c_str());
   for (int i=0; i<atoms.size(); i++) {
@@ -586,7 +588,7 @@ vector<double> DistanceHistogram::compare(DistanceHistogram &other)
 void DistanceHistogram::plotLocalHistograms()
 {
   string n = boost::lexical_cast<string>(num_samples);
-  string file = string(CURRENT_DIRECTORY) + "experiments/histograms/logs/local/";
+  string file = string(CURRENT_DIRECTORY) + "/experiments/histograms/logs/local/";
   file += name + "/"; 
   string data_file = file + "local_histograms";
   ofstream data(data_file.c_str());
@@ -605,7 +607,7 @@ void DistanceHistogram::plotLocalHistograms()
   }
 
   string script_file = file + "script.plot";
-  string eps_file = string(CURRENT_DIRECTORY) + "experiments/histograms/plots/" + name + ".eps";
+  string eps_file = string(CURRENT_DIRECTORY) + "/experiments/histograms/plots/" + name + ".eps";
   ofstream script(script_file.c_str());
   script << "set terminal post eps" << endl;
   script << "set output \"" << eps_file << "\"" << endl;

@@ -1,5 +1,7 @@
 #include "Angles.h"
 
+extern string CURRENT_DIRECTORY;
+
 /*!
  *  \brief This module is a null constructor.
  */
@@ -80,7 +82,7 @@ vector<double> Angles::getAngles()
  */
 void Angles::save(string &controls)
 {
-  string file_name = string(CURRENT_DIRECTORY) + "experiments/angles/profiles/" 
+  string file_name = string(CURRENT_DIRECTORY) + "/experiments/angles/profiles/" 
                      + controls + "/" + name + ".profile";
   ofstream log(file_name.c_str());
   for (int i=0; i<angles.size(); i++) {
@@ -98,7 +100,7 @@ void Angles::save(string &controls)
 void Angles::load(string &file, string &controls)
 {
   name = file;
-  string file_name = string(CURRENT_DIRECTORY) + "experiments/angles/profiles/"
+  string file_name = string(CURRENT_DIRECTORY) + "/experiments/angles/profiles/"
                      + controls + "/" + name + ".profile";
   ifstream log(file_name.c_str());
   string line;
@@ -122,7 +124,7 @@ void Angles::load(string &file, string &controls)
  */
 void Angles::save_dssp()
 {
-  string file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/angles/" 
+  string file_name = string(CURRENT_DIRECTORY) + "/experiments/dssp/angles/" 
                      + name + ".profile";
   ofstream log(file_name.c_str());
   for (int i=0; i<angles.size(); i++) {
@@ -139,7 +141,7 @@ void Angles::save_dssp()
 void Angles::load_dssp(string &file)
 {
   name = file;
-  string file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/angles/"
+  string file_name = string(CURRENT_DIRECTORY) + "/experiments/dssp/angles/"
                      + name + ".profile";
   ifstream log(file_name.c_str());
   string line;

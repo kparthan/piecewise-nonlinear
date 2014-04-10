@@ -62,6 +62,7 @@ struct Parameters
 };
 
 // segmentation functions
+void getHomeAndCurrentDirectory(void);
 bool checkIfSegmentationExists(string &, string &);
 Segmentation buildSegmentationProfile(struct Parameters &);
 string getPDBFilePath(string &);

@@ -2,6 +2,7 @@
 
 int main(int argc, char **argv)
 {
+  getHomeAndCurrentDirectory();
   struct Parameters parameters = parseCommandLineInput(argc,argv);
 
   if (parameters.comparison == SET) {
