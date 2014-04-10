@@ -1,0 +1,16 @@
+(d2huec_:C, d1nh8a2:A)
+Core Residues: 21
+Core RMSD: 6.131
+Raw Score: 30.790
+P-value: 0.9822
+Reference structure: d2huec_:C
+
+d1nh8a2:A   QYLMLDYDCPRSALKKATAITPGLESPTIAPLADPDWVAIRALVP---------------   255  (A)
+d2huec_:C   ---------------------------------------------KVLRDNIQGITKPAI    34  (B)
+
+d1nh8a2:A   ------------RRDVNGIMDELAAIGA--------------------------------   271  (A)
+d2huec_:C   RRLARRGGVKRISGLIYEETRGVLKVF-LENVIRDAVTYTEHAKRKTVTAMDVVYALKRQ    93  (B)
+
+d1nh8a2:A   KAILASDIRFCRF--   284  (A)
+d2huec_:C   GRTLYG-------FG   101  (B)
+

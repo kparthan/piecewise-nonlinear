@@ -1,0 +1,16 @@
+(d2iiaa_:A, d2j3sa2:A)
+Core Residues: 40
+Core RMSD: 2.693
+Raw Score: 34.029
+P-value: 0.3837
+Reference structure: d2iiaa_:A
+
+d2j3sa2:A   RAPS---------------VANVGSHC--DLI--QDMTAQVTSP---------SGKTHEA  2188  (A)
+d2iiaa_:A   ----IGRTCWAIAEGYIPPET------VCIL-NAGDEDAHVEITIYYSDKEPVGPYRLTV    64  (B)
+
+d2j3sa2:A   EIYC-IRFVPAEM----------------GTHTVSVKYKGQHVPGSPFQ--FT-VGPLGE  2235  (A)
+d2iiaa_:A   PA--RRTKHVRF-NDLNDPAPIPHDTDFASVIQSNV---------P---IVV-QH-----   103  (B)
+
+d2j3sa2:A   G-  2236  (A)
+d2iiaa_:A   -T   104  (B)
+

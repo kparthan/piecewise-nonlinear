@@ -1,0 +1,19 @@
+(d1ig6a_:A, d3broa1:A)
+Core Residues: 60
+Core RMSD: 3.628
+Raw Score: 54.845
+P-value: 0.2018
+Reference structure: d1ig6a_:A
+
+d3broa1:A   RDLGRLLKIASNQXS-TRFDIFAKKYDLTG---------------------TQXTIIDYL    40  (A)
+d1ig6a_:A   ---------------RADEQAFLVALY---KYMKERKTPIERIPYLGFKQINLWTMFQAA    42  (B)
+
+d3broa1:A   SRNKNK---E----VLQRDLESEFSI---KSSTATVLLQRXEIKKLLYRKVSGKDSRQKC    90  (A)
+d1ig6a_:A   QKLG--GYETITARRQWKHIYDELGGNPGSTSAATCTRRHYERLIL--------------    86  (B)
+
+d3broa1:A   LKLTK---K--ANKLETIILSYXDSDQSQXTSGLNKEEVVFLEKILKRXIES--------   137  (A)
+d1ig6a_:A   -----PYERFIKGEED------------------------------------KPLPPIKP   105  (B)
+
+d3broa1:A   --   137  (A)
+d1ig6a_:A   RK   107  (B)
+

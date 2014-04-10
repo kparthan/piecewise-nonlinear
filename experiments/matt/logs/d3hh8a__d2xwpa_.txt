@@ -1,0 +1,31 @@
+(d2xwpa_:A, d3hh8a_:A)
+Core Residues: 93
+Core RMSD: 3.891
+Raw Score: 82.279
+P-value: 0.0120
+Reference structure: d2xwpa_:A
+
+d3hh8a_:A   SDK-LKVVATN-------------SIIADMTKAIAGDKIDLHSIVPIGQDPH-----EYE    70  (A)
+d2xwpa_:A   ---KKALLVVSFGTSYHDTCEKNIVACERDLAASCPD-RDLFRA--------FTSGMIIR    49  (B)
+
+d3hh8a_:A   ----------PL--PEDAE-KTSN-------ADVIFYNGINLEDG---GQAWFTKLVKNA   107  (A)
+d2xwpa_:A   KLRQRDGIDIDTPLQ-ALQKL---AAQGYQDVA-IQSLHI-----INGD--EYEKIVREV    97  (B)
+
+d3hh8a_:A   QKTKNK----------DYFAVSD-------GI---D------------------------   123  (A)
+d2xwpa_:A   Q-----LLRPLFTRLTLGVPL-LSSHNDYVQLMQALRQQMPSLRQTEKVVFMGHGASHHA   151  (B)
+
+d3hh8a_:A   -----------------------------------------------VI-----------   125  (A)
+d2xwpa_:A   FAAYACLDHMMTAQRFPARVGAVESYPEVDILIDSLRDEGVTGVHLMPLMLVAGDHAIND   211  (B)
+
+d3hh8a_:A   YLEGASEKGKEDP--------------------HAWLNLENGIIYSKNIAKQLIAKDPKN   165  (A)
+d2xwpa_:A   MASDD--------GDSWKMRFNAAGIPATPWLSGLGENPAIRAMFVAHLHQALNM-----   258  (B)
+
+d3hh8a_:A   KETYEKNLKAYVAKLEKLDKEAKSKFDAIAENKKLIVTSEGCFKYFSKAYGVPSAYIWEI   225  (A)
+d2xwpa_:A   ------------------------------------------------------------   258  (B)
+
+d3hh8a_:A   NTEEEGTPDQISSLIEKLKVIKPSALFVESSVDRRPMETVSKDSGIPIYSEIFTDSIAKK   285  (A)
+d2xwpa_:A   ------------------------------------------------------------   258  (B)
+
+d3hh8a_:A   GKPGDSYYAMMKWNLDKISEGLAK   309  (A)
+d2xwpa_:A   ------------------------   258  (B)
+

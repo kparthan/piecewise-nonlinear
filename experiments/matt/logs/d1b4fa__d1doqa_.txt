@@ -1,0 +1,13 @@
+(d1doqa_:A, d1b4fa_:A)
+Core Residues: 55
+Core RMSD: 2.435
+Raw Score: 60.120
+P-value: 0.0341
+Reference structure: d1doqa_:A
+
+d1b4fa_:A   PDYTSFN--------TVDEWLEAIKMGQYKESFANAGFTSFDVVSQMMMEDILRVG-VTL    56  (A)
+d1doqa_:A   -------EQEEELDLPLEEL--GL-STRVLHSLKEEGIESVRALLALNLKDLKNIPGIG-   295  (B)
+
+d1b4fa_:A   AGHQKKILNSIQVMRAQMNQIQS-----    79  (A)
+d1doqa_:A   ERSLEEIKEALEKKG--------FTLKE   315  (B)
+

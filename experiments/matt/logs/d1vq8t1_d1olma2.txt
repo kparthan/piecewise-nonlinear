@@ -1,0 +1,19 @@
+(d1olma2:A, d1vq8t1:T)
+Core Residues: 17
+Core RMSD: 2.323
+Raw Score: 14.112
+P-value: 0.5950
+Reference structure: d1olma2:A
+
+d1vq8t1:T   SKQPDKQRKSQRRAPLHERHKQVRATLSADLREEYGQRNVRVNAGDTVEVLRGDFAGEEG    60  (A)
+d1olma2:A   ------------------------------------------------------------   275  (B)
+
+d1vq8t1:T   ------------EVINVDLD----------------------------------------    68  (A)
+d1olma2:A   KQQYEHSVQISRGSSHQVEYEILFPGCVLRWQFMSDGADVGFGIFLKTERQRAGEMTEVL   337  (B)
+
+d1vq8t1:T   -----------------------KAVIHVE--DVTLEKTDGEE------VPRPLDTSNVR    97  (A)
+d1olma2:A   PNQRYNSHLVPEDGTLTCSDPGIYVLRFDNTYS----------FIHAKKV----------   377  (B)
+
+d1vq8t1:T   VTDLDLEDEKREARLESEDDSA----------------   119  (A)
+d1olma2:A   ----------------------NFTVEVLLPDKASEEK   393  (B)
+

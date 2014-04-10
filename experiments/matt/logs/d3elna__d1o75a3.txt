@@ -1,0 +1,25 @@
+(d1o75a3:A, d3elna_:A)
+Core Residues: 57
+Core RMSD: 2.941
+Raw Score: 36.706
+P-value: 0.2751
+Reference structure: d1o75a3:A
+
+d3elna_:A   TELLKPRTLADLIRILHELFA-----------GDEVNVEEVQAVLEAYESNPAEWALYAK    52  (A)
+d1o75a3:A   ---------------------ETSYGYATLSYAD--------------------------    19  (B)
+
+d3elna_:A   FDQYRYTRN---------------LVDQGNGKFNLMILCWGEGHG-SSI--HDH-TDSHC    93  (A)
+d1o75a3:A   ---------YWAGELGQSRDVLLADLDAGMFDAVSRAT-H-----GH--GAFRQQFQYAV    71  (B)
+
+d3elna_:A   FLKLLQGNLKETLFDWPDKKSNEMIKKSERTLR-----------------------ENQC   130  (A)
+d1o75a3:A   EVLG---------------------------EKVLSKQETEDSRGRKKWEYETDPSVTKM   104  (B)
+
+d3elna_:A   AYINDS-------------IG----LHR--VENVSHTEPA----------VSLHLYSPPF   161  (A)
+d1o75a3:A   VRASASFQDLGEDGEIKFEAVEGAVALADRAS--------SFMVDSEEYKITNVKVHG--   154  (B)
+
+d3elna_:A   DTCHAFDQRTGHKNKVTMTFHSKFGIRTP-------------------------------   190  (A)
+d1o75a3:A   -----------------------------MKFVPVAVPHELKGIAKEKFHFVEDSRVTEN   185  (B)
+
+d3elna_:A   ---------------------   190  (A)
+d1o75a3:A   TNGLKTMLTEDSFSARKVSSM   206  (B)
+

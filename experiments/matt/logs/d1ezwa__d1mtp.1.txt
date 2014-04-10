@@ -1,0 +1,50 @@
+(d1mtp.1:B, (d1mtp.1:A, d1ezwa_:A))
+Core Residues: 7
+Core RMSD: 2.110
+Raw Score: 2.293
+Reference structure: d1mtp.1:B
+
+d1ezwa_:A   AEVSFGIELLPDDK------P--TKI-AHLIKV--AED----------------NGFEYA    34  (A)
+d1mtp.1:A   --------------GGFLRDDHLE-FALHLH-RRLA--EAVPD-----------GEVIWS    35  (B)
+d1mtp.1:B   --------------------------------------T----IRFSVDRPFHIVVRRRG   350  (C)
+
+d1ezwa_:A   ---WI--CDH--YN----------N----Y----SY---MGVLTLAAVITSKIKLGPGIT    66  (A)
+d1mtp.1:A   PYSVACALGVLAA-GARATTRTELTTLLGTDPAPL-LAAL--------------------    73  (B)
+d1mtp.1:B   ------------------------------------------------------------   350  (C)
+
+d1ezwa_:A   NPYTRHPLITASNIATLDWISGGRAI-------IGMGPGDKATF--------DKM-GLPF   110  (A)
+d1mtp.1:A   ---------D-RAV------------TDSPDLAS-RTVL-----WVSADVPVR--SSFR-   102  (B)
+d1mtp.1:B   ------------------------------------------------------------   350  (C)
+
+d1ezwa_:A   PCKIPIWNPEAEDEVGPATAIRE-------VKEVIYQYLEGGPVEYEGKYVKTGTADVKA   163  (A)
+d1mtp.1:A   -----------------------ATMHDRPD-----------------------------   110  (B)
+d1mtp.1:B   ------------------------------------------------------------   350  (C)
+
+d1ezwa_:A   RSIQGSDIPFYMGAQ--------------G-PIMLKTAGEIAN---G--VLVNASN-PKD   202  (A)
+d1mtp.1:A   ---------------SDVRTADFRTNPEGVRATVNADIA-DATRGMIREL-L----PQGA   149  (B)
+d1mtp.1:B   ------------------------------------------------------------   350  (C)
+
+d1ezwa_:A   FEVAVPKIEEGAKEAGRSLDEIDVAAYTCFSIDKDEDKAIEATKIVVAFIVMGSPD--VV   260  (A)
+d1mtp.1:A   --------------------------------------------------------VTPD   153  (B)
+d1mtp.1:B   ------------------------------------------------------------   350  (C)
+
+d1ezwa_:A   LERHGIDTEKAEQIAEAIGKGDFGTAIGLVDEDMIEAFSIAGDPDTVVDKIEELLKAGVT   320  (A)
+d1mtp.1:A   ------------------------------------------------------------   153  (B)
+d1mtp.1:B   ------------------------------------------------------------   350  (C)
+
+d1ezwa_:A   ------------------------------------------------------------   320  (A)
+d1mtp.1:A   LRAILTNALWAKARWTTPFEAHLTREGTFRTPRGPKRVPFMHRTKTMPYATARGWRMVTL   213  (B)
+d1mtp.1:B   ------------------------------------------------------------   350  (C)
+
+d1ezwa_:A   -------------------------------------------------QVVVGSPIGPD   331  (A)
+d1mtp.1:A   HAHDELAVDVLLPPGTNAAAVPTAPLLTALHRRSASTSVELALPRFELTQPHQLVEV---   270  (B)
+d1mtp.1:B   ---------------------------------------------------A--------   351  (C)
+
+d1ezwa_:A   --KEKAIELVGQEVIPHFK-----------------------------------------   348  (A)
+d1mtp.1:A   LAE----------------AGVRTLFTASADLSGISTVPLYVDTVIHQARLRVDERGAEG   314  (B)
+d1mtp.1:B   ---------ILF------------------------------------------------   354  (C)
+
+d1ezwa_:A   -----------------------   348  (A)
+d1mtp.1:A   AAATAAMMLL-------------   324  (B)
+d1mtp.1:B   ----------LGSIADPHDPGPA   367  (C)
+

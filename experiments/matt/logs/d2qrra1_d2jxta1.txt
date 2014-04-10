@@ -1,0 +1,16 @@
+(d2jxta1:A, d2qrra1:A)
+Core Residues: 49
+Core RMSD: 4.298
+Raw Score: 46.531
+P-value: 0.6846
+Reference structure: d2jxta1:A
+
+d2qrra1:A   SIPEDYQARLQPNRVEG-----SYPLVRX-EFTGATVDAPLXSQISRKYNIDVSILSSDL    55  (A)
+d2jxta1:A   -----------------MKMKTKIFRVKGKFLMG--------------------------    17  (B)
+
+d2qrra1:A   DYAGGVKFGXXVAELFGN-EQDDSAAIEYLRENN------VKVEVLGYVL----------    98  (A)
+d2jxta1:A   -----DKLQPFTKELNAIREEEIYERLYSEFGSKHRVPRSKVKIEEIEEISPEEVQDPVV    72  (B)
+
+d2qrra1:A   ------    98  (A)
+d2jxta1:A   KALVQR    78  (B)
+

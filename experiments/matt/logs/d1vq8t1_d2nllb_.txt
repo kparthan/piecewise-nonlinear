@@ -1,0 +1,19 @@
+(d2nllb_:B, d1vq8t1:T)
+Core Residues: 17
+Core RMSD: 2.088
+Raw Score: 25.219
+P-value: 0.7054
+Reference structure: d2nllb_:B
+
+d1vq8t1:T   SKQPDKQRKSQRRAPLHERHKQVRATLSADLREEYGQRNVRVNAGDTVEVLRGDFAGEEG    60  (A)
+d2nllb_:B   ------------------------------------------------------------   300  (B)
+
+d1vq8t1:T   EVINVDLDKAVIHVEDVTLEKTDG-------EEVPRPLDTSNVRVTDLDLE---------   104  (A)
+d2nllb_:B   ------------------------DELCVVCGDKATG--------------YHYRCITCE   321  (B)
+
+d1vq8t1:T   -----------------------------------------------------------D   105  (A)
+d2nllb_:B   GCKGFFRRTIQKNLHPSYSCKYEGKCVIDKVTRNQCQECRFKKCIYVGMATDLVLDDSKR   381  (B)
+
+d1vq8t1:T   EKREARLES--EDDSA---------   119  (A)
+d2nllb_:B   LAKRKLIEENRE----KRRREELEK   402  (B)
+

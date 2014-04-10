@@ -1,0 +1,16 @@
+(d1kv9a1:A, d3k1sa_:A)
+Core Residues: 43
+Core RMSD: 3.811
+Raw Score: 80.313
+P-value: 0.3369
+Reference structure: d1kv9a1:A
+
+d3k1sa_:A   SNAXXTTAEQIPFQLILNSGNA------------RSFAXEALQFAKQGKXAEADEAXVKA    45  (A)
+d1kv9a1:A   ----------------------PAPAKVERVPQPVT------------------------   574  (B)
+
+d3k1sa_:A   KEA-INEAHHFQTELIQSEARGEKT-----------------------------------    69  (A)
+d1kv9a1:A   ---AAPEQVQAGKQLYGQF------CSVCHGMGTISGGLIPDLRQSSDATREHFQQIVLQ   625  (B)
+
+d3k1sa_:A   -------------EISVLLIHAQDHLXNAITVKELAAEFIDLYKKLEAKG   106  (A)
+d1kv9a1:A   GALKPLGMPSFDDSLKPEEVEQIKLYVMSREYEDYMARH-----------   664  (B)
+

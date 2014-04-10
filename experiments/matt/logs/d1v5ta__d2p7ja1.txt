@@ -1,0 +1,16 @@
+(d2p7ja1:A, d1v5ta_:A)
+Core Residues: 22
+Core RMSD: 2.092
+Raw Score: 16.991
+P-value: 0.6050
+Reference structure: d2p7ja1:A
+
+d1v5ta_:A   G---------------------------------------------SSG-----------     4  (A)
+d2p7ja1:A   -NYSPVRDFHIELVKHKGFYIASPDESRLYGDIIPERSQFNFSNXYPDIWPRVVSEQAGY   239  (B)
+
+d1v5ta_:A   SS-----GLPIIVKWGG-QEYSVTTLSEDDTVLDLKQFLKTLTGVLPERQKLLGLKVKGK    58  (A)
+d2p7ja1:A   SYSGEHLIAFSSIKFVSNEPLHLII-----------------------------------   264  (B)
+
+d1v5ta_:A   PAENDVKLGALKLKPNTKIMMMGTRESGPSSG---------    90  (A)
+d2p7ja1:A   --------------------------------DLSNEQLSK   273  (B)
+

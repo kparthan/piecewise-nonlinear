@@ -1,0 +1,19 @@
+(d1mija_:A, d1yyva1:A)
+Core Residues: 44
+Core RMSD: 3.805
+Raw Score: 66.171
+P-value: 0.5066
+Reference structure: d1mija_:A
+
+d1yyva1:A   QLREGNLFAEQCPSREVLKHVTSRWGVLILVALRDGTHRFSDLRRXXGGVS------EXX    62  (A)
+d1mija_:A   ---------------------------------------------------SSTLTPXHL  1253  (B)
+
+d1yyva1:A   LAQSLQALEQDGFLNRVSYPVVPP------------------------------------    86  (A)
+d1mija_:A   RKAKLXFFW---------------VRYPSSAVLKXYFPDIKFNKNNTAQLVKWFSNFREF  1298  (B)
+
+d1yyva1:A   ---------------------------HVE-YSLTPLGEQVSDXVAALADWIELNL-PQV   117  (A)
+d1mija_:A   YYIQXEKYARQAVTESELYRVLNLHYNRNNHIEVPQNFRFVVESTLREFFRAIQGGKDTE  1371  (B)
+
+d1yyva1:A   LAQRE------------------------   122  (A)
+d1mija_:A   ---Q-SWKKSIYKIISRXDDPVPEYFKSP  1396  (B)
+

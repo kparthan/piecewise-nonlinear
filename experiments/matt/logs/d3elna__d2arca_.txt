@@ -1,0 +1,22 @@
+(d2arca_:A, d3elna_:A)
+Core Residues: 78
+Core RMSD: 2.177
+Raw Score: 91.098
+P-value: 7.4542e-04
+Reference structure: d2arca_:A
+
+d3elna_:A   TELLKPRTLADLIRILHELFAGDEVNVEEVQAVLEAYESNPAEWALYAKFDQYRY-TRNL    62  (A)
+d2arca_:A   -------------------------------------------------------DPL--     9  (B)
+
+d3elna_:A   VDQGN--------GKFNLMILCWGEG----HGSSIHDHTDSHCFLKLLQGNLKETLFDWP   110  (A)
+d2arca_:A   -----LPGYSFNAH-LVAGLTPIEANGYLDFFIDRPLGMKGYILNLTIRGQGVVKN----    59  (B)
+
+d3elna_:A   DKKSNEMIKKSERTLRENQCAYINDSIGLHRVEN-VSHT-EPAVSLHLYSPPFDTCHAFD   168  (A)
+d2arca_:A   --------QGREFVCRPGDILLFPPG-EIHHYGRHPE--AREWYHQWVYFR---------    99  (B)
+
+d3elna_:A   QRTGHKNKVTMTFHSKFGIRTP--------------------------------------   190  (A)
+d2arca_:A   ----------------------PRAYWHEWLNWPSIFANTGFFRPDEAHQPHFSDLFGQI   137  (B)
+
+d3elna_:A   ------------------------------   190  (A)
+d2arca_:A   INAGQGEGRYSELLAINLLEQLLLRRMEAI   167  (B)
+

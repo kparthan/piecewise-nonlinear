@@ -1,0 +1,19 @@
+(d1jhna3:A, d2ejqa1:A)
+Core Residues: 23
+Core RMSD: 2.755
+Raw Score: 9.637
+P-value: 0.7022
+Reference structure: d1jhna3:A
+
+d2ejqa1:A   TYEAFVELVERLWEEVPEDFKRGLQGVHVFPEAKPEPGLEGVWRLGEYLDPGPP------    55  (A)
+d1jhna3:A   -------------------------------------P-VNPSR-E--------IEDPED   282  (B)
+
+d2ejqa1:A   -------SA---------------------------------------------------    57  (A)
+d1jhna3:A   QKPEDWDERPKIPDPDAVKPDDWNEDAPAKIPDEEATKPDGWLDDEPEYVPDPDAEKPED   342  (B)
+
+d2ejqa1:A   --------------------------------------------------FGG--FEDLG    65  (A)
+d1jhna3:A   WDEDMDGEWEAPQIANPKCESAPGCGVWQRPMIDNPNYKGKWKPPMIDNPNYQGIW----   398  (B)
+
+d2ejqa1:A   R--HIALYYGSFLEVAGEGFDWEAEVWETMLHELRHHLESLAGRD-   108  (A)
+d1jhna3:A   -KPRKIPNPDF--FE------------------------------D   411  (B)
+

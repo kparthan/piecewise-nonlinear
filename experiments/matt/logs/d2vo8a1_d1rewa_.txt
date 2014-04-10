@@ -1,0 +1,19 @@
+(d1rewa_:A, d2vo8a1:A)
+Core Residues: 31
+Core RMSD: 2.614
+Raw Score: 20.034
+P-value: 0.5842
+Reference structure: d1rewa_:A
+
+d2vo8a1:A   TTVGNSTIKVNDEVQVGSAFEAILGIEGLNGDTEVYSAEYLFEY----NAEAFILNEITS   994  (A)
+d1rewa_:A   --------------------------------SSCKRHPLYVDFSDVGWN-DWI------    32  (B)
+
+d2vo8a1:A   FNDSLFVKSKEV-EPGKVRILV--------------------------------------  1015  (A)
+d1rewa_:A   ------------VAPPGYHAFYCHGECPFPLADHLNSTNHAIVQTLVNSVNSKIPKACCV    80  (B)
+
+d2vo8a1:A   -----------------------------ASLGNEIEKDSDLVKVNLTPKISSELEVLGL  1046  (A)
+d1rewa_:A   PTELSAISMLYLDENEKVVLKNYQDMVVEGCGCR--------------------------   114  (B)
+
+d2vo8a1:A   TTALVGAGDGNTHDLELSSKEVKINEEA  1074  (A)
+d1rewa_:A   ----------------------------   114  (B)
+

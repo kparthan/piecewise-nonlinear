@@ -1,0 +1,43 @@
+(d1lnsa3:A, d2bhua3:A)
+Core Residues: 110
+Core RMSD: 6.130
+Raw Score: 69.226
+P-value: 0.3107
+Reference structure: d1lnsa3:A
+
+d2bhua3:A   TFDWTDADWHGI-----------KLADCVF----YEVHVGTFTPEG--------------   141  (A)
+d1lnsa3:A   ------------LDNHYHFFNDKSLATFD-SSLLEREVL-------WVESPVDSEQRGEN   185  (B)
+
+d2bhua3:A   ---TYRAAAEKLP-YLKELGV---TAIQVMPLAAFDGQR-GWGYDGAAFYAP--------   185  (A)
+d1lnsa3:A   DLIKI-QI-----IRP-KS--TEKLPVVMTAS-------PYH----------LGINDKAN   219  (B)
+
+d2bhua3:A   ------------------------------------------------------------   185  (A)
+d1lnsa3:A   DLALHDMNVELEEKTSHEIHVEQKLPQKLSAKAKELPIVDKAPYRFTHGWTYSLNDYFLT   279  (B)
+
+d2bhua3:A   ---------YAP---YGR------------PEDLMALVDAAHR-----------------   204  (A)
+d1lnsa3:A   RGFASIYVAGVGTRSS--DGFQTSGDYQQIYS-MTAVIDWLNGRARAYTSRKKTHEIKAS   336  (B)
+
+d2bhua3:A   -LGLGVFLD-----VVYNHFGPSGNYLSSYAPSYFTDRFSSAWGMGLDYAEPHMRRYVTG   258  (A)
+d1lnsa3:A   WANGKVAMTGKSYLGT--------------------------------------------   352  (B)
+
+d2bhua3:A   N--ARMWLRD-YH-FDGLRLDA--------------------------------------   276  (A)
+d1lnsa3:A   -MAY-GAATTGVEGLELILAEAGISSWYNYYRENGLVRSPGGFPGEDLDVLAALTYSRNL   410  (B)
+
+d2bhua3:A   -----------------------------------------------------TPY----   279  (A)
+d1lnsa3:A   DGADFLKGNAEYEKRLAEMTAALDRKSGDYNQFWHDRNYLINTDKVKADVLIVHGLQDWN   470  (B)
+
+d2bhua3:A   -MTDDSETHILTELAQEIHELGGT--HLLLAEDHRNLPDL--------------------   316  (A)
+d1lnsa3:A   VTP-----EQAYNFWKAL-P----EGHAKHAFLHR-----GAHIYMNSWQSIDFSETINA   515  (B)
+
+d2bhua3:A   --------------VTVNHLDGIWTDDFHHETRVTLTGEQEGYYAGYRGGAEALAYTIRR   362  (A)
+d1lnsa3:A   YFVAKLLDRDLNLNLP-----PVILQE---------------------------------   537  (B)
+
+d2bhua3:A   GWRYE--GQFWAVKGEEHERGHPSDALEAPNFVYCIQNHDQIGNRPLGERLHQSDGVTLH   420  (A)
+d1lnsa3:A   -----NSKD----------QVWT-------------------------------------   545  (B)
+
+d2bhua3:A   EYRGAAALLLTLPMTPLLFQGQEWAASTPFQFFSDHAGELGQAVSEGRKKEFDVPDPQAE   489  (A)
+d1lnsa3:A   ------------------------------------------------------------   545  (B)
+
+d2bhua3:A   QTFLNSKLNWAEREGGEHARTLRLYRDLLRLRREDPVLHNR-----   530  (A)
+d1lnsa3:A   -----------------------------------------MMNDF   550  (B)
+

@@ -1,0 +1,16 @@
+(d1hdfa_:A, d1krha1:A)
+Core Residues: 43
+Core RMSD: 4.572
+Raw Score: 24.212
+P-value: 0.8044
+Reference structure: d1hdfa_:A
+
+d1krha1:A   IHHFEGTL------------ARVENLS-D--------------------------STITF   126  (A)
+d1hdfa_:A   --------SVCKGVSGNPAKGEVFLYKHVNFQGDSWKVTGNVYDFRSVSGLNDVVSSVKV    52  (B)
+
+d1krha1:A   D--IQLDDGQPDIHFLAGQYVNVT-------------LPGTTETRSYSFSSQPGNRLTGF   171  (A)
+d1hdfa_:A   GPNT------------------K-AFIFKDDRFNGNFIR------LE----------ESS    77  (B)
+
+d1krha1:A   VVRN--VPQGKMSEYLSVQAKAGDKMSFTGPFGSFY-   205  (A)
+d1hdfa_:A   QVTDLTTRN---LN---DAISS-XIVATF-------E   100  (B)
+

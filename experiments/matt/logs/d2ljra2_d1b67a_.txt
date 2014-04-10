@@ -1,0 +1,16 @@
+(d1b67a_:A, d2ljra2:A)
+Core Residues: 24
+Core RMSD: 4.005
+Raw Score: 32.119
+P-value: 0.8446
+Reference structure: d1b67a_:A
+
+d2ljra2:A   MG--------------LELFLDLVSQPSRAVYIFAKKNGIPLELRTVDLVKGQHKSKEFL    46  (A)
+d1b67a_:A   --GELPIAPIGRIIKNAGAERVS-DDARIALAKVLEEMG---------------------    37  (B)
+
+d2ljra2:A   QINSLGKLPTLKDGDFILTESSAILIYLSCK-----------------------------    77  (A)
+d1b67a_:A   -------------------------------EEIASEAVKLAKHAGRKTIKAEDIELARK    66  (B)
+
+d2ljra2:A   -YQ    79  (A)
+d1b67a_:A   MFK    69  (B)
+

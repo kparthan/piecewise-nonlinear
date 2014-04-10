@@ -1,0 +1,13 @@
+(d3ccda_:A, d1x6oa1:A)
+Core Residues: 35
+Core RMSD: 2.699
+Raw Score: 21.126
+P-value: 0.5519
+Reference structure: d3ccda_:A
+
+d1x6oa1:A   -KTYPLAAGALKKGGYVCINGRPCKVIDLSVSKTHAKVS---IV----------------    62  (A)
+d3ccda_:A   MFEQEVTITA--------------------PN----GLDTRPAAQFVKEAKGFTSEITVT    36  (B)
+
+d1x6oa1:A   -------ATDIFTGNR-LED--QAPSTHNVEVP------F--------------    86  (A)
+d3ccda_:A   SNGKSASAK-----SLFKLQTLGLTQGTVVTISAEGEDEQKAVEHLVKLMAELE    85  (B)
+

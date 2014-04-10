@@ -1,0 +1,19 @@
+(d2g45a_:A, d1a04a2:A)
+Core Residues: 40
+Core RMSD: 3.921
+Raw Score: 32.089
+P-value: 0.7231
+Reference structure: d2g45a_:A
+
+d1a04a2:A   EPATILL------------------------------------IDDHPMLRTGVKQLISM    28  (A)
+d2g45a_:A   -------VRQVSKHAFSLKQLDNPARIPPCGWKCSKCDMRENLWL---------------   210  (B)
+
+d1a04a2:A   APDI--TVVGEASN--------GE-QGIELAESLDPDLILLDLNMPGMNGLETLDKLREK    77  (A)
+d2g45a_:A   ----NLTDGSILCGRRYFDGSGGNNHAVEHYRETG--YPLAVKL----------------   248  (B)
+
+d1a04a2:A   SLSG-------------RIVVFSVSNHEEDVVTALKRGADGYLLKDMEPEDLLKALHQAA   124  (A)
+d2g45a_:A   ----GTITPDGADVYSYDE-------------------D-DMVLDP-----SL-------   272  (B)
+
+d1a04a2:A   AGEMVLSEALTPVLAASL-----------------   142  (A)
+d2g45a_:A   ------------------AEHLSHFGIDMLKMQKT   289  (B)
+

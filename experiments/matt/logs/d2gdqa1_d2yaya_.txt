@@ -1,0 +1,31 @@
+(d2yaya_:A, d2gdqa1:A)
+Core Residues: 46
+Core RMSD: 2.855
+Raw Score: 58.941
+P-value: 0.2568
+Reference structure: d2yaya_:A
+
+d2gdqa1:A   RYREEIPVYASFQS--------YSDSP---------------------------------   137  (A)
+d2yaya_:A   --------------NIPGAILHSLA--ELQDGLNAMIDPSWRAVRSLDNWALAITMESTE    51  (B)
+
+d2gdqa1:A   ------------------------------------------------------------   137  (A)
+d2yaya_:A   LLDSYPWKWWKNLNATPDLANVRIELVDIFHFSLSGAMQMRSTPDDEIPAASLKPLKEVM   111  (B)
+
+d2gdqa1:A   ------------------------------------------------------------   137  (A)
+d2yaya_:A   TTFLPAKECTSDPYGFVFFPLTDTQNAIASFRNIIQLANAYRFDVIIECIIYAAEDLGFN   171  (B)
+
+d2gdqa1:A   QWISRSVSNVEAQLK-KGFEQIKVKIGG--------------------------------   164  (A)
+d2yaya_:A   LVAYYIAKHTLNCIRQLS----------GYKDGSYVKVNNGVEDNSLLHNCIKDVSLDEV   221  (B)
+
+d2gdqa1:A   --TSFKEDVRHINALQHTAGS--SITMI-----LD-ANQSYDAAAAFKWERYFSEWTNIG   214  (A)
+d2yaya_:A   LDAD-KYVQAWNSIMANVYE-AFQIKESDRKDAERWFA----------------------   257  (B)
+
+d2gdqa1:A   WLEEPLPFDQPQDYAMLRSRLSVPVAGGENMKGPAQYVPLLSQRCLDIIQPDVMHVNGID   274  (A)
+d2yaya_:A   ------------------------------------------------------------   257  (B)
+
+d2gdqa1:A   EFRDCLQLARYFGVRASAHAYDGSLSRLYALFAQACLPPWSKMKNDHIEPIEWDVMENPF   334  (A)
+d2yaya_:A   ------------------------------------------------------------   257  (B)
+
+d2gdqa1:A   TDLVSLQPSKGMVHIPKGKGIGTEINMEIVNRYKWDGSAY-------   374  (A)
+d2yaya_:A   ----------------------------------------LAKENRL   264  (B)
+

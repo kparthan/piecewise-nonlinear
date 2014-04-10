@@ -1,0 +1,13 @@
+(d1qmha1:A, d2ljra2:A)
+Core Residues: 56
+Core RMSD: 2.991
+Raw Score: 50.319
+P-value: 0.1295
+Reference structure: d1qmha1:A
+
+d2ljra2:A   -----MGLELFLD------LV--SQPSRAVYIFAKKNGIPLELRTVDLVKGQHKSKEFLQ    47  (A)
+d1qmha1:A   ERGNIVQMRGEV-LLAGVPRHVAEREIATLAGSF----SLHEQNIHN---L---------   227  (B)
+
+d2ljra2:A   INSLG-------KLPTLKDG----DFILTE------------SSAILIYLSCKYQ---    79  (A)
+d1qmha1:A   -----PRDQGPGNTVSLEVESENITERFFVVGEKRVSAEVVAAQL-VKEVKRYLASTA   279  (B)
+

@@ -1,0 +1,43 @@
+(d1xmxa_:A, d3atya_:A)
+Core Residues: 80
+Core RMSD: 3.118
+Raw Score: 81.778
+P-value: 0.0277
+Reference structure: d1xmxa_:A
+
+d3atya_:A   MATFPELLRPLKLGRYTLRNR-IIMAPLT------------------------RC-----    30  (A)
+d1xmxa_:A   -------------------N-AMAIHVGIIDQDPVRLVTPLLDHRTVSRHIIFIGDHTQT    38  (B)
+
+d3atya_:A   --------------------QATEDDHVPRTESMLKYYEDRASAGLIIAEATMVQPNYTG    70  (A)
+d1xmxa_:A   VIYQRLSDVLNKRNISTDFFEIPAGS----------------------------------    64  (B)
+
+d3atya_:A   FLTEPGIY-SDAQIEEWRKIVDAVHKKGGLIFLQLIHAGRAGIPEKILQQSKSDQDPLAG   129  (A)
+d1xmxa_:A   --------NTSAIKSAIRELAETLKARGEEVKFNAS------------------------    92  (B)
+
+d3atya_:A   RLLAASAIPIKDHRIPAYFAASGEKETYGVPEELTDDEVRDGIIPLFVE-------GA--   180  (A)
+d1xmxa_:A   -------------------------------------------------CGLRHRLL-SA   102  (B)
+
+d3atya_:A   KN-AIFKAGFDGVEIHGANGYLLDAFFRESSNKRQSGPYAGTTIDTRCQLIYDV-----T   234  (A)
+d1xmxa_:A   YEVFRS--YHWPIFVVEP--------NS--------------------------DCLCWL   126  (B)
+
+d3atya_:A   KSVCDAVGSDRVGLRISPLNGVHGMIDSNPEALTKHLCKKIEPLSLAYLHYLRGDMVNQ-   293  (A)
+d1xmxa_:A   ----------YP-------------------------------EGN-NDTQVQDRITI-A   143  (B)
+
+d3atya_:A   ------------------------------------------------------------   293  (A)
+d1xmxa_:A   DYLTIFGARGEFNSPQLDQQLYQLGERWASNALELGPGLATLNYLATTCRKEQKLDVELS   207  (B)
+
+d3atya_:A   ------------------------------------------------------------   293  (A)
+d1xmxa_:A   DKQQGYRELNLLLSDLVEAKIASYENGILTFINEEARRFANGEWLETLVHSTVKQIQDDM   267  (B)
+
+d3atya_:A   --QIGDVVAWVRGSYSGVKISNLRYDFEEADQQIREGKVDAVAFGAKFIANPDLVERAQQ   351  (A)
+d1xmxa_:A   PTIQ--------------------------------------------------------   271  (B)
+
+d3atya_:A   NWPLNEPRPETYYTRTAVGYNDYPTYNK--------------------------------   379  (A)
+d1xmxa_:A   ----------------------------DRSLNVQVYRQLGEREVRNELDVATVVNNKLH   303  (B)
+
+d3atya_:A   ------------------------------------------------------------   379  (A)
+d1xmxa_:A   IIECKTKGMRDGDDTLYKLESLRDLLGGLQARAMLVSFRPLRHNDITRAEDLGLALIGPD   364  (B)
+
+d3atya_:A   -------------------   379  (A)
+d1xmxa_:A   ELKDLKTHLTQWFKAAGGN   383  (B)
+

@@ -1,0 +1,13 @@
+(d1wqjb1:B, d1ugla_:A)
+Core Residues: 33
+Core RMSD: 6.930
+Raw Score: 30.898
+P-value: 0.9651
+Reference structure: d1wqjb1:B
+
+d1ugla_:A   NLMKRCTRGFRKLG-----KCTTLEEEKC-KTLYPRGQCTCSDS--K-MNTHS-CDCKSC    50  (A)
+d1wqjb1:B   --------------AIHCPPCSEEKLARCRP-PVGCE--ELVREPGCGCCATCALGLGMP    45  (B)
+
+d1ugla_:A   -------------------------------------    50  (A)
+d1wqjb1:B   CGVYTPRCGSGLRCYPPRGVEKPLHTLMHGQGVCMEL    82  (B)
+

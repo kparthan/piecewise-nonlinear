@@ -1,0 +1,16 @@
+(d1enfa1:A, d1jmca1:A)
+Core Residues: 69
+Core RMSD: 2.898
+Raw Score: 42.947
+P-value: 0.0688
+Reference structure: d1enfa1:A
+
+d1jmca1:A   KVVPIASLTP-----------------Y---QSKWTICARVTNKS-QIRTWSNSRGEGKL   221  (A)
+d1enfa1:A   ----------DLHDKSELTDLALANAYGQYNHPFIKENIKSDEISGE-------------    38  (B)
+
+d1jmca1:A   FSLELVDESGE------IRATAFNEQVDK-FFPLIEVNKVYYFSKGTLKIANKQ--FTAV   272  (A)
+d1enfa1:A   KDLIFR---NQGDSGNDLRVKFA---TA-DLAQKFK-NKNVDIYGA-SFYYK--CEKI-S    86  (B)
+
+d1jmca1:A   KNDYEMTFNNETSVMPCEDDHHLPTV-   298  (A)
+d1enfa1:A   ENISECLY---GGTTLN---------S   101  (B)
+

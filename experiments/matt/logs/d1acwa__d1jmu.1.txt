@@ -1,0 +1,50 @@
+(d1jmu.1:A, (d1jmu.1:B, d1acwa_:A))
+Core Residues: 9
+Core RMSD: 2.716
+Raw Score: 2.315
+Reference structure: d1jmu.1:A
+
+d1acwa_:A   VSCEDCPEHCSTQKAQAKC-----------------------------------------    19  (A)
+d1jmu.1:A   -------------------TINVTGDG---------------------------------    17  (B)
+d1jmu.1:B   P-GG---VPW-----IAIG--------DETSVTSPGALRRMTSKDIDEPLVVVTEHAIAN   110  (C)
+
+d1acwa_:A   ------------------------------------------------------------    19  (A)
+d1jmu.1:A   ------------------------------------------------------------    17  (B)
+d1jmu.1:B   FTKAEMALEFNREFLDKLRVLSVSPKYSDLLTYVDCYVGVSARQALNNFQKQVPVITPTR   170  (C)
+
+d1acwa_:A   ------------------------------------------------------------    19  (A)
+d1jmu.1:A   ------------------------------------------------------------    17  (B)
+d1jmu.1:B   QTMYVDSIQAALKALEKWEIDLRVAQTLLPTNVPIGEVSCPMQSVVKLLDDQLPDDSLIR   230  (C)
+
+d1acwa_:A   ------------------------------------------------------------    19  (A)
+d1jmu.1:A   ------------------------------------------------------------    17  (B)
+d1jmu.1:B   RYPKEAAVALAKRNGGIQWMDVSEGTVMNEAVNAVAASALAPSASAPPLEEKSKLTEQAM   290  (C)
+
+d1acwa_:A   ------------------------------------------------------------    19  (A)
+d1jmu.1:A   ------------------------------------------------------------    17  (B)
+d1jmu.1:B   DLVTAAEPEIIASLVPVPAPVFAIPPKPADYNVRTLKIDEATWLRMIPKTMGTLFQIQVT   350  (C)
+
+d1acwa_:A   ----------------------------DN------------------------------    21  (A)
+d1jmu.1:A   ----------------------------NV------------------------------    19  (B)
+d1jmu.1:B   DNTGTNWHFNLRGGTRVVNLDQIAPMRFVLDLGGKSYKETSWDPNGKKVGFIVFQSKIPF   410  (C)
+
+d1acwa_:A   ------------------------------------------------------------    21  (A)
+d1jmu.1:A   ------------------------------------------------------------    19  (B)
+d1jmu.1:B   ELWTAASQIGQATVVNYVQLYAEDSSFTAQSIIATTSLAYNYEPEQLNKTDPEMNYYLLA   470  (C)
+
+d1acwa_:A   ----------------------DKCVCEPI------------------------------    29  (A)
+d1jmu.1:A   ----------------------FKPSAET-SSTAVPSLSLSPGMLN--------------    42  (B)
+d1jmu.1:B   TFIDSAAITPTNMTQPDVWDALLTMSPLS-----------------AGEVTVKGAVVSEV   513  (C)
+
+d1acwa_:A   ------------------------------------------------------------    29  (A)
+d1jmu.1:A   ------------------------------------------------------------    42  (B)
+d1jmu.1:B   VPAELIGSYTPESLNASLPNDAARCMIDRASKIAEAIKIDDDAGPDEYSPNSVPIQGQLA   573  (C)
+
+d1acwa_:A   ------------------------------------------------------------    29  (A)
+d1jmu.1:A   ------------------------------------------------------------    42  (B)
+d1jmu.1:B   ISQLETGYGVRIFNPKGILSKIASRAMQAFIGDPSTIITQAAPVLSDKNNWIALAQGVKT   633  (C)
+
+d1acwa_:A   ------------------------------------------    29  (A)
+d1jmu.1:A   ------------------------------------------    42  (B)
+d1jmu.1:B   SLRTKSLSAGVKTAVSKLSSSESIQNWTQGFLDKVSTHFPAP   675  (C)
+

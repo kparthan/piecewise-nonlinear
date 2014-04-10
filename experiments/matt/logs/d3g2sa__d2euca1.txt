@@ -1,0 +1,19 @@
+(d2euca1:A, d3g2sa_:A)
+Core Residues: 52
+Core RMSD: 5.396
+Raw Score: 48.509
+P-value: 0.7504
+Reference structure: d2euca1:A
+
+d3g2sa_:A   EPAMEPETLEARINRATNPLNKELDWASINGFCEQLNEDFEGPPLA----TRLLAHKIQ-    56  (A)
+d2euca1:A   ---------------------------------------XQ-----YFSPEQQYNAWIVS    16  (B)
+
+d3g2sa_:A   --S--PQE-----WEAIQALTVLETCMKSCGKRFHDEVGK--------------------    87  (A)
+d2euca1:A   DLVKQIFHKRAGCSP-------------------------GIHELAVFAEEHFHIDIDFV    51  (B)
+
+d3g2sa_:A   -------------------FRFLNELIKVVSPKYLGSRTSEKVKNKILELLYSWTVGLPE   128  (A)
+d2euca1:A   FSIIXNIGDIEFALTDEIEKKLSGYLS------TLLPYVTADXFETSKANAHAFL-SA--   107  (B)
+
+d3g2sa_:A   EVK-IAEAYQMLKKQGIVKS--   147  (A)
+d2euca1:A   ---AYH-L------------FV   113  (B)
+

@@ -1,0 +1,25 @@
+(d2bfwa1:A, d1bupa1:A)
+Core Residues: 37
+Core RMSD: 2.317
+Raw Score: 48.698
+P-value: 0.3528
+Reference structure: d2bfwa1:A
+
+d1bupa1:A   GPAVGIDLGSTYSCVGVFQHGKVEIIAND-QG--NRT-----------------------    37  (A)
+d2bfwa1:A   -----------------------------GIDCSFWNESYLTGSRDERKKSLLSKFGMDE   248  (B)
+
+d1bupa1:A   ------------------------------------------------------------    37  (A)
+d2bfwa1:A   GVTFMFIGRFDRGQKGVDVLLKAIEILSSKKEFQEMRFIIIGKGDPELEGWARSLEEKHG   308  (B)
+
+d1bupa1:A   -----------------------------------------TPSYVAFTDTE-RLIGDAA    55  (A)
+d2bfwa1:A   NVKVITEMLSREFVRELYGSVDFVIIPSYFEPFGLVALEAMCLGAI------PIA-----   357  (B)
+
+d1bupa1:A   KNQVAMNPT-----------------------------NTVFDAKRLIGRRFDDAVVQSD    86  (A)
+d2bfwa1:A   ---------SAVGGLRDIITNETGILVKAGDPGELANAI---------------------   387  (B)
+
+d1bupa1:A   MKHWPFMVVNDAGRPKVQVEYKGETK--SFYPEEVSSMVLTKMKEIAEAYLGKTVTNAVV   144  (A)
+d2bfwa1:A   -------------------LK-----ALELSRSDLSKFRENCKKRAMSFS----------   413  (B)
+
+d1bupa1:A   TVPAYFNDSQRQATKDAGTIAGLNVLRIINEPTAAAIAYGLDKK   188  (A)
+d2bfwa1:A   --------------------------------------------   413  (B)
+

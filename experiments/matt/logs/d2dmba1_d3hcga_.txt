@@ -1,0 +1,19 @@
+(d3hcga_:A, d2dmba1:A)
+Core Residues: 37
+Core RMSD: 4.657
+Raw Score: 27.357
+P-value: 0.8143
+Reference structure: d3hcga_:A
+
+d2dmba1:A   -------------------------------------------T----------------     8  (A)
+d3hcga_:A   YKKPSDAELKRTLTEEQYQVTQNSATEYAFSHEYDHLFKPGIYVDVVSGEPLFSSADKYD   437  (B)
+
+d2dmba1:A   -----------GDASKCLATGPGIASTVKTGE-----EVGFVVDAKTAGKGKVTCTVLTP    52  (A)
+d3hcga_:A   SGCGWPSFTRPIDAKSVTEHD-----------DFSYNXRRTEVRSHA-------------   473  (B)
+
+d2dmba1:A   DGTEAEADVIENED--GT-YDIFYTAAKPGT------YVIYVRFGGVDIPNSPFTVMATD   103  (A)
+d3hcga_:A   --------------ADSHLGHVFP-------DGPRDKGGLRYCING--------------   498  (B)
+
+d2dmba1:A   GEVTAVEEAPVNACP------------------------   118  (A)
+d3hcga_:A   ---------------ASLKFIPLEQXDAAGYGALKSKVK   522  (B)
+

@@ -1,0 +1,22 @@
+(d2pv4a1:A, d1p4ua_:A)
+Core Residues: 22
+Core RMSD: 2.811
+Raw Score: 9.146
+P-value: 0.7093
+Reference structure: d2pv4a1:A
+
+d1p4ua_:A   LSLASIHV---PLESI--KPSSA-------------------------------------   596  (A)
+d2pv4a1:A   --------XSEIDANYRALA---QQVADKVAGRVIALDRLPESLLTAYRSLCDELLADRD    49  (B)
+
+d1p4ua_:A   --LPVTAYDKNGFRILFH-FAKECPPGRPDVLVVVVSMLNMAPLPVKSIVLQAAAPKSMK   653  (A)
+d2pv4a1:A   GRFTR-------------AW----------------------------------------    56  (B)
+
+d1p4ua_:A   VKLQPPSGTELSPFSPIQPPAAITQVMLLANPLKEKVRLRYKLTFALGEQLSTEVGEVDQ   713  (A)
+d2pv4a1:A   -----------------------------------------------------------D    57  (B)
+
+d1p4ua_:A   FPPVEQWG-NL-------------------------------------------------   723  (A)
+d2pv4a1:A   QLPDSASSLFERCVFHGFYLANAWIQLSIVARDISELQDTDEAIAEQEYSGLYVRVAEAA   117  (B)
+
+d1p4ua_:A   ---------------------------   723  (A)
+d2pv4a1:A   LKESVKKLKKARTDRSXYNSXREVXGI   144  (B)
+

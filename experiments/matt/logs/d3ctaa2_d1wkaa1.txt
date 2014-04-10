@@ -1,0 +1,19 @@
+(d1wkaa1:A, d3ctaa2:A)
+Core Residues: 17
+Core RMSD: 1.524
+Raw Score: 23.583
+P-value: 0.6123
+Reference structure: d1wkaa1:A
+
+d3ctaa2:A   KNNVVITGTVTSQYIIQFQEKLGIIPYLNI------------------------------   134  (A)
+d1wkaa1:A   ------------------------------GKLYTLRYEVEGGGFIEIATVRPETVFADQ   224  (B)
+
+d3ctaa2:A   ------------------------------------------------------------   134  (A)
+d1wkaa1:A   AIAVHPEDERYRHLLGKRARIPLTEVWIPILADPAVEKDFGTGALKVTPAHDPLDYEIGE   284  (B)
+
+d3ctaa2:A   --------------------------KVDQASLPELRKIRG-FRGIHIEGFKTRTFGSVK   169  (A)
+d1wkaa1:A   RHGLKPVSVINLEGRMEGERVPEALRGLDRFEARRKAVELFREA----------------   328  (B)
+
+d3ctaa2:A   AFPAKIQNIPCFVIMPERTVYTDVIEIISDDRVSVEVYT---------   220  (A)
+d1wkaa1:A   ---------------------------------------GHLVKEEDY   337  (B)
+

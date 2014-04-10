@@ -1,0 +1,16 @@
+(d2g38a1:A, d2cyya2:A)
+Core Residues: 17
+Core RMSD: 0.796
+Raw Score: 34.320
+P-value: 0.4177
+Reference structure: d2g38a1:A
+
+d2cyya2:A   YSXLAFILVKVKAGKYSEVASNLAKYPEIVEVYETTGDYDXVVKIRTK-------NSEEL   117  (A)
+d2g38a1:A   ------------------------------------------------PEALTVAATEVR    19  (B)
+
+d2cyya2:A   NNFLDLIGSI--PGVEGTHTXIVLKTHKETTELPI-------------------------   150  (A)
+d2g38a1:A   RIRDRAIQSDAQVA---------------------PMTTAVRPPAADLVSEKAATFLVEY    58  (B)
+
+d2cyya2:A   --------------------------   150  (A)
+d2g38a1:A   ARKYRQTIAAAAVVLEEFAHALTTGA    84  (B)
+

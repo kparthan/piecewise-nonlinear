@@ -1,0 +1,16 @@
+(d1fftb2:B, d1x4ha1:A)
+Core Residues: 34
+Core RMSD: 3.696
+Raw Score: 26.400
+P-value: 0.7114
+Reference structure: d1fftb2:B
+
+d1x4ha1:A   LPSDVTEGKTVFIRNLS-----------FDSEEEALGEVLQQFGDLKYVRVVLHPDTEHS    56  (A)
+d1fftb2:B   -----------------SALLDPKGQIGLEQRSLILTAFGLMLIV---------------    54  (B)
+
+d1x4ha1:A   KGCAFAQF--M--------------------------------------TQEAAQKCLAA    76  (A)
+d1fftb2:B   --------VIPAILMAVGFAWKYRASNKDAKYSPNWSHSNKVEAVVWTVPILIIIFLAVL   106  (B)
+
+d1x4ha1:A   ASLEAEGGGLKLDGRQLKVDLAVTRDEAA------   105  (A)
+d1fftb2:B   TW-------------KTT-----------HALEPS   117  (B)
+

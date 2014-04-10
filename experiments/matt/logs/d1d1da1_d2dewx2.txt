@@ -1,0 +1,16 @@
+(d2dewx2:X, d1d1da1:A)
+Core Residues: 16
+Core RMSD: 2.509
+Raw Score: 3.143
+P-value: 0.6911
+Reference structure: d2dewx2:X
+
+d1d1da1:A   -----GP-----------------WADITQGPSESFVDFANRLIKAVE---------GSD   179  (A)
+d2dewx2:X   GTLIRV-TPEQPTHAVCVLGTLTQLDI---------------------CSSAPCTSFSIN    43  (B)
+
+d1d1da1:A   LPPSARAP-------------VIIDCFRQKSQPDIQQLIRAAPSTLTTPGEIIKYVLDRQ   226  (A)
+d2dewx2:X   ASPGVVV-DITWPLDPGVEVTLT-------------------------------------    79  (B)
+
+d1d1da1:A   KIAP---------------------------------   230  (A)
+d2dewx2:X   ----MKAASGSTGDQKVQISYYGPKTPPVKALLYLTA   112  (B)
+

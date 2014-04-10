@@ -1,0 +1,19 @@
+(d2ioja1:A, d2f9wa1:A)
+Core Residues: 55
+Core RMSD: 4.034
+Raw Score: 55.566
+P-value: 0.1897
+Reference structure: d2ioja1:A
+
+d2f9wa1:A   -------------------------KACLVIDLGTAVTSDLVAADGVHLGGYICPGXTLX   149  (A)
+d2ioja1:A   GLSVEEIREAVSGEYLIEPREEKXVEQVVIGAX---------------------------   238  (B)
+
+d2f9wa1:A   RSQLRTHTRRIRYDDAEARRALASLQPGQATAEAVERGCLLXLRGFVREQYAXACELLGP   209  (A)
+d2ioja1:A   ------------------------------------------SPQSALRYLREA----R-   251  (B)
+
+d2f9wa1:A   DCEIFLTGG-DAELVRDELA---------------------------GARIXPD---LVF   238  (A)
+d2ioja1:A   NAALVTG--GDRSDLLLTALEXPNVRCLILTGNLEPVQLVLTKAEERGVPVILTGHDTLT   309  (B)
+
+d2f9wa1:A   VGLALACPIE---------   248  (A)
+d2ioja1:A   AVSRLES---VFGRTRIRG   325  (B)
+

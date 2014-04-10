@@ -1,0 +1,16 @@
+(d1iv0a_:A, d1sxea_:A)
+Core Residues: 29
+Core RMSD: 1.965
+Raw Score: 38.377
+P-value: 0.3923
+Reference structure: d1iv0a_:A
+
+d1sxea_:A   GSHMEEKHMPPPNMTTNERRVIVPAD------------------------------PTLW   134  (A)
+d1iv0a_:A   --------------------------MRVGALDVGEARIGLAVGEEGVPLASGRGYLVRK    34  (B)
+
+d1sxea_:A   STDHVRQWLEWAVKEYGLPDVNILL-------------------FQNIDGKELCKMTKDD   175  (A)
+d1iv0a_:A   TLEEDVEALLDFVRREGLGKL----VVGLPLRTDLKESAQAGKVLP--------------    76  (B)
+
+d1sxea_:A   FQ------------RLTPSYNADILLSHLHYLRETPLP--------   201  (A)
+d1iv0a_:A   --LVEALRARGVEVEL----------------------WDERFTTK    98  (B)
+

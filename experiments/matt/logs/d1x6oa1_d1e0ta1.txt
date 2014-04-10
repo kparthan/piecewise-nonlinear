@@ -1,0 +1,16 @@
+(d1e0ta1:A, d1x6oa1:A)
+Core Residues: 33
+Core RMSD: 3.575
+Raw Score: 38.373
+P-value: 0.6441
+Reference structure: d1e0ta1:A
+
+d1x6oa1:A   -------------------------------------KTYPL-AAGALKKGGYVCINGRP    40  (A)
+d1e0ta1:A   PEIRTMKLEGGNDVSLKAGQTFTFTTDKSVIGNSEMVAVTYEGFTTDLSVGNTV------   123  (B)
+
+d1x6oa1:A   --------CKVIDLSVSKTHAKVS---IVATDIFTGNRLEDQAPSTHNVEV-------PF    86  (A)
+d1e0ta1:A   LVDDGLIGMEVTA---------IEGNKVICKVLNN----------------GDLGENKGV   158  (B)
+
+d1x6oa1:A   ---------    86  (A)
+d1e0ta1:A   NLPGVSIAL   167  (B)
+

@@ -1,0 +1,16 @@
+(d1fc6a3:A, d1th7a1:A)
+Core Residues: 42
+Core RMSD: 3.288
+Raw Score: 32.043
+P-value: 0.6239
+Reference structure: d1fc6a3:A
+
+d1th7a1:A   MNFLAETAHKVLA----------ES--------LNNLVLVK--LKGN--KE-VRG--MLR    37  (A)
+d1fc6a3:A   -------------AGSVTGVGLEITYDGGSGKDVVVLTPAPGGP---AEKAGARAGDVIV   200  (B)
+
+d1th7a1:A   SY---------------DQ------HMNLVLSDSEEIQSDGSGKKL----GTIVIRGDNV    72  (A)
+d1fc6a3:A   TVDGTAVKGXSLYDVSDLLQGEADSQVEVVLHAP------------GAPSNTRTLQLT-R   247  (B)
+
+d1th7a1:A   ILISPL    78  (A)
+d1fc6a3:A   Q-----   248  (B)
+

@@ -1,0 +1,16 @@
+(d1e5ba_:A, d1nkra2:A)
+Core Residues: 56
+Core RMSD: 3.039
+Raw Score: 35.968
+P-value: 0.3416
+Reference structure: d1e5ba_:A
+
+d1nkra2:A   IGLY-----EKPSLSAQPGPTVLAGENVTLSCSSRSS-----YDMYHLSREGEAHE----   147  (A)
+d1e5ba_:A   ----TGCSVT-ATRAE--EWS------DGFNVTYSVSGSSAWTVNLALN---G---SQTI   287  (B)
+
+d1nkra2:A   ------------RRLPAGP--KVNGTFQADFPLGPAT-HGGTYRCFGSFHDSPYEWSKSS   192  (A)
+d1e5ba_:A   QASWNANVTGSGSTRTVTPNGSG--NTFGVTVM----KNGSSTTPAATCA----------   331  (B)
+
+d1nkra2:A   DPLLVSVT--   200  (A)
+d1e5ba_:A   --------GS   333  (B)
+

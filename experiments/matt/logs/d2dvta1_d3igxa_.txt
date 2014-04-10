@@ -1,0 +1,34 @@
+(d3igxa_:A, d2dvta1:A)
+Core Residues: 145
+Core RMSD: 6.150
+Raw Score: 143.458
+P-value: 1.2208e-05
+Reference structure: d3igxa_:A
+
+d2dvta1:A   M------------------------------QGKVALEE-HFAIPETLQDSAGFVPGDYW    29  (A)
+d3igxa_:A   -AXQKSVLEQLKQVTXVVADTGDFELIKKYKPVDATTNPSLIL-----------------    41  (B)
+
+d2dvta1:A   KELQHRLLDI----QDTRLKLMDAHGIETMILSLNAPAVQAIPDR---------------    70  (A)
+d3igxa_:A   ------KAV-KEQKYS-----------------------------NLVAETISKVKANNP    65  (B)
+
+d2dvta1:A   --RKAIEIARRANDVLAEECAKRP-DRF-----LAFAAL-PLQDPDAATEELQRCVNDLG   121  (A)
+d3igxa_:A   DLNSDDLVKEIAIEILVSFGIKI-LDV-IEGKVSSEVDARVSFNSAT----TIDYAKRII   119  (B)
+
+d2dvta1:A   F------------VGALVNGFSQEGDGQTPLYYDLPQYRPFWGEVEK--L----------   157  (A)
+d3igxa_:A   -ARYESNGIPKDRVLIKI--------------AATWEGIKAAKLLQKEGINCNLTLIFDK   164  (B)
+
+d2dvta1:A   ----------DVPFYLHPRNPLPQDSRIYDGHPW----LLGPT---------------WA   188  (A)
+d3igxa_:A   AQAKACAEAGVYLVSPFV----------------GRITDW---QXQQNNLKTFPAIADDD   205  (B)
+
+d2dvta1:A   FAQETAVHALRLMASGLFDEHPRLNIILGHMGEGLPYMMWRIDHRNAWVKLPPRYPAKRR   248  (A)
+d3igxa_:A   GVNSVKAIYKLYKSHGFK-----T------------------------------------   224  (B)
+
+d2dvta1:A   FMDYFNENFHITT-SGNFRTQTLIDAILEIGAD-RILFSTDWPFENIDHASDWFNA---T   303  (A)
+d3igxa_:A   -------IVXGA-SFRN--VEQVIALA-GC---DALTIS-----------PVLLEELKNR   259  (B)
+
+d2dvta1:A   S--IAEADRVKIGRTNARRLFKLD------------------------------------   325  (A)
+d3igxa_:A   DEHL--------------------EVKLTKNDDVVTQSPQISEADFRWLXNENAXATHKL   299  (B)
+
+d2dvta1:A   ----------------------   325  (A)
+d3igxa_:A   AEGIRLFTKDTIELENIIKQNL   321  (B)
+

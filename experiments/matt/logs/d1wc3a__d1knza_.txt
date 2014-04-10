@@ -1,0 +1,25 @@
+(d1knza_:A, d1wc3a_:A)
+Core Residues: 48
+Core RMSD: 2.571
+Raw Score: 77.300
+P-value: 0.1395
+Reference structure: d1knza_:A
+
+d1wc3a_:A   SHMRPEPRLITILFSDIVGFTRMSNAL-QSQGVAELLNEYLGEMTRAVF-ENQGTVDKFV  1059  (A)
+d1knza_:A   ---------------------------TQQMAVSIINSSFEAAVVAATSALE--------    31  (B)
+
+d1wc3a_:A   GDAIMALYGAPEEMSPSEQVR----RAIATA-RQMLVALEKLNQGWQERGLVGR------  1108  (A)
+d1knza_:A   ---------------------NMGIE--YDYQDIYSRVKNKFDFVMDDSGVK--NNPIGK    66  (B)
+
+d1wc3a_:A   ------------------------------------------------------------  1108  (A)
+d1knza_:A   AITIDQALNNKFGSAIRNRNWLADTSRPAKLDEDVNKLRMMLGIDQKMRVLNACFSVKRI   129  (B)
+
+d1wc3a_:A   NEVPPVRFRCGIHQGMAVVGLFGSQERSDFTAIGPSVNIAARLQEATAPNSIMVSAMVAQ  1168  (A)
+d1knza_:A   P-----------------------------------------------------------   130  (B)
+
+d1wc3a_:A   YVPDEEIIKREFLELKGIDEPVMTCVINPNML----------------------------  1200  (A)
+d1knza_:A   --------------------------------GKSSSIIKCTKLMRDKLERGEVEVDDSF   158  (B)
+
+d1wc3a_:A   -----  1200  (A)
+d1knza_:A   VDEKM   163  (B)
+

@@ -1,0 +1,16 @@
+(d1nnxa_:A, d1dgsa2:A)
+Core Residues: 54
+Core RMSD: 3.087
+Raw Score: 55.039
+P-value: 0.1262
+Reference structure: d1nnxa_:A
+
+d1dgsa2:A   A-------------------------EEKETRLLDVVFQVGRTGRVTPVGVLE---PVFI   346  (A)
+d1nnxa_:A   -QGGFSGPSGSVTTVESAKSLRDDTWVTLRGNIVERIS--------DDLYVFKDASGT--    63  (B)
+
+d1dgsa2:A   EGSEVSRVTLHNESYIEELDIRIG--DWVLVHKAGGVIP---------EVLRVLKERRTG   395  (A)
+d1nnxa_:A   -----INVDID-HKRWNGVTVTPKDTVEIQG------EVDKDWNSVEIDVKQIRKV----   107  (B)
+
+d1dgsa2:A   KERPI   400  (A)
+d1nnxa_:A   -----   107  (B)
+

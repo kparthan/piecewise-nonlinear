@@ -1,0 +1,19 @@
+(d1vq8p1:P, d1e6ia_:A)
+Core Residues: 49
+Core RMSD: 1.995
+Raw Score: 79.583
+P-value: 0.0853
+Reference structure: d1vq8p1:P
+
+d1e6ia_:A   ------------------------------------------------------------   329  (A)
+d1vq8p1:P   TDLSAQKRLAADVLDVGKNRVWFNPERQGDIADAITREDVRELVDEGAIQAKDKKGNSRG    60  (B)
+
+d1e6ia_:A   --------------------------------RG-PHDAAIQNILTELQNHAAAWP-FLQ   354  (A)
+d1vq8p1:P   RARERQKKRAYGHQKGAGSRKGKAGARQNSKEDWESRIRAQRTKLRELRDE-GT--LSSS   117  (B)
+
+d1e6ia_:A   PVNKEEVPDYYDFIKEPMDLSTMEIKLESNKYQKMEDFIYDARLVFNNCRMYNGENTSYY   414  (A)
+d1vq8p1:P   ------------------QYRDLYDKAGGGEFDSVADLERYIDA----------------   143  (B)
+
+d1e6ia_:A   KYANRLEKFFNNKVKEIPEYSHLID   439  (A)
+d1vq8p1:P   -------------------------   143  (B)
+

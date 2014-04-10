@@ -1,0 +1,16 @@
+(d1seda_:A, d1tqga_:A)
+Core Residues: 48
+Core RMSD: 2.532
+Raw Score: 72.292
+P-value: 0.1980
+Reference structure: d1seda_:A
+
+d1tqga_:A   GS-------------------------------------HMEYLGVFVDETKEYLQNLND    22  (A)
+d1seda_:A   --DSMDHRIERLEYYIQLLVKTVDMDRYPFYALLIDKGLSKEEGEAVMRICDELSEELAT    59  (B)
+
+d1tqga_:A   TLL---ELEKNPEDMELINEAFRALHTLKGMAGTMGFSSMAKLCHTLENILDKARNSEIK    79  (A)
+d1seda_:A   Q-KAQGFV---------T--FDKLLALFAGQL--NEKLDV-H------------------    86  (B)
+
+d1tqga_:A   ITSDLLDKIF----------------AGVDMITRMVDKIVS--------   104  (A)
+d1seda_:A   ----------ETIFALYEQGLYQELMEVF------------IDIMKHFD   113  (B)
+

@@ -1,0 +1,19 @@
+(d2p02a2:A, d1nu0a_:A)
+Core Residues: 42
+Core RMSD: 3.528
+Raw Score: 47.645
+P-value: 0.4400
+Reference structure: d2p02a2:A
+
+d1nu0a_:A   XSGTLXAFDFGTKSIGVAVGQRITGTARPLPAIKAQDGTPDWNIIERLLKEWQPDEIIVG    60  (A)
+d2p02a2:A   ------------------------------------------------------------   148  (B)
+
+d1nu0a_:A   LPL---------------------------NXDGTEQPLTARARKFANRIHGRFG---VE    90  (A)
+d2p02a2:A   ---NEEDIGAGDQGLMFGYATDETEECMPLT-----IVLAHKLNAKLAELRRNGTLPWLR   199  (B)
+
+d1nu0a_:A   VKLHDERLSTVEAGGYRALNKGKVDSAS--------------------------------   125  (A)
+d2p02a2:A   PDSK-TQVTVQ-----------------YMQDRGAVLPIRVHTIVISVQHDEEVCLDEMR   241  (B)
+
+d1nu0a_:A   ---A-----------------VIILESYXEQGY--   138  (A)
+d2p02a2:A   DALKEKVIKAVVPAKYLDEDTIY---HLQPSGRFV   273  (B)
+

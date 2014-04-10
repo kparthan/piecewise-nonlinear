@@ -1,0 +1,22 @@
+(d1bi5a2:A, d3clsd1:D)
+Core Residues: 84
+Core RMSD: 5.322
+Raw Score: 64.804
+P-value: 0.1326
+Reference structure: d1bi5a2:A
+
+d3clsd1:D   SKILVIAEHR-----------------------------------RND-LRPVSLELIGA    24  (A)
+d1bi5a2:A   ----------IFEMVWTAQTIAPDSEGAIDGHLREAGLTFHLLKDVPGIVSKNITKALVE   285  (B)
+
+d3clsd1:D   ANGLKKSGED------KVVVAVIGSQ---ADAFVPALSVNGVD--ELV--VV--KG--SS    67  (A)
+d1bi5a2:A   AFEPL-----GISDYNSIFWIAHPGGPAILDQVEQKLA---L-KPEKMNATREVLSEYGN   336  (B)
+
+d3clsd1:D   IDFDP-DVFEASVSALIAAHN------PSV-----VLLPHSVDSLGYASSLASKTGYGFA   115  (A)
+d1bi5a2:A   ---MSSACVLFILDEMRKKSTQNGLKTTG-EGLEWGVLFGFG------------------   374  (B)
+
+d3clsd1:D   T-----DVYIVEYQGDELVATRGGYNQKVNVEVDFPGKSTVVLTIRPSVFKPLEGAGSPV   170  (A)
+d1bi5a2:A   -PGLTIETVVLRSVAI--------------------------------------------   389  (B)
+
+d3clsd1:D   VSNVDAPSVQSRSQNKDYVEVG   192  (A)
+d1bi5a2:A   ----------------------   389  (B)
+

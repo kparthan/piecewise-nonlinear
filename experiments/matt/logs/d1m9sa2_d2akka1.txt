@@ -1,0 +1,13 @@
+(d2akka1:A, d1m9sa2:A)
+Core Residues: 46
+Core RMSD: 2.850
+Raw Score: 32.554
+P-value: 0.4802
+Reference structure: d2akka1:A
+
+d1m9sa2:A   ETT--------------EKTVNLTRYVKYIRGNAGIYKLPREDNSLKQGTLA------SH   430  (A)
+d2akka1:A   ---MSIEVRDCNGALLAD-GDNVSLIK-D---------------------LKLKGSSTVL    34  (B)
+
+d1m9sa2:A   RCKALTVDREARNGGK--LWYRLKNIG-WTK-AENLSLD--   465  (A)
+d2akka1:A   KR-GTMIRGIRLTDSEDEIEGRTDKIKGLVLRTEFLK--KA    72  (B)
+

@@ -1,0 +1,16 @@
+(d1o8ba1:A, d1nkra2:A)
+Core Residues: 24
+Core RMSD: 2.929
+Raw Score: 18.034
+P-value: 0.7404
+Reference structure: d1o8ba1:A
+
+d1nkra2:A   IGLYEKPSLSA--------------------------------QPGPT----VL------   119  (A)
+d1o8ba1:A   -----------IVGVGTGSTEGAVSSSDAFDLNEVDSLGIYVDGADEINGHXQXIKGGGA    99  (B)
+
+d1nkra2:A   ---------------------------A--GE-NVTLSCSSRSSYDMYHLSREGEAHERR   149  (A)
+d1o8ba1:A   LTREKIIASVAEKFICIADASKQVDILANRGADVALIGT-------PD------------   212  (B)
+
+d1nkra2:A   LPAGPKVNGTFQADFPLGPATHGGTYRCFGSFHDSPYEWSKSSDPLLVSVT   200  (A)
+d1o8ba1:A   ------------GVKTIV---------------------------------   218  (B)
+

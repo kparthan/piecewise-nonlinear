@@ -1,0 +1,19 @@
+(d1lkoa1:A, d1mqva_:A)
+Core Residues: 76
+Core RMSD: 2.124
+Raw Score: 118.976
+P-value: 1.0131e-03
+Reference structure: d1lkoa1:A
+
+d1mqva_:A   ATDVIAQRKAILKQMGEATKPIAAMLKGEA------KW--DQAVVQKSLAAIADDSKKLP    52  (A)
+d1lkoa1:A   ------------------------------KSLKGSRTEKNILTAFAGESQARNRYNYFG    31  (B)
+
+d1mqva_:A   ALF-PADSKTGGDTAALPKIFEDKAKFDDLFAKLAAAATAAQGTIK--------------    97  (A)
+d1lkoa1:A   GQAKKD--------------G--FVQISDIFAETADQEREHAKRLFKFLEGGDLEIVAAF    75  (B)
+
+d1mqva_:A   -----------------------------------------DEASLKANIGGVLGNCKSC   116  (A)
+d1lkoa1:A   PAGIIADTHANLIASAAGEHHEYTEMYPSFARIAREEGYEEIARVFASIAVAEEFHEKRF   135  (B)
+
+d1mqva_:A   HDDFR--AK----   123  (A)
+d1lkoa1:A   LDFARNIK-EGRV   147  (B)
+

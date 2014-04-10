@@ -1,0 +1,13 @@
+(d1vq8z1:Z, d2qam01:0)
+Core Residues: 25
+Core RMSD: 2.976
+Raw Score: 18.493
+P-value: 0.6731
+Reference structure: d1vq8z1:Z
+
+d2qam01:0   A-----VQQNKP--TRSKRGMRRSHDALTAVT-SLSVDKTSGEKHLRHHITADGYYRGRK    52  (A)
+d1vq8z1:Z   -RSGRFGARYGRVSRRRVAEIESEMNEDHACPNC--------------------------    42  (B)
+
+d2qam01:0   VIAK----------------------------------------    56  (A)
+d1vq8z1:Z   ----GEDRVDRQGTGIWQCSYCDYKFTGGSYKPETPGGKTVRRS    82  (B)
+

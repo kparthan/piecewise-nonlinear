@@ -1,0 +1,19 @@
+(d2nt2a_:A, d1txka1:A)
+Core Residues: 29
+Core RMSD: 2.766
+Raw Score: 23.522
+P-value: 0.6317
+Reference structure: d2nt2a_:A
+
+d1txka1:A   PD------------------------NAWVQ-----------------QTRRSTGD----   411  (A)
+d2nt2a_:A   --SPTQIFEHVFLGSEWNASNLEDLQNRGVRYILNVTREIDNFFPGVFEYHNIRV-YDEE   363  (B)
+
+d1txka1:A   ---VKQSNLIRQPDGTIAFVVDFTGAEXKKLPEDTPVTAQTSIGDNGEIVESTVRY----   464  (A)
+d2nt2a_:A   ATDLLAY-------------------------------------------------WNDT   374  (B)
+
+d1txka1:A   ------NPVTKGWRLVXRVKVKDAKKTTEXRAALVNADQTLSETWSYQLPANE-------   511  (A)
+d2nt2a_:A   YKFISKAKKHGSKCLVHSK----------------------------------MGVSRSA   400  (B)
+
+d1txka1:A   ------------------------------------------------   511  (A)
+d2nt2a_:A   STVIAYAMKEYGWNLDRAYDYVKERRTVTKPNPSFMRQLEEYQGILLA   448  (B)
+

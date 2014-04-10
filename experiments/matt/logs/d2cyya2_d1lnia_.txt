@@ -1,0 +1,16 @@
+(d1lnia_:A, d2cyya2:A)
+Core Residues: 18
+Core RMSD: 1.480
+Raw Score: 26.379
+P-value: 0.4784
+Reference structure: d1lnia_:A
+
+d2cyya2:A   -----YSXLAFILVKVKAGKYSEVASNLAKYPEIVEVYETTGDYDXVVKIRT--KNSEEL   117  (A)
+d1lnia_:A   DVSGTV--------------------------------------------CLSALPPEAT    16  (B)
+
+d2cyya2:A   NNFLDLIGSIPGVEGTHTXIVLKTHKETTELPI---------------------------   150  (A)
+d1lnia_:A   DTLNLIASD------------------------GPFPYSQDGVVFQNRESVLPTQSYGYY    52  (B)
+
+d2cyya2:A   --------------------------------------------   150  (A)
+d1lnia_:A   HEYTVITPGARTRGTRRIITGEATQEDYYTGDHYATFSLIDQTC    96  (B)
+

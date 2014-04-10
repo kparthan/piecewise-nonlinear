@@ -1,0 +1,16 @@
+(d1k9ua_:A, d3buxb1:B)
+Core Residues: 40
+Core RMSD: 2.001
+Raw Score: 66.374
+P-value: 0.1696
+Reference structure: d1k9ua_:A
+
+d3buxb1:B   TFRITKADAAEFWRKAFGEKTIVPWKSFRQALHEVH------------------------   213  (A)
+d1k9ua_:A   ------------------------------------DDMERIFKRFDTNGDGKISLSELT    26  (B)
+
+d3buxb1:B   ------PISSGLEAMALKSTIDLTCNDYISVFEFDIFTRLF-QPW-SSLLRNWNSLAV--   263  (A)
+d1k9ua_:A   DALRTLGSTSADEVQRMMAEIDTDGDGFIDFNEFISFCNANPGLMKDV----------AK    76  (B)
+
+d3buxb1:B   --   263  (A)
+d1k9ua_:A   VF    78  (B)
+

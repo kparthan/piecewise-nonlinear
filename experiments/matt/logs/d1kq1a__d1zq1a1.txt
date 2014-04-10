@@ -1,0 +1,13 @@
+(d1zq1a1:A, d1kq1a_:A)
+Core Residues: 54
+Core RMSD: 1.810
+Raw Score: 62.906
+P-value: 0.0656
+Reference structure: d1zq1a1:A
+
+d1kq1a_:A   NI----QDK-ALENFKANQTEVTVFFL---NGFQMKGVIEEYD-----KYVVSLNS-QGK    51  (A)
+d1zq1a1:A   --RVDEFLKERN-INV--GDFVRITKEEDGEEVTYEGYIXPP-YELSAGDTLVLKLENGY    55  (B)
+
+d1kq1a_:A   QHLIYKHAISTYTV------    65  (A)
+d1zq1a1:A   NIGIALEKIRRIEVLERAKV    75  (B)
+

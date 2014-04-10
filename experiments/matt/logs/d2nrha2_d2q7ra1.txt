@@ -1,0 +1,19 @@
+(d2q7ra1:A, d2nrha2:A)
+Core Residues: 42
+Core RMSD: 3.224
+Raw Score: 40.940
+P-value: 0.4151
+Reference structure: d2q7ra1:A
+
+d2nrha2:A   EDGV-------VVDAGSAITIDIIHLGGFILP-GIANYKKIYSHISPFNTQVSLDAFPQK   143  (A)
+d2q7ra1:A   ----XDQETVGNVVLLAIV------------TLISVVQNGFFAHKVE-------------    31  (B)
+
+d2nrha2:A   --------------------------TMDA--LSYGVFKGIYLLIKDAAQ----------   165  (A)
+d2q7ra1:A   HESRTQNGRSFQRTGTLAFERVYTANQ---NCVD-AYPTFLAVLWSAGLLCSQVPAAFAG    87  (B)
+
+d2nrha2:A   -----------------------------------------NKKLYFTGGDGQFLANYFD   184  (A)
+d2q7ra1:A   LXYLFVRQKYFVGYLGERTQSTPGYIFGKRIILFLFLXSVAG------------------   129  (B)
+
+d2nrha2:A   HAIYDKLLIFRGMKKIIKENPNLL----------   208  (A)
+d2q7ra1:A   ------------------------IFNYYLIFFF   139  (B)
+

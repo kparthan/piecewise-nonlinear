@@ -1,0 +1,19 @@
+(d1i7na1:A, d3hyfa_:A)
+Core Residues: 49
+Core RMSD: 5.476
+Raw Score: 40.343
+P-value: 0.8028
+Reference structure: d1i7na1:A
+
+d3hyfa_:A   MYQ-----------LEKEPIVGAET-----------------------F--YVDGAANRE   449  (A)
+d1i7na1:A   ---KAKVLLVVDEPH----------TDWAKCFRGKKILGDYDIKVEQAEFSELNLVAHA-   158  (B)
+
+d3hyfa_:A   T-KLGKAGYVTNR------GRQKVVTLTDTTNQKTELQAIYLALQDSGLEVNIVTDSQYA   502  (A)
+d1i7na1:A   -DGTYAVDMQ---VLRNGTKVVRSFRPDFV----------------------------LI   186  (B)
+
+d3hyfa_:A   LGIITQWIHNWKKRGWPVKNVDLVNQIIEQLIKKEKVYLAWVPAHKG-----IGGNEQVD   549  (A)
+d1i7na1:A   R--------------------------------------QHAF----GMAENED-FRHLV   203  (B)
+
+d3hyfa_:A   KLVSAGIRKVL-----   560  (A)
+d1i7na1:A   IGMQY-A----GLPSI   214  (B)
+

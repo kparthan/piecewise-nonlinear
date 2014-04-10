@@ -1,0 +1,13 @@
+(d1z3eb1:B, d2a1jb1:B)
+Core Residues: 49
+Core RMSD: 3.297
+Raw Score: 69.961
+P-value: 0.1151
+Reference structure: d1z3eb1:B
+
+d2a1jb1:B   PADLLMEKLEQDFVSR--------VTECLTTVKSVNKTDSQTLLTT-----FGSLEQLIA   265  (A)
+d1z3eb1:B   ----------------KEKVLEMTIEELDL---------SVRSYNCLKRAGINTVQELAN   279  (B)
+
+d2a1jb1:B   ASREDLALCPGLGPQKARRLFDVLHE-PFLKV----   296  (A)
+d1z3eb1:B   KTEEDMMKVRNLGRKSLEEVKAKLEELG----LGLR   311  (B)
+

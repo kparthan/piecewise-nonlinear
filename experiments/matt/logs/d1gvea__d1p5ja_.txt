@@ -1,0 +1,37 @@
+(d1p5ja_:A, d1gvea_:A)
+Core Residues: 84
+Core RMSD: 6.682
+Raw Score: 83.241
+P-value: 0.4145
+Reference structure: d1p5ja_:A
+
+d1gvea_:A   ARPATVLGAMEMGRRMDVTSSSASVRAFLQRGHTEIDTAFVYANGQSETILGDLGLGLGR    63  (A)
+d1p5ja_:A   ------------------------------------------------------------     4  (B)
+
+d1gvea_:A   SGCKVKIATKAAPMFGKTLKPADVRFQLETSLKRLQCPRVDLFYLHF-------------   110  (A)
+d1p5ja_:A   ----------------------------------------GEPLH--VKTPIRDSMALSK    21  (B)
+
+d1gvea_:A   --------------PDHGTP-IEETLQACHQLHQEGKFVELGLSNYVSWEVAEICTLCKK   155  (A)
+d1p5ja_:A   MAGTSVYLKMDSAQPSGSF-KIRGIGHFCKRWAKQG-CAHFVCSSA-GNAGMAAAYAARQ    78  (B)
+
+d1gvea_:A   NGWIMPTVYQGMYNAITRQVETELFPCLRHFG---LRFYAFNPLAGGLLTGRYKYQDKDG   212  (A)
+d1p5ja_:A   LGVP--ATIVVPG----T-TPA---LTIERLKNEGATCKVVGEL----------------   112  (B)
+
+d1gvea_:A   KNPESRFFGNP-------------------------------------------------   223  (A)
+d1p5ja_:A   -----------LDEAFELAKALAKNNPGWVYIPPFDDPLIWEGHASIVKELKETLWEKPG   161  (B)
+
+d1gvea_:A   --------------------------------------------------FS-QLYMDRY   232  (A)
+d1p5ja_:A   AIALSVGGGGLLCGVVQGLQECGWGDVPVIAMETFGAHSFHAATTAGKLVS-LPK--I--   216  (B)
+
+d1gvea_:A   WKEEHFNGIALVEKALKTTYGPTAPSMISAAVRWMYHHSQLKGTQGDAVILGMSSLEQLE   292  (A)
+d1p5ja_:A   ------------------------------------------------------------   216  (B)
+
+d1gvea_:A   QNLALVEEGPLEPAVVDAFDQAWNLVAHECPNY----FR---------------------   327  (A)
+d1p5ja_:A   ---------------------------------TSVAKALGVKTVGSQALKLFQEHPIFS   243  (B)
+
+d1gvea_:A   ------------------------------------------------------------   327  (A)
+d1p5ja_:A   EVISDQEAVAAIEKFVDDEKILVEPACGAALAAVYSHVIQKLQLEGNLRTPLPSLVVIVC   303  (B)
+
+d1gvea_:A   -------------------   327  (A)
+d1p5ja_:A   GGSNISLAQLRALKEQLGM   322  (B)
+

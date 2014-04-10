@@ -1,0 +1,19 @@
+(d2iela1:A, d2b4aa1:A)
+Core Residues: 63
+Core RMSD: 3.112
+Raw Score: 63.418
+P-value: 0.0896
+Reference structure: d2iela1:A
+
+d2b4aa1:A   ---------------------------QPFRVTLVEDE--------------P-SHATLI    19  (A)
+d2iela1:A   ARYLVVAHRTAKSPELAAKLKELLAQDPEARFVLLVPAVPPPGWVYNEVRRRAEEEAAAA    63  (B)
+
+d2b4aa1:A   QYHLNQLGAEV-TVHPS--------GSAFF-QHRSQLSTCDLLIVSDQLVDLSIFSLLDI    69  (A)
+d2iela1:A   KRALEAQGIPVEEAKAGDISPLLAIEE-ELLAHPGAY-----------------------    99  (B)
+
+d2b4aa1:A   VKEQTKQPSVLILT-------TGR---LIESSEH-------NLSYLQKPFAISELRAAID   114  (A)
+d2iela1:A   ------QG-IVLSTLPPGLSRWLRLDVHT-----QAERFGLPVIHVIA------------   135  (B)
+
+d2b4aa1:A   YHKPS   119  (A)
+d2iela1:A   -----   135  (B)
+

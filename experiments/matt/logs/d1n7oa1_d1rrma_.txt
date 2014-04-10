@@ -1,0 +1,43 @@
+(d1rrma_:A, d1n7oa1:A)
+Core Residues: 75
+Core RMSD: 3.789
+Raw Score: 88.420
+P-value: 0.0172
+Reference structure: d1rrma_:A
+
+d1n7oa1:A   VKDTYTDRLDDWNGIIAGNQYYDSKNDQMAKLNQELEGKVADSLSSISS-------QA--   220  (A)
+d1rrma_:A   -------------------------------------------------XANRXILNETA    12  (B)
+
+d1n7oa1:A   ------------------------------------------------------------   220  (A)
+d1rrma_:A   WFGRGAVGALTDEVKRRGYQKALIVTDKTLVQCGVVAKVTDKXDAAGLAWAIYDGVVPNP    72  (B)
+
+d1n7oa1:A   ------------------------------------------------------------   220  (A)
+d1rrma_:A   TITVVKEGLGVFQNSGADYLIAIGGGSPQDTCKAIGIISNNPEFADVRSLEGLSPTNKPS   132  (B)
+
+d1n7oa1:A   --------------DRIYLWEKFSN-----------------------------------   231  (A)
+d1rrma_:A   VPILAIPTTAGTAAEV---------TINYVITDEEKRRKFVCVDPHDIPQVAFIDADXXD   183  (B)
+
+d1n7oa1:A   --------------------------YKTSANLTATYRKLEEMAKQVTNPSSRY------   259  (A)
+d1rrma_:A   GXPPALKAATGVDALTHAIEGYITRGAW--ALTDALHIKAIEIIAGA-------LRGSVA   234  (B)
+
+d1n7oa1:A   ---YQDETVVRTVRDSMEWMHKHVYNSEKSIVGNWWDY----------------------   294  (A)
+d1rrma_:A   GDKDAGE-EXALGQYVAGXGFSNVGLG-----------LVHGXAHPLGAFYNTPHGVANA   282  (B)
+
+d1n7oa1:A   -------------EIGTPRAINNTLSLMKEYFSDEEIKKYTDVIEKFVPDPEHFRKTTDN   341  (A)
+d1rrma_:A   ILLPHVXRYNADFTGEKYRDIARVXG----------------------------------   308  (B)
+
+d1n7oa1:A   PVKALGGN-----LVDMGRVKVIAGLLRKDDQEISSTIRSIEQVFKLVDQGEGFYQDGSY   396  (A)
+d1rrma_:A   --------VKVEGXSLEEARNAAVEAVFA-------------------------------   329  (B)
+
+d1n7oa1:A   IDHTNVAYTGAYGNVLIDGLSQLLPVIQKTKNPIDKDKMQTMYHWIDKSFAPLLVNGELM   456  (A)
+d1rrma_:A   ------------------------------------------------------------   329  (B)
+
+d1n7oa1:A   DMSRGRSISRANSEGHVAAVEVLRGIHRIADMSEGETKQRLQSLVKTIVQSDSYYDVFKN   516  (A)
+d1rrma_:A   ------------------------------------------------------------   329  (B)
+
+d1n7oa1:A   LKTYKDISLMQSLLSDAGVASVPR------------------------------------   540  (A)
+d1rrma_:A   ------------------------LNRDVGIPPHLRDVGVRKEDIPALAQAALDDVCTGG   365  (B)
+
+d1n7oa1:A   ---------------------   540  (A)
+d1rrma_:A   NPREATLEDIVELYHTAWEGG   386  (B)
+

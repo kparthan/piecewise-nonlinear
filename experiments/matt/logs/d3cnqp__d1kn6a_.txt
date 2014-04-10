@@ -1,0 +1,13 @@
+(d1kn6a_:A, d3cnqp_:P)
+Core Residues: 56
+Core RMSD: 3.221
+Raw Score: 39.867
+P-value: 0.1785
+Reference structure: d1kn6a_:A
+
+d3cnqp_:P   E--KKYIVGFKQGFKSCAKKEDVISEKGGKLQKCFKYVD-AASATL-------------N    52  (A)
+d1kn6a_:A   -FVNEWAAEIP--G-GQEAASAIAEELGYDLLGQIGSLENHYLFKHKSHPRRSRRSALHI    59  (B)
+
+d3cnqp_:P   EKAVEELKKDPSVAYVEEDKLYRALSA-    79  (A)
+d1kn6a_:A   TKRLSDDDR---VTWAEQQ--------Y    76  (B)
+

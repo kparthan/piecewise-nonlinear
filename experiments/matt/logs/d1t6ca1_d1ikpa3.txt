@@ -1,0 +1,19 @@
+(d1ikpa3:A, d1t6ca1:A)
+Core Residues: 34
+Core RMSD: 3.625
+Raw Score: 54.557
+P-value: 0.6161
+Reference structure: d1ikpa3:A
+
+d1t6ca1:A   PIMRVASIDIGSY-----------------------------------------------    19  (A)
+d1ikpa3:A   -------------EGGSLAALTAHQACHLPLETFTRHRQPRGAEQLEQCGYPVQRLVALY   298  (B)
+
+d1t6ca1:A   -----SVRLTIAQIKDGKLSIILERGRITSL---GTKVKETGRL--------------QE    57  (A)
+d1ikpa3:A   LAARLSW-------------------NQVDQVIRNALAS-----PGSGGDLGEAIREQPE   334  (B)
+
+d1t6ca1:A   DRIEETIQVLKEYKKLIDEFKVERVKAVATEAIRRAKNAEEFLERVKREVGLVVEVITPE   117  (A)
+d1ikpa3:A   QARLALTLAAAESERFVRQG----------------------------------------   354  (B)
+
+d1t6ca1:A   QEGRYAYLAVAYSLK----------------------------------------   132  (A)
+d1ikpa3:A   ---------------TGNDEAGAANADVVSLTCPVAAGECAGPADSGDALLERNY   394  (B)
+

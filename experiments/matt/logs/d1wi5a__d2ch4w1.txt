@@ -1,0 +1,19 @@
+(d2ch4w1:W, d1wi5a_:A)
+Core Residues: 43
+Core RMSD: 2.873
+Raw Score: 25.379
+P-value: 0.4498
+Reference structure: d2ch4w1:W
+
+d1wi5a_:A   GSSGSSGKNVNRVLSAEALKPGMLLTGTVSSLED---HGYLVDIGVDGTRAFLPLLKAQE   235  (A)
+d2ch4w1:W   ----------------------------------KEFEVLSFEIDE--QALAFDV--DN-    29  (B)
+
+d1wi5a_:A   Y-------------------------------------------------------IRQK   240  (A)
+d2ch4w1:W   -IEMVIEKSDITPVPKSRHFVEGVINLRGRIIPVVNLAKILGISFDEQKMKSIIVARTKD    88  (B)
+
+d1wi5a_:A   NKGAKLKVG--QYLNC---------------------------IVEKVKG---NGGVVSL   268  (A)
+d2ch4w1:W   V--------EVGF---LVDRVLGVLRITENQLDLTNVSDKFGKKSKGLV-KTDGRLIIYL   136  (B)
+
+d1wi5a_:A   S--VG--HSEVSTAIATEQQSWNLNNLSGPSSG--   297  (A)
+d2ch4w1:W   DIDKIIEEI------------------------TV   147  (B)
+

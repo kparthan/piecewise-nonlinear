@@ -1,0 +1,16 @@
+(d2jfga1:A, d1nz6a_:A)
+Core Residues: 15
+Core RMSD: 0.309
+Raw Score: 34.176
+P-value: 0.4230
+Reference structure: d2jfga1:A
+
+d1nz6a_:A   DPEKLKILEWIEGKERNIRALLSTXHTVLWAGETKWKPVGXADLVTPEQVKKVYRKAVLV    60  (A)
+d2jfga1:A   ------------------------------------------------------------     1  (B)
+
+d1nz6a_:A   VHPDKATGQPYEQYAK-------------XIFXELNDAWSEFENQGQKPLY---------    98  (A)
+d2jfga1:A   ----------------ADYQGKNVVIIGLGLTGLSCVDFFLARG-------VTPRVMDTR    37  (B)
+
+d1nz6a_:A   --------------------------------------------------------    98  (A)
+d2jfga1:A   MTPPGLDKLPEAVERHTGSLNDEWLMAADLIVASPGIALAHPSLSAAADAGIEIVG    93  (B)
+

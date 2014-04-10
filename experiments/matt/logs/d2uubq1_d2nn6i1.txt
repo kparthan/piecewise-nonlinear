@@ -1,0 +1,16 @@
+(d2nn6i1:I, d2uubq1:Q)
+Core Residues: 65
+Core RMSD: 2.939
+Raw Score: 52.834
+P-value: 0.0945
+Reference structure: d2nn6i1:I
+
+d2uubq1:Q   P-------KKVLTGVVVSDKMQKTVTVLVER----QFPHPLYGKVIKR--SKKYLAHDP-    47  (A)
+d2nn6i1:I   -SQLLPDVGAIVTCKVSSINSR-FAKVHILYVGSMPL---------KNSFRGTIRKEDVR   109  (B)
+
+d2uubq1:Q   ------EE---KYKLGDVVEIIESRPISK------RKRFRVLRLV---ESGRMDLVEKYL    89  (A)
+d2nn6i1:I   ATEKDKVEIYKSFRPGDIVLAKVIS----LGDAQSNYLLTTAENELGVVVAH--------   157  (B)
+
+d2uubq1:Q   IRRQNYESLSKR----------------------------   101  (A)
+d2nn6i1:I   ------------SESGIQMVPISWCEMQCPKTHTKEFRKV   185  (B)
+

@@ -1,0 +1,25 @@
+(d2nr9a1:A, d1zc6a2:A)
+Core Residues: 52
+Core RMSD: 2.909
+Raw Score: 72.589
+P-value: 0.1680
+Reference structure: d2nr9a1:A
+
+d1zc6a2:A   QPGI--------------------------------------------------------   125  (A)
+d2nr9a1:A   ----FLAQQGKITLILTALCVLIYIAQQLGFEDDIMYLMHYPAYEEQDSEVWRYISHTLV    59  (B)
+
+d1zc6a2:A   -----------------------IV---ALGTGSIGEALYPDGSHREAGGWGYPSGDEAS   159  (A)
+d2nr9a1:A   HLSNLHILFNLSWFFIFGGMIERTFGSVKLLML--------------------------Y    93  (B)
+
+d1zc6a2:A   GAWLGQRAAQLTQXALDGRHSH-SPLTRAVLDFVGGDWQAXXAWNGRATPAQFARLAPLV   218  (A)
+d2nr9a1:A   VVASAITGYVQNYVSG------PAFF----------------------------------   113  (B)
+
+d1zc6a2:A   LSAARVDPEADALLRQAGEDAWAIARALDPQ--DELPVALCGGLGQALRDWLP-PGFRQR   275  (A)
+d2nr9a1:A   ---G------LSGVVYAVLGYVFIRDKLNHHLFD-------------------LPE----   141  (B)
+
+d1zc6a2:A   LVAPQGDSAQGALLLLQ-------------------------------------------   292  (A)
+d2nr9a1:A   -----------------GFFTMLLVGIALGFISPLFGVEMGNAAHISGLIVGLIWGFIDS   184  (B)
+
+d1zc6a2:A   --------   292  (A)
+d2nr9a1:A   KLRKNSLE   192  (B)
+

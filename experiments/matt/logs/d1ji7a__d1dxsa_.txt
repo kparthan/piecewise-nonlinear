@@ -1,0 +1,13 @@
+(d1dxsa_:A, d1ji7a_:A)
+Core Residues: 50
+Core RMSD: 1.921
+Raw Score: 58.870
+P-value: 0.0819
+Reference structure: d1dxsa_:A
+
+d1ji7a_:A   SIRLPAHLRLQPIYWSRDDVAQWLKWAENEFSLRP-IDSNTFE---X-NGKALLLLTKED    69  (A)
+d1dxsa_:A   ------------------SLVSFLTGLG------CPNCIEYFTSQGLQSIYHLQNLTIED    41  (B)
+
+d1ji7a_:A   FR--YRSPHSGDELYELLQHILKQ    91  (A)
+d1dxsa_:A   LGALKIPEQYRMTIWRGLQD-L--    62  (B)
+

@@ -1,0 +1,25 @@
+(d3b57a1:A, d1ug3a1:A)
+Core Residues: 65
+Core RMSD: 4.540
+Raw Score: 74.642
+P-value: 0.2415
+Reference structure: d3b57a1:A
+
+d1ug3a1:A   KAALSEEELEKKSKAII------------------EEYLHLNDMKEAVQCVQELASPSLL  1276  (A)
+d3b57a1:A   -----------------XNKEEIILSAKNWXHSHFHD--W--------------------    27  (B)
+
+d1ug3a1:A   FIFVRHGVE---------------------------------------------------  1285  (A)
+d3b57a1:A   ---------SHIKRVWKLSKEIQSKEGGDLFTIELAALFHDYSDQEATKTLINWXETKEI    85  (B)
+
+d1ug3a1:A   ----------------------------STLER--SAIAREHMGQLLHQLLCAGHLSTA-  1314  (A)
+d3b57a1:A   PSELIKKIIRIIQSVSALTIEEKIVQDAD-RLDAIGAIGIARTFTYGGAH----NREIAN   149  (B)
+
+d1ug3a1:A   -----QYYQGLY-EILELAEDME--I-DIPHVWLYLAELVTPILQEGGVPMGELFREITK  1365  (A)
+d3b57a1:A   QNPKNTTLQHFYDKLLLIKDQL-NTETAKTIAKEKQKIXQDFIQA---LEK---------   197  (B)
+
+d1ug3a1:A   PLRPLGKAASLLLEILGLLCKSMGPKKVGTLWREAGLSWKEFLPEGQDIGAFVAEQKVEY  1425  (A)
+d3b57a1:A   ------------------------------------------------------------   197  (B)
+
+d1ug3a1:A   TL----  1427  (A)
+d3b57a1:A   --ELKV   201  (B)
+

@@ -1,0 +1,19 @@
+(d1ez3a_:A, d1d0na3:A)
+Core Residues: 21
+Core RMSD: 2.395
+Raw Score: 27.657
+P-value: 0.5239
+Reference structure: d1ez3a_:A
+
+d1d0na3:A   EDAANRKLAKLYKVSNGAGPMVVSLVADENPFAQGALRSEDCFILDHGKDGKIFVWKGKQ   322  (A)
+d1ez3a_:A   ------------------------------------------------------------    26  (B)
+
+d1d0na3:A   AN-----M-EER-KAALKTASDFISKMDY--------------------------P--KQ   347  (A)
+d1ez3a_:A   --RDRFMDEF-FEQVEEIRGFIDKIAENVEEVKRKHSAILASPNPDEKTKEELEELMSD-    81  (B)
+
+d1d0na3:A   TQVSVLPEGGETPLFRQFFKNWRDPDQTEGLGLAYL------------------------   383  (A)
+d1ez3a_:A   ------------------------------------IKKTANKVRSKLKSIEQSIEQEEG   105  (B)
+
+d1d0na3:A   --------------------------------------------   383  (A)
+d1ez3a_:A   LNRSSADLRIRKTQHSTLSRKFVEVMSEYNATQSDYRERCKGRI   149  (B)
+

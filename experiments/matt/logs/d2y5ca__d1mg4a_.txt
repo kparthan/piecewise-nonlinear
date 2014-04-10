@@ -1,0 +1,16 @@
+(d1mg4a_:A, d2y5ca_:A)
+Core Residues: 65
+Core RMSD: 3.021
+Raw Score: 50.214
+P-value: 0.0760
+Reference structure: d1mg4a_:A
+
+d2y5ca_:A   SDVVNVVFVDR-S-GQ-RIPVSGRVG---DNVLHLAQRH-GV---------DLEGACEAS    46  (A)
+d1mg4a_:A   KKAKKVRFYRNGDRYFKGIVYAIS-PDRFRSFEALLADLTRTLSDNVNLPQGV-------   105  (B)
+
+d2y5ca_:A   LACSTCHVYVSEDHLDLLPPPEEREDDMLDMAPLLQENSRLGCQIV-LTPELEGAEFTLP   105  (A)
+d1mg4a_:A   -----RTIYTID-----------------------G--LKKISSLDQL---VEGESYVCG   132  (B)
+
+d2y5ca_:A   KITR-------------------   109  (A)
+d1mg4a_:A   SIE-PFKKLEYTKNVNPNWSVNV   154  (B)
+

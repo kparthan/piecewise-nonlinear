@@ -1,0 +1,16 @@
+(d3ag3i_:I, d1iufa1:A)
+Core Residues: 19
+Core RMSD: 1.256
+Raw Score: 23.948
+P-value: 0.4815
+Reference structure: d3ag3i_:I
+
+d1iufa1:A   GIHMGKIKRRAITEHEKRALRHYFFQLQNRSGQQDLIEWFREKFGKDIS-----------    46  (A)
+d3ag3i_:I   -------------------------------------------------XTALAKPQMRG    11  (B)
+
+d1iufa1:A   ------------------QP-SVSQILSSKYSYLDNTVEKPWDVKRNR------------    75  (A)
+d3ag3i_:I   LLARRLRFHIVGAFMVSLGFATFYKFAVAEKRKKAYAD----------FYRNYDSMKDFE    61  (B)
+
+d1iufa1:A   ------------    75  (A)
+d3ag3i_:I   EMRKAGIFQSAK    73  (B)
+

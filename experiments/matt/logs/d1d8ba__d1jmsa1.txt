@@ -1,0 +1,16 @@
+(d1jmsa1:A, d1d8ba_:A)
+Core Residues: 53
+Core RMSD: 2.733
+Raw Score: 53.712
+P-value: 0.1012
+Reference structure: d1jmsa1:A
+
+d1d8ba_:A   EL-------------NNLRMTYERLRELS-LNLGNRMVPPVGNFM--------------P    42  (A)
+d1jmsa1:A   --KKISQYACQRRTTLNN--YNQLFTDALDI----------LA--ENDELRENEGSCLAF   191  (B)
+
+d1d8ba_:A   DSILKKMAAI--LPMNDSAFATLGTVEDKYRRRFKYFK--ATIADLSKKRSSE-------    91  (A)
+d1jmsa1:A   MRASSVLKSLPFPITSMKDTEGIPCLGDKVKSIIEGIIEDG------------ESSEAKA   239  (B)
+
+d1d8ba_:A   ---    91  (A)
+d1jmsa1:A   VLN   242  (B)
+

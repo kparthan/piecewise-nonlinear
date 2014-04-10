@@ -1,0 +1,22 @@
+(d3iwta_:A, d1a17a_:A)
+Core Residues: 46
+Core RMSD: 8.112
+Raw Score: 45.408
+P-value: 0.9495
+Reference structure: d3iwta_:A
+
+d1a17a_:A   PPADGALKRAEELKTQANDYFKAKDYENAIKFYSQAIELNPSN-----------------    61  (A)
+d3iwta_:A   -------------------------------------------PKSLNFYVITISTSRYE    29  (B)
+
+d1a17a_:A   -----------AIYYGNRSLAYLRTECYGYALGDATRAIELDKKYIKGYYRRAASNMALG   110  (A)
+d3iwta_:A   KLLKKEPIVDESGDIIKQLLIENGHK----------------------------------    55  (B)
+
+d1a17a_:A   KFRAALRD----------------------------------------------------   118  (A)
+d3iwta_:A   --------IIGYSLVPDDKIKILKAFTDALSIDEVDVIISTGGTGYSPTDITVETIRKLF   107  (B)
+
+d1a17a_:A   ----------------YETVVKVKP-HD---------------------KDAKMKYQEC-   139  (A)
+d3iwta_:A   DREIEGFSDVFRLVSFNDPEV---KAA-AYLTKASAGIIGKKIVYLLPGSPDAVKLALKE   163  (B)
+
+d1a17a_:A   NKIVKQKAFERAIAGDEHKRSVVDSLDIESMTIEDEYS-   177  (A)
+d3iwta_:A   LILPEVGHLVYLVR------------------------S   178  (B)
+

@@ -1,0 +1,13 @@
+(d1v38a_:A, d1ixra1:A)
+Core Residues: 54
+Core RMSD: 2.595
+Raw Score: 38.280
+P-value: 0.1765
+Reference structure: d1v38a_:A
+
+d1ixra1:A   P-DEENL-----------ALFELLLSVSGVGPKVALALLSALP---PRLL--ARALLEGD   105  (A)
+d1v38a_:A   -GS----SGSSGRRENHQTIQEFLERI--HLQ----EYTSTLLLNGYE--TLDD-LKDIK    46  (B)
+
+d1ixra1:A   ARLLTSASGV-GRRLAERIALELKGKVPPHL------   135  (A)
+d1v38a_:A   ESHLIELN-IADPEDRARLLSAAESLL----SGPSSG    78  (B)
+

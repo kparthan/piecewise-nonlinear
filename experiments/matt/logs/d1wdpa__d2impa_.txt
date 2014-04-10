@@ -1,0 +1,49 @@
+(d2impa_:A, d1wdpa_:A)
+Core Residues: 136
+Core RMSD: 7.707
+Raw Score: 114.035
+P-value: 0.0119
+Reference structure: d2impa_:A
+
+d1wdpa_:A   SDSNMLLNYVPVYVMLPLGVVNVDNVFEDPDGLKEQLLQLRAAGVDGVMVDVWWGIIELK    62  (A)
+d2impa_:A   ------------------------------------------------------------     3  (B)
+
+d1wdpa_:A   GPKQYDWRAYRSLLQLVQECGLTLQAIMSFHQCGGNVGDIVNIPIPQWVLDIGESNHDIF   122  (A)
+d2impa_:A   ------------------------------------------------------------     3  (B)
+
+d1wdpa_:A   YTNRSG-TRNKEYLTVGVDNEPIFHGRTAIEIYSDYMKSFRENMSDFLESGLIIDIEVGL   181  (A)
+d2impa_:A   ------VPVQ---HPM--YI---------DGQ----------------------------    14  (B)
+
+d1wdpa_:A   GPA--GELRY-PSYPQSQ-GWEFPGIGEF-----QCYDKYLKADFKAAVARAGHPEWELP   232  (A)
+d2impa_:A   ---FVTWRGDAWIDVVNPATE--------AVISRIP------------------------    39  (B)
+
+d1wdpa_:A   DDAGKYNDVPESTGFFKSNGTYVTEKGKFFLTWYSNKLLNHGDQILDEANKAF--LG---   287  (A)
+d2impa_:A   ---------------------------------DGQ--AEDARKAIDAAERAQPEWEALP    64  (B)
+
+d1wdpa_:A   ------------------------------------------------------------   287  (A)
+d2impa_:A   AIERASWLRKISAGIRERASEISALIVEEGGKIQQLAEVEVAFTADYIDYMAEWARRYEG   124  (B)
+
+d1wdpa_:A   ----------------CKVKLAIKVSGIHWWYKVENHAAELT------------------   313  (A)
+d2impa_:A   EIIQSDRPGENILLFKRALGVTTGILP---------------WNFPFFLIARKMAPALLT   169  (B)
+
+d1wdpa_:A   ---------A----------------------------GYYNLNDRDG-YRPIARMLSRH   335  (A)
+d2impa_:A   GNTIVIKPSEFTPNNAIAFAKIVDEIGLPRGVFNLVLGRGE------TVGQELAG--NPK   221  (B)
+
+d1wdpa_:A   HAILNFTCLEMRDSEQPSDAKSGPQELVQQVLSGGWREDIRVAGEN--------------   381  (A)
+d2impa_:A   VAMVSMTG---------------SVSAGEKIMATAAKNITKVXLELGGKAPAIVMDDADL   266  (B)
+
+d1wdpa_:A   ------------------------------------------------------------   381  (A)
+d2impa_:A   ELAVKAIVDSRVINSGQVCNCAERVYVQKGIYDQFVNRLGEAMQAVQFGNPAERNDIAMG   326  (B)
+
+d1wdpa_:A   ----------------------------------------------------------AL   383  (A)
+d2impa_:A   PLINAAALERVEQKVARAVEEGARVAFGGKAVEGKGYYYPPTLLLDVRQEMSIMHEETFG   386  (B)
+
+d1wdpa_:A   PRYD-------------ATAY--NQIILNARPQGVNNNGPPKLSMFGVTYLRLSDDLLQK   428  (A)
+d2impa_:A   PVLPVVAFDTLEDAISMA---NDSD-----------------YGLTS-SIYTQ-------   418  (B)
+
+d1wdpa_:A   SNFNIFKKFVL--KMHADQDYCANPQKYNHA-----------------------------   457  (A)
+d2impa_:A   -NLNVAMKAIKGLKF----------------GETYINRENFEAMQGFHAGWRKSGIGGAD   461  (B)
+
+d1wdpa_:A   --------ITPLKPSAPKIPIEVLLEATKPTLPFPWLPETDMKVDG--------   495  (A)
+d2impa_:A   GKHGLHEYLQ------------------------------------TQVVYLQS   479  (B)
+

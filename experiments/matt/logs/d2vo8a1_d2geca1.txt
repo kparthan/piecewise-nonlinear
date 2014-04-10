@@ -1,0 +1,19 @@
+(d2geca1:A, d2vo8a1:A)
+Core Residues: 51
+Core RMSD: 3.985
+Raw Score: 28.621
+P-value: 0.4016
+Reference structure: d2geca1:A
+
+d2vo8a1:A   TTVGN-------------STIKVNDE-VQVGSAF-EAI-----LGIEGLNGDT-EVYS-A   976  (A)
+d2geca1:A   -----RPPKVGSSGNASWFQAIK---AKKLNSP-QP--KFEGSGVPDNEN---LKT-SQQ    67  (B)
+
+d2vo8a1:A   EYLFEYNAEAFILNEITSFNDSLFVKS---------------------------------  1003  (A)
+d2geca1:A   HGYWRR---------------------QARFKPGKGRRKPVPDAWYFYYTGTGPAADLNW   106  (B)
+
+d2vo8a1:A   KEVEPGKVRILVASLGNEIEKDSDLVKVNLTPKISSELEVLGLTTALVGAGDGN-THDLE  1062  (A)
+d2geca1:A   GDSQDGIVWVAAKG---------------------------------AD-----VKSRSN   128  (B)
+
+d2vo8a1:A   LSSKEVKINEEA-------------------------------  1074  (A)
+d2geca1:A   Q-----------GTRDPDKFDQYPLRFSDGGPDGNFRWDFIPL   160  (B)
+

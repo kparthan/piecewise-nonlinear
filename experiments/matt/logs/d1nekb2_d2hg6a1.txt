@@ -1,0 +1,16 @@
+(d2hg6a1:A, d1nekb2:B)
+Core Residues: 32
+Core RMSD: 3.116
+Raw Score: 20.586
+P-value: 0.6859
+Reference structure: d2hg6a1:A
+
+d1nekb2:B   MRLEF----------------SIYRY-NPDVDDAPRMQDYTLEADEGRDMMLLDALIQLK    43  (A)
+d2hg6a1:A   -----MSITSTDICQAADALKGFVGFNR--KTGRYIVRFSE-----------------D-    35  (B)
+
+d1nekb2:B   EK--DPSLSFRRSCREGVCGSDGL--NMNGK--NGLACITPISALNQPGKKIVIRPL---    94  (A)
+d2hg6a1:A   --SFGMDVADD-------------SITPTSEFVW-----------------------SSV    57  (B)
+
+d1nekb2:B   ----------PGLPVIRDLVVD--------------------------------------   106  (A)
+d2hg6a1:A   RDDVMRLGREQ-----------LQILLEQNINERLNIGEPLLVYLRRQDLPEITAQRQLR   106  (B)
+

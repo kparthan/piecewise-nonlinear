@@ -1,0 +1,19 @@
+(d1xrta1:A, d2j73a_:A)
+Core Residues: 25
+Core RMSD: 2.138
+Raw Score: 21.088
+P-value: 0.5204
+Reference structure: d1xrta1:A
+
+d2j73a_:A   FTETT-IVVHY-HRYDGKYDGWNLWIWPVEPVSQEGKAYQFTGEDDF---------GKVA    53  (A)
+d1xrta1:A   -----MLKLIVKNGY--VID---------------------------PSQNLEGEFDILV    26  (B)
+
+d2j73a_:A   VVKLPMDLTKVGIIVRLNEWQAKDVAKDRFIEIKDGK------------AEVWILQGVEE   101  (A)
+d1xrta1:A   ENG----------------------------------KIKKIDKNILVPEAEIIDA----    48  (B)
+
+d2j73a_:A   IFYEKP------------------------------------------------------   107  (A)
+d1xrta1:A   ------KGLIVCPTLKLGSPADITIFDPNKEWILNEETNLSKSRNTPLWGKVLKGKVIYT   412  (B)
+
+d2j73a_:A   ----------   107  (A)
+d1xrta1:A   IKDGKMVYKD   422  (B)
+

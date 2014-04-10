@@ -1,0 +1,22 @@
+(d2j8ga1:A, d2bhma1:A)
+Core Residues: 29
+Core RMSD: 2.877
+Raw Score: 33.526
+P-value: 0.4970
+Reference structure: d2j8ga1:A
+
+d2bhma1:A   SYDTVMDKYWLSQYVIARETYDWYTLQKDYETVGMLSSPSEGQSYASQFQGDKALDKQYG   156  (A)
+d2j8ga1:A   ------------------------------------------------------------   191  (B)
+
+d2bhma1:A   SNVRTSVTIVSI------------------------------------------------   168  (A)
+d2j8ga1:A   ------------EEDDKPKTAGTWKQDSKGWWFRRNNGSFPYNKWEKIGGVWYYFDSKGY   238  (B)
+
+d2bhma1:A   -------------------------------------------VPNGK----GIGTVRFA   181  (A)
+d2j8ga1:A   CLTSEWLKDNEKWYYLKDNGAMATGWVLVGSEWYYMDDSGAMVTGWVKYKNNWYYMTNE-   297  (B)
+
+d2bhma1:A   KTTKRGDGETT-HWIATIGYQYVNPSLMSESARLTNPL-GFNVTSYRVDPEM--------   235  (A)
+d2j8ga1:A   -----------RGNMVSNEFIKSG--------------KGWYFM--------NTNGELAD   324  (B)
+
+d2bhma1:A   ---------------   235  (A)
+d2j8ga1:A   NPSFTKEPDGLITVA   339  (B)
+

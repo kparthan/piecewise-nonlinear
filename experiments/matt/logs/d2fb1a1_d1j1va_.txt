@@ -1,0 +1,16 @@
+(d1j1va_:A, d2fb1a1:A)
+Core Residues: 35
+Core RMSD: 2.700
+Raw Score: 33.402
+P-value: 0.5402
+Reference structure: d1j1va_:A
+
+d2fb1a1:A   P-----IG---------------------------------FNLLP---KLFTLSQLQSL   168  (A)
+d1j1va_:A   -VTIDNIQKTVAEYYKIKVADLLSKRRSRSVARPRQXAXALA----KELTNHSLPEIGDA   428  (B)
+
+d2fb1a1:A   YEAIYGEPXDKRNFRKRVAEXDFIEKTDKIDKLGSKRGAALYKFNGKAYR---------K   219  (A)
+d1j1va_:A   F-----GGRDHTTVLHACRKIE----------------------------QLREESHDIK   455  (B)
+
+d2fb1a1:A   DPKFKL---------   225  (A)
+d1j1va_:A   EDF---SNLIRTLSS   467  (B)
+

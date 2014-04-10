@@ -1,0 +1,22 @@
+(d2ciwa2:A, d2ccma_:A)
+Core Residues: 83
+Core RMSD: 3.657
+Raw Score: 91.447
+P-value: 0.0257
+Reference structure: d2ciwa2:A
+
+d2ccma_:A   AAHQLSDFQRNK-----------ILRVFNTFYDCN--HDGVI----EWDDFELAIKKICN    44  (A)
+d2ciwa2:A   ------------NSNDFIDNRNFDAETF-QTSLDVVAGKTHFDYADMNEIRLQRESLSNE   166  (B)
+
+d2ccma_:A   L--HSWPTDGK---KHNEARATLKLIWDGLRKYADEN----E--DEQVTKEEWLKMWAEC    93  (A)
+d2ciwa2:A   LDFP-------GWFTE--SKPIQNVESGFIFALVSDFNLPDNDENPLVRIDWWKYWFTNE   217  (B)
+
+d2ccma_:A   VKSVEKGESLPEWLTKYMNFMFDVNDTSGD------------------------------   123  (A)
+d2ciwa2:A   S-----------------------------FPYHLGWHPPSPAREIEFVTSASSAVLAAS   248  (B)
+
+d2ccma_:A   ------------------------------NIIDKHEYSTVYMSYGIPKSDCDAAFDTLS   153  (A)
+d2ciwa2:A   VTSTPSSLPSGAIGPGAEAVPLSFASTMTPFL----------------------------   280  (B)
+
+d2ccma_:A   DGGKTMVTREIFARLWTEYFVSNDRGAKGNHLFGTLKL--------   191  (A)
+d2ciwa2:A   --------LAT--NA-PY--YAQ---------------DPTLGPND   298  (B)
+

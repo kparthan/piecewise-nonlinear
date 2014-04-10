@@ -1,0 +1,767 @@
+<HTML><H1>Results</H1>
+<A HREF='summary.txt'>Parseable data</A>
+<BR><UL>
+<LI><a href="#mol1A">mol1A</a>
+</UL><HR>
+<TITLE>Dali: mol1A,                                                                       </TITLE><A name=mol1A>
+<h1>Query: <a name="mol1A">mol1A</a></h1>
+                                                                      
+<P><A NAME="summary">
+Select neighbours (check boxes) for viewing as multiple structural alignment or 3D superimposition. 
+The list of neighbours is sorted by Z-score. Similarities with a Z-score lower than 2 are spurious.
+Each neighbour has links to pairwise structural alignment with the query structure, 
+ and to the PDB format coordinate file where the neighbour
+is superimposed onto the query structure. 
+
+<form METHOD="POST" ACTION="http://ekhidna.biocenter.helsinki.fi/dali_server/qz-test" TARGET="_blank"/>
+<input TYPE="hidden" NAME="jobid" VALUE=test>
+<input TYPE="hidden" NAME="query_sequence" VALUE="MLLREINRYCKEKATGKRIYAVPKLWIPGFFKKFDEKSGRCFVDPYELGAEITDWILNQSREWDYSQPLSFLKGEKTPDWIKRSVVYGSLPRTTAAYNHKGSGYYEENDVLGFREAGTFFKMMLLLPFVKSLGADAIYLLPVSRMSDLFKKGDAPSPYSVKNPMELDERYHDPLLEPFKVDEEFKAFVEACHILGIRVILDFIPRTAARDSDLIREHPDWFYWIKVEELADYTPPRAEELPFKVPDEDELEIIYNKENVKRHLKKFTLPPNLIDPQKWEKIKREEGNILELIVKEFGIITPPGFSDLINDPQPTWDDVTFLRLYLDHPEASKRFLDPNQPPYVLYDVIKASKFPGKEPNRELWEYLAGVIPHYQKKYGIDGARLDMGHALPKELLDLIIKNVKEYDPAFVMIAEELDMEKDKASKEAGYDVILGSSWYFAGRVEEIGKLPDIAEELVLPFLASVETPDTPRIATRKYASKMKKLAPFVTYFLPNSIPYVNTGQEIGEKQPMNLGLDTDPNLRKVLSPTDEFFGKLAFFDHYVLHWDSPDRGVLNFIKKLIKVRHEFLDFVLN"> 
+<input TYPE="hidden" NAME="query_dssp" VALUE="LHHHHHHHHHHHHLLLLLLEEELHHHLLLLLLLLEEELLEEEELHHHHHHHHHHHHHLLLLLLLLLLLHHHHHLLLLHHHHHHLLEEEELHHHHLLLLLLLLLLLLLLLLLLLLLLLLHHHHHHLHHHHHHHLLLEEEELLLEEELLLLLLLLLLLLLLEEEEEEELHHHLLHHHLLLLHHHHHHHHHHHHHHLLLEEEEEELLLEEELLLHHHLLLHHHLLLEEHHHLLLLLLLLLLLLLLLLLLHHHHHHHHLLHHHHHHHLLLLLLHHHHLHHHHHHHHLLLLLHHHHHHHHHLEELLLLLLLLLLLLLLLLLLEEELLLLLLLLHHHHHHLLLLLLLLLLHHHHLLLLLLLLLLLHHHHHHHLLHHHHHHHHHLLLEEEELLHHHLLHHHHHHHHHHHHHHLLLLEEEELLLLHHHHHHHHHHLLLEELLLHHHHHLLLLLHHHHHHHHHLLLLLEEELLLLLLLLLHHHLLLHHHHHHHHHHHHHLLLLEEEEEELLHHHLLLLLLLLLLLLLHHHHHLLLLLLLLLLLLLLLLLLLLLLLLLLHHHHHHHHHHHHHHHHLHHHHHL"> 
+<input TYPE="hidden" NAME="cd1" VALUE=mol1A>
+<input TYPE="hidden" NAME="pdbresnos" VALUE="572    1     2     3     4     5     6     7     8     9    10    11    12    13    14    15    16    17    18    19    20    21    22    23    24    25    26    27    28    29    30    31    32    33    34    35    36    37    38    39    40    41    42    43    44    45    46    47    48    49    50    51    52    53    54    55    56    57    58    59    60    61    62    63    64    65    66    67    68    69    70    71    72    73    74    75    76    77    78    79    80    81    82    83    84    85    86    87    88    89    90    91    92    93    94    95    96    97    98    99   100   101   102   103   104   105   106   107   108   109   110   111   112   113   114   115   116   117   118   119   120   121   122   123   124   125   126   127   128   129   130   131   132   133   134   135   136   137   138   139   140   141   142   143   144   145   146   147   148   149   150   151   152   153   154   155   156   157   158   159   160   161   162   163   164   165   166   167   168   169   170   171   172   173   174   175   176   177   178   179   180   181   182   183   184   185   186   187   188   189   190   191   192   193   194   195   196   197   198   199   200   201   202   203   204   205   206   207   208   209   210   211   212   213   214   215   216   217   218   219   220   221   222   223   224   225   226   227   228   229   230   231   232   233   234   235   236   237   238   239   240   241   242   243   244   245   246   247   248   249   250   251   252   253   254   255   256   257   258   259   260   261   262   263   264   265   266   267   268   269   270   271   272   273   274   275   276   277   278   279   280   281   282   283   284   285   286   287   288   289   290   291   292   293   294   295   296   297   298   299   300   301   302   303   304   305   306   307   308   309   310   311   312   313   314   315   316   317   318   319   320   321   322   323   324   325   326   327   328   329   330   331   332   333   334   335   336   337   338   339   340   341   342   343   344   345   346   347   348   349   350   351   352   353   354   355   356   357   358   359   360   361   362   363   364   365   366   367   368   369   370   371   372   373   374   375   376   377   378   379   380   381   382   383   384   385   386   387   388   389   390   391   392   393   394   395   396   397   398   399   400   401   402   403   404   405   406   407   408   409   410   411   412   413   414   415   416   417   418   419   420   421   422   423   424   425   426   427   428   429   430   431   432   433   434   435   436   437   438   439   440   441   442   443   444   445   446   447   448   449   450   451   452   453   454   455   456   457   458   459   460   461   462   463   464   465   466   467   468   469   470   471   472   473   474   475   476   477   478   479   480   481   482   483   484   485   486   487   488   489   490   491   492   493   494   495   496   497   498   499   500   501   502   503   504   505   506   507   508   509   510   511   512   513   514   515   516   517   518   519   520   521   522   523   524   525   526   527   528   529   530   531   532   533   534   535   536   537   538   539   540   541   542   543   544   545   546   547   548   549   550   551   552   553   554   555   556   557   558   559   560   561   562   563   564   565   566   567   568   569   570   571   572 
+">
+<input TYPE="hidden" NAME="cd2list" VALUE="dummy">
+<input TYPE="submit" NAME="D1" VALUE="Structural Alignment"/> 
+<INPUT TYPE="CHECKBOX" NAME="expand_gaps" VALUE=1 CHECKED"/> Expand gaps 
+<input TYPE="submit" NAME="D3" VALUE="3D Superimposition (Jmol Applet)"/> 
+<input TYPE="reset" VALUE="Reset Selection"/>
+<h2>Summary</h2>
+<PRE>
+    No:  Chain   Z    rmsd lali nres  %id PDB  Description
+<INPUT TYPE="CHECKBOX" NAME="cd2list" VALUE="cd2=mol2A sequence=mrskrfealakrpvnqdgfvkewieegfiamespndpkpsikivngavteldgkpvsdfdlidhfiaryginlnraeevmamdsvklanmlcdpnvkrseivplttamtpakivevvshmnvvemmmamqkmrarrtPSQQAHVTNVKDNPVQIAADAAEGAWRGFDEQETTVAVARyapFNAIAlLVGSQVgrPGVLTQCSLEEATELKLGMLGHTCYAeTISVygtepvftdGDDTPWSKGFLASSYASRGLKMRFTSGSgsevqmgyaegksmlylEARCiYITKAAGVQGLQNGSvscigvpsAVPSgIRAVLAENLICsslDLECASSNDQTFTHSDMRRTARLLMQFLPGTDFISsgYSAVpnydnmfagsneDAEDFDDYNVIqrdlkVDGGlrpvreedviairnkaaralqavfagmglppitdeeveaatyahgskdmpernivedikfaqeiinknrnglevvkalaqggftdvaqdmlniqkakltgdylhtsaiivgdgqvlsavndvndyagpatGYRLQGERWEEIKNIPGALDPN dssp=lllhhhhhhhllhhhhlllllllhhhlllllllllllllleeeelleeeeelleehhhllhhhhhhhhhllllllhhhhhhllhhhhhhhhhlllllhhhhhhhhllllhhhhhhhhllllhhhhhhhhhhhlllllLLLEEELLLLLLLHHHHHHHHHHHHHHLLLEEEELLLLHHhhhHHHHHhHHHHHHhlLLLEEEELLLHHHHHHHHHLLLLLEEeEEELlllhhhhhhLLLLHHHHHHHHHHHHHLLLEEEEELLLlhhhhllllllllhhhhHHHHhHHHHHHLLLEEELLLhhhlllhhHLLLhHHHHHHHHHHHhhlLLEEELLLLLLLLLLHHHHHHHHHHHHLLLLLLLLeeEELLlhhhllllllllLHHHHHHHHHHhhhhlLLLLlllllhhhhhhhhhhhhhhhhhhhhhlllllllhhhhhhhhhlllhhhlllllhhhhhhhhhhhhhllllhhhhhhhhhhlllhhhhhhhhhhhhhhhhlhhhlllleeellleeellllllllllllllLLLLLHHHHHHHHLLLLLLLLL qstarts=82,115,182,187,193,367,382,387,408,417,421,441,445,456,470,477,498,502,552,560,565 sstarts=137,147,180,186,194,205,221,234,253,279,284,307,312,326,336,340,363,379,383,395,529 lengths=10,30,5,6,11,15,4,19,9,4,15,4,11,10,4,21,4,4,7,4,4 u=0.028081,-0.990519,0.134474,-0.329262,-0.136185,-0.934366,0.943821,-0.018040,-0.329965 t=-45,227,-27">   <A HREF=#alignment-1>1</A>:  mol2-A  8.0  3.5  201   551    7 <A HREF="http://ekhidna.biocenter.helsinki.fi/dali_server/qz-test?jobid=test&pdbid=mol2&u=0.028081,-0.990519,0.134474,-0.329262,-0.136185,-0.934366,0.943821,-0.018040,-0.329965&t=-45,227,-27">PDB</A>                                                                       
+<INPUT TYPE="CHECKBOX" NAME="cd2list" VALUE="cd2=mol2A sequence=mrskrfealakrpvnqdgfvkewieegfiamespndpkpsikivngavteldgkpvsdfdlidhfiaryginlnraeevmamdsvklanmlcdpnvkrseivplttamtpakivevvshmnvvemmmamqkmrarrtPSQQAHVTNVKdnPVQIAADAAEGAWRGFdEQETTVavarYAPFNaIALLvgsqvgrpgvlTQCSLEEAtelKLGMLGHtCYAETISVYgtepvftdgddtpwSKGFLASSYasrglkMRFTSGSGSevqmgyaegKSMLYlEARCIYITkaagVQGLQNGSVSciGVPSAVPSGIRAVLAENLICssldlECASSNDQTFtHSDMRRTARLLMQFLPGTDFISSGYSAVPNYDNMFAGSNEDAEDFDDYNVIQRDLKVDGGLRPVREEDVIAIRNKAARALQAVFAGMGLPPITDEEVEAATYAHGSKDMPERNIVEDIKFAQEIINKNRNGLEVVKALAQGGFTDVAQDMLNIQKAKLTGDYLHTSAIIVGDGQVLSAVNDVNDYAGPATGYRLQGERWEEIKNIPGALDPN dssp=lllhhhhhhhllhhhhlllllllhhhlllllllllllllleeeelleeeeelleehhhllhhhhhhhhhllllllhhhhhhllhhhhhhhhhlllllhhhhhhhhllllhhhhhhhhllllhhhhhhhhhhhlllllLLLEEELLLLLllHHHHHHHHHHHHHHLLlEEEELLllhhHHHHHhHHHHhhhhhhlllleEEELLLHHhhhHHHHLLLlLEEEEEELLllhhhhhhllllhhHHHHHHHHHhhllleEEEELLLLHhhhllllllLLHHHhHHHHHHHHhhhlLLEEELLLHHhlLLHHHLLLHHHHHHHHHHHHhhlllEEELLLLLLLlLLHHHHHHHHHHHHLLLLLLLLEEEELLLHHHLLLLLLLLLHHHHHHHHHHHHHHLLLLLLLLLLHHHHHHHHHHHHHHHHHHHHHLLLLLLLHHHHHHHHHLLLHHHLLLLLHHHHHHHHHHHHHLLLLHHHHHHHHHHLLLHHHHHHHHHHHHHHHHLHHHLLLLEEELLLEEELLLLLLLLLLLLLLLLLLLHHHHHHHHLLLLLLLLL qstarts=132,140,180,196,368,375,379,396,408,419,429,435,443,448,456,469,479,493,547 sstarts=137,144,150,167,177,183,198,209,217,240,255,260,273,279,291,303,309,328,339 lengths=7,4,16,6,5,4,8,7,9,9,5,4,5,8,10,6,14,10,17 u=0.258458,-0.815366,0.518052,-0.625422,-0.549947,-0.553539,0.736238,-0.180935,-0.652086 t=-128,188,40">   <A HREF=#alignment-2>2</A>:  mol2-A  4.8  3.3  154   551    4 <A HREF="http://ekhidna.biocenter.helsinki.fi/dali_server/qz-test?jobid=test&pdbid=mol2&u=0.258458,-0.815366,0.518052,-0.625422,-0.549947,-0.553539,0.736238,-0.180935,-0.652086&t=-128,188,40">PDB</A>                                                                       
+<INPUT TYPE="CHECKBOX" NAME="cd2list" VALUE="cd2=mol2A sequence=mrskrfealakrpvnqdgfvkewieegfiamespndpkpsikivngavteldgkpvsdfdlidhfiaryginlnraeevmamdsvklanmlcdpnvkrseivplttamtpakivevvshmnvvemmmamqkmraRRTPSqqahvtnvkdnpvqiaadaaegawrgFDEQettvavaryapfnaiallvgsqvgrpgVLTQCSLEEATELKLGMLGHTCYAETISVYGTEpvFTDGDdTPWSKGFLASSYASRGLKMRFTSGSgsevqmgyaegksmlylEARCIYITKAAGVQGLQngsVSCIGVPsavpsGIRAVLAENLICSSLDlECASSnDQTFthsdmrRTARLLMQflpgtdfISSGYSAVPnydnmfagsnedaedfddynviqrdlkvdgglrpvreedviairnkaaralqavfagmglppitdeeveaATYAHGskdMPERnivEDIKFAQEiinknrnGLEVVkalaqggftdvaQDMLNiqkakltgdylhtsaiivGDGQVLSAVNDVNDYAGPATGYRLQGERWEEIKNIPGALDPN dssp=lllhhhhhhhllhhhhlllllllhhhlllllllllllllleeeelleeeeelleehhhllhhhhhhhhhllllllhhhhhhllhhhhhhhhhlllllhhhhhhhhllllhhhhhhhhllllhhhhhhhhhhhllLLLLLleeelllllllhhhhhhhhhhhhhhlLLEEeellllhhhhhhhhhhhhhhhhhhlllLEEEELLLHHHHHHHHHLLLLLEEEEEELLLLHhhHHHLLlLHHHHHHHHHHHHHLLLEEEEELLLlhhhhllllllllhhhhHHHHHHHHHHHLLLEEElllHHHLLLHhhlllHHHHHHHHHHHHHHLLlEEELLlLLLLlllhhhHHHHHHHHhllllllLLEEEELLLhhhlllllllllhhhhhhhhhhhhhhllllllllllhhhhhhhhhhhhhhhhhhhhhlllllllhhhhhhHHHLLLhhhLLLLlhhHHHHHHHHhhhllllHHHHHhhhhhlllhhhhHHHHHhhhhhhhlhhhlllleeeLLLEEELLLLLLLLLLLLLLLLLLLHHHHHHHHLLLLLLLLL qstarts=73,78,82,121,162,166,179,366,383,390,408,413,420,429,441,475,546,556,561,567 sstarts=134,165,196,204,225,231,237,279,299,311,328,334,344,359,438,447,454,469,486,509 lengths=5,4,8,21,4,5,25,17,7,16,5,4,8,9,6,4,8,5,5,4 u=0.453378,-0.394133,-0.799442,0.513510,0.848611,-0.127154,0.728530,-0.352872,0.587133 t=74,26,-162">   <A HREF=#alignment-3>3</A>:  mol2-A  4.4  4.7  170   551    6 <A HREF="http://ekhidna.biocenter.helsinki.fi/dali_server/qz-test?jobid=test&pdbid=mol2&u=0.453378,-0.394133,-0.799442,0.513510,0.848611,-0.127154,0.728530,-0.352872,0.587133&t=74,26,-162">PDB</A>                                                                       
+<INPUT TYPE="CHECKBOX" NAME="cd2list" VALUE="cd2=mol2A sequence=mrskrfealakrpvnqdgfvkewieegfiamespndpkpsikivngavteldgkpvsdfdlidhfiaryginlnraeevmamdsvklanmlcdpnvkrseivplttamtpakivevvshmnvvemMMAMQKMRARRTPSQQAHVTNvkdnpvqiAADAAEGAWRGFDEQETTVavARYAPFNAIALLVGSQVGRPGVLTQCSLEEATeLKLGMLGHTCYAETISVYGTEPVFTDGDDTPWSKGFLASSYASRGLKMRFTSGSGSEVQMGYAEGKSMLYLEARCIYITKAAGVQGLQNGSVSCIGVPSAVPSGIRAVLAENLICSSLDLECASSNDQTFTHSDMRRTARLLMQFLPGTDFISSGYSAVPNYDNMFAGSNEDAEDFDDYNVIQRDLKVDGGLRPVREEDVIAIRNKAARALQAVFAGMGLPPITDEEVEAATYAHGSKDMPERNIVEDIKFAQEIINKNRNGLEVVKALAQGGFTDVAQDMLNIQKAKLTGDYLHTSAIIVGDGQVLSAVNDVNDYAGPATGYRLQGERWEEIKNIPGALDPN dssp=lllhhhhhhhllhhhhlllllllhhhlllllllllllllleeeelleeeeelleehhhllhhhhhhhhhllllllhhhhhhllhhhhhhhhhlllllhhhhhhhhllllhhhhhhhhllllhhhhHHHHHHHLLLLLLLLEEELLLllllhhhhHHHHHHHHHHLLLEEEELLllHHHHHHHHHHHHHHHHHHLLLLEEEELLLHHHhHHHHHLLLLLEEEEEELLLLHHHHHHLLLLHHHHHHHHHHHHHLLLEEEEELLLLHHHHLLLLLLLLHHHHHHHHHHHHHHHLLLEEELLLHHHLLLHHHLLLHHHHHHHHHHHHHHLLLEEELLLLLLLLLLHHHHHHHHHHHHLLLLLLLLEEEELLLHHHLLLLLLLLLHHHHHHHHHHHHHHLLLLLLLLLLHHHHHHHHHHHHHHHHHHHHHLLLLLLLHHHHHHHHHLLLHHHLLLLLHHHHHHHHHHHHHLLLLHHHHHHHHHHLLLHHHHHHHHHHHHHHHHLHHHLLLLEEELLLEEELLLLLLLLLLLLLLLLLLLHHHHHHHHLLLLLLLLL qstarts=125,193,366,376,387,416,420 sstarts=125,135,154,163,175,203,208 lengths=10,11,9,10,28,4,13 u=0.540627,-0.075704,0.837849,-0.674941,-0.633537,0.378266,0.502172,-0.769999,-0.393603 t=-204,38,22">   <A HREF=#alignment-4>4</A>:  mol2-A  4.4  2.7   85   551    7 <A HREF="http://ekhidna.biocenter.helsinki.fi/dali_server/qz-test?jobid=test&pdbid=mol2&u=0.540627,-0.075704,0.837849,-0.674941,-0.633537,0.378266,0.502172,-0.769999,-0.393603&t=-204,38,22">PDB</A>                                                                       
+<INPUT TYPE="CHECKBOX" NAME="cd2list" VALUE="cd2=mol2A sequence=mrskrfealakrpvnqdgfvkewieegfiamespndpkpsikivngavteldgkpvsdfdlidhfiaryginlnraeevmamdsvklanmlcdpnvkrseivplttamtpakivevvshmnvvemmmamqkmrarrtpsqqahvtnvkdnpvqiaadaaegawrgFDEQETTVAVARYAPFNAIALLVGSqvgrpgvLTQCSLEEAteLKLGMLGHTCYAETISVYgtepvftdgddtPWSKGFLASSYAsrglKMRFTSgSGSEvqmgyaegksmlyLEARCIYITKAAGvQGLQNGSVscigvpsavpsgiRAVLAENLICSsldleCASSNdQTFTHSDMRRTARLLmqfLPGTdfISSGYSavpnydNMFAGsneDAEDfddynviqrdlkvdgglrpvreedviairnkaaralqavfagmglppitdeeVEAATYAHGskdmpernivedikfaqeiinknrnglevvkalaqggftdvaqdmlniqkakltgdylhtsaiiVGDGQVLSAVNDVNDYAGPATGYRLQGERWEEIKNIPGALDPN dssp=lllhhhhhhhllhhhhlllllllhhhlllllllllllllleeeelleeeeelleehhhllhhhhhhhhhllllllhhhhhhllhhhhhhhhhlllllhhhhhhhhllllhhhhhhhhllllhhhhhhhhhhhlllllllleeelllllllhhhhhhhhhhhhhhlLLEEEELLLLHHHHHHHHHHHHHHHhhhllllEEEELLLHHhhHHHHHLLLLLEEEEEELLllhhhhhhllllHHHHHHHHHHHHhlllEEEEELlLLHHhhllllllllhhhHHHHHHHHHHHHLlLEEELLLHhhlllhhhlllhhHHHHHHHHHHHhllleEELLLlLLLLLLHHHHHHHHHhhhLLLLllLLEEEElllhhhLLLLLlllLHHHhhhhhhhhhhhllllllllllhhhhhhhhhhhhhhhhhhhhhlllllllhhhHHHHHHLLLhhhlllllhhhhhhhhhhhhhllllhhhhhhhhhhlllhhhhhhhhhhhhhhhhlhhhlllleeELLLEEELLLLLLLLLLLLLLLLLLLHHHHHHHHLLLLLLLLL qstarts=82,90,120,134,184,192,366,378,386,390,408,418,429,435,443,454,458,464,484,544,563 sstarts=165,172,177,197,208,214,238,254,261,278,292,313,329,335,339,353,359,371,379,435,508 lengths=7,5,13,9,6,12,12,6,4,13,8,11,5,4,11,4,6,5,4,9,4 u=0.074162,-0.870081,-0.487297,0.157355,0.492731,-0.855836,0.984754,-0.013208,0.173453 t=53,175,-115">   <A HREF=#alignment-5>5</A>:  mol2-A  3.4  4.7  158   551    3 <A HREF="http://ekhidna.biocenter.helsinki.fi/dali_server/qz-test?jobid=test&pdbid=mol2&u=0.074162,-0.870081,-0.487297,0.157355,0.492731,-0.855836,0.984754,-0.013208,0.173453&t=53,175,-115">PDB</A>                                                                       
+<INPUT TYPE="CHECKBOX" NAME="cd2list" VALUE="cd2=mol2A sequence=mrskrfealakrpvnqdgfvkewieegfiamespndpkpsikivngavteldgkpvsdfdlidhfiaryginlnraeevmamdsvklanmlcdpnvkrseivplttamtpakivevvshmnvvemmmamqkmrarrtPSQQAHVTNVKDNPVQiaadaaegawrGFDEQETTvAVARyapfnaIALLVGSQVGRPGVLTQCSLeeatELKLgMLGHtCYAETISvygtepvftdgddtpwsKGFLASSYASRGLKMRFTSgsgsevqmgyaegksmlylearciyitkaaGVQGLQNGSVSCIgvpsavpsgiravlaenlicssldLECASSNdqTFTHSDMRrtarllMQFLPGtdfissgysavpnydnmfagsnedaedfddynviqrdlkvdgglrpvreedviairnkaaralqavfagmglppitdeeveaatyahgskdmpernivedikfaqeiinknrnglevvkalaqggftdvaqdmlniqkakltgdylhtsaiivgdgqvlsaVNDVNDYAGPATGYRLQGERWEEIKNIPGALDPN dssp=lllhhhhhhhllhhhhlllllllhhhlllllllllllllleeeelleeeeelleehhhllhhhhhhhhhllllllhhhhhhllhhhhhhhhhlllllhhhhhhhhllllhhhhhhhhllllhhhhhhhhhhhlllllLLLEEELLLLLLLHHHhhhhhhhhhhhLLLEEEELlLLHHhhhhhhHHHHHHHHHHLLLLEEEELLlhhhHHHHhHLLLlLEEEEEEllllhhhhhhllllhhhHHHHHHHHHHLLLEEEEELlllhhhhllllllllhhhhhhhhhhhhhhhLLLEEELLLHHHLllhhhlllhhhhhhhhhhhhhhllLEEELLLllLLLLLHHHhhhhhhHHHLLLllllleeeelllhhhlllllllllhhhhhhhhhhhhhhllllllllllhhhhhhhhhhhhhhhhhhhhhlllllllhhhhhhhhhlllhhhlllllhhhhhhhhhhhhhllllhhhhhhhhhhlllhhhhhhhhhhhhhhhhlhhhlllleeellleeellLLLLLLLLLLLLLLLLLHHHHHHHHLLLLLLLLL qstarts=134,160,195,205,366,386,394,409,416,456,494,506,541,554,566 sstarts=137,148,164,173,183,207,212,217,241,290,327,336,340,350,517 lengths=11,5,8,4,20,4,4,7,19,13,7,4,4,6,4 u=0.325340,-0.662033,0.675179,-0.690422,-0.654198,-0.308776,0.646120,-0.365701,-0.669919 t=-157,152,55">   <A HREF=#alignment-6>6</A>:  mol2-A  3.1  4.0  120   551    8 <A HREF="http://ekhidna.biocenter.helsinki.fi/dali_server/qz-test?jobid=test&pdbid=mol2&u=0.325340,-0.662033,0.675179,-0.690422,-0.654198,-0.308776,0.646120,-0.365701,-0.669919&t=-157,152,55">PDB</A>                                                                       
+<INPUT TYPE="CHECKBOX" NAME="cd2list" VALUE="cd2=mol2A sequence=mrskrfealakrpvnqdgfvkewieegfiamespndPKPSikivngavteldgkPVSDFDLiDHFIArygINLNraeevmamdsvklanmlcdpnvkrseivplttamTPAKIvevvshmnvvemmMAMQkmRARRTpsqqahvtnvkdnpvqiaadaaegawrGFDEqettvavaryapfnaiallvgsqvgrpgvltqcsleeatelklgmlghtcyaetisvygtepvftdgddtpwskgflassyasrgLKMRFTSGSGSEvqmgyaEGKSMLYLEARCIYITKAAGVQGLQNgsVSCIGvPSAVpSGIRAVLAENLICSSLDLECAsSNDQtfthsdMRRTarLLMQFLPGTDFisSGYSAVPNydnmfagsnedaEDFDDYNviqrdlkVDGGlrpvreedviairnkaaralqavfagmglppitdeeveaatyahgskdmpernivedikfaqeIINKNRNGLEVVkalaqggftdvaqdMLNIqkakLTGDYLHTSAIIVGDGQVLSAVNDVNDYAGPATGYRLQGERWEEIKNIPGALDPN dssp=lllhhhhhhhllhhhhlllllllhhhllllllllllLLLLeeeelleeeeelleEHHHLLHhHHHHHhhlLLLLlhhhhhhllhhhhhhhhhlllllhhhhhhhhlllLHHHHhhhhllllhhhhhHHHHhhLLLLLllleeelllllllhhhhhhhhhhhhhhLLLEeeellllhhhhhhhhhhhhhhhhhhlllleeeelllhhhhhhhhhllllleeeeeellllhhhhhhllllhhhhhhhhhhhhhllLEEEEELLLLHHhhllllLLLLHHHHHHHHHHHHHHHLLLEEELllHHHLLlHHHLlLHHHHHHHHHHHHHHLLLEEElLLLLlllllhHHHHhhHHHHHLLLLLLllEEEELLLHhhlllllllllhHHHHHHHhhhhhhlLLLLlllllhhhhhhhhhhhhhhhhhhhhhlllllllhhhhhhhhhlllhhhlllllhhhhhhhhhhHHHLLLLHHHHHhhhhhlllhhhhhhHHHHhhhhHHLHHHLLLLEEELLLEEELLLLLLLLLLLLLLLLLLLHHHHHHHHLLLLLLLLL qstarts=7,15,22,27,50,63,67,76,82,113,139,165,178,199,364,369,377,381,386,393,403,440,453,564 sstarts=36,54,62,70,108,126,132,164,253,271,299,305,310,332,342,348,355,361,365,381,395,462,488,496 lengths=4,7,5,4,5,4,5,4,12,26,5,4,21,4,4,7,4,4,4,7,4,12,4,4 u=0.945887,0.207681,-0.249333,0.222522,0.144115,0.964217,0.236182,-0.967522,0.090103 t=-54,-130,-39">   <A HREF=#alignment-7>7</A>:  mol2-A  2.6  4.7  164   551    7 <A HREF="http://ekhidna.biocenter.helsinki.fi/dali_server/qz-test?jobid=test&pdbid=mol2&u=0.945887,0.207681,-0.249333,0.222522,0.144115,0.964217,0.236182,-0.967522,0.090103&t=-54,-130,-39">PDB</A>                                                                       
+
+</form>
+</PRE>
+<A NAME="alignments">
+<h2>Pairwise Structural Alignments </h2>
+Notation: three-state secondary structure definitions by DSSP (reduced to H=helix, E=sheet, L=coil) are shown above the amino acid sequence. Structurally equivalent residues are in uppercase, structurally non-equivalent residues (e.g. in loops) are in lowercase. Amino acid identities are marked by vertical bars.
+<a name=alignment-1><h3> No 1: Query=mol1A Sbjct=mol2A Z-score=8.0</h3>
+
+<A HREF="#mol1A">back to top</A>
+<PRE>
+DSSP  -------------------------------------------------------lhhhh
+Query -------------------------------------------------------mllre    5
+ident                                                             
+Sbjct mrskrfealakrpvnqdgfvkewieegfiamespndpkpsikivngavteldgkpvsdfd   60
+DSSP  lllhhhhhhhllhhhhlllllllhhhlllllllllllllleeeelleeeeelleehhhll
+
+
+DSSP  hhhhhhhhlllllleeelhhhlllllllleeelleeeelhhhhhhhhhhhhhllllllll
+Query inryckekatgkriyavpklwipgffkkfdeksgrcfvdpyelgaeitdwilnqsrewdy   65
+ident                                                             
+Sbjct lidhfiaryginlnraeevmamdsvklanmlcdpnvkrseivplttamtpakivevvshm  120
+DSSP  hhhhhhhhhllllllhhhhhhllhhhhhhhhhlllllhhhhhhhhllllhhhhhhhhlll
+
+
+DSSP  lllhhhhhllllhhhhhHLLEEEELHHhhlllllllllllllllllllllLLLHHHHHHL
+Query sqplsflkgektpdwikRSVVYGSLPRttaaynhkgsgyyeendvlgfreAGTFFKMMLL  125
+ident                   |                                         
+Sbjct nvvemmmamqkmrarrtPSQQAHVTNV-----------------------KDNPVQIAAD  157
+DSSP  lhhhhhhhhhhhlllllLLLEEELLLL-----------------------LLLHHHHHHH
+
+
+DSSP  HHHHHHHLLLEEEELLLEEElllllllllllllleeeeeeelhhhllhhhllllhhhHHH
+Query LPFVKSLGADAIYLLPVSRMsdlfkkgdapspysvknpmelderyhdpllepfkvdeEFK  185
+ident        | |                                                  
+Sbjct AAEGAWRGFDEQETTVAVAR----------------------------------yapFNA  183
+DSSP  HHHHHHHLLLEEEELLLLHH----------------------------------hhhHHH
+
+
+DSSP  HH-HHHHHH--LLLEEEEEELLleeelllhhhlllhhhllleehhhllllllllllllll
+Query AF-VEACHI--LGIRVILDFIPrtaardsdlirehpdwfywikveeladytppraeelpf  242
+ident             |                                               
+Sbjct IAlLVGSQVgrPGVLTQCSLEE--------------------------------------  205
+DSSP  HHhHHHHHHhlLLLEEEELLLH--------------------------------------
+
+
+DSSP  llllhhhhhhhhllhhhhhhhllllllhhhhlhhhhhhhhlllllhhhhhhhhhleelll
+Query kvpdedeleiiynkenvkrhlkkftlppnlidpqkwekikreegnilelivkefgiitpp  302
+ident                                                             
+Sbjct ------------------------------------------------------------  205
+DSSP  ------------------------------------------------------------
+
+
+DSSP  llllllllllllllleeellllllllhhhhhhllllllllllhhhhlllllllllllhhh
+Query gfsdlindpqptwddvtflrlyldhpeaskrfldpnqppyvlydvikaskfpgkepnrel  362
+ident                                                             
+Sbjct ------------------------------------------------------------  205
+DSSP  ------------------------------------------------------------
+
+
+DSSP  hhhhlLHHHHHHHHHLLLEE-EELL--------hHHLLHHHHHHHHHHHHHHLllLEEEE
+Query weylaGVIPHYQKKYGIDGA-RLDM--------gHALPKELLDLIIKNVKEYDpaFVMIA  413
+ident                    |                                     |  
+Sbjct -----ATELKLGMLGHTCYAeTISVygtepvftdGDDTPWSKGFLASSYASRG--LKMRF  258
+DSSP  -----HHHHHHHHLLLLLEEeEEELlllhhhhhhLLLLHHHHHHHHHHHHHLL--LEEEE
+
+
+DSSP  LLLL-----------------HHHH-HHHHHHLLLEELLLH---hhhhlLLLL-HHHHHH
+Query EELD-----------------MEKD-KASKEAGYDVILGSS---wyfagRVEE-IGKLPD  451
+ident                              | ||       |         |   |     
+Sbjct TSGSgsevqmgyaegksmlylEARCiYITKAAGVQGLQNGSvscigvpsAVPSgIRAVLA  318
+DSSP  ELLLlhhhhllllllllhhhhHHHHhHHHHHHLLLEEELLLhhhlllhhHLLLhHHHHHH
+
+
+DSSP  HHHLL---LLLEEELLLLllllLHHHlllHHHHHHHHHHHHHLLLLEEEE--EELL----
+Query IAEEL---VLPFLASVETpdtpRIATrkyASKMKKLAPFVTYFLPNSIPY--VNTG----  502
+ident          |    |                                             
+Sbjct ENLICsslDLECASSNDQ----TFTH---SDMRRTARLLMQFLPGTDFISsgYSAVpnyd  371
+DSSP  HHHHHhhlLLEEELLLLL----LLLL---LHHHHHHHHHHHHLLLLLLLLeeEELLlhhh
+
+
+DSSP  --------HHHLllllllllllllhhhhhllllllllllllllllllllllllllhhhHH
+Query --------QEIGekqpmnlgldtdpnlrkvlsptdeffgklaffdhyvlhwdspdrgvLN  554
+ident                                                             
+Sbjct nmfagsneDAED----------------------------------------------FD  385
+DSSP  llllllllLHHH----------------------------------------------HH
+
+
+DSSP  HHHHH----hHHHH----------------------------------------------
+Query FIKKL----iKVRH----------------------------------------------  564
+ident                                                             
+Sbjct DYNVIqrdlkVDGGlrpvreedviairnkaaralqavfagmglppitdeeveaatyahgs  445
+DSSP  HHHHHhhhhlLLLLlllllhhhhhhhhhhhhhhhhhhhhhlllllllhhhhhhhhhlllh
+
+
+DSSP  ------------------------------------------------------------
+Query ------------------------------------------------------------  564
+ident                                                             
+Sbjct kdmpernivedikfaqeiinknrnglevvkalaqggftdvaqdmlniqkakltgdylhts  505
+DSSP  hhlllllhhhhhhhhhhhhhllllhhhhhhhhhhlllhhhhhhhhhhhhhhhhlhhhlll
+
+
+DSSP  -----------------------hLHHH---------------hhl
+Query -----------------------eFLDF---------------vln  572
+ident                                               
+Sbjct aiivgdgqvlsavndvndyagpatGYRLqgerweeiknipgaldpn  551
+DSSP  leeellleeellllllllllllllLLLLlhhhhhhhhlllllllll
+
+
+</PRE><a name=alignment-2><h3> No 2: Query=mol1A Sbjct=mol2A Z-score=4.8</h3>
+
+<A HREF="#mol1A">back to top</A>
+<PRE>
+DSSP  -----lhhhhhhhhhhhhlllllleeelhhhlllllllleeelleeeelhhhhhhhhhhh
+Query -----mllreinryckekatgkriyavpklwipgffkkfdeksgrcfvdpyelgaeitdw   55
+ident                                                             
+Sbjct mrskrfealakrpvnqdgfvkewieegfiamespndpkpsikivngavteldgkpvsdfd   60
+DSSP  lllhhhhhhhllhhhhlllllllhhhlllllllllllllleeeelleeeeelleehhhll
+
+
+DSSP  hhlllllllllllhhhhhllllhhhhhhlleeeelhhhhlllllllllllllllllllll
+Query ilnqsrewdysqplsflkgektpdwikrsvvygslprttaaynhkgsgyyeendvlgfre  115
+ident                                                             
+Sbjct lidhfiaryginlnraeevmamdsvklanmlcdpnvkrseivplttamtpakivevvshm  120
+DSSP  hhhhhhhhhllllllhhhhhhllhhhhhhhhhlllllhhhhhhhhllllhhhhhhhhlll
+
+
+DSSP  lllhhhhhhlhhhhhhhLLLEEEElLLEEelllllllllllllleeeeeeelhhhllhhh
+Query agtffkmmlllpfvkslGADAIYLlPVSRmsdlfkkgdapspysvknpmelderyhdpll  175
+ident                                                             
+Sbjct nvvemmmamqkmrarrtPSQQAHV-TNVK-------------------------------  148
+DSSP  lhhhhhhhhhhhlllllLLLEEEL-LLLL-------------------------------
+
+
+DSSP  llllhHHHHHHHHHHHHHLLL-EEEEEEllleeelllhhhlllhhhllleehhhllllll
+Query epfkvDEEFKAFVEACHILGI-RVILDFiprtaardsdlirehpdwfywikveeladytp  234
+ident           |        |                                        
+Sbjct ---dnPVQIAADAAEGAWRGFdEQETTV--------------------------------  173
+DSSP  ---llHHHHHHHHHHHHHHLLlEEEELL--------------------------------
+
+
+DSSP  llllllllllllhhhhhhhhllhhhhhhhllllllhhhhlhhhhhhhhlllllhhhhhhh
+Query praeelpfkvpdedeleiiynkenvkrhlkkftlppnlidpqkwekikreegnilelivk  294
+ident                                                             
+Sbjct ------------------------------------------------------------  173
+DSSP  ------------------------------------------------------------
+
+
+DSSP  hhleelllllllllllllllllleeellllllllhhhhhhllllllllllhhhhllllll
+Query efgiitppgfsdlindpqptwddvtflrlyldhpeaskrfldpnqppyvlydvikaskfp  354
+ident                                                             
+Sbjct ------------------------------------------------------------  173
+DSSP  ------------------------------------------------------------
+
+
+DSSP  lllllhhhhhhhllHHHHHhhHHLL-----------LEEEELLHhhllhhhhhHHHHHHH
+Query gkepnrelweylagVIPHYqkKYGI-----------DGARLDMGhalpkelldLIIKNVK  403
+ident                 |                       |                   
+Sbjct ----------avarYAPFN-aIALLvgsqvgrpgvlTQCSLEEA------telKLGMLGH  216
+DSSP  ----------llhhHHHHH-hHHHHhhhhhhlllleEEELLLHH------hhhHHHHLLL
+
+
+DSSP  hhlllLEEEELLLL------------hhHHHHHHHHL-----lLEELLlHHHH-----hl
+Query eydpaFVMIAEELD------------meKDKASKEAG-----yDVILGsSWYF-----ag  441
+ident                                                             
+Sbjct ----tCYAETISVYgtepvftdgddtpwSKGFLASSYasrglkMRFTS-GSGSevqmgya  271
+DSSP  ----lLEEEEEELLllhhhhhhllllhhHHHHHHHHHhhllleEEEEL-LLLHhhhllll
+
+
+DSSP  llLLHHH-HHHHHHLL----LLLEEELLLLlllLLHHHLllhhHHHHHHHHHHHLLL---
+Query rvEEIGK-LPDIAEEL----VLPFLASVETpdtPRIATRkyasKMKKLAPFVTYFLP---  493
+ident                     |                           |           
+Sbjct egKSMLYlEARCIYITkaagVQGLQNGSVS-ciGVPSAV----PSGIRAVLAENLICssl  326
+DSSP  llLLHHHhHHHHHHHHhhhlLLEEELLLHH-hlLLHHHL----LLHHHHHHHHHHHHhhl
+
+
+DSSP  --LEEEEEELLHhhlllllllllllllhhhhhllllllllllllllllllllllllLLHH
+Query --NSIPYVNTGQeigekqpmnlgldtdpnlrkvlsptdeffgklaffdhyvlhwdsPDRG  551
+ident                                                             
+Sbjct dlECASSNDQTF-------------------------------------------tHSDM  343
+DSSP  llEEELLLLLLL-------------------------------------------lLLHH
+
+
+DSSP  HHHHHHHHHHHHH-----------------------------------------------
+Query VLNFIKKLIKVRH-----------------------------------------------  564
+ident                                                             
+Sbjct RRTARLLMQFLPGtdfissgysavpnydnmfagsnedaedfddynviqrdlkvdgglrpv  403
+DSSP  HHHHHHHHHHLLLllllleeeelllhhhlllllllllhhhhhhhhhhhhhhlllllllll
+
+
+DSSP  ------------------------------------------------------------
+Query ------------------------------------------------------------  564
+ident                                                             
+Sbjct reedviairnkaaralqavfagmglppitdeeveaatyahgskdmpernivedikfaqei  463
+DSSP  lhhhhhhhhhhhhhhhhhhhhhlllllllhhhhhhhhhlllhhhlllllhhhhhhhhhhh
+
+
+DSSP  ------------------------------------------------------------
+Query ------------------------------------------------------------  564
+ident                                                             
+Sbjct inknrnglevvkalaqggftdvaqdmlniqkakltgdylhtsaiivgdgqvlsavndvnd  523
+DSSP  hhllllhhhhhhhhhhlllhhhhhhhhhhhhhhhhlhhhlllleeellleeellllllll
+
+
+DSSP  --------------------hlhhhhhl
+Query --------------------efldfvln  572
+ident                             
+Sbjct yagpatgyrlqgerweeiknipgaldpn  551
+DSSP  lllllllllllhhhhhhhhlllllllll
+
+
+</PRE><a name=alignment-3><h3> No 3: Query=mol1A Sbjct=mol2A Z-score=4.4</h3>
+
+<A HREF="#mol1A">back to top</A>
+<PRE>
+DSSP  ------------------------------------------------------------
+Query ------------------------------------------------------------    0
+ident                                                             
+Sbjct mrskrfealakrpvnqdgfvkewieegfiamespndpkpsikivngavteldgkpvsdfd   60
+DSSP  lllhhhhhhhllhhhhlllllllhhhlllllllllllllleeeelleeeeelleehhhll
+
+
+DSSP  -lhhhhhhhhhhhhlllllleeelhhhlllllllleeelleeeelhhhhhhhhhhhhhll
+Query -mllreinryckekatgkriyavpklwipgffkkfdeksgrcfvdpyelgaeitdwilnq   59
+ident                                                             
+Sbjct lidhfiaryginlnraeevmamdsvklanmlcdpnvkrseivplttamtpakivevvshm  120
+DSSP  hhhhhhhhhllllllhhhhhhllhhhhhhhhhlllllhhhhhhhhllllhhhhhhhhlll
+
+
+DSSP  lllllllllhhhhhLLLLH--------------------------HHHH-----------
+Query srewdysqplsflkGEKTP--------------------------DWIK-----------   82
+ident                                                             
+Sbjct nvvemmmamqkmraRRTPSqqahvtnvkdnpvqiaadaaegawrgFDEQettvavaryap  180
+DSSP  lhhhhhhhhhhhllLLLLLleeelllllllhhhhhhhhhhhhhhlLLEEeellllhhhhh
+
+
+DSSP  ----------------HLLEEEELhhhhllllllllllllllllllllllllhhhHHHLH
+Query ----------------RSVVYGSLprttaaynhkgsgyyeendvlgfreagtffkMMLLL  126
+ident                                                            |
+Sbjct fnaiallvgsqvgrpgVLTQCSLE-------------------------------EATEL  209
+DSSP  hhhhhhhhhhhhhlllLEEEELLL-------------------------------HHHHH
+
+
+DSSP  HHHHHHLLLEEEELLLeeelllllllllllllleeeEEEE--LHHHLlhhhllllHHHHH
+Query PFVKSLGADAIYLLPVsrmsdlfkkgdapspysvknPMEL--DERYHdpllepfkVDEEF  184
+ident                |                                            
+Sbjct KLGMLGHTCYAETISV--------------------YGTEpvFTDGD-------dTPWSK  242
+DSSP  HHHHLLLLLEEEEEEL--------------------LLLHhhHHHLL-------lLHHHH
+
+
+DSSP  HHHHHHHHHLLLEEEEEELLleeelllhhhlllhhhllleehhhllllllllllllllll
+Query KAFVEACHILGIRVILDFIPrtaardsdlirehpdwfywikveeladytppraeelpfkv  244
+ident           |                                                 
+Sbjct GFLASSYASRGLKMRFTSGS----------------------------------------  262
+DSSP  HHHHHHHHHLLLEEEEELLL----------------------------------------
+
+
+DSSP  llhhhhhhhhllhhhhhhhllllllhhhhlhhhhhhhhlllllhhhhhhhhhleelllll
+Query pdedeleiiynkenvkrhlkkftlppnlidpqkwekikreegnilelivkefgiitppgf  304
+ident                                                             
+Sbjct ------------------------------------------------------------  262
+DSSP  ------------------------------------------------------------
+
+
+DSSP  llllllllllllleeellllllllhhhhhhllllllllllhhhhlllllllllllhhhhh
+Query sdlindpqptwddvtflrlyldhpeaskrfldpnqppyvlydvikaskfpgkepnrelwe  364
+ident                                                             
+Sbjct ---------------------------------------------gsevqmgyaegksml  277
+DSSP  ---------------------------------------------lhhhhllllllllhh
+
+
+DSSP  hhLLHHHHHHHHHLLLEEE---ELLHHHL-----LHHHHHHHHHHHHHHLllLEEEE-LL
+Query ylAGVIPHYQKKYGIDGAR---LDMGHAL-----PKELLDLIIKNVKEYDpaFVMIA-EE  415
+ident           |  |  |                                |          
+Sbjct ylEARCIYITKAAGVQGLQngsVSCIGVPsavpsGIRAVLAENLICSSLD-lECASSnDQ  336
+DSSP  hhHHHHHHHHHHHLLLEEElllHHHLLLHhhlllHHHHHHHHHHHHHHLL-lEEELLlLL
+
+
+DSSP  LL---hhhHHHHHHHL------lLEELLLHHH----------------------------
+Query LD---mekDKASKEAG------yDVILGSSWY----------------------------  438
+ident           |                 |                               
+Sbjct TFthsdmrRTARLLMQflpgtdfISSGYSAVPnydnmfagsnedaedfddynviqrdlkv  396
+DSSP  LLlllhhhHHHHHHHHhllllllLLEEEELLLhhhlllllllllhhhhhhhhhhhhhhll
+
+
+DSSP  ---------------------------------------hhlLLLLHHhhhhhhhlllll
+Query ---------------------------------------fagRVEEIGklpdiaeelvlp  459
+ident                                                |            
+Sbjct dgglrpvreedviairnkaaralqavfagmglppitdeeveaATYAHG------------  444
+DSSP  llllllllhhhhhhhhhhhhhhhhhhhhhlllllllhhhhhhHHHLLL------------
+
+
+DSSP  eeelllllllllhhhlLLHHhhhhhhhhhhhlllleeeeeellhhhlllllllllllllh
+Query flasvetpdtpriatrKYASkmkklapfvtyflpnsipyvntgqeigekqpmnlgldtdp  519
+ident                                                             
+Sbjct -------------skdMPER----------------------------------------  451
+DSSP  -------------hhhLLLL----------------------------------------
+
+
+DSSP  hhhhlllllllllllllllllllllllLLLHHHHH-----hhHHHHH------------H
+Query nlrkvlsptdeffgklaffdhyvlhwdSPDRGVLN-----fiKKLIK------------V  562
+ident                                                             
+Sbjct ------------------------nivEDIKFAQEiinknrnGLEVVkalaqggftdvaQ  487
+DSSP  ------------------------lhhHHHHHHHHhhhllllHHHHHhhhhhlllhhhhH
+
+
+DSSP  HHHL-----------------hHHHH----------------------------------
+Query RHEF-----------------lDFVL----------------------------------  571
+ident                                                             
+Sbjct DMLNiqkakltgdylhtsaiivGDGQvlsavndvndyagpatgyrlqgerweeiknipga  547
+DSSP  HHHHhhhhhhhlhhhlllleeeLLLEeelllllllllllllllllllhhhhhhhhlllll
+
+
+DSSP  ---l
+Query ---n  572
+ident     
+Sbjct ldpn  551
+DSSP  llll
+
+
+</PRE><a name=alignment-4><h3> No 4: Query=mol1A Sbjct=mol2A Z-score=4.4</h3>
+
+<A HREF="#mol1A">back to top</A>
+<PRE>
+DSSP  lhhhhhhhhhhhhlllllleeelhhhlllllllleeelleeeelhhhhhhhhhhhhhlll
+Query mllreinryckekatgkriyavpklwipgffkkfdeksgrcfvdpyelgaeitdwilnqs   60
+ident                                                             
+Sbjct mrskrfealakrpvnqdgfvkewieegfiamespndpkpsikivngavteldgkpvsdfd   60
+DSSP  lllhhhhhhhllhhhhlllllllhhhlllllllllllllleeeelleeeeelleehhhll
+
+
+DSSP  llllllllhhhhhllllhhhhhhlleeeelhhhhllllllllllllllllllllllllhh
+Query rewdysqplsflkgektpdwikrsvvygslprttaaynhkgsgyyeendvlgfreagtff  120
+ident                                                             
+Sbjct lidhfiaryginlnraeevmamdsvklanmlcdpnvkrseivplttamtpakivevvshm  120
+DSSP  hhhhhhhhhllllllhhhhhhllhhhhhhhhhlllllhhhhhhhhllllhhhhhhhhlll
+
+
+DSSP  hhhhlHHHHHHHLLLeeeellleeelllllllllllllleeeeeeelhhhllhhhllllh
+Query kmmllLPFVKSLGADaiyllpvsrmsdlfkkgdapspysvknpmelderyhdpllepfkv  180
+ident              |                                              
+Sbjct nvvemMMAMQKMRAR---------------------------------------------  135
+DSSP  lhhhhHHHHHHHLLL---------------------------------------------
+
+
+DSSP  hhhhhhhhhhhhhLLLEEEEEELLleeelllhhhlllhhhllleehhhllllllllllll
+Query deefkafveachiLGIRVILDFIPrtaardsdlirehpdwfywikveeladytppraeel  240
+ident                                                             
+Sbjct -------------RTPSQQAHVTN------------------------------------  146
+DSSP  -------------LLLLLEEELLL------------------------------------
+
+
+DSSP  llllllhhhhhhhhllhhhhhhhllllllhhhhlhhhhhhhhlllllhhhhhhhhhleel
+Query pfkvpdedeleiiynkenvkrhlkkftlppnlidpqkwekikreegnilelivkefgiit  300
+ident                                                             
+Sbjct ------------------------------------------------------------  146
+DSSP  ------------------------------------------------------------
+
+
+DSSP  llllllllllllllllleeellllllllhhhhhhllllllllllhhhhlllllllllllh
+Query ppgfsdlindpqptwddvtflrlyldhpeaskrfldpnqppyvlydvikaskfpgkepnr  360
+ident                                                             
+Sbjct ----------------------------------------------------------vk  148
+DSSP  ----------------------------------------------------------ll
+
+
+DSSP  hhhhhhLLHHHHHHHhHLLLEEEELL-hHHLLHHHHHHHHHHHHHHLLLLEEEELLlLHH
+Query elweylAGVIPHYQKkYGIDGARLDM-gHALPKELLDLIIKNVKEYDPAFVMIAEElDME  419
+ident       |          | |                           |            
+Sbjct dnpvqiAADAAEGAW-RGFDEQETTVavARYAPFNAIALLVGSQVGRPGVLTQCSL-EEA  206
+DSSP  llhhhhHHHHHHHHH-HLLLEEEELLllHHHHHHHHHHHHHHHHHHLLLLEEEELL-LHH
+
+
+DSSP  H-HHHHHHHLLLEEL---------------------------------------------
+Query K-DKASKEAGYDVIL---------------------------------------------  433
+ident    |                                                        
+Sbjct TeLKLGMLGHTCYAEtisvygtepvftdgddtpwskgflassyasrglkmrftsgsgsev  266
+DSSP  HhHHHHHLLLLLEEEeeellllhhhhhhllllhhhhhhhhhhhhhllleeeeellllhhh
+
+
+DSSP  ------------------------------------------------------------
+Query ------------------------------------------------------------  433
+ident                                                             
+Sbjct qmgyaegksmlylearciyitkaagvqglqngsvscigvpsavpsgiravlaenlicssl  326
+DSSP  hllllllllhhhhhhhhhhhhhhhllleeelllhhhlllhhhlllhhhhhhhhhhhhhhl
+
+
+DSSP  ------------------------------------------------------------
+Query ------------------------------------------------------------  433
+ident                                                             
+Sbjct dlecassndqtfthsdmrrtarllmqflpgtdfissgysavpnydnmfagsnedaedfdd  386
+DSSP  lleeellllllllllhhhhhhhhhhhhlllllllleeeelllhhhlllllllllhhhhhh
+
+
+DSSP  --------------------------llhhhhhlllllhhhhhhhhhllllleeelllll
+Query --------------------------gsswyfagrveeigklpdiaeelvlpflasvetp  467
+ident                                                             
+Sbjct ynviqrdlkvdgglrpvreedviairnkaaralqavfagmglppitdeeveaatyahgsk  446
+DSSP  hhhhhhhhllllllllllhhhhhhhhhhhhhhhhhhhhhlllllllhhhhhhhhhlllhh
+
+
+DSSP  llllhhhlllhhhhhhhhhhhhhlllleeeeeellhhhlllllllllllllhhhhhllll
+Query dtpriatrkyaskmkklapfvtyflpnsipyvntgqeigekqpmnlgldtdpnlrkvlsp  527
+ident                                                             
+Sbjct dmpernivedikfaqeiinknrnglevvkalaqggftdvaqdmlniqkakltgdylhtsa  506
+DSSP  hlllllhhhhhhhhhhhhhllllhhhhhhhhhhlllhhhhhhhhhhhhhhhhlhhhllll
+
+
+DSSP  llllllllllllllllllllllhhhhhhhhhhhhhhhhlhhhhhl
+Query tdeffgklaffdhyvlhwdspdrgvlnfikklikvrhefldfvln  572
+ident                                              
+Sbjct iivgdgqvlsavndvndyagpatgyrlqgerweeiknipgaldpn  551
+DSSP  eeellleeelllllllllllllllllllhhhhhhhhlllllllll
+
+
+</PRE><a name=alignment-5><h3> No 5: Query=mol1A Sbjct=mol2A Z-score=3.4</h3>
+
+<A HREF="#mol1A">back to top</A>
+<PRE>
+DSSP  ------------------------------------------------------------
+Query ------------------------------------------------------------    0
+ident                                                             
+Sbjct mrskrfealakrpvnqdgfvkewieegfiamespndpkpsikivngavteldgkpvsdfd   60
+DSSP  lllhhhhhhhllhhhhlllllllhhhlllllllllllllleeeelleeeeelleehhhll
+
+
+DSSP  -----------------------lhhhhhhhhhhhhlllllleeelhhhlllllllleee
+Query -----------------------mllreinryckekatgkriyavpklwipgffkkfdek   37
+ident                                                             
+Sbjct lidhfiaryginlnraeevmamdsvklanmlcdpnvkrseivplttamtpakivevvshm  120
+DSSP  hhhhhhhhhllllllhhhhhhllhhhhhhhhhlllllhhhhhhhhllllhhhhhhhhlll
+
+
+DSSP  lleeeelhhhhhhhhhhhhhlllllllllllhhhhhllllhhhhhHLLEEEElHHHHLll
+Query sgrcfvdpyelgaeitdwilnqsrewdysqplsflkgektpdwikRSVVYGSlPRTTAay   97
+ident                                                             
+Sbjct nvvemmmamqkmrarrtpsqqahvtnvkdnpvqiaadaaegawrgFDEQETT-VAVAR--  177
+DSSP  lhhhhhhhhhhhlllllllleeelllllllhhhhhhhhhhhhhhlLLEEEEL-LLLHH--
+
+
+DSSP  lllllllllllllllllllllhhHHHHLHHHHHHHL------lLEEEELLLEeellllll
+Query nhkgsgyyeendvlgfreagtffKMMLLLPFVKSLG------aDAIYLLPVSrmsdlfkk  151
+ident                                                 |           
+Sbjct -----------------------YAPFNAIALLVGSqvgrpgvLTQCSLEEA--------  206
+DSSP  -----------------------HHHHHHHHHHHHHhhhllllEEEELLLHH--------
+
+
+DSSP  lllllllleeeeeeelhhhllhhhllllhhhhhHHHHHHhhHLLLEEEEEELLleeelll
+Query gdapspysvknpmelderyhdpllepfkvdeefKAFVEAchILGIRVILDFIPrtaards  211
+ident                                                             
+Sbjct -------------------------------teLKLGML--GHTCYAETISVY-------  226
+DSSP  -------------------------------hhHHHHHL--LLLLEEEEEELL-------
+
+
+DSSP  hhhlllhhhllleehhhllllllllllllllllllhhhhhhhhllhhhhhhhllllllhh
+Query dlirehpdwfywikveeladytppraeelpfkvpdedeleiiynkenvkrhlkkftlppn  271
+ident                                                             
+Sbjct ------------------------------------------------------------  226
+DSSP  ------------------------------------------------------------
+
+
+DSSP  hhlhhhhhhhhlllllhhhhhhhhhleelllllllllllllllllleeellllllllhhh
+Query lidpqkwekikreegnilelivkefgiitppgfsdlindpqptwddvtflrlyldhpeas  331
+ident                                                             
+Sbjct ------------------------------------------------------------  226
+DSSP  ------------------------------------------------------------
+
+
+DSSP  hhhllllllllllhhhhlllllllllllhhhhhhhLLHHHHHHHHHL----LLEEEEllH
+Query krfldpnqppyvlydvikaskfpgkepnrelweylAGVIPHYQKKYG----IDGARLdmG  387
+ident                                              |              
+Sbjct -----------------------gtepvftdgddtPWSKGFLASSYAsrglKMRFTS-gS  262
+DSSP  -----------------------llhhhhhhllllHHHHHHHHHHHHhlllEEEEEL-lL
+
+
+DSSP  HHL-------------LHHHHHHHHHHHHhhlllLEEEELLL-----------lhHHHHH
+Query HAL-------------PKELLDLIIKNVKeydpaFVMIAEEL-----------dmEKDKA  423
+ident                        | |                                 |
+Sbjct GSEvqmgyaegksmlyLEARCIYITKAAG----vQGLQNGSVscigvpsavpsgiRAVLA  318
+DSSP  LHHhhllllllllhhhHHHHHHHHHHHHL----lLEEELLLHhhlllhhhlllhhHHHHH
+
+
+DSSP  HHHHLL-----LEELLlHHHHhlllLLHHHHHHHHH---LLLL--LEEELL------LLL
+Query SKEAGY-----DVILGsSWYFagrvEEIGKLPDIAE---ELVL--PFLASV------ETP  467
+ident                                                             
+Sbjct ENLICSsldleCASSNdQTFT----HSDMRRTARLLmqfLPGTdfISSGYSavpnydNMF  374
+DSSP  HHHHHHhllleEELLLlLLLL----LLHHHHHHHHHhhhLLLLllLLEEEElllhhhLLL
+
+
+DSSP  LLllhhhlllhhhhhhhHHHHhhlllleeeeeellhhhlllllllllllllhhhhhllll
+Query DTpriatrkyaskmkklAPFVtyflpnsipyvntgqeigekqpmnlgldtdpnlrkvlsp  527
+ident                                                             
+Sbjct AG------------sneDAED----fddynviqrdlkvdgglrpvreedviairnkaara  418
+DSSP  LL------------lllLHHH----hhhhhhhhhhhllllllllllhhhhhhhhhhhhhh
+
+
+DSSP  lllllllllllllllllLLLLLHHHH----------------------------------
+Query tdeffgklaffdhyvlhWDSPDRGVL----------------------------------  553
+ident                                                             
+Sbjct lqavfagmglppitdeeVEAATYAHGskdmpernivedikfaqeiinknrnglevvkala  478
+DSSP  hhhhhhhlllllllhhhHHHHHHLLLhhhlllllhhhhhhhhhhhhhllllhhhhhhhhh
+
+
+DSSP  --------------------hhhhhhhhhhHHLH--------------------------
+Query --------------------nfikklikvrHEFL--------------------------  567
+ident                                                             
+Sbjct qggftdvaqdmlniqkakltgdylhtsaiiVGDGqvlsavndvndyagpatgyrlqgerw  538
+DSSP  hlllhhhhhhhhhhhhhhhhlhhhlllleeELLLeeelllllllllllllllllllhhhh
+
+
+DSSP  --------hhhhl
+Query --------dfvln  572
+ident              
+Sbjct eeiknipgaldpn  551
+DSSP  hhhhlllllllll
+
+
+</PRE><a name=alignment-6><h3> No 6: Query=mol1A Sbjct=mol2A Z-score=3.1</h3>
+
+<A HREF="#mol1A">back to top</A>
+<PRE>
+DSSP  ---lhhhhhhhhhhhhlllllleeelhhhlllllllleeelleeeelhhhhhhhhhhhhh
+Query ---mllreinryckekatgkriyavpklwipgffkkfdeksgrcfvdpyelgaeitdwil   57
+ident                                                             
+Sbjct mrskrfealakrpvnqdgfvkewieegfiamespndpkpsikivngavteldgkpvsdfd   60
+DSSP  lllhhhhhhhllhhhhlllllllhhhlllllllllllllleeeelleeeeelleehhhll
+
+
+DSSP  lllllllllllhhhhhllllhhhhhhlleeeelhhhhlllllllllllllllllllllll
+Query nqsrewdysqplsflkgektpdwikrsvvygslprttaaynhkgsgyyeendvlgfreag  117
+ident                                                             
+Sbjct lidhfiaryginlnraeevmamdsvklanmlcdpnvkrseivplttamtpakivevvshm  120
+DSSP  hhhhhhhhhllllllhhhhhhllhhhhhhhhhlllllhhhhhhhhllllhhhhhhhhlll
+
+
+DSSP  lhhhhhhlhhhhhhhllLEEEELLLEEElllllllllllllleEEEEEelhhhllhhhll
+Query tffkmmlllpfvkslgaDAIYLLPVSRMsdlfkkgdapspysvKNPMElderyhdpllep  177
+ident                                             ||              
+Sbjct nvvemmmamqkmrarrtPSQQAHVTNVK---------------DNPVQ------------  153
+DSSP  lhhhhhhhhhhhlllllLLLEEELLLLL---------------LLHHH------------
+
+
+DSSP  llhhhhhhhhhhhhhhllLEEEEEELllEEELllhhhlllhhhllleehhhlllllllll
+Query fkvdeefkafveachilgIRVILDFIprTAARdsdlirehpdwfywikveeladytppra  237
+ident                               ||                            
+Sbjct -------iaadaaegawrGFDEQETT-vAVAR----------------------------  177
+DSSP  -------hhhhhhhhhhhLLLEEEEL-lLLHH----------------------------
+
+
+DSSP  lllllllllhhhhhhhhllhhhhhhhllllllhhhhlhhhhhhhhlllllhhhhhhhhhl
+Query eelpfkvpdedeleiiynkenvkrhlkkftlppnlidpqkwekikreegnilelivkefg  297
+ident                                                             
+Sbjct ------------------------------------------------------------  177
+DSSP  ------------------------------------------------------------
+
+
+DSSP  eelllllllllllllllllleeellllllllhhhhhhllllllllllhhhhlllllllll
+Query iitppgfsdlindpqptwddvtflrlyldhpeaskrfldpnqppyvlydvikaskfpgke  357
+ident                                                             
+Sbjct ------------------------------------------------------------  177
+DSSP  ------------------------------------------------------------
+
+
+DSSP  llhhhhhhhLLHHHHHHHHHLLLEEEELL----HHHLlhhhHHHHhhhhhhhllllEEEE
+Query pnrelweylAGVIPHYQKKYGIDGARLDM----GHALpkelLDLIiknvkeydpafVMIA  413
+ident                 |                   |                       
+Sbjct ---yapfnaIALLVGSQVGRPGVLTQCSLeeatELKL---gMLGH----------tCYAE  221
+DSSP  ---hhhhhhHHHHHHHHHHLLLLEEEELLlhhhHHHH---hHLLL----------lLEEE
+
+
+DSSP  LLL-----------------LHHHHHHHHHHLLLEELLL---------hhhhhlllllhh
+Query EEL-----------------DMEKDKASKEAGYDVILGS---------swyfagrveeig  447
+ident                                |      |                     
+Sbjct TISvygtepvftdgddtpwsKGFLASSYASRGLKMRFTSgsgsevqmgyaegksmlylea  281
+DSSP  EEEllllhhhhhhllllhhhHHHHHHHHHHLLLEEEEELlllhhhhllllllllhhhhhh
+
+
+DSSP  hhhhhhhllLLLEEELLLLLLLllhhhlllhhhhhhhhhhhhhllllEEEEEELlhhhlL
+Query klpdiaeelVLPFLASVETPDTpriatrkyaskmkklapfvtyflpnSIPYVNTgqeigE  507
+ident              |                                              
+Sbjct rciyitkaaGVQGLQNGSVSCI-gvpsavpsgiravlaenlicssldLECASSN---dqT  337
+DSSP  hhhhhhhhhLLLEEELLLHHHL-llhhhlllhhhhhhhhhhhhhhllLEEELLL---llL
+
+
+DSSP  LLLllllllllhhhhhllllllllllllllllllLLLLllllhhhhhHHHHHH-------
+Query KQPmnlgldtdpnlrkvlsptdeffgklaffdhyVLHWdspdrgvlnFIKKLI-------  560
+ident                                                             
+Sbjct FTH-------------------------------SDMR---rtarllMQFLPGtdfissg  363
+DSSP  LLL-------------------------------LHHH---hhhhhhHHHLLLlllllee
+
+
+DSSP  ------------------------------------------------------------
+Query ------------------------------------------------------------  560
+ident                                                             
+Sbjct ysavpnydnmfagsnedaedfddynviqrdlkvdgglrpvreedviairnkaaralqavf  423
+DSSP  eelllhhhlllllllllhhhhhhhhhhhhhhllllllllllhhhhhhhhhhhhhhhhhhh
+
+
+DSSP  ------------------------------------------------------------
+Query ------------------------------------------------------------  560
+ident                                                             
+Sbjct agmglppitdeeveaatyahgskdmpernivedikfaqeiinknrnglevvkalaqggft  483
+DSSP  hhlllllllhhhhhhhhhlllhhhlllllhhhhhhhhhhhhhllllhhhhhhhhhhlllh
+
+
+DSSP  ----------------------------hhhhhlHHHH----------------------
+Query ----------------------------kvrhefLDFV----------------------  570
+ident                                      |                      
+Sbjct dvaqdmlniqkakltgdylhtsaiivgdgqvlsaVNDVndyagpatgyrlqgerweeikn  543
+DSSP  hhhhhhhhhhhhhhhlhhhlllleeellleeellLLLLlllllllllllllhhhhhhhhl
+
+
+DSSP  ------hl
+Query ------ln  572
+ident         
+Sbjct ipgaldpn  551
+DSSP  llllllll
+
+
+</PRE><a name=alignment-7><h3> No 7: Query=mol1A Sbjct=mol2A Z-score=2.6</h3>
+
+<A HREF="#mol1A">back to top</A>
+<PRE>
+DSSP  -----------------------------lhhhhhhHHHH----------hhllLLLLEE
+Query -----------------------------mllreinRYCK----------ekatGKRIYA   21
+ident                                                             
+Sbjct mrskrfealakrpvnqdgfvkewieegfiamespndPKPSikivngavteldgkPVSDFD   60
+DSSP  lllhhhhhhhllhhhhlllllllhhhllllllllllLLLLeeeelleeeeelleEHHHLL
+
+
+DSSP  E-LHHHL---LLLL---------------llleeelleeeelhhhhhhHHHHH-----hh
+Query V-PKLWI---PGFF---------------kkfdeksgrcfvdpyelgaEITDW-----il   57
+ident                                                             
+Sbjct LiDHFIArygINLNraeevmamdsvklanmlcdpnvkrseivplttamTPAKIvevvshm  120
+DSSP  HhHHHHHhhlLLLLlhhhhhhllhhhhhhhhhlllllhhhhhhhhlllLHHHHhhhhlll
+
+
+DSSP  llllllLLLL--LHHHH-----------------------hlllLHHH------------
+Query nqsrewDYSQ--PLSFL-----------------------kgekTPDW------------   80
+ident          |                                    |             
+Sbjct nvvemmMAMQkmRARRTpsqqahvtnvkdnpvqiaadaaegawrGFDEqettvavaryap  180
+DSSP  lhhhhhHHHHhhLLLLLllleeelllllllhhhhhhhhhhhhhhLLLEeeellllhhhhh
+
+
+DSSP  ------------------------------------------------------------
+Query ------------------------------------------------------------   80
+ident                                                             
+Sbjct fnaiallvgsqvgrpgvltqcsleeatelklgmlghtcyaetisvygtepvftdgddtpw  240
+DSSP  hhhhhhhhhhhhhlllleeeelllhhhhhhhhhllllleeeeeellllhhhhhhllllhh
+
+
+DSSP  -----------hhHLLEEEELHHHHlllllllllllllllllllLLLLLHHHHHHLHHHH
+Query -----------ikRSVVYGSLPRTTaaynhkgsgyyeendvlgfREAGTFFKMMLLLPFV  129
+ident                    |                                        
+Sbjct skgflassyasrgLKMRFTSGSGSE-------------vqmgyaEGKSMLYLEARCIYIT  287
+DSSP  hhhhhhhhhhhllLEEEEELLLLHH-------------hhllllLLLLHHHHHHHHHHHH
+
+
+DSSP  HHHLLLEEEE--LLLEEelllllllllllllleeeeeeELHHhllhhhlllLHHHHHHHH
+Query KSLGADAIYL--LPVSRmsdlfkkgdapspysvknpmeLDERyhdpllepfKVDEEFKAF  187
+ident |  |                                                      | 
+Sbjct KAAGVQGLQNgsVSCIG--------------------vPSAV--------pSGIRAVLAE  319
+DSSP  HHHLLLEEELllHHHLL--------------------lHHHL--------lLHHHHHHHH
+
+
+DSSP  HHHHHHLLLEEE-EEELlleeelllhhhlllhhhllleehhhllllllllllllllllll
+Query VEACHILGIRVI-LDFIprtaardsdlirehpdwfywikveeladytppraeelpfkvpd  246
+ident    |  |                                                     
+Sbjct NLICSSLDLECAsSNDQ-------------------------------------------  336
+DSSP  HHHHHHLLLEEElLLLL-------------------------------------------
+
+
+DSSP  hhhhhhhhllhhhhhhhllllllhhhhlhhhhhhhhlllllhhhhhhhhhleelllllll
+Query edeleiiynkenvkrhlkkftlppnlidpqkwekikreegnilelivkefgiitppgfsd  306
+ident                                                             
+Sbjct ------------------------------------------------------------  336
+DSSP  ------------------------------------------------------------
+
+
+DSSP  llllllllllleeellllllllhhhhhhllllllllllhhhhlllllllllllhhhhhHH
+Query lindpqptwddvtflrlyldhpeaskrfldpnqppyvlydvikaskfpgkepnrelweYL  366
+ident                                                             
+Sbjct ----------------------------------------------------tfthsdMR  344
+DSSP  ----------------------------------------------------lllllhHH
+
+
+DSSP  LL-hHHHHHHHhLLLE--EEELlHHHL---------lhhHHHHHHH----hhhHHLL---
+Query AG-vIPHYQKKyGIDG--ARLDmGHAL---------pkeLLDLIIK----nvkEYDP---  407
+ident             | |                                             
+Sbjct RTarLLMQFLP-GTDFisSGYS-AVPNydnmfagsnedaEDFDDYNviqrdlkVDGGlrp  402
+DSSP  HHhhHHHHHLL-LLLLllEEEE-LLLHhhlllllllllhHHHHHHHhhhhhhlLLLLlll
+
+
+DSSP  ---------------------------lleeeellllhhhhhhhhhhllleelllhhhhh
+Query ---------------------------afvmiaeeldmekdkaskeagydvilgsswyfa  440
+ident                                                             
+Sbjct vreedviairnkaaralqavfagmglppitdeeveaatyahgskdmpernivedikfaqe  462
+DSSP  llhhhhhhhhhhhhhhhhhhhhhlllllllhhhhhhhhhlllhhhlllllhhhhhhhhhh
+
+
+DSSP  LLLLLHHHHHHH-------------hHLLLlleeelllllllllhhhlllhhhhhhhhhh
+Query GRVEEIGKLPDI-------------aEELVlpflasvetpdtpriatrkyaskmkklapf  487
+ident         |                                                   
+Sbjct IINKNRNGLEVVkalaqggftdvaqdMLNI------------------------------  492
+DSSP  HHHLLLLHHHHHhhhhhlllhhhhhhHHHH------------------------------
+
+
+DSSP  hhhlllleeeeeellhhhlllllllllllllhhhhhllllllllllllllllllllllll
+Query vtyflpnsipyvntgqeigekqpmnlgldtdpnlrkvlsptdeffgklaffdhyvlhwds  547
+ident                                                             
+Sbjct ------------------------------------------------------------  492
+DSSP  ------------------------------------------------------------
+
+
+DSSP  llhhhhhhhhhhhhhhhHLHH---------------------------------------
+Query pdrgvlnfikklikvrhEFLD---------------------------------------  568
+ident                     |                                       
+Sbjct -------------qkakLTGDylhtsaiivgdgqvlsavndvndyagpatgyrlqgerwe  539
+DSSP  -------------hhhhHHLHhhlllleeellleeelllllllllllllllllllhhhhh
+
+
+DSSP  --------hhhl
+Query --------fvln  572
+ident             
+Sbjct eiknipgaldpn  551
+DSSP  hhhlllllllll
+
+
+</PRE>
+</PRE>
+<HR>

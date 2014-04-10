@@ -1,0 +1,16 @@
+(d1m1eb_:B, d2qypb_:B)
+Core Residues: 23
+Core RMSD: 1.268
+Raw Score: 47.454
+P-value: 0.3752
+Reference structure: d1m1eb_:B
+
+d2qypb_:B   AYV-SDVYCEVCEFLVKEVTKLIDNNKTEKEILDAFDKMCSKLPKSLSEECQEVVDTYGS    56  (A)
+d1m1eb_:B   ---KSPEEMYIQQKVRVLLMLRKMG-----------------------------------    30  (B)
+
+d2qypb_:B   SI------------------------LSILLEEVSPELVCSMLHLC--------------    78  (A)
+d1m1eb_:B   --SNLTASEEEFLRTYAGVVNSQLSQID------------------QGAEDVVMAFSRSE    75  (B)
+
+d2qypb_:B   ---    78  (A)
+d1m1eb_:B   TED    78  (B)
+

@@ -1,0 +1,25 @@
+(d1tlja_:A, d2vxxa_:A)
+Core Residues: 39
+Core RMSD: 1.788
+Raw Score: 68.015
+P-value: 0.1057
+Reference structure: d1tlja_:A
+
+d2vxxa_:A   ALPRQAFGEMADTVILLEKATTT----------------------------PICEGMNRL    36  (A)
+d1tlja_:A   -----------------------LVWEELREKALNKIYHDKEIGYLDPDILGF-------    33  (B)
+
+d2vxxa_:A   LASFQALYLQYQKHHFVVEGAEFYPLHQFFQDCYEQVQDHVHALGERLNGLGGVPVAGFQ    96  (A)
+d1tlja_:A   ------------------------------------------------------------    33  (B)
+
+d2vxxa_:A   QLAAL-----------------------------------------CCFTPEPEGAF---   112  (A)
+d1tlja_:A   -----LLAFYRNRNDVYTQSSCSGRITIVDAEMPWDRKNSTIIFKNHLRITEQ----DLE    84  (B)
+
+d2vxxa_:A   ------------------------------------------------------------   112  (A)
+d1tlja_:A   DVLSKNQVRRLWLIVQGPIIHIYAKNIETGWDILKIAREAGFKHSGILATNQKGVLVELR   144  (B)
+
+d2vxxa_:A   ------------------NCRQMLSNDLQAEQAIIGVLRQQATQAESLGDRATAYLYDQI   154  (A)
+d1tlja_:A   TGIRMVHLLRESNTERVDKDKIKTLVNVCNEVLARGKQKMNLLKDLLS------------   192  (B)
+
+d2vxxa_:A   LLKTEERAYHIGHFLANDSLKV   176  (A)
+d1tlja_:A   ----------------------   192  (B)
+

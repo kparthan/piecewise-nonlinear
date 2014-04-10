@@ -1,0 +1,16 @@
+(d2pwwa1:A, d2qpva1:A)
+Core Residues: 73
+Core RMSD: 3.120
+Raw Score: 75.896
+P-value: 0.0930
+Reference structure: d2pwwa1:A
+
+d2qpva1:A   XPVXQSRIIH---LSVEKPWAEVYDFAANP--GNXPRWAAGLAGGLEADGEDWIAKGGPL    55  (A)
+d2pwwa1:A   ------LKFPDTGLEEKE--VA-FSIVNH-AAKSL-------------------------    25  (B)
+
+d2qpva1:A   GEVRVN---FAPH---NEFGVIDHVVTLPDGL----KVYNALRVT-------------PN    92  (A)
+d2pwwa1:A   ------GFIHVD-QWDYERVXFDYKIV-----HHEGTFYLRVPAYAVKGEIPRPSTIVQ-    72  (B)
+
+d2qpva1:A   GSGTEVSFTLL-------------RLEGXTDEDFEQDASAITADLEXLKSLLEA   133  (A)
+d2pwwa1:A   ---IX-TPILGKYYYPHGVEYEGETF-------PQAVIDKCNNKLALLAKTIK-   114  (B)
+

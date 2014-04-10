@@ -1,0 +1,13 @@
+(d2jnea1:A, d2qam01:0)
+Core Residues: 24
+Core RMSD: 2.216
+Raw Score: 16.540
+P-value: 0.6137
+Reference structure: d2jnea1:A
+
+d2qam01:0   AVQQNKPTRSKRGMRRSHDALTAV----------------------------TSLSVDKT    32  (A)
+d2jnea1:A   ------------------------MELHCPQCQHVLDQDNGHARCRSCGEFIEMKALCPD    36  (B)
+
+d2qam01:0   SGEKH-LR-------HHITADGY-YRGRKVIAK----------    56  (A)
+d2jnea1:A   CHQPLQV-LKACGAVDYFCQHGHGLI-------SKKRVEFVLA    71  (B)
+

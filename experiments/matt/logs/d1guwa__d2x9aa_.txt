@@ -1,0 +1,13 @@
+(d2x9aa_:A, d1guwa_:A)
+Core Residues: 24
+Core RMSD: 1.995
+Raw Score: 25.010
+P-value: 0.4628
+Reference structure: d2x9aa_:A
+
+d1guwa_:A   HMVEEVLEEEEEEYVVEKV------------------------LDRRVVKGKVEYLLKWK    43  (A)
+d2x9aa_:A   -------------------TTDAECLSKPAFDGTLSNVWKEGDSRYANFENCIYELSG--    40  (B)
+
+d1guwa_:A   GFSDED----------NTWEPEENLDCPDLIAEFLQSQKTAHETDKS---    80  (A)
+d2x9aa_:A   ---IG-IGYDNDTSWNGHWTPVR------------------------AAD    62  (B)
+

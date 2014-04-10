@@ -1,0 +1,13 @@
+(d2fcwb1:B, d3psma_:A)
+Core Residues: 18
+Core RMSD: 2.623
+Raw Score: 12.820
+P-value: 0.8188
+Reference structure: d2fcwb1:B
+
+d3psma_:A   KTCENLADTFRGPCFTDGSCDDHCKNKEHLIKGRCRDDFRCWC--TRNC-----------    47  (A)
+d2fcwb1:B   -----------KTCSQA--E-------------FRCHDGKCISRQF---VCDSDRDCLDG   116  (B)
+
+d3psma_:A   --------    47  (A)
+d2fcwb1:B   SDEASCPV   124  (B)
+

@@ -1,0 +1,13 @@
+(d1h8ba_:A, d3buxb1:B)
+Core Residues: 54
+Core RMSD: 3.484
+Raw Score: 53.341
+P-value: 0.1660
+Reference structure: d1h8ba_:A
+
+d3buxb1:B   TFRIT------KADAAEFWRKAFGEKTIVPWKSFRQALHEVHPISSGLEAMALKSTIDLT   231  (A)
+d1h8ba_:A   -----MADTDTAEQVIASFRILASDKPYILAE----ELRREL---PPDQAQYCIKRM-PA    47  (B)
+
+d3buxb1:B   CN--------DYISVFEFDIFTRLFQPWSSLLRNWNSLAV-----   263  (A)
+d1h8ba_:A   --YSGPGSVPGAL---DYAAFSSALY--------------GESDL    73  (B)
+

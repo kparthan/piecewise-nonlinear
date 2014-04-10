@@ -1,0 +1,13 @@
+(d2ca5a1:A, d1nz6a_:A)
+Core Residues: 42
+Core RMSD: 1.736
+Raw Score: 75.460
+P-value: 0.1281
+Reference structure: d2ca5a1:A
+
+d1nz6a_:A   DPEKLKILEWIEGKERNIRALLSTXHTVLWAGETKWKPVGXADLVTPE-QVKKVYRKAVL    59  (A)
+d2ca5a1:A   ------------------------------------------------DDGTQTLQGELT    31  (B)
+
+d1nz6a_:A   VVH--PDKATGQPYEQYAKXIFXELNDAWSEFENQGQKPLY--------------    98  (A)
+d2ca5a1:A   LALDKLAKNPS---NPQLLAEYQSKLSEYTLYRNAQ-----SNTVKVIKDVDAAI    78  (B)
+

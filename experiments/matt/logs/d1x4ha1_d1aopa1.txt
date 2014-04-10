@@ -1,0 +1,13 @@
+(d1aopa1:A, d1x4ha1:A)
+Core Residues: 45
+Core RMSD: 3.104
+Raw Score: 29.423
+P-value: 0.4240
+Reference structure: d1aopa1:A
+
+d1x4ha1:A   LPSDVTEGKTVFIRNLSFDS-----EEEALGEVLQQF-------GDLKYV---RVVLHPD    52  (A)
+d1aopa1:A   -------LLRCR--------LPGGVITTKQWQAIDKFAGENTIYGSIRL-TNRQ------   118  (B)
+
+d1x4ha1:A   TEHSKGCAFAQFMTQEAAQKCLAAASLEAEGGGLKLDGRQLKVDLAVTRDEAA   105  (A)
+d1aopa1:A   --------TFQFHG-IL--PVHQMLHS-------------VGLDAL-------   145  (B)
+

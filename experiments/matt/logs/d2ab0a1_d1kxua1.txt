@@ -1,0 +1,25 @@
+(d1kxua1:A, d2ab0a1:A)
+Core Residues: 30
+Core RMSD: 2.813
+Raw Score: 44.892
+P-value: 0.5448
+Reference structure: d1kxua1:A
+
+d2ab0a1:A   SASAL-------------------------------------------------------     6  (A)
+d1kxua1:A   -----WTFSSEEQLARLRADANRKFRCKAVANGKVLPNDPVFLEPHEEMTLCKYYEKRLL    65  (B)
+
+d2ab0a1:A   ------------------------VC---LAPGS---EETEAVTTIDLLVRGGIKVTTAS    36  (A)
+d1kxua1:A   EFCSVFKPAMPRSVVGTACMYFKRFYLNNSV---MEYHPRIIMLTCAFLACKV-------   115  (B)
+
+d2ab0a1:A   VASDGNLAITCSRGVKLLADAPLVEVADGEYDVIVLPGGIKGAECFRDSTLLVETVKQFH    96  (A)
+d1kxua1:A   ------------------------------------------------------------   115  (B)
+
+d2ab0a1:A   RSGRIVAAICAAPATVLVPHDIFPIGNMTGFPTLKDKIPAEQWLDKRVVWDARVKLLTSQ   156  (A)
+d1kxua1:A   ------------------------------------------------------------   115  (B)
+
+d2ab0a1:A   GPG----------------------TAIDFGLKIIDLLVGREKAHEVASQLVMAAGIYNY   194  (A)
+d1kxua1:A   ---DEFNVSSPQFVGNLRESPLGQEKALEQILEYE-------------------------   147  (B)
+
+d2ab0a1:A   YE--------------   196  (A)
+d1kxua1:A   --LLLIQQLNFHLIVH   161  (B)
+

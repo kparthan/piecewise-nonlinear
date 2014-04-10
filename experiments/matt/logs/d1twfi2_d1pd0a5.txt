@@ -1,0 +1,16 @@
+(d1pd0a5:A, d1twfi2:I)
+Core Residues: 30
+Core RMSD: 1.733
+Raw Score: 30.629
+P-value: 0.3203
+Reference structure: d1pd0a5:A
+
+d1twfi2:I   TNIGETAGVVQDIGSDPTLPRSD-------------RECPKCHS-RE--NVFFQSQQRRK    93  (A)
+d1pd0a5:A   -----------------------DIDPPPLNEDGLIVRCRRCRSYMNPFVTFIEQ-----   247  (B)
+
+d1twfi2:I   DTSMV-LFFVCLSCSHIFTSDQKNKRTQF-------------------------------   121  (A)
+d1pd0a5:A   -----GRRWRCNFCRLANDV---------PMQMDQPKSRYDRNEIKCAVMEYMAPKEYTL   298  (B)
+
+d1twfi2:I   --   121  (A)
+d1pd0a5:A   RQ   300  (B)
+

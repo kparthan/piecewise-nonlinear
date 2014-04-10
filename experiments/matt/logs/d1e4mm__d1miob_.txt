@@ -1,0 +1,52 @@
+(d1miob_:B, d1e4mm_:M)
+Core Residues: 66
+Core RMSD: 4.845
+Raw Score: 69.549
+P-value: 0.2832
+Reference structure: d1miob_:B
+
+d1e4mm_:M   EITCQENLPFTCGNTDALNSSSFSSDFIFGVASSAYQIEGTIGRGLNIWDGFTHRYPNKS    62  (A)
+d1miob_:B   ------------------------------------------------------------     2  (B)
+
+d1e4mm_:M   GPDHGNGDTTCDSFSYWQKDIDVLDELNATGYRFSIAWSRIIPRGKRSRGVNEKGIDYYH   122  (A)
+d1miob_:B   ------------------------------------------------------------     2  (B)
+
+d1e4mm_:M   GLISGLIKKGITPFVTLFHWDLPQTLQDEYEGFLDPQIIDDFKDYADLCFEEFGDSVKYW   182  (A)
+d1miob_:B   ------------------------------------------------------------     2  (B)
+
+d1e4mm_:M   LTINQLYSVPTRGYGSALDAPGRCSPTVDPSCYAGNSSTEPYIVAHHQLLAHAKVVDLYR   242  (A)
+d1miob_:B   ------------L--DATPK----------------------------------------     7  (B)
+
+d1e4mm_:M   KNYTHQGGKIGPTMITRWFLPYNDTDRHSIAATERMKEFFLGWFMGPLTNGTYPQIMIDT   302  (A)
+d1miob_:B   ------------------------------------------------------------     7  (B)
+
+d1e4mm_:M   VGERLPSFSPEESNLVKGSYDF--------------------------------------   324  (A)
+d1miob_:B   ----------------------EIVERKALRINPAKTCQPVGAMYAALGIHNCLPHSHGS    45  (B)
+
+d1e4mm_:M   ------------------------------------------------------------   324  (A)
+d1miob_:B   QGCCSYHRTVLSRHFKEPAMASTSSFTEGASVFGGGSNIKTAVKNIFSLYNPDIIAVHTT   105  (B)
+
+d1e4mm_:M   ------------------------------------------------------------   324  (A)
+d1miob_:B   CLSETLGDDLPTYISQMEDAGSIPEGKLVIHTNTPSYVGSHVTGFANMVQGIVNYLSENT   165  (B)
+
+d1e4mm_:M   ------------------------------------------------------------   324  (A)
+d1miob_:B   GAKNGKINVIPGFVGPADMREIKRLFEAMDIPYIMFPDTSGVLDGPTTGEYKMYPEGGTK   225  (B)
+
+d1e4mm_:M   ------------------------------------------------------------   324  (A)
+d1miob_:B   IEDLKDTGNSDLTLSLGSYASDLGAKTLEKKCKVPFKTLRTPIGVSATDEFIMALSEATG   285  (B)
+
+d1e4mm_:M   ---------------------------LGLNYYFTQYAQPSPNPVNSTNHTAMMDAGAKL   357  (A)
+d1miob_:B   KEVPASIEEERGQLIDLMIDAQQYLQGKKVALL---------------------------   318  (B)
+
+d1e4mm_:M   TYINASGHYIGPLFEKDKADSTDNIY--YYPKGIYSVMDYFKNKYYNPLIY-VTENGIST   414  (A)
+d1miob_:B   ------------------------GDPDEIIALSKFIIELGA---------IPKYVVTGT   345  (B)
+
+d1e4mm_:M   PGDENRNQSMLDYTRIDYLCSHLCFLNKVIKEKDVNVKGYLAWALGDNYEFNKGFTVRFG   474  (A)
+d1miob_:B   -------------PGMKFQKEIDAMLAEAG------IEGSKV--KVEGDFF---------   375  (B)
+
+d1e4mm_:M   LSYIDWNNVTDRDLKKSGQWYQSFISP---------------------------------   501  (A)
+d1miob_:B   ---------------------------DVHQWIKNEGVDLLISNTYGKFIAREENIPFVR   408  (B)
+
+d1e4mm_:M   --------------------------------------------------   501  (A)
+d1miob_:B   FGFPIMDRYGHYYNPKVGYKGAIRLVEEITNVILDKIERECTEEDFEVVR   458  (B)
+

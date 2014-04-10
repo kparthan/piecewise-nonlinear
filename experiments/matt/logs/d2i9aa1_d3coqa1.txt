@@ -1,0 +1,13 @@
+(d3coqa1:A, d2i9aa1:A)
+Core Residues: 16
+Core RMSD: 2.482
+Raw Score: 7.761
+P-value: 0.8168
+Reference structure: d3coqa1:A
+
+d2i9aa1:A   NCDCLNGGTCVSNKYF---------------------SNIHWCNCPKKFGGQHCEIDKSK    48  (A)
+d3coqa1:A   ------EQACDI----CRLKKLKCSKEKPKCAKCLKNNWECRYSPKT-------------    44  (B)
+
+d2i9aa1:A   T----    49  (A)
+d3coqa1:A   -KRSP    48  (B)
+

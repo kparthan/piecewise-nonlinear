@@ -1,0 +1,43 @@
+(d2d0ta1:A, d1odza_:A)
+Core Residues: 43
+Core RMSD: 3.472
+Raw Score: 57.584
+P-value: 0.4383
+Reference structure: d2d0ta1:A
+
+d1odza_:A   ------------V-----------------------------------------------    42  (A)
+d2d0ta1:A   SKEYHIDEEVGFALPNPQENLPDFYNDWMFIAKHLPDLIESGQLRERVEKLNMLSIDHLT    71  (B)
+
+d1odza_:A   -------------------------------------------------------KPVTV    47  (A)
+d2d0ta1:A   DHKSQRLARLVLGCITMAYVWGKGHGDVRKVLPRNIAVPYCQLSKKLELPPILVYAD---   128  (B)
+
+d1odza_:A   KLVDSQA----------------------------------TMETRSLFAFMQEQRRHS-    72  (A)
+d2d0ta1:A   -------CVLANWKKKDPNKPLTYENMDVLFSFRDGDCSKGFFLVSLLVEIAAASAIKVI   181  (B)
+
+d1odza_:A   --------------------IMFGHQHETTQGLTITRTDGTQSDTFNAVGDFAAVYGWDT   112  (A)
+d2d0ta1:A   PTVFKAMQMQERDTLLKALLE---------------------------------------   202  (B)
+
+d1odza_:A   LSIVAPKAEGDIVAQVKKAYARGGIITVSSHFDNPKTDTQKGVWPVGTSWDQTPAVVDSL   172  (A)
+d2d0ta1:A   ------------------------------------------------------------   202  (B)
+
+d1odza_:A   PGGAYNPVLNGYLDQVAEWANNLKDEQGRLIPVIFRLYHENTGSWFWWGDKQSTPEQYKQ   232  (A)
+d2d0ta1:A   ------------------------------------------------------------   202  (B)
+
+d1odza_:A   LFRYSVEYLRDVKGVRNF--------LYAYSPNNFWDVTEANYLERYPGDEWVDVLGFDT   284  (A)
+d2d0ta1:A   ------------------IASCLEKALQ--------------------------------   212  (B)
+
+d1odza_:A   YGPVADNADWF-------------------------------------------------   295  (A)
+d2d0ta1:A   -----------VFHQIHDHVNPKAFFSVLRIYLSGWKGNPQLSDGLVYEGFWEDPKEFAG   261  (B)
+
+d1odza_:A   ------------------------------------------------------------   295  (A)
+d2d0ta1:A   GSAGQSSVFQCFDVLLGIQQTAGGGHAAQFLQDMRRYMPPAHRNFLCSLESNPSVREFVL   321  (B)
+
+d1odza_:A   ---RNVVANAALVARMAEARGKIPVISGIGIRAPDIEAGLYDNQWYRKLISGLKADPDAR   352  (A)
+d2d0ta1:A   SKGDAGLREAYDACVKALVSLR--------------------------------------   343  (B)
+
+d1odza_:A   EIAFLLVWRNAPQGVPGGTQVPHYWVPANRPENINNGTLEDFQAFYADEFTAFNRDIEQV   414  (A)
+d2d0ta1:A   ------------------------------------------------------------   343  (B)
+
+d1odza_:A   YQRPTLIV-----------------------------------------   422  (A)
+d2d0ta1:A   --------SYHLQIVTKYILIPASQGGTDLMNFLKTVRSTTEKSLLKEG   403  (B)
+

@@ -1,0 +1,22 @@
+(d1v4pa_:A, d1jwqa_:A)
+Core Residues: 60
+Core RMSD: 4.208
+Raw Score: 68.830
+P-value: 0.2971
+Reference structure: d1v4pa_:A
+
+d1jwqa_:A   MKVVVIDAGHGAKDSGAVGISRKNYEKTFNLAMALKVESILKQNPKLEVVLTRSDDTFLE    60  (A)
+d1v4pa_:A   ------------------------------------------------------------     1  (B)
+
+d1jwqa_:A   LKQRVKVAENLKA---NVFVSIHANSSGSSASNGTETYYQRSASKAFANVMHKYFAPAT-   116  (A)
+d1v4pa_:A   -------------MYSI---------------------------EVRTHSALHVVKGAVV    20  (B)
+
+d1jwqa_:A   ---GL-TDRGIRYGNFHVIRETTMPAV--LLEVGYLSNAKEEATLFDEDFQNRVAQGIAD   170  (A)
+d1v4pa_:A   KVLGSEAKWTYSTY----V--KG-NKGVLIVKFD-------R--KPSDEEIREIERLANE    64  (B)
+
+d1jwqa_:A   GITE--------------------------------------------------------   174  (A)
+d1v4pa_:A   KVKENAPIKIYELPREEAEKMFGEDMYDLFPVPEDVRILKVVVIEDWNVNACNKEHTKTT   124  (B)
+
+d1jwqa_:A   --YLDVK-----------------------   179  (A)
+d1v4pa_:A   GEIG---PIKIRKVRFRKSKGLLEIHFELL   151  (B)
+

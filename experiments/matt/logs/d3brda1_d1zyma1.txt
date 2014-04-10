@@ -1,0 +1,19 @@
+(d1zyma1:A, d3brda1:A)
+Core Residues: 31
+Core RMSD: 2.966
+Raw Score: 14.364
+P-value: 0.6642
+Reference structure: d1zyma1:A
+
+d3brda1:A   DKAEYRFFEAMGQVANPISPCPVVGSLEVDGHGEASRVELHGRDFKPNLKVWFGATPVET   601  (A)
+d1zyma1:A   ------------------------------------------------------------    22  (B)
+
+d3brda1:A   TFRSEESLHCSIPPVSQVRNEQTHWMFTNR------------------------------   631  (A)
+d1zyma1:A   -------DEIVIDRKKI--SADQVDQEV--ERFLSGRAKASAQLETIKTKAGETFGEEKE    70  (B)
+
+d3brda1:A   ----------------TT--GDV-----EVPISLVRDDGVVYSSGLTFSYKS--------   660  (A)
+d1zyma1:A   AIFEGHIMLLEDEELEQEIIALIKDKHMTA-----------------DAAAHEVIEGQAS   113  (B)
+
+d3brda1:A   -------------------------------   660  (A)
+d1zyma1:A   ALEELDDEYLKERAADVRDIGKRLLRNILGL   144  (B)
+

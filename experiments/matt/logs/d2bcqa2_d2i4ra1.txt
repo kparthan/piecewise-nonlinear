@@ -1,0 +1,13 @@
+(d2i4ra1:A, d2bcqa2:A)
+Core Residues: 31
+Core RMSD: 3.322
+Raw Score: 37.090
+P-value: 0.5958
+Reference structure: d2i4ra1:A
+
+d2bcqa2:A   SESVPVLEL---FSNIWGAGTKTAQMWYQQGFRS-L--------------EDIR------   364  (A)
+d2i4ra1:A   ---------LAVVG-----DPDFTIGFXLAGISDIYEVTSDEEIVKAVEDV---LKRDDV    46  (B)
+
+d2bcqa2:A   -SQASLTTQQAIGLKHYSDFLE--------------------   385  (A)
+d2i4ra1:A   GVVIXKQE-YLKKL--------PPVLRREIDEKVEPTFVSVG    79  (B)
+

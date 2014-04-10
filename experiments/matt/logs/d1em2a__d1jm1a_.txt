@@ -1,0 +1,28 @@
+(d1jm1a_:A, d1em2a_:A)
+Core Residues: 49
+Core RMSD: 3.092
+Raw Score: 39.580
+P-value: 0.4485
+Reference structure: d1jm1a_:A
+
+d1em2a_:A   SFSAQER-------------EYIRQGKEATAVVDQILAQEENWKFEKNNEYGDTVYTIEV   276  (A)
+d1jm1a_:A   -------NTDGLAGFPRYKVANIQQVQQQIKSSG--------------------------    75  (B)
+
+d1em2a_:A   PFHGKTFILKTFLPCPAELVYQEV----------------------ILQPERXVLWNKTV   314  (A)
+d1jm1a_:A   ------------------------CAVYFFAYPLTDEPCFLVDLQALT------------    99  (B)
+
+d1em2a_:A   TACQILQ--------------------------RVE--DNTLISYDV-----SAGAAGGV   341  (A)
+d1jm1a_:A   -------GQQITEIPNPYYGKYAGPLGQIQTIKGVGPNGTIFAFSDVCVHLGCQ------   146  (B)
+
+d1em2a_:A   VSPRDFVNVRRIERRRDRYLSSGIATS---------------------------------   368  (A)
+d1jm1a_:A   ---------------------------LPAQVIVSSESDPGLYAKGADLHCPCHGSIYAL   179  (B)
+
+d1em2a_:A   ------------------------------HSAKPP--------------------T-HK   377  (A)
+d1jm1a_:A   KDGGVVVSGPAPRPLPIVILDYDSSTGDIYAVG---TNAPYFSAGIPRTTPQDNLLYDPR   236  (B)
+
+d1em2a_:A   YVRGENG-PGGXIVLKSASNPRVCTFVWILNTDLKGRLPRYLIHQSLAATXFEFAFHLRQ   436  (A)
+d1jm1a_:A   YSYSVPNNPSCSN--------------G--------------------------------   250  (B)
+
+d1em2a_:A   RISELGA   443  (A)
+d1jm1a_:A   -------   250  (B)
+

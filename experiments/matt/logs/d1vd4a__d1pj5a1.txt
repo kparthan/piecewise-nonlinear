@@ -1,0 +1,16 @@
+(d1pj5a1:A, d1vd4a_:A)
+Core Residues: 29
+Core RMSD: 2.412
+Raw Score: 24.848
+P-value: 0.4491
+Reference structure: d1pj5a1:A
+
+d1vd4a_:A   RIETDERDSTNR--ASFKCPV----------------------------------CSSTF   136  (A)
+d1pj5a1:A   ------------ARRLRCLTIDDGRSIVLGKEPVFYKEQAVGYVTSAAYGYTVAKPIAYS   790  (B)
+
+d1vd4a_:A   TDLEANQLFDPMTG--------TFRCTFC---HTEVEEDESAMPKKDAR-----------   174  (A)
+d1pj5a1:A   YL------------PGTVSVGDSVDIEY-FGRRITATVTED--------PLYDPKMTRLR   829  (B)
+
+d1vd4a_:A   -   174  (A)
+d1pj5a1:A   G   830  (B)
+

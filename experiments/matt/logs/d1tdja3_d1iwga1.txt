@@ -1,0 +1,13 @@
+(d1iwga1:A, d1tdja3:A)
+Core Residues: 55
+Core RMSD: 2.724
+Raw Score: 45.876
+P-value: 0.1617
+Reference structure: d1iwga1:A
+
+d1tdja3:A   GGRPSH-PLQERLYSFEFP-ESP--GALLRFLNTLGT-YW------NISLFHYRSHGTDY   472  (A)
+d1iwga1:A   ------IAPPAVTISASYPGAD-AKTVQDTVTQVIEQNMNGIDNLMY-MSSNSDS---TG    86  (B)
+
+d1tdja3:A   GRVLAAFE----------------------------YD---CHDETNNPAFRFFLAG   514  (A)
+d1iwga1:A   -TVQITLTFESGTDADIAQVQVQNKLQLAMPLLPQEVQQQGVSVEKSS--S------   134  (B)
+

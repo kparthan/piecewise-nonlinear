@@ -1,0 +1,19 @@
+(d3ft1a_:A, d3c2wa3:A)
+Core Residues: 29
+Core RMSD: 2.397
+Raw Score: 24.690
+P-value: 0.4495
+Reference structure: d3ft1a_:A
+
+d3c2wa3:A   TPVTLANCEDEPIHVPGAIQPHGALVTLRADGMVLAASENIQALLGFVASPGSYLTQEQV    64  (A)
+d3ft1a_:A   ------------------------------------------------------------     1  (B)
+
+d3c2wa3:A   GPEVLRMLEEGLTGNGPWS-------------------------------NSVETR---I    90  (A)
+d3ft1a_:A   -------------------AVQVTFTVQKGSDPKKLVLDIKYTRPGDSLAEVELRQHGSE    41  (B)
+
+d3c2wa3:A   GE----------------------HLFDVIGHSYKEVFYLEFEI-RTA--DT--------   117  (A)
+d3ft1a_:A   --EWEPLTKKGNVWEVKSSKPLVGPFNFRFMSKG---GMRNVFDEVIPTAFSIGKTYKPE    96  (B)
+
+d3c2wa3:A   ----   117  (A)
+d3ft1a_:A   EQEF   100  (B)
+

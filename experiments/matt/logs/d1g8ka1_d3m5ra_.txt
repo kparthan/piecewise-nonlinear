@@ -1,0 +1,19 @@
+(d3m5ra_:A, d1g8ka1:A)
+Core Residues: 30
+Core RMSD: 3.422
+Raw Score: 21.306
+P-value: 0.7766
+Reference structure: d3m5ra_:A
+
+d1g8ka1:A   LPATVQQQ-----------------------------------KDKYRFWLNNGRNNEVW   707  (A)
+d3m5ra_:A   --------HMTIASVPTSRYLSDMTLEEMSRDWFMLMPRQKIIGPLCV------------   117  (B)
+
+d1g8ka1:A   QTAYHDQYNSLMQERYPMAYIEMNPD--DCKQLDVTGGDIVEVYNDFGSTFAMVYPVAEI   765  (A)
+d3m5ra_:A   --------------------------RLDQA----IMEKNIVLKANF-------------   134  (B)
+
+d1g8ka1:A   KRGQTFMLFGYVNGIQGDVTT-----DWTDRDIIPYYKGTW-----GDIRKVGSMSEFKR   815  (A)
+d3m5ra_:A   ---------------------SVIFNRL-------------ETLILLRAFTEE-------   153  (B)
+
+d1g8ka1:A   TVS-----------------------------------FKSRRFG--------------   825  (A)
+d3m5ra_:A   ---GAIVGEISPLPSLPGHTYEDVKNAVGVLIGGLEWNG------NTVRVSENIQRFAW   203  (B)
+

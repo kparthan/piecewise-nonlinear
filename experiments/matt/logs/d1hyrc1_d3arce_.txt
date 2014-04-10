@@ -1,0 +1,16 @@
+(d3arce_:E, d1hyrc1:C)
+Core Residues: 16
+Core RMSD: 1.895
+Raw Score: 7.267
+P-value: 0.6853
+Reference structure: d3arce_:E
+
+d1hyrc1:C   TVPPMVN-----------------------------------------------------   187  (A)
+d3arce_:E   -------TTGERPFSDIITSVRYWVIHSITIPALFIAGWLFVSTGLAYDVFGTPRPDSYY    56  (B)
+
+d1hyrc1:C   --VTRSEASE---------GNITVTCRASGFYPWNITLSWRQDGVSLSHDTQQWGDVLPD   236  (A)
+d3arce_:E   AQEQRSIPLVTDRFEAKQQV----------------------------------------    76  (B)
+
+d1hyrc1:C   GNGTYQTWVATRI-CQGEEQRFTCYMEHSGNHSTHPVPS   274  (A)
+d3arce_:E   -------------ETFLEQLK------------------    84  (B)
+

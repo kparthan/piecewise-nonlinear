@@ -1,0 +1,19 @@
+(d1uapa_:A, d1iyjb5:B)
+Core Residues: 72
+Core RMSD: 2.501
+Raw Score: 69.246
+P-value: 0.0249
+Reference structure: d1uapa_:A
+
+d1iyjb5:B   RELLPFSKLSDPAFQPPC-----------------------SEVDVVGVVVSVVKPI-GL  3015  (A)
+d1uapa_:A   ------------------SPDAPTCPKQCRRTGTLQSNFCASSLVVTATVKSMVRE-PGE    64  (B)
+
+d1iyjb5:B   APLVYLSDEC---------------LHLLVVKFGI--DLNEDIKPRVLIAASNLQWRPES  3058  (A)
+d1uapa_:A   GLAVTVSLI-GAYKTGGLDLPSPPTGASLKFYVPCKQCPP--MKKGVS-YLLMGQVEE--   118  (B)
+
+d1iyjb5:B   TSRVP--TLFAGNFSVFSASPKE-AHFQERVTNMKHAIENIDTFYKEAEKKLIQVLKGDS  3115  (A)
+d1uapa_:A   -----NRGPVLPPESFVVLHR--PNQD-Q-------------------------------   139  (B)
+
+d1iyjb5:B   PK---------------  3117  (A)
+d1uapa_:A   --ILTNLSKRKCPSQPV   154  (B)
+

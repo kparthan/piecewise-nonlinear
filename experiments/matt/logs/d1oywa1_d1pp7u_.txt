@@ -1,0 +1,16 @@
+(d1pp7u_:U, d1oywa1:A)
+Core Residues: 61
+Core RMSD: 3.414
+Raw Score: 58.482
+P-value: 0.1206
+Reference structure: d1pp7u_:U
+
+d1oywa1:A   PKQYDG---------------------------STDAQIALSTIGRV------------N   427  (A)
+d1pp7u_:U   ------DLEASFTSRLPPEIVAALKRKSSRDPNSRFPRKLHMLLTYLASNPQLEEEIGLS    58  (B)
+
+d1oywa1:A   Q------RFGXGYVVEVIRGANNQRIRDYGHDKLKVYGXGRDK-SHEHWVSVIRQLIHLG   480  (A)
+d1pp7u_:U   WISDTEFKMKKKNVALVMG------------------------IKLNTLNVNLRDL----    90  (B)
+
+d1oywa1:A   LVTQNIAQ----HSALQLTEAARPVL---RGESSLQLAVPRIV   516  (A)
+d1pp7u_:U   AFEQLQ--HDKGGW-TQWKRSGF---TRNSVFED---------   118  (B)
+

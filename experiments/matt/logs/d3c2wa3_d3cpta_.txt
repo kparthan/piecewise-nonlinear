@@ -1,0 +1,16 @@
+(d3cpta_:A, d3c2wa3:A)
+Core Residues: 73
+Core RMSD: 3.185
+Raw Score: 51.819
+P-value: 0.0896
+Reference structure: d3cpta_:A
+
+d3c2wa3:A   TPVTLANCEDEPIHV--P--GA--IQP---HG-ALVTLRADGMVLAASENIQALLGFV-A    53  (A)
+d3cpta_:A   ---------------DDLKRFLYKKLPSVEGLHAIVVSDRDGVPVIKVAN--DNAPE-HA    44  (B)
+
+d3c2wa3:A   SPGSYLTQEQVGPEVLR-ML-EEGLTG--N-----GPWS--NSVETRIGEHLFDVIGHSY   102  (A)
+d3cpta_:A   LRPGFL-----------STFALAT--DQGSKLGLSKN--KSIICYYN----TYQVVQFNR    85  (B)
+
+d3c2wa3:A   KEVFYLEFEIRTADT------------------------   117  (A)
+d3cpta_:A   LPLVVSFIASSS---ANTGLIVSLEKELAPLFEELRQVV   121  (B)
+

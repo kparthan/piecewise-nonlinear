@@ -1,0 +1,19 @@
+(d2h5na1:A, d2ozja_:A)
+Core Residues: 18
+Core RMSD: 2.492
+Raw Score: 11.546
+P-value: 0.6882
+Reference structure: d2h5na1:A
+
+d2ozja_:A   X-------------------------ARLK------------------------------     5  (A)
+d2h5na1:A   -MGLGRQSLNIMTFSGQELTAIIKMAKSM-VMADGKIKPAEIAVMTREFMRFGILQDQVD    58  (B)
+
+d2ozja_:A   -------------------------------NL--------------------PQ----E    10  (A)
+d2h5na1:A   LLLKASDSIEASQAVALIARMDEERKKYVASYLGVIMASDGDIDDNELALWTLISTLCGL   118  (B)
+
+d2ozja_:A   RPLPLASLIEARENQVLSXALAQSDRVQISLFSFADGESVSEEEYFGDTLYLILQGEAVI    70  (A)
+d2h5na1:A   PTMTVMEAIN--------------------------------------------------   128  (B)
+
+d2ozja_:A   TFDDQKIDLVPEDVLXVPAHKIHAIAGKGRFKXLQITLID----   110  (A)
+d2h5na1:A   ----------------------------------------NMKN   132  (B)
+

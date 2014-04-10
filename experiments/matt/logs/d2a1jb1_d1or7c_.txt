@@ -1,0 +1,16 @@
+(d1or7c_:C, d2a1jb1:B)
+Core Residues: 22
+Core RMSD: 1.075
+Raw Score: 42.527
+P-value: 0.3174
+Reference structure: d1or7c_:C
+
+d2a1jb1:B   PA-------------------------DLLMEKLEQDFVSRVTECLTTVKSVNKTDSQTL   253  (A)
+d1or7c_:C   --MQKEQLSALMDGETLDSELLNELAHNPEMQKTWESYHLIRDSMRG-----DT------    47  (B)
+
+d2a1jb1:B   LTTFGSLEQLIAASREDLALCPGLGPQKARRLFDVLHEPFLKV-----------------   296  (A)
+d1or7c_:C   -------------------------------------------PEVLHFDISSRVMAAIE    64  (B)
+
+d2a1jb1:B   --   296  (A)
+d1or7c_:C   EE    66  (B)
+

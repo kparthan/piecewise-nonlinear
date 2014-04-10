@@ -1,0 +1,25 @@
+(d1t35a_:A, d1c8na_:A)
+Core Residues: 31
+Core RMSD: 3.751
+Raw Score: 25.485
+P-value: 0.7949
+Reference structure: d1t35a_:A
+
+d1c8na_:A   NSTVV----SNSELILNLTPIALAYTVQSLPLIAT-------------------------   117  (A)
+d1t35a_:A   -----XKTICVFAGSN-------------------PGGNEAYKRKAAELGVYXAEQGIGL    36  (B)
+
+d1c8na_:A   -----Q----PAWLGTIADNYSK-------------------WRWVSLRIIYSPKCPTTT   149  (A)
+d1t35a_:A   VYGGSRVGLXGTIADAIXENG--GTAIGVXPSGLFSGEVVHQNLTEL-------------    81  (B)
+
+d1c8na_:A   SGTVAMCLSYDRNDVAPGSRVQLSQTYKAINFPPYAGYD-----GAAILNTDVTPTSAIY   204  (A)
+d1t35a_:A   ---------------------------------------IEVNGX-HERKAK--------    93  (B)
+
+d1c8na_:A   VDVDVTRFDKAWYSTIGTAAFAALTAFDQNQFCPCTVHIGSDGGPAVAVPPGDIFFKYVI   264  (A)
+d1t35a_:A   ------------------------------------------------------------    93  (B)
+
+d1c8na_:A   ELIEPINPTMN-------------------------------------------------   275  (A)
+d1t35a_:A   -----------XSELADGFISXPGGFGTYEELFEVLCWAQIGIHQKPIGLYNVNGYFEPX   142  (B)
+
+d1c8na_:A   -------------------------------------   275  (A)
+d1t35a_:A   XKXVKYSIQEGFSNESHLKLIHSSSRPDELIEQXQNY   179  (B)
+

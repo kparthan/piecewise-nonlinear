@@ -1,0 +1,28 @@
+(d2fug12:1, d1vk0a_:A)
+Core Residues: 74
+Core RMSD: 4.289
+Raw Score: 50.285
+P-value: 0.4006
+Reference structure: d2fug12:1
+
+d1vk0a_:A   SAS---------------------------------------------------------     3  (A)
+d2fug12:1   ---SGLDPRFERTLYAHVGKEGSWTLDYYLRHGGYETAKRVLKEKTPDEVIEEVKRSGLR    63  (B)
+
+d1vk0a_:A   FDGPKFKXTDGSYVQ-----------------------TK---------TID-VGSSTDI    30  (A)
+d2fug12:1   GRGGA----------GFPTGLKWSFMPKDDGKQHYLICN-ADESEPGSFKDRYILEDV-P   111  (B)
+
+d1vk0a_:A   SPYLSLIREDSILN-GNRAVIFDVYWDVGFTKTSGWSLSSVKLSTRNLCLFLR-LPKPFH    94  (A)
+d2fug12:1   HLLIEGMILAGYAIRAT-VGYIYVRGE-----------YR-------------RA-----   141  (B)
+
+d1vk0a_:A   DN--LKDLYR-FFA-------SKF--------VTFVGVQIEEDLDLLRENHGLVIRNAIN   136  (A)
+d2fug12:1   --ADR--LE-QAIKEARARGYLGKNLFGTDFSFDLHVH----------------------   174  (B)
+
+d1vk0a_:A   VGKLAAEARGTLVLEFLGTRELAHRVLWSDLGQLDSIEAKWEKAGP-----EE--QLEAA   189  (A)
+d2fug12:1   ----------------------------------------------RGAGAYICGEETAL   188  (B)
+
+d1vk0a_:A   AIEGWLIV----------------NVW-DQLSDE--------------------------   206  (A)
+d2fug12:1   MNSLEG--LRANPRLKPPFPAQSGLW-GK-----PTTINNVETLASVVPIMERGADWFAQ   240  (B)
+
+d1vk0a_:A   ---------   206  (A)
+d2fug12:1   MGTEQSKGM   249  (B)
+

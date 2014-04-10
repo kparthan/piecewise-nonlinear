@@ -1,0 +1,13 @@
+(d1zpwx1:X, d2cdqa2:A)
+Core Residues: 59
+Core RMSD: 2.819
+Raw Score: 72.890
+P-value: 0.1463
+Reference structure: d1zpwx1:X
+
+d2cdqa2:A   KSILTSIVLKRN---VTMLDIASTRMLGQVGFLAKVFSIFEELGISVDVVATSEVSISLT   385  (A)
+d1zpwx1:X   ------------GKRLYAVAY----DIPDDTRRVKLANLLK-SYGERVQLS-------VF    37  (B)
+
+d2cdqa2:A   LDPSKLWSR-ELIQQELDHVVEELEKIA-V----VNLLKG--------------   419  (A)
+d1zpwx1:X   E--------CYLDERLLEDLRRRARRLLDLGQDALRIYPVAGQVEVLGVGPLPE    83  (B)
+

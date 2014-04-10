@@ -1,0 +1,16 @@
+(d1pn5a1:A, d1l3ka1:A)
+Core Residues: 25
+Core RMSD: 2.412
+Raw Score: 21.250
+P-value: 0.6388
+Reference structure: d1pn5a1:A
+
+d1l3ka1:A   KEPEQLRKL-----------------------FIGGLSFE--------------------    24  (A)
+d1pn5a1:A   ---------MAGGAWGRLACYLEFLKKEELKEFQL-----LLANKAHSRSSSGETPAQPE   104  (B)
+
+d1l3ka1:A   -TTDESLRSHFEQWGTLTDCVVMRDPNTKRSRGFGFVTYATVEE---VDAAMNARPHKVD    80  (A)
+d1pn5a1:A   KTSGMEVASYLVAQYGE----------------------QR---AWDL------------   127  (B)
+
+d1l3ka1:A   GRVVEPK---R-AVS-----------------    91  (A)
+d1pn5a1:A   -------ALHTWEQ-MGLRSLCAQAQEGAGHS   151  (B)
+

@@ -1,0 +1,52 @@
+(d1rt8a_:A, d1wdpa_:A)
+Core Residues: 63
+Core RMSD: 4.429
+Raw Score: 77.821
+P-value: 0.2471
+Reference structure: d1rt8a_:A
+
+d1wdpa_:A   SDSNMLLNYVPVYVMLPLGVVNVDNVFEDPDGLKEQLLQLRAAGVDGVMVDV--------    54  (A)
+d1rt8a_:A   ----------------------------------------------------INEEERRE   117  (B)
+
+d1wdpa_:A   ---WWGIIELKGPKQYDWRAYRSLLQLVQECGLTLQAIMSFHQCGGNVGDIVNIPI--PQ   109  (A)
+d1rt8a_:A   FIKHINSVLAGDP-------------------------------------------DVGS   134  (B)
+
+d1wdpa_:A   WVLDIGESNHDIFYTNRSGTRNK-EY-----LTVGVDNEPIFHGRTAIEIYSDYMKSFRE   163  (A)
+d1rt8a_:A   --R--------------------VPINTETFEFFDQCKDG-----LILSKLINDS-----   162  (B)
+
+d1wdpa_:A   NMSDFLESGLIIDIEVGLGPAGELRYPSYPQSQGWEFPGIGEFQCYDK------------   211  (A)
+d1rt8a_:A   ------------------------------------------------VPDTIDERVLNK   174  (B)
+
+d1wdpa_:A   -------------------------------------YLKADFKAAVARAGHPEWELPDD   234  (A)
+d1rt8a_:A   QRPLDNFKCIENNNVVINSAKAMGGISITNIGAGDILEG---------------------   216  (B)
+
+d1wdpa_:A   AGKYNDVPESTGFFKSNGTYVTEKGKFFLTWYSNKLLNHGDQILDEANKAFLGCKVKL--   292  (A)
+d1rt8a_:A   ----------------------------------REHLILGLVWQIIRRGLLG-----KI   237  (B)
+
+d1wdpa_:A   ------------------------------------------------------------   292  (A)
+d1rt8a_:A   TLDQFLRLPPEKILLRWFNYHLKAANWPRTVSNFSKDVSDGENYTVLLNQLAPELCSRAP   313  (B)
+
+d1wdpa_:A   ------------------------AIKVSGIHWWYKVENHAAELTAGYYNLNDRDGYRPI   328  (A)
+d1rt8a_:A   LQTTDVLQRAEQVLQNAEKLDCRKY-----------------------------------   338  (B)
+
+d1wdpa_:A   ---------ARM--LSRHHAILNFTCLEMRDSEQPSDAKSGPQELVQQVLSGGWREDIRV   377  (A)
+d1rt8a_:A   LTPTAMVAGN--PKLNLAF-----------------------------------------   355  (B)
+
+d1wdpa_:A   AGENALPRYDATAYNQIILNARPQGVNNNGPPKLSMFGVTYLRLSDDLLQKSNFNIFKKF   437  (A)
+d1rt8a_:A   ------------------------------------------------------------   355  (B)
+
+d1wdpa_:A   VLKMHADQDYCANPQKYNHAITP-LKPSAPKIPIEVLLEATKPTLPFPWLPETDMKVDG-   495  (A)
+d1rt8a_:A   -----------------------VA----------------------------------H   358  (B)
+
+d1wdpa_:A   ------------------------------------------------------------   495  (A)
+d1rt8a_:A   LFNTHPGLEPAEGEREARVFTLWLNSLDVTPSIHDFFNNLRDGLILLQAYDKITPNTVNW   431  (B)
+
+d1wdpa_:A   ------------------------------------------------------------   495  (A)
+d1rt8a_:A   KKVNKAPASGDEMMRFKAVENCNYAVDLGKNQGFSLVGIQGADITDGSRTLTLALVWQMM   491  (B)
+
+d1wdpa_:A   ------------------------------------------------------------   495  (A)
+d1rt8a_:A   RMNITKTLHSTLSDSDMVAWANSMAAKGGKGSQIRSFRDPSISTGVFVLDVLHGIKSEYV   557  (B)
+
+d1wdpa_:A   ---------------------------------------------------------   495  (A)
+d1rt8a_:A   DYNLVTDGSTEELAIQNARLAISIARKLGAVIFILPEDIVAVRPRLVLHFIGSLMAV   614  (B)
+

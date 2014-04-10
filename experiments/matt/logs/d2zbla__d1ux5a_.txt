@@ -1,0 +1,43 @@
+(d1ux5a_:A, d2zbla_:A)
+Core Residues: 122
+Core RMSD: 12.282
+Raw Score: 147.981
+P-value: 0.1805
+Reference structure: d1ux5a_:A
+
+d2zbla_:A   MKWFNTLSHNRWLEQETDRIFNFGKNAVVPTGFGWLGNKGQIKEEMG-------------    47  (A)
+d1ux5a_:A   -----------------------------------------------KYPRPHKKLKQLH  1362  (B)
+
+d2zbla_:A   ----------------------------------------THLWITARMLHVYSVAA-SM    66  (A)
+d1ux5a_:A   WEKLDCTDNSIWGTGKAEKFADDLYEKGVLADLEKAFAAREIKSLASKRKEDLQK--ITF  1420  (B)
+
+d2zbla_:A   GRPGAYDLVDHGIKAMNGALRDKKYGGWYACVNDQGVVDASKQGYQHFF-----------   115  (A)
+d1ux5a_:A   LSRDISQQFGINLHM----------------------------------YSSLSVADLVK  1446  (B)
+
+d2zbla_:A   ----------ALLGAASAVTT---------------------------------------   126  (A)
+d1ux5a_:A   KILNCDRDFLQTPSVVEFLS-KSEIIEVSVNLARNYAPYSTDWEGVRNLEDAKPPEKDPN  1505  (B)
+
+d2zbla_:A   -------GHPEARKLLDYTIEVIEKYFWSEEEQMCLESWDEAFSQTEDYRGGNANMHAVE   179  (A)
+d1ux5a_:A   DLQRADQIY---------------------------------------------------  1514  (B)
+
+d2zbla_:A   AF-----------------LIV-YDVTHDKK-WLDRALRIASVI-IHDVARNGDYRVNEH   219  (A)
+d1ux5a_:A   --LQLMVNLESYWGSRMRALT-VV-------TSYEREYNELL--AKLRKVDKAV------  1556  (B)
+
+d2zbla_:A   FDSQWNPIRDYNKDNPAHRFRAY-------------------------------------   242  (A)
+d1ux5a_:A   -----------------------SALQESDNLRNVFNVILAVGNFMNDTSKQAQGFKLST  1593  (B)
+
+d2zbla_:A   ------------------------------------------GG--TPGA-WIEWGRLML   257  (A)
+d1ux5a_:A   LQRLTFIKDTTNSMTFLNYVEKIVRLNYPSFNDFLSELEPVLD-VVKV--SIEQLVNDCK  1650  (B)
+
+d2zbla_:A   HLHAALE-AR---FET---------------------------P--PAWLLEDAKGLFHA   284  (A)
+d1ux5a_:A   DFSQSIVNVERSVE--IGNLSDSSKFHPLDKVLIKTLPVLPEARKKGDLLEDEVKLTIME  1708  (B)
+
+d2zbla_:A   TIRDAWA--PDGADGFVYSVDWDGKPIVRERVRWPIVEAMGTAYALYTLTDDSQYEEWYQ   342  (A)
+d1ux5a_:A   FESL---MHTYGED----------------------------------------------  1719  (B)
+
+d2zbla_:A   -KWWDYCIKYLMDYENGSWWQELDADNKVTTKVWDGKQDIYHLLHCLVIPRLPLAPGLAP   401  (A)
+d1ux5a_:A   SGDKFAKISFF-------------------------------------------------  1730  (B)
+
+d2zbla_:A   AVAAGLLDINAHHHH------------------------------   421  (A)
+d1ux5a_:A   ---------------KKFADFINEYKKAQAQNLAAEEEERLYIKH  1760  (B)
+

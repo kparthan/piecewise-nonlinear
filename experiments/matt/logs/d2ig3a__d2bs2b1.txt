@@ -1,0 +1,19 @@
+(d2bs2b1:B, d2ig3a_:A)
+Core Residues: 39
+Core RMSD: 2.818
+Raw Score: 41.653
+P-value: 0.5108
+Reference structure: d2bs2b1:B
+
+d2ig3a_:A   ---------MKF------------------------------------------------     3  (A)
+d2bs2b1:B   TGNWFNGMSQR-VESWIHAQKEHDISKLEERIEPEVAQEVFELDRCIECGCCIAACGTKI   165  (B)
+
+d2ig3a_:A   ---ETINQESIAKLMEIFYEKVRKDKDLGPIFNNAIGTSDEEWKEHKAKIGNFWAGMLLG    60  (A)
+d2bs2b1:B   MREDFVGAAGLNRVVRFMID--PH------------------------------------   187  (B)
+
+d2ig3a_:A   EGDYNGQPLKKHLDLPPFPQEFFEIWLK---LFEESLNIVYNEEMKN---V---------   105  (A)
+d2bs2b1:B   ----------------------------DERTDEDYYELIG--DD--DGVFGCMTLLACH   215  (B)
+
+d2ig3a_:A   ----------------I--LQRAQMIASHFQNMLYKYGGH-   127  (A)
+d2bs2b1:B   DVCPKNLPLQSKIAYLRRKMV-SV----------------N   239  (B)
+

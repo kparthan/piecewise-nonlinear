@@ -1,0 +1,19 @@
+(d1x75a1:A, d1r17a1:A)
+Core Residues: 42
+Core RMSD: 4.244
+Raw Score: 16.683
+P-value: 0.7402
+Reference structure: d1x75a1:A
+
+d1r17a1:A   GS-----------------------------NVNHLIKVTDQSITEGYDDSDGIIKAHDA   306  (A)
+d1x75a1:A   --TRRTIFELRKARDRAHILEALAVALANIDPIIELI-----------------------   397  (B)
+
+d1r17a1:A   ENLIYDVTFEV-----DDKVKS--G-DTMTVNIDKNTV---PSDLTDSFA-IPKIKDNSG   354  (A)
+d1x75a1:A   -----------RHAPTPAEAKTALVANPWQL-------NVAA--------MLE-------   425  (B)
+
+d1r17a1:A   EIIA-------------TGTYDNTNKQITYTFTDYVDKYE-NIKA------------HLK   388  (A)
+d1x75a1:A   ----DDAARPEWLEPEFGVRD------GLYYLTEQQAQAILDL--RLQKLTGLEHEKLL-   475  (B)
+
+d1r17a1:A   LTSYIDKSKVPNNNTKLDVEYKTALSSVNKTITVEY-------------------   424  (A)
+d1x75a1:A   ------------------------------------DEYKELLDQIAELLRILGS   494  (B)
+

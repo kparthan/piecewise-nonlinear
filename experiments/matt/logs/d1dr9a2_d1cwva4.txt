@@ -1,0 +1,16 @@
+(d1cwva4:A, d1dr9a2:A)
+Core Residues: 62
+Core RMSD: 2.940
+Raw Score: 54.271
+P-value: 0.1360
+Reference structure: d1cwva4:A
+
+d1dr9a2:A   ADFPTPSISDFEIPTS--------------NIRR-IICST-----SGGFP--EPHLSWLE   143  (A)
+d1cwva4:A   --PTLTGILVN-----GQNFATDKGFPKTIFKNATFQLQMDNDVAN----NTQYEWSSS-   843  (B)
+
+d1dr9a2:A   NGEELN--AINTTVSQDPETELYAVSSKLDFNMTTNH--SFMCLIKY---GHLRVNQTFN   196  (A)
+d1cwva4:A   ---FTPNVSVNDQ-----------GQVTITYQ----TYSEVAVTAKSKKFPSYSVSYRFY   885  (B)
+
+d1dr9a2:A   WNTA   200  (A)
+d1cwva4:A   P---   886  (B)
+

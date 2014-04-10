@@ -1,0 +1,16 @@
+(d2jn9a1:A, d1hxma2:A)
+Core Residues: 31
+Core RMSD: 2.391
+Raw Score: 24.480
+P-value: 0.4941
+Reference structure: d2jn9a1:A
+
+d1hxma2:A   SQPHTKPSVFVMKNGTNVACL---VK----EFYPKDIRINLVSSKKITEFDPAIVISPSG   173  (A)
+d2jn9a1:A   ---------------------VKTLRLNNVTL--EMAAYQEESE----------------    22  (B)
+
+d1hxma2:A   KYNAVKLGKYEDSNSVTCSVQHD-------------------------------------   196  (A)
+d2jn9a1:A   -----------P--KRKIAFTLNVTSETYHDIAVLLYEKTFNVEVPERDLAFRGEMTNYS    69  (B)
+
+d1hxma2:A   -------------NKTVHSTDFE--------   206  (A)
+d2jn9a1:A   TSLTNLYEPGAVSEFYIEIT---EIDKNADS    97  (B)
+

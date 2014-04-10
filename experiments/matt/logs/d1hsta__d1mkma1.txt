@@ -1,0 +1,13 @@
+(d1mkma1:A, d1hsta_:A)
+Core Residues: 59
+Core RMSD: 2.168
+Raw Score: 75.928
+P-value: 0.0674
+Reference structure: d1mkma1:A
+
+d1hsta_:A   SH---PTYSEMIAAAIRAEKSRGGSSRQSIQKYIKSHYKVGHNADLQIKLSIRRLLAAGV    80  (A)
+d1mkma1:A   --MNTLKKAFEILDFIVKNPG--DVSVSEIAEKFN-------MSVSNAYKYMVVLEEKGF    49  (B)
+
+d1hsta_:A   LKQTKGVGASGSFRLA--K-----------    97  (A)
+d1mkma1:A   VLRKKD----KRYVPGYKLIEYGSFVLRRF    75  (B)
+

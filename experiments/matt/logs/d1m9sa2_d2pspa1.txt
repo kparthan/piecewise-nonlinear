@@ -1,0 +1,13 @@
+(d2pspa1:A, d1m9sa2:A)
+Core Residues: 28
+Core RMSD: 2.774
+Raw Score: 12.669
+P-value: 0.7034
+Reference structure: d2pspa1:A
+
+d1m9sa2:A   ETTEKTVNLT----RY---VKYI-RGNAGIYKLPREDNSLKQGTLASHRCKALTV-----   437  (A)
+d2pspa1:A   ----------XKPAA-CRCSR--QDPKNRVNCG----------------------FPGIT    25  (B)
+
+d1m9sa2:A   -D--REARNGGKLWYRLKNI------GWTKAENLSLD---   465  (A)
+d2pspa1:A   SDQCFTS-----GCCFD--SQVPGVPWCFKPL-----PAQ    53  (B)
+

@@ -1,0 +1,16 @@
+(d1mgta1:A, d1yo5c1:C)
+Core Residues: 47
+Core RMSD: 2.694
+Raw Score: 50.310
+P-value: 0.3261
+Reference structure: d1mgta1:A
+
+d1yo5c1:C   QPI------HLWQFLKELLLKPHSYGRFIR-WLNKEKGIFKIEDSAQVARLWGIRKNRPA   299  (A)
+d1mgta1:A   ---VTPFEKKVYEWLTKNV-----------KRG------SVI-TYGDLAKALN-------   120  (B)
+
+d1yo5c1:C   MNYDKLSRSIRQYYKK--GIIRKPDIS-------QRLVYQFVHP----------------   334  (A)
+d1mgta1:A   TSPRAVGGAMKRNP-YPIVVPCH----RVVAHDGIG--------YYSSGIEEKKFLLEIE   167  (B)
+
+d1yo5c1:C   --   334  (A)
+d1mgta1:A   GV   169  (B)
+

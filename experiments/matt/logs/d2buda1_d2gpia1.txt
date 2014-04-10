@@ -1,0 +1,16 @@
+(d2gpia1:A, d2buda1:A)
+Core Residues: 26
+Core RMSD: 2.371
+Raw Score: 19.891
+P-value: 0.5944
+Reference structure: d2gpia1:A
+
+d2buda1:A   DPLMQKIDISEN---------PDKIYFIRREDGTVHRGQVLQ------SRTTENAAAPDE   411  (A)
+d2gpia1:A   ------------XNQSIIFTEQLTWDVQ-------LSAIHFTAQQQGXVI----------    31  (B)
+
+d2buda1:A   YYVHYVGLN-----------------------------------------------RRLD   424  (A)
+d2gpia1:A   DCYIGQK-VLEHLAAEKINNSEQALSLFEQFRFDIEEQAEKLIEQEAFDVQGHIQVER--    88  (B)
+
+d2buda1:A   GWVGRHRISDNADDLGGITVLPAPPLAPDQ--   454  (A)
+d2gpia1:A   ------------------------------VD    90  (B)
+

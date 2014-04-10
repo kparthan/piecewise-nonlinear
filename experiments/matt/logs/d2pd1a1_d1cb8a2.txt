@@ -1,0 +1,16 @@
+(d1cb8a2:A, d2pd1a1:A)
+Core Residues: 27
+Core RMSD: 1.514
+Raw Score: 31.950
+P-value: 0.3716
+Reference structure: d1cb8a2:A
+
+d2pd1a1:A   ------------------------------------------------------------     1  (A)
+d1cb8a2:A   PKVLANTNQLQAVYHQQLDMVQAIFYTAGKLSVAGIEIETDKPCAVLIKHINGKQVIWAA   659  (B)
+
+d2pd1a1:A   ----XTKLALFVRLEAKPGQEAALADFLASALPLANAESGTTAWFALKFGPSTFGVFDAF    56  (A)
+d1cb8a2:A   DPLQKEKTAVLSIRDLK-------------------------------------------   676  (B)
+
+d2pd1a1:A   ADEAGRQAHLNGQIAAALXANAATLLSSPPNIEKVELL----AAKLPA------   100  (A)
+d1cb8a2:A   --------------------------TGKTNRVKIDFPQQEFAG----ATVELK   700  (B)
+

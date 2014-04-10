@@ -1,0 +1,16 @@
+(d3cx5f1:F, d1a8pa1:A)
+Core Residues: 12
+Core RMSD: 1.913
+Raw Score: 11.120
+P-value: 0.6588
+Reference structure: d3cx5f1:F
+
+d1a8pa1:A   SNLNVERVLSVHHWNDTLFSFKTTRNPSLRFENGQFVMIGLEVDGRPLMRAYSIASPNYE    61  (A)
+d3cx5f1:F   ------------------------------------------------------------    74  (B)
+
+d1a8pa1:A   EHLEFFSIKVQ----NGPLTSRLQHLKEGDELMVSRKPTGTLV-----------------   100  (A)
+d3cx5f1:F   -----------VTDQLEDLREHFKNTE----------------EGKALVHHYEECAERVK   106  (B)
+
+d1a8pa1:A   -----------------------------------------   100  (A)
+d3cx5f1:F   IQQQQPGYADLEHKEDCVEEFFHLQHYLDTATAPRLFDKLK   147  (B)
+

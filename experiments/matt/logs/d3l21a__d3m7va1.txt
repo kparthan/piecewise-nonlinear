@@ -1,0 +1,34 @@
+(d3m7va1:A, d3l21a_:A)
+Core Residues: 81
+Core RMSD: 8.295
+Raw Score: 77.148
+P-value: 0.7183
+Reference structure: d3m7va1:A
+
+d3l21a_:A   VG----------------------------------------------------------     5  (A)
+d3m7va1:A   --TFNRIHLVVLDSVGIGAAPDANNFSNAGVPDGASDTLGHISKTVGLNVPNMAKIGLGN    60  (B)
+
+d3l21a_:A   ------------F-DVAARLGTLLTAMVTPFSGDGSLDTA--------------------    32  (A)
+d3m7va1:A   IPRDTPLKTVPAENHPT---GY------------------VTKLEEVSLGKDTMTGHWEI    99  (B)
+
+d3l21a_:A   -------------------------TAARLANHLVDQGCD-----------------GLV    50  (A)
+d3m7va1:A   MGLNITEPSPFAPTVLNKLADAGVSTY-------------AVGKINDIFNGSGITNDMGH   265  (B)
+
+d3l21a_:A   VSGTTGESPTTTDGEKIELLRAVLE--AVGDRA---------RVIAG-AGTY-------D    91  (A)
+d3m7va1:A   NK-------------SNSHGVDTLIKTMG----LSAFTKGFSFTNLVDF-D-ALYGHRRN   306  (B)
+
+d3l21a_:A   TAHSIRLAKACAAEGA--------------HGLLVVT----------PYYSKPPQRGLQA   127  (A)
+d3m7va1:A   AHGYRDCLHEFDERL-PEIIAAMKVDDLLLITADH-GNDPTYAGTDHTR-----------   353  (B)
+
+d3l21a_:A   HFTAVADATELPMLLY-DIPGRSAVPIEPDTIRALASHPNIVGVXDAKADLHSGAQIMAD   186  (A)
+d3m7va1:A   ----------------EYV------------------------PL---------------   358  (B)
+
+d3l21a_:A   TGLA--------------YYSGDDALNLPWLRMGATGFISVIAHLAAGQLRELLSAFGSG   232  (A)
+d3m7va1:A   ----LAYSPSFTGNGVLPVGHYAD---------------ISATI----------------   383  (B)
+
+d3l21a_:A   DIATARKINIAVAPLXNAMSRLGGVTLSKAGLRLQGIDVGDPRLPQVAATPEQIDALAAD   292  (A)
+d3m7va1:A   -------------------------ADNFG---------VDTAM----------------   393  (B)
+
+d3l21a_:A   MRAASVLR----------   300  (A)
+d3m7va1:A   --------IGESFLDKLI   403  (B)
+

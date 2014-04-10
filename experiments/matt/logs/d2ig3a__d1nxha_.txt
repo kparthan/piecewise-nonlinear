@@ -1,0 +1,19 @@
+(d1nxha_:A, d2ig3a_:A)
+Core Residues: 38
+Core RMSD: 1.520
+Raw Score: 66.578
+P-value: 0.1244
+Reference structure: d1nxha_:A
+
+d2ig3a_:A   MKFETINQESIAKLMEIFYEKVRKDKDLGPIFNNAIGTSDEEWKEHKAKIGNFWAGMLLG    60  (A)
+d1nxha_:A   ------------------------------------------------------------     3  (B)
+
+d2ig3a_:A   EGDYNGQPLKKHLDLPPFP-----------------------------------------    79  (A)
+d1nxha_:A   -------------------EGELXRLXKRRILESYRWQEDVVKPLSRELEIDVEEFQDIL    43  (B)
+
+d2ig3a_:A   --------------------------------------------QEFFEIWLKLFEESLN    95  (A)
+d1nxha_:A   XDKLDXSSLEALHPRFESARPRCIREKLHSDLQLCWLVDVXEIISVDDAEALKDEITELV   103  (B)
+
+d2ig3a_:A   IV-YNEEMKNVILQRAQMIASHFQNMLYKYGGH   127  (A)
+d1nxha_:A   LAGREYSEALSEGRRRLHEILRS----------   126  (B)
+

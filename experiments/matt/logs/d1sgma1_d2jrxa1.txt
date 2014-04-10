@@ -1,0 +1,13 @@
+(d2jrxa1:A, d1sgma1:A)
+Core Residues: 31
+Core RMSD: 3.514
+Raw Score: 46.228
+P-value: 0.6557
+Reference structure: d2jrxa1:A
+
+d1sgma1:A   GDSRE------------------KILHTASRLSQLQGYHATGLNQIVKESGAPKGSLYHF    46  (A)
+d2jrxa1:A   -----MPQISRYSDEQVEQLLAELL----------------------------NVLEKHK    27  (B)
+
+d1sgma1:A   FPNGKEELAIEAVTYTGKIVEHLIQQS--MDES------------------------    77  (A)
+d2jrxa1:A   A------PTDLSLMVLGNMVTNLINTSIAP---AQRQAIANSFARALQSSINEDKAH    75  (B)
+

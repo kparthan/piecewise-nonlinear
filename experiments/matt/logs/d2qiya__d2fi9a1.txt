@@ -1,0 +1,19 @@
+(d2fi9a1:A, d2qiya_:A)
+Core Residues: 23
+Core RMSD: 2.587
+Raw Score: 35.423
+P-value: 0.6471
+Reference structure: d2fi9a1:A
+
+d2qiya_:A   VT----------------------------------------------------------     4  (A)
+d2fi9a1:A   --HFPGRAPIDAYGNGGFRFADMSHRGSIICIPSGIYGIDMTGPVPTQEDISRVLEESDQ    68  (B)
+
+d2qiya_:A   ---------V-----------------------QDICFAFLQNYYERMRTDPSKLAYFYA    32  (A)
+d2fi9a1:A   IEVLLIGTGVELLRLPEELRVLLWEKRISSDTMSTGAAVRTFNVLLAED-----------   117  (B)
+
+d2qiya_:A   STAELTHTNYQSKKDDVLPTVKVTGRENINKFFSRNDAKVRSLKLKLDTIDFQYTGHLHK    96  (A)
+d2fi9a1:A   ------------------------------------------RAVAAL------------   123  (B)
+
+d2qiya_:A   SILIMATGEMFWTGTPVYKFCQTFILLPSSTFDITNDIIRFISN-----   143  (A)
+d2fi9a1:A   --------------------------------------------LFAVE   128  (B)
+

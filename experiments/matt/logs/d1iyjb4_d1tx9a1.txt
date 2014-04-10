@@ -1,0 +1,19 @@
+(d1tx9a1:A, d1iyjb4:B)
+Core Residues: 37
+Core RMSD: 5.122
+Raw Score: 19.204
+P-value: 0.7424
+Reference structure: d1tx9a1:A
+
+d1iyjb4:B   PL-------------PLSSLFSDGG-----------------------------------  2743  (A)
+d1tx9a1:A   --QSVRFQTALASIKLIQASAV---LDLTEDDFDFLTSNKVWIATDRSRARRCVEACVYG    61  (B)
+
+d1iyjb4:B   ----NVGCVDVIVQRVYPLQWVWKLRVTS-YKKREK--SALLSIWRPSSDLPSLLT----  2929  (A)
+d1tx9a1:A   TLDFVGYPRF-------------------PAPVEFIAAV-----------------IAYY    85  (B)
+
+d1iyjb4:B   -----------EGQRYRIYHLSVSKSKNKFEWPSIQLTATKRTQYQQL-----------P  2967  (A)
+d1tx9a1:A   VHPVNIQTACLIMEGAE-------------------------------FTENIINGVERP   114  (B)
+
+d1iyjb4:B   VSSETLLQLYQP--------------------  2979  (A)
+d1tx9a1:A   VKAAELFAFT--LRVRAGNTDVLTDAEENVRQ   144  (B)
+

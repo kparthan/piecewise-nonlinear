@@ -1,0 +1,28 @@
+(d1lfpa_:A, d1sfsa_:A)
+Core Residues: 70
+Core RMSD: 4.341
+Raw Score: 56.631
+P-value: 0.3251
+Reference structure: d1lfpa_:A
+
+d1sfsa_:A   GIWGVDS--AQVVTDQLFQCVRTELGYPKFWGRYLSEVPNVSEGLTR-DEIVRIRNYGVK    60  (A)
+d1lfpa_:A   -------SHWAQIK---------------------------------HKKAK---VDAQR    21  (B)
+
+d1sfsa_:A   ----VLP--IYNAFREAVGYA------------NGQVAARNAVFHARRLGIPKNKLLFAN   102  (A)
+d1lfpa_:A   GKLFSKLIRE-----------IIVATRLGGPNPEFNPRLRTAIEQAKKANXPWEN-----    65  (B)
+
+d1sfsa_:A   IEDFFAVDAAWIAAWVETLYPTGY-RPGLYADPTKGDFAAAYCEAVSRNNQVAVQAVIWS   161  (A)
+d1lfpa_:A   ----------------------IERAI--------------------------KKG----    73  (B)
+
+d1sfsa_:A   AAPRPGTTKEQKAPRYQPAAPPC---SA-NVWVWQYGRDAEV---CPVDTNL-ADRRLLD   213  (A)
+d1lfpa_:A   -----------------------AGELEGEQ-FEEVIYEGYAPGGVAVXVLATTD-----   104  (B)
+
+d1sfsa_:A   FLY---------------------------------------------------------   216  (A)
+d1lfpa_:A   ---NRNRTTSEVRHVFTKHGGNLGASGCVSYLFERKGYIEVPAKEVSEEELLEKAIEVGA   161  (B)
+
+d1sfsa_:A   ------------------------------------------------------------   216  (A)
+d1lfpa_:A   EDVQPGEEVHIIYTVPEELYEVKENLEKLGVPIEKAQITWKPISTVQINDEETAQKVIKL   221  (B)
+
+d1sfsa_:A   --------------------------   216  (A)
+d1lfpa_:A   LNALEELDDVQQVIANFEIPEEILQK   247  (B)
+

@@ -1,0 +1,43 @@
+(d2g5da1:A, d1r85a_:A)
+Core Residues: 46
+Core RMSD: 4.025
+Raw Score: 40.032
+P-value: 0.6225
+Reference structure: d2g5da1:A
+
+d1r85a_:A   KPHISALNAPQLDQRYKNEFTIGAAVEPYQLQNEKDVQMLKRHFNSIVAENVMK------    62  (A)
+d2g5da1:A   ------------------------------------------------------PDRPAG    45  (B)
+
+d1r85a_:A   -------------------------PISI--QPEEGKFNFEQADRIVKFAKANGM----D    91  (A)
+d2g5da1:A   IPDPAGTTVAGGGAVYTVVPHLSMPH---WAA-----QDFAKSLQSFRLGCANLKNRQGW    97  (B)
+
+d1r85a_:A   IRFHTLVWHSQVPQWFFLDKEGKPMVNETDPVKREQNKQLLLKRLETHIKTI--------   143  (A)
+d2g5da1:A   ----------------------------------------------------QDVCAQAF   105  (B)
+
+d1r85a_:A   ---------VERYKDDIKYWDVVNEVVGDDGKLRNSPWYQIAGIDYIKVAFQAARKYGGD   194  (A)
+d2g5da1:A   QTPIHSFQAKRF-F--------------------------------------------ER   120  (B)
+
+d1r85a_:A   NIKLYMNDYNTEVEPKRTALYNLVKQLKEEGVP---------------------------   227  (A)
+d2g5da1:A   YFTPWQVAGN-----G-----------------SLAGTVTGYYEPVLKGDGRRTERARFP   158  (B)
+
+d1r85a_:A   ------------------------------------------------------------   227  (A)
+d2g5da1:A   IYGIPDDFISVPLPLVRIRQTGKNSGTHTADLSRFPITARTTAIKGRFEGSRFLPYHTRN   233  (B)
+
+d1r85a_:A   ------------------------------------------------------------   227  (A)
+d2g5da1:A   QINGGALDGKAPILGYAEDPVELFFMHIQGSGRLKTPSGKYIRIGYADKNEHPYVSIGRY   293  (B)
+
+d1r85a_:A   ------------------------------------------------------------   227  (A)
+d2g5da1:A   MADKGYLKLGQTSMQGIKAYMRQNPQRLAEVLGQNPSYIFFRELDGPVGALGTPLMGEYA   358  (B)
+
+d1r85a_:A   ------------------------------------------------------------   227  (A)
+d2g5da1:A   GAIDRHYITLGAPLFVATAHPVTRKALNRLIMAQDTGSAIKGAVRVDYFWGYGDEAGELA   418  (B)
+
+d1r85a_:A   --------------IDGIGHQSHIQIGWPSEAEIEKTINMFAALGLDNQITELDVSMYGW   273  (A)
+d2g5da1:A   GKQKTTGYVWQLLPNGMKPE-----------------------------Y----------   439  (B)
+
+d1r85a_:A   PPRAYPTYDAIPKQKFLDQAARYDR-LFKLYEKLSDKISNVTFWGIADNHTWLDSRADVY   332  (A)
+d2g5da1:A   -------------------------RP---------------------------------   441  (B)
+
+d1r85a_:A   YDANGNVVVDPNAPYAKVEKGKGKDAPFVFGPDYKVKPAYWAIIDHK   379  (A)
+d2g5da1:A   -----------------------------------------------   441  (B)
+

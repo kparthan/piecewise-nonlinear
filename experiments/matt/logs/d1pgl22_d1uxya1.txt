@@ -1,0 +1,25 @@
+(d1uxya1:A, d1pgl22:2)
+Core Residues: 54
+Core RMSD: 2.575
+Raw Score: 38.147
+P-value: 0.2530
+Reference structure: d1uxya1:A
+
+d1pgl22:2   CVLNP-------------------------------------------------------   187  (A)
+d1uxya1:A   -----HSLKPWNTFGIDHNAQHIVCAEDEQQLLNAWQYATAEGQPVLILGEGSNVLFLED    57  (B)
+
+d1pgl22:2   ------------Q----------NPFVLN----------------------------RWM   197  (A)
+d1uxya1:A   YRGTVIINRIKGIEIHDEPDAWYLHVGAGENWHRLVKYTLQEGMPGLENLALIPGCVG--   115  (B)
+
+d1pgl22:2   GKLTFPQGTSRSVKRMP---LSIGGGAGAKSAILMNMPNAVLSM-WR----YFV--G-DL   246  (A)
+d1uxya1:A   -----------------SSPIQ----------------------NIGAYGVELQRVCAYV   136  (B)
+
+d1pgl22:2   VFEVSKMTSPYIKCTVSFFIAFGNLADDTINFEAFPHKLVQFGEIQEKVVLKFSQEE-FL   305  (A)
+d1uxya1:A   DSVELA----------------------------------------TGKQVRLTAKECRF   156  (B)
+
+d1pgl22:2   TA-WSTQVRPATTLLADGCPYL--YAMVHDSSVSTIPGDFVIG---VKLTIIENMCAYGL   359  (A)
+d1uxya1:A   --GYR-------------DSIFKHEY-----------------QDRFAIVAVGLR-----   179  (B)
+
+d1pgl22:2   NPGISGSRLLG---------------------   370  (A)
+d1uxya1:A   -----------LPKEWQPVLTYGDLTRLDPTT   200  (B)
+

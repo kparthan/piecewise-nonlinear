@@ -1,0 +1,13 @@
+(d1gvna_:A, d2j5ya_:A)
+Core Residues: 45
+Core RMSD: 2.265
+Raw Score: 69.537
+P-value: 0.2117
+Reference structure: d1gvna_:A
+
+d2j5ya_:A   LVPRGSHMTID-QWLLKNAKEDAIAELKKAGIT---------------------------    24  (A)
+d1gvna_:A   -----------VTYEKTFEIEIINELSA-SVY-NRVLNYVLNHELNKNDSQLLEVNLLNQ    49  (B)
+
+d2j5ya_:A   -S--DFYFNAINKAKTVEEVNALKNEILKAH-A-----------    53  (A)
+d1gvna_:A   LKLAKR--VNLFDYS-LEELQAVHEYWRSMNRYSKQVLNKEKVA    90  (B)
+

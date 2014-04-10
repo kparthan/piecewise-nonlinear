@@ -1,0 +1,16 @@
+(d3d9ta1:A, d2f1fa1:A)
+Core Residues: 29
+Core RMSD: 2.550
+Raw Score: 21.098
+P-value: 0.5593
+Reference structure: d3d9ta1:A
+
+d2f1fa1:A   RRILS-----------------VLLENESGALSR-VIGLFSQRGYNIESLTVAPTDDPTL    43  (A)
+d3d9ta1:A   -----MQTHAARMRTFMYWPSSVP----------VQPEQLASAGFYYVGR----------   294  (B)
+
+d2f1fa1:A   SRMTIQTVG----DEKVLEQI--E---KQLHKLVDVLRVSELG-----------------    77  (A)
+d3d9ta1:A   ---NDDVKCFCCDGG--L---RCWESGDD--------------PWVEHAKWFPRCEFLIR   332  (B)
+
+d2f1fa1:A   --------------    77  (A)
+d3d9ta1:A   MKGQEFVDEIQGRY   346  (B)
+

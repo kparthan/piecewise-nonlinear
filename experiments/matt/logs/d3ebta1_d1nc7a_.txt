@@ -1,0 +1,19 @@
+(d1nc7a_:A, d3ebta1:A)
+Core Residues: 45
+Core RMSD: 6.215
+Raw Score: 46.468
+P-value: 0.8349
+Reference structure: d1nc7a_:A
+
+d3ebta1:A   XSNNXQTVRESYEAFHRRDLPGVLAALAPDVRWTHPDGXSPYGLGGTKHGHDEVIAFIRH    60  (A)
+d1nc7a_:A   ------------------------------------------------------------     0  (B)
+
+d3ebta1:A   VP--THIAEXRLAPDEFIESGER---IVVLGTRRV-------------------------    90  (A)
+d1nc7a_:A   --HXNGARKWFFPDGYIPNG-KRGYLVSHESLCI-XNTGDETAKIRITFLFEDSKPVVHE    55  (B)
+
+d3ebta1:A   ---------------------------------TAVNGRSATLKFVHVWRFENGRAV--T   115  (A)
+d1nc7a_:A   VEISPXKSLHLRLDKLGIPKCKPYSIXAESNVPV------VXQLSRLDVG-------KNH   102  (B)
+
+d3ebta1:A   FEDHFDTAEXIRLITA------   131  (A)
+d1nc7a_:A   YTLXTT---I------GYWEEG   115  (B)
+

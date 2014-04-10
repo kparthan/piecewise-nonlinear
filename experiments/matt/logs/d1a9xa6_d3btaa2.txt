@@ -1,0 +1,28 @@
+(d3btaa2:A, d1a9xa6:A)
+Core Residues: 58
+Core RMSD: 6.364
+Raw Score: 40.215
+P-value: 0.8230
+Reference structure: d3btaa2:A
+
+d1a9xa6:A   RFQHAVERL---------------------------------------------------   685  (A)
+d3btaa2:A   ---------NEKEIKDLYDNQSNSGILKDFWGDYLQYDKPYYMLNLYDPNKYVDVNNVGI  1129  (B)
+
+d1a9xa6:A   KLKQPANATVTAIEMAVEKAKEIGYPLVVRAAMEIVYDEADLRRYFQTAVLLDHFLD---   757  (A)
+d3btaa2:A   RGYMYL---------------------------------------------------KGP  1138  (B)
+
+d1a9xa6:A   -----------------DAVEVDVDAICDGEMV-LI--GGIMEHIEQAGVHSGDSACSLP   797  (A)
+d3btaa2:A   RGSVMTTNIYLNSSLYRGTKFIIK-KYA-----SGNKDN---------------------  1171  (B)
+
+d1a9xa6:A   AYTLSQEIQDVMRQQVQKLAFELQVRG-----LMNVQFAVKNNEVYLIE-----------   841  (A)
+d3btaa2:A   ---------------------------IVRNNDRVYINVVVKNKEYRLATNASQAGVEKI  1204  (B)
+
+d1a9xa6:A   --------------VNPRAA-----------RTVPFVSKATGVPLAKVAARVMAGKSLAE   876  (A)
+d3btaa2:A   LSALEIPDVGNLSQVVVMK-SKNDQGITNKCKM---------------------------  1236  (B)
+
+d1a9xa6:A   QGVTKEVIPPYYSVKEVVLPFNKFPGVDP---------------------LLGPEM----   911  (A)
+d3btaa2:A   -----------------------------NLQDNNGNDIGFIGFHQFNNIAKLVA-SNWY  1266  (B)
+
+d1a9xa6:A   ----------RSTGEVMGVGRT---FAEAFAKAQLGS------   935  (A)
+d3btaa2:A   NRQIERSSRTLGCSWEF-----IPVDDG---------WGERPL  1295  (B)
+

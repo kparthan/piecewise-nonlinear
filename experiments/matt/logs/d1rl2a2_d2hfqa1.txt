@@ -1,0 +1,16 @@
+(d2hfqa1:A, d1rl2a2:A)
+Core Residues: 25
+Core RMSD: 2.048
+Raw Score: 23.436
+P-value: 0.4822
+Reference structure: d2hfqa1:A
+
+d1rl2a2:A   QYRIIDFKRDKD-GIPGRVATI------EYDPNRSANIALINYA----------------    96  (A)
+d2hfqa1:A   ------------MQIHVYDTYVKAKDGHV--------MHFDVFTDVRDDKKAIEFAKQWL    40  (B)
+
+d1rl2a2:A   ------------------------------D----GEKRYIIAPKNLKVGXEIXSGPDAD   122  (A)
+d2hfqa1:A   SSIGEEGATVTSEECRFCHSEKAPDEVIEAIKQNGYFIYKME------------------    82  (B)
+
+d1rl2a2:A   IKI---   125  (A)
+d2hfqa1:A   ---GCN    85  (B)
+

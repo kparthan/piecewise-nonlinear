@@ -1,0 +1,13 @@
+(d1d6ga_:A, d1acwa_:A)
+Core Residues: 11
+Core RMSD: 1.318
+Raw Score: 13.126
+P-value: 0.7145
+Reference structure: d1d6ga_:A
+
+d1acwa_:A   ------------------------------------VSCEDCPEHCSTQKAQAKCDNDKC    24  (A)
+d1d6ga_:A   MDVVDSLLVNGSNITPPCELGLENETLFCLDQPRPSKEWQPAQVIL--------------    46  (B)
+
+d1acwa_:A   VCEPI    29  (A)
+d1d6ga_:A   -L---    47  (B)
+

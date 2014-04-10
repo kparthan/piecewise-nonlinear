@@ -1,0 +1,13 @@
+(d2c9wa1:A, d1b4fa_:A)
+Core Residues: 18
+Core RMSD: 1.933
+Raw Score: 23.010
+P-value: 0.5167
+Reference structure: d2c9wa1:A
+
+d1b4fa_:A   ----PDYTSFNTVDEWLEAIKMGQYKESFANAGFTSFDVVSQMMMEDILRVGVTLAGHQ-    60  (A)
+d2c9wa1:A   HLYLTK-----------------------------------------------------P   155  (B)
+
+d1b4fa_:A   -----KKILNSIQVMRAQMNQIQS----------------------    79  (A)
+d2c9wa1:A   LYTSAPSLQHLCRLTINKCTG---AIWGLPLPTRLKDYLEEYKFQV   198  (B)
+

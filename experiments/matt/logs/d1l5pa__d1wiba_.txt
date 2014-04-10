@@ -1,0 +1,16 @@
+(d1wiba_:A, d1l5pa_:A)
+Core Residues: 24
+Core RMSD: 1.958
+Raw Score: 21.934
+P-value: 0.5450
+Reference structure: d1wiba_:A
+
+d1l5pa_:A   ------------------------------------------------------------     1  (A)
+d1wiba_:A   GSSGSSGPPKFDPNEVKVVYLRCTGGEVGATSALAPKIGPLGLSPKKVGDDIAKATGDWK    54  (B)
+
+d1l5pa_:A   ----GTITAVKGGVKKQLKFEDDQ-TLFTVLTEAGLMSADD---TCQGNKACGKCICKHV    52  (A)
+d1wiba_:A   GLRITVKLTIQNRQAQIEVVPSASAL---------------SGPSSG-------------    86  (B)
+
+d1l5pa_:A   SGKVAAAEDDEKEFLEDQPANARLACAITLSGENDGAVFEL    93  (A)
+d1wiba_:A   -----------------------------------------    86  (B)
+

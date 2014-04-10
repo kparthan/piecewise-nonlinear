@@ -1,0 +1,19 @@
+(d3dtub2:B, d3oeqa_:A)
+Core Residues: 26
+Core RMSD: 2.178
+Raw Score: 38.009
+P-value: 0.3567
+Reference structure: d3dtub2:B
+
+d3oeqa_:A   VESSTDGQVVPQEVLNLPLEKA------------------HEEADDYLDHLLDSLEELSE    93  (A)
+d3dtub2:B   ----------------------LEIIGRPQPGGTGFQPSASPVATQIHWLDGFILVIIAA    67  (B)
+
+d3oeqa_:A   AH---PDCIPDVELSHGVMTLEIPAFGTYVINKQPPNKQIWLASPLSGPNRFDLL-----   145  (A)
+d3dtub2:B   ITIFVTL------------------------------------------------LILYA    79  (B)
+
+d3oeqa_:A   ----------------------------------------------NGEWVSLRNGTKLT   159  (A)
+d3dtub2:B   VWRFHEKRNKVPARFTHNSPLEIAWTIVPIVILVAIGAFSLPVLFNQQ------------   127  (B)
+
+d3oeqa_:A   DILTEEVEKAISK--   172  (A)
+d3dtub2:B   -------------EI   129  (B)
+

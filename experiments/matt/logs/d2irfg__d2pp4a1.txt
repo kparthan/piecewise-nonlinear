@@ -1,0 +1,16 @@
+(d2pp4a1:A, d2irfg_:G)
+Core Residues: 44
+Core RMSD: 3.065
+Raw Score: 45.212
+P-value: 0.4135
+Reference structure: d2pp4a1:A
+
+d2irfg_:G   RMRMRPWLEEQINSNTIPGLKWLNKEKKIFQIPWMHA-----------------------    41  (A)
+d2pp4a1:A   ------------------GA-----------RQL---SKLKRFLTTLQQYGNDISPEIGE   146  (B)
+
+d2irfg_:G   ---------------A-------------------RHG--WDVEKDAPLFRNWAIHTGKH    65  (A)
+d2pp4a1:A   RVRTLVLGLVNSTLTIEEFHSKLQEATNFPLRPFVIPFLKANLPLLQRELLHCARLAKQ-   205  (B)
+
+d2irfg_:G   QPGIDKPDPKTWKANFRCAMNSL--PDIEEVKDRSIKKGNNAFRVYRMLP--   113  (A)
+d2pp4a1:A   -------NPAQYLAQHEQLLLD-AST------------------------TS   225  (B)
+

@@ -1,0 +1,31 @@
+(d2v03a_:A, d1piia2:A)
+Core Residues: 87
+Core RMSD: 4.129
+Raw Score: 69.428
+P-value: 0.0457
+Reference structure: d2v03a_:A
+
+d1piia2:A   MQTVLAKIVADKAIWVE----ARKQQQPLASFQNEVQPSTRHFYDALQGARTAFILECKK    56  (A)
+d2v03a_:A   -----------------MSTLE--QT----------------------------------     7  (B)
+
+d1piia2:A   ASPSKGVIRDDFD-------PARIAAIYKHYASAISVLTDEKYFQGSFNFLPIVSQIAPQ   109  (A)
+d2v03a_:A   -------------IGNTPLVK---LQRMGPDNGSEVWLKLEG------------------    33  (B)
+
+d1piia2:A   PILCKDFI----------------------------------------------------   117  (A)
+d2v03a_:A   --------NNPAGSVXDRAALSMIVEAEKRGEIKPGDVLIEATSGNTGIALAMIAALKGY    85  (B)
+
+d1piia2:A   ------------------------------------------------------------   117  (A)
+d2v03a_:A   RMKLLMPDNMSQERRAAMRAYGAELILVTKEQGMEGARDLALEMANRGEGKLLDQFNNPD   145  (B)
+
+d1piia2:A   ---IDP-YQIYLARYYQ--AD-ACLLMLSVLDDDQYRQLAAVAHSLEMGVLTEVS-----   165  (A)
+d2v03a_:A   NPYAHYTTTGPEIWQQTGGRITHFVSSMGT--TGTITGVSRFMREQSKPVTIVGLQPEEG   203  (B)
+
+d1piia2:A   -------N-EEEQERAI--------ALGAKVVGINNRDLRDL-SIDLNRTRELAPKLGHN   208  (A)
+d2v03a_:A   SSIPGIRRWPT------EYLPGIFNASLV--DEVLDI-----HQR---------------   235  (B)
+
+d1piia2:A   VTVIS-------------------------ESGINTYAQVRELSHFANG--FLIGSALMA   241  (A)
+d2v03a_:A   -----DAENTMRELAVREGIFCGVSSGGAVAG-----------------ALRV-------   266  (B)
+
+d1piia2:A   HDDLHAAVRRVLL----------------------------   254  (A)
+d2v03a_:A   -------------AAANPDAVVVAIICDRGDRYLSTGVFGE   294  (B)
+

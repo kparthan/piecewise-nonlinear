@@ -1,0 +1,19 @@
+(d1ycsb1:B, d1p0za_:A)
+Core Residues: 45
+Core RMSD: 3.740
+Raw Score: 44.569
+P-value: 0.6211
+Reference structure: d1ycsb1:B
+
+d1p0za_:A   EERLHYQVGQRALIQAM--------------------------QISAM-----PELVEAV    33  (A)
+d1ycsb1:B   -----------------PLALLLDSSLEGEFDLVQRIIYEVDDPSLP-NDEGITALHNAV   368  (B)
+
+d1p0za_:A   QKRDLARIKALIDPMRSFSDATY--ITVGDASGQRL---------------YH--VNPD-    73  (A)
+d1ycsb1:B   CAGHTEIVKFLVQFG--------VNVNAADSDGWTPLHCAASCNNVQVCKFLVESGA--A   418  (B)
+
+d1p0za_:A   EIGKSMEGGDSDEALINAKSYVSVRKGSLGSSLRGKSPIQDATGKVIGIVSVGYTIEQLE   133  (A)
+d1ycsb1:B   V---FAM-----------------------------------------------------   422  (B)
+
+d1p0za_:A   HH----------------------------------   135  (A)
+d1ycsb1:B   --TYSDMQTAADKCEEMEEGYTQCSQFLYGVQEKMG   456  (B)
+

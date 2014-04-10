@@ -1,0 +1,16 @@
+(d1igna2:A, d2g9wa1:A)
+Core Residues: 54
+Core RMSD: 3.035
+Raw Score: 55.151
+P-value: 0.1810
+Reference structure: d1igna2:A
+
+d2g9wa1:A   KLTR----LGDLERAVXDHLWSR-TEPQ----------------------------TVRQ    29  (A)
+d1igna2:A   ----KRKFSADEDYTLAIAV---KKQF-YRDLFQIDPDTGRSLIRTQSRRGPIAREFFKH   528  (B)
+
+d2g9wa1:A   VHEALSARRDLAYTTVXAVLQR-LAKKNLVLQIRAHRYAPVHGRDELVAGLXVDALAQAE    91  (A)
+d1igna2:A   FAEEH---AAHTENAWRDRFRKFLLAYG-----------IDDYISYYEA-E---------   564  (B)
+
+d2g9wa1:A   DSGSRQAALVHFVERVGADEADALRRALAELEA---------------   124  (A)
+d1igna2:A   ---------------------------------EPMKNLTPTPGNYNS   594  (B)
+

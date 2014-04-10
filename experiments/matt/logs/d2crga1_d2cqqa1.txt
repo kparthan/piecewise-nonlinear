@@ -1,0 +1,13 @@
+(d2cqqa1:A, d2crga1:A)
+Core Residues: 46
+Core RMSD: 1.603
+Raw Score: 59.996
+P-value: 0.0866
+Reference structure: d2cqqa1:A
+
+d2crga1:A   ME--EWSASEACLFEEALEKYGK----DFNDIRQDFLPWKSLTSIIEYYYMWKTTDRYVQ    61  (A)
+d2cqqa1:A   --APEWTEEDLSQLTRSMVKFPGGTPGRWEKIAH-ELG-RSVTDVTTKAKQLKDSV----    59  (B)
+
+d2crga1:A   QKR-------    64  (A)
+d2cqqa1:A   ---TCSPGMV    66  (B)
+

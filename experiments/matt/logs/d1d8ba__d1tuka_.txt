@@ -1,0 +1,13 @@
+(d1tuka_:A, d1d8ba_:A)
+Core Residues: 38
+Core RMSD: 3.904
+Raw Score: 33.406
+P-value: 0.7258
+Reference structure: d1tuka_:A
+
+d1d8ba_:A   ELNNLRMTYE--RLRELSLNLGNRMVPPVGNFMPDSILKKMAAILPMNDSAFAT-LGTVE    67  (A)
+d1tuka_:A   ----------ACQAS-QL-------------AVCASAI-L--------------SGAKPS    21  (B)
+
+d1d8ba_:A   DKYRRRFKYFKATIADLSKKRSSE--------------------------    91  (A)
+d1tuka_:A   GECCGNLRAQQGCF---C-QYAKDPTYGQYIRSPHARDTLTSCGLAVPHC    67  (B)
+

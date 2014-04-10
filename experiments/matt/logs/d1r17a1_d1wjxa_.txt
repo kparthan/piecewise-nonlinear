@@ -1,0 +1,19 @@
+(d1wjxa_:A, d1r17a1:A)
+Core Residues: 50
+Core RMSD: 3.888
+Raw Score: 34.346
+P-value: 0.3943
+Reference structure: d1wjxa_:A
+
+d1r17a1:A   GSN--------------------------------VNHLIKVTDQSITEGYDDSDGIIKA   303  (A)
+d1wjxa_:A   ---VLENRRARHDYEILETYEAGIALKGTEVKSLRA-GKVDFTGSFARFED---------    49  (B)
+
+d1r17a1:A   HDAENLIYDV-TFEVDDKVKSGDTMTVNIDKNTVPSDLTDSFAIPKIKDNSGEIIATGTY   362  (A)
+d1wjxa_:A   ---GELYLENLYI-----------------------------------------------    59  (B)
+
+d1r17a1:A   DNTNKQITYTFTDYVDKYENIKA---HLKLTSYIDKSK-VPNNNTKL-----DVEYKTAL   413  (A)
+d1wjxa_:A   ---------------------APVDPRRKRKLLLHKHELRRLLGKV-EQKGLTLVPL---   102  (B)
+
+d1r17a1:A   SSVNKTITVEY--------------------   424  (A)
+d1wjxa_:A   -----------KIYFNERGYAKVLLGLARGK   122  (B)
+

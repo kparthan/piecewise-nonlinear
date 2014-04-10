@@ -1,0 +1,16 @@
+(d1e3ha1:A, d1kgsa1:A)
+Core Residues: 50
+Core RMSD: 2.941
+Raw Score: 54.493
+P-value: 0.2548
+Reference structure: d1e3ha1:A
+
+d1kgsa1:A   SKSTKLVCGDLILDTATKKAYRGSKEIDL--TKKEYQILEYLVXNKNR------------   169  (A)
+d1e3ha1:A   -----------------------------YQDDVLEALSAAVRP-EL-SAALTIAGKQDR   291  (B)
+
+d1kgsa1:A   --V--VTKEELQEHL--W--VFSDVLRSHIKNLRKKVDKGFK--KKIIHTVRGIGYVARD   224  (A)
+d1e3ha1:A   EAELDRVKALAAEKLLPEFEGREKEISAAYRALTKSLVRERVIAE---------------   336  (B)
+
+d1kgsa1:A   E---------   225  (A)
+d1e3ha1:A   -KKRIDGRGV   345  (B)
+

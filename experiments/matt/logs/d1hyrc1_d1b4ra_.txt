@@ -1,0 +1,13 @@
+(d1b4ra_:A, d1hyrc1:C)
+Core Residues: 59
+Core RMSD: 2.852
+Raw Score: 45.571
+P-value: 0.3020
+Reference structure: d1b4ra_:A
+
+d1hyrc1:C   TVPPMVNVTRSEASEG---N-ITVTCR-ASGFYPWNITLSWRQ-----DGVSLSHDTQQW   230  (A)
+d1b4ra_:A   -----ATLVGPH-GPLASGQLAAFHIAAPL-P----VTATRWDFGDGSA-EVD----A-A    50  (B)
+
+d1hyrc1:C   GDVLPDGNGTYQTWVATRI-CQ----GEEQRFTCYMEHSGNHSTHPVPS------   274  (A)
+d1b4ra_:A   -------------GPAASHRY-VLPGRY--HVTAVLALGAGSALLGT--DVQVEA    87  (B)
+

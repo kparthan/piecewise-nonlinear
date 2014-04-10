@@ -1,0 +1,46 @@
+(d3k40a_:A, d1hx0a2:A)
+Core Residues: 97
+Core RMSD: 5.468
+Raw Score: 77.785
+P-value: 0.0672
+Reference structure: d3k40a_:A
+
+d1hx0a2:A   X-----------------------------------------------------------     1  (A)
+d3k40a_:A   -MEAPEFKDFAKTMVDFIAEYLENIRERRVLPEVKPGYLKPLIPDAAPEKPEKWQDVMQD    59  (B)
+
+d1hx0a2:A   ------------------------------------------------------------     1  (A)
+d3k40a_:A   IERVIMPGVTHWHSPKFHAYFPTANSYPAIVADMLSGAIACIGFTWIASPACTELEVVMM   119  (B)
+
+d1hx0a2:A   ----------------------------------YA--------PQTQS-----------     8  (A)
+d3k40a_:A   DWLGKMLELPAEFLACSGGKGGGVIQGTASESTLVALLGAKAKKLKEVKELHPEWDEHTI   179  (B)
+
+d1hx0a2:A   GR--TSIVHL--------------------------FEWRWVDIALECERYLGP---KGF    37  (A)
+d3k40a_:A   L-GKLVGYCSDQAHSSVERAGLLGGVKLRSVQSENHRM-RGAALEKAIEQ--DVAEGLIP   235  (B)
+
+d1hx0a2:A   GGVQ------------VSPPNENIVVTNPSRPWWERYQPVSYKLCTRSGNENEFRDMVTR    85  (A)
+d3k40a_:A   FYAVVTLGTTNSCAFDYL------------------------------------DECGPV   259  (B)
+
+d1hx0a2:A   CNNVGVRIYVDA------VINHMCGSGAAAGTGTTCGSYCNPGNREFPAVPYSAWDFNDG   139  (A)
+d3k40a_:A   GNKHNLWIHVD-AAYAGSAFICPE------------------------------------   282  (B)
+
+d1hx0a2:A   KCKTASGGIESYNDPYQVRDCQLVGLLDLALEKDYVRSMIADYLNK--------LIDIGV   191  (A)
+d3k40a_:A   ----------------------------------------------YRHLMKGIES---A   293  (B)
+
+d1hx0a2:A   AGFRIDA-S-KHMWPGDIKAVLDKLHNLNTNWFPAGSRPFIFQEVIDLGGEAIKSSEYFG   249  (A)
+d3k40a_:A   DSFNF--NPHXWMLV-------------------------------------N--FDCS-   311  (B)
+
+d1hx0a2:A   NGRVTEFKYGAKLGTVVRKWSGEKMSYLKNWGEGWGFMPSDRALVFVDNHDNQ-------   302  (A)
+d3k40a_:A   AM---------------------------------------------------WLKDPSW   320  (B)
+
+d1hx0a2:A   ---------------------------------------------------R-GHGAGGS   310  (A)
+d3k40a_:A   VPLGRRFRALKLWFVLRLYGVENLQAHIRRHCNFAKQFGDLCVADSRFELAAEINMGLVC   407  (B)
+
+d1hx0a2:A   S--------------------------ILTFWDARLYKIAVGFMLAHPYGFTRVMSSYRW   344  (A)
+d3k40a_:A   FRLKGSNERNEALLKRINGRGHIHLVPAKIKDV---------------------------   440  (B)
+
+d1hx0a2:A   ARNFVNGEDVNDWIGPPNNNGVIKEVTINADTTCGNDWVCEHRWREIRNMVWFRNVVDG-   403  (A)
+d3k40a_:A   -----------------------------------------------------------Y   441  (B)
+
+d1hx0a2:A   ----------------------------------   403  (A)
+d3k40a_:A   FLRMAICSRFTQSEDMEYSWKEVSAAADEMEQEQ   475  (B)
+

@@ -1,0 +1,16 @@
+(d1s6na_:A, d1kmta_:A)
+Core Residues: 75
+Core RMSD: 2.726
+Raw Score: 60.063
+P-value: 6.3262e-03
+Reference structure: d1s6na_:A
+
+d1kmta_:A   AMVP----------------NVVVTG-LTLVCSSAPGPLELDLTGDLESFKKQSFVLKEG   107  (A)
+d1s6na_:A   ----ISEFQLKGTTYGVCSKAFKFLGTPADTG----------------------------    28  (B)
+
+d1kmta_:A   VEYRIKISFRVNREIVSG-MKYIQHTYRKGVKID-----KTD------YMVGSYGP-RAA   154  (A)
+d1s6na_:A   -HGTVVLELQYTGTDGPCKVPISSVAS-------LNDLTPV-GRLVTVNPFVSVATAN-A    78  (B)
+
+d1kmta_:A   AYEFLTPVEEAPKGMLARGS----YSIKSRFTDDDKTDHLSWEWNLTIKKDW------   202  (A)
+d1s6na_:A   KVLIEL--------------EPPFGDSYIVVGR--GEQQINHHWHKS-----GSSIGK   115  (B)
+

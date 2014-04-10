@@ -1,0 +1,16 @@
+(d2jdqd_:D, d1nh2a2:A)
+Core Residues: 21
+Core RMSD: 2.585
+Raw Score: 12.349
+P-value: 0.6681
+Reference structure: d2jdqd_:D
+
+d1nh2a2:A   KIQNIVGSCDVKFPIRLEGLA-FSHGTFS-----------------SY-EP--ELF----   190  (A)
+d2jdqd_:D   --------------------SAVL-----RGFLILGKEDRRYGPALSINELSNL--AKGE   720  (B)
+
+d1nh2a2:A   -PGLIYRMVKPKIVLLIFVSGKIVLTGAKQREEIYQAFEAIYPVLSEFRKM---------   240  (A)
+d2jdqd_:D   KANVLIG-----QGDVVLV--------------------------------MKRKRDSQT   749  (B)
+
+d1nh2a2:A   -------   240  (A)
+d2jdqd_:D   ATKRIRM   756  (B)
+

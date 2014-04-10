@@ -1,0 +1,19 @@
+(d1zbdb_:B, d3ktoa_:A)
+Core Residues: 18
+Core RMSD: 1.662
+Raw Score: 31.400
+P-value: 0.4605
+Reference structure: d1zbdb_:B
+
+d3ktoa_:A   PIIYLVDHQKDARAALSKLLSPLDVTIQCFASAESFXRQQISDDAIGXIIEAHLEDKKDS    71  (A)
+d1zbdb_:B   ------------------------------------------------------------    44  (B)
+
+d3ktoa_:A   GIELLETLVKRGFHLPTIVXASSSDIPTAVRAXRASAADFIEKP--------FIEHVLVH   123  (A)
+d1zbdb_:B   --------------------------------------------EELTDEEKEIINRVIA    59  (B)
+
+d3ktoa_:A   DVQQIINGAK--------------------------------------------------   133  (A)
+d1zbdb_:B   RAEKXETXEQERIGRLVDRLETXRKNVAGDGVNRCILCGEQLGXLGSASVVCEDCKKNVC   119  (B)
+
+d3ktoa_:A   ------------------------------------------------   133  (A)
+d1zbdb_:B   TKCGVETSNNRPHPVWLCKICLEQREVWKRSGAWFFKGFPKQVLPQPX   167  (B)
+

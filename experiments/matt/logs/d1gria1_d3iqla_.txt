@@ -1,0 +1,13 @@
+(d3iqla_:A, d1gria1:A)
+Core Residues: 50
+Core RMSD: 0.874
+Raw Score: 95.984
+P-value: 0.0120
+Reference structure: d3iqla_:A
+
+d1gria1:A   ------MEAIAKYDFKATADDELSFKRGDILKV----Q-NWYKAELNGKDGFIPKNYIEM    55  (A)
+d3iqla_:A   SVGSDQPCCRALYDFEPENEGELGFKEGDIITLTNQIDENWYEGMLHGQSGFFPINYVEI   346  (B)
+
+d1gria1:A   K-----    56  (A)
+d3iqla_:A   LVALPH   352  (B)
+

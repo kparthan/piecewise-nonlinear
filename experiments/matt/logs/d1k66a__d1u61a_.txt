@@ -1,0 +1,19 @@
+(d1u61a_:A, d1k66a_:A)
+Core Residues: 58
+Core RMSD: 2.345
+Raw Score: 64.125
+P-value: 0.1680
+Reference structure: d1u61a_:A
+
+d1k66a_:A   AVGNATQPLLVVE--------D--SDEDFSTFQRLLQREGV-------------VNP--I    35  (A)
+d1u61a_:A   -------------IDAKQLNSLALAYXGDAVYEQYIRYHL-LQKGKVRPNQLHRLGTSFV    47  (B)
+
+d1k66a_:A   YRCITGDQALDFLYQTGSYCNPDIAPRPA-VILL----------------------DLNL    72  (A)
+d1u61a_:A   S----------------------------AKAQAKVVYHLLETAFLTEEEEAVLRRGRNA    79  (B)
+
+d1k66a_:A   -PGTDGRE-------VLQEIKQDEVLKKIPVV------IM-TTSSNPKDIEICYSYSISS   117  (A)
+d1u61a_:A   NSG-----TVPKNTDVQ---------------TYRHSTAFEA------------------   101  (B)
+
+d1k66a_:A   YIVK--PL----EIDRLTETVQTFIKYWLDIVVLPEMG   149  (A)
+d1u61a_:A   ---LIGYHHLLNNRERLDEIVYKAIAV-LEE-------   128  (B)
+

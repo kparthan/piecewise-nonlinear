@@ -1,0 +1,13 @@
+(d1st6a6:A, d3loca1:A)
+Core Residues: 36
+Core RMSD: 6.731
+Raw Score: 44.353
+P-value: 0.9360
+Reference structure: d1st6a6:A
+
+d3loca1:A   R------------------------SRAVSAKKKAILSAALDTFSQFGFHGTRLEQIAEL    46  (A)
+d1st6a6:A   -AAAVGTANKTTVEGIQATVKSARELTPQVVSAARILLRN--PG----------------   687  (B)
+
+d3loca1:A   AGVSKTNLLYYFPSKEALYIAVLRQILDIWLAPLKAFRE------------    85  (A)
+d1st6a6:A   ------------------NQAAYEHFETMKNQWIDNV--EKMTGLVDEAID   718  (B)
+

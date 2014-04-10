@@ -1,0 +1,13 @@
+(d1vega_:A, d2dkla1:A)
+Core Residues: 50
+Core RMSD: 3.303
+Raw Score: 69.392
+P-value: 0.1143
+Reference structure: d1vega_:A
+
+d2dkla1:A   GMK----------------TSGKQ--DEAWIMSRLIKQLTDMGFPREPAEEALKSNNMNL    49  (A)
+d1vega_:A   ---GSSGSSGNPHMWWLQDADPENNSRQASPSQESINQLVYMGFDTVVAEAALRVFGGNV    57  (B)
+
+d2dkla1:A   DQAMSALLEKKVDVDKRGLGVTDHNGMAAK---------------    79  (A)
+d1vega_:A   QLAAQTLAHHG-------------------GSLPPDLQFSGPSSG    83  (B)
+

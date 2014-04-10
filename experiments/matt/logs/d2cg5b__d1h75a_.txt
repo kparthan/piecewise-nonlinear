@@ -1,0 +1,13 @@
+(d1h75a_:A, d2cg5b_:B)
+Core Residues: 34
+Core RMSD: 2.778
+Raw Score: 31.960
+P-value: 0.5053
+Reference structure: d1h75a_:A
+
+d2cg5b_:B   QRDLVEAVAHILGIRDLAAVNLDSSLADLGL---------DALMSVEVRQTLERELNLVL  2174  (A)
+d1h75a_:A   -------------------------------MRITIYTRNDCVQCHATKRAM-ENRGFDF    28  (B)
+
+d2cg5b_:B   SVREV---------------------RQL-----T-----LRKLQELSSKA--  2194  (A)
+d1h75a_:A   EMI--NVDRVPEAAEALRAQGFRQLPVVIAGDLSWSGFRPDM-INRLH-P-AP    76  (B)
+

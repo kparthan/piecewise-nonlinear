@@ -1,0 +1,19 @@
+(d2c6ua_:A, d2cvla_:A)
+Core Residues: 51
+Core RMSD: 2.449
+Raw Score: 39.253
+P-value: 0.2381
+Reference structure: d2c6ua_:A
+
+d2cvla_:A   ----XEAVKTDRAPAAIGPYAQAVKAG-----GFVFVSGQIPLAPDGSLVEGDIRVQTER    51  (A)
+d2c6ua_:A   SPCDT-------------------NWRYYGDSCYGFFRHNL-------------------   121  (B)
+
+d2cvla_:A   VXENLKAVLEAAGSGLSRVVQT----------------TCFLADXEDF------------    83  (A)
+d2c6ua_:A   TWEESKQYCTDMNAT--LLK--IDNRNIVEYIKARTHLIR--------WVGLSRQKSNEV   169  (B)
+
+d2cvla_:A   --------------------P-GFNEVYARYFTPPYP-ARATVAVKALPRGVR-------   114  (A)
+d2c6ua_:A   WKWEDGSVISENMFEFLEDGKGN--MNC---------AYFH------------NGKMHPT   206  (B)
+
+d2cvla_:A   ---VEVACVALAE--   124  (A)
+d2c6ua_:A   FCENKHYLMCERKAG   221  (B)
+

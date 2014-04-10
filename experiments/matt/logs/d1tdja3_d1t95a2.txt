@@ -1,0 +1,16 @@
+(d1t95a2:A, d1tdja3:A)
+Core Residues: 25
+Core RMSD: 3.017
+Raw Score: 19.602
+P-value: 0.7245
+Reference structure: d1t95a2:A
+
+d1tdja3:A   GGRPSHPLQERLYSFEFPESPGALLRFLNTLGTYWNISLFHYRSHGTDYGRVLAAFEYDC   499  (A)
+d1t95a2:A   -------DKAVIARLRKG------------------------------GEEFEVLVD---    30  (B)
+
+d1tdja3:A   HDETNNP--------------------------AFRFFLAG-------------------   514  (A)
+d1t95a2:A   -------PYLARDLKEGKEVNFEDLLAAEEVFKDAKKG---ERASVDELRKIFGTDDVFE    80  (B)
+
+d1tdja3:A   ------   514  (A)
+d1t95a2:A   IARKII    86  (B)
+

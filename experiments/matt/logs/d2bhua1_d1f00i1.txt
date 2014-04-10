@@ -1,0 +1,16 @@
+(d1f00i1:I, d2bhua1:A)
+Core Residues: 56
+Core RMSD: 2.255
+Raw Score: 58.886
+P-value: 0.0676
+Reference structure: d1f00i1:I
+
+d2bhua1:A   SFQTQHDPRTR---LGATPLPGG----------AGTRFRLWTSTAR------TVAVRVNG    54  (A)
+d1f00i1:I   -----------ASITEIKAD--KTTAVANGQDAITYTVKVMK----GDKPVSNQEVTFTT   700  (B)
+
+d2bhua1:A   -------TEHVMTSLGGGIYELELPVGP--------GARYLFVLDGVPTPDPYARFLPDG    99  (A)
+d1f00i1:I   TLGKLSNSTEKTDTN----GYAKVTL--TSTTPGKSLVSARVS---DVA-----------   740  (B)
+
+d2bhua1:A   VHGEAEVVDFG-----   110  (A)
+d1f00i1:I   --VDVKAPE--VEFFT   752  (B)
+

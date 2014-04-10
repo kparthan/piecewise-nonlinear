@@ -1,0 +1,19 @@
+(d2pbdp_:P, d1se9a_:A)
+Core Residues: 36
+Core RMSD: 2.830
+Raw Score: 40.929
+P-value: 0.4042
+Reference structure: d2pbdp_:P
+
+d1se9a_:A   EAEVHNQLEIKFRLTDGSDIGPKAFPDATTVSALKETVISEWPREKENGP-KTV--KEVK    57  (A)
+d2pbdp_:P   ----------------------------AGWNAYIDNLM-----------ADG-TCQDAA    20  (B)
+
+d1se9a_:A   LISA---GKVLENSKTVKDYRSPVSNLAGAVT----------------------------    86  (A)
+d2pbdp_:P   IVGYKDSPSVWA--------------------AVPGKTFVNITPAEVGVLVGKDRSSFYV    60  (B)
+
+d1se9a_:A   ----------------------------------------------TMHVIIQAPVTEKE   100  (A)
+d2pbdp_:P   NGLTLGGQKCSVIRDSLLQDGEFSMDLRTKSTGGAPTFNVTVTKTDKTLVLLMGKE----   116  (B)
+
+d1se9a_:A   K-----------------------   101  (A)
+d2pbdp_:P   -GVHGGLINKKCYEMASHLRRSQY   139  (B)
+

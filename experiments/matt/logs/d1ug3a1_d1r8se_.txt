@@ -1,0 +1,25 @@
+(d1r8se_:E, d1ug3a1:A)
+Core Residues: 66
+Core RMSD: 3.233
+Raw Score: 74.524
+P-value: 0.3680
+Reference structure: d1r8se_:E
+
+d1ug3a1:A   KAALSEE-------------------------------------------ELEKKSKAII  1251  (A)
+d1r8se_:E   -------NRKMAMGRKKFNMDPKKGIQFLVENELLQNTPEEIARFLYKGEGL--NKTAIG   112  (B)
+
+d1ug3a1:A   EEYLH----LND-MKEAVQCVQELASPSL------------LF--IFVR-HGVESTLERS  1291  (A)
+d1r8se_:E   DYLGEREELNLAVLHAFVD-LH-------EFTDLNLVQALRQ-FLWS--FRLP-----GK   156  (B)
+
+d1ug3a1:A   AIAREHMGQLLHQ-LLCAGHLSTAQYYQGLYEILEL------------------------  1326  (A)
+d1r8se_:E   AQKIDRMMEA-FAQRYCLC-----------------NPGVFQSTDTCYVLSYSVIMLNTD   198  (B)
+
+d1ug3a1:A   -AEDMEIDIPHVWLYLAELVTPILQEGGV-------------------------PMGELF  1360  (A)
+d1r8se_:E   LHN-PN------V----------------RDKMGLERFVAMNRGINEGGDLPEELLRNLY   235  (B)
+
+d1ug3a1:A   REITKPLRPLGKAASLLLEILGLLCKSMGPKKVGTLWREAGLSWKEFLPEGQDIGAFVAE  1420  (A)
+d1r8se_:E   DSIRNE------------------------------------------------------   241  (B)
+
+d1ug3a1:A   QKVEYTL-------  1427  (A)
+d1r8se_:E   -------PFKIPED   248  (B)
+

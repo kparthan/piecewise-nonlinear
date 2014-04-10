@@ -1,0 +1,43 @@
+(d3ivra_:A, d1edqa2:A)
+Core Residues: 84
+Core RMSD: 4.356
+Raw Score: 102.422
+P-value: 0.0184
+Reference structure: d3ivra_:A
+
+d1edqa2:A   TDGSHLAPLKEPLLEKNKPYKQNSGKVVGSYFVEWGVYGRNFTVDKIPAQNLTHLLYGFI   192  (A)
+d3ivra_:A   ------------------------------------------------------------     3  (B)
+
+d1edqa2:A   PICGGNGINDSLKEIEGSFQALQRSCQGREDFKVSIHDPFAALQKAQKGVTAWDDPYKGN   252  (A)
+d3ivra_:A   ------------------------------------------------------------     3  (B)
+
+d1edqa2:A   FGQLMALKQAHPDLKILPSIGGWTLSDPFFFMG---------------------------   285  (A)
+d3ivra_:A   ---------------------------------SLHDFTLADVYRRNAALFPDRTAFMVD    29  (B)
+
+d1edqa2:A   --------DKVKRDRFVGSVKEFLQTWKFF-DG-VDIDWEFPGGKGANPNLGSPQDGETY   335  (A)
+d3ivra_:A   GVRLTHRDYLARAERLASGLLRDG------VHTGDRVAILSQN-------------CSEM    70  (B)
+
+d1edqa2:A   VLLMKELRAMLDQLSVETGRKYELTSAISAGKDKIDKVAYNVAQNSM-------------   382  (A)
+d3ivra_:A   IELIGAVALIG------------AILLPVN-----------------YRLNADEIAFVLG   101  (B)
+
+d1edqa2:A   ------------------------------------------------------------   382  (A)
+d3ivra_:A   DGAPSVVVAGTDYRDIVAGVLPSLGGVKKAYAIGDGSGPFAPFKDLASDTPFSAPEFGAA   161  (B)
+
+d1edqa2:A   -DHIFLMSYDFYGAFDLKNLGHQTALNAPAWKPDTAYTTVN-------------------   422  (A)
+d3ivra_:A   DGFVIIHT---------------AA----------------GRPRGALISQGNLLIAQSS   192  (B)
+
+d1edqa2:A   --------------------GVNALLAQ--GVKPGKIVVGTAMDARSVQAKGK-------   526  (A)
+d3ivra_:A   LVDAWRLTEADVNLGMLPLFHVTGLGL-MLT----------------------LQQAGGA   229  (B)
+
+d1edqa2:A   ------------------------------------------------------------   526  (A)
+d3ivra_:A   SVIAAKFDPAQAARDIEAHKVTVMAEFAPMLGNILDQAAPAQLASLRAVTGLDTPETIER   289  (B)
+
+d1edqa2:A   ---------------YVLDK----------------------------------------   531  (A)
+d3ivra_:A   FEATCPNATFWATFGQSETSGLSTFAPYRDRPKSAGRPLFWRTVAVVDAEDRPLPPGEVG   349  (B)
+
+d1edqa2:A   --------QLGGLFSWEIDADNGDILNSMNASLGNSAGVQ--------------------   563  (A)
+d3ivra_:A   EIVLRGPTVFKGYWN-------------NAAATQ------HAFRNGWHHTGDMGRFDADG   390  (B)
+
+d1edqa2:A   --------   563  (A)
+d3ivra_:A   YLFYAGRA   398  (B)
+

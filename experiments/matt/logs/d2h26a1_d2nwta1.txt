@@ -1,0 +1,16 @@
+(d2nwta1:A, d2h26a1:A)
+Core Residues: 26
+Core RMSD: 3.168
+Raw Score: 22.022
+P-value: 0.7258
+Reference structure: d2nwta1:A
+
+d2h26a1:A   -QVKPEAWLSSGPSPGPGRLQLVCHVSGFYPKP--VWVMWMRGEQEQQGTQLGDILPNAN   240  (A)
+d2nwta1:A   MPKIIEAVYEN----------GVFKPLQ-----KVDLKEG--------------------    25  (B)
+
+d2h26a1:A   WTWYLRATLDVADGEAAGLSCRVKHSSLEGQDIILYWRN---------------------   279  (A)
+d2nwta1:A   ----------------------ER-------VK------IKLELKVEPIDLGEPVSVEEI    50  (B)
+
+d2h26a1:A   -----------   279  (A)
+d2nwta1:A   KKIRDGTWMSS    61  (B)
+

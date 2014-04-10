@@ -1,0 +1,13 @@
+(d2hg7a1:A, d2dixa1:A)
+Core Residues: 28
+Core RMSD: 2.604
+Raw Score: 30.386
+P-value: 0.5960
+Reference structure: d2hg7a1:A
+
+d2dixa1:A   GKTPIQVLHEYGMKTKNIP--------------------------VYECERSDVQIHVPT    40  (A)
+d2hg7a1:A   -----------------MILYDAIMYKYPNAVSRKDFELRNDGNGSYIEKW---------    34  (B)
+
+d2dixa1:A   FTFRVTVGDITCTG---EGTSKKL-AKHRAAEAAINILKANAS--    79  (A)
+d2hg7a1:A   --------------NLRAPL----PTQAELETWWEELQKNPP-YE    60  (B)
+

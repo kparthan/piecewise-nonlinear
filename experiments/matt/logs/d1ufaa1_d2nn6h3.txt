@@ -1,0 +1,19 @@
+(d2nn6h3:H, d1ufaa1:A)
+Core Residues: 41
+Core RMSD: 2.699
+Raw Score: 39.356
+P-value: 0.3494
+Reference structure: d2nn6h3:H
+
+d1ufaa1:A   ----------------------------------------------------------WL   414  (A)
+d2nn6h3:H   QGVLVQVSPSLVKRQKTHFHDLPCGASVILGNNGFIWIYPTPEHGFIANLEPVSLADREV   233  (B)
+
+d1ufaa1:A   ---NEKTLDYW--------------EKVYRAEGAXREAARRGVLPEGVLRQAXRELLL--   455  (A)
+d2nn6h3:H   ISRLRNCI---ISLVTQRMMLYDTSILY------------------------------CY   260  (B)
+
+d1ufaa1:A   -LEASDWPFLXETGQAE-AYARERYEEHARAFFHLLKGASPEELRALEERDNPFPEADPR   513  (A)
+d2nn6h3:H   EAS-LPHQI-KD---ILKPEIMEEIVMETRQRLLEQEG----------------------   293  (B)
+
+d1ufaa1:A   LYLF   517  (A)
+d2nn6h3:H   ----   293  (B)
+

@@ -1,0 +1,16 @@
+(d2nqda_:A, d1kmta_:A)
+Core Residues: 80
+Core RMSD: 3.051
+Raw Score: 60.419
+P-value: 0.0223
+Reference structure: d2nqda_:A
+
+d1kmta_:A   AMVPNVVVTGLTLVCSSAPGPLELDLTGDLESFKKQSFVLKEGVEYRIKISFRVNREI--   122  (A)
+d2nqda_:A   ----------------SH--KVTKA-------HNGATLTVAVGELVEIQLPS------NP    30  (B)
+
+d1kmta_:A   VSGMKYIQHTYRKGVKIDKT--DYMVGSY----------------------GPRAAAYEF   158  (A)
+d2nqda_:A   TTGFAWYFE-----------GGTK-----ESPNESMFTVENKYFPPDSKLLGA---GGTE    71  (B)
+
+d1kmta_:A   LTPVEEAPKGMLARGSYSIKSRFTD-DDKTD--HLSWEWNLTIKKDW   202  (A)
+d2nqda_:A   HF-HVTVK----AAGTHAVNLTYMRPWTGPSHDSERFTVYLKAN---   110  (B)
+

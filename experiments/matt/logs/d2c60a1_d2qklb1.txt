@@ -1,0 +1,16 @@
+(d2qklb1:B, d2c60a1:A)
+Core Residues: 27
+Core RMSD: 2.257
+Raw Score: 34.979
+P-value: 0.4311
+Reference structure: d2qklb1:B
+
+d2c60a1:A   SDV----------R---IK---FEHNGERRIIAFSRPVKYEDVEHKVTTVFGQPLDLHYX    86  (A)
+d2qklb1:B   ---SFTNATFSQVLDDLSARFIL---------------------------------NL--    23  (B)
+
+d2c60a1:A   NNELSI-LLK-NQDDLDKAIDILDRS---SSXKSLRILLLS-------------------   122  (A)
+d2qklb1:B   -----PAEEQSSVERLCFQIEQAHWFYEDFI----------RAQNDQLPSLGLRVFSAKL    68  (B)
+
+d2c60a1:A   -----------------------   122  (A)
+d2qklb1:B   FAHCPLLWKWSKVHEEAFDDFLR    91  (B)
+

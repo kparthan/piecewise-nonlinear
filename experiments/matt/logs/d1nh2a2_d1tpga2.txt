@@ -1,0 +1,13 @@
+(d1tpga2:A, d1nh2a2:A)
+Core Residues: 34
+Core RMSD: 2.172
+Raw Score: 31.002
+P-value: 0.3319
+Reference structure: d1tpga2:A
+
+d1nh2a2:A   KIQNIVGSCDVKFP----IRLEGLAFSHGTFSSYEPELF------PGLIYRMVKPKIVLL   205  (A)
+d1tpga2:A   --------------SYQVICRDEKTQ-------------MIYQQHQSWLRPVLRSNRVEY    33  (B)
+
+d1nh2a2:A   IFVS---GKIVLTGAKQREEIYQAFEAIYPVLSEFRKM---   240  (A)
+d1tpga2:A   CWCNSGRAQCHSVP------------------------VKS    50  (B)
+

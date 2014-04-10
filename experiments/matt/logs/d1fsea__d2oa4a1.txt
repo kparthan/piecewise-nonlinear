@@ -1,0 +1,13 @@
+(d2oa4a1:A, d1fsea_:A)
+Core Residues: 48
+Core RMSD: 2.878
+Raw Score: 64.384
+P-value: 0.1449
+Reference structure: d2oa4a1:A
+
+d1fsea_:A   SKPLL------------------------------------TKREREVFELLVQD-KTTK    30  (A)
+d2oa4a1:A   -----MMFLRKVEGPRSVTLPDGSIMTRADLPPANTRRWVASRKIAVVRGVIYG-LITLA    54  (B)
+
+d1fsea_:A   EIASELF-ISEKTVRNHISNAMQKLGVKGRSQAVVELLRMGELEL-------    74  (A)
+d2oa4a1:A   EAKQTY-GLSDEEFNSWVSALAE--HGKDALKVTA----------LKKYRQL    93  (B)
+

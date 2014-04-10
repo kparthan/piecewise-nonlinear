@@ -1,0 +1,16 @@
+(d1j0ta_:A, d2h26a1:A)
+Core Residues: 20
+Core RMSD: 3.466
+Raw Score: 5.567
+P-value: 0.9451
+Reference structure: d1j0ta_:A
+
+d2h26a1:A   -----------------------Q-------------------------VKPEAWLSSGP   195  (A)
+d1j0ta_:A   ASFIDNTCRGVMGNRDIYKKVVRVCEDCTNIFRLPGLDGMCRNRCFYNEWFL--------    51  (B)
+
+d2h26a1:A   SPGPGRLQLVCHVSGF--YPKPVWVMWMRGEQEQQGTQLGDILPNANWTWYLRATLDVAD   253  (A)
+d1j0ta_:A   --------------ICLKAANRED------------------------------------    61  (B)
+
+d2h26a1:A   GEAAGLSCRV-KHSSLEG-QDIILYWRN------   279  (A)
+d1j0ta_:A   ----------EIEKFRVWIS--------ILNAGQ    77  (B)
+

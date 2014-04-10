@@ -1,0 +1,19 @@
+(d1t2wa_:A, d1v70a_:A)
+Core Residues: 34
+Core RMSD: 2.230
+Raw Score: 27.429
+P-value: 0.5000
+Reference structure: d1t2wa_:A
+
+d1v70a_:A   MEIKDLKRLARYN---------PEKMAKIPVF----------------------------    23  (A)
+d1t2wa_:A   -------------KPQIPKDKSKVAGYIEIPDADIKEPVYPGPATPEQLNRGVSFAEENE   108  (B)
+
+d1v70a_:A   ---------------------------QSERMLYDLYALLPGQAQKVHVHEGSDKVYYAL    56  (A)
+d1t2wa_:A   SLDDQNISIAGHTFIDRPNYQFTNLKAA-KKGSMVYFKV---------------------   146  (B)
+
+d1v70a_:A   EGEVVVRVGEEEALLAPGMAAFAPAGAPHGVRNESASPALLLVVTAPRP-----------   105  (A)
+d1t2wa_:A   ------------------------------------GNETRKYKMTSIRDVKPTDVGVLD   170  (B)
+
+d1v70a_:A   ------------------------------------   105  (A)
+d1t2wa_:A   EQKGKDKQLTLITADDYNEKTGVWEKRKIFVATEVK   206  (B)
+

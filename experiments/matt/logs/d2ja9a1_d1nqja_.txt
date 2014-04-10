@@ -1,0 +1,16 @@
+(d1nqja_:A, d2ja9a1:A)
+Core Residues: 36
+Core RMSD: 2.739
+Raw Score: 19.272
+P-value: 0.6190
+Reference structure: d1nqja_:A
+
+d2ja9a1:A   KRY---IP-SVNDFVIGVI---IGTFSDSYKVSLQNFSSSVS------------------    96  (A)
+d1nqja_:A   ---KATVIPNFNTTMQGSLLGDDSR------D-------YY-SFEVKEEGEVNIELDKKD   950  (B)
+
+d2ja9a1:A   -----LSY---------MAFPNASKKNRPT--------------------L--QVGDLVY   120  (A)
+d1nqja_:A   EFGVTWT-LHPESDRITYGQVD--------GNKVSNKVKLRPGKYYLLVYKYSGS-GNYE  1003  (B)
+
+d2ja9a1:A   ARVCTAEKELEAEIECFDSTTGRDAGFGILE-   151  (A)
+d1nqja_:A   LRVN---------------------------K  1008  (B)
+

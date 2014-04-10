@@ -1,0 +1,16 @@
+(d1h4vb1:B, d1x4aa1:A)
+Core Residues: 28
+Core RMSD: 2.350
+Raw Score: 26.770
+P-value: 0.5193
+Reference structure: d1h4vb1:B
+
+d1x4aa1:A   SGGGVIRGPAGNNDCRIYV---GNLPPDIRTKDIEDVFYKYGAIRDIDLKNRRGGPPFAF    65  (A)
+d1h4vb1:B   -------------------EKGP----------------------------------DLY   332  (B)
+
+d1x4aa1:A   VEFED---PRDAEDAVYGRDGYDYDGYRLRVEFPRSGRGTG-------------------   103  (A)
+d1h4vb1:B   LIPLTEEAVAEAFYLAEALRP------RLRAEY--------ALAPRKPAKGLEEALKRGA   378  (B)
+
+d1x4aa1:A   -------------------------------------------   103  (A)
+d1h4vb1:B   AFAGFLGEDELRAGEVTLKRLATGEQVRLSREEVPGYLLQALG   421  (B)
+

@@ -1,0 +1,19 @@
+(d2au5a1:A, d2c35a1:A)
+Core Residues: 54
+Core RMSD: 4.671
+Raw Score: 60.706
+P-value: 0.6147
+Reference structure: d2au5a1:A
+
+d2c35a1:A   EE------------DASQLIFP-------------------------KEF------E--T    28  (A)
+d2au5a1:A   --XLILSPNFEYEEITRSF---LSNXLAFTRGHFTGDISHFSPIVLAE--XEKDPNWLEE    57  (B)
+
+d2c35a1:A   A--ETL--L--NSEVHMLLEHRKQQNESAEDEQELSEVFMKTLNYTARFS-RFKNRETIA    81  (A)
+d2au5a1:A   AAGGXQGVIVQSLL----------------------------------EDENFSSVEQLK    83  (B)
+
+d2c35a1:A   SVRSLLLQKKLHKFELACLANLCPETAEESKALIPSLEGR--F-----EDEELQQILDDI   134  (A)
+d2au5a1:A   GELARLIRLY------------------------------FALAKDNLTENQESLYVDLF   113  (B)
+
+d2c35a1:A   QTKRSFQY---------------   142  (A)
+d2au5a1:A   DKFT----FLLLCSDEFIXYLDS   132  (B)
+

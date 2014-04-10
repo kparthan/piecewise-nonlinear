@@ -1,0 +1,16 @@
+(d2oxga_:A, d1clca2:A)
+Core Residues: 69
+Core RMSD: 4.076
+Raw Score: 50.976
+P-value: 0.0554
+Reference structure: d2oxga_:A
+
+d1clca2:A   IETKVSAAKITENYQFDS------RIRLNSIGFIPNHSKKATI-AAN-------------    74  (A)
+d2oxga_:A   ------------------ADDAKPRVKVP-SSAKAGETVTVKALISHKMESGQRKDADGK    41  (B)
+
+d1clca2:A   --------CSTFYVVKEDGTIVYTGTATSMFDNDTKE---TVYIADFSSVNEEGTYYLAV   123  (A)
+d2oxga_:A   LIPRSIINRFTCELN---GVNVVDVAIDP--------AVSTNPYFE-FDAKVDAAGEFKF    89  (B)
+
+d1clca2:A   P-------GVGKSVNFKI-   134  (A)
+d2oxga_:A   TWYDDDGSVYEDVKPIAVA   108  (B)
+

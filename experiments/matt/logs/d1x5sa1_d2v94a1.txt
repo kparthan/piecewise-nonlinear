@@ -1,0 +1,16 @@
+(d2v94a1:A, d1x5sa1:A)
+Core Residues: 42
+Core RMSD: 2.556
+Raw Score: 43.843
+P-value: 0.3116
+Reference structure: d2v94a1:A
+
+d1x5sa1:A   MAS-----------DE-GKLFVGGLSF-------DT----NEQSLEQVFSKYGQIS--EV    42  (A)
+d2v94a1:A   ---XEIKITEVKENKLIGRKEIY-FEIYHPGEPTP-SRKDVKGKLVAXLD----LNPETT    51  (B)
+
+d1x5sa1:A   VVVKDRETQRS---------RGFGFVTFENIDDAKDAMMAMNGKSVDGRQIRVDQAGKS-    92  (A)
+d2v94a1:A   VIQ------YIRSYFGSYKSKGYAKYYYD------------------------------K    75  (B)
+
+d1x5sa1:A   -----SDNRS-----------    97  (A)
+d2v94a1:A   DRXLYIE---PEYILIRDGII    93  (B)
+

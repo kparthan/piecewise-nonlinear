@@ -1,0 +1,16 @@
+(d1tg7a1:A, d1h4ra2:A)
+Core Residues: 34
+Core RMSD: 2.356
+Raw Score: 29.719
+P-value: 0.3479
+Reference structure: d1tg7a1:A
+
+d1h4ra2:A   EMY--GV-NYFAIRNKKG--------------TELLLGVD--------------------   237  (A)
+d1tg7a1:A   ---RNSAYNYWVPQVPT-KGTAPGYSNQETTASSIIVKAGYLVRSAYLDGNDLHIQADFN   625  (B)
+
+d1h4ra2:A   --ALGLHIYDPENRLTP-----------------------KISFPWNEIRNISYSDKEFT   272  (A)
+d1tg7a1:A   ATT-PIEVVG-------APSGAKNLVINGKKTQTKVDKNGIWSASV--------------   663  (B)
+
+d1h4ra2:A   IKPLDKKIDVFKFNSSKLRVNKLILQLCIGNHDLFMRRRKA-   313  (A)
+d1tg7a1:A   -------------------------------AY--------T   666  (B)
+

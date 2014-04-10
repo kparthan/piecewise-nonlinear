@@ -1,0 +1,19 @@
+(d3kwoa_:A, d1nnqa1:A)
+Core Residues: 59
+Core RMSD: 1.326
+Raw Score: 135.089
+P-value: 2.1082e-03
+Reference structure: d3kwoa_:A
+
+d1nnqa1:A   VVKRT-------------------------------------------------------     6  (A)
+d3kwoa_:A   -----NAXSVTKQLLQXQADAHHLWVKFHNYHWNVKGLQFFSIHEYTEKAYEEXAELFDS    53  (B)
+
+d1nnqa1:A   ---------------------------------MTKKFLEEAFAGESMAHMRYLIFAEKA    33  (A)
+d3kwoa_:A   CAERVLQLGEKAITCQKVLXENAKSPKVAKDCFTPLEVIELIKQDYEYLLAEFKKLNEAA   113  (B)
+
+d1nnqa1:A   EQEGFPNIAKLFRAIAYAEFVHAKNHFIALGKLGKTPENLQMGIEGETFEVEEMYPVYNK    93  (A)
+d3kwoa_:A   EKESDTTTAAFAQENIAKYEKSLWXIGATLQG----------------------------   145  (B)
+
+d1nnqa1:A   AAEFQGEKEAVRTTHYALEAEKIHAELYRKAKEKAEKGEDI--   134  (A)
+d3kwoa_:A   -----------------------------------------AC   147  (B)
+

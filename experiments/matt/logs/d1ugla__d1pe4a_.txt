@@ -1,0 +1,13 @@
+(d1pe4a_:A, d1ugla_:A)
+Core Residues: 39
+Core RMSD: 3.507
+Raw Score: 23.536
+P-value: 0.5843
+Reference structure: d1pe4a_:A
+
+d1ugla_:A   NLMKR--CTRGFRK---LGKC-----TTLEEEKCKTLYPRGQCTCSDSKMNTHSCDCKSC    50  (A)
+d1pe4a_:A   ---RDGYPLASNGCKFGCS--GLGENNPTCNHVCEKKAG-S-DYGYCY-AWTCYC-EH--    49  (B)
+
+d1ugla_:A   ------------------    50  (A)
+d1pe4a_:A   VAEGTVLWGDSGTGPCRS    67  (B)
+

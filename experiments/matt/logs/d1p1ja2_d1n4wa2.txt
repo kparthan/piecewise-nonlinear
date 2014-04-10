@@ -1,0 +1,19 @@
+(d1n4wa2:A, d1p1ja2:A)
+Core Residues: 34
+Core RMSD: 3.402
+Raw Score: 40.572
+P-value: 0.5475
+Reference structure: d1n4wa2:A
+
+d1p1ja2:A   ------------------------------------------------------------   323  (A)
+d1n4wa2:A   GPNGNIMTARANHMWNPTGAHQSSIPALGIDAWDNSDSSVFAEIAPMPAGLETWVSLYLA   378  (B)
+
+d1p1ja2:A   ---S--------------------------GQTKLKSVLAQFLVDAGIKP-V--------   344  (A)
+d1n4wa2:A   ITKNPQRGTFVYDAATDRAKLNWTRDQNAPAVNAAKALFDRINKANGTIYRYDLFGTQLK   438  (B)
+
+d1p1ja2:A   SIASYNHLGNNDGYNLSAPKQFRSKEISKSSVIDDIIASNDILYNDKLGKKVDHCIVIKY   404  (A)
+d1n4wa2:A   AFADD-------------------------------------------------------   443  (B)
+
+d1p1ja2:A   MKPVGDSKVAMDEYYSELMLGGHNRISIHNVCE   437  (A)
+d1n4wa2:A   ----------F----------------CYHPLG   450  (B)
+

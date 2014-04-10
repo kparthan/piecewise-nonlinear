@@ -1,0 +1,19 @@
+(d1ewqa4:A, d3bw6a_:A)
+Core Residues: 52
+Core RMSD: 4.014
+Raw Score: 57.189
+P-value: 0.2982
+Reference structure: d1ewqa4:A
+
+d3bw6a_:A   MAMRIYYIGVFRSGGEKALELSEVKDLSQFGFFERSSVGQFM------TFFAETVASRT-    51  (A)
+d1ewqa4:A   -------------XE--GXLKG--------------------EGPGPLPPLLQQYVELRD    25  (B)
+
+d3bw6a_:A   -GAGQRQSIEEGNYIGHVYARSEGIC----GV-----------------------LITDK    83  (A)
+d1ewqa4:A   QYPDYLLLFQVGDFYE----------CFGEDAERLARALGLVLTHKTSKDFTTPXAGIPL    75  (B)
+
+d3bw6a_:A   EYPVRPAYTLLNKILDEYLVAHPKEEWADVTETNDALKMKQLDTYISKYQDP--------   135  (A)
+d1ewqa4:A   RA-FEAYAERLLK---------------------------------------XGFRLAVA    95  (B)
+
+d3bw6a_:A   -------------------------   135  (A)
+d1ewqa4:A   DQVEPAEEAEGLVRREVTQLLTPGT   120  (B)
+

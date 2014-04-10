@@ -1,0 +1,19 @@
+(d1ut7a_:A, d3bwuc1:C)
+Core Residues: 48
+Core RMSD: 7.338
+Raw Score: 50.809
+P-value: 0.8663
+Reference structure: d1ut7a_:A
+
+d3bwuc1:C   GVALGATRVIY-----------PAGQKQE-QLAVT--NND--------------------    26  (A)
+d1ut7a_:A   -----------GSHMGIQLTQLSLPPGFRFYPTDEELMV-QYLCRKAAGYDFSLQLIAEI    49  (B)
+
+d3bwuc1:C   ---------------------------------------------------ENSTYLIQS    35  (A)
+d1ut7a_:A   DLYKFDPWVLPNKALFGEKEWYFFSPRDRPNRVAGSGYWKATGTDKIISTEGQRVGIKKA   116  (B)
+
+d3bwuc1:C   WVENADG----------VKDGRFIVTPPLFAMKGKKENTLRILDATNNQLPQDRESLFWM    85  (A)
+d1ut7a_:A   LVF----YIGKAPKGTKTN---------------------------------------WI   133  (B)
+
+d3bwuc1:C   NVKAIPSMDENTL---QLAIISRIKLYYRPAKLA-   121  (A)
+d1ut7a_:A   MHEYRLIE-----PSDDWVLCRIYKK--------Q   163  (B)
+

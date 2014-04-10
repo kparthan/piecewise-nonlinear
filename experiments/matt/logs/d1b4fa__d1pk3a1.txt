@@ -1,0 +1,13 @@
+(d1pk3a1:A, d1b4fa_:A)
+Core Residues: 56
+Core RMSD: 1.454
+Raw Score: 86.451
+P-value: 0.0104
+Reference structure: d1pk3a1:A
+
+d1b4fa_:A   PDYTSFN----TVDEWLEAIK--MGQYKESFANAGFTSFDVVSQMMMEDIL-RVGVTLAG    58  (A)
+d1pk3a1:A   -------WTIEEVIQYIESNDNSLAVHGDLFRKHEID-GKALLRLNSEMMMKYMGLK-LG    67  (B)
+
+d1b4fa_:A   HQKKILNSIQVMRAQMNQIQS    79  (A)
+d1pk3a1:A   PALKICNLVNKV---------    79  (B)
+

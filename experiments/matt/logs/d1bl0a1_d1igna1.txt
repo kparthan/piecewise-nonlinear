@@ -1,0 +1,13 @@
+(d1igna1:A, d1bl0a1:A)
+Core Residues: 40
+Core RMSD: 3.266
+Raw Score: 45.851
+P-value: 0.4702
+Reference structure: d1igna1:A
+
+d1bl0a1:A   DA--ITIHSILDWIEDNL-ESPLS---------LEKVSERS--GYSKWHLQRMFKKETGH    54  (A)
+d1igna1:A   --KASFTDEEDEFILDVVRK----NPTRRTTHTLYDEISHYVPNHTGNSIRHRFRVYLS-   412  (B)
+
+d1bl0a1:A   SLGQYIR----------------------------S----    62  (A)
+d1igna1:A   -------KRLEYVYEVDKFGKLVRDDDGNLIKTKVLPPSI   445  (B)
+

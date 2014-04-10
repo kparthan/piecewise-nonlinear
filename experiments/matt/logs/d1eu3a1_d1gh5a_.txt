@@ -1,0 +1,16 @@
+(d1gh5a_:A, d1eu3a1:A)
+Core Residues: 30
+Core RMSD: 2.704
+Raw Score: 26.884
+P-value: 0.6175
+Reference structure: d1gh5a_:A
+
+d1eu3a1:A   GLEVDNNSLLRNIYSTIVYEYSDIVI------------DFKTS-----------------    30  (A)
+d1gh5a_:A   --------------------------MINRTDCNENSYLEIHNNEGRDTLCFANAGTMPV    34  (B)
+
+d1eu3a1:A   -----HNLVTKK---------------------LDVRDARDFFINSEMDEYAANDFKTGD    64  (A)
+d1gh5a_:A   AIYGVNWVESGNNVVTLQFQRNLSDPRLETITLQK-------WGSWNPGHIH-EILSIR-    85  (B)
+
+d1eu3a1:A   KIAVFSVPFDWNYLSKGKVTAYTYGGITPYQK--    96  (A)
+d1gh5a_:A   --------------------------------IY    87  (B)
+

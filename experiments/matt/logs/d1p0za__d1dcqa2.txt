@@ -1,0 +1,19 @@
+(d1dcqa2:A, d1p0za_:A)
+Core Residues: 22
+Core RMSD: 1.910
+Raw Score: 26.753
+P-value: 0.5580
+Reference structure: d1dcqa2:A
+
+d1p0za_:A   EERLH-------------------------------------------------------     9  (A)
+d1dcqa2:A   -----LTKEIISEVQRMTGNDVCCDCGAPDPTWLSTNLGILTCIECSGIHRELGVHYSRM   301  (B)
+
+d1p0za_:A   --------------------------------------------YQVGQRALIQAMQISA    25  (A)
+d1dcqa2:A   QSLTLDVLGTSELLLAKNIGNAGFNEIMECCLPSEDPVKPNPGSDMIARKDYITAKYMER   361  (B)
+
+d1p0za_:A   MPELVEAVQKRDLARIKALIDPMRSFSDATYITVGDASGQRLYHVNPDEIGKSMEGGDSD    85  (A)
+d1dcqa2:A   ------------------------------------------------------------   361  (B)
+
+d1p0za_:A   EALINAKSYVSVRKGSLGSSLRGKSPIQDATGKVIGIVSVGYTIEQLEHH-   135  (A)
+d1dcqa2:A   ------------------------RYARKK--------------------H   368  (B)
+

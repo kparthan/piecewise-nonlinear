@@ -1,0 +1,19 @@
+(d1u5ta1:A, d1ub9a_:A)
+Core Residues: 61
+Core RMSD: 1.673
+Raw Score: 80.462
+P-value: 0.0136
+Reference structure: d1u5ta1:A
+
+d1ub9a_:A   MEELKEIMKSHILG----------------------------------------------    14  (A)
+d1u5ta1:A   --------------VNKTILEKQSVELRDQLMVFQERLVEFAKKHNSELQASPEFRSKFM    65  (B)
+
+d1ub9a_:A   ---------------------------NPVRLGIMIFLLPR-----RKAPFSQIQK-VLD    41  (A)
+d1u5ta1:A   HMCSSIGIDPLSLFDRDKHLFTVNDFYYEVCLKVIEICRQTKDMNGGVISFQELEKVHFR   125  (B)
+
+d1ub9a_:A   ---LTPGNLDSHIRVLERNGLVKTYKVIADRPRTVVEITDFGMEEAKRFLSSLKAVIDGL    98  (A)
+d1u5ta1:A   KLNVGLDDLEKSIDMLKSLECFEIFQIR---GKKFLRSVP--------------------   162  (B)
+
+d1ub9a_:A   DL--   100  (A)
+d1u5ta1:A   --NE   164  (B)
+

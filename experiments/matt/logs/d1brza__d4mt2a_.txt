@@ -1,0 +1,13 @@
+(d4mt2a_:A, d1brza_:A)
+Core Residues: 8
+Core RMSD: 2.069
+Raw Score: 3.139
+P-value: 0.6912
+Reference structure: d4mt2a_:A
+
+d1brza_:A   XDKCKKVYENYPVSKCQLA------------------------------------N---Q    21  (A)
+d4mt2a_:A   -------------------MDPNCSCATDGSCSCAGSCKCKQCKCTSCKKSCCSCCPVGC    41  (B)
+
+d1brza_:A   CNYDCKLDKHARSGECFYDEKRNLQCICDYCEY--------------    54  (A)
+d4mt2a_:A   AKCS-QG--------------------------CICKEASDKCSCCA    61  (B)
+

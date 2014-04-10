@@ -1,0 +1,16 @@
+(d3lhra_:A, d1d1da1:A)
+Core Residues: 47
+Core RMSD: 2.013
+Raw Score: 57.559
+P-value: 0.0968
+Reference structure: d3lhra_:A
+
+d1d1da1:A   GPWADITQGPSESFVDFANRLIKAVEGSDL------------------------------   180  (A)
+d3lhra_:A   ------------------------------GSPDPEIFRQRFRQFGYQDSPGPREAVSQL    30  (B)
+
+d1d1da1:A   --------------PPSARAPVIIDCFRQKSQPDIQQLIRAAPSTLTTPGEIIKYVLDRQ   226  (A)
+d3lhra_:A   RELCRLWLRPETHTKEQILELVVLEQFVAILPKELQTWVRDHHP--ENGEEAVTVLEDLE    88  (B)
+
+d1d1da1:A   K-IAP   230  (A)
+d3lhra_:A   SELD-    92  (B)
+

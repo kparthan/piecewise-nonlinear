@@ -1,0 +1,46 @@
+(d3o83a_:A, d2zbla_:A)
+Core Residues: 86
+Core RMSD: 10.433
+Raw Score: 61.125
+P-value: 0.9774
+Reference structure: d3o83a_:A
+
+d2zbla_:A   MKWFNTLSHNRWLEQETDRIFNFGKNAVVPTGFGWLGNKGQIKEEMGTHLWITARMLHVY    60  (A)
+d3o83a_:A   ------------------------------------------------------------     3  (B)
+
+d2zbla_:A   SVAA-------SMGRPGAYDLVDHGIKAMNGALRDKKYGGWYACVNDQGVVDASKQGYQH   113  (A)
+d3o83a_:A   ----KQLIEFVRW-----SPERAQHYRNKG------------------------------    23  (B)
+
+d2zbla_:A   FFALLGAASAV-------------------------------------------------   124  (A)
+d3o83a_:A   ------Y--WIDQPLTRILTVGVQSHPHSLAIICGERQLSYIELDRLSTNLATRLAEKGL    75  (B)
+
+d2zbla_:A   ------------------------------------------------------------   124  (A)
+d3o83a_:A   GKGDTALVQLPNVAEFYIVFFALLKAGVVVLNALYSHRQYELNAFIKQIQPKLLIGSRQH   135  (B)
+
+d2zbla_:A   ----------------------------------------------------TTGHP---   129  (A)
+d3o83a_:A   EVFSNNQFIDSLHDVNLSPEIILMLNHQATDFGLLDWIETPAETFVDFSSTPAD---EVA   192  (B)
+
+d2zbla_:A   -----------------EARKLLDYTIEVIEKYFW----SEE------------------   150  (A)
+d3o83a_:A   FFQLSGGGTPKLIPRTHNDYDYSVRASAEICGL--NSNTRLLCALPAPHNFMLSSPGALG   252  (B)
+
+d2zbla_:A   -----------------------------EQM--------------------------C-   154  (A)
+d3o83a_:A   VLHAGGCVVMAPNPEPLNCFSIIQRHQVNMASLVPSAVIMWLEKAAQYKDQIQSLKLLQV   312  (B)
+
+d2zbla_:A   --------------------LE-------------SWDEAFSQTEDYRGGNANMHAVEAF   181  (A)
+d3o83a_:A   GGASFPESLARQVPEVLNCKLQQVFGMAEGLVNYTRL------DDSDE------------   354  (B)
+
+d2zbla_:A   LIVYDVTHDKKWLDRALRIASVIIHDVARNGDYRVNEHFDSQWNPIRD--YNKDNPAHRF   239  (A)
+d3o83a_:A   ------------------------------------------------QIFT-------T   359  (B)
+
+d2zbla_:A   R---------------------AYGGTPGAWIEWGRLMLHLHAALEARFETPPAWLLEDA   278  (A)
+d3o83a_:A   QGRPISSDDEIKIVDEQYREVPEGEIGM--------------------------------   387  (B)
+
+d2zbla_:A   KGLFHATIRDAWAPDGADGFVYSVDWDGKPIVRERVRWPIVEAMGTAYALYT--------   330  (A)
+d3o83a_:A   -------------------------------------LA-------------TRGPYTFC   397  (B)
+
+d2zbla_:A   -LTDDSQYEEWYQKWWDYCIKY-----------LMDYE-NGSWWQELDADNKVTTKVWDG   377  (A)
+d3o83a_:A   GYYQSP---EHNSQV-------FDEDNYYYSGDLVQRTPDGNLRVV--------------   433  (B)
+
+d2zbla_:A   KQDIYHLLHCLVIPRLPLAPGLAPAVAAGLLDINAHHHH----   421  (A)
+d3o83a_:A   ---------------------------------------GRIK   437  (B)
+

@@ -1,0 +1,16 @@
+(d1a79a2:A, d1eu3a1:A)
+Core Residues: 28
+Core RMSD: 2.658
+Raw Score: 27.293
+P-value: 0.6084
+Reference structure: d1a79a2:A
+
+d1eu3a1:A   GLEVDNNSLLRNIYSTIVYEYSDIVIDFKTS---HNLVTKKLDVRDARDFFI--------    48  (A)
+d1a79a2:A   ------------------------KITGLLDGDRVIVFD-----------KNGISKLSAR    33  (B)
+
+d1eu3a1:A   --------NSEMDEYAAND------FKTGDKIAVFSVPFDWNYLSKGKVTAYTYGGITPY    94  (A)
+d1a79a2:A   HYGNVEGNFLSLSLVEALYLINLGWLEV--------------------------------    61  (B)
+
+d1eu3a1:A   QK---------------------    96  (A)
+d1a79a2:A   --KYKDNKPLSFEELYEYARNVE    82  (B)
+

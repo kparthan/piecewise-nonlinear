@@ -1,0 +1,16 @@
+(d2ffga1:A, d3br8a_:A)
+Core Residues: 25
+Core RMSD: 1.704
+Raw Score: 40.747
+P-value: 0.4678
+Reference structure: d2ffga1:A
+
+d3br8a_:A   MLQYRIIVDGRVQGVGFRYFVQMEADKRKLAGWVKNRDDGRVEILAEGP-----------    49  (A)
+d2ffga1:A   -----------------S-QLXGIITRLQ--------------------SLQETAEAANE    23  (B)
+
+d3br8a_:A   -----------------------------------------ENALQSFVEAVK-NGSPFS    67  (A)
+d2ffga1:A   PXQRYFEVNGEKICSVKYFEKNQTFELTVFQKGEKPNTYPFDNIDXVSIEIFELLQ----    79  (B)
+
+d3br8a_:A   KVTDISVTESRSLEGHHRFSIVY    90  (A)
+d2ffga1:A   -----------------------    79  (B)
+

@@ -1,0 +1,31 @@
+(d1zmba1:A, d2chua1:A)
+Core Residues: 94
+Core RMSD: 4.050
+Raw Score: 65.095
+P-value: 2.9805e-03
+Reference structure: d1zmba1:A
+
+d2chua1:A   LPISMSDEGDSFLVKDSLGENKIPKNPSKVVILD-----------------LGILDTFDA    66  (A)
+d1zmba1:A   ----------------------------------XVKSFLXLGQSNXAGRGFINEV----    22  (B)
+
+d2chua1:A   LKLNDKVVGVPAKNLPKYLQQFKNKPSVGGVQQVDFEAINALKPDLIIISGRQSKFYDKL   126  (A)
+d1zmba1:A   ------------------------------------------------------------    22  (B)
+
+d2chua1:A   KEIAPTLFVGLDNANFLSSFENNVLSVAKLYGLEKEALEKISDIKNEIEKAKS-------   179  (A)
+d1zmba1:A   ---------------------------------------P--XI--YNERIQ-XLRNGRW    38  (B)
+
+d2chua1:A   -------------------------IVD--------------------------------   182  (A)
+d1zmba1:A   QXXTEPINYDRPVSGISLAGSFADAW--SQKNQEDIIGLIPCAEGGSSIDEWALDGVLFR    96  (B)
+
+d2chua1:A   --------------EDKKALII---LTNSNKISAFGPQSRFGIIHDVLGINAVDENIKGK   229  (A)
+d1zmba1:A   HALTEAKFAXESSELTGILWHQGESDSLNGN-----------------------------   127  (B)
+
+d2chua1:A   SI---NSEFILEKNP-------------DYIFVVDR--NV----ILGNKER--AQGILDN   265  (A)
+d1zmba1:A   --YKVYYKKLLLII-EALRKELNVPDIPIIIGGLG-DFLGKERFGKGCTEYNFINKELQK   183  (B)
+
+d2chua1:A   ALV--AKTKAAQNKKIIYLD--PEYW-----YLASGNGLESLKTMILEIKNAVK------   310  (A)
+d1zmba1:A   --FAFEQDNC----YFVTASGLTC--NPDGIHID-A---ISQRKFGLRYFEAFFNRKHVL   231  (B)
+
+d2chua1:A   ---------------------------------------------------   310  (A)
+d1zmba1:A   EPLINENELLNLNYARTHTKAEKIYIKSXDFALGKISYDEFTSELXKINND   282  (B)
+

@@ -1,0 +1,19 @@
+(d1q06a_:A, d1ub9a_:A)
+Core Residues: 37
+Core RMSD: 2.562
+Raw Score: 64.482
+P-value: 0.3069
+Reference structure: d1q06a_:A
+
+d1ub9a_:A   MEELKEIMKSHILGNPVRL-----------------------------------------    19  (A)
+d1q06a_:A   -------------------MNISDVAKITGLTSKAIRFYEEKGLVTPPMRSENGYRTYTQ    41  (B)
+
+d1ub9a_:A   ------------------GIMIFLLPRR-KAPFSQIQKVLDLTPGNLDSHIRVLERNGLV    60  (A)
+d1q06a_:A   QHLNELTLLRQARQVGFNLEESGELVNLFN------------------------------    71  (B)
+
+d1ub9a_:A   KTYKVIADRPRTVVE--ITDFGMEEAKRFLSSLKAVIDGLDL------------------   100  (A)
+d1q06a_:A   --------------DPQRHSADVKRRTLEKVAEIERHIEELQSMRDQLLALANACPGCPI   122  (B)
+
+d1ub9a_:A   -----   100  (A)
+d1q06a_:A   IENLS   127  (B)
+

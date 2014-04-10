@@ -1,0 +1,13 @@
+(d1etxa_:A, d1sgma1:A)
+Core Residues: 37
+Core RMSD: 2.798
+Raw Score: 58.184
+P-value: 0.3334
+Reference structure: d1etxa_:A
+
+d1sgma1:A   ------------------------GDSREKILHTASRLSQLQ----------GYHATGLN    30  (A)
+d1etxa_:A   VLTVKPLRDSVKQALKNYFAQLVNDLYELVLAEVEQPLLDMVMQYTRGNATRAALMMG--    82  (B)
+
+d1sgma1:A   QIVKESGAPKGSLYHFFPNGK-EELAIEAVTY-TGKIVEHLIQQSMDES-    77  (A)
+d1etxa_:A   --------------------INRGTLRKKLKKYGM--------------N    98  (B)
+

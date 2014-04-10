@@ -1,0 +1,13 @@
+(d1r5ba2:A, d1ueba1:A)
+Core Residues: 35
+Core RMSD: 2.847
+Raw Score: 31.023
+P-value: 0.4675
+Reference structure: d1r5ba2:A
+
+d1ueba1:A   MI--------------SVTDLRPGTKVKMD----GGLWECVEYQHQKLGRGG--------    34  (A)
+d1r5ba2:A   --HATTRFIAQIAILELPSILTTGYSCVMHIHTAVEEVSFAKLLHKL---DKTNRKSKKP   609  (B)
+
+d1ueba1:A   -------AKVVAKFKNLETGATVERTFNSGEKLEDI    63  (A)
+d1r5ba2:A   PMFATKGMKIIAE-----------------------   622  (B)
+

@@ -1,0 +1,22 @@
+(d3q46a_:A, d1l1oc_:C)
+Core Residues: 54
+Core RMSD: 4.383
+Raw Score: 50.032
+P-value: 0.5037
+Reference structure: d3q46a_:A
+
+d1l1oc_:C   NTNWKTLYEVKSENLGQGDKPDYFSSVAT---------------------VVYLRKENCM   477  (A)
+d3q46a_:A   -----------------------------MNPFHELEPGPEVPEVVYALIEIPKG-----    26  (B)
+
+d1l1oc_:C   YQACPTQDCNKKVIDQQNGLYRCEKCDTEFPNFKYRMILS-VNIADFQ--------ENQW   528  (A)
+d3q46a_:A   ----------------------------------------SRNKYE-LDKATGLLKLDRV    45  (B)
+
+d1l1oc_:C   VTCFQESAEAILGQNAAYLGELKDKNEQAFEEVFQNA----NFR----------------   568  (A)
+d3q46a_:A   LYS----------------------------------PFFYPVDYGIIPQTWYDDGDPFD    71  (B)
+
+d1l1oc_:C   -SF---------------------IFRVRVKVETYIKA----------------------   589  (A)
+d3q46a_:A   IM-VIMREPVYPLTIIEARPIGIMKMEDS---------GDKDWKVLAVPVEDPYFNDWKD   121  (B)
+
+d1l1oc_:C   -------------------TV-----MDVKPVD-YREYGRRLVMSIRRSAL--M---   616  (A)
+d3q46a_:A   ISDVPKAFLDEIAHFFQRYKELQGKTTKIEGWGNAEEAKREILRAIEMYKEKFGKEE   178  (B)
+

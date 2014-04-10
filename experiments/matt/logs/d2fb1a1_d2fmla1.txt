@@ -1,0 +1,13 @@
+(d2fmla1:A, d2fb1a1:A)
+Core Residues: 54
+Core RMSD: 2.041
+Raw Score: 69.440
+P-value: 0.0196
+Reference structure: d2fmla1:A
+
+d2fb1a1:A   PIGFNLLPKLFTLSQLQSLYEAIYGEP---XDKRNFRKRVAEXDFIEKTDKIDKLGSKRG   206  (A)
+d2fmla1:A   PQVLQVLGKDFTITEARKVFAKFLGVDYRSIDHSNFKKAXTQYF--EELGEP--------   261  (B)
+
+d2fb1a1:A   AALYKFNGKAYRKDPKFKL   225  (A)
+d2fmla1:A   SKIYQLK------------   268  (B)
+

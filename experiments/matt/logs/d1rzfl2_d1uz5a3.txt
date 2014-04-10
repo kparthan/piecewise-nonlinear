@@ -1,0 +1,19 @@
+(d1uz5a3:A, d1rzfl2:L)
+Core Residues: 40
+Core RMSD: 2.919
+Raw Score: 24.250
+P-value: 0.5619
+Reference structure: d1uz5a3:A
+
+d1rzfl2:L   QP----------------------------------------------------------   110  (A)
+d1uz5a3:A   --PKVAVISTGNEIVPPGNELKPGQIYDINGRALCDAINELGGEGIFMGVARDDKESLKA   238  (B)
+
+d1rzfl2:L   ------KA--APSVTLFPPSSEELQANKATLVCLISDFYPG------AVTVAW-KADSSP   155  (A)
+d1uz5a3:A   LIEKAVNVGDVVVISGGA-------------DLT-------ASVIEELGEVKVHGIA---   280  (B)
+
+d1rzfl2:L   VKAGVETTTPSKQSNNKYAASSYLSLTPEQWKSHRS---YSCQVTHEGSTVEKTVAPT--   210  (A)
+d1uz5a3:A   ----------------------------------IQPGKPTIIGVIKGKPVFGLP---GY   303  (B)
+
+d1rzfl2:L   -------------------------   210  (A)
+d1uz5a3:A   PTSCLTNFTLLVVPLLLRALGREGK   328  (B)
+

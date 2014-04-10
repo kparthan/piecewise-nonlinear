@@ -1,0 +1,19 @@
+(d2r7ja2:A, d2a15a1:A)
+Core Residues: 39
+Core RMSD: 2.574
+Raw Score: 32.427
+P-value: 0.5317
+Reference structure: d2r7ja2:A
+
+d2a15a1:A   -----------------------T------------------------------------     5  (A)
+d2r7ja2:A   AELACFCYPHLENDSYKFIPFNNLAIKAMLTAKVDKKDMDKFYDSIIYGIAPPPQFKKRY    61  (B)
+
+d2a15a1:A   -----------QSPALIASQSSWRCVQAHDREGWLALMADD-------------------    35  (A)
+d2r7ja2:A   NTNDNSRGMNFETIMFTKVAMLICEALNS------------LKVTQANVSNVLSRVVSIR   109  (B)
+
+d2a15a1:A   ---------VVIEDPIGKSVTNPDGS--GIKGKEA-VGAFFDTHIAANR--LTVTCEETF    81  (A)
+d2r7ja2:A   HLENLVIRKEN---------------PQDI-----LFHS-KDLLL--K-STLIAI-----   140  (B)
+
+d2a15a1:A   PSSSPDEIAHILVLHSEFDGGFTSEVRGVFTYRVNKAGLITNMRGYWNLDMMTFG   136  (A)
+d2r7ja2:A   -------------GQS---------------------------------------   143  (B)
+

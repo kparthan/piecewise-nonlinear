@@ -1,0 +1,22 @@
+(d1zd0a1:A, d3grda_:A)
+Core Residues: 18
+Core RMSD: 1.276
+Raw Score: 23.009
+P-value: 0.4897
+Reference structure: d1zd0a1:A
+
+d3grda_:A   XPKANL-------------------------------------------EIIRSTY----    13  (A)
+d1zd0a1:A   ------LEIRTKVGEICISKVWLTDEQINKLFDRFKGDYQVVNAECADKVIF----ATII    58  (B)
+
+d3grda_:A   ------------------------------------------------------------    13  (A)
+d1zd0a1:A   AIKAVKEGRSIAKTVPGEILVRLSGNRQIKEAIKKVGAKEGENYIVTFGENASALLQKIL   118  (B)
+
+d3grda_:A   -----------EGSASSNAKHLAEALSEKVEWTEAEGFPYGGTYIGVEAIXENVFSRLGS    62  (A)
+d1zd0a1:A   STLEIKELELERCDLEYAKKAFEDIA----------------------------------   144  (B)
+
+d3grda_:A   EWNDYKASVNXYHEVSGKDVIIAEGXYSGVYKDTGKSFEAEFVHVWQLENGKIVKFKQYV   122  (A)
+d1zd0a1:A   ------------------------------------------------------------   144  (B)
+
+d3grda_:A   DSHLVREAXKS   133  (A)
+d1zd0a1:A   -----------   144  (B)
+

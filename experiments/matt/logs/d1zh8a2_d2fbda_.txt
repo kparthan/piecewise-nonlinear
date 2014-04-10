@@ -1,0 +1,19 @@
+(d2fbda_:A, d1zh8a2:A)
+Core Residues: 30
+Core RMSD: 2.896
+Raw Score: 32.963
+P-value: 0.7241
+Reference structure: d2fbda_:A
+
+d1zh8a2:A   HVPAFWKAKELVESGAIGDPVFX-------------------------------------   154  (A)
+d2fbda_:A   -----------------------KTFTRCSLAREMYALGVPKSELPQWTCIAEHESSYRT    37  (B)
+
+d1zh8a2:A   ----------------------NW-----------QIWVGXDENNKYVHTDWRKKPKHV-   180  (A)
+d2fbda_:A   NVVGPTNSNGSNDYGIFQINNYYWCQPSNGRFSYNECHLS-------------------C    78  (B)
+
+d1zh8a2:A   ---GG-FLSDGGVHHAAAXRLILGE-IEWISAVAKDLSPLLGGXDFLSSIFEFENGTVGN   235  (A)
+d2fbda_:A   DALLTDN-ISNSVTCARKIKSQQGWTAWS-------------------------------   106  (B)
+
+d1zh8a2:A   YTISYSLKGNERFEITGTKGKISISWDKIVLNEEEXKVPQ----------------   275  (A)
+d2fbda_:A   ----------------------------------------TWKYCSGSLPSINDCF   122  (B)
+

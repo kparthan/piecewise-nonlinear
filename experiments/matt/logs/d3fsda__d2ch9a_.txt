@@ -1,0 +1,16 @@
+(d2ch9a_:A, d3fsda_:A)
+Core Residues: 71
+Core RMSD: 3.018
+Raw Score: 90.694
+P-value: 0.0144
+Reference structure: d2ch9a_:A
+
+d3fsda_:A   D-----------------------DIAFYEERLRAAXLTGDLKGLETLLADDLAFVDHTG    49  (A)
+d2ch9a_:A   -TCSQDLNSRVKPGFPKTIKTNDPGVLQAARYSVEKFNNC--------------------    63  (B)
+
+d3fsda_:A   CVKTKQTHLEPYRAGLLKLS-RLDLSDA-VVRAAG--EDGRVVVVRAVTAGVYDGEAFT-   104  (A)
+d2ch9a_:A   ----------------TNDMFLFKESRITRALVQIVKGLKYMLEVEIGR----------T    97  (B)
+
+d3fsda_:A   ----------------------ETLRFTRIWRRTQG--PAGWKLVAGHCSVIL---   133  (A)
+d2ch9a_:A   TCKKNQHLRLDDCDFQTNHTLKQTLSCYSEVWVV--PWLQHFEVPVLRCHHH-HHH   150  (B)
+

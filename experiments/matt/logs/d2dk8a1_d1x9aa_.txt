@@ -1,0 +1,13 @@
+(d1x9aa_:A, d2dk8a1:A)
+Core Residues: 39
+Core RMSD: 3.333
+Raw Score: 24.122
+P-value: 0.6732
+Reference structure: d1x9aa_:A
+
+d2dk8a1:A   P----------DADPVEIENRIIELC-HQFPHGITDQVIQNEMPHIEAQQRAVAINRLLS    56  (A)
+d1x9aa_:A   -MALVLVKYGTD--HPVEKLKIRSA-KAED--KIVLI----------QN-GVFWALEE--    41  (B)
+
+d2dk8a1:A   MGQLD----------------------LLRSNTGLLYRIKD---------------    75  (A)
+d1x9aa_:A   -LET-PAKVYAIKDDFLARGYSEEDSKVPLITY--------SEFIDLLEGEEKFIG    87  (B)
+

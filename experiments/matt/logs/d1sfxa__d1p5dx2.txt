@@ -1,0 +1,19 @@
+(d1p5dx2:X, d1sfxa_:A)
+Core Residues: 20
+Core RMSD: 2.008
+Raw Score: 26.502
+P-value: 0.5479
+Reference structure: d1p5dx2:X
+
+d1sfxa_:A   HXSNPLGELVKALEKLSFKPSDVRIYSLLLERGGXRVSEIARELDLSARFVRDRLKVLL-    58  (A)
+d1p5dx2:X   -----------------------------------------------------------I   155  (B)
+
+d1sfxa_:A   ---------------------KRGFVRREIVEKGWVGYIYS-------------------    78  (A)
+d1p5dx2:X   LPRYFKQIRDDIAMAKPMKVVV-D-----------------CGNGVAGVIAPQLIEALGC   197  (B)
+
+d1sfxa_:A   -------------------AEKPEKVLKEFKSSILGEIERIEKXFTDGS-----------   108  (A)
+d1p5dx2:X   SVIPLYCEVDGNFPNHHPDPGKPENLKDLIAKVKAEN------------ADLGLAFDGDG   245  (B)
+
+d1sfxa_:A   -------------   108  (A)
+d1p5dx2:X   DRVGVVTNTGTII   258  (B)
+

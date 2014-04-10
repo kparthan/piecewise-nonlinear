@@ -1,0 +1,16 @@
+(d3d3ra1:A, d2cqka1:A)
+Core Residues: 21
+Core RMSD: 1.535
+Raw Score: 34.620
+P-value: 0.5373
+Reference structure: d3d3ra1:A
+
+d2cqka1:A   A-------------------------------------------------------VSTE    47  (A)
+d3d3ra1:A   -XCLSIPSQVVAVDNERQSVTVDTLGVRRDVSSHLXTEPLAIGDYVLIHIGFVXNKIDRN    59  (B)
+
+d2cqka1:A   DLKECLKKQLEFCFSRENLSKDLYLISQMDSDQFIPIWTVANMEEIKKLTTDPDLILEVL   107  (A)
+d3d3ra1:A   DALQSLELYQEIVSK--LE-----------------------------------------    76  (B)
+
+d2cqka1:A   RSSPMVQVDEKGEKVRPSHKRCI   130  (A)
+d3d3ra1:A   -----------------------    76  (B)
+

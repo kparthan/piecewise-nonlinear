@@ -1,0 +1,16 @@
+(d1wj0a_:A, d1t33a1:A)
+Core Residues: 21
+Core RMSD: 1.799
+Raw Score: 21.357
+P-value: 0.5510
+Reference structure: d1wj0a_:A
+
+d1t33a1:A   MNIPTTTTKGEQAKSQLIAAALAQFGEYGLHATT---------------R-DIAALAGQN    44  (A)
+d1wj0a_:A   ----------------------------------AICCQVDNCGADLSKVKDYHRRHKVC   149  (B)
+
+d1t33a1:A   IAAITY-----------YFGSKEDLYLACAQWIADFLGEKFRPHAEKAERLFSQP-----    88  (A)
+d1wj0a_:A   EIHSKATTALVGGIMQRFC-----QQ--C--------------------------SRFHV   176  (B)
+
+d1t33a1:A   -----    88  (A)
+d1wj0a_:A   LEEFD   181  (B)
+

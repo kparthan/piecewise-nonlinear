@@ -1,0 +1,34 @@
+(d2elba1:A, d2tbva_:A)
+Core Residues: 14
+Core RMSD: 1.705
+Raw Score: 13.500
+P-value: 0.6816
+Reference structure: d2elba1:A
+
+d2tbva_:A   GGVTVTSHREYLTQVNNSSGFVVNGGIVGNSLQLNPSNGTLFSWLPALASNFDQYSFNSV   160  (A)
+d2elba1:A   ------------------------------------------------------------     6  (B)
+
+d2tbva_:A   VLDYVPLCGTTEVGRVALYFDKDSQDPEPA------------------------------   190  (A)
+d2elba1:A   ------------------------------KLPIEETLEDSPQTRSLLGVFEEDATAISN    35  (B)
+
+d2tbva_:A   ------------------------------------------------------------   190  (A)
+d2elba1:A   YXNQLYQAXHRIYDAQNELSAATHLTSKLLKEYEKQRFPEVXSSTLQQFSKVIDELSSCH   100  (B)
+
+d2tbva_:A   ------------------------------------------------------------   190  (A)
+d2elba1:A   AVLSTQLADAXXFPITQFKERDLKEILTLKEVFQIASNDHDAAINRYSRLSKKVKYEVTE   165  (B)
+
+d2tbva_:A   ------------------------------------------------------------   190  (A)
+d2elba1:A   DVYTSRKKQHQTXXHYFCALNTLQYKKKIALLEPLLGYXQAQISFFKXGSENLNEQLEEF   225  (B)
+
+d2tbva_:A   ------------------------------DRVELANFGVL-K--ETAPWAEAMLRIPTD   217  (A)
+d2elba1:A   LANIGTSVQNVRREXDSDIETXQQTIEDLEVASDPLYVPDPDPTDFP-------------   272  (B)
+
+d2tbva_:A   KVKRYCNDSATVDQKLIDLGQLGIATYGGAGADAVGELFLARSVTLYFPQPTNTLLSSKR   277  (A)
+d2elba1:A   ------------------------------------------------------------   272  (B)
+
+d2tbva_:A   LDLTGSLADATGPGYLVLTRTPTVLTHTFRATGTFNLSGGLRCLTSLTLGATGAVVINDI   337  (A)
+d2elba1:A   ------------------------------------------------------------   272  (B)
+
+d2tbva_:A   LAIDNVGTASDYFLNCTVSSLPATVTFTVSGVAAGILLVGRARANVVNLL-   387  (A)
+d2elba1:A   --------------------------------------------------V   273  (B)
+

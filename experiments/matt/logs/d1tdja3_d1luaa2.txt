@@ -1,0 +1,16 @@
+(d1luaa2:A, d1tdja3:A)
+Core Residues: 33
+Core RMSD: 2.803
+Raw Score: 27.851
+P-value: 0.5406
+Reference structure: d1luaa2:A
+
+d1tdja3:A   GGRPSHPLQ--ERLYSFEFP----------------------------------------   441  (A)
+d1luaa2:A   ---------SKKLLFQFDTDATPSVFDVVVGYDGGADHITGYGNVTPDNVGAYVDGTIYT    52  (B)
+
+d1tdja3:A   ----------------ESPGALLRFLNTLGT-Y----WNISLFHYRSHGTDYGRVLAAFE   480  (A)
+d1luaa2:A   RGGKEKQSTAIFVGGGDM-AAGERVFEAVKKRFFGPFRVSCMLDSN--------------    97  (B)
+
+d1tdja3:A   YDCHDETNNPAFRFFLAG   514  (A)
+d1luaa2:A   ------------------    97  (B)
+

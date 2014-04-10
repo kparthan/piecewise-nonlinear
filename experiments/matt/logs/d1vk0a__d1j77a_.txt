@@ -1,0 +1,25 @@
+(d1j77a_:A, d1vk0a_:A)
+Core Residues: 78
+Core RMSD: 12.500
+Raw Score: 93.412
+P-value: 0.8961
+Reference structure: d1j77a_:A
+
+d1vk0a_:A   SASFDGPKFKXTDGSYVQTKTIDVGSSTDI------------SPYLSLIREDSILNGNRA    48  (A)
+d1j77a_:A   ------------------------------ALTFAKRLKADTTAVHDSVDNLVMSVQP--    35  (B)
+
+d1vk0a_:A   VIFDVYWDVGFTKTSGWSLSSVKLSTRNLCLFL---------------------------    87  (A)
+d1j77a_:A   ---------------------------------FVSKENYIKFLKLQSVFHKAVDHIYKD    62  (B)
+
+d1vk0a_:A   -------------------------------------RLPKPFHDNLKDLYRFFASKFVT   110  (A)
+d1j77a_:A   AELNKAIPELEYMARYDAVTQDLKDLGEEPYKFDKELPYEAGN-----KAIGW-------   110  (B)
+
+d1vk0a_:A   FVGVQIEEDLDLLRENHGLVIRNAINVGKLA---AEARG-----TL-----------VLE   151  (A)
+d1j77a_:A   --------------------LYCAEGSNLGAAFLFKHAQKLDYNGEHGARHLAPHPDGRG   150  (B)
+
+d1vk0a_:A   FLGTRELAHRVLWSDLGQLDSIEAKWEKA-----------GPEEQLEAAAIEGWLIVNVW   200  (A)
+d1j77a_:A   KHWR-------------------------AFVEHLNALNLTPEAEAEAIQGAREAFAFYK   185  (B)
+
+d1vk0a_:A   DQLSDE----------------   206  (A)
+d1j77a_:A   VVLRETFGLAADAEAPEGMMPH   207  (B)
+

@@ -1,0 +1,58 @@
+<HTML><H1>Results</H1>
+<A HREF='summary.txt'>Parseable data</A>
+<BR><UL>
+<LI><a href="#mol1A">mol1A</a>
+</UL><HR>
+<TITLE>Dali: mol1A,                                                                       </TITLE><A name=mol1A>
+<h1>Query: <a name="mol1A">mol1A</a></h1>
+                                                                      
+<P><A NAME="summary">
+Select neighbours (check boxes) for viewing as multiple structural alignment or 3D superimposition. 
+The list of neighbours is sorted by Z-score. Similarities with a Z-score lower than 2 are spurious.
+Each neighbour has links to pairwise structural alignment with the query structure, 
+ and to the PDB format coordinate file where the neighbour
+is superimposed onto the query structure. 
+
+<form METHOD="POST" ACTION="http://ekhidna.biocenter.helsinki.fi/dali_server/qz-test" TARGET="_blank"/>
+<input TYPE="hidden" NAME="jobid" VALUE=test>
+<input TYPE="hidden" NAME="query_sequence" VALUE="KLANGDIAIIDFTGIVDNKKLASASAQNYELTIGSNSFIKGFETGLIAMKVNQKKTLALTFPSDYHVKELQSKPVTFEVVLKAIK"> 
+<input TYPE="hidden" NAME="query_dssp" VALUE="LLLLLEEEEEEEEEEELLEELLLLLLLEEEEEELLLLLLLLHHHHHHLLLLLEEEEELLLLLLLLLLLHHHLLLLEEEEEELLLL"> 
+<input TYPE="hidden" NAME="cd1" VALUE=mol1A>
+<input TYPE="hidden" NAME="pdbresnos" VALUE="85   29    30    31    32    33    34    35    36    37    38    39    40    41    42    43    44    45    46    47    48    49    50    51    52    53    54    55    56    57    58    59    60    61    62    63    64    65    66    67    68    69    70    71    72    73    74    75    76    77    78    79    80    81    82    83    84    85    86    87    88    89    90    91    92    93    94    95    96    97    98    99   100   101   102   103   104   105   106   107   108   109   110   111   112   113 
+">
+<input TYPE="hidden" NAME="cd2list" VALUE="dummy">
+<input TYPE="submit" NAME="D1" VALUE="Structural Alignment"/> 
+<INPUT TYPE="CHECKBOX" NAME="expand_gaps" VALUE=1 CHECKED"/> Expand gaps 
+<input TYPE="submit" NAME="D3" VALUE="3D Superimposition (Jmol Applet)"/> 
+<input TYPE="reset" VALUE="Reset Selection"/>
+<h2>Summary</h2>
+<PRE>
+    No:  Chain   Z    rmsd lali nres  %id PDB  Description
+<INPUT TYPE="CHECKBOX" NAME="cd2list" VALUE="cd2=mol2A sequence=AKTAAALHILVKEEklaldlleqikngadfgklakkHSICpsgkrgGDLGEFRQGQMVPAFDKVVFSCPVLEPTGpLHTQFGYHIIKVLYRN dssp=LLEEEEEEEEELLHhhhhhhhhhhhhlllhhhhhhhHHLLlllllhHHLLEEELLLLLHHHHHHHHHLLLLLLEEeEEELLEEEEEEEELLL qstarts=4,19,25,36,56,73 sstarts=0,36,46,55,76,80 lengths=14,4,9,20,4,12 u=0.174688,-0.430027,0.885754,-0.830398,-0.547727,-0.102147,0.529078,-0.717685,-0.452775 t=3,-3,2">   <A HREF=#alignment-1>1</A>:  mol2-A  4.4  2.2   63    92   10 <A HREF="http://ekhidna.biocenter.helsinki.fi/dali_server/qz-test?jobid=test&pdbid=mol2&u=0.174688,-0.430027,0.885754,-0.830398,-0.547727,-0.102147,0.529078,-0.717685,-0.452775&t=3,-3,2">PDB</A>                                                                       
+
+</form>
+</PRE>
+<A NAME="alignments">
+<h2>Pairwise Structural Alignments </h2>
+Notation: three-state secondary structure definitions by DSSP (reduced to H=helix, E=sheet, L=coil) are shown above the amino acid sequence. Structurally equivalent residues are in uppercase, structurally non-equivalent residues (e.g. in loops) are in lowercase. Amino acid identities are marked by vertical bars.
+<a name=alignment-1><h3> No 1: Query=mol1A Sbjct=mol2A Z-score=4.4</h3>
+
+<A HREF="#mol1A">back to top</A>
+<PRE>
+DSSP  llllLEEEEEEEEEEELL---------------------eELLL----llLLEEEEEELl
+Query klanGDIAIIDFTGIVDN---------------------kKLAS----asAQNYELTIGs   35
+ident        |                                              |   | 
+Sbjct ----AKTAAALHILVKEEklaldlleqikngadfgklakkHSICpsgkrgGDLGEFRQG-   55
+DSSP  ----LLEEEEEEEEELLHhhhhhhhhhhhhlllhhhhhhhHHLLlllllhHHLLEEELL-
+
+
+DSSP  lLLLLLHHHHHHLLLLLEEEE-ELLLllllllllhhhllLLEEEEEELLLL
+Query nSFIKGFETGLIAMKVNQKKT-LALTfpsdyhvkelqskPVTFEVVLKAIK   85
+ident       |        |      |                            
+Sbjct -QMVPAFDKVVFSCPVLEPTGpLHTQ-------------FGYHIIKVLYRN   92
+DSSP  -LLLHHHHHHHHHLLLLLLEEeEEEL-------------LEEEEEEEELLL
+
+
+</PRE>
+</PRE>
+<HR>

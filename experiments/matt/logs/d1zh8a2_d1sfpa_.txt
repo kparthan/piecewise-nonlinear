@@ -1,0 +1,19 @@
+(d1sfpa_:A, d1zh8a2:A)
+Core Residues: 38
+Core RMSD: 4.303
+Raw Score: 27.301
+P-value: 0.7176
+Reference structure: d1sfpa_:A
+
+d1zh8a2:A   HVPAFWKAKELVESGAIG------------DPVFXNWQIWVGXDENNKYVHTDWRKKPKH   179  (A)
+d1sfpa_:A   ------------------LPRNTNCGGILKEESGVIATYY--------------------    25  (B)
+
+d1zh8a2:A   VGGFLSDGGVHHAAAXRLILGEIEWISAVAKDLSPLLGGXDFLSSIFEFENGTVGNYTIS   239  (A)
+d1sfpa_:A   -----------------------------------------------------------G    26  (B)
+
+d1zh8a2:A   YSLKGNERFEITGT--KGKISIS-WD-----------------------------KIVLN   267  (A)
+d1sfpa_:A   --PKTNCVWTIQMPPEYHVRVSIQYLQLNCNKESLEIIDGLPGSPVLGKICEGSLMDYRS    84  (B)
+
+d1zh8a2:A   EEEXKVPQ-----------------------------   275  (A)
+d1sfpa_:A   S-------GSIMTVKYIREPEHPASFYEVLYFQDPQA   114  (B)
+

@@ -1,0 +1,16 @@
+(d1nlxa_:A, d1tqga_:A)
+Core Residues: 78
+Core RMSD: 5.027
+Raw Score: 104.315
+P-value: 0.0799
+Reference structure: d1nlxa_:A
+
+d1tqga_:A   GSH-MEYLGVFVDETKEYLQNLNDTLLELEKNPE---------DMELINEA-FR-ALHTL    47  (A)
+d1nlxa_:A   ---ATTEEQKLIEDVNASFRAAMAT---------TANVPPADKYKTF-EA-AFTVSSKRN   449  (B)
+
+d1tqga_:A   KGMAGTMGFSSMAKLCHTLENILDKARNSEI-------KITSDLLDKI-FAGVDMITRMV    99  (A)
+d1nlxa_:A   LADAVSK-APQLVPKLDEVYNAAYNAADH-AAPEDKYEAFVLHFS-EALRIIAGT-----   501  (B)
+
+d1tqga_:A   DKIVS------   104  (A)
+d1nlxa_:A   -----PEVHAV   507  (B)
+

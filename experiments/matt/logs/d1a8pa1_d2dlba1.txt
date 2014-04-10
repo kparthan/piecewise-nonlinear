@@ -1,0 +1,16 @@
+(d2dlba1:A, d1a8pa1:A)
+Core Residues: 18
+Core RMSD: 1.072
+Raw Score: 23.377
+P-value: 0.4927
+Reference structure: d2dlba1:A
+
+d1a8pa1:A   S---------------------------------------NLNVERVLSVHHWNDTLFSF    22  (A)
+d2dlba1:A   -AGYLNNIALNLEIVLKNKADSPEVSETLVTRICENLLLSKEVSFLKA------------  2048  (B)
+
+d1a8pa1:A   KTTRNPSLRFENGQFVMIGLEVDGRPLMRAYSIASPNYEEHLEFFSIKVQNGPLTSRLQH    82  (A)
+d2dlba1:A   ------------------------------------------------------------  2048  (B)
+
+d1a8pa1:A   LKEGDELMVSRKPTGTLV-------------   100  (A)
+d2dlba1:A   --DGSVENFKLS------DXEYEITNTEELP  2071  (B)
+

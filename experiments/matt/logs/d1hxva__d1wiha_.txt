@@ -1,0 +1,16 @@
+(d1wiha_:A, d1hxva_:A)
+Core Residues: 26
+Core RMSD: 1.878
+Raw Score: 22.896
+P-value: 0.4155
+Reference structure: d1wiha_:A
+
+d1hxva_:A   KLANGDI-------------------------------A-IIDFTGIV--DNKKLASASA    54  (A)
+d1wiha_:A   -------GSSGSSGLDHITVVTADGKVALNQIGQISMKSPQVILVNMASFPE--------    45  (B)
+
+d1hxva_:A   QNYELTIGSNSFIKGFETGLIAMKV---------------NQKKTLALTFPSDYHVKELQ    99  (A)
+d1wiha_:A   -------------------------CTAAAIKAIRESGMNLNPEVEG-------------    67  (B)
+
+d1hxva_:A   SKPVTFEVVLKAIK---------   113  (A)
+d1wiha_:A   ----TLIRVPIP--KVTSGPSSG    84  (B)
+

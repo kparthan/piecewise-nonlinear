@@ -1,0 +1,19 @@
+(d2pu9a_:A, d1o7fa3:A)
+Core Residues: 37
+Core RMSD: 2.887
+Raw Score: 35.079
+P-value: 0.4904
+Reference structure: d2pu9a_:A
+
+d1o7fa3:A   TVDDLEIIYDELLHI--KALS------H-----LSTTVKRELAGVL--IFESHAKGGTVL   366  (A)
+d2pu9a_:A   -----NKTLAAMKNFAEQY-AKRTDTYFCSDLSVTAVVIEGLARHKEELG----------    51  (B)
+
+d1o7fa3:A   FNQGEEGTSWYIILKGSVNVVIYGKGVVCTLHEGDDFGKLALVNDAPRAASIVLREDNCH   426  (A)
+d2pu9a_:A   ------------------------------------------------------------    51  (B)
+
+d1o7fa3:A   FLRVDKEDFNRILRDVEAN-----------------------------------------   445  (A)
+d2pu9a_:A   --SPLCP-CRH--------YEDKEAEVKNTFWNCPCVPMRERKECHCMLFLTPDNDFAGD   100  (B)
+
+d1o7fa3:A   -----------------   445  (A)
+d2pu9a_:A   AQDIPMETLEEVKASMA   117  (B)
+

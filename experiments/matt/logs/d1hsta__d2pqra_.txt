@@ -1,0 +1,16 @@
+(d2pqra_:A, d1hsta_:A)
+Core Residues: 29
+Core RMSD: 2.299
+Raw Score: 38.629
+P-value: 0.3128
+Reference structure: d2pqra_:A
+
+d1hsta_:A   SHP---------------------------------------------------------    26  (A)
+d2pqra_:A   ---DFWPTLKDAYEPLYPQQLEILRQQVVSEGGPTATIQSRFNYAWGLIKSTDVNDERLG    61  (B)
+
+d1hsta_:A   ----TYSEMIAAAIRAEKSRGGSSRQSIQKYIKSH--YKVGHNADLQIKLSIRRLLAAGV    80  (A)
+d2pqra_:A   VKILTD-----------------------------IYKEAESRRRECLYYLTIGCYKLGE    92  (B)
+
+d1hsta_:A   LKQTKGVGASGS--FRLAK----    97  (A)
+d2pqra_:A   YS----------MAKR---YVDT   102  (B)
+

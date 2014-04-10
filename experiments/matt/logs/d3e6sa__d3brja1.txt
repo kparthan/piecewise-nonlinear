@@ -1,0 +1,22 @@
+(d3brja1:A, d3e6sa_:A)
+Core Residues: 61
+Core RMSD: 3.869
+Raw Score: 94.464
+P-value: 0.1682
+Reference structure: d3brja1:A
+
+d3e6sa_:A   SEELLDLFNRQVTQEF------------TASQVYLSASIWFDQNDW--------------    34  (A)
+d3brja1:A   ----------------NESEIIERLNSAPSVRGFFIATVDVFNES-IDGLIQRIFRKDNF    48  (B)
+
+d3e6sa_:A   ---------------------------------------EGM-AAY-MLAES--AEE---    48  (A)
+d3brja1:A   AVQSVVGPLLQDSGPLGDLSVRLKLLFGLGVLPDDIYHDIE-DII-KLK---NHL--NSD   101  (B)
+
+d3e6sa_:A   --REHGLGFVDFANKRNIPIELQAVPAPVSCAEWSSPEDVWQSILELEQANTRSLLNLAE   106  (A)
+d3brja1:A   ASDYE-------------------------------------------------------   106  (B)
+
+d3e6sa_:A   AASTCHD--------------------------------FAVMAFLNPFHLQQVNEEDKI   134  (A)
+d3brja1:A   -------FTDPNILEPIKKLHLVKKXGXVQLEVNEPDDDIDLEFYQLQLQRQQQIIKSGL   159  (B)
+
+d3e6sa_:A   GSILAKVTDENRTPGLLRSLDVVSF   159  (A)
+d3brja1:A   SLAIVEICNELGK------------   172  (B)
+

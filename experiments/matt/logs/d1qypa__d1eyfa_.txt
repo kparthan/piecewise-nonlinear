@@ -1,0 +1,16 @@
+(d1eyfa_:A, d1qypa_:A)
+Core Residues: 18
+Core RMSD: 1.913
+Raw Score: 19.357
+P-value: 0.5738
+Reference structure: d1eyfa_:A
+
+d1qypa_:A   GSHMEQDLKTLPTTKITCPKCGNDTAYWWEMQTRAG---------------------DEP    39  (A)
+d1eyfa_:A   ------------------------------------MKKATCLTDDQRWQSVLARDPNA-    23  (B)
+
+d1qypa_:A   -STIFYKCTKCGHTWRSYE-----------------------------------------    57  (A)
+d1eyfa_:A   DGEFVFAVRTTGIFCRP--SCRARHALRENVSFYANASEALAAGFRPCKRCQPDKANPRQ    81  (B)
+
+d1qypa_:A   -----------    57  (A)
+d1eyfa_:A   HRLDKITHACR    92  (B)
+

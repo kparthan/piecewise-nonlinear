@@ -1,0 +1,16 @@
+(d1dlja3:A, d1jmva_:A)
+Core Residues: 68
+Core RMSD: 4.317
+Raw Score: 67.223
+P-value: 0.0713
+Reference structure: d1dlja3:A
+
+d1jmva_:A   MYKHILVAVDLSEESPILLKKAVGIAKRHD-AKLSIIHVDVNFSDLYTGLIDVNMSSMQD    59  (A)
+d1dlja3:A   --------------AKQIINVLKEQE----SPVKVVGVYR--------------------   316  (B)
+
+d1jmva_:A   RISTE--------------TQKALLDLAESVDY-PISEK--------------LSGSGDL    90  (A)
+d1dlja3:A   -----LIMKSNSDNFRESAIKDVIDILKS----KDIKIIIYEPMLNKLESEDQSVLVNDL   367  (B)
+
+d1jmva_:A   GQVLSDA--IEQYDVDL-LVTGHHQDFWSKLMSSTRQVMNTIKIDM---LVVPLRD----   140  (A)
+d1dlja3:A   E-NF---KKQ-------ANIIVTNRYDNE-LQ--D-----------VKNKVYSRDIFGRD   402  (B)
+

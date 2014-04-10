@@ -1,0 +1,19 @@
+(d2q37a1:A, d1hxmb2:B)
+Core Residues: 31
+Core RMSD: 4.211
+Raw Score: 19.489
+P-value: 0.8216
+Reference structure: d2q37a1:A
+
+d1hxmb2:B   KQLDADVSPKP-------------------------------------------------   134  (A)
+d2q37a1:A   -----------GEDEWKVCCGSSEFAKQXSTSGPLTSQEAIYTARDIWFNQVNVTDWLEA    54  (B)
+
+d1hxmb2:B   ---------------TIFLP---------------SIAETKLQKAG--TYLCLLEKFFPD   162  (A)
+d2q37a1:A   FSAHPQIGNTPSEQSTA---FATTSASALQELAEWNVLYKKKFGFIFIICASG-------   117  (B)
+
+d1hxmb2:B   VIKIHWEEKKSNTILGSQEGNTMKTNDTYMKF---SWLTV-----------------PEK   202  (A)
+d2q37a1:A   -------------------------------RTHAEX---LHALKERYENRPIVELEIAA   143  (B)
+
+d1hxmb2:B   SLDKEHRCIVRHENNKNGVDQEI--IFPPI--------   230  (A)
+d2q37a1:A   XEQXKI-----------------TEL----RXAKLFSD   160  (B)
+

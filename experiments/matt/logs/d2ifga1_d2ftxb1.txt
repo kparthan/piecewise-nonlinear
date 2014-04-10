@@ -1,0 +1,16 @@
+(d2ftxb1:B, d2ifga1:A)
+Core Residues: 28
+Core RMSD: 2.065
+Raw Score: 25.932
+P-value: 0.4439
+Reference structure: d2ftxb1:B
+
+d2ifga1:A   GV-------------PTLKVQVPNASVDVGDDVL-LRCQVEGRGLEQAGWILTELEQSAT   237  (A)
+d2ftxb1:B   --ANENILKLKLYRSLGVILDLE-----------NDQVLINRK-----------------   184  (B)
+
+d2ifga1:A   VMKSGGL-----PSLGLTLANVTSDLNRKNVTC----------WA--ENDVGRAEVSVQV   280  (A)
+d2ftxb1:B   -------NDGNIDILPLDN--------------NLSDFYKTKYIWERLGK----------   213  (B)
+
+d2ifga1:A   NVS   283  (A)
+d2ftxb1:B   ---   213  (B)
+

@@ -1,0 +1,16 @@
+(d1wz3a1:A, d1v5ta_:A)
+Core Residues: 44
+Core RMSD: 2.145
+Raw Score: 50.780
+P-value: 0.1544
+Reference structure: d1wz3a1:A
+
+d1v5ta_:A   GSSGSS-GLPIIVKWGG----QE--YSVTTLSEDDTVLDLKQFLKTLTGVLPERQKLLGL    53  (A)
+d1wz3a1:A   ------QKIVVHLRAT-GGAPILKQSKFKV-SGSDKFANVIDFLRRQLHSD--SLFVYVN    59  (B)
+
+d1v5ta_:A   KVKGKPAENDVKLGALKLKPNTKIMMMGTRESGPSSG-----------------------    90  (A)
+d1wz3a1:A   S------------------------------------AFSPNPDESVIDLYNNFGFDGKL    83  (B)
+
+d1v5ta_:A   ----------    90  (A)
+d1wz3a1:A   VVNYACSMAW    93  (B)
+

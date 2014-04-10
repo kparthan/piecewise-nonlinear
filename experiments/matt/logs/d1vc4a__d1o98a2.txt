@@ -1,0 +1,31 @@
+(d1o98a2:A, d1vc4a_:A)
+Core Residues: 94
+Core RMSD: 8.413
+Raw Score: 86.323
+P-value: 0.3123
+Reference structure: d1o98a2:A
+
+d1vc4a_:A   MRPDLSRVPGVLG-------------EIARKRASEVAPYPLPEPPSVP------------    35  (A)
+d1o98a2:A   -------------SKKPVALIILDGFAL--------------------RDETYGNAVAQA    28  (B)
+
+d1vc4a_:A   ------------------------------------------------------SFKEAL    41  (A)
+d1o98a2:A   NKPNFDRYWNEYPHTTLKACGEAVGLPEGQMGNSEVGHLNIGAGRIVYTNLDNTIGEVLS   322  (B)
+
+d1vc4a_:A   LRPGLS--------------------------VIAEVKRQSPSEGLI-R-----------    63  (A)
+d1o98a2:A   Q-HGLRQLRIAETEKYPHVTFFMSGGREEEFPGEDRILI--------NSPKVPTYDLKPE   373  (B)
+
+d1vc4a_:A   EV--DPVEAALAYARG--GARAVSVLTEPHR-F---------------GG-SLLDLKRVR   102  (A)
+d1o98a2:A   MSAYEVTDALLKEIE-ADKYDAIILNYA---NPDMVGHSGKLEPTIKAVEAVDECLGKVV   429  (B)
+
+d1vc4a_:A   EAVD---LPLLRKD--------------------------FVVDPFMLEEARAFG---AS   130  (A)
+d1o98a2:A   DAILAKGGIAIIT-ADHGNADEVLTPDGKPQTAHTTNPVPVI-------------VTKKG   475  (B)
+
+d1vc4a_:A   AALLIVALLGELTGAYLEEARRLGLEALVEVHTERELEIALEAGAEVLGINNRDLATLHI   190  (A)
+d1o98a2:A   IKL---------------------------------------------------RDGGI-   483  (B)
+
+d1vc4a_:A   NLETAPRLGRLARKRGFGGVLVAESGYSRKEELKALEG-LFDAVLIGTSLMRAPDLEAAL   249  (A)
+d1o98a2:A   -LGDLAPTMLDLLG-----LP-----------------QP--------------------   500  (B)
+
+d1vc4a_:A   RELVG----------   254  (A)
+d1o98a2:A   -----KEMTGKSLIV   510  (B)
+

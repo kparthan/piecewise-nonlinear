@@ -1,0 +1,19 @@
+(d1qtma1:A, d1jcfa1:A)
+Core Residues: 36
+Core RMSD: 3.004
+Raw Score: 40.381
+P-value: 0.6085
+Reference structure: d1qtma1:A
+
+d1jcfa1:A   MLRKDIGIDLGTANTLVFLRGKGIVVNEPSVIAIDSTTGE--------------------    40  (A)
+d1qtma1:A   ------------------------------ALEEAPWPPPEGAFVGFVLSRKEPMWADLL   322  (B)
+
+d1jcfa1:A   -----ILKVGLEAKNMIGKTPATIKAIRP-------------------------------    64  (A)
+d1qtma1:A   ALAAARGG----------------R----VHRAPEPYKALRDLKEARGLLAKDLSVLALR   362  (B)
+
+d1jcfa1:A   ---------------------------------MRDGVIA----DYTVALVMLRYFINKA    87  (A)
+d1qtma1:A   EGLGLPPGDDPMLLAYLLDPSNTTPEGVARRYGG---EWTEEAGERAALSERLFANLWGR   419  (B)
+
+d1jcfa1:A   KGGMNLFKPRVVIGVPIGITDVERRAILDAGLEAGASKVFLIEEPMAAAIGSN-   140  (A)
+d1qtma1:A   LE---------------------------------------------------G   422  (B)
+

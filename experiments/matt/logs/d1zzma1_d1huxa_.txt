@@ -1,0 +1,31 @@
+(d1huxa_:A, d1zzma1:A)
+Core Residues: 52
+Core RMSD: 5.513
+Raw Score: 54.902
+P-value: 0.5665
+Reference structure: d1huxa_:A
+
+d1zzma1:A   MICRFIDTHCHFDFPPF-------------------------------------------    17  (A)
+d1huxa_:A   -----------------SIYTLGIDVGSTASKCIILKDGKEIVAKSLVAVGTGTSGPARS    44  (B)
+
+d1zzma1:A   --------------------------------------------------------SGDE    21  (A)
+d1huxa_:A   ISEVLENAHMKKEDMAFTLATGYGRNSLEGIADKQMSELSCHAMGASFIWPNVHTVIDIG   104  (B)
+
+d1zzma1:A   EASLQR----------------------AAQAGVGKIIVPATEAENFARVLALAENYQPL    59  (A)
+d1huxa_:A   GQDV--KVIHVENGTMTNFQMNDKCAAGTGRFL---------------------------   135  (B)
+
+d1zzma1:A   YAALGLHPGMLEKHSDVSLEQLQQALERRPAKVVAVGEIGLDLFGDDPQFERQQWLLDEQ   119  (A)
+d1huxa_:A   ------------------------------------------------------------   135  (B)
+
+d1zzma1:A   LKLAKRYDLPVILHSRRTHDKLAMHLKRHDLPRTGVVHGFSGSLQQAERFVQLGYKIGVG   179  (A)
+d1huxa_:A   ------------------------------------------------------------   135  (B)
+
+d1zzma1:A   GTITYPRASKTRDVIAKLPL----------------------ASLLLETDAPDMPLNGFQ   217  (A)
+d1huxa_:A   --------------------DVMANILEVKVSDLAELGAKSTKRVAISST----------   165  (B)
+
+d1zzma1:A   GQPNRPEQAARVFAVLCELR---REPADEIAQALLNNTYTLFN-----------------   257  (A)
+d1huxa_:A   -------CT-VFAESEVISQLSKGTDKIDIIAGIHRSVAS---RVIGLANRVGIVKDVVM   214  (B)
+
+d1zzma1:A   ----------VP----------------------------------   259  (A)
+d1huxa_:A   TGGVAQNYGVRGALEEGLGVEIKTSPLAQYNGALGAALYAYKKAAK   260  (B)
+

@@ -1,0 +1,16 @@
+(d1iioa_:A, d3buxb1:B)
+Core Residues: 29
+Core RMSD: 2.577
+Raw Score: 27.239
+P-value: 0.5185
+Reference structure: d1iioa_:A
+
+d3buxb1:B   TFRITKADAAEFWRKAFGEKTIV-------------------------------------   200  (A)
+d1iioa_:A   -----------------------GSHMKMGVKEDIRGQIIGALAGADFPINSPEELMAAL    34  (B)
+
+d3buxb1:B   ------------------PWKSFRQALHEVHPISSGLEAMALKSTIDLTCNDYISVFEFD   242  (A)
+d1iioa_:A   PNGPDTTCKSGDVELKASDAGQVLTADDF--PFKSAEEVADTIVNKA-GL----------    81  (B)
+
+d3buxb1:B   IFTRLFQPWSSLLRNWNSLAV   263  (A)
+d1iioa_:A   ---------------------    81  (B)
+

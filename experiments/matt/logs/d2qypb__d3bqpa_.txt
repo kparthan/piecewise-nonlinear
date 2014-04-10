@@ -1,0 +1,13 @@
+(d3bqpa_:A, d2qypb_:B)
+Core Residues: 42
+Core RMSD: 2.505
+Raw Score: 78.071
+P-value: 0.1297
+Reference structure: d3bqpa_:A
+
+d2qypb_:B   AYVSDVYCEVCEFLVKEVTKLIDNNK-----------------------TEKEILDAFDK    34  (A)
+d3bqpa_:A   --------------------------DGGFCEVCKKLVGYLDRNLEKNSTKQEILAALEK    34  (B)
+
+d2qypb_:B   MCSKLPKSLSEECQEVVDTYGSSILSILLEEVSPELVCSMLHLC---------------    78  (A)
+d3bqpa_:A   GCSFLPDPYQKQCDQFVAEYEPVLIEILVEV-------------MDPSFVCLKIGACPS    80  (B)
+

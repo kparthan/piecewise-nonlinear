@@ -1,0 +1,22 @@
+(d2ogqa1:A, d1exra_:A)
+Core Residues: 25
+Core RMSD: 1.990
+Raw Score: 37.499
+P-value: 0.4202
+Reference structure: d2ogqa1:A
+
+d1exra_:A   EQLTEEQIAEFKEAFALFDKDGDGTITTKELGTVMRSLGQNPTEAELQDMINEVDADGNG    61  (A)
+d2ogqa1:A   ------------------------------------------------------------   371  (B)
+
+d1exra_:A   TIDFPEFLSLMAR-----------------------------------------------    74  (A)
+d2ogqa1:A   -------------DCHLSDMLQQLHSVNASKPSERGLVRQEEAEDPACIPIFWVSKWVDY   417  (B)
+
+d1exra_:A   ---------------------------------------------------KMKEQDSEE    83  (A)
+d2ogqa1:A   SDKYGLGYQLCDNSVGVLFNDSTRLILYNDGDSLQYIERDGTESYLTVSSHPNSLMKKIT   477  (B)
+
+d1exra_:A   ELIEAFKVFDRDGNGLISAA-ELRHVMTNLGEKLTDDEVDEMIREADIDGDGHINYEEFV   142  (A)
+d2ogqa1:A   LLKYFRNYMSEH--------LLK---------------AG--------------------   494  (B)
+
+d1exra_:A   RMMVS   147  (A)
+d2ogqa1:A   -----   494  (B)
+

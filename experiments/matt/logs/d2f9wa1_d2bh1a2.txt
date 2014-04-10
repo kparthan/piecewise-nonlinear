@@ -1,0 +1,19 @@
+(d2bh1a2:A, d2f9wa1:A)
+Core Residues: 71
+Core RMSD: 3.022
+Raw Score: 57.503
+P-value: 0.0952
+Reference structure: d2bh1a2:A
+
+d2f9wa1:A   KACLVIDLG----TAVTSDLVAAD-GVHLGGYI-CPGXTLXRSQLRTHTRRIRYDDAEAR   168  (A)
+d2bh1a2:A   SEFLTVRLSSQKEADIPWLVWSAEQQEVIASGQVA-------------------------    36  (B)
+
+d2f9wa1:A   RALASLQPGQATAEAVERGCLLXLRGFVREQYAXACELLG-PDCEIFLTGGDA-------   220  (A)
+d2bh1a2:A   -----------------------GWEALHEIE-SY-----ADQRSVVVLLA--ASDLILT    65  (B)
+
+d2f9wa1:A   -----------------------------------------------------ELVRDEL   227  (A)
+d2bh1a2:A   SVEIPPGASRQLENMLPYLLEDEIAQDVEDVHFCVLSKGRETADVVGVDRLWLRACLDHL   125  (B)
+
+d2f9wa1:A   A--GARIX--PDLV-FVGLALACPIE-   248  (A)
+d2bh1a2:A   KACGFDVKRVLP-DVLA-I--PR---P   145  (B)
+

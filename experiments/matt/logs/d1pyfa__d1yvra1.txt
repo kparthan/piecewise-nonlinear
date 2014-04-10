@@ -1,0 +1,40 @@
+(d1yvra1:A, d1pyfa_:A)
+Core Residues: 34
+Core RMSD: 1.987
+Raw Score: 49.839
+P-value: 0.2853
+Reference structure: d1yvra1:A
+
+d1pyfa_:A   KKAKLGKSDLQVFPIGLGTNAVGGHNLYPNLNEETGKELVREAIRNGVTXLDTAYIYGIG    61  (A)
+d1yvra1:A   ------------------------------------------------------------     5  (B)
+
+d1pyfa_:A   RSEELIGEVLREFNREDVVIATKAAHRKQGNDFVFDN-----------------------    98  (A)
+d1yvra1:A   -------------------------------------MDQTQPLNEKQVPNSEGCYVWQV    27  (B)
+
+d1pyfa_:A   ------------------------------------------------------------    98  (A)
+d1yvra1:A   SDMNRLRRFLCFGSEGGTYYIEEKKLGQENAEALLRLIEDGKGCEVVQEIKTFSQEGRAA    87  (B)
+
+d1pyfa_:A   ------------------------------------------------------------    98  (A)
+d1yvra1:A   KQEPTLFALAVCSQCSDIKTKQAAFRAVPEVCRIPTHLFTFIQFKKDLWGRALRKAVSDW   155  (B)
+
+d1pyfa_:A   -------------------------------------SPDFLKKSVDESLKRLNTDYIDL   121  (A)
+d1yvra1:A   YNTKDALNLAMAVTKYKQRNGWSHKDLLRLSHIKPANEGLTMVAKYVSKG------WK--   207  (B)
+
+d1pyfa_:A   --FYIHFPDEHTP-----KDEAVNALNEXKKAGKIRSIGVSNFSLEQLKEANKDGLVDVL   174  (A)
+d1yvra1:A   EVQEAY-------KEKELSPETEKVLKYLEATE---------------------------   233  (B)
+
+d1pyfa_:A   QGEYNLLNREAEKTFFPYTKEHNISFIPYFPLVSGLLAGKYTEDTTFPEGDLRNEQEHFK   234  (A)
+d1yvra1:A   ------------------------------------------------------------   233  (B)
+
+d1pyfa_:A   GERFKENIRKVNKLAPIAEKHNVDIPHIVLAWYLARPEIDILIPGAKRADQLIDNIKTAD   294  (A)
+d1yvra1:A   ------------------------------------------------------------   233  (B)
+
+d1pyfa_:A   VTLSQEDISFIDKLFAPG------------------------------------------   312  (A)
+d1yvra1:A   ------------------RVKRTKDELEIIHLIDEYRLVREHLLTIHLKSKEIWKSLLQD   275  (B)
+
+d1pyfa_:A   ------------------------------------------------------------   312  (A)
+d1yvra1:A   MPLTALLRNLGKMTADSVLAPASSEVSSVCERLTNEKLLKKARIHPFHILVALETYKKGH   335  (B)
+
+d1pyfa_:A   -----------------------   312  (A)
+d1yvra1:A   LRWIPDTSIVEALDNAFYKSFKL   363  (B)
+

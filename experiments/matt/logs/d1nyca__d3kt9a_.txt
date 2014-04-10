@@ -1,0 +1,16 @@
+(d3kt9a_:A, d1nyca_:A)
+Core Residues: 52
+Core RMSD: 3.964
+Raw Score: 42.240
+P-value: 0.6751
+Reference structure: d3kt9a_:A
+
+d1nyca_:A   GSMYQLQFINLVYDTTKLTHLEQ---TNINLFIGNWSNHQLQKSICIR-HGDDTSH--NQ    52  (A)
+d3kt9a_:A   -----------------------MMRVCW-------------------LV------RQDS    12  (B)
+
+d1nyca_:A   YHILFIDTAHQRIKFS----SFDNE---EI--IYILDYD--DTQHILMQTSSKQGIGT--    99  (A)
+d3kt9a_:A   RHQRIRLPHLEAVVIGRGPETK-ITDKKCSRQQVQLKAECNKG-YVKVKQV-------GV    63  (B)
+
+d1nyca_:A   ------------SRPIVYERLV-------------------   109  (A)
+d3kt9a_:A   NPTSIDSVVIGKDQEVKLQP--GQVLHMVNELYPYIVEFEE   102  (B)
+

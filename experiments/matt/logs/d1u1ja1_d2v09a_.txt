@@ -1,0 +1,43 @@
+(d2v09a_:A, d1u1ja1:A)
+Core Residues: 83
+Core RMSD: 12.560
+Raw Score: 38.306
+P-value: 0.9994
+Reference structure: d2v09a_:A
+
+d1u1ja1:A   ASHIVGYPRXGPKRELKFALESFWDGKSTAEDLQKVS------------------ADLRS    43  (A)
+d2v09a_:A   -------------------------------------DIPQPIRGDKGATVKIPRNIERD    28  (B)
+
+d1u1ja1:A   SIWKQX---SAAGT---KFIPSNTFAHYDQVLDTTAXLG-------AVPPRYGYTGGEIG    90  (A)
+d2v09a_:A   RQNPD-MLVPPETDHGTVSNMKF----------------SFSDTHNRLEKG--GYARE--    67  (B)
+
+d1u1ja1:A   LDV-----------------YF-SX--------------ARGNA-SVPAXEX--------   109  (A)
+d2v09a_:A   ---VTVRELPISENLASVNMRLKP-GAIRELHWHKEAEWAYMIYGSARVTIVDEKGRSFI   123  (B)
+
+d1u1ja1:A   ---------TKWFDTNYHYI---VPE--------------------------LGPEVNFS   131  (A)
+d2v09a_:A   DDVGEGDLWYFPS-------GLPHS-IQALEEGAEFLLVFDDGSFDSSNTFQLT------   169  (B)
+
+d1u1ja1:A   YASHKAVNEYKEAKALGVDTVPV----LVGPVSYLLLSKAAKGVDKSFELLSL---LPKI   184  (A)
+d2v09a_:A   -----------------------DWLAHTPKEVIAANF---------------GVTKEEI   191  (B)
+
+d1u1ja1:A   LPIYKEVITELKAAGATWIQLDEPVLVXDLEGQKLQAFTGAYAELESTLSGLNVLVETYF   244  (A)
+d2v09a_:A   SN----------------------------------------------------------   193  (B)
+
+d1u1ja1:A   ADIPAEAYKTLTSLKGVTAFGFDLVRGTKTLDLVKAGFPEGKYLFAGVVDGR--------   296  (A)
+d2v09a_:A   ----------------------------------------------------LPGKEKYI   201  (B)
+
+d1u1ja1:A   ------------------------------------------------------------   296  (A)
+d2v09a_:A   FENQLPGSLKDDIVEGPNGEVPYPFTYRLLEQEPIESEGGKVYIADSTNFKVSKTIASAL   261  (B)
+
+d1u1ja1:A   ---------------NIWANDFAASLSTLQALEGIVGKDKLVVSTSCSLLHTAV------   335  (A)
+d2v09a_:A   VTVEPGAMRELHWHPNT----------------------------------HEWQYYISG   287  (B)
+
+d1u1ja1:A   -------------------------D----LINET-----------------------KL   343  (A)
+d2v09a_:A   KARMTVFASDGHARTFNYQAGDVGYVPFAMGHY--VENIGDEPLVFLEIFKDDHYADVSL   345  (B)
+
+d1u1ja1:A   --DDEIKSWXAFAAQKVVEVNALAKALAGQKDEALFSANAAALASRRSSPRVTN------   395  (A)
+d2v09a_:A   NQW---------------------------------------------------LAMLPE   354  (B)
+
+d1u1ja1:A   ----------------------------   395  (A)
+d2v09a_:A   TFVQAHLDLGKDFTDVLSKEKHPVVKKK   382  (B)
+

@@ -1,0 +1,16 @@
+(d2gtvx1:X, d2qam01:0)
+Core Residues: 17
+Core RMSD: 2.276
+Raw Score: 20.122
+P-value: 0.5471
+Reference structure: d2gtvx1:X
+
+d2qam01:0   AVQQNKP---TRSKRGMRRSHDA--LT---------------------------------    22  (A)
+d2gtvx1:X   -------MIEKLAEIRKKIDEIDNKILKARWPWAEKLIAERNSLAKDVAEIKNQLGIPIN    53  (B)
+
+d2qam01:0   ------------------------AVTSLSVDKTSGEKHLRHHITADGYYRGRKVIAK--    56  (A)
+d2gtvx1:X   DPEREKYIYDRIRKLCKEHNVDENIG--------------------------------IK    81  (B)
+
+d2qam01:0   ------------    56  (A)
+d2gtvx1:X   IFQRLIEHNKAL    93  (B)
+

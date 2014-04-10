@@ -1,0 +1,16 @@
+(d1l7ba_:A, d2y5fl_:L)
+Core Residues: 16
+Core RMSD: 2.101
+Raw Score: 8.914
+P-value: 0.6751
+Reference structure: d1l7ba_:A
+
+d2y5fl_:L   KLCSLDNGDCDQFC--------------------------H---EEQNSVVCSCARGYTL   117  (A)
+d1l7ba_:A   --------------MEKGGEALKGLTFVITGELSRPREEVKALLRRLGAKVTDS-----V    41  (B)
+
+d2y5fl_:L   ADNGKACIPTGPYPCGKQTLERR-------------------------------------   140  (A)
+d1l7ba_:A   SRKT-------------------SYLVVGENPGSKLEKARALGVPTLTEEELYRLLEART    82  (B)
+
+d2y5fl_:L   ----------   140  (A)
+d1l7ba_:A   GKKAEELVGS    92  (B)
+

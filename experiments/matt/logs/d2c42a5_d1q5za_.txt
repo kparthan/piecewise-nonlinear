@@ -1,0 +1,19 @@
+(d1q5za_:A, d2c42a5:A)
+Core Residues: 23
+Core RMSD: 2.096
+Raw Score: 33.056
+P-value: 0.5756
+Reference structure: d1q5za_:A
+
+d2c42a5:A   TSQFE-----------------KR--GVAINVPQWVPENCIQCNQCAFVCPHSAILPVLA   709  (A)
+d1q5za_:A   -----PFSGLKFKQNSFLSTVPSVTNMHSMH-----------------------------   538  (B)
+
+d2c42a5:A   KEEELVGAPANFTALEAKGKELKGYKFRIQINTLDCMGCGNCADICPPKEKALVMQPLDT   769  (A)
+d1q5za_:A   ---------------------------------------------------------F--   539  (B)
+
+d2c42a5:A   QRDAQVPNLEYAARIP--------------------------------------------   785  (A)
+d1q5za_:A   DARETFLGVIRKALE-PDTSTPFPVRRAFDGLRAEILPNDTIKSAALKAQCSDIDKHPEL   598  (B)
+
+d2c42a5:A   -----------------------------------------------------------   785  (A)
+d1q5za_:A   KAKMETLKEVITHHPQKEKLAEIALQFAREAGLTRLKGETDYVLSNVLDGLIGDGSWRA   657  (B)
+

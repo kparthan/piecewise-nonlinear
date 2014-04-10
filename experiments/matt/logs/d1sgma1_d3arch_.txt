@@ -1,0 +1,13 @@
+(d3arch_:H, d1sgma1:A)
+Core Residues: 28
+Core RMSD: 1.300
+Raw Score: 56.174
+P-value: 0.2221
+Reference structure: d3arch_:H
+
+d1sgma1:A   GDSREKILHTASRLSQLQGYHATGLNQIVKESGAPKGSLYHFFP----------------    48  (A)
+d3arch_:H   --------------------------------------------ARRTWLGDILRPLNSE    17  (B)
+
+d1sgma1:A   -------NGKEELAIEAVTYTGKIVEHLIQQSMDE--------S------    77  (A)
+d3arch_:H   YGKVAPGWG-TTPLMAVFMGLFLVFLLIILEIYNSTLILDGVNVSWKALG    66  (B)
+

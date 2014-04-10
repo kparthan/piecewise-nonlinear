@@ -1,0 +1,19 @@
+(d1gg3a1:A, d1ugka_:A)
+Core Residues: 31
+Core RMSD: 3.432
+Raw Score: 10.687
+P-value: 0.8578
+Reference structure: d1gg3a1:A
+
+d1ugka_:A   GSSGSSGLGTL------------------------------F-FS--LE-YNFER---KA    23  (A)
+d1gg3a1:A   -----------PDPAQLTEDITRYYLCLQLRQDIVAGRLPCSFATLALLGSYTIQSELGD   130  (B)
+
+d1ugka_:A   FVVNIKEARGLPAMDEQSMTSDPYIKMTILPEKKHKVKTRVLRKTLDPAFDE--------    75  (A)
+d1gg3a1:A   ----------------------------------------------------YDPELHGV   138  (B)
+
+d1ugka_:A   ------------------T---FT--FYGIPYTQIQELALHFTILSFDRFSRDDIIGEVL   112  (A)
+d1gg3a1:A   DYVSDFKLAPNQTKELEEKVMELHKSYRSMTPAQADLE----------------------   176  (B)
+
+d1ugka_:A   I--PLSGIELSEGKML--MNREIISGPSSG---   138  (A)
+d1gg3a1:A   -FLEN--A--------KKL-----------SMY   187  (B)
+

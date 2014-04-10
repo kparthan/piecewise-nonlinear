@@ -1,0 +1,13 @@
+(d1iufa2:A, d2fx0a1:A)
+Core Residues: 45
+Core RMSD: 3.079
+Raw Score: 39.523
+P-value: 0.3032
+Reference structure: d1iufa2:A
+
+d2fx0a1:A   SREQT---XENILKAAKKKFGERG--YEG---------TSIQEIA---K-EAKVNVAXAS    45  (A)
+d1iufa2:A   -----PPKYPLLEAALFEWQVQQGDDA--TLSGETIKRAAAIL-WHKIPEYQDQP---VP   124  (B)
+
+d2fx0a1:A   YYFNGKENLYYEVFKKYGLANELPNFLEKNQ---    76  (A)
+d1iufa2:A   NFS---NGWLEGFRKRH--------------ILH   141  (B)
+

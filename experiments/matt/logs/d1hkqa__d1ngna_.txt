@@ -1,0 +1,19 @@
+(d1ngna_:A, d1hkqa_:A)
+Core Residues: 59
+Core RMSD: 5.182
+Raw Score: 58.693
+P-value: 0.6193
+Reference structure: d1ngna_:A
+
+d1hkqa_:A   QS------------------NKLIESSHTLT----------LNEKRLVLCAASLIDSRKP    39  (A)
+d1ngna_:A   --KWTPPRSPFNLVQEILFHDPWKLLIATIFLNRTSGKMAIPVLWEFLEKYP--------   460  (B)
+
+d1hkqa_:A   LPKDG--YL--TIRADTFAEVFG--I-DVKHAYAALDDAATKLF--------NRD-----    79  (A)
+d1ngna_:A   -----SAEVARAADWRDVSELLKPLGLYDLRAKTIIKFSDEYLTKQWRYPIEL--HGIGK   513  (B)
+
+d1hkqa_:A   ---------IRRYV----------------------------KGKVVERMRWVFHVKYRE   102  (A)
+d1ngna_:A   YGNDSYRIFCV-N-EWKQVHPEDHKLNKYHDWLWENHEKLSLS-----------------   554  (B)
+
+d1hkqa_:A   GQGCVELGFSPTIIPHLTMLHKEFTSYQLK   132  (A)
+d1ngna_:A   ------------------------------   554  (B)
+

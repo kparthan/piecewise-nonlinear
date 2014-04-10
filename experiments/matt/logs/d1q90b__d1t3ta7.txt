@@ -1,0 +1,28 @@
+(d1t3ta7:A, d1q90b_:B)
+Core Residues: 55
+Core RMSD: 5.174
+Raw Score: 60.332
+P-value: 0.4604
+Reference structure: d1t3ta7:A
+
+d1q90b_:B   VYDWFEERLEIQAIADDITSKYVP-------------------PHVNIF-YCIGGITFTC    43  (A)
+d1t3ta7:A   ------------------------PQLSTEDNALLLIDLGKGHNALGATALAQVYR----   848  (B)
+
+d1q90b_:B   FLVQVATGFAMTFYYRPTVAEAFASVQYIMTDVNFGWLIRSIHRWSASMMVLMMVLHV--   101  (A)
+d1t3ta7:A   ----------------------------------------------------------QL   850  (B)
+
+d1q90b_:B   -----------------------------------FRVYLTGGFKR----------P---   113  (A)
+d1t3ta7:A   GDKPADVRDVAQLKGFYDAMQALVAARKLLAWHDRSDG--GLLVTLAEMAFAGHCGVQVD   908  (B)
+
+d1q90b_:B   ------------------------------------------------------------   113  (A)
+d1t3ta7:A   IAALGDDHLAALFNEELGGVIQVRAEDRDAVEALLAQYGLADCVHYLGQALAGDRFVITA   968  (B)
+
+d1q90b_:B   --------RELTWVTGVIMAVCTVSFGVTGYSLPWDQVGYWAVKIVTGVPDAIPGVGGFI   165  (A)
+d1t3ta7:A   NDQTVFSESRTTLRVWWAETTWQMQRLRD-------------------------------   997  (B)
+
+d1q90b_:B   VELLRGGVGVGQATLTRFYSLHTFVLPLLTAVFMLMHFLMIRKQGISGPL----------   215  (A)
+d1t3ta7:A   --------------------NP-QCADQEHEAK-----------------ANDTDPGLNV  1019  (B)
+
+d1q90b_:B   --------------   215  (A)
+d1t3ta7:A   KLSFDINEDIAAPY  1033  (B)
+

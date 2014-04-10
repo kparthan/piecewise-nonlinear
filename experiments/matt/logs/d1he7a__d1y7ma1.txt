@@ -1,0 +1,19 @@
+(d1y7ma1:A, d1he7a_:A)
+Core Residues: 31
+Core RMSD: 2.646
+Raw Score: 28.868
+P-value: 0.4249
+Reference structure: d1y7ma1:A
+
+d1he7a_:A   SHMPASVQLHTAVEMHHWCIPFSVDGQPA-----PSLRWLFNGSVLNETSFIFTEFLEPA   336  (A)
+d1y7ma1:A   -----------------------------PDPYTIPYHIAVS------------------    61  (B)
+
+d1he7a_:A   ANETVRHGCLRLNQPTHVN-NGNYTLLAANPFG-QASASIMAAF----------------   378  (A)
+d1y7ma1:A   ------------------IGAKTLTLSLN----NRVXKTYPIAVGKILTQTPTGEFYIIN    99  (B)
+
+d1he7a_:A   -----------------------------------MDNPFEFNPE---------------   388  (A)
+d1y7ma1:A   RQRNPGGPFGAYWLSLSAAHYGIHGTNNPASIGKAVS-K------GCIRXHNKDVIELAS   152  (B)
+
+d1he7a_:A   ------------   388  (A)
+d1y7ma1:A   IVPNGTRVTINR   164  (B)
+

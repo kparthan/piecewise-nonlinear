@@ -1,0 +1,19 @@
+(d1j0pa_:A, d2nuha_:A)
+Core Residues: 29
+Core RMSD: 3.629
+Raw Score: 23.526
+P-value: 0.8348
+Reference structure: d1j0pa_:A
+
+d2nuha_:A   SDVYLI----------------FST-----------------------------------    11  (A)
+d1j0pa_:A   ------AAPKAPADGLKMDKTKQ--PVVFNHSTHKAVKCGDCHHPVNGKEDLQKCATAGC    51  (B)
+
+d2nuha_:A   ------------CPDLPSAE------IISRVLVQER---------LAACVTQLPGAVSTY    44  (A)
+d1j0pa_:A   HDNMDKKDKSAKGYYHAMHDKGTKFKSCVGCHLETAGADAAKKKELTG------------    99  (B)
+
+d2nuha_:A   RWQGKIETTQEIQLLIKTNAVHVNAAITRLCALHPYRLPEAIAVQVSVGLPEYLTWINTE   104  (A)
+d1j0pa_:A   -----------------CKGSKC-------------------H-----------------   106  (B)
+
+d2nuha_:A   ID-   106  (A)
+d1j0pa_:A   --S   107  (B)
+

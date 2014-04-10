@@ -1,0 +1,13 @@
+(d2bskb1:B, d1b4fa_:A)
+Core Residues: 35
+Core RMSD: 1.776
+Raw Score: 49.791
+P-value: 0.2405
+Reference structure: d2bskb1:B
+
+d1b4fa_:A   PDYTSF---NTVDEWLEAIKMGQYKESFANAGFTSFDVVSQMMMEDILRVGVT-------    55  (A)
+d2bskb1:B   ------LEVEXXADXYNRXT---------------------------------SACHRKC    33  (B)
+
+d1b4fa_:A   --------------LAGHQKKILNSIQVMRAQMNQIQS------    79  (A)
+d2bskb1:B   VPPHYKEAELSKGESVCLDRCVSKYLDIHERXGKKLTELSXQDE    77  (B)
+

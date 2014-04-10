@@ -1,0 +1,22 @@
+(d3mlaa_:A, d3clsd1:D)
+Core Residues: 98
+Core RMSD: 2.940
+Raw Score: 94.811
+P-value: 0.0136
+Reference structure: d3mlaa_:A
+
+d3clsd1:D   SKILVIAEHRR-NDL---R-PVSLELIGAANGLKKSGEDKVVVAVIG-S-----------    43  (A)
+d3mlaa_:A   MRKIGIIGGT-FDPPHYGHLLIANEVYHAL-NL------EE-VWFLPNQIPPHKQGRNIT    51  (B)
+
+d3clsd1:D   -Q--ADA-FVPALSVNGVD-ELVVVK--G-SSIDFDPDVFEASVSALIAAH-NPSVVLLP    94  (A)
+d3mlaa_:A   SVESRLQMLELATEAEEH-FSICLEELSRKGP-----SYTYDTMLQLTKKYPDV-QFHFI   104  (B)
+
+d3clsd1:D   HS--VDS--L--GYA-S-SLASKTGYGFATDVYIVEYQGDELVATRGGYNQKVNVEVDFP   146  (A)
+d3mlaa_:A   IGGDMV-EYLPKWY-NIEALL----D----------------------------------   124  (B)
+
+d3clsd1:D   GKSTV-VLTIRP----------------SVFKPLEGAGSPVVSNVDAPSVQSRSQNKDYV   189  (A)
+d3mlaa_:A   -----LVTFVGVARPGYKLRTPYPITTVEI------------------------------   149  (B)
+
+d3clsd1:D   EVG---------------------------------------   192  (A)
+d3mlaa_:A   ---PEFAVSSSLLRERYKEKKTCKYLLPEKVQVYIERNGLYE   188  (B)
+

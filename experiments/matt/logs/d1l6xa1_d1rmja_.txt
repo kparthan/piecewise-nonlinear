@@ -1,0 +1,16 @@
+(d1rmja_:A, d1l6xa1:A)
+Core Residues: 34
+Core RMSD: 2.104
+Raw Score: 27.684
+P-value: 0.3411
+Reference structure: d1rmja_:A
+
+d1l6xa1:A   GP-------------------------------------------------SVFLFPPKP   247  (A)
+d1rmja_:A   --SYYHHHHHHDYDIPTTENLYFQGAMGSGPCRRHLDSVLQQLQTEVYRGAQTLYVPNCD    31  (B)
+
+d1l6xa1:A   KD---TLMISRTPEVTCVVVDVSHEDPEVKFNWYVDGVEVHNAKTKPREEQYNSTYRVVS   304  (A)
+d1rmja_:A   HRGFYR------KRQCRSSQ----------------------------------GQRRGP    51  (B)
+
+d1l6xa1:A   VLTVLHQDWLNGKEYKCKVSNKALPAPIEKTISKAKG---------------------   341  (A)
+d1rmja_:A   CWCVDR-MG----------------------------KSLPGSPDGNGSSSCPTGSSG    80  (B)
+

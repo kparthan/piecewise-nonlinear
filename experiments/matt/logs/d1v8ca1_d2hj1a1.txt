@@ -1,0 +1,13 @@
+(d2hj1a1:A, d1v8ca1:A)
+Core Residues: 46
+Core RMSD: 2.471
+Raw Score: 33.946
+P-value: 0.3115
+Reference structure: d2hj1a1:A
+
+d1v8ca1:A   ----PKVNLYATFRDLTGK-SQLEL-PG--ATVGEVLENLVRAY-PALKEELFEGEGLAE    51  (A)
+d2hj1a1:A   NQINIEIAYAFP-ER----YYLKSFQVDEGITVQTAITQSG--ILSQFPEIDL-----ST    58  (B)
+
+d1v8ca1:A   RVSVFLEG-------------RDVRYLQGLSTPLSPGATLDLFPPVAGG---------    87  (A)
+d2hj1a1:A   -NKIGIF-SRPIKLTDVLKEGD---------------------------RIEIYRPLL    87  (B)
+

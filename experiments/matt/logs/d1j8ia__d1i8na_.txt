@@ -1,0 +1,16 @@
+(d1i8na_:A, d1j8ia_:A)
+Core Residues: 25
+Core RMSD: 1.605
+Raw Score: 23.228
+P-value: 0.3642
+Reference structure: d1i8na_:A
+
+d1j8ia_:A   VGSEVSDKRTCVSLTTQRLPVSRIKTYTITEGSLRAVIFITKR-----------------    43  (A)
+d1i8na_:A   -------------------------ETITAGN--EDCWSKRPGWKLPDNLLTKTEFTSVD    69  (B)
+
+d1j8ia_:A   -----------------------------------------------GLKVCADPQATWV    56  (A)
+d1i8na_:A   ECRKMCEESAVEPSCYILQINTETNECYRNNEGDVTWSSLQYDQPNVVQWHLHACS----   125  (B)
+
+d1j8ia_:A   RDVVRSMDRKSNTRNNMIQTKPTGTQQSTNTAVTLTG    93  (A)
+d1i8na_:A   -------------------------------------   125  (B)
+

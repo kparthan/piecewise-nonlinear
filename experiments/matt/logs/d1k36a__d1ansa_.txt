@@ -1,0 +1,13 @@
+(d1ansa_:A, d1k36a_:A)
+Core Residues: 10
+Core RMSD: 2.374
+Raw Score: 4.938
+P-value: 0.6709
+Reference structure: d1ansa_:A
+
+d1k36a_:A   VSITKCSSDMNGYCLHGQCI-YLVDMS---QNYCRCEVGYTGVRCEHFFL----------    46  (A)
+d1ansa_:A   ------------------RSCCPCYWGGCPWG------------------QNCYPEGCSG    24  (B)
+
+d1k36a_:A   ---    46  (A)
+d1ansa_:A   PKV    27  (B)
+

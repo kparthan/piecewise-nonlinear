@@ -1,0 +1,16 @@
+(d1bcoa1:A, d2c5lc1:C)
+Core Residues: 33
+Core RMSD: 3.733
+Raw Score: 24.570
+P-value: 0.7998
+Reference structure: d1bcoa1:A
+
+d2c5lc1:C   ------EE-SFFVQVHDVSPEQPRTVIKAPRVSTAQDV--IQQTLCKAKYSLSILSNPNP  2184  (A)
+d1bcoa1:A   TEEQKRM-LLLPAEA-----------------------VNV-------------------   497  (B)
+
+d2c5lc1:C   S-DY-VLLEEVV--KDKSSQRVLLD-QECVFQA----------QSKWKGAGKFILKLKEQ  2238  (A)
+d1bcoa1:A   -SRKGEFTLKVGGSL-KGAKNVYYNMA------LMNAGVKKVVVRFDP------------   537  (B)
+
+d2c5lc1:C   V-----------------------  2239  (A)
+d1bcoa1:A   -QQLHSTVYCYTLDGRFICEAECL   560  (B)
+

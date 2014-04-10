@@ -1,0 +1,16 @@
+(d1nija2:A, d2al3a1:A)
+Core Residues: 33
+Core RMSD: 3.148
+Raw Score: 36.232
+P-value: 0.5022
+Reference structure: d1nija2:A
+
+d2al3a1:A   -SAVSVLAPN--------------------------------------------------    18  (A)
+d1nija2:A   ISSIVVELDYPVDISEVSRVMENLLLESADKLLRYKGMLWIDGEPNRLLFQGVQRLYSAD   283  (B)
+
+d2al3a1:A   ----------GRRHTVKVTPSTVLLQVLEDTCRRQDFNPSEYDLKFQRTVLDLSLQWRFA    68  (A)
+d1nija2:A   WDRPWGDEKPHSTMV-FIGIQLPEEEIRAAFAGL--R-----------------------   317  (B)
+
+d2al3a1:A   NLPNNAKLEMVPVSRSR-    85  (A)
+d1nija2:A   -----------------K   318  (B)
+

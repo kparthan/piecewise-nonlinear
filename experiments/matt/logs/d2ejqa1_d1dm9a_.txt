@@ -1,0 +1,16 @@
+(d1dm9a_:A, d2ejqa1:A)
+Core Residues: 41
+Core RMSD: 5.393
+Raw Score: 60.208
+P-value: 0.7673
+Reference structure: d1dm9a_:A
+
+d2ejqa1:A   TYE-----AFVELVERLWEEVPEDFKRGLQGVHV-------------FPEAKPEPGLEGV    43  (A)
+d1dm9a_:A   ---PAVEVRLDKWLWAAR----------------FYKTRALAREMIEGG-----------    34  (B)
+
+d2ejqa1:A   WRLGEYLDPGPPSAFGGFEDLGRHIALYYGS-------------FLEVAGEGFD------    84  (A)
+d1dm9a_:A   -------------------------KVHYNGQRSKPSKIVELNAT---------LTLRQG    60  (B)
+
+d2ejqa1:A   ------WE--------------------AEVWETMLHELRHHLESLAGRD   108  (A)
+d1dm9a_:A   NDERTVIVKAITEQRRPASEAALLYEETAESVEKREKMALARKLNALT--   108  (B)
+

@@ -1,0 +1,19 @@
+(d1qvea_:A, d3bwuc1:C)
+Core Residues: 43
+Core RMSD: 2.284
+Raw Score: 30.898
+P-value: 0.3335
+Reference structure: d1qvea_:A
+
+d3bwuc1:C   -------GVA-LGATRVIYPAGQKQEQLAVTNNDENS-----------------------    29  (A)
+d1qvea_:A   ISEFARAQLSEAM---------------TL-------ASGLKTKVSDIFSQDGSCPANTA    62  (B)
+
+d3bwuc1:C   -------------TYLIQSWVENADGVKDGRFIVTPPLFAMKGKKENTLRILDATNNQLP    76  (A)
+d1qvea_:A   ATAGIEKDTDINGKYVAKVTTGGT------------------------------------    86  (B)
+
+d3bwuc1:C   QD--RESLFWMNVKAIPSMDENTLQ------LAIISRIKLYY-RPAKLA-----------   121  (A)
+d1qvea_:A   --AAASGGCTIVATMKAS-------DVATPLRGKTLTLTLG-NA-----DKGSYTWACTS   131  (B)
+
+d3bwuc1:C   -------------------   121  (A)
+d1qvea_:A   NADNKYLPKTCQTATTTTP   150  (B)
+

@@ -1,0 +1,16 @@
+(d1vk3a4:A, d1ug1a_:A)
+Core Residues: 38
+Core RMSD: 2.881
+Raw Score: 38.909
+P-value: 0.2996
+Reference structure: d1vk3a4:A
+
+d1ug1a_:A   GS----------------SGSSGASLLARYPPE---------KLFQAERNFNAAQD----    31  (A)
+d1vk3a4:A   --AKPKPSKVFAVGWNDFELEREKELWRAIR--KLSEEGAFILSSSQ---------LLTR   554  (B)
+
+d1ug1a_:A   ---------------LDVSLLEGDLVGVIKKKDPMGSQNRWLIDN---------GVTKGF    67  (A)
+d1vk3a4:A   THVETFREYGLKIEVKLPEVRPAHQXVLVF---------------SERTPVVDVPVKEI-   598  (B)
+
+d1ug1a_:A   VYSSFLKPYNPRRSHSDASSGPSSG-----    92  (A)
+d1vk3a4:A   -------------------------GTLSR   603  (B)
+

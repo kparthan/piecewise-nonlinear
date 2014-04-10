@@ -1,0 +1,13 @@
+(d2hf1a1:A, d1h8la1:A)
+Core Residues: 31
+Core RMSD: 4.203
+Raw Score: 23.297
+P-value: 0.8262
+Reference structure: d2hf1a1:A
+
+d1h8la1:A   -------GI-------WGFVLDATDGRGIL-NATISVADINHPVTTYKDGDYWRLLVQGT   349  (A)
+d2hf1a1:A   DAKFLEILVCPLCKGPLVFDK---------SKDELICKGDRLAFPIKD-GIPXXLE----    47  (B)
+
+d1h8la1:A   YKVTASARGYDPVTKTVEVDSKGGVQVNFTLSRT-------------   383  (A)
+d2hf1a1:A   ----------------------------------SEARELAPEEEVK    60  (B)
+

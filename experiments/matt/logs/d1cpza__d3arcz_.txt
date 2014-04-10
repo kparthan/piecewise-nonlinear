@@ -1,0 +1,13 @@
+(d3arcz_:Z, d1cpza_:A)
+Core Residues: 19
+Core RMSD: 2.187
+Raw Score: 19.525
+P-value: 0.5293
+Reference structure: d3arcz_:Z
+
+d1cpza_:A   AQEFSVKGM--------------------------S---------CNHCVARIEEAVGRI    25  (A)
+d3arcz_:Z   ---------MTILFQLALAALVILSFVMVIGVPVAYASPQDWDRSKQLIFLGSGLWIALV    51  (B)
+
+d1cpza_:A   SGVKKVKVQLKKEKAVVKFDEA-NVQATEICQAINELGYQAEVI-------    68  (A)
+d3arcz_:Z   LV--------------------VG--------------------VLNFFVV    62  (B)
+

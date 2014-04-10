@@ -1,0 +1,13 @@
+(d1s6la1:A, d2cqka1:A)
+Core Residues: 46
+Core RMSD: 2.707
+Raw Score: 29.410
+P-value: 0.3018
+Reference structure: d1s6la1:A
+
+d2cqka1:A   AVSTEDLKE--CLKKQLEFCFSRENLSKDLYL-ISQMDSDQFIPIWTVANMEEIKKLTTD    99  (A)
+d1s6la1:A   ---------ADL-LVPLLREL---AK------GR-------PVSRTTLAGI--LD---WP    49  (B)
+
+d2cqka1:A   PDLILEVL-RSSPMV---QVDEKG---EKVRPSHKRCI----   130  (A)
+d1s6la1:A   AERVAAVLEQA----TSTEY----DKDGNIIGYGL---TLRE    80  (B)
+

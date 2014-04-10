@@ -1,0 +1,16 @@
+(d1vqza1:A, d3lo3a_:A)
+Core Residues: 51
+Core RMSD: 3.907
+Raw Score: 34.799
+P-value: 0.5152
+Reference structure: d1vqza1:A
+
+d3lo3a_:A   SNA-----TAYIIVGLTPKDAEK------------------------LQQYGARVASTLA    29  (A)
+d1vqza1:A   ---KSPEFNVRRGIKFTS-----GKVEVFANVTESKIQDIKIYGDFFGIEDVAAVEDVLR   293  (B)
+
+d3lo3a_:A   KYSGEVLVKGSVEQLHGKFEHKAQVILEF-PSREDAYNWYHSEEYQALISTRDLGXDSQ-    87  (A)
+d1vqza1:A   GV---------------------------KYEREDVLKALKT---ID-ITRYF--AGI-S   319  (B)
+
+d3lo3a_:A   --FQ----LIG    92  (A)
+d1vqza1:A   REEIAEAVVG-   329  (B)
+

@@ -1,0 +1,16 @@
+(d2czvc1:C, d2pd1a1:A)
+Core Residues: 39
+Core RMSD: 2.640
+Raw Score: 46.365
+P-value: 0.2588
+Reference structure: d2czvc1:C
+
+d2pd1a1:A   XTK-------------------------L-------------------------------     4  (A)
+d2czvc1:C   ---RKLKTLPPTLRDKNRYIAFEIISDGDFTKDEVKELIWKSSLEVLGETGTAIVKPWLI    59  (B)
+
+d2pd1a1:A   -----ALFVRLEAKPGQEAALADFLASALPLANAESGTTAWFALKFGPSTFGVFDAFADE    59  (A)
+d2czvc1:C   KFDPNTKTGIVRSDREYVEYLRFALMLVS--EF-N--GKRLIIRTLGV------------   102  (B)
+
+d2pd1a1:A   AGRQAHLNGQIAAALXANAATLLSSPPNIEKVELLAAKLPA------------------   100  (A)
+d2czvc1:C   -----------------------------------------SGTIKRLKRKFLAKYGWK   120  (B)
+

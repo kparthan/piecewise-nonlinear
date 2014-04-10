@@ -1,0 +1,16 @@
+(d1bhua_:A, d1oi1a2:A)
+Core Residues: 27
+Core RMSD: 2.643
+Raw Score: 16.255
+P-value: 0.7071
+Reference structure: d1bhua_:A
+
+d1oi1a2:A   SWPMFLLETLNGSEMASATLFKKEPPKPPLNNF------KVGMKLEAIDKKNPYL-----   188  (A)
+d1bhua_:A   ---------------------------------APSCPAGSLCTYSGT-------GLSGA    20  (B)
+
+d1oi1a2:A   ---------------------ICPATIGD-------------------------------   196  (A)
+d1bhua_:A   RTVIPASDMEKAGTDGVKLPASARSFANGTHFTLRYGPARKVTCVRFPCYQYATVGKVAP    80  (B)
+
+d1oi1a2:A   -----VKGDEVHITFDGWSGAFDYWCKYDSRDIFPAGWCRLTGDVLQPPGTS-------   243  (A)
+d1bhua_:A   GAQLRS-----LPSPG-A-------------------------------TVTVGQDLGD   102  (B)
+

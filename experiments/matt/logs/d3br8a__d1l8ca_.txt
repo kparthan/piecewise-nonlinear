@@ -1,0 +1,16 @@
+(d1l8ca_:A, d3br8a_:A)
+Core Residues: 27
+Core RMSD: 4.040
+Raw Score: 32.462
+P-value: 0.8073
+Reference structure: d1l8ca_:A
+
+d3br8a_:A   MLQYRIIVDGRVQGVGFRYFVQMEADKRKLAGWVKNRDDGRVEILAEG-------PENAL    53  (A)
+d1l8ca_:A   ------------------------------------------------ADPEKRKLIQQQ    12  (B)
+
+d3br8a_:A   QSFVEAVKNGSPFS---KVTDIS-----------------------VTESR--SLEGHHR    85  (A)
+d1l8ca_:A   LVLLLHAHKC----QRREQ----ANGEVRACSLPHCRTMKNVLNHMTHCQAGKACQVA--    62  (B)
+
+d3br8a_:A   FSIVY---------------------------------    90  (A)
+d1l8ca_:A   -----HCASSRQIISHWKNCTRHDCPVCLPLKNASDKR    95  (B)
+

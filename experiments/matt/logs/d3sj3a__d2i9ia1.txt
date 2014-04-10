@@ -1,0 +1,28 @@
+(d2i9ia1:A, d3sj3a_:A)
+Core Residues: 35
+Core RMSD: 2.134
+Raw Score: 59.105
+P-value: 0.2544
+Reference structure: d2i9ia1:A
+
+d3sj3a_:A   DVMDVMNRLILAMDLMNRDDALRVTGEVREYIDTVKIGYPLVLSEGMDIIAEFRKRFGCR    66  (A)
+d2i9ia1:A   ------------------------------------------------------------    51  (B)
+
+d3sj3a_:A   IIADFKV-------------AD----------------------------------IPET    79  (A)
+d2i9ia1:A   -------ERMKTSSEHVTPLDFNYPIHIVQAPQNHHVVGILTPRIQVSDNLKPYIDKFQD   103  (B)
+
+d3sj3a_:A   NEKICRATFKAGADAIIVHGF---------------------------------------   100  (A)
+d2i9ia1:A   ALINQIQTIFEK---------RGYQVLRFQDEKALNAQDKRKIFSVLDLKGWVGILEDLK   154  (B)
+
+d3sj3a_:A   ------------------------------------------------------------   100  (A)
+d2i9ia1:A   MNLKDPNNPNLDTLVDQSSGSVWFNFYEPESNRVVHDFAVEVGTFQAMTYTYKHNNSGGL   214  (B)
+
+d3sj3a_:A   ----------------------PGADSVRACLNVAEEMGREVFLLTEMSHPGAEMFIQGA   138  (A)
+d2i9ia1:A   NSSNSIIHEYLEKNKEDAIHKILNRMYAVVMKKAVTELT---------------------   253  (B)
+
+d3sj3a_:A   ADEIARMGVDLGVKNYVGPSTAPERLSRLREIIGQDSFLISPGVGAQGGDPGETLRFADA   198  (A)
+d2i9ia1:A   ------------------------------------------------------------   253  (B)
+
+d3sj3a_:A   IIVGRSIFLADNPAAAAAGIIESIKDLL------------------   226  (A)
+d2i9ia1:A   ----------------------------KENIDKYREAIDRMKGFK   271  (B)
+

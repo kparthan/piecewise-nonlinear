@@ -1,0 +1,16 @@
+(d1se0a_:A, d1l0oc_:C)
+Core Residues: 33
+Core RMSD: 5.012
+Raw Score: 19.223
+P-value: 0.9090
+Reference structure: d1se0a_:A
+
+d1l0oc_:C   DGTVKVSRS----LKEMGNKIRK-----------------AKDELSKTRGRAPTVTEIAD   140  (A)
+d1se0a_:A   ---------NDLNREETRLKTFTDWPLDWLDKRQLAQTGMYF--T--HAGDKV-------    78  (B)
+
+d1l0oc_:C   HLGISPEDV---------------------VLAQEAV------------RL---------   158  (A)
+d1se0a_:A   KCFFCGV--EIGSWEQEDQPVPEHQRWSPNCPLLR--RRTTNNVPINAEALDRILPPISY   134  (B)
+
+d1l0oc_:C   -   158  (A)
+d1se0a_:A   D   135  (B)
+

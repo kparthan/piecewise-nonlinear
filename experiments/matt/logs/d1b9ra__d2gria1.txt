@@ -1,0 +1,16 @@
+(d2gria1:A, d1b9ra_:A)
+Core Residues: 53
+Core RMSD: 3.098
+Raw Score: 42.477
+P-value: 0.3249
+Reference structure: d2gria1:A
+
+d1b9ra_:A   -------------------PRVVFI-DEQ---SG---E---YAVDAQDGQSLMEVATQNG    31  (A)
+d2gria1:A   APIKGVTFGEDTVWEVQGYKNVRITFELDERVD-KVLNEKCSVYTVESGTEVTEFACVVA    59  (B)
+
+d1b9ra_:A   V----------------------P--GIVAECGGSCVCATCR-IEIEDAWVEIVGEANPD    66  (A)
+d2gria1:A   EAVVKTLQPVSDLLTNMGIDLDEWSVAT--------------FYLFDD------------    93  (B)
+
+d1b9ra_:A   ENDLLQSTGEPMTAGTRLSCQVFIDPSM--DGLIVRVPLPA---   105  (A)
+d2gria1:A   -------------AGE--E---------NFSSRMY-CSFYPPDE   112  (B)
+

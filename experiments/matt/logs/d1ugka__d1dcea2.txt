@@ -1,0 +1,16 @@
+(d1dcea2:A, d1ugka_:A)
+Core Residues: 72
+Core RMSD: 4.427
+Raw Score: 52.420
+P-value: 0.0968
+Reference structure: d1dcea2:A
+
+d1ugka_:A   GSSGSSGLGT---LFFSLEYNFERKAFVVNIKEARGLPAMDEQSMTSDPYI---------    48  (A)
+d1dcea2:A   ----------HDVLC-CVHVSREEACLSVCF-S----------------R-PLTVGSRMG   272  (B)
+
+d1ugka_:A   KMTIL----PEKKHKVK--------TRVLRKTLDPAFDETFTFYGIPYTQI------QEL    90  (A)
+d1dcea2:A   TLLLMVDEAPLSVEW--RTPDGRNRPS-----------HVWLCDLPAA-SLNDQLPQHTF   318  (B)
+
+d1ugka_:A   ALHFTILSFDRFSRDDIIGEVLIPLSGIELSEGKMLMNREIISGPSSG-------   138  (A)
+d1dcea2:A   RVIWTG------------SDSQKEC--VLLKDRP-ECWCR--------DSATDEQ   350  (B)
+

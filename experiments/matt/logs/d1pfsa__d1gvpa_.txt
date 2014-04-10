@@ -1,0 +1,13 @@
+(d1gvpa_:A, d1pfsa_:A)
+Core Residues: 68
+Core RMSD: 2.369
+Raw Score: 62.942
+P-value: 0.0450
+Reference structure: d1gvpa_:A
+
+d1pfsa_:A   MNIQITF---TDSVRQGTSAK-----GNPYTFQEGFLHLEDKPHPLQCQFFV---ESVIP    49  (A)
+d1gvpa_:A   -MIKVEIKPSQAQFTTRSG-VSRQGKPYSLNEQLCYVDLG-NEYPVLVKITLDEGQPAYA    57  (B)
+
+d1pfsa_:A   AGSYQVP--YRINVNNGRP----ELA-FDFKAMKRA-    78  (A)
+d1gvpa_:A   PGLYTVHLSSFKVG--Q--FGSLMIDRL---RLVPAK    87  (B)
+

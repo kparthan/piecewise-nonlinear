@@ -1,0 +1,19 @@
+(d1drua2:A, d1zh8a2:A)
+Core Residues: 64
+Core RMSD: 2.410
+Raw Score: 70.638
+P-value: 0.0668
+Reference structure: d1drua2:A
+
+d1zh8a2:A   HVPAFWKAKELVES--GAIGDP---VFXNWQIWVGXDENNKYVHTDWRKKPKHVGG-FLS   185  (A)
+d1drua2:A   --VGVNVMLKLLEKAAKVMGD-YTDIEIIEAH-H----------------------RHKV   164  (B)
+
+d1zh8a2:A   DGGVHH--AAAXRLILGEIEWISAVAKDLSPLLGGXDFLSSIFE---------FE-NG--   231  (A)
+d1drua2:A   --D---APSGTALAMGE---------------------------AIAHALDKDLKDCAVY   192  (B)
+
+d1zh8a2:A   -------------TVGNYTISYSLKGNER-----FEITGTK-----GKISISWDKIVLNE   268  (A)
+d1drua2:A   SREGHTGERVPGTIGFATVRAG-------DIVGEHTAMFA-DIGERLEITHKA-------   237  (B)
+
+d1zh8a2:A   EEXKVPQ---   275  (A)
+d1drua2:A   -------SSR   240  (B)
+

@@ -1,0 +1,19 @@
+(d1dkza2:A, d1kmta_:A)
+Core Residues: 53
+Core RMSD: 2.287
+Raw Score: 40.687
+P-value: 0.1668
+Reference structure: d1dkza2:A
+
+d1kmta_:A   AMVP----------------------------------------------NVVVTGLTLV    78  (A)
+d1dkza2:A   ----VLLLDVTPLSLGIETMGGVMTTLIAKNTTIPTKHSQVFSTAEDNQSAVSIH-VLQG   443  (B)
+
+d1kmta_:A   CSSAPG-----PLELDLTGDLESFKKQSFVLKEGVEYRIKISFRVNR------EIV----   123  (A)
+d1dkza2:A   ER----KRAADNKSLGQF-----------------------------NLDGINPA-PRGM   469  (B)
+
+d1kmta_:A   SGMKYIQHTYRKGVKIDKTDYMVGSYGPRAAAYEFLTPVEEAPKGMLARGSYSIKSRFT-   182  (A)
+d1dkza2:A   PQIEVTFDIDAD---------------------------------------GILHVSAKD   490  (B)
+
+d1kmta_:A   DDDKTDHLSWEWNLTIKKDW---   202  (A)
+d1dkza2:A   KNSGKE-QKITIKA------SSG   506  (B)
+

@@ -1,0 +1,25 @@
+(d1ae9a_:A, d2cw9a1:A)
+Core Residues: 48
+Core RMSD: 3.024
+Raw Score: 40.540
+P-value: 0.5052
+Reference structure: d1ae9a_:A
+
+d2cw9a1:A   NAFIRASRALTDK-----------------------------------------------   282  (A)
+d1ae9a_:A   -------------RSRLTADEYLKIYQAAESSPCWLRLAMELAVVTGQRVGDLCEMKWSD   223  (B)
+
+d2cw9a1:A   --------VTDLLGGLFSK-----------------------------------------   293  (A)
+d1ae9a_:A   IVDGYLYVEQS--------KTGVKIAIPTALHIDALGISMKETLDKCKEILGGETIIAST   275  (B)
+
+d2cw9a1:A   ----TEXSEVLTEILRVDP---------AFDKDRFLKQCENDIIPNVLEAXISGELDILK   340  (A)
+d1ae9a_:A   RREPLSSGTVSRYFMRARKASGLSFEGDPPTFHELRSLSARL-YEKQI------------   322  (B)
+
+d2cw9a1:A   DWCYEATYSQLAHPIQQAKALGLQFHSRILD-IDNVDLAXGKXVEQGPVLII-TFQAQLV   398  (A)
+d1ae9a_:A   ----------------------------SDKFAQ------------------HLLG----   332  (B)
+
+d2cw9a1:A   XVVRNPKGEVVEGDPDKVLRX-----------LYVWALCRDQDELNPYAAWRLLDISASS   447  (A)
+d1ae9a_:A   ---------------------HKFRDDRGREWD-------------------------KI   353  (B)
+
+d2cw9a1:A   TEQI--   451  (A)
+d1ae9a_:A   ----EI   355  (B)
+

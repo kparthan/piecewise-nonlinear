@@ -1,0 +1,19 @@
+(d2pd2a_:A, d2crya1:A)
+Core Residues: 25
+Core RMSD: 2.717
+Raw Score: 16.641
+P-value: 0.5632
+Reference structure: d2pd2a_:A
+
+d2crya1:A   TLTVNGPPIISSTQTQHALHG----------------------------EKGQIKCFIRS    39  (A)
+d2pd2a_:A   ---------------------MKVVVQIKDFDKVPQALRSVINLYNDIKDAEIEVVLHQS    39  (B)
+
+d2crya1:A   TPPPDR----------------------------------------------------I-    46  (A)
+d2pd2a_:A   ------AIKALLKDSDTRSIIEDLIKKNILIVGCENSIRSQNLSHDQLIPGIKIVTSGVG    93  (B)
+
+d2crya1:A   -AWSWKENVLESGTSG-RYTVETISTEEGVISTLTISNIVRADFQTIYNCTAWNSFGSDT   104  (A)
+d2pd2a_:A   EIVRK--QS-------EGWIYLAL------------------------------------   108  (B)
+
+d2crya1:A   EIIRLKEQGSEMSGPSSG   122  (A)
+d2pd2a_:A   ------------------   108  (B)
+

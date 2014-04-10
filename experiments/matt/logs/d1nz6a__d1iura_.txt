@@ -1,0 +1,16 @@
+(d1iura_:A, d1nz6a_:A)
+Core Residues: 60
+Core RMSD: 2.544
+Raw Score: 82.555
+P-value: 0.0433
+Reference structure: d1iura_:A
+
+d1nz6a_:A   DP---------EKLKILEWIEG-KERN--IRALLSTXHTVLWAGETKWKPVGXADL--VT    46  (A)
+d1iura_:A   --MHHHHHHLVPRGSILKE---VT---SVVEQ-----------------------AWKLP    29  (B)
+
+d1nz6a_:A   PEQVKKVYRKAVLVVHPDKATG-QPYEQYAKXIFXELNDAWSEFENQGQKPLY-------    98  (A)
+d1iura_:A   ESERKKIIRRLYLKWHPDKN--PEN-HDIANEVFKHLQNEINRLEKQAF----LDQNADR    82  (B)
+
+d1nz6a_:A   ------    98  (A)
+d1iura_:A   ASRRTF    88  (B)
+

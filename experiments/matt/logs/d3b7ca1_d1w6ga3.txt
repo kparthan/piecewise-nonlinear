@@ -1,0 +1,19 @@
+(d1w6ga3:A, d3b7ca1:A)
+Core Residues: 53
+Core RMSD: 2.352
+Raw Score: 46.221
+P-value: 0.1521
+Reference structure: d1w6ga3:A
+
+d3b7ca1:A   ------XPTDDIVQLLKGQEEAWNRGDLDAYXQGYWQNEQLXLISNGKFRNGWDETLAAY    54  (A)
+d1w6ga3:A   ELPVLEEEFEVVEQLL-AT--------------D--------------------------   115  (B)
+
+d3b7ca1:A   KKNYPDKESLGE-------L----KF--TIKEIKXLS----------NYAAXVVG-----    86  (A)
+d1w6ga3:A   ------------ERWLKALAARNLDVSKVRVAPLSA-GVFEYAEERGRRILRGLAFVQDF   162  (B)
+
+d3b7ca1:A   ---------RWDLKRLKDTPTG-VFTLLVEKIDDRWVITXDHS-SD--------------   121  (A)
+d1w6ga3:A   PEDSAWAHPV------------DGLVAYVDV--VSKEVTRVIDTGVFPVPAEHGNYTDPE   208  (B)
+
+d3b7ca1:A   ---   121  (A)
+d1w6ga3:A   LTG   211  (B)
+

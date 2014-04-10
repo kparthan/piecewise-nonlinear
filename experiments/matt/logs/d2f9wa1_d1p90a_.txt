@@ -1,0 +1,19 @@
+(d1p90a_:A, d2f9wa1:A)
+Core Residues: 69
+Core RMSD: 3.049
+Raw Score: 55.711
+P-value: 0.0831
+Reference structure: d1p90a_:A
+
+d2f9wa1:A   ------K-ACLVID----------LGTAVTSDLVAA---DGVHLGGYICPGXTL--XRSQ   152  (A)
+d1p90a_:A   ERVPEGSIRVAIA-SNNGEQLDGHFGSCLRFLVYQVSAKDASLVDIRSTL----DVA---   150  (B)
+
+d2f9wa1:A   LRTHTRRIRYDDAEARRALASLQPGQATAEA--VERGCLLXLRGFVREQYAXACELLGPD   210  (A)
+d1p90a_:A   -------------------------------LAE--DKNAWRVEQIQ--DC---------   166  (B)
+
+d2f9wa1:A   CEIFLTG--GD--AEL-VRDELAGARIXPDL--VF---VGLALACPIE------------   248  (A)
+d1p90a_:A   --QVLYVVSIGGPAAAKVVRAG--IHPLKK-PKGCAAQEA--------IAELQTVMAGSP   213  (B)
+
+d2f9wa1:A   --------   248  (A)
+d1p90a_:A   PPWLAKLV   221  (B)
+

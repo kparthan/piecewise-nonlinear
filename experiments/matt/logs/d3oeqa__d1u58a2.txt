@@ -1,0 +1,19 @@
+(d1u58a2:A, d3oeqa_:A)
+Core Residues: 47
+Core RMSD: 5.496
+Raw Score: 40.258
+P-value: 0.5695
+Reference structure: d1u58a2:A
+
+d3oeqa_:A   VESSTDGQVVPQEVLNLPLE----------------------------------------    71  (A)
+d1u58a2:A   --------------------ESGLRYAYTLVVDGTANTRRCFGTGHVDGEAFVGYSNNKT    47  (B)
+
+d3oeqa_:A   ---------KAH--EEADDYLDHLLDSLEELSEAHPDCIPDVELSHGVMTLEI----PAF   116  (A)
+d1u58a2:A   HGIGRWVNASH-VEEENKEFVRQCKELQAELDKMQ--N---------------NSKVIGV    89  (B)
+
+d3oeqa_:A   GTYVINKQPPNKQIWLASPLSGPNRFDLLNGEWVSL-----RNGTKLTDILTEEVEKAIS   171  (A)
+d1u58a2:A   KTVQL-------------------DVGCTSKIEK--HYAYDGNETE--------------   114  (B)
+
+d3oeqa_:A   K-----------------   172  (A)
+d1u58a2:A   -CQKKLTEYRKLVLASAV   144  (B)
+

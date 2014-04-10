@@ -1,0 +1,16 @@
+(d2o37a_:A, d1nz6a_:A)
+Core Residues: 52
+Core RMSD: 2.421
+Raw Score: 89.090
+P-value: 0.0606
+Reference structure: d2o37a_:A
+
+d1nz6a_:A   DPEKLKILEWIEGKER-----NIRALLSTXHTVLWAGETKWKPVGXADLVTPEQVKKVYR    55  (A)
+d2o37a_:A   ----------------MVKETKLYDLLG---------------VSPSA--NEQELKKGYR    27  (B)
+
+d1nz6a_:A   KAVLVVHPDKATGQPY-EQYAKXIFXELNDAWSEFENQGQKPLY----------------    98  (A)
+d2o37a_:A   KAALKYHPDKP-----TG--DTEKFKEISEAFEILN---DP---QKREIYDQYGLEAARS    74  (B)
+
+d1nz6a_:A   -------    98  (A)
+d2o37a_:A   GGPSFGP    81  (B)
+

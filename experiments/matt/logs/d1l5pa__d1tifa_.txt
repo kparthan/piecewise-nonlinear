@@ -1,0 +1,16 @@
+(d1tifa_:A, d1l5pa_:A)
+Core Residues: 38
+Core RMSD: 2.248
+Raw Score: 28.617
+P-value: 0.3881
+Reference structure: d1tifa_:A
+
+d1l5pa_:A   G------------TITAVK-GGVKKQLKFEDDQTLFTVL-TEAGLMSADDTCQGNKACGK    46  (A)
+d1tifa_:A   -KDFIINEQIRAREVRLIDQNGDQLGIK-----SK-QEALE---IAA-------------    39  (B)
+
+d1l5pa_:A   C----ICKHVSGKVAAAEDDEKEFLEDQPANARLACAITLSGEN-DGAVFEL--------    93  (A)
+d1tifa_:A   -RRNLDLVLVAPN-------------------------------AKPPVCRIMDYGKFRF    67  (B)
+
+d1l5pa_:A   -----------    93  (A)
+d1tifa_:A   EQQKKEKEARK    78  (B)
+

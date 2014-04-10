@@ -1,0 +1,13 @@
+(d1utca1:A, d1x58a1:A)
+Core Residues: 12
+Core RMSD: 1.462
+Raw Score: 20.470
+P-value: 0.5670
+Reference structure: d1utca1:A
+
+d1x58a1:A   RKDFTKEEVNYLFHGVKTMGNHWNSILWSFPFQKGRR------------AVDLAHKYHRL    55  (A)
+d1utca1:A   -------------------------------------EENIIPYITNVLQNPDLALRMAV   353  (B)
+
+d1x58a1:A   I-    56  (A)
+d1utca1:A   RN   355  (B)
+

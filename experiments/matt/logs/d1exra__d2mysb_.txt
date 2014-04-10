@@ -1,0 +1,19 @@
+(d2mysb_:B, d1exra_:A)
+Core Residues: 75
+Core RMSD: 2.113
+Raw Score: 129.114
+P-value: 1.6731e-03
+Reference structure: d2mysb_:B
+
+d1exra_:A   EQLTEEQIAEFKEAFALFDKDGDGTITTKELGTVMRSLGQ-NPTEAELQDMINEVDADGN    60  (A)
+d2mysb_:B   --FDETEIEDFKEAFTVIDQNADGIIDKDDLRETFAAMGRLNVKNEELDAMIK-EASG--    73  (B)
+
+d1exra_:A   GTIDFPEFLSLMARKMKEQDSEEE------------------------------------    84  (A)
+d2mysb_:B   -PINFTVFLTMFGEKLK-------GADPEDVIMGAFKVLDPDGKGSIKKSFLEELLTTGG   125  (B)
+
+d1exra_:A   --------LIEAFK--VFDRDGNGLISAAELRHVMTNLGEKLTDDEVDEMIREADIDGDG   134  (A)
+d2mysb_:B   GFTPEEIKN--MWAAFP-------------------------------------------   141  (B)
+
+d1exra_:A   HINYEEFVRMMVS----------------   147  (A)
+d2mysb_:B   -------------VDYKNICYVITHGEDA   163  (B)
+

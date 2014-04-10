@@ -1,0 +1,22 @@
+(d2ftsa3:A, d1zc6a2:A)
+Core Residues: 26
+Core RMSD: 1.986
+Raw Score: 40.789
+P-value: 0.4490
+Reference structure: d2ftsa3:A
+
+d1zc6a2:A   QPGIIVALGTGSIGEALYPDGSHREAGGWGYPSGDEASGAWLGQRAAQLTQXALDGRHSH   181  (A)
+d2ftsa3:A   ------------------------------------------------------------   499  (B)
+
+d1zc6a2:A   SPLTRAVLDFVGGDWQAXXAWNGRATPAQFARLAPLV-----------------------   218  (A)
+d2ftsa3:A   -------------------------------------PVVAVMSTGNELLNPEDDLLPGK   521  (B)
+
+d1zc6a2:A   ------------------------------------------------------------   218  (A)
+d2ftsa3:A   IRDSNRSTLLATIQEHGYPTINLGIVGDNPDDLLNALNEGISRADVIITSGGVSMGEKDY   581  (B)
+
+d1zc6a2:A   -------------------LSAARVD---------------------PEADALLRQA-GE   237  (A)
+d2ftsa3:A   LKQVLDIDLHAQIHFGRVFMKPGL--PTTFATLDIDGVRKIIFALPGNPVSAVVTCNLFV   639  (B)
+
+d1zc6a2:A   DAWAIARALDPQDELPVALCGGLGQALRDWLPPGFRQRLVAPQGDSAQGALLLLQ-----   292  (A)
+d2ftsa3:A   VPALRKMQG----------------------------------------------ILDPR   653  (B)
+

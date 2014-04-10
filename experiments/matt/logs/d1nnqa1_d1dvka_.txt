@@ -1,0 +1,19 @@
+(d1dvka_:A, d1nnqa1:A)
+Core Residues: 50
+Core RMSD: 2.036
+Raw Score: 85.166
+P-value: 0.0685
+Reference structure: d1dvka_:A
+
+d1nnqa1:A   VVK------------------------RTMTKKFLEEAFAGESMAHMRYLIFAEKAEQEG    37  (A)
+d1dvka_:A   ---MRIQEAIAQDKTISVIIDPSQIGSTEGKPLLSMKCNLYIHEILSRWKASL-EA----   130  (B)
+
+d1nnqa1:A   FPN-IAKLFRAIAYAEFVHAKNHFIALGKLGKTPENLQMGIEGETFEVEEMYPVYNKAAE    96  (A)
+d1dvka_:A   ---YHPELFLDTKKALFPLLLQLRRN----------------------------------   153  (B)
+
+d1nnqa1:A   FQGEKEAVRTTHYALEAEKIHAELYRKAKEKAEKGEDI----------------------   134  (A)
+d1dvka_:A   --------------------------------------QLAPDLLISLATVLYHLQQPKE   175  (B)
+
+d1nnqa1:A   ----------------------------------------------------   134  (A)
+d1dvka_:A   INLAVQSYMKLSIGNVAWPIGVANIMIDERTRLWITSIKRLITFEEWYTSNH   247  (B)
+

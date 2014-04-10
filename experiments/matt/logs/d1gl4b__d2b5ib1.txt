@@ -1,0 +1,16 @@
+(d2b5ib1:B, d1gl4b_:B)
+Core Residues: 54
+Core RMSD: 2.881
+Raw Score: 45.117
+P-value: 0.2648
+Reference structure: d2b5ib1:B
+
+d1gl4b_:B   -PIMVTVEEQRSQSVRPGADVTFICTAKSKS---PAYTLVWTRLHNGKLPSRAMDFN---  1821  (A)
+d2b5ib1:B   SQFTCFYNS------------RAQISCVWS-QTSCQVHAWPD-----RR----RWQQTCE    49  (B)
+
+d1gl4b_:B   -------------GI------LTIRNVQPSDA-GTYVCTGSNM---------FAMDQGTA  1852  (A)
+d2b5ib1:B   LLPVSQASWACNLILGAPDSQKL---------TTVDIVTLRVLCREGVRWRVMAIQDFKP   100  (B)
+
+d1gl4b_:B   TLHVQ--  1857  (A)
+d2b5ib1:B   F----EN   103  (B)
+

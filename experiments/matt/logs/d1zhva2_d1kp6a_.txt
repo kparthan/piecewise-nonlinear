@@ -1,0 +1,13 @@
+(d1kp6a_:A, d1zhva2:A)
+Core Residues: 50
+Core RMSD: 3.027
+Raw Score: 48.317
+P-value: 0.1817
+Reference structure: d1kp6a_:A
+
+d1zhva2:A   G------------WSCFKF--------QGPFAFDETG-I--VLSVISPLSTNGIGIFVVS    98  (A)
+d1kp6a_:A   -NNAFCAGFGLSCKWECW-CTAHGTGNEL--------RYATAAGCGDHLS----KSYYDA    46  (B)
+
+d1zhva2:A   TFDGDHLLVRSNDLEKTADLLANAGHSLL------   127  (A)
+d1kp6a_:A   RA--GHCLFSDDLRNQFYSHCSSLNNNMSCRSLSK    79  (B)
+

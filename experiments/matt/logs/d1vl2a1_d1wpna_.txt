@@ -1,0 +1,22 @@
+(d1wpna_:A, d1vl2a1:A)
+Core Residues: 91
+Core RMSD: 5.250
+Raw Score: 92.211
+P-value: 7.5567e-03
+Reference structure: d1wpna_:A
+
+d1vl2a1:A   KE-KVVLAY----SGGLD----TSVILKWLCEKGFDVIAYVANVGQKDD--FVAIKEKAL    50  (A)
+d1wpna_:A   --EKILIFGHQNPDTD--TICSAIAYADLKNKLGFNAEPVRLG------QVNGETQYALD    51  (B)
+
+d1vl2a1:A   KTGASKVYVEDLRREFVTDYIFTALLGNAMYEGRYLLGTAIARPLIAKRQV--EIAEKEG   108  (A)
+d1wpna_:A   YFKQESPRL------------------------------------------VETA--ANE    67  (B)
+
+d1vl2a1:A   AQY-----------------------VAHGATGKGNDQVRFELTYAALNPNLKVISPWKD   145  (A)
+d1wpna_:A   VNGVILVDHNERQQSIKDIEEVQVLEVIDHH----R-----IANFE-TAEPLYYRAEP--   115  (B)
+
+d1vl2a1:A   PE---------FLAKFK----------------------------------TDLINYAME   164  (A)
+d1wpna_:A   --VGCTATILNK-----MYKENNVKIEKEIAGLMLSAIISDSLLFKSPTCTDQDVAAAKE   168  (B)
+
+d1vl2a1:A   KGIP----------I-------   169  (A)
+d1wpna_:A   LA--EIAGVDAEEYGLNMLKAG   188  (B)
+

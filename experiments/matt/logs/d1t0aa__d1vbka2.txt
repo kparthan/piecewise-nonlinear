@@ -1,0 +1,22 @@
+(d1vbka2:A, d1t0aa_:A)
+Core Residues: 74
+Core RMSD: 3.903
+Raw Score: 70.428
+P-value: 0.0459
+Reference structure: d1vbka2:A
+
+d1t0aa_:A   KIRIGHG-----------------------------------------------------     8  (A)
+d1vbka2:A   -------MNVVIVRYGEIGTKSRQTRSWFEKILMNNIREALVTEEVPYKEIFSRHGRIIV    53  (B)
+
+d1t0aa_:A   -----------------------FDVHKFGEPRP-LIL-CGVEVPYETGLVAHSDGDVVL    43  (A)
+d1vbka2:A   KTNSPKEAANVLVRVFGIVSISPAMEVE------ASLEKIN---------------RTAL    92  (B)
+
+d1t0aa_:A   HAISDAILGAXALGDIGKHFPDTDAAYKGADSRVLLRHCYALAKAKG--FELGNLDVTII   101  (A)
+d1vbka2:A   LMFRKKA--KE------------------------------------VGKERPKFRVTAR   114  (B)
+
+d1t0aa_:A   AQ--AP--KXAPHIEDXRQVLAADLNADVA------DINVKATTTEKLGFTGRKEGIAVE   151  (A)
+d1vbka2:A   RITKEFPLDSLEIQAKVGEYILNNENCEVDLKNYDIEIGIE---------IM-QG--KAY   162  (B)
+
+d1t0aa_:A   AVVLLSRQ-----------   159  (A)
+d1vbka2:A   IY------TEKIKGWGGLP   175  (B)
+

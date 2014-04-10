@@ -1,0 +1,16 @@
+(d2dpia1:A, d2f1fa1:A)
+Core Residues: 28
+Core RMSD: 1.722
+Raw Score: 28.908
+P-value: 0.4486
+Reference structure: d2dpia1:A
+
+d2f1fa1:A   RRILSVLLENE-------------SGALSRVIGLFSQRGYNIESLTVAPTDDPTLSRMTI    48  (A)
+d2dpia1:A   -----------QSFSEEDSFKKCSSEVE-AKNKIEELLA---------------------   326  (B)
+
+d2f1fa1:A   QTVGDE--------------------------------------------KVLEQIEKQL    64  (A)
+d2dpia1:A   ------SLLNRVCQDGRKPHTVRLIIRRYSSEKHYGRESRQCPIPSHVIQVMTPMVDILM   388  (B)
+
+d2f1fa1:A   HKLVDVLRVSELG-------------    77  (A)
+d2dpia1:A   KLFR---------NMTLLSVCFCNLK   414  (B)
+

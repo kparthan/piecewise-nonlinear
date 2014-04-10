@@ -1,0 +1,16 @@
+(d2uubr1:R, d1t33a1:A)
+Core Residues: 37
+Core RMSD: 2.536
+Raw Score: 39.799
+P-value: 0.3854
+Reference structure: d2uubr1:R
+
+d1t33a1:A   M-------------NIPTTTTKGEQA--KSQLIAAALAQ----FGEYGLHAT-TRDIAAL    40  (A)
+d2uubr1:R   -KAKVKATLGEFDLRD----------YRNVEVLKRFLS-ETGKIL--PRRRTGL------    58  (B)
+
+d1t33a1:A   AGQNIAAITYYFG---SKEDLYLACAQWIADFLGEKFRPHAEKAERLFSQP---------    88  (A)
+d2uubr1:R   -------------SAKEQRILAKTIKRARILGL------------------LPFTEKLVR    87  (B)
+
+d1t33a1:A   -    88  (A)
+d2uubr1:R   K    88  (B)
+

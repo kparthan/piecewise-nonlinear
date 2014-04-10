@@ -1,0 +1,13 @@
+(d1fxda_:A, d1iqza_:A)
+Core Residues: 57
+Core RMSD: 1.430
+Raw Score: 96.408
+P-value: 9.0192e-03
+Reference structure: d1fxda_:A
+
+d1iqza_:A   PKYTIVDKETCIACGACGAAAPDIYDYD-EDGIAYVTLDDNQGIVEVPDILIDDMMDAFE    59  (A)
+d1fxda_:A   --PIEVN-DDCMAXEACVEICPDVFEMNEEGDKAVVIN------PDSD---LDCVEEAID    48  (B)
+
+d1iqza_:A   GCPTDSIKVADEPFDGDPNKFE    81  (A)
+d1fxda_:A   SCPAEAIVRS------------    58  (B)
+

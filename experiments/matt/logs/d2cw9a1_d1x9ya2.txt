@@ -1,0 +1,22 @@
+(d1x9ya2:A, d2cw9a1:A)
+Core Residues: 79
+Core RMSD: 3.304
+Raw Score: 65.123
+P-value: 0.0569
+Reference structure: d1x9ya2:A
+
+d2cw9a1:A   NAFIRASRALTDKVTDLLGGLFSKTE--XSEVLTEILRVDPAFDKDRFLKQCENDIIPNV   327  (A)
+d1x9ya2:A   ---------------KQ-LE--I-NVKSDK--VP--------QKVKDLAQQQFAGYAKAL    71  (B)
+
+d2cw9a1:A   LEAXISGELDILKDWCYEATYSQLAHPIQQAKALGLQFHSRILDIDNVDLAXGKXVEQ--   385  (A)
+d1x9ya2:A   DKQSNA-----------------------------------K-TG-KYELGEAFKI--YK    92  (B)
+
+d2cw9a1:A   -------GPVLIITFQAQLVXVVRNPKGEVVEGDPDKVLRX-LYVWALCRDQDEL-----   432  (A)
+d1x9ya2:A   FNGEEDNSYYYPVIKD-------------------------GKIVYTLTLSPKN-KDDLN   126  (B)
+
+d2cw9a1:A   ------NPYAAWRLLD--ISASSTEQI---------------------------------   451  (A)
+d1x9ya2:A   KSKEDMNY--SVKISNFIAK-------DLDQIKDKNSNITVLTDEKGFYFEEDGKVRLVK   177  (B)
+
+d2cw9a1:A   ----------------------------------   451  (A)
+d1x9ya2:A   ATPLANNIKEKESAKTVSPQLKQELKTTVTPTKV   211  (B)
+

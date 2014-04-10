@@ -1,0 +1,16 @@
+(d1jd5a_:A, d1bdfa1:A)
+Core Residues: 35
+Core RMSD: 2.458
+Raw Score: 35.602
+P-value: 0.3393
+Reference structure: d1jd5a_:A
+
+d1bdfa1:A   QGSVTEFLKPRLV-------------------------------------DIEQVSS---    21  (A)
+d1jd5a_:A   -------------GNYFPQYPEYAIETARLRTFEAWPRNLKQKPHQLAEAGFFYT--GVG   258  (B)
+
+d1bdfa1:A   THAKVTLEPLERGFGHTLGNALRAILLSSMPPVERIAYNVEAARVEQRTDLDKLVIEME-   206  (A)
+d1jd5a_:A   DRVRCFS----------------------------------------------CGGGLMD   272  (B)
+
+d1bdfa1:A   TNGTIDPEEAIRRA---------------AT--ILAEQLEAFV------------   232  (A)
+d1jd5a_:A   WNDNDEPWEQHALWLSQCRFVKLMKGQLYIDTVA---------AKPVLAEEKEES   318  (B)
+

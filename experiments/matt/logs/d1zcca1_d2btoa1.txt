@@ -1,0 +1,28 @@
+(d2btoa1:A, d1zcca1:A)
+Core Residues: 84
+Core RMSD: 5.528
+Raw Score: 88.383
+P-value: 0.0545
+Reference structure: d2btoa1:A
+
+d1zcca1:A   MT-KIVSHR---------------------------------------------------     8  (A)
+d2btoa1:A   --VNNTIVVSIGQAGNQIAASFWKTVCLEHGIDPLTGQTAPGVAPRGNWSSFFSKLGESG    62  (B)
+
+d1zcca1:A   ------GA----------------------NRFA-------------------------P    15  (A)
+d2btoa1:A   SYVPRAI-MVDLEPSVIDNVKATSGSLFNPAN--LISRTEGAGGNFAVGYLGAGREVLPE   119  (B)
+
+d1zcca1:A   ENTFAAADLALQQG--ADYIELDV--------RESADGVLYVIHDETLDRTTNGTGPVGH    65  (A)
+d2btoa1:A   --VMSRLDYEIDKCDNVGGIIVLHAIGGGTGSG---------------------------   150  (B)
+
+d1zcca1:A   MLSSEIDTLDAGGWFDDRFKGAIVPRLDAYLEHLR---GRAGVYIELKYC----------   112  (A)
+d2btoa1:A   -------------------------FGALLIESLKEKYGEIPVLS-----CAVLPSPQVS   180  (B)
+
+d1zcca1:A   -------DPAKVAALVRHLGMVRDTFYFSFSEEMRQGLQSIAPEFRRMMTLD--------   157  (A)
+d2btoa1:A   SVVTEPYNTVFALNTLRRSADA--C--------------------LIFDN--EALFDLAH   216  (B)
+
+d1zcca1:A   ---------IAKSPSLVGAVHHASIIEITPAQMRRPGIIEASRKAGLEIMVYYGGDDMAV   208  (A)
+d2btoa1:A   RKWNIESPTVD-------------------------DLNLLITEAL--------------   237  (B)
+
+d1zcca1:A   HREIATSDVD-YINLDRPDLFAAVRSGMAELLL-----   240  (A)
+d2btoa1:A   --------AGIT---------------------ASMRF   246  (B)
+

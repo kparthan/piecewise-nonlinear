@@ -1,0 +1,19 @@
+(d3kpba_:A, d1iuja_:A)
+Core Residues: 26
+Core RMSD: 2.700
+Raw Score: 24.092
+P-value: 0.6345
+Reference structure: d3kpba_:A
+
+d1iuja_:A   MFVTMNRIPVRPEYAEQFE------------------EAFRQRARLVDRMPGFIRNLVLR    42  (A)
+d3kpba_:A   -------------------TLVKDILSKPPITAHSNISIMEAAKILIKHN----------   418  (B)
+
+d1iuja_:A   PKNPGDPYVVMTLWESEEAFRAWTESP-----------------AFKEGHARSGTLPKEA    85  (A)
+d3kpba_:A   ---------------------------INHLPIVDEHGKLVGIITSWDIAKALAQNK---   448  (B)
+
+d1iuja_:A   FLGPNRLEAFEVVLDSE-------------------------------------------   102  (A)
+d3kpba_:A   -----------------KTIEEIMTRNVITAHEDEPVDHVAIKMSKYNISGVPVVDDYRR   491  (B)
+
+d1iuja_:A   ---------------   102  (A)
+d3kpba_:A   VVGIVTSEDISRLFG   506  (B)
+

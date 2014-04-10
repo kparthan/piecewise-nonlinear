@@ -1,0 +1,19 @@
+(d3mjza_:A, d1d0na3:A)
+Core Residues: 40
+Core RMSD: 2.732
+Raw Score: 41.030
+P-value: 0.3251
+Reference structure: d3mjza_:A
+
+d1d0na3:A   EDAANRKLAKLYKVSNGAGPMVVSLVADENPFAQGALRSEDCFILDHGKDGKIFVWKGKQ   322  (A)
+d3mjza_:A   ------------------------------------------------PLIRIDLTS---     9  (B)
+
+d1d0na3:A   ANMEERKAALKTASDFISKMDY-------------PKQTQVSVLPEGGETPLFRQFF--K   367  (A)
+d3mjza_:A   -----DR-SREQRRAIADAVH-DALVEVLAIPARDRF-QILTAHDPSDI----I--AEDA    55  (B)
+
+d1d0na3:A   NWRDPDQTEGLGLAYL--------------------------------------------   383  (A)
+d3mjza_:A   ----------------GLGFQRSPSVVIIHVFTQAGRTIETKQRVFAAITESLAPIGVAG    99  (B)
+
+d1d0na3:A   --------------------------------   383  (A)
+d3mjza_:A   SDVFIAITENAPHDWSFGFGSAQYVTGELAIP   131  (B)
+

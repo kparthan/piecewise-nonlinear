@@ -1,0 +1,19 @@
+(d1nekd_:D, d2ig3a_:A)
+Core Residues: 52
+Core RMSD: 1.944
+Raw Score: 83.463
+P-value: 0.0419
+Reference structure: d1nekd_:D
+
+d2ig3a_:A   MKFETINQESIAKLMEIFYEKVRKD--------------------KD-LGP--IFNNAIG    37  (A)
+d1nekd_:D   -------------------------SNASALGRNGVHDFILVRATAIVL-TLYI------    30  (B)
+
+d2ig3a_:A   TSDEEWKEHKAKIGNFWAGMLLGEGDYNGQPLKKHLDL--P-------------------    76  (A)
+d1nekd_:D   --------------------------------------IYMVGFFATSGELTYEVWIGFF    52  (B)
+
+d2ig3a_:A   --------P-FP-QEFFEIWLKLFEESLNIVYN-EEMKNVILQRAQMIASHFQNMLYKYG   125  (A)
+d1nekd_:D   ASAFTKVFTLLALFSILIHAWIGMWQVLTDYVKPLALRLMLQLVIVVALVVYVIYGF---   109  (B)
+
+d2ig3a_:A   GH------   127  (A)
+d1nekd_:D   --VVVWGV   115  (B)
+

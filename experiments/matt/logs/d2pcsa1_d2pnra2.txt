@@ -1,0 +1,19 @@
+(d2pnra2:A, d2pcsa1:A)
+Core Residues: 38
+Core RMSD: 3.581
+Raw Score: 51.871
+P-value: 0.5320
+Reference structure: d2pnra2:A
+
+d2pcsa1:A   LNGNGSIELKGTVEEVWSK-----------------------------------LMDPSI    25  (A)
+d2pnra2:A   -------------------NPVHPKHIGSIDPTCNVADVVKDAYETAKMLCEQYYL----   213  (B)
+
+d2pcsa1:A   LSKCIMGCKSLELIGEDKYKADLQIGIAAVKGKYDAIIEVTDIKPPYHYKLLVNGEGGPG    85  (A)
+d2pnra2:A   V------------------APELEVE----E-----------------------------   222  (B)
+
+d2pcsa1:A   FVNAEGVIDLTPINDECTQLTYTYSAEVGGKVAA-------------I-GQRMLGGVAKL   131  (A)
+d2pnra2:A   ----------------------------------FNAKAPDKPIQVVYVPSHLFHMLFEL   248  (B)
+
+d2pcsa1:A   LISDFFKKIQKEIAKS--------------------------------------   147  (A)
+d2pnra2:A   FKNSMRATVELYEDR-KEGYPAVKTLVTLGKEDLSIKISDLGGGVPLRKIDRLF   301  (B)
+

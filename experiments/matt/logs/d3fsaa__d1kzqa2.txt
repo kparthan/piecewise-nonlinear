@@ -1,0 +1,16 @@
+(d1kzqa2:A, d3fsaa_:A)
+Core Residues: 69
+Core RMSD: 2.974
+Raw Score: 44.309
+P-value: 0.2178
+Reference structure: d1kzqa2:A
+
+d3fsaa_:A   A-----ECSVDIQGNDQMQFNTNAITVDK---SCKQFTVNLSHPGNLPKNVMG-HNWVL-    50  (A)
+d1kzqa2:A   -ASSVVNNVARCSYG---AD-STLGPVKLSAEGPTTMTLVCGK----------DGVKV-P   175  (B)
+
+d3fsaa_:A   -----STAAD-----MQGVVTDGMASGLDKDYLKPDDSRVI-----------AH---TKL    86  (A)
+d1kzqa2:A   QDNNQYCSG-TTLTGCNEK-------------------SF-KDILPKLTENPW-QGNA--   211  (B)
+
+d3fsaa_:A   IGSGEKD--SVTFDVSKL--------EQYMFFCAAHAA--------MK-GTLTLK--   125  (A)
+d1kzqa2:A   -----SSDKGATLTIK--KEAFPAESKSVIIGC-----TGGSPEKHHCTVKLEF-AG   255  (B)
+

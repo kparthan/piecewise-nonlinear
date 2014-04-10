@@ -1,0 +1,14 @@
+(d1fu3a_:A, (d2vt1.1:B, d2vt1.1:A))
+Core Residues: 6
+Core RMSD: 1.007
+Raw Score: 2.101
+Reference structure: d1fu3a_:A
+
+d1fu3a_:A   WCKQSGEMCNLLDQNCC-------------------------------------------    17  (A)
+d2vt1.1:A   -----------------IEILSEQTKSDIRNS----------------------------   251  (B)
+d2vt1.1:B   -----------PTHI--AIGIYF---------NPEIAPAPFISLIETNQCALAVRKYANE   295  (C)
+
+d1fu3a_:A   --DGYCIVLVCT---------------------------------    27  (A)
+d2vt1.1:A   --KLVVMN-------------------------------------   257  (B)
+d2vt1.1:B   VGIPTVRDVK--LARKLYKTHTKYSFVDFEHLDEVLRLIVWLEQV   338  (C)
+

@@ -1,0 +1,16 @@
+(d3cjsb1:B, d1iqza_:A)
+Core Residues: 24
+Core RMSD: 3.212
+Raw Score: 23.800
+P-value: 0.8265
+Reference structure: d3cjsb1:B
+
+d1iqza_:A   PKYTIVDKETCIACGACGAAA---------PDIY-DYDEDGIAYVTLDDNQGIVEVPD--    48  (A)
+d3cjsb1:B   ---------------------MKKVVAVVKL---QLP-----AGKAT--------P--AP    21  (B)
+
+d1iqza_:A   -----------ILIDDMMDAFEGCPTDSIKVADEPFDGDPNKFE----------------    81  (A)
+d3cjsb1:B   PVGPALGQHGANIMEFVKAFNAAT--AN----------------MGDAIVPVEITIYADR    63  (B)
+
+d1iqza_:A   -------    81  (A)
+d3cjsb1:B   SFTFVTK    70  (B)
+

@@ -1,0 +1,13 @@
+(d2exda1:A, d1pfsa_:A)
+Core Residues: 51
+Core RMSD: 3.010
+Raw Score: 49.308
+P-value: 0.1597
+Reference structure: d2exda1:A
+
+d1pfsa_:A   M-----------------NIQITFTDSVRQGTSAKGNPYTFQEGFLHLEDKPHPLQCQFF    43  (A)
+d2exda1:A   -RRETTDIGGGKYTFELKGKVGKVV-KIAED---------HYLVEVE------GDKWIAY   114  (B)
+
+d1pfsa_:A   VESVIPAGSYQVPYRINVNNGRPE---LAFDFKAMKRA-    78  (A)
+d2exda1:A   SDEKLS-LGDRVMVVD------VDGLKLKVKR--IPP-Q   143  (B)
+

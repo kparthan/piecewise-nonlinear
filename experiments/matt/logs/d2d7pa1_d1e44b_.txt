@@ -1,0 +1,16 @@
+(d1e44b_:B, d2d7pa1:A)
+Core Residues: 31
+Core RMSD: 2.621
+Raw Score: 23.334
+P-value: 0.5183
+Reference structure: d1e44b_:B
+
+d2d7pa1:A   SDDARRLTVTSLQETGLKVNQPASFAVQLNGARGVI------------------------    43  (A)
+d1e44b_:B   ------------------------------------GFKDYGHDYHPAPKTENIKGLGDL    24  (B)
+
+d2d7pa1:A   --D-ARVHTPS-GAVEECYVSELDSDK-HTIRFIPHENGVHS------------------    80  (A)
+d1e44b_:B   KPGIPKTPKQNGGGKRKRWTGDK----GRKIYEWDSQ-----HGELEGYRASDGQHLGSF    75  (B)
+
+d2d7pa1:A   ------------------IDVKFNGAHIPGSPFKIRVGEQSQAG   106  (A)
+d1e44b_:B   DPKTGNQLKGPDPKRNIKKYL-----------------------    96  (B)
+

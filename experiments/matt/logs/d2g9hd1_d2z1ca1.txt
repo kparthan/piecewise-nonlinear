@@ -1,0 +1,13 @@
+(d2z1ca1:A, d2g9hd1:D)
+Core Residues: 50
+Core RMSD: 2.841
+Raw Score: 33.609
+P-value: 0.3168
+Reference structure: d2z1ca1:A
+
+d2g9hd1:D   IGVGNLRNFYTKHDYI-DLKGLIDKNLPSANQLEFST-GINDLISESN--NWDEISKFKG    59  (A)
+d2z1ca1:A   ----------------CLAVPGKVIEV-NGPVAVVDFGG-VKREVRLDLMP--DTK----    37  (B)
+
+d2g9hd1:D   KKLDIFGIDYNGPCKSKYMYG-GATLSG----------------    86  (A)
+d2z1ca1:A   PGDWVIVHT---------GFAIEKLDEKKAMEILEAWAEVEKAM    72  (B)
+

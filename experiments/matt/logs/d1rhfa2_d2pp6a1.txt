@@ -1,0 +1,16 @@
+(d2pp6a1:A, d1rhfa2:A)
+Core Residues: 34
+Core RMSD: 2.613
+Raw Score: 23.805
+P-value: 0.3921
+Reference structure: d2pp6a1:A
+
+d1rhfa2:A   VPFFTVEPKDLAVPPNAPFQLSCEAVGPPEPVT---------------------IVWWRG   136  (A)
+d2pp6a1:A   ---------------------------------XADLFDGXKRRXDALIAERFGXKVNIN    27  (B)
+
+d1rhfa2:A   TTKIGGPAPSPSV--------LNVTG-------VTQSTXFSCEAHNLKGLASSRTATVHL   181  (A)
+d2pp6a1:A   GTDCIV-----VESDFLAGKNVVV--FSGNVIPRR-GDRVVLR---------GSEFTVTR    78  (B)
+
+d1rhfa2:A   Q---------------   182  (A)
+d2pp6a1:A   -IRRFNGKPQLTLEEN    93  (B)
+

@@ -1,0 +1,46 @@
+(d1x3la_:A, d1vema2:A)
+Core Residues: 95
+Core RMSD: 6.629
+Raw Score: 69.157
+P-value: 0.3993
+Reference structure: d1x3la_:A
+
+d1vema2:A   AVNGKGMNPDYKAYLMAPLKKIPEVTNWETFENDLRWAKQNGFYAITVDFWWGDMEKNGD    60  (A)
+d1x3la_:A   ------------------------------------------------------------     1  (B)
+
+d1vema2:A   QQFDFSYAQRFAQSVKNAGMKMIPIISTHQCGGNVGDDCNVPIPSWVWNQKSDDSLYFKS   120  (A)
+d1x3la_:A   ------------------------------------------------------------     1  (B)
+
+d1vema2:A   ETGTVNKETLNPLASDVIRKEYGELYTAFAAAMKPYKDVIA----K-IY--LS-GGPAGE   172  (A)
+d1x3la_:A   -----------------------------------------MIAMDIREIGLRLVG----    15  (B)
+
+d1vema2:A   -LRYPSYTTSDGTGYPSRGKF---QAYTEFAKSKFRLWV---------LNKYGSLNEVNK   219  (A)
+d1x3la_:A   EAI------------------KAADP----Y--RAVLNAVKVSDDKIIVQGKE-------    44  (B)
+
+d1vema2:A   AWGTKLI-----------------------------------------------------   226  (A)
+d1x3la_:A   -------FEIKGKVYVIALGKAACEMARAIEDILDVEDGVAVTKYGYGKELKRIKVIEAG    97  (B)
+
+d1vema2:A   --------------------------SELAILPPSDGEQFLMN-----------------   243  (A)
+d1x3la_:A   HPIPDEKSILGAKEALSILNRARENDIVFILISGGGS------ALFELPEEGISLEDLKL   151  (B)
+
+d1vema2:A   ---------------------------------------------GYLSMYGK-------   251  (A)
+d1x3la_:A   TTDLLLKSGAKIHEINTVRKHISKVKGGKLAKMIKGTGIVLIISDVVGDN-L-EAIASGP   209  (B)
+
+d1vema2:A   ------------------------------------------------------D-YL-E   255  (A)
+d1x3la_:A   TVKDPTTFEDAKRILELYDIWEKVPESVRLHIERGLRGEVEETLKEDLPNVHNFLIASNS   269  (B)
+
+d1vema2:A   WYQGILENHTKLIGELAHNAFDTTFQVPIGAKIAGVHWQYNNPTIPHGAEKPAGYNDYSH   315  (A)
+d1x3la_:A   ISCEAIAREAQR------------------------------------------------   281  (B)
+
+d1vema2:A   LLDAFKSAKLDVTFTCLEMTDKGSYPEYS------------MPKTLVQNIATLANEK---   360  (A)
+d1x3la_:A   -------LG--------------------FKAYIMTTTLEGEAKDAGLFIGSIVQEIAER   314  (B)
+
+d1vema2:A   -------GI-------------------------------------VLNGENALSIGNEE   376  (A)
+d1x3la_:A   GRPFEPPVVLVFGGETTVTIEGKGGKGGPNQEIALSATRKISDLEALIVAFDTDG-----   369  (B)
+
+d1vema2:A   E------------------------YKRVAEMAFNYNFA----------------GFTLL   396  (A)
+d1x3la_:A   -TDGPTDAAGGIVDGTTYKKLREKGIDV--E--------KVLKEHNSYEALKKVGGLLFT   418  (B)
+
+d1vema2:A   RYQDVMYNNSLMGKFKDLLGV-----------------   417  (A)
+d1x3la_:A   G--------------------PTGTNVNSIVIAIVTSK   436  (B)
+

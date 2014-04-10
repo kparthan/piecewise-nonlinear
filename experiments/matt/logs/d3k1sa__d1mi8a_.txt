@@ -1,0 +1,19 @@
+(d1mi8a_:A, d3k1sa_:A)
+Core Residues: 13
+Core RMSD: 1.881
+Raw Score: 9.793
+P-value: 0.6938
+Reference structure: d1mi8a_:A
+
+d3k1sa_:A   S--------------N-AXXTTAEQIPF---------------------QLILNSGNARS    21  (A)
+d1mi8a_:A   -SGAISGDSLISLASTGKRVSIKDLLDEKDFEIWAINEQTMKLESAKVSR----------    47  (B)
+
+d3k1sa_:A   FAXEALQFAKQGKXAEADEAXVKAKEAINEAHHFQTELIQSEARGEKTEISVLLIHAQDH    81  (A)
+d1mi8a_:A   ------------------------------------------------------------    47  (B)
+
+d3k1sa_:A   LXNAITVKELAAEFIDLYKKLEAKG-----------------------------------   106  (A)
+d1mi8a_:A   -------------------------VFMTGKKLVYILKTRLGRTIKATANHRFLTIDGWK    82  (B)
+
+d3k1sa_:A   ---------------------------------------------------------   106  (A)
+d1mi8a_:A   RLDELSLKEHIALPRKSDISWDSIVSITETGVEEVFDLTVPGPHNFVANDIIVHASI   156  (B)
+

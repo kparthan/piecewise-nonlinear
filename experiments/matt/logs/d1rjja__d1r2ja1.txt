@@ -1,0 +1,19 @@
+(d1r2ja1:A, d1rjja_:A)
+Core Residues: 47
+Core RMSD: 3.099
+Raw Score: 47.156
+P-value: 0.3668
+Reference structure: d1r2ja1:A
+
+d1rjja_:A   MATSGFKHL-----------------------------VV--VKF--KE------DT---    18  (A)
+d1r2ja1:A   ---------SLPMLVAASLAYGRKSVAWGCVGILRACRTAAVAHARTR-EQFGRPLGDHQ   262  (B)
+
+d1rjja_:A   ----KVDEILKGLENL-VSQIDTVKSFEWGEDKESHDMLRQGFTHAFSMTFENKDGYVAF    73  (A)
+d1r2ja1:A   LVAGHIADLWTAEQIAARVCEYAS------------------------------------   286  (B)
+
+d1rjja_:A   T----------S---HPLHVEFSAAFTAVI--DK--IVLLDFPVAAVKSSVVATP-----   111  (A)
+d1r2ja1:A   -DHMVPATILAKHVAAERAAAGAATAAQVLASAGAGHV-----------------VERAY   337  (B)
+
+d1rjja_:A   ----------------------------   111  (A)
+d1r2ja1:A   RDAKLMEIIEGSSEMCRVMLAQHALALP   365  (B)
+

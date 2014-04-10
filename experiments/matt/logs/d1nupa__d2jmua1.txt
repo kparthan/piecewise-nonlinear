@@ -1,0 +1,28 @@
+(d2jmua1:A, d1nupa_:A)
+Core Residues: 53
+Core RMSD: 5.339
+Raw Score: 53.151
+P-value: 0.4967
+Reference structure: d2jmua1:A
+
+d1nupa_:A   SRIP--------------------------------------------------------     6  (A)
+d2jmua1:A   ----AQGLIEVERKFAPGPDTEERLQELGATLEHRVTFRDTYYDTSELSLMLSDHWLRQR    57  (B)
+
+d1nupa_:A   ------------------------------------------------------------     6  (A)
+d2jmua1:A   EGSGWELKCPGVTGVSGPHNEYVEVTSEAAIVAQLFELLGSGEQKPAGVAAVLGSLKLQE   117  (B)
+
+d1nupa_:A   ------VVLLACGSF-------NPITNMHLRMFEVARDHLHQTGMYQVI-----------    42  (A)
+d2jmua1:A   VASFITTRSSWKLALSGAHGQEPQL------------------------TIDLDSADFGY   153  (B)
+
+d1nupa_:A   Q-GIISPVNDTYGKKDLA----ASHHRVAMARLALQTSDWIRVDPWESEQAQWMETVK--    95  (A)
+d2jmua1:A   AVGEVEA---------MVHEKAEVPAALEKIITVSSMLG--VPAQEE-----------AP   191  (B)
+
+d1nupa_:A   VLRHHHSKLLAVPELKLLCGADVLKTFQTPNLWKDAHIQEIVEKFGLVCVGRVSHDPKGY   175  (A)
+d2jmua1:A   AKLMVYLQRF--------------------------------------------------   201  (B)
+
+d1nupa_:A   IAESPILRMHQHNIHLAKEPVQNEISATYIRRALGQGQSVKYLIPDAVITYIKDHGLYTK   235  (A)
+d2jmua1:A   ------------------------------------------------------------   201  (B)
+
+d1nupa_:A   -----------------------   235  (A)
+d2jmua1:A   RPLDYQRLLEAASSGEATGDSAS   224  (B)
+

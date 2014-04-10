@@ -1,0 +1,19 @@
+(d2a8na1:A, d2z3va_:A)
+Core Residues: 45
+Core RMSD: 5.729
+Raw Score: 50.839
+P-value: 0.8486
+Reference structure: d2a8na1:A
+
+d2z3va_:A   MFKTILLAYDGSEHARRAAEVAKAEAEAHGARLIVVHAYEPVPDYLGEPFFEEALRRRLE    60  (A)
+d2a8na1:A   ------------------------------------------A----------ERTHFME     9  (B)
+
+d2z3va_:A   RAEGVLEEARALTGVPKEDALLLEG-----------------------------------    85  (A)
+d2a8na1:A   LALVEARSAGERDEV----PIGAV-LVLDGRVIARSGNRTRELNDVTAHAEIAVIRMACE    64  (B)
+
+d2z3va_:A   ----------VPAEAILQAARA--EKADLIVMGTRGLGALGSLFLGSQS------QRVVA   127  (A)
+d2a8na1:A   ALGQERLPGADL--YV------TLEPCTMC-------------------AAAISFAR-IR    96  (B)
+
+d2z3va_:A   EAPCPVLLVR--------------------------------   137  (A)
+d2a8na1:A   RLY-------YGAQDPKGGAVESGVRFFSQPTCHHAPDVYSG   131  (B)
+

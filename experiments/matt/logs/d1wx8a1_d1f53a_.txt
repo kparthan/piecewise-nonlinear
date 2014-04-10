@@ -1,0 +1,16 @@
+(d1f53a_:A, d1wx8a1:A)
+Core Residues: 39
+Core RMSD: 4.448
+Raw Score: 28.477
+P-value: 0.5628
+Reference structure: d1f53a_:A
+
+d1wx8a1:A   VSGREPSSRI-----------IRVSVKTPQDCHEFFLA---------------------E    35  (A)
+d1f53a_:A   -----I----DHVPCRGGENFLKIWSHSGGQQSVDCYANRGRIDFGGWWVDKISTGNNDL    51  (B)
+
+d1wx8a1:A   NSNVRRFKKQISKYLHCNADRLVLIFTGKILRDQDILSQRGILDGSTVH-----VVVRSH    90  (A)
+d1f53a_:A   IYYDA---------------------------NGDSV---RVDRWHDITYPNRPP-----    76  (B)
+
+d1wx8a1:A   --------    90  (A)
+d1f53a_:A   KVNSIEIL    84  (B)
+

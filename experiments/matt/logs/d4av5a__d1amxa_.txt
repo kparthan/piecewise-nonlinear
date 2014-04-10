@@ -1,0 +1,22 @@
+(d1amxa_:A, d4av5a_:A)
+Core Residues: 66
+Core RMSD: 3.176
+Raw Score: 57.087
+P-value: 0.0304
+Reference structure: d1amxa_:A
+
+d4av5a_:A   -------FACKTANGTAIPIGGGSANVY--VNLAPVVNVGQNLVVDLSTQIFCHNDYP--    49  (A)
+d1amxa_:A   TSSVFYYKTGDML--------------PEDT-----------------THVRWFLNI-NN   196  (B)
+
+d4av5a_:A   --------ETITDYVTLQRGSAYGGVLSNFSGTVKYSGSSYPFPTTSETP----------    91  (A)
+d1amxa_:A   EKSYVSKDITIKDQIQG----------------G-QQ-------------LDLSTLNINV   226  (B)
+
+d4av5a_:A   -------------------------------RVVYNS-------------RTDKPWPVAL   107  (A)
+d1amxa_:A   TGTHSNYYSGQSAITDFEKAFPGSKITVDNTKNTID-VTIPQGYGSYNSFSINYKTKITN   285  (B)
+
+d4av5a_:A   YLTPVSSAGGVAIKAGSLI--AVLILRQTNNY---------NSDDFQFVWNIYANNDVVV   156  (A)
+d1amxa_:A   E------------------QQKEFVNNSQAW-YQEHGKEEVNGKSFNHTVHN--------   318  (B)
+
+d4av5a_:A   PT   158  (A)
+d1amxa_:A   --   318  (B)
+

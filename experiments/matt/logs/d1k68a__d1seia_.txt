@@ -1,0 +1,19 @@
+(d1seia_:A, d1k68a_:A)
+Core Residues: 30
+Core RMSD: 3.029
+Raw Score: 35.879
+P-value: 0.6077
+Reference structure: d1seia_:A
+
+d1k68a_:A   AHKKIFLVE---DNKADIRLIQEALANSTVPHEVVTVRDGMEAMA---------------    50  (A)
+d1seia_:A   ---------VMTDPIADMLTAIRNANMVR-HEKLEVP--------ASKIKREIAEILKRE    42  (B)
+
+d1k68a_:A   ----------YLRQEGEYANASRPDLILLXLNLPKKDGREVLAEIKSDPTLKRIPVVVLS   100  (A)
+d1seia_:A   GFIRDYEYIED--NKQGI------------------------------------------    58  (B)
+
+d1k68a_:A   TSINEDDIFHSYDLHVNCYITKSANLSQLFQIVKGIEEFWLSTATLPS------------   148  (A)
+d1seia_:A   ------------------------------------------------LRIFLKYGPNER    70  (B)
+
+d1k68a_:A   ------------------------------------------------------------   148  (A)
+d1seia_:A   VITGLKRISKPGLRVYVKAHEVPRVLNGLGIAILSTSQGVLTDKEARQKGTGGEIIAYVI   130  (B)
+

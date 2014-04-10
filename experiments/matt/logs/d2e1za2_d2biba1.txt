@@ -1,0 +1,28 @@
+(d2biba1:A, d2e1za2:A)
+Core Residues: 39
+Core RMSD: 3.242
+Raw Score: 29.673
+P-value: 0.6276
+Reference structure: d2biba1:A
+
+d2e1za2:A   ------------------------------------------------------------   193  (A)
+d2biba1:A   SFQAGWHKSAYGNWWYQAPDSTGEYAVGWNEIEGEWYYFNQTGILLQNQWKKWNNHWFYL   368  (B)
+
+d2e1za2:A   -------------------------------------------------------DEKDS   197  (A)
+d2biba1:A   TDSGASAKNWKKIDGIWYYFNKENQMEIGWVQDKEQWYYLDVDGSMKTGWLQYMGQW---   425  (B)
+
+d2e1za2:A   ------------------------------GLIVAHLGNGASICAVR-NGQSVD------   220  (A)
+d2biba1:A   YYFAPSGEMKMGWVKDKETWYYMDSTGVMKTGEIEVAG---QHYYLEDSGAMK-QGWHKK   481  (B)
+
+d2e1za2:A   -----------TSMGMTPLEGL------------MMGTRSGDVDF---GAMAWIA-----   249  (A)
+d2biba1:A   ANDWYFYKTDGSRA----VG--WIKDKDKWYFLKE----NGQLL-VNGKTPEG--YTVDS   528  (B)
+
+d2e1za2:A   ----------KETGQTLSDLERVVNKESGLLGISGLSSDLRVLEKAWHEGHERARLAIKT   299  (A)
+d2biba1:A   SGAWLVDVSIEK------------------------------------------------   540  (B)
+
+d2e1za2:A   FVHRIARHIAGHAASLHRLDGIIFTGGIGENSVLIRQLVIEHLGVLGLTLDVEMNKQPNS   359  (A)
+d2biba1:A   ------------------------------------------------------------   540  (B)
+
+d2e1za2:A   HGERIISANPSQVICAVIPTNEEKMIALDAIHLGNVKA-   397  (A)
+d2biba1:A   --------------------------------------S   541  (B)
+

@@ -1,0 +1,16 @@
+(d1njha_:A, d1hdma1:A)
+Core Residues: 36
+Core RMSD: 2.327
+Raw Score: 35.806
+P-value: 0.3498
+Reference structure: d1njha_:A
+
+d1hdma1:A   SRGFPIAEVFTLKPLEFG---------------------KPNTLVCFVSNLFPPMLTVNW   132  (A)
+d1njha_:A   ------------------NAXKAIIKEDVQASLERYADRPVYIHLETTTGX---------    41  (B)
+
+d1hdma1:A   HDHSVPV-----------------------------------------------EG-FGP   144  (A)
+d1njha_:A   -------TVVAYIRNAKVTYHQAKIKGNGPYRVGLKTEEGWIYAEGLTEYTVDEENRLLX    94  (B)
+
+d1hdma1:A   TFVS-AVDGLSFQAFSYLNFT-PEPSDI-FSCIVTHEPDRYTAIAYWVPRNALPS   196  (A)
+d1njha_:A   AGHLPGG----KLAISLQISEKP-----FTV------------------------   116  (B)
+

@@ -1,0 +1,16 @@
+(d1wvka_:A, d1twfi2:I)
+Core Residues: 18
+Core RMSD: 2.157
+Raw Score: 11.158
+P-value: 0.6706
+Reference structure: d1wvka_:A
+
+d1twfi2:I   T---------------------------------------N-IGETAGVVQDIGSDPTLP    69  (A)
+d1wvka_:A   -GHHHHHHLEGGGNAQKSAMARAKNLEKAKAAGKGSQLEANKK-AM--------------    44  (B)
+
+d1twfi2:I   RSDRECPKCHSRENVFFQSQQRRKDTSMVLFFVCLSCSHIFTSDQKNKRTQF--------   121  (A)
+d1wvka_:A   ------------------------------SIQCKVCMQTFICT--------TSEVKCRE    66  (B)
+
+d1twfi2:I   --------------------   121  (A)
+d1wvka_:A   HAEAKHPKADVVACFPHLKK    86  (B)
+

@@ -1,0 +1,16 @@
+(d1wkta_:A, d1kloa2:A)
+Core Residues: 20
+Core RMSD: 3.273
+Raw Score: 9.852
+P-value: 0.8897
+Reference structure: d1wkta_:A
+
+d1kloa2:A   ----C-----------------QCNDNI-----------------DPNAVG-NCNRL---    83  (A)
+d1wkta_:A   GDGYLIMCKNCDPNTGSCDWKQNW----NTCVGIGANVHWMVTGGSTDGKQGCATIWEGS    56  (B)
+
+d1kloa2:A   --------------------------TGECLKCIYNTAGFYCDRCKEGFFGNPLAPNPAD   117  (A)
+d1wkta_:A   GCVGRSTTMCCPANTCCNINTGFYIRSYRRVE----------------------------    88  (B)
+
+d1kloa2:A   KCKA   121  (A)
+d1wkta_:A   ----    88  (B)
+

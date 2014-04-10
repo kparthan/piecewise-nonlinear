@@ -1,0 +1,46 @@
+(d3kcgi_:I, d2bhua3:A)
+Core Residues: 73
+Core RMSD: 5.401
+Raw Score: 69.796
+P-value: 0.5229
+Reference structure: d3kcgi_:I
+
+d2bhua3:A   TFDWTDADWHGIKLADCVFYEVHVGTFTPEGTYRAAAEKLPYLKELGVTAIQVMPLAAFD   170  (A)
+d3kcgi_:I   ------------------------------------------------------------     3  (B)
+
+d2bhua3:A   GQRGWGYDGAAFYAPYAPYGRPEDLMALVDAAHRLGLGVFLDVVYNHFGPSGNYLSSYAP   230  (A)
+d3kcgi_:I   ------------------------------------------------------------     3  (B)
+
+d2bhua3:A   SYFTDR--------------FSSAWGMGLDYAEP-------------HMRRYVTGNARMW   263  (A)
+d3kcgi_:I   ------SPVDICTAKPRDIPMNPMCI--------YRSPEQKIPEATNRRVWELSKANSRF    58  (B)
+
+d2bhua3:A   LRDYHF---------------DGL---RL-------------------------------   274  (A)
+d3kcgi_:I   ATTFY-QHLADSKNDNDNIFLSPLSISTAFAMTKLGACNDTLQQLMEVFKFDTISEKTSD   117  (B)
+
+d2bhua3:A   --DATPYMTDDSETHILTELAQEIHELGGTHLLLAEDHRNLPDL--VTVNHLDGIWTDDF   330  (A)
+d3kcgi_:I   QIHFF----------------------------FA--------KLNC---RLY-------   131  (B)
+
+d2bhua3:A   HHETRVTLTGEQEGYYAGYRGGAEALAYTIRRGWRYEGQFWAVKGEEHERGHPSDALEA-   389  (A)
+d3kcgi_:I   -----------------------------------------------------------R   132  (B)
+
+d2bhua3:A   ------PNFVYCI-QNHDQIGNRPLGE-RLHQSDGVTLHEYRGAAALLLTLPMTPLLFQG   441  (A)
+d3kcgi_:I   KANKASKLVSA--NRL-----------FGDKSL---------------------------   152  (B)
+
+d2bhua3:A   --------------------QEWAASTPFQFFSDHAGELGQAVSEGRKKEFDVPDPQAEQ   490  (A)
+d3kcgi_:I   TFNETYQDISELVYGAKLQPL--DFK----------------------------------   176  (B)
+
+d2bhua3:A   TFLNSKLNWAEREGG-EHARTLRLYRDLLRLRREDPVLHNR-------------------   530  (A)
+d3kcgi_:I   ---------------ENAEQSRAAINKWVSNKTE-------GRITDVIPSEAINELTVLV   214  (B)
+
+d2bhua3:A   ------------------------------------------------------------   530  (A)
+d3kcgi_:I   LVNTIYFKGLWKSKFSPENTRKELFYKADGESCSASMMYQEGKFRYRRVAEGTQVLELPF   274  (B)
+
+d2bhua3:A   ------------------------------------------------------------   530  (A)
+d3kcgi_:I   KGDDITMVLILPKPEKSLAKVEKELTPEVLQEWLDELEEMMLVVHMPRFRIEDGFSLKEQ   334  (B)
+
+d2bhua3:A   ------------------------------------------------------------   530  (A)
+d3kcgi_:I   LQDMGLVDLFSPEKSKLPGIVAEGRDDLYVSDAFHKAFLEVNEEGSEAAASTAVVIAGRS   394  (B)
+
+d2bhua3:A   -------------------------------------   530  (A)
+d3kcgi_:I   LNPNRVTFKANRPFLVFIREVPLNTIIFMGRVANPCV   431  (B)
+

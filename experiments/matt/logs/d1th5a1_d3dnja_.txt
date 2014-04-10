@@ -1,0 +1,16 @@
+(d3dnja_:A, d1th5a1:A)
+Core Residues: 30
+Core RMSD: 1.731
+Raw Score: 39.384
+P-value: 0.3191
+Reference structure: d3dnja_:A
+
+d1th5a1:A   LE-------------------------------------------------LNEENVEKV   164  (A)
+d3dnja_:A   --LYRVLILNDDYTPMEFVVYVLERFFNKSREDATRIMLHVHQNGVGVCGVYTYEVAETK    97  (B)
+
+d1th5a1:A   LNEIRPYLAGTG-GGGLQFLMIKGPIVKVRLTGPAAVVRTVRIAVSKKLREKIPSIQIVQ   223  (A)
+d3dnja_:A   VAQVIDSARRHQHPLQCTMEKD--------------------------------------   119  (B)
+
+d1th5a1:A   LLS   226  (A)
+d3dnja_:A   ---   119  (B)
+

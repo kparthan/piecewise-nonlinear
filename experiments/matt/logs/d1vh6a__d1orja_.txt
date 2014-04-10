@@ -1,0 +1,16 @@
+(d1orja_:A, d1vh6a_:A)
+Core Residues: 53
+Core RMSD: 2.227
+Raw Score: 99.895
+P-value: 0.0489
+Reference structure: d1orja_:A
+
+d1vh6a_:A   AT---------------PG--ELTLXLYNGCLKFIRLAAQAIENDDX-------------    47  (A)
+d1orja_:A   --RNIAEAYFQNMVETATPLEQIILLYDKAIECLERAIEIY-DQ---VNELEKRKEFVEN  1055  (B)
+
+d1vh6a_:A   ------------------------------------------ERKNENLIKAQNIIQELN    65  (A)
+d1orja_:A   IDRVYDIISALKSFLDHEKGKEIAKNLDTIYTIILNTLVKVDKTKEELQKILEILKDLRE  1115  (B)
+
+d1vh6a_:A   FTLNRNIEL-SASXGAXYDYXYRRLVQANIKNDTGXLAEVEGYVTDFRDAWKQAI   119  (A)
+d1orja_:A   AWEEVKKKVHHH-------------------------------------------  1127  (B)
+

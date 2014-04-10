@@ -1,0 +1,16 @@
+(d1ykha1:A, d2csba2:A)
+Core Residues: 13
+Core RMSD: 0.402
+Raw Score: 21.599
+P-value: 0.5431
+Reference structure: d1ykha1:A
+
+d2csba2:A   IVECALKLQDRYGI----------------------------------------------   307  (A)
+d1ykha1:A   --------------NYQYKIQELRKLLKSLLLNYLELIGVLSINPDMYERKVENIRTILV   156  (B)
+
+d2csba2:A   -------------------REDVALCLARAFDGSISXIATTPYRTLKDVCPDLTLEEAKS   348  (A)
+d1ykha1:A   NIHHLLNEYRPHQSRESLIMLLEEQLEYKRGE----------------------------   188  (B)
+
+d2csba2:A   VN-----------------   350  (A)
+d1ykha1:A   --IREIEQVCKQVHDKLTS   205  (B)
+

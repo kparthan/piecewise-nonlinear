@@ -1,0 +1,16 @@
+(d1wxaa1:A, d1se9a_:A)
+Core Residues: 72
+Core RMSD: 2.583
+Raw Score: 61.920
+P-value: 0.0155
+Reference structure: d1wxaa1:A
+
+d1se9a_:A   EAEVHNQLEIKFRLTD--GS-DIGPKAFPDATTVSALKETVIS--EWPREKENGPKTVKE    55  (A)
+d1wxaa1:A   -----SGGTLRIYADSLKPNIPYKTILLSTTDTADFAVAESLEKYGLEK------ENPKD    56  (B)
+
+d1se9a_:A   VKLISA---------------GKVLENSKTVKDYRSPVSNLAGAVT--------TMHVII    92  (A)
+d1wxaa1:A   YCIARVMLPPGAQHSDERGAKEIILDDDECPLQIFRE---------WPSDKGILVFQLKR   107  (B)
+
+d1se9a_:A   QAPVTEKEK---   101  (A)
+d1wxaa1:A   ---------RPP   110  (B)
+

@@ -1,0 +1,19 @@
+(d1yuza1:A, d1j30a_:A)
+Core Residues: 66
+Core RMSD: 1.302
+Raw Score: 161.284
+P-value: 2.0462e-03
+Reference structure: d1yuza1:A
+
+d1j30a_:A   DLKGTKTAENLKQGFIGESMANRRYLYFAKRADEEGYPEIAGLLRSIAEGETAHAFGHLD    62  (A)
+d1yuza1:A   -----------K------------------------------------------------    23  (B)
+
+d1j30a_:A   FIRQGGLTDPATDKPIGTLEQMIESAIAGETYEWTQMYPGFAKVAREEGFPEVAEWFETL   122  (A)
+d1yuza1:A   --------T-----AVGSTLENLKAAIAGETGAHA-KYTAFAKAAREQGYEQIARLFEAT    69  (B)
+
+d1j30a_:A   ARAEKSHAEKFQNVLKQLKGG---------------------------------------   143  (A)
+d1yuza1:A   AAAELIHIGLEYALVAEME--PGYEKPTVPSAYSCDLNLISGANGEIYETSDMYPAFIRK   129  (B)
+
+d1j30a_:A   ----------------------------   143  (A)
+d1yuza1:A   AQEEGNSKAVHVFTRAKLAESVHAERYL   157  (B)
+

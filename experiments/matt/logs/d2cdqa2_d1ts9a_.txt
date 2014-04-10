@@ -1,0 +1,16 @@
+(d1ts9a_:A, d2cdqa2:A)
+Core Residues: 19
+Core RMSD: 1.062
+Raw Score: 28.505
+P-value: 0.4760
+Reference structure: d1ts9a_:A
+
+d2cdqa2:A   KSILTSIVLKRNVTMLDIASTRMLG-----------------------------------   353  (A)
+d1ts9a_:A   -------------------------LQGVELIARDWIGLXVEVVESPNHSEVGIKGEVVD    39  (B)
+
+d2cdqa2:A   --------------------------------------------QVGFLAKVFSIFEELG   369  (A)
+d1ts9a_:A   ETQNTLKIXTEKGLKVVAKRGRTFRVWYKGKIXRIKGDLINFRPEDRIKRGLXXLKRAKG    99  (B)
+
+d2cdqa2:A   ISVDVVATSEVSISLTLDPSKLWSRELIQQELDHVVEELEKIAVVNLLKG   419  (A)
+d1ts9a_:A   VWI-----------------------------------------------   102  (B)
+

@@ -1,0 +1,19 @@
+(d1hy5a_:A, d1jgsa_:A)
+Core Residues: 58
+Core RMSD: 8.734
+Raw Score: 56.223
+P-value: 0.9304
+Reference structure: d1hy5a_:A
+
+d1jgsa_:A   LFNEIIPLGRLIHMVNQKKDRLLNEYLSPLDITAAQFKVLCSIRCAACITPVELKKVLSV    66  (A)
+d1hy5a_:A   -----TSFSDSIKQLAAETLPKYXQQLNSLD-----------------------------  1125  (B)
+
+d1jgsa_:A   DLGALTRMLDRLVCKGWVERLPNPNDKRGVLVKLTTGGAAIC------EQCHQL---VGQ   117  (A)
+d1hy5a_:A   ---------------------------------------AE-XLQKNHDQFAT-GSGP-L  1143  (B)
+
+d1jgsa_:A   D-LHQELTKNLT------ADEVATLEYLLKKVLP--------------------------   144  (A)
+d1hy5a_:A   RGSITQCQGLXQFCGGELQAEASAILNTPV----CGIPFSQWGTIGGAASAYVASGVDLT  1199  (B)
+
+d1jgsa_:A   --------------------   144  (A)
+d1hy5a_:A   QAANEIKGLAQQXQKLLSLX  1219  (B)
+

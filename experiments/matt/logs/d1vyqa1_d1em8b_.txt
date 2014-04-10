@@ -1,0 +1,19 @@
+(d1em8b_:B, d1vyqa1:A)
+Core Residues: 39
+Core RMSD: 7.869
+Raw Score: 27.431
+P-value: 0.9959
+Reference structure: d1em8b_:B
+
+d1vyqa1:A   M-----------HLK-IV----CL---SDEVREMYKNHKTHHED----------------    26  (A)
+d1em8b_:B   -GEIAIAIPAHVRL-VM-VANDLPALTDPLVSDVLRAL------TVSPDQVLQLTPEKIA    77  (B)
+
+d1vyqa1:A   ------SGLDLFIVKDEVLKPKSTTFVKLGIKAIALQYKSNYYNIVNTSFLLFPRSSISK    96  (A)
+d1em8b_:B   MLPQGSHC-NSWRLG-------------T-------------------------------    92  (B)
+
+d1vyqa1:A   TPLRLANSIGLIDAGYRGEIIAALDNTSDQEYHIKKN-DKLVQLVSFTGEPLSFELVEEL   155  (A)
+d1em8b_:B   -------------------------------------DEPLSL-E------GAQVASPA-   107  (B)
+
+d1vyqa1:A   DETS-----------------------------   159  (A)
+d1em8b_:B   ----LTDLRANPTARAALWQQICTYEHDFFPRN   136  (B)
+

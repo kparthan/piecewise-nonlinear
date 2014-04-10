@@ -1,0 +1,19 @@
+(d3reaa_:A, d1xn5a_:A)
+Core Residues: 26
+Core RMSD: 2.147
+Raw Score: 32.642
+P-value: 0.4482
+Reference structure: d3reaa_:A
+
+d1xn5a_:A   MTRLPD------------IK-KEVRFNAPIEKVWEAVSTSEGLA---FWFMENDLKAETG    44  (A)
+d3reaa_:A   ------NADSAWLEAQEEEEVGFPVR------------------PQVPL-----------    80  (B)
+
+d1xn5a_:A   HHFHLQSPFGPSPCQVTDVERPIKLSFTWDTDGWSVTFHLKEEENGTIFTIVHSGWKQGD   104  (A)
+d3reaa_:A   ------------------------------------------------------------    80  (B)
+
+d1xn5a_:A   TKVEKAGAESA--------------------------VVHERMDRGWHDLVNERLRQIVE   138  (A)
+d3reaa_:A   -----------RPMTYKAALDISHFLKEKGGLEGLIWSQRRQEILDLWIYHTQG------   123  (B)
+
+d1xn5a_:A   -----------------------------------------------------------   138  (A)
+d3reaa_:A   YFPDWQNYTPGPGIRYPLTFGWCFKLVPVEPEDAEKEVLVWRFDSKLAFHHMARELHPE   205  (B)
+

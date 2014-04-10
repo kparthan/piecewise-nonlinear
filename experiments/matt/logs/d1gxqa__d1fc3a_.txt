@@ -1,0 +1,16 @@
+(d1fc3a_:A, d1gxqa_:A)
+Core Residues: 49
+Core RMSD: 2.710
+Raw Score: 49.511
+P-value: 0.2200
+Reference structure: d1fc3a_:A
+
+d1gxqa_:A   PMAVEEVIEMQGLSLDPTSH-RVMAGEEP--L--EM-------------------GPTEF   160  (A)
+d1fc3a_:A   --------------------NKP------KNLDASITSIIHEIGVPAHIKGYLYLREAIA   173  (B)
+
+d1gxqa_:A   KLLHFFMTHPERVYSR--EQLLNHVWGT-------NVY--VED-----------------   192  (A)
+d1fc3a_:A   MVYHDI--E-------LLGSITKVLYPDIAKKYNTTASRVER-AIRHAIEVAWSRGNLES   223  (B)
+
+d1gxqa_:A   ----------------RTVDVHIRRLRKALEPGGHDRMVQTVRGTGYRFSTRF--   229  (A)
+d1fc3a_:A   ISSLFGYTVSVSKAKPTNSEFIAMVADKLRLEH--------------------KA   258  (B)
+

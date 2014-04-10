@@ -1,0 +1,13 @@
+(d2clyc_:C, d1bx7a_:A)
+Core Residues: 10
+Core RMSD: 1.626
+Raw Score: 3.082
+P-value: 0.7028
+Reference structure: d2clyc_:C
+
+d1bx7a_:A   GNTC--------------------------------------------------------     6  (A)
+d2clyc_:C   ----LDPVQKLFVDKIREYRTKRQTSGGPVDAGPEYQQDLDRELFKLKQMYGKADMNTFP    60  (B)
+
+d1bx7a_:A   GGETCSAAQVCLKGKCVCNEVHCRIRCKYGLKKDENGCEYPCSCAKA    53  (A)
+d2clyc_:C   N-------------FTFEDPKFE------------------------    70  (B)
+

@@ -1,0 +1,16 @@
+(d2qlxa_:A, d2byca1:A)
+Core Residues: 69
+Core RMSD: 5.985
+Raw Score: 66.073
+P-value: 0.5056
+Reference structure: d2qlxa_:A
+
+d2byca1:A   -MDELVSLTYRSRVRLADPVA-DIVQIMRASRV------RNLR---L----GITGILLYN    45  (A)
+d2qlxa_:A   GDXTLEKH--AFKXQLNP---GXEAEYRKRHD-EIWPELV---DLLHQSGASDY-SIHLD    48  (B)
+
+d2byca1:A   G---VHFVQTIEGPRSACDELFRLISADPR-------------------HQEILAFDLEP    83  (A)
+d2qlxa_:A   -RETNTLFGVLTRPKD--H-TXASLPDHPVXKKWWAHXADIXATNPDNSPV----QSDLV   100  (B)
+
+d2byca1:A   ITARRFPDWSMRIVSRKELRALAPDLERLDLSGPEDVAELHRTIAASLSRGDA--   136  (A)
+d2qlxa_:A   TLF-H------------------------------------------------XP   106  (B)
+

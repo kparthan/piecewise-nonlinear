@@ -1,0 +1,43 @@
+(d1olta_:A, d1vema2:A)
+Core Residues: 180
+Core RMSD: 5.795
+Raw Score: 210.007
+P-value: 2.7254e-11
+Reference structure: d1olta_:A
+
+d1vema2:A   AVNGKGMNPDYKAYLM-------------APLKK---IPEVTNWETFENDLRWAKQNGFY    44  (A)
+d1olta_:A   ----------------QQIDWDLALIKYYT----SYPTAL--------------------    30  (B)
+
+d1vema2:A   AITVDFWWGDMEKNGDQQFD-------FSYAQRFAQSVKNAGMKMIPIISTHQCGGN---    94  (A)
+d1olta_:A   --------------------EFSEDFGEQAFLQAVAR--YPERPLSLYVHIP-----FCH    63  (B)
+
+d1vema2:A   -----VGDDCNVPIPSWVWNQKSDDSLYFKSETGTVNKET--LNPLA---SDVIRKEYGE   144  (A)
+d1olta_:A   KLCYFCGC--------------------------------NKIVTRQQHKADQYLDALEQ    91  (B)
+
+d1vema2:A   LYTAFAAAMKPY-KDVIAKIYLSGGP-AGELRYPSYTTSDGTGYPSRGKFQAYTEFAKSK   202  (A)
+d1olta_:A   EIVHRAPLFAGRHV-----SQLHWG-GGTPTY----------------------------   117  (B)
+
+d1vema2:A   FRLWVLNKYGSLNEVNKAWGTKLISELAILPPSDGEQFLMNGYLSMYGKDYLEWYQGILE   262  (A)
+d1olta_:A   ---------------------------------------------------------LNK   120  (B)
+
+d1vema2:A   NHTKLIGELAHNAFDTTFQ--VPIGAKIAGVHWQYNNPTIPHGAEKPAGYNDYSHLLDAF   320  (A)
+d1olta_:A   AQISRLMKLLRENF--QFNADAEISIEVDPR------------------E-IELDVLDHL   159  (B)
+
+d1vema2:A   KSAKL-DVTFTCLEMTDKGSYP---EY----SMP-KTLVQNIATLANEKGI-VLNGENAL   370  (A)
+d1olta_:A   RAEGFNRLSMGV-QDFNK----EVQR-LVNREQ-DEEFIFALLNHAREIGFTSTNIDL--   210  (B)
+
+d1vema2:A   SIGNEE------------EYKRVAEMAFNYNFAGFTLLRYQDVMYN--------------   404  (A)
+d1olta_:A   IY----GLPKQTPESFAFTLKRVAELNP----DRLSV---------FNYAHLPTIFAAQR   253  (B)
+
+d1vema2:A   -------------NSLMGKFKDL-------------LG------V---------------   417  (A)
+d1olta_:A   KIKDADLPSPQQKLDILQETIAFLTQSGYQFIGMDHFARPDDELAVAQREGVLHRNFQGY   313  (B)
+
+d1vema2:A   ------------------------------------------------------------   417  (A)
+d1olta_:A   TTQGDTDLLGMGVSAISMIGDCYAQNQKELKQYYQQVDEQGNALWRGIALTRDDCIRRDV   373  (B)
+
+d1vema2:A   ------------------------------------------------------------   417  (A)
+d1olta_:A   IKSLICNFRLDYSPIEQQWDLLFADYFAEDLKLLAPLAKDGLVDVDEKGIQVTAKGRLLI   433  (B)
+
+d1vema2:A   -----------   417  (A)
+d1olta_:A   RNICMCFDTYL   444  (B)
+

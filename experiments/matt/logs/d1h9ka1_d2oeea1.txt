@@ -1,0 +1,16 @@
+(d2oeea1:A, d1h9ka1:A)
+Core Residues: 10
+Core RMSD: 0.471
+Raw Score: 14.685
+P-value: 0.5970
+Reference structure: d2oeea1:A
+
+d1h9ka1:A   GSHMKISARNVFKGTVSALKEGAVNAEVDILLGGGDKLAAV---------------VTLE    42  (A)
+d2oeea1:A   -----------------------------------------VNFYDVAYDLENALRGSEE    21  (B)
+
+d1h9ka1:A   SARSLQLAAGKEVVAVVKAPWVLLMTDSSGY-----------------------------    73  (A)
+d2oeea1:A   FTRLKN-------------------------LYDEVNADESAKRXFENFRDVQLQAQKTV    74  (B)
+
+d1h9ka1:A   --------------------------------------    73  (A)
+d2oeea1:A   ALVQQHEKISQLXEAEQRXSXLIGELNKIIXKPLEELY   112  (B)
+

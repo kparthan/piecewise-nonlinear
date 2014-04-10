@@ -1,0 +1,16 @@
+(d1t3ua_:A, d1h8la1:A)
+Core Residues: 31
+Core RMSD: 2.493
+Raw Score: 19.674
+P-value: 0.5717
+Reference structure: d1t3ua_:A
+
+d1h8la1:A   GIWGFVLDATDGRGILNATISVADINHPVTTYKDGDYWRLLVQGTY-KV--TASARGYDP   361  (A)
+d1t3ua_:A   TLTVQI------LD--------------------KEYCINCPDDERANLESAA-------    32  (B)
+
+d1h8la1:A   -VTKTVEVDSKGGVQVNFTL--SRT-----------------------------------   383  (A)
+d1t3ua_:A   RYL---------------DGKXREIRSSGKVIGADRVAVXAALNITHDLLHRKERLDQES    77  (B)
+
+d1h8la1:A   --------------------   383  (A)
+d1t3ua_:A   SSTRERVRELLDRVDRALAN    97  (B)
+

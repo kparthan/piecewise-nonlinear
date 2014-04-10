@@ -1,0 +1,16 @@
+(d2nxyb1:B, d1jbja1:A)
+Core Residues: 62
+Core RMSD: 3.389
+Raw Score: 47.134
+P-value: 0.1827
+Reference structure: d2nxyb1:B
+
+d1jbja1:A   KKDGSQTNKAKNLVQVDGSRGD----GSVLLTC-GLTDKT--IKWLK-DGSIIS------   146  (A)
+d2nxyb1:B   -------------KKVVL----GKKGDTVELTCTASQKKSIQFHWKNSNQIKILGNQGSF  1043  (B)
+
+d1jbja1:A   -----------PLNATK--------NTWNLGNNAKD--PRGTYQCQGAKETSNPLQVYYR   185  (A)
+d2nxyb1:B   LTKGPSKLNDRAD--SRRSLWDQGNFPLIIKN--LKIEDSDTYICEVEDQKEE-VQLLV-  1097  (B)
+
+d1jbja1:A   M   186  (A)
+d2nxyb1:B   -  1097  (B)
+

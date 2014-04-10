@@ -1,0 +1,16 @@
+(d1n62a1:A, d2fb1a1:A)
+Core Residues: 27
+Core RMSD: 2.647
+Raw Score: 32.529
+P-value: 0.5532
+Reference structure: d1n62a1:A
+
+d2fb1a1:A   P------IGFNLLPK---LF----------------------------------------   160  (A)
+d1n62a1:A   -APDGTLSALQEGF-RMMHGLQCGYCTPGMIMRSHRLLQENPSPTEAEIRFGIGGNLCRC   139  (B)
+
+d2fb1a1:A   -----TLSQLQSLYEAIYGEPXDKRNFRKRVAEXDFIEKTDKIDKLGSKRGAALYKFNGK   215  (A)
+d1n62a1:A   TGYQNIVKAIQYAAAKINGVPF-E------------------------------------   162  (B)
+
+d2fb1a1:A   AYRKDPKFKL-   225  (A)
+d1n62a1:A   ----------E   163  (B)
+

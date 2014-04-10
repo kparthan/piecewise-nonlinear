@@ -1,0 +1,19 @@
+(d1kf6d_:D, d1j30a_:A)
+Core Residues: 59
+Core RMSD: 3.664
+Raw Score: 91.190
+P-value: 0.1421
+Reference structure: d1kf6d_:D
+
+d1j30a_:A   DLKGTKTAENLKQGFIGESMANRRYLYFAKRADEEGYPEIAGLLRSIAEGETAHAFGHLD    62  (A)
+d1kf6d_:D   ------------------------------------------------------------     0  (B)
+
+d1j30a_:A   FIRQGGL------------------------------TDPATDKPI--------------    78  (A)
+d1kf6d_:D   -------MINPNPKRSDEPVFWGLFGAGGMWSAIIAPVMI------LLVGILLPLGLFPG    46  (B)
+
+d1j30a_:A   ----------GT--LEQMIESAIAGETYEWTQMYPGFAKVAREEGFPEVA--EWFETLAR   124  (A)
+d1kf6d_:D   DALSYERVLAFAQSFIGRVFLFLMIVLPLW-CGLHRMHHAMHDLKIHV--PAG--KWVFY   101  (B)
+
+d1j30a_:A   AEKSHAEKFQNVLKQLKGG--   143  (A)
+d1kf6d_:D   GLAAILTVVTLIGVV----TI   118  (B)
+

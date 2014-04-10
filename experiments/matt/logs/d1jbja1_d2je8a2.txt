@@ -1,0 +1,16 @@
+(d2je8a2:A, d1jbja1:A)
+Core Residues: 29
+Core RMSD: 1.817
+Raw Score: 25.943
+P-value: 0.3597
+Reference structure: d2je8a2:A
+
+d1jbja1:A   KKDGSQTNKAKNLVQVDGSRGDGSVLLTCGLTD---KTIKWLKDGSIISPLNATKNTWNL   157  (A)
+d2je8a2:A   ---------------------------------LPPTSVSYQMK----------------   794  (B)
+
+d1jbja1:A   GNNAKDP----RGTYQCQGA--------------------------KETSNPLQVYYRM-   186  (A)
+d2je8a2:A   -------QTDGKCELTLFSSMLAKDIFIETPLQGARYSDNFFDLLPGERKK-VIITSPRI   846  (B)
+
+d1jbja1:A   ------------------   186  (A)
+d2je8a2:A   KKGEELPVNIKHIRETYK   864  (B)
+

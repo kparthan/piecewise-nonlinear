@@ -1,0 +1,22 @@
+(d1vq8w1:W, d1nf4a_:A)
+Core Residues: 31
+Core RMSD: 2.362
+Raw Score: 39.133
+P-value: 0.5122
+Reference structure: d1vq8w1:W
+
+d1nf4a_:A   NREDRKAKVIEV------------------------------------------------    15  (A)
+d1vq8w1:W   ------------MHALVQLRGEVNMHTDIQDTLEMLNIHHVNHCTLVPETDAYRGMVAKV    48  (B)
+
+d1nf4a_:A   ---------LNKARAMELHAIHQY-----MNQHYSLDDMDYGELAANMKLI---------    52  (A)
+d1vq8w1:W   NDFVAFGEPSQETLETVLATRA--EPLEGDA--------------------DVDDEWVAE    86  (B)
+
+d1nf4a_:A   -----------------------------AIDEMRHAENFAERIKELGGEPTTQKEGKVV    83  (A)
+d1vq8w1:W   HTDYDDISGLAFALLSEETTLREQGLSPTLRL----------------------------   118  (B)
+
+d1nf4a_:A   TGQAVPVIYESDADQEDATIEAYSQFLKVCKEQGDI-----------------------V   120  (A)
+d1vq8w1:W   ------------------------------------HPPRGGHDGVKHPVKEGGQLGKHD   142  (B)
+
+d1nf4a_:A   TARLFERIIEEEQAHLTYYENIGSHIKNLGDTYLAKIAGTPSSTGTASKGFV   172  (A)
+d1vq8w1:W   TEGIDDLLEAMR----------------------------------------   154  (B)
+

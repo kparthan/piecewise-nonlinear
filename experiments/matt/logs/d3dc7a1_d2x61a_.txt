@@ -1,0 +1,28 @@
+(d2x61a_:A, d3dc7a1:A)
+Core Residues: 84
+Core RMSD: 3.786
+Raw Score: 60.577
+P-value: 0.1094
+Reference structure: d2x61a_:A
+
+d3dc7a1:A   HVSFKRPAWLGDSITANNGLATVHYHDI---------------LAADWDVERSDNLGISG    62  (A)
+d2x61a_:A   -----KKVIIAG----------------NGPSLKEIDYSRLPNDF--------DVFRCNQ    32  (B)
+
+d3dc7a1:A   STIGSRY-----------------------------------------------------    69  (A)
+d2x61a_:A   F------YFEDKYYLGKKCKAVFYNPSLFFEQYYTLKHLIQNQEYETELIMCSNYNQAHL    86  (B)
+
+d3dc7a1:A   --------------------------------------------DAXAVRYQAIPE-DAD    84  (A)
+d2x61a_:A   ENENFVKTFYDYFPDAHLGYDFFKQLKDFNAYFKFHEIYFNQRITSGVYMCAVAIALGYK   146  (B)
+
+d3dc7a1:A   FIAVFGGVN------DYG-RDQPLGQYGD------------CDXTTFYGALXXLLTGLQT   125  (A)
+d2x61a_:A   EIYLSGI--DFYQSSYAFDT---------KQKNLLKLAPNFSK--------NTDIKALEF   199  (B)
+
+d3dc7a1:A   NWP--TVPKLFISAIHIGSDFGGSFSAVTNGLGYRQSDY-EAAIAQXTADYGVPHLSLYR   182  (A)
+d2x61a_:A   LEKTYKIKLYCLC--------------------------PNSLLANFI----GLA-----   224  (B)
+
+d3dc7a1:A   D-----AGXTFAIPAQAAIYSVDTLHPNNAGHRVIARKLQSFLDSHF-------------   224  (A)
+d2x61a_:A   -PNLNSNFIIQE----------KN-----------------------NYTKDILIPSSEA   250  (B)
+
+d3dc7a1:A   --------   224  (A)
+d2x61a_:A   YGKFSKNI   258  (B)
+

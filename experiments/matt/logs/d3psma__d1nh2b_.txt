@@ -1,0 +1,13 @@
+(d1nh2b_:B, d3psma_:A)
+Core Residues: 22
+Core RMSD: 2.361
+Raw Score: 19.507
+P-value: 0.5779
+Reference structure: d1nh2b_:B
+
+d3psma_:A   KTCENLADTFRGPC----------F---TDGSCDDHCKNKEHLI--KG--RC--R---DD    38  (A)
+d1nh2b_:B   --------------NAEASRVYEIIVESVVNEVREDFE-NAGIDEQTLQDLKNIWQKKL-    46  (B)
+
+d3psma_:A   FRCWCTRNC--    47  (A)
+d1nh2b_:B   ---------TE    48  (B)
+

@@ -1,0 +1,19 @@
+(d1oa8a_:A, d1iyjb4:B)
+Core Residues: 50
+Core RMSD: 2.259
+Raw Score: 41.170
+P-value: 0.1656
+Reference structure: d1oa8a_:A
+
+d1iyjb4:B   -------------------------------------------------PLPLSSLFSDG  2742  (A)
+d1oa8a_:A   GSPAAAPPTLPPYFMKGSIIQLANGELKKVEDLKTEDFIQSAEISNDLKID---------   612  (B)
+
+d1iyjb4:B   GNVGCVDVIVQRVYPLQ-W-VWKLRVTSYKKREKSALLSIWRPSSD-----------LPS  2926  (A)
+d1oa8a_:A   ------SSTVERIEDSHSPGVAVIQFAVGEH-RAQVSVEVL-VE--YPFFVFGQGWSSCC   662  (B)
+
+d1iyjb4:B   -------------LLTEGQRYRIYHLSVSKSKNKFEWPSIQLTATKRTQYQQLPVSSETL  2973  (A)
+d1oa8a_:A   PERTSQLFDLPCSKLSVGDVCISL------------------------------------   686  (B)
+
+d1iyjb4:B   LQLYQP---  2979  (A)
+d1oa8a_:A   ------TLK   689  (B)
+

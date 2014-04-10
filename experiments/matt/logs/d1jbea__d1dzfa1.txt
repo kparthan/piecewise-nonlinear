@@ -1,0 +1,19 @@
+(d1dzfa1:A, d1jbea_:A)
+Core Residues: 69
+Core RMSD: 3.166
+Raw Score: 71.417
+P-value: 0.0772
+Reference structure: d1dzfa1:A
+
+d1jbea_:A   ADKELKFLVVDDF--------STMRRIVRNLLKELGFNNVEEA-----------------    36  (A)
+d1dzfa1:A   -------------NERNISRLWRAFRTVKEMVKDRGYF-I---TQEEVELPLEDFKAKYC    47  (B)
+
+d1jbea_:A   ----------EDGVDALNKLQAGG---Y-------------GFVISDWNMPNMD------    64  (A)
+d1dzfa1:A   DSMGRPQRKMMS------------FQANPTEESISKFPDMGSLWVEFCDE----PSVGVK    91  (B)
+
+d1jbea_:A   ----GLELLKTIRAXXAMSA-LPVLMVTAEAK-KENIIAAAQ-AG---ASGYVVK-PF--   111  (A)
+d1dzfa1:A   TMKTFVIHIQ-E-----KN-FQTGIFVYQNNITPSAMK-LV-PSIPPATIETFNEAALVV   142  (B)
+
+d1jbea_:A   TAATLEEKLNKIFEKLGM   129  (A)
+d1dzfa1:A   N-----------------   143  (B)
+

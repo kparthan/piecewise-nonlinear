@@ -1,0 +1,19 @@
+(d1ooha_:A, d1tuza_:A)
+Core Residues: 50
+Core RMSD: 3.458
+Raw Score: 47.314
+P-value: 0.2722
+Reference structure: d1ooha_:A
+
+d1tuza_:A   MAKERGLISPSDFAQLQKYMEYSTK----------KVSDVLKLFEDGEMAKYVQGD-AI-    48  (A)
+d1ooha_:A   -------------------------SHMTMEQFLTSLDMIRSGCAP----KFKLKTEDLD    29  (B)
+
+d1tuza_:A   --------------GYEGFQQFLKIYLEVDN----V------------------------    66  (A)
+d1ooha_:A   RLRVGDFNFPPSQDLMCYTKCVSLMAG-TVNKKGEFNAPKALAQLPHLVPPEMMEMSRKS    88  (B)
+
+d1tuza_:A   -----------------PRHLSLALFQSFETGHCLNETNVTKDVVCLND-----VSCYFS   104  (A)
+d1ooha_:A   VEACRDTHKQFKESCERVYQTAKCFSENA--------------------DGQFMWP----   124  (B)
+
+d1tuza_:A   LLEGGRPEDKLEWS   118  (A)
+d1ooha_:A   --------------   124  (B)
+

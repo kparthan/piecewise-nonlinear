@@ -1,0 +1,16 @@
+(d1ny8a_:A, d2fx0a1:A)
+Core Residues: 29
+Core RMSD: 2.306
+Raw Score: 19.716
+P-value: 0.5799
+Reference structure: d1ny8a_:A
+
+d2fx0a1:A   SREQTX------------------ENILK--AAK----------KKFGERGYEGTSIQEI    33  (A)
+d1ny8a_:A   ------MIEDPMENNEIQSVLMNALSL--QEV--HVSGDGSHFQVI--------------    36  (B)
+
+d2fx0a1:A   AKEAKVNVAX-ASYYFNGKENLYYEVFKKYGLANELPNFLEKNQ----------------    76  (A)
+d1ny8a_:A   --AVGE---LFDGM---SRVKKQQTVYGPLME------------YIADNRIHAVSIKAYT    76  (B)
+
+d2fx0a1:A   ---------------------    76  (A)
+d1ny8a_:A   PAEWARDRKLNGFLEHHHHHH    97  (B)
+

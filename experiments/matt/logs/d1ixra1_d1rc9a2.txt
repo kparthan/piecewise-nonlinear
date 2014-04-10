@@ -1,0 +1,13 @@
+(d1rc9a2:A, d1ixra1:A)
+Core Residues: 23
+Core RMSD: 2.365
+Raw Score: 13.178
+P-value: 0.5750
+Reference structure: d1rc9a2:A
+
+d1ixra1:A   PDEENL--------------------ALFELLLSVSGVGPKVALALLSALPPRLLARALL   102  (A)
+d1rc9a2:A   ------TPCGDCPSDCDNGLCTNPCTR--ENK-----FT--NCNTMVQQSSCQ-DNY-M-   206  (B)
+
+d1ixra1:A   EGDARLLTSASGVGRRLAERIALELKGK-VPPHL-------------   135  (A)
+d1rc9a2:A   ----------------------------KT----NCPASCFCQNKII   221  (B)
+

@@ -1,0 +1,19 @@
+(d1e3ha5:A, d2cpya1:A)
+Core Residues: 30
+Core RMSD: 2.566
+Raw Score: 23.574
+P-value: 0.5603
+Reference structure: d1e3ha5:A
+
+d2cpya1:A   EGDVNSAK--------VCAHITNIPFSITKMDVLQFLEGIPVDENAVHVLVDNNGQGLG-   586  (A)
+d1e3ha5:A   --------FSGPIGGVRVALI--------------------------------------R   165  (B)
+
+d2cpya1:A   QALVQFKNEDDARKSERLHRKKLNGREAF-VHVVTLED----------------------   623  (A)
+d1e3ha5:A   GQWVAFP----THTEL-ED----------AVFDXVVA-GRVLEDGDVAIXXVEAEATEKT   209  (B)
+
+d2cpya1:A   ------------------MREIEKNPPAQGKSG---------------------------   638  (A)
+d1e3ha5:A   IQLVKDGAEAPTEEVVAAG-LDA----------AKPFIKVLCKAQADLAAKAAKPTGEFP   258  (B)
+
+d2cpya1:A   ----   638  (A)
+d1e3ha5:A   VFLD   262  (B)
+

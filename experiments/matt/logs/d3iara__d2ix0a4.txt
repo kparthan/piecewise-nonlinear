@@ -1,0 +1,43 @@
+(d2ix0a4:A, d3iara_:A)
+Core Residues: 42
+Core RMSD: 2.900
+Raw Score: 55.555
+P-value: 0.3805
+Reference structure: d2ix0a4:A
+
+d3iara_:A   PAFDKPKVELHVHLDGSIKPETILY-----------------------------------    29  (A)
+d2ix0a4:A   --------------------E----APDGVATEMLDEGLVREDLTALDFVTIDSASTEDM   208  (B)
+
+d3iara_:A   --------------------------------------YGRRRGIA------------LP    39  (A)
+d2ix0a4:A   DDALFAKALPDDKLQLIVAIADPTAWIAEGSKLDKAAKIR------AFTNYLPGFNIPML   262  (B)
+
+d3iara_:A   ANTAEGLLNVIGMDKP------------------------------------------LT    57  (A)
+d2ix0a4:A   ------PRELS-----DDLCSLRANEVRPVLACRMTLSADGTIEDNIEFFAATIESKAKL   311  (B)
+
+d3iara_:A   LPDFLAK-----------------------------------------------------    64  (A)
+d2ix0a4:A   -------VYDQVSDWLENTGDWQPESEAIAEQVRLLAQICQRRGEWRHNHALVFKDRPDY   364  (B)
+
+d3iara_:A   ------------------------------------------------------------    64  (A)
+d2ix0a4:A   RFILGEKGEVLDIVAEPRRIANRIVEEAMIAANICAARVLRDKLGFGIYNVHMGFDPANA   424  (B)
+
+d3iara_:A   ------------------------------------------------------------    64  (A)
+d2ix0a4:A   DALAALLKTHGLHVDAEEVLTLDGFCKLRRELDAQPTGFLDSRIRRFQSFAEISTEPGPH   484  (B)
+
+d3iara_:A   ------------FDYYMPAIA------------------------G--CREAIKRIAYEF    86  (A)
+d2ix0a4:A   FGLGLEAYATWTSPIRKY--GDMINHRLLKAVIKGETATRPQDEITVQMAERRRLNRMAE   542  (B)
+
+d3iara_:A   VEMKAKEGVVYVEVRYSPHLLANSKVEPIPWNQAEGDLTPDEVVALVGQGLQEGERDFGV   146  (A)
+d2ix0a4:A   RDVGDWLY----------------------------------------------------   550  (B)
+
+d3iara_:A   KARSILCCMRHQPNWSPKVVELCKKYQQQTVVAIDLAGDETIPGSSLLPGHVQAYQEAVK   206  (A)
+d2ix0a4:A   ------------------------------------------------------------   550  (B)
+
+d3iara_:A   SGIHRTVHAGEVGSAEVVKEAVDILKTERLGHGYHTLEDQALYNRLRQENMHFEICPWSS   266  (A)
+d2ix0a4:A   ------------------------------------------------------------   550  (B)
+
+d3iara_:A   YLTGAWKPDTEHAVIRLKNDQANYSLNTDDPLIFKSTLDTDYQMTKRDMGFTEEEFKRLN   326  (A)
+d2ix0a4:A   ------------------------------------------------------------   550  (B)
+
+d3iara_:A   INAAKSSFLPEDEKRELLDLLYK-----AYGMPPSASAGQNLA   364  (A)
+d2ix0a4:A   -----------------------ARFLKDK-------------   557  (B)
+

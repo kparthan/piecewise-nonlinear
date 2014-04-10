@@ -1,0 +1,13 @@
+(d3dkma_:A, d1ug1a_:A)
+Core Residues: 51
+Core RMSD: 2.405
+Raw Score: 46.784
+P-value: 0.2447
+Reference structure: d3dkma_:A
+
+d1ug1a_:A   GSSGSSGASLLARY---------------PPEKLFQAER-NFNAAQDLDVS-LLE---GD    40  (A)
+d3dkma_:A   --------------GRENLYFQGLKYMVPG--ARVTRGLDWKW-------RDQD-GSPQG  1299  (B)
+
+d1ug1a_:A   LVGVIKKKDPMGSQNRWLIDNG-VTKGFVYSS-----FLKPYNPRRSHSDASSGPSSG--    92  (A)
+d3dkma_:A   EGTVTGEL---HN-GWIDVTWDAGGSNSYRMGAEGKFDLKLAPGY-------------DP  1342  (B)
+

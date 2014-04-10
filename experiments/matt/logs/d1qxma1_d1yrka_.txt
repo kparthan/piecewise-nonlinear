@@ -1,0 +1,19 @@
+(d1yrka_:A, d1qxma1:A)
+Core Residues: 38
+Core RMSD: 3.577
+Raw Score: 32.914
+P-value: 0.6923
+Reference structure: d1yrka_:A
+
+d1qxma1:A   TNANDLRNNEVFFISPSNNT--------------NKVLDKISQSEVKL------------    37  (A)
+d1yrka_:A   --------------------GSHMAPFLRIAFNSY-------------ELGSLQAEDEAN    24  (B)
+
+d1qxma1:A   --WNKLSGANQKWRLIYDTN-K-QAYKIKVMDNTSLILTWNAPLSSVSVKTDTNGDNQYW    93  (A)
+d1yrka_:A   QPFC------AVKMKEALSTERGKTLVQK-----KP------------------------    49  (B)
+
+d1qxma1:A   YLLQNYISRNVIIRNYMNPNLVLQYNI-------------------------DD--TLMV   126  (A)
+d1yrka_:A   ---------------------------TMYPEWKSTFDAHIYEGRVIQIVLMRAAEEP--    80  (B)
+
+d1qxma1:A   STQTSSSNQF--FKFSNCIYEALN-----------------------------   148  (A)
+d1yrka_:A   ----------VSEVTVGVSVLAERCKKNNGKAEFWLDLQPQAKVLMSVQYFLE   123  (B)
+

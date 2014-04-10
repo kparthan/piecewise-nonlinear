@@ -1,0 +1,16 @@
+(d1i3oe_:E, d1se9a_:A)
+Core Residues: 36
+Core RMSD: 3.449
+Raw Score: 34.287
+P-value: 0.6654
+Reference structure: d1i3oe_:E
+
+d1se9a_:A   EAEVHN------------------------------------------------------     6  (A)
+d1i3oe_:E   ------FALDRPSETHADYLLRTGQVVDISDTIYPRNPAMYSEEARLKSFQNWPDYAHLT   180  (B)
+
+d1se9a_:A   --------------QLEIKFRLTDGSDIGPKAFPDA-T-TVSALKETVISEWPREKENGP    50  (A)
+d1i3oe_:E   PRELASAGLYYTGIGDQVQCFA----CGGKLKNW--EPGD--RAWSEHRRHF-PNCFF-V   230  (B)
+
+d1se9a_:A   KTVKEVKLISAGKVLENSKTVKDYRSPVSNLAGAVTTMHVIIQAPVTEKEK-----   101  (A)
+d1i3oe_:E   L------------------------------------------G-------RNLNI   237  (B)
+

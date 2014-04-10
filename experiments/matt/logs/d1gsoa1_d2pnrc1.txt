@@ -1,0 +1,16 @@
+(d2pnrc1:C, d1gsoa1:A)
+Core Residues: 19
+Core RMSD: 2.177
+Raw Score: 14.101
+P-value: 0.6018
+Reference structure: d2pnrc1:C
+
+d1gsoa1:A   ERASLGVVMAA------------------------GGYPGDYRTGDVIHGLPLEEVAGGK   363  (A)
+d2pnrc1:C   -----------VLLPALSPTMTMGTVQRWEKKVGEK-----LSEGDLLA-----------   167  (B)
+
+d1gsoa1:A   VFHAGTKLA---------QVVTNGGRVLCVTALGHTVAEAQKRAYALMTDIHWDD-CFCR   416  (A)
+d2pnrc1:C   ---------EIETDKATIGFEVQEE------------------------------GYLA-   187  (B)
+
+d1gsoa1:A   KDIGWRAIER--------   426  (A)
+d2pnrc1:C   ----------KILVPEGT   195  (B)
+

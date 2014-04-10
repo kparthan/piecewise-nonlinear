@@ -1,0 +1,16 @@
+(d2ct5a1:A, d1pfsa_:A)
+Core Residues: 15
+Core RMSD: 1.648
+Raw Score: 12.655
+P-value: 0.6674
+Reference structure: d2ct5a1:A
+
+d1pfsa_:A   MNIQITFTDSVRQGTSAKGNPYTFQEGFLHLEDKPHPLQCQFFVESVIPAGSYQVPY---    57  (A)
+d2ct5a1:A   ---------------------------------------------------------SKV    10  (B)
+
+d1pfsa_:A   -----------------RINVN--NGRPELAFDFKAMKRA--------------------    78  (A)
+d2ct5a1:A   WKYFGFDTNAEGCILQWKKIYCRICMAQIAYSGN------TSNLSYHLEKNHPEEFCEFV    64  (B)
+
+d1pfsa_:A   ---    78  (A)
+d2ct5a1:A   KSN    67  (B)
+

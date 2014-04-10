@@ -1,0 +1,28 @@
+(d2ieaa1:A, d1geqa_:A)
+Core Residues: 93
+Core RMSD: 3.269
+Raw Score: 60.347
+P-value: 0.0968
+Reference structure: d2ieaa1:A
+
+d1geqa_:A   MF-----KD--GS------------------------LIPYLTAGDPDKQSTLNFLLA--    27  (A)
+d2ieaa1:A   --EKLELPSLQD-FGALLEEQSKEISTTIAFVRALNVML-------------------KN   508  (B)
+
+d1geqa_:A   ----LDEYAGAIELGIPFSDPIADGKTIQESHYR--------------------------    57  (A)
+d2ieaa1:A   KSIKDR----LVPIIADE---------AR-----TFGMEGLFRQIGIYSPEDEKGQILQE   567  (B)
+
+d1geqa_:A   ALKNGFKLREAFWIVKEFRRHS-----STPIVLMTYYNPIYRAGVRN-FLAEAKAS----   107  (A)
+d2ieaa1:A   GI----NELGAGCSWLAAATSYSTNNLPMIPFYIYYSMFG---FQ--RIGDLCWAAGDQQ   618  (B)
+
+d1geqa_:A   GVDGILVVDLPVF------------HAKEFTEIAREEG-IKTVFLAAPNTPDERLKVIDD   154  (A)
+d2ieaa1:A   ARGFLIGGTSGR-TTLNGEGLQHEDGH--SHIQSLTIPNCISYDPA--------Y-----   662  (B)
+
+d1geqa_:A   MTTGF--VYLVSLYEIPKTAYDLLRRAKRICRN-KVAVGFGVSKREHVVSLLKEGANGVV   218  (A)
+d2ieaa1:A   -----AYEV------------------------AVI------------------------   669  (B)
+
+d1geqa_:A   VGSALVKIIGEKGREATEFLKKKVEELLGI------------------------------   248  (A)
+d2ieaa1:A   ------------------------------MHDGLERMYGEKQENVYYYITTLNENYHMP   699  (B)
+
+d1geqa_:A   -   248  (A)
+d2ieaa1:A   A   700  (B)
+

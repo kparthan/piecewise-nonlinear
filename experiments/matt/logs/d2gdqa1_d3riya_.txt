@@ -1,0 +1,31 @@
+(d3riya_:A, d2gdqa1:A)
+Core Residues: 77
+Core RMSD: 5.827
+Raw Score: 77.117
+P-value: 0.1336
+Reference structure: d3riya_:A
+
+d2gdqa1:A   RYREEIPVYASFQSYSDSPQWISRSVSNVEAQLKKGFEQIKVKIGGTSFKEDVRHINALQ   178  (A)
+d3riya_:A   ------------------------------------------------------------    31  (B)
+
+d2gdqa1:A   HTAGSSITMILDANQSYDAAAAFKWERYFSEWTNIGWLEEPL-----PFDQPQDYAMLRS   233  (A)
+d3riya_:A   ------------------------------------------SFTARPSSSMADFRK---    45  (B)
+
+d2gdqa1:A   RLSVPVAGGENMKGPAQYVP-LLSQRCLDIIQP--D---VMHV-----------------   270  (A)
+d3riya_:A   --------------------FFA---KAKHIV-IISGAGVS--AESGVPTFRGAGGYWRK    79  (B)
+
+d2gdqa1:A   ------------------------------------NGIDEFRDCLQLARYFGVRASAHA   294  (A)
+d3riya_:A   WQAQDLATPLAFAHNPSRVWEFYHYRREVMGSKEPNAGHRAIAECETRLGKQGRRVVV--   137  (B)
+
+d2gdqa1:A   -YDGSLSRLYALFAQACLPPWSKMKNDHIEPIEWDVMENPFTDLVSL-QPSK--------   344  (A)
+d3riya_:A   ITQNID--ELHRKA--GT----------K-NLLEI------------HGS--LFKTRCTS   168  (B)
+
+d2gdqa1:A   ---GMVHIPKGKGIG--------TEINMEIVNRYKWDGSAY-------------------   374  (A)
+d3riya_:A   CGVVAENYKSP----ICPALSGKGAPEP-------------GTQDASIPVEKLPRCEEAG   211  (B)
+
+d2gdqa1:A   ------------------------------------------------------------   374  (A)
+d3riya_:A   CGGLLRPHVVWFGENLDPAILEEVDRELAHCDLCLVVGTSSVVYPAAMFAPQVAARGVPV   271  (B)
+
+d2gdqa1:A   -------------------------------   374  (A)
+d3riya_:A   AEFNTETTPATNRFRFHFQGPCGTTLPEALA   302  (B)
+

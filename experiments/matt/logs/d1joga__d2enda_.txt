@@ -1,0 +1,19 @@
+(d2enda_:A, d1joga_:A)
+Core Residues: 62
+Core RMSD: 3.682
+Raw Score: 76.936
+P-value: 0.0813
+Reference structure: d2enda_:A
+
+d1joga_:A   -----------NLNVLDAAFYSLEQTVVQISDRNWFDXQPSIVQD---------------    40  (A)
+d2enda_:A   TRINLTLVSELADQHLMAEYRELPRVFGAVRKH--VANGKRVR--DFKISPTFILGAGHV    57  (B)
+
+d1joga_:A   ---TLIAGAIQKFEFVYELSLKXXKRQLQQDAINTDDIGAYGFKDILREALRFG-LIGDX    96  (A)
+d2enda_:A   TFFYD--KLEFLRKRQIELIAECLKRG---------------------------FNIKDT    88  (B)
+
+d1joga_:A   SKWVAYRDXRNITSHTYDQEKAXA-VYAQIDDFLIESSFLLEQLRQ--------------   141  (A)
+d2enda_:A   T----V------------------QDIS------------------DIPQEFRGDYIPHE   108  (B)
+
+d1joga_:A   ------------------------------   141  (A)
+d2enda_:A   ASIAISQARLDEKIAQRPTWYKYYGKAIYA   138  (B)
+

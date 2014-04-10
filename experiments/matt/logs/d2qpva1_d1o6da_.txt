@@ -1,0 +1,19 @@
+(d1o6da_:A, d2qpva1:A)
+Core Residues: 47
+Core RMSD: 2.890
+Raw Score: 66.773
+P-value: 0.2140
+Reference structure: d1o6da_:A
+
+d2qpva1:A   ---------------------------------------------X-PV--XQSRIIHLS    12  (A)
+d1o6da_:A   LRVRIAVIGKLDGFIKEGIKHYEKFLRRFCKPEVLEIKRVHRGSIEEIVRKE--------    52  (B)
+
+d2qpva1:A   VEKPWAEVYDFAANPGNXPRWAAGLAGGLEADGEDWIAKGGPLGEVRVNFAPHNE-----    67  (A)
+d1o6da_:A   -------------------------------------------------------TEDLT    57  (B)
+
+d2qpva1:A   ------FGVIDHVVTLPDGLKVYNALRVTPNGS-------------------GTEVSFTL   102  (A)
+d1o6da_:A   NRILPGSFVMVMDKR------------------GEEVSSEEFADFLKDLEMKGKDITILI    99  (B)
+
+d2qpva1:A   LRLEGXTDE---------------------DFEQDASAITADLEXLKSLLEA-   133  (A)
+d1o6da_:A   GGPY-----GLNEEIFAKAHRVFSLSKMTFTHGMTVLIVLEQIFRAFKIIHGE   147  (B)
+

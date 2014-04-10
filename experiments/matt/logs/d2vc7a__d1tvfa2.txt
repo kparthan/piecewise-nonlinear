@@ -1,0 +1,37 @@
+(d1tvfa2:A, d2vc7a_:A)
+Core Residues: 67
+Core RMSD: 3.794
+Raw Score: 50.077
+P-value: 0.4672
+Reference structure: d1tvfa2:A
+
+d2vc7a_:A   MRIPLVGKDSIESKDIGFTLIHEH------------------------------------    24  (A)
+d1tvfa2:A   ------------------------GPHTSSYAQATNSDVTPVQAANQYGYAGLSAAYEPT    50  (B)
+
+d2vc7a_:A   ------------------------------------------------------------    24  (A)
+d1tvfa2:A   SAVNVSQTGQLLYQYNIDTKWNPASMTKLMTMYLTLEAVNKGQLSLDDTVTMTNKEYIMS   110  (B)
+
+d2vc7a_:A   -------------------LR-----VFSEAV---RQQWPHLYNEDEEFRNAVNEVKRAM    57  (A)
+d1tvfa2:A   TLPELSNTKLYPGQVWTIADLLQITVSNSSNAAALIL-----------------------   147  (B)
+
+d2vc7a_:A   QFGVKTIVDPTVMGLGRDIRFMEKVVKATGINLVAGTGIYIYID----------------   101  (A)
+d1tvfa2:A   --------------------------------------------AKKVSKNTSDFVDLMN   163  (B)
+
+d2vc7a_:A   -----------------LP-----------------FYFLNRSIDEIADLFIHDIKEGIQ   127  (A)
+d1tvfa2:A   NKAKAIGMKNTHFVNPTGAENSRLRSFAPTKYKDQER-TV-TTARDYAILDLHVIKETP-   220  (B)
+
+d2vc7a_:A   GTLNKA--------------------------------GFVXIAADEPGI-TKDVEKVIR   154  (A)
+d1tvfa2:A   ---KILDFTKQLAPTTHAVTYYTFNFSLEGAKMSLPGTDGLKTGS-----SDTANY-NH-   270  (B)
+
+d2vc7a_:A   AAAI---------ANKETKVPIITHSNAHNN-----------TGLEQQRILTEEG--VDP   192  (A)
+d1tvfa2:A   TI--TTKRGKFRINQ----------------VIMGAGDYKNLG--GEKQRNMMGNALME-   309  (B)
+
+d2vc7a_:A   GKILIGHLGDTDNIDYIKKIADKGSFIGLDRYGLDLFLPVDKRNETTLRLIKDGYSDKIM   252  (A)
+d1tvfa2:A   ------------------------------------------------------------   309  (B)
+
+d2vc7a_:A   ISHDYCCTIDWGTAKPEYKPKLAPRWSITLIFEDTIPFLKRNGVNEEVIATIFKENPKKF   312  (A)
+d1tvfa2:A   ------------------------------------------------------------   309  (B)
+
+d2vc7a_:A   FS------   314  (A)
+d1tvfa2:A   --RSFDQY   315  (B)
+

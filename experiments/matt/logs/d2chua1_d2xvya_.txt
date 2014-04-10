@@ -1,0 +1,34 @@
+(d2xvya_:A, d2chua1:A)
+Core Residues: 36
+Core RMSD: 1.603
+Raw Score: 62.468
+P-value: 0.1740
+Reference structure: d2xvya_:A
+
+d2chua1:A   LPISMSDEGDSFLVKDSLGENKIPKNPSKVVILDLGILDTFDALKLNDKVVGVPAKNLPK    83  (A)
+d2xvya_:A   ------------------------------------------------------------     8  (B)
+
+d2chua1:A   YLQQFKNKPSVGGVQQVDFEAINALKPDLIIISGRQSKFYDKLKEIAPTLFVGLDNANF-   142  (A)
+d2xvya_:A   -----------------------------------------------------------Q     8  (B)
+
+d2chua1:A   ------------------------------------------------------------   142  (A)
+d2xvya_:A   KTGILLVAFGTSVEEARPALDKMGDRVRAAHPDIPVRWAYTAKMIRAKLRAEGIAAPSPA    68  (B)
+
+d2chua1:A   ------------------------------------------------------LSSFEN   148  (A)
+d2xvya_:A   EALAGMAEEGFTHVAVQSLHTIPGEEFHGLLETAHAFQGLPKGLTRVSVGLPLIGTTADA   128  (B)
+
+d2chua1:A   NVLSVAKLYGLE------------------------------------------------   160  (A)
+d2xvya_:A   EAVAEALVAS--LPADRKPGEPVVFMGHGTPHPADICYPGLQYYLWRLDPDLLVGTVEGS   186  (B)
+
+d2chua1:A   ------------------------------------------------------------   160  (A)
+d2xvya_:A   PSFDNVMAELDVRKAKRVWLMPLMAVAGDHARNDMAGDEDDSWTSQLARRGIEAKPVLHG   246  (B)
+
+d2chua1:A   ---KEALEKISDIKNEIEKAKSIVDEDKKALIILTNSNKISAFGPQSRFGIIHDVLGINA   217  (A)
+d2xvya_:A   TAESDAVAAIWLRHLDDALARLN-------------------------------------   269  (B)
+
+d2chua1:A   VDENIKGKSINSEFILEKNPDYIFVVDRNVILGNKERAQGILDNALVAKTKAAQNKKIIY   281  (A)
+d2xvya_:A   ------------------------------------------------------------   269  (B)
+
+d2chua1:A   LDPEYWYLASGNGLESLKTMILEIKNAVK   310  (A)
+d2xvya_:A   -----------------------------   269  (B)
+

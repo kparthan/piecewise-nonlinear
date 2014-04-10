@@ -1,0 +1,19 @@
+(d1ni5a3:A, d2cqva1:A)
+Core Residues: 35
+Core RMSD: 3.061
+Raw Score: 27.984
+P-value: 0.5438
+Reference structure: d1ni5a3:A
+
+d2cqva1:A   PQIIQFPEDQKVRAGESVELFGKVTGTQ--------------------PITCTWMKFRKQ    47  (A)
+d1ni5a3:A   ----------------------------GQSENIVPWQTWLQPLELPAGL-GSVQLNA--   343  (B)
+
+d2cqva1:A   IQESE-----------HMKVENS--------------------------------ENGSK    64  (A)
+d1ni5a3:A   -----GGDIRPPRADEAVSVR--FKAPGLLHIVGRNGGRKLKKIWQELGVPPWLRDTTPL   396  (B)
+
+d2cqva1:A   LTILAARQEHC---------------G----CYTLLVENK-LGSRQAQVNLTVVDKPDPP   104  (A)
+d1ni5a3:A   LFYGE------TLIAAAGVFVTQEGVAEGENGVSFVWQKTLS------------------   432  (B)
+
+d2cqva1:A   AGTP   108  (A)
+d1ni5a3:A   ----   432  (B)
+

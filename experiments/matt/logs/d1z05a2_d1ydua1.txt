@@ -1,0 +1,25 @@
+(d1ydua1:A, d1z05a2:A)
+Core Residues: 28
+Core RMSD: 3.008
+Raw Score: 17.442
+P-value: 0.6665
+Reference structure: d1ydua1:A
+
+d1z05a2:A   DVDNS-------------------------------------------------------   213  (A)
+d1ydua1:A   -----DQIFNKVGSYWLGQKANKQFDSVGNDLNSVSTSIEGGTKWLVNKIKGKMQKPLPE    56  (B)
+
+d1z05a2:A   ----------------------------------VLISIHH-G-LGAGIVLDGRVLQ---   234  (A)
+d1ydua1:A   LLKEYDLPIGIFPGDATNYEFDEETKKLTVLIPSICEVGYKDSSVLKFTTTV---T-GHL   112  (B)
+
+d1z05a2:A   ----GRHGN----IGELGHIQIDPQGKRCHCGNYGCLETVASSQAIRDQVTARIQAGEPS   286  (A)
+d1ydua1:A   EKGKLT---DVEGIKTKVMIW---------------------------------------   130  (B)
+
+d1z05a2:A   CLATVEEISIEDICAAAADGDPLAVDVIQQLGRYLGAAIAIVINLFNPEKILIGGVINQA   346  (A)
+d1ydua1:A   ------------------------------------------------------------   130  (B)
+
+d1z05a2:A   KSILYPSIEQCIREQSLPVYHQDLKLVESR------------------------------   376  (A)
+d1ydua1:A   ------------------------------VKVTSISTDASKVYFTAGMKKSRSRDAYGV   160  (B)
+
+d1z05a2:A   ----FYKQATMPGAALIKQALYDGLLLMKVVEG-----   405  (A)
+d1ydua1:A   QRNGL----------------------------RVDKF   170  (B)
+

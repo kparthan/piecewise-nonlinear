@@ -1,0 +1,22 @@
+(d1xjca_:A, d1kmta_:A)
+Core Residues: 24
+Core RMSD: 3.036
+Raw Score: 17.422
+P-value: 0.7591
+Reference structure: d1xjca_:A
+
+d1kmta_:A   AMVPNVVVTGLTLVCSSAPGPLELDLTGDLESFKKQSFVLKEGVEYRIKISFRVNREIVS   124  (A)
+d1xjca_:A   ---------------------------------------------------X--------     1  (B)
+
+d1kmta_:A   GMKYIQHTYRKGVKIDKTDYMVGSYGPRAAAYEFLTPVEEAPKGMLARGSYSIKSRFTDD   184  (A)
+d1xjca_:A   --NVWQVVGYKHSG----------------------------------------------    13  (B)
+
+d1kmta_:A   D-----------K----TD-----------------------------------------   188  (A)
+d1xjca_:A   -KTTLXEKWVAAAVREGWRVGTVKHHGAVATAVEGDGLLQLHLRRPLWRLDDVLALYAPL    92  (B)
+
+d1kmta_:A   ---HLSWEWNLTIKKDW-------------------------------------------   202  (A)
+d1xjca_:A   RLDLVLVEGYK------QERHPKVVLVRSEEDWASLQHLANIRAVIAWEPLEGPLAHPVF   146  (B)
+
+d1kmta_:A   -------------------   202  (A)
+d1xjca_:A   SLADDDEYIPWLXNEVRTR   165  (B)
+

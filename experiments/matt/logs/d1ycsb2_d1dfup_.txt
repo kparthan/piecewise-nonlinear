@@ -1,0 +1,16 @@
+(d1dfup_:P, d1ycsb2:B)
+Core Residues: 31
+Core RMSD: 2.395
+Raw Score: 29.255
+P-value: 0.5545
+Reference structure: d1dfup_:P
+
+d1ycsb2:B   IMN------------------------KGVIYALWDYEPQNDDELPM-KEGDCMTIIHRE   491  (A)
+d1dfup_:P   ---MFTINAEVRKEQGKGASRRLRAANKFPAIIYGG-----------KEAPLAIEL----    42  (B)
+
+d1ycsb2:B   DEDEI------------------EWWWARLNDKEGYVPR-------------------NL   514  (A)
+d1dfup_:P   -----DHDKVMNMQAKAEFYSEVLTIVV----DGKEIKVKAQDVQRHPYKPKLQHIDFVR    93  (B)
+
+d1ycsb2:B   LGLYP-   519  (A)
+d1dfup_:P   -----A    94  (B)
+

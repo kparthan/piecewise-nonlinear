@@ -1,0 +1,19 @@
+(d1g86a_:A, d1g8ka1:A)
+Core Residues: 45
+Core RMSD: 3.550
+Raw Score: 25.424
+P-value: 0.6102
+Reference structure: d1g86a_:A
+
+d1g8ka1:A   LPATVQQQKDK--YR-FWLNNGRNNEVWQTAYHDQYNSLMQERYPMAYIEMNPD-DCKQL   738  (A)
+d1g86a_:A   ----------SLLPVPY-------------------------------------TEA--A    12  (B)
+
+d1g8ka1:A   DVTGGDIVEVYND-----------------------------------------------   751  (A)
+d1g86a_:A   SLSTGSTVTIKGRPLVCFLNEPYLQVDFHTEMKEESDIVFHFQVCFGRRVVMNSREYGAW    72  (B)
+
+d1g8ka1:A   ---------------FGSTFAMVYPVAEIKRGQTFMLFGYV------NGIQGDVTTDWTD   790  (A)
+d1g86a_:A   KQQVESKNMPFQDGQEFELSISV------------------LPDKYQVMV--N-------   105  (B)
+
+d1g8ka1:A   RDIIPYYK-----------------------GTWGDI-RKVGSMSEFKRTVSFKSRRFG   825  (A)
+d1g86a_:A   --------GQSSYTFDHRIKPEAVKMVQVWRDISLTKFNVSYLKR--------------   142  (B)
+

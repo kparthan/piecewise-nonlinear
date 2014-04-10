@@ -1,0 +1,22 @@
+(d1t3ta3:A, d1piea2:A)
+Core Residues: 49
+Core RMSD: 3.215
+Raw Score: 42.088
+P-value: 0.2542
+Reference structure: d1t3ta3:A
+
+d1piea2:A   DYDIVIMNTNKPRALTESKYNERFAETREALKRMQTRLDIQSLGELSNEEFDANTDLIGD   273  (A)
+d1t3ta3:A   ------------------------------------------------------------     1  (B)
+
+d1piea2:A   ETLIKRARHAVYENNRTKIAQKAFVAGNLTKFGELLNASHASLKDDYEV---------TG   324  (A)
+d1t3ta3:A   -------------------------------------------------MMEILRGSPAL    11  (B)
+
+d1piea2:A   LELDTLAETAQK-Q----AGVLGARMTGAG-------------------------FG---   351  (A)
+d1t3ta3:A   --SAFRINKLLARFQAANLQVHNIYAE---YVHFADLNAPLNDSEQAQLTRLLQYG-PAL    65  (B)
+
+d1piea2:A   --------------------------------------------GCAIALV--AHD-NVS   364  (A)
+d1t3ta3:A   SSHTPAGKLLLVTPRPGTISPWSSKATDIAHNCGLQQVDRLERGVAYYIEASTLTAEQWR   125  (B)
+
+d1piea2:A   AFRKAVGQVYEEVVGYPA----SFYVAQIGSGSTKL----------   396  (A)
+d1t3ta3:A   QVAAELH---------D-RMMETVFSS---------LTDAEKLFIH   152  (B)
+

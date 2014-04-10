@@ -1,0 +1,19 @@
+(d1m45a_:A, d1tuza_:A)
+Core Residues: 69
+Core RMSD: 2.686
+Raw Score: 70.907
+P-value: 0.0431
+Reference structure: d1m45a_:A
+
+d1tuza_:A   MAKERGLISPSDFAQLQ----------------------------KY---MEY-------    22  (A)
+d1m45a_:A   -----------------TRANKDIFTLFDKKGQGAIAKDSLGDYLR-AIGYNPTNQLVQD    45  (B)
+
+d1tuza_:A   -----------------------------STKKVSDVLKLFEDGEMAKYVQGD--AIGYE    51  (A)
+d1m45a_:A   IINASLASSLTLDQITGLIEVNEKELDATTKAKTEDFVKAFQ----V-FDKESTGKVSVG   104  (B)
+
+d1tuza_:A   GFQQFL--KIYLEVDNVPRHLSLALFQS-FETGHCLNETNVTK-DVVCLNDVSCYFSLLE   107  (A)
+d1m45a_:A   DLRYMLTGL----GEKLTDAEVDELLKGVEVDS----------NGEIDYKKFIEDVLRQ-   149  (B)
+
+d1tuza_:A   GGRPEDKLEWS   118  (A)
+d1m45a_:A   -----------   149  (B)
+

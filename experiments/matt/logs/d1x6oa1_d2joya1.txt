@@ -1,0 +1,13 @@
+(d2joya1:A, d1x6oa1:A)
+Core Residues: 44
+Core RMSD: 2.186
+Raw Score: 36.754
+P-value: 0.2779
+Reference structure: d2joya1:A
+
+d1x6oa1:A   KTYPLAAG--ALKKGGYVCING-------RPCKVIDLSVSKTHAKVSIVATDI---FTGN    70  (A)
+d2joya1:A   --------MPAIEVGRICV--KVKGREAGSKCVIVDIID-----DNFVLVTGPKDITGVK    45  (B)
+
+d1x6oa1:A   RLEDQAPSTHN--VEVPF--------------------------------------    86  (A)
+d2joya1:A   RRRVNI-----LHLEPTDKKIDIQKGASDEEVKKKLEESNLTEYMKEKIKIRMPTL    96  (B)
+

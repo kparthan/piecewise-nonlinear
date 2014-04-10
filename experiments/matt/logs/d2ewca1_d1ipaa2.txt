@@ -1,0 +1,16 @@
+(d1ipaa2:A, d2ewca1:A)
+Core Residues: 50
+Core RMSD: 2.645
+Raw Score: 28.539
+P-value: 0.3651
+Reference structure: d1ipaa2:A
+
+d2ewca1:A   T-------------------IRRYDVNEDRGHTGLVE--AG--DFYYLNYCVGNVGQDIE    39  (A)
+d1ipaa2:A   -MRITSTANPRIKELARLLER----------------KHRDSQRRFLIEGA---------    34  (B)
+
+d2ewca1:A   SQINGAFDEXERRLALVGLTLDAVVQXDCL--FRDVWNIPVXEK--------XIKERFNG    89  (A)
+d1ipaa2:A   -------REIERALQ--AG--IELEQALVWEGGL----------NPEEQQVYA---AL--    68  (B)
+
+d2ewca1:A   RYPARKSIQTEFAHHGGPQGLLF---------------QVDGVAYSK-H-   122  (A)
+d1ipaa2:A   --LALLEV---------------SEAVLKKLSVRDNPAGLIALARM-PER   105  (B)
+

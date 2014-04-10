@@ -1,0 +1,13 @@
+(d2cs7a1:A, d1j8ia_:A)
+Core Residues: 44
+Core RMSD: 3.085
+Raw Score: 39.867
+P-value: 0.3206
+Reference structure: d2cs7a1:A
+
+d1j8ia_:A   VGSEVSDKRTCVSL----TT---QRLPVSRIKTYTITEGSLRAVIFITKRGLK----VCA    49  (A)
+d2cs7a1:A   --------------QGRYTTDDGYIFNASDI--IEDTG---DAYIV-----PHGDHYHYI    35  (B)
+
+d1j8ia_:A   DPQATWVRDVVRSMDRKSNTRNNMIQTKPTGTQQSTNTAVTLTG    93  (A)
+d2cs7a1:A   PKNELS-ASELAAAEAFLSG------------------------    54  (B)
+

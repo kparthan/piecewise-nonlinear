@@ -1,0 +1,19 @@
+(d2ciwa1:A, d1p28a_:A)
+Core Residues: 52
+Core RMSD: 3.351
+Raw Score: 54.066
+P-value: 0.3460
+Reference structure: d2ciwa1:A
+
+d1p28a_:A   ------------------------------NSSTQSYKDA--MGPLVRECMGSVSATEDD    26  (A)
+d2ciwa1:A   XEPGSGIGYPYDNNTLPYVAPGPTDSRAPCPALNALANHGYIP-HD--------------    44  (B)
+
+d1p28a_:A   FKTVLNRNPLESRTAQCLLACALDKVGLISPEGAIYTGDDLMPVMNRLYGF--N------    78  (A)
+d2ciwa1:A   ---------------------G---RA---------------ISRETL-QNAFLNHMGIA    64  (B)
+
+d1p28a_:A   DFKTVMKAKAVNDCANQ-VNGAYPDRCDL-----------IKN--FTDCVRNS-------   117  (A)
+d2ciwa1:A   NSVIELALTNAFVVCEYVTG---------SDCGDSLVNLTL--LAEPHAFEH-DHSFSRK   112  (B)
+
+d1p28a_:A   -------   117  (A)
+d2ciwa1:A   DYKQGVA   119  (B)
+

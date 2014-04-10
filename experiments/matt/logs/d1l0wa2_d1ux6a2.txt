@@ -1,0 +1,19 @@
+(d1ux6a2:A, d1l0wa2:A)
+Core Residues: 16
+Core RMSD: 1.747
+Raw Score: 12.309
+P-value: 0.6051
+Reference structure: d1ux6a2:A
+
+d1l0wa2:A   FGLELKEVGPLFRQSGFRVFQEAESVKALALPKALSRKEVAELEE------VAKRHKAQG   348  (A)
+d1ux6a2:A   ---------------------------------------------ALADNCPLEHN-P--   824  (B)
+
+d1l0wa2:A   LAWARVEEGGFSGGVAKFLEPVREALLQATEARPGDTLLFVAGPRKVAATALGA------   402  (A)
+d1ux6a2:A   -------------------------------------------------DQL--DSDSDR   833  (B)
+
+d1l0wa2:A   -VRLRAADLLGLK-----------------------------------------------   414  (A)
+d1ux6a2:A   IGDTCD--NN---QDIDEDGHQNNLDNCPYVPNANQADHDKDGKGDACDHDDDNDGIPDD   888  (B)
+
+d1l0wa2:A   ------------------------------------------------   414  (A)
+d1ux6a2:A   KDNCRLVPNPDQKDSDGDGRGDACKDDFDHDSVPDIDDICPENVDISE   936  (B)
+

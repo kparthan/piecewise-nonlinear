@@ -1,0 +1,19 @@
+(d2nmla1:A, d2c35a1:A)
+Core Residues: 24
+Core RMSD: 0.642
+Raw Score: 45.269
+P-value: 0.3047
+Reference structure: d2nmla1:A
+
+d2c35a1:A   EEDASQLIFPKEFE----------------------------------------------    27  (A)
+d2nmla1:A   --------------SHTILLVQPTKRPEGRTYADYESVNECMEGVCKMYEEHLKRMNPNS    47  (B)
+
+d2c35a1:A   ------------------------------TAETLLNSEVHMLLEHRKQQNESAEDEQEL    57  (A)
+d2nmla1:A   PSITYDISQLFDFIDDLADLSCLVYRADTQTYQPYNKDWIKEKIYVLLRRQAQQ------   101  (B)
+
+d2c35a1:A   SEVFMKTLNYTARFSRFKNRETIASVRSLLLQKKLHKFELACLANLCPETAEESKALIPS   117  (A)
+d2nmla1:A   ------------------------------------------------------------   101  (B)
+
+d2c35a1:A   LEGRFEDEELQQILDDIQTKRSFQY   142  (A)
+d2nmla1:A   -------------------------   101  (B)
+

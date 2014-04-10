@@ -1,0 +1,19 @@
+(d2fyga1:A, d2fh5a1:A)
+Core Residues: 42
+Core RMSD: 3.754
+Raw Score: 27.947
+P-value: 0.7107
+Reference structure: d2fyga1:A
+
+d2fh5a1:A   MV-----------------------------------------------DFFTIFSKGGL    13  (A)
+d2fyga1:A   --HHHHNSTVLSFCAFAVDPAKAYKDYLASGGQPITNCVKMLCTHTGTGQAI--------    55  (B)
+
+d2fh5a1:A   VLWCFQGVSDSCTGPVNALIRSVLLQETHEALTLKY-KL----DNQFE------------    63  (A)
+d2fyga1:A   -----------TVTPE-AN---------MD-QESFGGASCCLYC----RCHIDHPNPKGF    89  (B)
+
+d2fh5a1:A   ---LVFVVGFQK--ILTLTYVDKLIDDVHRLFRDKYRTEIQQQSALSLLNGTFDFQNDFL   118  (A)
+d2fyga1:A   CDLKGKYVQIPTTCANDPVGFTLRN-----------------------------------   114  (B)
+
+d2fh5a1:A   RLLREAEESSK------------   129  (A)
+d2fyga1:A   --TV-------CTVCGMWKGYGC   128  (B)
+

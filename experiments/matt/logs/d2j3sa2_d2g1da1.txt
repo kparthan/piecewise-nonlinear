@@ -1,0 +1,16 @@
+(d2g1da1:A, d2j3sa2:A)
+Core Residues: 27
+Core RMSD: 2.175
+Raw Score: 24.649
+P-value: 0.4512
+Reference structure: d2g1da1:A
+
+d2j3sa2:A   RAPSVANVGSHCDLIQDM-TAQVTSPSGKTHEAEIYCIRFVPAEM-------GTHTVSVK  2215  (A)
+d2g1da1:A   ------------------MDLIIKEK------------------RDNPILKRKEIKYVLK    24  (B)
+
+d2j3sa2:A   YKG-----------------------------------Q-HVPG-SPFQFTVGPLGEG--  2236  (A)
+d2g1da1:A   ---FDSSRTPSREEIKELIAKHEGVDKELVIVDNNKQLTGKH--EIEGYTKIY-----AD    74  (B)
+
+d2j3sa2:A   ------------------------  2236  (A)
+d2g1da1:A   KPSAMLYEPDYELIRNGLKQKEAK    98  (B)
+

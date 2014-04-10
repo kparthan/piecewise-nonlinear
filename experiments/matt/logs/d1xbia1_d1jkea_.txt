@@ -1,0 +1,19 @@
+(d1jkea_:A, d1xbia1:A)
+Core Residues: 50
+Core RMSD: 3.209
+Raw Score: 63.547
+P-value: 0.3337
+Reference structure: d1jkea_:A
+
+d1xbia1:A   AVY--------------------------------VKFKVPEEIQKELLDAVAKA-----    24  (A)
+d1jkea_:A   ---MIALIQRVTRASVTVEGEVTGEIGAGLLVLLGVEKDDDEQKANRLCERVLGYRIFSD    57  (B)
+
+d1xbia1:A   -------QKIK-------KGANEVTKAVERGIAKLVIIAEDVKPEEV-VAHLPYLCEEKG    69  (A)
+d1jkea_:A   AEGKMNLNV--QQAGGSVLVV--------------------------SQFTLAA--DT--    85  (B)
+
+d1xbia1:A   IPYAYV------------------ASKQDLGKAAG-----LEVAASSVAI----------    96  (A)
+d1jkea_:A   ------ERGMRPSFSKGASPDRAEALYDYFVERCRQQEMNTQ--T-----GRFAADMQVS   132  (B)
+
+d1xbia1:A   --------INEGDAEELKVL--IEKVNVLK   116  (A)
+d1jkea_:A   LVNDGPVTF-----------WLQ--V----   145  (B)
+

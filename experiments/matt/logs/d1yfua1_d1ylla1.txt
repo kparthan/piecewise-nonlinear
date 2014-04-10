@@ -1,0 +1,22 @@
+(d1ylla1:A, d1yfua1:A)
+Core Residues: 94
+Core RMSD: 3.682
+Raw Score: 91.564
+P-value: 1.7612e-03
+Reference structure: d1ylla1:A
+
+d1yfua1:A   MLTYGAPFNFPRWIDEHAH-LLKPP-V-GNRQVW--QD-----SDFIVTVVGGPNHRTDY    50  (A)
+d1ylla1:A   ---SELRILRAVDY-----PR----XPGSTEEIARDGGDGLDGFGWRLSIADVGESGG--    52  (B)
+
+d1yfua1:A   --HD-DPLEEFFYQLRG-NAYLN-LWVDGRRERADLKEGDIFLLPPHVRHSPQRP-EAGS   104  (A)
+d1ylla1:A   FSG-FAGYQRIISVLEGGGXRLRVDGA----ESAPLRARQAFAFSGDSEVHCTL-LDGAI   106  (B)
+
+d1yfua1:A   ACLVIERQRPAGMLDGFEWYCDACGHLVHRVEVQLKSIVTDLPPLFESFYASEDKRRCPH   164  (A)
+d1ylla1:A   RDFNLIYAPR--------------------------------------------------   116  (B)
+
+d1yfua1:A   CGQVHPGRAA--------------------------------------------------   174  (A)
+d1ylla1:A   ----------RHRARLQWLRVEGELDWHGTASTLLLFAQQDGVAISLQGQPRGQLAAHDC   166  (B)
+
+d1yfua1:A   ------------------------------   174  (A)
+d1ylla1:A   LCAEGLQGLQHWRLTAHEPAWVCAVELDSL   196  (B)
+

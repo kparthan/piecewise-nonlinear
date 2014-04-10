@@ -1,0 +1,16 @@
+(d1smye_:E, d2i1qa1:A)
+Core Residues: 27
+Core RMSD: 1.773
+Raw Score: 34.968
+P-value: 0.4105
+Reference structure: d1smye_:E
+
+d2i1qa1:A   LTDLPGVGPSTAEKLVEAGYIDFMKIATA----TVGELTDIEGISEKAAAKMIMGARDLC    60  (A)
+d1smye_:E   -----------------------------AEPGI-DKLFGM-VDSKYRLTVVVAKRAQQL    30  (B)
+
+d2i1qa1:A   D----------------------------LGF----------------------------    64  (A)
+d1smye_:E   LRHGFKNTVLEPEERPKMQTLEGLFDDPNA--ETWAMKELLTGRLVFGENLVPEDRLQKE    88  (B)
+
+d2i1qa1:A   --------    64  (A)
+d1smye_:E   MERIYPGE    96  (B)
+

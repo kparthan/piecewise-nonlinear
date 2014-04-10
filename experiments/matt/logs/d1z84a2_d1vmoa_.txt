@@ -1,0 +1,22 @@
+(d1vmoa_:A, d1z84a2:A)
+Core Residues: 35
+Core RMSD: 3.028
+Raw Score: 24.598
+P-value: 0.6288
+Reference structure: d1vmoa_:A
+
+d1z84a2:A   PPTVSSRLDGTKDYFEET------------------------------------------   213  (A)
+d1vmoa_:A   ------------------RTREYTSVITVPNGGHWGKWGIRQFCHSGYANGFALKVEPSQ    42  (B)
+
+d1z84a2:A   --------------------------------GKCCLCEAKSK--HFVIDESS-------   232  (A)
+d1vmoa_:A   FGRDDTALNGIRLRCLDGSVIESLVGKWGTWTSFLVC------PTGYLVSFSLRSEKSQG    96  (B)
+
+d1z84a2:A   ---------HFVSVAPFAATYPFEIWIIPKDHSSHFHHLDD----VKAVDLGGLLKLMLQ   279  (A)
+d1vmoa_:A   GGDDTAANNIQFRCS--------DEAVLVGDG---------LSWGRF--G--PW------   129  (B)
+
+d1z84a2:A   KIAKQLNDPPYNYMIHTSPLKVTESQLPYTHWFLQIVPQLSGVGGFEIGTGCYINPVFPE   339  (A)
+d1vmoa_:A   ------------------------------------------------------------   129  (B)
+
+d1z84a2:A   DVAKV--MREVSLT------------------------------   351  (A)
+d1vmoa_:A   -----SKRC-----KICGLQTKVESPQGLRDDTALNNVRFFCCK   163  (B)
+

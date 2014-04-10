@@ -1,0 +1,13 @@
+(d1ryja_:A, d1rwsa_:A)
+Core Residues: 59
+Core RMSD: 3.234
+Raw Score: 50.936
+P-value: 0.1329
+Reference structure: d1ryja_:A
+
+d1rwsa_:A   ----KMIKVKVIGRNIEKEIEW-REGMKVRDILRAVGFNT-ES-AIAKVNGKVVLEDDEV    54  (A)
+d1ryja_:A   MVIGMKFTVITD--DGKKILESGAP-RRIKDVLGELEI--PIETVVVKKNGQIVIDEEEI    58  (B)
+
+d1rwsa_:A   KDGDFVEVIPVVSGG----    69  (A)
+d1ryja_:A   FDGDIIEVIRV----IYGG    73  (B)
+

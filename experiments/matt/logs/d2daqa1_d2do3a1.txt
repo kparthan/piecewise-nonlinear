@@ -1,0 +1,13 @@
+(d2do3a1:A, d2daqa1:A)
+Core Residues: 47
+Core RMSD: 1.710
+Raw Score: 54.141
+P-value: 0.0593
+Reference structure: d2do3a1:A
+
+d2daqa1:A   ---------KLHYKQIVWVK---LGNYRWWPAEICNPRSVPLNIQGLKHD--LGDFPVFF    53  (A)
+d2do3a1:A   EFPAQELRKYFKMGDHVKVIAGRFE---GDTGLIVR--------------VEENFVILFS   504  (B)
+
+d2daqa1:A   FGSHDYYWVHQGRVFPYVEGDKSFAEGQTSINKTFKKALEEAAKRFQELKA-   104  (A)
+d2do3a1:A   DLTMHELKVLPRDLQLCS---------------------------------E   523  (B)
+

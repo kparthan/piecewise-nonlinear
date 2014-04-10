@@ -1,0 +1,16 @@
+(d2qsba1:A, d1rhfa2:A)
+Core Residues: 6
+Core RMSD: 1.397
+Raw Score: 2.694
+P-value: 0.7079
+Reference structure: d2qsba1:A
+
+d1rhfa2:A   VPFFTVEPKDLAVPPNAPFQLSCEAVGPPEPVTIVWWR----------------------   135  (A)
+d2qsba1:A   --------------------------------------VRVDQNLFNEVXYLLDELSQDI    23  (B)
+
+d1rhfa2:A   -----------------------------------------GTTKIGGPAPSPSVLNVTG   154  (A)
+d2qsba1:A   TVPKNVRKVAQDSKAKLSQENESLDLRCATVLSXLDEXANDPNVPAH-------------    70  (B)
+
+d1rhfa2:A   VTQSTXFSCEAHNLKGLASSRTATVHLQ----------------   182  (A)
+d2qsba1:A   ----------------------------GRTDLYTIISKLEALS    86  (B)
+

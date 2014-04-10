@@ -1,0 +1,16 @@
+(d2fgga1:A, d1d8ba_:A)
+Core Residues: 25
+Core RMSD: 1.768
+Raw Score: 45.407
+P-value: 0.3366
+Reference structure: d2fgga1:A
+
+d1d8ba_:A   -------------------------------------EL--------------------N    13  (A)
+d2fgga1:A   SEHVGKTCQIDVLIEEHDERTRAKARLSWAGRQXVGVGLARLDPADEPVAQIGDELAIAR    63  (B)
+
+d1d8ba_:A   NLRMTYERLRELSLNLGNRMVPPVGNFMPDSILKKMAAILPMNDSAFATLGTVEDKYRRR    73  (A)
+d2fgga1:A   ALSDLANQLFALTSSDIEAS-TH-------------------------------------    85  (B)
+
+d1d8ba_:A   FKYFKATIADLSKKRSSE--    91  (A)
+d2fgga1:A   ------------------QP    87  (B)
+

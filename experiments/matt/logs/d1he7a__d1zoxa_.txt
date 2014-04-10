@@ -1,0 +1,16 @@
+(d1zoxa_:A, d1he7a_:A)
+Core Residues: 76
+Core RMSD: 2.238
+Raw Score: 73.301
+P-value: 3.5267e-03
+Reference structure: d1zoxa_:A
+
+d1he7a_:A   SHMPASVQLHTAVEM---------------HHWCIPFSVD-GQPAPSLRWLFN-----GS   320  (A)
+d1zoxa_:A   ---------------EDPVTGPEEVSGQEQGSLTVQCRYTSGWKDYKKYWCQGVPQRSCK    45  (B)
+
+d1he7a_:A   VLN----------ETSFIFTEFLEPAANETVRHGCLRLNQPTHVNNGNYTLLAANPFG--   368  (A)
+d1zoxa_:A   TLVETDASEQLVKKNR-VSIRDN-QR----DFIFTVTMEDLRMSDAGIYWCGITK---GG    96  (B)
+
+d1he7a_:A   -QASASIMAAFMDNPFEFNPE   388  (A)
+d1zoxa_:A   LDPMFKVTVNIGPV-------   110  (B)
+

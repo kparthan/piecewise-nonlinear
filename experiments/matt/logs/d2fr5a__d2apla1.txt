@@ -1,0 +1,22 @@
+(d2apla1:A, d2fr5a_:A)
+Core Residues: 34
+Core RMSD: 3.223
+Raw Score: 50.174
+P-value: 0.5804
+Reference structure: d2apla1:A
+
+d2fr5a_:A   E-PEHVQRLLLSSREAKKSA---YCPYSRF-PVGAALLTGDGRIFSGCNIENACYPLGV-    64  (A)
+d2apla1:A   -KSTEKKELSHFRLKLETYLNEHFPE----XSG---------------N----------N    31  (B)
+
+d2fr5a_:A   -CAERTAIQKAISEGYKDFRAIAISSDLQEEFISPCGACRQVMREFGTDWAVYMTKPDGT   123  (A)
+d2apla1:A   PFITARSDEAL-------------------------------------------------    42  (B)
+
+d2fr5a_:A   FVVRTVQELLPASFGPEDLQKIQ-------------------------------------   146  (A)
+d2apla1:A   -----------------------TAYCDAVAQGFSHPEAESXASEVLYQGLHFSRYDTLV    79  (B)
+
+d2fr5a_:A   ------------------------------------------------------------   146  (A)
+d2apla1:A   SVLEREFEQELPSPLPERLAPILLKNKAIQSVFAKYDLTDDFEASPEYEHLYTELTGTIV   139  (B)
+
+d2fr5a_:A   -----------   146  (A)
+d2apla1:A   LLIESNHLPTI   150  (B)
+

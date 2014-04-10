@@ -1,0 +1,22 @@
+(d1hzta_:A, d2hjsa2:A)
+Core Residues: 50
+Core RMSD: 3.613
+Raw Score: 34.774
+P-value: 0.4230
+Reference structure: d1hzta_:A
+
+d2hjsa2:A   CAVA--------------------------------------------AELCEVLAPLLA   145  (A)
+d1hzta_:A   ----LHLAFSSWLFNAKGQLLVTRRALSKKAWPGVWTNSVCGHPQLGESNEDAVIRRCR-    85  (B)
+
+d2hjsa2:A   ---TLDCRQLNLTACL-SVSSLGREGVKELARQTAELLNARPLEPRLFDRQIAFNLLAQV   201  (A)
+d1hzta_:A   YELGVEITPPESIYPDFR------------------------------------------   103  (B)
+
+d2hjsa2:A   GAVDAEGHSAIERRIFAEVQALLGERIGPLNVTCIQAPVFF------------GDSLSVT   249  (A)
+d1hzta_:A   -----------------------------------------YRATDPSGIVENEVCPVFA   122  (B)
+
+d2hjsa2:A   LQCAEPVDLAAVTRVL-DATKGIEWVGEGDYPTVVGDALGQDETYVG--RVRAGQADPCQ   306  (A)
+d1hzta_:A   ARTTSALQI---ND--DE-----------------------------VMDYQWCD-----   143  (B)
+
+d2hjsa2:A   VNLWIVSDNVRKG----------------------------------------   319  (A)
+d1hzta_:A   -------------LADVLHGIDATPWAFSPWMVMQATNREARKRLSAFTQLKL   183  (B)
+

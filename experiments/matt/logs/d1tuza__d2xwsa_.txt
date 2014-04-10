@@ -1,0 +1,19 @@
+(d2xwsa_:A, d1tuza_:A)
+Core Residues: 26
+Core RMSD: 3.720
+Raw Score: 25.827
+P-value: 0.8467
+Reference structure: d2xwsa_:A
+
+d1tuza_:A   MAKERGLI----SPSDFAQLQKYMEYSTKKVSDVLKLFEDGEMAKYVQGDAIGYEGFQQF    56  (A)
+d2xwsa_:A   --------GMRRGL----------------------------------------------     5  (B)
+
+d1tuza_:A   LKIYLEVDNVPRHLSLALFQSFETGHCLNETNVTKDV-VCLNDVSCYFSLLEGGRPEDKL   115  (A)
+d2xwsa_:A   --------------------VIVGH-----------GSQLNHYREVMELHRKR-------    27  (B)
+
+d1tuza_:A   ----------------------------------------EWS-----------------   118  (A)
+d2xwsa_:A   IEESGAFDEVKIAFAARKRRPMPDEAIREMNCDIIYVVPLFISYGLHVTEDLPDLLGFPR    87  (B)
+
+d1tuza_:A   --------------------------------------   118  (A)
+d2xwsa_:A   GRGIKEGEFEGKKVVICEPIGEDYFVTYAILNSVFRIG   125  (B)
+

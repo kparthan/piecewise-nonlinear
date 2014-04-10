@@ -1,0 +1,22 @@
+(d1s99a_:A, d1zj8a2:A)
+Core Residues: 83
+Core RMSD: 5.494
+Raw Score: 75.611
+P-value: 0.0632
+Reference structure: d1s99a_:A
+
+d1zj8a2:A   RNEGQWALGHREPLNANEE-----------LKKAGNPLDVRERIENIYAK----------    48  (A)
+d1s99a_:A   -------------------RIAGFRFSLYPXTDDF--ISVIKSALAAT--DTSKVWTKTD    45  (B)
+
+d1zj8a2:A   ---------------QGFDS-----IDKTDLRGRFRWWGLYTQREQGYDGTWTGDDNIDK    88  (A)
+d1s99a_:A   HISTVLRGSIDHVFDAAKAIYLHAANSEQH-----IVX----------------------    78  (B)
+
+d1zj8a2:A   LEAK------------------------------YFMMRVR-CDGGAL---------SA-   107  (A)
+d1s99a_:A   ----NGTFSIGCPGDTQGDTYLDKRVNEDAVRGLKAEAPCQFA-----LYPXNEPDYXGL   132  (B)
+
+d1zj8a2:A   --AALRTLGQISTEFARDTADISDRQNVQYHWIEVENVPEIWRRLDD-V-------GLQT   157  (A)
+d1s99a_:A   IXEAVDIAKAQG-----TFVQGVHY-ASELD-GDAHDVFSTLEAVFRXAEQQTNHITXTV   185  (B)
+
+d1zj8a2:A   TEAC-----------   161  (A)
+d1s99a_:A   N---LSANSPSRKNR   197  (B)
+

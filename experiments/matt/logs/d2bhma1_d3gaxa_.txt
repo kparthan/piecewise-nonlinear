@@ -1,0 +1,16 @@
+(d3gaxa_:A, d2bhma1:A)
+Core Residues: 74
+Core RMSD: 2.419
+Raw Score: 88.737
+P-value: 0.0169
+Reference structure: d3gaxa_:A
+
+d2bhma1:A   SYDT--------VMDKYWLSQYVIARETYDWYTLQKDYETVGMLSSPSEGQSYASQFQGD   148  (A)
+d3gaxa_:A   ----GPMDASVEEEGVRRALDFAVGEYNK--------------------------A----    37  (B)
+
+d2bhma1:A   KA-LDKQYGSNVRTSVT--IVSIVPNGKG--IGTVRFAKTTKR---------------GD   192  (A)
+d3gaxa_:A   --SN---D---MYHSRACQVVRARKQIVAGVNYFLDVELCR--TTCTKTQLDNCPFHDQP    89  (B)
+
+d2bhma1:A   --GETTHWIATIGYQYVNPSLMSESARLTNPLGFNVTSYRVDPEM---   235  (A)
+d3gaxa_:A   HLKRKAFCSFQIYAVPWQ---------------GTMTLSKSTC--QDA   120  (B)
+

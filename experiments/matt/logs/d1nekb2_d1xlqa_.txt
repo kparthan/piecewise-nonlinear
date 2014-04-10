@@ -1,0 +1,16 @@
+(d1xlqa_:A, d1nekb2:B)
+Core Residues: 76
+Core RMSD: 2.826
+Raw Score: 84.314
+P-value: 0.0109
+Reference structure: d1xlqa_:A
+
+d1nekb2:B   MRLEFSIYRYNPDVDDAPRMQDYTLEADEGRDMMLLDALIQLKEKDPSLSFRRSCR-EGV    59  (A)
+d1xlqa_:A   SKVVYVSHD----------GTRRELDVA--DGVSLMQAAVSNGI----YDIVGDCGGSAS    44  (B)
+
+d1nekb2:B   CGSDGLNMNG--------------------------KNGLACITPISALN--QPGKKIVI    91  (A)
+d1xlqa_:A   CATCHVYVNEAFTDKVPAANEREIGMLESVTAELKPNSRLCCQIIMT---PELDGIVVDV   101  (B)
+
+d1nekb2:B   RPLPGLPVIRDLVVD-   106  (A)
+d1xlqa_:A   PD----------RQ-W   106  (B)
+

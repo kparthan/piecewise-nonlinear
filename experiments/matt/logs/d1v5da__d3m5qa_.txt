@@ -1,0 +1,43 @@
+(d3m5qa_:A, d1v5da_:A)
+Core Residues: 53
+Core RMSD: 3.821
+Raw Score: 59.177
+P-value: 0.3867
+Reference structure: d3m5qa_:A
+
+d1v5da_:A   AKEMKPFPQQVNYAGVIK------------------------PNHVTQES-L-NASVRSY    82  (A)
+d3m5qa_:A   ------------------AVCPDGTRVSHAACCAFIPLAQDLQETIFQ--NECGEDAHEV    40  (B)
+
+d1v5da_:A   YDNWKKKYLKNDLSSLPGGYYV-----------KGEITGDADGFKPLGTSEGQGYGMIIT   131  (A)
+d3m5qa_:A   IRLTFHDAIA------------ISRSQGPKAGGGA-------------------------    63  (B)
+
+d1v5da_:A   VLMAGYDSNAQKIYDGLFKTARTFKSSQNPNLMGWVVADSKKAQGHFDSATDGDLDIAYS   191  (A)
+d3m5qa_:A   ------------------------------------------------------------    63  (B)
+
+d1v5da_:A   LLLAHKQWGSNGTVNYLKEAQDMITKGIKASNVTNNNQLNLGDWDSKSSLDTRPSDWMMS   251  (A)
+d3m5qa_:A   ------------------------------------------------------------    63  (B)
+
+d1v5da_:A   HLRAFYEFTGDKTWLTVINNLYDVYTQFSNKYSPNTGLISDFVVKNPPQPAPKDFLDESE   311  (A)
+d3m5qa_:A   ------------------------------------------------------------    63  (B)
+
+d1v5da_:A   YTNAYYYNASRVPLRIVMDYAMYGEKRSKVISDKVSSWIQNKTNGNP-------------   358  (A)
+d3m5qa_:A   -----------------------------------------------DGSMLLFPTVEPN    76  (B)
+
+d1v5da_:A   -------------------SKIVDGYQLNGSNIGSYPTAVFVSPFIAASITSSNNQKWVN   399  (A)
+d3m5qa_:A   FSANNGIDDSVNNLIPFMQKH--------------NTI----------------------   100  (B)
+
+d1v5da_:A   SGWDWMKNKRERYFSDSYNLLTMLFITGNW------------------------------   429  (A)
+d3m5qa_:A   ---------SA-ADLVQFAGAVALSNCPGAPRLEFLAGRPNKTIAAVDGLIPEPQDSVTK   150  (B)
+
+d1v5da_:A   ------------------------------------------------------------   429  (A)
+d3m5qa_:A   ILQRFEDAGGFTPFEVVSLLASHSVARADKVDQTIDAAPFDSTPFTFDTQVFLEVLLKGV   210  (B)
+
+d1v5da_:A   ------------------------------------------------------------   429  (A)
+d3m5qa_:A   GFPGSANNTGEVASPLPLGSGSDTGEMRLQSDFALAHDPRTACIWQGFVNEQAFMAASFR   270  (B)
+
+d1v5da_:A   --------------------------WKPVP-----------------------------   434  (A)
+d3m5qa_:A   AAMSKLAVLGHNRNSLIDCSDVVPVPKP---ATGQPAMFPASTGPQDLELSCPSERFPTL   327  (B)
+
+d1v5da_:A   ------------------------------   434  (A)
+d3m5qa_:A   TTQPGASQSLIAHCPDGSMSCPGVQFNGPA   357  (B)
+

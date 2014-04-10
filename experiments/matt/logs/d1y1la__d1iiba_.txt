@@ -1,0 +1,16 @@
+(d1iiba_:A, d1y1la_:A)
+Core Residues: 76
+Core RMSD: 4.521
+Raw Score: 73.888
+P-value: 0.0810
+Reference structure: d1iiba_:A
+
+d1y1la_:A   KVLFVCI-----HNTARSVMAEALF-NAMAKSWKAESAGVEKAERVDETVKRLLAERGLK    54  (A)
+d1iiba_:A   KKHIYLFSSAGMSTSLLVSKMRAQ-AEKYEV--PVIIEAFP-------------------    40  (B)
+
+d1y1la_:A   AKEKPRTVDEV------NLDDFDLIVTVCEE---SSCV--VLPTDK-----PVTRWHI--    96  (A)
+d1iiba_:A   -----------ETLAGEKGQNA--DVVLLGPQIAYML-PEI-----QRLLPNKPVEVIDS    81  (B)
+
+d1y1la_:A   -ENPAGKDEG-TYRRVLAEIEERVKKLVGE-   124  (A)
+d1iiba_:A   LLYG---K--VDGLGVLKAAVAAIKKAA--A   105  (B)
+

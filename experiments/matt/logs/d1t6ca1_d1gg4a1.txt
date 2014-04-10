@@ -1,0 +1,19 @@
+(d1gg4a1:A, d1t6ca1:A)
+Core Residues: 69
+Core RMSD: 4.820
+Raw Score: 65.180
+P-value: 0.1982
+Reference structure: d1gg4a1:A
+
+d1t6ca1:A   P---------------------------------------IMRVASIDIGSYSVRLTIAQ    27  (A)
+d1gg4a1:A   -VPGRLFPIQLAENQLLLDDSYNANVGSXTAAVQVLAEXPGYRVLVVG-----D------   360  (B)
+
+d1t6ca1:A   IKDGKLSIILERGRITSLGTKVKETGRLQE-DRIEETIQVLKEYKKLIDEFKVERVKAVA    86  (A)
+d1gg4a1:A   -------------XAE--------------LGA--ESEACHVQVGEAAKAAGIDRVLSVG   391  (B)
+
+d1t6ca1:A   TEAIRRAKNAEEF-LERVKREVGLVVEVITPEQEGRYAYLAVAYSLK-------------   132  (A)
+d1gg4a1:A   K------------QSHAISTASGVGEHFAD---KTALITRLKLLIA-EQQVITILVKGSR   435  (B)
+
+d1t6ca1:A   ------------   132  (A)
+d1gg4a1:A   SAAXEEVVRALQ   447  (B)
+

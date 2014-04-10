@@ -1,0 +1,19 @@
+(d1a3wa3:A, d3grda_:A)
+Core Residues: 36
+Core RMSD: 2.323
+Raw Score: 41.100
+P-value: 0.2698
+Reference structure: d1a3wa3:A
+
+d3grda_:A   XPK---------------------------------------ANLEIIRSTYEGSASSNA    21  (A)
+d1a3wa3:A   ---DMRNCTPKPTSTTETVAASAVAAVFEQKAKAIIVLSTSGTTPRLVSKYR--------   415  (B)
+
+d3grda_:A   KHLAEALSEKVEWTEAEGFPYGGTYIGVEAIXENVFSRLGSEWNDYKASVNXYHEVSGKD    81  (A)
+d1a3wa3:A   ------------------------------------------------PNCPIILVTR--   425  (B)
+
+d3grda_:A   VIIAEGXYSGVYKDTGKSFEA---------------------------------------   102  (A)
+d1a3wa3:A   ---------------------CPRAARFSHLYRGVFPFVFEKEPVSDWTDDVEARINFGI   464  (B)
+
+d3grda_:A   ------------EFVHVWQL------ENGKIVKFKQYVDSHLVREAXKS--   133  (A)
+d1a3wa3:A   EKAKEFGILKKGDTYVSIQGFKAGAGHS---NTLQVS------------TV   500  (B)
+

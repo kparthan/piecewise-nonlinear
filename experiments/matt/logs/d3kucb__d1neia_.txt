@@ -1,0 +1,13 @@
+(d1neia_:A, d3kucb_:B)
+Core Residues: 33
+Core RMSD: 2.595
+Raw Score: 29.751
+P-value: 0.4443
+Reference structure: d1neia_:A
+
+d3kucb_:B   -------NTIRV-FLPNKQRTVVRVRN-G-----------MSLHDCLMKKLKVRG-----    90  (A)
+d1neia_:A   MGKATYTVTVTNNSN----GVSVDYETETPMTLLVPEVAAEVIKDLVNTVRSYDTENEHD    56  (B)
+
+d3kucb_:B   --LQPECCAVFRLLHEHKGKKARLDWNTDAASLIGEELQVDFL   131  (A)
+d1neia_:A   VCGW---------------------------------------    60  (B)
+

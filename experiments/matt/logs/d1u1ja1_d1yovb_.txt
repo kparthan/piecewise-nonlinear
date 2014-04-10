@@ -1,0 +1,43 @@
+(d1yovb_:B, d1u1ja1:A)
+Core Residues: 123
+Core RMSD: 6.377
+Raw Score: 89.205
+P-value: 0.0106
+Reference structure: d1yovb_:B
+
+d1u1ja1:A   A-----------------------------------SHIVGYPRXGPKRELKFALESFWD    26  (A)
+d1yovb_:B   -DWEGRWNHVKKFLERSGPFTHPDFEPSTESLQFLLDTCKV-------------------    51  (B)
+
+d1u1ja1:A   GKSTAEDLQKVSADL--------RSSIWKQXSAAGTKFI-PSNT---------------F    62  (A)
+d1yovb_:B   ---------------LVIGAGGLGCELLKNLALSGFRQIHV---IDMDTIDVSNLNRQFL    93  (B)
+
+d1u1ja1:A   AHYDQ--VLDTTAXLGAVPPRYGYTGGEIGLDVYFSXARGNASVPAXEXTKWFDTNYHYI   120  (A)
+d1yovb_:B   FRP--KDIGR--------------------------------------------------   101  (B)
+
+d1u1ja1:A   VPELGPEVNFSYASHKAVNEYKEAK--ALGVDTVPVLVGPVSYLLLSKAAKGVDKSFELL   178  (A)
+d1yovb_:B   --------------PKAEVAAEFLNDRVPNCNVVP-------------------------   122  (B)
+
+d1u1ja1:A   SLLPKILPIYKEVITELKAAGATWIQLDEPVLVXDLEGQKLQAFTGAYAELESTLSGLNV   238  (A)
+d1yovb_:B   -------------------------HFNK-------------------------------   126  (B)
+
+d1u1ja1:A   LVETYFADIPAEAYKTL--TSLKG-VTAFGFD--------LVRGTKTLDLVKAGF-P---   283  (A)
+d1yovb_:B   -IQ--------------DFN----DTFY----RQFHIIVCGLDSIIARRWINGMLISLLN   163  (B)
+
+d1u1ja1:A   ---------EGKYLFAGVVDGRNIWANDFAASLSTLQALEGIVGKDKLVVSTSCSLLH--   332  (A)
+d1yovb_:B   YEDGVLDPSSIVPLIDGGTE--G-FKGNAR-V---ILP-GM-----------------TA   198  (B)
+
+d1u1ja1:A   ------------------------------------------------------------   332  (A)
+d1yovb_:B   CIECTLELYPPQVNFPMCTIASMPRLPEHCIEYVRMLQWPKEQPFGEGVPLDGDDPEHIQ   258  (B)
+
+d1u1ja1:A   --------------------------------TAVDLINETKLDDEIKSWX--AFAAQKV   358  (A)
+d1yovb_:B   WIFQKSLERASQYNIRGVTYRLTQGVVKRIIPAVAST--------------NAVIAAVCA   304  (B)
+
+d1u1ja1:A   VEVNALAKALAGQKDEALFSANAA----------------ALASRRSSPRVTN-------   395  (A)
+d1yovb_:B   TEVFKIATS---AY----------IPLNNYLVFNDVDGLYTY-----------TFEAERK   340  (B)
+
+d1u1ja1:A   ------------------------------------------------------------   395  (A)
+d1yovb_:B   ENCPACSQLPQNIQLQEVLDYLTNSASLQMKSPAITATRTLYLQSEERTRPNLLAVADVT   429  (B)
+
+d1u1ja1:A   --------   395  (A)
+d1yovb_:B   TPQTVLFK   437  (B)
+

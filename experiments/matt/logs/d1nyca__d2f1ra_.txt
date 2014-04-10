@@ -1,0 +1,19 @@
+(d2f1ra_:A, d1nyca_:A)
+Core Residues: 50
+Core RMSD: 3.084
+Raw Score: 26.705
+P-value: 0.4368
+Reference structure: d2f1ra_:A
+
+d1nyca_:A   GSMYQLQFINLVYDTTKLTHLE-QTNINL-FIGN-----WS-NHQLQK------------    38  (A)
+d2f1ra_:A   ------LILSIVGTS-------DSG-KTTLIT--RMMPILRERG----LRVAVVKRKDSW    54  (B)
+
+d1nyca_:A   ------------------------------------------SICIRHGD-DTSHNQYHI    55  (A)
+d2f1ra_:A   KIYNSGADVVIASPVKLAFIRRVSEEEGNDLDWIYERYLSDYDLVITEGFSKAGKDRIVV   114  (B)
+
+d1nyca_:A   ------------------LFIDTAHQRIKFSSFDN-----EEIIYI--LDYDDTQHILMQ    90  (A)
+d2f1ra_:A   VKKPEEVEHFRQGRILAVVC---------------DERVDGHKWFRRDEV--------ER   151  (B)
+
+d1nyca_:A   TSSKQGIGTSRP--IVYERLV--------   109  (A)
+d2f1ra_:A   ------------IAE------FILSLLRE   162  (B)
+

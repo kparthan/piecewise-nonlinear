@@ -1,0 +1,19 @@
+(d3zuca_:A, d2vn6a_:A)
+Core Residues: 84
+Core RMSD: 3.382
+Raw Score: 48.693
+P-value: 0.0900
+Reference structure: d3zuca_:A
+
+d2vn6a_:A   TVLPKDIPGD------SLKVTVGT-ANGKPGDTVTVPVTFADVAK-MKNVG--------T    45  (A)
+d3zuca_:A   ----------GSHMNLKVEFFNAGTQAQ----SNSIYPKFR----LT----NTGSNAINL    38  (B)
+
+d2vn6a_:A   --CNFYLGYDASLLEV-VSVDAGPIV--KNAAVNFSSSASN---------GTISFLFLDN    91  (A)
+d3zuca_:A   ADVKLHYYFTV-DGDKAQTFWCD-WSPVGSS--NVTGTFVKMNPTTTGADQYLEIAFSSA    94  (B)
+
+d2vn6a_:A   T-ITDELITA--------DGVFANIKF-----KLKSVTAKT--TTP--------------   121  (A)
+d3zuca_:A   -AG-------TLAANTSIE-VQGRFA-KSDWTNY-------NQADDYSFNSSATTYTSWD   137  (B)
+
+d2vn6a_:A   -VTFKD---GGAFGDGTMSKIASVTKTNGSVTIDP-----   152  (A)
+d3zuca_:A   KVTAYSAEGLI------------------------WGIEP   153  (B)
+

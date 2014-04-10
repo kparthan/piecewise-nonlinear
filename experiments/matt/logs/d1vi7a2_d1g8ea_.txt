@@ -1,0 +1,16 @@
+(d1g8ea_:A, d1vi7a2:A)
+Core Residues: 28
+Core RMSD: 2.453
+Raw Score: 29.278
+P-value: 0.5880
+Reference structure: d1g8ea_:A
+
+d1vi7a2:A   PLTEYTLQC---EYHQLTGIEALLGQCDGKIINSDYQAFVLLRVAL--------------   180  (A)
+d1g8ea_:A   ---------MHTSELLKHIYDINLSYLL------------------LAQRLIVQDKASAM    33  (B)
+
+d1vi7a2:A   -----------------PAAKVAEFSAKLADFSRGSLQLLAIEEE---------------   208  (A)
+d1g8ea_:A   FRLGINEEMATTLAALTLPQMVKLAE---TNQ-------------LVCHFRFDSHQTITQ    77  (B)
+
+d1vi7a2:A   ---------------------   208  (A)
+d1g8ea_:A   LTQDSRVDDLQQIHTGIMLST    98  (B)
+

@@ -1,0 +1,19 @@
+(d1m6ya1:A, d2c35a1:A)
+Core Residues: 30
+Core RMSD: 2.960
+Raw Score: 42.709
+P-value: 0.5570
+Reference structure: d1m6ya1:A
+
+d2c35a1:A   EEDASQLIFPKEFETAETLL-----------------------NSEVHMLLEHRKQQNES    50  (A)
+d1m6ya1:A   --------------------NRGFTFEREEPLDXRXDLESEVTA----------------   138  (B)
+
+d2c35a1:A   AEDEQELSEVFMKTLNYTARFSRFK--NRETIASVRSLLLQKKL----------------    92  (A)
+d1m6ya1:A   --------------------QKVLNELPEEELARIIFEYGE---EKRFARRIARKIVENR   175  (B)
+
+d2c35a1:A   ------------------------------HKFELACLANLCPETAEESKALIPSLEGRF   122  (A)
+d1m6ya1:A   PLNTTLDLVKAVREALPSYEIRRRKRHFATKTFQAIRIYV--------------------   215  (B)
+
+d2c35a1:A   EDEELQQILDDIQTKRSFQY   142  (A)
+d1m6ya1:A   --------------------   215  (B)
+

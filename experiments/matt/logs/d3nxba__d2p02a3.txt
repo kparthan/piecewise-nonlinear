@@ -1,0 +1,19 @@
+(d2p02a3:A, d3nxba_:A)
+Core Residues: 45
+Core RMSD: 2.798
+Raw Score: 52.831
+P-value: 0.3377
+Reference structure: d2p02a3:A
+
+d3nxba_:A   D-----------------------------------------DDFTAMYKVLDVVKAHKD   455  (A)
+d2p02a3:A   -IGGPQGDAGLTGRKIIVDTYGGWGAHGGGAFSGKDYTKVDRSAAYAARWVAKSLVKGGL   332  (B)
+
+d3nxba_:A   SWPFLEPVDESYAPNYYQIIKAPMDISSMEKKLNGGLYCT--KEEF----------VNDM   503  (A)
+d2p02a3:A   C--RR--------------------VL-------------VQVS--YAIGVSHPLSIS-I   354  (B)
+
+d3nxba_:A   KTMFRNCRKYNGESSEYT----KM-SDNLERCFHRAMMK---------------------   537  (A)
+d2p02a3:A   F-H---------------YGTSQKSERELLEIVKKNFD-LRPGVIVRDLDLKKPIYQRTA   397  (B)
+
+d3nxba_:A   --------------------   537  (A)
+d2p02a3:A   AYGHFGRDSFPWEVPKKLKY   417  (B)
+

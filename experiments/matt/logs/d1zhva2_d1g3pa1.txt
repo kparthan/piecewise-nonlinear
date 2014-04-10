@@ -1,0 +1,13 @@
+(d1g3pa1:A, d1zhva2:A)
+Core Residues: 21
+Core RMSD: 2.168
+Raw Score: 14.030
+P-value: 0.6038
+Reference structure: d1g3pa1:A
+
+d1zhva2:A   GWSCFK---FQGPFAFDETGIVLSVISP-----------------LSTNGIGIFV-VSTF   100  (A)
+d1g3pa1:A   ------AETVE-----------------SCLAKSHTENSFTNVXKDDKTLDRYANYEG--    35  (B)
+
+d1zhva2:A   DGDHLLVRSNDLEKTADLLANAGHSLL-----------------------   127  (A)
+d1g3pa1:A   ---CLWNATG-----------------VVVCTGDETQCYGTWVPIGLAIP    65  (B)
+

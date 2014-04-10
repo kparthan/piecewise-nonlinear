@@ -1,0 +1,31 @@
+(d1b12a_:A, d3igsa_:A)
+Core Residues: 42
+Core RMSD: 3.125
+Raw Score: 15.991
+P-value: 0.7652
+Reference structure: d1b12a_:A
+
+d3igsa_:A   AXSLLEQLDKNIAASGGLIVSCQPVPGSPLDKPEIVAAXALAAEQA--GAVAVRIEGIDN    57  (A)
+d1b12a_:A   ----------------------------------------------RSFI----------    80  (B)
+
+d3igsa_:A   LRXTRSLVSVPIIGIIKRDLDESPVRITPFLDDVDALAQAGAAIIAVDGTARQRPVAVEA   117  (A)
+d1b12a_:A   ---------YEPFQ-------------------------------IPS------------    88  (B)
+
+d3igsa_:A   LLARIHHHHLLTXAD-CSSVDDGLAC----------------------------------   142  (A)
+d1b12a_:A   ---------------GSM--------MPTLLIGDFILVEKFAYGIKDPIYQKTLIETGHP   125  (B)
+
+d3igsa_:A   ---------QRL--GA--DIIGTTXSGY--------------------------------   157  (A)
+d1b12a_:A   KRGDIVVFKY--PED-PKLDYIK-----RAVGLPGDKVTYDPVSKELTIQPGCSSGQACE   177  (B)
+
+d3igsa_:A   ---------------------------------------------TTPDTPEEPDLP---   169  (A)
+d1b12a_:A   NALPVTYSNVEPSDFVQTFSRRNGGEATSGFFEVPKNETKENGIRLSERKETL----GDV   233  (B)
+
+d3igsa_:A   -----------------------------------LVK--------------ALHDAGC-   179  (A)
+d1b12a_:A   THRILTVPIAQDQVGMYYQQPGQQLATWIVPPGQYFM-MGDNRDNSADSRYWGFV----P   288  (B)
+
+d3igsa_:A   --RVIAEGRYNSPALAAEAIRYGAWAVTVGSAI-------------TRLEHICGWYNDAL   224  (A)
+d1b12a_:A   EANL--------------------VGRATA---IWMSFDGLRLSRIGG------------   321  (B)
+
+d3igsa_:A   KKAAS--   229  (A)
+d1b12a_:A   -----IH   323  (B)
+

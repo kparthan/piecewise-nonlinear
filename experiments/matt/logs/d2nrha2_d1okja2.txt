@@ -1,0 +1,16 @@
+(d1okja2:A, d2nrha2:A)
+Core Residues: 61
+Core RMSD: 2.671
+Raw Score: 36.764
+P-value: 0.1733
+Reference structure: d1okja2:A
+
+d2nrha2:A   -EDGVVVDAGS------AITIDIIHL-----GG--FILPGIANYKKIYSHISPFNTQVSL   137  (A)
+d1okja2:A   AT--RVLAAIDARMGEVYWAEYQRD-ENGIWHGEETEAV---------------------   142  (B)
+
+d2nrha2:A   DAFPQKTMDALSYG-VFKGIYLLIKDAAQNKKLYFTGGDG---QFLANYFDHAIYDKLLI   193  (A)
+d1okja2:A   --------------LKPEIVHERMQQLS--GEWVTVGTGWQAWPDLGKESG-LVLRDGEV   185  (B)
+
+d2nrha2:A   FRGMKKIIKENPNLL-------------------------------   208  (A)
+d1okja2:A   ---------------LLPAAEDMLPIACQMFAEGKTVAVEHAEPVY   216  (B)
+

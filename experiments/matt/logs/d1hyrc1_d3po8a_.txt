@@ -1,0 +1,16 @@
+(d3po8a_:A, d1hyrc1:C)
+Core Residues: 49
+Core RMSD: 3.343
+Raw Score: 45.452
+P-value: 0.4541
+Reference structure: d3po8a_:A
+
+d1hyrc1:C   T--------------------------------------VP--PMVNVTRSEASEGN-IT   199  (A)
+d3po8a_:A   -GTSVTLQLDDGSGRTYQLREGSNIIGRGQDAQFRLPDTGVSRRHLEIRWD------GQV    55  (B)
+
+d1hyrc1:C   VTCRASGFYPWNITLSWRQDGVSLSHDTQQWGDVLPDGNGTYQ----TWVATRICQGEEQ   255  (A)
+d3po8a_:A   ALLADLNSTN-GTTVN---------------------------NAPVQEWQ---------    78  (B)
+
+d1hyrc1:C   R--FTCYMEHSGNHSTHPVPS--   274  (A)
+d3po8a_:A   -LADGDVIRLGHSEIIVRMHPLT   100  (B)
+

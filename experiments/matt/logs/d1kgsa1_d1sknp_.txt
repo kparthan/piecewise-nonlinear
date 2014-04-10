@@ -1,0 +1,16 @@
+(d1sknp_:P, d1kgsa1:A)
+Core Residues: 28
+Core RMSD: 2.272
+Raw Score: 35.486
+P-value: 0.4876
+Reference structure: d1sknp_:P
+
+d1kgsa1:A   SKSTKLVCGDLIL--DTATKKAYRGSKEIDL----------------------------T   153  (A)
+d1sknp_:P   GR-QSK------DEQLASDN-----------ELPVSAFQISEMSLSELQQVLKNESLSEY   497  (B)
+
+d1kgsa1:A   KKEYQILEYLVXNKN-RVVTKEELQEHLWVFSDVLRSHIKNLRKKVDKGFKKKIIHTVRG   217  (A)
+d1sknp_:P   QRQLIRKIRRRGKNKVA-------------------------------------------   514  (B)
+
+d1kgsa1:A   IGYVARDE---------------   225  (A)
+d1sknp_:P   --------ARTCRQRRTDRHDKM   529  (B)
+

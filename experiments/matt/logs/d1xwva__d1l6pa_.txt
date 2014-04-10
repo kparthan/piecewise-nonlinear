@@ -1,0 +1,19 @@
+(d1l6pa_:A, d1xwva_:A)
+Core Residues: 55
+Core RMSD: 3.486
+Raw Score: 44.299
+P-value: 0.2533
+Reference structure: d1l6pa_:A
+
+d1xwva_:A   DQV--------------------------DVKDC-ANNEIK---KVMVD-----G-CHGS    24  (A)
+d1l6pa_:A   ---DAPGRSQFVPADQAFAFDFQQNQHDLNLTWQIKDGYYLYRKQIRITPEHAKIADVQ-    59  (B)
+
+d1xwva_:A   D------------------------PCII--H-RGKPFTLEALFDANQNTKTAKIEIKAS    57  (A)
+d1l6pa_:A   -LPQGVWHEDEFYGKSEIYRDRLTLPVTINQASAGATLTVTYQGCA--------------   104  (B)
+
+d1xwva_:A   LDGLEIDVPGIDTNACHFMKCPLV-KGQQY-DAKYTWNVPKIAPKSENVVVTVKLVGDNG   115  (A)
+d1l6pa_:A   ------------------------DAGFCYPPETKTVPLSE-------------------   121  (B)
+
+d1xwva_:A   VLACAIATHAKIRD-   129  (A)
+d1l6pa_:A   ------------VVA   124  (B)
+

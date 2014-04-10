@@ -1,0 +1,16 @@
+(d2dm9a1:A, d1p1ja2:A)
+Core Residues: 58
+Core RMSD: 3.482
+Raw Score: 67.915
+P-value: 0.1106
+Reference structure: d2dm9a1:A
+
+d1p1ja2:A   S----------------------------GQTKLKSVLAQFLVDAGIKPVS-IASYNHLG   353  (A)
+d2dm9a1:A   -EIISSVLEEVKRRLETMSEDEYFESVKALLKEAIKELN------------EKKVRVMSN   127  (B)
+
+d1p1ja2:A   NNDGYNLSAPKQFRSKEISKSSVIDDIIASNDILYNDKLGKKVDHCIVIKYMKPVG----   409  (A)
+d2dm9a1:A   EKTLGLIAS--RIEEIKSELG-----------------------DV-SIELG-ETVDTMG   160  (B)
+
+d1p1ja2:A   -DSKVAMDEYYSELMLGGHNRISI--HNVCE------------------------   437  (A)
+d2dm9a1:A   GVIVETE-----------------DGRIRIDNTFEARMERFEGEIRSTIAKVLFG   198  (B)
+

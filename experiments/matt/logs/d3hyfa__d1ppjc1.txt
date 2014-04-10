@@ -1,0 +1,19 @@
+(d1ppjc1:C, d3hyfa_:A)
+Core Residues: 36
+Core RMSD: 2.265
+Raw Score: 43.572
+P-value: 0.3702
+Reference structure: d1ppjc1:C
+
+d3hyfa_:A   MYQLEKEPIVGAETFYVDGAANRETKLGKAGYVTNRGRQKVVTLTD--------------   471  (A)
+d1ppjc1:C   ----------------------------------------------PLNTPPHIKPEWYF   274  (B)
+
+d3hyfa_:A   -------T----TNQKTELQAIYLALQDSGLEVNIVTDSQYALGIITQWIHNWKKRGWPV    98  (A)
+d1ppjc1:C   LFAYAILRSIPNKLGGVLALAFSILILALIPL----------------------------   306  (B)
+
+d3hyfa_:A   K---------------------------------------------NVDLVNQIIEQL-I   526  (A)
+d1ppjc1:C   -LHTSKQRSMMFRPLSQCLFWALVADLLTLTWIGGQPVEHPYITIGQLASVLYFLLILVL   365  (B)
+
+d3hyfa_:A   KKEKVYLAWVPAHKGIGGNEQVDKLVSAGIRKVL------------   560  (A)
+d1ppjc1:C   MP--------------------------------TAGTIENKLLKW   379  (B)
+

@@ -1,0 +1,19 @@
+(d3ci0k3:K, d2byca1:A)
+Core Residues: 49
+Core RMSD: 3.439
+Raw Score: 45.320
+P-value: 0.3814
+Reference structure: d3ci0k3:K
+
+d2byca1:A   MDELVSLTYRSRVRLAD-----------PVADIVQIMRASRVRNLRLGITGILLYNGVHF    49  (A)
+d3ci0k3:K   -----------------GRTRSQQEYQQALWYSASAESLALSALSLSL------------    59  (B)
+
+d2byca1:A   VQTIEG---PRSAC---DELFRLISAD---------PRHQEI--LAFDLEPITARR----    88  (A)
+d3ci0k3:K   ------KNEKR--VHLEQPWAS--GPRFFPLPQGQIAV----TLRDAQSN------YFWL   280  (B)
+
+d2byca1:A   -------------------FPD--WSMRIVSRKELRALAPDLERLDLSGPEDVAELHRTI   127  (A)
+d3ci0k3:K   RSDITVNEIELTMNSLIVRMG-PQHFSVLWHQ----------------------------   311  (B)
+
+d2byca1:A   AASLSRGDA----   136  (A)
+d3ci0k3:K   ---------TGES   315  (B)
+

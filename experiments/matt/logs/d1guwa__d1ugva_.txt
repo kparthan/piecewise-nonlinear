@@ -1,0 +1,13 @@
+(d1ugva_:A, d1guwa_:A)
+Core Residues: 38
+Core RMSD: 2.333
+Raw Score: 29.379
+P-value: 0.3735
+Reference structure: d1ugva_:A
+
+d1guwa_:A   HMVEEVLEE----------------EE------------EEYVVEKVLDRRVVKGKVEYL    39  (A)
+d1ugva_:A   ---------GSSGSSGTPFRKAKALYACKAEHDSELSFTAGTVFDNVHPSQE---PGWLE    48  (B)
+
+d1guwa_:A   LKWKGFSDEDNTWEPEENLDCP-DLIAEFLQSQKTAHETDKS-----    80  (A)
+d1ugva_:A   GTLN--GK--TGLIPENYVEF-LS------------------GPSSG    72  (B)
+

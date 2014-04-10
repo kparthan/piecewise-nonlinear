@@ -1,0 +1,19 @@
+(d1ik9a1:A, d3brda1:A)
+Core Residues: 47
+Core RMSD: 6.894
+Raw Score: 35.948
+P-value: 0.9147
+Reference structure: d1ik9a1:A
+
+d3brda1:A   DKAEYRFFEAMGQVANPISPCPVV---------G--------SLEVDGHGEA------SR   578  (A)
+d1ik9a1:A   ------------------------MERKISRIHLVSEPSITHFLQVSW-E--KTLESGFV    33  (B)
+
+d3brda1:A   VELHGRDFKPNLKVWFGATPVETTFRSEE----SLHCSIP--PVSQVR------NEQTHW   626  (A)
+d1ik9a1:A   ITLT-------------------------DGHSAWTGTVSESEISQEADDMAMEKGKYVG    68  (B)
+
+d3brda1:A   MFTNRTTGDVEVP-------------------ISLVRDDGVVYSS-------GLTFSYKS   660  (A)
+d1ik9a1:A   EL-------RK--ALLSADVYTFNFSKESAYFFF-----------EKNLKDVSFRLGSFN   112  (B)
+
+d3brda1:A   -----   660  (A)
+d1ik9a1:A   LEKVE   117  (B)
+

@@ -1,0 +1,34 @@
+(d1jeya1:A, d1pgua2:A)
+Core Residues: 40
+Core RMSD: 2.460
+Raw Score: 32.270
+P-value: 0.3621
+Reference structure: d1jeya1:A
+
+d1pgua2:A   GHDEVLKTISGHNKGITALTVNPLISGSYDGRIXEWSSSSXHQDHSNLIVSLDNSKAQEY   386  (A)
+d1jeya1:A   ------------------------------------------------------------   254  (B)
+
+d1pgua2:A   SSISWDDTLKVNGITKHEFGSQPKVASANNDGFTAVL---------TND--DDLLILQSF   435  (A)
+d1jeya1:A   -------------------------------------RALSRLKLKLNKDIV--------   268  (B)
+
+d1pgua2:A   TGDIIKSVRL--------------------------------------------------   445  (A)
+d1jeya1:A   --------ISVGIYNLVQKALKPPPIKLYRETNEPVKTKTRTFNTSTGGLLLPSDTKRSQ   320  (B)
+
+d1pgua2:A   -----------------------NSPGSAVS-----------------------------   453  (A)
+d1jeya1:A   IYGSRQIILEKEETEELKRFDDPGLMLMGFKPLVLLKKHHYLRPSLFVYPEESLVIGSST   380  (B)
+
+d1pgua2:A   -----------LSQNYVAVGLEE--------GNTIQVFKLSDLE--------------VS   480  (A)
+d1jeya1:A   LFSALLIKCLEKE---VAALCRYTPRRNIPPYFVALVPQ-----EEELDDQKIQVTPPGF   432  (B)
+
+d1pgua2:A   FDLKTPLRAKPSYISISPSETYIAAGDVXGKILLYDLQSREVKTSRWAFRTSKINAISWK   540  (A)
+d1jeya1:A   QLV-FLPF----------------------------------------------------   439  (B)
+
+d1pgua2:A   PAEEIEEDLVATGSLDTNIFIYSVKRPXKIIKALNAHKDGVNNLLWETPSTLVSSGADAC   606  (A)
+d1jeya1:A   ------------------------------------------------------------   439  (B)
+
+d1pgua2:A   IKRWNVV-----------------------------------------------------   613  (A)
+d1jeya1:A   -------ADDKRKMPFTEKIMATPEQVGKMKAIVEKLRFTYRSDSFENPVLQQHFRNLEA   492  (B)
+
+d1pgua2:A   ------------------------------------------   613  (A)
+d1jeya1:A   LALDLMEPEQAVDLTLPKVEAMNKRLGSLVDEFKELVYPPDY   534  (B)
+

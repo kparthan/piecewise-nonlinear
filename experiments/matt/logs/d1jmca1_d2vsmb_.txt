@@ -1,0 +1,19 @@
+(d2vsmb_:B, d1jmca1:A)
+Core Residues: 41
+Core RMSD: 4.068
+Raw Score: 22.366
+P-value: 0.8862
+Reference structure: d2vsmb_:B
+
+d1jmca1:A   KVVPIASLTPYQSKWTICARV-------------------TNKSQIRTWSNSRGE-GKLF   222  (A)
+d2vsmb_:B   ---------------------IVLEPIYWNSSNSKFLPGQGLVLYPQ--------IGDKL    61  (B)
+
+d1jmca1:A   SLEL--------VD--------------------------ESGE---IRATAFNEQ----   241  (A)
+d2vsmb_:B   DIICPKVDVGQYEYYKVYMVDKDQADRCTIKKENTPLLNCAKP-DQDIKFTIKFQ-EFSP   122  (B)
+
+d1jmca1:A   -----VDKF----FPLIEVNKVYYFSKGTLKIANKQFTAVKNDYEMTFNNETSVMPCEDD   292  (A)
+d2vsmb_:B   NLWGLEF--QKNKDYYIIST----------------------------------------   140  (B)
+
+d1jmca1:A   HHLP-----------TV---------------   298  (A)
+d2vsmb_:B   -SNGSLEGLDNQEGGV-CQTRAMKILMKVGHH   170  (B)
+

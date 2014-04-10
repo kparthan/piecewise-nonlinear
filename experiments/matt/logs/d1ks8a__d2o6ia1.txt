@@ -1,0 +1,46 @@
+(d2o6ia1:A, d1ks8a_:A)
+Core Residues: 98
+Core RMSD: 9.433
+Raw Score: 105.552
+P-value: 0.4020
+Reference structure: d2o6ia1:A
+
+d1ks8a_:A   MAYDYKQVLRDSLLFYEAQRSGRLPADQKVTWRKDSALNDQGDQGQDLTGGYFDAGDFVK    60  (A)
+d2o6ia1:A   ------------------------------------------------------------     1  (B)
+
+d1ks8a_:A   FGFPMAYTATVLAWGLIDFEAGYSSAGALDDGRKAVKW-------------------ATD   101  (A)
+d2o6ia1:A   --------------------------------------MTIPYKEQRLPIEKVFRDPVHN    22  (B)
+
+d1ks8a_:A   YFIKAHTSQNEFYGQVGQGDADHAFWGRPEDMTMARPAYKIDTSRPGSDL----AGETAA   157  (A)
+d2o6ia1:A   --Y-----------------------------------------------IHVQHQVILD    33  (B)
+
+d1ks8a_:A   ALAAAS---IVFRNVDGT---------------YSNNLLTHARQLFDFANNYRGK--YSD   197  (A)
+d2o6ia1:A   LINS--AEVQRLRRIK--QLGTSSFTFHGAEHSRFSHSLGVYEITRRICE-----IFQR-    83  (B)
+
+d1ks8a_:A   SITDARNFYASAD---------YRDELVWAAAWLYRATNDNTYLNTAESLYDEFGLQNWG   248  (A)
+d2o6ia1:A   ---------NYS-VERLGENGWNDDERLITLCAALL------------------------   109  (B)
+
+d1ks8a_:A   GGLNWDSKVSGVQVLL-----------------------A-KL-----TNKQAYKDT---   276  (A)
+d2o6ia1:A   --------------H-DVGHGPYSHTFEHIFDTNHEAITVQIITSPETEVYQILNRVSAD   154  (B)
+
+d1ks8a_:A   ----------VQS-YVNYLINNQQKTPKGLLYIDM-------------------------   300  (A)
+d2o6ia1:A   FPEKVASVITKQ-YP--------------------NPQVVQMISSQIDADRMDYLLRDAY   193  (B)
+
+d1ks8a_:A   -------------------WGTLRHAANAAFIMLEAAELGLSASSYRQFAQTQIDYALGD   341  (A)
+d2o6ia1:A   FTGTEYGTFDLTRILRVIRPYKGGI-----------------------------------   218  (B)
+
+d1ks8a_:A   GGRSFVCGFGSNPPTRPHHRSSSCPPAPATCDWNTFNSPDPNYHVLSGALVGGPDQNDNY   401  (A)
+d2o6ia1:A   ------------------------------------------------------------   218  (B)
+
+d1ks8a_:A   VDDRSDYVH---NEVATDYNAGFQSALAALVALGY-------------------------   433  (A)
+d2o6ia1:A   ---------AFAMNGMHAVEDYIVSRYQMYV----QVYFHPVSRGMEVILDHLLHRAKEL   265  (B)
+
+d1ks8a_:A   ------------------------------------------------------------   433  (A)
+d2o6ia1:A   FENPEFDYDLQASLLVPFFKGDFTLQEYLKLDDGVLSTYFTQWMDVPDSILGDLAKRFLM   325  (B)
+
+d1ks8a_:A   ------------------------------------------------------------   433  (A)
+d2o6ia1:A   RKPLKSATFTNEKESAATIAYLRELIEKVGFNPKYYTAINSSLPYDFYRRTQIELMQKDG   393  (B)
+
+d1ks8a_:A   ---------------------------------------------------   433  (A)
+d2o6ia1:A   SLVELATVSPLVAALAGQSQGDERFYFPKEMLDFDETYREFSSYIHNGALV   453  (B)
+

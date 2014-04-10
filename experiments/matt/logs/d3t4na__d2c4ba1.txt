@@ -1,0 +1,19 @@
+(d2c4ba1:A, d3t4na_:A)
+Core Residues: 36
+Core RMSD: 1.893
+Raw Score: 32.712
+P-value: 0.2927
+Reference structure: d2c4ba1:A
+
+d3t4na_:A   STVSILPTSLPQIHRANMLAQGSPAASKISPLVTKKSKTRWHFGIRSRSYPLDVMGEIYI   524  (A)
+d2c4ba1:A   ------------------------------------------------------------     3  (B)
+
+d3t4na_:A   A-----------------------------------------------------LKNL--   529  (A)
+d2c4ba1:A   -VINTFDGVADYLQTYHKLPDNYITKSEAQALGWVASKGNLADVAPGKSIGGDIFS--NR    59  (B)
+
+d3t4na_:A   ----------GAEWAKP-SEED----LWTIKLRWKYIPDLMKMVIQLFQIETNNYL--VD   583  (A)
+d2c4ba1:A   EGKLPGKSGRTWREADINYT--SGFRNSDRILYSSD---WLIYKTTD---------AYQT   105  (B)
+
+d3t4na_:A   FKFDGWESSTFSAYPFLHLTTKLIMELAVNS   630  (A)
+d2c4ba1:A   FTKIR--------------------------   110  (B)
+

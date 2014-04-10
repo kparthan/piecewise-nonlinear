@@ -1,0 +1,19 @@
+(d2ga1a1:A, d1jgsa_:A)
+Core Residues: 57
+Core RMSD: 3.213
+Raw Score: 70.394
+P-value: 0.1028
+Reference structure: d2ga1a1:A
+
+d1jgsa_:A   LFNEIIPLGRLIHMVNQKKDRLL-------------------------------------    29  (A)
+d2ga1a1:A   -----------------------XNKKTQLLEVIAALPEELVDQALNYVQXLQNPIQITP    37  (B)
+
+d1jgsa_:A   -NEYLSPLDIT----AA-QFKVLCSIRCAACITPVELKKVLS-VDLGALTRMLDRLVCKG    82  (A)
+d2ga1a1:A   GVC--GGQAR-IRNTRIPVWTLVAYRQ--QGAPDKELLANYPGLTAEDLSAAWHYYEQN-    91  (B)
+
+d1jgsa_:A   WVERLPNPNDKRGVLVKLTTGGAAICEQCHQLVGQDLHQELTKNLTADEVATLEYLLKKV   142  (A)
+d2ga1a1:A   ------------------PEQIDREIAQ--------------------------------   101  (B)
+
+d1jgsa_:A   LP-   144  (A)
+d2ga1a1:A   --D   102  (B)
+

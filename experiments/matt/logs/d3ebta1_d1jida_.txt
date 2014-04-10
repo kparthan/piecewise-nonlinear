@@ -1,0 +1,19 @@
+(d1jida_:A, d3ebta1:A)
+Core Residues: 17
+Core RMSD: 1.566
+Raw Score: 30.296
+P-value: 0.5587
+Reference structure: d1jida_:A
+
+d3ebta1:A   -----------X------------------------------------------------     1  (A)
+d1jida_:A   AARSPADQDRFICIYPAYLNNKKTIAEGRRIPISKAVENPTATEIQDVCSAVGLNVFLEK    64  (B)
+
+d3ebta1:A   ------------------------------------SNNXQTVRESYEAFH--RRDLPGV    23  (A)
+d1jida_:A   NKMYSREWNRDVQYRGRVRVQLKQEDGSLCLVQFPSRKSVMLYAAEMIPKLKTR------   118  (B)
+
+d3ebta1:A   LAALAPDVRWTHPDGXSPYGLGGTKHGHDEVIAFIRHVPTHIAEXRLAPDEFIESGERIV    83  (A)
+d1jida_:A   ------------------------------------------------------------   118  (B)
+
+d3ebta1:A   VLGTRRVTAVNGRSATLKFVHVWRFENGRAVTFEDHFDTAEXIRLITA   131  (A)
+d1jida_:A   ------------------------------------------------   118  (B)
+

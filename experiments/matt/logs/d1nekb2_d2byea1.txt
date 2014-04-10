@@ -1,0 +1,16 @@
+(d2byea1:A, d1nekb2:B)
+Core Residues: 67
+Core RMSD: 3.062
+Raw Score: 44.381
+P-value: 0.1370
+Reference structure: d2byea1:A
+
+d1nekb2:B   --------MRLEFSIYRYNPDVDDAPRM---QDYTLEADEGR-DMMLLDALIQLKEKD--    46  (A)
+d2byea1:A   EERKCLQTHRVTVHGVP-----------GPEPFTVFTIN---GGTKAKQLLQQILTNEQD    47  (B)
+
+d1nekb2:B   -PSLSFRRSCREGVCGSDGLNMN------------------GKNGLACITPISALN--QP    85  (A)
+d2byea1:A   IKPVTT------------DYFLMEEKYFISKEKNECRKQPFQRAIG-PEEEIMQILSSW-    93  (B)
+
+d1nekb2:B   G-------KKIVIRPLPGLPVIRDLVVD   106  (A)
+d2byea1:A   -FPEEGYMGRIVLKTQQE----------   110  (B)
+

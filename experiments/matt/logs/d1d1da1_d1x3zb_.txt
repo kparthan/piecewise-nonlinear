@@ -1,0 +1,13 @@
+(d1x3zb_:B, d1d1da1:A)
+Core Residues: 45
+Core RMSD: 3.476
+Raw Score: 44.869
+P-value: 0.3782
+Reference structure: d1x3zb_:B
+
+d1d1da1:A   GPWADITQGP-----SESFVDFANRLIKAVEGSDLPPSARAPVIIDCFRQKSQPDIQQLI   205  (A)
+d1x3zb_:B   ----------GSIGLTVEDLLSLRQVV---SGNPE----ALAPLLENIS-ARYPQLREHI   294  (B)
+
+d1d1da1:A   RAAPSTLTTPGE--IIKYVLDRQKIAP-----   230  (A)
+d1x3zb_:B   MANP--E-----VFVSM----------LLEAV   309  (B)
+

@@ -1,0 +1,16 @@
+(d1oxxk1:K, d1esfa1:A)
+Core Residues: 51
+Core RMSD: 4.115
+Raw Score: 31.612
+P-value: 0.3560
+Reference structure: d1oxxk1:K
+
+d1esfa1:A   SEKSEEINEKDLRKKSELQGTALGNLKQIYYYNEKAKTENKESHDQFLQHTILFKGFFTY    64  (A)
+d1oxxk1:K   -------------------------------EINEL-EGKVTN-----------EGVVI-   258  (B)
+
+d1esfa1:A   --NDLLVDFDSKDIVDK-YKG--KKVDLYGAY--YGY---------QCAGGTP-------   101  (A)
+d1oxxk1:K   GSLRFPV----------SV--SSDRAIIG-IRPEDVKLSKDVIKDDSWILVG-KGKVKVI   304  (B)
+
+d1esfa1:A   ----------------------------------NKTACMYG--GVTLHDNNRLT   120  (A)
+d1oxxk1:K   GYQGGLFRITITPLDSEEEIFTYSDHPIHSGEEVLVYVRKD-KIKVFEK------   352  (B)
+

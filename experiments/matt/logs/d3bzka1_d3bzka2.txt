@@ -1,0 +1,16 @@
+(d3bzka2:A, d3bzka1:A)
+Core Residues: 42
+Core RMSD: 3.167
+Raw Score: 35.663
+P-value: 0.5048
+Reference structure: d3bzka2:A
+
+d3bzka1:A   YQHDVSQLKLARSLDAVVEDCVNAVGVDVNTASA-ALLARISGLNSTLAQNIVAHRDANG   532  (A)
+d3bzka2:A   ----------------------------------DNPLDA-SAVHPETYPLVQRIAADTE   588  (B)
+
+d3bzka1:A   A----FR--TRDELKKVS-------------RLGEK--TFE--QAAGFLRVMNG------   563  (A)
+d3bzka2:A   RDIRSL-IGDSAFLKRLDPKKFTDETFGLPTVTD--ILKE-LDKP---------GRDPRP   635  (B)
+
+d3bzka1:A   -   563  (A)
+d3bzka2:A   E   636  (B)
+

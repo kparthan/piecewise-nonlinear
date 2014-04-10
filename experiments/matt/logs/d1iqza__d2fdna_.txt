@@ -1,0 +1,13 @@
+(d2fdna_:A, d1iqza_:A)
+Core Residues: 53
+Core RMSD: 2.160
+Raw Score: 64.661
+P-value: 0.0429
+Reference structure: d2fdna_:A
+
+d1iqza_:A   PKYTIVDKETCIACGACGAAAP-DIYDYDEDGIAYVTLDDNQGIVE-VPDILIDDMMDAF    58  (A)
+d2fdna_:A   --AYVINE-ACISCGACEPECPVNAISSG-DDRYVIDA------D-TCI---D--CGACA    44  (B)
+
+d1iqza_:A   EGCPTDSIKVADEPFDGDPNKFE    81  (A)
+d2fdna_:A   GVCPVDAPVQ----A--------    55  (B)
+

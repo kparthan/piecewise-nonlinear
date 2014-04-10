@@ -1,0 +1,19 @@
+(d2dw4a1:A, d3qu3a_:A)
+Core Residues: 33
+Core RMSD: 2.113
+Raw Score: 46.618
+P-value: 0.3229
+Reference structure: d2dw4a1:A
+
+d3qu3a_:A   RVLFGDWLLGEVSSGQYEGLQWLNEARTVFRVPWKHFGRRDLDEEDAQIFKAWAVARGRW    68  (A)
+d2dw4a1:A   -----------------------------------------------SGVEGAAFQSRLP   184  (B)
+
+d3qu3a_:A   PPSGVNLPPPEAEAAE---------------------RR-ERRGWKTNFRCALHSTGRFI   106  (A)
+d2dw4a1:A   H--------------DRMTSQEAACFPDIISGPQQTQKVFLFIRNRTLQLWLDNPK----   226  (B)
+
+d3qu3a_:A   LRQDNSGDPVDPHKVYELSRELGS------------------------------------   130  (A)
+d2dw4a1:A   ------------------------IQLTFEATLQQLEAPYNSDTVLVHRVHSYLERHGLI   262  (B)
+
+d3qu3a_:A   -----------   130  (A)
+d2dw4a1:A   NFGIYKRIKPL   273  (B)
+

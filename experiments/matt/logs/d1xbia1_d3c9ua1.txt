@@ -1,0 +1,19 @@
+(d3c9ua1:A, d1xbia1:A)
+Core Residues: 46
+Core RMSD: 2.970
+Raw Score: 37.739
+P-value: 0.2909
+Reference structure: d3c9ua1:A
+
+d1xbia1:A   AVYVKFKVPEEIQKELLDAVAKA-----------------------------------QK    26  (A)
+d3c9ua1:A   -----------------------MRLKELGEFGLIDLIKKTLESKVIGDDTAPVEYCSKK    37  (B)
+
+d1xbia1:A   IKKGA------------------------NEVTK-AVERG----IAKLVIIAEDVKPEEV    57  (A)
+d3c9ua1:A   LLLTTDVLNEGVHFLRSYIPEAVGWKAISV-NVSDVI---ANGGLPKWALISLN------    87  (B)
+
+d1xbia1:A   VAH----------------LPYLCEEKGIPYAYVASKQDLGKAAGLEVAA---------S    92  (A)
+d3c9ua1:A   ---LPEDLEVSYVERFYIGVKRACEFYKCEVVGGN---------------ISKSEKIGIS   129  (B)
+
+d1xbia1:A   SVAIINEGDAEELKVLIEKVNVLK--   116  (A)
+d3c9ua1:A   VFLVGE------------------TE   137  (B)
+

@@ -1,0 +1,19 @@
+(d3kxsa_:A, d1f7da_:A)
+Core Residues: 33
+Core RMSD: 4.357
+Raw Score: 19.192
+P-value: 0.7920
+Reference structure: d3kxsa_:A
+
+d1f7da_:A   MIIEGDGILDKRSE----------------DAGYDLLAAKEIHLLPGEVKVIPTGVKLML    44  (A)
+d3kxsa_:A   --------------MDIDPYKEFGATVELLSFLPSD------------------------    22  (B)
+
+d1f7da_:A   PKGYWGLIIGKSSIGSKGLDVL--------------------------------------    66  (A)
+d3kxsa_:A   -------FFPSVRDLLDT----AAALYRDALESPEHCSPHHTALRQAILCWGDLMTLATW    71  (B)
+
+d1f7da_:A   ----------------------------------------------G--GV--IDEGYR-    75  (A)
+d3kxsa_:A   VGTNLEDPASRDLVVSYVNTNVGLKFRQLLWFHISCLTFGRETVLEYLVSFGVWIRTPPA   131  (B)
+
+d1f7da_:A   --GEIGVIMINVSRKSITLMERQKIAQLIILPCKHEVLEQGKVVM   118  (A)
+d3kxsa_:A   ARPP-NAPIL-----------------------------------   140  (B)
+

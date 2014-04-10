@@ -1,0 +1,34 @@
+(d2bona1:A, d2yr1a_:A)
+Core Residues: 58
+Core RMSD: 4.813
+Raw Score: 66.444
+P-value: 0.4608
+Reference structure: d2bona1:A
+
+d2yr1a_:A   MNISPKAIKVRNIWIGGTEPCICAPVVGEDDRKVLREAEEVCRKQPDLLEW---------    51  (A)
+d2bona1:A   ---------------------------------------------------PASLLILNG    13  (B)
+
+d2yr1a_:A   ------RADFFRAIDDQERVLATANGLRNIAGEIPILFTIRSEREGGQPIPLNEAEVRRL   105  (A)
+d2bona1:A   KSTDNLPL------------------------------RE--------------------    23  (B)
+
+d2yr1a_:A   IEAICRSGAIDLVDYELAYGERIADVRRMTEECSVWL-VVSRHYFDGTPRKETLLADMRQ   164  (A)
+d2bona1:A   ------------AIM----------------------LLR--------------------    29  (B)
+
+d2yr1a_:A   AERYGA--DIAKVAVMPKSP-EDVLVLLQATEEARRELAIPLITMAMGGLGAITRLAGWL   221  (A)
+d2bona1:A   ------EEGMTIHVRVTWE-KGDAARYVEEARKFGV------------------------    58  (B)
+
+d2yr1a_:A   FGSAVTFAVGNQSSAPGQIPIDDVRTVLSILQTYS-------------------------   256  (A)
+d2bona1:A   -ATVIAGG------------GDGTINEVSTALIQCEGDDIPALGILPLGTANDFATSVGI   105  (B)
+
+d2yr1a_:A   ------------------------------------------------------------   256  (A)
+d2bona1:A   PEALDKALKLAIAGDAIAIDMAQVNKQTCFINMATGGFGTRIALGSVSYIIHGLMRMDTL   175  (B)
+
+d2yr1a_:A   ------------------------------------------------------------   256  (A)
+d2bona1:A   QPDRCEIRGENFHWQGDALVIGIGNGRQAGGGQQLCPNALINDGLLQLRIFTGDEILPAL   235  (B)
+
+d2yr1a_:A   --------------------------------------------------R---------   257  (A)
+d2bona1:A   VSTLKSDEDNPNIIEGASSWFDIQAPHDITFNLDGEPLSGQNFHIEILPAALRCRLPPDC   295  (B)
+
+d2yr1a_:A   ----   257  (A)
+d2bona1:A   PLLR   299  (B)
+

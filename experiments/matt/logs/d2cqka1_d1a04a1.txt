@@ -1,0 +1,13 @@
+(d1a04a1:A, d2cqka1:A)
+Core Residues: 46
+Core RMSD: 2.827
+Raw Score: 47.974
+P-value: 0.2746
+Reference structure: d1a04a1:A
+
+d2cqka1:A   AVSTEDLK-------ECLKKQLEFC-FSRENLSKDLYLISQMDSDQFIPIWTVANMEEIK    94  (A)
+d1a04a1:A   --------ERDVNQLTPRERDILKLIA----------Q--------GLPNKMIARR--LD   181  (B)
+
+d2cqka1:A   KLTTDPDLILEVLRS---SPMVQVDEKGEKVRPS--HKRCI--------   130  (A)
+d1a04a1:A   ---ITESTVKVHVKHMLKKMKLKS-------RVEAAV----WVHQERIF   216  (B)
+

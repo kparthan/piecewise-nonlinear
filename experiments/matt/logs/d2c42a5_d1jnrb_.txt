@@ -1,0 +1,19 @@
+(d1jnrb_:B, d2c42a5:A)
+Core Residues: 61
+Core RMSD: 1.472
+Raw Score: 91.801
+P-value: 2.8632e-03
+Reference structure: d1jnrb_:B
+
+d2c42a5:A   TSQFEKRGVAINVPQWVPENCIQ-----CNQCAFVCPHSAILPVLAKEEELVGAPANFTA   723  (A)
+d1jnrb_:B   ------------PSFVNPEKCDGCKALERTACEYICPNDLMTLDKE--------------    35  (B)
+
+d2c42a5:A   LEAKGKELKGYKFRIQI-NTLDCMGCGNCADICPPKEKALVMQPLDTQRDAQVPNLEYAA   782  (A)
+d1jnrb_:B   -----------KMKAYNREPDMCWECYSCVKMCPQ--GAIDVRGYV--------------    68  (B)
+
+d2c42a5:A   RIP---------------------------------------------------------   785  (A)
+d1jnrb_:B   ---DYSPLGGACVPMRGTSDIMWTVKYRNGKVLRFKFAIRTTPWGSIQPFEGFPEPTEEA   125  (B)
+
+d2c42a5:A   -------------------------   785  (A)
+d1jnrb_:B   LKSELLAGEPEIIGTSEFPQVKKKA   150  (B)
+

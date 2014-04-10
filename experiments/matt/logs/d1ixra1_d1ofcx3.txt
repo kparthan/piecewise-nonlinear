@@ -1,0 +1,13 @@
+(d1ofcx3:X, d1ixra1:A)
+Core Residues: 40
+Core RMSD: 4.214
+Raw Score: 37.794
+P-value: 0.6827
+Reference structure: d1ofcx3:X
+
+d1ixra1:A   PDEENLALFELLLS-------VSGVGPKVALAL-----LSALPPRLLARALLEG------   104  (A)
+d1ofcx3:X   ---AVDAYFREAL-KAPRPPKQ--PIV------QDFQFFPPRLFELLDQEIYYFRKTVGY   752  (B)
+
+d1ixra1:A   ---------------------DARLLTSASGVGRRLAERIALELKGKVPPHL--------   135  (A)
+d1ofcx3:X   KVPKNTKVQREEQRKIDEAEPLTEEEIQEKE---------------------NLLSQGFT   798  (B)
+

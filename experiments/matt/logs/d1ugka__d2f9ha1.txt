@@ -1,0 +1,19 @@
+(d2f9ha1:A, d1ugka_:A)
+Core Residues: 48
+Core RMSD: 3.483
+Raw Score: 32.025
+P-value: 0.4377
+Reference structure: d2f9ha1:A
+
+d1ugka_:A   GSSGSSGLGTLFFSLEYNFERKAFVVNIKEARGLPAMDEQSMTSDPYIKMTILPEKKHKV    60  (A)
+d2f9ha1:A   ------------------------------------------------------W-KXQA     7  (B)
+
+d1ugka_:A   KTRVLRKTLDP-AF--------------------------DET-FT--FYGIPYTQIQEL    90  (A)
+d2f9ha1:A   TVT--------EIGKHAIDDSEKXIILFGETATDTLKQHAVIQSF-PEKDQVTLA--EGD    56  (B)
+
+d1ugka_:A   ALHFTILSFDRFSRDDIIGEVLIPLSGIELSEGK--------------------------   124  (A)
+d2f9ha1:A   HLKIGD--------------TNYTI--TKVGSFANSNLQSIAHSTLIFADAPTDEDDVIR   100  (B)
+
+d1ugka_:A   -MLMNREIISGPSSG----------------   138  (A)
+d2f9ha1:A   NGVYLTP--------HQLPKITIGTTIDYLV   123  (B)
+

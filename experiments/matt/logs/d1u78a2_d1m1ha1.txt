@@ -1,0 +1,13 @@
+(d1m1ha1:A, d1u78a2:A)
+Core Residues: 28
+Core RMSD: 4.059
+Raw Score: 11.776
+P-value: 0.8334
+Reference structure: d1m1ha1:A
+
+d1u78a2:A   AP-RRKALS----VRD------------ERNVIRAAS----------------NSCKTAR    81  (A)
+d1m1ha1:A   --EEKVVIRAQGKEK-YRLSLKGNARDISV--LGKKGVTTFRIENGEVKVVESVEGDTC-   104  (B)
+
+d1u78a2:A   DI--------------RNELQLS--ASKRTILNVIKRSG----   104  (A)
+d1m1ha1:A   --VNAPPISKPGQKITCKENKT-EAK-------------IVLD   131  (B)
+

@@ -1,0 +1,28 @@
+(d1e12a_:A, d2et1a_:A)
+Core Residues: 36
+Core RMSD: 2.623
+Raw Score: 34.927
+P-value: 0.5894
+Reference structure: d1e12a_:A
+
+d2et1a_:A   TDPDPLQDFCVADLDGKA-VSVNGHTCKPMSEAGDDFLFSSKLTKAGNTSTPNGSAVTEL    59  (A)
+d1e12a_:A   ----------------RENAL---------------------------------------    28  (B)
+
+d2et1a_:A   DVAEWPGTNTLGVSMNRVDFAPGGTNPPHIHPRATEIGMVMKGELLVGILGSLDSGNKLY   119  (A)
+d1e12a_:A   ------------------------------------------------------------    28  (B)
+
+d2et1a_:A   SRVVRAGETFVIPRGLMHFQFNVGKTEAYMVVSFNSQNPGIVFVPLTLFG----------   169  (A)
+d1e12a_:A   --------------------------------------------------LSSSLWVNVA    38  (B)
+
+d2et1a_:A   ------------------------------------------------------------   169  (A)
+d1e12a_:A   LAGIAILVFVYMGRTIRPGRPRLIWGATLMIPLVSISSYLGLLSGLTVGMIEMPAGHALA    98  (B)
+
+d2et1a_:A   -------------SD-PPIP-TPVLTKALRVEAGVVELLKSKFA-GG-------------   200  (A)
+d1e12a_:A   GEMVRSQWGRYLTWALSTPMILLALGLLADVDLGSLFTVIAADIGMCVTGLAAAMTTSAL   158  (B)
+
+d2et1a_:A   ---------S--------------------------------------------------   201  (A)
+d1e12a_:A   LFRWAFYAISCAFFVVVLSALVTDWAASASSAGTAEIFDTLRVLTVVLWLGYPIVWAVGV   218  (B)
+
+d2et1a_:A   --------------------------------------------   201  (A)
+d1e12a_:A   EGLALVQSVGATSWAYSVLDVFAKYVFAFILLRWVANNERTVAV   262  (B)
+

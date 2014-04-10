@@ -1,0 +1,16 @@
+(d2o3la1:A, d2fx0a1:A)
+Core Residues: 33
+Core RMSD: 2.680
+Raw Score: 45.869
+P-value: 0.4295
+Reference structure: d2o3la1:A
+
+d2fx0a1:A   -----------SREQTXENILKAAKKKFGERGYE--GT--SIQEIAKEAK-VNVAXASYY    47  (A)
+d2o3la1:A   EYKXXXARVAALPEDYQFVFKKIQNYXWNFS---AGNGXDXLHIQYELIDLF--------    62  (B)
+
+d2fx0a1:A   FNGKENLYYEVFKKYGLANELPNFLEKNQ-------------------------------    76  (A)
+d2o3la1:A   -----------------------------EAGAAEGRQVLDITGEDVASFADELVANAKT    93  (B)
+
+d2fx0a1:A   --    76  (A)
+d2o3la1:A   YV    95  (B)
+

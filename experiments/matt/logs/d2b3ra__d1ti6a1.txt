@@ -1,0 +1,22 @@
+(d1ti6a1:A, d2b3ra_:A)
+Core Residues: 27
+Core RMSD: 2.463
+Raw Score: 21.213
+P-value: 0.5122
+Reference structure: d1ti6a1:A
+
+d2b3ra_:A   GSG---------------------------------------------------------  1384  (A)
+d1ti6a1:A   ---KYPLGMLSPHPRFSMHTMGDGKNSYMNYIKDHRVEVDGYKYWIMRVNSIDAEARGIK   785  (B)
+
+d2b3ra_:A   --AVKLSVSYRNGTLFIMVMHIKDLVTEDGADPNPYVKTYLLPDTHKTSK----------  1432  (A)
+d1ti6a1:A   NGDLIRAYND----RGSVILA-----------------------------AQVTECLQPG   812  (B)
+
+d2b3ra_:A   ------------RKTKISRKTRNPTFNEML---VYSGYSKETLRQRELQLSVLSAESLRE  1477  (A)
+d1ti6a1:A   TVHSYESCAVYDPL----------------GTAGK-------------------------   831  (B)
+
+d2b3ra_:A   NFFLGGITLPLKDFNLS-----------------------------KETVKWYQLTA---  1505  (A)
+d1ti6a1:A   -----------------SADRGGCINILTPDRYISKYACGMANNTALVEIEKWD---GDK   871  (B)
+
+d2b3ra_:A   ----  1505  (A)
+d1ti6a1:A   YEIY   875  (B)
+

@@ -1,0 +1,19 @@
+(d1zata2:A, d2pfsa_:A)
+Core Residues: 36
+Core RMSD: 3.413
+Raw Score: 35.766
+P-value: 0.5764
+Reference structure: d1zata2:A
+
+d2pfsa_:A   XSVYHHI----------------LLAV---------------------------------    11  (A)
+d1zata2:A   -------KEQLASMNAIANVKATYSI-NGETFQIPSSDIMSWLTYNDGKVDLDTEQVRQY   268  (B)
+
+d2pfsa_:A   -------DF-------------------------SSEDSQVVQKVRNLASQIGARLSLIH    39  (A)
+d1zata2:A   VTDLGTKYNTSTNDTKFKSTKRGEVTVPVGTYSWTI-QTDSETEALKKAILAGQDFTR--   325  (B)
+
+d2pfsa_:A   VLDTAIPLDTETTYDAXLDVEKQKLSQIGNTLGIDPAHRWLVWGEPREEIIRIAEQENVD   109  (A)
+d1zata2:A   ------------------------------------------------------------   325  (B)
+
+d2pfsa_:A   LIV-VGSHSTANSVLHYAKCDVLAVRL----   145  (A)
+d1zata2:A   --SPIVQGGTT----------------ADHP   338  (B)
+

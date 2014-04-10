@@ -1,0 +1,43 @@
+(d1y9za_:A, d3bmva4:A)
+Core Residues: 134
+Core RMSD: 7.469
+Raw Score: 90.978
+P-value: 1.1907e-03
+Reference structure: d1y9za_:A
+
+d3bmva4:A   ASDTAVSNVVNYSTDVIYQIVTDRFVDGNTSNNPTGDLYDPTHTSLKKYFGGDWQGIINK    60  (A)
+d1y9za_:A   ------------------------------------------------------------     1  (B)
+
+d3bmva4:A   IND-GYLTGM-GVTAIWIPQPVENIYAVLPDSTFGGSTSYHGYWARDFKRTNPYFGSFTD   118  (A)
+d1y9za_:A   ---AET--TPWGQ-----------------------------------------------     8  (B)
+
+d3bmva4:A   FQNLINTAHAH---------N----IKVIIDFAPNH------------------------   141  (A)
+d1y9za_:A   -----------TFVGATVLSDSQAGNRTICII----DSGYDRSHNDLNANNVTGTNNSGT    53  (B)
+
+d3bmva4:A   --------------------------------------------TSPASETDPTYAEN-G   156  (A)
+d1y9za_:A   GNWYQPGNNNAHGTHVAGTIAAIANNEGVVGVMPNQNANIHIVKVFNEA---------GW   104  (B)
+
+d3bmva4:A   RLYDNGTLLGGYTNDTNGYFHHYGGTDFSSYEDGIYRNLFDLADLNQQNSTIDSY-LKSA   215  (A)
+d1y9za_:A   GYSS---------------------------------------------------SLVAA   113  (B)
+
+d3bmva4:A   IKVWLD-MGIDGIR--LDAVKHMPFGWQKNFMDSILSYRPVFTFGEWF--LGTNEIDVNN   270  (A)
+d1y9za_:A   IDTCVNSGGANVVTMSLGGSG--STTTERNALNTHYNNG-VLLIA---AAGNAGDSSY--   165  (B)
+
+d3bmva4:A   TY----FANESGMSLLD------------FRFSQKVRQVFRDNTDTMYGLDSMIQSTASD   314  (A)
+d1y9za_:A   --SYPASYD--SVMSVAAVDSNLDHAAFSQYT---------------------------D   194  (B)
+
+d3bmva4:A   YNFIND-MVTFIDNHDMDRFYNGGSTRPVEQALAFTLTSRGVPAIY-YGT----------   362  (A)
+d1y9za_:A   Q-----VEISGPG-------------------------------E-AIL-STVTVGEGRL   216  (B)
+
+d3bmva4:A   -------------EQYMTGNGDP--------YNRAMMT----------------------   379  (A)
+d1y9za_:A   ADITIGGQSYFSNGVVPHN----RLTPSGTSYAPAPI-NASATGALAECTVNGTSFSCGN   271  (B)
+
+d3bmva4:A   ------------------------------------------------------------   379  (A)
+d1y9za_:A   MANKICLVERVGNQGSSYPEINSTKACKTAGAKGIIVYSNSALPGLQNPFLVDANSDITV   331  (B)
+
+d3bmva4:A   -SFNTST--TA-------------------------YNVIKKLAPLRKSN----------   401  (A)
+d1y9za_:A   PSVSVD-RAT-GLALKAKLGQSTTVSNQGNQDYEYYNGTSMATPHVSGVATLVWSYHPEC   389  (B)
+
+d3bmva4:A   -----------PAI---------------AY----------------   406  (A)
+d1y9za_:A   SASQVRAALNATADDLSVAGRDNQTGYGMI-NAVAAKAYLDESCTGP   435  (B)
+

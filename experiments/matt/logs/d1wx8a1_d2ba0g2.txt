@@ -1,0 +1,16 @@
+(d2ba0g2:G, d1wx8a1:A)
+Core Residues: 25
+Core RMSD: 2.635
+Raw Score: 23.660
+P-value: 0.5906
+Reference structure: d2ba0g2:G
+
+d1wx8a1:A   VSGREPSSRIIRVSVKTP-QDCHEFFLA------------------------EN------    36  (A)
+d2ba0g2:G   ------------------PVRDLPVSVTSLIVGNKYLVDPSREEMSVGDTTLTITTDKDD   220  (B)
+
+d1wx8a1:A   -----------------------SNVRRFKKQISKYLHCNADRLVLIFTGKILRDQDILS    73  (A)
+d2ba0g2:G   NVVAMQKSGGYLLDEKLFDELLDVSINCARKLREKF-K----------------------   257  (B)
+
+d1wx8a1:A   QRGILDGSTVHVVVRSH    90  (A)
+d2ba0g2:G   -----------------   257  (B)
+

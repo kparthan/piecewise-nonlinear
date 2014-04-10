@@ -1,0 +1,13 @@
+(d1hlva1:A, d1iufa1:A)
+Core Residues: 56
+Core RMSD: 2.319
+Raw Score: 45.058
+P-value: 0.1236
+Reference structure: d1hlva1:A
+
+d1iufa1:A   GIHMGKIK----RRAITEHEKRALRHYFFQLQN-RSGQQDLIEWFREKFGKDISQPSVSQ    52  (A)
+d1hlva1:A   --------MGPKRRQLTFREKSRIIQEVEEN--PDLRKGEIARRFN------IPPSTLST    44  (B)
+
+d1iufa1:A   ILSSKYSYLDNTV--EKPWD--V-KRNR    75  (A)
+d1hlva1:A   ILKN-KRAILASERKYG---VASTCR--    66  (B)
+

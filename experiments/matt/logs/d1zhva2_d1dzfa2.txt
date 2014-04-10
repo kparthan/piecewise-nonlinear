@@ -1,0 +1,13 @@
+(d1dzfa2:A, d1zhva2:A)
+Core Residues: 24
+Core RMSD: 2.697
+Raw Score: 26.401
+P-value: 0.6854
+Reference structure: d1dzfa2:A
+
+d1zhva2:A   GWSCFKFQGPFAFDETGIVLSVISPLSTNGIGIFVVS--TF--DGDHLLVRSNDLEKTAD   117  (A)
+d1dzfa2:A   -------------------------------------ITHHELVPKHIRLSSDEKRELLK   166  (B)
+
+d1zhva2:A   LLANAGHS-----LL---------------------------------------   127  (A)
+d1dzfa2:A   RYR-----LKESQLPRIQRADPVALYLGLKRGEVVKIIRKSETSGRYASYRICM   215  (B)
+

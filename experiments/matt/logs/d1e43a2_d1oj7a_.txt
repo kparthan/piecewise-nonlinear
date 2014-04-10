@@ -1,0 +1,43 @@
+(d1oj7a_:A, d1e43a2:A)
+Core Residues: 94
+Core RMSD: 5.887
+Raw Score: 88.982
+P-value: 0.0603
+Reference structure: d1oj7a_:A
+
+d1e43a2:A   -------VNGTL-MQYFEWYTPNDGQHWKRLQNDAEHLSDIGITAVW-----IPPAYKGL    47  (A)
+d1oj7a_:A   KAGLNNFNLHTPTRILFGK----------------------------GAIAGLR------    23  (B)
+
+d1e43a2:A   SQSDNGYGPYDLYDLGEFQQKGTVRTKYGTKSELQDAIGSLHSRNVQV-YGDVVLNHKAG   106  (A)
+d1oj7a_:A   ------------------------------------------------EQI---------    26  (B)
+
+d1e43a2:A   ADATEDVTAVEVNPANRNQETSEEYQIKAWTDFRFPGRGNTYSDFKWHWYHFDGADWDES   166  (A)
+d1oj7a_:A   ------------------------------------------------------------    26  (B)
+
+d1e43a2:A   RKISRIFKFRGEGKAWDWEVSSENGNYDYLMYADVDYDHPDVVAETKKWGIW--YANELS   224  (A)
+d1oj7a_:A   ----------------------------------------------------PHDA----    30  (B)
+
+d1e43a2:A   LDGFRIDA--------------------------AKHIK----------FSFLRDWVQAV   248  (A)
+d1oj7a_:A   ---RVLITYGGGSVKKTGVLDQVLDALKGMDVLEFG---GIEPNPAYETLMNAVKLVRE-    83  (B)
+
+d1e43a2:A   RQATGKEMF---TVAEYWQNNAGKLENYLNKTSF------------------------NQ   281  (A)
+d1oj7a_:A   ---------QKVTFLLAVG-GGSVLDGTKFIAAAANYPENIDPWHILQTGGKEIKSAIPM   133  (B)
+
+d1e43a2:A   SVFDVPLHFNLQAASSQGGGYDMRKLLNG--TVVSKHPLK--------------------   319  (A)
+d1oj7a_:A   GCVLTLP-------------------A--TGSESNA--GAVISRKTTGDKQAFHSAHVQP   170  (B)
+
+d1e43a2:A   --SVTFVDNHDTQPGQSLESTV--------------------------------------   339  (A)
+d1oj7a_:A   VFAVLDPV-----------YT-YTLPPRQVANGVVDAFVHTVEQYVTKPVDAKIHDRFAE   218  (B)
+
+d1e43a2:A   ------------------QTWFKPLAYAFILTR---ESGYPQVFYGDMYGTKGDSQREIP   378  (A)
+d1oj7a_:A   GILLTLIEDGPKALKEPENY---DVRANVMWAATQALN----------------------   253  (B)
+
+d1e43a2:A   ALKHKIEPILKARKQ---------------------------------------------   393  (A)
+d1oj7a_:A   ---------------GLIGAGVPQDWATHMLGHELTAMHGLDHAQTLAIVLPALWNEKRD   298  (B)
+
+d1e43a2:A   ------------------------------------------------------------   393  (A)
+d1oj7a_:A   TKRAKLLQYAERVWNITEGSDDERIDAAIAATRNFFEQLGVPTHLSDYGLDGSSIPALLK   358  (B)
+
+d1e43a2:A   -----------------------------   393  (A)
+d1oj7a_:A   KLEEHGMTQLGENHDITLDVSRRIYEAAR   387  (B)
+

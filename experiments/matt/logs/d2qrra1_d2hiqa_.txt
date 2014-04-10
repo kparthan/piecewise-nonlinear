@@ -1,0 +1,16 @@
+(d2hiqa_:A, d2qrra1:A)
+Core Residues: 65
+Core RMSD: 2.964
+Raw Score: 74.703
+P-value: 0.0236
+Reference structure: d2hiqa_:A
+
+d2qrra1:A   SIPEDYQARLQPNRVEGSYPLVRXEFTGATVDA------------PLXSQISRKYNI-DV    48  (A)
+d2hiqa_:A   ----------------ATLLQLHFAFN------GPFGDAMAEQLKPLAESINQEPGFLWK    46  (B)
+
+d2qrra1:A   SILSSDLDYAGGVKF--GXXVAELFG-NEQDDSAAIEYLRENN----VKV-EVLGYVL--    98  (A)
+d2hiqa_:A   VWTESE---------KNHEAGGIYLFTDEKSALAYLEKHTARLKNLGVE-EVVAKVFDVN    96  (B)
+
+d2qrra1:A   --------    98  (A)
+d2hiqa_:A   EPLSQINQ   104  (B)
+

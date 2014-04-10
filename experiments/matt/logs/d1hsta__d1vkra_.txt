@@ -1,0 +1,16 @@
+(d1vkra_:A, d1hsta_:A)
+Core Residues: 29
+Core RMSD: 2.340
+Raw Score: 35.638
+P-value: 0.5072
+Reference structure: d1vkra_:A
+
+d1hsta_:A   -----------------SH--PTYSEMIA-AAIRAEKSRGGSSRQSIQKYIKSHYKV---    60  (A)
+d1vkra_:A   SHVRKIIVACDAGMGSSAMGAGVLRK-KIQD--------------------------AGL   407  (B)
+
+d1hsta_:A   --------------------------------------------GHNADLQIKLSIRRLL    76  (A)
+d1vkra_:A   SQISVTNSAINNLPPDVDLVITHRDLTERAMRQVPQAQHISLTNFLDSGLYTSLTERLVA   467  (B)
+
+d1hsta_:A   AAGVLKQTKGVGASGSFRLAK-    97  (A)
+d1vkra_:A   AQR------------------H   471  (B)
+

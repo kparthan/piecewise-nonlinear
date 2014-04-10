@@ -1,0 +1,55 @@
+(d1eexa_:A, d1gjwa2:A)
+Core Residues: 196
+Core RMSD: 3.954
+Raw Score: 199.837
+P-value: 3.4145e-14
+Reference structure: d1eexa_:A
+
+d1gjwa2:A   MLLREINRYCKEKATGKRIYAVPKLWIPGFFKKFDEKSGRCFVDPYELGAEITDWILNQS    60  (A)
+d1eexa_:A   ------------------------------------------------------------     1  (B)
+
+d1gjwa2:A   REWDYSQPLSFLKGEKTPDW----------------------------------------    80  (A)
+d1eexa_:A   --------------------MRSKRFEALAKRPVNQDGFVKEWIEEGFIAMESPNDPKPS    40  (B)
+
+d1gjwa2:A   ------------------------------------------------------------    80  (A)
+d1eexa_:A   IKIVNGAVTELDGKPVSDFDLIDHFIARYGINLNRAEEVMAMDSVKLANMLCDPNVKRSE   100  (B)
+
+d1gjwa2:A   ---------------------------------IKRSVVYGSLPRTTAAYNHKGSGYYEE   107  (A)
+d1eexa_:A   IVPLTTAMTPAKIVEVVSHMNVVEMMMAMQKMRARRTPSQQAHVTN--------------   146  (B)
+
+d1gjwa2:A   NDVLGFRE-AG----TFFKMMLLLPFVKSLGADAIYLLPV--SRMSDLFKKGDAPSPYSV   160  (A)
+d1eexa_:A   --------VKDNPVQIAADAAEGAWRG----FDEQETT-VAVAR----------------   177  (B)
+
+d1gjwa2:A   KNPMELDERYHDPLLEPFKVDEEFKAFVEACHIL--GIRVILDFIPRTAARDSDLIREHP   218  (A)
+d1eexa_:A   ------Y------------APFNAIALLVGSQVGRPGVLTQCSLEEA-------------   206  (B)
+
+d1gjwa2:A   DWFYWIKVEELADYTPPRAEELPFKVPDEDELEIIYNKENVKRHLKKFTLPPNLIDPQKW   278  (A)
+d1eexa_:A   ------------------------------------------------------------   206  (B)
+
+d1gjwa2:A   EKIKREEGNILELIVKEFGIITPPGFSDLINDPQPTWDDVTFLRLYLDHPEASKRFLDPN   338  (A)
+d1eexa_:A   ------------------------------------------------------------   206  (B)
+
+d1gjwa2:A   QPPYVLYDVIKASKFPGKEPNRELWEYL--AGVIPHYQKKYGIDGARLDMGH--------   388  (A)
+d1eexa_:A   ----------------------------TELKLGMLGH----TCYAETI-SVYGTEPVFT   233  (B)
+
+d1gjwa2:A   --ALPKELLDLIIKNVKEYDPAFVMIAEEL-----------------DME-KDKASKEAG   428  (A)
+d1eexa_:A   DGDDTPWSKGFLASSYASRG--LKMRFTSGSGSEVQMGYAEGKSMLYLEARCIYITKAAG   291  (B)
+
+d1gjwa2:A   YDVILGSSW-------Y---FAGRVEEIGKLPDIAEEL--V-LPFLASVETPDTPRIATR   475  (A)
+d1eexa_:A   VQGLQNGS-VSCIGVPSAVPS-----GIRAVLAENLICSSLDLECASSNDQ--TFT--HS   341  (B)
+
+d1gjwa2:A   KYASKMKKLAPFVTYFLPN-SIPYVNTG--------------QE-IGEKQPMNLGLDTDP   519  (A)
+d1eexa_:A   --DM-RRTARLLMQFLP--GTDFISSGYSAVPNYDNMFAGSNEDAED-------------   383  (B)
+
+d1gjwa2:A   NLRKVLSPTDEFFGKLAFFDHYVLHWDSPDRGVLNFIKKLIKVR--HEFLDFV-------   570  (A)
+d1eexa_:A   ---------------------------------FDDYNVIQRDLKVD------GGLRPVR   404  (B)
+
+d1gjwa2:A   ------------------------------------------------------------   570  (A)
+d1eexa_:A   EEDVIAIRNKAARALQAVFAGMGLPPITDEEVEAATYAHGSKDMPERNIVEDIKFAQEII   464  (B)
+
+d1gjwa2:A   ---------------------------------------------------------LN-   572  (A)
+d1eexa_:A   NKNRNGLEVVKALAQGGFTDVAQDMLNIQKAKLTGDYLHTSAIIVGDGQVLSAVNDVNDY   524  (B)
+
+d1gjwa2:A   ---------------------------   572  (A)
+d1eexa_:A   AGPATGYRLQGERWEEIKNIPGALDPN   551  (B)
+

@@ -1,0 +1,19 @@
+(d2a2la1:A, d2fh5a1:A)
+Core Residues: 60
+Core RMSD: 2.937
+Raw Score: 62.304
+P-value: 0.1065
+Reference structure: d2a2la1:A
+
+d2fh5a1:A   ------------------------------MVDFFTIFSKGGLVLWCFQGVSDSCTGPVN    30  (A)
+d2a2la1:A   MNKSQQVQTITLAAAQQMAAAVEKKATEINVAVVFSVVDRGGNTLLIQRMD---------    54  (B)
+
+d2fh5a1:A   ---ALIRSVLLQETHEALT-----------------------------------------    53  (A)
+d2a2la1:A   EAFVS--------------SCDISLNKAWSACSLKQGTHEITSAVQPGQSLYGLQLTNQQ   100  (B)
+
+d2fh5a1:A   -----LKYKLDNQ---FELVFVVGFQKILTLTYVDKLIDDVHRLFRDKYRTEIQQQSALS   105  (A)
+d2a2la1:A   RIIIFGGGLPVIFNEQVIGAVGVSGGTVEQDQLLAQCALDCFSAL---------------   145  (B)
+
+d2fh5a1:A   LLNGTFDFQNDFLRLLREAEESSK   129  (A)
+d2a2la1:A   ------------------------   145  (B)
+

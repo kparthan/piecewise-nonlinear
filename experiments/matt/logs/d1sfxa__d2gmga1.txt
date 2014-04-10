@@ -1,0 +1,16 @@
+(d2gmga1:A, d1sfxa_:A)
+Core Residues: 64
+Core RMSD: 2.553
+Raw Score: 68.909
+P-value: 0.0156
+Reference structure: d2gmga1:A
+
+d1sfxa_:A   HXSNPLGELVKALEKLSF---------KPSDVRIYSLLLERGGXRVSEIARELDL----S    46  (A)
+d2gmga1:A   ------------------AHHHHHHGSATRREKIIELLLE-GDYSPSELARILDMRGKGS    41  (B)
+
+d1sfxa_:A   ARFVRDRLKVLLKRG----F-VRREIVEKG-----------------------WVGYIYS    78  (A)
+d2gmga1:A   KKVILEDLKVISKIAKREGMVLLIKPAQCRKCGFVFKAEINIPSRCPKCKSEWIEEPRFK   101  (B)
+
+d1sfxa_:A   AEKPEKVLKEFKSSILGEIERIEKXFTDGS   108  (A)
+d2gmga1:A   LER--K------------------------   105  (B)
+

@@ -1,0 +1,22 @@
+(d1lm5a_:A, d1bd8a_:A)
+Core Residues: 53
+Core RMSD: 3.772
+Raw Score: 47.713
+P-value: 0.3938
+Reference structure: d1lm5a_:A
+
+d1bd8a_:A   RAGDRLSGAAARGDVQEVRRLLHRELVHPDALNRFGKTALQVMMFGST------------    54  (A)
+d1lm5a_:A   ------------------------------------------------SSPIAAIFDTEN  2627  (B)
+
+d1bd8a_:A   ------AI-------------------------ALEL-LKQGASPNVQDTSGTSPVHD--    80  (A)
+d1lm5a_:A   LEKISIT-EGIERGIVDSITGQRLLEAQACTGGI---IHPTTGQK---------L---SL  2671  (B)
+
+d1bd8a_:A   -------------------AARTGFLDTLKVLVEHGADVNVPDGTGALPIH------LAV   115  (A)
+d1lm5a_:A   QDAVSQGVIDQDMATRLKPAQ-KA---------------------------FIGFKMSAA  2710  (B)
+
+d1bd8a_:A   QEG---------HTAVVSFLAAESDLHRRDARGL---------TPLELALQRGA---QDL   154  (A)
+d1lm5a_:A   EAVKEKWLPYEAGQRFLEFQYLTG-G--------LVDPEVHGRISTEEAIRKGFIDGRAA  2761  (B)
+
+d1bd8a_:A   VDILQGHM--------------------------------------------   162  (A)
+d1lm5a_:A   QRLQ-DT-SSYAKILTCPKTKLKISYKDAINRSMVEDITGLRLLEAASVSSK  2811  (B)
+

@@ -1,0 +1,16 @@
+(d1p4wa_:A, d1kgsa1:A)
+Core Residues: 54
+Core RMSD: 2.552
+Raw Score: 66.582
+P-value: 0.0991
+Reference structure: d1p4wa_:A
+
+d1kgsa1:A   SKSTKLVC---------GDLILDTATKKAYR---GSKEID--LTKKEYQILEYLVXNKNR   169  (A)
+d1p4wa_:A   --------YTPESVAKLLE------------KISAGGYGDKRLSPKESEVLRLFAEG---   165  (B)
+
+d1kgsa1:A   V-VTKEELQEHLWV-F-SDVLRSHIKNLRKKVDKGFKK-K--IIHTVRGIGYVARDE---   225  (A)
+d1p4wa_:A   -FLVT-EIAKKL--NRSIKTISSQKKSAMMKLGV----DNDIAL---------L---NYL   205  (B)
+
+d1kgsa1:A   ----------   225  (A)
+d1p4wa_:A   SSVSMTPVDK   215  (B)
+

@@ -1,0 +1,19 @@
+(d1jr3d1:D, d1p28a_:A)
+Core Residues: 38
+Core RMSD: 3.856
+Raw Score: 46.015
+P-value: 0.6381
+Reference structure: d1jr3d1:D
+
+d1p28a_:A   -------------------------------------------------N----------    -1  (A)
+d1jr3d1:D   FTPFHWVDALLMGKSKRALHILQQLRLEGSEPVILLRTLQRELLLLVNLKRQSAHTPLRA   271  (B)
+
+d1p28a_:A   --------------------SSTQSYKDAMGPLVRECMGSVSATEDDFKTVLNRNPLESR    39  (A)
+d1jr3d1:D   LFDKHRVWQNRRGMMGEALNRLSQTQLRQAVQLLTRTELTLK------------------   313  (B)
+
+d1p28a_:A   TAQ-----CLLACALDKVGLISPEGAIYTGDDLMPV--MNRLYGFNDFKTVMKAKAVNDC    92  (A)
+d1jr3d1:D   ---QDYGQSVWAELEGLSL----------------LLCHKP-------------------   335  (B)
+
+d1p28a_:A   ANQVNGAYPDRCDLIKNFTDCVRNS---   117  (A)
+d1jr3d1:D   -------------------------LAD   338  (B)
+

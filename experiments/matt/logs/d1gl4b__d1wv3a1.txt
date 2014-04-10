@@ -1,0 +1,16 @@
+(d1wv3a1:A, d1gl4b_:B)
+Core Residues: 41
+Core RMSD: 2.789
+Raw Score: 32.777
+P-value: 0.4133
+Reference structure: d1wv3a1:A
+
+d1gl4b_:B   PIMVT--------VEEQ-RSQSVRP----GADVT--------F-ICTAKSKSPAYTLVWT  1806  (A)
+d1wv3a1:A   -----XHKLIIKYN---KQLKXLNLRDGKTYTISEDERADITLKSL--------------    38  (B)
+
+d1gl4b_:B   RLHNGKLPSRAMDFNGILTIRNV------QP----SD--AGTYVCTGSNMFAMDQ--GTA  1852  (A)
+d1wv3a1:A   ----------------GEVIHLEQNNQGTWQANHTSINKVLVRKG----------DLDDI    72  (B)
+
+d1gl4b_:B   TLHVQ-  1857  (A)
+d1wv3a1:A   TLQLYT    78  (B)
+

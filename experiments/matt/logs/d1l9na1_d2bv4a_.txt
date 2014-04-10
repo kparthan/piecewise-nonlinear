@@ -1,0 +1,19 @@
+(d2bv4a_:A, d1l9na1:A)
+Core Residues: 67
+Core RMSD: 4.671
+Raw Score: 49.899
+P-value: 0.1861
+Reference structure: d2bv4a_:A
+
+d1l9na1:A   AALGVQSINWQTAFNRQAHHTDKFSSQE-----LILRRGQNFQVLMIMNKGL--GSNERL    53  (A)
+d2bv4a_:A   ----------------------------AQQGVFTLPARINFGVTVLVNS--AAT--QHV    28  (B)
+
+d1l9na1:A   EFIVSTGPYPSESAMT-KAVFPLSNGSSGGWSAVLQASN------G-NTLTISISSPASA   105  (A)
+d2bv4a_:A   EIF-------------VDNEPRAA---------------FSGVGTGDNNLGTKVINS--G    58  (B)
+
+d1l9na1:A   PIGRYT---MALQIFSQGGISSVKLGT---------FI-------------------LLF   134  (A)
+d2bv4a_:A   S-----GNVR-VQITANGRQSDLVSSQLVLANKLNLA-VVGSEDGTDMDYNDSIVILNWP   111  (B)
+
+d1l9na1:A   NPWLNV   140  (A)
+d2bv4a_:A   LG----   113  (B)
+

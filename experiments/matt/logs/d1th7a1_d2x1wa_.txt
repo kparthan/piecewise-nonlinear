@@ -1,0 +1,16 @@
+(d2x1wa_:A, d1th7a1:A)
+Core Residues: 12
+Core RMSD: 1.296
+Raw Score: 17.905
+P-value: 0.5453
+Reference structure: d2x1wa_:A
+
+d1th7a1:A   MNFLAETAHKVLAESL-NNLVLVKLKGNKEVRGMLRSYDQHMNLVLSDSEEIQSDGSGKK    61  (A)
+d2x1wa_:A   ------TEILKSIDNEWRK-----------------------------------------   128  (B)
+
+d1th7a1:A   LGTIVIRGDNVILISPL-------------------------------------------    78  (A)
+d2x1wa_:A   -----------------TQCMPREVAIDVGKEFGVATNTFFKPPCVSVYRCGGCCNSEGL   171  (B)
+
+d1th7a1:A   ------------------------------------------    78  (A)
+d2x1wa_:A   QCMNTSTSYLSKTLFEITVPLSQGPKPVTISFANHTSCRCMS   213  (B)
+

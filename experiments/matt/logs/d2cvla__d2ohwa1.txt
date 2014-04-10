@@ -1,0 +1,19 @@
+(d2ohwa1:A, d2cvla_:A)
+Core Residues: 45
+Core RMSD: 5.172
+Raw Score: 43.327
+P-value: 0.5851
+Reference structure: d2ohwa1:A
+
+d2cvla_:A   XEAVKTDRAPAAIGPYAQAVKAGGFVFVSGQIPLAPDGSLVEGDIR-VQTERVXENLKAV    59  (A)
+d2ohwa1:A   ----------------------------------------------EDKMDLYLQQG---    13  (B)
+
+d2cvla_:A   LEAAGSGLSRVVQTTCFL-----ADXEDFPGFNEV-----------YARYF--TPPYP-A   100  (A)
+d2ohwa1:A   ------------------MYGPLETKPDERHLF--LGSLRERVVLALTKGQVLRSKPYKE    53  (B)
+
+d2cvla_:A   RA----------------------------------------------------TVAVKA   108  (A)
+d2ohwa1:A   A-EHELKNSHNVTLLINGELQYQSYSSYIQMASRYGVPFKIVSDLQFHTPLGIVIAADIA   112  (B)
+
+d2cvla_:A   LPRGVRV---EVACVALAE--------   124  (A)
+d2ohwa1:A   -------VNRELIYIQD--DIYNRSVL   130  (B)
+

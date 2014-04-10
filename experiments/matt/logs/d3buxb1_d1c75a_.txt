@@ -1,0 +1,16 @@
+(d1c75a_:A, d3buxb1:B)
+Core Residues: 28
+Core RMSD: 2.684
+Raw Score: 32.108
+P-value: 0.5597
+Reference structure: d1c75a_:A
+
+d3buxb1:B   TFRITKADAAEFWRKAFGEKTIVP---WKSFRQALHEVHPISSGLEAMALKSTIDLTCND   234  (A)
+d1c75a_:A   ------------------------VDAEAVVQQKCISCHGGD------------------    39  (B)
+
+d3buxb1:B   YI----------------------------------------SVFEFDIFTRLFQPWSSL   254  (A)
+d1c75a_:A   --LTGASAPAIDKAGANYSEEEILDIILNGQGGMPGGIAKGAEAEAVAAWLAEK------    91  (B)
+
+d3buxb1:B   LRNWNSLAV   263  (A)
+d1c75a_:A   ------K--    92  (B)
+

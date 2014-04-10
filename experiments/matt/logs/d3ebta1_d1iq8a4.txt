@@ -1,0 +1,19 @@
+(d1iq8a4:A, d3ebta1:A)
+Core Residues: 38
+Core RMSD: 2.754
+Raw Score: 45.137
+P-value: 0.3351
+Reference structure: d1iq8a4:A
+
+d3ebta1:A   XS----------------------------------------------------------     2  (A)
+d1iq8a4:A   --PITKKSALFKISNESLRWPVVRRAKERAKSINERFGELVEHPIFGRVSRYLSLTYPFA   418  (B)
+
+d3ebta1:A   -------------NNXQTVRESYEAFHRRDLPGVLAALAPDVRWTHPDGXSPYGLGGTKH    49  (A)
+d1iq8a4:A   QSEAEDDFKIEKPTKEDAIKYVMAIAEYQF------------------------------   448  (B)
+
+d3ebta1:A   GHDEVIAFIRHVPTHIAE---XRLAPDEFIESGERIV--VLGTRRVTAVNGRSATLKFVH   104  (A)
+d1iq8a4:A   ------------------GEGASR-------------AFDD------------------A   459  (B)
+
+d3ebta1:A   VWRFE-NGRAVTFEDHFDTAEXIRLITA------------------------------   131  (A)
+d1iq8a4:A   KVELSKTGMPRQVKVN------------GKRLATVRADDGLLTLGIEGAKRLHRVLPY   505  (B)
+

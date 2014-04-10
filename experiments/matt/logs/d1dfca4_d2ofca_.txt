@@ -1,0 +1,19 @@
+(d2ofca_:A, d1dfca4:A)
+Core Residues: 33
+Core RMSD: 3.632
+Raw Score: 23.519
+P-value: 0.8430
+Reference structure: d2ofca_:A
+
+d1dfca4:A   --------------------RPIIVFRGEHGFIGCRKVTGTLDANRSSYD-V--------  1413  (A)
+d2ofca_:A   TYKITVRVYQTNPNAFFHPVEKT---------------------------VWKYANGGTW    33  (B)
+
+d1dfca4:A   ----------------FQLEFNDG--------AYNIKDSTG----KYWTVGSDSA-----  1440  (A)
+d2ofca_:A   TITDDQHVLTMGGSGTSGTLR---FHADNGESFTATFG-VHNYKRWCD-------IVTNL    82  (B)
+
+d1dfca4:A   --------------------VTS--SGDTPVDFFFEFCDYNKVAIKVGGRYLKGDHAGVL  1478  (A)
+d2ofca_:A   AADETGMVINQQYYSQKNREEARERQLSNY-EVKNA------------------------   117  (B)
+
+d1dfca4:A   KASAETVDPASLWEY------------------------  1493  (A)
+d2ofca_:A   ---------------KGRNFEIVYTEAEGNDLHANLIIG   141  (B)
+

@@ -1,0 +1,16 @@
+(d2k5wa1:A, d1iyjb4:B)
+Core Residues: 60
+Core RMSD: 2.720
+Raw Score: 51.279
+P-value: 0.0901
+Reference structure: d2k5wa1:A
+
+d1iyjb4:B   ----------PLPLSSLFSDGGNVGCVDVIVQRVYPL----------QWVWKLRVTSY--  2906  (A)
+d2k5wa1:A   ERASLNRIGKD--------------VYYMQIKGEG--TIEKVDGRNLR---NYTLPAYDE    42  (B)
+
+d1iyjb4:B   -KKREKSALLSIWRPSSDLPSLLTEGQRYRIYH--------------LSVSKSKNKFEWP  2951  (A)
+d2k5wa1:A   DGVK-KQITFRSTKKE--NDHKLNKYAFLRLYVDQDDNSKNEISSIEVK-----------    88  (B)
+
+d1iyjb4:B   SIQLTATKRTQYQQLPVSSE----------TLLQLYQP-  2979  (A)
+d2k5wa1:A   ----------SYEEIQK---ADLPEKVKDKFT-I----K   109  (B)
+

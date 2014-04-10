@@ -1,0 +1,34 @@
+(d1ct9a1:A, d2pida_:A)
+Core Residues: 109
+Core RMSD: 4.658
+Raw Score: 99.625
+P-value: 5.7093e-03
+Reference structure: d1ct9a1:A
+
+d2pida_:A   GLLAAQKARGLFKDFFPETGTKIELPELFPQTIYCGFDPTADSL----------------    87  (A)
+d1ct9a1:A   --------------------------------------------RDWFDYDAVKDNVTDK   208  (B)
+
+d2pida_:A   -------HVGHLLALLGLFHLQRAG-HNVIALVGGATARLGDPSGRTKEREALETERV--   137  (A)
+d1ct9a1:A   NELRQALEDSVKSHL----MS----DVP--YGVLL-----------------------SG   235  (B)
+
+d2pida_:A   RANARALRLGLEALAANHQQLFTDGRSWGSFTVLDN-------S---------------A   175  (A)
+d1ct9a1:A   GLDSSIISAITKKYA---------------LHSFAVGLPGSPDLKAAQEVANHLGTVHHE   296  (B)
+
+d2pida_:A   WYQKQHLVDFLAAVGGHFRMG-TLLSRQSVQLRLKSPEG-MSLAEFFYQVLQAYDFYYLF   233  (A)
+d1ct9a1:A   I--HFTVQEGLD-AIRDVIY-HIET--------------YD-VTTIRASTPMYLMSRKIK   337  (B)
+
+d2pida_:A   QRYGCRVQLGGS-----------------------------------------D--QLGN   250  (A)
+d1ct9a1:A   A-MGIKM-----VLSGEGSDEVFGGYLYFHKAPNAKELHEETVRKLLALHMYDCARANKA   391  (B)
+
+d2pida_:A   IMSGYEFINKLTGEDVFGITVP------LIT----AV----------------WLNRD-K   296  (A)
+d1ct9a1:A   MSAWG-----------VE----ARVPFLDKKFLDVA-MRINPQDKMCKMEKHIL----RE   434  (B)
+
+d2pida_:A   TSPFELYQFFVRQPDDSVERYLKLFTFLPLPEIDHIMQLHVKEPERRGPQKRLAAEVTKL   356  (A)
+d1ct9a1:A   C-------------------------------------------------------FEAY   439  (B)
+
+d2pida_:A   VHGREGLDSAKRCTQAL-------------------------------------------   373  (A)
+d1ct9a1:A   L----------------PASVAWRQKEQFSDGVGYSWIDTLKEVAAQQVSDQQLETARFR   483  (B)
+
+d2pida_:A   ---------------------------------   373  (A)
+d1ct9a1:A   FPYNTPTSKEAYLYREIFEELFPLPSAAECVPG   516  (B)
+

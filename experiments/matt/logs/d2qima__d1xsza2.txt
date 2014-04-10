@@ -1,0 +1,22 @@
+(d1xsza2:A, d2qima_:A)
+Core Residues: 64
+Core RMSD: 4.599
+Raw Score: 70.375
+P-value: 0.3484
+Reference structure: d1xsza2:A
+
+d2qima_:A   GVFTF---QDEYTSTI--------AP---------------AKLYKALVTDADIIIPKAV    34  (A)
+d1xsza2:A   -----KTSP-GYELT-STTLNKDSTFKKLDSFLHSTDVNINTV-FPGIGD----------   239  (B)
+
+d2qima_:A   ETIQSVEIVEGNGGPGTIKKLTFIEGGESKYVLHKIEAIDEAN---------------LG    79  (A)
+d1xsza2:A   ------------NV-----------------------KTTVD-QPKSWLSFFTGYKGTIT   263  (B)
+
+d2qima_:A   YNY---SIVGGVGLPDTIEKISF-ETKLVE----------------GANGGSIGKVTIKI   119  (A)
+d1xsza2:A   LTDNKTS----------------AQATIQ-VYTPNIFSKWLFGEQPR----VIIQPGQ--   300  (B)
+
+d2qima_:A   ETKGDAQPNEEE---------------------------GK-AAKARGDAFFKAIESYLS   151  (A)
+d1xsza2:A   ------------TKESIDLAAKAAADFSSPVKNFKATYDYEVGDLIKAYDNQKKLITIER   348  (B)
+
+d2qima_:A   AHPDYN----   157  (A)
+d1xsza2:A   NL----ALKA   354  (B)
+

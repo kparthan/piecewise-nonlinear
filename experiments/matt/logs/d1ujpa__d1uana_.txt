@@ -1,0 +1,28 @@
+(d1uana_:A, d1ujpa_:A)
+Core Residues: 87
+Core RMSD: 7.024
+Raw Score: 66.843
+P-value: 0.8141
+Reference structure: d1uana_:A
+
+d1ujpa_:A   MTT---------------LEAFAKARSE-----GRAALIPYLTAG---------------    25  (A)
+d1uana_:A   ---MLDLLVVAPHPDDGELGCGGTLA--RAKAEGLSTGILDL---TRGEMGSKGTPEERE    52  (B)
+
+d1ujpa_:A   ---------------------F-PSR-E-GFLQAVEEVL--PYADLLEIG-L-PYSDGPV    61  (A)
+d1uana_:A   KEVAEASRILGLDFRGNLGFPDGGLADVPEQRLKLAQALRRLRPRVVFAPLEADR-----   107  (B)
+
+d1ujpa_:A   IQRASELALRKGMSVQG-ALELVREVRALT----------------EKPLFLMT--YLNP   102  (A)
+d1uana_:A   -------HP--------DHTAASRLAVAAVHLAGLRKAPLEGEPFRVERLFFYPGNHP--   150  (B)
+
+d1ujpa_:A   VLAWGPERFFGLFKQAGATGVILPDLPPDEDPGLVRLAQEIGLETVFLLA----PTSTDA   158  (A)
+d1uana_:A   F---------------------------------A--PS------FLVKISAFID-----   164  (B)
+
+d1ujpa_:A   -----------------------------------RIATVVRHA------------TGFV   171  (A)
+d1uana_:A   QWEAAVLAYRSQFTVGPKGVEARKAMRRYWGNYLGVD--YA---EPFVSPLPVLYVPWSR   226  (B)
+
+d1ujpa_:A   YAVSVEVKDLVRRIKARTALPVAVGFGVSGKATAAQAAVADGVVVGSALVRALEEGRSLA   243  (A)
+d1uana_:A   A-----------------------------------------------------------   227  (B)
+
+d1ujpa_:A   PLLQEIRQGLQRLPLP   271  (A)
+d1uana_:A   ----------------   227  (B)
+

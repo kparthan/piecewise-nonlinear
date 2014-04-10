@@ -1,0 +1,28 @@
+(d1tubb1:B, d3igsa_:A)
+Core Residues: 72
+Core RMSD: 2.468
+Raw Score: 79.791
+P-value: 0.0230
+Reference structure: d1tubb1:B
+
+d3igsa_:A   AXSLLEQLDKNIAASGGLIVSCQPVPGSPLDKPEIVAAXALAAEQAGAVAVRIEGIDNLR    59  (A)
+d1tubb1:B   ------------------------------------------------------------     1  (B)
+
+d3igsa_:A   XTRSLVSVPIIGIIKRDLDESPVRITPFLDDVDALAQAGAAIIAVDGTARQRPVAVEALL   119  (A)
+d1tubb1:B   ------------------------------------------------------------     1  (B)
+
+d3igsa_:A   ARIHHHHLLTXADCS---------------------------------------------   134  (A)
+d1tubb1:B   ---M----REIVHIQAGQCGNQIGAKFWEVISDEHGIDPTGSYHGDSDLQLERINVYYNE    55  (B)
+
+d3igsa_:A   ------------------------------------------------------------   134  (A)
+d1tubb1:B   AAGNKYVPRAILVDLEPGTMDSVRSGPFGQIFRPDNFVFGQSGAGNNWAKGHYTEGAELV   115  (B)
+
+d3igsa_:A   --SVDDGLACQRL--GADIIGTTXSGYTTPDTP----EE--PD--LPLVKALHDAGC--R   180  (A)
+d1tubb1:B   DSVLDVVRKESESCDCLQGFQLT----------HSLGGGTGSGMGTLLISKIREEYPDRI   165  (B)
+
+d3igsa_:A   VIAEGRYNSPA------------LA---AE-AIRYGAWAVTVGSAI-TRLEHICGWYNDA   223  (A)
+d1tubb1:B   MNTFS-VVP--SPKVSDTVVEPYN-ATLSVHQLVENTDETYCI-DNEALY----------   210  (B)
+
+d3igsa_:A   LKKAAS-----------------------------------   229  (A)
+d1tubb1:B   ------DICFRTLKLTTPTYGDLNHLVSATMSGVTTCLRFP   245  (B)
+

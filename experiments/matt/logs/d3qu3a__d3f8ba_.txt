@@ -1,0 +1,16 @@
+(d3f8ba_:A, d3qu3a_:A)
+Core Residues: 60
+Core RMSD: 4.127
+Raw Score: 67.729
+P-value: 0.2861
+Reference structure: d3f8ba_:A
+
+d3qu3a_:A   RV-------LFGDWLLGEVSSGQYEGLQWLNEARTVFRVPWKHFGRRDLDEED-AQIFKA    60  (A)
+d3f8ba_:A   --PKEMLRAQTNVILLNVLKQG---------------DNY-------------VYGIIKQ    34  (B)
+
+d3qu3a_:A   WAVARGRWPPSGVNLPPPEAEAAERRERRG---WKTNFRCALHST---GRFILRQDNSGD   114  (A)
+d3f8ba_:A   VKEASNGE----------------------MELNEATLYTIFKRLEKDGIISSYW-----    67  (B)
+
+d3qu3a_:A   --PVDPHKVYELSRELGS-------------------------   130  (A)
+d3f8ba_:A   GDGR-RKY-YRLTE-I--GHENMRLAFESWSRVDKIIENLEAN   109  (B)
+

@@ -1,0 +1,19 @@
+(d1jrma_:A, d2bhma1:A)
+Core Residues: 33
+Core RMSD: 2.357
+Raw Score: 28.005
+P-value: 0.4152
+Reference structure: d1jrma_:A
+
+d2bhma1:A   SYDTVM------------------------------------------------DKYWLS   108  (A)
+d1jrma_:A   ------VITMDCLREVGDDLLVNIEVSPASGKFGIPSYNEWRKRIEVKIHSPPQKG-KAN    53  (B)
+
+d2bhma1:A   QYVIARET---YDWYTLQKDYETVGMLSSPSEGQSYASQFQGDKALDKQYGSNVRTSVTI   165  (A)
+d1jrma_:A   REIIKEFSETFG-------------------------------------------RDVEI    70  (B)
+
+d2bhma1:A   VS----IVPNGKGIGTVRFAKTTKRGDGETTHWIATIGYQYVNPSLMSESARLTNPLGFN   225  (A)
+d1jrma_:A   VSGQKSRQ--------KTIRIQG-----MGR-----------------------------    88  (B)
+
+d2bhma1:A   VTSYRVDPEM----------------   235  (A)
+d1jrma_:A   ----------DLFLKLVSEKFGLEIP   104  (B)
+

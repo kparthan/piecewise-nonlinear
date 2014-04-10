@@ -1,0 +1,43 @@
+(d1yvua2:A, d1edqa2:A)
+Core Residues: 69
+Core RMSD: 3.972
+Raw Score: 67.579
+P-value: 0.2507
+Reference structure: d1yvua2:A
+
+d1edqa2:A   TDGSHLAPLKEPLLEKNKPYKQNS------------------------------------   156  (A)
+d1yvua2:A   ------------------------KLNFKDTVLDAKGKNTKVITNLRKFLELCRPFVKKD   350  (B)
+
+d1edqa2:A   --G------------------------------KVVGSYFVEWGVYGRNF--TVDKIPAQ   182  (A)
+d1yvua2:A   VLSVEIISVSVWRKEEFLKELINFLKNKGIKLKIKGKSLILAQTR---EEAKEKLIPVIN   412  (B)
+
+d1edqa2:A   NL------THLLYGFIPICGGNGINDSLKEIEGSFQALQRSCQGREDFKVSIHDPFAALQ   236  (A)
+d1yvua2:A   K-IKDVDLVIVFL-E-------------------------------------------F-   436  (B)
+
+d1edqa2:A   KAQKGVTAWDDPYKGNFGQLMALKQAH----PDLKILPSIGGWTLSDPFFFMGDKVKRDR   292  (A)
+d1yvua2:A   ---------------LL--YDFVKRELLKKXIPSQVILNR--------------------   459  (B)
+
+d1edqa2:A   ----FVGSVKEFLQTWKFFDGVDIDWEFPGGKGANPNLGSPQDGETYVLLMKELRAMLDQ   348  (A)
+d1yvua2:A   TLKNEN--------------------------------------------LKFVLLNVAE   475  (B)
+
+d1edqa2:A   LSVET-------------------------------------------------------   353  (A)
+d1yvua2:A   QVLAKTGNIPYKLKEIEGKVDAFVGIDISRITRDGKTVNAVAFTKIFNSKGELVRYYLTS   535  (B)
+
+d1edqa2:A   ------------------------------------------------------------   353  (A)
+d1yvua2:A   YPAFGEKLTEKAIGDVFSLLEKLGFKKGSKIVVHRDGRLYRDEVAAFKKYGELYGYSLEL   595  (B)
+
+d1edqa2:A   ------------------------------------------------------------   353  (A)
+d1yvua2:A   LEIIKRNNPRFFSNEKFIKGYFYKLSEDSVILATYNQVYEGTHQPIKVRKVYGELPVEVL   655  (B)
+
+d1edqa2:A   -----------G--------------------------------------RKYELTSAIS   364  (A)
+d1yvua2:A   CSQILSLTLXNYSSFQPIKLPATVHYSDKITKLXLRGIEPIKKEGDIXYWL---------   706  (B)
+
+d1edqa2:A   AGKDKIDKVAYNVAQNSMDHIFLMSYDFYGAFDLKNLGHQTALNAPAWKPDTAYTTVNGV   424  (A)
+d1yvua2:A   ------------------------------------------------------------   706  (B)
+
+d1edqa2:A   NALLAQGVKPGKIVVGTAMDARSVQAKGKYVLDKQLGGLFSWEIDADNGDILNSMNASLG   557  (A)
+d1yvua2:A   ------------------------------------------------------------   706  (B)
+
+d1edqa2:A   NSAGVQ   563  (A)
+d1yvua2:A   ------   706  (B)
+

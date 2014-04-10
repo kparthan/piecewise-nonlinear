@@ -1,0 +1,19 @@
+(d3cx5g_:G, d2pcsa1:A)
+Core Residues: 42
+Core RMSD: 2.358
+Raw Score: 60.037
+P-value: 0.3145
+Reference structure: d3cx5g_:G
+
+d2pcsa1:A   LNGNGSIELKGTVEEVWSKLMDPSILSKCIMGCKSLELIGEDKYKADLQIG---------    51  (A)
+d3cx5g_:G   ---------------------------------------------------PQSFTSIAR    10  (B)
+
+d2pcsa1:A   ---------------------------------IAAVKGKYDAIIEVTDIKPPYHYKLLV    78  (A)
+d3cx5g_:G   IGDYILKSPVLSKLCVPVANQFINLAGYKKLGLKFDDLIAE-------------------    51  (B)
+
+d2pcsa1:A   NGEGGPGFVNAEGVIDLTPINDECTQLTYTYSAEVGGKVAAIGQRMLGGVAKLLISDFFK   138  (A)
+d3cx5g_:G   --ENPIM----------------------------QTALRRLPEDESYARAYRIIRAHQT    81  (B)
+
+d2pcsa1:A   KIQKEIAKS------------------------------------------   147  (A)
+d3cx5g_:G   ELTH-----HLLPRNEWIKAQEDVPYLLPYILEAEAAAKEKDELDNIEVSK   127  (B)
+

@@ -1,0 +1,13 @@
+(d2izva1:A, d2cp8a1:A)
+Core Residues: 22
+Core RMSD: 2.246
+Raw Score: 22.063
+P-value: 0.6101
+Reference structure: d2izva1:A
+
+d2cp8a1:A   QTAALMAHLFEMGFC----DRQLNLRLLKKHNYNILQVVTELLQL---------------    48  (A)
+d2izva1:A   ---------------PFSLQHICRTVICNCT--TYDGIDALPI--PSSMKLYLKEYHYKS   426  (B)
+
+d2cp8a1:A   ---    48  (A)
+d2izva1:A   KVR   429  (B)
+

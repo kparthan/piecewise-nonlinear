@@ -1,0 +1,13 @@
+(d1yuaa1:A, d1qypa_:A)
+Core Residues: 45
+Core RMSD: 3.986
+Raw Score: 34.153
+P-value: 0.5434
+Reference structure: d1yuaa1:A
+
+d1qypa_:A   GS--HMEQDLK-TLPTT-KITCPKCGNDTAYWWEMQ-TRAGDEPSTIFYKCTKCGH-TWR    54  (A)
+d1yuaa1:A   --MNGEVAPPKEDPVPLPELPCEKS-DA--YFVLRDGAA----GVFLAANT---FPKSRE    48  (B)
+
+d1qypa_:A   SYE--------------    57  (A)
+d1yuaa1:A   TRAPLVEELYRFRDRLP    65  (B)
+

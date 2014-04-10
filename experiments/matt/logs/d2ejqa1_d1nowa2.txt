@@ -1,0 +1,19 @@
+(d1nowa2:A, d2ejqa1:A)
+Core Residues: 56
+Core RMSD: 3.022
+Raw Score: 57.064
+P-value: 0.2073
+Reference structure: d1nowa2:A
+
+d2ejqa1:A   TYEAF------------------------------------VELVERLWEEVPEDFKR--    23  (A)
+d1nowa2:A   -----ALWPLPLSVKMTPNLLHLAPENFYISHSPNSTAGPSCTLLEEAFRRYHGYI--FG   107  (B)
+
+d2ejqa1:A   --G-LQGVHVFPEAKPEPGLEGVWR--------------LGEYLDPGPPSAFGGFEDLGR    66  (A)
+d1nowa2:A   TQVQQLLVSITL-------------QSECDAFPNISSDESYTLLVK---------EPV-A   158  (B)
+
+d2ejqa1:A   HIALYYGSFLEVAGEGFDWEAE-VWETMLHELRHHLES----------LAGRD-------   108  (A)
+d1nowa2:A   VLKANR----------------VW--GALRGLETFSQLVYQDSYGTFTIN---ESTIIDS   197  (B)
+
+d2ejqa1:A   --   108  (A)
+d1nowa2:A   PR   199  (B)
+

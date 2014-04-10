@@ -1,0 +1,19 @@
+(d1ug7a_:A, d1jcfa1:A)
+Core Residues: 46
+Core RMSD: 4.103
+Raw Score: 41.922
+P-value: 0.8237
+Reference structure: d1ug7a_:A
+
+d1jcfa1:A   MLRKDIGI----------------------D--LGTANTLVFLRGKGIVVNEPSVIAIDS    36  (A)
+d1ug7a_:A   --------GSSGSSGMSEVTRSLLQRWGASLRRGAD------------------------    28  (B)
+
+d1jcfa1:A   TTGEILKVGLEAKNMIGKTPATIKAIRPMRDGVI-ADYTVALVMLRYFINKAKGGMNLFK    95  (A)
+d1ug7a_:A   ----------------------------FDS---WGQLVEAIDEYQILARHLQK------    51  (B)
+
+d1jcfa1:A   PR-----------------------VVIGVPIGITDVE-----RRAILDAGLEAGASKVF   127  (A)
+d1ug7a_:A   --EAQAQHNNSEFTEEQKKTIGKIATCL----------ELRSAA--LQS-----------    86  (B)
+
+d1jcfa1:A   -----LIEEPMAAAIGSN------------------------   140  (A)
+d1ug7a_:A   TQSQEEFKLEDLKKLEPILKNILTYNKEFPFDVQPISGPSSG   128  (B)
+

@@ -1,0 +1,13 @@
+(d2piaa3:A, d1rwsa_:A)
+Core Residues: 50
+Core RMSD: 3.589
+Raw Score: 26.193
+P-value: 0.6180
+Reference structure: d2piaa3:A
+
+d1rwsa_:A   --------------KMIKVKVIGRN-IEKEIEWREGMKVRDILRAVG----FNTESA---    39  (A)
+d2piaa3:A   SFGATNTNARENTPFTVRLSR----SG-TSFEIPANRSILE---VLRDANVR-VP--SSC   272  (B)
+
+d1rwsa_:A   ---------IAK-VN--------------GKVVLE-DDEVKDGDF-VEVIPVVSGG    69  (A)
+d2piaa3:A   ESGTCGSCKTALCSGEADHRDMVLRDDEKGTQIMVCVSRAKSAELVLDL-------   321  (B)
+

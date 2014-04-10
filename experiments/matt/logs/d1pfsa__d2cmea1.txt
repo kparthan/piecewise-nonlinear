@@ -1,0 +1,16 @@
+(d2cmea1:A, d1pfsa_:A)
+Core Residues: 29
+Core RMSD: 2.482
+Raw Score: 30.066
+P-value: 0.4843
+Reference structure: d2cmea1:A
+
+d1pfsa_:A   MNIQITFTDSVRQGTSAKGN-PYTFQEG----FLHLEDK--PHPLQCQFFVESVIPAGSY    53  (A)
+d2cmea1:A   --------------------VPPALHLVDPQIQLTIT--ADPKVYPIILRLGSNLSLS--    56  (B)
+
+d1pfsa_:A   QVPYRINVNNGRPELAFDFKAMKRA-----------------------------------    78  (A)
+d2cmea1:A   -------------------------MARRNLDSLEARAFQSTPIVVQMTKLATTEELPDE    91  (B)
+
+d1pfsa_:A   -------    78  (A)
+d2cmea1:A   FVVVTAK    98  (B)
+

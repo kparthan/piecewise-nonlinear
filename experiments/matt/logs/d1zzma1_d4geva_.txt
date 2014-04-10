@@ -1,0 +1,31 @@
+(d4geva_:A, d1zzma1:A)
+Core Residues: 56
+Core RMSD: 3.326
+Raw Score: 55.888
+P-value: 0.4381
+Reference structure: d4geva_:A
+
+d1zzma1:A   MICRFIDTHCHFDFPPFSGDEEASLQRAAQAGVGKIIVPATEAENFARVLALAENYQPLY    60  (A)
+d4geva_:A   ------------------------------------------------------------     1  (B)
+
+d1zzma1:A   AALGLHPGMLEKH-----------------------------------------------    73  (A)
+d4geva_:A   -------------XKQYLELMQKVLDEGTQKNDRTGTGTLSIFGHQMRFNLQDGFPLVTT    47  (B)
+
+d1zzma1:A   ----------------------------------------------S---DV--------    76  (A)
+d4geva_:A   KRCHLRSIIHELLWFLQGDTNIAYLHENNVTIWDEWADENGDLGPVYGKQWRAWPTPDGR   107  (B)
+
+d1zzma1:A   ---SLEQLQQALERRPAK-----------------------------VV---AVGEIGLD   101  (A)
+d4geva_:A   HIDQITTVLNQLK-NDPDSRRIIVSAWNVGELDKMALAPCHAFFQFYVADGKLSCQL---   163  (B)
+
+d1zzma1:A   LFGDD----PQ-FERQQ----WLLDEQLKLAKRYDLPV-ILHSRRTHDKL----------   141  (A)
+d4geva_:A   -----YQRSCDVFLGLPFNIASYALLVHMMAQQCDLEVGDFV--------WTGGDTHLWS   210  (B)
+
+d1zzma1:A   ----------------AMHLKRHDLPRTGVVHGFSGSLQQAERFVQLGYKIGVGGTITYP   185  (A)
+d4geva_:A   NHMDQTHLQLSREPRPLP--KLI-------------------------------------   231  (B)
+
+d1zzma1:A   RASKTRDVIAKLPLASLLLETDAPDMPLNGFQGQPNRPEQAARVFAVLCELRREPADEIA   245  (A)
+d4geva_:A   ------------------------------------------------------------   231  (B)
+
+d1zzma1:A   QALLNNTYTLFNVP---------------------------------   259  (A)
+d4geva_:A   --------------IKRKPESIFDYRFEDFEIEGYDPHPGIKAPVAI   264  (B)
+

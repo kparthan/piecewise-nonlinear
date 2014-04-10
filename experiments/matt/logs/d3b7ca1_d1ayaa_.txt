@@ -1,0 +1,19 @@
+(d1ayaa_:A, d3b7ca1:A)
+Core Residues: 37
+Core RMSD: 2.471
+Raw Score: 29.264
+P-value: 0.3655
+Reference structure: d1ayaa_:A
+
+d3b7ca1:A   XPTDDIVQLLKGQEEAWNRGDLDAYXQGYWQNEQLXLISNGKFRNGWDETLAAYKKNYPD    60  (A)
+d1ayaa_:A   --MR--------------------------------------------------------     4  (B)
+
+d3b7ca1:A   KESLGELKF----------------------TIKEIKXL---SNYAAXVVGRWDLKRLKD    95  (A)
+d1ayaa_:A   ---------RWFHPNITGVEAENLLLTRGVDGSFLARPSKSNPG-DFTLSVR--------    46  (B)
+
+d3b7ca1:A   TPTGV---FTLLVEKIDDRWVITXDH-----------------------SSD--------   121  (A)
+d1ayaa_:A   ---RNGAVTHIKIQNTGDYYDLY---GGEKFATLAELVQYYMEHHGQLKE--KNGDVIEL    98  (B)
+
+d3b7ca1:A   -----   121  (A)
+d1ayaa_:A   KYPLN   103  (B)
+

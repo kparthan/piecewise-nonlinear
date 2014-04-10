@@ -1,0 +1,13 @@
+(d2qjla_:A, d1rwsa_:A)
+Core Residues: 61
+Core RMSD: 3.257
+Raw Score: 42.238
+P-value: 0.0817
+Reference structure: d2qjla_:A
+
+d1rwsa_:A   -KMIKVKVIGRN--------IEKEIEWR---EGMKVRDILRAVG-------------F--    34  (A)
+d2qjla_:A   MVNVKVEFLGG-LDAIFGKQRVHKIKM-DKEDPVTVGDLIDHIVSTMINNPNDVSIFIED    58  (B)
+
+d1rwsa_:A   -NTESA-IAKVNGKVV----LEDDEVKDG--DFVEVIPVVSGG---    69  (A)
+d2qjla_:A   DSIRPGIITLINDTDWELEGEKDYILEDGDIISFTS--TL---HGG    99  (B)
+

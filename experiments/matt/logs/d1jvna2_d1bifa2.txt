@@ -1,0 +1,28 @@
+(d1bifa2:A, d1jvna2:A)
+Core Residues: 80
+Core RMSD: 4.728
+Raw Score: 58.319
+P-value: 0.1064
+Reference structure: d1bifa2:A
+
+d1jvna2:A   GSHMP---------------------------------------------VVHVI-DVES    11  (A)
+d1bifa2:A   -----SIYLCRHGESELNLKGRIGGDPGLSPRGREFSKHLAQFISDQNIKDLKVFTS---   301  (B)
+
+d1jvna2:A   GN-LQSLTNAIEHLGYEVQLVKSPKDFNISGTSRLILP---GVGN---------------    52  (A)
+d1bifa2:A   --QMKRTIQTAEALSVPYEQF-----------------KVLNEI-DAGVCEEMTYEEIQD   341  (B)
+
+d1jvna2:A   ----------------------YGH--FVDNLFNRGFEKPIREYIESGKPIMGIXVGLQA    88  (A)
+d1bifa2:A   HYPLEFALRDQDKYRYRYPKGESY-EDLVQRLE--PVIMELERQ--ENVLVICHQAVMRC   396  (B)
+
+d1jvna2:A   LFAGSVESPKSTGLNYIDF------KLSRFDDSEKPVPEIGWNSCIPSENLFFGLDPYKR   142  (A)
+d1bifa2:A   LLA-----------YFLDKAAEELPYL---------------------------------   412  (B)
+
+d1jvna2:A   YYFVHSFAAILNSEKKKNLEND---------------GWKIAKAKYGSEEFIAAVNKNNI   187  (A)
+d1bifa2:A   -------KC-------------PLHTVLKLTPVAYGCKVESIFLNVA-------------   439  (B)
+
+d1jvna2:A   FATQFHPEKSGKAGLNVIENFLKQQSPPIPNYSAEEKELLMN------------------   229  (A)
+d1bifa2:A   ------------------------------------------AVNTHRDRPQNVDISRPS   457  (B)
+
+d1jvna2:A   -----------   229  (A)
+d1bifa2:A   EEALVTVPAHQ   468  (B)
+

@@ -1,0 +1,19 @@
+(d1t3wa_:A, d1ufaa1:A)
+Core Residues: 39
+Core RMSD: 3.669
+Raw Score: 61.058
+P-value: 0.4264
+Reference structure: d1t3wa_:A
+
+d1ufaa1:A   WLNEKTLDYWEKVYRAEGAXREAARRGVLPEGVLRQAXRELLLLEASDWPFLXE------   466  (A)
+d1t3wa_:A   ------------------------------------------------------KRTTXR   452  (B)
+
+d1ufaa1:A   ------------------------------------------------------------   466  (A)
+d1t3wa_:A   ILIGLLVQNPELATLVPPLENLDENKLPGLGLFRELVNTCLSQPGLTTGQLLEHYRGTNN   512  (B)
+
+d1ufaa1:A   ------------------------TGQAEAYARERYEEHARAFFHLLK-GASPEELRALE   501  (A)
+d1t3wa_:A   AATLEKLSXWDDIADKNIAEQTFTDSLNHXFDSLLELRQEELIARERTHGLSNEERLELW   572  (B)
+
+d1ufaa1:A   ERDNPFPEADPRLYLF----   517  (A)
+d1t3wa_:A   TLNQ------------ELAK   580  (B)
+

@@ -1,0 +1,13 @@
+(d2ahma1:A, d1fsea_:A)
+Core Residues: 22
+Core RMSD: 2.063
+Raw Score: 43.546
+P-value: 0.4052
+Reference structure: d2ahma1:A
+
+d1fsea_:A   SKPLLTKREREVFELLVQDKTTKEIASELFI--SEKTVRNHISNAMQKLGVKGRSQAVV-    64  (A)
+d2ahma1:A   -------------------------------SKMSDVKCTSVVLLSVLQQL--------R    26  (B)
+
+d1fsea_:A   -ELLR--MG--ELEL-------------------------------------------    74  (A)
+d2ahma1:A   VE---SSSKLWA---QCVQLHNDILLAKDTTEAFEKMVSLLSVLLSMQGAVDINRLCE    78  (B)
+

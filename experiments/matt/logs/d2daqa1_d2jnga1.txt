@@ -1,0 +1,16 @@
+(d2jnga1:A, d2daqa1:A)
+Core Residues: 48
+Core RMSD: 1.756
+Raw Score: 54.316
+P-value: 0.1590
+Reference structure: d2jnga1:A
+
+d2daqa1:A   --------------K--LHYKQIVWV-KLGNY-----RWWPAEICNPRSVPLNIQGLKHD    45  (A)
+d2jnga1:A   RSEFASGNTYALYVRDTLQPGMRVRMLDD---YEEISAGDEGEFRQ--------------    47  (B)
+
+d2daqa1:A   ----LGDFPVFFFGSHDYYWVHQGRVFPYVEGDKSFAEGQTSINKTFKKALEEAAKR--F    99  (A)
+d2jnga1:A   SNNGVPPVQVFWESTGRTYWVHWHMLEIL----------------------------GFE    79  (B)
+
+d2daqa1:A   QELKA   104  (A)
+d2jnga1:A   E----    80  (B)
+

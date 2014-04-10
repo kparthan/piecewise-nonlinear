@@ -1,0 +1,19 @@
+(d3qe1a_:A, d3fsaa_:A)
+Core Residues: 29
+Core RMSD: 4.091
+Raw Score: 24.509
+P-value: 0.8375
+Reference structure: d3qe1a_:A
+
+d3fsaa_:A   AECSVDIQGNDQMQFNTNAITVDKSCKQFTVNLSHPGNLPKNVMGH--------------    46  (A)
+d3qe1a_:A   ----------------------------------------------SPRVVRIVKSESGY    51  (B)
+
+d3fsaa_:A   -NWVLSTAA-------------------------------------------------D-    55  (A)
+d3qe1a_:A   GFNVRGQVSEGGQLRSINGELYAPLQHVSAVLPGGAADRAGVRKGDRILEVNGVNVEGAT   111  (B)
+
+d3fsaa_:A   MQGVVTDGMASGLDKDYLKPDDSRV-IAHTKLIGSGEKDSVTF-DVSKLEQYMFFCAAHA   116  (A)
+d3qe1a_:A   HKQVVDLIRAG-------EKELIL-TV----------------LSV--------------   133  (B)
+
+d3fsaa_:A   AMKGTLTLK------   125  (A)
+d3qe1a_:A   ---------ESESKV   206  (B)
+

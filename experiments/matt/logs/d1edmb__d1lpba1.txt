@@ -1,0 +1,13 @@
+(d1lpba1:A, d1edmb_:B)
+Core Residues: 12
+Core RMSD: 1.842
+Raw Score: 3.178
+P-value: 0.6945
+Reference structure: d1lpba1:A
+
+d1edmb_:B   VDGDQCESN-PCLNGGSCKDDINSYECWCPFGFEGKNCEL--------------------    84  (A)
+d1lpba1:A   ---------GII--------------INLDEGELCL----NSAQCKSNCCQHDTILSLSR    38  (B)
+
+d1edmb_:B   ------    84  (A)
+d1lpba1:A   CALKAR    44  (B)
+

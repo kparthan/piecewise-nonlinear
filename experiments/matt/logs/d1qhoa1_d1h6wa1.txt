@@ -1,0 +1,16 @@
+(d1h6wa1:A, d1qhoa1:A)
+Core Residues: 23
+Core RMSD: 3.234
+Raw Score: 15.315
+P-value: 0.8314
+Reference structure: d1h6wa1:A
+
+d1qhoa1:A   ASAPQIGSVAPNMG----------------------------------------------   509  (A)
+d1h6wa1:A   --------------TGATLNGRGSTTSMRGVVKLTTTAGSQSGGDASSALAWNADVIHQR   291  (B)
+
+d1qhoa1:A   --------IPGN-VVTIDGKGFGTTQGTV----TFGGVTATVKSWTSNRIEVYVPNMAAG   556  (A)
+d1h6wa1:A   GGQTINGTLRINNTLTIA-----------SGGANI-TGTVNMTGGYIQ------------   327  (B)
+
+d1qhoa1:A   LTDVKVTAGGVSSNLYSYNI   576  (A)
+d1h6wa1:A   --------------------   327  (B)
+

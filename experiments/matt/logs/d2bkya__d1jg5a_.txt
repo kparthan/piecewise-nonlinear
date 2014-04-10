@@ -1,0 +1,16 @@
+(d1jg5a_:A, d2bkya_:A)
+Core Residues: 45
+Core RMSD: 1.860
+Raw Score: 49.604
+P-value: 0.1674
+Reference structure: d1jg5a_:A
+
+d2bkya_:A   SNVVLIGKKPVMNYVLAALTLLNQGVSEIVIKARGRAIS---------------------    47  (A)
+d1jg5a_:A   --------------------------PYLLISTQIR-MEVGPTMVGDEHSDPELMQQLGA    33  (B)
+
+d2bkya_:A   -----------------KAVDTVEIVRNRFLPDKIEIKEIRVGSQVVTSQDGRQSRVSTI    90  (A)
+d1jg5a_:A   SKRRVLGNNFYEYYVNDPPRIVLDKLE--CR--GFRVLSMTGVG-------------QTL    76  (B)
+
+d2bkya_:A   EIAIRKK    97  (A)
+d1jg5a_:A   VWCLHKE    83  (B)
+

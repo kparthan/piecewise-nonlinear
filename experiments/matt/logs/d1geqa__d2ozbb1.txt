@@ -1,0 +1,31 @@
+(d2ozbb1:B, d1geqa_:A)
+Core Residues: 41
+Core RMSD: 3.585
+Raw Score: 45.081
+P-value: 0.4233
+Reference structure: d2ozbb1:B
+
+d1geqa_:A   MFKDGSLIPYLTAGDPDKQSTLNFLLALDEYAGAIELGIPFSDPIAD-------------    47  (A)
+d2ozbb1:B   -----------------------------------------------EAAPEYRVIVDAN    97  (B)
+
+d1geqa_:A   ---GKTIQESHYRALKNGF----------KLREAFW---IVK------------------    73  (A)
+d2ozbb1:B   NLTVEIENELNIIHKFIR-DKYSKRFPELESLVP--NALD--YIRTVKELGNSLDKCKNN   152  (B)
+
+d1geqa_:A   -------EFRRHSSTPIVLMTYYNPIYRAGVRNFLAEAKASGVDGILVVDLPVFHAKEFT   126  (A)
+d2ozbb1:B   ENLQQILT----------------------------------------------------   160  (B)
+
+d1geqa_:A   EIAREEGIKTVFLAAPNTPDERLKVIDDMTTGFVYLVSLYEIPKTAYDLLRRAKRICRNK   193  (A)
+d2ozbb1:B   ------------------------------------------------------------   160  (B)
+
+d1geqa_:A   VAVGFGVSKREHVVSLLKEGANGVVVGSALVKIIGE------------------------   229  (A)
+d2ozbb1:B   ------------------------------------NATIMVVSVTASTTQGQQLSEEEL   184  (B)
+
+d1geqa_:A   --------KGREATEFLKKKVEELLGI---------------------------------   248  (A)
+d2ozbb1:B   ERLEEACDMALELNASKHRIYEYVESRMSFIAPNLSIIIGASTAAKIMGVAGGLTNLSKM   244  (B)
+
+d1geqa_:A   ------------------------------------------------------------   248  (A)
+d2ozbb1:B   PACNIMLLGAQSVLPHTGYIYHSDIVQSLPPDLRRKAARLVAAKCTLAARVDSFHESTEG   314  (B)
+
+d1geqa_:A   -------------------   248  (A)
+d2ozbb1:B   KVGYELKDEIERKFDKWQE   333  (B)
+

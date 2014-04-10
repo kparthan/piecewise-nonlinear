@@ -1,0 +1,13 @@
+(d1xaka_:A, d2d7pa1:A)
+Core Residues: 60
+Core RMSD: 2.617
+Raw Score: 40.498
+P-value: 0.1502
+Reference structure: d1xaka_:A
+
+d2d7pa1:A   SDDARRLTVTSLQ------ETGLKVNQPASFAVQLNGARGVIDARVHTPSGAVEECYVSE    61  (A)
+d1xaka_:A   -------------CELYHYQE-CVRGTTVILKEPC----PSGTYEG------NSPFHPLA    35  (B)
+
+d2d7pa1:A   LDSDKHTIRFIPHENGVHSIDVKFNG-AHIPGSPFKIRVGEQSQAG-   106  (A)
+d1xaka_:A   D----NKFALTCT---STHFAFACA-DGTR--HTYQLRARS-----V    67  (B)
+

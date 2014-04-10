@@ -1,0 +1,13 @@
+(d1ugia_:A, d2gu3a1:A)
+Core Residues: 54
+Core RMSD: 2.319
+Raw Score: 56.208
+P-value: 0.0846
+Reference structure: d1ugia_:A
+
+d2gu3a1:A   GISEDKAAKIIKDEGLVSKQKEVHLAREGNV---------------LLWEVTYLDKEGQY   143  (A)
+d1ugia_:A   ----TNLSDIIEKE-TGKQLVIQESILM-LPEEVEEVIGNKPESDILVHTAYDE---STD    52  (B)
+
+d2gu3a1:A   SLSYVDF-----TTGKILKNITP---------   161  (A)
+d1ugia_:A   ENVMLLTSDAPEYKPWALVIQDSNGENKIKML    84  (B)
+

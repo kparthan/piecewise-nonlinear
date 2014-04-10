@@ -1,0 +1,22 @@
+(d1q3qa2:A, d1saza1:A)
+Core Residues: 72
+Core RMSD: 8.884
+Raw Score: 73.387
+P-value: 0.8177
+Reference structure: d1q3qa2:A
+
+d1saza1:A   XFRILT-----------------------------INPGSTSTKLSIFEDERXVKXQNFS    31  (A)
+d1q3qa2:A   ------RGVVIDKEVVHPRMPKRVENAKIALINEALEVKKT-------------------   251  (B)
+
+d1saza1:A   HS--PDELGRFQK---ILDQLEFREKIARQFVEETGYSL----------SSFSAFVSRGG    76  (A)
+d1q3qa2:A   --ETD--AKI---NITSPDQLMSFLEQEEKMLKDMV---DHIAQTGANVVFVQKG-I---   297  (B)
+
+d1saza1:A   LLDPIPGGVYLVDGLXIKTLKSGKNGEHASNLGAIIAHRFSSETGVPAYVVDPVVVDEXE   136  (A)
+d1q3qa2:A   ---------------------------------DDLAQHYLAKYGIMAVRRV--------   316  (B)
+
+d1saza1:A   DVARVSGHPNYQRKSIFHALNQKTVAKEVAR-----------------XXNKR-------   172  (A)
+d1q3qa2:A   ------------------K-KSDMEKLAKA-TGAKIVTNVKDLTPEDLGYAEVVEERKLA   356  (B)
+
+d1saza1:A   -------------   172  (A)
+d1q3qa2:A   GENMIFVEGCKNP   369  (B)
+

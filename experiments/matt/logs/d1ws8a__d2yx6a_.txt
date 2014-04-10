@@ -1,0 +1,19 @@
+(d2yx6a_:A, d1ws8a_:A)
+Core Residues: 31
+Core RMSD: 2.381
+Raw Score: 21.169
+P-value: 0.5241
+Reference structure: d2yx6a_:A
+
+d1ws8a_:A   MATVHKVGDSTGWTTLVPYDYAKWASSNKFHVGDSLLFNYNNKFHNVLQVDQEQ-----F    55  (A)
+d2yx6a_:A   ---------------------------------------------MRVAIPA--EDDRGI    13  (B)
+
+d1ws8a_:A   KSCNSSSPAASYTSGADSIPLKR---------PGTFYFLCG-IPGHCQLGQKVEIKVDP-   104  (A)
+d2yx6a_:A   K----------------------SNVSKHFGRSRYFVFVDIEGEDV---KNVEVVEVP-F    47  (B)
+
+d1ws8a_:A   ------------------------------------------------------------   104  (A)
+d2yx6a_:A   GDLPNFIKDHGAKIVLTYGIGRRAIEYFNSLGISVVTGVYGRISDVIKAFIGGKLKIDYD   112  (B)
+
+d1ws8a_:A   ---   104  (A)
+d2yx6a_:A   WKE   115  (B)
+

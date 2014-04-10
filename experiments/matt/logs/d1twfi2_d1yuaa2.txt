@@ -1,0 +1,13 @@
+(d1yuaa2:A, d1twfi2:I)
+Core Residues: 35
+Core RMSD: 2.905
+Raw Score: 30.206
+P-value: 0.5104
+Reference structure: d1yuaa2:A
+
+d1twfi2:I   TNIGETAGVVQDI-------GSDPTL------PRSDR-ECPKCHSRENVFF------QSQ    89  (A)
+d1yuaa2:A   -------------EKLRYLADAPQQDPEGNKTMVRFSRK----TKQQYVSSEKDGKAT--   106  (B)
+
+d1twfi2:I   QRRKDTSMVLFFVCLS--CSHIFTSDQKNKRTQF   121  (A)
+d1yuaa2:A   ---------GWSAFYVDGKWVEGKK---------   122  (B)
+

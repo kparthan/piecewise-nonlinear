@@ -1,0 +1,16 @@
+(d2bvca1:A, d1d4ba_:A)
+Core Residues: 51
+Core RMSD: 6.675
+Raw Score: 27.058
+P-value: 0.7708
+Reference structure: d2bvca1:A
+
+d1d4ba_:A   MEYLSALNPSDLLRSVSNISSEFGRRVWTSAPPPQRPFRVCDHKRTIRKGLTAATRQELL    60  (A)
+d2bvca1:A   -------------------------------------------------------TPDDV     9  (B)
+
+d1d4ba_:A   AKALETLLL-NGV-LTLVLEED--------GTAVD-SEDFFQLLED--------------    95  (A)
+d2bvca1:A   ----FKLAKDEK-VEYVDVRF-CDLPGIMQHFTIPAS-AFDKSVFDDGLAFDGSSIRGFQ    62  (B)
+
+d1d4ba_:A   ------------DTCLMVLQ---SGQSWSPTRSGVLHHHHHH---------   122  (A)
+d2bvca1:A   SIHESDMLLLPDPETARID-PFRAAKTLN-INFFV-------HDPFTLEPY   104  (B)
+

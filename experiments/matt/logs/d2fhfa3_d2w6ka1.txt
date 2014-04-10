@@ -1,0 +1,19 @@
+(d2w6ka1:A, d2fhfa3:A)
+Core Residues: 39
+Core RMSD: 2.719
+Raw Score: 20.222
+P-value: 0.4449
+Reference structure: d2w6ka1:A
+
+d2fhfa3:A   DVVVRLPDVAVPGEAVQASA-------RQAVIHLVDIAGITSSTPADY------------    72  (A)
+d2w6ka1:A   --------------------XPLPIPSLLIAGIGCRR-----------GCSAEHLRALLE    29  (B)
+
+d2fhfa3:A   -------------------------------------------------------ATK--    75  (A)
+d2w6ka1:A   RTLGEHGRSLAELDALASIDGKRDEPGLRQLATLLERPVHFLAPAVLHDYEPRLLSPSAV    89  (B)
+
+d2fhfa3:A   -----------NLY--LW--NNETCDALS--APVADWNDVSTT----PTGSDKYGPYWVI   114  (A)
+d2w6ka1:A   ALRETGCSSVAEA-AALALAE---RLG--GGRA----------DLLGAKRSDDRASIALA   133  (B)
+
+d2fhfa3:A   PLTKESGCINVIVRDGTNKLIDSDLRVSFSDFTDRTVSVIAGNSAVYD---   162  (A)
+d2w6ka1:A   RLL---------------------------------------------TER   139  (B)
+

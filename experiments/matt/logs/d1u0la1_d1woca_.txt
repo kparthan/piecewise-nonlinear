@@ -1,0 +1,13 @@
+(d1woca_:A, d1u0la1:A)
+Core Residues: 60
+Core RMSD: 2.657
+Raw Score: 58.335
+P-value: 0.1718
+Reference structure: d1woca_:A
+
+d1u0la1:A   ---LRRRGIVVSFHS-----------NMVTVEDEE----------TGERILCKLR--GKF    36  (A)
+d1woca_:A   TNRLVLSGTVCRAP-LRKVSPSGIPHCQFVLEHRSVQEEAGFHRQAWCQXPVIVSGHENQ    60  (B)
+
+d1u0la1:A   RLQNL--KIYVGDRVEYTPDETG----------SGVIEN-VLHRK    68  (A)
+d1woca_:A   A---ITHSITVGSRITVQGFISCHKAKNGLSKXVLHAEQIELI--   100  (B)
+

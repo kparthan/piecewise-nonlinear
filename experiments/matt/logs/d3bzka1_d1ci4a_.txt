@@ -1,0 +1,16 @@
+(d1ci4a_:A, d3bzka1:A)
+Core Residues: 47
+Core RMSD: 2.101
+Raw Score: 49.527
+P-value: 0.1382
+Reference structure: d1ci4a_:A
+
+d3bzka1:A   YQHDVSQLKLARSLDAVV-------EDCVNA--VGVDVNTASAA---LLARISGLNSTLA   521  (A)
+d1ci4a_:A   ------------------XTTSQKHRD--FVAEPX---------GEKPVGSLAGIGEVLG    31  (B)
+
+d3bzka1:A   QNIVAHRDANGAFR-------------------TR-DELKK-VSRLGEKTFEQAA-GFLR   559  (A)
+d1ci4a_:A   KKLEE-RG------FDKAYVVLGQFLVLKKDEDLFREWLKDTCG-ANAKQSRDCFGCL--    81  (B)
+
+d3bzka1:A   VMNG--------   563  (A)
+d1ci4a_:A   ----REWCDAFL    89  (B)
+

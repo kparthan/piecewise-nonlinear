@@ -1,0 +1,19 @@
+(d1pc6a_:A, d1s69a_:A)
+Core Residues: 41
+Core RMSD: 2.347
+Raw Score: 49.779
+P-value: 0.2994
+Reference structure: d1pc6a_:A
+
+d1s69a_:A   STL---------------------------------------------------------     4  (A)
+d1pc6a_:A   ---MKKLTFEIRSPAHQQNAIHAVQQILPDPTKPIVVTIQERNRSLDQNRKLWACLGDVS    57  (B)
+
+d1s69a_:A   -YEKL----GGTTAVDLAVDKFYERVLQDDRIKHFFADV---------------------    38  (A)
+d1pc6a_:A   RQVEWHGRWLDAESWKCVFTAALKQ--------------QDVVPNLAGNGFVVIGQSTSR   103  (B)
+
+d1s69a_:A   ---DMAKQRAHQKAFLTYAFGGTDKYDGRYMREAHKELVENHGLNGEHFDAVAEDLLATL    95  (A)
+d1pc6a_:A   MRVGEFAELLELIQAFGTERGVKW------------------------------------   127  (B)
+
+d1s69a_:A   KEMGVPEDLIAEVAAVAGAPAHKRDVLNQ--------------   124  (A)
+d1pc6a_:A   -----------------------------SDEARLALEWKARW   141  (B)
+

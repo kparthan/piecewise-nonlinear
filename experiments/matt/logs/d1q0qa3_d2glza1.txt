@@ -1,0 +1,19 @@
+(d2glza1:A, d1q0qa3:A)
+Core Residues: 68
+Core RMSD: 3.192
+Raw Score: 64.082
+P-value: 0.2075
+Reference structure: d2glza1:A
+
+d1q0qa3:A   ESLVTCGRLFMDAVKQSKAQLLPV-----------------DSEHNAIFQS-LPQPIQHN   167  (A)
+d2glza1:A   ------------------VEKTPWELVIDFHGHTCPDIALGYRIAQLAQREXGI------    38  (B)
+
+d1q0qa3:A   LGYADLE---QNGVVSILLT-GSGGPFRETPLRDLATMTPDQACRHPNWSMGRKISVDSA   223  (A)
+d2glza1:A   -------RPAPDSECLVKA-YT--------------------------------------    52  (B)
+
+d1q0qa3:A   TMMNKGLEYIEARWLFNASA--SQMEVL----IHPQSVIHSMVRY-QDGSVLAQL-----   271  (A)
+d2glza1:A   ----QSCALDAIQVLNKATIGRHALII-EETHRY-----XYQFHFTGTQDIHQF-TVSPA   101  (B)
+
+d1q0qa3:A   ----------------------------------GEP-------------   274  (A)
+d2glza1:A   VLDHLETLRHPDLSPRERQNKVLEGVQYVLTLEESAFCHYDKIPGQLSKI   151  (B)
+

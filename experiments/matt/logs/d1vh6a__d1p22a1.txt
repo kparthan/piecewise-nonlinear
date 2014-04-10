@@ -1,0 +1,19 @@
+(d1p22a1:A, d1vh6a_:A)
+Core Residues: 28
+Core RMSD: 1.588
+Raw Score: 46.699
+P-value: 0.2731
+Reference structure: d1p22a1:A
+
+d1vh6a_:A   ATPGELTLXLYN-------------------------------GCLKFIR--LAAQAIEN    44  (A)
+d1p22a1:A   ------------SPAIMLQRDFITALPARGLDHIAENILSYLDA--K---SLC-------   170  (B)
+
+d1vh6a_:A   DDX------------------------------------------------ERKNENLIK    56  (A)
+d1p22a1:A   ---AAELVCKEWYRVTSDGMLWKKLIERMVRTDSLWRGLAERRGWGQYLFPPNSFYRALY   236  (B)
+
+d1vh6a_:A   AQNIIQELNFTLNRNIELSASXGAXYDYXYRRLVQANIKNDTGXLAEVEGYVTDFRDAWK   116  (A)
+d1p22a1:A   PKIIQDIETIESNWRC--------------------------------------------   252  (B)
+
+d1vh6a_:A   QAI   119  (A)
+d1p22a1:A   ---   252  (B)
+

@@ -1,0 +1,19 @@
+(d2fcja1:A, d1l9na1:A)
+Core Residues: 28
+Core RMSD: 3.470
+Raw Score: 20.807
+P-value: 0.7486
+Reference structure: d2fcja1:A
+
+d1l9na1:A   AALGVQSI----------------------------------------------------     8  (A)
+d2fcja1:A   --------MRRVEKVIIVEGRSDKQKVAAVLNEPVVIVCTNGTISDARLEELADELEGYD    52  (B)
+
+d1l9na1:A   -----NW---QTAFNRQAHHTDKFSSQELILRRGQ-----NFQVLM-------------I    42  (A)
+d2fcja1:A   VYLLADADEAGEKLRRQFRR---------------MFPEAEHLYI-DRAYREVAAAPIWH    96  (B)
+
+d1l9na1:A   MNKGLGSNERLEFIVSTGPYPSESAMTKAVFP-----LSNGSSGGWSAVLQASNG--NTL    95  (A)
+d2fcja1:A   L-------------------------------AQVLLR----------ARFDVRIESL--   113  (B)
+
+d1l9na1:A   TISISSPASAPIGRYTMALQIFSQGGISSVKLGTFILLFNPWLNV-   140  (A)
+d2fcja1:A   ---------------------------------------------M   114  (B)
+

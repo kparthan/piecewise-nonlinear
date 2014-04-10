@@ -1,0 +1,19 @@
+(d1twfh_:H, d1d7qa_:A)
+Core Residues: 57
+Core RMSD: 3.019
+Raw Score: 45.896
+P-value: 0.1609
+Reference structure: d1twfh_:H
+
+d1d7qa_:A   PKNKGKGGKNRRRGKNENESEKRELVFKE--DG-QEYAQVIKMLG-----NGRLEAMCF-    65  (A)
+d1twfh_:H   -----------------------------SNTLFDDIFQVSEVDPGRYNKVCRIEAASTT    32  (B)
+
+d1d7qa_:A   DG-VKRLCHIRGKL--RKKVWINTSDIILVGLRD--------------------------    96  (A)
+d1twfh_:H   QDQCKLTLDI----NVEL-FPVAAQDSLTVTIA-SSLTRSWRPPQAGDRSLADDYDYVMY    98  (B)
+
+d1d7qa_:A   -----------------YQD-------NK--------------ADVILKYNADEARSLKA   118  (A)
+d1twfh_:H   GTAYKFEEVSKDLIAVYY--SFGGLLMRLEGNYRNLNNLKQENAYLLIRR----------   146  (B)
+
+d1d7qa_:A   YGELPEHAKINETDTFGPGDDDEIQFDDIGDDDEDIDDI   157  (A)
+d1twfh_:H   ---------------------------------------   146  (B)
+

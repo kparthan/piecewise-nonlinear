@@ -1,0 +1,16 @@
+(d1adua1:A, d1b24a2:A)
+Core Residues: 19
+Core RMSD: 1.635
+Raw Score: 34.316
+P-value: 0.4303
+Reference structure: d1adua1:A
+
+d1b24a2:A   LFNXREQIAFIKGLYVAEGDKTLKRLRI--------------------------------   127  (A)
+d1adua1:A   ----------------------------AWEKGMEAARALMDKYHVDNDLKANFKLLPDQ   211  (B)
+
+d1b24a2:A   --------------------W-NKNKALLEIVSRWLNNLGVRNTIHLDDHRHGVYVLNIS   166  (A)
+d1adua1:A   VEALAAVCKTWLNEEHRGLQLTFTSNKTFVTMMGRFLQAY--------------------   251  (B)
+
+d1b24a2:A   LRDRIKFVHTILS--------------   179  (A)
+d1adua1:A   -------------LQSFAEVTYKHHEP   265  (B)
+

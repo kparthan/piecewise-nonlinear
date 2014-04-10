@@ -1,0 +1,16 @@
+(d1sg5a1:A, d2qlvb1:B)
+Core Residues: 36
+Core RMSD: 3.541
+Raw Score: 27.193
+P-value: 0.6312
+Reference structure: d1sg5a1:A
+
+d2qlvb1:B   S--LMVPVEIRW------------------QQ--------GGSKVYVTGSFTKWRKMIGL   192  (A)
+d1sg5a1:A   -MSMNDTYQPI-NCDDYDNLELACQHHLMLTLELKDGEKLQAKASDLVSRK---------    49  (B)
+
+d2qlvb1:B   IPDSDNNGSFHVKLRLLPGTHRFRFIVD----NELRVSDFLPTATDQMGNFVNYIEVRQ-   247  (A)
+d1sg5a1:A   --------------------NVEYLVVEAAGETRELR--------------LD------K    69  (B)
+
+d2qlvb1:B   -----------------   247  (A)
+d1sg5a1:A   ITSFSHPEIGTVVVSES    86  (B)
+

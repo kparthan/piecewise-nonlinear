@@ -1,0 +1,16 @@
+(d3kdfb_:B, d2uubq1:Q)
+Core Residues: 71
+Core RMSD: 8.200
+Raw Score: 90.919
+P-value: 0.3194
+Reference structure: d3kdfb_:B
+
+d2uubq1:Q   P----------------------------KKVLTGVVVSDKMQK--------TVTVLVER    25  (A)
+d3kdfb_:B   -HIVPCTISQLLSATLVDEVFRIGNVEISQVTIVGIIRH-----AEKAPTNIVYKIDDX-    97  (B)
+
+d2uubq1:Q   QFPHPLYGKVIKRS--KKYLAHDPEEK-----YKLGDVVEIIE--SRPISKRKRFRVLRL    76  (A)
+d3kdfb_:B   --------------TAAPXDVR-----QWVTVVPPETYVKVA-GHLRSFQNKKSLVAFKI   146  (B)
+
+d2uubq1:Q   VESGRMDLVEKYLIRRQNYESLSKR--   101  (A)
+d3kdfb_:B   XPLEDXNEFTTHILEVINAHXVL--SK   171  (B)
+

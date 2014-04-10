@@ -1,0 +1,16 @@
+(d1iowa1:A, d2crga1:A)
+Core Residues: 24
+Core RMSD: 4.283
+Raw Score: 28.636
+P-value: 0.8952
+Reference structure: d1iowa1:A
+
+d2crga1:A   MEEW------------------SASEACLFEEALEKYGKDFNDIRQDFLPWKSLTSIIEY    49  (A)
+d1iowa1:A   ----MTDKIAVLLGGTSAEREVSLNSGAAVLAGLREGG----------------------    34  (B)
+
+d2crga1:A   YYMW------------------------KTTDRYVQQKR---------------------    64  (A)
+d1iowa1:A   ----IDAYPVDPKEVDVTQLKSMGFQKVFIALHGRG---GEDGTLQGMLELMGLPYTGSG    87  (B)
+
+d2crga1:A   ---------    64  (A)
+d1iowa1:A   VMASALSMD    96  (B)
+

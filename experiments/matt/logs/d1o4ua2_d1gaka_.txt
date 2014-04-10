@@ -1,0 +1,19 @@
+(d1gaka_:A, d1o4ua2:A)
+Core Residues: 42
+Core RMSD: 2.439
+Raw Score: 46.435
+P-value: 0.2966
+Reference structure: d1gaka_:A
+
+d1o4ua2:A   --------------------------------------------MEKILDLLMSFVKEDE    16  (A)
+d1gaka_:A   FDDVVVSRQEQSYVQRGMVNFLDEEMHKLVKRFRDMRWNLGPGFVFLLKKVNRERMMRYC    60  (B)
+
+d1o4ua2:A   GKL-DLASFP---------LRNTTAGAHLLLKTENVVASGIEVSRMFLEKMGLLSKFNVE    66  (A)
+d1gaka_:A   -MDYARYSK-KILQLKHLPVNK--------------------------------------    80  (B)
+
+d1o4ua2:A   DGEYLEGTGVIGEIEGNTYKLLVAERTLLNVLSVMFS-----------------------   103  (A)
+d1gaka_:A   ----------------KTLTKMGRFVGYRNY--G---VIRELYADVFRDVQGFRGPKMTA   119  (B)
+
+d1o4ua2:A   ------------------   103  (A)
+d1gaka_:A   AMRKYSSKDPGTFPCKNE   137  (B)
+

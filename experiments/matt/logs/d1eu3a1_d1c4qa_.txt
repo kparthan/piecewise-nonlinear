@@ -1,0 +1,13 @@
+(d1c4qa_:A, d1eu3a1:A)
+Core Residues: 56
+Core RMSD: 2.353
+Raw Score: 48.271
+P-value: 0.1362
+Reference structure: d1c4qa_:A
+
+d1eu3a1:A   GLEVDNNSLLRNIYSTIV-YE-YSDIVIDFKTS-----HNLVTKKLDVRDARDFFINSEM    52  (A)
+d1c4qa_:A   ------------------TPDCVT-GKVEYTKYNDDDTFTVKV-G---------DKELAT   131  (B)
+
+d1eu3a1:A   D-EYAANDFK--T--GDKIAVFSVPFDWNYLSKGKVTA-YTYGGITPYQK    96  (A)
+d1c4qa_:A   NRANLQSLLLSAQITGMTVTIKTNAC----------HNGGGFSEVIFR--   169  (B)
+

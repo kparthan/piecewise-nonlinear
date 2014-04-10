@@ -1,0 +1,19 @@
+(d1jlya2:A, d1m1fa_:A)
+Core Residues: 39
+Core RMSD: 2.551
+Raw Score: 29.426
+P-value: 0.4640
+Reference structure: d1jlya2:A
+
+d1m1fa_:A   ---MERGEI-------------------------------------------------WL     8  (A)
+d1jlya2:A   WKSIF----QFPKGYVTFKGNNGKYLGVITINQLPCLQFGYDNLNDPKVAHQMFVTSNGT   209  (B)
+
+d1m1fa_:A   VSLDPTAG-------------HEQQ--------------GTRPVLIVTPAAFNRVTRLPV    41  (A)
+d1jlya2:A   ICIKS---NYMNKFWRLSTDDWI--LVDGNDPRETNEAAALFRSDVHD----F-----NV   255  (B)
+
+d1m1fa_:A   VVPVTSFARTAG-----------------------FAVSLDGVGIRTTGVVRCD--QPRT    79  (A)
+d1jlya2:A   ISLLNM------QKTWFIKRFTSGKPGFINCMNAATQN--------------VDETAILE   295  (B)
+
+d1m1fa_:A   IDMKARGGKRLERVPETIMNEVLGRLSTILT---   110  (A)
+d1jlya2:A   I------------------------------IEL   299  (B)
+

@@ -1,0 +1,40 @@
+(d2nzwa1:A, d2iiza_:A)
+Core Residues: 26
+Core RMSD: 2.065
+Raw Score: 37.485
+P-value: 0.5307
+Reference structure: d2nzwa1:A
+
+d2iiza_:A   NXPREQLGVCAEGNLHSVYLXFNAND---N---VESQLRPC-------------------    39  (A)
+d2nzwa1:A   --------------------------MFQPLLDAYVES-ASIEKMASKSPPPLKIAVANW    33  (B)
+
+d2iiza_:A   ------------------------------------------------------------    39  (A)
+d2nzwa1:A   WGDEEIKEFKNSVLYFILSQRYTITLHQNPNEFSDLVFGNPLGSARKILSYQNAKRVFYT    93  (B)
+
+d2iiza_:A   ------------------------------------------------------------    39  (A)
+d2nzwa1:A   GENESPNFNLFDYAIGFDELDFNDRYLRMPLYYDRLHHKAESVNDTTAPYKLKDNSLYAL   153  (B)
+
+d2iiza_:A   ------------------------------------------------------------    39  (A)
+d2nzwa1:A   KKPSHCFKEKHPNLCAVVNDESDPLKRGFASFVASNPNAPIRNAFYDALNSIEPVTGGGS   213  (B)
+
+d2iiza_:A   ------------------------------------------------------------    39  (A)
+d2nzwa1:A   VRNTLGYNVKNKNEFLSQYKFNLCFENTQGYGYVTEKIIDAYFSHTIPIYWGSPSVAKDF   273  (B)
+
+d2iiza_:A   -----------------------------------------------------IANVAQY    46  (A)
+d2nzwa1:A   NPKSFVNVHDFKNFDEAIDYIKYLHTHKNAYLDMLYENPLNTLDGKAYFYQNLSFKKILA   333  (B)
+
+d2iiza_:A   IYELTDQYSDS-AFNGFVAIGANYWDSLYPESRPEXLKPFPAXQEGNREAPAIEYDLFVH   105  (A)
+d2nzwa1:A   FFKTILENDT-IY-----------------------------------------------   345  (B)
+
+d2iiza_:A   LRCDRYDILHLVANEISQXFEDLVELVEEERGFRFXDSRDLTGFVDGTENPKGRHRQEVA   165  (A)
+d2nzwa1:A   ------------------------------------------------------------   345  (B)
+
+d2iiza_:A   LVGSEDPEFKGGSYIHVQKYAHNLSKWHRLPLKKQEDIIGRTKQDNIEYESEDKPLTSHI   225  (A)
+d2nzwa1:A   ------------------------------------------------------------   345  (B)
+
+d2iiza_:A   KRVNLKDENGKSIEILRQSXPYGSLKEQGLXFISTCRTPDHFEKXLHSXVFGDGAGNHDH   285  (A)
+d2nzwa1:A   ------------------------------------------------------------   345  (B)
+
+d2iiza_:A   LXHFTSALTGSSFFAPSLDFLXQFD----   310  (A)
+d2nzwa1:A   -------------------------HDNP   349  (B)
+

@@ -1,0 +1,19 @@
+(d2gnxa2:A, d2vaca_:A)
+Core Residues: 48
+Core RMSD: 4.055
+Raw Score: 43.288
+P-value: 0.6040
+Reference structure: d2gnxa2:A
+
+d2vaca_:A   SMGI--------------------------------------HAT-EELKEFFAKARAGS    24  (A)
+d2gnxa2:A   ----PDLFGKISSFIRKYDAANVSLIFDQYPAVVSLPSDRPVXH-WPNVIXIXTDRASD-   374  (B)
+
+d2vaca_:A   V-------RLIKV-VIEDEQLVLGASQEPVGRWDQDYDRAVLPLLDAQQPCYLLYRLDSQ    76  (A)
+d2gnxa2:A   -LNSLEKVVHFYDDKV----------------------------------QSTYFLT--R   397  (B)
+
+d2vaca_:A   N--AQGFEWLFLAWSPDNSPVRLKMLYAATRATVKKEFGGGHIKDELFGTVKDD-LSFAG   133  (A)
+d2gnxa2:A   PEPHF-TIVVIFES----------------------------------------KKSERD   416  (B)
+
+d2vaca_:A   YQKH----------------------   137  (A)
+d2gnxa2:A   SH--FISFLNELSLALKNPKVFASLK   440  (B)
+

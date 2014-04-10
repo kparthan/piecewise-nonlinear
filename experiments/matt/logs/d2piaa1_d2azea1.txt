@@ -1,0 +1,19 @@
+(d2azea1:A, d2piaa1:A)
+Core Residues: 22
+Core RMSD: 1.715
+Raw Score: 24.946
+P-value: 0.4908
+Reference structure: d2azea1:A
+
+d2piaa1:A   TTPQEDGFLRLKIASKEKIAR---------------------------------------    21  (A)
+d2azea1:A   ---------------------AQECQNLEVERQRRLERIKQKQSQLQELILQQIAFKNLV   237  (B)
+
+d2piaa1:A   ---------------------DIWSFELTDPQGAPLPPFEAGANLTVAVPNGSRRTYSLC    60  (A)
+d2azea1:A   QRNRHAEQQASRPPPPNSVIHLPFIIVNTSKKT---------------------------   270  (B)
+
+d2piaa1:A   NDSQE------------------RNRYVIAVKRDSNGRGG--SISFIDDTSEGDAVEVSL   100  (A)
+d2azea1:A   -----VIDCSISNDKFEYLFNFDNTFEIHDDI--------EVL-----------------   300  (B)
+
+d2piaa1:A   PRN----------------------------------------------   103  (A)
+d2azea1:A   ---KRMGMACGLESGSCSAEDLKMARSLVPKALEPYVTEMAQGTVGGVF   346  (B)
+

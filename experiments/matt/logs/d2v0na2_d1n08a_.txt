@@ -1,0 +1,22 @@
+(d1n08a_:A, d2v0na2:A)
+Core Residues: 65
+Core RMSD: 4.702
+Raw Score: 74.522
+P-value: 0.2916
+Reference structure: d1n08a_:A
+
+d2v0na2:A   VIAGAAARLDGLGGRVLIVD------------------DNERQA-QRVAA--ELGVE-HR   178  (A)
+d1n08a_:A   --------------------RPEIVGPEKVQSPYPIRFEGKVV-HGF---GRGSKELGIP    44  (B)
+
+d2v0na2:A   PVIES--DPEKAKIS--------------AG-----GPVDLVIVNA--------AAKNFD   209  (A)
+d1n08a_:A   TANISEDAI------QELLRYRDSGVYFGYAMVQKRVFPMVMSVG-WNPYYKNKLR----    93  (B)
+
+d2v0na2:A   GLRFTAA----------------------LRSEERTRQLPVLAMVDPDDRGRMVKALEIG   247  (A)
+d1n08a_:A   -------SAEVHLIERQGEDFYEEIMRVIV------LG----------------------   118  (B)
+
+d2v0na2:A   VNDILSRPI---DPQELSARVKTQIQRKRYTDYLRNNLDHSLELAVTDQ-----------   293  (A)
+d1n08a_:A   YIRPEL---NYAGLDKLIEDIHTDIRVALNSMD-R--------------PSYSSYKKDPF   160  (B)
+
+d2v0na2:A   --   293  (A)
+d1n08a_:A   FK   162  (B)
+

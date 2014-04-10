@@ -1,0 +1,19 @@
+(d1puca_:A, d1ytda2:A)
+Core Residues: 34
+Core RMSD: 4.838
+Raw Score: 23.526
+P-value: 0.9526
+Reference structure: d1puca_:A
+
+d1ytda2:A   MNVFNTASDEDIKKGLASD-------VYFERTISAIGDKCNDLRV-AMEATVSGPLDTWI    52  (A)
+d1puca_:A   -------------------SKSGVPRLLTASERERLEPFIDQIHYSPRYAD---------    33  (B)
+
+d1ytda2:A   NFTGLDEVLKLLEGLDVDLYAIPEGTILFPRDANGLPVPFIRVEGRY-------------    99  (A)
+d1puca_:A   ----------------------------DE-------YE--------YRHVMLPKAMLKA    50  (B)
+
+d1ytda2:A   ------------------------CDFGMYETA-ILGFICQASGI---------------   119  (A)
+d1puca_:A   IPTDYFNPETGTLRILQEEEWRGLGITQ-----SLG---------WEMYEVHVPEPHILL    96  (B)
+
+d1ytda2:A   ------   119  (A)
+d1puca_:A   FKREKD   102  (B)
+

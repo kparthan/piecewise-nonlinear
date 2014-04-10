@@ -1,0 +1,13 @@
+(d2diga1:A, d2buda1:A)
+Core Residues: 52
+Core RMSD: 2.035
+Raw Score: 59.525
+P-value: 0.0686
+Reference structure: d2diga1:A
+
+d2buda1:A   DPLM--QKIDISENPDKIYFIRRE-DGTVHRGQVLQSRTTENAAAPDEYYVHYVGLNRRL   423  (A)
+d2diga1:A   ----MPSRKFA---DGEVVRGRWPGSSLYYEVEILSHDST-----SQLYTVK-YKD-GT-    52  (B)
+
+d2buda1:A   DGWVGRHRISDNADDLGGITVLPAPPLAPDQ   454  (A)
+d2diga1:A   ELELKENDIK---------------------    62  (B)
+

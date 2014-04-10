@@ -1,0 +1,16 @@
+(d1i3ja_:A, d1b24a2:A)
+Core Residues: 21
+Core RMSD: 2.019
+Raw Score: 25.388
+P-value: 0.4867
+Reference structure: d1i3ja_:A
+
+d1b24a2:A   --------------------------------LFNXREQIAFIKGLYVAEGDKTLKRLRI   127  (A)
+d1i3ja_:A   KFCKCGVRIQTSAYTCSKCRNRSGENNSFFNHKHSDITKSKISEKMK-GK----------   197  (B)
+
+d1b24a2:A   WNKNKALLEIVSRWLNNLGVRNTIHLDDHRHGVYVLNISLRDRIKFVHTILS--------   179  (A)
+d1i3ja_:A   KPS-----------------------------N-------------------IKKISCDG   209  (B)
+
+d1b24a2:A   -----------------------------------   179  (A)
+d1i3ja_:A   VIFDCAADAARHFKISSGLVTYRVKSDKWNWFYIN   244  (B)
+

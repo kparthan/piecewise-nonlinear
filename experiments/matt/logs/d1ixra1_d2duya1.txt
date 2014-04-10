@@ -1,0 +1,13 @@
+(d2duya1:A, d1ixra1:A)
+Core Residues: 49
+Core RMSD: 1.873
+Raw Score: 71.458
+P-value: 0.0433
+Reference structure: d2duya1:A
+
+d1ixra1:A   PDEENL-------------ALFELLLSVSGVGPKVALALLSALPPRLLARALLEG-DARL   108  (A)
+d2duya1:A   ------PLPQAQTPVSLNEASLEELXALPGIGPVLARRIVEGR---PY-------ARVED    54  (B)
+
+d1ixra1:A   LTSASGVGRRLAERIALELKGKVPPHL--   135  (A)
+d2duya1:A   LLKVKGIGPATLERLRPYL--------RP    75  (B)
+

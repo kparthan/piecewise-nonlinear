@@ -1,0 +1,19 @@
+(d1jfla2:A, d1mqva_:A)
+Core Residues: 33
+Core RMSD: 1.493
+Raw Score: 56.609
+P-value: 0.1715
+Reference structure: d1jfla2:A
+
+d1mqva_:A   ATDVIAQRKAILKQMGEATKPIAAMLKGEAKWDQ--------------------------    34  (A)
+d1jfla2:A   ----------------------------------FKKAGLLATTGTIVSGVYEKEFSKYG   141  (B)
+
+d1mqva_:A   ------AVVQKSLAAIADD-SKKLPALFPADSKTGGDTAALPKIFEDKAKFDDLFAKLAA    87  (A)
+d1jfla2:A   VEIMTPTEDEQKDVMRGIYEGVKAG-----------------------------NLKLGR   172  (B)
+
+d1mqva_:A   AATAAQGTIKDEASLKANIGGVLGNCKSCHDDFRAK------------------------   123  (A)
+d1jfla2:A   ELLLKTAKI---------------------------LEERGAECIIAGCTEVSVVLKQDD   205  (B)
+
+d1mqva_:A   -----------------------   123  (A)
+d1jfla2:A   LKVPLIDPMDVIAEVAVKVALEK   228  (B)
+

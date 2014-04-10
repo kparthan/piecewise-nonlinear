@@ -1,0 +1,22 @@
+(d1cqxa3:A, d1s28a_:A)
+Core Residues: 29
+Core RMSD: 2.017
+Raw Score: 36.692
+P-value: 0.5125
+Reference structure: d1cqxa3:A
+
+d1s28a_:A   GA----------------------------------------------------------     2  (A)
+d1cqxa3:A   --DVDAKTPIVLISGGVGLTPMVSMLKVALQAPPRQVVFVHGARNSAVHAMRDRLREAAK   319  (B)
+
+d1s28a_:A   --------------------------------------------------XKNSFDRLID    12  (A)
+d1cqxa3:A   TYENLDLFVFYDQPLPEDVQGRDYDYPGLVDVKQIEKSILLPDADYYICGPIPFMRMQHD   379  (B)
+
+d1s28a_:A   GLAKDYGXPGFPEKKHEHEVYCFEFKEVSIRIYQDKFKWVYFLSDIGVIDNLDSNACQSL    72  (A)
+d1cqxa3:A   ALKNLGI-H-------------EA------RIHYE--VF---------------------   396  (B)
+
+d1s28a_:A   LRLNEFNLRTPFFTVGLNEKKDGVVHTRIPL---LNLDNVEXRRVFEALLNLSGEVKKTF   129  (A)
+d1cqxa3:A   -------------------------------GPDLF------------------------   401  (B)
+
+d1s28a_:A   G--   130  (A)
+d1cqxa3:A   -AE   403  (B)
+

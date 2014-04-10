@@ -1,0 +1,19 @@
+(d1v64a_:A, d2esha1:A)
+Core Residues: 39
+Core RMSD: 1.835
+Raw Score: 65.174
+P-value: 0.1890
+Reference structure: d1v64a_:A
+
+d2esha1:A   RGGRGFRGWWLASTIL---------------------------LL--VAEKPSHGYE---    31  (A)
+d1v64a_:A   ----------------GSSGSSGQLKDKFDGRPTKPPPNSYSLYCAEL---------MAN    35  (B)
+
+d2esha1:A   LAERLAEFGIEIPGIGHMGNIYRVLADLEESGFLSTEWDTTVSPPRKIY-----------    80  (A)
+d1v64a_:A   MKD----------------------------------------------VPSTERMVLCS    49  (B)
+
+d2esha1:A   -R---ITPQGKLYLREILRSLEDMKRRIETLEERIKRVLQE-------------------   117  (A)
+d1v64a_:A   QQWKLLSQKEKDAYHKKCDQKKKDYEVELLRFLESLP----EEEQQRVLGEEKMLNISGP   105  (B)
+
+d2esha1:A   ---   117  (A)
+d1v64a_:A   SSG   108  (B)
+

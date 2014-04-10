@@ -1,0 +1,13 @@
+(d1oaia_:A, d1efub3:B)
+Core Residues: 44
+Core RMSD: 1.968
+Raw Score: 87.207
+P-value: 0.0721
+Reference structure: d1oaia_:A
+
+d1efub3:B   AEI--T----ASLVKELRERTGAGMMDCKKALTEANGDIELAIENMRKSGAIKAAKKAGN    54  (A)
+d1oaia_:A   ---PTLSPEQQEMLQAFSTQSGMNLEWSQKCLQDNNWDYTRSAQAFTHLKAKG-------   610  (B)
+
+d1efub3:B   ---------    54  (A)
+d1oaia_:A   EIPEVAFMK   619  (B)
+

@@ -1,0 +1,46 @@
+(d1g6sa_:A, d1vema2:A)
+Core Residues: 71
+Core RMSD: 5.637
+Raw Score: 72.671
+P-value: 0.3274
+Reference structure: d1g6sa_:A
+
+d1vema2:A   A------------------------------V--NGKGMNPDYKAYLMAPLKKIPEVTNW    28  (A)
+d1g6sa_:A   -MESLTLQPIARVDGTINLPGSKSVSNRALLLAALA------------------------    35  (B)
+
+d1vema2:A   ETFENDLRWAKQNGFYAITVDFWWGDMEKNGDQQFDFSYAQRFAQSVKNAGMKMIPIIST    88  (A)
+d1g6sa_:A   ------------------------------------------------------------    35  (B)
+
+d1vema2:A   HQCGGNVGDDCNVPIPSWVWNQKSDDSLYFKSETGTVNKETLNPLASDVIRKEYGELYTA   148  (A)
+d1g6sa_:A   ------------------------------------------------------------    35  (B)
+
+d1vema2:A   FAAAMKPYKDVIAKIYLSGGPAGELRYPSYTTSDGTGYPSRGKFQAYTEFAKSKFRLWVL   208  (A)
+d1g6sa_:A   ------------------------------------------------------------    35  (B)
+
+d1vema2:A   NKYGSLNEVNKAWGTKLISELAILPPSDGEQFLMNGYLSMYGKDYLEWYQGILENHTKLI   268  (A)
+d1g6sa_:A   ------------------------------------------------------------    35  (B)
+
+d1vema2:A   GELAHNAFDTTFQVPIGAKIAGVHW-----------------------------------   293  (A)
+d1g6sa_:A   -------------------------HGKTVLTNLLDSDDVRHMLNALTALGVSYTLSADR    70  (B)
+
+d1vema2:A   -----------------------------------------------------QYNNPTI   300  (A)
+d1g6sa_:A   TRCEIIGNGGPLHAEGALELFLGNAGTAMRPLAAALCLGSNDIVLTGEPRMKERP-----   125  (B)
+
+d1vema2:A   PHGAEKPAGYNDYSHLLDAFKSAK-----------------------LDVTFTCLEMTDK   337  (A)
+d1g6sa_:A   -I---------GHLVDALRLG---GAKITYLEQENYPPLRLQGGFTGGNVDVDG------   166  (B)
+
+d1vema2:A   GSYPEYSM--PKTLVQNIATLANE-KGIVLNGENALSIGNE-EEYKRVAEMAFN-YNFAG   392  (A)
+d1g6sa_:A   --------SVSSQFLTALLMTAP-LAPEDTVIRIKGDLVSKPYIDITLNLMK--TFGVEI   215  (B)
+
+d1vema2:A   -FTL-LRYQDVMYNNSLMGKFKDLLGV---------------------------------   417  (A)
+d1g6sa_:A   ENQHYQ---------------------QFVVKGGQSYQSPGTYLVEGDASSASYFLAAAA   254  (B)
+
+d1vema2:A   ------------------------------------------------------------   417  (A)
+d1g6sa_:A   IKGGTVKVTGIGRNSMQGDIRFADVLEKMGATICWGDDYISCTRGELNAIDMDMNHIPDA   314  (B)
+
+d1vema2:A   ------------------------------------------------------------   417  (A)
+d1g6sa_:A   AMTIATAALFAKGTTTLRNIYNWRVKETDRLFAMATELRKVGAEVEEGHDYIRITPPEKL   374  (B)
+
+d1vema2:A   -----------------------------------------------------   417  (A)
+d1g6sa_:A   NFAEIATYNDHRMAMCFSLVALSDTPVTILDPKCTAKTFPDYFEQLARISQAA   427  (B)
+

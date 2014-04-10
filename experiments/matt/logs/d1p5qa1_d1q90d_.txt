@@ -1,0 +1,22 @@
+(d1q90d_:D, d1p5qa1:A)
+Core Residues: 57
+Core RMSD: 5.811
+Raw Score: 69.756
+P-value: 0.3089
+Reference structure: d1q90d_:D
+
+d1p5qa1:A   SWEXNSEEKLEQSTI---------------------------------------------   272  (A)
+d1q90d_:D   ---------------TKKPDLSDPVLKAKLAKGMGHNTYGEPAWPNDLLYMFPVVILGTF    48  (B)
+
+d1p5qa1:A   --------------------------------VKERGTVYFKEG----KYKQALLQYKKI   296  (A)
+d1q90d_:D   ACVIGLSVLDPAAMGEPANPFATPLEILPEWYFYPVFQILRVV-PNKLLGVLLMAAVPAG   107  (B)
+
+d1p5qa1:A   VSWLEYES-SFS-------NEEAQKAQALRLASHLNLAMCHLKLQAFSAAIESCNKALEL   348  (A)
+d1q90d_:D   LITVPFIESIN-KFQNPYRRPIATILFLLGTLVAVWLGIGSTF-----------------   149  (B)
+
+d1p5qa1:A   DSNNEKGLSRRGEAHLAVNDFELARADFQKVLQLYPNNKAAKTQLAVCQQRIRRQLAREK   408  (A)
+d1q90d_:D   ------------------------------------------------------------   149  (B)
+
+d1p5qa1:A   KLYANMFERLAEEENKAKA----------   427  (A)
+d1q90d_:D   -------------------PIDISLTLGL   159  (B)
+

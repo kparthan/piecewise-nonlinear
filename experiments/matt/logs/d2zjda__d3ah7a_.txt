@@ -1,0 +1,16 @@
+(d3ah7a_:A, d2zjda_:A)
+Core Residues: 67
+Core RMSD: 3.106
+Raw Score: 48.666
+P-value: 0.1758
+Reference structure: d3ah7a_:A
+
+d2zjda_:A   PSEKTFKQRRTFEQRVEDVRLIREQHPTKIPVIIERYKGEKQL--PVL-DKTKFLVPDHV    58  (A)
+d3ah7a_:A   ----------------------------MPLVTFLP-------HEKFCPEGLTVEVKPGT    24  (B)
+
+d2zjda_:A   NMSELIKIIRRRLQLNANQ--------AFFLLVNG-----------------------H-    86  (A)
+d3ah7a_:A   NILELAHD--HHIEMESA-CGGVKACTTCHCIVR-KGFDSLEEADELEEDMLDKAWGLEA    80  (B)
+
+d2zjda_:A   SMVS--VSTPISEVYESEKDEDGFLYMVYA-SQETFGMK----   122  (A)
+d3ah7a_:A   QSR-LGCQVFVA--DE-------DLTIEIPKYSL-----NHAA   108  (B)
+

@@ -1,0 +1,13 @@
+(d2ylba_:A, d1kq1a_:A)
+Core Residues: 59
+Core RMSD: 0.873
+Raw Score: 135.280
+P-value: 1.7911e-03
+Reference structure: d2ylba_:A
+
+d1kq1a_:A   NIQDKALENFKANQTEVTVFFLNGFQMKGVIEEYDKYVVSLNSQGKQHLIYKHAISTYTV    65  (A)
+d2ylba_:A   SLQDPFLNALRRERVPVSIYLVNGIKLQGQIESFDQFVILLK-NTVSQMVYKHAISTVVP    64  (B)
+
+d1kq1a_:A   ------    65  (A)
+d2ylba_:A   SRPVSH    70  (B)
+

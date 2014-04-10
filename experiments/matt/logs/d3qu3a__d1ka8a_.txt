@@ -1,0 +1,16 @@
+(d1ka8a_:A, d3qu3a_:A)
+Core Residues: 59
+Core RMSD: 6.473
+Raw Score: 39.288
+P-value: 0.7459
+Reference structure: d1ka8a_:A
+
+d3qu3a_:A   RV---LFGDWLLGEVSSGQYEGLQWLNEARTV----------FRVPWKHFGRRDLD---E    52  (A)
+d1ka8a_:A   --DADPTFDFI---------------------GYLETLPQTSGMYM----------GNAS    27  (B)
+
+d3qu3a_:A   EDA-------QIFKAWAVAR-----GRWPPSGVNLPPPEAEAAERRERRG--WKTNFRCA    98  (A)
+d1ka8a_:A   I--IPRNYRKYLYHAYLAYMEANGYRN-----------------------VLSLK---MF    59  (B)
+
+d3qu3a_:A   LHST------GRFILRQDNSGDPVDPHKVYELSRELGS-----   130  (A)
+d1ka8a_:A   GLG-LPVMLKEYGLNYEK-RHTKQGIQTNLTLKEESYGDWLPK   100  (B)
+

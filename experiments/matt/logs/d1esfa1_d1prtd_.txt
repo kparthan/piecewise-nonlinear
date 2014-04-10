@@ -1,0 +1,16 @@
+(d1prtd_:D, d1esfa1:A)
+Core Residues: 69
+Core RMSD: 3.298
+Raw Score: 49.896
+P-value: 0.0224
+Reference structure: d1prtd_:D
+
+d1esfa1:A   SEKSEEINEKDLRKKSELQGTALGNLKQIYYY--NEKAKTENKESHDQFLQ---------    49  (A)
+d1prtd_:D   --------------------------------DVPYVLVKTNMVVTSVAM-KPYEVTPTR    27  (B)
+
+d1esfa1:A   --HTILFK------------GFFTYNDLLVDFDS----------KDIVDKYKGKKVDLYG    89  (A)
+d1prtd_:D   MLVCGIA-AKLGAAASSPDAHV------PFCFGKDLKRPGSSPMEVMLRAVFMQQRPLRM    80  (B)
+
+d1esfa1:A   AYY-GYQCAGGTPNKTACMYGGVTLHDNNRLT-----   120  (A)
+d1prtd_:D   FLGPKQ-LTFEGK-PALELIR-MVECS--G--KQDCP   110  (B)
+

@@ -1,0 +1,22 @@
+(d2avue1:E, d2ywxa_:A)
+Core Residues: 36
+Core RMSD: 3.963
+Raw Score: 57.111
+P-value: 0.6833
+Reference structure: d2avue1:E
+
+d2ywxa_:A   MIC--------------------------------------------------------I     4  (A)
+d2avue1:E   ---SIVQEARDIQLAMELITLGARLQMLESETQLSRGRLIKLYKELRGSPPPKGMLPFST    61  (B)
+
+d2ywxa_:A   I--MGSESDLKIAEKAVNILKEFGVEFEVRVASAHRTPELVEEIVKNSKADVFIAIAGLA    62  (A)
+d2avue1:E   DWFM----TWEQNVHASMFCNAWQ------------------------------------    81  (B)
+
+d2ywxa_:A   AHLPGVVASLTTKPVIAVPVDAKLDGLDALLSSVQMPPGIPVATVGIDRGENAAILALEI   122  (A)
+d2avue1:E   ------------------------------------------------------------    81  (B)
+
+d2ywxa_:A   LALKDE--------NIAKKLIEYREKMKKKVYASDEKVKEMFK-----------------   157  (A)
+d2avue1:E   ------FLLKTGLCNGVDAVIKAYRLYLEQC------------PQAEEGPLLALTRAWTL   123  (B)
+
+d2ywxa_:A   -------------------------------------   157  (A)
+d2avue1:E   VRFVESGLLQLSSCNCCGGNFITHAHQPVGSFACSLC   160  (B)
+

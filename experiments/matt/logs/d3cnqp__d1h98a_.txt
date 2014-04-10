@@ -1,0 +1,16 @@
+(d1h98a_:A, d3cnqp_:P)
+Core Residues: 19
+Core RMSD: 2.416
+Raw Score: 18.575
+P-value: 0.7348
+Reference structure: d1h98a_:A
+
+d3cnqp_:P   ----EKKYI------------------VGFKQGFKSCAKKEDVISEKGGKLQKCFKYVDA    46  (A)
+d1h98a_:A   PHVICEPCIGVKDQSCVEVCPVECIYDGG-------------------------------    29  (B)
+
+d3cnqp_:P   ASATL-----------------------------------NEKAVEELKKDPSVAYVEED    71  (A)
+d1h98a_:A   DQ---FYIHPEECIDCGACVPACPVNAIYPEEDVPEQWKSYIEKNRKLAG----------    76  (B)
+
+d3cnqp_:P   KLYRALSA-    79  (A)
+d1h98a_:A   --------L    77  (B)
+

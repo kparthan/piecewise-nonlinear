@@ -1,0 +1,16 @@
+(d1xmta_:A, d1v8ca1:A)
+Core Residues: 30
+Core RMSD: 2.675
+Raw Score: 27.272
+P-value: 0.5445
+Reference structure: d1xmta_:A
+
+d1v8ca1:A   ---PKVNLYATFRDLTGKSQLELPG-----------------------------------    22  (A)
+d1xmta_:A   PPKIVWNEG----------------KRRFETEDHEAFIEYKMRNNGKVMDLVHTYVPSFK    48  (B)
+
+d1v8ca1:A   ------ATVGEVLENLVRAYPALKEELFEGEGLAERVSVFLEGRDVRYLQ--GL---STP    71  (A)
+d1xmta_:A   RGLGLASHLCVAAFEHASSHSI-SI-----IPS-----------------CSYVSDTF--    83  (B)
+
+d1v8ca1:A   LSPGATLDLFPPVAGG----------------    87  (A)
+d1xmta_:A   ----------------LPRNPSWKPLIHSEVF    99  (B)
+

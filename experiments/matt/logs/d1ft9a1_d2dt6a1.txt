@@ -1,0 +1,13 @@
+(d2dt6a1:A, d1ft9a1:A)
+Core Residues: 22
+Core RMSD: 1.928
+Raw Score: 28.917
+P-value: 0.4426
+Reference structure: d2dt6a1:A
+
+d1ft9a1:A   DIKQRIAGFFIDHANTTGRQTGVIVSVDFTVEEIANLIGSSRQTTSTALNSLIKEGY--I   193  (A)
+d2dt6a1:A   ----------------------------------------EVRNIVDKTASFVARNGPEF    67  (B)
+
+d1ft9a1:A   SRQGRG--HYTIPNLVRLKAAA-------------------------------------   213  (A)
+d2dt6a1:A   EA----RIRQ------------NEINNPKFNFLNPNDPYHAYYRHKVSEFKEGKAQEPS   110  (B)
+

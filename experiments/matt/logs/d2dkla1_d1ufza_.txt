@@ -1,0 +1,13 @@
+(d1ufza_:A, d2dkla1:A)
+Core Residues: 46
+Core RMSD: 1.520
+Raw Score: 69.822
+P-value: 0.0391
+Reference structure: d1ufza_:A
+
+d2dkla1:A   GMKTSGK---------------------------QDEAWIMSRLIKQLTDMGFP----RE    36  (A)
+d1ufza_:A   -------GSSGSSGEYGYEDLRESSNSLLNHQLSEIDQARLYSCLDHMREV-LGDAVPDD    52  (B)
+
+d2dkla1:A   PAEEALKSNNMNLDQAMSALLEKKVDVDKRGLGVTDHNGMAAK------    79  (A)
+d1ufza_:A   ILTEAILKHKFDVQKALSVVLEQDG------------------SGPSSG    83  (B)
+

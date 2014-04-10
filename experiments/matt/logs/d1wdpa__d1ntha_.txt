@@ -1,0 +1,46 @@
+(d1ntha_:A, d1wdpa_:A)
+Core Residues: 213
+Core RMSD: 3.918
+Raw Score: 229.976
+P-value: 5.3166e-16
+Reference structure: d1ntha_:A
+
+d1wdpa_:A   SDSNML------------------------------------------------------     8  (A)
+d1ntha_:A   ------TFRKSFDCYDFYDRAKVGEKCTQDDWDLMKIPMKAMELKQKYGLDFKGEFIPTD    55  (B)
+
+d1wdpa_:A   ------------------------------------------------------------     8  (A)
+d1ntha_:A   KDMMEKLFKAGFEMLLECGIYCTDTHRIVKYTEDEIWDAINNVQKEFVLGTGRDAVNVRK   115  (B)
+
+d1wdpa_:A   -----LNYVPVYVMLPL----GVVNVDNVFE-DPDGLKEQLLQLRAAGVD-GVMVDVWW-    56  (A)
+d1ntha_:A   RSVGDKAKPI-VQGGPTGSPISE-------DVFMPVHMSYALE----KEVDTIVNG---V   160  (B)
+
+d1wdpa_:A   ---------------GIIELKGPKQYD--WRAYRSLLQLVQECGLT--LQAIM--SFHQC    95  (A)
+d1ntha_:A   MTSVRGKSPIPKSPYEVL---------AAKTETRLIKNACAMAGR-PGMGVKGPETSL--   208  (B)
+
+d1wdpa_:A   GGNVGDIVNIPIPQWVLDIGESNHDIFYTNRSGTRNKEYLTVGVDNEPIFHGRTA-IEIY   154  (A)
+d1ntha_:A   -------------------------------------------------------SAQGN   213  (B)
+
+d1wdpa_:A   SDYMKSFRENMSDF--LESGLI-IDIEVGLGPAGELRYPSYPQSQGWEFPGIGEFQCYDK   211  (A)
+d1ntha_:A   I-SA--DC-TG---GMT-----CTD-SHEVS----QLN----------------------   234  (B)
+
+d1wdpa_:A   YLKADFKAAVARAGHPEWELPDDAGKYNDVPESTGFFKSNGTYVTEKGKFFLTWY-SNKL   270  (A)
+d1ntha_:A   -------------------------------------------------------ELK-I   238  (B)
+
+d1wdpa_:A   LNHGDQILDEANKAFLGCKVKLAIKVSGIHWWYKVENHAAELTAGYYNL---NDR--DGY   325  (A)
+d1ntha_:A   DLDAISVIAHYKGNSD----IIMDEQMPIFG---------GY-----AGGIEE--TTIVD   278  (B)
+
+d1wdpa_:A   RPIARMLSR--HHAILNFT-------CLEMRDSEQPSDAKSGPQELVQQVLSGGWR-EDI   375  (A)
+d1ntha_:A   VATHINAVLMSSASWHLDGPVHIRWGST-NTR---------ETLMIAGWACATISEFTDI   328  (B)
+
+d1wdpa_:A   RVAGENAL--PRYDATAYNQIILNA----RPQGVNNNGPPKLSMFGVTY-L---------   419  (A)
+d1ntha_:A   LSGNQYYPCAGPCTEMCLLEASAQSITDTAS-----------GREILSGVASAKGVVTDK   377  (B)
+
+d1wdpa_:A   RLSDDLLQKSNF-NIFKKFVLKMHADQDYCANPQKYNHAITPLKPSAPKIPIEVLLEATK   478  (A)
+d1ntha_:A   TT----------GMEARMMGEVARA-----------------------------------   392  (B)
+
+d1wdpa_:A   PTLPFPW---------LPETDMK-------------------------------------   492  (A)
+d1ntha_:A   -------TAGVEISEVNVI----LDKLVSLYEKNYASAPAGKTFQECYDVKTVTPTEEYM   441  (B)
+
+d1wdpa_:A   ------V--DG------   495  (A)
+d1ntha_:A   QVYDGARKKLEDLGLVF   458  (B)
+

@@ -1,0 +1,19 @@
+(d1ca1a2:A, d1pdkb_:B)
+Core Residues: 46
+Core RMSD: 4.131
+Raw Score: 39.347
+P-value: 0.4402
+Reference structure: d1ca1a2:A
+
+d1pdkb_:B   LLDRPCH-----VSGD-SLNKHVVFKTRAS-RDFWYPPG--RSPTESFVIRLENCHATAV    59  (A)
+d1ca1a2:A   -------SVGKNV---KELVAYISTSGE--KD-------AGTDDYMYFGIKTK-------   283  (B)
+
+d1pdkb_:B   GKIVTLTFKGTEEAALPGHLKVTGVNAGRLGIALLDTDGSSLLKPGTSHNKGQGEKVTGN   119  (A)
+d1ca1a2:A   -----------------------------------------------------------D   284  (B)
+
+d1pdkb_:B   SLELPFGA-----YVVATPEALRTKSVVPG--DYEATATFELTYR---------------   157  (A)
+d1ca1a2:A   GKTQEWEMDNPGNDF---------------MTGSKDTYTFKL---KDENLKIDDIQNMWI   326  (B)
+
+d1pdkb_:B   --------------------------------------------   157  (A)
+d1ca1a2:A   RKRKYTAFPDAYKPENIKVIANGKVVVDKDINEWISGNSTYNIK   370  (B)
+

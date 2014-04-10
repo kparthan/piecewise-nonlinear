@@ -1,0 +1,58 @@
+<HTML><H1>Results</H1>
+<A HREF='summary.txt'>Parseable data</A>
+<BR><UL>
+<LI><a href="#mol1A">mol1A</a>
+</UL><HR>
+<TITLE>Dali: mol1A,                                                                       </TITLE><A name=mol1A>
+<h1>Query: <a name="mol1A">mol1A</a></h1>
+                                                                      
+<P><A NAME="summary">
+Select neighbours (check boxes) for viewing as multiple structural alignment or 3D superimposition. 
+The list of neighbours is sorted by Z-score. Similarities with a Z-score lower than 2 are spurious.
+Each neighbour has links to pairwise structural alignment with the query structure, 
+ and to the PDB format coordinate file where the neighbour
+is superimposed onto the query structure. 
+
+<form METHOD="POST" ACTION="http://ekhidna.biocenter.helsinki.fi/dali_server/qz-test" TARGET="_blank"/>
+<input TYPE="hidden" NAME="jobid" VALUE=test>
+<input TYPE="hidden" NAME="query_sequence" VALUE="KSILTSIVLKRNVTMLDIASTRMLGQVGFLAKVFSIFEELGISVDVVATSEVSISLTLDPSKLWSRELIQQELDHVVEELEKIAVVNLLKG"> 
+<input TYPE="hidden" NAME="query_dssp" VALUE="LLLLLLLLLLLLLLEEEEELHHHLLLLLHHHHHHHHHHHLLLLEEEEEEELLEEEEEELLHHHLLLLLLHHHHHHHHHHHLLLLEEEEELL"> 
+<input TYPE="hidden" NAME="cd1" VALUE=mol1A>
+<input TYPE="hidden" NAME="pdbresnos" VALUE="91  329   330   331   332   333   334   335   336   337   338   339   340   341   342   343   344   345   346   347   348   349   350   351   352   353   354   355   356   357   358   359   360   361   362   363   364   365   366   367   368   369   370   371   372   373   374   375   376   377   378   379   380   381   382   383   384   385   386   387   388   389   390   391   392   393   394   395   396   397   398   399   400   401   402   403   404   405   406   407   408   409   410   411   412   413   414   415   416   417   418   419 
+">
+<input TYPE="hidden" NAME="cd2list" VALUE="dummy">
+<input TYPE="submit" NAME="D1" VALUE="Structural Alignment"/> 
+<INPUT TYPE="CHECKBOX" NAME="expand_gaps" VALUE=1 CHECKED"/> Expand gaps 
+<input TYPE="submit" NAME="D3" VALUE="3D Superimposition (Jmol Applet)"/> 
+<input TYPE="reset" VALUE="Reset Selection"/>
+<h2>Summary</h2>
+<PRE>
+    No:  Chain   Z    rmsd lali nres  %id PDB  Description
+<INPUT TYPE="CHECKBOX" NAME="cd2list" VALUE="cd2=mol2X sequence=gkRLYAVAYDIPDDTRRVKLANLLKSYGERVQLSVFECyLDERLLEDLRRRARRLLdlgqdALRIYPVAGQVEVLGVGPLPE dssp=llEEEEEEEELLLHHHHHHHHHHHHLLEEEEELLEEEEeELHHHHHHHHHHHHHHLlllllEEEEEELLLLLLLLLLLLLLL qstarts=11,27,41,53,67,84 sstarts=2,14,25,33,39,61 lengths=12,11,8,5,17,7 u=0.484626,-0.777018,-0.401721,0.807418,0.574031,-0.136254,0.336472,-0.258325,0.905569 t=86,27,97">   <A HREF=#alignment-1>1</A>:  mol2-X  4.3  2.5   60    82    7 <A HREF="http://ekhidna.biocenter.helsinki.fi/dali_server/qz-test?jobid=test&pdbid=mol2&u=0.484626,-0.777018,-0.401721,0.807418,0.574031,-0.136254,0.336472,-0.258325,0.905569&t=86,27,97">PDB</A>                                                                       
+
+</form>
+</PRE>
+<A NAME="alignments">
+<h2>Pairwise Structural Alignments </h2>
+Notation: three-state secondary structure definitions by DSSP (reduced to H=helix, E=sheet, L=coil) are shown above the amino acid sequence. Structurally equivalent residues are in uppercase, structurally non-equivalent residues (e.g. in loops) are in lowercase. Amino acid identities are marked by vertical bars.
+<a name=alignment-1><h3> No 1: Query=mol1A Sbjct=mol2X Z-score=4.3</h3>
+
+<A HREF="#mol1A">back to top</A>
+<PRE>
+DSSP  lllllllllllLLLEEEEELHHHllllLHHHHHHHHHHhllLLEEEEEEelleEEEEEll
+Query ksiltsivlkrNVTMLDIASTRMlgqvGFLAKVFSIFEelgISVDVVATsevsISLTLdp   60
+ident                                |              |             
+Sbjct ---------gkRLYAVAYDIPDD----TRRVKLANLLK---SYGERVQL----SVFEC--   38
+DSSP  ---------llEEEEEEEELLLH----HHHHHHHHHHH---LLEEEEEL----LEEEE--
+
+
+DSSP  hhhllllLLHHHHHHHHHHHLLLL-----EEEEELL--------------
+Query sklwsreLIQQELDHVVEELEKIA-----VVNLLKG--------------   91
+ident        |    |                                     
+Sbjct ------yLDERLLEDLRRRARRLLdlgqdALRIYPVagqvevlgvgplpe   82
+DSSP  ------eELHHHHHHHHHHHHHHLlllllEEEEEELllllllllllllll
+
+
+</PRE>
+</PRE>
+<HR>

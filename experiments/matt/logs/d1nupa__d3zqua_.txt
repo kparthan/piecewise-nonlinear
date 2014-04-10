@@ -1,0 +1,25 @@
+(d3zqua_:A, d1nupa_:A)
+Core Residues: 103
+Core RMSD: 3.745
+Raw Score: 59.924
+P-value: 0.1144
+Reference structure: d3zqua_:A
+
+d1nupa_:A   SRI-PVVLLACGSFNPI-------TNMHLRMFEVARDHLHQTGMYQVIQ-------GIIS    47  (A)
+d3zqua_:A   ---MSGPERITL-----AMTGASGAQYGLRLL-----------------DCLVQEEREVH    35  (B)
+
+d1nupa_:A   PVNDTYGKKDL------------------AASHHRVAMARLALQTSDWI---RVDPWESE    86  (A)
+d3zqua_:A   FL---------ISKAAQLVMATETDVALPAKPQAMQAFLTEYCGA----AAGQIRVFG--    80  (B)
+
+d1nupa_:A   QAQ-WMET----VKVLR-HHHSKLLAVPE--LKLLCGADVLKTF-QTPNL----WKDA--   151  (A)
+d3zqua_:A   ---QND--WMAPPA-SGSSAP--------NAMVICP---CSTGTLSA---VATGAC--NN   118  (B)
+
+d1nupa_:A   ------HIQEIVEK-FGLVCVGRVSHDP---KG-YIAESPILR-MHQHNIHLAKEP----   195  (A)
+d3zqua_:A   LIERAAD--VALKERRPLVLVPREAPF-SSIHLENML----KLSNL--GAVILPAAPGFY   169  (B)
+
+d1nupa_:A   --------VQNEISATYIRRALGQGQSVKYLIPDAVITYIKDHGLYTK------------   235  (A)
+d3zqua_:A   HQPQSVEDL---------------------------------------VDFVVARILNTL   190  (B)
+
+d1nupa_:A   -----------------   235  (A)
+d3zqua_:A   GIPQDMLPRWGEQHLVS   207  (B)
+

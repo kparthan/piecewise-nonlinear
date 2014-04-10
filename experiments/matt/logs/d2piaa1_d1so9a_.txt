@@ -1,0 +1,19 @@
+(d1so9a_:A, d2piaa1:A)
+Core Residues: 42
+Core RMSD: 3.657
+Raw Score: 33.203
+P-value: 0.4511
+Reference structure: d1so9a_:A
+
+d2piaa1:A   TTPQEDGFL-------------------------RLKIASKEKIA--R------DIWSFE    27  (A)
+d1so9a_:A   ---------VEQASDLILDEKIKVTFDANVAAGLPWEFVPVQR--DIDVRIGETVQIMYR    69  (B)
+
+d2piaa1:A   LTDPQG----------------------------------APLPPFEAGANLTVAVPNGS    53  (A)
+d1so9a_:A   AKNLASTPTTGQATFNVTPMAAGAYFNKVQCFCFTETTLEPG------------------   111  (B)
+
+d2piaa1:A   RRTYSLCNDSQERNRYVIAVKRDSNGRGGSISFI----------------DDTSEGDAVE    97  (A)
+d1so9a_:A   -------------EEMEMPVVFFVD---------PEIVKPVETQGIKTLTLSYTFY----   145  (B)
+
+d2piaa1:A   VSLPRN------   103  (A)
+d1so9a_:A   ------PREPSK   151  (B)
+

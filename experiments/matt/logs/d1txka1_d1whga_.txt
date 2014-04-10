@@ -1,0 +1,19 @@
+(d1whga_:A, d1txka1:A)
+Core Residues: 34
+Core RMSD: 7.262
+Raw Score: 25.052
+P-value: 0.9943
+Reference structure: d1whga_:A
+
+d1txka1:A   PDNAWVQQTRRSTGDVKQSNLIRQ-PDGTIAFVVDFT--------------------GAE   435  (A)
+d1whga_:A   ------------------------GSSGSS-------GNEELRAQQEAEAAQRLSEEKAQ    29  (B)
+
+d1txka1:A   XKKLPEDTPVTAQT-----------------SIGDNG--------------------EIV   458  (A)
+d1whga_:A   ASAISVGSRCEVRAPDHSLRRGTVMYVGLTDFK----PGYWVGVRYDEPLGKNDGSVNGK    85  (B)
+
+d1txka1:A   ESTVRYNPVTKGWRLVXRVKVKDAKKTTEXRA--------------ALVNADQTLSETWS   504  (A)
+d1whga_:A   RY------------------------------FECQAKYGAFVKPSAVTVG---------   106  (B)
+
+d1txka1:A   YQLPANE-------   511  (A)
+d1whga_:A   -------DSGPSSG   113  (B)
+

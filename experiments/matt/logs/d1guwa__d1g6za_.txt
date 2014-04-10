@@ -1,0 +1,13 @@
+(d1g6za_:A, d1guwa_:A)
+Core Residues: 46
+Core RMSD: 2.296
+Raw Score: 45.930
+P-value: 0.1851
+Reference structure: d1g6za_:A
+
+d1guwa_:A   HMVEEVLEEEEEEYVV----------E-KVLDRRVVKGK-----VEYLLKWKG--FSDED    49  (A)
+d1g6za_:A   ----------------ISSPKQEEYEVERIVDEKLD---RNGAVKLYRIRW--LNYSSRS    38  (B)
+
+d1guwa_:A   NTWEPEENLD-CPDLIAEFLQSQKTA-----HETDKS    80  (A)
+d1g6za_:A   DTWEPPENLSGCSAVLAEWKRRKR--RLKGSNS----    69  (B)
+

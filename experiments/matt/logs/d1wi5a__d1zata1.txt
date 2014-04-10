@@ -1,0 +1,19 @@
+(d1zata1:A, d1wi5a_:A)
+Core Residues: 43
+Core RMSD: 3.839
+Raw Score: 28.019
+P-value: 0.5973
+Reference structure: d1zata1:A
+
+d1wi5a_:A   GSSGSSGKNVNRVLSA-------------------------------------EALK-PG   200  (A)
+d1zata1:A   ----------------LIEDTYIEVDLENQHMWYYKDGKVALETDIVSGKPTTP---TPA   379  (B)
+
+d1wi5a_:A   MLLTGT-VSSLEDH---------------GYLVDIG-VDG--------------------   223  (A)
+d1zata1:A   GVFYVWNKE-ED--ATLKGTNGTPYESPVNYWMPIDWTG-VGIHDSDWQPEYGGDLWKTR   437  (B)
+
+d1wi5a_:A   ---TRAFLPLLKAQEYIRQKNKGAKLKVGQ-YLNCIVEKVKGNGGVVSLSVGHSEVSTAI   279  (A)
+d1zata1:A   GSHGCINTPPSVMKELFGMV----------EKG--------------------TP-----   462  (B)
+
+d1wi5a_:A   ATEQQSWNLNNLSGPSSG----   297  (A)
+d1zata1:A   ------------------VLVF   466  (B)
+

@@ -96,7 +96,7 @@ void Lengths::save(string &controls)
  */
 void Lengths::save_dssp()
 {
-  string file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/lengths/profiles/"
+  string file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/lengths/"
                      + name + ".profile";
   ofstream log(file_name.c_str());
   for (int i=0; i<lengths.size(); i++) {
@@ -140,7 +140,7 @@ void Lengths::load(string &file, string &controls)
 void Lengths::load_dssp(string &file)
 {
   name = file;
-  string file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/lengths/profiles/"
+  string file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/lengths/"
                      + name + ".profile";
   ifstream log(file_name.c_str());
   string line;

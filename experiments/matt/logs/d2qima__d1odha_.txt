@@ -1,0 +1,22 @@
+(d1odha_:A, d2qima_:A)
+Core Residues: 64
+Core RMSD: 6.483
+Raw Score: 51.937
+P-value: 0.7888
+Reference structure: d1odha_:A
+
+d2qima_:A   GVFT--------------------------FQDEYTSTI--A--PAKLYKALVTDADIII    30  (A)
+d1odha_:A   ----LSWDINDVKLPQNVKTTDWFQEWPDSYV-KHIYSSDDRNAQ--RH-----------    55  (B)
+
+d2qima_:A   PKAVETIQSVEIVEGNGGPGTIKKLTFIEGGESKYV----LHKIEAI--DEANLGYNYSI    84  (A)
+d1odha_:A   ------------------------------------LSSWAMRNTNNHNS--R-ILKKSC    76  (B)
+
+d2qima_:A   VG---------------------------------------------GVGLPDT---IE-    95  (A)
+d1odha_:A   L-GVVVCSRDCSTEEGRKIYLRPAICDKARQKQQRKSCPNCNGPLKLIP-----CRGHGG   130  (B)
+
+d2qima_:A   -KISFETKLVEGANGGSIGKVTIKIETKGDAQPNEEEGKAAKA---RGD-AFFKAI-ESY   149  (A)
+d1odha_:A   FPVTNFWRHDGR-----FIFFQSKG------------E--H--DHPR--PETKLE-AEAR   166  (B)
+
+d2qima_:A   LSAHPDYN---   157  (A)
+d1odha_:A   RA------MKK   171  (B)
+

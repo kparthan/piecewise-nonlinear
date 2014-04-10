@@ -1,0 +1,13 @@
+(d1smyf1:F, d1l0oc_:C)
+Core Residues: 51
+Core RMSD: 1.727
+Raw Score: 85.979
+P-value: 0.0210
+Reference structure: d1smyf1:F
+
+d1l0oc_:C   DGTVKV---SRSLKEMGNKIRKAKDELSKTRGRAPTVTEIADHLG--ISPEDVVLAQEAV   156  (A)
+d1smyf1:F   ------IRIPVHMVETINKLSRTARQLQQELGREPTYEEIAEAMGPGWDAKRVEETLKIA   311  (B)
+
+d1l0oc_:C   RL-----   158  (A)
+d1smyf1:F   QEPVSLE   318  (B)
+

@@ -11,9 +11,11 @@ line = fr.readline()
 line_count = 0;
 
 # dali experiment scripts
-#scop_path = '/home/pkas7/Research/SCOP/pdbstyle-1.75B/'
-#fasta_path = '/home/pkas7/Research/Work/piecewise-nonlinear/experiments/dali/fasta/'
-#cmd = '/home/pkas7/Research/Work/pdb-utils/pdb-superimpose'
+scop_path = '/home/parthan/Research/SCOP/pdbstyle-1.75B/'
+dali_dir = '/home/parthan/Research/Work/piecewise-nonlinear/experiments/dali/'
+fasta_path = '/home/parthan/Research/Work/piecewise-nonlinear/experiments/dali/fasta2/'
+#cmd = '/home/parthan/Research/Work/pdb-utils/pdb-superimpose'
+#cmd = '/home/parthan/Research/Work/piecewise-nonlinear/experiments/dali/dali4'
 #while line != '':
 #  x = line.strip('\n')
 #  y = line.split()
@@ -24,16 +26,50 @@ line_count = 0;
 #    structure = y[i]
 #    structure_dir = structure[2:4] + '/'
 #    structure_path = scop_path + structure_dir + structure
-#    fasta = fasta_path + pivot[:-4] + '_' + structure[:-4] + '-dali.fasta'
-#    current = cmd + ' -s ' + pivot_path + ' -t ' + structure_path + ' -a ' + fasta
+#    alignment = pivot[:-4] + '_' + structure[:-4]
+#    fasta = fasta_path + alignment + '-dali.fasta'
+#    #current = cmd + ' -s ' + pivot_path + ' -t ' + structure_path + ' -a ' + fasta
+#    current = cmd + ' ' + pivot_path + ' ' + structure_path + ' ' + fasta
 #    fw.write(current+'\n')
+#    cmd2 = 'mv index.html ' + dali_dir + 'html/' + alignment + '.html'
+#    fw.write(cmd2+'\n')
 #    fw.write('echo $line_number\n')
 #    fw.write('line_number=$((line_number+1))\n')
 #  line_count += 1
 #  line = fr.readline()
 
+# matt experiment scripts
+matt_dir = '/home/parthan/Research/Work/piecewise-nonlinear/experiments/matt/'
+fasta_path = '/home/parthan/Research/Work/piecewise-nonlinear/experiments/matt/fasta/'
+logs_path = '/home/parthan/Research/Work/piecewise-nonlinear/experiments/matt/logs/'
+cmd = '/home/parthan/Research/Work/piecewise-nonlinear/experiments/matt/Matt-src-1.00/bin/Matt'
+while line != '':
+  x = line.strip('\n')
+  y = line.split()
+  pivot = y[0]
+  pivot_dir = pivot[2:4] + '/'
+  pivot_path = scop_path + pivot_dir + pivot
+  for i in range(1,6):
+    structure = y[i]
+    structure_dir = structure[2:4] + '/'
+    structure_path = scop_path + structure_dir + structure
+    alignment = pivot[:-4] + '_' + structure[:-4]
+    fasta = fasta_path + alignment + '-matt.fasta'
+    current = cmd + ' ' + pivot_path + ' ' + structure_path + ' -o '  + alignment
+    fw.write(current+'\n')
+    cmd3 = 'mv ' + alignment + '.fasta ' + fasta_path
+    fw.write(cmd3+'\n')
+    cmd3 = 'mv ' + alignment + '.txt ' + logs_path 
+    fw.write(cmd3+'\n')
+    cmd4 = 'rm ' + alignment + '.pdb ' + alignment + '.spt'
+    fw.write(cmd4+'\n')
+    fw.write('echo $line_number\n')
+    fw.write('line_number=$((line_number+1))\n')
+  line_count += 1
+  line = fr.readline()
+
 # sst experiment scripts
-#scop_path = '/home/pkas7/Research/SCOP/pdbstyle-1.75B/'
+#scop_path = '/home/parthan/Research/SCOP/pdbstyle-1.75B/'
 #cmd = './sst-script.sh --file '
 #while line != '':
 #  x = line.strip('\n')
@@ -83,9 +119,9 @@ line_count = 0;
 
 #cmd = './piecewise-nonlinear-fit --structure protein --segmentation bezier --controls 0 1 2 --constrain sigma length --profile knot_invariants --method specific '
 
-cmd = './piecewise-nonlinear-fit --structure protein --segmentation dssp --profile angles_lengths --type affine --score anglen --go -20 --ge -5 '
-#cmd = './piecewise-nonlinear-fit --structure protein --segmentation dssp --profile angles_lengths '
+#cmd = './piecewise-nonlinear-fit --structure protein --segmentation dssp --profile angles_lengths --type affine --score anglen --go -20 --ge -5 '
 # for single structure
+#cmd = './piecewise-nonlinear-fit --structure protein --segmentation dssp --profile angles_lengths '
 #cmd += '--scopid '
 #while line != '':
 #  x = line.strip('\n')
@@ -101,20 +137,20 @@ cmd = './piecewise-nonlinear-fit --structure protein --segmentation dssp --profi
 #  line = fr.readline()
 
 # comparison script
-cmd += '--record --compare --scopids '
-while line != '':
-  x = line.strip('\n')
-  y = line.split()
-  current = cmd
-  for i in range(0,6):
-    structure = y[i]
-    structure_id = y[i][:-4]
-    current += structure_id + " "
-  fw.write(current+'\n')
-  fw.write('echo $line_number\n')
-  fw.write('line_number=$((line_number+1))\n')
-  line_count += 1
-  line = fr.readline()
+#cmd += '--record --compare --scopids '
+#while line != '':
+#  x = line.strip('\n')
+#  y = line.split()
+#  current = cmd
+#  for i in range(0,6):
+#    structure = y[i]
+#    structure_id = y[i][:-4]
+#    current += structure_id + " "
+#  fw.write(current+'\n')
+#  fw.write('echo $line_number\n')
+#  fw.write('line_number=$((line_number+1))\n')
+#  line_count += 1
+#  line = fr.readline()
 
 fw.write('STOPM=`date -u "+%s"`\n')
 fw.write('RUNTIMEM=`expr $STOPM - $STARTM`\n')

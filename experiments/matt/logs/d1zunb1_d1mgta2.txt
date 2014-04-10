@@ -1,0 +1,16 @@
+(d1mgta2:A, d1zunb1:B)
+Core Residues: 29
+Core RMSD: 2.508
+Raw Score: 19.121
+P-value: 0.6197
+Reference structure: d1mgta2:A
+
+d1zunb1:B   DRNYTDLRFPV-QYVNRPN---LNFRGFAGTLASGIVHKGDEIVVLPSGKSSRVKSIVTF   293  (A)
+d1mgta2:A   -----------MLSVEKFRVGERVVWIGVIF-----------------------------    20  (B)
+
+d1zunb1:B   EGELEQAGPG---QAVTLTXED--EID--ISRGDL---LV--HADNVP------------   329  (A)
+d1mgta2:A   ----------SGRVQGIAFA--FDRG-TLM-----KRIHDLAE-----HLGKRGVSISLD    57  (B)
+
+d1zunb1:B   -------------------------------   329  (A)
+d1mgta2:A   VQPSDYPEKVFKVLIGELDNASFLRELSFEG    88  (B)
+

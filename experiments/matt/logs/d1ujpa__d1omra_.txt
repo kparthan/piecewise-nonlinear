@@ -1,0 +1,28 @@
+(d1omra_:A, d1ujpa_:A)
+Core Residues: 33
+Core RMSD: 4.098
+Raw Score: 42.284
+P-value: 0.8353
+Reference structure: d1omra_:A
+
+d1ujpa_:A   MTTLEAFAKARSEGRAALIPYLT-----------AGFP--------S--REGFLQAVEEV    39  (A)
+d1omra_:A   -----------------------GNSKSGALSKEI---LEELQLNTKFTEEELSSWYQSF    35  (B)
+
+d1ujpa_:A   LPYADLLEIGLPYSDGPVIQRASELALRKGMSVQGALELVREVRALTEKPLFLMTYLNPV   103  (A)
+d1omra_:A   LKECPSGR----------------------------------------------------    43  (B)
+
+d1ujpa_:A   LAWGPERFFGLFKQAGATGVILPDLPPDEDPGLVRLAQEIGLETVFLLAPTSTDARIATV   163  (A)
+d1omra_:A   ------------------------------------------------------------    43  (B)
+
+d1ujpa_:A   VRHATGFVYAVSVEVKDLVRRIKARTALPVAV--GFGVSGKATAAQAAVADGVVVGSALV   233  (A)
+d1omra_:A   --------------------------------ITRQ------------------EFQTIY    53  (B)
+
+d1ujpa_:A   RALEEGRSLAPLLQEIRQGLQRLPLP----------------------------------   271  (A)
+d1omra_:A   SKFF----------------------PEADPKAYAQHVFRSFDANSDGTLDFKEYVIALH    91  (B)
+
+d1ujpa_:A   ------------------------------------------------------------   271  (A)
+d1omra_:A   MTSAGKTNQKLEWAFSLYDVDGNGTISKNEVLEIVTAIFKMISPEDTKHLPEDENTPEKR   151  (B)
+
+d1ujpa_:A   ---------------------------------------------------   271  (A)
+d1omra_:A   AEKIWGFFGKKDDDKLTEKEFIEGTLANKEILRLIQFEPQKVKEKLKEKKL   202  (B)
+

@@ -1,0 +1,19 @@
+(d2o3bb_:B, d1hxma1:A)
+Core Residues: 50
+Core RMSD: 3.867
+Raw Score: 32.331
+P-value: 0.4052
+Reference structure: d2o3bb_:B
+
+d1hxma1:A   ----AI--ELVP----------EHQTV--PVSIGVPA-TLRCSMKGE-------------    28  (A)
+d2o3bb_:B   STKTNSEIL---EQLKQASDGLL----FMSE------SEYPFEV---FLWEGSAPPVTHE    44  (B)
+
+d1hxma1:A   -------------------------------------------------AI--GNYYINW    37  (A)
+d2o3bb_:B   IVLQQTGHGQDAPFKVVDIDSFFSRATTPQDWYEDEENAVVAKFQKLLEVIKSNLKNPQV   104  (B)
+
+d1hxma1:A   YRKTQGNTMTFIYREKDIYGPGFKDNFQGDIDIAKNLAVLKILAPSERDE-GSYYCACDT    96  (A)
+d2o3bb_:B   YRLG--------------------------------------------EVELDVYVIGET   120  (B)
+
+d1hxma1:A   LGMGGEYT-DKLIFGKGTRVTVEPR   120  (A)
+d2o3bb_:B   P-------AGNLAGIST-KVVET--   135  (B)
+

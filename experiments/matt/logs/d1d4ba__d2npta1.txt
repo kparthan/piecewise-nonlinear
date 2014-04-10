@@ -1,0 +1,16 @@
+(d2npta1:A, d1d4ba_:A)
+Core Residues: 62
+Core RMSD: 3.546
+Raw Score: 47.756
+P-value: 0.1845
+Reference structure: d2npta1:A
+
+d1d4ba_:A   MEYLSALNPSDLLRSVSNISSEFG--R-RVWTSAPPPQ---RPFRVCDHK---RTIRKGL    51  (A)
+d2npta1:A   ------------------------MALGPF--------PAMQVLVIRIKIPNSGAVDWT-    32  (B)
+
+d1d4ba_:A   TAATRQELLAKALETLLLNGV--------LTLVLEE---DGTAVDSEDFFQLL--E----    94  (A)
+d2npta1:A   VHSQL--LFRDVLDVIG----QVLPEATTTAFEYEDEDGDRITVRSDEEMKAMLSYYYST    88  (B)
+
+d1d4ba_:A   -------------DDTCLMVLQSGQSWSPTRSGVLHHHHHH   122  (A)
+d2npta1:A   VMEQQVNGQLIEPLQIFPRA---------------------   108  (B)
+

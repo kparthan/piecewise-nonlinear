@@ -1,0 +1,16 @@
+(d2vzsa3:A, d3brda1:A)
+Core Residues: 63
+Core RMSD: 2.933
+Raw Score: 42.229
+P-value: 0.2312
+Reference structure: d2vzsa3:A
+
+d3brda1:A   DKAEYRFFEAMGQVANPIS-PCPVVGSLEVDGHGEASRVELHGRDF--------KPNLKV   592  (A)
+d2vzsa3:A   -------------------PLHIQYS-HDN--------RSVVVIN-QTSNAVSGL-TATT   704  (B)
+
+d3brda1:A   WFG-----ATPVETTFRS-----------EESL-HCSIPPVSQVRNEQTHWMFTNRTTGD   635  (A)
+d2vzsa3:A   KLYNLDGTEKYSNT----KTGLSVGALGAKATAVTVPAVSG--L---------------S   743  (B)
+
+d3brda1:A   VEVPISLVRDDG------VV--YSSGLTFSYKS------   660  (A)
+d2vzsa3:A   TTYLAKNVL---TDSSGKE-VSRNV-YWLSTKADTLNWG   777  (B)
+

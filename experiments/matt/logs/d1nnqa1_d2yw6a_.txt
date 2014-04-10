@@ -1,0 +1,19 @@
+(d2yw6a_:A, d1nnqa1:A)
+Core Residues: 57
+Core RMSD: 1.087
+Raw Score: 120.961
+P-value: 1.9588e-03
+Reference structure: d2yw6a_:A
+
+d1nnqa1:A   VVKRT-------------------------------------------------------     6  (A)
+d2yw6a_:A   -----DKKASDVADLLQKQLSTYNDLHLTLKHVHWNVVGPNFIGVHEMIDPQVELVRGYA    65  (B)
+
+d1nnqa1:A   -----------------------------------MTKKFLEEAFAGESMAHMRYLIFAE    31  (A)
+d2yw6a_:A   DEVAERIATLGKSPKGTPGAIIKDRTWDDYSVERDTVQAHLAALDLVYNGVIEDTRKSIE   125  (B)
+
+d1nnqa1:A   KAEQEGFPNIAKLFRAIAYAEFVHAKNHFIALGKLGKTPENLQMGIEGETFEVEEMYPVY    91  (A)
+d2yw6a_:A   KLEDL-DLVSQDLLIAHAGELEKFQWFVRAHLE---------------------------   157  (B)
+
+d1nnqa1:A   NKAAEFQGEKEAVRTTHYALEAEKIHAELYRKAKEKAEKGEDI-   134  (A)
+d2yw6a_:A   -------------------------------------------S   158  (B)
+

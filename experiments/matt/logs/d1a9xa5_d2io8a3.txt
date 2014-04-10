@@ -1,0 +1,34 @@
+(d2io8a3:A, d1a9xa5:A)
+Core Residues: 84
+Core RMSD: 7.081
+Raw Score: 101.655
+P-value: 0.0895
+Reference structure: d2io8a3:A
+
+d1a9xa5:A   DRRRFDVAMKKIGLETARSGIAHTMEEALAVAADVGFPCIIRPSFTMGGSGGGIAYNREE   187  (A)
+d2io8a3:A   ------------------------------------------------------------   201  (B)
+
+d1a9xa5:A   FEEICARGLDLSPTKELLIDESLIGWKEYEMEVVRDKNDNCIIVCSIENFDAMGIHTGDS   247  (A)
+d2io8a3:A   ------------------------------------------------------------   201  (B)
+
+d1a9xa5:A   ITVAPA----------Q------------------------------------------T   255  (A)
+d2io8a3:A   ------QPEIAGELLKISGARLENKGQFDGKWLDEKDPLQNAYVQANGQVINQDPYHYYT   254  (B)
+
+d1a9xa5:A   LTDKEYQIMRNASMAVLREIGVET------------------------------------   279  (A)
+d2io8a3:A   ITESAEQELIKATNELHLMYL---HATDKVLKDDNLLALFDIPKILWPRLRLSWQRRRHH   311  (B)
+
+d1a9xa5:A   -GGSNVQFAVNPKNGRLIVIEMNPRVSRSSALASKA--TGFP-----------------I   319  (A)
+d2io8a3:A   MITGRMDFCMD--ERGLKVYEYNADSASCHTEAG--LILE--RWAEQGYKGNGFNPAEGL   365  (B)
+
+d1a9xa5:A   AKVAAKLAVGY-------------------------------------------------   330  (A)
+d2io8a3:A   INELAGAWKH-SRANKAILPILWSLFPHHRYLLDTDFTVNDELVKTGYAVKPIAGRCGSN   542  (B)
+
+d1a9xa5:A   ----------------------------------------------TLDELMNDITGGRT   344  (A)
+d2io8a3:A   IDLVSHHEEVLDKTSGKFAEQKNIYQQLWCLPKVDGKYIQVCTFTVGGNYGGTCL-----   597  (B)
+
+d1a9xa5:A   PASFEPSID-----YVVTKIPRFNFEKFAGANDRLTTQMKSVGEVMAIGRTQQESLQKAL   399  (A)
+d2io8a3:A   ---------RGDESLVIKK------------------------ESD--------------   610  (B)
+
+d1a9xa5:A   RGL-----   402  (A)
+d2io8a3:A   ---IEPLI   615  (B)
+

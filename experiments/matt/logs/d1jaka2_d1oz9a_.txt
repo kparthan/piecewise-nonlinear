@@ -1,0 +1,19 @@
+(d1oz9a_:A, d1jaka2:A)
+Core Residues: 70
+Core RMSD: 3.033
+Raw Score: 78.707
+P-value: 0.0700
+Reference structure: d1oz9a_:A
+
+d1jaka2:A   DRKAPVRPTPLDRVIPAPASVDPGGAPYRITRGTHIRVDD----SREARRVGDYLADLLR    63  (A)
+d1oz9a_:A   --------------------------------KNRVLVKLKKRKVR-KDKIEKWAELALS    34  (B)
+
+d1jaka2:A   PATGYRLPVTAHGHG--GIRLRLA---GGP------------YGDEGYRLDSGPA-----   101  (A)
+d1oz9a_:A   ALGLN----------NVELSVYITDDQEIRELNKTYRKKDKPTD---VLSFPMGEEFGGY    81  (B)
+
+d1jaka2:A   -G-VTITARK-----------------AA-GLFHGVQTLRQLLPPAVEKDSAQPGPWLVA   141  (A)
+d1oz9a_:A   KILGDVVISQDTAERQARELGHSLEEEVKRLIVHGIVHLLGY------------------   123  (B)
+
+d1jaka2:A   GGTIEDTPR-------------------------   150  (A)
+d1oz9a_:A   ---------DHEKGGEEEKKFRELENYVLSKLSK   148  (B)
+

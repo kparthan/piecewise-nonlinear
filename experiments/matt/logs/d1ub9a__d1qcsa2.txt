@@ -1,0 +1,16 @@
+(d1qcsa2:A, d1ub9a_:A)
+Core Residues: 39
+Core RMSD: 3.766
+Raw Score: 28.145
+P-value: 0.6123
+Reference structure: d1qcsa2:A
+
+d1ub9a_:A   MEELKEIMKSHILG-----------------------------NPVRLGIMIFLLPR-RK    30  (A)
+d1qcsa2:A   --------------DKAKQCIGTXTIEIDFLQKKNIDSNPYDTDKXAAEFIQQFN--NQA   129  (B)
+
+d1ub9a_:A   APFSQIQKV----------LDLTPGNLDSHIRVL--ERNGLVKTYKVIADRP--------    70  (A)
+d1qcsa2:A   FSVGQ--QLVFSFNDKLFGLLVKDI---------EAXD--------------PSILKRQK   171  (B)
+
+d1ub9a_:A   RTVVEITDFGMEEAKRFLSSLKAVIDGLDL--------------------   100  (A)
+d1qcsa2:A   IEVGLVVGNS--------------------QVAFEKAENSSLNLIGKAKT   201  (B)
+

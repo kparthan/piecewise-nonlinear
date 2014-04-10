@@ -1,0 +1,16 @@
+(d2ayda_:A, d1v8ca1:A)
+Core Residues: 37
+Core RMSD: 3.267
+Raw Score: 26.858
+P-value: 0.7330
+Reference structure: d2ayda_:A
+
+d1v8ca1:A   PKVNLYATFRDLTGKSQLELPGATVGEVLENLVRAYPALKEELFEGEGLAER--------    52  (A)
+d2ayda_:A   ------SR-------IVVHTQTLFDI--VND-G------YRW-------RKYGQKSVKGS   323  (B)
+
+d1v8ca1:A   -----------------VSVFLEGRDVRYLQGLSTPLSP--G-ATLDLF-PPVAGG----    87  (A)
+d2ayda_:A   PYPRSYYRCSSPGCPVKKHVERS----------------SHDTKLLITTYE-----GKHD   362  (B)
+
+d1v8ca1:A   ------    87  (A)
+d2ayda_:A   HDMPPG   368  (B)
+

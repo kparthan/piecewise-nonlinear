@@ -1,0 +1,19 @@
+(d2aqma_:A, d1xl4a1:A)
+Core Residues: 79
+Core RMSD: 3.137
+Raw Score: 47.742
+P-value: 0.0223
+Reference structure: d2aqma_:A
+
+d1xl4a1:A   TAGV-----------------LFSSRMVIS-DFE-GKPTLMMRLANLRIEQII--EADVH   177  (A)
+d2aqma_:A   ----ESTTVKMYEALPTGPGKEV-GTVVISEA--PGGLHFKVNMEK-------LTPGYHG    46  (B)
+
+d1xl4a1:A   LVLVRSEISQEGMVF------------------RRF------------------HDLTLT   201  (A)
+d2aqma_:A   FHVHEN---------PSCAPGEKDGKIVPALAAGGHYDPGNTHHHLGPEGDGHMG--DLP    95  (B)
+
+d1xl4a1:A   RSRSPIFSLSWTVMHPIDHHSPIYGETDETLRNSHSEFLVLFTGHHEAFAQNVHA-----   256  (A)
+d2aqma_:A   RLSANADG-KVSETVVAPH----LKK-LAEIK--QRSLMVHV-------------GGDNY   134  (B)
+
+d1xl4a1:A   -------------RHAYSCDEIIWGGHFVDVFTTLPDGRRALDLGKFHEIAQHHHH   299  (A)
+d2aqma_:A   SDKPEPLGGGGARFACGVIE------------------------------------   154  (B)
+

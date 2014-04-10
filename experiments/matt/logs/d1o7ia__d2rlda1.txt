@@ -1,0 +1,19 @@
+(d2rlda1:A, d1o7ia_:A)
+Core Residues: 28
+Core RMSD: 5.593
+Raw Score: 6.555
+P-value: 0.9914
+Reference structure: d2rlda1:A
+
+d1o7ia_:A   MEEKVGNLK-----PNMESVNVTVRVL---------------------------------    22  (A)
+d2rlda1:A   --XREDXK-DNVVKDK-----------SLEFAVRIVNLYKFLVNEQKEFVXSKQILRSGT    46  (B)
+
+d1o7ia_:A   ------------EA---SE--A--RQI-QTKNGVRTISEAIVGDETGRVKLTLW------    56  (A)
+d2rlda1:A   SIGANIREAEQSR-ADFINKLNIALKEANETEY---------------------WLELLI    86  (B)
+
+d1o7ia_:A   --------------------GKHAGSI-KEGQVVKIENAWTTAFKGQVQLNAGSKTKIAE    95  (A)
+d2rlda1:A   RTEYITREQYESINNDSTEINKLLISIIK-------------------------------   115  (B)
+
+d1o7ia_:A   ASEDGFPESSQIPENTPTAP   115  (A)
+d2rlda1:A   --------------------   115  (B)
+

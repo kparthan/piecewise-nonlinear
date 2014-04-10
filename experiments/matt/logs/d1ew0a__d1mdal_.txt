@@ -1,0 +1,19 @@
+(d1mdal_:L, d1ew0a_:A)
+Core Residues: 42
+Core RMSD: 3.001
+Raw Score: 37.319
+P-value: 0.5464
+Reference structure: d1mdal_:L
+
+d1ew0a_:A   GSHMLETEDVVRARDAHLRSILDTVPDATVVSATDGTIVSFNAAAVRQFGYAEEEVIGQN   181  (A)
+d1mdal_:L   ------------------------------------------------------------     7  (B)
+
+d1ew0a_:A   LRILMPE--------PYRHEHDGYLQRYMATGEKR------II-----------------   210  (A)
+d1mdal_:L   -------VDPRAKWQPQDNDIQAC-----------DYWRHCSIAGNICDCSAGSLTSCPP    48  (B)
+
+d1ew0a_:A   --------GIDRVVSGQRKDG--STFPMKLAVGEMRSGGE--------------------   240  (A)
+d1mdal_:L   GTLVASGSX-VGSCYN-----PPDPNKYITAYRDCCG-Y-NVSGRCACLNTEGELPVYNK   100  (B)
+
+d1ew0a_:A   -----------------RFFTGF-IRDLT   251  (A)
+d1mdal_:L   DANDIIWCFGGEDGMTYHCSISPVSGA--   127  (B)
+

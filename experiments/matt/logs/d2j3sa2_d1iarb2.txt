@@ -1,0 +1,13 @@
+(d1iarb2:B, d2j3sa2:A)
+Core Residues: 51
+Core RMSD: 2.171
+Raw Score: 38.845
+P-value: 0.2700
+Reference structure: d1iarb2:B
+
+d2j3sa2:A   RAPSV-----------ANVGSHC---DL----------IQDMTAQVTSP------SGKTH  2186  (A)
+d1iarb2:B   -----KPRAPGNLTVHDT-----LLLTWSNPYPPDNYLYNHLTYAVNIWSENDPADFRIY   150  (B)
+
+d2j3sa2:A   EAEIYC--IRFVPAE---MGTHTVSVKYK----G-QHVPG-SPFQFTVGPLGEG  2236  (A)
+d1iarb2:B   NVTY--LEPSLRIA-AGISYRARVR-AWAQAYNTTWS---EWSPSTKWH-----   197  (B)
+

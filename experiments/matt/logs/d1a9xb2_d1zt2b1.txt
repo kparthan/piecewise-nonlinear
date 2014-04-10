@@ -1,0 +1,28 @@
+(d1zt2b1:B, d1a9xb2:B)
+Core Residues: 45
+Core RMSD: 2.875
+Raw Score: 46.356
+P-value: 0.3323
+Reference structure: d1zt2b1:B
+
+d1a9xb2:B   LNGMD-LAKEVTTAEAYSWTQGSWTLTGGLPQAKKEDELPFHVVAYDFGAKRNILRMLVD  1711  (A)
+d1zt2b1:B   L--DVKKY----------------------------------------------------     8  (B)
+
+d1a9xb2:B   RGCRLTIVPAQT-----------------------------------SAEDVLKMNPDGI  1736  (A)
+d1zt2b1:B   ------------PFIKSLDDELKKYGGGITLTDLLLNSTTLIDQAKDRIQKT-KS-----    50  (B)
+
+d1a9xb2:B   FLSNGPGDPAP-------------CDYAITAIQKFLETDIP--VF--G------------  1767  (A)
+d1zt2b1:B   -----------GDELPHYVSYNEPVLVFYTTLLSLAILNDVKLIRRYAYAEAKQFRSLLH    99  (B)
+
+d1a9xb2:B   ------------------------------------------------------------  1767  (A)
+d1zt2b1:B   TENEENLLEISKLLDLKINRCDPIKFYLEKKRRIIQKEFCVHFIDYLKYTKDLKEDWKLS   159  (B)
+
+d1a9xb2:B   ---------------------IXLGHQLLALASGAKTVKMKFGHHGGNHPVKDVEKNVVM  1806  (A)
+d1zt2b1:B   GQILHKGYVYLDKNQLIGLIAESIKSKIVEMIRP--------------------------   193  (B)
+
+d1a9xb2:B   ITAQNHGFAVDEATLPANLRVTHKSLFDGTLQGIHRTDKPAFSFQGNPEASPGPHDAAPL  1866  (A)
+d1zt2b1:B   ------------------------------------------------------------   193  (B)
+
+d1a9xb2:B   FDHFIELIEQYRKT----------------  1880  (A)
+d1zt2b1:B   --------------LNLKEIPEKLKSLIER   209  (B)
+

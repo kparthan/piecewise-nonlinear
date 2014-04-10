@@ -1,0 +1,30 @@
+(d1mhm.1:B, (d1mhm.1:A, d2cdqa2:A))
+Core Residues: 34
+Core RMSD: 4.144
+Raw Score: 24.325
+Reference structure: d1mhm.1:B
+
+d2cdqa2:A   KSILTSIVLKR-------------------------------------------------   339  (A)
+d1mhm.1:B   ------------------------------------------------------------    15  (B)
+d1mhm.1:A   ------X-S--LFVYSYKIIIKTCGTTKLLLAIPPILRLAETLSLKVQDVRYTRGSRHFS   134  (C)
+
+d2cdqa2:A   ---------------------------------------------NVTMLDIAST-----   349  (A)
+d1mhm.1:B   ---------------------------------------------FEKRLEISFVEPGLF    29  (B)
+d1mhm.1:A   EEVAVLDGYFGKLAAGSKAVIMGSPDKTQKWHVYSASAGSVQSNDPVYTLEMCMTG----   190  (C)
+
+d2cdqa2:A   -RMLG----QVGF-----------------LA--KVFSI-FEELG-I-S--V--------   372  (A)
+d1mhm.1:B   GKG--LR--S--------------------LSKAQ-LDEILG-P-AECT--I--------    56  (B)
+d1mhm.1:A   -LD----REKAS-VFYKTEESSAAHMTVRSGIR-K-IL-----------PKSEICDFEFE   231  (C)
+
+d2cdqa2:A   ------------DVVATSE--------VSISLT-LDPSKLWSRELIQQELDHVVEELEKI   411  (A)
+d1mhm.1:B   ------------VDNLSND--------YVDSYVLSE------------------------    72  (B)
+d1mhm.1:A   PCGYSMNSIEGAAVSTIHITPEDGFTYASFESVGYN--------P-------KT-ME--L   273  (C)
+
+d2cdqa2:A   AVVNLLKG----------------------------------------------------   419  (A)
+d1mhm.1:B   ------------------------------------------------------------    72  (B)
+d1mhm.1:A   -GPLVERVLACFEPAEFSVALHADVATKLLERICSVDVKGYSLAEWSPEEFGEGGSIVYQ   332  (C)
+
+d2cdqa2:A   -----   419  (A)
+d1mhm.1:B   -----    72  (B)
+d1mhm.1:A   KFTRT   337  (C)
+

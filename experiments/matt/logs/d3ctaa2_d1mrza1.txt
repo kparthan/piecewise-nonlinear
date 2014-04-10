@@ -1,0 +1,16 @@
+(d1mrza1:A, d3ctaa2:A)
+Core Residues: 60
+Core RMSD: 2.389
+Raw Score: 51.314
+P-value: 0.1080
+Reference structure: d1mrza1:A
+
+d3ctaa2:A   KNNVVITGTVTSQYIIQFQEKLGIIPY--LNIKVDQAS-LPELRKIRGFRGIHIEGFKTR   163  (A)
+d1mrza1:A   --YFEIEGIV----------------FPTANIDRGNE-KLV---DLK-------------   194  (B)
+
+d3ctaa2:A   TFGSVKAFPAKI-----QNIPCFVIMPERTV-YTDVIEIISD--------DRVSVEVYT-   220  (A)
+d1mrza1:A   ----RGVYLVRVHLPDGKKKFGVMNVG---FRRNVKYEVYILDFEGDLYGQRLKLEVLKF   253  (B)
+
+d3ctaa2:A   -------------------------------   220  (A)
+d1mrza1:A   MRDEKKEELKAAIDQDVKSARNMIDDIINSK   288  (B)
+

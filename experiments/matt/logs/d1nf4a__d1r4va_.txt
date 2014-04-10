@@ -1,0 +1,22 @@
+(d1r4va_:A, d1nf4a_:A)
+Core Residues: 65
+Core RMSD: 6.947
+Raw Score: 90.793
+P-value: 0.7235
+Reference structure: d1r4va_:A
+
+d1nf4a_:A   NREDRKAKVIEVLNKARAMELHAIHQYMNQHYSLDDMDY---------------------    42  (A)
+d1r4va_:A   ---------------------------------------ETXLRPKGFDKLDHYFRTELD    41  (B)
+
+d1nf4a_:A   ------GELAANMKLIAIDEMRHAENFAERIK----ELGGEPTTQKEGKVVTGQAVPVIY    92  (A)
+d1r4va_:A   IDLTDETIELLLNSVKAAFGKLFYGAEQRAR-WNGRD-----------------------    77  (B)
+
+d1nf4a_:A   ESD------------------------------ADQEDATIEAYSQFLKVCKEQGDIVTA   122  (A)
+d1r4va_:A   ---FIALADLNITKALEEHIKNFQKIEQDXGVDELL------------------------   110  (B)
+
+d1nf4a_:A   RL-------------FERIIEEEQAHLTYYENIGSHIKNLG--DTYLAKI---AG--TP-   161  (A)
+d1r4va_:A   --EYIAFIPPVEXNVGEDLKSEYRNIXGGLLLXHADVIKKATGERKP---SREA-XEF-V   163  (B)
+
+d1nf4a_:A   -SS--TGTASKGFV-   172  (A)
+d1r4va_:A   AQIVDKV-------F   171  (B)
+

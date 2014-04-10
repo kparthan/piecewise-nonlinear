@@ -1,0 +1,31 @@
+(d1nbaa_:A, d3qz6a_:A)
+Core Residues: 81
+Core RMSD: 5.166
+Raw Score: 69.425
+P-value: 0.2217
+Reference structure: d1nbaa_:A
+
+d3qz6a_:A   AXFL----------------------------------KKKLSAGKSVVGTXLNLVYNPD    25  (A)
+d1nbaa_:A   ----TFNDIEARLAAVLEEAFEAGTSIYNERGFKRRIGYG------NRPAVIHID-----    51  (B)
+
+d3qz6a_:A   IVRIYAEA----------------------------------GLDYFIVDCEHA------    45  (A)
+d1nbaa_:A   --------LANAWTQPGHPFSCPGMETIIPNVQRINEAARAKGV-PVFYT--TNVYRNRD   100  (B)
+
+d3qz6a_:A   -----------------------------------------------AYTFREINHLVSV    58  (A)
+d1nbaa_:A   ASSGTNDMGLWYSKIPTETLPADSYWAQIDDRIAPADGEVVIEKNRASAFPGT--NLELF   158  (B)
+
+d3qz6a_:A   AKNAGVSVLVRIP---QV---DRAHV-QRLLDIGAEGFX---IPGVQS-------AETXR   101  (A)
+d1nbaa_:A   LTSNRID-TLIVTGATAAGCVR--HTVEDAIAKGFRPIIPRETIG---DRVPGVVQWNLY   212  (B)
+
+d3qz6a_:A   ETVRLAKYPPLGERGVGGSIVTDF-------------------------KPVNW-AEWVQ   135  (A)
+d1nbaa_:A   DIDNKFG-----------------DVESTDSVVQYLDALPQFEDTVPKTLSDPQPE----   251  (B)
+
+d3qz6a_:A   ERNDEIFIXAQIEHVKAVEDIDSILAVQGVDAVIFGPRDLSNDLGIIGQTEHPKVYECYE   195  (A)
+d1nbaa_:A   ------------------------------------------------------------   251  (B)
+
+d3qz6a_:A   KVYRAADRQGVVKGFFTAADAAKXGWAVERGAQXLLWSGDVAALQTYTAKGVKTIKELPG   255  (A)
+d1nbaa_:A   ------------------------------------------------------------   251  (B)
+
+d3qz6a_:A   FNP--------   258  (A)
+d1nbaa_:A   ---VEAPADPV   259  (B)
+

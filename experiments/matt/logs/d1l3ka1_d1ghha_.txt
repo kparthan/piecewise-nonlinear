@@ -1,0 +1,16 @@
+(d1ghha_:A, d1l3ka1:A)
+Core Residues: 31
+Core RMSD: 2.976
+Raw Score: 29.856
+P-value: 0.6808
+Reference structure: d1ghha_:A
+
+d1l3ka1:A   KEPEQLRKLFIGGLSFETTDESLRSHFEQWGTLTDCVVMRDPNTK---------------    52  (A)
+d1ghha_:A   ---------------------------------MRIEVT------IAKTSPLPAGAIDAL    21  (B)
+
+d1l3ka1:A   ----------------------RS-RGFGFVTY-ATVEEVDAAMNA-RPHKVDGRVVEPK    87  (A)
+d1ghha_:A   AGELSRRIQYAFPDNEGHVSVRYAAANNLSVI-GATKEDKQRISEILQETW---------    71  (B)
+
+d1l3ka1:A   RAVS----------    91  (A)
+d1ghha_:A   ----ESADDWFVSE    81  (B)
+

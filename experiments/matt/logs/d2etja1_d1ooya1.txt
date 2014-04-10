@@ -1,0 +1,28 @@
+(d1ooya1:A, d2etja1:A)
+Core Residues: 47
+Core RMSD: 2.967
+Raw Score: 28.979
+P-value: 0.5031
+Reference structure: d1ooya1:A
+
+d2etja1:A   ------XGIDELYKKEFG------------------------------------------    12  (A)
+d1ooya1:A   NVRERIIKRAALEFE---DGMYANLGIGIPLLASNFISPNMTVHLQSENGILGLGPYPLQ   317  (B)
+
+d2etja1:A   --------------------------------------IVAGVD-----------E-AGR    22  (A)
+d1ooya1:A   NEVDADLINAGKETVTVLPGASYFSSDESFAMIRGGHVNLTMLGAMQVSKYGDLANWMI-   376  (B)
+
+d2etja1:A   GCLAGPV----VAAAVVLEKEIEAKRERLLDEIXEKAAVGIGIASPEEIDLYNIFNATKL    88  (A)
+d1ooya1:A   -P-GK--LVKGM--------------------------GG--------------------   386  (B)
+
+d2etja1:A   AXNRALENLSV--KP--SFVLVDG----------KGIE----------LSVPGTCLVKGD   124  (A)
+d1ooya1:A   ----AMD-L--VSS-AKTKVVVTMEHSAKGNAHKIM--EKCTLPLTGKQC-VNRIITE--   433  (B)
+
+d2etja1:A   QKSKLIGAASIVAKVFRDRLXSEFHRXYPQFSFHKHKGYATKEHLNEIRKNGVLPIHRLS   184  (A)
+d1ooya1:A   ------------------------------------------------------------   433  (B)
+
+d2etja1:A   FEPVLELLTDDLLREFFEKGLISENRFERILNLLGAR-----------------------   221  (A)
+d1ooya1:A   -------------------------------------KAVFDVDRKKGLTLIELWEGLTV   456  (B)
+
+d2etja1:A   -------------------------   221  (A)
+d1ooya1:A   DDIKKSTGCDFAVSPKLIPMQQVTT   481  (B)
+

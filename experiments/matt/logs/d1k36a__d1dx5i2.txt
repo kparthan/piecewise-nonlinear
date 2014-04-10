@@ -1,0 +1,13 @@
+(d1dx5i2:I, d1k36a_:A)
+Core Residues: 16
+Core RMSD: 1.884
+Raw Score: 11.498
+P-value: 0.6769
+Reference structure: d1dx5i2:I
+
+d1k36a_:A   V-----SITKCSSDM----NGYCLHGQCIYLVDM------SQNYCRCEVGYTGVRCEHFF    45  (A)
+d1dx5i2:I   -MFCNQTACPADCD-PNTQAS-------------CECPEGYILDDG--------------   418  (B)
+
+d1k36a_:A   L----    46  (A)
+d1dx5i2:I   -FICT   422  (B)
+

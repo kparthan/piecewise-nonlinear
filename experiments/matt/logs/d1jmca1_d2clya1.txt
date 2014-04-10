@@ -1,0 +1,19 @@
+(d2clya1:A, d1jmca1:A)
+Core Residues: 19
+Core RMSD: 2.652
+Raw Score: 12.711
+P-value: 0.6250
+Reference structure: d2clya1:A
+
+d1jmca1:A   KVVPIASLTPYQSKWTICARVTNKSQIRTWSNS------------------------R--   216  (A)
+d2clya1:A   ---------------------------------GEFADKLNEQKIAQLEEVKQASIKQIQ   105  (B)
+
+d1jmca1:A   GE--GKLFSLELVDESGEIRAT-AFNEQVDKFFPLIEVNKVYYFSKGTLKIANKQFTAVK   273  (A)
+d2clya1:A   DAIDM-----------------EKSQQALVQKRHYLF-----------------------   125  (B)
+
+d1jmca1:A   NDYEMTFNNETSVM-PCEDDHHLPTV----------------------------------   298  (A)
+d2clya1:A   --------------DV----------QRNNIAMALEVTYRERLHRVYREVKNRLDYHISV   161  (B)
+
+d1jmca1:A   ----------------------   298  (A)
+d2clya1:A   QNMMRQKEQEHMINWVEKRVVQ   183  (B)
+

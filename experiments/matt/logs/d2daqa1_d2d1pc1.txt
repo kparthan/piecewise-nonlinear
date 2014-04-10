@@ -1,0 +1,16 @@
+(d2d1pc1:C, d2daqa1:A)
+Core Residues: 32
+Core RMSD: 2.359
+Raw Score: 27.894
+P-value: 0.4492
+Reference structure: d2d1pc1:C
+
+d2daqa1:A   ----------------KL--H---YKQIVW---VKLGNYRWWPAEICNPRSVPLNIQGLK    43  (A)
+d2d1pc1:C   MLHTLHRSPWLTDFAALLRLLSEGDELLLLQDGVT-------------------------    35  (B)
+
+d2daqa1:A   HDL-------GD---F------------------------PVFFFGSHDYYWVHQGRVFP    69  (A)
+d2d1pc1:C   ---AAVDGNRYLESLRNAPIKVYALNEDLIARGLTGQISNDIILI---------------    77  (B)
+
+d2daqa1:A   YVEGDKSFAEGQTSINKTFKKALEEAAKRFQELKA-----   104  (A)
+d2d1pc1:C   ---------------------DYTDFVRLTVK-HPSQMAW    95  (B)
+

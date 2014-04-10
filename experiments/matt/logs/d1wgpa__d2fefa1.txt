@@ -1,0 +1,19 @@
+(d2fefa1:A, d1wgpa_:A)
+Core Residues: 34
+Core RMSD: 2.598
+Raw Score: 35.479
+P-value: 0.5220
+Reference structure: d2fefa1:A
+
+d1wgpa_:A   --------------------------GSSGSSGVRRVPLFENM-----------------    17  (A)
+d2fefa1:A   LTLDNRLAEALPLWRNLARTDRAPRRNI---------------DLADWKADWRELIAALD    50  (B)
+
+d1wgpa_:A   -----------------------------DERLLDAICERL-KPCLFTEKSYLVREGDPV    47  (A)
+d2fefa1:A   RFSRSHGYRQPFAAQGHAALENAWAWGQAAENASTLLLKAIDRG----------------    94  (B)
+
+d1wgpa_:A   N--EMLFIIRGRLESVTTDGGRSGFYNRSLLKEGDFCGDELLTWALDPKSGSNLPSSTRT   105  (A)
+d2fefa1:A   -LAG--------------------------------------------------------    97  (B)
+
+d1wgpa_:A   VKALTEVEAFAL--IADELKFVASQFR-RSG--PSSG----------   137  (A)
+d2fefa1:A   ------------AELRSIYLETAALWLDYSRLLG---AARDSLREQG   129  (B)
+

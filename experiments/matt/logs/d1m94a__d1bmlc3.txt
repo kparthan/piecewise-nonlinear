@@ -1,0 +1,13 @@
+(d1bmlc3:C, d1m94a_:A)
+Core Residues: 44
+Core RMSD: 2.578
+Raw Score: 28.011
+P-value: 0.4777
+Reference structure: d1bmlc3:C
+
+d1m94a_:A   -------MIEVVVNDRL------GKKVRVKCLAEDSVG----------DFKKVLSLQIGT    37  (A)
+d1bmlc3:C   DPFDRSHLKLFTIKYVDVNTNELLKSEQLLTASERNLDFRDLYDPRDKAKL---------   335  (B)
+
+d1m94a_:A   QPN-KI-----------VL---QKGGSVLKDHISLEDYEV---HDQTNLELYYL---    73  (A)
+d1bmlc3:C   ---LYNNLDAFGIMDYTL-TGKVED---------------NHDDTNRIITVYM-GKR   372  (B)
+

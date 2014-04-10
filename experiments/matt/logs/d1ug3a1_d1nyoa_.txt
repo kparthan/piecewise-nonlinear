@@ -1,0 +1,25 @@
+(d1nyoa_:A, d1ug3a1:A)
+Core Residues: 42
+Core RMSD: 3.626
+Raw Score: 30.352
+P-value: 0.6515
+Reference structure: d1nyoa_:A
+
+d1ug3a1:A   KAALSEEELEKKSKAIIEEYLHLNDMKEAVQCVQ------EL--AS-------PS-----  1274  (A)
+d1nyoa_:A   ----------------------------------GDLVGPGCAEYAAANPTGPASVQGMS    26  (B)
+
+d1ug3a1:A   -----------LLFIFVRHGVE--ST--L-------------------------------  1288  (A)
+d1nyoa_:A   QDPVAVAASNNPELTTLTAALSGQLNPQVNLVDTLNSGQYTVFAPTNAAFSKLPASTIDE    86  (B)
+
+d1ug3a1:A   --ERSAIAREHMGQLLHQLL--C-------------------------------------  1307  (A)
+d1nyoa_:A   LKTNSSLLTSILTYH-VV--AGQTSPANVVGTRQTLQGASVTVTGQGNSLKVGNADVVCG   143  (B)
+
+d1ug3a1:A   AGHLSTAQYYQGLYEILELAEDMEIDIPHVWLYLAELVTPILQEGGVPMGELFREITKPL  1367  (A)
+d1nyoa_:A   GVSTAN------------------------------------------------------   149  (B)
+
+d1ug3a1:A   RPLGKAASLLLEILGLLCKSMGPKKVGTLWREAGLSWKEFLPEGQDIGAFVAEQKVEYTL  1427  (A)
+d1nyoa_:A   ------------------------------------------------------------   149  (B)
+
+d1ug3a1:A   --------------  1427  (A)
+d1nyoa_:A   ATVYMIDSVLMPPA   163  (B)
+

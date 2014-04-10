@@ -1,0 +1,19 @@
+(d1js8a2:A, d1l2ha_:A)
+Core Residues: 36
+Core RMSD: 2.686
+Raw Score: 23.480
+P-value: 0.4654
+Reference structure: d1js8a2:A
+
+d1l2ha_:A   R-------SL-----------NCTLRDSQQKSLVMSGPYELKALHLQGQDMEQQVVWSMS    45  (A)
+d1js8a2:A   -EDRVFAGF-LLRTIGQSADVNFDVCTKDGECT---------------------FGGT--  2826  (B)
+
+d1l2ha_:A   ----------------FVQGEESNKIPVALGLKEKNLY-LSCVLKDDKPT--LQLESVDP    87  (A)
+d1js8a2:A   FCILGGEHEMFWAFDRLF---------KYD--------ITT---------SLK-------  2853  (B)
+
+d1l2ha_:A   KNYPKKKMEKRFVFNKIEINNKLEFESAQFPNF----YISTSQAENMPVFLGGQDI-TDF   146  (A)
+d1js8a2:A   ---------------------------------HLRLDA-----------------HDDF  2863  (B)
+
+d1l2ha_:A   TMQFVS-----------------------   152  (A)
+d1js8a2:A   DIKVTIKGIDGHVLSNKYLSPPTVFLAPA  2892  (B)
+

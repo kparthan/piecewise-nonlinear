@@ -1,0 +1,19 @@
+(d2i15a1:A, d3b7ca1:A)
+Core Residues: 50
+Core RMSD: 2.793
+Raw Score: 69.201
+P-value: 0.1599
+Reference structure: d2i15a1:A
+
+d3b7ca1:A   -------------------------------------------------XPTDDIVQLLK    11  (A)
+d2i15a1:A   MKPQLLALKQFVQTEFEKVDFETFRQNFNRCLEREQSTLLIYEDDDYDDQSFFLKPMLSD    60  (B)
+
+d3b7ca1:A   GQEEAWNRG----------------DLDAYXQGY-WQNEQLXLISNGKFR-NGWDETLAA    53  (A)
+d2i15a1:A   AFFISSEVVKQLDLPKGDVKSCCQSFYEALTLFISALA-ITK--------GVDVGRYHQQ   118  (B)
+
+d3b7ca1:A   YKKNYPDKESLGELKFTIKEIKXLSNYAAXVVGRWDLKRLKDTPTGVFTLLVEKIDDRWV   113  (A)
+d2i15a1:A   LGKRFG------------------------------------------------------   124  (B)
+
+d3b7ca1:A   ITXDHSSD-----   121  (A)
+d2i15a1:A   --------VLTVY   129  (B)
+

@@ -1,0 +1,13 @@
+(d1xhca3:A, d1nh8a2:A)
+Core Residues: 21
+Core RMSD: 2.245
+Raw Score: 21.002
+P-value: 0.6211
+Reference structure: d1xhca3:A
+
+d1nh8a2:A   QYLMLDYDCPRSALKKATAITPG---------LESPTIAPLADPDWVAIRA-LVPRRDVN   260  (A)
+d1xhca3:A   -----------------------PRRYNFKFRST-VFKFG------KLQIAII-------   312  (B)
+
+d1nh8a2:A   GIMDELAAIGAKAI------------LASDIRFCRF--------------   284  (A)
+d1xhca3:A   --------------GNTKGEGKWIEDNTKVFYIG--AVVFNDIRKATKLE   351  (B)
+

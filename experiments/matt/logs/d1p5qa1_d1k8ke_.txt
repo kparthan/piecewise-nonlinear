@@ -1,0 +1,22 @@
+(d1k8ke_:E, d1p5qa1:A)
+Core Residues: 52
+Core RMSD: 7.377
+Raw Score: 86.076
+P-value: 0.8216
+Reference structure: d1k8ke_:E
+
+d1p5qa1:A   SWEXNSEEKLEQSTIV--------------------------------------------   273  (A)
+d1k8ke_:E   ----------------PAYHSSLMDPDTKLIGNMALLPIRSQFKGPAPRETKDTDIVDEA    45  (B)
+
+d1p5qa1:A   -------KERGTVYFKEGKYKQALLQYKKIVSWLEYESSFSNE-----------EAQKAQ   315  (A)
+d1k8ke_:E   IYYFKANVF----------------------------------FKNYEIKNEADRTLIYI    71  (B)
+
+d1p5qa1:A   ALRLASHLNLAMCHLKL-QAFSAAIESCNKALE--LDSN---------------------   351  (A)
+d1k8ke_:E   TLYISECLKKLQKC---NSK-SQGEKEMYTLGITNF---PIPGEPGFPLNAIYAKPANKQ   124  (B)
+
+d1p5qa1:A   ------NEKGLSRRGEAHLAVNDFELARADFQKVLQLYPNNKAAKTQLAVCQQRIRRQLA   405  (A)
+d1k8ke_:E   EDEVMRAYLQQLRQETGLRLC---------------------------------------   145  (B)
+
+d1p5qa1:A   REKKLYANMFERLAEEENKAKA------------------------------   427  (A)
+d1k8ke_:E   ----------------------EKVFDPQNDKPSKWWTCFVKRQFMNKSLSG   175  (B)
+

@@ -1,0 +1,16 @@
+(d1ybza1:A, d2ja9a1:A)
+Core Residues: 9
+Core RMSD: 2.318
+Raw Score: 3.877
+P-value: 0.6791
+Reference structure: d1ybza1:A
+
+d2ja9a1:A   KRYIPSVNDFVIGVIIGTF----------------------S-DSYKVSLQNFSSSVSLS    98  (A)
+d1ybza1:A   -------------------TTLKLLRKEIDKIDNQIISLLKKRLE---------------    27  (B)
+
+d2ja9a1:A   YMAFPNA-----------------------------------------SKKNRPTLQVGD   117  (A)
+d1ybza1:A   -------IAQAIGKIKKELNLPIEDRKREEEVLRRAGEFREIFEKILEVSKDVQ------    74  (B)
+
+d2ja9a1:A   LVYARVCTAEKELEAEIECFDSTTGRDAGFGILE-   151  (A)
+d1ybza1:A   ----------------------------------R    75  (B)
+

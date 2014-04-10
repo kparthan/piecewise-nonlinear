@@ -1,0 +1,16 @@
+(d1ixda_:A, d1oz2a2:A)
+Core Residues: 50
+Core RMSD: 2.472
+Raw Score: 52.113
+P-value: 0.1864
+Reference structure: d1ixda_:A
+
+d1oz2a2:A   FSWSQYLRSTRAQAAPKHLFVSQSHSPPP-------------L--GFQVGMKLEA-VDRM   357  (A)
+d1ixda_:A   -----------------------------GSSGSSGLAMPPGNSHGLEVGSLAEVKE---    28  (B)
+
+d1oz2a2:A   NPSLVCVASVTDVVD------SRFLVHFDNW-------------------DDTYDYWCDP   392  (A)
+d1ixda_:A   -N-PPFYGVIRWIGQPPGLNEVLAGLELEDECAGCTDGTFRGTRYFTCALKK--ALFVKL    84  (B)
+
+d1oz2a2:A   SSPYIHPVGWCQKQGKPLTPPQDYPDPDN-------------   421  (A)
+d1ixda_:A   KS--CRPDS--------------------RFASLQPSGPSSG   104  (B)
+

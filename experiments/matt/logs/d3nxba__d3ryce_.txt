@@ -1,0 +1,19 @@
+(d3ryce_:E, d3nxba_:A)
+Core Residues: 21
+Core RMSD: 0.687
+Raw Score: 47.263
+P-value: 0.3361
+Reference structure: d3ryce_:E
+
+d3nxba_:A   DDDFTAMYKVLDVVKAHKDSWPFLEPVDESYAPNYYQIIKAPMDISSMEKKLNGGLYCTK   496  (A)
+d3ryce_:E   ------------------------------------------------------------     4  (B)
+
+d3nxba_:A   EEFVNDMKTMFRNCRKYNGE-----------------------------------SSEYT   521  (A)
+d3ryce_:E   --------------------ADMEVIELNKATSGQSWEVILKPPSFDGVPERRRDPSLEE    49  (B)
+
+d3nxba_:A   KMSDNLERCFHRAMMK--------------------------------------------   537  (A)
+d3ryce_:E   IQKKLEAAEERRKYQEAELLKHLAEKREHEREVIQKAIEENNNFIKMAKEKLAQKMESNK   109  (B)
+
+d3nxba_:A   ------------------------------------   537  (A)
+d3ryce_:E   ENREAHLAAMLERLQEKDKHAEEVRKNKELKEEASR   145  (B)
+

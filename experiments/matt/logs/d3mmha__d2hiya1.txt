@@ -1,0 +1,22 @@
+(d2hiya1:A, d3mmha_:A)
+Core Residues: 51
+Core RMSD: 3.153
+Raw Score: 52.729
+P-value: 0.1989
+Reference structure: d2hiya1:A
+
+d3mmha_:A   MHALHFSASDKAALYREVLPQIESVVADET----------------DWVANLANTAAVLK    44  (A)
+d2hiya1:A   ------------------------------XTRYALLVRGINVGKNKV--VXAELRQELT    29  (B)
+
+d3mmha_:A   EAFGWFWVGFYLVDTRSDELVLAPFQGPLACTRIPFGRGVCGQAWAKGGTVVVGDVDAHP   104  (A)
+d2hiya1:A   -NLGLEKVESYI------------------------------------------------    40  (B)
+
+d3mmha_:A   DHIACSSLSRSEIVVPLFSDGRC-IGVLDADSEHLAQFDETDALYLGELAKILE-KRFEA   162  (A)
+d2hiya1:A   -----------------------NSGNIFFTS---IDSKAQLVEKLETFFAVHYPF----    70  (B)
+
+d3mmha_:A   SRQAV-------------------------------------------------------   167  (A)
+d2hiya1:A   -----IQSFSLLSLEDFEAELENLPAWWSRDLARKDFLFYTEGLDVDQVIATVESLELKD   125  (B)
+
+d3mmha_:A   -------------------------------------------------------   167  (A)
+d2hiya1:A   EVLYFGKLGIFWGKFSEESYSKTAYHKYLLKVPFYRHITIRNAKTFDKIGQXLKK   180  (B)
+

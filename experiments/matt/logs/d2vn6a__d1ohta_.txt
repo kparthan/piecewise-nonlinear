@@ -1,0 +1,22 @@
+(d1ohta_:A, d2vn6a_:A)
+Core Residues: 33
+Core RMSD: 3.779
+Raw Score: 24.846
+P-value: 0.7650
+Reference structure: d1ohta_:A
+
+d2vn6a_:A   TVLPKDIP----------------------------------------------------     9  (A)
+d1ohta_:A   --------TARLLSRSDWGARLPKSVEHFQGPAPYVIIHHSYXPAVCYSTPDCXKSXRDX    63  (B)
+
+d2vn6a_:A   --------GDSLK---VTVGTANGKPGDTVTVPVTFADVAKMKNVGTCNFYLGYDASLLE    58  (A)
+d1ohta_:A   QDFHQLERGWNDIGYSFGIGGD---------GXIYTGRG---------------------    93  (B)
+
+d2vn6a_:A   VVSVDAGPIVKNAAVNFSSSASNGTISFLFLDNTITDELITADGVFANIKFKLKSVTAKT   118  (A)
+d1ohta_:A   ------------------------------------------------------------    93  (B)
+
+d2vn6a_:A   TTPVTFKDGGAFGDGTMSKI---------ASVTKTNG-------SVTIDP----------   152  (A)
+d1ohta_:A   -----------FN-----VIGAHAPKYNDKSVGIVLIGDWRTELPP----KQXLDAAKNL   133  (B)
+
+d2vn6a_:A   ----------------------------------------------------   152  (A)
+d1ohta_:A   IAFGVFKGYIDPAYKLLGHRQVRDTECPGGRLFAEISSWPHFTHINDTEGVS   185  (B)
+

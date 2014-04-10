@@ -1,0 +1,16 @@
+(d3f31a_:A, d2spca_:A)
+Core Residues: 69
+Core RMSD: 2.789
+Raw Score: 127.176
+P-value: 4.1865e-03
+Reference structure: d3f31a_:A
+
+d2spca_:A   Q--------------------------------NLDLQLYMRDCELAESWMSAREAFLNA    27  (A)
+d3f31a_:A   -TAEDIQERRQQVLDRYHRFKELSTLRRQKLEDSYRFQFFQRDAEELEKWIQEKLQIASD    69  (B)
+
+d2spca_:A   DDD-AN-AGGNVEALIKKHEDFDKAINGHEQKIAALQTVADQLIAQNHYASNLVDEKRKQ    85  (A)
+d3f31a_:A   EN-YKDPTNL-----QGKLQKHQAFEAEVQANSGAIVKLDETGNLMISEG----------   113  (B)
+
+d2spca_:A   VLERWRHLKEGLIEKRSRLGD----------------------------------   106  (A)
+d3f31a_:A   ---------------------HFASETIRTRLMELHRQWELLLEKMREKGIKLLQ   147  (B)
+

@@ -1,0 +1,25 @@
+(d2ag4a_:A, d1pgl21:2)
+Core Residues: 32
+Core RMSD: 2.102
+Raw Score: 29.474
+P-value: 0.2955
+Reference structure: d2ag4a_:A
+
+d1pgl21:2   METNLFKLSLDDVETPKGSMLDLKISQSKIA--LPKNTVGGTILRSDLLANFLTEGNFRA    58  (A)
+d2ag4a_:A   -------------------------------HMS--------SFSWDNCD----------    11  (B)
+
+d1pgl21:2   SVDLQRTHRIKGMIKMVA------------------------------------------    76  (A)
+d2ag4a_:A   ------------------EGKDPAVIRSLTLEPDPIVVPGNVTLSVVGSTSVPLSSPLKV    53  (B)
+
+d1pgl21:2   ---------TVGIPENTG------------------------------------------    85  (A)
+d2ag4a_:A   DLVLEKEVAG--------LWIKIPCTDYIGSCTFEHFCDVLDMLIPTGEPCPEPLRTYGL   105  (B)
+
+d1pgl21:2   ------------------------------IALACAMNSSIRGRASSDIYTICSQDCELW   115  (A)
+d2ag4a_:A   PCHCPFKEGTYSLPKSEFVVPDLELPSWLTTGNYRIESVL--------------------   145  (B)
+
+d1pgl21:2   NPACTKAMTMSFNPNP---CSDAWSLEFLKR--TGFHCDIICVTGWTATPMQDVQVTIDW   170  (A)
+d2ag4a_:A   ----------------SSSG-----------KRLGCIKIAASLK----------------   162  (B)
+
+d1pgl21:2   FISSQECVPRTY--   182  (A)
+d2ag4a_:A   ------------GI   164  (B)
+

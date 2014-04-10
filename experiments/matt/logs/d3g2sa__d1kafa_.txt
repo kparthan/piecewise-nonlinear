@@ -1,0 +1,19 @@
+(d1kafa_:A, d3g2sa_:A)
+Core Residues: 29
+Core RMSD: 2.530
+Raw Score: 42.435
+P-value: 0.5538
+Reference structure: d1kafa_:A
+
+d3g2sa_:A   EPAMEPETLEARINRATNPLNKELDWASINGFCEQLNEDFEGPPLATRLLAHKIQSP---    58  (A)
+d1kafa_:A   ---------------------------------------------------------MEI   106  (B)
+
+d3g2sa_:A   -----QEWEAIQALTVL-ETCMKSCGKRFHDEVGKFRFLNELIKVVSPKYLGSRTS----   108  (A)
+d1kafa_:A   TSDMEEDKDLMLKLLDKNGF------------------------------------VLKK   130  (B)
+
+d3g2sa_:A   ------------------------------------------------------------   108  (A)
+d1kafa_:A   VEIYRSNYLAILEKRTNGIRNFEINNNGNMRIFGYKMMEHHIQKFTDIGMSCKIAKNGNV   190  (B)
+
+d3g2sa_:A   ------EKVKNKILELLYSWTVGLPEEVKIAEAYQMLKKQGIVKS   147  (A)
+d1kafa_:A   YLDIKRSA-ENIEAVITVASE-L----------------------   211  (B)
+

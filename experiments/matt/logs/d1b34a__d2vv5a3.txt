@@ -1,0 +1,16 @@
+(d2vv5a3:A, d1b34a_:A)
+Core Residues: 19
+Core RMSD: 2.143
+Raw Score: 14.429
+P-value: 0.6782
+Reference structure: d2vv5a3:A
+
+d1b34a_:A   ----------------------KLVRFLMKLSHETVTIELKNGTQVHGTITGVDVSMNTH    39  (A)
+d2vv5a3:A   YAVNIVAALAIIIVGLIIARMISNAVNRLMISRK--------------------------    60  (B)
+
+d1b34a_:A   LKAVKMTLKNREPVQLETLSIRGNNIRYFILPDSL-PLDTLLV-----------------    81  (A)
+d2vv5a3:A   -----------------------------------IDATVADFLSALVRYGIIAFTLIAA    85  (B)
+
+d1b34a_:A   ---------------------------    81  (A)
+d2vv5a3:A   LGRVGVQTASVIAVLGAAGLVVGLALQ   112  (B)
+

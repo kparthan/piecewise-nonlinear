@@ -1,0 +1,19 @@
+(d1igra1:A, d1oz2a2:A)
+Core Residues: 20
+Core RMSD: 2.291
+Raw Score: 10.188
+P-value: 0.7218
+Reference structure: d1igra1:A
+
+d1oz2a2:A   FSWSQYLRSTRAQAAPKHLFVSQSHSPPPL----------------------GFQVGMKL   351  (A)
+d1igra1:A   ------------------------------EICGPGIDIRNDYQQLKRLENCTV------    24  (B)
+
+d1oz2a2:A   EAVDRMNPSLVCVASVTDVVDSRFLVHFDNWDDTYDYW-------------------CDP   392  (A)
+d1igra1:A   ---------------I-------EGYLHIL--------LISKAEDYRSYRFPKLTVIT--    52  (B)
+
+d1oz2a2:A   SSPYIHPVGWCQKQGKPLTP----PQDYPD------------------------------   418  (A)
+d1igra1:A   --------------------EYLLLFRVAGLESLGDLFPNLTVIRGWKLFYNYALVIFEM    92  (B)
+
+d1oz2a2:A   PDN------------------------------------------------------   421  (A)
+d1igra1:A   TNLKDIGLYNLRNITRGAIRIEKNADLCYLSTVDWSLILDAVSNNYIVGNKPPKECG   149  (B)
+

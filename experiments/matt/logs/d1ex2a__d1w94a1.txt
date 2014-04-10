@@ -1,0 +1,22 @@
+(d1w94a1:A, d1ex2a_:A)
+Core Residues: 65
+Core RMSD: 4.219
+Raw Score: 68.763
+P-value: 0.1496
+Reference structure: d1w94a1:A
+
+d1ex2a_:A   MTKPLILA-SQSPRRKELLDLL-Q---LPYSIIVSEVEEKLNRNFSPEENVQWLAKQKAK    55  (A)
+d1w94a1:A   --XLLTTSRKPSQRTRSFSQRLSRIXGWRYINRGK-------------------------    33  (B)
+
+d1ex2a_:A   A-VADLHP-----HAIVIGAD-TMVCLDGECLGKPQDQEEAASMLRRLSGRSHSVITAVS   108  (A)
+d1w94a1:A   -XSLRDVLIEARGPVAVVSERHG---------------------------------NPAR    59  (B)
+
+d1ex2a_:A   IQA------ENHSETFYDKTEVAFWSLSEEEIWTYIETKEPMDKAGAYGIQGRGALFVKK   162  (A)
+d1w94a1:A   ITFLDERGGERGYILFNPSFEX--------------------------------------    81  (B)
+
+d1ex2a_:A   IDGDYYSVMGLPISKTMRAL-------------------------RHF------------   185  (A)
+d1w94a1:A   --------------------KKPELADKAVRVSSCPPGSEGLCNLXG-LEVDESSSRDAW   120  (B)
+
+d1ex2a_:A   ----------------------------------   185  (A)
+d1w94a1:A   SIRTDEEYAWVXELXDARGTPAGFKLLIRDFRVG   154  (B)
+

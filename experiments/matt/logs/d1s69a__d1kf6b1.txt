@@ -1,0 +1,19 @@
+(d1kf6b1:B, d1s69a_:A)
+Core Residues: 44
+Core RMSD: 9.031
+Raw Score: 48.723
+P-value: 0.9935
+Reference structure: d1kf6b1:B
+
+d1s69a_:A   ST---------------LYEKLGG------------------------------------    10  (A)
+d1kf6b1:B   --MTHFIESLEAIKPYIIG-----NSRTADQGTNIQTPAQMAKYHQFSGCINCGLCYAAC   158  (B)
+
+d1s69a_:A   --------------------------TTAVDLAVDKFYERVLQDDRIKHFFADVDMAKQR    44  (A)
+d1kf6b1:B   PQFGLNPEFIGPAAITLAHRYNEDSRDHGKKE----RMAQLNSQNGVW------------   202  (B)
+
+d1s69a_:A   AHQKAFLTYAFGGTDKYDGRYMREAHKEL--------VENH-------GLNGEHFDAVAE    89  (A)
+d1kf6b1:B   -----------------------------SCTFVGYCSE--VCPKHVDPAAAIQQGKVES   231  (B)
+
+d1s69a_:A   DLLATLKEMGVPEDLIAEVAAVAGAPAHKRDVLNQ--   124  (A)
+d1kf6b1:B   SKDFLIATLK-------------------------PR   243  (B)
+

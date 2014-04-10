@@ -1,0 +1,19 @@
+(d1ykga1:A, d3ktoa_:A)
+Core Residues: 70
+Core RMSD: 4.134
+Raw Score: 77.384
+P-value: 0.0755
+Reference structure: d1ykga1:A
+
+d3ktoa_:A   PIIYLVDH---Q--KDARAALSKLLS--PLDVTIQCFASAESFXRQQISDDAIGXIIEAH    64  (A)
+d1ykga1:A   --ITIISASQTGNARRVAEALRDD--LLAAKLNVKLVN-AGDYK----------------   101  (B)
+
+d3ktoa_:A   LEDKKDSGIELLE--TLVKRG-FHLPTIVXASSS---DIPTAVRAXRAS-----------   107  (A)
+d1ykga1:A   ----------F--KQIA----SE-KLLIVVTST-QGEG-----------EPPEEAVALHK   132  (B)
+
+d3ktoa_:A   --------------AADFIEK-----------------------------------PFIE   118  (A)
+d1ykga1:A   FLFSKKAPKLENTAF-AVFSLGDTSYEFFCQSGKDFDSKLAELGGERLLDRVDADVEY-Q   190  (B)
+
+d3ktoa_:A   HVLVHDVQQIINGAK---   133  (A)
+d1ykga1:A   AAASEWRARVVDALKSRA   208  (B)
+

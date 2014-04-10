@@ -1,0 +1,13 @@
+(d1tiga_:A, d1vi7a2:A)
+Core Residues: 41
+Core RMSD: 2.690
+Raw Score: 39.830
+P-value: 0.4344
+Reference structure: d1tiga_:A
+
+d1vi7a2:A   PLT-EYTLQC-E----------------------------------------YH-QLTGI   154  (A)
+d1tiga_:A   --INVKEVRLSPTIEEHDFNTKLRNARKFLEKGDKVKATIRFKGRAITHKEIGQRVLDRL   140  (B)
+
+d1vi7a2:A   EALLGQCDGKIIN-SDY-QAFVLLRVAL-PAAKVAEFSAKLADFSRGSLQLLAIEEE-   208  (A)
+d1tiga_:A   SEACADI-AVVETAPKMDGRNMFLVLAPKN---------------------------D   170  (B)
+

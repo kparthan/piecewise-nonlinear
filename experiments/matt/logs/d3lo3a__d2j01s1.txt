@@ -1,0 +1,16 @@
+(d2j01s1:S, d3lo3a_:A)
+Core Residues: 39
+Core RMSD: 2.547
+Raw Score: 41.931
+P-value: 0.2752
+Reference structure: d2j01s1:S
+
+d3lo3a_:A   SNATAY-IIVGLTP---K---------------------------DAEKLQQYGARVAST    27  (A)
+d2j01s1:S   ------RLRLSVFRSLKHIYAQIIDDEKGVTLVSASSLALKLKGNKTEVARQVGRALAEK    76  (B)
+
+d3lo3a_:A   LAKYSGEVLVKGSVEQLHGKFEHKAQVILEFPSREDAYNWYHSEEYQALISTRDLGXDSQ    87  (A)
+d2j01s1:S   ALALGIKQVAFDRG---------PY-----------------------------------    92  (B)
+
+d3lo3a_:A   FQLIG----------------    92  (A)
+d2j01s1:S   -----KYHGRVKALAEGAREG   108  (B)
+

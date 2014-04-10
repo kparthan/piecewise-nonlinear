@@ -1,0 +1,22 @@
+(d1o7fa2:A, d1yuda1:A)
+Core Residues: 71
+Core RMSD: 3.326
+Raw Score: 53.785
+P-value: 0.1881
+Reference structure: d1o7fa2:A
+
+d1yuda1:A   XQNADDFIKFLELEQHVEGGFYRS-------SYRSETAFDPSRQLWS-------------    40  (A)
+d1o7fa2:A   ------------------------AEWIACLDKRPL-----------ERSSEDVDIIFTR    37  (B)
+
+d1yuda1:A   ---------------------SIYFLLRTGEVSH-FH--RLTADEXWYFHAGQSLTIYXI    76  (A)
+d1o7fa2:A   LKGVKAFEKFHPNLLRQICLCGYYENLEK-GIT-LFRQGDIGT-NWYAVL-AGSLDVKVS    93  (B)
+
+d1yuda1:A   SPE-GELT-------TAQLGLDLAAGER-PQFLVP----KGCI-FGSAXNQDGFSLVGCX   122  (A)
+d1o7fa2:A   E--TS---SHQDAVTICTLGI-------GTAFGESILDNTPR-HATIVTR--ESSELLRI   138  (B)
+
+d1yuda1:A   VSPGFTFDDFELFSQEALLAXYPQHKAVVQKLSRPE------------------------   158  (A)
+d1o7fa2:A   EQE---------------------------------DFKALWEKYRQYMAGLLAPPYGVM   165  (B)
+
+d1yuda1:A   --   158  (A)
+d1o7fa2:A   ET   167  (B)
+

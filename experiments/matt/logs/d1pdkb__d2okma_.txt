@@ -1,0 +1,19 @@
+(d2okma_:A, d1pdkb_:B)
+Core Residues: 64
+Core RMSD: 2.670
+Raw Score: 41.420
+P-value: 0.0895
+Reference structure: d2okma_:A
+
+d1pdkb_:B   --LLDRPCHVSGDSLNKHVVFKTRASRDFWYPPGRSPT----ESFVIRLENCHATAVG--    60  (A)
+d2okma_:A   ERD-YPFFYKV--G--DL--------------------AGESNQVRWFLNV-------NL    61  (B)
+
+d1pdkb_:B   --------KIVTLTFKGTEEAALPGHLKVTGVNAGRLGIALLDTDGSSLLKPGTSHNKGQ   112  (A)
+d2okma_:A   NKSDVTEDISIADRQG----------------------SGQQLNK--------------E    85  (B)
+
+d1pdkb_:B   GEKVTG-------------------------------------------NSLELPFGAYV   129  (A)
+d2okma_:A   SFTFDIVNDKETKYISLAEFEQQGYGKIDFVTDNDFNLRFYRDKARFTSFIVRYTSTITE   145  (B)
+
+d1pdkb_:B   VATPEALRTKSVVPGDY---EA-TATFELTYR-------------------   157  (A)
+d2okma_:A   -----------------AGQHQATFENSYDINYQLNNQDATNEKNTSQVKN   179  (B)
+

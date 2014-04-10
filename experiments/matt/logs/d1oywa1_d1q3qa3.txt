@@ -1,0 +1,16 @@
+(d1q3qa3:A, d1oywa1:A)
+Core Residues: 46
+Core RMSD: 2.957
+Raw Score: 57.339
+P-value: 0.3663
+Reference structure: d1q3qa3:A
+
+d1oywa1:A   PK------------QY------------D--GSTDAQIALSTIGRVNQRFG-------XG   433  (A)
+d1q3qa3:A   --VDPDDEETLLKIAATSITGKNAESHKELLAKLAVEAVKQVAE-------KKDGKYVV-   195  (B)
+
+d1oywa1:A   YVVEVIRGANNQRIRDYGHDKL-------------K-VYGXGR-------------DK-S   465  (A)
+d1q3qa3:A   -DLDNIKF--------------EKKAGEGVEESELVKAVTI--LIRGGTEHVIDEVERAL   391  (B)
+
+d1oywa1:A   HEHWVSVIRQLIHLGLVTQNIAQHSALQLTEAARPVLRGESSLQLAVPRIV   516  (A)
+d1q3qa3:A   EDAVKVVKDVMEDG-------------------------------------   405  (B)
+

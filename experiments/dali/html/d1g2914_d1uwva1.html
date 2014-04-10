@@ -1,0 +1,77 @@
+<HTML><H1>Results</H1>
+<A HREF='summary.txt'>Parseable data</A>
+<BR><UL>
+<LI><a href="#mol11">mol11</a>
+</UL><HR>
+<TITLE>Dali: mol11,                                                                       </TITLE><A name=mol11>
+<h1>Query: <a name="mol11">mol11</a></h1>
+                                                                      
+<P><A NAME="summary">
+Select neighbours (check boxes) for viewing as multiple structural alignment or 3D superimposition. 
+The list of neighbours is sorted by Z-score. Similarities with a Z-score lower than 2 are spurious.
+Each neighbour has links to pairwise structural alignment with the query structure, 
+ and to the PDB format coordinate file where the neighbour
+is superimposed onto the query structure. 
+
+<form METHOD="POST" ACTION="http://ekhidna.biocenter.helsinki.fi/dali_server/qz-test" TARGET="_blank"/>
+<input TYPE="hidden" NAME="jobid" VALUE=test>
+<input TYPE="hidden" NAME="query_sequence" VALUE="VRVPGENLVRAVVEIVENLGSERIVRLRVGGVTFVGSFRSESRVREGVEVDVVFDMKKIHIFDKTTGKAIF"> 
+<input TYPE="hidden" NAME="query_dssp" VALUE="LLLLLLLEEEEEEEEEEELLLLEEEEEEELLEEEEEEELLLLLLLLLLEEEEELLHHHLLLLLLLLLLLLL"> 
+<input TYPE="hidden" NAME="cd1" VALUE=mol11>
+<input TYPE="hidden" NAME="pdbresnos" VALUE="71  302   303   304   305   306   307   308   309   310   311   312   313   314   315   316   317   318   319   320   321   322   323   324   325   326   327   328   329   330   331   332   333   334   335   336   337   338   339   340   341   342   343   344   345   346   347   348   349   350   351   352   353   354   355   356   357   358   359   360   361   362   363   364   365   366   367   368   369   370   371   372 
+">
+<input TYPE="hidden" NAME="cd2list" VALUE="dummy">
+<input TYPE="submit" NAME="D1" VALUE="Structural Alignment"/> 
+<INPUT TYPE="CHECKBOX" NAME="expand_gaps" VALUE=1 CHECKED"/> Expand gaps 
+<input TYPE="submit" NAME="D3" VALUE="3D Superimposition (Jmol Applet)"/> 
+<input TYPE="reset" VALUE="Reset Selection"/>
+<h2>Summary</h2>
+<PRE>
+    No:  Chain   Z    rmsd lali nres  %id PDB  Description
+<INPUT TYPE="CHECKBOX" NAME="cd2list" VALUE="cd2=mol2A sequence=QIITVSVNDLDSFGQGVARHNGKTLFIPGLLPQENAEVTVTEDKKQYARAKVVRRLSDSP dssp=LLEEEEEEEELLLLEEEEEELLEEEEEELLLLLLEEEEEEEEELLLEEEEEEEEELLLLL qstarts=6,22,43 sstarts=0,13,29 lengths=13,16,13 u=0.067454,-0.038127,-0.996994,-0.674877,0.734236,-0.073739,0.734841,0.677822,0.023796 t=125,8,39">   <A HREF=#alignment-1>1</A>:  mol2-A  3.0  2.6   42    60   12 <A HREF="http://ekhidna.biocenter.helsinki.fi/dali_server/qz-test?jobid=test&pdbid=mol2&u=0.067454,-0.038127,-0.996994,-0.674877,0.734236,-0.073739,0.734841,0.677822,0.023796&t=125,8,39">PDB</A>                                                                       
+<INPUT TYPE="CHECKBOX" NAME="cd2list" VALUE="cd2=mol2A sequence=QIITVSVNDLDSFgQGVARHNGKTLFIPgllpQENAEVTVtEDKKQYARAKVVRRLSDSP dssp=LLEEEEEEEELLLlEEEEEELLEEEEEEllllLLEEEEEEeEELLLEEEEEEEEELLLLL qstarts=8,21,31,44,52 sstarts=0,14,20,32,41 lengths=13,6,8,8,4 u=0.680927,-0.265996,-0.682338,-0.498649,0.513976,-0.697981,0.536366,0.815521,0.217341 t=106,15,44">   <A HREF=#alignment-2>2</A>:  mol2-A  1.2  2.9   39    60   15 <A HREF="http://ekhidna.biocenter.helsinki.fi/dali_server/qz-test?jobid=test&pdbid=mol2&u=0.680927,-0.265996,-0.682338,-0.498649,0.513976,-0.697981,0.536366,0.815521,0.217341&t=106,15,44">PDB</A>                                                                       
+
+</form>
+</PRE>
+<A NAME="alignments">
+<h2>Pairwise Structural Alignments </h2>
+Notation: three-state secondary structure definitions by DSSP (reduced to H=helix, E=sheet, L=coil) are shown above the amino acid sequence. Structurally equivalent residues are in uppercase, structurally non-equivalent residues (e.g. in loops) are in lowercase. Amino acid identities are marked by vertical bars.
+<a name=alignment-1><h3> No 1: Query=mol11 Sbjct=mol2A Z-score=3.0</h3>
+
+<A HREF="#mol11">back to top</A>
+<PRE>
+DSSP  llllllLEEEEEEEEEEELlllEEEEEEELLEEEEEEElllllLLLLLEEEEELLH---h
+Query vrvpgeNLVRAVVEIVENLgseRIVRLRVGGVTFVGSFrsesrVREGVEVDVVFDM---k   57
+ident             |              |  | |                  |        
+Sbjct ------QIITVSVNDLDSF---GQGVARHNGKTLFIPG-----LLPQENAEVTVTEdkkq   46
+DSSP  ------LLEEEEEEEELLL---LEEEEEELLEEEEEEL-----LLLLLEEEEEEEEelll
+
+
+DSSP  hlllllllllllll
+Query kihifdkttgkaif   71
+ident               
+Sbjct yarakvvrrlsdsp   60
+DSSP  eeeeeeeeelllll
+
+
+</PRE><a name=alignment-2><h3> No 2: Query=mol11 Sbjct=mol2A Z-score=1.2</h3>
+
+<A HREF="#mol11">back to top</A>
+<PRE>
+DSSP  llllllleEEEEEEEEEELLL-LEEEEEeellEEEEEEELlllllLLLLEEEE-ELLHhh
+Query vrvpgenlVRAVVEIVENLGS-ERIVRLrvggVTFVGSFRsesrvREGVEVDV-VFDMkk   58
+ident             |             |                   |  || |       
+Sbjct --------QIITVSVNDLDSFgQGVARH----NGKTLFIP-gllpQENAEVTVtEDKKqy   47
+DSSP  --------LLEEEEEEEELLLlEEEEEE----LLEEEEEE-llllLLEEEEEEeEELLle
+
+
+DSSP  lllllllllllll
+Query ihifdkttgkaif   71
+ident              
+Sbjct arakvvrrlsdsp   60
+DSSP  eeeeeeeelllll
+
+
+</PRE>
+</PRE>
+<HR>

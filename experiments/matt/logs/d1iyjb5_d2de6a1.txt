@@ -1,0 +1,19 @@
+(d2de6a1:A, d1iyjb5:B)
+Core Residues: 55
+Core RMSD: 4.731
+Raw Score: 27.916
+P-value: 0.6556
+Reference structure: d2de6a1:A
+
+d1iyjb5:B   RELLPFSKLSDPAFQPPCSEVDVVGVV---------------------------------  3006  (A)
+d2de6a1:A   ---------------------------MANVDEAILKRVKGWAPYVDAKLGFRNHWYPVM    33  (B)
+
+d1iyjb5:B   ---------VSVVKPIG--LAPLVYLSDECLHLLVVKFGIDLNED-----IK--PRV---  3045  (A)
+d2de6a1:A   FSKEINEGEPKTLK---LLGENLLVNRID-GKLYCLKD---RCL-HRGVQLSVKVECKTK    85  (B)
+
+d1iyjb5:B   -L---------IA---ASN-----------------LQWRPESTS--RVPTLFAGNFSVF  3073  (A)
+d2de6a1:A   STITCWYHAWTYRWEDGV-LCDILTNPTSAQIGRQKLKTYPVQEAKGCVFIY-LGDGD--   141  (B)
+
+d1iyjb5:B   SASPKEAHFQERVTNMKHAIENIDTFYKEAEKKLIQVLKGDSPK-  3117  (A)
+d2de6a1:A   --------------------------------------------P   142  (B)
+

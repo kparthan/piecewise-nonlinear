@@ -1,0 +1,13 @@
+(d1irza_:A, d1iufa1:A)
+Core Residues: 60
+Core RMSD: 4.961
+Raw Score: 63.350
+P-value: 0.1329
+Reference structure: d1irza_:A
+
+d1iufa1:A   GIHMGKIKRRAITEHEKRALRHYFFQLQN---RSGQQDLIEWFREKFGKDISQPSVSQIL    54  (A)
+d1irza_:A   --TAQKKPRVLWTHELHNKFLAAVDHL--GVERAVPKKILDLMNV---DKLTRENVASHL    53  (B)
+
+d1iufa1:A   SSKYSYLDNTVEKPWDVKRNR-    75  (A)
+d1irza_:A   Q-KFRVALKKV----------S    64  (B)
+

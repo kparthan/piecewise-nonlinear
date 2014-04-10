@@ -1,0 +1,19 @@
+(d1f46a_:A, d2pcsa1:A)
+Core Residues: 70
+Core RMSD: 4.090
+Raw Score: 73.748
+P-value: 0.1560
+Reference structure: d1f46a_:A
+
+d2pcsa1:A   -----LNGNGSIELKGT--------VEEVWSKLMDPSILSKCI--MGCKSLEL---IGED    42  (A)
+d1f46a_:A   RKEAVI-----------IMNVAAHHGS--E---LNGELLLNSIQQAGF-IF--GDMN---    43  (B)
+
+d2pcsa1:A   KYKADLQIGIAAVKGK------YDAIIEVTDIKP--------------PYHYKLLVNGEG    82  (A)
+d1f46a_:A   IYHRH---------LSPDGSGPALFSLANM-V--KPGTFDPEMKDFTTP-GVTIF-----    85  (B)
+
+d2pcsa1:A   GPGFVNAEGVIDLTPINDECTQLTYTYSAEVGGKVAAIGQRMLGGVAKLLISDFFKKIQK   142  (A)
+d1f46a_:A   ----------------------------MQVPSYG---DELQLFKLMLQSAQHIADEVG-   113  (B)
+
+d2pcsa1:A   EIAKS-------------------------------   147  (A)
+d1f46a_:A   -----GVVLDDQRRMMTPQKLREYQDIIREVKDANA   144  (B)
+

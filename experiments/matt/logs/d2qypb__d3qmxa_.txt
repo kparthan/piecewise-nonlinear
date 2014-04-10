@@ -1,0 +1,16 @@
+(d3qmxa_:A, d2qypb_:B)
+Core Residues: 15
+Core RMSD: 0.346
+Raw Score: 33.441
+P-value: 0.4298
+Reference structure: d3qmxa_:A
+
+d2qypb_:B   AYVSDV-------------------------YCEVCEFLVKEVTKLIDNNKTEKEILDAF    32  (A)
+d3qmxa_:A   ------MRGSHHHHHHGSAVSAKIEIYTWSTCPFCMRALALLKRKG--------------    29  (B)
+
+d2qypb_:B   DKMCSKLPKSLSEECQEVVDTYGSSILSILLEEVSPELVCSMLHLC--------------    78  (A)
+d3qmxa_:A   ----------------------------------------------VEFQEYCIDGDNEA    43  (B)
+
+d2qypb_:B   ---------------------------------------------    78  (A)
+d3qmxa_:A   REAMAARANGKRSLPQIFIDDQHIGGCDDIYALDGAGKLDPLLHS    88  (B)
+

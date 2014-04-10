@@ -1,0 +1,22 @@
+(d2z16a_:A, d2ccma_:A)
+Core Residues: 53
+Core RMSD: 2.696
+Raw Score: 64.655
+P-value: 0.2201
+Reference structure: d2z16a_:A
+
+d2ccma_:A   AAHQLSDFQRNKILRVFNTFYDCNHDG--V-IEWDDFELAIKKICNLHSWPT--------    50  (A)
+d2z16a_:A   ---------------------------SSGMSLLTEVETYVL-SI-----IPSGPLKAEI    24  (B)
+
+d2ccma_:A   ---------------------------DGKKHNEARATLKLIWDGLRKYADENEDEQVTK    83  (A)
+d2z16a_:A   AQKLEDVFAGKNTDLEALMEWLKTRPILSPLTKGILGFVFTLTVP---------------    69  (B)
+
+d2ccma_:A   EEWLKMWAECVKSVEKGESLPEWLTKYMNFMFDVNDTS-----------GDNIIDKHEYS   132  (A)
+d2z16a_:A   --------------------------------------SRRRFVQNALNDPNN-------    92  (B)
+
+d2ccma_:A   TVYMSYGIPKSDCDAAFDTLSDGGKTMV--TREIFARLWTEYFVSNDRGAKGNHL-----   185  (A)
+d2z16a_:A   ----------------------------MDRAVKLYKKLKREI------------TFHGA   112  (B)
+
+d2ccma_:A   -FGTLKL-------------------------------------------   191  (A)
+d2z16a_:A   KEV----ALSYSTGALASCMGLIYNRMGTVTTEVAFGLVCATCEQIADSQ   158  (B)
+

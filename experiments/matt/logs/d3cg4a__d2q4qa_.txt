@@ -1,0 +1,19 @@
+(d2q4qa_:A, d3cg4a_:A)
+Core Residues: 50
+Core RMSD: 3.184
+Raw Score: 50.046
+P-value: 0.2762
+Reference structure: d2q4qa_:A
+
+d3cg4a_:A   H-----------------------------------------------------------     4  (A)
+d2q4qa_:A   -STSPEIASLSWGQXKVKGSNTTYKDCKVWPGGSRTWDWRETGTEHSPGVQPADVKEVVE    59  (B)
+
+d3cg4a_:A   -K-GDVXIVDD--DA--HVR-IAVKTILSDAGFHIISADSGGQCIDLLKKGF------SG    51  (A)
+d2q4qa_:A   KGVQTLVIGRGXSE-ALKV-PSSTVEYLKKHGIDVRVL-QTEQAVKEYNALVAQGVRVGG   116  (B)
+
+d3cg4a_:A   VVLLDIXXPGXDGWDTIRAILDNSLEQGIAIVXLTAKNAPDAKXIGLQEYVVDYITKPFD   111  (A)
+d2q4qa_:A   VFHS-------TC-----------------------------------------------   122  (B)
+
+d3cg4a_:A   NEDLIEKTTFFXGFVRNQ   129  (A)
+d2q4qa_:A   ------------------   122  (B)
+

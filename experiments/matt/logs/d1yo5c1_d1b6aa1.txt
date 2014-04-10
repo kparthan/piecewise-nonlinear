@@ -1,0 +1,13 @@
+(d1b6aa1:A, d1yo5c1:C)
+Core Residues: 44
+Core RMSD: 2.809
+Raw Score: 44.105
+P-value: 0.2115
+Reference structure: d1b6aa1:A
+
+d1yo5c1:C   QPI--------------------------HLWQFLKELLLKPHSYGRFIRWLNKEKG-IF   279  (A)
+d1b6aa1:A   ---HDDMECSHYMKNFDVGHVPIRLPRTKHLLNVINENF------------------GTL   413  (B)
+
+d1yo5c1:C   KIEDSAQVARLWGIRKNRPAMNYDKLSRSIRQYYKKGIIRKPDISQRLVYQFVHP---   334  (A)
+d1b6aa1:A   -AFCRRWLDRLGE-------S---KYLMALKNLCDLGIVDP----YP--------PLC   448  (B)
+

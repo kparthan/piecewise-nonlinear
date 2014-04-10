@@ -1,0 +1,13 @@
+(d1rhfa1:A, d1cida2:A)
+Core Residues: 58
+Core RMSD: 3.407
+Raw Score: 44.163
+P-value: 0.3856
+Reference structure: d1rhfa1:A
+
+d1cida2:A   VMKVTQPD-------SNTLTCEVMGPTSPKMRLILKQENQEAR---VS-RQE------KV   148  (A)
+d1rhfa1:A   -GAPVK--LTVSQGQPVKLNCSVEGX-EE-PDIQWVKDGAVVQNLDQ-LY-IPVSEQHWI    59  (B)
+
+d1cida2:A   IQVQAP------EAGVWQCLLSEGEEVKMD------SKIQV----   177  (A)
+d1rhfa1:A   GFLSL-KSVERSDAGRYWCQVE----DG--GETEISQPVWLTVEG    97  (B)
+

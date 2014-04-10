@@ -1,0 +1,16 @@
+(d2dyrb2:B, d1dgsa2:A)
+Core Residues: 17
+Core RMSD: 2.058
+Raw Score: 13.528
+P-value: 0.6041
+Reference structure: d2dyrb2:B
+
+d1dgsa2:A   A----EEKETRLLDVVFQVGRTGRVTPVGVLEPVFIEGSEVSRV---TLHNESYIEELDI   367  (A)
+d2dyrb2:B   -XAYPMQL------------------------------------GFQDATSPIMEELLH-    22  (B)
+
+d1dgsa2:A   RIGDWVLVHKAGGVIPEVLRVL--K---ERRTGKERPI----------------------   400  (A)
+d2dyrb2:B   ----------------------FHDHTLM---------IVFLISSLVLYIISLMLTTKLT    51  (B)
+
+d1dgsa2:A   ---------------------------------------   400  (A)
+d2dyrb2:B   HTSTMDAQEVETIWTILPAIILILIALPSLRILYMMDEI    90  (B)
+

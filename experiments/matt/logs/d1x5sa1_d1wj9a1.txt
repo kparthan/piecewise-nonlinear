@@ -1,0 +1,16 @@
+(d1wj9a1:A, d1x5sa1:A)
+Core Residues: 55
+Core RMSD: 2.463
+Raw Score: 38.498
+P-value: 0.1852
+Reference structure: d1wj9a1:A
+
+d1x5sa1:A   MASDEGKLFVGGLSF---------DT-----NEQSLEQVFSKYGQI-----SEVVVVKDR    48  (A)
+d1wj9a1:A   ------MWLTKLVL-NPASRAARRDLANPYEMHRTLSKAVS---RALEEGRERLLWR---    47  (B)
+
+d1x5sa1:A   ETQRSR---------GFGFVTFENIDDAKDAMMAMNGKS-VD--GRQIR-VDQAGKSSDN    95  (A)
+d1wj9a1:A   ----LEPARGLEPPVVLVQTLT--------EP-DW--S-VLDEGYAQVFPPKPFHP----    87  (B)
+
+d1x5sa1:A   RS    97  (A)
+d1wj9a1:A   --    87  (B)
+

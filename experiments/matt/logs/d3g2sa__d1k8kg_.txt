@@ -1,0 +1,19 @@
+(d1k8kg_:G, d3g2sa_:A)
+Core Residues: 65
+Core RMSD: 4.019
+Raw Score: 83.562
+P-value: 0.0870
+Reference structure: d1k8kg_:G
+
+d3g2sa_:A   EPAME--------------------------------------PE---------------     8  (A)
+d1k8kg_:G   -----ARFRKVDVDEYDENKFVDEDDGAGPDEGEVDSCLRQGNMTAALQAALKNPPINTK    67  (B)
+
+d3g2sa_:A   --------------TLEARINRATNPLNKELDWASINGFCEQLNEDFE--GPPLATRLLA    52  (A)
+d1k8kg_:G   SQAVKDRAGSIVLKVLISF--K----------AN---DIEKAVQSLD-KNGVDLLMKYIY   111  (B)
+
+d3g2sa_:A   HKIQSPQE-WEAIQALTVLETCMKS-CGKRFHD-EV-GKFRFLNELIKVVSPKYLGSRTS   108  (A)
+d1k8kg_:G   KGFESPS-DNSSAVLLQWHEKALAAGGVGSI--VRVLTARKT------------------   150  (B)
+
+d3g2sa_:A   EKVKNKILELLYSWTVGLPEEVKIAEAYQMLKKQGIVKS-   147  (A)
+d1k8kg_:G   ---------------------------------------V   151  (B)
+

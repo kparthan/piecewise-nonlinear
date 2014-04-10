@@ -1,0 +1,16 @@
+(d2ewha1:A, d1x4aa1:A)
+Core Residues: 66
+Core RMSD: 4.855
+Raw Score: 68.040
+P-value: 0.1507
+Reference structure: d2ewha1:A
+
+d1x4aa1:A   SGGGVIRGPAGNNDCRIYVGNLPPDIR--TKDIEDVFYKYG-A-IRDIDLKNRRGGPPFA    64  (A)
+d2ewha1:A   --------------GIALGMIETRGL-VPAIEAADAMTKAAEVRLVGRQF-VGG---GYV    46  (B)
+
+d1x4aa1:A   FVEFE-----DPRDAEDAVYGRDGYDYDGYRLRVEFPRSGRGTG----------------   103  (A)
+d2ewha1:A   TVLVRGETGAVNAAVRAGADACERV--G-DGLVAAHI-------IARVHSEVENILPKAP    96  (B)
+
+d1x4aa1:A   --   103  (A)
+d2ewha1:A   QA    98  (B)
+

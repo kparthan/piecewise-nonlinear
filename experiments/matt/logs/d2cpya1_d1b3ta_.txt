@@ -1,0 +1,19 @@
+(d1b3ta_:A, d2cpya1:A)
+Core Residues: 41
+Core RMSD: 2.651
+Raw Score: 47.483
+P-value: 0.2773
+Reference structure: d1b3ta_:A
+
+d2cpya1:A   EGDV---------------------------------------NSAKVCAHITNIPFSIT   556  (A)
+d1b3ta_:A   ----KGGWFGKHRGQGGSNPKFENIAEGLRALLARSHVERTTDEGTWVAGVFVYGG----   512  (B)
+
+d2cpya1:A   KMDVLQFLEGIPVDENAVHVLVDNNGQGLGQALVQFKNEDDARKSERL------------   604  (A)
+d1b3ta_:A   ------------------------------------------------SKTSLYNLRRGT   524  (B)
+
+d2cpya1:A   ---------H-RKKLN----------------G-REAFVHVV-TLEDMREIEKNPP--AQ   634  (A)
+d1b3ta_:A   ALAIPQCRLTPLSRLPFGMAPGPGPQPGPLRESIVCYFMVFLQTHIFAEVLKD-AIKDL-   582  (B)
+
+d2cpya1:A   GKSG-------------------------   638  (A)
+d1b3ta_:A   ----VMTKPAPTCNIRVTVCSFDDGVDLP   607  (B)
+

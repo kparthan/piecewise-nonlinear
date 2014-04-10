@@ -1,0 +1,16 @@
+(d1whua_:A, d1ub9a_:A)
+Core Residues: 44
+Core RMSD: 3.215
+Raw Score: 59.438
+P-value: 0.3563
+Reference structure: d1whua_:A
+
+d1ub9a_:A   MEELKEIMKSHILG---------------NPVRLGIMIFLLPRR--K-------------    30  (A)
+d1whua_:A   --------------GSSGSSGPQKIFTPSAEIVKYTKIIAMEKLYAVFTDYEHDKVSRDE   312  (B)
+
+d1ub9a_:A   ---APFSQIQKVLD-------LT--PGNLDSHIRVLERNGLVKTYKVIADRPRTVVEITD    78  (A)
+d1whua_:A   AVNKIRLDTEEHLKEKFPEVDQFEIIESFNIVAKEVFRSI--------------------   352  (B)
+
+d1ub9a_:A   FGMEEAKRFLSSLKAVIDGLDL------------------   100  (A)
+d1whua_:A   ----------------------ILNEYKRCDGRDSGPSSG   370  (B)
+

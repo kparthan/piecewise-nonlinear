@@ -1,0 +1,31 @@
+(d2pbka_:A, d1aym3_:3)
+Core Residues: 34
+Core RMSD: 2.667
+Raw Score: 22.427
+P-value: 0.5039
+Reference structure: d2pbka_:A
+
+d1aym3_:3   GLPVYVTPGSGQFMTTDDMQSPCALPWYHPTKEIFIPGEVKNLIEMCQVDTLIPINSTQS    60  (A)
+d2pbka_:A   ------------------------------------------------------------     3  (B)
+
+d1aym3_:3   NIGNVSMYTVTLSPQTKLAEEIFAIKVDIASHPLATTLIGEIASYFTHWTGSLRFSFMFC   120  (A)
+d2pbka_:A   ------------------------------------------------------------     3  (B)
+
+d1aym3_:3   GTANTTLKVLLAYTP---------------------------------------------   135  (A)
+d2pbka_:A   ------QGLYVGG-FVDVVSCPKLEQELYLDPDQVTDYLPVTEPLPITIEHLPETEVGWT    55  (B)
+
+d1aym3_:3   -------PGIGKPRSRKEAML--GTHVVWDVGLQSTVSL---------------------   165  (A)
+d2pbka_:A   LGLFQVSH-------------GIFCTGAITSPA-FL---ELASRLADTSHVARAPVKNLP    98  (B)
+
+d1aym3_:3   --------------VVPWISASQYRFTTPDTYSS--------------------------   185  (A)
+d2pbka_:A   KEPLLEILHTWLPGLSL-----------------SSIHPRELSQTPSGPVFQHVSLCALG   141  (B)
+
+d1aym3_:3   --AG-YITCWYQTNFVVPPNTPNTAEMLCFVSGCKDFCLRMARDTD--------------   228  (A)
+d2pbka_:A   RRRGTVAVYGHD----------------------------------AEWVVSRFSSVSKS   167  (B)
+
+d1aym3_:3   ----------------------------------------LHKQTGPITQ----------   238  (A)
+d2pbka_:A   ERAHILQHVSSCRLEDLSTPNFVSPLETLMAKAIDAGFIRD---------RLDLLKTDRG   218  (B)
+
+d1aym3_:3   ------------   238  (A)
+d2pbka_:A   VASILSPVYLKA   230  (B)
+

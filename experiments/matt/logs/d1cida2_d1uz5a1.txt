@@ -1,0 +1,16 @@
+(d1uz5a1:A, d1cida2:A)
+Core Residues: 18
+Core RMSD: 2.338
+Raw Score: 18.508
+P-value: 0.6566
+Reference structure: d1uz5a1:A
+
+d1cida2:A   VMKVTQPDSNTLTCEVMGPTSPKMRLILKQENQE--ARVSRQEKVIQVQAPEA-------   156  (A)
+d1uz5a1:A   ----------------------------------IGK----------------KVARLKH   338  (B)
+
+d1cida2:A   ------GVWQCLLSEGEEVKMDSKIQV---------------------------------   177  (A)
+d1uz5a1:A   KVFSVRRQFLPVKLEGDLAVPIL----KGSGAVTSFIDADGFVEIPETVESLDEGEEVEV   396  (B)
+
+d1cida2:A   ------   177  (A)
+d1uz5a1:A   TLFKGW   402  (B)
+

@@ -1,0 +1,19 @@
+(d2oika1:A, d1rjja_:A)
+Core Residues: 50
+Core RMSD: 3.517
+Raw Score: 34.360
+P-value: 0.5642
+Reference structure: d2oika1:A
+
+d1rjja_:A   MA---------------------------------TSGFKHLVVVKFKEDTK------VD    21  (A)
+d2oika1:A   --SFHKNCELCTTAGGEILWQDALCRVVHVENQDYPGFCRVILNRH------VKEXSDLR    57  (B)
+
+d1rjja_:A   E-ILKGLENLVSQIDT-VKSFE------------WGED-----KESHDMLRQGFTHAFSM    62  (A)
+d2oika1:A   PAERDHLXLVVFAV--EEAV--REVXRPDKINLAS---LGNXTP-----------HVHWH    99  (B)
+
+d1rjja_:A   TF-EN------------------------------KDGYVAFTSHPLHVEFSAAFTAVID    91  (A)
+d2oika1:A   V-IP-RFKRDRHFPNSVWGETKRESLPQALDQGSTTALKKAISVR-LD------------   144  (B)
+
+d1rjja_:A   KIVLLDFPVAAVKSSVVATP   111  (A)
+d2oika1:A   --------------------   144  (B)
+

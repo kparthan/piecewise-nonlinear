@@ -1,0 +1,16 @@
+(d1lnqa2:A, d3buxb1:B)
+Core Residues: 32
+Core RMSD: 2.491
+Raw Score: 35.526
+P-value: 0.5739
+Reference structure: d1lnqa2:A
+
+d3buxb1:B   TFRITKADAAEFWRKAFGEKTIVPWKSFRQALHEVHPI-----SSGLEAMALKSTID-LT   231  (A)
+d1lnqa2:A   --------------------------------------PATRILL-LVLAVIIYGTAGFH    39  (B)
+
+d3buxb1:B   CNDY------ISVFEFDIFTRLFQPWSSLLRNWNS--------------------LAV--   263  (A)
+d1lnqa2:A   ----FIEGESWT-VSLYWTFVTIAT----------VGYGDYSPSTPLGMYFTVTLIVLGI    84  (B)
+
+d3buxb1:B   --------------   263  (A)
+d1lnqa2:A   GTFAVAVERLLEFL    98  (B)
+

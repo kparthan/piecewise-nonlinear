@@ -1,0 +1,52 @@
+(d1vdka_:A, d1e4mm_:M)
+Core Residues: 61
+Core RMSD: 6.530
+Raw Score: 81.747
+P-value: 0.5390
+Reference structure: d1vdka_:A
+
+d1e4mm_:M   EITCQENLPFTCGNTDALNSSSFSSDFIFGVASSAYQIEGTIGRGLNIWDGFTHRYPNKS    62  (A)
+d1vdka_:A   ------------------------------------------------------------     4  (B)
+
+d1e4mm_:M   GPDHGNGDTTCDSFSYWQKDIDVLDELNATGYRFSIAWSRIIPRGKRSRGVNEKGIDYYH   122  (A)
+d1vdka_:A   ------------------------------------------------------------     4  (B)
+
+d1e4mm_:M   GLISGLIKKGITPFVTLFHWDLPQTLQDEYEGFLDPQIIDDFKDYADLCFEEFGDSVKYW   182  (A)
+d1vdka_:A   ------------------------------------------------------------     4  (B)
+
+d1e4mm_:M   LTINQLYS---------------------------------------VPTRGYGSALDAP   203  (A)
+d1vdka_:A   --------RIERDTMGEVRVPADKYWGAQTQRSLENFRIGTDRFRMPLEIIRA-------    48  (B)
+
+d1e4mm_:M   GRCSP-----T---------------------------VDPSCYAGNS------------   219  (A)
+d1vdka_:A   -----YGMLKKAAARANLELGELPEEIAKAIIQAAEEVVQ--------GKWDDHFPLVVF    95  (B)
+
+d1e4mm_:M   ------------------------------------------------------S--TEP   223  (A)
+d1vdka_:A   QTGSGTQTNMNVNEVIANRASEILGKPLGSKYAHPNDHVNRGQSSNDTFPTAMYVAVALA   155  (B)
+
+d1e4mm_:M   YI-VAHHQLLAHAKVVDLYRKNYTHQG---------------------------------   249  (A)
+d1vdka_:A   LHQRLYPAVEGLIRTFTAKAQAF----DQIVKVGRTHLMDAVPITLGQEIGSWAAQLKTT   211  (B)
+
+d1e4mm_:M   ------------------------------------------------------------   249  (A)
+d1vdka_:A   LAAVKEMEKGLYNLAIGGTAVGTGLNAHPRFGELVAKYLAEETGLPFRVAENRFAALAAH   271  (B)
+
+d1e4mm_:M   ---------------------------------------GKIGPTMITRWFLPYNDTD--   268  (A)
+d1vdka_:A   DELVNVMGAIRTLAGALMKIGNDVRWLASGPYAGIGEITIP-----------------AN   314  (B)
+
+d1e4mm_:M   -----------------------------------------------RHSIAATERMKEF   281  (A)
+d1vdka_:A   EPGSSIMPGKVNPTQVEALTMVVVRVYGNDHTVAFAGSQGNFQLNVYKPVMAYSTLESIN   374  (B)
+
+d1e4mm_:M   FLGWF-MGPLTNGTYPQIMIDTVGERLPSFSPEESNLVKGS--YDFLGLNYYFTQYAQPS   338  (A)
+d1vdka_:A   LLAD-AVASFD------------------------------AHLA---------------   388  (B)
+
+d1e4mm_:M   PNPVNSTNHTAMMDAGAKLTYINASGHYIGPLFEKDKADSTDNIYYYPKGIYSVMDYFKN   398  (A)
+d1vdka_:A   ------------------------------------------------------------   388  (B)
+
+d1e4mm_:M   KYYNPLIYVTENGISTPGDENRNQSMLDYTRIDYLCSHLCFLNKVIKEKDVNVKGYLAWA   458  (A)
+d1vdka_:A   ------------------------------------------------------------   388  (B)
+
+d1e4mm_:M   LGDNYEFNKGFTVRFGLSYIDWNNVTDRDLKKSGQWYQSFISP-----------------   501  (A)
+d1vdka_:A   -------------------------------------------QGIEPNLERIEEYLQKN   405  (B)
+
+d1e4mm_:M   --------------------------------------------------------   501  (A)
+d1vdka_:A   PMLATALNKAIGYDKAAEIVKKALKKTLKQAALELGYLTEEEFDRIVVPMRLAKPH   463  (B)
+

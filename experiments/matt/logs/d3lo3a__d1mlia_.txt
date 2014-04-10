@@ -1,0 +1,16 @@
+(d1mlia_:A, d3lo3a_:A)
+Core Residues: 69
+Core RMSD: 3.521
+Raw Score: 59.546
+P-value: 0.1357
+Reference structure: d1mlia_:A
+
+d3lo3a_:A   SNATAY--IIVGLTP-KDAEKLQQYGARVASTLAKYS----GEVLVKGS-VEQLHGKFEH    50  (A)
+d1mlia_:A   --MLFHVKMTVKLPVDMDPAKATQLKADEKELAQRLQREGTWR-HLWRIAG---------    48  (B)
+
+d3lo3a_:A   KAQVILEFPSR--E-DAYNW-YHSEEYQALISTRDLGX--DSQFQLIG------------    92  (A)
+d1mlia_:A   HYANYSVFDV-PSVEALHDTLMQ---L--PL-------FPYMDIEVDGLCRHPSSIHSDD    95  (B)
+
+d3lo3a_:A   -    92  (A)
+d1mlia_:A   R    96  (B)
+

@@ -1,0 +1,25 @@
+(d1ulya_:A, d3elna_:A)
+Core Residues: 30
+Core RMSD: 2.886
+Raw Score: 43.967
+P-value: 0.6596
+Reference structure: d1ulya_:A
+
+d3elna_:A   TELLKP------------------------------------------------------     9  (A)
+d1ulya_:A   ------AKKVKVITDPEVIKVXLEDTRRKILKLLRNKEXTISQLSEILGKTPQTIYHHIE    55  (B)
+
+d3elna_:A   ----------------------------------R-------TLADLIRILHELFA-GD-    26  (A)
+d1ulya_:A   KLKEAGLVEVKRTEXKGNLVEKYYGRTADVFYINLYLGDEELRYIARSRLKTKIDIFK-R   114  (B)
+
+d3elna_:A   ---E-VNVEEVQAVLEA-YESNPAEWALYAKFDQYRYTRNLVDQGNGKFNLMILCWGEGH    81  (A)
+d1ulya_:A   LGYQFEENELLNIXDRXSQ-----------------------------------------   133  (B)
+
+d3elna_:A   GSSIHDHTDSHCFLKLLQGNLKETLFDWPDKKSNEMIKKSERTLRENQCAYINDSIGLHR   141  (A)
+d1ulya_:A   ------------------------------------------------------------   133  (B)
+
+d3elna_:A   VENVSHTEPAVSLHLYSPPFDTCHAFDQRTGHKNKVTMTFHSKFGIRTP-----------   190  (A)
+d1ulya_:A   -------------------------------------------------KEFDATVRISK   144  (B)
+
+d3elna_:A   -----------------------------------------------   190  (A)
+d1ulya_:A   YIEEKEDALKDFSNEDIIHAIEWLSTAELARDEEYLELLKRLGSILK   191  (B)
+

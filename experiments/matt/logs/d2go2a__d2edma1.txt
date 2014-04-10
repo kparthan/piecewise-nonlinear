@@ -1,0 +1,22 @@
+(d2edma1:A, d2go2a_:A)
+Core Residues: 30
+Core RMSD: 2.564
+Raw Score: 22.685
+P-value: 0.5477
+Reference structure: d2edma1:A
+
+d2go2a_:A   SSVVVDTN----GQPVSNGADAYYLVPVSHGHAGLALAKIGNEAEPRAVVLDPHHRPGLP    56  (A)
+d2edma1:A   --------SVVANY----------------------------------------------    46  (B)
+
+d2go2a_:A   VRFESPLRINIIKESYFLNIKFGPSSSDSGVWDVIQQDPIGLAVKVTDTKSLLGPFKVEK   116  (A)
+d2edma1:A   ------------------------------------------------------------    46  (B)
+
+d2go2a_:A   EGE--GYKIVYYPERGQTGLDIGLVHRNDKYYLAVKD-----------------------   151  (A)
+d2edma1:A   ---DQMMR-------------VPIQRRAKVMSIRG--ERSYNTPLGKVAMKNGLSDKDMK    88  (B)
+
+d2go2a_:A   -------------------------------------------------GE---------   153  (A)
+d2edma1:A   DVSADLVISTVTAPRTDPAGTGAENSNMTLKILNNTGVDLLINDITVRPTVIAGNIKGNT   148  (B)
+
+d2go2a_:A   -----------------------------------PCVFKIRKAT---------   163  (A)
+d2edma1:A   MSNTYFSSKDIKSSSSKITLIDVCSKFEDGAAFEATMNIGFTS-KNVIDIKDEI   201  (B)
+

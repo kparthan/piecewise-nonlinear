@@ -1,0 +1,16 @@
+(d1t1va_:A, d1u0la1:A)
+Core Residues: 36
+Core RMSD: 2.821
+Raw Score: 34.169
+P-value: 0.4215
+Reference structure: d1t1va_:A
+
+d1u0la1:A   LR--RRGIVV-------------------------------SFHSNMVTVEDEETGERIL    29  (A)
+d1t1va_:A   --MSGLRVYSTSVTGSREIKSQQSEVTRILDGKRIQYQLVDISQDNALR-----------    47  (B)
+
+d1u0la1:A   CKLRGK--FRLQ--NL-KIYVGDRVEYTPDETGSGVIENVLHRK----------------    68  (A)
+d1t1va_:A   -DE---MRT---LAGNPKATPPQIVNG----------NHYCGDYELFVEAVEQDTLQEFL    90  (B)
+
+d1u0la1:A   ---    68  (A)
+d1t1va_:A   KLA    93  (B)
+

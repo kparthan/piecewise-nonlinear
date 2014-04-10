@@ -1,0 +1,19 @@
+(d1usub_:B, d1joga_:A)
+Core Residues: 37
+Core RMSD: 4.992
+Raw Score: 52.853
+P-value: 0.7151
+Reference structure: d1usub_:B
+
+d1joga_:A   NLNVLDAAFYSLEQTVVQISDRNWFDXQPSIVQDTLIAGAIQKFEFVYELSLKXXKRQLQ    66  (A)
+d1usub_:B   ------------------------------------------------------------    12  (B)
+
+d1joga_:A   QDAINTDDIGAYGFKDILREALRFG--LIGDX-SKWVAYRDXRNITSHT-----------   112  (A)
+d1usub_:B   -------------------------VDK----NCIGWAKEYFKQKIVG-VEAKKYAKIKS    46  (B)
+
+d1joga_:A   ------------------------------------------------------------   112  (A)
+d1usub_:B   VSSIEGDCEVNQRGKVISLFDLKITVLIEGHVDSALPFEGSINVPEVAFDSEASSYQFDI   111  (B)
+
+d1joga_:A   ---------------Y---DQEKAXAVYAQIDDFLIESSFLLEQLRQ---   141  (A)
+d1usub_:B   SIFKETSELSEAKPLIRSELLPKLRQIFQQFGKDLLATH--------GND   153  (B)
+

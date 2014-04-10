@@ -1,0 +1,16 @@
+(d3l7ha_:A, d1cpza_:A)
+Core Residues: 27
+Core RMSD: 1.644
+Raw Score: 34.198
+P-value: 0.3970
+Reference structure: d3l7ha_:A
+
+d1cpza_:A   AQEFSVKGMSCNHCVARIEEAVGRISGVKKVKVQLK------------------------    36  (A)
+d3l7ha_:A   -----------------L-KRIQSHKGVVGTIVVNNEGIPVKSTLDNTTTVQYAGLMSQL    50  (B)
+
+d1cpza_:A   -----------------------------------KEKAVVKFDEANVQATEICQAINEL    61  (A)
+d3l7ha_:A   ADKARSVVRDLDPSNDMTFLRVRSKKHEIMVAPDKDFILIVIQN----------------    94  (B)
+
+d1cpza_:A   GYQAEVI    68  (A)
+d3l7ha_:A   -------    94  (B)
+

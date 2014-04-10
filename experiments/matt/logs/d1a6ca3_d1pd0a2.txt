@@ -1,0 +1,25 @@
+(d1pd0a2:A, d1a6ca3:A)
+Core Residues: 30
+Core RMSD: 2.745
+Raw Score: 33.006
+P-value: 0.5611
+Reference structure: d1pd0a2:A
+
+d1a6ca3:A   FSS---------------------------------------------------------   351  (A)
+d1pd0a2:A   ---RPMNQLYPIDLLTELPPPITDLTLPPPPLVIPPERMLVPSELSNASPDYIRSTLNAV   189  (B)
+
+d1a6ca3:A   ---------------------------SELYNWFTLTNLKPDANTGVVNFDIPGYIHDFA   384  (A)
+d1pd0a2:A   PKNSSLLKKSKLPFGLVIRPYQHLYDCMETVM-RARGS-T--------------------   564  (B)
+
+d1a6ca3:A   SKDA--TV-------------TLASNPLSWLVAATGWHYGE-------------------   410  (A)
+d1pd0a2:A   ----GLR-MSRFYGHFFNRSSDLCAFS--------------TMPRDQSYLFEVNVDESIM   605  (B)
+
+d1a6ca3:A   ------------------VDLCISWSRSKQAQAQEGSVSITTNYRDWGAYWQGQARIYDL   452  (A)
+d1pd0a2:A   ADYCYVQVAVLLSLNNSQRRIRIITLAMP-------------------------------   634  (B)
+
+d1a6ca3:A   RRTEAEIPIFLGSYAGATPSGALGKQNYVRISIVNAKDIVALRVCLRPKSIKFWGRSATL   512  (A)
+d1pd0a2:A   -----------------------------------T------------------------   635  (B)
+
+d1a6ca3:A   F-----------   513  (A)
+d1pd0a2:A   -TESLAEVYASA   646  (B)
+

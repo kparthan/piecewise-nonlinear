@@ -1,0 +1,19 @@
+(d3nula_:A, d3bw6a_:A)
+Core Residues: 85
+Core RMSD: 3.184
+Raw Score: 106.021
+P-value: 1.2147e-03
+Reference structure: d3nula_:A
+
+d3bw6a_:A   MAM-----------------RIYYIGVFRSGGEKALELSEVKDLSQFGFFERSSVGQFMT    41  (A)
+d3nula_:A   ---SWQSYVDDHLXCDVEGNHLTAAAILGQD---GSVWAQSAK---------------FP    40  (B)
+
+d3bw6a_:A   FFAETVASRTG--A-------------------------GQRQSIEEGNYIGHVYARSEG    74  (A)
+d3nula_:A   QLKPQEIDGIKKDFEEPGFLAPTGLFLGGEKYXVIQGEQGAVIRGKKGPGGVTIKKT-NQ    99  (B)
+
+d3bw6a_:A   ICGVLITDKE-YPVRPAYTLLNKILDEYLVAHPKEEWADVTETNDALKMKQLDTYISKYQ   133  (A)
+d3nula_:A   ALVFGFYD-EPXTGGQCNLVVERLGDYLIESEL---------------------------   131  (B)
+
+d3bw6a_:A   DP   135  (A)
+d3nula_:A   --   131  (B)
+

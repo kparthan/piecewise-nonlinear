@@ -1,0 +1,16 @@
+(d1f56a_:A, d1ug1a_:A)
+Core Residues: 24
+Core RMSD: 2.893
+Raw Score: 16.427
+P-value: 0.7822
+Reference structure: d1f56a_:A
+
+d1ug1a_:A   GSSGSSGASLLARYPPEKLFQAERN--------FNAAQDLDVSLLEGDLVGVIKKKDPMG    52  (A)
+d1f56a_:A   -------------------------AVYNIGWSFNVNGA---------------------    14  (B)
+
+d1ug1a_:A   SQ--------------------NRWLID---NGV-----------------------TKG    66  (A)
+d1f56a_:A   --RGKSFRAGDVLVFKYIKGQHNVVAVNGRGYA-SCSAPRGARTYSSGQDRIKLTRGQNY    71  (B)
+
+d1ug1a_:A   FVYSS--FLKPYNPRRSHSDASSGPSSG-----------    92  (A)
+d1f56a_:A   FICSFPGHC-------------------GGGMKIAINAK    91  (B)
+

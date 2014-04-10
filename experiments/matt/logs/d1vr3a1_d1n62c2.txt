@@ -1,0 +1,25 @@
+(d1n62c2:C, d1vr3a1:A)
+Core Residues: 46
+Core RMSD: 2.784
+Raw Score: 26.563
+P-value: 0.4367
+Reference structure: d1n62c2:C
+
+d1vr3a1:A   XVQAWYXDESTADP----------------------------------------------    14  (A)
+d1n62c2:C   --------------MIPGSFDYHRPKSIADAVALLTKLGEDARPLAGGHSLIPIMKTRLA    46  (B)
+
+d1vr3a1:A   ------------------------RKPHRAQPDRPVSLEQLRTLGVLYWKLDADKYENDP    50  (A)
+d1n62c2:C   TPEHLVDLRDIGDLVGIREEGTDVV-----------------------------------    71  (B)
+
+d1vr3a1:A   ELEKIRKXRNYSWXDIITI----------------------CKDTL-------PNYE--E    79  (A)
+d1n62c2:C   -------------------IGAMTTQHALIGSDFLAAKLPIIRETSLLIADPQIR--YMG   110  (B)
+
+d1vr3a1:A   KIKXFFEEHLHLDEEIRYI----------------LE--GSGYFDVRDKEDKWIRISXEK   121  (A)
+d1n62c2:C   TI--G--------------GNAANGDPGNDMPALMQCLGAAYELTGPE-----GARIVAA   149  (B)
+
+d1vr3a1:A   GDX-------ITLPAGIYHRF-TLDEKNYVKAXRLFVGEPVWTPYNRPADHFDARVQYXS   173  (A)
+d1n62c2:C   RDYYQGAYFTAIE---PGELLTAIRIP---------------------------------   173  (B)
+
+d1vr3a1:A   FLEGTA----   179  (A)
+d1n62c2:C   ------VPPT   177  (B)
+

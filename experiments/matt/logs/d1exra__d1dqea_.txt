@@ -1,0 +1,19 @@
+(d1dqea_:A, d1exra_:A)
+Core Residues: 69
+Core RMSD: 4.895
+Raw Score: 91.897
+P-value: 0.1119
+Reference structure: d1dqea_:A
+
+d1exra_:A   EQLT---------------------------EE---------------QIAEFKEAFALF    19  (A)
+d1dqea_:A   ----SQEVMKNLSLNFGKALDECKKEMTLTDAINEDFYNFWKEGYEIKNRETGCAIMCLS    56  (B)
+
+d1exra_:A   DK-DGDG-----TI-TTKELGTVMRSLGQN-----PTEAELQDMINEVDADGNGTI---D    64  (A)
+d1dqea_:A   TKLN---MLDPEGNLHHGNAMEFAKKHGADETMAQQLIDIVHGCEKSTPA------NDDK   107  (B)
+
+d1exra_:A   FPEFLSLMARKMKEQDSEEELIEAFKVFDRDGNGLISAAELRHVMTNLGEKLTDDEVDEM   124  (A)
+d1dqea_:A   CIWTLGVATCFKAEIHKLN-----------------------------------------   126  (B)
+
+d1exra_:A   IREADIDGDGHINYEEFVRMMVS-----------   147  (A)
+d1dqea_:A   -----------------------WAPSMDVAVGE   137  (B)
+

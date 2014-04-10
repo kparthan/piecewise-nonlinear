@@ -1,0 +1,25 @@
+(d1evya2:A, d2go2a_:A)
+Core Residues: 36
+Core RMSD: 3.292
+Raw Score: 15.398
+P-value: 0.7874
+Reference structure: d1evya2:A
+
+d2go2a_:A   SSVVVDTNGQPVSNGADAYYLVPVSHGHA--------------------GLAL-------    33  (A)
+d1evya2:A   -----------K-----DELLYL----NKAVVFGSGAFGTALAMVLSKKC---REVCVWH    45  (B)
+
+d2go2a_:A   --------------------------------------------AKIGNEAEPR------    43  (A)
+d1evya2:A   MNEEEVRLVNEKRENVLFLKGVQLASNITFTSDVEKAYNGAEIILFV-IP----TQFLRG   100  (B)
+
+d2go2a_:A   -------------------AVVLDPHHRPGLPVRFESPLRINIIKESYFLNIKFGPSSSD    84  (A)
+d1evya2:A   FFEKSGGNLIAYAKEKQVPVL---------------------------------------   121  (B)
+
+d2go2a_:A   SGVWDV--------------IQ--QDPIGL--AVKVTDTKSLLG----------------   110  (A)
+d1evya2:A   ------VCTKGIERSTLKFPAEIIGEFLPSPLLSVLAG------PSFAIEVATGVFTCVS   169  (B)
+
+d2go2a_:A   -----PFKVEKEGEGYK---IVYYPERGQTGLDIGLVHRNDKYYLAVKDGEPCVFKIRK-   161  (A)
+d1evya2:A   IASADIN----------VARR--------------------------------------L   181  (B)
+
+d2go2a_:A   ------AT--------   163  (A)
+d1evya2:A   QRIMSTGDRSFVCWAT   197  (B)
+

@@ -1,0 +1,22 @@
+(d2hxva2:A, d1qxma1:A)
+Core Residues: 49
+Core RMSD: 4.307
+Raw Score: 18.350
+P-value: 0.7420
+Reference structure: d2hxva2:A
+
+d1qxma1:A   TNANDLR--NNEVFFISPSNNTNKVLDKISQSEVKLWNKLSGANQKWRLIY-DTNKQ---    57  (A)
+d2hxva2:A   -------XYET-------------------------------------FXKRAIELAKKG    16  (B)
+
+d1qxma1:A   ----------AYKIKVMDNTSLILTWNAPLSSVSVKTDTNGDNQYWYLLQNYISRNVIIR   107  (A)
+d2hxva2:A   LGRVNPNPPVGAVVVK-DGRIIAE-------------------GF---------------    41  (B)
+
+d1qxma1:A   NYMNPNL-V--------------------------LQ--------YNIDD-TLMVST---   128  (A)
+d2hxva2:A   -HPYFGGPHAERXAIESARKKGEDLRGATLIVTLEPCDHHGKTPPCTDLIIES----GIK    96  (B)
+
+d1qxma1:A   -----------QTSSSNQFF---------KFSNCIYEALN--------------------   148  (A)
+d2hxva2:A   TVVIGTRDPNPVSGNG---VEKFRNHGIEVI---------EGVLEEEVKKLCEFFITYVT   144  (B)
+
+d1qxma1:A   ---   148  (A)
+d2hxva2:A   KKR   147  (B)
+

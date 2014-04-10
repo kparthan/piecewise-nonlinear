@@ -1,0 +1,16 @@
+(d2jn4a1:A, d1ty0a1:A)
+Core Residues: 27
+Core RMSD: 1.629
+Raw Score: 25.500
+P-value: 0.4024
+Reference structure: d2jn4a1:A
+
+d1ty0a1:A   SENIKDVKLQLNYAY---------EIIPVDYTNCNIDYLTTHDFYIDISSYKKKNFSVDS    54  (A)
+d2jn4a1:A   ---------------MKVMIRKTATGHSAYVAK---------------------------    18  (B)
+
+d1ty0a1:A   EVESYITTKFTKNQKVNIFGLPYIFTRY------DVYYIYGGVTPSVNSNS---------    99  (A)
+d2jn4a1:A   ---------------KDLEELIVEME--NPALWGGKVTLAN----------GWQLELPAM    51  (B)
+
+d1ty0a1:A   ---------------    99  (A)
+d2jn4a1:A   AADTPLPITVEARKL    66  (B)
+

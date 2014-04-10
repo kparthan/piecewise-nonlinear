@@ -1,0 +1,91 @@
+<HTML><H1>Results</H1>
+<A HREF='summary.txt'>Parseable data</A>
+<BR><UL>
+<LI><a href="#mol1A">mol1A</a>
+</UL><HR>
+<TITLE>Dali: mol1A,                                                                       </TITLE><A name=mol1A>
+<h1>Query: <a name="mol1A">mol1A</a></h1>
+                                                                      
+<P><A NAME="summary">
+Select neighbours (check boxes) for viewing as multiple structural alignment or 3D superimposition. 
+The list of neighbours is sorted by Z-score. Similarities with a Z-score lower than 2 are spurious.
+Each neighbour has links to pairwise structural alignment with the query structure, 
+ and to the PDB format coordinate file where the neighbour
+is superimposed onto the query structure. 
+
+<form METHOD="POST" ACTION="http://ekhidna.biocenter.helsinki.fi/dali_server/qz-test" TARGET="_blank"/>
+<input TYPE="hidden" NAME="jobid" VALUE=test>
+<input TYPE="hidden" NAME="query_sequence" VALUE="KVLFVCIHNTARSVMAEALFNAMAKSWKAESAGVEKAERVDETVKRLLAERGLKAKEKPRTVDEVNLDDFDLIVTVCEESSCVVLPTDKPVTRWHIENPAGKDEGTYRRVLAEIEERVKKLVGE"> 
+<input TYPE="hidden" NAME="query_dssp" VALUE="LEEEEELLLLLHHHHHHHHHHLLLLLLLEEEEELLLLLLLLHHHHHHHHLLLLLLLLLLLLHHHLLHHHLLLEEEEELLLLLLLLLLLLLEEEEELLLLLLLLLLHHHHHHHHHHHHHHHHLLL"> 
+<input TYPE="hidden" NAME="cd1" VALUE=mol1A>
+<input TYPE="hidden" NAME="pdbresnos" VALUE="124    1     2     3     4     5     6     7     8     9    10    11    12    13    14    15    16    17    18    19    20    21    22    23    24    25    26    27    28    29    30    31    32    33    34    35    36    37    38    39    40    41    42    43    44    45    46    47    48    49    50    51    52    53    54    55    56    57    58    59    60    61    62    63    64    65    66    67    68    69    70    71    72    73    74    75    76    77    78    79    80    81    82    83    84    85    86    87    88    89    90    91    92    93    94    95    96    97    98    99   100   101   102   103   104   105   106   107   108   109   110   111   112   113   114   115   116   117   118   119   120   121   122   123   124 
+">
+<input TYPE="hidden" NAME="cd2list" VALUE="dummy">
+<input TYPE="submit" NAME="D1" VALUE="Structural Alignment"/> 
+<INPUT TYPE="CHECKBOX" NAME="expand_gaps" VALUE=1 CHECKED"/> Expand gaps 
+<input TYPE="submit" NAME="D3" VALUE="3D Superimposition (Jmol Applet)"/> 
+<input TYPE="reset" VALUE="Reset Selection"/>
+<h2>Summary</h2>
+<PRE>
+    No:  Chain   Z    rmsd lali nres  %id PDB  Description
+<INPUT TYPE="CHECKBOX" NAME="cd2list" VALUE="cd2=mol2A sequence=dkkTIYFISTGNSARSQMAEGWGKEILgEGWNVYSAGIETHGVNPKAIEAMKEVDIDIsnHTSDLIDNDIlKQSDLVVTLCSDADNncPILPpnVKKEHWGFDDPAGKEWSEFQRVRDEIKLAIEKFKLR dssp=lleEEEEEELLLLLHHHHHHHHHHHHLlLLEEEEEEELLLLLLLHHHHHHHHHLLLLLllLLLLLLLHHHhHHLLEEEELLHHHHHhlLLLLllLEEEELLLLLLLLLLHHHHHHHHHHHHHHHHHHHLL qstarts=0,24,38,56,63,67,80,84,88 sstarts=3,28,41,60,66,71,82,88,94 lengths=24,13,17,6,4,11,4,4,36 u=0.991420,0.126389,0.033354,-0.000452,-0.251848,0.967767,0.130715,-0.959478,-0.249630 t=-11,-28,40">   <A HREF=#alignment-1>1</A>:  mol2-A 18.5  1.6  119   130   25 <A HREF="http://ekhidna.biocenter.helsinki.fi/dali_server/qz-test?jobid=test&pdbid=mol2&u=0.991420,0.126389,0.033354,-0.000452,-0.251848,0.967767,0.130715,-0.959478,-0.249630&t=-11,-28,40">PDB</A>                                                                       
+<INPUT TYPE="CHECKBOX" NAME="cd2list" VALUE="cd2=mol2A sequence=dkktIYFIstgnSARSQMAEGWGKeilgegwnVYSAGIethgvNPKAIEAmkevdidisnhTSDLIDNdilkqsdlvvtlcsdadnnCPILppnVKKEHwGFDDpaGKEWSEFQRVRDEIKLAIEKFKLR dssp=lleeEEEEelllLLHHHHHHHHHHhhlllleeEEEEELlllllLHHHHHHhhhllllllllLLLLLLHhhhhhlleeeellhhhhhhLLLLlllLEEEElLLLLllLLLHHHHHHHHHHHHHHHHHHHLL qstarts=0,13,27,44,56,65,87,92,104 sstarts=4,12,32,43,61,87,94,100,106 lengths=4,12,6,7,7,4,5,4,20 u=0.922456,0.377988,0.078746,-0.011260,-0.177528,0.984051,0.385939,-0.908630,-0.159505 t=-19,-34,35">   <A HREF=#alignment-2>2</A>:  mol2-A  2.1  3.7   69   130    7 <A HREF="http://ekhidna.biocenter.helsinki.fi/dali_server/qz-test?jobid=test&pdbid=mol2&u=0.922456,0.377988,0.078746,-0.011260,-0.177528,0.984051,0.385939,-0.908630,-0.159505&t=-19,-34,35">PDB</A>                                                                       
+
+</form>
+</PRE>
+<A NAME="alignments">
+<h2>Pairwise Structural Alignments </h2>
+Notation: three-state secondary structure definitions by DSSP (reduced to H=helix, E=sheet, L=coil) are shown above the amino acid sequence. Structurally equivalent residues are in uppercase, structurally non-equivalent residues (e.g. in loops) are in lowercase. Amino acid identities are marked by vertical bars.
+<a name=alignment-1><h3> No 1: Query=mol1A Sbjct=mol2A Z-score=18.5</h3>
+
+<A HREF="#mol1A">back to top</A>
+<PRE>
+DSSP  ---LEEEEELLLLLHHHHHHHHHHLLL-LLLLEEEEELLLLlLLLHHHHHHHHLLLLLL-
+Query ---KVLFVCIHNTARSVMAEALFNAMA-KSWKAESAGVEKAeRVDETVKRLLAERGLKA-   55
+ident       |    | ||| |||          |   ||| |    |         |      
+Sbjct dkkTIYFISTGNSARSQMAEGWGKEILgEGWNVYSAGIETH-GVNPKAIEAMKEVDIDIs   59
+DSSP  lleEEEEEELLLLLHHHHHHHHHHHHLlLLEEEEEEELLLL-LLLHHHHHHHHHLLLLLl
+
+
+DSSP  lLLLLLHhHLLH-HHLLLEEEEELllLLLL--LLLL--LLEEEEELLLLLLLLLLHHHHH
+Query kEKPRTVdEVNL-DDFDLIVTVCEesSCVV--LPTD--KPVTRWHIENPAGKDEGTYRRV  110
+ident                 || || |                    |    ||||      ||
+Sbjct nHTSDLI-DNDIlKQSDLVVTLCS--DADNncPILPpnVKKEHWGFDDPAGKEWSEFQRV  116
+DSSP  lLLLLLL-LHHHhHHLLEEEELLH--HHHHhlLLLLllLEEEELLLLLLLLLLHHHHHHH
+
+
+DSSP  HHHHHHHHHHHLLL
+Query LAEIEERVKKLVGE  124
+ident   ||     |    
+Sbjct RDEIKLAIEKFKLR  130
+DSSP  HHHHHHHHHHHHLL
+
+
+</PRE><a name=alignment-2><h3> No 2: Query=mol1A Sbjct=mol2A Z-score=2.1</h3>
+
+<A HREF="#mol1A">back to top</A>
+<PRE>
+DSSP  ----LEEEeelllllhhHHHHHHHHLLLL------llLEEEEEllllllllhhhHHHHHL
+Query ----KVLFvcihntarsVMAEALFNAMAK------swKAESAGvekaervdetvKRLLAE   50
+ident                             |                              |
+Sbjct dkktIYFI-----stgnSARSQMAEGWGKeilgegwnVYSAGI------ethgvNPKAIE   49
+DSSP  lleeEEEE-----elllLLHHHHHHHHHHhhlllleeEEEEEL------lllllLHHHHH
+
+
+DSSP  L------lllllLLLLLHH-----------------hlLHHHllleeeeellllllllll
+Query R------glkakEKPRTVD-----------------evNLDDfdlivtvceesscvvlpt   87
+ident                                                             
+Sbjct AmkevdidisnhTSDLIDNdilkqsdlvvtlcsdadnnCPIL---------------ppn   94
+DSSP  HhhhllllllllLLLLLLHhhhhhlleeeellhhhhhhLLLL---------------lll
+
+
+DSSP  LLLEE-EEELllllllllLHHHHHHHHHHHHHHHHLLL----
+Query DKPVT-RWHIenpagkdeGTYRRVLAEIEERVKKLVGE----  124
+ident  |                |             |         
+Sbjct VKKEHwGFDD------paGKEWSEFQRVRDEIKLAIEKfklr  130
+DSSP  LEEEElLLLL------llLLLHHHHHHHHHHHHHHHHHhhll
+
+
+</PRE>
+</PRE>
+<HR>

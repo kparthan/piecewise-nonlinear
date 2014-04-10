@@ -1,0 +1,16 @@
+(d1xdpa1:A, d2spca_:A)
+Core Residues: 65
+Core RMSD: 2.844
+Raw Score: 110.065
+P-value: 0.0162
+Reference structure: d1xdpa1:A
+
+d2spca_:A   Q--------------------------------------NLDLQLYMRDCE-LAESWMSA    20  (A)
+d1xdpa1:A   -GQEKLYIEKELSWLSFNERVLQEAADKSNPLIERMRFLGIYSNNLDEFYKVRFAELKRR    60  (B)
+
+d2spca_:A   REAFLNADDDANAGGNVEALIK-KHEDFDKAINGHEQKIAALQTVADQLIAQNHYASNLV    79  (A)
+d1xdpa1:A   IIISE-EQ---G----------SN--SH--SRHLLGKIQSRVLKADQEFDGLYNELLLEM   102  (B)
+
+d2spca_:A   DEKRKQVLERWRHLKEGLIEKRSRLGD   106  (A)
+d1xdpa1:A   ARNQ-----------------------   106  (B)
+

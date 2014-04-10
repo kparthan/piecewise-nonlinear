@@ -1,0 +1,13 @@
+(d2f69a1:A, d1qypa_:A)
+Core Residues: 29
+Core RMSD: 1.897
+Raw Score: 26.326
+P-value: 0.4047
+Reference structure: d2f69a1:A
+
+d1qypa_:A   GSHMEQDLKT-----------LPTTKITCPKCG----------NDTAYW-WEMQTRAGDE    38  (A)
+d2f69a1:A   ----------HGVCWIYYPDGGSLVG-------EVNEDGEMTGEKIAYVYPD--------   150  (B)
+
+d1qypa_:A   PST-IFYKC-------TKCGHTWRSYE-------------------    57  (A)
+d2f69a1:A   ---ERTALYGKFIDGEMIEGKLATLMSTEEGRPHFELMPGNSVYHF   193  (B)
+

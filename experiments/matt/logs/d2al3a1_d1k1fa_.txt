@@ -1,0 +1,13 @@
+(d1k1fa_:A, d2al3a1:A)
+Core Residues: 30
+Core RMSD: 3.078
+Raw Score: 28.820
+P-value: 0.7226
+Reference structure: d1k1fa_:A
+
+d2al3a1:A   SAVS-------V--LA-PNGRRHTVKVT-PS--TVLLQVLEDTCRRQDFNPSEYDLKFQR    56  (A)
+d1k1fa_:A   ----XVDPVGFAEAWKAQFPDSEPPRXELRSVGDIE-QELERAKASIR------------    43  (B)
+
+d2al3a1:A   TVLDLSLQWRFANLPNNAKLEMVPVSRSR------------------------    85  (A)
+d1k1fa_:A   -----------------------------RLEQEVNQERFRXIYLQTLLAKEK    67  (B)
+

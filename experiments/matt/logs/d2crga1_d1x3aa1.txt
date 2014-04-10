@@ -1,0 +1,13 @@
+(d1x3aa1:A, d2crga1:A)
+Core Residues: 27
+Core RMSD: 2.509
+Raw Score: 28.191
+P-value: 0.5590
+Reference structure: d1x3aa1:A
+
+d2crga1:A   ----------------MEEWSASEACLFEEALEKYG--------------KDFNDIRQDF    37  (A)
+d1x3aa1:A   TNDEETIQQQILALSADK------------------RNFLRDPPAGVQFNFDFDQMY--P    47  (B)
+
+d2crga1:A   LPWK------------------------SLTSIIEYYYMWKTT--DRYVQQKR----    64  (A)
+d1x3aa1:A   V---ALVMLQEDELLSKMRFALVPKLVKEEVFWRNYFYRVSLIKQS-------AQLT    94  (B)
+

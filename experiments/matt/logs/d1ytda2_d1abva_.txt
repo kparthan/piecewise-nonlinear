@@ -1,0 +1,19 @@
+(d1abva_:A, d1ytda2:A)
+Core Residues: 32
+Core RMSD: 3.304
+Raw Score: 34.312
+P-value: 0.6364
+Reference structure: d1abva_:A
+
+d1ytda2:A   MNVFNTASDEDIKKGLASDVYFERTISAIGDKCNDLRVAMEATVSGPLDTWI-NFT----    55  (A)
+d1abva_:A   ----------------------------------------------------SE--FITV     6  (B)
+
+d1ytda2:A   GLDEVLKLLE-GLDVDLYAIPEGTILFPRDANGLPVPFIRVEGRYC--D-FGMYETAILG   111  (A)
+d1abva_:A   ARPYAKAAFDFAV---------------------------------EHQSVERWQDMLAF    33  (B)
+
+d1ytda2:A   FICQASG---I-------------------------------------------------   119  (A)
+d1abva_:A   AAEVTKNEQMAELLSGALAPETLAESFIAVCGEQLDENGQNLIRVMAENGRLNALPDVLE    93  (B)
+
+d1ytda2:A   ------------   119  (A)
+d1abva_:A   QFIHLRAVSEAT   105  (B)
+

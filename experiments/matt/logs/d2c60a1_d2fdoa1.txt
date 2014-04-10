@@ -1,0 +1,16 @@
+(d2fdoa1:A, d2c60a1:A)
+Core Residues: 31
+Core RMSD: 4.153
+Raw Score: 25.183
+P-value: 0.8173
+Reference structure: d2fdoa1:A
+
+d2c60a1:A   SDVRIKFEHNGERRIIAFSRPVKYEDVEHKVTTVFGQPLDLHYXNNELSILLKNQDDLDK   102  (A)
+d2fdoa1:A   ---------------------------------------------XPAYV--FSKESFLK    13  (B)
+
+d2c60a1:A   AIDILDRS--------------------------------------------------SS   112  (A)
+d2fdoa1:A   FLEGHLE-DDVVVVVSSDVTDFCKKLSESXVGEKEYCFAEFAFPADIFDADEDEIDEXXK    72  (B)
+
+d2c60a1:A   XKSLRILLLS-----------   122  (A)
+d2fdoa1:A   YAIV-FVEKEKLSEAGRNAIR    92  (B)
+

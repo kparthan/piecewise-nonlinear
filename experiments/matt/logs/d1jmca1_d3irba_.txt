@@ -1,0 +1,19 @@
+(d3irba_:A, d1jmca1:A)
+Core Residues: 44
+Core RMSD: 3.433
+Raw Score: 40.197
+P-value: 0.4296
+Reference structure: d3irba_:A
+
+d1jmca1:A   KVVPIASLTP--------------------------------------------------   192  (A)
+d3irba_:A   ----------KEGSLLRWYDVXEAERYEYTVGPAGEQFFNGLKQNKIIGSKCSKCGRIFV    57  (B)
+
+d1jmca1:A   -------------------YQSKWTI-CARVTNK--------SQIRTWSNSRGEGKLFSL   224  (A)
+d3irba_:A   PARSYCEHCFVKIENYVEINKDEAYVDSYTIIY-NDDEGNKLA---------------QP   101  (B)
+
+d1jmca1:A   ELVDE-----------SGEIRATAFNEQVDKFFPLIEVNKVYYFSKGTLKIANKQFTAV-   272  (A)
+d3irba_:A   VYIA-LIRFPNIEGGLLCYAEGNV-------------------KVGAKAKIL-------S   134  (B)
+
+d1jmca1:A   ---KNDYEMTFNNETSVMPCEDDHHLPTV   298  (A)
+d3irba_:A   FQWPLRVKVD-------------------   144  (B)
+

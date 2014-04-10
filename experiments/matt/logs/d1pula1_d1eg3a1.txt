@@ -1,0 +1,16 @@
+(d1eg3a1:A, d1pula1:A)
+Core Residues: 63
+Core RMSD: 4.132
+Raw Score: 72.584
+P-value: 0.1799
+Reference structure: d1eg3a1:A
+
+d1pula1:A   NWDDADVKKRWDAFTKFGAATATEMTGKNFDKWLKDA-----------------------    54  (A)
+d1eg3a1:A   -------------------------------------HPKMTELYQSLADLNNVRFSAYR   107  (B)
+
+d1pula1:A   ----------GVLDNKAITGTMTGIAFSKVT-GPKKK-ATFDETKKVLAFVAEDRAR--Q   100  (A)
+d1eg3a1:A   TAMKLRRLQKALCLD-LLSLSAACDALDQHNLKQNDQPMDILQIINCLTTIYDR-LEQEH   165  (B)
+
+d1pula1:A   SKK--PIQDELDAITEKLAKLE-----------------------   120  (A)
+d1eg3a1:A   NN-LVNVPLCVDMCLNWLLNVYDTGRTGRIRVLSFKTGIISLCKA   209  (B)
+

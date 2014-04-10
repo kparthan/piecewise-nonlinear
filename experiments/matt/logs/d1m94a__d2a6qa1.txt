@@ -1,0 +1,16 @@
+(d2a6qa1:A, d1m94a_:A)
+Core Residues: 19
+Core RMSD: 1.837
+Raw Score: 24.546
+P-value: 0.5398
+Reference structure: d2a6qa1:A
+
+d1m94a_:A   -----------------------------------MIEVVVNDRLGKKVRVKCLAEDSVG    25  (A)
+d2a6qa1:A   MRTISYSEARQNLSATMMKAVEDHAPILITRQNGEAC----------------VL-MSLE    52  (B)
+
+d1m94a_:A   DFKKVLSLQIGTQPNKIVLQKGGSVLKDHISLEDYEVHDQTNLELYYL------------    73  (A)
+d2a6qa1:A   EYNSLEETAYL-------------------------------------LRSPANARRLMD    75  (B)
+
+d1m94a_:A   -----------------    73  (A)
+d2a6qa1:A   SIDSLKSGKGTEKDIIE    92  (B)
+

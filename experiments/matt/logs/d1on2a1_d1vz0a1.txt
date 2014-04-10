@@ -1,0 +1,13 @@
+(d1vz0a1:A, d1on2a1:A)
+Core Residues: 40
+Core RMSD: 2.062
+Raw Score: 70.420
+P-value: 0.1730
+Reference structure: d1vz0a1:A
+
+d1on2a1:A   T-----TPSMEMYIEQIYMLIEEKGYARVSDIAEALAVHPSSVTKMVQKLDKDEYLIYEK    56  (A)
+d1vz0a1:A   -EDLSPVEEARGYQALLEMG------LTQEEVARRVGKARSTVANALRLLQL--------   160  (B)
+
+d1on2a1:A   YRGLVL------------------------------------------------    62  (A)
+d1vz0a1:A   ------PPEALEALERGEITAGHARALLMLEPEDRLWGLKEILEKGLSVRQAEA   208  (B)
+

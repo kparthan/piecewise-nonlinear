@@ -1,0 +1,19 @@
+(d1r8ea1:A, d1pula1:A)
+Core Residues: 34
+Core RMSD: 2.570
+Raw Score: 43.363
+P-value: 0.3685
+Reference structure: d1r8ea1:A
+
+d1pula1:A   NWD---------------------------------------------------------    20  (A)
+d1r8ea1:A   ---ESYYSIGEVSKLANVSIKALRYYDKIDLFKPAYVDPDTSYRYYTDSQLIHLDLIKSL    59  (B)
+
+d1pula1:A   -----DADVKKRWDAFTKFGAATATEMTGKNFDKWLKDAGVLDNKAITGTMTGIAFSKVT    75  (A)
+d1r8ea1:A   KYIGTPLEEMKKAQDL---E----------------------------------------    76  (B)
+
+d1pula1:A   GPKKK-ATFDETKKVLAFVAEDRARQSKKPIQDELDAITEKLAKLE--------------   120  (A)
+d1r8ea1:A   -----MEELFAFYTEQERQIREKLDFLS------------------ALEQTISLVKKRMK   113  (B)
+
+d1pula1:A   -------   120  (A)
+d1r8ea1:A   RQMEYPA   120  (B)
+

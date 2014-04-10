@@ -1,0 +1,13 @@
+(d2epia_:A, d1ygya3:A)
+Core Residues: 62
+Core RMSD: 2.362
+Raw Score: 65.459
+P-value: 0.0360
+Reference structure: d2epia_:A
+
+d1ygya3:A   AQ------GINLIIHYVD----RPGALGKIGTLLGTAGVNIQAAQLSEDAEGPGATILLR   501  (A)
+d2epia_:A   --IFMRKVVAEVSIIPLGKGASVSKYVKKAIEVFKKYDLKVETNAM-----------GTV    48  (B)
+
+d1ygya3:A   LDQ---DVPDDVRTAIAAAVDA-----YKLEVVDLS------------------   529  (A)
+d2epia_:A   LEGDLDEI-LKAFKEAHSTVL-NDVDRVVSSLKID-ERKDKENTIERKLKAIGE    99  (B)
+

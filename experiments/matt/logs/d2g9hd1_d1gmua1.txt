@@ -1,0 +1,16 @@
+(d1gmua1:A, d2g9hd1:D)
+Core Residues: 23
+Core RMSD: 1.979
+Raw Score: 19.601
+P-value: 0.5647
+Reference structure: d1gmua1:A
+
+d2g9hd1:D   IGVGNLRNFYTKHDYIDLKGLIDKNLPS--------------------------------    31  (A)
+d1gmua1:A   -------------------MLYLTQR-LEIPAAATASVTLPIDVRVKSRVKVTLNDGRDA    40  (B)
+
+d2g9hd1:D   ---------A---NQLEF-STGIN-DLISESNNWDEISKFKGKKLDIFGIDYNGPCKSKY    77  (A)
+d1gmua1:A   GLLLPRGLLLRGGDVLSNEE----GTEFVQVIA---------------------------    69  (B)
+
+d2g9hd1:D   MYGGATLSG-    86  (A)
+d1gmua1:A   ---------A    70  (B)
+

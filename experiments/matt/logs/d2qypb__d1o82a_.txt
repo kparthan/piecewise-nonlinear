@@ -1,0 +1,16 @@
+(d1o82a_:A, d2qypb_:B)
+Core Residues: 28
+Core RMSD: 2.620
+Raw Score: 40.796
+P-value: 0.5717
+Reference structure: d1o82a_:A
+
+d2qypb_:B   AYVSDVYCEVCEFLVKEV----TKLIDNNKTEKEILDAFDKMCSKLPKSLSEECQE----    49  (A)
+d1o82a_:A   ------------------MAKEFG--IPAAVAGTVLNVVEAG--------------GWVT    26  (B)
+
+d2qypb_:B   ---------------------------------VVD-TYGSSILSILLEEVSPELVCSML    75  (A)
+d1o82a_:A   TIVSILTAVGSGGLSLLAAAGRESIKAYLKKEIK--KKGKRAVIAW--------------    70  (B)
+
+d2qypb_:B   HLC    78  (A)
+d1o82a_:A   ---    70  (B)
+

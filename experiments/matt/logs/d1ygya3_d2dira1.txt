@@ -1,0 +1,16 @@
+(d2dira1:A, d1ygya3:A)
+Core Residues: 39
+Core RMSD: 4.289
+Raw Score: 27.466
+P-value: 0.8492
+Reference structure: d2dira1:A
+
+d1ygya3:A   AQG--------------------------INLIIHYVDR-------P---GALGKIGTLL   475  (A)
+d2dira1:A   ---KAFLEDMKKYAETFLEPWFKAPNKGTFQIVY-----KSRNNSHVNREEVIRELAGIV    59  (B)
+
+d1ygya3:A   GTA----GVNIQ-----AAQLSEDAEGPGATILLRLDQDVPDDVRTAIAAAVDAYKLEVV   526  (A)
+d2dira1:A   -CTLNSENKVDLTNPQYTVVVEII--KAVCCLSV--------------------------    90  (B)
+
+d1ygya3:A   D-LS   529  (A)
+d2dira1:A   -VK-    92  (B)
+

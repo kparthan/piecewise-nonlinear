@@ -1,0 +1,13 @@
+(d1rp3a1:A, d1iufa1:A)
+Core Residues: 49
+Core RMSD: 3.084
+Raw Score: 51.078
+P-value: 0.1791
+Reference structure: d1rp3a1:A
+
+d1iufa1:A   GIHMGKIKRRA---ITEHEKRALRHYFFQL-Q---NRSGQQDLI-EWFREKFGKDISQPS    49  (A)
+d1rp3a1:A   -----------GSRQVREKERRIKEVVEKLKEKLGREPTDEEVAKELG-------ISTEE   128  (B)
+
+d1iufa1:A   VSQILSSKYSYLDNTVEKPWDVKRNR--------------------    75  (A)
+d1rp3a1:A   LFKTLDKINFSYILS-----------LEEVFRDFARDYSELIPSST   163  (B)
+

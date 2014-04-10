@@ -1,0 +1,19 @@
+(d1ckva_:A, d1s28a_:A)
+Core Residues: 51
+Core RMSD: 3.031
+Raw Score: 34.975
+P-value: 0.3955
+Reference structure: d1ckva_:A
+
+d1s28a_:A   GAX--------------------------------------------KNSFDRLIDG-LA    15  (A)
+d1ckva_:A   ---MSVNSNAYDAGIMGLKGKDFADQFFADENQVVHESDTVVLVLKKSDEINTFIEEILL    57  (B)
+
+d1s28a_:A   KDYGXPGFPEKKHEHEVYCFEFK---EVSIRIYQDKFKWVYFLSDIGVIDNLDSNACQSL    72  (A)
+d1ckva_:A   TDYK-------------------KNVNPTVNVEDR-AGYWWIKANG--------------    83  (B)
+
+d1s28a_:A   LRLNEFNL------------------------RTPFFTVGLNEKKDGVVHTRIPLLNLDN   108  (A)
+d1ckva_:A   --------KIEVDCDEISELLGRQFNVYDFLVDVSSTIG---------------------   114  (B)
+
+d1s28a_:A   VEXRRVFE-ALL-------NLSGEVKKTFG----------   130  (A)
+d1ckva_:A   --------RA--YTLGNKFTIT--SELMG-LDRKLEDYHA   141  (B)
+

@@ -1,0 +1,16 @@
+(d3nxaa_:A, d1exra_:A)
+Core Residues: 70
+Core RMSD: 3.643
+Raw Score: 98.336
+P-value: 0.0235
+Reference structure: d3nxaa_:A
+
+d1exra_:A   EQL-----TEEQIAEFKEAFALFDKDG----DGTITTKELGTVMRSLGQNPTEAELQ---    49  (A)
+d3nxaa_:A   ---DCYTELEKAVIVLVENFYKYVSK-YSLVKNKISKSSFREMLQK-----------ELN    47  (B)
+
+d1exra_:A   -------------DMINEVDADG--NGTIDFPEFLSLMARKMKEQDSEEELIEAFKVFDR    94  (A)
+d3nxaa_:A   HMLSDTGNRKAADKLIQNL--DANHDGRISFDEYWTLIGGITGPIAKLIHEQEQ------    99  (B)
+
+d1exra_:A   DGNGLISAAELRHVMTNLGEKLTDDEVDEMIREADIDGDGHINYEEFVRMMVS---   147  (A)
+d3nxaa_:A   -----------------------------------------------------QSS   102  (B)
+

@@ -1,0 +1,16 @@
+(d1r75a_:A, d1hxmb2:B)
+Core Residues: 51
+Core RMSD: 4.001
+Raw Score: 35.240
+P-value: 0.6386
+Reference structure: d1r75a_:A
+
+d1hxmb2:B   KQLDADVSP-------------------------------KPTIFLPSIAE-TKLQ--KA   149  (A)
+d1r75a_:A   ---------VTFKNGKPTVKGTKTYPMFSNILYRIADTEARRWAFYN----DS---KELI    55  (B)
+
+d1hxmb2:B   GTYLCLLE--KFFPDVI-KIHWEEKKSNTILGSQEGNTMKTNDTYMKFSWLTVPEKSLDK   206  (A)
+d1r75a_:A   IHVAVLFDYDSQ-----IVPLG---------DTTAFRIG------KYLCEVDVRPL---E   103  (B)
+
+d1hxmb2:B   EHRCIVRHENNKNGVDQEIIFPPI----------------------   230  (A)
+d1r75a_:A   TQMFVE----------G-------SVTGWRVDTLEARTAEDERGYR   132  (B)
+

@@ -1,0 +1,13 @@
+(d3faua_:A, d2bkya_:A)
+Core Residues: 61
+Core RMSD: 3.674
+Raw Score: 73.519
+P-value: 0.1004
+Reference structure: d3faua_:A
+
+d2bkya_:A   SNVVLIGKKP----VMNYVLAALTLLNQG-----VSEIVIKARGRAISKAVDTVEIVRNR    59  (A)
+d3faua_:A   --SLDLHGLHVDEALEHLMRVLEKKTEEFKQNGGKPYLSVITGRRIKPAVIKYLISHS--    74  (B)
+
+d2bkya_:A   FLPDKIEIKEIRVGSQVVTSQDGRQSRVSTIEIAIRKK-    97  (A)
+d3faua_:A   -F--RFSEI--KP-----------------G--CLKVML    89  (B)
+

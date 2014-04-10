@@ -1,0 +1,13 @@
+(d1fvia1:A, d1dgsa2:A)
+Core Residues: 52
+Core RMSD: 2.493
+Raw Score: 46.211
+P-value: 0.1921
+Reference structure: d1fvia1:A
+
+d1dgsa2:A   AEEKETRLLDVVFQVGRTGR-------VTP-VGVLE----PVFIEGSEVSR--VTLHNES   360  (A)
+d1fvia1:A   FKDAEATIISMTALF-----KSGKVEEDVMGSIEVDYDGVV--------FSIGTGFDAD-   254  (B)
+
+d1dgsa2:A   YI-EELDI-------RIGDWVLVHKAGGVI------PEVLRVLKERRTGKERPI   400  (A)
+d1fvia1:A   QRRD----FWQNKESYIGKMVKFKY-----FEMPRFPVFIGIR-----------   293  (B)
+

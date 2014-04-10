@@ -1,0 +1,16 @@
+(d1whma_:A, d1m9sa2:A)
+Core Residues: 45
+Core RMSD: 2.265
+Raw Score: 47.350
+P-value: 0.2157
+Reference structure: d1whma_:A
+
+d1m9sa2:A   ETTEKT-----------VNLTRYVKYIRGNAGIYKLPREDNSLKQGTLASH-RCKALTVD   438  (A)
+d1whma_:A   ------GSSGSSGPPLEINSRVSLK----------------------VG--ETIESGTVI    30  (B)
+
+d1m9sa2:A   REAR---NG-GKLWYRLK------------------------NIGWTKAENLSLD-----   465  (A)
+d1whma_:A   FCDVLPGKESLGYFVGVDMDNPIGNWDGRFDGVQLCSFACVESTILLHINDIIPESSGPS    90  (B)
+
+d1m9sa2:A   --   465  (A)
+d1whma_:A   SG    92  (B)
+

@@ -1,0 +1,22 @@
+(d1yb3a1:A, d4av5a_:A)
+Core Residues: 40
+Core RMSD: 3.061
+Raw Score: 31.455
+P-value: 0.4313
+Reference structure: d1yb3a1:A
+
+d4av5a_:A   FACK-------------------------------------T-----------------A     6  (A)
+d1yb3a1:A   ----XLKEVHELLNRIWGDIFELREELKEELKGFTVEEVSEVFNAYLYIDGKWEEXKYPH    57  (B)
+
+d4av5a_:A   NGTAIPIGG---GSANVYVNLAPVVNVGQNLVVDLSTQIFCHNDYPETITD---------    54  (A)
+d1yb3a1:A   PAFA-----VKPGGEVGATPQ------------------------------GFYFVFAFP    82  (B)
+
+d4av5a_:A   -----------------------YV---TLQRGSAYGGVLSNFSGTVKYSGSSYPFPTTS    88  (A)
+d1yb3a1:A   KEELSKEFIEDVIRAFEKLFIYGAENFLEDFYNF----------E----------HPI--   120  (B)
+
+d4av5a_:A   ETPRVVYNSRTDKPWPVALYLTPVSSAGGVAIKAGSLIAVLILRQ------------TNN   136  (A)
+d1yb3a1:A   ---------------------------------------------SGDEVWDRIVNSD--   133  (B)
+
+d4av5a_:A   YNSDDFQFVWNIYANNDVVVPT----------------------   158  (A)
+d1yb3a1:A   ---EEXINFEVDLGF-------DKEEVKREIKRFIELARRYNLL   167  (B)
+

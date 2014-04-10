@@ -1,0 +1,16 @@
+(d1f1sa3:A, d1zunb1:B)
+Core Residues: 22
+Core RMSD: 1.967
+Raw Score: 20.944
+P-value: 0.5809
+Reference structure: d1f1sa3:A
+
+d1zunb1:B   DRNYTDLRFPV------------------QYVNRPNL-------------------NFRG   260  (A)
+d1f1sa3:A   -----------EVELLENSSKQQVIYDKNSQTWAVI-KHDNQESLINNQFKMNKAGLYLV   959  (B)
+
+d1zunb1:B   FAGTLASGIVHKGDEIVVLPSGKSSRVKSIVTFEGELEQAGPGQAVTLTX----------   310  (A)
+d1f1sa3:A   QKVG----------------------------------------NDYQNVYYQPQTMTKT   979  (B)
+
+d1zunb1:B   EDEIDISRGDLLVHADNVP----   329  (A)
+d1f1sa3:A   D------------------QLAI   984  (B)
+

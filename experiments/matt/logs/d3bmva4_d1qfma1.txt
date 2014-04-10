@@ -1,0 +1,46 @@
+(d1qfma1:A, d3bmva4:A)
+Core Residues: 90
+Core RMSD: 12.056
+Raw Score: 76.474
+P-value: 0.6056
+Reference structure: d1qfma1:A
+
+d3bmva4:A   ASDTAVSNVVNYSTDVIYQIVTDRFVDGNTSNNPTGDLYDPTHTSLKKYFGGDWQGIINK    60  (A)
+d1qfma1:A   ------------------------------------------------------------     1  (B)
+
+d3bmva4:A   INDGYLTGMGVTAI---WIPQPVENIY-AVLPDSTFGGSTSYHGYWARDFKRTNPYFGSF   116  (A)
+d1qfma1:A   --------------MLSFQYPDVYRDETAIQDY-HGHKV---------------------    24  (B)
+
+d3bmva4:A   TDFQNLINTAHAHNIKVIIDFAPNHTSPASETDPTYAENGRLYDNGTLLGGYTNDTNGYF   176  (A)
+d1qfma1:A   -----------------------------------XDPYA--------------------    29  (B)
+
+d3bmva4:A   HHYGGTDFSSYEDGIYRNLFDLAD-LNQQNSTIDSYLKSAIKVWLDMGIDGIRLDAVKHM   235  (A)
+d1qfma1:A   ----------------------W-LEDPDSEQTKAFVEAQNKITVPF-------------    53  (B)
+
+d3bmva4:A   PFGWQKNFMDSILSYRPVFTFGEWFLGTNEIDVNNTYFANESGMSLLDFRFSQKVRQVFR   295  (A)
+d1qfma1:A   ------------------------------------------------------------    53  (B)
+
+d3bmva4:A   DNTDTMYGLDSMI-----------------------------------------------   308  (A)
+d1qfma1:A   -------------LEQXPIRGLYKERMTELYDYPKYSCHFKKGKRYFYFYNTGLQNQRVL   100  (B)
+
+d3bmva4:A   -------------QSTASDYNFINDMVTFIDNHDMDRFYN----GGSTRPVEQ-------   344  (A)
+d1qfma1:A   YVQDSLEGEARVFLDPNILSDDG-TVALR-----------GYAFSEDGEYF--AYGLSAS   146  (B)
+
+d3bmva4:A   ----------ALAFTLTSRGVPAIYYGTEQYMTGN---------GDPYNR----------   375  (A)
+d1qfma1:A   GSDWVTIKFMKVDGA--------------------KELPDVLERVKFSX-MAWTHDGKGM   185  (B)
+
+d3bmva4:A   ---------------------------------------------------AMMTSFN--   382  (A)
+d1qfma1:A   FYNAYPQQDGKSDGTETSTNLHQKLYYHVLGTDQSEDILCAEFPDEPKWMGGAELSDDGR   245  (B)
+
+d3bmva4:A   ------------------------------------------------------------   382  (A)
+d1qfma1:A   YVLLSIREGXDPVNRLWYCDLQQESNGITGILKWVKLIDNFEGEYDYVTNEGTVFTFKTN   305  (B)
+
+d3bmva4:A   ------------------------------------------------------------   382  (A)
+d1qfma1:A   RHSPNYRLINIDFTDPEESKWKVLVPEHEKDVLEWVACVRSNFLVLCYLHDVKNTLQLHD   365  (B)
+
+d3bmva4:A   ------------------TSTTAYNVIKKLAPLRKSNPAIAY------------------   406  (A)
+d1qfma1:A   LATGALLKIFPLEVGSVVGY-S--------------------GQKKDTEIFYQFTSFLSP   404  (B)
+
+d3bmva4:A   --------------------------   406  (A)
+d1qfma1:A   GIIYHCDLTKEELEPRVFREVTVKGI   430  (B)
+

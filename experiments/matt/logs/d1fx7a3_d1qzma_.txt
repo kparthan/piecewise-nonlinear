@@ -1,0 +1,16 @@
+(d1qzma_:A, d1fx7a3:A)
+Core Residues: 19
+Core RMSD: 2.433
+Raw Score: 20.375
+P-value: 0.5417
+Reference structure: d1qzma_:A
+
+d1fx7a3:A   GADDANLVRLTELPAGSPVAVVVRQLTEHVQGDI---DLITRLKDAGVVPNA--------   193  (A)
+d1qzma_:A   ----------------------------------SGYTEDEKLNIAK-----RHLLPKQI   511  (B)
+
+d1fx7a3:A   ----------RVTVETTPGGGV--TIVIPGHE--NVTLPHEMAHAVKVEK----------   229  (A)
+d1qzma_:A   ERNALKKGELTVD---------DSAI------IGIIR-------------YYTREAGVRG   543  (B)
+
+d1fx7a3:A   -------------------------V---------------   230  (A)
+d1qzma_:A   LEREISKLCRKAVKQLLLDKSLKHIEINGDNLHDYLGVQRF   584  (B)
+

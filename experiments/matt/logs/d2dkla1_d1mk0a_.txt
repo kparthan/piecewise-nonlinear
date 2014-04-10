@@ -1,0 +1,16 @@
+(d1mk0a_:A, d2dkla1:A)
+Core Residues: 28
+Core RMSD: 2.029
+Raw Score: 30.295
+P-value: 0.5115
+Reference structure: d1mk0a_:A
+
+d2dkla1:A   GMKTSGK--------------------QDEAWIMSRLIKQLTDMGFPREPAEEALKSNNM    47  (A)
+d1mk0a_:A   ------MKSGIYQIKNTLNNKVYVGSAKDFEKRWKRHFKDLEKG----------------    38  (B)
+
+d2dkla1:A   N---LDQAMSALLEKKVDVDKRGLGVTDHNGMAAK-------------------------    79  (A)
+d1mk0a_:A   -CHSSIKLQRSFNK---------------------HGNVFECSILEEIPYEKDLIIERAN    76  (B)
+
+d2dkla1:A   ---------------------    79  (A)
+d1mk0a_:A   FWIKELNSKINGYNIADATFG    97  (B)
+

@@ -1,0 +1,16 @@
+(d2grga1:A, d2c5lc1:C)
+Core Residues: 29
+Core RMSD: 2.436
+Raw Score: 28.349
+P-value: 0.6531
+Reference structure: d2grga1:A
+
+d2c5lc1:C   EESFF-VQVHDVSPEQPRTVIKAPRVS---------------------------------  2159  (A)
+d2grga1:A   -----MKSSIP----------------ITEVLPRAVGSLTFDENYNLLDTSGVAKVIEKS    39  (B)
+
+d2c5lc1:C   TAQDVIQQTLCKAKYSLSILS---------------------NPNPSDYVLLEEVVKDKS  2207  (A)
+d2grga1:A   PIAEIIRKSNAEL--------GRLGYSVYEDAQYIGHAFKKAG----HFIVYFTP-----    82  (B)
+
+d2c5lc1:C   SQRVLLDQECVFQAQSKWKGAGKFILKLKEQV--------------  2239  (A)
+d2grga1:A   --------------------KN----------KNREGVVPPVGITN    98  (B)
+

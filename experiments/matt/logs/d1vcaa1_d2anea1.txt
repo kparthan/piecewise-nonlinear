@@ -1,0 +1,16 @@
+(d2anea1:A, d1vcaa1:A)
+Core Residues: 52
+Core RMSD: 4.409
+Raw Score: 34.850
+P-value: 0.5853
+Reference structure: d2anea1:A
+
+d1vcaa1:A   FPKDPE------IHLS--GPLEAGKPITVKC-SVADVYPFDRLE---I--DLLKGD--HL   134  (A)
+d2anea1:A   ------RIEIPVLPL-RDVVVYPHMVIPLFVGRE----------KSIRCLEAA---MDHD    47  (B)
+
+d1vcaa1:A   MKS---------------------------------QEFLEDADRKSLET---KSLEVTF   158  (A)
+d2anea1:A   K--KIMLVAQKEASTDEPGVNDLFTVGTVASILQMLK-------------LPDGTVKVLV    92  (B)
+
+d1vcaa1:A   TPVIE--DIGKVLVCRAKLHIDEMDSVPTV----RQAVKELQVYISP   199  (A)
+d2anea1:A   EGLQ-RARISAL------------------SDNGEHFSAKAEYL---   117  (B)
+

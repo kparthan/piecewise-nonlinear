@@ -1,0 +1,19 @@
+(d1kyqa2:A, d1jaka2:A)
+Core Residues: 33
+Core RMSD: 2.370
+Raw Score: 46.761
+P-value: 0.3806
+Reference structure: d1kyqa2:A
+
+d1jaka2:A   DRKAPVRPTPLDRVIPAPASVDPGGAPYRIT-------RGTHIRVDD----SREARRVGD    56  (A)
+d1kyqa2:A   -------------------------------GANLEIGDRLQILISTNGLSPRFGALVRD   179  (B)
+
+d1jaka2:A   YLADLLRPATGYRLPVTAHGHGGIRLRLAGGPYGDEGYRLDSGPAGVTITARKAAGLFHG   116  (A)
+d1kyqa2:A   EIRNLFTQ----------------------------------------------------   187  (B)
+
+d1jaka2:A   VQTLRQLLPPAVEKDSAQP-----------------------------------------   135  (A)
+d1kyqa2:A   --------------XGDLALEDAVVKLGELRRGIRLLAPDDKDVKYRXDWARRCTDLFGI   233  (B)
+
+d1jaka2:A   -GPWLVAGGTIEDTPR-------------------------------------   150  (A)
+d1kyqa2:A   QHC-------------HNIDVKRLLDLFKVXFQEQNCSLQFPPRERLLSEYCS   273  (B)
+

@@ -1,0 +1,16 @@
+(d2pa7a1:A, d2ozja_:A)
+Core Residues: 69
+Core RMSD: 2.465
+Raw Score: 85.798
+P-value: 2.4162e-03
+Reference structure: d2pa7a1:A
+
+d2ozja_:A   XARLKNLPQERPLPLASLIEARENQVLSXALAQSDR------------------------    36  (A)
+d2pa7a1:A   ------------------------------------ENKVINFKKIIDSRGSLVAIEENK    25  (B)
+
+d2ozja_:A   -----VQISLFSFAD------GESVSEEEYF-GDTLYLILQGEAVITF----DDQKIDL-    79  (A)
+d2pa7a1:A   NIPFSI-KRVYYIF-DTKGEEP--RGFHAHKKLEQVLVCLNGSCRVILDDGNIIQEITLD    81  (B)
+
+d2ozja_:A   VPEDVLXVPAHKIHAIA-GKGRFKXLQITLID------------------------   110  (A)
+d2pa7a1:A   SPAVGLYVGPAVWHEMHDFSSDCVMMVLASD-YYDETDYIRQYDNFKKYIAKINLE   136  (B)
+

@@ -1,0 +1,16 @@
+(d3bwga1:A, d1sgma1:A)
+Core Residues: 27
+Core RMSD: 2.781
+Raw Score: 33.895
+P-value: 0.6249
+Reference structure: d3bwga1:A
+
+d1sgma1:A   G--------------------DSREKILHTASRLSQLQGYHATGLNQIVKESGAPKGSLY    44  (A)
+d3bwga1:A   -QQIATEIETYIEEHQLQQGDKLP--------------------------------VLET    31  (B)
+
+d1sgma1:A   HFFPNGKE----ELAIEAVTYTGKIVEHLI-----------------------QQSMDES    77  (A)
+d3bwga1:A   LXA-----QFEVSKSTITKSLELLEQKG--AIFQVRGSGIFVRKHKRKGYISLL------    78  (B)
+
+d1sgma1:A   ----    77  (A)
+d3bwga1:A   SNQG    82  (B)
+

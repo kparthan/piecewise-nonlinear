@@ -1,0 +1,16 @@
+(d1ei5a1:A, d2ifga1:A)
+Core Residues: 36
+Core RMSD: 4.107
+Raw Score: 36.132
+P-value: 0.6752
+Reference structure: d1ei5a1:A
+
+d2ifga1:A   G----------------------VPTLKVQVPNASVDVGDDVLL----RCQVEGRG----   221  (A)
+d1ei5a1:A   -EVSRVEADSAWFGSWLDDETGLVLSLED---------------AGHGRMKARFG-TSPE   378  (B)
+
+d2ifga1:A   -------------LEQAGWILTELEQSATVMKSGGLPSLGLTLANVTSDLNRKNVTCWAE   268  (A)
+d1ei5a1:A   MMDVVSANEARSAVTTIRRD---------------------------------GETIELV   405  (B)
+
+d2ifga1:A   N--DVGRAEVSVQVNVS-   283  (A)
+d1ei5a1:A   RASENLRLSMK------R   417  (B)
+

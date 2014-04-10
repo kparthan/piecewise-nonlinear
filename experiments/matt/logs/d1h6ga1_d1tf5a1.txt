@@ -1,0 +1,19 @@
+(d1tf5a1:A, d1h6ga1:A)
+Core Residues: 32
+Core RMSD: 2.394
+Raw Score: 42.607
+P-value: 0.5319
+Reference structure: d1tf5a1:A
+
+d1h6ga1:A   DLRRQLRKAVXDHVSDSFLETNVPLLVLIEAAKNGNEKEVKEYAQVFREHANKLIEVANL   436  (A)
+d1tf5a1:A   ------------------------------------------------------------   227  (B)
+
+d1h6ga1:A   ACSISNNEEGVKLVR------------------XSASQL----------EA---LCP---   462  (A)
+d1tf5a1:A   ---------------AAKSTKLYVQANAFVRTLKAEKDYTYDIKTKAVQLTEEGM--TKA   269  (B)
+
+d1h6ga1:A   --------QVINAALALAAKPQSKLAQENXDLFKEQWEKQVRVLTDAVDDITS-------   507  (A)
+d1tf5a1:A   EKAFGIDNL--FD-------------VKHVALNHHINQALKAHVAM-------QKDVDYV   307  (B)
+
+d1h6ga1:A   -----------------------------------------   507  (A)
+d1tf5a1:A   VEDGQVVIVDSFTGRLMKGRRYSEGLHQAIEAKEGLEIQNE   348  (B)
+

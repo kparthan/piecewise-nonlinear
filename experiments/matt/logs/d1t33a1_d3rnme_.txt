@@ -1,0 +1,13 @@
+(d3rnme_:E, d1t33a1:A)
+Core Residues: 25
+Core RMSD: 2.447
+Raw Score: 35.064
+P-value: 0.6335
+Reference structure: d3rnme_:E
+
+d1t33a1:A   -------------------MNIPTTTTKG-----EQAKSQLIAAALAQFGEYGLHATTRD    36  (A)
+d3rnme_:E   TLATPAVRNLAMENNIKLSEVVGSG----KDGRILKEDILNYLEKQTLE-HHH-H-----   158  (B)
+
+d1t33a1:A   IAALAGQNIAAITYYFGSKEDLYLACAQWIADFLGEKFRPHAEKAERLFSQP--    88  (A)
+d3rnme_:E   ----------------------------------------------------HH   160  (B)
+

@@ -1,0 +1,19 @@
+(d2fhfa4:A, d2uubq1:Q)
+Core Residues: 32
+Core RMSD: 3.339
+Raw Score: 24.410
+P-value: 0.6408
+Reference structure: d2fhfa4:A
+
+d2uubq1:Q   PKKVLTGVVVSDK-----MQKTVTVLVERQFPHPLYGKVIKR-----S--KKYLAHDPEE    49  (A)
+d2fhfa4:A   -------------DGATVMKRVDFRN----------------TGADQQTGLLVMTIDDGM   996  (B)
+
+d2uubq1:Q   KYKLGD---------------------------V--VEIIESRPISKRK-----------    69  (A)
+d2fhfa4:A   Q-----AGASLDSRVDGIVVAINAAPESRTLQDFAGTSLQLS-------AIQQAAGDRSL  1044  (B)
+
+d2uubq1:Q   --------------------RFRVLRLVESGRMDLVEKYLIRRQNYESLSKR--------   101  (A)
+d2fhfa4:A   ASGVQVAADGSVTLPAWSVAVLELP---------------------------QGESQGAG  1077  (B)
+
+d2uubq1:Q   ------   101  (A)
+d2fhfa4:A   LPVSSK  1083  (B)
+

@@ -1,0 +1,13 @@
+(d2h80a1:A, d2bcqa2:A)
+Core Residues: 22
+Core RMSD: 2.336
+Raw Score: 22.534
+P-value: 0.6629
+Reference structure: d2h80a1:A
+
+d2bcqa2:A   SESVP-------------------------------------VLELFSNIW-GA-----G   345  (A)
+d2h80a1:A   -----LVPRGSQEIEAKEACDWLRAAGFPQYAQLYEDSQFPINIVAVKNDHDF-LEKDLV    64  (B)
+
+d2bcqa2:A   TKTAQMWYQQGFRSLEDIRSQASLTTQQAIGLKHYSDFLE------   385  (A)
+d2h80a1:A   EPLCRRLNTLN-----------------------------KCASMK    81  (B)
+

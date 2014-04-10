@@ -1,0 +1,22 @@
+(d1p7hl2:L, d2vn6a_:A)
+Core Residues: 81
+Core RMSD: 2.944
+Raw Score: 48.295
+P-value: 0.0781
+Reference structure: d1p7hl2:L
+
+d2vn6a_:A   TVLPKDIPGDSL--------------KVTVGT--AN-GKP------------GDT-----    27  (A)
+d1p7hl2:L   ------------SSVPLEWPLSSQSGSYELRIEVQPKPHHRAHYETEGSRGAVKAPTGGH   440  (B)
+
+d2vn6a_:A   VTVPVTFADVAKMKNVGTCNFYLGYD----------------ASLL-EV-----VSVDAG    65  (A)
+d1p7hl2:L   PVVQLHGY-------MENKPLGLQIFIGTADERILKPHAFYQVH--RI-TGKTVTT----   486  (B)
+
+d2vn6a_:A   PIVKNAAVNFSSS-ASN--------GTISFLFLDNTITDELITADGV--FANIKFKL--K   112  (A)
+d1p7hl2:L   -------------TSYEKIVGNTKVLEIPLEP---------------KNNMRATID-CAG   517  (B)
+
+d2vn6a_:A   SVT---------------------AKTTTPVTFKDGG-AFGDGTMS-KIASV---TKTNG   146  (A)
+d1p7hl2:L   I--LKLRNADIELRKGETDIGRKNTRVRLVFRVH---IP-------ES-S--GRIVSLQT   562  (B)
+
+d2vn6a_:A   SVTIDP-------   152  (A)
+d1p7hl2:L   ASNPIECSQRSAH   575  (B)
+

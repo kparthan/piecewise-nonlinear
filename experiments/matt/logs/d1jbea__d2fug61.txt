@@ -1,0 +1,19 @@
+(d2fug61:6, d1jbea_:A)
+Core Residues: 75
+Core RMSD: 3.607
+Raw Score: 75.545
+P-value: 0.0157
+Reference structure: d2fug61:6
+
+d1jbea_:A   ---------------------ADKELKFLVVDDFSTMRRIVRNLLKELGFNNVEEA----    36  (A)
+d2fug61:6   EREGILFTTLEKLVAWGRSNSLW--PATFG-------LACCAIEMMAST-------DAQA    75  (B)
+
+d1jbea_:A   -----------EDGVDALNKLQAGGYGFVISDWNMPNMDGLELLKTIRAXXAMSALPVLM    85  (A)
+d2fug61:6   DVMIVAGRLSKKMAPVMRRVWEQMP--------------------------D--PKWVIS   107  (B)
+
+d1jbea_:A   VT------AEAKKENIIA---------AAQAG-ASGYVV-KPFTAATLEEKLNKIFEKLG   128  (A)
+d2fug61:6   MGACASSGGM--------FNNYAIVQNVDSVVPVDVYVPGCPPRPEALIYAVMQLQKKVR   159  (B)
+
+d1jbea_:A   M----------------   129  (A)
+d2fug61:6   -GQAYNERGERLPPVAA   175  (B)
+

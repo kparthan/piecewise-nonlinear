@@ -1,0 +1,22 @@
+(d2bpa2_:2, d1auya_:A)
+Core Residues: 59
+Core RMSD: 2.700
+Raw Score: 44.543
+P-value: 0.1566
+Reference structure: d2bpa2_:2
+
+d1auya_:A   SPLTIKQ-----------------------------------------------------    33  (A)
+d2bpa2_:2   -------MFQTFISRHNSNFFSDKLVLTSVTPASSAPVLQTPKATSSTLYFDSLTVNAGN    53  (B)
+
+d1auya_:A   ---PFQSEV-LFAGTKD--AEASLTIANIDSVSTLTTFYRHASL-----------ESLWV    76  (A)
+d2bpa2_:2   GGFLHCIQMDT------SVNAANQVVS----V---------GA-DIAFDADPKFFACLVR    93  (B)
+
+d1auya_:A   TIHPTLQAPTFPTTVGVCWVPAQSPVTPAQITKTYGGQIFCIGGAIQTL-----SPLIVK   131  (A)
+d2bpa2_:2   FESSS--------------------------------------------VPTTLPTAYDV   109  (B)
+
+d1auya_:A   CPLEMMQP----------RVKDSIQYLDSPKLLIS-IT-AQPTAPPASTCIITVSGT---   176  (A)
+d2bpa2_:2   YPL----NGRHDGGYYTVKD--------CVTIDVLPR-TP--------GNNVYVGFMVWS   148  (B)
+
+d1auya_:A   ----------LSMHSPLITDTST----------------   189  (A)
+d2bpa2_:2   NFTATKCRGLV------------SLNQVIKEIICLQPLK   175  (B)
+

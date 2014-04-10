@@ -1,0 +1,13 @@
+(d1f6va_:A, d1u78a2:A)
+Core Residues: 25
+Core RMSD: 2.132
+Raw Score: 23.794
+P-value: 0.5194
+Reference structure: d1f6va_:A
+
+d1u78a2:A   APRRKAL--------------SVRDERNVIRA-A----SNSC------------------    77  (A)
+d1f6va_:A   -------GSRIAKRTAINKTKKADVKAIADAWQINGEKEL--ELLQQIAQKPGALRILNH    51  (B)
+
+d1u78a2:A   ---------------KTARDIRNELQLSASKRTILNVIKRSG--------------   104  (A)
+d1f6va_:A   SLRLAAMTAHGKGERVNEDYLRQAFR----------------ELDLDVDISTLLRN    91  (B)
+

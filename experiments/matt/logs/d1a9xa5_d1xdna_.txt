@@ -1,0 +1,31 @@
+(d1xdna_:A, d1a9xa5:A)
+Core Residues: 96
+Core RMSD: 3.356
+Raw Score: 96.560
+P-value: 2.5706e-04
+Reference structure: d1xdna_:A
+
+d1a9xa5:A   DRRRFDVAMKKIGLETARSGIAHTMEEALAVAADVGFPCIIRPSFTMGGSGGGI------   181  (A)
+d1xdna_:A   ------------------------------------------------------QSDFSP    57  (B)
+
+d1a9xa5:A   ---AYNREEFEEICARGLDLSPT-K---ELLIDESLIGWKEYEMEVVRDKNDNC-----I   229  (A)
+d1xdna_:A   YIEIDLPS--ESRIQSLHKS---GLAAQEWVACEKVH-GTNFGIYLIN------QGDHEV   105  (B)
+
+d1a9xa5:A   IVCSIENFDAMGIHTGDSITVAPA-----QTLTDKEYQIMRNASMAVLREIGV-----ET   279  (A)
+d1xdna_:A   V-RFAKR------------SGIX-DPNENFFGYHILIDEFTAQIRILNDLLK-QKYGLSR   150  (B)
+
+d1a9xa5:A   -GGSNVQFAVNPKN----------------------------------------GRLIVI   298  (A)
+d1xdna_:A   VGRLVLNGELF-GAKYKHPLVPKSEKWCTLPNGKKFPIAGVQIQREPFPQYSPELHFFAF   209  (B)
+
+d1a9xa5:A   EMNPR---VSRSSALASKATGFPIAKVAAKLAVGYTLDELMNDITGGRTPASFEPSIDYV   355  (A)
+d1xdna_:A   DIKYSVSGAE--------------------------------------------------   219  (B)
+
+d1a9xa5:A   VTKIPRFNFEKFAGANDRLTTQMKSVGEVMAIGRTQQESLQKALRGL-------------   402  (A)
+d1xdna_:A   -----------------------------------------------EDFVLLGYDEFVE   232  (B)
+
+d1a9xa5:A   ------------------------------------------------------------   402  (A)
+d1xdna_:A   FSSKVPNLLYARALVRGTLDECLAFDVENFXTPLPALLGLGNYPLEGNLAEGVVIRHVRR   292  (B)
+
+d1a9xa5:A   ------------------------   402  (A)
+d1xdna_:A   GDPAVEKHNVSTIIKLRCSSFXEL   316  (B)
+

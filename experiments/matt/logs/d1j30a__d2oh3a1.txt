@@ -1,0 +1,19 @@
+(d2oh3a1:A, d1j30a_:A)
+Core Residues: 61
+Core RMSD: 1.067
+Raw Score: 141.552
+P-value: 1.3940e-03
+Reference structure: d2oh3a1:A
+
+d1j30a_:A   DLKGTKTAENLKQGFIGESMANRRYLYFAKRADEEGYPEIAGLLRSIAEGETAHAFGHLD    62  (A)
+d2oh3a1:A   ------------------------------------------------------------     3  (B)
+
+d1j30a_:A   FIRQGGLTDPATDKPIGTLEQMIESAIAGETYEWTQMYPGFAKVAREEGFPEVAEWFETL   122  (A)
+d2oh3a1:A   ----------------YTLAEFLAHAIALETEAA-ERYVELADXXEAHNNLDTATVFRDX    45  (B)
+
+d1j30a_:A   ARAEKSHAEKFQNVLKQLKGG---------------------------------------   143  (A)
+d2oh3a1:A   ARFSTLHGDEIKQRSR-AL--ELPKLXSWQYRWKTPPEVGDEHYLXTPYHALRYARDNEI   105  (B)
+
+d1j30a_:A   -------------------------------------------------   143  (A)
+d2oh3a1:A   RGXEYYKEAAANSADPEVKRLGADFAAEEAEHVVALDKWIEKTPRPSIT   154  (B)
+

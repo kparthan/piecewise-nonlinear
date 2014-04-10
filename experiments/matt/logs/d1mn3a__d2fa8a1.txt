@@ -1,0 +1,16 @@
+(d2fa8a1:A, d1mn3a_:A)
+Core Residues: 17
+Core RMSD: 1.188
+Raw Score: 32.091
+P-value: 0.4417
+Reference structure: d2fa8a1:A
+
+d1mn3a_:A   SSLIKKIEENERKDTLNTLQNXFPDXDPSLIEDVC-----------IAKKSRIEPCVDAL   446  (A)
+d2fa8a1:A   -----------------------------------TKPRIAIRYCTQC--NWLLRAGWXA    26  (B)
+
+d1mn3a_:A   LSLSE-------------------------------------------------------   451  (A)
+d2fa8a1:A   QEILQTFASDIGEVSLIPSTGGLFEITVDGTIIWERKRDGGFPGPKELKQRIRDLIDPER    86  (B)
+
+d1mn3a_:A   ---   451  (A)
+d2fa8a1:A   DLG    89  (B)
+

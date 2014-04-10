@@ -1,0 +1,19 @@
+(d2ae6a1:A, d2zjda_:A)
+Core Residues: 43
+Core RMSD: 3.230
+Raw Score: 41.912
+P-value: 0.4303
+Reference structure: d2ae6a1:A
+
+d2zjda_:A   PSEKT-------------------------------------------------------     6  (A)
+d2ae6a1:A   -----XSTSLTIRLVAEADWPALHALDQIISLAAYQEKXKDETIFVAISGQQLAGFIEVH    68  (B)
+
+d2zjda_:A   ---------------FKQRR---------TFEQRVEDVRLIREQHPTKIPVIIERYKGEK    42  (A)
+d2ae6a1:A   PPTSLAAHQKQWLLSI--GVSPDFQDQGIGGSLLSYIKDXAEISGI-HKLSL-RVXAT--   122  (B)
+
+d2zjda_:A   QLPVLDKTKFLVPDHVNMSELIKIIRRRLQLNANQAFFLLVNGHSMVSVSTPISEVYESE   102  (A)
+d2ae6a1:A   ------------------------------------------------------------   122  (B)
+
+d2zjda_:A   K--------DEDGFLYMVYASQETFGMK------------------   122  (A)
+d2ae6a1:A   -NQEAIRFYEKHGFV-QEAHFKE-----EFYINGHYCDDYQYAYFI   161  (B)
+

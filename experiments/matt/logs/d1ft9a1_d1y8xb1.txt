@@ -1,0 +1,16 @@
+(d1y8xb1:B, d1ft9a1:A)
+Core Residues: 30
+Core RMSD: 3.103
+Raw Score: 23.435
+P-value: 0.6997
+Reference structure: d1y8xb1:B
+
+d1ft9a1:A   DIKQRIAGF-FIDHANTTGRQTGVIVSVDFTVEEIANL----IGSSRQTTSTALNSLIKE   190  (A)
+d1y8xb1:B   ---------LPQN-------------------------IQFSPSAKLQEVLDYLTNS--A   372  (B)
+
+d1ft9a1:A   GYISRQGRG---------------------------------------------HY--TI   203  (A)
+d1y8xb1:B   -SLQXKSPAITATLEGKNRTLYXQSVTSIEERTRPNLSKTLKELGLVDGQELAVADVTT-   430  (B)
+
+d1ft9a1:A   PNLVRLKAAA----------   213  (A)
+d1y8xb1:B   ----------PQTVLFKLHF   440  (B)
+

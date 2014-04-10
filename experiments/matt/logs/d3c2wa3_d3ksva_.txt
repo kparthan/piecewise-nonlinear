@@ -1,0 +1,19 @@
+(d3ksva_:A, d3c2wa3:A)
+Core Residues: 40
+Core RMSD: 3.088
+Raw Score: 38.579
+P-value: 0.4776
+Reference structure: d3ksva_:A
+
+d3c2wa3:A   TPVTLANCEDEPIHVP--------------------------------GAIQPH-GALVT    31  (A)
+d3ksva_:A   ----------------MAANCIFCKIIKGDIPCAKVAETSKALAFMDINPLSR-GHMLVI    43  (B)
+
+d3c2wa3:A   LRADGMVLAASENIQALLGFVASPGSYLTQEQVGPEVLRMLEEG-----LTGNGPWSNSV    86  (A)
+d3ksva_:A   ----PK--------------------------------------EHASCLHE--------    53  (B)
+
+d3c2wa3:A   ET----------------RI------GEHLFDVIGHS-------YKEVFYLEFEIRTADT   117  (A)
+d3ksva_:A   --LGMEDAADVGVLLAKASRAVAGPDGSMQYNVLQNNGSLAHQEVP-HVHFHIIPKT---   107  (B)
+
+d3c2wa3:A   ----------------------------------   117  (A)
+d3ksva_:A   DEKTGLKIGWDTVKVASDELAEDAKRYSEAIAKI   141  (B)
+

@@ -1,0 +1,16 @@
+(d1gz0a2:A, d2d7pa1:A)
+Core Residues: 30
+Core RMSD: 2.781
+Raw Score: 14.168
+P-value: 0.5531
+Reference structure: d1gz0a2:A
+
+d2d7pa1:A   SDDARRLTVTSLQETGLKVNQPASFAVQLNGARGVID------A---RVHTPSGAVEECY    58  (A)
+d1gz0a2:A   ---------------------SEXIYGI---------HAVQALLERAPE-------RFQE    24  (B)
+
+d2d7pa1:A   VSELD-------------------------S------------DKHTIRFIPHENGVHSI    81  (A)
+d1gz0a2:A   VFILKGREDKRLLPLIHALESQGVVIQLANRQYLDEKSDGAVHQGIIARVKP--------    76  (B)
+
+d2d7pa1:A   DVKFNGAHIPGSPFKIRVGEQSQAG   106  (A)
+d1gz0a2:A   -----------------G-------    77  (B)
+

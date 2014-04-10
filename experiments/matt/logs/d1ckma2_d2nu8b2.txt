@@ -1,0 +1,28 @@
+(d2nu8b2:B, d1ckma2:A)
+Core Residues: 88
+Core RMSD: 4.717
+Raw Score: 55.448
+P-value: 0.0523
+Reference structure: d2nu8b2:B
+
+d1ckma2:A   NITTERAVLTLNGLQIKLHKVVGESRDDIVAKMKDLAMDDHKFPR---------------    55  (A)
+d2nu8b2:B   ---------------------------------------------MNLHEYQAKQLFARY    15  (B)
+
+d1ckma2:A   ----------------------------------------LPGPNPVSIERKDFEKLKQN    75  (A)
+d2nu8b2:B   GLPAPVGYACTTPREAEEAASKIGAGPWVVKCQVHAGGRGKAGGVKVVNSKED--IR---    70  (B)
+
+d1ckma2:A   ------------------------KYVVSEKTD-GIRFMMFFTRVFGF--KVCTI---ID   105  (A)
+d2nu8b2:B   AFAENWLGKRLVTYQTDANGQPVNQILVEAATDIAKELYLGAVVDRSSRRVVFMASTEGG   130  (B)
+
+d1ckma2:A   RAM----------TVYLL-----------PF--------------------KN--IP--R   120  (A)
+d2nu8b2:B   V-EIEKVAEETPHLIHKVALDPLTGPMPYQGRELAFKLGLEGKLVQQFTKIFMGLATIFL   189  (B)
+
+d1ckma2:A   --VLFQGSIFDGELCVDIVEKKFAFVLFDAVVVSGVTVSQ--------------MDLASR   164  (A)
+d2nu8b2:B   ERDL-ALIEINP-LVITK-QGDLI--CLDGKLGAD-----GNALFRQPDLREMRD-----   234  (B)
+
+d1ckma2:A   FFAMKRSLKEFKNVPEDPAILRYKEWIPLEHPTIIKDHLKKANAIYHTDGLIIMSVDEPV   224  (A)
+d2nu8b2:B   ------------------------------------------------------------   234  (B)
+
+d1ckma2:A   IYGRNFNLFKLKPG----   238  (A)
+d2nu8b2:B   --------------QSQE   238  (B)
+

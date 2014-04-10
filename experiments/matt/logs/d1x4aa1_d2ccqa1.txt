@@ -1,0 +1,16 @@
+(d2ccqa1:A, d1x4aa1:A)
+Core Residues: 29
+Core RMSD: 3.945
+Raw Score: 25.026
+P-value: 0.7825
+Reference structure: d2ccqa1:A
+
+d1x4aa1:A   SGGGVIRGPAGNNDCRIYVGNLPPDIRTKDIEDVFYKYGAIRDIDLKNRRGGPPFAFVEF    68  (A)
+d2ccqa1:A   ------------------------------------------------------------    11  (B)
+
+d1x4aa1:A   E------------------DPRDAEDAVYGRDGYD-YDGYR-L-RVEFPR---SGRG---   101  (A)
+d2ccqa1:A   -GSASPAVAELCQNTPETFLEASKLLLTYADNIL-RNPNDEKYRSIRIGNTAFS---TRL    65  (B)
+
+d1x4aa1:A   -TG------------------------------------------   103  (A)
+d2ccqa1:A   LP-VRGAVECLFEMGFEEGETHLIFPKKASVEQLQKIRDLIAIER   109  (B)
+

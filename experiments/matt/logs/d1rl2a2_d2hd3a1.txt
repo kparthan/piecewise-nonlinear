@@ -1,0 +1,13 @@
+(d2hd3a1:A, d1rl2a2:A)
+Core Residues: 47
+Core RMSD: 2.065
+Raw Score: 54.267
+P-value: 0.0804
+Reference structure: d2hd3a1:A
+
+d1rl2a2:A   QYRIIDFKRDKDGIPGRVATIEYDPNRS-----A-NIALINY------ADGEKRYIIAPK   107  (A)
+d2hd3a1:A   ------------XKLAVVTGQIVCTVR-HHGLAHDKLLXVEXIDPQGNPDGQCAVAIDNI    47  (B)
+
+d1rl2a2:A   NLKVGXEIX-SGPDADI---------------------KI--------------   125  (A)
+d2hd3a1:A   GAGTGEWVLLV------SGSSARQAHKSETSPVDLCVIGIVDEVVSGGQVIFHK    95  (B)
+

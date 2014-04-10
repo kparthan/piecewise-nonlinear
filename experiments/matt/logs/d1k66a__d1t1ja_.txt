@@ -1,0 +1,19 @@
+(d1t1ja_:A, d1k66a_:A)
+Core Residues: 77
+Core RMSD: 2.991
+Raw Score: 74.457
+P-value: 0.0328
+Reference structure: d1t1ja_:A
+
+d1k66a_:A   AVGNATQPLLVVE-D----------SDEDFSTFQRLLQREGVVNPIYRCITG--------    41  (A)
+d1t1ja_:A   --HM--RKIFLACPYSHADAEVVEQRFRACNEVAATIVRAGH--VVFSQV--SMSHPINL    51  (B)
+
+d1k66a_:A   -------------DQALDFLYQTGSYCNPDI--AP--RPAVILL-----DLNLPGTDGRE    79  (A)
+d1t1ja_:A   CLAELDRAAIGRLWA----------PV----DAFYMDHLEELIVLDLPGWRDS--AGIRR    95  (B)
+
+d1k66a_:A   VLQEIKQDEVLKKIPVVIMTTSSNPKDIEICYSYSISSYIVKPLEIDRLTETVQTFIKYW   139  (A)
+d1t1ja_:A   EMEFFEAG----GQRVSLW--------------------SE----------VE-HEF---   117  (B)
+
+d1k66a_:A   LDIVVLPEMG-   149  (A)
+d1t1ja_:A   ----------R   118  (B)
+

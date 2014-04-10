@@ -1,0 +1,19 @@
+(d1iq0a1:A, d2g9wa1:A)
+Core Residues: 48
+Core RMSD: 6.935
+Raw Score: 80.288
+P-value: 0.7615
+Reference structure: d1iq0a1:A
+
+d2g9wa1:A   KLTRLGDLERAVXDHLW---------------------------SRTEPQTVRQVHEALS    35  (A)
+d1iq0a1:A   -----------------GDTGPYVQYAHARAHSILRKAGEWGAPD---------------   494  (B)
+
+d2g9wa1:A   ARRDLAYTTVXAVLQRLAKKNLVLQIRAHRYAPVHGR------DELVAGLXVDALAQAED    92  (A)
+d1iq0a1:A   -------------------------------------LSQATPYERALALDLLDFEEA--   515  (B)
+
+d2g9wa1:A   ---------SGSRQAALVHFVERVG-----------------------------ADEADA   114  (A)
+d1iq0a1:A   VLEAAEERTPHVLAQYLLDLAASWNAYYNARENGQPATPVLTAPEGLRELRLSLVQSLQR   575  (B)
+
+d2g9wa1:A   LRRALAELEA-------   124  (A)
+d1iq0a1:A   TLATGLDLLGIPAPEVM   592  (B)
+

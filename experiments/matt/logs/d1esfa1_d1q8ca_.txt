@@ -1,0 +1,19 @@
+(d1q8ca_:A, d1esfa1:A)
+Core Residues: 30
+Core RMSD: 3.050
+Raw Score: 24.151
+P-value: 0.7262
+Reference structure: d1q8ca_:A
+
+d1esfa1:A   SE-KS--EEIN--------------------------------------EK--DLR--KK    15  (A)
+d1q8ca_:A   --LTRTQR---RIAVVEFIFSLLFFLPKEAEVIQADFLEYDTKERQLNEW-QKLI-VKAF    64  (B)
+
+d1esfa1:A   SELQ-GTALGNLKQIYYY-NEKAKTENKESHDQFLQHTILFKGFFTYNDLLVDFDSKDIV    77  (A)
+d1q8ca_:A   SEN-IF-SFQKKIEEQQLKNQLEIQT----------------------------------    88  (B)
+
+d1esfa1:A   DKYKGKKVDLYGAYYGYQCAGGTPNKTACMYGGVTLHDNNRLT-----------------   120  (A)
+d1q8ca_:A   -------------------------------------------KIDLLTTAVVLCALSEQ   113  (B)
+
+d1esfa1:A   --------------------------------------   120  (A)
+d1q8ca_:A   KAHNTDKPLLISEALLIMDHYSQGAEKKQTHALLDKLL   151  (B)
+

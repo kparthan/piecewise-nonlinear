@@ -1,0 +1,19 @@
+(d2cr9a1:A, d2spca_:A)
+Core Residues: 23
+Core RMSD: 1.726
+Raw Score: 31.339
+P-value: 0.4736
+Reference structure: d2cr9a1:A
+
+d2spca_:A   QNLDLQLYMRDCELAESWMSAREAFLNADDDANAGGNVEALIKKHEDFDKAINGHEQKIA    59  (A)
+d2cr9a1:A   ------------------------------------------------------------     8  (B)
+
+d2spca_:A   ALQTVAD-----------------------------------------------------    66  (A)
+d2cr9a1:A   -------KSEKRMKLTLKGGAAVDPDSGLEHSAHVLEKGGKVFSATLGLVDIVKGTNSYY    60  (B)
+
+d2spca_:A   ----------QL-----------------------IAQNHYASNLVDEKRKQVLER----    89  (A)
+d2cr9a1:A   KLQLLEDDKEN-RYWIFRSWGRVGTVIGSNKLEQMPSKEDAIEHFMKLYEEKTG--NAWH   117  (B)
+
+d2spca_:A   ------WRHLKEGLIEKRSRLGD-------   106  (A)
+d2cr9a1:A   SKNFTKYPK--------------KFYPLEI   133  (B)
+

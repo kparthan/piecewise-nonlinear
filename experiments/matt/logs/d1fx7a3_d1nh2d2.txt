@@ -1,0 +1,13 @@
+(d1nh2d2:D, d1fx7a3:A)
+Core Residues: 31
+Core RMSD: 3.310
+Raw Score: 27.389
+P-value: 0.7546
+Reference structure: d1nh2d2:D
+
+d1fx7a3:A   GADD--------------------ANLVRLTELPAGSPVAVVVRQLTEHVQGDIDLITRL   184  (A)
+d1nh2d2:D   ----NTQSKLTVKGNLDTYGFCDDVWTFIV------------------------------    80  (B)
+
+d1fx7a3:A   KDAGVVPNARVTVETTPGGGVTIVIPGHENVTLPHEMAHAVKVEKV---   230  (A)
+d1nh2d2:D   ------------------KNCQVTVEDQSVISVD--KL-RIVACNSKKS   121  (B)
+

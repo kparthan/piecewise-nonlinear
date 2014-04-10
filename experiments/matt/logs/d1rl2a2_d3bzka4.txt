@@ -1,0 +1,13 @@
+(d3bzka4:A, d1rl2a2:A)
+Core Residues: 42
+Core RMSD: 2.047
+Raw Score: 41.591
+P-value: 0.2355
+Reference structure: d3bzka4:A
+
+d1rl2a2:A   QYRIIDFKR------------------DKDGIPGRVATIEYDPNRSANIALINYADGEKR   101  (A)
+d3bzka4:A   ---------FKTAEFQEGVESLKDLKPGMV-LEGVVTNVTN------FGAFVDIGVHQDG   680  (B)
+
+d1rl2a2:A   YII---AP--------KNLKVGXEIXSGPDADIKI-----------------------   125  (A)
+d3bzka4:A   LVHISALSEKFVKDPYEVVKAGDIVKV--------KVMEVDIPRNRVGLSMRMSDTPG   730  (B)
+

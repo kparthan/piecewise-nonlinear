@@ -1,0 +1,16 @@
+(d1sddb1:B, d2daqa1:A)
+Core Residues: 30
+Core RMSD: 2.097
+Raw Score: 20.585
+P-value: 0.5543
+Reference structure: d1sddb1:B
+
+d2daqa1:A   -----------------KLHY------KQIVWVKLGN------Y----RWWPAEICNPRS    34  (A)
+d1sddb1:B   NAIQPNKTYTYVWHATTRSGPENPGSACRAWAYY--SAVNPEKDIHSGLIGPLLICRKGT  1714  (B)
+
+d2daqa1:A   VPLNIQGLKHDLGDFPVFFFGSHDYYWVHQGRVFPYVEGDKSFAEGQTSINKTFKKALEE    94  (A)
+d1sddb1:B   LDKET-------------------------------------------------------  1719  (B)
+
+d2daqa1:A   AAKRFQELKA----   104  (A)
+d1sddb1:B   ----------NMPV  1723  (B)
+

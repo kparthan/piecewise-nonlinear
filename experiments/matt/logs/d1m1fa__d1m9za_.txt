@@ -1,0 +1,19 @@
+(d1m9za_:A, d1m1fa_:A)
+Core Residues: 26
+Core RMSD: 2.410
+Raw Score: 18.211
+P-value: 0.6286
+Reference structure: d1m9za_:A
+
+d1m1fa_:A   MERGEIW-----------------LVSLDPTAGH--------------------------    17  (A)
+d1m9za_:A   -------ALCKFCDVRFSTCDNQKSCMSNC----SITSICEKPQEVCVAVWRKNDENITL    74  (B)
+
+d1m1fa_:A   -EQQGT--------------------RPVLIVTPAAFNRVTRL----PVVVPVTSFARTA    55  (A)
+d1m9za_:A   ETV---CHDPKLPYHDFILEDAASPTCIMKEKK----------KPGETFFMCSCS-----   116  (B)
+
+d1m1fa_:A   GFAVSLDGVGIRTTGVVRCDQPRTIDMKARGGK---------RLERVPETIMNEVLGRLS   106  (A)
+d1m9za_:A   ---------------------------------SDECNDNIIFSE---------------   128  (B)
+
+d1m1fa_:A   TILT--   110  (A)
+d1m9za_:A   ----EY   130  (B)
+

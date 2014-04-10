@@ -1,0 +1,13 @@
+(d2cqea1:A, d1ueba1:A)
+Core Residues: 13
+Core RMSD: 2.129
+Raw Score: 8.947
+P-value: 0.7232
+Reference structure: d2cqea1:A
+
+d1ueba1:A   MISVTDLRPGTKVKMDGGLWECVEYQHQKLGRG---------------------------    33  (A)
+d2cqea1:A   ---------------------------------FPCKLYHTTGNCINGDDCMFSHDPLTE   484  (B)
+
+d1ueba1:A   --------------GAKVVAKFKNLETGATVERTFNSGEKLEDI--    63  (A)
+d2cqea1:A   ETRELLDKMLADDAEAGAEDEKEVEEL-----------------KK   513  (B)
+

@@ -1,0 +1,16 @@
+(d1u97a_:A, d1qhoa1:A)
+Core Residues: 10
+Core RMSD: 1.584
+Raw Score: 4.552
+P-value: 0.6536
+Reference structure: d1u97a_:A
+
+d1qhoa1:A   ASAPQIGSVAPNMGIPGNVVTIDGKGFGTTQGTVTFGG-----VTATVKSWTSNRIEVYV   550  (A)
+d1u97a_:A   --------------------------------------MTETDKKQEQENH--AE-----    15  (B)
+
+d1qhoa1:A   PNMAAGLTDVKVTAGGVSSNLYSYNI----------------------------------   576  (A)
+d1u97a_:A   --------------------------CEDKPKPCCVCKPEKEERDTCILFNGQDSEKCKE    49  (B)
+
+d1qhoa1:A   --------------------   576  (A)
+d1u97a_:A   FIEKYKECMKGYGFEVPSAN    69  (B)
+

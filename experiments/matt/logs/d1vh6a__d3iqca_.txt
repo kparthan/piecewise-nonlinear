@@ -1,0 +1,16 @@
+(d3iqca_:A, d1vh6a_:A)
+Core Residues: 55
+Core RMSD: 1.392
+Raw Score: 112.813
+P-value: 6.0833e-03
+Reference structure: d3iqca_:A
+
+d1vh6a_:A   ----------ATPGELTLXLYNGCLKFIRLAAQAIENDDXERKNENLIKAQNIIQELNFT    67  (A)
+d3iqca_:A   YANAYQAYQHESPAKLIEMLYEGILRFSSQAKRCIENEDIEKKIYYINRVTDIFTELLNI    67  (B)
+
+d1vh6a_:A   LNRNIELSASXGAXYDYXYRRLVQANIKNDTGXLAEVEGYVTDFRDAWKQAI--------   119  (A)
+d3iqca_:A   L--DYE--K-------------------------------------------GGEVAVYL    80  (B)
+
+d1vh6a_:A   ----------------------------------------------   119  (A)
+d3iqca_:A   TGLYTHQIKVLTQANVENDASKIDLVLNVARGLLEAWREIHSDELA   126  (B)
+

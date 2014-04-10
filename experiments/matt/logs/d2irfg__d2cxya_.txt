@@ -1,0 +1,16 @@
+(d2cxya_:A, d2irfg_:G)
+Core Residues: 50
+Core RMSD: 2.881
+Raw Score: 41.603
+P-value: 0.3455
+Reference structure: d2cxya_:A
+
+d2irfg_:G   RM------------------------------------------------RMRPWLEEQI    16  (A)
+d2cxya_:A   --GEKITKVYELGNEPERKLWVDRYLTFXEERGSPVSSLPAVGKKPLDLFRLYVCVKEIG    58  (B)
+
+d2irfg_:G   NSNTIPGLKWLNKEKKIFQ--IPWMHAARHGWDVEK-D-APLFRNWAIHTGKHQPGIDKP    72  (A)
+d2cxya_:A   -------------------GLAQ-------------VNKNKKWRELATNLNVGT----SS    82  (B)
+
+d2irfg_:G   D-PKTWKANFRCAMNSLPD-IEEVKDRSIKKGNNAFRVYRMLP----------   113  (A)
+d2cxya_:A   SAASSLKKQYIQYLF----AFE----------------CKIE-RGEEPPPEVF   114  (B)
+

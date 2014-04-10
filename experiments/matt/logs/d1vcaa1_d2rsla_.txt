@@ -1,0 +1,19 @@
+(d2rsla_:A, d1vcaa1:A)
+Core Residues: 24
+Core RMSD: 1.929
+Raw Score: 18.247
+P-value: 0.6444
+Reference structure: d2rsla_:A
+
+d1vcaa1:A   FPKDPEIHLSGPLEAGKPITVKCSVADVYPFDRLEIDLLKGDHLMKSQ-----------E   139  (A)
+d2rsla_:A   -----------------------------------------MRLFGYARVSTSQQSLDIQ    19  (B)
+
+d1vcaa1:A   FLEDADRKSLET----------------------------------------KSLEVTFT   159  (A)
+d2rsla_:A   ------------VRALKDAGVKANRIFTDKRKGLDLLRMKVEEGDVILVKKLDRL-----    69  (B)
+
+d1vcaa1:A   PVIEDIGK-----------------VLVCRAKLHIDEMDSVPT-VRQAVKELQVYISP--   199  (A)
+d2rsla_:A   --------GRDTADMIQLIKEFDAQGVSIRFID----------DGISTD---------GE   102  (B)
+
+d1vcaa1:A   --------------------   199  (A)
+d2rsla_:A   MGKMVVTILSAVAQAERQRI   122  (B)
+

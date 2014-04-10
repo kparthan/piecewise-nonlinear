@@ -1,0 +1,19 @@
+(d1t3qc1:C, d3fsaa_:A)
+Core Residues: 36
+Core RMSD: 6.185
+Raw Score: 38.869
+P-value: 0.9095
+Reference structure: d1t3qc1:C
+
+d3fsaa_:A   AECSV-----------------DIQGND--------QMQFNTNA---IT-----------    21  (A)
+d1t3qc1:C   -----HWEFDEYARRKGDYALVMAAAGLSMQGGRCVAARIA---LGAVEERAHQAIRAND   228  (B)
+
+d3fsaa_:A   ------------------------VDKSCKQFTVNLSHPGNLPKNVMGHNWVLS------    51  (A)
+d1t3qc1:C   FLVGKVIDESTAATAAELATEGLEPRSDIH------------------------GSRDLR   264  (B)
+
+d3fsaa_:A   --TAADMQGVVTDGMASG--LDKDYLKPDDSRVIAHTKLIGSGEKDSVTFDVSKLEQYMF   110  (A)
+d1t3qc1:C   LSLAKAITQRVILKAAQGAMY---------------------------------------   285  (B)
+
+d3fsaa_:A   FCAAHAAMKGTLTLK   125  (A)
+d1t3qc1:C   ---------------   285  (B)
+

@@ -1,0 +1,16 @@
+(d3rgha_:A, d2bhua1:A)
+Core Residues: 64
+Core RMSD: 2.971
+Raw Score: 60.283
+P-value: 0.0300
+Reference structure: d3rgha_:A
+
+d2bhua1:A   SFQTQHDPRTR---------LGATPLPG-------GAGTRFRLWT--STARTVAVRVNG-    54  (A)
+d3rgha_:A   -----------MDPFDASKVKCSGP---GLERATAGEVGQFQVDCSSAGSAELTIEIX-S   199  (B)
+
+d2bhua1:A   ----TEHV----MTSLGGGIYELELPVGP----GARYLFVLDGVPT-PDPYARFLPDGVH   101  (A)
+d3rgha_:A   EAGLP---AEVYIQDHGDGTHTITYIP--LCPGAYTVTIKYGGQPVPNF-----------   243  (B)
+
+d2bhua1:A   GEAEVVDFG--   110  (A)
+d3rgha_:A   -PSKLQVE-PA   252  (B)
+

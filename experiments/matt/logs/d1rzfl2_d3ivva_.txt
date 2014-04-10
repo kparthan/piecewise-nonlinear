@@ -1,0 +1,16 @@
+(d3ivva_:A, d1rzfl2:L)
+Core Residues: 64
+Core RMSD: 2.813
+Raw Score: 38.565
+P-value: 0.2336
+Reference structure: d3ivva_:A
+
+d1rzfl2:L   QPKA--------------------------------------APSVTLFPPSSEELQ---   127  (A)
+d3ivva_:A   ----SGKVVKFSYMWTINNFSFCREEMGEVIKSSTFSSGANDKLKWCLR-VNPKG--LDE    78  (B)
+
+d1rzfl2:L   --ANKATLVCLISDFYPGAVTVAWKA--------DSS----PVKAGVE--TTTPSKQSNN   171  (A)
+d3ivva_:A   ESKDYLSLYLLLVSCPKSEVRAKFKFSILNAKGEE--TKAMESQ----RAYRFV------   126  (B)
+
+d1rzfl2:L   KYAASSYLS-LTPEQW---KSHR---------------SYSCQVTHEGSTVEKTVAPT   210  (A)
+d3ivva_:A   --QGKDWGFKKFIR--RDFL---LDEANGLLPDDKLTLFCEVSVV--Q----------   165  (B)
+

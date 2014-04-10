@@ -1,0 +1,19 @@
+(d1j5ya2:A, d1jaka2:A)
+Core Residues: 43
+Core RMSD: 3.061
+Raw Score: 47.896
+P-value: 0.3949
+Reference structure: d1j5ya2:A
+
+d1jaka2:A   DRKAPV------------RPTPLDRVIPA----PASVDPGGAPYRITRGTHIRVDDSREA    51  (A)
+d1j5ya2:A   ------KSGVSRLVAVKHAPEEIKEE---LLCVVR-------------------------    93  (B)
+
+d1jaka2:A   RRVGDYLADLLRPATGYRLPVTAHGHGGIRLRLAGGPYGDE-GYRLDSGPA---------   101  (A)
+d1j5ya2:A   -----------------------------------------NGGRIVDVIVEHPVYGEIR   112  (B)
+
+d1jaka2:A   ----------------------------------GVTITARKAAGLFHGVQTLRQLLPPA   127  (A)
+d1j5ya2:A   GIIDVSSEEEVLKFVNLXEXAKTEPLLTLSGGVHLHTIEAPDEETXERIXRELKKKGF--   170  (B)
+
+d1jaka2:A   VEKDSAQPGPWLVAGGTIEDTPR----   150  (A)
+d1j5ya2:A   -----------------------LIEE   174  (B)
+

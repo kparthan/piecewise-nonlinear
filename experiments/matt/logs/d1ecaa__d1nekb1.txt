@@ -1,0 +1,19 @@
+(d1nekb1:B, d1ecaa_:A)
+Core Residues: 32
+Core RMSD: 2.341
+Raw Score: 38.738
+P-value: 0.4538
+Reference structure: d1nekb1:B
+
+d1ecaa_:A   LSADQISTVQASFDK----------VK---------------------------------    17  (A)
+d1nekb1:B   ---------------MGQFYAQYEKI-KPYLLNNGQNPPAREHLQMPEQREKLDGLYECI   150  (B)
+
+d1ecaa_:A   -------------------G---DPVGILYAVFK-ADPSIMAKFTQFAGKDLESIKGT--    52  (A)
+d1nekb1:B   LCACCSTSCPSFWWNPDKFIGPAGLLAAYRFL--ID----------------------SR   186  (B)
+
+d1ecaa_:A   -------------------------AP-------FETHANRIVGFFSKIIGELPNIEADV    80  (A)
+d1nekb1:B   DTETDSRLDGLSDAFSVFRCHSIMNCVSVCPKGLNPTRAIGHIKSMLLQRNA--------   238  (B)
+
+d1ecaa_:A   NTFVASHKPRGVTHDQLNNFRAGFVSYMKAHTDFAGAEAAWGATLDTFFGMIFSKM   136  (A)
+d1nekb1:B   --------------------------------------------------------   238  (B)
+

@@ -1,0 +1,13 @@
+(d1vlia1:A, d1rl2a2:A)
+Core Residues: 35
+Core RMSD: 2.602
+Raw Score: 22.870
+P-value: 0.4904
+Reference structure: d1vlia1:A
+
+d1rl2a2:A   QYRIIDFKRDKDGI--------PGRVAT-IEYDPNRS-ANIAL---INYADGEK------   100  (A)
+d1vlia1:A   --------------EIRNFAYRGIFTTAPIQ------KGEAFSEDNIAVL----RPGQKP   332  (B)
+
+d1rl2a2:A   ----------RY--IIAPKNLKVGXEIXSGPDADI-KI-----   125  (A)
+d1vlia1:A   QGLHPRFFELLTSGVRAVRDIPADTGIV-------WDDILLKD   368  (B)
+

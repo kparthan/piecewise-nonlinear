@@ -1,0 +1,13 @@
+(d1pkpa2:A, d2dixa1:A)
+Core Residues: 52
+Core RMSD: 2.181
+Raw Score: 63.547
+P-value: 0.0586
+Reference structure: d1pkpa2:A
+
+d2dixa1:A   GKTPIQV-LHEYGMKTKNIPVYECERSDVQI---------HVPTFTFRVTVGD-ITCTGE    55  (A)
+d1pkpa2:A   -------INPNKL-----ELEERVVAVNRV-AKVVKGGRRLRFSALVVVGDKNGHVGFG-    49  (B)
+
+d2dixa1:A   GT-------SKKLAKHRAAEAAINILKANAS----    79  (A)
+d1pkpa2:A   TGKAQEVPEAIRKAIEDAKKNL--IE-----VPIV    77  (B)
+

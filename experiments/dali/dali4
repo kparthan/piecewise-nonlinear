@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# This program generates a FASTA file using the DALI alignment method.
+
+PDBID1=$1
+
+PDBID2=$2
+
+FASTA=$3
+
+REDIRECT=${PDBID1}_`basename ${PDBID2} .pdb`-dali.redirect
+rm -f dali.lock dali.default
+/home/parthan/Research/Work/piecewise-nonlinear/experiments/dali/DaliLite_3.3/DaliLite -pairwise ${PDBID1} ${PDBID2} test > /dev/null #2> /dev/null
+rm -f list1 list2 mol* pdb90.html replist summary.txt
+
+if [ ! -f index.html ]; then
+    echo "****** WARNING *******"
+    echo "Aligning the following structures failed:"
+    echo $PDBID1
+    echo $PDBID2
+    exit
+fi
+
+if [ $(grep "Sbjct" index.html | wc -l) -eq 0 ]; then #It failed, use the online EBI version
+    rm index.html
+    exit
+fi
+
+BEGIN_LINE=$(cat index.html | grep -n "<PRE>" | head -2 | tail -1 | cut -d ':' -f 1)
+
+SED_CMD=1,${BEGIN_LINE}d
+sed $SED_CMD index.html > dali.data
+END_LINE=$(cat dali.data | grep -n "</PRE>" | head -1 | cut -d ':' -f 1)
+let END_LINE=$END_LINE-1
+DALI_DATA=data.dali
+head -${END_LINE} dali.data > $DALI_DATA
+rm dali.data
+
+printf ">%s\n" $(basename $PDBID1 .pdb) > $FASTA
+cat $DALI_DATA | grep "Query" | cut -d ' ' -f 2 | tr '[a-z]' '[A-Z]' >> $FASTA
+printf "\n>%s\n" $(basename $PDBID2 .pdb) >> $FASTA
+cat $DALI_DATA | grep "Sbjct" | cut -d ' ' -f 2 | tr '[a-z]' '[A-Z]' >> $FASTA
+
+#./pdb-sanitise-alignment ${PDBID1} ${PDBID2} $FASTA.tmp > $FASTA
+#rm -f $FASTA.tmp
+#Time to output the score
+# let SCORE_LINE=$BEGIN_LINE-3
+# head -$SCORE_LINE ${REDIRECT}.dat | tail -1 | cut -d ' ' -f 7 | cut -d '<' -f 1
+#rm index.html $DALI_DATA
+echo -n "."

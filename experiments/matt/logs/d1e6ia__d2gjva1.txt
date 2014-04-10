@@ -1,0 +1,16 @@
+(d2gjva1:A, d1e6ia_:A)
+Core Residues: 65
+Core RMSD: 3.709
+Raw Score: 68.311
+P-value: 0.3265
+Reference structure: d2gjva1:A
+
+d1e6ia_:A   RGPHDAAIQNILTELQNHA-AAWPFLQPVNKEEVPDYYDFIK--------EPM------D   373  (A)
+d2gjva1:A   ME-TLSVIHTVANRLRELNPDM--DI----------------HISSTDAKVYIPTGQQVT    41  (B)
+
+d1e6ia_:A   LST-MEIKLESNKY-QK-------------------MEDFIYDARLVFNNCRMYNGENTS   412  (A)
+d2gjva1:A   V--LI---------HYCGSVFAEPENTDATVQKQLIRI----SAT------VIVPQ----    76  (B)
+
+d1e6ia_:A   YYKYANRLEKFFNNKVKEI-------PEYSHL---------------ID-----------   439  (A)
+d2gjva1:A   -ISDAINALDRLRRSLGGIELPDCDRPLWLESEKYIGDAANFCRYALD-MTASTLFIAEQ   134  (B)
+

@@ -1,0 +1,16 @@
+(d2ae8a1:A, d1gl4b_:B)
+Core Residues: 25
+Core RMSD: 1.957
+Raw Score: 22.988
+P-value: 0.4363
+Reference structure: d2ae8a1:A
+
+d1gl4b_:B   PIMVTVEEQRSQSVRPGADVTFICTAKSKSPAYTLVWTRLHNGKLPSRAMDFNGILTIRN  1828  (A)
+d2ae8a1:A   -------------------------------XIYQKQRT---------------------    12  (B)
+
+d1gl4b_:B   VQPSDAGTYVCTGSNM--------------------------FAMDQGTATLHVQ-----  1857  (A)
+d2ae8a1:A   --------QLNISISDDQSPSHINTGVGFLNHXLTLFTFHSGLSLNIEAQG----DDHHV    64  (B)
+
+d1gl4b_:B   --------------------  1857  (A)
+d2ae8a1:A   TEDIGIVIGQLLLEXIKDKK    84  (B)
+

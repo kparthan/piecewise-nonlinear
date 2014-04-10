@@ -1,0 +1,19 @@
+(d1ijya_:A, d1iuja_:A)
+Core Residues: 42
+Core RMSD: 3.774
+Raw Score: 39.484
+P-value: 0.6761
+Reference structure: d1ijya_:A
+
+d1iuja_:A   MFVT-------------MNRIPVRPE-YA-------EQFEEAFRQRARLVDRM-PGFIRN    38  (A)
+d1ijya_:A   ----ELACQEITVPLCKGIGYEY---TY-MPNQFNHDTQDEAGLEVHQFWPLVEI-----    51  (B)
+
+d1iuja_:A   LVLRPKNPGDPYVVMTLWESEEAFRAW-TESPAFKEGHARSGTLPK-EAFLGPNRLEAFE    96  (A)
+d1ijya_:A   -------------------------QCSPDL--KFFLCSMYTP---ICL-----------    70  (B)
+
+d1iuja_:A   VVLDSE------------------------------------------------------   102  (A)
+d1ijya_:A   ------EDYKKPLPPCRSVCERAKAGCAPLMRQYGFAWPDRMRCDRLPEQGNPDTLCMDY   124  (B)
+
+d1iuja_:A   --   102  (A)
+d1ijya_:A   ER   126  (B)
+

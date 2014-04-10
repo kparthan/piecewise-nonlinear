@@ -1,0 +1,13 @@
+(d1nr4a_:A, d1j8ia_:A)
+Core Residues: 58
+Core RMSD: 2.178
+Raw Score: 88.747
+P-value: 0.0135
+Reference structure: d1nr4a_:A
+
+d1j8ia_:A   VGSEVSDK-------RTCVSLTTQRLPVSRIKTYTI-TEGSL-RAVIFITKRGLKVCADP    51  (A)
+d1nr4a_:A   --------RGTNVGRECCLEYFKGAIPLRKLKTWYQTSEDCSRDAIVFVTVQGRAICSDP    53  (B)
+
+d1j8ia_:A   QATWVRDVVRSMDRKSNTRNNMIQTKPTGTQQSTNTAVTLTG    93  (A)
+d1nr4a_:A   NNKRVKNAVKYLQSL---------------------------    68  (B)
+

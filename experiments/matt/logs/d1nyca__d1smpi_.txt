@@ -1,0 +1,16 @@
+(d1smpi_:I, d1nyca_:A)
+Core Residues: 63
+Core RMSD: 3.440
+Raw Score: 40.745
+P-value: 0.0733
+Reference structure: d1smpi_:I
+
+d1nyca_:A   GSMYQLQFINLVYDTTKLTH------LEQTNINLFIGNWSNHQLQKSICIR---------    43  (A)
+d1smpi_:I   --------------------SSLRLPSAAELSG--QWVLSG--AEQHCDIRLNTDVLDGT    36  (B)
+
+d1nyca_:A   ---HGDDTSH-NQ----------YHILFIDTAHQRIKFSSFDNEEI-----IYILDYDDT    84  (A)
+d1smpi_:I   TWKLA-----GDTACLQKLLPEAP-VGWRPTPDGLTLTQ-------ADGSAVAFFSRNRD    83  (B)
+
+d1nyca_:A   QHILMQTSSKQGIG-TSRPIVYERLV--   109  (A)
+d1smpi_:I   -RYEHKL-------VDGSVRTLK---KK   100  (B)
+

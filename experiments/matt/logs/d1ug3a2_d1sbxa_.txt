@@ -1,0 +1,19 @@
+(d1sbxa_:A, d1ug3a2:A)
+Core Residues: 37
+Core RMSD: 3.246
+Raw Score: 36.416
+P-value: 0.5417
+Reference structure: d1sbxa_:A
+
+d1ug3a2:A   ALPSEELNRQLEKLLKEGSSNQRVFDWIEANLSEQQIVSNTLVRA---------------  1482  (A)
+d1sbxa_:A   ---------------------------------------------GSHXFXPSDRSTERC   101  (B)
+
+d1ug3a2:A   -----LMTAVCYSAIIFET-PLRVDVAVLKARA-KLLQKYLCDEQKELQALYALQALVVT  1535  (A)
+d1sbxa_:A   ETVLEGE--TI--SCFVVGGEKRLCLPQILNSVLR-------------------------   132  (B)
+
+d1ug3a2:A   LEQPPNLLR---------------------------------------------MFFDAL  1550  (A)
+d1sbxa_:A   ---------DFSLQQINAVCDELHIYCSRCTADQLEILKVXGILPFSAPSCGLITKTDAE   183  (B)
+
+d1ug3a2:A   YDEDV--VKEDAFYSW  1564  (A)
+d1sbxa_:A   RLCN-ALLYG------   192  (B)
+

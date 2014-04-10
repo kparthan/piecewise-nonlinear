@@ -1,0 +1,19 @@
+(d1yksa1:A, d2od6a1:A)
+Core Residues: 41
+Core RMSD: 2.125
+Raw Score: 40.909
+P-value: 0.3307
+Reference structure: d1yksa1:A
+
+d2od6a1:A   XAEPKF------TSFTTADFINDVDXE-LFIDAVEKTAPVW-VKEXKSRGL---------    43  (A)
+d1yksa1:A   ------SHMLKKGMTTVLDFHPGAGKTRRFLPQILAECARRRL--------RTLVLAPTR   230  (B)
+
+d2od6a1:A   ----------------------------------------------------LKFSXNRV    51  (A)
+d1yksa1:A   VVLSEMKEAFHGLDVKFHTQAFSAHGSGREVIDAMCHATLTYRMLEPTRVVNWEVIIMDE   290  (B)
+
+d2od6a1:A   -WNKGEVFR-----------------------VVXTYEYKDRASFEANIAYLEDTFGKNP    87  (A)
+d1yksa1:A   AHF------LDPASIAARGWAAHRARANESATIL--------------------------   318  (B)
+
+d2od6a1:A   VFLQLVTTAKFTTSRCLVVXEV------   109  (A)
+d1yksa1:A   ----------------------MTATPP   324  (B)
+

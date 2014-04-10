@@ -1,0 +1,22 @@
+(d1pkha_:A, d1yuda1:A)
+Core Residues: 45
+Core RMSD: 2.564
+Raw Score: 32.204
+P-value: 0.2185
+Reference structure: d1pkha_:A
+
+d1yuda1:A   XQNADDFIKFLELEQHVEGGFYRSSYRSETAFDPSRQLWSSIYFLLRTG-----------    49  (A)
+d1pkha_:A   -------------------------------------------------MILSDKDIIDY    11  (B)
+
+d1yuda1:A   -------------------------------EVS------------HFHRLTADEXWYF-    65  (A)
+d1pkha_:A   VTSKRIIIKPFNKDFVGPCSYDVTLGDEFIIYD-DEVYDLSKELNYKRIKIKNSILVCPL    70  (B)
+
+d1yuda1:A   -HAGQ-------------------SLTIYXISPE--------------------------    79  (A)
+d1pkha_:A   NYN--LTEEKINYFKEKYNVDYVVEGGVLGTTNEYIELPNDISAQYQGRSSLGRVFLTSH   128  (B)
+
+d1yuda1:A   ------------GELTTAQLGLDLAAGERPQFLVPKGCIFGSAXNQDGFSLVGCXVSPGF   127  (A)
+d1pkha_:A   QTAGWIDAGFKGKITLEIVA-------FDKPVILYKN-----------------------   158  (B)
+
+d1yuda1:A   TFDDFELFSQEALLAXYPQHKAVVQKLSRPE------------------------   158  (A)
+d1pkha_:A   -------------------------------QRIGQLIFSKLLSPADVGYSERKT   182  (B)
+

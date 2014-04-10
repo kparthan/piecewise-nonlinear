@@ -1,0 +1,19 @@
+(d1xl4a2:A, d1xn5a_:A)
+Core Residues: 29
+Core RMSD: 1.445
+Raw Score: 46.140
+P-value: 0.3087
+Reference structure: d1xl4a2:A
+
+d1xn5a_:A   MTRLPDIKKEVRFNAPIEKVWEAVSTSEGLAFWFMENDLKAETGHHFHLQSPF-------    53  (A)
+d1xl4a2:A   -----------------------------------------------------ITRLGLE    29  (B)
+
+d1xn5a_:A   ----GPSPCQVTDVERPIKLSFTWDTDGWSVTFHLKEEENGTIFTIVHSGWKQGDTKVEK   109  (A)
+d1xl4a2:A   KRGWL-------------------------------------------------------    34  (B)
+
+d1xn5a_:A   -------AGAESAVVHERMDRGWHDLVNERLRQIVE------------------------   138  (A)
+d1xl4a2:A   DDHYHDLLTVSWPVFITLITGLYLVTN-ALFALAYLACGDVIENARPGSFTDAFFFSVQT    93  (B)
+
+d1xn5a_:A   ---------------------------------------------   138  (A)
+d1xl4a2:A   MATIGYGKLIPIGPLANTLVTLEALCGMLGLAVAASLIYARFTRP   138  (B)
+

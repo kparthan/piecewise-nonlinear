@@ -1,0 +1,19 @@
+(d1hn6a_:A, d2bgwa2:A)
+Core Residues: 13
+Core RMSD: 1.847
+Raw Score: 9.313
+P-value: 0.6813
+Reference structure: d1hn6a_:A
+
+d2bgwa2:A   GGRPRVYVDVR-------------------------------------------------    26  (A)
+d1hn6a_:A   -----------EVENNFPCSLYKDEIMKEIERESKRIKLNDNDDEGNKKIIAPRIFISDD   484  (B)
+
+d2bgwa2:A   ----------EERSPVPSILESLGVQVIPKQLPMGDYLVSDSIIVERKTSSDFAKSLFDG    76  (A)
+d1hn6a_:A   KDSLKCPCDPE------------------------MVSNST-CRFFVC------------   507  (B)
+
+d2bgwa2:A   RLFEQASRLAEHYETVFIIVEGPPVPRRYRGRERSLYAAMAALQLDYGIRLMNTMDPKGT   136  (A)
+d1hn6a_:A   ------------------------------------------------------------   507  (B)
+
+d2bgwa2:A   ALVIESLARLST--------------------------------------   148  (A)
+d1hn6a_:A   ------------KCVERRAEVTSNNEVVVKEEYKDEYADIPEHKPTYDKM   545  (B)
+

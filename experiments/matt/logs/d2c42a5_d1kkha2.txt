@@ -1,0 +1,19 @@
+(d1kkha2:A, d2c42a5:A)
+Core Residues: 40
+Core RMSD: 4.778
+Raw Score: 35.259
+P-value: 0.8007
+Reference structure: d1kkha2:A
+
+d2c42a5:A   TSQFEKRGVAINVPQWVPENCIQ-CNQCAFVCPHSAILPVLAKEEE--------------   713  (A)
+d1kkha2:A   ---------------------KGEFEEFLKNCKF------------LIVYAEKRKKKTAE   207  (B)
+
+d2c42a5:A   --------------LVGAPANFTALEAKGKELKGYKF-RIQINTLDCMGCGNCADICPPK   758  (A)
+d1kkha2:A   LVNEVAKIENKDEIFKEIDKVID--------------EAL--------------------   233  (B)
+
+d2c42a5:A   EKA--LVMQPLDTQRDAQVPNLEYAARI----------------------------P---   785  (A)
+d1kkha2:A   ---KIK-------NKEDFGKLMTKNHELLKKLNISTPKLDRIVDIGNRFGFGAKLTGAGG   283  (B)
+
+d2c42a5:A   ----------------------------------   785  (A)
+d1kkha2:A   GGCVIILVNEEKEKELLKELNKEDVRIFNCRMMN   317  (B)
+

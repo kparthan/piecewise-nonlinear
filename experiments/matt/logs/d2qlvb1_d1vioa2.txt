@@ -1,0 +1,13 @@
+(d1vioa2:A, d2qlvb1:B)
+Core Residues: 35
+Core RMSD: 2.338
+Raw Score: 22.103
+P-value: 0.4741
+Reference structure: d1vioa2:A
+
+d2qlvb1:B   SLMVPVEI---RWQ-QG------------GS---KVYVTGSFTKWRKMIGLIPDSDNNGS   201  (A)
+d1vioa2:A   --------SLRLDKFIAENVGLTRSQATKAIRQSAVKIN--------GEIVKS-------    36  (B)
+
+d2qlvb1:B   FHVKLRLLPGTH----RFRFIVDNELRVSDFLPTATDQMGNFVNYIEVRQ   247  (A)
+d1vioa2:A   GSV---------QISQEDEIYFEDELLTW----I----------------    57  (B)
+

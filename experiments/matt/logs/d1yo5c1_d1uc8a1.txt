@@ -1,0 +1,16 @@
+(d1uc8a1:A, d1yo5c1:C)
+Core Residues: 19
+Core RMSD: 1.159
+Raw Score: 33.105
+P-value: 0.4751
+Reference structure: d1uc8a1:A
+
+d1yo5c1:C   QP---------------------------------------IHLWQFLKELLLKPHSYGR   267  (A)
+d1uc8a1:A   --MLAILYDRIRPDERMLFERAEALGLPYKKVYVPALPMVLGE-----------------    41  (B)
+
+d1yo5c1:C   FIRWLNKEKGIFKIE------------------DSAQVARLWGIRKNRPAMNYDKLSRSI   309  (A)
+d1uc8a1:A   ---------------RPKELEGVTVALERCVSQSRGLAAARYLTALGIPV----------    76  (B)
+
+d1yo5c1:C   RQYYKKGIIRKPDISQRLVYQFVHP------------   334  (A)
+d1uc8a1:A   -------------------------VNRPEVIEACGD    88  (B)
+

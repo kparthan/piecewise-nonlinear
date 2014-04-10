@@ -1,0 +1,13 @@
+(d1bbga_:A, d1myna_:A)
+Core Residues: 21
+Core RMSD: 2.649
+Raw Score: 13.879
+P-value: 0.7036
+Reference structure: d1bbga_:A
+
+d1myna_:A   DCLSGRYKGPCAVWDNETC-------R-RVCKEEGRSSGHCSPS--LKCWCEGC------    44  (A)
+d1bbga_:A   -------------------DDGLCYEGTNCGKV-G-KYCCSP--IGKYCVCYDSKAICNK    37  (B)
+
+d1myna_:A   ---    44  (A)
+d1bbga_:A   NCT    40  (B)
+

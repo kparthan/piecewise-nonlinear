@@ -1,0 +1,19 @@
+(d1sqga1:A, d2dmba1:A)
+Core Residues: 14
+Core RMSD: 2.510
+Raw Score: 8.298
+P-value: 0.8387
+Reference structure: d1sqga1:A
+
+d2dmba1:A   TGDASKCLAT-------------------------------------------------G    18  (A)
+d1sqga1:A   ----------RNLRSMAAQAVEQVVEQGQSLSNILPPLQQKVSDKDKALLQELCFGVLRT    54  (B)
+
+d2dmba1:A   PGIASTVKTGEEVGFVVDAKTAGKGKVTCTVLTPDGTEAEADVIENEDGTYDIFYTAAKP    78  (A)
+d1sqga1:A   LSQL--D-----------------------------------------------------    59  (B)
+
+d2dmba1:A   GTYVIYVRFGGVDIPNSPF-TVM-----ATDGEVTAVEEAPVNACP--------------   118  (A)
+d1sqga1:A   -------------------WLINKLMARPMTGK-------------QRTVHYLIMVGLYQ    87  (B)
+
+d2dmba1:A   ---------------------------------------------------------   118  (A)
+d1sqga1:A   LLYTRIPPHAALAETVEGAIAIKRPQLKGLINGVLRQFQRQQEELLAEFNASDARYL   144  (B)
+

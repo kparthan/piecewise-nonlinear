@@ -1,0 +1,52 @@
+(d3qoma_:A, d1gaia_:A)
+Core Residues: 81
+Core RMSD: 6.389
+Raw Score: 73.643
+P-value: 0.3630
+Reference structure: d3qoma_:A
+
+d1gaia_:A   ATLDSWLSNEATVARTAILNNI--------------------------------------    22  (A)
+d3qoma_:A   ----------------------AXTIKGRAFPEGFLWGGAVAAHQLEGGYKEGGKGLSTA    37  (B)
+
+d1gaia_:A   ------------------------------------------------------------    22  (A)
+d3qoma_:A   DIXTLGTNERPREITDGVVAGKYYPNHQAIDFYHRYPEDIELFAEXGFKCFRTSIAWTRI    97  (B)
+
+d1gaia_:A   ------------------------------------------------------------    22  (A)
+d3qoma_:A   FPNGDESEPNEAGLQFYDDLFDECLKNGIQPVVTLAHFEXPYHLVKQYGGWRNRKLIQFY   157  (B)
+
+d1gaia_:A   ------------------------------------------------------------    22  (A)
+d3qoma_:A   LNFAKVCFERYRDKVTYWXTFNEINNQTNFESDGAXLTDSGIIHQPGENRERWXYQAAHY   217  (B)
+
+d1gaia_:A   ------------------------------------------------------------    22  (A)
+d3qoma_:A   ELVASAAAVQLGHQINPDFQIGCXIAXCPIYPLTAAPADVLFAQRAXQTRFYFADVHCNG   277  (B)
+
+d1gaia_:A   ------------------------------------------------------------    22  (A)
+d3qoma_:A   TYPQWLRNRFESEHFNLDITAEDLKILQAGTVDYIGFSYYXSFTVKDTGKLAYNEEHDLV   337  (B)
+
+d1gaia_:A   -GADGAWVSGADSGIVVASPSTDNPDYFYTWTRDSGLVIKTLVDLFRNGDTDLLSTIE--    79  (A)
+d3qoma_:A   KNPY---------VKA-------------SD---------------------------WG   348  (B)
+
+d1gaia_:A   --HYI-SSQAIIQ---------------------GVSNPSGDLSSGGLGEPKFNVDETAY   116  (A)
+d3qoma_:A   WQVDPVG------LRYAXNWFTDRYHLPLFIVENGLGAID--------------------   382  (B)
+
+d1gaia_:A   TGSWGRP--------QRDGPALRATAMIGFGQWLLDNGYTSAA-TEIVWPLV--RNDLSY   165  (A)
+d3qoma_:A   -------KKTADNQIHDDYRIDYLTDHLRQIKLAVLE-DGV--DL-------IGYTP--W   423  (B)
+
+d1gaia_:A   VAQY---------------WNQTGYDLWEEV---NGSSFFTIAVQHRALVEGSAFATAVG   207  (A)
+d3qoma_:A   GCIDLVAASTGQXSKRYGFIYVDEN-DDGSGSLKRYKKD----SFTWFQHVIATN-----   473  (B)
+
+d1gaia_:A   SSCSWCDSQAPQILCYLQSFWTGSYILANFDSSRSGKDTNTLLGSIHTFDPEAGCDDSTF   267  (A)
+d3qoma_:A   ------------------------------------------------------------   473  (B)
+
+d1gaia_:A   QPCSPRALANHKEVVDSFRSIYTLNDGLSDSEAVAVGRYPEDSYYNGNPWFLCTLAAAEQ   327  (A)
+d3qoma_:A   ------------------------------------------------------------   473  (B)
+
+d1gaia_:A   LYDALYQWDKQGSLEITDVSLDFFKALYSGAATGTYSSSSSTYSSIVSAVKTFADGFVSI   387  (A)
+d3qoma_:A   ------------------------------------------------------------   473  (B)
+
+d1gaia_:A   VETHAASNGSLSEQFDKSDGDELSARDLTWSYAALLTANNRRNSVVPP--SWGETSASSV   445  (A)
+d3qoma_:A   ------------------------------------------------GAE---------   476  (B)
+
+d1gaia_:A   PGTCAATSASGTYSSVTVTSWPSIVATG--   473  (A)
+d3qoma_:A   ----------------------------IE   478  (B)
+

@@ -1,0 +1,19 @@
+(d3czza_:A, d1op4a_:A)
+Core Residues: 42
+Core RMSD: 3.888
+Raw Score: 34.159
+P-value: 0.5190
+Reference structure: d3czza_:A
+
+d1op4a_:A   EASGEIALCKTGFPEDVYS-AVLPKDVHEGQPLLNVKFSNCNRKRKVQYESSEPADFKVD    82  (A)
+d3czza_:A   -------------------LGK-FSQTCY--------------------------NSAIQ    14  (B)
+
+d1op4a_:A   EDGTVYAVRSFPLTAEQAK-----------------------------------------   101  (A)
+d3czza_:A   G-SVLTST-----------CERTNGGYNTSSIDLNSVIAAVDGSLKWQGSNFIEACRNTQ    62  (B)
+
+d1op4a_:A   ----FLIYAQDKE-----TQEKWQVAVNLSREPTLTEEPMKEPH-EIEEIVFPRQLAKHS   151  (A)
+d3czza_:A   LAGSSELAAEC--KTAAGQFVSTKINLD----------------DHIANI----------    94  (B)
+
+d1op4a_:A   GALQRQKR-------   159  (A)
+d3czza_:A   --------DGTLKYE   101  (B)
+

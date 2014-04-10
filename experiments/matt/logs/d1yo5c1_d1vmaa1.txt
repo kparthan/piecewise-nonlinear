@@ -1,0 +1,16 @@
+(d1vmaa1:A, d1yo5c1:C)
+Core Residues: 39
+Core RMSD: 3.753
+Raw Score: 30.410
+P-value: 0.7545
+Reference structure: d1vmaa1:A
+
+d1yo5c1:C   QPI------------HLWQF-----LKELLLKPHSYGRFIRWLNKEK-GIFKIE-DSAQV   287  (A)
+d1vmaa1:A   ---MGLFDFLKKGLQKTKETFFGRVVK------------L-------LKGKKLDDETREE    38  (B)
+
+d1yo5c1:C   ARLWGIRKNR-PAMN-YDKLSRSIRQYYKKGIIRKPDIS--------QRLVYQFVHP---   334  (A)
+d1vmaa1:A   LEELLIQADVGVETTEYI---------------------LERLEEKDGDA-L-----ESL    71  (B)
+
+d1yo5c1:C   ----------   334  (A)
+d1vmaa1:A   KEIILEILNF    81  (B)
+

@@ -1,0 +1,31 @@
+(d2p62a1:A, d1ehia2:A)
+Core Residues: 31
+Core RMSD: 1.943
+Raw Score: 44.589
+P-value: 0.3219
+Reference structure: d2p62a1:A
+
+d1ehia2:A   DKALTKELLTVNGIRNTKYIVVDPESANNWSWDKIVAELGNIVFVKAANQGSSVGISRVT   194  (A)
+d2p62a1:A   ------------------------------------------------------------     1  (B)
+
+d1ehia2:A   NAEEYTEALSDSFQYDYKVLIEEAVNGARELEVGVIGN-DQPLVSEIGAHTVPNQGSGDG   253  (A)
+d2p62a1:A   --------------------------------------MRIKLIIV--------------     8  (B)
+
+d1ehia2:A   WYDYNNKFVDNSAVHFQIPAQLSPEVTKEVKQMALDAYKVLNLRGEARMDFLLDENNVPY   313  (A)
+d2p62a1:A   ------------------------------------------------------------     8  (B)
+
+d1ehia2:A   LGEPNTLPGFTNMSLFKRLWDY--------------------------------------   335  (A)
+d2p62a1:A   --------------------EGKTDESFFKVLLEKLYGFREAKKLTPEFPIGKWGFRIGE    48  (B)
+
+d1ehia2:A   ---------------SDINNAKLVDMLIDYGFEDFAQNKKLS------------------   362  (A)
+d2p62a1:A   HPLVLEKDNIALVIIHAEGKQRIPKVLKSVLDSVKLG-----LLNVEEVYVVRDVDEGND   103  (B)
+
+d1ehia2:A   ------------------------------------------------------------   362  (A)
+d2p62a1:A   VFEWVLSFLREREVRVDNGAIVTEGVKIYPYGMGNLTLNEPFVKEKKELELSLAYLAKLD   163  (B)
+
+d1ehia2:A   ------------------------------------------------------------   362  (A)
+d2p62a1:A   GILEKYRGSMRALSQDKGDKLTPKDVMHILSIANDYTGDCLSGLYEKYIGIMIHRNRELL   223  (B)
+
+d1ehia2:A   ------------------   362  (A)
+d2p62a1:A   IRFLSEVNLLPLLERMVG   241  (B)
+

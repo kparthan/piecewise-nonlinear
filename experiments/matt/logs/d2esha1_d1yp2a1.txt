@@ -1,0 +1,19 @@
+(d1yp2a1:A, d2esha1:A)
+Core Residues: 19
+Core RMSD: 1.656
+Raw Score: 23.187
+P-value: 0.5046
+Reference structure: d1yp2a1:A
+
+d2esha1:A   RGGRGFRGWWLASTILLLVAE------------------------------------K--    25  (A)
+d1yp2a1:A   ---------------------YLPPSKMLDADVTDSVIGEGCVIKNCKIHHSVVGLRSCI   355  (B)
+
+d2esha1:A   ------------PSHGYELAERLAEFGIEIPGIGHMGNIYRVLADLEESGFLSTEWDTTV    73  (A)
+d1yp2a1:A   SEGAIIEDSLLMGAD---------------------------------------------   370  (B)
+
+d2esha1:A   SPPRKIYRITPQGKLYLREILRSLEDMKRRIETLEERIKRVLQE----------------   117  (A)
+d1yp2a1:A   ------YYETDADRKLLAAKG-----------------------SVPIGIGKNCHIKRAI   401  (B)
+
+d2esha1:A   --------------------------------------------------   117  (A)
+d1yp2a1:A   IDKNARIGDNVKIINKDNVQEAARETDGYFIKSGIVTVIKDALIPSGIII   451  (B)
+

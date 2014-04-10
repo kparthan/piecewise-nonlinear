@@ -1,0 +1,13 @@
+(d2dbsa1:A, d1on2a1:A)
+Core Residues: 22
+Core RMSD: 1.920
+Raw Score: 29.112
+P-value: 0.4675
+Reference structure: d2dbsa1:A
+
+d1on2a1:A   TTPSMEMYIEQIYMLIEEKGYARVSDIAEALAVHPSSVTKMVQKLDK-------------    48  (A)
+d2dbsa1:A   ----RLAELDGVLXQYLLEA---------------------------DLLRELPPTYRLV    35  (B)
+
+d1on2a1:A   ----DE---------------------------YLIYEKYRGL-VL-------------    62  (A)
+d2dbsa1:A   LLPLDEPEVAAQALAWAXEAPNPEGWPSVYALFLQ--------GRPIRLLLLGKEVEVA    86  (B)
+

@@ -1,0 +1,16 @@
+(d1hs7a_:A, d1m94a_:A)
+Core Residues: 20
+Core RMSD: 2.184
+Raw Score: 17.730
+P-value: 0.6773
+Reference structure: d1hs7a_:A
+
+d1m94a_:A   -----------------------------------------------------------M     1  (A)
+d1hs7a_:A   TNQKTKELSNLIETFAEQSRVLEKECTKIGSKRDSKELRYKIETELIPNCTSVRDKIESN    82  (B)
+
+d1m94a_:A   IEVVVNDRLGKKVRVKCLAEDSVGDFKKVLSLQIGTQPNKIVLQKGGSVLKDHISLEDYE    61  (A)
+d1hs7a_:A   I---------------LIHQNG-KLSADFKNLKTK-------------------------   101  (B)
+
+d1m94a_:A   VHDQTNLELYYL------------------    73  (A)
+d1hs7a_:A   ------------YQSLQQSYNQRKSLFPLK   119  (B)
+

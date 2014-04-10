@@ -1,0 +1,18 @@
+(d1pnha_:A, (d1n13.1:B, d1n13.1:A))
+Core Residues: 15
+Core RMSD: 2.327
+Raw Score: 16.003
+Reference structure: d1pnha_:A
+
+d1pnha_:A   T-----------------------------------------------------------     1  (A)
+d1n13.1:A   -PLHAYFKLPNTVSLVAGSSEGE-------------------------------------    28  (B)
+d1n13.1:B   -XIMPPEAEIV------------PLPKLPMGALVPTAYGYIISDVPGETISAAISVAIPK    99  (C)
+
+d1pnha_:A   ---------------VCNLRRCQLSCRSLGLLGKCIGVKCE-CVKH--------------    31  (A)
+d1n13.1:A   ---------------TPLNAFDGALLNAGI-----------GN---VNLIRIS-------    52  (B)
+d1n13.1:B   DKSLCGLIMEYEGKCSKKEAEKTVREMAKI-----------------------GFEMRGW   136  (C)
+
+d1pnha_:A   -----------------------------    31  (A)
+d1n13.1:A   -----------------------------    52  (B)
+d1n13.1:B   ELDRIESIAVEHTVEKLGCAFAAAALWYK   165  (C)
+

@@ -1,0 +1,28 @@
+(d2fm9a1:A, d1uw4b_:B)
+Core Residues: 53
+Core RMSD: 2.920
+Raw Score: 82.458
+P-value: 0.1931
+Reference structure: d2fm9a1:A
+
+d1uw4b_:B   RPPLQEYVRKLLYKDLSKVTTEKVLRQMRKLPWQDQEVKDYVICCMINIWNVKYNSIHCV   827  (A)
+d2fm9a1:A   ------------------------------------------------------------    49  (B)
+
+d1uw4b_:B   ANLLAGLVLYQEDVGIHVVDGVLEDIRLGMEVNQPKFNQRRISS-AKFLGELYNYRMVES   886  (A)
+d2fm9a1:A   ----------------------------------------PQ--LED-FP----------    55  (B)
+
+d1uw4b_:B   AVIFRTL-YSFTSFGVNPDGSPSSLDPPEHLFRIRLVCTILDTCGQYFDR----------   935  (A)
+d2fm9a1:A   ----ALIKQA----------------------------------------SLDALFKCGK    71  (B)
+
+d1uw4b_:B   ----------------GSSKRKLDCFLVYFQRYVWWKKSLEVWTKDHPFPIDIDYMISDT   979  (A)
+d2fm9a1:A   DAEALKEVFTNSNNVAGKKAIMEFAGLFRSALNATS-DS---------------------   109  (B)
+
+d1uw4b_:B   LELLRPKIKLCN--SLEESIRQVQDLEREFLIKLGLVN----------------------  1015  (A)
+d2fm9a1:A   ------------PEAKTLLMKVGAEYTAQIIKDG----LKEKSAFGPWLPETKKAEAKLE   153  (B)
+
+d1uw4b_:B   ------------------------------------------------------------  1015  (A)
+d2fm9a1:A   NLEKQLLDIIKNNTGGELSKLSTNLVMQEVMPYIASCIEHNFGCTLDPLTRSNLTHLVDK   213  (B)
+
+d1uw4b_:B   ------------------------------------  1015  (A)
+d2fm9a1:A   AAAKAVEALDMCHQKHLEMQTLIPLLLRNVFAQIPA   263  (B)
+

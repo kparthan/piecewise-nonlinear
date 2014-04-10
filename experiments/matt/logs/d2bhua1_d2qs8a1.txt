@@ -1,0 +1,16 @@
+(d2qs8a1:A, d2bhua1:A)
+Core Residues: 24
+Core RMSD: 1.612
+Raw Score: 21.700
+P-value: 0.4776
+Reference structure: d2qs8a1:A
+
+d2bhua1:A   SFQTQHDPRTRLGATPLPGGAGTRFRLWTSTARTVAVRVNGTEHVMTSLGGGIYELELPV    73  (A)
+d2qs8a1:A   ---------------------------------SKTLIHA--------------------    13  (B)
+
+d2bhua1:A   GPG-------------ARYLFVLDGVPTPDPYARFLPDGVHGEAEVVDFG----------   110  (A)
+d2qs8a1:A   ---GKLIDGKSDQVQSRISIVIDGNIISD-------------IKKG----FISSNDFEDY    53  (B)
+
+d2bhua1:A   -------------------------------------------------   110  (A)
+d2qs8a1:A   IDLRDHTVLPSIESGKLADLIAVKGNPIEDISVLENVDVVIKDGLLYEG   412  (B)
+

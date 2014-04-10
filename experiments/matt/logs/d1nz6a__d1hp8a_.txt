@@ -1,0 +1,16 @@
+(d1hp8a_:A, d1nz6a_:A)
+Core Residues: 34
+Core RMSD: 2.876
+Raw Score: 40.034
+P-value: 0.4554
+Reference structure: d1hp8a_:A
+
+d1nz6a_:A   DPEKLKILEWIEGKERNIRALLSTXHTVLWAGETKWKPVGXADLV-----TPEQVKKVYR    55  (A)
+d1hp8a_:A   ---------------------------------------------MPQKDPCQKQACEIQ    15  (B)
+
+d1nz6a_:A   KAVLVVH-PDKATGQPYEQYAKXIFXELNDAWSEFENQGQKPLY----------------    98  (A)
+d1hp8a_:A   KCLQANSYM---------------ES-KCQAVIQELRKCCA---QYPKGRSVVCSGFEKE    56  (B)
+
+d1nz6a_:A   ------------    98  (A)
+d1hp8a_:A   EEENLTRKSASK    68  (B)
+

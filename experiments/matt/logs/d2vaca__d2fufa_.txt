@@ -1,0 +1,19 @@
+(d2fufa_:A, d2vaca_:A)
+Core Residues: 52
+Core RMSD: 2.718
+Raw Score: 37.120
+P-value: 0.3568
+Reference structure: d2fufa_:A
+
+d2vaca_:A   SMGIH----------------------------------ATEELKEFFAKARAGSVRLIK    29  (A)
+d2fufa_:A   -----KVEDPKDFPSELLSFLSHAVFSNRTLACFAIYTTKEKAALLYKKIXEKYSVTFIS   185  (B)
+
+d2vaca_:A   VVIEDEQLVLGASQEPVGRWDQDYDRAVL-----------------------------P-    59  (A)
+d2fufa_:A   RHNSYNHNIL-FFLTP-------------HRHRVSAINNYAQKLCTFSFLICKGVNKEYL   231  (B)
+
+d2vaca_:A   -LL--DAQQ--P-CYLLYRLDSQNAQGFEWLFLAWSPDNSPVRLKMLYAATRATVKKEFG   113  (A)
+d2fufa_:A   XYSALT-RDPFSVIEESL--------------P---------------------------   249  (B)
+
+d2vaca_:A   GGHIKDELFGTVKDDL---SFAGYQKH-   137  (A)
+d2fufa_:A   ---------------GGLKEH------D   256  (B)
+

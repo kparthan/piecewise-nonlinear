@@ -1,0 +1,25 @@
+(d1pg6a_:A, d2et1a_:A)
+Core Residues: 76
+Core RMSD: 3.097
+Raw Score: 70.525
+P-value: 0.0758
+Reference structure: d1pg6a_:A
+
+d2et1a_:A   TDPDPLQDFCVADLDGKAVSVNGHTCKPMSEAGDDFLFSSKLTKAGNTSTPNGSAVTELD    60  (A)
+d1pg6a_:A   ---------------------------------------------------R-XRFTID-    11  (B)
+
+d2et1a_:A   VAEWPGTNTLGVSMNRVDFAPGGTNPPHIHPRAT----EIGMVMKGELLVGILGSLD---   113  (A)
+d1pg6a_:A   --QN-XQ----FPLVEIDLEHGGS-VY-------LQQGSXVYH-TENVTLNTKL---NGL    56  (B)
+
+d2et1a_:A   ------SG-NKLYSRVVRAGETFVIPRG-------LMHFQFNVGKTEAYMVVSF-NSQNP   158  (A)
+d1pg6a_:A   GKLVGAIGRS------------------XVSGESXFITQAXSN--GDGKLALAPNTPGQI    96  (B)
+
+d2et1a_:A   GIVFVPLTLFGSDPPIPTPVLTKALRVEAGVVELLKSK----------------------   196  (A)
+d1pg6a_:A   VALEL-----GEK-------------------------QYRLNDGAFLALDGSAQYKXER   126  (B)
+
+d2et1a_:A   --------------FAGGS-----------------------------------------   201  (A)
+d1pg6a_:A   QNIGGGLFVXTTEGL---GTLLANSFGSIKKITLDGGTXTIDNAHVVAWSRELDYDIHLE   190  (B)
+
+d2et1a_:A   -----------------------------------------   201  (A)
+d1pg6a_:A   NGFXQSIGTGEGVVNTFRGHGEIYIQSLNLEQFAGTLKRYL   231  (B)
+

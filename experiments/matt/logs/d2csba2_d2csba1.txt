@@ -1,0 +1,13 @@
+(d2csba1:A, d2csba2:A)
+Core Residues: 53
+Core RMSD: 2.488
+Raw Score: 71.607
+P-value: 0.1885
+Reference structure: d2csba1:A
+
+d2csba2:A   IVECALKLQDRYGIREDVALCLARAFDGSISXIATTPYRTLKDVC----PDL--TLEEAK   347  (A)
+d2csba1:A   --RTLATLIDEHGLSPDAADELIEHFE-SIAGILATDLEEIERXYEEGRLSEEAY-RAAV   406  (B)
+
+d2csba2:A   SVN   350  (A)
+d2csba1:A   EIQ   409  (B)
+

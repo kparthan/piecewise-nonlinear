@@ -1,0 +1,37 @@
+(d1lara1:A, d2gu2a1:A)
+Core Residues: 74
+Core RMSD: 3.411
+Raw Score: 71.312
+P-value: 0.0302
+Reference structure: d1lara1:A
+
+d2gu2a1:A   CVAEEPIKKIAIFGGTHGNELTGVFLVTHW------------------------------    33  (A)
+d1lara1:A   ------------------------------MITDLADNIERLKANDGLKFSQEYESIDPG  1336  (B)
+
+d2gu2a1:A   -----------------------------------------------LKNGAEVHRAGL-    45  (A)
+d1lara1:A   QQFTWENSNLEVNKPKNRYANVIAYDHSRVILTSIDGVPGSDYINANYIDGY-------R  1389  (B)
+
+d2gu2a1:A   ---EVKPFITNPRAVEKCTRYIDCDLNRVFDLENLSKEXSEDLPYEVRRAQEINHLFGPK   102  (A)
+d1lara1:A   KQNAYIATQGP----------------------------------LPETMGDFWRMVW--  1413  (B)
+
+d2gu2a1:A   NSDD--AYDVVFDLHNTTSNXG-----------------------------------CTL   125  (A)
+d1lara1:A   ----EQRTATVVMMT-------RLEEKSRVKCDQYWPARGTETCGLIQVTLLDTVELATY  1462  (B)
+
+d2gu2a1:A   ILGDSGNDFLIQXFHYIKTCXAPLPCSVYLIEHPSLKYATTRSIA--------------K   171  (A)
+d1lara1:A   TVR------------------------------------------TFALHKSGSSEKREL  1480  (B)
+
+d2gu2a1:A   YPVGIEVGPQPHGVLRADILDQXRRXLKHALDFI-QRFNEGKEFPPCAIDVYKIXEKVDY   230  (A)
+d1lara1:A   RQFQFMAW-PDHGVPEY--PTPILAFLRRVKACNPL------------------------  1513  (B)
+
+d2gu2a1:A   PRNESGDVAAVIHPNLQDQDWKPLHPGDPVFVSLDGKVIPLGGDCTVYPVFVNEAAYYEK   290  (A)
+d1lara1:A   ------------------------------------------------------------  1513  (B)
+
+d2gu2a1:A   KEAFAKTTKLTLNAKSIRST----------------------------------------   310  (A)
+d1lara1:A   --------------------DAGPMVVHCSAGVGRTGCFIVIDAMLERMKHEKTVDIYGH  1553  (B)
+
+d2gu2a1:A   ------------------------------------------------------------   310  (A)
+d1lara1:A   VTCMRSQRNYMVQTEDQYVFIHEALLEAATCGHTEVPARNLYAHIQKLGQVPPGESVTAM  1613  (B)
+
+d2gu2a1:A   ----------   310  (A)
+d1lara1:A   ELEFKLLASS  1623  (B)
+

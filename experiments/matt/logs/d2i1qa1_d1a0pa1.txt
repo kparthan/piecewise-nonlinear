@@ -1,0 +1,16 @@
+(d1a0pa1:A, d2i1qa1:A)
+Core Residues: 29
+Core RMSD: 2.538
+Raw Score: 42.628
+P-value: 0.5704
+Reference structure: d1a0pa1:A
+
+d2i1qa1:A   LTDLPGVGPSTAEKLVEAGYIDFMKIA-TA-TVGELTDIEGI---------SEKAAAKMI    53  (A)
+d1a0pa1:A   ---------------------------QDLARIEQFLDALW-LEKNLAENTLNAYRRDLS    34  (B)
+
+d2i1qa1:A   MGARDLCDLGF-------------------------------------------------    64  (A)
+d1a0pa1:A   MMVEWLHH---RGLTLATAQSDDLQALLAERLSSARLLSAVRRLFQYLYREKFREDDPSA    98  (B)
+
+d2i1qa1:A   --    64  (A)
+d1a0pa1:A   HL   100  (B)
+

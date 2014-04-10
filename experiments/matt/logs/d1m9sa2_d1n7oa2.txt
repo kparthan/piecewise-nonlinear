@@ -1,0 +1,16 @@
+(d1n7oa2:A, d1m9sa2:A)
+Core Residues: 27
+Core RMSD: 2.126
+Raw Score: 26.866
+P-value: 0.4933
+Reference structure: d1n7oa2:A
+
+d1m9sa2:A   ---E--------TTEKTVNLTRYVKYIRGNAGIYKLPREDNSLKQGTLASHRCKALTVDR   439  (A)
+d1n7oa2:A   SSLIENNETLQSVYDAKQ-----------------------------------------G   833  (B)
+
+d1m9sa2:A   EARN-------------------GGKLWYRLKNIGWTKAENLSLD---------------   465  (A)
+d1n7oa2:A   VWGIVKYDDSVSTISNQFQVLKRGVYTIRKEGDEY-KIA------YYNPETQESAPDQEV   886  (B)
+
+d1m9sa2:A   ----   465  (A)
+d1n7oa2:A   FKKL   890  (B)
+

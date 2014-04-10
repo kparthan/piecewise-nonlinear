@@ -1,0 +1,13 @@
+(d1rq6a_:A, d1bl0a1:A)
+Core Residues: 18
+Core RMSD: 1.373
+Raw Score: 26.536
+P-value: 0.4720
+Reference structure: d1rq6a_:A
+
+d1bl0a1:A   --------------------------------------------DAITIHSILDWIEDNL    24  (A)
+d1rq6a_:A   MGNIRTSFVKRIAKEMIETHPGKFTDDFDTNKKLVEEFSTVSTKHLRNKIAGYITRIISQ    60  (B)
+
+d1bl0a1:A   ESPLSLEKVSERSGYSKWHLQRMFKKETGHSLGQYIRS    62  (A)
+d1rq6a_:A   QK------------------------------------    62  (B)
+

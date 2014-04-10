@@ -1,0 +1,13 @@
+(d2rb6a1:A, d1b34a_:A)
+Core Residues: 47
+Core RMSD: 2.309
+Raw Score: 59.820
+P-value: 0.1318
+Reference structure: d2rb6a1:A
+
+d1b34a_:A   KLVRFLMKLSHETVTIELKNGTQVHG-TITGVDV--SMNTHLKAVKMTLKNREPVQL--E    56  (A)
+d2rb6a1:A   ----------SSQYIXSTKDGKXITSDSKPKLDKTTG-XYLYYDE------------DGR    61  (B)
+
+d1b34a_:A   TLSIRGNNIRYFILPDSLPLDTLLV    81  (A)
+d2rb6a1:A   EVXIKQEDVTQIIER----------    76  (B)
+

@@ -1,0 +1,22 @@
+(d1qqha_:A, d5nula_:A)
+Core Residues: 18
+Core RMSD: 1.301
+Raw Score: 33.845
+P-value: 0.4213
+Reference structure: d1qqha_:A
+
+d5nula_:A   MKIVYWSGTGNTEKMAELIAKGIIESGKDVNTINVSDVNIDELLNEDILILGCSAMTDEV    60  (A)
+d1qqha_:A   ------------------------------------------------------------    66  (B)
+
+d5nula_:A   LEESEFEPFIEEISTKISGKKVALFGSYGWGD-GKWMRDFEERMNGYGCVVVETPLIVQN   119  (A)
+d1qqha_:A   -----------------------------KSKAHKAIELQMALQGLAQ------------    84  (B)
+
+d5nula_:A   EPDEAEQDCIEFGKKIANI-----------------------------------------   138  (A)
+d1qqha_:A   -------------------SAYKTEDWTLQDTCEELWNTEPTHCFKKGGQTVQVYFDGNK   125  (B)
+
+d5nula_:A   ------------------------------------------------------------   138  (A)
+d1qqha_:A   DNCMTYVAWDSVYYMTDAGTWDKTATCVSHRGLYYVKEGYNTFYIEFKSECEKYGNTGTW   185  (B)
+
+d5nula_:A   ------------------------   138  (A)
+d1qqha_:A   EVHFGNNVIDCNDSMCSTSDDTVS   209  (B)
+

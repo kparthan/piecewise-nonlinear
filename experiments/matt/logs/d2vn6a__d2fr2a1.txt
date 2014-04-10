@@ -1,0 +1,22 @@
+(d2fr2a1:A, d2vn6a_:A)
+Core Residues: 68
+Core RMSD: 4.670
+Raw Score: 48.774
+P-value: 0.2051
+Reference structure: d2fr2a1:A
+
+d2vn6a_:A   TVLPKD------------------------------IPGDS---LKVTVGTANGKPGDTV    28  (A)
+d2fr2a1:A   ------DLAPALQALSPLLGSWAGRGAGKYPTIRPFEY---LEEVVFAHV----------    44  (B)
+
+d2vn6a_:A   TVP----VTFAD-------------VAKMKNVGTCNFYLGYDASLLEVV--------SVD    63  (A)
+d2fr2a1:A   ---GKPFLTYTQQTRAVADGKPLHSE-----------------------TGYLRVCRPGC    78  (B)
+
+d2vn6a_:A   AGPI---------VKNAAVNFSSSASNGTISFLFL-DNTITD-ELITADGVFANIKFKLK   112  (A)
+d2fr2a1:A   VELVLAHPSGITEIE----VGTYSVTGDVIELELSTRA----DGS-I-------------   116  (B)
+
+d2vn6a_:A   SVTAKTTTPV--------------------TFKDGGAFGDG----TMSKIASVTKTNGSV   148  (A)
+d2fr2a1:A   ----------GLAPTAKEVTALDRSYRIDGDEL-SYSLQMRAVGQPLQDHL-AAVLHRQR   164  (B)
+
+d2vn6a_:A   TIDP   152  (A)
+d2fr2a1:A   ----   164  (B)
+

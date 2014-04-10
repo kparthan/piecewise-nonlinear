@@ -1,0 +1,46 @@
+(d1l5pa_:A, (d1o7d.2:C, (d1o7d.2:E, d1o7d.2:D)))
+Core Residues: 18
+Core RMSD: 3.917
+Raw Score: 13.904
+Reference structure: d1l5pa_:A
+
+d1l5pa_:A   ------------------------------------------------------------     1  (A)
+d1o7d.2:C   -E-D----------FAFCRKLNISICPLTQTA----------------------------   507  (B)
+d1o7d.2:D   RDLVIQNEYLRARFDP----------------NTGLLMELENLLLLPVRQAFYWYNASTG   649  (C)
+d1o7d.2:E   PRTQFSGLRRELPPSV--------------------------------------------   900  (D)
+
+d1l5pa_:A   ------------------------------------------------------------     1  (A)
+d1o7d.2:C   ------------------------------------------------------------   507  (B)
+d1o7d.2:D   NNLSSQASGAYIFRPNQNKPLFVSHWAQTHLVKASLVQEVHQNFSAWCSQVVRLYPRQ--   707  (C)
+d1o7d.2:E   ----------------------------------------------------------RL   902  (D)
+
+d1l5pa_:A   -----G---TITAV-KGG------------------------------------------     9  (A)
+d1o7d.2:C   -----E---RFQVI-VYNPLG--RKVDWM----VRLPV-SKHVYLVKDPGG-KIVPSDVV   550  (B)
+d1o7d.2:D   -----R---HLELEWTVG-P-IP--VGDGWGKE-----VISRFDTA-LATRGLFYTDSN-   748  (C)
+d1o7d.2:E   LTLARWGPETLLLRLEHQFAVGEDSGRNLSSPVTLDLTNLFSAF--T---ITNLRE----   953  (D)
+
+d1l5pa_:A   ------------------------------------------------------------     9  (A)
+d1o7d.2:C   TIPSSDSQELLFSALVPAVGF---------------------------------------   575  (B)
+d1o7d.2:D   ---------------------GREILERRRNYRPTWKLNQTEPVAGNYYPVNSRIYITDG   787  (C)
+d1o7d.2:E   ------------------------------------------------------------   953  (D)
+
+d1l5pa_:A   ------------------------------------------------------------     9  (A)
+d1o7d.2:C   ------------------------------------------------------------   575  (B)
+d1o7d.2:D   NMQLTVLTDRSQGGSSLRDGSLELMVHRRLLKDDARGVGEPLNKEGSGLW----------   837  (C)
+d1o7d.2:E   --------------------------------------------------TTLAANQLLA   963  (D)
+
+d1l5pa_:A   ----------------VKKQLK-FEDDQTLFTVLTEAGLMSADDTCQGNKACGKCICKHV    52  (A)
+d1o7d.2:C   ----------------SIYSVS-QMP----------------------------------   584  (B)
+d1o7d.2:D   ----------------VRGRHL-VLL----------------------------------   846  (C)
+d1o7d.2:E   YASRLQWTTDATITLQPMEIRTFLASV---------------------------------  1004  (D)
+
+d1l5pa_:A   SGKVAAAEDDEKEFLEDQPANARLACAITLSGENDGAVFEL-------------------    93  (A)
+d1o7d.2:C   -----------------------------------------N------------------   585  (B)
+d1o7d.2:D   ------------------------------------------DKKETAAARHRLQAEMEV   864  (C)
+d1o7d.2:E   ----------------------------Q-------------------------------  1005  (D)
+
+d1l5pa_:A   -------------    93  (A)
+d1o7d.2:C   -------------   585  (B)
+d1o7d.2:D   LAPQVVLAQGG--   875  (C)
+d1o7d.2:E   -----------WE  1007  (D)
+

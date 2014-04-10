@@ -1,0 +1,13 @@
+(d2bcgg2:G, d1k36a_:A)
+Core Residues: 15
+Core RMSD: 2.089
+Raw Score: 10.298
+P-value: 0.6795
+Reference structure: d2bcgg2:G
+
+d1k36a_:A   V--SITKCSSDMNGYCLHGQCIYLVDMSQNYCRCEVGYTGVRCEHFFL------------    46  (A)
+d2bcgg2:G   -PRED------------------GSKDNIYLSRSYD------------ASSHFESMTDDV   428  (B)
+
+d1k36a_:A   ------------------    46  (A)
+d2bcgg2:G   KDIYFRVTGHPLVLKQRQ   446  (B)
+

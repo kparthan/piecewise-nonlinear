@@ -1,0 +1,16 @@
+(d2tpta3:A, d1o4ua2:A)
+Core Residues: 66
+Core RMSD: 2.957
+Raw Score: 64.422
+P-value: 0.0207
+Reference structure: d2tpta3:A
+
+d1o4ua2:A   MEKILDLLMSFVKEDEGKLDLASFPLRNT--TAGAHLLL-KTENVVASG---IEVSRMFL    54  (A)
+d2tpta3:A   -----------------------------TAMLTKAVYADTEGFVSEMDTRALGMAVVAM   366  (B)
+
+d1o4ua2:A   -EKMGL-----------LSKFNV-EDGEYLEGTG--VIGEI-EGNTYKLLVAERTLLNVL    98  (A)
+d2tpta3:A   GGG---RRQASDTIDYSVGFTDMAR--LGDQVDGQRPLAVIHAKDENNWQEAAKAVKAAI   421  (B)
+
+d1o4ua2:A   SVMFS-----------------   103  (A)
+d2tpta3:A   ---KLADKAPESTPTVYRRISE   440  (B)
+

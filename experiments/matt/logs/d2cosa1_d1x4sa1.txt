@@ -1,0 +1,13 @@
+(d1x4sa1:A, d2cosa1:A)
+Core Residues: 20
+Core RMSD: 2.505
+Raw Score: 13.493
+P-value: 0.5988
+Reference structure: d1x4sa1:A
+
+d2cosa1:A   -------------------VNRQMLQELVNAGCDQEM-AGRALKQTGSRSIEAALEYISK    47  (A)
+d1x4sa1:A   MEPAGPCGFCPAGEVQPARY-----------------TCPRC-NAPY-CSLRCYRTHGT-    47  (B)
+
+d2cosa1:A   M------    48  (A)
+d1x4sa1:A   -CAENFY    53  (B)
+

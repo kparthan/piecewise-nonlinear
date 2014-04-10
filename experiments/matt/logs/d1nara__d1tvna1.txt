@@ -1,0 +1,31 @@
+(d1tvna1:A, d1nara_:A)
+Core Residues: 133
+Core RMSD: 5.402
+Raw Score: 114.587
+P-value: 5.6474e-05
+Reference structure: d1tvna1:A
+
+d1nara_:A   -PKPIFREYIGVKPNSTTLHDFPT--EIINTETLEFHYILGFAIESYYESGKGTGTFEES    57  (A)
+d1tvna1:A   AVEKLT------------------VSGNQILAG---------------------------    15  (B)
+
+d1nara_:A   WDVELFGPEKVKNLKRRHP---EVKVVISIGGRG----VNTPFDPAEENVWVSNAKESLK   110  (A)
+d1tvna1:A   -------------------GENTSFAGPSLFW--SNTGWGAEK-----------------    37  (B)
+
+d1nara_:A   LIIQKYSDDSGNLIDGIDIHYEHIRSDEPFAT-LMGQLITELKKDDDL-NINVVSIAP--   166  (A)
+d1tvna1:A   --------------------------------FYTAETVAKAKTE---FNATLIRAAIGH    62  (B)
+
+d1nara_:A   -------SENNSSHYQKLYNAKKD-YI-----NWVDYQFSNQQ-KPV-------------   199  (A)
+d1tvna1:A   GTSTGGSLNFDWEGNMSRLDTVVNAAIAEDMYVIIDFHSH-EAHT--DQATAVRFFEDVA   119  (B)
+
+d1nara_:A   -----------------------STDDAFVEIFKSLEKDYH---PH--KVLPGF---STD   228  (A)
+d1tvna1:A   TKYGQYDNVIYEIYNEPLQISWVND---IKPYAETVIDKI-RAIDPDNLIVVGTPTWSQ-   174  (B)
+
+d1nara_:A   PLDTKHNKIT---RDIFI--GGCTRLVQTFSLPGVFFWNA---NDS--VIPKRDGDKPFI   278  (A)
+d1tvna1:A   ----------DVDV---ASQN-PI---DRA-NIAYTLHF-YAGTH-GQSY--------RN   206  (B)
+
+d1nara_:A   VELTLQQL-LAA------------------------------------------------   289  (A)
+d1tvna1:A   KAQTALDNGI--ALFATEWGTVNADGNGGVNINETDAWMAFFKTNNISHANWALNDKNEG   264  (B)
+
+d1nara_:A   -----------------------------   289  (A)
+d1tvna1:A   ASLFTPGGSWNSLTSSGSKVKEIIQGWGG   293  (B)
+

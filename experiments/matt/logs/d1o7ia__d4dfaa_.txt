@@ -1,0 +1,19 @@
+(d4dfaa_:A, d1o7ia_:A)
+Core Residues: 61
+Core RMSD: 3.028
+Raw Score: 53.041
+P-value: 0.1659
+Reference structure: d4dfaa_:A
+
+d1o7ia_:A   MEEKVGNLKPNMESVNVTVRVLEASEARQIQTKNGVRTISEAIVGDE-TGRVKLTL-WGK    58  (A)
+d4dfaa_:A   -------------LHKEPATLIKAIDG------------DTVKLMY-KGQPMTFRALLV-    39  (B)
+
+d1o7ia_:A   H-A-------------GS--IKEGQ-VVKIENA--WTT-AFKGQVQLNAGSKTKIAEASE    98  (A)
+d4dfaa_:A   -DTPEFNEKYGPEASAFTKKMVENAKKIEVEFDKGQRTDKY---GRGL----AYAYAD--    95  (B)
+
+d1o7ia_:A   DGFPESSQIPENTPTAP-------------------------------------------   115  (A)
+d4dfaa_:A   -----------------GKMVNEALVRQGLAKVAYVYKGNNTHEQLLRKAEAQAKKEKLN   138  (B)
+
+d1o7ia_:A   ---   115  (A)
+d4dfaa_:A   IWS   141  (B)
+

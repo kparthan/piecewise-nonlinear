@@ -1,0 +1,16 @@
+(d1vhoa1:A, d3kucb_:B)
+Core Residues: 20
+Core RMSD: 1.678
+Raw Score: 19.452
+P-value: 0.5191
+Reference structure: d1vhoa1:A
+
+d3kucb_:B   NTIRVFLPNKQRTVVRVRNGMSLHDCLMKKLKVRGLQPECCAVFRLLHEH--KGKKARLD   113  (A)
+d1vhoa1:A   ------------------------------------------GFVVSKVEGQFARLEPV-    86  (B)
+
+d3kucb_:B   WNTDAASLIG--------------------------------------------------   123  (A)
+d1vhoa1:A   ----------YASKVRIYTKNGIERGVIGXLAPHLQDSESRKKVPTYDEIFVDLSLCERG   144  (B)
+
+d3kucb_:B   ---EELQVDFL   131  (A)
+d1vhoa1:A   VRVGDIAV---   152  (B)
+

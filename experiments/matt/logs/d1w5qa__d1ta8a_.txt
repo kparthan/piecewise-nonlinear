@@ -1,0 +1,37 @@
+(d1ta8a_:A, d1w5qa_:A)
+Core Residues: 38
+Core RMSD: 2.311
+Raw Score: 42.220
+P-value: 0.3301
+Reference structure: d1ta8a_:A
+
+d1w5qa_:A   ANRAYPYTRLRRNRRDDFSRRLVRENVLTVDDLILPVFVLDGVNQRESIPSMPGVERLSI    65  (A)
+d1ta8a_:A   ------------------------------------------------------------     5  (B)
+
+d1w5qa_:A   DQLLIEAEEWVALGIPALALFPVTPVEKKSLDAAEAYNPEGIAQRATRALRERFPELGII   125  (A)
+d1ta8a_:A   ------------------------------------------------------------     5  (B)
+
+d1w5qa_:A   TDVCLCEFTTHGQCGILDDDGY-V---LNDVSIDVLVRQALSHAEAG-----AQV-----   171  (A)
+d1ta8a_:A   ----------------------PLTLTAATTRAQELRKQLNQYSHEYYVKDQP--SVEDY    40  (B)
+
+d1w5qa_:A   -VA--PSDM--MDGRI------GA---IREAL----------------------------   189  (A)
+d1ta8a_:A   VYDRLYKE-LVDIE--TEFPDLITPDSPTQ--RVGGKVLSGFEKAPHDIPMYSLNDGFSK    95  (B)
+
+d1w5qa_:A   -----------------------------------------------------------E   190  (A)
+d1ta8a_:A   EDIFAFDERVRKAIGKPVAYCCELKIDGLAISLRYENGVFVRGATRGDGTVGENITENLR   155  (B)
+
+d1w5qa_:A   SAGH-TNVRVMAYSAKYASAYYGPFRDANRATYQMDPANSDEALHEVAADLAEGADMVMV   259  (A)
+d1ta8a_:A   ----TVR-----------------------------------------------------   158  (B)
+
+d1w5qa_:A   KPGMPYLDIVRRVKDEFRAPTFVYQVSGEYAMHMGAIQNGWLAESVILESLTAFKRAGAD   319  (A)
+d1ta8a_:A   ------------------------------------------------------------   158  (B)
+
+d1w5qa_:A   GILTYFAKQAAEQLRRG-------------------------------------------   336  (A)
+d1ta8a_:A   -----------------SVPMRLTEPISVEVRGECYMPKQSFVALNEEREENGQDIFANP   201  (B)
+
+d1w5qa_:A   ------------------------------------------------------------   336  (A)
+d1ta8a_:A   RNAAAGSLRQLDTKIVAKRNLNTFLYTVADFGPMKAKTQFEALEELSAIGFRTNPERQLC   261  (B)
+
+d1w5qa_:A   --------------------------------------------------------   336  (A)
+d1ta8a_:A   QSIDEVWAYIEEYHEKRSTLPYEIDGIVIKVNEFALQDELGFTVKAPRWAIAYKFP   317  (B)
+

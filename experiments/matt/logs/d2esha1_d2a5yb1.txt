@@ -1,0 +1,16 @@
+(d2a5yb1:B, d2esha1:A)
+Core Residues: 65
+Core RMSD: 3.292
+Raw Score: 75.482
+P-value: 0.0407
+Reference structure: d2a5yb1:B
+
+d2esha1:A   RGGRGFRGWWLASTILLLVAEK----PSHGYELAER-LAEFGIEIPGIGHMG-----NIY    53  (A)
+d2a5yb1:B   --------SDEDRSALAFAVVMPPGVDIPVKLWSCVIPV-------------EQLDDEVA   431  (B)
+
+d2esha1:A   RVLADLEE-SGFLSTE-WDTTVSPPRKIYRITPQGKLYLREILRSLEDMKRRIETLEERI   111  (A)
+d2a5yb1:B   DRLKRLSKRGALLSGKRM------PVLTFKIDHIIHMFLKHVV--D--------------   469  (B)
+
+d2esha1:A   KRVLQE-----------------------------------------   117  (A)
+d2a5yb1:B   ------AQTIANGISILEQRLLEIETVIRPEDFPKFMQLHQKFYDSL   543  (B)
+

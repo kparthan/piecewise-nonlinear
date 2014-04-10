@@ -1,0 +1,13 @@
+(d2f66c1:C, d2j5ya_:A)
+Core Residues: 33
+Core RMSD: 1.947
+Raw Score: 63.738
+P-value: 0.2545
+Reference structure: d2f66c1:C
+
+d2j5ya_:A   LVPRGSHM---------TIDQWLLKNAKEDAIAELKKAGIT-----------SDFYFNAI    32  (A)
+d2f66c1:C   --------SKKYGDIALKKKLEQNTKKLDEESSQLETTT--RSIDSADDLDQFIKNYLDI   191  (B)
+
+d2j5ya_:A   NKAKTVEEVNALKNEILKAHA------------    53  (A)
+d2f66c1:C   RTQ------------------YHLRREKLATWD   206  (B)
+

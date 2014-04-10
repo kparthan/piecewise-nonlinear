@@ -1,0 +1,19 @@
+(d1qh4a1:A, d1iyjb5:B)
+Core Residues: 30
+Core RMSD: 4.723
+Raw Score: 27.077
+P-value: 0.8367
+Reference structure: d1qh4a1:A
+
+d1iyjb5:B   RELLPFSKLSDPAFQPPCSEVDVVGVVVSVVKPIGLAPLVYLSDECLHLLVVKFGIDLNE  3039  (A)
+d1qh4a1:A   ------------------------------------------------------------     2  (B)
+
+d1iyjb5:B   DIKPR-----------------VLIAASNLQWRPESTSRV-PTLFAGNFSVFSASPKEAH  3081  (A)
+d1qh4a1:A   -----PFSNSHNLLKMKYSVDDEYPDLSV-----------HN------------------    27  (B)
+
+d1iyjb5:B   FQERVTN-------MKHAIENIDT-------FYKEAEKKLIQVLKGDSPK----------  3117  (A)
+d1qh4a1:A   -------NHMAKVLTLDLYKKLRDRQTSSGFTLDDVIQTGVDN-------PGHPFIMTVG    73  (B)
+
+d1iyjb5:B   -----------------------------  3117  (A)
+d1qh4a1:A   CVAGDEESYEVFKELFDPVIEDRHGGYKP   102  (B)
+

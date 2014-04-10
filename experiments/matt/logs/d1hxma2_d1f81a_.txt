@@ -1,0 +1,16 @@
+(d1f81a_:A, d1hxma2:A)
+Core Residues: 15
+Core RMSD: 2.550
+Raw Score: 6.800
+P-value: 0.7404
+Reference structure: d1f81a_:A
+
+d1hxma2:A   SQPHTKPSVFVMKNGTNVACLVKEFYPKD-------------------------------   149  (A)
+d1f81a_:A   -----------------------------SPQESRRLSIQRCIQSLVHACQCRNANCSLP    31  (B)
+
+d1hxma2:A   -------------------IRINLVSSKKITEFDPAIVISPSGKYNAVKLGKYEDSNSVT   190  (A)
+d1f81a_:A   SCQKMKRVVQHTKGCKRKTNGGCPV-----------------------------------    56  (B)
+
+d1hxma2:A   CSVQHDNKT-VHSTDFE---------------------   206  (A)
+d1f81a_:A   CK-------QLIALCCYHAKHCQENKCPVPFCLNIKHK    87  (B)
+

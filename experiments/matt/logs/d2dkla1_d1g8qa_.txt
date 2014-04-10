@@ -1,0 +1,16 @@
+(d1g8qa_:A, d2dkla1:A)
+Core Residues: 32
+Core RMSD: 2.369
+Raw Score: 31.267
+P-value: 0.4330
+Reference structure: d1g8qa_:A
+
+d2dkla1:A   GMKTSGK-QDEAWIMSRLIKQLTDMG--------------------------FPRE----    36  (A)
+d1g8qa_:A   -------FVNKDQIAKDVKQFYDQALQQAVVDDDANNAKAVVKTFHETLDCCGSSTLTAL   165  (B)
+
+d2dkla1:A   -----------------------PAEEALKSNNMNLDQAMSALLEKKVDVDKRGLGVTDH    73  (A)
+d1g8qa_:A   TTSVLKNNLCPSGSNIISNLFKEDCHQKIDDLF---------------------------   198  (B)
+
+d2dkla1:A   NGMAAK----    79  (A)
+d1g8qa_:A   ------SGKH   202  (B)
+

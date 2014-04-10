@@ -1,0 +1,43 @@
+(d3c0na2:A, d3atya_:A)
+Core Residues: 36
+Core RMSD: 2.610
+Raw Score: 29.816
+P-value: 0.4699
+Reference structure: d3c0na2:A
+
+d3atya_:A   MATFPELLRPLKLGRYTLRNRIIMAPLTRCQATEDDHVPRTESMLKYYEDRASAGLIIAE    60  (A)
+d3c0na2:A   ------------------------------------------------------------    85  (B)
+
+d3atya_:A   ATMVQPNYTGFLTEPGIYSDAQIEEWRKIVDAVHKK---GGLIFLQLIHAGRAGIPEKIL   117  (A)
+d3c0na2:A   ------------------------------------IPTLSALDIPDG------------    96  (B)
+
+d3atya_:A   QQSKSDQDPLAGRLLAASAIPIKDHRIPAYFAASGEKETYGVPEELTDDEVRDGIIPLFV   177  (A)
+d3c0na2:A   ----------------------------------------------------------DE    98  (B)
+
+d3atya_:A   EGAKNAIFKAGFDGVEIHGANGYLLDAFFRESSNKRQSGPYAGTTIDTRCQLIYDVTKSV   237  (A)
+d3c0na2:A   VDVQWRLVHDS-------------------------------------------------   109  (B)
+
+d3atya_:A   CDA---------------------------------------------------------   240  (A)
+d3c0na2:A   ---ANFIKPTSYLAHYLGYAWVGGNHSQYVGEDMDVTRDGDGWVIRGNNDGGCDGYRCGD   166  (B)
+
+d3atya_:A   --------VGSD------------------------------------------------   244  (A)
+d3c0na2:A   KTAIKVSNFAYNLDPDSFKHGDVTQSDRQLVKTVVGWAVNDSDTPQSGYDVTLRGDTATN   226  (B)
+
+d3atya_:A   ------------------------------------------------------------   244  (A)
+d3c0na2:A   WSKTNTYGLSEKVTTKNKFKWPLVGETELSIEIAANQSWASQNGGSTTTSLSQSVRPTVP   286  (B)
+
+d3atya_:A   ------------------------------------------------------------   244  (A)
+d3c0na2:A   ARSKIPVKIELYKADISYPYEFKADVSYDLTLSGFLRWGGNAWYTHPDNRPNWNHTFVIG   346  (B)
+
+d3atya_:A   --------------------------------------------------RVGLRISPLN   254  (A)
+d3c0na2:A   PYKDKASSIRYQWDKRYIPGEVKWWDWNWTIQQNGLSTMQNNLARVLRPVRAGITGDF--   404  (B)
+
+d3atya_:A   GVHGMIDSNPEALTKHLCKKIEPLSLAYLHYLRGDMVNQQIGDVVAWVRGSYSGVKISNL   314  (A)
+d3c0na2:A   ---------SA-------------------------------------------------   406  (B)
+
+d3atya_:A   RYDFEEADQQIREGKVDAVAFGAKFIANPDLVERAQQNWPLNEPRPETYYTRTAVGYNDY   374  (A)
+d3c0na2:A   ------------------------------------------------------------   406  (B)
+
+d3atya_:A   PTYNK---------------------------------------------   379  (A)
+d3c0na2:A   -----ESQFAGNIEIGAPVPLGLRLEIPLDAQELSGLGFNNVSLSVTPAA   468  (B)
+

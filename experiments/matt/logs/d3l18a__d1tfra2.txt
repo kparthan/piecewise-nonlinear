@@ -1,0 +1,22 @@
+(d1tfra2:A, d3l18a_:A)
+Core Residues: 81
+Core RMSD: 3.933
+Raw Score: 70.185
+P-value: 0.1219
+Reference structure: d1tfra2:A
+
+d3l18a_:A   ASM-KVLFLS-ADGF------------------------EDLELIYPLHRIKEEGHEVYV    32  (A)
+d1tfra2:A   ---KEGICLIDF-SQIALSTALVNFPDKEKINLSMVRHLILNSIKFNVKKAKTLGY-TKI    66  (B)
+
+d3l18a_:A   ASFQ--------------------------------------RGKITGKHGYSVNVDLTF    54  (A)
+d1tfra2:A   VL--CIDNAKSGYWRRDFAYYYKKTWDWEGYFESSHKVIDELKAY---------MPYIVM   124  (B)
+
+d3l18a_:A   EEVDPDEFDALVLPGGKAPE-----IVRLNEKAVMITRRMFEDDKPVASI-CHG--PQIL   106  (A)
+d1tfra2:A   --------------------DIDKYEAD--DHIAVLVKKFSLEGHKILIISSD-GDF---   158  (B)
+
+d3l18a_:A   ISAK-VLKG-RRGTSTITIRDDVINAGAEWIDAEVVVDG--NWVSSRHPGDLYAWMREFV   162  (A)
+d1tfra2:A   ----TQL--HK----------------------------YPNVKQWSPMHK--KW-----   177  (B)
+
+d3l18a_:A   KLLH---   166  (A)
+d1tfra2:A   ----VKI   180  (B)
+

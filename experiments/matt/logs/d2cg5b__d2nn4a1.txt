@@ -1,0 +1,13 @@
+(d2nn4a1:A, d2cg5b_:B)
+Core Residues: 31
+Core RMSD: 1.639
+Raw Score: 46.480
+P-value: 0.3193
+Reference structure: d2nn4a1:A
+
+d2cg5b_:B   ----------------------QRD-LVEAVAHILGIRDLAAVNLDSSLADL--GL----  2154  (A)
+d2nn4a1:A   LNTFYDVQQLLKTFGHIVYFGDRELEIEFMLDELKE----------------LYM-NHMI    43  (B)
+
+d2cg5b_:B   -DALMSVEVRQTLERELNLVLSVREVRQLTLRKLQELSSKA-  2194  (A)
+d2nn4a1:A   EKEQWARAAAVLRKELEQ-----------------------T    62  (B)
+

@@ -1,0 +1,13 @@
+(d1wgla_:A, d2dkla1:A)
+Core Residues: 52
+Core RMSD: 4.629
+Raw Score: 72.511
+P-value: 0.2660
+Reference structure: d1wgla_:A
+
+d2dkla1:A   GMKT---SGKQDEAWIMSRLIKQLTDMGFPREPAEEALKSNNMNLDQAMSALLEKKVDVD    64  (A)
+d1wgla_:A   ----GSSGSSGCSEEDLKAIQDMFP--NMDQEVIRSVLEAQRGNKDAAINSLLQMGEEPS    54  (B)
+
+d2dkla1:A   KRGLGV----TDHNGMAAK    79  (A)
+d1wgla_:A   ------GPSSG--------    59  (B)
+

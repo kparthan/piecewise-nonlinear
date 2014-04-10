@@ -1,0 +1,40 @@
+(d1taza_:A, d1y7ba2:A)
+Core Residues: 27
+Core RMSD: 3.289
+Raw Score: 13.766
+P-value: 0.7524
+Reference structure: d1taza_:A
+
+d1y7ba2:A   IKNPILRGFNPDPSICRADTDYYIATSTFEWFPGVQIHHSKDLVNWHLVAHPLNRTSLLD    63  (A)
+d1taza_:A   ------------------------------------------------------------   146  (B)
+
+d1y7ba2:A   MKGNPNSGGIWAPDLSYHDGKFWLIYTDVKVTDGMWKDCHNYLTTCESVDGVWSDPITLN   123  (A)
+d1taza_:A   ------------------------------------------------------------   146  (B)
+
+d1y7ba2:A   GSGFDASLFHDNDGKKYLVNMYWDQRTYNHNFYGIVLQEYSDKEKKLIGKAKIIYKGTDI   183  (A)
+d1taza_:A   ------------------------------------------------------------   146  (B)
+
+d1y7ba2:A   KYTEGPHIYHIGDYYYLFTAEGG-------------------------------------   206  (A)
+d1taza_:A   -----------------------VGPTYSTAVLNCLKNLDLWCFDVFSLNQAADDHALRT   182  (B)
+
+d1y7ba2:A   ------------------------------TTYEHSETVARSKNIDGPYEIDPEYPLLT-   235  (A)
+d1taza_:A   IVFELLTRHNLISRFKIPTVFLMSFLDALETGYGKY---------------------KNP   221  (B)
+
+d1y7ba2:A   --SWHDPRN---------------------------------SLQKCGHASLVHTHTDEW   260  (A)
+d1taza_:A   YHNQIHAA-DVTQTVHXFLLRTGMVHCLSEIELLAIIFAAAIHDYEH-------------   267  (B)
+
+d1y7ba2:A   YLAHLVGRPLPVGNQPVLEQRGYCPLGRETSIQRIEWVDNWPRVVGGK-QGSVNVE-APK   318  (A)
+d1taza_:A   ------------------------------------------------TGTTNSF-HIQ-   277  (B)
+
+d1y7ba2:A   IPEVKW------------------------------------------------------   324  (A)
+d1taza_:A   ------TKSECAIVYNDRSVLENHHISSVFRLMQDDEMNIFINLTKDEFVELRALVIEMV   331  (B)
+
+d1y7ba2:A   ------------------------------------------------------------   324  (A)
+d1taza_:A   LATDMSCHFQQVKTMKTALQQRIDKPKALSLLLHAADISHPTKQWLVHSRWTKALMEEFF   393  (B)
+
+d1y7ba2:A   ------------------------------------------------------------   324  (A)
+d1taza_:A   RQGDKEAELGLPRTSTLVAQSQIGFIDFIVEPTFSVLTDVAEKSVQDPNPDVVSFRSTWV   486  (B)
+
+d1y7ba2:A   ----------------   324  (A)
+d1taza_:A   KRIQENKQKWKERAAS   502  (B)
+

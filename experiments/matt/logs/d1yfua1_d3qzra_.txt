@@ -1,0 +1,25 @@
+(d3qzra_:A, d1yfua1:A)
+Core Residues: 39
+Core RMSD: 2.585
+Raw Score: 34.069
+P-value: 0.3795
+Reference structure: d3qzra_:A
+
+d1yfua1:A   MLTYGAPFNFPRWIDEHAHLLKPPV-------------------------GNRQVWQDSD    35  (A)
+d3qzra_:A   -------------------------GPSLDFALSLLRRNVRQVQTDQGHFTMLGVR--D-    32  (B)
+
+d1yfua1:A   FIVTVVGGPNHRTDY----H------DDPLEE-FFYQL------RGNAYLNLWVDGRRER    78  (A)
+d3qzra_:A   -RLAVLPRHS-----QPGKTIWIEHKLV--NVLDAVELVDEQGVNL--------------    70  (B)
+
+d1yfua1:A   ADLKEGDIFLLPPHVRHSPQRPEAGSACLVIERQRPAGMLDGFEWYCDACGHLVHRVEVQ   138  (A)
+d3qzra_:A   -------------------------ALTLITLDTN-------------------------    80  (B)
+
+d1yfua1:A   LKSIVTDL--------------------------PPLFESFYASEDKRRCPHCGQVHPGR   172  (A)
+d3qzra_:A   --------EKFRDITKFIPENISTASDATLVINTE-------------------------   107  (B)
+
+d1yfua1:A   AA----------------------------------------------------------   174  (A)
+d3qzra_:A   --HMPSMFVPVGDVVQYGFLNLSGKPTHRTMMYNFPTKAGQCGGVVTSVGKIIGIHIGGN   165  (B)
+
+d1yfua1:A   ---------------   174  (A)
+d3qzra_:A   GRQGFCAGLKRSYFA   180  (B)
+

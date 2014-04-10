@@ -1,0 +1,13 @@
+(d2g81i1:I, d1bx7a_:A)
+Core Residues: 18
+Core RMSD: 2.708
+Raw Score: 9.933
+P-value: 0.6333
+Reference structure: d2g81i1:I
+
+d1bx7a_:A   GNTCGGETCS---A---------------AQVCLK---------------GKCVCNEV-H    28  (A)
+d2g81i1:I   ----------PCCDRCECTKSIPPQCRCSDVRLN-SCHSACKSCACTFSIPAQCFCGDIN    65  (B)
+
+d1bx7a_:A   CRIRCKYGLKKDENGCEYPCSCAKA----    53  (A)
+d2g81i1:I   DF-----------------C-----YKPC    72  (B)
+

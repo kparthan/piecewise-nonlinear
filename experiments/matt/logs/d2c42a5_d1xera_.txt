@@ -1,0 +1,16 @@
+(d1xera_:A, d2c42a5:A)
+Core Residues: 62
+Core RMSD: 1.816
+Raw Score: 88.670
+P-value: 9.3208e-03
+Reference structure: d1xera_:A
+
+d2c42a5:A   TSQFEKRGVAIN------------------------------------VPQWVPENCIQC   692  (A)
+d1xera_:A   ------------GIDPNYRTNRQVVGEHSGHKVYGPVEPPXVLGIHGTIVGVDFDLCIAD    48  (B)
+
+d2c42a5:A   NQCAFVCPHSAILPVLAKEEELVGAPANFTAL----EAKGKELKGYKFRIQI-NTLDCMG   747  (A)
+d1xera_:A   GSCINACPVNVFQWYD--------------TPGHPASE---------KKADPVNEQACIF    85  (B)
+
+d2c42a5:A   CGNCADICPPKEKALVMQPLDTQRDAQVPNLEYAARIP   785  (A)
+d1xera_:A   CMACVNVCPV--AAIDVKPP------------------   103  (B)
+

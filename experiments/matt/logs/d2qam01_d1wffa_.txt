@@ -1,0 +1,13 @@
+(d1wffa_:A, d2qam01:0)
+Core Residues: 22
+Core RMSD: 2.463
+Raw Score: 15.212
+P-value: 0.6849
+Reference structure: d1wffa_:A
+
+d2qam01:0   AVQQNKPTRSKRGMRRSHDALT------------------------------------AV    24  (A)
+d1wffa_:A   ----------------------GSSGSSGIHHLPPVKAPLQTKKKIMKHCFLCGKKTGLA    38  (B)
+
+d2qam01:0   TS-LSVDKTSGEKHLRHHITADGYYRGRKVIAK--------------------------    56  (A)
+d1wffa_:A   --TSFECR-CGNNFCAS-H-----RYAEAH---GCNYDYKSAGRRYLEEANPVSGPSSG    85  (B)
+

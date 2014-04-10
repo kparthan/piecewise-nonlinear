@@ -1,0 +1,13 @@
+(d1k78a2:A, d1t33a1:A)
+Core Residues: 39
+Core RMSD: 2.205
+Raw Score: 62.680
+P-value: 0.3059
+Reference structure: d1k78a2:A
+
+d1t33a1:A   MNIPTTTTK----------GEQAKSQLIAAALAQFGEYGLHATTRDIAALA---------    41  (A)
+d1k78a2:A   ---------VIGGSKPKVATPKVVEKIAEYKRQNP-----TMFAWEIRDRLLAERVCDND   127  (B)
+
+d1t33a1:A   -GQNIAAITYYFGSKEDLYLACAQWIADFLGEKFRPHAEKAERLFSQP--    88  (A)
+d1k78a2:A   TVPSVSSINRIIR-----------------------------------TK   142  (B)
+

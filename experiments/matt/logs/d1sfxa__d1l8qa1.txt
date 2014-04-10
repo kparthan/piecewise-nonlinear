@@ -1,0 +1,16 @@
+(d1l8qa1:A, d1sfxa_:A)
+Core Residues: 44
+Core RMSD: 2.631
+Raw Score: 56.362
+P-value: 0.2017
+Reference structure: d1l8qa1:A
+
+d1sfxa_:A   HXSNPLGELVKALEKLSF------------------------------------------    17  (A)
+d1l8qa1:A   ------------------GFEGLERKERKERDKLXQIVEFVANYYAVKVEDILSDKRNKR   331  (B)
+
+d1sfxa_:A   --KPSDVRIYSLLLERGGXRVSEIARELDLSARFVRDRLKVLLKRGFVRREIVEKGWVGY    75  (A)
+d1l8qa1:A   TSEARKIAXYLCRKVCS-ASLIEIARAFKRKDH---TTVIHAIRSVE-------------   374  (B)
+
+d1sfxa_:A   IYSAEKPEKVL--KEF-KSSILGEIERIEKXFTDGS-----------------   108  (A)
+d1l8qa1:A   -----------EEKK-RK------------------FKHLVGFLEKQAFDKIC   399  (B)
+

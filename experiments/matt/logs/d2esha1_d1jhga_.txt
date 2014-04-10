@@ -1,0 +1,19 @@
+(d1jhga_:A, d2esha1:A)
+Core Residues: 25
+Core RMSD: 0.646
+Raw Score: 65.595
+P-value: 0.2225
+Reference structure: d1jhga_:A
+
+d2esha1:A   RGGRGFRGWWLASTILLLVAEKPSHGYELAERLAEFGIEIPGIGHMGNIYRVLADLEESG    63  (A)
+d1jhga_:A   ------------------------------------------------------------     8  (B)
+
+d2esha1:A   FLSTEWDTTVSPPRKIYRITPQGKLYLREILRSLEDMKRRIETLEERIKRVLQE------   117  (A)
+d1jhga_:A   -----------------------------SAAMAEQRHQEWLRFVDLLKNAYQNDLHLPL    38  (B)
+
+d2esha1:A   ------------------------------------------------------------   117  (A)
+d1jhga_:A   LNLMLTPDEREALGTRVRIIEELLRGEMSQRELKNELGAGIATITRGSNSLKAAPVELRQ    98  (B)
+
+d2esha1:A   ----------   117  (A)
+d1jhga_:A   WLEEVLLKSD   108  (B)
+

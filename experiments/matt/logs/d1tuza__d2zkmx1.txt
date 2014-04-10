@@ -1,0 +1,19 @@
+(d2zkmx1:X, d1tuza_:A)
+Core Residues: 44
+Core RMSD: 2.401
+Raw Score: 36.273
+P-value: 0.3528
+Reference structure: d2zkmx1:X
+
+d1tuza_:A   --------MAKERGLISPSDFAQLQKYMEYSTKKVSDVLKL-------------------    33  (A)
+d2zkmx1:X   ASRSTFLDK--------------------------------ILVKLKMQLNSEGKIPVKN   169  (B)
+
+d1tuza_:A   ------------------------------------------------------FEDGEM    39  (A)
+d2zkmx1:X   FFQMFPADRKRVEAALSACHLPKGKNDAINPEDFPEPVYKSFLMSLCPRPEIDEIF----   225  (B)
+
+d1tuza_:A   AKYVQGDAIGYEGFQQFLK-IYLEVDNVPRHLSLALFQSFETGHCLNETNVTKDVV--CL    96  (A)
+d2zkmx1:X   T------YMTKEHLTKFINQKQR--------QVQGLIDKYEPS-----------LSPEGM   291  (B)
+
+d1tuza_:A   NDVSCYFSL-LEGGRPEDKLEWS----------   118  (A)
+d2zkmx1:X   VWFLCG--PENS-----------VLAQDKLLLH   311  (B)
+

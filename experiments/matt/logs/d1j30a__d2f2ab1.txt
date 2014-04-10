@@ -1,0 +1,19 @@
+(d2f2ab1:B, d1j30a_:A)
+Core Residues: 36
+Core RMSD: 3.497
+Raw Score: 53.912
+P-value: 0.5648
+Reference structure: d2f2ab1:B
+
+d1j30a_:A   DLKGTKTAENLKQGFIGESMANRRYLYFAKRADEEGYPEIAGLLRSIAEGETAHAFGHLD    62  (A)
+d2f2ab1:B   ------------------------------------------------------------   294  (B)
+
+d1j30a_:A   FIRQGGLTDPATDKPIGTLEQMIESAIAGETYEW--------------------------    96  (A)
+d2f2ab1:B   ----------------------------------ELPDERKAKYVNELGLPAYDAHVLTL   319  (B)
+
+d1j30a_:A   TQMYPGFAKVAREEGFPEVAEWFETLAR-AEKSHAEKFQNVLKQLKGG------------   143  (A)
+d2f2ab1:B   TKEMSDFFESTIEHGAD--VKLTSNWLMGGVNEYLNKNQ---------VELLDTKLTPEN   368  (B)
+
+d1j30a_:A   --------------------------------   143  (A)
+d2f2ab1:B   LAGMIKLIEDGTMSSKIAKKVFPELAAKGGNA   400  (B)
+

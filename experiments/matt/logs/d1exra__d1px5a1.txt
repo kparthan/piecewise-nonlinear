@@ -1,0 +1,22 @@
+(d1px5a1:A, d1exra_:A)
+Core Residues: 37
+Core RMSD: 1.703
+Raw Score: 67.714
+P-value: 0.2209
+Reference structure: d1px5a1:A
+
+d1exra_:A   EQLTEEQIAEFKEAFALFDKDGDGTITTKELGTVMRSLGQNPTEAELQDMINEVDADGNG    61  (A)
+d1px5a1:A   ------------------------------------------------------------   201  (B)
+
+d1exra_:A   TIDFPEFLSLMARKMKEQDSEEELIEAFKVFDRDGNGLISAAELRHVMTNLGEKLTDDEV   121  (A)
+d1px5a1:A   ----------PTKLKSLIRLVKHWYQTCKKTH-GNKL-----------------------   226  (B)
+
+d1exra_:A   DEMIREADIDGDGHI---------------------------------------------   136  (A)
+d1px5a1:A   ---------------PPQYALELLTVYAWEQGSRKTDFSTAQGFQTVLELVLKHQKLCIF   271  (B)
+
+d1exra_:A   ----------------------------------------------NYEEFVRMMVS---   147  (A)
+d1px5a1:A   WEAYYDFTNPVVGRCMLQQLKKPRPVILDPADPTGNVGGGDTHSWQRLAQEARVWLGYPC   331  (B)
+
+d1exra_:A   ---------------   147  (A)
+d1px5a1:A   CKNLDGSLVGAWTML   346  (B)
+

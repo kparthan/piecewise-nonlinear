@@ -1,0 +1,16 @@
+(d1e2wa2:A, d1gsoa1:A)
+Core Residues: 30
+Core RMSD: 3.081
+Raw Score: 25.251
+P-value: 0.6159
+Reference structure: d1e2wa2:A
+
+d1gsoa1:A   ---------------------ERASLGVVMAAGGYPGDYRTGDVIHGLPLEEVAGGKVFH   366  (A)
+d1e2wa2:A   TIYNASAAGKIVAITALSEKKGGFEVSIEKA-----------------------------   199  (B)
+
+d1gsoa1:A   AGTKLAQVVTNGGRVLCVT-ALGHTVAEAQKRAYALMTDIHWDDCF--------CR--KD   418  (A)
+d1e2wa2:A   ---------N----GEVVVDKIPAGPD-------------------LIVKEGQTVQADQP   227  (B)
+
+d1gsoa1:A   IGWRAIER--   426  (A)
+d1e2wa2:A   LTN-----NP   232  (B)
+

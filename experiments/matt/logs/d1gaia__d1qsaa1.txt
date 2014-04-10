@@ -1,0 +1,46 @@
+(d1qsaa1:A, d1gaia_:A)
+Core Residues: 155
+Core RMSD: 20.081
+Raw Score: 205.323
+P-value: 0.3142
+Reference structure: d1qsaa1:A
+
+d1gaia_:A   ATLDSWLSNEATV-----------------------------------------------    13  (A)
+d1qsaa1:A   -------------DSLDEQRSRYAQIKQAWDNRQMDVVEQMMPGLKDYPLYPYLEYRQIT    47  (B)
+
+d1gaia_:A   ------ARTAILNNIGADGAWVSGADSGIVVASPSTDNPDYFYT-------WTRDSGLVI    60  (A)
+d1qsaa1:A   DDLMNQPAVTVTNFVR----------------------------ANPTLPPARTLQSRFV    79  (B)
+
+d1gaia_:A   KTLVDLFRNGDTDL------LSTIEHYISSQAIIQGVSNPSGDLSSGGLGEPKFNVDETA   115  (A)
+d1qsaa1:A   NELARR--------EDWRGLLAFSPE--K-------------------------------    98  (B)
+
+d1gaia_:A   YTGSWGRPQRDGPAL--RATAMIGFGQWLLDNGYTSAATEIV----WPLVRNDLSYVAQY   169  (A)
+d1qsaa1:A   ---------------PGTTEAQCNYYYAKWNTGQSEE-----AWQGAKELW-L-------   130  (B)
+
+d1gaia_:A   WNQTGYDLWEEVNGSSFFTIAVQHRAL----VEGSAFATAVGS--------SCSWCDSQA   217  (A)
+d1qsaa1:A   -------------------------TGKSQPNACDKLFSVWR-ASGKQDPLAYLERI--R   162  (B)
+
+d1gaia_:A   PQILCYL-----------------------------------------------------   224  (A)
+d1qsaa1:A   --LAMKAGNTGLVTVLAGQMPADYQTIASAIISLANNPNTVLTFARTTGATDFTRQMAAV   220  (B)
+
+d1gaia_:A   QSFWTGSY--ILANFDSSRSGK-----------------------------------DTN   247  (A)
+d1qsaa1:A   AFASV---ARQDAEN-------ARLMIPSLAQAQQLNEDQIQELRDIVAWRLMGNDVTDE   270  (B)
+
+d1gaia_:A   TLLGSIHTFD-PEAGCDDSTFQPCSP--RALANHKEVVDSFRSIYTLNDGLSDSEAVAVG   304  (A)
+d1qsaa1:A   QAKWRDDAIMRSQSTSL---------IERRVRMALGTG----------------------   299  (B)
+
+d1gaia_:A   RYPEDSYYNGNPWFLCTLAAA--EQLYDALYQWDKQGSLEITDVSLDFFKALYSGAATGT   362  (A)
+d1qsaa1:A   ---------------------DRRGLNTWLARL---------------------------   311  (B)
+
+d1gaia_:A   YSSSSSTYSSIV-------SAVKTFAD-GFVSIVETHAASNGSLSEQFDKSDGDELSARD   414  (A)
+d1qsaa1:A   ------------PMEAKEKDEWRYWQ-ADLLLE---------------------------   331  (B)
+
+d1gaia_:A   LTWSYAA---LLTANNRRNSVVPPSWGETSASSVPGTCAATSASGTYSSVTVTSWPSIVA   471  (A)
+d1qsaa1:A   -------RGREAEAKEILHQ----------------------------------------   344  (B)
+
+d1gaia_:A   T------------------------------------------------------G----   473  (A)
+d1qsaa1:A   -LMQQRGFYPMVAAQRIGEEYELKIDKAPQNVDSALTQGPEMARVRELMYWNLDNTARSE   403  (B)
+
+d1gaia_:A   -----------------------------------------------   473  (A)
+d1qsaa1:A   WANLVKSKSKTEQAQLARYAFNNQWWDLSVQATIAGKLWDHLEERFP   450  (B)
+

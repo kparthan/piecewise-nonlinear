@@ -1,0 +1,19 @@
+(d1eexg_:G, d1tuza_:A)
+Core Residues: 38
+Core RMSD: 3.017
+Raw Score: 33.724
+P-value: 0.3368
+Reference structure: d1eexg_:G
+
+d1tuza_:A   MAKERGLISPSDFAQ---------------------------------------------    15  (A)
+d1eexg_:G   ---------------SARVSDYPLANKHPEWVKTATNKTLDDFTLENVLSNKVTAQDMRI    81  (B)
+
+d1tuza_:A   ---------------------------------------------LQKYMEYSTK-KVSD    29  (A)
+d1eexg_:G   TPETLRLQASIAKDAGRDRLAMNFERAAELTAVPDDRILEIYNALRPYRS---TKEELLA   138  (B)
+
+d1tuza_:A   VLKLFEDGEMAKYVQGDAIGYEGFQQFLKIYLEVDNVPRHLSLALFQSFETGHCLNETNV    89  (A)
+d1eexg_:G   IADDLES----RYQAKICA-----------------------------------------   153  (B)
+
+d1tuza_:A   TKDVVCLNDVSCYFSLLEGGRPEDKLEWS--------   118  (A)
+d1eexg_:G   -------AFVREAATLYVE----------RKKLKGDD   173  (B)
+

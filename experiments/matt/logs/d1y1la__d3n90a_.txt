@@ -1,0 +1,22 @@
+(d3n90a_:A, d1y1la_:A)
+Core Residues: 21
+Core RMSD: 2.729
+Raw Score: 23.841
+P-value: 0.7322
+Reference structure: d3n90a_:A
+
+d1y1la_:A   ------------------------------------------------------------     1  (A)
+d3n90a_:A   AFKGGGPYGQGVTRGQDLSGKDFSGQTLIRQDFKTSILRQANFKGAKLLGASFFDADLTG   140  (B)
+
+d1y1la_:A   ---------------------------------------------KVLFVCIHNTARSVM    15  (A)
+d3n90a_:A   ADLSEADLRGADFSLANVTKVNLTNANLEGATMMGNTSFKGSNITGADFTD---------   191  (B)
+
+d1y1la_:A   AEALFNAMAKSWKAESAGVEKAERVDETVKRLLAERGLKAKEKPRTVDEVNLDDFDLIVT    75  (A)
+d3n90a_:A   ------------------------------------------------------------   191  (B)
+
+d1y1la_:A   VCEESSCVVLPTDKPVTRWHIENPAGKDEGTYRRVLAEIEERVKKLVGE-----------   124  (A)
+d3n90a_:A   VP------------------L-------------RDDQRVYLCK-VA--DGVNATTGNAT   217  (B)
+
+d1y1la_:A   --------   124  (A)
+d3n90a_:A   RDTLLCNL   225  (B)
+

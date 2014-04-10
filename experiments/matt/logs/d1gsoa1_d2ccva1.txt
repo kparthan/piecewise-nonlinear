@@ -1,0 +1,16 @@
+(d2ccva1:A, d1gsoa1:A)
+Core Residues: 33
+Core RMSD: 2.390
+Raw Score: 25.727
+P-value: 0.3989
+Reference structure: d2ccva1:A
+
+d1gsoa1:A   ERASLGVVMAA-GGYPGDYRTGDVIHGLPLEEVA--------------------------   360  (A)
+d2ccva1:A   RVQSGKIDCGDDA---------------------GWAKVPSDDPGRDNTRELAKNITFAS    39  (B)
+
+d1gsoa1:A   --------GGKVFHAGTKLAQVV------------------------------TNGGRVL   385  (A)
+d2ccva1:A   PYCRPPVVLLSITQ-LD----VEQSQNLRVIARLYSVSPSGFKASCYTWHNTKV---YSM    91  (B)
+
+d1gsoa1:A   CVTALG-HTVAEAQKRAYALMTDIHWDDCFCRKDIGWRAIER   426  (A)
+d2ccva1:A   SISWISIE----------------------------------    99  (B)
+

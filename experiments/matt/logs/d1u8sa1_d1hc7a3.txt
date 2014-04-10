@@ -1,0 +1,16 @@
+(d1hc7a3:A, d1u8sa1:A)
+Core Residues: 34
+Core RMSD: 2.109
+Raw Score: 25.030
+P-value: 0.3962
+Reference structure: d1hc7a3:A
+
+d1u8sa1:A   SL---------------TQHLVITAVGTDRPGI--CNEVVRLVTQAGC-NIIDSRIAMFG    43  (A)
+d1hc7a3:A   --TRKVDTYEAFKEAVQEGFALAFH--------CGDKACERLIQEETTATTRCV------   447  (B)
+
+d1u8sa1:A   KEF------------------TL--LMLISGSPSNITRVETTLPLLGQQHDLITMMKRTS    83  (A)
+d1hc7a3:A   ---PFEAEPEEGFCVRCGRPSAYGKRVVFAK-----------------------------   475  (B)
+
+d1u8sa1:A   PHDH--    87  (A)
+d1hc7a3:A   ----AY   477  (B)
+

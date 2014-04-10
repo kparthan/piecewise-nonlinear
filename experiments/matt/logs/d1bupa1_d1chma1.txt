@@ -1,0 +1,22 @@
+(d1chma1:A, d1bupa1:A)
+Core Residues: 76
+Core RMSD: 3.192
+Raw Score: 74.500
+P-value: 0.0595
+Reference structure: d1chma1:A
+
+d1bupa1:A   GP-------------------------------------AVGIDLG--------------    12  (A)
+d1chma1:A   --QMPKTLRIRNGDKVRSTFSAQEYANRQARLRAHLAAENIDAAIFTSYHNINYYSDFLY    59  (B)
+
+d1bupa1:A   ------STYSCVGVFQHGKVEIIANDQGNRTTPS-----------------YVAFTDTER    49  (A)
+d1chma1:A   CSFGRPYALVVTE----------D-----DVISISANIDGGQPWRRTVGTDNI-------    97  (B)
+
+d1bupa1:A   LIGDAAKNQVAMNPTNTVFDAKRLIGRRFDDAVVQSDMKHWPFMVVNDAGRPKVQVEYKG   109  (A)
+d1chma1:A   -----------------VY-----------------------T----------DW-----   102  (B)
+
+d1bupa1:A   ETKSF-YPEEVSSMVLTKMKEIAEAYLGKTVTNAVVTVP-AYFNDSQRQATKDAGTIAGL   167  (A)
+d1chma1:A   ---QRDNYFAAIQQALPK-A-------------RRIGIEHDHLNLQNRDKLAARYP--DA   143  (B)
+
+d1bupa1:A   NVLRIINEPTAA-AIAYGLDKK--   188  (A)
+d1chma1:A   ELV--DV-AAACMR--------MR   156  (B)
+

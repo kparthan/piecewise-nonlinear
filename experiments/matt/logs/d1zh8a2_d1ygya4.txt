@@ -1,0 +1,19 @@
+(d1ygya4:A, d1zh8a2:A)
+Core Residues: 57
+Core RMSD: 3.460
+Raw Score: 64.197
+P-value: 0.0891
+Reference structure: d1ygya4:A
+
+d1zh8a2:A   HVPAFWKAKELVESGAIGDPVFXNWQIWVGXDENNKYVHTDWRKKPKHVG--------GF   183  (A)
+d1ygya4:A   --------------------------------------------------GGVVNEEVAP   326  (B)
+
+d1zh8a2:A   LSDGGVHHAAAXRLILG-EIEWI-------------------------------------   205  (A)
+d1ygya4:A   WLDLVRKLGVLAGVLSDELPVSLSVQVRGELAAEEVEVLRLSALRGLFSAVIEDAVTFVN   386  (B)
+
+d1zh8a2:A   ------------SAVAKDLSPLLGGXDF-----------LSSIFEFENGTVGNYTISYSL   242  (A)
+d1ygya4:A   APALAAERGVTAEIC-------------KASESPNHRSVVDVRAVGADGSVVTVSGTLY-   432  (B)
+
+d1zh8a2:A   KGNE--------RFEITGTKGKISISWDKIVLNEEEXKVPQ-   275  (A)
+d1ygya4:A   ----GPQLSQKIVQING-----RHFDL--------------R   451  (B)
+

@@ -1,0 +1,19 @@
+(d1wira_:A, d1gxqa_:A)
+Core Residues: 41
+Core RMSD: 6.079
+Raw Score: 36.909
+P-value: 0.9217
+Reference structure: d1wira_:A
+
+d1gxqa_:A   -----------------------PMAVEE-VIEMQGLSLDPTSH--------RVMAGEEP   152  (A)
+d1wira_:A   GSSGSSGEPAHGRQHTPCLFCDRLFASAEET---------FS--HCKLEHQFNI------    43  (B)
+
+d1gxqa_:A   L-EM------GPTEFKLLHFFMTHPERVYS----------------REQLLNHVW-----   184  (A)
+d1wira_:A   -DSMVHKHGLEFYGYIKLINFIRLKN----PTVEYMNSIYNPVPWEKDEYLKP--VLEDD    96  (B)
+
+d1gxqa_:A   --GTNVYVEDRTVDVHIRRLRKALEPGGHDRMVQTVRGTGYRFSTRF-------------   229  (A)
+d1wira_:A   LLLQFDV----------------------------------------EDLYEPVSTPFSS   116  (B)
+
+d1gxqa_:A   -----   229  (A)
+d1wira_:A   GPSSG   121  (B)
+

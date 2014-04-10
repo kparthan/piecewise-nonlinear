@@ -1,0 +1,19 @@
+(d1z8ga2:A, d1op4a_:A)
+Core Residues: 25
+Core RMSD: 3.468
+Raw Score: 22.195
+P-value: 0.7368
+Reference structure: d1z8ga2:A
+
+d1op4a_:A   EASGEIALCKTGFPEDVYSAVLPKDVHEGQPLLNVKFSNCNRKRKV---QYESSEPADFK    80  (A)
+d1z8ga2:A   ----------------------------------------------PLYPVQVS------    57  (B)
+
+d1op4a_:A   VDEDGTVYAVRSFPLTAEQAK---FLIYAQDKETQE-KWQVAVNLSREPTLTEEPMKEPH   136  (A)
+d1z8ga2:A   ---------------------SADARLMVFDKTEGTWRLLCSSR----------------    80  (B)
+
+d1op4a_:A   EIEEIVFPRQLAKHSGALQRQKR-------------------------------------   159  (A)
+d1z8ga2:A   -S---------------------NARVAGLSCEEMGFLRALTHSELDVRTAGAAGTSGFF   118  (B)
+
+d1op4a_:A   -----------------------------------------   159  (A)
+d1z8ga2:A   CVDEGRLPHTQRLLEVISVCDCPRGRFLAAICQDCGRRKLP   159  (B)
+

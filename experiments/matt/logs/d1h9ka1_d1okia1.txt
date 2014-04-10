@@ -1,0 +1,16 @@
+(d1okia1:A, d1h9ka1:A)
+Core Residues: 29
+Core RMSD: 2.954
+Raw Score: 19.402
+P-value: 0.6606
+Reference structure: d1okia1:A
+
+d1h9ka1:A   GSHMKISARNVFKGTV------SALKEGAVN------------------------AEVDI    27  (A)
+d1okia1:A   ----------------PPGNYRLVVFE--LENFQGRRAEFSGEXSNLADRGFDRVRSIIV    95  (B)
+
+d1h9ka1:A   --LLGGG----------------DKLAAVVTLESARS--------LQLAAGKEVVAVVKA    61  (A)
+d1okia1:A   SAGP---WVAFEQSNFRGEMFILEKGEYPR----W--NTWSSSYRSDRLMSF--------   138  (B)
+
+d1h9ka1:A   PWVLLMTDSSGY------    73  (A)
+d1okia1:A   ------------RPIKMD   144  (B)
+

@@ -1,0 +1,13 @@
+(d1rp3a2:A, d2dk8a1:A)
+Core Residues: 40
+Core RMSD: 2.533
+Raw Score: 43.177
+P-value: 0.2727
+Reference structure: d1rp3a2:A
+
+d2dk8a1:A   PDADP----------------------VEIENRIIEL-CHQFPHGITDQVIQNEMPHIE-    43  (A)
+d1rp3a2:A   -----NVEEEVIKRELTEKVKEAVSKLPEREKLVIQLIFY-EELPAK--EVAKILET--S   213  (B)
+
+d2dk8a1:A   -AQQRAVAINRLLSMGQLDLLRSNTGLLYRIKD------    75  (A)
+d1rp3a2:A   VSR-VSQLKAKALERL-----------------REMLSN   234  (B)
+

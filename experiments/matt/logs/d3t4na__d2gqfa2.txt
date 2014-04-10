@@ -1,0 +1,22 @@
+(d2gqfa2:A, d3t4na_:A)
+Core Residues: 21
+Core RMSD: 2.080
+Raw Score: 36.497
+P-value: 0.5794
+Reference structure: d2gqfa2:A
+
+d3t4na_:A   STVSILPTSLPQIHRANMLAQGSPAASKISPLVTKKSKTRWHFGIRSRSYPLDVM-----   519  (A)
+d2gqfa2:A   -------------------------------------------------------SLVPF   199  (B)
+
+d3t4na_:A   ------------------------------------------------------------   519  (A)
+d2gqfa2:A   TYRETDKFLTALSGISLPVTITALCGKSFYNQLLFTHRGISGPAVLQISNYWQPTESVEI   259  (B)
+
+d3t4na_:A   ------GEIYIALKNLGAEWAKPSEEDLWTIKLRWKYIPDLMKMVIQLFQIETNNYLVDF   584  (A)
+d2gqfa2:A   DLLPNHNVEEEINQAKQ-------------------------------------------   276  (B)
+
+d3t4na_:A   KFDGWESSTFSAYPFLHLTT-------------------------------------KLI   623  (A)
+d2gqfa2:A   --------------------SSPKQXLKTILVRLLPKKLVELWIEQGIVQDEVIANISKV   316  (B)
+
+d3t4na_:A   MELAVNS-------------------   630  (A)
+d2gqfa2:A   RVKNLVDFIHHWEFTPNGTEGYRTAE   342  (B)
+

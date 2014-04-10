@@ -1,0 +1,16 @@
+(d3pc7a_:A, d1jbja1:A)
+Core Residues: 21
+Core RMSD: 3.497
+Raw Score: 10.699
+P-value: 0.8952
+Reference structure: d3pc7a_:A
+
+d1jbja1:A   KKDGSQTNKAKNLVQVDGS-------------------------------RGDGSVLLTC   129  (A)
+d3pc7a_:A   -------------------SQTKVLLDIFTGVRLYLPPSTPDFSRLRRYFVAFDGDLVQE   882  (B)
+
+d1jbja1:A   GLTDKTI----------KWL---KDGS--IISPL-NATKNTWNLGNNAKDPRGTYQCQGA   173  (A)
+d3pc7a_:A   -------FDXTSATHVLGSRDKNPA--AQQVSPEWI------------------------   909  (B)
+
+d1jbja1:A   KETSNPLQVYYRM-------------   186  (A)
+d3pc7a_:A   -------------WACIRKRRLVAPS   922  (B)
+

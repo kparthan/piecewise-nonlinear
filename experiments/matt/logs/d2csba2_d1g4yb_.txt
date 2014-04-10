@@ -1,0 +1,16 @@
+(d1g4yb_:B, d2csba2:A)
+Core Residues: 17
+Core RMSD: 1.435
+Raw Score: 20.084
+P-value: 0.5116
+Reference structure: d1g4yb_:B
+
+d2csba2:A   IVECALKLQDRYGI------REDVALCLARAFDGSI---------------------SXI   326  (A)
+d1g4yb_:B   --------------DTQLTKRVKNAAANVLRET---WLIYKNTKLVKKIDHAKVRKHQRK   455  (B)
+
+d2csba2:A   ATTPYRTLKDVCPDLTLEEAKS--VN----------------------------------   350  (A)
+d1g4yb_:B   ----------------------FLQ-AIHQLRSVKMEQRKLNDQANTLVDLAKTQLHHHH   493  (B)
+
+d2csba2:A   -   350  (A)
+d1g4yb_:B   H   494  (B)
+

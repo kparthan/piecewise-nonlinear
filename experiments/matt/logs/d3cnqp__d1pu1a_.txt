@@ -1,0 +1,13 @@
+(d1pu1a_:A, d3cnqp_:P)
+Core Residues: 47
+Core RMSD: 3.190
+Raw Score: 39.753
+P-value: 0.3797
+Reference structure: d1pu1a_:A
+
+d3cnqp_:P   EKKYIVGFKQGFK----SCAKKEDVISEKGG------------------KLQKCFKYVDA    46  (A)
+d1pu1a_:A   --------MSLRKLTEGDLDEISSFLHNTI-SDFILKRVSAKEIVDIDITVLVEYTDELK    51  (B)
+
+d3cnqp_:P   ASATL------------------NEKAVEELKKDPSVAYVEEDKLYRALSA----    79  (A)
+d1pu1a_:A   VDISAELYLDELSDADPGIVDEAVDAAYRSLESF--LD-------------GFRE    91  (B)
+

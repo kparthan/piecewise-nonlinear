@@ -1,0 +1,13 @@
+(d1yt3a2:A, d2csba2:A)
+Core Residues: 40
+Core RMSD: 2.366
+Raw Score: 42.437
+P-value: 0.2970
+Reference structure: d1yt3a2:A
+
+d2csba2:A   --------IVECALKLQDRYGI--------------REDVALCLARAFDGSISXIATTPY   331  (A)
+d1yt3a2:A   LNLMDMPGYRKAFKAIKS-LITDVSETHKISAELLASRRQINQLLNWHW-----------   342  (B)
+
+d2csba2:A   RTLK------DVCPDL-----TLEEAKSVN--------   350  (A)
+d1yt3a2:A   ----KLKPQNNLP-ELISGWRGELMAEALHNLLQEYPQ   375  (B)
+

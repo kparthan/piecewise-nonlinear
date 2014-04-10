@@ -1,0 +1,19 @@
+(d1kf6c_:C, d3bw6a_:A)
+Core Residues: 28
+Core RMSD: 2.035
+Raw Score: 49.165
+P-value: 0.3077
+Reference structure: d1kf6c_:C
+
+d3bw6a_:A   MAMRIYYIGVFRSGGEKALELSE-------------------------------------    21  (A)
+d1kf6c_:C   -----------------------TTKRKPYVRPMTSTWWKKLPFYRFYMLREGTAVPAVW    37  (B)
+
+d3bw6a_:A   --------------------------------------VKDLSQFGFFERSSVGQFMTFF    43  (A)
+d1kf6c_:C   FSIELIFGLFALKNGPEAWAGFVDFLQNPVIVIINLITLAA-------------------    78  (B)
+
+d3bw6a_:A   AETVASRTGAGQRQSIEEGNYIGHVYARSEGICGVLI-----TDKE--Y-----------    85  (A)
+d1kf6c_:C   -------------------------------------ALLHTKT--WFELAPKAANIIVK    99  (B)
+
+d3bw6a_:A   ---------PVRPAYTLLNKILDEYLVAHPKEEWADVTETNDALKMKQLDTYISKYQDP   135  (A)
+d1kf6c_:C   DEKMGPEPIIKSLWAVTVVATIVILFVALYW----------------------------   130  (B)
+

@@ -1,0 +1,43 @@
+(d1kbla3:A, d2ah2a2:A)
+Core Residues: 70
+Core RMSD: 5.135
+Raw Score: 58.344
+P-value: 0.2346
+Reference structure: d1kbla3:A
+
+d2ah2a2:A   LAPGSSRVELFKRQSSKVPFEKDGKVTERVVHSFRLPALVNVDGVMVAIADARYETSFDN    60  (A)
+d1kbla3:A   ------------------------------------------------------------     2  (B)
+
+d2ah2a2:A   SLIDTVAKYSVDDGETWETQIAIKNSRASSVSRVVDPTVIVKGNKLYVLVGSYNSSRSYW   120  (A)
+d1kbla3:A   ------------------------------------------------------------     2  (B)
+
+d2ah2a2:A   TSHGDARDWDILLAVGEVTKSTAGGKITASIKWGSPVSLKEFFPAEMEGMHTNQFLGGAG   180  (A)
+d1kbla3:A   ------------------------------------------------------------     2  (B)
+
+d2ah2a2:A   VAIVASNGNLVYPVQVTNKKKQVFSKIFYSEDEGKTWKFGKGRSAFGCSEPVALEW----   236  (A)
+d1kbla3:A   --------------------------------------------------------AKWV     5  (B)
+
+d2ah2a2:A   ---------------EGKLIINTRVD----------------------------------   247  (A)
+d1kbla3:A   YKFEEGNASMRNLLGG----------KGCNLAEMTILGMPIPQGFTVTTEACTEYYNSGK    55  (B)
+
+d2ah2a2:A   -----------------------------YRRRLVYESSDM-------------------   259  (A)
+d1kbla3:A   QITQEIQDQIFEAITWLEELNGKKFGDTEDPLLVSVRSG--ARASMPGMMDTILNLGLND   113  (B)
+
+d2ah2a2:A   ------------------------------------------------------------   259  (A)
+d1kbla3:A   VAVEGFAKKTGNPRFAYDSYRRFIQMYSDVVMEVPKSHFEKIIDAMKEEKGVHFDTDLTA   173  (B)
+
+d2ah2a2:A   -------------------------------------G--NTW-----------------   263  (A)
+d1kbla3:A   DDLKELAEKFKAVYKEAMNGEEFPQEPKDQLMGAVKAVFRSW-DNPRAIVYRRMNDIPGD   232  (B)
+
+d2ah2a2:A   ---LEAVGTLSRVWGPSPKSNQPGSQSSFTAVTIEGMRVMLFTHPLNFKGRWLRDRLNLW   320  (A)
+d1kbla3:A   WGTAV----NVQTMVF---------------------------GN--------KG-----   248  (B)
+
+d2ah2a2:A   LTDNQRIYNVGQVSIGDENSAYSSVLY-----KDDKL--YCLHEINSNEVYSLV------   367  (A)
+d1kbla3:A   -----------------ETSGTGVAFTRNPSTGEKGIYGEYLIN----------AQGEDV   281  (B)
+
+d2ah2a2:A   -----------FA--RLVGELRIIKSVLQSWKNWDSHLSSICTPA---------------   399  (A)
+d1kbla3:A   VAGVRTPQPITQLENDMPDCYKQFMDLAMKLEKHFR---------DMQDMEFTIEEGKLY   332  (B)
+
+d2ah2a2:A   --------------------------------------------   399  (A)
+d1kbla3:A   FLQTRNGKRTAPAALQIACDLVDEGMITEEEAVVRIEAKSLDQL   376  (B)
+

@@ -1,0 +1,25 @@
+(d1h7za_:A, d1xl4a1:A)
+Core Residues: 45
+Core RMSD: 2.689
+Raw Score: 47.462
+P-value: 0.1696
+Reference structure: d1h7za_:A
+
+d1xl4a1:A   TAGVLFSSRMVISDFEGKPTLMMRLANL--------------------------------   166  (A)
+d1h7za_:A   ----------------------------KNNTLWTGPKPEANCIIEYGKQNPDSKLTLIL   160  (B)
+
+d1xl4a1:A   ------------------------------------------------------------   166  (A)
+d1h7za_:A   VKNGGIVNGYVTLMGASDYVNTLFKNKNVSINVELYFDATGHILPDSSSLKTDLELKYKQ   220  (B)
+
+d1xl4a1:A   ----------------------RIEQIIEADVHLVLVR--SEISQEGMVFRRFHDLTLTR   202  (A)
+d1h7za_:A   TADFSARGFMPSTTAYPFVLPNAGTHNENYIFGQCYYKASD-------------------   261  (B)
+
+d1xl4a1:A   SRSPIFSLSWTVMHPIDHHSPIYGETDETLRNSHSEFLVLFTGHHEAFA-------QNVH   255  (A)
+d1h7za_:A   --------------------------------GALFPLEVTVMLNKRL-PDSRTSYVMTF   288  (B)
+
+d1xl4a1:A   ARHAYSCDEIIWGGHFVDVFTTLPDGRRALDLGKFHEIAQHHHH----------------   299  (A)
+d1h7za_:A   LWSLNAGL------------------------------------APETTQATLITSPFTF   312  (B)
+
+d1xl4a1:A   -------   299  (A)
+d1h7za_:A   SYIREDD   319  (B)
+

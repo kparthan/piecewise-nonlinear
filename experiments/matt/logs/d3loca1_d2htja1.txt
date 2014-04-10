@@ -1,0 +1,13 @@
+(d2htja1:A, d3loca1:A)
+Core Residues: 52
+Core RMSD: 2.819
+Raw Score: 43.859
+P-value: 0.2999
+Reference structure: d2htja1:A
+
+d3loca1:A   RSRAVSAKKKAILSAALDTFSQFGFHGTRLEQIAELAGVSKTNLLYYFPS---------K    61  (A)
+d2htja1:A   -------MKNEILEFLNRHN----G--GKTAEIAEALAVTDYQARYYLL-LLEKAGMVQR    46  (B)
+
+d3loca1:A   EA---------LYIAVLRQ-ILDIWLAPLKA-FRE-    85  (A)
+d2htja1:A   S-PLRRGMATYWF-LKG-EKQAGQS--CS--ST--T    73  (B)
+

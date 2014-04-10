@@ -1,0 +1,49 @@
+(d1zhxa_:A, d1hx0a2:A)
+Core Residues: 33
+Core RMSD: 2.228
+Raw Score: 43.122
+P-value: 0.3166
+Reference structure: d1zhxa_:A
+
+d1hx0a2:A   XYAPQTQSGRTSIVHLFEWRWVDIALECERYLGPKGFGGVQVSPPNENIVVTNPSRPWWE    60  (A)
+d1zhxa_:A   ------------------------------------------------------------    -1  (B)
+
+d1hx0a2:A   RYQPVSYKLCTRSGNENEFRDMVTRCNNVGVRIYVDAVINHMCGSGAAAGTGTTCGSYCN   120  (A)
+d1zhxa_:A   ------------------------------------------------------------    -1  (B)
+
+d1hx0a2:A   PGNREFPAVPYSAWDFNDGKCKTASGGIESYNDPYQVRDCQLVGLLDLA-----------   169  (A)
+d1zhxa_:A   -------------------------------------------------MDPSQYASSSS     9  (B)
+
+d1hx0a2:A   ------------------------------------------------------------   169  (A)
+d1zhxa_:A   WTSFLKSIASFNGDLSSLSAPPFILSPISLTEFSQYWAEHPELFLEPSFINDDNYKEHCL    69  (B)
+
+d1hx0a2:A   ----LEKDYVRSMIADYLNKLIDIG-----------------------------------   190  (A)
+d1zhxa_:A   IDPEVESPELARMLAVTKWFISTLKSQYCSRNESLGSEKKPLNPFLGELFVGKWENKEHP   129  (B)
+
+d1hx0a2:A   ------------------------------------------------------------   190  (A)
+d1zhxa_:A   EFGETVLLSEQVSHHPPVTAFSIFNDKNKVKLQGYNQIKASFTKSLMLTVKQFGHTMLDI   189  (B)
+
+d1hx0a2:A   ------------------------------------------------------------   190  (A)
+d1zhxa_:A   KDESYLVTPPPLHIEGILVASPFVELEGKSYIQSSTGLLCVIEFSGRGYFSGKKNSFKAR   249  (B)
+
+d1hx0a2:A   ----------------------VAGFRID---ASKHMWPGDIKAVLDKLHNLNTNWFPAG   225  (A)
+d1zhxa_:A   IYKDSKDSKDKEKALYTISGQWSGSSKIIKANKK--------------------------   283  (B)
+
+d1hx0a2:A   SRPFIFQEVIDLGGEAIKSSEYFGN--GRVTEFKYGAKLGTVVRKWSGEKMSYLKNWGEG   283  (A)
+d1zhxa_:A   -------EE----------------SRL--------------------------------   288  (B)
+
+d1hx0a2:A   WGFMPSDRALVFVDNHDNQRGHGAGGSSILTFWDARLYKIAVGFMLAHPYGFTRVMSSYR   343  (A)
+d1zhxa_:A   ------------------------------------------------------------   288  (B)
+
+d1hx0a2:A   WARNFVNGEDVNDWIGPPNNNGVIKEVTINADTTCGNDWVCEHRWREIRNMVWFRNVVDG   403  (A)
+d1zhxa_:A   ------------------------------------------------------------   288  (B)
+
+d1hx0a2:A   ------------------------------------------------------------   403  (A)
+d1zhxa_:A   FYDAARIPAEHLNVKPLEEQHPLESRKAWYDVAGAIKLGDFNLIAKTKTELEETQRELRK   348  (B)
+
+d1hx0a2:A   ------------------------------------------------------------   403  (A)
+d1zhxa_:A   EEEAKGISWQRRWFKDFDYSVTPEEGALVPEKDDTFLKLASALNLSTKNAPSGTLVGDKE   408  (B)
+
+d1hx0a2:A   --------------------------   403  (A)
+d1zhxa_:A   DRKEDLSSIHWRFQRELWDEEKEIVL   434  (B)
+

@@ -1,0 +1,19 @@
+(d1c7ka_:A, d2ejqa1:A)
+Core Residues: 58
+Core RMSD: 2.130
+Raw Score: 67.431
+P-value: 0.0535
+Reference structure: d1c7ka_:A
+
+d2ejqa1:A   TYEAF-----------VELVERLWEEV-PE---------DFKR------GLQGVHVFPEA    34  (A)
+d1c7ka_:A   -----TVTVTYDPSNAPS-FQQEIANAAQ-IWNSSVRNVQL--RAGGNADF-SYYEGNDS    50  (B)
+
+d2ejqa1:A   KPEPGLEGVWRLGEYLDPGPPSAFGGFEDL---GRHIALYYGSFLEV--AGEGFDWEA-E    88  (A)
+d1c7ka_:A   R----------GSYAQTD------------GHGRGYIFLDY-QQ---NQQ--------YD    76  (B)
+
+d2ejqa1:A   VWETMLHELRHHLESL-------------------------------------AGRD---   108  (A)
+d1c7ka_:A   STRVTAHETGHVLG--LPDHYQGPCSELMSGGGPGPSCTNPYPNAQERSRVNAL---WAN   131  (B)
+
+d2ejqa1:A   -   108  (A)
+d1c7ka_:A   G   132  (B)
+

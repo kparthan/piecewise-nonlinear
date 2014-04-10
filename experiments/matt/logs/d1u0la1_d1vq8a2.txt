@@ -1,0 +1,13 @@
+(d1vq8a2:A, d1u0la1:A)
+Core Residues: 42
+Core RMSD: 1.936
+Raw Score: 54.408
+P-value: 0.1090
+Reference structure: d1vq8a2:A
+
+d1u0la1:A   -------------------------------L---R-RRGIVVSFHS------NMVTVED    21  (A)
+d1vq8a2:A   GRRIQGQRRGRGTSTFRAPSHRYKADLEHRKVEDGDVIAGTVVDIEHDPARSAPVAAVEF    60  (B)
+
+d1u0la1:A   EETGERILCKLRGKFRLQNL-KIYVGDRVEYTPDETGSGVIE------NVLHRK    68  (A)
+d1vq8a2:A   E-DGDRRLILAP--------EGVGVGDELQV-----------GVSAEIAP----    90  (B)
+

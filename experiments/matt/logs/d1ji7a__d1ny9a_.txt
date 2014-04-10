@@ -1,0 +1,16 @@
+(d1ny9a_:A, d1ji7a_:A)
+Core Residues: 47
+Core RMSD: 2.905
+Raw Score: 61.552
+P-value: 0.1696
+Reference structure: d1ny9a_:A
+
+d1ji7a_:A   SIRLPAHLRLQPIYWS----RDDVAQWLKWAENEFSLRPIDSNTFEX-------------    57  (A)
+d1ny9a_:A   ----------------WQRIQDEADELTRRFVALMD-----------AGEPADSEGAMDA   192  (B)
+
+d1ji7a_:A   ------NGKAL----------LL-LTKEDF------RYRSPH----SGDELYELLQHILK    90  (A)
+d1ny9a_:A   AEDHRQGIA--RNHYDCGYEMH-TCLGEMYVSDERFTRNIDAAKPGLAAYMRDAILANAV   249  (B)
+
+d1ji7a_:A   Q---    91  (A)
+d1ny9a_:A   RHTP   253  (B)
+

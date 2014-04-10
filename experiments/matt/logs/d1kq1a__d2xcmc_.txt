@@ -1,0 +1,16 @@
+(d2xcmc_:C, d1kq1a_:A)
+Core Residues: 26
+Core RMSD: 1.846
+Raw Score: 23.060
+P-value: 0.4893
+Reference structure: d2xcmc_:C
+
+d1kq1a_:A   NIQDKALENFKANQTEVTVFFLNGFQMKG----VIEEYDKYVVSLNSQ-G----------    50  (A)
+d2xcmc_:C   -----------------------------AKYRHEYYQKPEEVVVTV-FAKGIPKQNVNI   179  (B)
+
+d1kq1a_:A   ------------------------------------------KQHLIYKHAIST------    62  (A)
+d2xcmc_:C   DFGEQILSVVIEVPGEDAYYLQPRLFGKIIPDKCKYEVLSTKIEICLAKA----DIITWA   235  (B)
+
+d1kq1a_:A   --YT-V    65  (A)
+d2xcmc_:C   SLEHGK   241  (B)
+

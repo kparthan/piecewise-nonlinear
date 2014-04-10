@@ -1,0 +1,13 @@
+(d1wgea1:A, d1qypa_:A)
+Core Residues: 34
+Core RMSD: 2.139
+Raw Score: 30.819
+P-value: 0.3051
+Reference structure: d1wgea1:A
+
+d1qypa_:A   GSHMEQDLKTLP--------------------TTKITCPKCGNDTAYW---WE--MQTRA    35  (A)
+d1wgea1:A   ------------MAVFHDEVEIEDFQYDEDSETYFYPCP-C-GDNFAITKEDLENGE---    50  (B)
+
+d1qypa_:A   GDEPSTIFYKCTKCGHTWRSYE-----------    57  (A)
+d1wgea1:A   ------DVATCPSCSLIIKVIYDKDQFMCGETV    77  (B)
+

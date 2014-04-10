@@ -1,0 +1,16 @@
+(d2gyka1:A, d1d1da1:A)
+Core Residues: 33
+Core RMSD: 2.128
+Raw Score: 41.034
+P-value: 0.2962
+Reference structure: d2gyka1:A
+
+d1d1da1:A   GPWADITQ----GPSESFVDFANRLIKAVEGSDLPPSARA--------------------   186  (A)
+d2gyka1:A   --------LKHSISDYTEAEFLQLVTTICNAD--------TSSEEELVKLVTHFEEMTEH    46  (B)
+
+d1d1da1:A   ---------------PVIIDCFRQKS--QPDIQQLIRAAPSTLTTPGEIIKYVLDRQKIA   229  (A)
+d2gyka1:A   PSGSALIYYPKEGDDDSPSGIVNTVKQWRA------------------------------    76  (B)
+
+d1d1da1:A   P---------   230  (A)
+d2gyka1:A   -ANGKSGFKQ    85  (B)
+

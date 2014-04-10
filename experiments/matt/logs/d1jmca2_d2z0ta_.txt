@@ -1,0 +1,19 @@
+(d2z0ta_:A, d1jmca2:A)
+Core Residues: 35
+Core RMSD: 2.347
+Raw Score: 30.537
+P-value: 0.4347
+Reference structure: d2z0ta_:A
+
+d1jmca2:A   QFD---FTG-------------------ID---DLENKSKDSLVDIIGICKSYEDATKIT   333  (A)
+d2z0ta_:A   ---MKWEM-GLQEEYIELIKAGKKKIEGRLYDEKRRQIKPGDIIIFE-------------    43  (B)
+
+d1jmca2:A   VRSNNREVAKRNIYLMDTSGKVVTATLWGEDADKFDGSRQPVL--AIKGARVSDFGG---   388  (A)
+d2z0ta_:A   -------------------------------------------GGKLK-VKVKG-IRVYS    58  (B)
+
+d1jmca2:A   --------------------------------------------RSLSVLSSSTIIANPD   404  (A)
+d2z0ta_:A   SFKEMLEKEGIENVLPGVKSIEEGVKVYRQFYDEEREKKYGVVAIEIEPIE---------   109  (B)
+
+d1jmca2:A   IPEAYKLRGWFDAEGQ   420  (A)
+d2z0ta_:A   ----------------   109  (B)
+

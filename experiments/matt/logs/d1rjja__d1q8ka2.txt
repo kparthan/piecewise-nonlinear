@@ -1,0 +1,16 @@
+(d1q8ka2:A, d1rjja_:A)
+Core Residues: 70
+Core RMSD: 3.376
+Raw Score: 35.076
+P-value: 0.3882
+Reference structure: d1q8ka2:A
+
+d1rjja_:A   MATSG--FKHLVVVKFKEDT--------KVDEILKGLENLVSQIDTVKSFEWGEDKESHD    50  (A)
+d1q8ka2:A   -----QAVKIRADIEV-AC-YGYEGIDAVKEALRAGLNC--STE---NMPIKINLIA---   230  (B)
+
+d1rjja_:A   MLRQG-FTHAFSMTFENKDGY--VAFTSHPL---HVE--FSAAFT--AV-------IDKI    93  (A)
+d1q8ka2:A   -----PPRYVMTTTT----LERTE-------GLSV--LSQA--MAVIKEKIEEKRGVFNV   270  (B)
+
+d1rjja_:A   --VLLDFPV-AAVKSSVVATP-----------------   111  (A)
+d1q8ka2:A   QMEPKVVTDTDETEL------ARQMERLERENAEVDGD   302  (B)
+

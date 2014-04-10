@@ -1,0 +1,13 @@
+(d1khia1:A, d1ueba1:A)
+Core Residues: 55
+Core RMSD: 2.015
+Raw Score: 76.662
+P-value: 0.0206
+Reference structure: d1khia1:A
+
+d1ueba1:A   -------MISVTDLRPGTKVKMDGGLWECVEYQHQKLGRGG----AKVVAKFKNLETGAT    49  (A)
+d1khia1:A   GSASQTVTIPCHHIRLGDILILQGRPCQVIRIST-------SAATGQHRYLGVDLFTKQL    79  (B)
+
+d1ueba1:A   VERTFNS---------GEKLEDI-    63  (A)
+d1khia1:A   HEESSF-VSNPAPSVVVQTMLGPV   102  (B)
+

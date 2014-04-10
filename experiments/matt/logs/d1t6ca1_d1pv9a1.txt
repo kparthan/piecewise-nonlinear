@@ -1,0 +1,16 @@
+(d1pv9a1:A, d1t6ca1:A)
+Core Residues: 63
+Core RMSD: 2.939
+Raw Score: 65.592
+P-value: 0.0314
+Reference structure: d1pv9a1:A
+
+d1t6ca1:A   PIMRVA----------SIDIGS-----------------YSVRLTIAQIKDGKLSIILER    39  (A)
+d1pv9a1:A   ------LVKFMDENSIDRVFIAKPVNVYYFSGTSPLGGGYIIVDG-------------DE    48  (B)
+
+d1t6ca1:A   GRITSLGTKVKETGRLQE-------------------DRIEETIQVLKEYKKLIDEFKVE    80  (A)
+d1pv9a1:A   ATLYV-------------PELEYEMAKEESKLPVVKFKKFDEIYEIL--KN---------    84  (B)
+
+d1t6ca1:A   R-VKAVATEAIRRAKNAEEFLERVKREVGLVVEVITPEQEGRYAYLAVAYSLK------   132  (A)
+d1pv9a1:A   -TETLGIEGTL-----SYSMVENFKEKSVKEFKKIDD--VI------------KDLRII   124  (B)
+

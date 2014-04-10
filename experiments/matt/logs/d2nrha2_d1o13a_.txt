@@ -1,0 +1,16 @@
+(d1o13a_:A, d2nrha2:A)
+Core Residues: 66
+Core RMSD: 3.021
+Raw Score: 48.428
+P-value: 0.1933
+Reference structure: d1o13a_:A
+
+d2nrha2:A   EDGVVVDAGS-----------------AITIDII----HLGGFILPGIAN-YKKIYSHIS   124  (A)
+d1o13a_:A   --XIIAIPVSENRGKDSPISEHFGRAPYFAFVKVKNNAIADISVEEN---PLA-QDH---    51  (B)
+
+d2nrha2:A   PFNTQVSLDAFPQKTMDALSYGVFKGIYLLIKDAAQNKKLYFTG-GDGQ---FL--ANYF   183  (A)
+d1o13a_:A   ------------------VHGAVPNFVKEKG---A----ELVIVRGI--GRRAIAAFEAX    84  (B)
+
+d2nrha2:A   DHAIYDK-LL------IF--RGMKKIIKENPNLL----   208  (A)
+d1o13a_:A   -GVKVIKGA-SGTVEEV-VNQY------------LSGQ   107  (B)
+

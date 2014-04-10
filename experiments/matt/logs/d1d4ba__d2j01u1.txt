@@ -1,0 +1,19 @@
+(d2j01u1:U, d1d4ba_:A)
+Core Residues: 13
+Core RMSD: 1.720
+Raw Score: 13.794
+P-value: 0.6157
+Reference structure: d2j01u1:U
+
+d1d4ba_:A   MEYLSALNPSDLLRSVSNISSEFGRRVWTSAPPPQRPFRVCDHKRTIRKGLTAATR----    56  (A)
+d2j01u1:U   --------------------------------------------------------PRAK     5  (B)
+
+d1d4ba_:A   ------------------------------------------------------------    56  (A)
+d2j01u1:U   TGVVRRRKHKKILKLAKGYWGLRSKSFRKARETLFAAGNYAYAHRKRRKRDFRRLWIVRI    65  (B)
+
+d1d4ba_:A   ------------------------------------QELLAKALETLLLNGVLTLVLEED    80  (A)
+d2j01u1:U   NAACRQHGLNYSTFIHGLKKAGIEVDRKNLADLAVREPQVFAELVERAK-----------   114  (B)
+
+d1d4ba_:A   GTAVDSEDFFQLLEDDTCLMVLQSGQSWSPTRSGVLHHHHHH----   122  (A)
+d2j01u1:U   ------------------------------------------AAQG   118  (B)
+

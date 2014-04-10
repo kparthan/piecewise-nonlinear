@@ -1,0 +1,16 @@
+(d1ezga_:A, d3loca1:A)
+Core Residues: 8
+Core RMSD: 1.725
+Raw Score: 3.019
+P-value: 0.6945
+Reference structure: d1ezga_:A
+
+d3loca1:A   RSRAVSAKKKAILSAALDTFSQFGFHGTRLEQIAELAGVSKTNLLYYFPSKEALYIAVLR    70  (A)
+d1ezga_:A   ------------------------------------------------------------     2  (B)
+
+d3loca1:A   QILDI-----WLAPLKAFRE----------------------------------------    85  (A)
+d1ezga_:A   -----QCTGGAD--CTSCTGACTGCGNCPNAVTCTNSQHCVKANTCTGSTDCNTAQTCTN    54  (B)
+
+d3loca1:A   -----------------------------    85  (A)
+d1ezga_:A   SKDCFEANTCTDSTNCYKATACTNSSGCP    83  (B)
+

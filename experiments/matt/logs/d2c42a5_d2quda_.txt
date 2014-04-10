@@ -1,0 +1,19 @@
+(d2quda_:A, d2c42a5:A)
+Core Residues: 31
+Core RMSD: 3.319
+Raw Score: 24.718
+P-value: 0.6470
+Reference structure: d2quda_:A
+
+d2c42a5:A   TSQFEKRGVAINVPQWVPENCIQCNQCAFVCPHSAILPVLAKEEELVGAP----------   718  (A)
+d2quda_:A   --------------------------------------------------GGSMSKTIVL     6  (B)
+
+d2c42a5:A   ----------------AN-----------------------------FTALE--------   725  (A)
+d2quda_:A   SVGEATRTLTEIQSTADRQIFEEKVGPLVGRLRLTASLRQNGAKTAYRVNLKLDQADVVD    66  (B)
+
+d2c42a5:A   ----------AKGKELKGYKFRIQINTLDCMGC--GNCADICPPKEKALVMQPLDTQRDA   773  (A)
+d2quda_:A   SGLPKVRYTQVW-------SHDVTIVA-NSTEASRKSLYDLTKS----------------   108  (B)
+
+d2c42a5:A   QVPNLEYAARIP-------------------   785  (A)
+d2quda_:A   ------------LVATSQVEDLVVNLVPLGR   127  (B)
+

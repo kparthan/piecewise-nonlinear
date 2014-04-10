@@ -1,0 +1,13 @@
+(d1zxta_:A, d1j8ia_:A)
+Core Residues: 56
+Core RMSD: 2.044
+Raw Score: 81.112
+P-value: 0.0651
+Reference structure: d1zxta_:A
+
+d1j8ia_:A   VGSEVSDK------RTCVSLTTQRLPVSRIKTYTITE-GSL--RAVIFITKRGLKVCADP    51  (A)
+d1zxta_:A   --------VSYTPNSCCYGFQQHPPPVQILKEWYPT-SPACPKPGVILLTKRGRQICADP    55  (B)
+
+d1j8ia_:A   QATWVRDVVRSMDRKSNTR-NNMIQTKPTGTQQSTNTAVTLTG---    93  (A)
+d1zxta_:A   SKNWVRQLMQRLP------AI----------------------AHH    73  (B)
+

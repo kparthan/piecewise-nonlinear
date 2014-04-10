@@ -1,0 +1,19 @@
+(d2jeka1:A, d1qkka_:A)
+Core Residues: 40
+Core RMSD: 3.477
+Raw Score: 42.182
+P-value: 0.6596
+Reference structure: d2jeka1:A
+
+d1qkka_:A   PSVFLIDDDRDLRKAMQQTLELAGFTVSSFASATEALAGLSADFAGIVISDIRMPGM---    61  (A)
+d2jeka1:A   ---------------------------------------------------------DPF     8  (B)
+
+d1qkka_:A   ---DGLALFRKILALDPDLP---------------MILVT-------------GHGDIPM    90  (A)
+d2jeka1:A   DLKRFVYAQAPVY-RS-VV-EELRAGRKRGHWMWFVFPQLRGLGSSPLAVRYGIS-SLEE    64  (B)
+
+d1qkka_:A   AVQAIQ---D-GAYDFIAKPFAADRLVQSARR---AEE-KR-RLVMENRSLRRAAEAASE   141  (A)
+d2jeka1:A   AQAYLQHDLLGPRL------------------HECT--GLVNQV----------------    88  (B)
+
+d1qkka_:A   GLK---------------------------------------------------------   144  (A)
+d2jeka1:A   ---QGRSIEEIFGPPDDLKLCSSMTLFARATDANQDFVALLAKYYGGGEDRRTVALLAVT   145  (B)
+

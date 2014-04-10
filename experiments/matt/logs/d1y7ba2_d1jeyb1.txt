@@ -1,0 +1,37 @@
+(d1jeyb1:B, d1y7ba2:A)
+Core Residues: 53
+Core RMSD: 5.491
+Raw Score: 53.271
+P-value: 0.5954
+Reference structure: d1jeyb1:B
+
+d1y7ba2:A   IKNPILRGFNPDPSICRADTDYYIATSTFEWFPGVQIHHSKDLVNWHLVAHPLNRTSLLD    63  (A)
+d1jeyb1:B   ------------------------------------------------------------   242  (B)
+
+d1y7ba2:A   MKGNPNSGGIWAPDLSYHDGKFWLIYTDVKVTDGMWKDCHNYLTTCESVDGVWSDPITLN   123  (A)
+d1jeyb1:B   ------------------------------------------------------------   242  (B)
+
+d1y7ba2:A   GSGFDASLFHDNDGKKYLVNMYWDQRTYNHNFY--------GIVLQEYSDKEKKLIGKAK   175  (A)
+d1jeyb1:B   ---------------------------------RHSIHWPCRLTIG------------SN   256  (B)
+
+d1y7ba2:A   IIYKGTDIKYTEGPHIYHIGDYYYLFTAEGGTTYEHSETVARSKNIDGPYEIDPEYPLLT   235  (A)
+d1jeyb1:B   LSIRI--------------------------------------------------AA--Y   264  (B)
+
+d1y7ba2:A   SWHDPRNSLQKCG-----------------------------------------------   248  (A)
+d1jeyb1:B   -KSILQ-------ERVKKTWTVVDAKTLKKEDIQKETVYCLNDDDETEVLKEDIIQGFRY   316  (B)
+
+d1y7ba2:A   ----------------------HASLVHTHT--D--EW----------------------   260  (A)
+d1jeyb1:B   GSDIVPFSKVDEEQMKYKSEGKCFSVLG---FCKSSQVQRRFFMGNQVLKVFAARDDEAA   373  (B)
+
+d1y7ba2:A   ------------------YLAHLVGRPLPVGNQPVLEQRGYCPLG----RETSIQRIEWV   298  (A)
+d1jeyb1:B   AVALSSLIHALDDLDMVAIVRYA----------------------YDKRANPQVGVAFPH   411  (B)
+
+d1y7ba2:A   D----NWPRVVGGKQGSVNVEAPKIP---------EVKW---------------------   324  (A)
+d1jeyb1:B   IKHNYECLVY-----V----------QLPFMEDLRQ---YMFSSLKNSKKYAPTEAQLNA   453  (B)
+
+d1y7ba2:A   ------------------------------------------------------------   324  (A)
+d1jeyb1:B   VDALIDSMSLAKKDEKTDTLEDLFPTTKIPNPRFQRLFQCLLHRALHPREPLPPIQQHIW   513  (B)
+
+d1y7ba2:A   --------------------------------   324  (A)
+d1jeyb1:B   NMLNPPAEVTTKSQIPLSKIKTLFPLIEAKKK   545  (B)
+

@@ -1,0 +1,16 @@
+(d2za4b_:B, d2qrra1:A)
+Core Residues: 38
+Core RMSD: 2.883
+Raw Score: 43.057
+P-value: 0.5506
+Reference structure: d2za4b_:B
+
+d2qrra1:A   SIPEDYQARLQ-----PNR--VEGSY----PL---VRXEFTGATVDAPLXSQISRKYN--    45  (A)
+d2za4b_:B   -----------MKKAVINGEQIRSISDLHQTLKKEL----------------------AL    26  (B)
+
+d2qrra1:A   -------IDVS---ILSSDLDYAGGVKFGX---XVAELFG-------------------N    73  (A)
+d2za4b_:B   PEYYGENLDA-LWAA---------------LTGWV-----EYPLVLEWRQFEQSKQLTNG    66  (B)
+
+d2qrra1:A   EQDDSAAIEYLRENNVKVEVLGYVL---    98  (A)
+d2za4b_:B   AESVLQVFREAKAEGADITI-----ILS    89  (B)
+

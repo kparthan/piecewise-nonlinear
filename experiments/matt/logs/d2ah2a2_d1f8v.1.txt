@@ -1,0 +1,58 @@
+(d1f8v.1:D, (d1f8v.1:A, d2ah2a2:A))
+Core Residues: 8
+Core RMSD: 2.497
+Raw Score: 2.036
+Reference structure: d1f8v.1:D
+
+d2ah2a2:A   LAPGSSRVELFKRQSSKVPFEKDGKVTERVVHSFRLPALVNVD-----------------    43  (A)
+d1f8v.1:A   -------------------------------------------NRRNKARKVVSRSTALV    23  (B)
+d1f8v.1:D   -------------------------------------------S----------------   362  (C)
+
+d2ah2a2:A   ------------------------------------------------------------    43  (A)
+d1f8v.1:A   PMAPASQRTGPAPRKPRKRNQALVRNPRLTDAGLAFLKCAFAAPDFSVDPGKGIPDNFHG    83  (B)
+d1f8v.1:D   ------------------------------------------------------------   362  (C)
+
+d2ah2a2:A   -------------------------------G-----VMVAIAD-ARYETSFDNSLIDT-    65  (A)
+d1f8v.1:A   RTLAIKDCNTTSVVFTPNT------------D-----TYIVVAPVP-------------G   113  (B)
+d1f8v.1:D   -------------------KFWEGVLRVLNQISGTLHQLTGM------------------   399  (C)
+
+d2ah2a2:A   -VAKYSVD-----DGETWETQ-IAIKNSRASSVSRV------------------------    94  (A)
+d1f8v.1:A   FAYFRAEVAVGAQP-TTFVGVPY-------------PTYATNFGAGSQNGLPAVNNYSKF   159  (B)
+d1f8v.1:D   ------------------------------------------------------------   399  (C)
+
+d2ah2a2:A   ---VDPTVIVKGNKLYVLVGSYNSSRSYWTSHGDARDWDILLAVGEVTKSTAGGKITASI   151  (A)
+d1f8v.1:A   RYASMACG------LY--------------------------------------------   169  (B)
+d1f8v.1:D   ------------------------------------------------------------   399  (C)
+
+d2ah2a2:A   KWGSPVSLKEFFPAEMEGMHTNQFLGG---------------------------------   178  (A)
+d1f8v.1:A   ---------------------------PTSNMMQFSGSVQVWRVDLNLSEAVNPAVTAIT   202  (B)
+d1f8v.1:D   ------------------------------------------------------------   399  (C)
+
+d2ah2a2:A   ---------------------------------------AGV------------------   181  (A)
+d1f8v.1:A   PAPGVFANFVDKRINGLRGIRPLAPRDNYSGNFIDGAYTFA-FDKSTDFEWCDFVRSLEF   261  (B)
+d1f8v.1:D   ---------------------------------------YM-------------------   401  (C)
+
+d2ah2a2:A   ------------------------------------------------------------   181  (A)
+d1f8v.1:A   SESNVLGAATAMKLLAPGGGTDTTLTGLGNVNTLVYKISTPTGAVNTAILRTWNCIELQP   321  (B)
+d1f8v.1:D   ------------------------------------------------------------   401  (C)
+
+d2ah2a2:A   ---------------------------------AIVASNG--NLVYPVQVTNKKKQVFSK   206  (A)
+d1f8v.1:A   YTDSALFQFSGVSPPFDPLALECYHNLKMRFPVAVS----SRE-----------------   360  (B)
+d1f8v.1:D   ------------------------------------------------------------   401  (C)
+
+d2ah2a2:A   IFYSEDEGKTWKFGKGRSAFGCSEPVALEWEGKLIINTRVDYRRRLVYESSDMGNTWLEA   266  (A)
+d1f8v.1:A   ---N--------------------------------------------------------   361  (B)
+d1f8v.1:D   ------------------------------------------------------------   401  (C)
+
+d2ah2a2:A   VGTLSRVWGPSPKSNQPGSQSSFTAVTIEGMRVMLFTHPLNFKGRWLRDRLNLWLTDNQR   326  (A)
+d1f8v.1:A   ------------------------------------------------------------   361  (B)
+d1f8v.1:D   ------------------------------------------------------------   401  (C)
+
+d2ah2a2:A   IYNVGQVSIGDENSAYSSVLYKDDKLYCLHEINSNEVYSLVFARLVGELRIIKSVLQSWK   386  (A)
+d1f8v.1:A   ------------------------------------------------------------   361  (B)
+d1f8v.1:D   ------------------------------------------------------------   401  (C)
+
+d2ah2a2:A   NWDSHLSSICTPA   399  (A)
+d1f8v.1:A   -------------   361  (B)
+d1f8v.1:D   -------------   401  (C)
+

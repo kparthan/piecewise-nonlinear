@@ -1,0 +1,19 @@
+(d2wfba_:A, d3hyfa_:A)
+Core Residues: 74
+Core RMSD: 3.309
+Raw Score: 78.186
+P-value: 0.0259
+Reference structure: d2wfba_:A
+
+d3hyfa_:A   MYQLEKEPIV---GAETFYV-------------D--GAANRETKLGKAGYVTN-----RG   462  (A)
+d2wfba_:A   ----------ASHMQRIAVTAEGPGLDGLVDPRFGRAA----------GFVVVDAATMAA    40  (B)
+
+d3hyfa_:A   RQKVVTL---TDTTNQKTELQAIYLALQDSGLE-VNIVTDSQYALGIITQWIHNWKKRGW    90  (A)
+d2wfba_:A   EYVDNGASQTLSH---GAGINAAQVLAKSG---AGVLLTG--YV----------------    76  (B)
+
+d3hyfa_:A   PVKNVDLVNQIIEQLIKKEKVYLAWVPAHKGIGGNEQVDKLVSAGIRKVL----------   560  (A)
+d2wfba_:A   ---GPKAFQALQAAG-----IKVGQDLEGLTVR-----------------QAVQRFLDGQ   111  (B)
+
+d3hyfa_:A   ---------   560  (A)
+d2wfba_:A   VPMAAGPNK   120  (B)
+

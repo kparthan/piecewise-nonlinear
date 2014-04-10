@@ -1,0 +1,19 @@
+(d1i17a_:A, d2y5ca_:A)
+Core Residues: 22
+Core RMSD: 1.879
+Raw Score: 29.037
+P-value: 0.5021
+Reference structure: d1i17a_:A
+
+d2y5ca_:A   SDVVNVVFVD-----------RSGQRIPVSGRVGD-------------------------    26  (A)
+d1i17a_:A   ----------RVAENRPGAFIKQGRKLDIDFGA--EGNRYYAANYWQFPDGIYYEGCSEA    48  (B)
+
+d2y5ca_:A   ----------------------------------NVLHLAQRHGVDLEGACEASLACSTC    52  (A)
+d1i17a_:A   NVTKEMLVTSCVNATQAANQAEFSREKQDSKLHQRVLWRLIKEI----------------    92  (B)
+
+d2y5ca_:A   HVYVSEDHLDLLPPPEEREDDMLDMAPLLQENSRLGCQIVLTPELEGAEFTLPKITR---   109  (A)
+d1i17a_:A   ---------------------------------------------------------CSA    95  (B)
+
+d2y5ca_:A   ------------   109  (A)
+d1i17a_:A   KHCDFWLERGAA   107  (B)
+

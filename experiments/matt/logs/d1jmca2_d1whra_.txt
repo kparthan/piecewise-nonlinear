@@ -1,0 +1,19 @@
+(d1whra_:A, d1jmca2:A)
+Core Residues: 48
+Core RMSD: 3.945
+Raw Score: 24.798
+P-value: 0.7846
+Reference structure: d1whra_:A
+
+d1jmca2:A   QF--------------DFTGIDDLENKSKDSLVDII--------------------GICK   324  (A)
+d1whra_:A   --GSSGSSGTDSTGIDLH------------------EFLVNTLKKNPRDRMMLLKLEQE-   164  (B)
+
+d1jmca2:A   S---YED----ATKITVRSNNREVAKRNIYLMDTSGKVVTATLWGEDADKFDGSRQPVLA   377  (A)
+d1whra_:A   -ILEF--INDNNN-------------QFKKF-----------------------------   179  (B)
+
+d1jmca2:A   ----------------IKGARVSDF---GGRSLSVLSSSTIIANPD--IPEAYKLRGWFD   416  (A)
+d1whra_:A   PQMTSYHRMLLHRVAAYFGMDHNVDQTGKAVIINKTSNTR-I----PEQRFSEHIKDE--   232  (B)
+
+d1jmca2:A   --AEGQ------------   420  (A)
+d1whra_:A   KNTE-FQQRFILSGPSSG   249  (B)
+

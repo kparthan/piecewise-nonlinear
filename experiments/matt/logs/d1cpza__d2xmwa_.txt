@@ -1,0 +1,13 @@
+(d2xmwa_:A, d1cpza_:A)
+Core Residues: 64
+Core RMSD: 1.082
+Raw Score: 112.295
+P-value: 6.1482e-04
+Reference structure: d2xmwa_:A
+
+d1cpza_:A   --AQEFSVKGMSCNHCVARIEEAVGRISGVKKVKVQLKKEKAVVKFDEANVQATEICQAI    58  (A)
+d2xmwa_:A   AQTINLQLEGMRCAACASSIERAIAKVPGVQSCQVNFALEQAVVSYH----TPQILTDAV    60  (B)
+
+d1cpza_:A   NELGYQAEVI-    68  (A)
+d2xmwa_:A   ERAGYHARVLK    71  (B)
+

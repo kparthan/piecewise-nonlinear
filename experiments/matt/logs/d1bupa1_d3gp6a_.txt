@@ -1,0 +1,25 @@
+(d3gp6a_:A, d1bupa1:A)
+Core Residues: 20
+Core RMSD: 1.552
+Raw Score: 37.500
+P-value: 0.4113
+Reference structure: d3gp6a_:A
+
+d1bupa1:A   GPAVGIDLGSTYSCVGVFQHGKVEIIANDQGNRTTPSYVAFTDTERLIGDAAKNQVAMNP    63  (A)
+d3gp6a_:A   ------------------------------------------------------------     0  (B)
+
+d1bupa1:A   TNTVFDAKRLIGRRFDDAVVQSDMKHWPFMVVNDAGRPKVQVEYKGETKSFYPE-EVSSM   122  (A)
+d3gp6a_:A   ------------------------------------------------------MNADEW     5  (B)
+
+d1bupa1:A   VLTKMKEIAEAYLGKTVTNAVVTVPAYFNDSQRQATKDAGTIAGLNVLRIINEPTAAAIA   182  (A)
+d3gp6a_:A   MTTFRENIAQTWQQP---------------------------------------------    20  (B)
+
+d1bupa1:A   YGLDKK------------------------------------------------------   188  (A)
+d3gp6a_:A   ------EHYDLYIPAITWHARFAYNERPWGGGFGLSRWDEKGNWHGLYAMAFKDSWNKWE    82  (B)
+
+d1bupa1:A   ------------------------------------------------------------   188  (A)
+d3gp6a_:A   PIAGYGWESTWRPLADENFHLGLGFTAGVTARDNWNYIPLPVLLPLASVGYGPVTFQMTY   142  (B)
+
+d1bupa1:A   --------------------   188  (A)
+d3gp6a_:A   IPGTYNNGNVYFAWMRFQFL   162  (B)
+

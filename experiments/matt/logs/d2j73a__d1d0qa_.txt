@@ -1,0 +1,16 @@
+(d1d0qa_:A, d2j73a_:A)
+Core Residues: 40
+Core RMSD: 2.498
+Raw Score: 25.529
+P-value: 0.4641
+Reference structure: d1d0qa_:A
+
+d2j73a_:A   FTET------------------TIVVHYHRYDGKYDGW--NLWIWPVEPVSQEGKAYQFT    44  (A)
+d1d0qa_:A   ----GHRIPEETIEAIRRGVDIVDVI------------GEYVQLKRQG------------    33  (B)
+
+d2j73a_:A   GEDDFGKVAVVKLPMDLTKVGII-VRLNEWQAK-DVA--KDRFIEIKDGK-AEVWILQG-    98  (A)
+d1d0qa_:A   -----------------RNYFGLCP--------FHGEKTPSFSVSPE---KQ-------I    58  (B)
+
+d2j73a_:A   -----VEEIFYEKP-------------------------------   107  (A)
+d1d0qa_:A   FHCFGCGAGGNAFTFLMDIEGIPFVEAAKRLAAKAGVDLSVYELD   103  (B)
+

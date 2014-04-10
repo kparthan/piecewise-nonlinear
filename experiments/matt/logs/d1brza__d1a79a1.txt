@@ -1,0 +1,16 @@
+(d1a79a1:A, d1brza_:A)
+Core Residues: 24
+Core RMSD: 2.078
+Raw Score: 19.573
+P-value: 0.5483
+Reference structure: d1a79a1:A
+
+d1brza_:A   XDKCKKVYENYPVSKCQ------------------LANQCNYDCKLDKHARSGECFYDEK    42  (A)
+d1a79a1:A   -----------------ERLCLKYLVYKDLRTRGYIV---KT--GLKYGADFRLYE----   116  (B)
+
+d1brza_:A   RNL---------QCICDYC----------------------------EY-----------    54  (A)
+d1a79a1:A   ---RGANIDKEHSVYLVKVFPEDSSFLLSELTGFVRVAHSVRKKLLIA-IVDADGDIVYY   172  (B)
+
+d1brza_:A   -------    54  (A)
+d1a79a1:A   NMTYVKP   179  (B)
+

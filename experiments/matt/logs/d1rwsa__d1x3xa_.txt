@@ -1,0 +1,16 @@
+(d1x3xa_:A, d1rwsa_:A)
+Core Residues: 17
+Core RMSD: 2.360
+Raw Score: 12.402
+P-value: 0.6186
+Reference structure: d1x3xa_:A
+
+d1rwsa_:A   KMIKVKVIGRNIEKEIEWREGMKVRDILRAVGFNT--------------ES---AIAKVN    44  (A)
+d1x3xa_:A   -----------------------------------CGDKKYTKEEVAKHNTQNDLWIIYD    25  (B)
+
+d1rwsa_:A   GKVVLE--DD-------------------------------------EVKDGDFVEVIPV    65  (A)
+d1x3xa_:A   GEVHDMTSF-YKEHPGGKVILNKAGQDATSVLKTLAPHVKAADVVMKKL-----------    73  (B)
+
+d1rwsa_:A   VSGG---------    69  (A)
+d1x3xa_:A   ----KQTCIGKVK    82  (B)
+

@@ -1,0 +1,43 @@
+(d3n2wa_:A, d1ecea_:A)
+Core Residues: 38
+Core RMSD: 2.281
+Raw Score: 53.826
+P-value: 0.1928
+Reference structure: d3n2wa_:A
+
+d1ecea_:A   AGGGYWHTSGREILDANNVPVRIAGINWFGFETCNYVVHGLWSRDYRSMLDQIKSLGYNT    60  (A)
+d3n2wa_:A   ------------------------------------------------------------     1  (B)
+
+d1ecea_:A   IRLPYSDDIL--------------------------------------------------    70  (A)
+d3n2wa_:A   ----------GPRARDLGVPFEGTPGALNAITDVAGVEVGHTTVISGDGAMVIGKGPYRT    50  (B)
+
+d1ecea_:A   ----------------------KPGTMPNSINFYQMNQDLQGLTSLQVMDKIVAYAGQIG   108  (A)
+d3n2wa_:A   GVTIIHPLGKTSLDGVAAGRAVIN------------------------------------    74  (B)
+
+d1ecea_:A   LRIILDRHRPDCSGQSALWYTSSV------------------------------------   132  (A)
+d3n2wa_:A   ------------------------GTGEWTGMHLVDEVGQFLGPIALTGTGNVGLVHQSM   110  (B)
+
+d1ecea_:A   ------------------------------------------------------------   132  (A)
+d3n2wa_:A   MDWSVGKVPEEALFSRLLPVVAETLDNRLNDVFGHGLTRDHVFAALDGAKGGPVAEGNVG   170  (B)
+
+d1ecea_:A   ------------------------------------------------------------   132  (A)
+d3n2wa_:A   GGTGMIAYTFKGGIGTSSRVVSAGDTRYTVGVLVQANHGDRNDLRIAGVQIGKEIKGAWP   230  (B)
+
+d1ecea_:A   --------------------------------SEATWISDLQALAQRYKGNPTVVGFDLH   160  (A)
+d3n2wa_:A   EVNGIVAAGPDAGKPSLLIVIATDAPLMPHQLERMARRAALGVGRNG-------------   281  (B)
+
+d1ecea_:A   NEPHDPACWGCG-------------------------------DPSIDWRLAAERAGNAV   189  (A)
+d3n2wa_:A   ------------STAGALSGEFALAFSTSHVIPLGGKPRLPAIINDTDSETMNALFRGVV   329  (B)
+
+d1ecea_:A   LSVNPNLLIFVEGVQSYNGDSYWWGGNLQGAGQYPVVLNVPNRLVYSAHDYATSVYPQTW   249  (A)
+d3n2wa_:A   QATE--------------------------------------------------------   333  (B)
+
+d1ecea_:A   FSDPTFPNNMPGIWNKNWGYLFNQNIAPVWLGEFGTTLQSTTDQTWLKTLVQYLRPTAQY   309  (A)
+d3n2wa_:A   ------------------------------------------------------------   333  (B)
+
+d1ecea_:A   GADSFQWTFWSWNPDSGDTGGILKDDWQTVDTVKDGYLAPIKSSIFDPV-----------   358  (A)
+d3n2wa_:A   -------------------------------------------------EALVNQLVASE   344  (B)
+
+d1ecea_:A   ---------------------------   358  (A)
+d3n2wa_:A   TMTGANNAKVYGIPHDQLARIMKARFP   371  (B)
+

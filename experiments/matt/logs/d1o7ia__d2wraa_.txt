@@ -1,0 +1,19 @@
+(d2wraa_:A, d1o7ia_:A)
+Core Residues: 36
+Core RMSD: 3.087
+Raw Score: 26.655
+P-value: 0.7013
+Reference structure: d2wraa_:A
+
+d1o7ia_:A   MEEKVGNLKPNMESVNVTVRVLEAS-EARQIQTKNGVRTISEAIVGDETGRVKLTLWGKH    59  (A)
+d2wraa_:A   -------------------------TSSNRA--------GEFS-----------------    14  (B)
+
+d1o7ia_:A   AGSIKEGQVVKIENA---------WTTAFKG------Q-VQ-------------------    84  (A)
+d2wraa_:A   ---IPPNTDFRAIF-FANAAEQQHIK-----LFIGDSQEP-AAYHKLTTRDGPREATLNS    64  (B)
+
+d1o7ia_:A   ------LNA-------------------------------GS------------KTKIAE    95  (A)
+d2wraa_:A   GNGKIRFE-VSVNGKPSATDARLAPINGKKGSPFTVNFGIVVSEDGHDSDYNDGIVVLQW   125  (B)
+
+d1o7ia_:A   -ASEDGFPESSQIPENTPTAP   115  (A)
+d2wraa_:A   PIG------------------   128  (B)
+

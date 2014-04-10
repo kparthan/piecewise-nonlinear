@@ -1,0 +1,22 @@
+(d2g38b1:B, d2vxxa_:A)
+Core Residues: 60
+Core RMSD: 2.007
+Raw Score: 133.919
+P-value: 8.5299e-03
+Reference structure: d2g38b1:B
+
+d2vxxa_:A   ALPRQAFGEMADTVILLEKATT-----------------TPICEGMNRLLASFQALYLQY    47  (A)
+d2g38b1:B   ----------------------AFEAYPPEVNSANIYAGPGPDSMLAAARAWRSLDVEMT    39  (B)
+
+d2vxxa_:A   QKHHFVVEGAEFYPLHQFFQDCYEQVQDHVHALGERLNGLGGVPVAGFQQLAALCCFTPE   107  (A)
+d2g38b1:B   AVQRSFNR----------------------------------------------------    47  (B)
+
+d2vxxa_:A   PEGAF-----------------------NCRQMLSNDLQAEQAIIGVLRQQATQAESLGD   144  (A)
+d2g38b1:B   -----TLLSLMDAWAGPVVMQLMEAAKPFVRWLTDLCVQLSEVERQIHEIVRAYEWAHH-   101  (B)
+
+d2vxxa_:A   RATAYLYDQILLKTEERAYHIGHFLANDSLKV----------------------------   176  (A)
+d2g38b1:B   --------------------------------DMVPLAQIYNNRAERQILIDNNALGQFT   129  (B)
+
+d2vxxa_:A   ---------------------------------------------   176  (A)
+d2g38b1:B   AQIADLDQEYDDFWDEDGEVMRDYRLRVSDALSKLTPWKAPPPIA   174  (B)
+

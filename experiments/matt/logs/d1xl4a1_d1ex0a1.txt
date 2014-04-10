@@ -1,0 +1,22 @@
+(d1ex0a1:A, d1xl4a1:A)
+Core Residues: 75
+Core RMSD: 3.021
+Raw Score: 59.579
+P-value: 0.0383
+Reference structure: d1ex0a1:A
+
+d1xl4a1:A   T------------------------AG-VLFSSRMVISDFEGK-----------------   156  (A)
+d1ex0a1:A   -AFGGRRAVPPNNSNAAEDDLPTVEQEFLNV-TSVHLF-----KERWDTNKVDHHTDKYE    70  (B)
+
+d1xl4a1:A   -----------PTLMMRLANLRIEQI----IEADVHLVLVRSEISQEGMVF-------RR   194  (A)
+d1ex0a1:A   NNKLIVRRGQSFYVQIDFSR------PYDPRRDLFRVEYVIG---------RYPQENKGT   115  (B)
+
+d1xl4a1:A   FHDLTL-----------TRSRSPIFSL----SWTVMHPIDHHSPIYGETDETLRN-----   234  (A)
+d1ex0a1:A   YIPVPIVSELQSGKWGAKI--------VMREDRSVRLSI---QS-----------SPKCI   153  (B)
+
+d1xl4a1:A   -SHSEFLVLFTGHHEAFAQN-VHARHAYSCDEIIWGGHFVDVFTTLPDGRRALDLGKFHE   292  (A)
+d1ex0a1:A   VGKFRMYVAVWT-------PYGVLRTSRNPET----------------------------   178  (B)
+
+d1xl4a1:A   IAQHHHH------------   299  (A)
+d1ex0a1:A   -------DTYILFNPWCED   190  (B)
+

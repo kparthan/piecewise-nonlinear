@@ -122,7 +122,7 @@ void Angles::load(string &file, string &controls)
  */
 void Angles::save_dssp()
 {
-  string file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/angles/profiles/" 
+  string file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/angles/" 
                      + name + ".profile";
   ofstream log(file_name.c_str());
   for (int i=0; i<angles.size(); i++) {
@@ -139,7 +139,7 @@ void Angles::save_dssp()
 void Angles::load_dssp(string &file)
 {
   name = file;
-  string file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/angles/profiles/"
+  string file_name = string(CURRENT_DIRECTORY) + "experiments/dssp/angles/"
                      + name + ".profile";
   ifstream log(file_name.c_str());
   string line;

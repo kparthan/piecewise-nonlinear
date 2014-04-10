@@ -1,0 +1,37 @@
+(d2v8ta_:A, d1nfga2:A)
+Core Residues: 91
+Core RMSD: 7.450
+Raw Score: 86.394
+P-value: 0.2912
+Reference structure: d2v8ta_:A
+
+d1nfga2:A   GGIDVHTHVETVSFNTQSADTFATATVAAACGGTTTIVDFCQQDRGHSLAEAVAKWDGMA   111  (A)
+d2v8ta_:A   ------------------------------------------------------------     1  (B)
+
+d1nfga2:A   GGKSAIDYGYHIIVLDPTDSVIEELEVLPDLGITSFXVFM--------------------   151  (A)
+d2v8ta_:A   ----------------------------------------MFLRIDRLQIELPMPKEQDP    20  (B)
+
+d1nfga2:A   --------AYRGMN---MI--DDVTLLKTLDKAVKTGSLVMVHAE---------------   183  (A)
+d2v8ta_:A   NAAAAVQALLGGRFGEMSTLMNYMYQSFNFR--------------GKKALKPYYDLIANI    66  (B)
+
+d1nfga2:A   ------NGDAADYLRDKFVAEGKTA-----------------------------------   202  (A)
+d2v8ta_:A   ATEELGHIELVAATINSLLAK----NPGKDLEEGVDPASTPLGFAKDVRNAAHFIAGGAN   122  (B)
+
+d1nfga2:A   ----------------------------------------------PIYHALS--RPPRV   214  (A)
+d2v8ta_:A   SLVMGAMGEHWNGEYVFTSGNLILDLLHNFFLEVAARTHKLRVYEMTDN-PVAREMIGYL   181  (B)
+
+d1nfga2:A   EAEATARALALAEIVN---APIYIVHVTCEESLEEVMRAKSRGVRALAET------CTHY   265  (A)
+d2v8ta_:A   LVRGGVHAAAYGKAL-ESLTGVEMTK------------------------MLPIPKI-DN   215  (B)
+
+d1nfga2:A   LYLTKEDLERPDFEGAKYVFTPPARAKKDHDVLWNALRNGVF------------------   307  (A)
+d2v8ta_:A   SKI--------------------PE-------AKKYMDLGFHRNLYRFSPEDYRDLGLIW   248  (B)
+
+d1nfga2:A   ----ETVSSDHCSWLFKGHKDRGRNDFRAIPNGAPGVEERLMMVYQGVNEGRISLTQFVE   363  (A)
+d2v8ta_:A   KGASPE------------------------------------------------------   254  (B)
+
+d1nfga2:A   LVATRPAKVFGMFPQKGT------------------------------------------   381  (A)
+d2v8ta_:A   DGTEV-------------VVVDGPPTGGPVFDAGHDAAEFAPEFHPGELYEIAKKLYEKA   301  (B)
+
+d1nfga2:A   -   381  (A)
+d2v8ta_:A   K   302  (B)
+

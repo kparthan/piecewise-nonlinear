@@ -1,0 +1,43 @@
+(d2zbxa_:A, d1m7xa3:A)
+Core Residues: 65
+Core RMSD: 3.892
+Raw Score: 63.126
+P-value: 0.1504
+Reference structure: d2zbxa_:A
+
+d1m7xa3:A   VVQTEERKKANQFDAPISIYEVHLGSWRRHTDNNFWLSYRELADQLVPYAKWMGFTHLEL   286  (A)
+d2zbxa_:A   ------------------------------------------------------------     8  (B)
+
+d1m7xa3:A   LPINEHPFDGSWGYQPTGLYAPTRRFGTRDDFRYFIDAAHAAGLNVILDWVPGHFPTDDF   346  (A)
+d2zbxa_:A   ------------------------------------------------------------     8  (B)
+
+d1m7xa3:A   ALAEFDGTNLYEHSTLIYNYG---------------------------------------   378  (A)
+d2zbxa_:A   ---------------------PQTTDAPAFPSNRSCPYQLPDGYAQLRDTPGPLHRVTLY    46  (B)
+
+d1m7xa3:A   ------------------------------------------------------------   378  (A)
+d2zbxa_:A   DGRQAWVVTKHEAARKLLGDPRLSSNRTDDNFPATSPRFESPQAFIGLDPPEHGTRRRMT   110  (B)
+
+d1m7xa3:A   -----------RREVSNFLVGNALYWIERFGIDAL--RV---------------------   404  (A)
+d2zbxa_:A   ISEFTVKRIKGMRPEVEEVVHGFLDEMLAAGPTADLVSQFALPVPSMVICRLLGVPYADH   170  (B)
+
+d1m7xa3:A   D--AVASMIY--------------------------------------------------   412  (A)
+d2zbxa_:A   EFFQDA--S-KRLVQSTDAQSALTARNDLAGYLDGLITQFQTEPGAGLVGALVADQLANG   227  (B)
+
+d1m7xa3:A   ----------RGGRE--NLEAIEFLRNTNRILGEQ-------------------------   449  (A)
+d2zbxa_:A   EIDREELISTA--MLLLIAGHETTASMTSLSVITLLDHPEQYAALRADRSLVPGAVEELL   285  (B)
+
+d1m7xa3:A   ------------------------------------------------------------   449  (A)
+d2zbxa_:A   RYLAIADIAGGRVATADIEVEGQLIRAGEGVIVVNSIANRDGTVYEDPDALDIHRSARHH   345  (B)
+
+d1m7xa3:A   ---------------------------------VSGAVTMAEESTDFPGV--------SR   468  (A)
+d2zbxa_:A   LAFGFGVHQCLGQNLARLELEVILNALMDRVPTLRL--------------AVPVEQLVLR   391  (B)
+
+d1m7xa3:A   PQD-MGGLGFWYKWNLGWMHDTLDYMKLDPVYRQYHHDKLTFGILYNYTENFVLPLSHDE   527  (A)
+d2zbxa_:A   ---PGTTIQGVN------------------------------------------------   400  (B)
+
+d1m7xa3:A   VVHGKKSILDRMPGDAWQKFANLRAYYGWMWAFPGKKLLFMGNEFAQGREWNHDASLDWH   587  (A)
+d2zbxa_:A   ------------------------------------------------------------   400  (B)
+
+d1m7xa3:A   LLEGGDNWHHGVQRLVRDLNLTYRHHKAMHELDFD----------   622  (A)
+d2zbxa_:A   -----------------------------------ELPVTWHHHH   410  (B)
+

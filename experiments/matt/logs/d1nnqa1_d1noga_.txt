@@ -1,0 +1,19 @@
+(d1noga_:A, d1nnqa1:A)
+Core Residues: 58
+Core RMSD: 1.892
+Raw Score: 114.905
+P-value: 0.0106
+Reference structure: d1noga_:A
+
+d1nnqa1:A   VVKRTMTKKFL-------------------------------------------------    12  (A)
+d1noga_:A   -----------SPVVEVQGTIDELNSFIGYALVLSRWDDIRNDLFRIQNDLFVLGEDVST    71  (B)
+
+d1nnqa1:A   -------------------------------------EEAFAGESMAHMRYLIFAEKAEQ    35  (A)
+d1noga_:A   GGKGRTVTREMIDYLEARVKEMKAEIGKIELFVVPGGSVESASLHMARAVSRRLERRIVA   131  (B)
+
+d1nnqa1:A   EG----F-PNIAKLFRAIAYAEFVHAKNHFIALGKLGKTPENLQMGIEGETFEVEEMYPV    90  (A)
+d1noga_:A   ASKLTEINKNVLIYANRLSSILFMHALISNKRLNIPE----KI--W--------------   171  (B)
+
+d1nnqa1:A   YNKAAEFQGEKEAVRTTHYALEAEKIHAELYRKAKEKAEKGEDI   134  (A)
+d1noga_:A   --------------------------------------------   171  (B)
+

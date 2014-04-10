@@ -1,0 +1,19 @@
+(d1v2za_:A, d1he7a_:A)
+Core Residues: 10
+Core RMSD: 1.184
+Raw Score: 7.704
+P-value: 0.7190
+Reference structure: d1v2za_:A
+
+d1he7a_:A   SHMPASVQLHTAVEMHHWCIPFSVDGQPAPSLRWLFNGSVLNE-TSFIF--TEFLEPAAN   338  (A)
+d1v2za_:A   -------------------------------------------STAFFFRRMSPAD----   185  (B)
+
+d1he7a_:A   ETVRHGCLRLNQPTHVNNGNYTLLAANPFGQASASIMAAFMDNPFEFNPE----------   388  (A)
+d1v2za_:A   --------------------------------------------------KRKLLDELRS   195  (B)
+
+d1he7a_:A   ------------------------------------------------------------   388  (A)
+d1v2za_:A   IYRTIVLEYFNTDAKVNERIDEFVSKAFFADISVSQVLEIHVELMDTFSKQLKLEGRSED   255  (B)
+
+d1he7a_:A   -----------------------   388  (A)
+d1v2za_:A   ILLDYRLTLIDVIAHLCEMYRRS   278  (B)
+

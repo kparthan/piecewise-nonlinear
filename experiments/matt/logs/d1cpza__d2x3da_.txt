@@ -1,0 +1,13 @@
+(d2x3da_:A, d1cpza_:A)
+Core Residues: 63
+Core RMSD: 1.979
+Raw Score: 84.463
+P-value: 0.0147
+Reference structure: d2x3da_:A
+
+d1cpza_:A   -----AQEFSVKGMSCNH---CVARIEEAVGRISGVKKVKVQLKK-------EKAVVKFD    45  (A)
+d2x3da_:A   GMAIRRLVLDVLKPI---RGTSIVDLAERISKLDGVEGVNISVTDMDVETMGLMIIIEGT    56  (B)
+
+d1cpza_:A   EANVQATEICQAINELGYQAEVI------------    68  (A)
+d2x3da_:A   S--LNFDDIRKMLEEEGCAIHSIDEVVSGNRIIEG    89  (B)
+

@@ -1,0 +1,25 @@
+(d1x9za_:A, d1bd8a_:A)
+Core Residues: 30
+Core RMSD: 3.174
+Raw Score: 41.570
+P-value: 0.6838
+Reference structure: d1x9za_:A
+
+d1bd8a_:A   ------------------------------------------------------------     7  (A)
+d1x9za_:A   QSFGRVLTIVHSDCALLERDGNISLLSLPVAERWLRQAQLTPGEAPVCAQPLLIPLRLKV   492  (B)
+
+d1bd8a_:A   -RAGDRLSGAAARGDVQEVRRLLHRELVHPDALNRFGKTALQVMMF--------------    51  (A)
+d1x9za_:A   SAEEKSALEKAQSA-----------------------------LAELGIDFQSDAQHVTI   523  (B)
+
+d1bd8a_:A   -----------------------------GSTAIALELLKQGASPNVQDTSGTSPVHDAA    82  (A)
+d1x9za_:A   RAVPLPLRQQNLQILIPELIGYLAKQSVFEPGNIAQWIARNLX-----------------   566  (B)
+
+d1bd8a_:A   RTGFLDTLKVLVEHGADVNVPDGTGALPIHLAVQEGHTAVVSFLAAESDLHRRDARGLTP   142  (A)
+d1x9za_:A   ------------------------------------------------------------   566  (B)
+
+d1bd8a_:A   LELALQRGAQDLVDILQGHM----------------------------------------   162  (A)
+d1x9za_:A   --------------------SEHAQWSXAQAITLLADVERLCPQLVKTPPGGLLQSVDLH   606  (B)
+
+d1bd8a_:A   --------   162  (A)
+d1x9za_:A   PAIKALKD   614  (B)
+

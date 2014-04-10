@@ -1,0 +1,16 @@
+(d1kjqa1:A, d2buda1:A)
+Core Residues: 20
+Core RMSD: 2.033
+Raw Score: 17.214
+P-value: 0.5987
+Reference structure: d1kjqa1:A
+
+d2buda1:A   DPLMQKIDISENPDKIYFIRREDGTVHRGQVLQSRTTENAAAPDEYYVHYVGLNRRLDGW   426  (A)
+d1kjqa1:A   ----------------GPAASAV-------------------------------------   325  (B)
+
+d2buda1:A   V--------------------GRH--------------------RISDNADDLGGITVLP   446  (A)
+d1kjqa1:A   -ILPQLTSQNVTFDNVQNAVGADLQIRLFGKPEIDGSRRLGVALATAESVVDAI------   378  (B)
+
+d2buda1:A   APPLAPDQ--------------   454  (A)
+d1kjqa1:A   --------ERAKHAAGQVKVQG   392  (B)
+

@@ -1,0 +1,13 @@
+(d1kfta_:A, d2a1jb1:B)
+Core Residues: 51
+Core RMSD: 2.270
+Raw Score: 63.108
+P-value: 0.0727
+Reference structure: d1kfta_:A
+
+d2a1jb1:B   PADLLMEKLEQDFVSRVTECL----TTVKSVNKTDSQTLLTTFGSLEQLIAASREDLALC   274  (A)
+d1kfta_:A   ---------------------TSSLETIEGVGPKRRQMLLKYMGGLQGLRNASVEEIAK-    60  (B)
+
+d2a1jb1:B   PGLG-PQKARRLFDVLHEPFLKV   296  (A)
+d1kfta_:A   VPGISQGLAEKIFWSLKH-----    78  (B)
+

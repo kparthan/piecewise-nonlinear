@@ -1,0 +1,16 @@
+(d1kkea1:A, d1u8sa1:A)
+Core Residues: 15
+Core RMSD: 1.185
+Raw Score: 14.654
+P-value: 0.6053
+Reference structure: d1kkea1:A
+
+d1u8sa1:A   SLT----------QHLVITAVGTDRPGICNEVVRLVTQAGCNIIDSRIAMFGKEFTLLML    51  (A)
+d1kkea1:A   ---EQSYVASAVTPLRLNSS------------------------------------TKVL   270  (B)
+
+d1u8sa1:A   ISGSPSNITRVETTLPLLGQQHDLITMMKRTSPHDH------------------------    87  (A)
+d1kkea1:A   DMLI--------------------------------DSSTLEINSSGQLTVRSTSPNLRY   298  (B)
+
+d1u8sa1:A   --------------    87  (A)
+d1kkea1:A   PIADVSGGIGMSPN   312  (B)
+

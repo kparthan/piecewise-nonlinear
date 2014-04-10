@@ -1,0 +1,16 @@
+(d1s98a_:A, d1wyxa_:A)
+Core Residues: 34
+Core RMSD: 3.040
+Raw Score: 25.744
+P-value: 0.6057
+Reference structure: d1s98a_:A
+
+d1wyxa_:A   LNVLAKA----------------------------------LYDNVAESPDELSFRKGDI    27  (A)
+d1s98a_:A   ---SI--TLSDSAAARVNTFLANRGKGFGLRLGVRTSGCSGMAYVLEFVDE---------    47  (B)
+
+d1wyxa_:A   MTVLEQDTQG--LDGWWLCSLHGRQGIVPGNRLK--ILVGMYDKKP--------------    69  (A)
+d1s98a_:A   ----------PTP-EDIVFEDKGVKVVVDGKSMQFLD---------GTQLDFVKEGLNEG    87  (B)
+
+d1wyxa_:A   -----------    69  (A)
+d1s98a_:A   FKFTNPNVKDE    98  (B)
+

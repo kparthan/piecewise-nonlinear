@@ -1,0 +1,19 @@
+(d2clyb1:B, d1ug3a2:A)
+Core Residues: 20
+Core RMSD: 0.288
+Raw Score: 47.033
+P-value: 0.2851
+Reference structure: d2clyb1:B
+
+d1ug3a2:A   ALPSEELNRQLEKLLKEGSSNQRVFDWIEANLSEQQIVSNTLVRALMTAVCYSAIIFETP  1497  (A)
+d2clyb1:B   ------------------------------------------------------------     4  (B)
+
+d1ug3a2:A   LRVDVAVLKARAKLLQKYLC----------------------------------------  1517  (A)
+d2clyb1:B   --------------------KLALKTIDWVAFGEIIPRNQKAVANSLKSWNETLTSRLAT    43  (B)
+
+d1ug3a2:A   -----------------------------------------------------------D  1518  (A)
+d2clyb1:B   LPEKPPAIDWAYYKANVAKAGLVDDFEKKFNALKVPIPEDKYTAQVDAEEKEDVKSCAEF   103  (B)
+
+d1ug3a2:A   EQKELQALYALQALVVTLEQPPNLLRMFFDALYDEDVVKEDAFYSW-  1564  (A)
+d2clyb1:B   LTQSKTRIQEYEKELEKMR---------------------------N   123  (B)
+

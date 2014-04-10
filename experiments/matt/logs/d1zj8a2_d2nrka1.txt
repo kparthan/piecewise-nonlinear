@@ -1,0 +1,22 @@
+(d2nrka1:A, d1zj8a2:A)
+Core Residues: 51
+Core RMSD: 4.893
+Raw Score: 53.072
+P-value: 0.5569
+Reference structure: d2nrka1:A
+
+d1zj8a2:A   RNEGQWALGHREPL----------------------------------------------    23  (A)
+d2nrka1:A   --------------IVTEYQPAWVEQFEEEAQALKQILKENCLKVEHIGSTSVPNLAAKP    49  (B)
+
+d1zj8a2:A   --------NANEELKKAGNPLDVRERIENIYAKQGF---------------------DSI    54  (A)
+d2nrka1:A   IIDFLVIVEE--------------------------IEKVDLLQWEFERIGYEYXGEFGL    83  (B)
+
+d1zj8a2:A   DKTDL--------------RGR------FRWWGLYTQREQGYDGTWTGDDNIDKLEAKYF    94  (A)
+d2nrka1:A   SG-RRYLRKGPIKRTHHVHIY-QFDNTQEILRH---------------------------   114  (B)
+
+d1zj8a2:A   MMRV--R---CDGGAL-SAAALRTLGQISTEFARDTADISDRQNVQYHWIEVE--NVPEI   146  (A)
+d2nrka1:A   ----LAFRNYLRENPAIATTYGTLKKQLAQAH---------------------PDSIDKY   149  (B)
+
+d1zj8a2:A   WRRLDDVG--LQTTEAC---------   161  (A)
+d2nrka1:A   X--KDAFIKKIE-----KEALKKYWE   170  (B)
+

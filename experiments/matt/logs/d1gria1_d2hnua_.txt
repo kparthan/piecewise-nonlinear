@@ -1,0 +1,13 @@
+(d2hnua_:A, d1gria1:A)
+Core Residues: 26
+Core RMSD: 3.212
+Raw Score: 14.348
+P-value: 0.7751
+Reference structure: d2hnua_:A
+
+d1gria1:A   --------------------------------------------------MEAIAKYDFK    10  (A)
+d2hnua_:A   VRTCLPCGPGGKGRCFGPSICCGDELGCFVGTAEALRCQEENYLPSPCQSGQKPCG----    62  (B)
+
+d1gria1:A   ATADDELSFKRGDILKV--QNWYKAELNGKDGFIPKNYIEMK---    56  (A)
+d2hnua_:A   ------------SGGRCAAAGICC-SP---DGCHEDPA----CDP    87  (B)
+

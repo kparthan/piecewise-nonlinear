@@ -1,0 +1,25 @@
+(d1jb0l_:L, d1pgl21:2)
+Core Residues: 25
+Core RMSD: 3.780
+Raw Score: 21.928
+P-value: 0.8771
+Reference structure: d1jb0l_:L
+
+d1pgl21:2   M-----------------------------------------------------------     1  (A)
+d1jb0l_:L   -LVKPYNGDPFVGHLSTPISDSGLVKTFIGNLPAYRQGLSPILRGLEVGMAHGYFLIGPW    62  (B)
+
+d1pgl21:2   -----------------------------------------------------------E     2  (A)
+d1jb0l_:L   VKLGPLRDSDVANLGGLISGIALILVATACLAAYGLVSFQKGGSSSDPLKTSEGWSQFTA   122  (B)
+
+d1pgl21:2   --TNLFK--LSLDD--VETPKGSMLDLKISQSKIALPKNTVGGTILRSDLLANFLTEGNF    56  (A)
+d1jb0l_:L   GFFVGAMGSAFVAFFLLE------------------------------------------   140  (B)
+
+d1pgl21:2   RASVDLQRTHRIKGMIKMVATVGIPENTGIALACAMNSSIRGRASSDIYTICSQDCELWN   116  (A)
+d1jb0l_:L   --------NF--------------------------------------------------   142  (B)
+
+d1pgl21:2   PACTKAMTMSFNPNPCSDAWSLEFLKRTGFHCDIICVTGWTATPMQDVQVTIDWFISSQE   176  (A)
+d1jb0l_:L   --------------------LVVDGIMTGL------------------------------   152  (B)
+
+d1pgl21:2   CVPRTY--   182  (A)
+d1jb0l_:L   ------FN   154  (B)
+

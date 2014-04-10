@@ -1,0 +1,19 @@
+(d1jm7a_:A, d2cqva1:A)
+Core Residues: 15
+Core RMSD: 2.265
+Raw Score: 10.547
+P-value: 0.6804
+Reference structure: d1jm7a_:A
+
+d2cqva1:A   PQIIQFP-------------------------EDQKVRAGESVELFGKVTGTQPITCTWM    42  (A)
+d1jm7a_:A   -------MDLSALRVEEVQNVINAMQKILECPIC--------------------------    27  (B)
+
+d2cqva1:A   KFRKQIQESEHMKVENSENGSKLTILAARQEHC-----GCYTLLVENKLGSRQAQVNLTV    97  (A)
+d1jm7a_:A   ---------------------------------LELIKEPVSTKC-------DHIFCK--    45  (B)
+
+d2cqva1:A   VDKPDPPAGTP-------------------------------------------------   108  (A)
+d1jm7a_:A   -----------FCMLKLLNQKKGPSQCPLCKNDITKRSLQESTRFSQLVEELLKIICAFQ    94  (B)
+
+d2cqva1:A   ---------   108  (A)
+d1jm7a_:A   LDTGLEYAN   103  (B)
+

@@ -1,0 +1,13 @@
+(d2dy8a1:A, d1ueba1:A)
+Core Residues: 44
+Core RMSD: 2.670
+Raw Score: 33.980
+P-value: 0.4436
+Reference structure: d2dy8a1:A
+
+d1ueba1:A   MISVTDLRPGTKVKMD------GGLWECVEYQHQKLGRGGAKVVAKFKNLET--GATVER    52  (A)
+d2dy8a1:A   ----------------DEFEEFHVPERIIDSQRASLEDGTSQLQYLVKWRRLNYDEATWE   322  (B)
+
+d1ueba1:A   TFNSGEK-LEDI----------------    63  (A)
+d2dy8a1:A   --NATDIVKLA-PEQVKHFQNRENSKIL   347  (B)
+

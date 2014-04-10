@@ -1,0 +1,50 @@
+(d1dnu.1:A, (d1dnu.1:C, d2cvla_:A))
+Core Residues: 21
+Core RMSD: 2.379
+Raw Score: 28.842
+Reference structure: d1dnu.1:A
+
+d2cvla_:A   XEAVKTDRAPAAIGP-YAQAVKAGGFVFVSGQI---PLAPDGSLV---------------    41  (A)
+d1dnu.1:A   ---------------C-----------------PEQ---------DKYRTITGMCNNRRS    19  (B)
+d1dnu.1:C   ------------V--NCE-T---------S-CVQQPP------CF---------------   126  (C)
+
+d2cvla_:A   ------------------------------------------------------------    41  (A)
+d1dnu.1:A   PTLGASNRAFVRWLPAEYEDGFSLPYGWTPGVKRNGFPVALARAVSNEIVRFPTDQLTP-    78  (B)
+d1dnu.1:C   -----------------------------------------------------------P   127  (C)
+
+d2cvla_:A   ------------------------------------------------------------    41  (A)
+d1dnu.1:A   ------------------------------------------------------------    78  (B)
+d1dnu.1:C   LKIPPNDPRIKNQADCIPFFRSXPACPGSNITIRNQINALTSFVDASMVYGSEEPLARNL   187  (C)
+
+d2cvla_:A   ---------------------------------------------------EGDI-----    45  (A)
+d1dnu.1:A   ---------------------------------------------------DQ-------    80  (B)
+d1dnu.1:C   RNMSNQLGLLAVNQRFQDNGRALLPFDNLHDDPCLLTNRSARIPCFLAGDTRSSEMPELT   247  (C)
+
+d2cvla_:A   RVQTERVXENLKAVLEAAGSGLSRVVQTTCFLA-DXEDFPGFNEVYARYFTPPYPARATV   104  (A)
+d1dnu.1:A   ERSLMFMQWGQLLDHDLDF--------------T--------------------------   100  (B)
+d1dnu.1:C   SMHTLLLREHNRLATELKS--------------LN-PRWDGE-R---L------------   276  (C)
+
+d2cvla_:A   AVKALPRGVRVEVACVALAE----------------------------------------   124  (A)
+d1dnu.1:A   --------------------PEPA------------------------------------   104  (B)
+d1dnu.1:C   ------------------------YQEARKIVGAMVQIITYRDYLPLVLGPTAMRKYLPT   312  (C)
+
+d2cvla_:A   ------------------------------------------------------------   124  (A)
+d1dnu.1:A   ------------------------------------------------------------   104  (B)
+d1dnu.1:C   YRSYNDSVDPRIANVFTNAFRYGHTLIQPFMFRLDNRYQPMEPNPRVPLSRVFFASWRVV   372  (C)
+
+d2cvla_:A   ------------------------------------------------------------   124  (A)
+d1dnu.1:A   ------------------------------------------------------------   104  (B)
+d1dnu.1:C   LEGGIDPILRGLMATPAKLNRQNQIAVDEIRERLFEQVMRIGLDLPALNMQRSRDHGLPG   432  (C)
+
+d2cvla_:A   ------------------------------------------------------------   124  (A)
+d1dnu.1:A   ------------------------------------------------------------   104  (B)
+d1dnu.1:C   YNAWRRFCGLPQPETVGQLGTVLRNLKLARKLMEQYGTPNNIDIWMGGVSEPLKRKGRVG   492  (C)
+
+d2cvla_:A   ------------------------------------------------------------   124  (A)
+d1dnu.1:A   ------------------------------------------------------------   104  (B)
+d1dnu.1:C   PLLACIIGTQFRKLRDGDRFWWENEGVFSMQQRQALAQISLPRIICDNTGITTVSKNNIF   552  (C)
+
+d2cvla_:A   --------------------------   124  (A)
+d1dnu.1:A   --------------------------   104  (B)
+d1dnu.1:C   MSNSYPRDFVNCSTLPALNLASWREA   578  (C)
+

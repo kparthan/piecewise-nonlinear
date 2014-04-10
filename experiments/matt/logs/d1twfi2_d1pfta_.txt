@@ -1,0 +1,13 @@
+(d1pfta_:A, d1twfi2:I)
+Core Residues: 31
+Core RMSD: 1.981
+Raw Score: 31.476
+P-value: 0.3468
+Reference structure: d1pfta_:A
+
+d1twfi2:I   TNIGETAGVVQDIGSDPTLPRSD-----RECPKCHSRENVFFQSQQRRKDTSMVLFFVCL   104  (A)
+d1pfta_:A   -----------------------MVNKQKVCPACESAELIYDPER---------GEIVCA    28  (B)
+
+d1twfi2:I   SCSHIFTS--DQKNKRTQF------------   121  (A)
+d1pfta_:A   KCGYVIE-ENI--------IDMGPEWRAFDA    50  (B)
+

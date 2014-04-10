@@ -1,0 +1,22 @@
+(d1pprm1:M, d2d29a1:A)
+Core Residues: 45
+Core RMSD: 2.498
+Raw Score: 84.142
+P-value: 0.1569
+Reference structure: d1pprm1:M
+
+d2d29a1:A   GKGFYDVLRVLDGGRIGIAAMAVGLGQAALDYA---------------------------   267  (A)
+d1pprm1:M   -------------DEIGDAAKKLGDASYAFAKEVDWNNGIFLQAPGKLQPLEALKAIDKM    47  (B)
+
+d2d29a1:A   ------------------------------------------------------------   267  (A)
+d1pprm1:M   IVMGAAADPKLLKAAAEAHHKAIGSISGPNGVTSRADWDNVNAALGRVIASVPENMVMDV   107  (B)
+
+d2d29a1:A   -------------------LAYAKGREAFGRPIAEFEGVSFKLAEAATELEAARLLYLKA   308  (A)
+d1pprm1:M   YDSVSKITDPKVPAYMKSLV----------------------NGADAEKAYEGFLAFKDV   145  (B)
+
+d2d29a1:A   AELKDAGRPFTLEAAQAKLFASEAAVKACDEAIQILGGYGYVKDYPVERYWRDARLTRIG   368  (A)
+d1pprm1:M   VKKSQV------------------------------------------------------   151  (B)
+
+d2d29a1:A   EGTSEILKLVIARRLLEAV-----   387  (A)
+d1pprm1:M   -------------------TSAAG   156  (B)
+

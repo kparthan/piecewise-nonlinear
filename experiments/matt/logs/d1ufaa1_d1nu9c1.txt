@@ -1,0 +1,19 @@
+(d1nu9c1:C, d1ufaa1:A)
+Core Residues: 58
+Core RMSD: 3.338
+Raw Score: 98.649
+P-value: 0.1436
+Reference structure: d1nu9c1:C
+
+d1ufaa1:A   WLNEKT-----------------------L-DYWEKVYRAEGAXREAARRGVL-------   441  (A)
+d1nu9c1:C   ------IVTKDYSKESRVNENSKYGTLISDWYLKGRLTSLESQFINALGIL--ETYHYGE    52  (B)
+
+d1ufaa1:A   ---------PEGVLRQAXRELLLLEA--SDWPFLXETGQAEAYARER-------------   477  (A)
+d1nu9c1:C   KEYKDAKDKLMTRILGEDQYLLERKKVQYEEYKKLYKK---------YKEENPTSKVKMK   103  (B)
+
+d1ufaa1:A   --------YEEHA---RAFFHLLKGASPEELRALEERDNPFPEADPRLYLF---------   517  (A)
+d1nu9c1:C   TFDQYTIEDL---TMREY-NELTES--------------------------LKSAVKDFE   133  (B)
+
+d1ufaa1:A   ------------   517  (A)
+d1nu9c1:C   KDVEIIENQHHD   145  (B)
+

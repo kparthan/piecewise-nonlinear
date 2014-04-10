@@ -1,0 +1,43 @@
+(d1ir6a_:A, d1odza_:A)
+Core Residues: 72
+Core RMSD: 3.790
+Raw Score: 73.912
+P-value: 0.0218
+Reference structure: d1ir6a_:A
+
+d1odza_:A   VKPVTVKLVDSQATMETRSLFAFMQEQRRHSIMFGHQHETTQGLTITRTDGTQSDTFNAV   101  (A)
+d1ir6a_:A   ------------------------------------------------------------    49  (B)
+
+d1odza_:A   GDFAAVYGWDTLSI---VAPKAEGD-IVAQVKKAYARGGIITVSSHFDNPKTDTQKGVWP   157  (A)
+d1ir6a_:A   --------------PLALLPLKGLREAAALLEEALRQGKRIRVHG-D-------------    80  (B)
+
+d1odza_:A   VGTSWDQTPAVVDSLPGGAYNPV--LNGY-LDQVAEWANNL--KDEQGRLIPVIFRLYHE   212  (A)
+d1ir6a_:A   -----------------------YDAD--GLTGTAILVRGLAAL-----GADVHPFIP--   108  (B)
+
+d1odza_:A   -N-TGSWFWWGDKQSTPE------------------------------------------   228  (A)
+d1ir6a_:A   HRLEEGYG----------VLMERVPEHLEASDLFLTVDCGITNHAELRELLENGVEVIVT   158  (B)
+
+d1odza_:A   ------------------------------------------------------------   228  (A)
+d1ir6a_:A   DHHTPGKTPPPGLVVHPALTPDLKEKPTGAGVAFLLLWALHERLGLPPPLEYADLAAVGT   218  (B)
+
+d1odza_:A   ----------------------------------------------------------QY   230  (A)
+d1ir6a_:A   IADVAPLWGWNRALVKEGLARIPASSWVGLRLLAEAVGYTGKAVEVAFRIAPRINAASRL   278  (B)
+
+d1odza_:A   KQLFRYSVEYLRDVKGVRNFLYAYSPNNFWDVTEANYLERYPGDEWVDVLGFDTYGPVAD   290  (A)
+d1ir6a_:A   GEAEKALRLLLTD-----------------------------------------------   291  (B)
+
+d1odza_:A   NADWFRNVVANAALVARMAEARGKIPVISGIGIRAPDIEAGLYDNQWYRKLISGLKADPD   350  (A)
+d1ir6a_:A   ------------------------------------------------------------   291  (B)
+
+d1odza_:A   AREIAFLLVWRNAPQGVPGGTQVPHYWVPANRPENINNGTLEDFQAFYADEFTAFNRDIE   412  (A)
+d1ir6a_:A   ------------------------------------------------------------   291  (B)
+
+d1odza_:A   QVYQRPTLIV--------------------------------------------------   422  (A)
+d1ir6a_:A   ----------DAAEAQALVGELHRLNARRQTLEEAMLRKLLPQADPEAKAIVLLDPEGHP   341  (B)
+
+d1odza_:A   ------------------------------------------------------------   422  (A)
+d1ir6a_:A   GVMGIVASRILEATLRPVFLVAQGKGTVRSLAPISAVEALRSAEDLLLRYGGHKEAAGFA   401  (B)
+
+d1odza_:A   --------------------------------   422  (A)
+d1ir6a_:A   MDEALFPAFKARVEAYAARFPDPVREVALLDL   433  (B)
+

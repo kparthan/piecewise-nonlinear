@@ -1,0 +1,13 @@
+(d3kvqa_:A, d1hxma2:A)
+Core Residues: 50
+Core RMSD: 2.386
+Raw Score: 42.338
+P-value: 0.1510
+Reference structure: d3kvqa_:A
+
+d1hxma2:A   SQPHTKPSVFVMKN---------GTNVACLVKEFYPKDIRINLV-----SSKK---ITEF   163  (A)
+d3kvqa_:A   ------PTITGNL-ENQTTSIGESIEVSCTAS------PQIMWFKDNETLV-EDSGIVLK   716  (B)
+
+d1hxma2:A   DPAIVISPSGKYNAV-KLGKY------EDSN-SVTCSVQHDNKTVHSTDFE-------   206  (A)
+d3kvqa_:A   DG-------------NRNLTIRRVRKEDE--GLYTCQAC----CAKVE---AFFIIEG   756  (B)
+

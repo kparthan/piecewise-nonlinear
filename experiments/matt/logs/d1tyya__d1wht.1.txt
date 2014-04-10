@@ -1,0 +1,50 @@
+(d1wht.1:B, (d1wht.1:A, d1tyya_:A))
+Core Residues: 25
+Core RMSD: 9.004
+Raw Score: 27.145
+Reference structure: d1wht.1:B
+
+d1tyya_:A   NKVW--------------------------------------------------------     8  (A)
+d1wht.1:A   ----GHAADRIARLPGQPAVDFDMYSGYITVDEGAGRSLFYLLQEAPEDA----------    41  (B)
+d1wht.1:B   S-YD----------------------------------------------PCTERYSTAY   278  (C)
+
+d1tyya_:A   ------------------------------------------------------------     8  (A)
+d1wht.1:A   ------------------------------------------------------------    41  (B)
+d1wht.1:B   YNRRDVQMALHANVTGAMNYTWATCSDTINTHWHDAPRSMLPIYRELIAAGLRIWVFSGD   336  (C)
+
+d1tyya_:A   ---------------------------------------------VIGDASVDLV-----    18  (A)
+d1wht.1:A   ---------------------------------------------QPAPL-----VLWLN    51  (B)
+d1wht.1:B   TDAVVPLTATRYSIGALGLPTTTSWYPWYDDQEVGGWSQVYKGLTLVSVR----------   393  (C)
+
+d1tyya_:A   ------------------------------------------------------------    18  (A)
+d1wht.1:A   GGPGCSSVAYGASEELGAFRVKPRGAGLVLNEYRWNKVANVLFLDSPAGVGFSYTNTSSD   109  (B)
+d1wht.1:B   ------------------------------------------------------------   393  (C)
+
+d1tyya_:A   --------------------P---EKQNS--YLK-CPGGASANVGVCVARLGGECGFIGC    52  (A)
+d1wht.1:A   IYTSGDNRTAHDSYAFLAKWFERFP----HYKYRDFYIAG--------------------   144  (B)
+d1wht.1:B   ------------------------------------------------------------   393  (C)
+
+d1tyya_:A   LGDDDAGRFLRQVFQDNGVDVTFLRLDADLTSAVLIVNSFTYLVHPGADTYVSPQDLPPF   119  (A)
+d1wht.1:A   ------------------------------------------------------------   144  (B)
+d1wht.1:B   ----------------------------------------------G-------------   394  (C)
+
+d1tyya_:A   RQYEWFYFS--SI----------------------------GLT--DRPAREACLEGARR   147  (A)
+d1wht.1:A   -------ES--YAGHYVPELSQLVHRSKNPVINLKGFMVGNGLID-DYHDYVGTFEFWWN   194  (B)
+d1wht.1:B   ---------AGHE----------------------------VPL-HRPRQALVLFQYFLQ   416  (C)
+
+d1tyya_:A   XREAGGYVLFDVNLRSKXWGNTD-------------------EIPELIARSAA-------   181  (A)
+d1wht.1:A   H----------------------GIVSDDTYRRLKEACLHDSFI---------HPSPACD   223  (B)
+d1wht.1:B   G-----------------------------------------------------------   417  (C)
+
+d1tyya_:A   --------------LASICKVSADELCQLSGASHWQDARYYLRDLGCD----TTIISLGA   223  (A)
+d1wht.1:A   AATDVATAEQGNIDMYS-------------------------------LYTPV-------   245  (B)
+d1wht.1:B   ------------------------------------------------------------   417  (C)
+
+d1tyya_:A   DGALLITAEGEFHFPAPRVDVVDTTGAGDAFVGGLLFTLSRANCWDHALLAEAISNANAC   283  (A)
+d1wht.1:A   ------CNI---------------------------------------------------   248  (B)
+d1wht.1:B   ------------------------------------------------------------   417  (C)
+
+d1tyya_:A   GAXAVTAKGAXTALPFPDQLNTFLS------   308  (A)
+d1wht.1:A   -------------------------------   248  (B)
+d1wht.1:B   -------------------------KPMPGQ   423  (C)
+

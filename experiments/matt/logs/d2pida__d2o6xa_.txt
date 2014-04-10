@@ -1,0 +1,37 @@
+(d2o6xa_:A, d2pida_:A)
+Core Residues: 67
+Core RMSD: 8.647
+Raw Score: 84.833
+P-value: 0.6278
+Reference structure: d2o6xa_:A
+
+d2pida_:A   GLLAAQKARGLFKDFFPETGTKIELPELFPQTIYCG--FDPTADSLHV--GHLLALLGLF    99  (A)
+d2o6xa_:A   ------------------------------------NDDLWHQW----KRMY--------    19  (B)
+
+d2pida_:A   HLQRAGHNVIALVGGATARLGDPSGRTKEREAL--------ETERVRANARALRLGLEAL   151  (A)
+d2o6xa_:A   ---------------------------------NKEYNGADDQHRRNIWEKNVKHIQEHN    46  (B)
+
+d2pida_:A   AANHQQLFTDGRSWGSFTVLDNSAWYQKQHLVDFLAAVGGHFRMGTLLSRQSVQLRLKSP   211  (A)
+d2o6xa_:A   LRHDLG------------------------------------------------------    52  (B)
+
+d2pida_:A   EGMSLAEFFYQVLQAYDFYYLFQRYGCRVQLGGSDQLGNIMSGYEFINKLTGEDVFGITV   271  (A)
+d2o6xa_:A   ------------------------------------------------------------    52  (B)
+
+d2pida_:A   PLITAV---------WL---NRDKTSPFELYQFFVRQPDDSVERYLKLFTFLPLPEIDHI   332  (A)
+d2o6xa_:A   ------LVTYTLGLNQFTDMTFEEFK----------------------------------    72  (B)
+
+d2pida_:A   MQLHVKEPE----------------------------------RRGPQKRLAAEVTKLVH   358  (A)
+d2o6xa_:A   ---------AKYLTEMSRASDILSHGVPYEAVPDKIDWRESGYVTEVK---DQGNCG---   121  (B)
+
+d2pida_:A   GREGLDSAKRCTQAL---------------------------------------------   373  (A)
+d2o6xa_:A   SGWAFSTTGTMEGQYMKNERTSISFSEQQLVDCSRPWGNNGCGGGLMENAYQYLKQFGLE   181  (B)
+
+d2pida_:A   ------------------------------------------------------------   373  (A)
+d2o6xa_:A   TESSYPYTAVEGQCRYNKQLGVAKVTGFYTVHSGSEVELKNLVGAEGPAAVAVDVESDFM   241  (B)
+
+d2pida_:A   ------------------------------------------------------------   373  (A)
+d2o6xa_:A   MYRSGIYQSQTCSPLRVNHAVLAVGYGTQGGTDYWIVKNSWGLSWGERGYIRMVRNRGNM   301  (B)
+
+d2pida_:A   ----------------   373  (A)
+d2o6xa_:A   CGIASLASLPMVARFP   317  (B)
+

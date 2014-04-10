@@ -1,0 +1,13 @@
+(d1e8pa_:A, d1edmb_:B)
+Core Residues: 22
+Core RMSD: 3.164
+Raw Score: 11.764
+P-value: 0.8036
+Reference structure: d1e8pa_:A
+
+d1edmb_:B   VDG---------------------DQCESNPCLNGGSCKDDINSYECWCPFGFEGKNCEL    84  (A)
+d1e8pa_:A   ---ASCWAQSQGYNCCNNPSSTKVE-YTDAS----GQWGVQNGQWCGIDYS---------    43  (B)
+
+d1edmb_:B   ---    84  (A)
+d1e8pa_:A   YGQ    46  (B)
+

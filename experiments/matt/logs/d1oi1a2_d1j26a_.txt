@@ -1,0 +1,19 @@
+(d1j26a_:A, d1oi1a2:A)
+Core Residues: 12
+Core RMSD: 1.104
+Raw Score: 16.507
+P-value: 0.5525
+Reference structure: d1j26a_:A
+
+d1oi1a2:A   ------------------------------------------------------------   140  (A)
+d1j26a_:A   GSSGSSGEHAKQASSYIPLDRLSISYCRSSGPGGQNVNKVNSKAEVRFHLASADWIEEPV    60  (B)
+
+d1oi1a2:A   ------------------------------------SWPMFLLETLNGSEMASATLFKKE   163  (A)
+d1j26a_:A   RQKIALTHKNKINKAGELVLTSESSRYQFRNLAECLQKIRDMIAEASG------------   108  (B)
+
+d1oi1a2:A   PPKPPLNNFKVGMKLEAIDKKNPYLICPATIGDVKGDEVHITFDGWSGAFDYWCKYDSRD   223  (A)
+d1j26a_:A   ------------------------------------------------------------   108  (B)
+
+d1oi1a2:A   IFPAGWCRLTGDVLQPPGTS----   243  (A)
+d1j26a_:A   --------------------PSSG   112  (B)
+

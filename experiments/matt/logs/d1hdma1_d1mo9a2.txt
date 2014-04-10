@@ -1,0 +1,19 @@
+(d1mo9a2:A, d1hdma1:A)
+Core Residues: 37
+Core RMSD: 2.984
+Raw Score: 26.792
+P-value: 0.5759
+Reference structure: d1mo9a2:A
+
+d1hdma1:A   SRGFPIAEVFTLKPLEFG-----------------KPNTLVC------------------   118  (A)
+d1mo9a2:A   ------------------GVNAKGVFDHATLVEELDYEPGSTVVVVGGSKTAVEYGCFFN   234  (B)
+
+d1hdma1:A   -----FV-----------------------------SN-LFPPMLTV-NWHDHSVPVEGF   142  (A)
+d1mo9a2:A   ATGRRTVMLVRTEPLKLIKDNETRAYVLDRMKEQGME-II--SGSNVTRIEED-------   284  (B)
+
+d1hdma1:A   GPTFVSAVDGLSFQAFSYLNFTPEPSDI-----FSCIVTHEPDRYTAIAYWVPRNALPS-   196  (A)
+d1mo9a2:A   ----------------------------ANGRVQAVVAMTP--NGEMRIET--------D   306  (B)
+
+d1hdma1:A   -------   196  (A)
+d1mo9a2:A   FVFLGLG   313  (B)
+

@@ -1,0 +1,19 @@
+(d1r5sa_:A, d2f4pa1:A)
+Core Residues: 29
+Core RMSD: 2.956
+Raw Score: 19.987
+P-value: 0.6124
+Reference structure: d1r5sa_:A
+
+d2f4pa1:A   ----------------------------------------------VDDIFERGSKGSSD    15  (A)
+d1r5sa_:A   GPLGSPSKDCGSPKYAYFNGCSSPTAPLSPMSPPGYKLVTGDRNNSSCRNYN-KQASEQN    59  (B)
+
+d2f4pa1:A   FFTGNVWVKXLVTDENGVFNTQVYDVVFEPGARTHWHSHPGGQILIVTRGKGFYQERGKP    75  (A)
+d1r5sa_:A   WAN---------------------------------------------------------    62  (B)
+
+d2f4pa1:A   ARILKKGDVVEIPPNVVHWHGAAPDEELVHIGISTQVHLGPAEWLGSV--TEEEYRKATE   133  (A)
+d1r5sa_:A   ----------------------------------------------Y-SAEQNRMGQAGS    75  (B)
+
+d2f4pa1:A   -GK------------------------------------------------------   135  (A)
+d1r5sa_:A   TISNSHAQPFDFPDDNQNAKKVAAGHELQPLAIVDQRPSSRASSRASSRPRPDDLEI   132  (B)
+

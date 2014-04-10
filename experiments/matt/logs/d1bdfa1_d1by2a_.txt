@@ -1,0 +1,16 @@
+(d1by2a_:A, d1bdfa1:A)
+Core Residues: 42
+Core RMSD: 2.439
+Raw Score: 29.072
+P-value: 0.4921
+Reference structure: d1by2a_:A
+
+d1bdfa1:A   QGSVTEFLKPRLVD---------IEQVSSTHAKV---------TLEPLERGFGHTLGNAL    43  (A)
+d1by2a_:A   --------------AVNDGDMRLADGGATNQGRVEIFYRGQWGTV-------CD--NLW-    35  (B)
+
+d1bdfa1:A   RAILLSS--MP---------PVERIAYNVEAARVEQRTDL--------------------   198  (A)
+d1by2a_:A   ---DLT-DAS-VVCRALGFENATQALGR------------AAFGQGSGPIMLDEVQCTGT    78  (B)
+
+d1bdfa1:A   -----------------DK-LVIEMETN-GTIDPEEAIRRAATILAEQLEAFV--   232  (A)
+d1by2a_:A   EASLADCKSLGWLKSNCRHERDAGVVCTNET----------------------TL   115  (B)
+

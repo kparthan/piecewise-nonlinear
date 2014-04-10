@@ -1,0 +1,19 @@
+(d1f39a_:A, d3u5wa_:A)
+Core Residues: 43
+Core RMSD: 3.902
+Raw Score: 47.745
+P-value: 0.3743
+Reference structure: d1f39a_:A
+
+d3u5wa_:A   LITEMSDY-------------------------------------DIREMIQHKHVGRLG    24  (A)
+d1f39a_:A   --------ASASAFWLEVEGNSMTAPTGSKPSFPDGMLILVDPEQAV--EPGDFCIARLG   185  (B)
+
+d3u5wa_:A   YVVDDRPIIVPMTFRFSG----GSFYSFTTDGQKTNAMRKNDAICILFDQIESQTKWRTV    80  (A)
+d1f39a_:A   -------GDEFTFKKLIRDSGQVFLQP---------------------------------   205  (B)
+
+d3u5wa_:A   LVQGRYREIAREDEEEA--IVRIMANEPTWWKPVFFRVDIE-KLSGHQAE----------   144  (A)
+d1f39a_:A   -----------------LNP-------------QYPMIPCNESCSVV---GKVIASQWPE   232  (B)
+
+d3u5wa_:A   ----   144  (A)
+d1f39a_:A   ETFG   236  (B)
+

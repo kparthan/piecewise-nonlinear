@@ -1,0 +1,16 @@
+(d1lcya1:A, d1ws8a_:A)
+Core Residues: 35
+Core RMSD: 3.434
+Raw Score: 25.090
+P-value: 0.7774
+Reference structure: d1lcya1:A
+
+d1ws8a_:A   MATVHKVGDSTGWTTLVPYDYAKWASSNKFHVGDSLL-----------------------    37  (A)
+d1lcya1:A   --------------------------------RRYIGVMMLTLSPSILAELQLREPSFPD   253  (B)
+
+d1ws8a_:A   ---------------------FNYNNKFHNVLQVDQEQFKSCNSSSP------AASYTSG    70  (A)
+d1lcya1:A   VQHGVLIHKVILGSPAHRAGLRP------GDVILA------------IGEQMVQN-----   290  (B)
+
+d1ws8a_:A   ADSIP-------LKRP--GTFYFLCGIPGHCQLGQKVEIKVDP------   104  (A)
+d1lcya1:A   -----AEDVYEAVRTQSQLAVQIRRG----R---ETLTLYV--TPEVTE   325  (B)
+

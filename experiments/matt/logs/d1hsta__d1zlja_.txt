@@ -1,0 +1,13 @@
+(d1zlja_:A, d1hsta_:A)
+Core Residues: 47
+Core RMSD: 2.630
+Raw Score: 75.927
+P-value: 0.2197
+Reference structure: d1zlja_:A
+
+d1hsta_:A   SHP-------TYSEMIAAAIRAEKSRGGSSRQSIQKYIKSHYKVGHNADLQIKLSIRRLL    76  (A)
+d1zlja_:A   ---DPLSGLTDQERTLLGLL-SE----GLTNKQIADRXF-------LAEKTVKNYVSRLL   189  (B)
+
+d1hsta_:A   AAGVL---KQTKGVGASGSFR--LAK----------    97  (A)
+d1zlja_:A   AKL--GXERR----------TQAAVFATELKRSRPP   213  (B)
+

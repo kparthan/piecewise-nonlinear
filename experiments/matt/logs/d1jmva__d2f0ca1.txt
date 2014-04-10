@@ -1,0 +1,19 @@
+(d2f0ca1:A, d1jmva_:A)
+Core Residues: 24
+Core RMSD: 2.457
+Raw Score: 21.879
+P-value: 0.6780
+Reference structure: d2f0ca1:A
+
+d1jmva_:A   MY-----------KHILVAVDLSEESPILLKKAVGIAKRHD----------AKLSIIHVD    39  (A)
+d2f0ca1:A   --PTKSWSGELGGGIILSLRK--------------------KGTTVEYSIGGE-------    93  (B)
+
+d1jmva_:A   VNFSDL----------------------YTGLIDVNMSSMQDRISTETQKALLDLAESVD    77  (A)
+d2f0ca1:A   ------ISSSILANSNLVNRSVPNEFCPRNRCSL--------------------------   121  (B)
+
+d1jmva_:A   YPI---------------------------------SEKLSGSGDLGQVLSDAIEQYDVD   104  (A)
+d2f0ca1:A   ---VGHMVGGWNAFHIDIPSSGVCQWFGPTASSGTPRGTGTYPI----------------   162  (B)
+
+d1jmva_:A   LLVTGHHQDFWSKLMSSTRQVMNTIKIDMLVVPLRD-   140  (A)
+d2f0ca1:A   ------------------------------------D   163  (B)
+

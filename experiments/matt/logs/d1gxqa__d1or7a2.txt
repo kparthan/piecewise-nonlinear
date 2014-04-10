@@ -1,0 +1,16 @@
+(d1or7a2:A, d1gxqa_:A)
+Core Residues: 47
+Core RMSD: 7.671
+Raw Score: 39.519
+P-value: 0.9659
+Reference structure: d1or7a2:A
+
+d1gxqa_:A   PMAVEEVIEMQGLSL-------DPTSHRVMAGEEP-LE----MGPTEFKLLHFFMTHPER   172  (A)
+d1or7a2:A   ---------------SHMSEQLTDQVL-VER----VQ-KGDQKAFNL---LVV-------    27  (B)
+
+d1gxqa_:A   VYSREQL------LNHVWGTNVYV-EDRTVDVHIRRLRKALEPGGHDRMVQTVRGTGYRF   225  (A)
+d1or7a2:A   -------RYQHKVASLVSRYVPS-GDVPDVVQEAFIKAYRALDSF---------------    64  (B)
+
+d1gxqa_:A   STRF-----------------------------------------------   229  (A)
+d1or7a2:A   ----RGDSAFYTWLYRIAVNTAKNYLVAQGRRPPSSDVDAIEAENFESGGA   111  (B)
+

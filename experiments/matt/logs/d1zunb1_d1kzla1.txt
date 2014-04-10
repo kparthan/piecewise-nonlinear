@@ -1,0 +1,16 @@
+(d1kzla1:A, d1zunb1:B)
+Core Residues: 59
+Core RMSD: 2.457
+Raw Score: 52.182
+P-value: 0.0928
+Reference structure: d1kzla1:A
+
+d1zunb1:B   DRNYTDL------RFPVQYVNRPN-LN------FRGFAGTLASG--IVHKGDEIVVLPSG   282  (A)
+d1kzla1:A   -------MFTGLVE-AIGVVKD--VQGTIDNGFAMKIEAPQI--LDDCHTGDSIAV--NG    46  (B)
+
+d1zunb1:B   KSSRVKSIVTFEGELEQAGPGQAVTLTXEDEI--------DI------SRGDLLVHADNV   328  (A)
+d1kzla1:A   TCLTVTDFD------------R-YHFTVGIA-PESLRLTNL-GQCKAGDPVN-LERAV--    88  (B)
+
+d1zunb1:B   P----   329  (A)
+d1kzla1:A   -LSST    92  (B)
+

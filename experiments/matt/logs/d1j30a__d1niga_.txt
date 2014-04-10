@@ -1,0 +1,19 @@
+(d1niga_:A, d1j30a_:A)
+Core Residues: 64
+Core RMSD: 2.346
+Raw Score: 113.188
+P-value: 8.2496e-03
+Reference structure: d1niga_:A
+
+d1j30a_:A   DLK-------------GTKTAENLKQGFIGESMANRRYLYFAKRADEEGYP---------    40  (A)
+d1niga_:A   ---MDIKRYCPVTDSELPADH--VYFKFRSEIEAAEAYLGLAISEGI----KVRETREIL    51  (B)
+
+d1j30a_:A   ----------------------------------------EIAGLLRSIAEGETAHAFGH    60  (A)
+d1niga_:A   DIIDTVYNSLSDSKLNDFQEKRLNFTEEDWYDIKEKANNGNRWSLYMFLARSAVDSAVYW   113  (B)
+
+d1j30a_:A   LDFIRQGGLTDPATDK--PIGTLEQMIESAIAGETYEWTQMYPGFAKVAREEGFPEVAEW   118  (A)
+d1niga_:A   SYRMK-ETEEF-----KEIVKEE-------------------------------------   130  (B)
+
+d1j30a_:A   FETLARAEKSHAEKFQNVLKQLKGG------------------   143  (A)
+d1niga_:A   -------------------------MISKLLKAGYVILRESLG   148  (B)
+

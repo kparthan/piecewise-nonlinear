@@ -1,0 +1,31 @@
+(d1zx5a1:A, d1oiha_:A)
+Core Residues: 78
+Core RMSD: 4.310
+Raw Score: 76.169
+P-value: 0.0762
+Reference structure: d1zx5a1:A
+
+d1oiha_:A   LELDVHPVAGRIGAEIRGVKLSPDLDAATVEAIQAALVRHKVIFFRGQTHLDDQSQ----    68  (A)
+d1zx5a1:A   --------------------------------------------------------XELP     4  (B)
+
+d1oiha_:A   ------------------------------------------------------------    68  (A)
+d1zx5a1:A   SFIFQAQENLVERPWGGEWIALLKGFRQSGIGESWEFSAHTSRPSTVLVKGQQLSXIELF    64  (B)
+
+d1oiha_:A   -------EGFAKLLGEPVAPVVDGTRYLLQLD--RA---NSWHTDVTFV---------EA   116  (A)
+d1zx5a1:A   SKHRDELLGRAAEKFSK--------FPILVRLIDA-ASPTQVHVH----PSDKAAESLGE   111  (B)
+
+d1oiha_:A   --YPKASILRSVVAPASGGDTVWANTAAAYQELPEPLRELADKLWAVHSNEVYETEHPVV   199  (A)
+d1zx5a1:A   AEGGVESAWLV--FNK-G-KAYAG------------------------------------   131  (B)
+
+d1oiha_:A   RVHPISGERALQLGHFVKRIKGYSLADSQHLFAVLQGHVTRLEN----------------   243  (A)
+d1zx5a1:A   ---------------------------------------F-KE-DVKIEELEEKLKEEDF   150  (B)
+
+d1oiha_:A   -----TVRWRWEAGDVAIWDNRATQHYAVDDYGTQP-RIVRRVTLAGEVPVGVDGQLSRT   297  (A)
+d1zx5a1:A   DFKTLLNTFETTPYDTFVIR-PGIPHAG-EG-----LRV-LEVSS---------------   187  (B)
+
+d1oiha_:A   TRK---------------------------------------------------------   300  (A)
+d1zx5a1:A   ---NSTLAYFFNENDWEKVKKVLNTKKVEEFEVKGKKGXAETENFGLEVVDVTGTAEIKT   244  (B)
+
+d1oiha_:A   -------------------------------------------------------   300  (A)
+d1zx5a1:A   GGVXNILYAAEGYFILRGKETADLHRGYSCLVPASTDSFTVESERGKIVRIYLKV   299  (B)
+

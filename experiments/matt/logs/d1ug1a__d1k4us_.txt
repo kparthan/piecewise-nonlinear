@@ -1,0 +1,13 @@
+(d1k4us_:S, d1ug1a_:A)
+Core Residues: 57
+Core RMSD: 1.844
+Raw Score: 74.669
+P-value: 0.0104
+Reference structure: d1k4us_:S
+
+d1ug1a_:A   GSSGSSGASLLAR---YPPE-KLFQAERNFNAAQDLDVSLLEGDLVGVIKKKDPMGSQNR    56  (A)
+d1k4us_:S   -------------QLKK---GSQVEALFSYEATQPEDLEFQEGDIILVLSKVN----EEW   494  (B)
+
+d1ug1a_:A   WLIDNGVTKGFVYSSFLKPYNPRRSHSDASSGPSSG-    92  (A)
+d1k4us_:S   LEGESKGKVGIFPKVFVEDSA---------------T   516  (B)
+

@@ -1,0 +1,13 @@
+(d2pu9b_:B, d1b34a_:A)
+Core Residues: 44
+Core RMSD: 2.442
+Raw Score: 46.446
+P-value: 0.3330
+Reference structure: d2pu9b_:B
+
+d1b34a_:A   KLVRFLMKLSHETVTIELKNG----------------TQVHGTITGVDVSM---------    36  (A)
+d2pu9b_:B   -------MNVGDRVRVTS-S-VVVYHHPEHKKTAFDLQGMEGEVAAVL---TEWQGRPIS    48  (B)
+
+d1b34a_:A   ---NTHLKAVKMTLKNREPVQL--ETLSIRGNNIRYFILPDSLPLDTLLV    81  (A)
+d2pu9b_:B   ANLPVLVKFE------------QRFKAHFRPDEV-TLIE-----------    74  (B)
+

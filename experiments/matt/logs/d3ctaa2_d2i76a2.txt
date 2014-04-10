@@ -1,0 +1,19 @@
+(d2i76a2:A, d3ctaa2:A)
+Core Residues: 27
+Core RMSD: 2.157
+Raw Score: 27.842
+P-value: 0.5195
+Reference structure: d2i76a2:A
+
+d3ctaa2:A   KNNVVITGTVTSQYIIQFQEKLGIIPYLNIKVDQASLPELRKIRGFRGIHIEGFKTRTFG   166  (A)
+d2i76a2:A   VLNFVGT----------------------------GTLTRFFLECLK-------------    20  (B)
+
+d3ctaa2:A   SVKA------------------FPAKIQ--NIPCFVIMPERTV-----------------   189  (A)
+d2i76a2:A   ----IGYILSRSIDRARNLAEVYGGKAATLE------------KHPEVVFVIVPDRYIKT    71  (B)
+
+d3ctaa2:A   ----------------------------------------YTDVIEIISDDRVSVEVYT-   220  (A)
+d2i76a2:A   VANHLNLGDAVLVHCSGFLSSEIFKKSGRASIHPNFSFLEK------------------A   115  (B)
+
+d3ctaa2:A   ---------------------------------------   220  (A)
+d2i76a2:A   LEXKDQIVFGLEGDERGLPIVKKIAEEISGKYFVIPSEK   154  (B)
+

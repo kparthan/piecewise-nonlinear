@@ -1,0 +1,22 @@
+(d1kjna_:A, d1ex2a_:A)
+Core Residues: 72
+Core RMSD: 3.703
+Raw Score: 64.696
+P-value: 0.1111
+Reference structure: d1kjna_:A
+
+d1ex2a_:A   MTK-P-LILASQ--------S---PRRKELLDLLQLPYSII-------------------    28  (A)
+d1kjna_:A   ---TGKALXVL-GCPESPVQIPLAIYTSHKLKKKGFRVTVTANPAALRLVQVADPEGIYT    61  (B)
+
+d1ex2a_:A   ----VSEVE---------------------EKLNRNFSPEENVQWLAK-QK-AKAVADLH    61  (A)
+d1kjna_:A   DEXVDL---ESCINELAEGDYEFLAGFVPNDA----------------AAAYLVTFAGIL   102  (B)
+
+d1ex2a_:A   PHAIVIGADTMVCLDGECLGKPQDQEEAASMLRRLSGRSHSVITAVSIQAENH-------   114  (A)
+d1kjna_:A   N-TETLAIIFDR---D-------------------------------------ADVLEEL   121  (B)
+
+d1ex2a_:A   ---------SETFYDKTEVAFWSLSEEEIWTYIETKEPMDKAGAYGIQGRGALFVKKIDG   165  (A)
+d1kjna_:A   VNEIXETLDAEIIAARA-------------------------------------------   138  (B)
+
+d1ex2a_:A   DYYS--VMGL--PISKTMRALRHF-   185  (A)
+d1kjna_:A   ----HHNP--APLRVRIDRFXEEKP   157  (B)
+

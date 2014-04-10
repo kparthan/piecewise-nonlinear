@@ -1,0 +1,19 @@
+(d1q0qa1:A, d1dr9a2:A)
+Core Residues: 12
+Core RMSD: 2.956
+Raw Score: 6.450
+P-value: 0.8973
+Reference structure: d1q0qa1:A
+
+d1dr9a2:A   ADFPTPSISDFEIPTSNIRRIICSTSGGFPEPHLSWLENGEELNAINTTVSQDPETELYA   165  (A)
+d1q0qa1:A   ------------------------------------------------------------   301  (B)
+
+d1dr9a2:A   VSSKLDFNM-TTNHSFMCLIKYGHLRVNQTFNWNTA------------------------   200  (A)
+d1q0qa1:A   ---------KLSALTFA-APDYD-------------RYPCLKLAMEAFEQGQAATTALNA   337  (B)
+
+d1dr9a2:A   ------------------------------------------------------------   200  (A)
+d1q0qa1:A   ANEITVAAFLAQQIRFTDIAALNLSVLEKMDMREPQCVDDVLSVDANAREVARKEVMRLA   397  (B)
+
+d1dr9a2:A   -   200  (A)
+d1q0qa1:A   S   398  (B)
+

@@ -1,0 +1,22 @@
+(d1dr9a2:A, (d1r8o.1:B, d1r8o.1:A))
+Core Residues: 19
+Core RMSD: 2.770
+Raw Score: 9.148
+Reference structure: d1dr9a2:A
+
+d1dr9a2:A   ADFPTPSISDFEIPTSNIRRIICST-----------------------------------   130  (A)
+d1r8o.1:A   -------------------------RLVDTDGKPIENDGAEYY-----------------    18  (B)
+d1r8o.1:B   -WK----------------------------------------LPSVTVGNPKVSVFGGP   115  (C)
+
+d1dr9a2:A   -SGGFP---------------EP-------HLSWLENGEELNAINTTVSQDPETELYAVS   167  (A)
+d1r8o.1:A   -I-------------------LPSVRGKGGGLVLAKSG----------------------    36  (B)
+d1r8o.1:B   FK-IEEGKSGYKDVYSSSKGRDL-------DDGIEVNK----------------------   145  (C)
+
+d1dr9a2:A   SKLDFNMTTN-HS--FMCLIKYGHLRVNQTFNWNTA------------------------   200  (A)
+d1r8o.1:A   ----------GEKCPLSVVQS---------------PSELSNGLPVRFKASPRSKYISVG    71  (B)
+d1r8o.1:B   ----------KKE--KRLVVK---------------DGNPFI------------------   160  (C)
+
+d1dr9a2:A   --------------------------------   200  (A)
+d1r8o.1:A   MLLGIEVIESPECAPKPSMWSVKSG-------    96  (B)
+d1r8o.1:B   -------------------------IRFKKSG   167  (C)
+

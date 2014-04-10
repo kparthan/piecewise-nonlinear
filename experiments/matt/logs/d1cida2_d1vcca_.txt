@@ -1,0 +1,13 @@
+(d1vcca_:A, d1cida2:A)
+Core Residues: 33
+Core RMSD: 2.542
+Raw Score: 25.466
+P-value: 0.4386
+Reference structure: d1vcca_:A
+
+d1cida2:A   VMKVTQPDSNTLTCEVMGPTSPKMRLILKQENQEARVSRQEKVIQVQAPEAG--------   157  (A)
+d1vcca_:A   -----------------------MRALFYKD-GKLFT-------DNN-----FLNPVSDD    24  (B)
+
+d1cida2:A   ----------------VWQCLLSEGEE-VK----MDSKIQV---------------   177  (A)
+d1vcca_:A   NPAYEVLQHVKIPTHLTDVVVYEQ-TWEEALTRLIFVGS--DSKGRRQYFYGKMHV    77  (B)
+

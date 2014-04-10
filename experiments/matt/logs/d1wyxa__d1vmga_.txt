@@ -1,0 +1,16 @@
+(d1vmga_:A, d1wyxa_:A)
+Core Residues: 22
+Core RMSD: 2.885
+Raw Score: 8.634
+P-value: 0.7810
+Reference structure: d1vmga_:A
+
+d1wyxa_:A   LNVLAKALYDNVAESPDEL-SFRKGD---IM--TVLEQDTQG------------------    37  (A)
+d1vmga_:A   -------------------XDLELKELQSKXKEXY-------FEKDSQRGIYATFTWLVE    34  (B)
+
+d1wyxa_:A   ---------------L--DGWWLCSLHGRQGIV-PGNRL--KI--LVGMYDKKP------    69  (A)
+d1vmga_:A   EVGELAEALLSNNLDSIQEE-------------LADVIAWTVSIANL-------EGIDIE    74  (B)
+
+d1wyxa_:A   ---------    69  (A)
+d1vmga_:A   EALKKKYKL    83  (B)
+

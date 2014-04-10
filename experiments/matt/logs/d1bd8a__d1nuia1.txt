@@ -1,0 +1,22 @@
+(d1nuia1:A, d1bd8a_:A)
+Core Residues: 58
+Core RMSD: 3.880
+Raw Score: 40.020
+P-value: 0.5880
+Reference structure: d1nuia1:A
+
+d1bd8a_:A   RAGDR------L-SGA-A--------------------ARGDVQEVRRLLHRELVHPDAL    38  (A)
+d1nuia1:A   -----GTYNVWNFGESNGRYSALTARGISKETCQKAGYWIAKVD----------------   102  (B)
+
+d1bd8a_:A   NRFGKTALQVM-----MFGSTAIALELLKQGASPNV---QDTS-GTSPV-----------    78  (A)
+d1nuia1:A   -----------GVMYQVA------------------DYRD---QNGNIVSQKVRDKDKNF   130  (B)
+
+d1bd8a_:A   ----------HDAA---------------------------------RTGFLDTLKVLVE    95  (A)
+d1nuia1:A   KTTGSHKSDALF--GKHLWNGGKKIVVTEGEIDMLTVMELQDCKYPVVSLGH--------   180  (B)
+
+d1bd8a_:A   HGADVNVPDGTGALPIHLAVQEGHTAVVSFLAAESDLH--RRDARGLTPLELALQRGAQ-   152  (A)
+d1nuia1:A   -----------------------GASAAKKTCA-ANYEYFDQF---E---QII----L-M   205  (B)
+
+d1bd8a_:A   --------DLVDILQGHM--------------------------------   162  (A)
+d1nuia1:A   FDMDEAGRKAVEEAAQVLPAGKVRVAVLPCKDANECHLNGHDREIMEQVW   255  (B)
+

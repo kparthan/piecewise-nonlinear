@@ -1,0 +1,13 @@
+(d1ffgb_:B, d1iqza_:A)
+Core Residues: 29
+Core RMSD: 2.502
+Raw Score: 22.430
+P-value: 0.5655
+Reference structure: d1ffgb_:B
+
+d1iqza_:A   P-----KYTIVDKETCIACGACGAAAPDIYDYDEDGIAYVTLDDNQGIVEVPDILIDDMM    55  (A)
+d1ffgb_:B   -PRRIILS-----------------------------------------RLKAGEVDLLE   176  (B)
+
+d1iqza_:A   DAFEGCP------------------TD---SIKVADE------------PFDGDPNKFE-    81  (A)
+d1ffgb_:B   EELGHLTTLTDVVKGADSLSAILPGDIAEDDI-----TAVLCFVIEADQIT-----FETV   226  (B)
+

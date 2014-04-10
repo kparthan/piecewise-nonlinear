@@ -1,0 +1,13 @@
+(d1k8ma_:A, d1g2914:1)
+Core Residues: 43
+Core RMSD: 2.250
+Raw Score: 37.506
+P-value: 0.2025
+Reference structure: d1k8ma_:A
+
+d1g2914:1   VRV-------------PGENLV--RAVVEIVENL---GSER-----IVRLRVGGVTFVGS   338  (A)
+d1k8ma_:A   ---MGQVVQFKLSDIGEG----IREVTVKEWYV-KEGDTV-SQFDSICEVQSDKASVTI-    50  (B)
+
+d1g2914:1   F-------RSESRVREGVEVDVVFDMK------------KIHIFDKTTGKAIF--   372  (A)
+d1k8ma_:A   -TSRYDGVIKKLYYNLDDIAYVG----KPLVDIETEALKD-------------LE    87  (B)
+

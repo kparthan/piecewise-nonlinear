@@ -1,0 +1,19 @@
+(d1qjpa_:A, d2byca1:A)
+Core Residues: 47
+Core RMSD: 2.530
+Raw Score: 33.394
+P-value: 0.3502
+Reference structure: d1qjpa_:A
+
+d2byca1:A   MD---ELVSLTYRSRVRLADPVADIVQIMRASRVRNLRLGITGILLYNG-----VHFVQT    52  (A)
+d1qjpa_:A   --APKDNTWYTGAKLGWSQ------------------------------HENKLGAGAFG    41  (B)
+
+d2byca1:A   I-EGPRSACD-------------------------ELF--------RL------------    66  (A)
+d1qjpa_:A   GYQVNPYVG-FEMGYDWLGRMPYAYKAQGVQLTAKLG-YPITDDLDIYTRLGGMVWRADT   106  (B)
+
+d2byca1:A   -------------------I------------SAD-----PRHQEILAFDLEPITARRFP    90  (A)
+d1qjpa_:A   YSNVYGKNHDTGVSPVFAGGVEYAITPEIATRLEYQWTNGMLSL-GVSYRFG--------   171  (B)
+
+d2byca1:A   DWSMRIVSRKELRALAPDLERLDLSGPEDVAELHRTIAASLSRGDA   136  (A)
+d1qjpa_:A   ----------------------------------------------   171  (B)
+

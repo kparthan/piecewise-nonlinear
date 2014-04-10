@@ -1,0 +1,13 @@
+(d3fila_:A, d1v8ca1:A)
+Core Residues: 48
+Core RMSD: 2.437
+Raw Score: 61.861
+P-value: 0.1924
+Reference structure: d3fila_:A
+
+d1v8ca1:A   --PKVNLYATFRDLT-GKSQLELPGATVGEVLENLVRAYP---ALKEELFEGEGLAERVS    54  (A)
+d3fila_:A   XQYKLILN----GK-TLKGVLTIEAVDAATAEKVFKQYANDLGVD--GE---------WT    44  (B)
+
+d1v8ca1:A   VFLEGRDVRYLQGLSTPLSPGATLDLFPPVAGG--    87  (A)
+d3fila_:A   YDDA------------------TKTFTV-----TE    56  (B)
+

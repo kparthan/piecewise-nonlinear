@@ -1,0 +1,13 @@
+(d1opca_:A, d1fsea_:A)
+Core Residues: 57
+Core RMSD: 4.603
+Raw Score: 79.808
+P-value: 0.3275
+Reference structure: d1opca_:A
+
+d1fsea_:A   --------------------SKPLLTKREREVFELL----VQDKTTKEIASELF-----I    38  (A)
+d1opca_:A   VIAFGKFKLNLGTREMFREDEPMPLTSGEFAVLKALVSHPREPLSRDKLMNLARGREYSA   196  (B)
+
+d1fsea_:A   SE-KTVRNHISNAMQK-LGVKGRSQAVVELLRMGELE----------L-    74  (A)
+d1opca_:A   M-ERSIDVQISRLRRMVEEDPA--H------PRYIQ-TVWGLGYVFVPD   235  (B)
+

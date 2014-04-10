@@ -1,0 +1,19 @@
+(d1nula_:A, d1jcfa1:A)
+Core Residues: 56
+Core RMSD: 4.162
+Raw Score: 40.093
+P-value: 0.6166
+Reference structure: d1nula_:A
+
+d1jcfa1:A   MLRKDIGIDLGTANTLVFLRGKGIVVNEPSVIAIDSTTGEILKVGLEAKNMIGKTPATIK    60  (A)
+d1nula_:A   ------------------------------------------------------------     3  (B)
+
+d1jcfa1:A   AIRPMRDGVIADYTVALVMLRYFINKAKGGMNL--FKPRVVIGVPIGITDVE-RRAILDA   117  (A)
+d1nula_:A   -------EKYIVTWDMLQIHARKLASRLMPSE-QWKGIIAV-----------SR--GGLV    41  (B)
+
+d1jcfa1:A   GLEAGA-------SKVFLIE----------------------E-PMAAAI----------   137  (A)
+d1nula_:A   PGALLARELGIRHVDTVCISSLKVLKRAEGDGEGFIVIDDLVDTGGT-AVAIREMYPKAH   108  (B)
+
+d1jcfa1:A   ------------GSN-------------------------------   140  (A)
+d1nula_:A   FVTIFAKPAGRPL--VDDYVVDIPQDTWIEQPWDMGVVFVPPISGR   152  (B)
+

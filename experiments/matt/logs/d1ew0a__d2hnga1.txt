@@ -1,0 +1,19 @@
+(d2hnga1:A, d1ew0a_:A)
+Core Residues: 23
+Core RMSD: 1.679
+Raw Score: 29.502
+P-value: 0.4686
+Reference structure: d2hnga1:A
+
+d1ew0a_:A   GSHMLETEDVVRARDAHLRSILDTVPDATVVSATDGTIVSFNAAAVRQFGYAEEEVIGQN   181  (A)
+d2hnga1:A   ------------------------------------------------------------     5  (B)
+
+d1ew0a_:A   LRILM-------------------------------------------------------   186  (A)
+d2hnga1:A   -----XNLKREQEFVSQYHFDARNFEWENENGAPETKVDVNFQLLQHDQENQVTSLIVIL    59  (B)
+
+d1ew0a_:A   --------------------------------------PEPYRHEHDGYLQRYMAT----   204  (A)
+d2hnga1:A   SFXIVFDKFVISGTISQVNHIDGRIVNEPSELNQEEVETLARPCLNXLNRLTYEVTEIAL   119  (B)
+
+d1ew0a_:A   ---GEKRIIGIDRVVSGQRKDGSTFPMKLAVGEMRSGGERFFTGFIRDLT-   251  (A)
+d2hnga1:A   DLPGINLE------------------------------------------F   128  (B)
+

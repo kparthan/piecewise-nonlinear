@@ -1,0 +1,19 @@
+(d1slua_:A, d1clca2:A)
+Core Residues: 44
+Core RMSD: 3.496
+Raw Score: 31.685
+P-value: 0.4748
+Reference structure: d1slua_:A
+
+d1clca2:A   IETKVSAAKITENYQFDSRIRLNSIG--------FIPNHSKK-ATIAAN----------C    75  (A)
+d1slua_:A   --------------------------IAPYPQAEKG----MKRQVIQL-TPQEDESTLKV    38  (B)
+
+d1clca2:A   ST-FYVVKEDG-------TIVYTGTATS-----MFDNDTKETVYIADFSSVNEEG-----   117  (A)
+d1slua_:A   --ELLIGQTL-EVDCNLHRLGGKLENKTLEGWGYD---------YYVFDKV----SSPVS    82  (B)
+
+d1clca2:A   -------------------------------------TYYLAVPGVGKSVNFKI------   134  (A)
+d1slua_:A   TMMHCPDKEKKFVTAYLGDAGMLRYNSKLPIVVYTPDNVDVKYRV---------WKAEEK   135  (B)
+
+d1clca2:A   -------   134  (A)
+d1slua_:A   IDNAVVR   142  (B)
+

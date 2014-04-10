@@ -1,0 +1,19 @@
+(d2oqea3:A, d3grda_:A)
+Core Residues: 62
+Core RMSD: 4.141
+Raw Score: 36.034
+P-value: 0.4791
+Reference structure: d2oqea3:A
+
+d3grda_:A   XPKANLEII-R-STYEGSASSNAKHLAEALSEKVEWT------EAEGFPYGGTYIGVEAI    52  (A)
+d2oqea3:A   ---------LTVEDL------CS--------------TEEVIRNDPAVIE----------   136  (B)
+
+d3grda_:A   XENVF------------SRLGSEWNDYKASVNXYHEVSGKDVI--------IAEGXYSGV    92  (A)
+d2oqea3:A   -----QCVLSGIPANEMHKVY-----CDPWTIG----------YDERWGTGKRLQQALVY   176  (B)
+
+d3grda_:A   YKDTG--------KSFEAEFVHVW-QLENGKIVKFKQYVDSHLVREAX-KS---------   133  (A)
+d2oqea3:A   YRS--DEDDSQYSHPLDFCPIVDTEE--------KKVIFID--IPNRRRKVSKHKHANFY   224  (B)
+
+d3grda_:A   ------------   133  (A)
+d2oqea3:A   PKHMIEKVGAMR   236  (B)
+

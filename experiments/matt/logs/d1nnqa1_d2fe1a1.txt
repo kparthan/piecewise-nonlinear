@@ -1,0 +1,19 @@
+(d2fe1a1:A, d1nnqa1:A)
+Core Residues: 56
+Core RMSD: 4.933
+Raw Score: 84.961
+P-value: 0.3319
+Reference structure: d2fe1a1:A
+
+d1nnqa1:A   VVKR------------------------------TMTKKFL----EEAFAGESMAHMRYL    27  (A)
+d2fe1a1:A   ----MELVVDASAIAALYVPEERSEQAERAVSQAQ--EL--HTLDLAAYEVANDLWKHAR    52  (B)
+
+d1nnqa1:A   IFAEKAEQEGFPNIAKL--FRAIAYAEFVHAKNHFIALGKLGKTPENLQ----MGIEGET    81  (A)
+d2fe1a1:A   R------------G---LLREDEASNMLEELWEFF-KA-----------LKVHSYAEVLK    85  (B)
+
+d1nnqa1:A   FEVEEMYPVYNKAAEFQGEKEAVRT-THYALEAEKIHAELYRKAKEKAEKGEDI------   134  (A)
+d2fe1a1:A   ----DAFALALKHG-----------VT---------------------------VYDAAY   103  (B)
+
+d1nnqa1:A   ---------------------------   134  (A)
+d2fe1a1:A   VALAEKIGGKLLTLDRQLAEKFPALVT   130  (B)
+
