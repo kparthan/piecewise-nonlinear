@@ -1516,7 +1516,7 @@ Segmentation buildSegmentationProfile(struct Parameters &parameters)
       segmentation = generalFit(parameters);
       break;
   }
-  //segmentation.printNumberOfSegments(pdb_file,parameters.control_string);
+  segmentation.printNumberOfSegments(pdb_file,parameters.control_string);
   return segmentation;
 }
 
@@ -1670,7 +1670,7 @@ Segmentation generalFit(struct Parameters &parameters)
 void updateRuntime(string name, Segmentation &segmentation)
 {
   string path = string(CURRENT_DIRECTORY); 
-  string time_file = path + "runtime-segmentation-part4";
+  string time_file = path + "/runtime-segmentation-part4";
   ofstream log(time_file.c_str(),ios::app);
   log << setw(10) << name;
   log << setw(10) << segmentation.getNumberOfCoordinates() << "\t";
@@ -1813,7 +1813,7 @@ double computeDihedralAngle(Line<double> &line1, Line<double> &line2)
 void updateRuntime(string name, Angles &angles, double time) 
 {
   string path = string(CURRENT_DIRECTORY); 
-  string time_file = path + "runtime-angles-part4";
+  string time_file = path + "/runtime-angles-part4";
   ofstream log(time_file.c_str(),ios::app);
   log << fixed << setw(10) << name;
   log << fixed << setw(10) << angles.size(); 
@@ -1966,7 +1966,7 @@ double computeMidPointsDistance(Line<double> &line1, Line<double> &line2)
 void updateRuntime(string name, Lengths &lengths, double time)
 {
   string path = string(CURRENT_DIRECTORY); 
-  string time_file = path + "runtime-lengths-part4";
+  string time_file = path + "/runtime-lengths-part4";
   ofstream log(time_file.c_str(),ios::app);
   log << fixed << setw(10) << name;
   log << fixed << setw(10) << lengths.size(); 
