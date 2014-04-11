@@ -24,6 +24,10 @@ set ylabel "Raw score"
 set output "raw_score.eps" 
 plot "../raw_score_values" using (1):1, "../raw_score_values" using (2):2, "../raw_score_values" using (3):3, "../raw_score_values" using (4):4, "../raw_score_values" using (5):5 
 
-set ylabel "P-value"
+set ylabel "p-value"
 set output "p_value.eps" 
 plot "../p_values" using (1):1, "../p_values" using (2):2, "../p_values" using (3):3, "../p_values" using (4):4, "../p_values" using (5):5 
+
+set ylabel "z-score"
+set output "zscores.eps" 
+plot "../zscores" using (1):1, "../zscores" using (2):2, "../zscores" using (3):3, "../zscores" using (4):4, "../zscores" using (5):5 
