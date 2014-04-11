@@ -8,8 +8,8 @@ fw = open('astral-experiments-part4.sh','w')
 fw.write('STARTM=`date -u "+%s"`\n')
 fw.write('line_number=1\n')
 line_count = 0;
-cmd = './piecewise-nonlinear-fit-part4 --structure protein --profile dihedral_angles --polygon projections '
-cmd += '--controls 0 1 2 --constrain sigma length '
+cmd = './piecewise-nonlinear-fit-part4 --structure protein --segmentation bezier --profile angles_lengths --polygon projections '
+cmd += '--controls 0 1 2 --constrain sigma length --force segmentation profile '
 
 # for single structure
 cmd += '--scopid '
