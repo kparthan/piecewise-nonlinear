@@ -119,7 +119,7 @@ double computeStandardDeviation(vector<double> &sample, double mean)
   for (int i=0; i<sample.size(); i++){
     variance += (sample[i] - mean) * (sample[i] - mean);
   }
-  variance /= sample.size();
+  variance /= (sample.size() - 1);
   return sqrt(variance);
 }
 
