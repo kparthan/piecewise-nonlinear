@@ -2,7 +2,7 @@ import sys, codecs, os, re
 if sys.stdout.encoding is None:
         sys.stdout = codecs.open('/dev/stdout', 'w', 'utf-8')
 
-fr = open('domains_used.test','r')
+fr = open('domains_used','r')
 fw1 = open('core_rmsd_values','w')
 fw2 = open('raw_score_values','w')
 fw3 = open('p_values','w')

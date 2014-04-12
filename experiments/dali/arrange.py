@@ -2,8 +2,8 @@ import sys, codecs, os, re
 if sys.stdout.encoding is None:
         sys.stdout = codecs.open('/dev/stdout', 'w', 'utf-8')
 
-fr = open('dali-results','r')
-fw = open('dali-results-arranged','w')
+fr = open('dali_results','r')
+fw = open('dali_results_arranged','w')
 lc = 0
 num = 1
 line = fr.readline()
