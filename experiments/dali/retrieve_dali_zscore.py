@@ -20,7 +20,7 @@ def retrieve_zscore(file_name):
     line = fr.readline()
 
 all_html_files = os.listdir('html')
-fw = open('zscores','w')
+fw = open('zscores_dali','w')
 fr = open('domains_used','r')
 line = fr.readline()
 line_count = 0

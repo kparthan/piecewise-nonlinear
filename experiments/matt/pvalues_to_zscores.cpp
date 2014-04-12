@@ -59,7 +59,7 @@ main()
   long double zscore;
   boost::math::normal_distribution<long double> standard_normal;
 
-  ofstream out("zscores");
+  ofstream out("zscores_matt");
   for (int i=0; i<pvalues.size(); i++) {
     for (int j=0; j<pvalues[i].size(); j++) {
       long double cdf = 1 - pvalues[i][j];
