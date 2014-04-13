@@ -20,11 +20,16 @@
 using namespace std;
 using namespace boost::program_options;
 
+#define SET 1
+#define UNSET 0
+
 struct Parameters
 {
+  int use_reference;
   int num_columns;
   int reference_column;
   string data_file;
+  string out_file;
 };
 
 void Usage(const char *exe, options_description &desc)
@@ -42,16 +47,32 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
   options_description desc("Allowed options");
   desc.add_options()
        ("help","produce help component")
+       ("reference","whether to use a reference column or not")
        ("columns",value<int>(&parameters.num_columns),"number of columns")
-       ("reference",value<int>(&parameters.reference_column),"reference column")
+       ("refcolumn",value<int>(&parameters.reference_column),"reference column")
        ("data",value<string>(&parameters.data_file),"path to the data file")
+       ("out",value<string>(&parameters.out_file),"path to the output file")
   ;
   variables_map vm;
   store(parse_command_line(argc,argv,desc),vm);
   notify(vm);
 
-  if (argc != 7 || vm.count("help")) {
+  if (vm.count("help")) {
     Usage(argv[0],desc);
+  }
+
+  if (!vm.count("reference") && argc != 7) {
+    Usage(argv[0],desc);
+  }
+
+  if (vm.count("reference") && argc != 10) {
+    Usage(argv[0],desc);
+  }
+
+  if (vm.count("reference")) {
+    parameters.use_reference = SET;
+  } else {
+    parameters.use_reference = UNSET;
   }
 
   return parameters;
@@ -142,20 +163,48 @@ convertDataToZscores(
   return zscores;
 }
 
+vector<vector<double>>
+convertDataToZscores(
+  vector<vector<double>> &data,
+  int num_columns
+)
+{
+  vector<vector<double>> zscores = data;
+  for (int i=0; i<num_columns; i++) {
+    vector<double> ref_data = getReferenceColumn(data,i);
+    double mean = computeMean(ref_data);
+    double sigma = computeStandardDeviation(ref_data,mean);
+    for (int j=0; j<data.size(); j++) {
+      double tmp = (data[j][i] - mean) / sigma;
+      zscores[j][i] = tmp;
+    }
+  }
+  return zscores;
+}
+
 int main(int argc, char **argv)
 {
   struct Parameters parameters = parseCommandLineInput(argc,argv);
 
   vector<vector<double>> data = load(parameters.data_file,parameters.num_columns);
 
-  vector<double> ref_data = getReferenceColumn(data,parameters.reference_column-1);
+  vector<vector<double>> zscores;
+  vector<double> ref_data;
+  double mean,sigma;
 
-  double mean = computeMean(ref_data);
-  double sigma = computeStandardDeviation(ref_data,mean);
-  cout << "mean: " << mean << "; sigma: " << sigma << endl;
+  if (parameters.use_reference == SET) {
+    ref_data = getReferenceColumn(data,parameters.reference_column-1);
 
-  vector<vector<double>> zscores = convertDataToZscores(data,parameters.num_columns,mean,sigma);
-  writeToFile(zscores,"zscores");
+    mean = computeMean(ref_data);
+    sigma = computeStandardDeviation(ref_data,mean);
+    cout << "mean: " << mean << "; sigma: " << sigma << endl;
+
+    zscores = convertDataToZscores(data,parameters.num_columns,mean,sigma);
+  } else if (parameters.use_reference == UNSET) {
+    zscores = convertDataToZscores(data,parameters.num_columns);
+  }
+
+  writeToFile(zscores,parameters.out_file.c_str());
 
   return 0;
 }

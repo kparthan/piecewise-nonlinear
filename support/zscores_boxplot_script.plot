@@ -16,4 +16,4 @@ set xtics font "Times-Roman, 25"
 set ytics font "Times-Roman, 20"
 
 set output "zscores.eps" 
-plot "zscores" using (1):1, "zscores" using (2):2, "zscores" using (3):3, "zscores" using (4):4, "zscores" using (5):5
+plot "zscores.dat" using (1):1, "zscores.dat" using (2):2, "zscores.dat" using (3):3, "zscores.dat" using (4):4, "zscores.dat" using (5):5
