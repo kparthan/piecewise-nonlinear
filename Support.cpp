@@ -680,7 +680,8 @@ void rankStructures(struct Parameters &parameters)
 
   clock_t c_start = clock();
   auto t_start = high_resolution_clock::now();
-  ofstream log("alignments_scores");
+  string output = domain + "_alignments_scores";
+  ofstream log(output.c_str());
   log << "Structure selected: [" << index+1 << "]: " << domain << endl;
   for (int i=0; i<structures.size(); i++) {/*
     cout << "Loading profiles of " << structures[i] << " ... [" << i+1 << "]\n";

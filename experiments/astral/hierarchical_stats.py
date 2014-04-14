@@ -9,7 +9,7 @@ superfamilies = {}
 folds = {}
 classes = {}
 
-fr = open('associated.txt','r')
+fr = open('astral_scop40_proper.txt','r')
 line = fr.readline()
 count = 0
 while line != '':
