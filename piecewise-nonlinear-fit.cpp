@@ -18,6 +18,10 @@ int main(int argc, char **argv)
     build(parameters);
   }
 
+  if (parameters.rank_structures == SET) {
+    rankStructures();
+  }
+
   return 0;
 }
 

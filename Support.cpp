@@ -617,6 +617,13 @@ void build(struct Parameters &parameters)
 }
 
 /*!
+ *
+ */
+void rankStructures()
+{
+}
+
+/*!
  *  \brief This function is used to construct the string of the maximum 
  *  number of intermediate controls used.
  *  \param controls a reference to a vector<int>
