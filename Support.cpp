@@ -650,8 +650,9 @@ void rankStructures(struct Parameters &parameters)
 
   // read ASTRAL SCOP 40 structures
   vector<string> structures;
-  //ifstream file2("experiments/astral/astral_scop40_proper.txt");
-  ifstream file2("experiments/astral/test.txt");
+  ifstream file2("experiments/astral/astral_scop40_proper.txt");
+  //ifstream file2("experiments/astral/astral-part2");
+  //ifstream file2("experiments/astral/test.txt");
   while(getline(file2,line)) {
     boost::char_separator<char> sep(",() \t");
     boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
@@ -668,66 +669,75 @@ void rankStructures(struct Parameters &parameters)
   // select a random structure
   srand(time(NULL));
   int index = rand() % domains_not_present.size();
+  //index = 59150; 
   string domain = domains_not_present[index];
+  cout << "Structure selected: [" << index+1 << "]: " << domain << endl;
   parameters.file = getSCOPFilePath(domain);
   Segmentation segmentation = buildSegmentationProfile(parameters);
   Angles angles1 = buildAnglesProfile(parameters,segmentation);
   Lengths lengths1 = buildLengthsProfile(parameters,segmentation);
   double domain_self_align = getSelfAlignmentScore(angles1,lengths1,parameters);
 
-  vector<Segmentation> all_segmentations;
-  vector<Angles> angles_profiles;
-  vector<Lengths> lengths_profiles;
-  vector<double> self_align;
-  for (int i=0; i<structures.size(); i++) {
+  clock_t c_start = clock();
+  auto t_start = high_resolution_clock::now();
+  ofstream log("alignments_scores");
+  log << "Structure selected: [" << index+1 << "]: " << domain << endl;
+  for (int i=0; i<structures.size(); i++) {/*
+    cout << "Loading profiles of " << structures[i] << " ... [" << i+1 << "]\n";
     parameters.file = getSCOPFilePath(structures[i]);
     Segmentation segmentation = buildSegmentationProfile(parameters);
     Angles angles = buildAnglesProfile(parameters,segmentation);
     Lengths lengths = buildLengthsProfile(parameters,segmentation);
     all_segmentations.push_back(segmentation);
     angles_profiles.push_back(angles);
-    lengths_profiles.push_back(lengths);
-    double self = getSelfAlignmentScore(angles,lengths,parameters);
-    self_align.push_back(self);
-  }
+    lengths_profiles.push_back(lengths);*/
+    string name = structures[i] + ".ent";
+    Angles angles;
+    angles.load(name,parameters.control_string);
+    Lengths lengths;
+    lengths.load(name,parameters.control_string);
 
-  ofstream log("alignments_scores");
-  vector<vector<double>> all_scores;
-  for (int i=0; i<structures.size(); i++) {
-      cout << "Aligning " << domain << " and " << structures[i] << " ...\n";
-      Alignment alignment(angles1,angles_profiles[i],
-                          lengths1,lengths_profiles[i],
-                          parameters.scoring_function);
-      if (parameters.align_type == BASIC_ALIGNMENT) {
-        alignment.computeBasicAlignment(parameters.gap_penalty,
-                                        parameters.max_angle_diff);
-        alignment.save(parameters.gap_penalty,parameters.control_string,
+    // align the two structures
+    cout << "Aligning " << domain << " and " << structures[i] 
+         << " ... [" << i+1 << "]\n";
+    Alignment alignment(angles1,angles,lengths1,lengths,parameters.scoring_function);
+    if (parameters.align_type == BASIC_ALIGNMENT) {
+      alignment.computeBasicAlignment(parameters.gap_penalty,parameters.max_angle_diff);
+      alignment.save(parameters.gap_penalty,parameters.control_string,
+                     domain,structures[i]);
+    } else if (parameters.align_type == AFFINE_GAP_ALIGNMENT) {
+      alignment.computeAffineGapAlignment(parameters.gap_open_penalty,
+          parameters.gap_extension_penalty,parameters.max_angle_diff);
+      if (parameters.segmentation == BEZIER_SEGMENTATION) {
+        alignment.save(parameters.gap_open_penalty,
+                       parameters.gap_extension_penalty,
+                       parameters.control_string,domain,structures[i]);
+      } else if (parameters.segmentation == DSSP_SEGMENTATION) {
+        alignment.save_dssp(parameters.gap_open_penalty,
+                       parameters.gap_extension_penalty,
                        domain,structures[i]);
-      } else if (parameters.align_type == AFFINE_GAP_ALIGNMENT) {
-        alignment.computeAffineGapAlignment(parameters.gap_open_penalty,
-            parameters.gap_extension_penalty,parameters.max_angle_diff);
-        if (parameters.segmentation == BEZIER_SEGMENTATION) {
-          alignment.save(parameters.gap_open_penalty,
-                         parameters.gap_extension_penalty,
-                         parameters.control_string,domain,structures[i]);
-        } else if (parameters.segmentation == DSSP_SEGMENTATION) {
-          alignment.save_dssp(parameters.gap_open_penalty,
-                         parameters.gap_extension_penalty,
-                         domain,structures[i]);
-        }
       }
-      vector<double> scores = alignment.getScores();
-      pair<double,double> normalized_scores
-      = computeNormalizedAlignmentScore(domain_self_align,self_align[i],scores[0]);
-      scores.push_back(normalized_scores.first);
-      scores.push_back(normalized_scores.second);
-      log << setw(10) << structures[i];
-      for (int j=0; j<scores.size(); j++) {
-        log << fixed << setw(20) << setprecision(4) << scores[j];
-      }
-      log << endl;
+    }
+    vector<double> scores = alignment.getScores();
+    double self_align = getSelfAlignmentScore(angles,lengths,parameters);
+    pair<double,double> normalized_scores
+    = computeNormalizedAlignmentScore(domain_self_align,self_align,scores[0]);
+    scores.push_back(normalized_scores.first);
+    scores.push_back(normalized_scores.second);
+    log << setw(10) << structures[i];
+    for (int j=0; j<scores.size(); j++) {
+      log << fixed << setw(20) << setprecision(4) << scores[j];
+    }
+    log << endl;
   }
   log.close();
+
+  clock_t c_end = clock();
+  auto t_end = high_resolution_clock::now();
+  double cpu_time = double(c_end-c_start)/(double)(CLOCKS_PER_SEC);
+  double wall_time = duration_cast<seconds>(t_end-t_start).count();
+  cout << "CPU time: " << cpu_time << " secs." << endl;
+  cout << "Wall time: " << wall_time << " secs." << endl;
 }
 
 /*!

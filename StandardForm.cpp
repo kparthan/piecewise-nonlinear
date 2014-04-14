@@ -617,8 +617,8 @@ void StandardForm::fitOneSegment()
  */
 void StandardForm::computeCodeLengthMatrix(void)
 {
-  int procs = omp_get_num_procs();
-  omp_set_num_threads(procs);
+  //int procs = omp_get_num_procs();
+  //omp_set_num_threads(procs);
   int j;
   //#pragma omp parallel for private(j)
   for (int i=0; i<numResidues; i++){
@@ -663,8 +663,8 @@ void StandardForm::computeCodeLengthMatrix(void)
  */
 void StandardForm::computeCodeLengthMatrixBezier(void)
 {
-  int procs = omp_get_num_procs();
-  omp_set_num_threads(procs);
+  //int procs = omp_get_num_procs();
+  //omp_set_num_threads(procs);
   int i,j,k,window_size,limit;
   if (parameters.constrain_segment_length == CONSTRAIN) {
     window_size = parameters.max_segment_length;
