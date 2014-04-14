@@ -59,6 +59,8 @@ struct Parameters
   int construct_polygon;            // polygon construction heuristic 
   int num_sides;                    // # of sides in the approximating polygon
   int max_order;                    // maximum order of knot invariants
+  // to rank structures
+  int rank_structures;              // to rank structures
 };
 
 // segmentation functions
@@ -74,6 +76,7 @@ vector<Point<double>> getProteinCoordinates(struct Parameters &);
 Segmentation proteinFit(struct Parameters &);
 Segmentation generalFit(struct Parameters &);
 void updateRuntime(string, Segmentation &);
+void rankStructures(struct Parameters &);
 
 // angles functions
 bool checkIfAnglesExist(string &, string &);

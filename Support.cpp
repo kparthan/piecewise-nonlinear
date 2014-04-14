@@ -99,6 +99,8 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("polygon",value<string>(&polygon),"polygon construction heuristic")
        ("sides",value<int>(&parameters.num_sides),"# of sides in a polygon")
        ("order",value<int>(&parameters.max_order),"maximum order of knot invariants")
+       // for ranking structures
+       ("rank","to rank structures")
   ;
   variables_map vm;
   store(parse_command_line(argc,argv,desc),vm);
@@ -156,7 +158,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     parameters.segmentation_only = UNSET;
   }
 
-  if (parameters.structure == PROTEIN && !vm.count("compare")) {
+  if (parameters.structure == PROTEIN && !vm.count("compare") && !vm.count("rank")) {
     if (vm.count("file") && vm.count("pdbid")) {
       cout << "Please use one of --file or --pdbid ..." << endl;
       Usage(argv[0],desc);
@@ -291,7 +293,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
   if (vm.count("compare")) {
     noargs = 1;
     parameters.comparison = SET;
-    if (!vm.count("database")) {
+    if (!vm.count("database") && !vm.count("rank")) {
       parameters.database_comparison = UNSET;
       if (parameters.structure == PROTEIN) {
         if (vm.count("files") && vm.count("pdbids")) {
@@ -498,6 +500,14 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
     }
   }
 
+  if (vm.count("rank")) {
+    parameters.rank_structures = SET;
+    noargs = 0;
+  } else {
+    parameters.rank_structures = UNSET;
+  }
+
+    noargs = 0;
   if (noargs) {
     cout << "Not enough arguments supplied..." << endl;
     Usage(argv[0],desc);
@@ -617,10 +627,107 @@ void build(struct Parameters &parameters)
 }
 
 /*!
- *
+ *  \brief This function ranks the structures in ASTRAL-SCOP 40
  */
-void rankStructures()
+void rankStructures(struct Parameters &parameters)
 {
+  // read the structures not present in ASTRAL SCOP 40
+  vector<string> domains_not_present;
+  ifstream file("experiments/astral/domains_not_present");
+  string line;
+  while(getline(file,line)) {
+    boost::char_separator<char> sep(",() \t");
+    boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
+    int i = 0;
+    BOOST_FOREACH (const string& t, tokens) {
+      if (i == 0) {
+        domains_not_present.push_back(t);
+        i = 1;
+      }
+    }
+  }
+  file.close();
+
+  // read ASTRAL SCOP 40 structures
+  vector<string> structures;
+  //ifstream file2("experiments/astral/astral_scop40_proper.txt");
+  ifstream file2("experiments/astral/test.txt");
+  while(getline(file2,line)) {
+    boost::char_separator<char> sep(",() \t");
+    boost::tokenizer<boost::char_separator<char> > tokens(line,sep);
+    int i = 0;
+    BOOST_FOREACH (const string& t, tokens) {
+      if (i == 0) {
+        structures.push_back(t);
+        i = 1;
+      }
+    }
+  }
+  file2.close();
+
+  // select a random structure
+  srand(time(NULL));
+  int index = rand() % domains_not_present.size();
+  string domain = domains_not_present[index];
+  parameters.file = getSCOPFilePath(domain);
+  Segmentation segmentation = buildSegmentationProfile(parameters);
+  Angles angles1 = buildAnglesProfile(parameters,segmentation);
+  Lengths lengths1 = buildLengthsProfile(parameters,segmentation);
+  double domain_self_align = getSelfAlignmentScore(angles1,lengths1,parameters);
+
+  vector<Segmentation> all_segmentations;
+  vector<Angles> angles_profiles;
+  vector<Lengths> lengths_profiles;
+  vector<double> self_align;
+  for (int i=0; i<structures.size(); i++) {
+    parameters.file = getSCOPFilePath(structures[i]);
+    Segmentation segmentation = buildSegmentationProfile(parameters);
+    Angles angles = buildAnglesProfile(parameters,segmentation);
+    Lengths lengths = buildLengthsProfile(parameters,segmentation);
+    all_segmentations.push_back(segmentation);
+    angles_profiles.push_back(angles);
+    lengths_profiles.push_back(lengths);
+    double self = getSelfAlignmentScore(angles,lengths,parameters);
+    self_align.push_back(self);
+  }
+
+  ofstream log("alignments_scores");
+  vector<vector<double>> all_scores;
+  for (int i=0; i<structures.size(); i++) {
+      cout << "Aligning " << domain << " and " << structures[i] << " ...\n";
+      Alignment alignment(angles1,angles_profiles[i],
+                          lengths1,lengths_profiles[i],
+                          parameters.scoring_function);
+      if (parameters.align_type == BASIC_ALIGNMENT) {
+        alignment.computeBasicAlignment(parameters.gap_penalty,
+                                        parameters.max_angle_diff);
+        alignment.save(parameters.gap_penalty,parameters.control_string,
+                       domain,structures[i]);
+      } else if (parameters.align_type == AFFINE_GAP_ALIGNMENT) {
+        alignment.computeAffineGapAlignment(parameters.gap_open_penalty,
+            parameters.gap_extension_penalty,parameters.max_angle_diff);
+        if (parameters.segmentation == BEZIER_SEGMENTATION) {
+          alignment.save(parameters.gap_open_penalty,
+                         parameters.gap_extension_penalty,
+                         parameters.control_string,domain,structures[i]);
+        } else if (parameters.segmentation == DSSP_SEGMENTATION) {
+          alignment.save_dssp(parameters.gap_open_penalty,
+                         parameters.gap_extension_penalty,
+                         domain,structures[i]);
+        }
+      }
+      vector<double> scores = alignment.getScores();
+      pair<double,double> normalized_scores
+      = computeNormalizedAlignmentScore(domain_self_align,self_align[i],scores[0]);
+      scores.push_back(normalized_scores.first);
+      scores.push_back(normalized_scores.second);
+      log << setw(10) << structures[i];
+      for (int j=0; j<scores.size(); j++) {
+        log << fixed << setw(20) << setprecision(4) << scores[j];
+      }
+      log << endl;
+  }
+  log.close();
 }
 
 /*!

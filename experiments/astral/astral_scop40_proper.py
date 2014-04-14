@@ -2,7 +2,7 @@ import sys, codecs, os, re
 if sys.stdout.encoding is None:
         sys.stdout = codecs.open('/dev/stdout', 'w', 'utf-8')
 
-fr = open('parsed-file.txt','r')
+fr = open('parsed_astral_scop40.txt','r')
 d = {}
 line = fr.readline()
 while line != '':
@@ -16,7 +16,7 @@ fr.close()
 print 'length of dictionary: ', len(d)
 
 fr = open('astral-parts','r')
-fw = open('associated.txt','w')
+fw = open('astral_scop40_proper.txt','w')
 line = fr.readline()
 num_lines = 0
 num_domains = 0

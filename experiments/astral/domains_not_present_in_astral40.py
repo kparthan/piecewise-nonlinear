@@ -2,7 +2,7 @@ import sys, codecs, os, re
 if sys.stdout.encoding is None:
         sys.stdout = codecs.open('/dev/stdout', 'w', 'utf-8')
 
-fr = open('associated.txt','r')
+fr = open('parsed_astral_scop40.txt','r')
 d = {}
 line = fr.readline()
 while line != '':

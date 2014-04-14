@@ -6,6 +6,10 @@ int main(int argc, char **argv)
   struct Parameters parameters = parseCommandLineInput(argc,argv);
 
   if (parameters.comparison == SET) {
+    if (parameters.rank_structures == SET) {
+      rankStructures(parameters);
+      exit(1);
+    } 
     if (parameters.standardize == SET) {
       if (parameters.standardize_status == UNSET) {
         standardizePremeasures(parameters);
@@ -16,10 +20,6 @@ int main(int argc, char **argv)
     }
   } else if (parameters.comparison == UNSET) {
     build(parameters);
-  }
-
-  if (parameters.rank_structures == SET) {
-    rankStructures();
   }
 
   return 0;
