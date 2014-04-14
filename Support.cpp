@@ -668,30 +668,39 @@ void rankStructures(struct Parameters &parameters)
 
   // select a random structure
   srand(time(NULL));
-  int index = rand() % domains_not_present.size();
-  //index = 59150; 
-  string domain = domains_not_present[index];
-  cout << "Structure selected: [" << index+1 << "]: " << domain << endl;
-  parameters.file = getSCOPFilePath(domain);
-  Segmentation segmentation = buildSegmentationProfile(parameters);
-  Angles angles1 = buildAnglesProfile(parameters,segmentation);
-  Lengths lengths1 = buildLengthsProfile(parameters,segmentation);
-  double domain_self_align = getSelfAlignmentScore(angles1,lengths1,parameters);
+  vector<string> queries;
+  vector<Angles> q_angles;
+  vector<Lengths> q_lengths;
+  vector<double> q_self_aligns;
+  for (int i=0; i<parameters.rankings; i++) {
+    int index = rand() % domains_not_present.size();
+    //index = 59150; 
+    string q = domains_not_present[index];
+    queries.push_back(q);
+    parameters.file = getSCOPFilePath(q);
+    Segmentation segmentation = buildSegmentationProfile(parameters);
+    Angles angles = buildAnglesProfile(parameters,segmentation);
+    q_angles.push_back(angles);
+    Lengths lengths = buildLengthsProfile(parameters,segmentation);
+    q_lengths.push_back(lengths);
+    double self_align = getSelfAlignmentScore(angles,lengths,parameters);
+    q_self_aligns.push_back(self_align);
+  }
+
+  // create output results file
+  vector<shared_ptr<ofstream>> results;
+  for(int i=0; i<parameters.rankings; i++) {
+    string output = queries[i] + "_alignments_scores";
+    results.push_back(make_shared<ofstream>(output.c_str()));
+  }
 
   clock_t c_start = clock();
   auto t_start = high_resolution_clock::now();
   string output = domain + "_alignments_scores";
   ofstream log(output.c_str());
   log << "Structure selected: [" << index+1 << "]: " << domain << endl;
-  for (int i=0; i<structures.size(); i++) {/*
-    cout << "Loading profiles of " << structures[i] << " ... [" << i+1 << "]\n";
-    parameters.file = getSCOPFilePath(structures[i]);
-    Segmentation segmentation = buildSegmentationProfile(parameters);
-    Angles angles = buildAnglesProfile(parameters,segmentation);
-    Lengths lengths = buildLengthsProfile(parameters,segmentation);
-    all_segmentations.push_back(segmentation);
-    angles_profiles.push_back(angles);
-    lengths_profiles.push_back(lengths);*/
+  for (int i=0; i<structures.size(); i++) {
+    for (int j=0; j<parameters.rankings; j++) {
     string name = structures[i] + ".ent";
     Angles angles;
     angles.load(name,parameters.control_string);
@@ -726,12 +735,15 @@ void rankStructures(struct Parameters &parameters)
     scores.push_back(normalized_scores.first);
     scores.push_back(normalized_scores.second);
     log << setw(10) << structures[i];
-    for (int j=0; j<scores.size(); j++) {
-      log << fixed << setw(20) << setprecision(4) << scores[j];
+    for (int k=0; k<scores.size(); k++) {
+      log << fixed << setw(20) << setprecision(4) << scores[k];
     }
     log << endl;
+    }
   }
-  log.close();
+  for(int i=0; i<parameters.rankings; i++) {
+    results[i]->close();
+  }
 
   clock_t c_end = clock();
   auto t_end = high_resolution_clock::now();

@@ -61,6 +61,7 @@ struct Parameters
   int max_order;                    // maximum order of knot invariants
   // to rank structures
   int rank_structures;              // to rank structures
+  int rankings;                     // # of random structures to be ranked
 };
 
 // segmentation functions
