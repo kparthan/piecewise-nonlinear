@@ -673,10 +673,16 @@ void rankStructures(struct Parameters &parameters)
   vector<Lengths> q_lengths;
   vector<double> q_self_aligns;
   vector<int> indexes(parameters.rankings,0);
+  vector<string> my_queries;
+  my_queries.push_back("d1dlwa_");
+  my_queries.push_back("d1grja1");
+  my_queries.push_back("d2giya1");
+  my_queries.push_back("d1w0ma_");
+  my_queries.push_back("d2c4ba1");
   for (int i=0; i<parameters.rankings; i++) {
     indexes[i] = rand() % domains_not_present.size();
-    //index = 59150; 
-    string q = domains_not_present[indexes[i]];
+    //string q = domains_not_present[indexes[i]];
+    string q = my_queries[i] ;
     queries.push_back(q);
     parameters.file = getSCOPFilePath(q);
     Segmentation segmentation = buildSegmentationProfile(parameters);
@@ -693,8 +699,8 @@ void rankStructures(struct Parameters &parameters)
   for(int i=0; i<parameters.rankings; i++) {
     string output = CURRENT_DIRECTORY + "/experiments/alignments_scores/" + queries[i] + "_alignments_scores";
     results.push_back(make_shared<ofstream>(output.c_str()));
-    *results[i] << "Structure selected: [" << indexes[i]+1 << "]: " 
-                << queries[i] << endl;
+    //*results[i] << "Structure selected: [" << indexes[i]+1 << "]: " 
+    *results[i] << "Structure selected: " << queries[i] << endl;
   }
 
   clock_t c_start = clock();
