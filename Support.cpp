@@ -100,7 +100,7 @@ struct Parameters parseCommandLineInput(int argc, char **argv)
        ("sides",value<int>(&parameters.num_sides),"# of sides in a polygon")
        ("order",value<int>(&parameters.max_order),"maximum order of knot invariants")
        // for ranking structures
-       ("rank","to rank structures")
+       ("rank",value<int>(&parameters.rankings),"to rank structures")
   ;
   variables_map vm;
   store(parse_command_line(argc,argv,desc),vm);
@@ -672,10 +672,11 @@ void rankStructures(struct Parameters &parameters)
   vector<Angles> q_angles;
   vector<Lengths> q_lengths;
   vector<double> q_self_aligns;
+  vector<int> indexes(parameters.rankings,0);
   for (int i=0; i<parameters.rankings; i++) {
-    int index = rand() % domains_not_present.size();
+    indexes[i] = rand() % domains_not_present.size();
     //index = 59150; 
-    string q = domains_not_present[index];
+    string q = domains_not_present[indexes[i]];
     queries.push_back(q);
     parameters.file = getSCOPFilePath(q);
     Segmentation segmentation = buildSegmentationProfile(parameters);
@@ -690,55 +691,55 @@ void rankStructures(struct Parameters &parameters)
   // create output results file
   vector<shared_ptr<ofstream>> results;
   for(int i=0; i<parameters.rankings; i++) {
-    string output = queries[i] + "_alignments_scores";
+    string output = CURRENT_DIRECTORY + "/experiments/alignments_scores/" + queries[i] + "_alignments_scores";
     results.push_back(make_shared<ofstream>(output.c_str()));
+    *results[i] << "Structure selected: [" << indexes[i]+1 << "]: " 
+                << queries[i] << endl;
   }
 
   clock_t c_start = clock();
   auto t_start = high_resolution_clock::now();
-  string output = domain + "_alignments_scores";
-  ofstream log(output.c_str());
-  log << "Structure selected: [" << index+1 << "]: " << domain << endl;
   for (int i=0; i<structures.size(); i++) {
-    for (int j=0; j<parameters.rankings; j++) {
     string name = structures[i] + ".ent";
     Angles angles;
     angles.load(name,parameters.control_string);
     Lengths lengths;
     lengths.load(name,parameters.control_string);
 
-    // align the two structures
-    cout << "Aligning " << domain << " and " << structures[i] 
-         << " ... [" << i+1 << "]\n";
-    Alignment alignment(angles1,angles,lengths1,lengths,parameters.scoring_function);
-    if (parameters.align_type == BASIC_ALIGNMENT) {
-      alignment.computeBasicAlignment(parameters.gap_penalty,parameters.max_angle_diff);
-      alignment.save(parameters.gap_penalty,parameters.control_string,
-                     domain,structures[i]);
-    } else if (parameters.align_type == AFFINE_GAP_ALIGNMENT) {
-      alignment.computeAffineGapAlignment(parameters.gap_open_penalty,
-          parameters.gap_extension_penalty,parameters.max_angle_diff);
-      if (parameters.segmentation == BEZIER_SEGMENTATION) {
-        alignment.save(parameters.gap_open_penalty,
-                       parameters.gap_extension_penalty,
-                       parameters.control_string,domain,structures[i]);
-      } else if (parameters.segmentation == DSSP_SEGMENTATION) {
-        alignment.save_dssp(parameters.gap_open_penalty,
-                       parameters.gap_extension_penalty,
-                       domain,structures[i]);
+    for (int j=0; j<parameters.rankings; j++) {
+      // align the two structures
+      cout << "Aligning " << queries[j] << " and " << structures[i] 
+           << " ... [" << i+1 << "]\n";
+      Alignment alignment(q_angles[j],angles,q_lengths[j],lengths,
+                          parameters.scoring_function);
+      if (parameters.align_type == BASIC_ALIGNMENT) {
+        alignment.computeBasicAlignment(parameters.gap_penalty,parameters.max_angle_diff);
+        alignment.save(parameters.gap_penalty,parameters.control_string,
+                       queries[j],structures[i]);
+      } else if (parameters.align_type == AFFINE_GAP_ALIGNMENT) {
+        alignment.computeAffineGapAlignment(parameters.gap_open_penalty,
+            parameters.gap_extension_penalty,parameters.max_angle_diff);
+        if (parameters.segmentation == BEZIER_SEGMENTATION) {
+          alignment.save(parameters.gap_open_penalty,
+                         parameters.gap_extension_penalty,
+                         parameters.control_string,queries[j],structures[i]);
+        } else if (parameters.segmentation == DSSP_SEGMENTATION) {
+          alignment.save_dssp(parameters.gap_open_penalty,
+                         parameters.gap_extension_penalty,
+                         queries[j],structures[i]);
+        }
       }
-    }
-    vector<double> scores = alignment.getScores();
-    double self_align = getSelfAlignmentScore(angles,lengths,parameters);
-    pair<double,double> normalized_scores
-    = computeNormalizedAlignmentScore(domain_self_align,self_align,scores[0]);
-    scores.push_back(normalized_scores.first);
-    scores.push_back(normalized_scores.second);
-    log << setw(10) << structures[i];
-    for (int k=0; k<scores.size(); k++) {
-      log << fixed << setw(20) << setprecision(4) << scores[k];
-    }
-    log << endl;
+      vector<double> scores = alignment.getScores();
+      double self_align = getSelfAlignmentScore(angles,lengths,parameters);
+      pair<double,double> normalized_scores
+      = computeNormalizedAlignmentScore(q_self_aligns[j],self_align,scores[0]);
+      scores.push_back(normalized_scores.first);
+      scores.push_back(normalized_scores.second);
+      *results[j] << setw(10) << structures[i];
+      for (int k=0; k<scores.size(); k++) {
+        *results[j] << fixed << setw(20) << setprecision(4) << scores[k];
+      }
+      *results[j] << endl;
     }
   }
   for(int i=0; i<parameters.rankings; i++) {
