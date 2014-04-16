@@ -674,11 +674,9 @@ void rankStructures(struct Parameters &parameters)
   vector<double> q_self_aligns;
   vector<int> indexes(parameters.rankings,0);
   vector<string> my_queries;
-  my_queries.push_back("d1dlwa_");
-  my_queries.push_back("d1grja1");
-  my_queries.push_back("d2giya1");
-  my_queries.push_back("d1w0ma_");
-  my_queries.push_back("d2c4ba1");
+  my_queries.push_back("d2hosa_");
+  my_queries.push_back("d2fdna_");
+  my_queries.push_back("d1gu7a2");
   for (int i=0; i<parameters.rankings; i++) {
     indexes[i] = rand() % domains_not_present.size();
     //string q = domains_not_present[indexes[i]];
@@ -700,6 +698,7 @@ void rankStructures(struct Parameters &parameters)
     string output = CURRENT_DIRECTORY + "/experiments/alignments_scores/" + queries[i] + "_alignments_scores";
     results.push_back(make_shared<ofstream>(output.c_str()));
     //*results[i] << "Structure selected: [" << indexes[i]+1 << "]: " 
+    //            << queries[i] << endl;
     *results[i] << "Structure selected: " << queries[i] << endl;
   }
 
