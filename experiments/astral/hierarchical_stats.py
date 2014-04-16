@@ -17,6 +17,7 @@ while line != '':
   y = line.split()
   domain = y[0]
   domain_id = y[1]
+  parts = domain_id.split('.')
 
   # family
   family = domain_id
@@ -26,21 +27,21 @@ while line != '':
     families[family] = 1;
 
   # superfamily
-  superfamily = domain_id[0:5]
+  superfamily = parts[0] + '.' + parts[1] + '.' + parts[2] 
   if superfamily in superfamilies:
     superfamilies[superfamily] += 1
   else:
     superfamilies[superfamily] = 1;
 
   # fold
-  fold = domain_id[0:3]
+  fold = parts[0] + '.' + parts[1]
   if fold in folds:
     folds[fold] += 1
   else:
     folds[fold] = 1;
 
   # class
-  cls = domain_id[0]
+  cls = parts[0] 
   if cls in classes:
     classes[cls] += 1
   else:
