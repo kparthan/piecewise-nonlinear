@@ -674,9 +674,7 @@ void rankStructures(struct Parameters &parameters)
   vector<double> q_self_aligns;
   vector<int> indexes(parameters.rankings,0);
   vector<string> my_queries;
-  my_queries.push_back("d2hosa_");
-  my_queries.push_back("d2fdna_");
-  my_queries.push_back("d1gu7a2");
+  my_queries.push_back("d1l6za1");
   for (int i=0; i<parameters.rankings; i++) {
     indexes[i] = rand() % domains_not_present.size();
     //string q = domains_not_present[indexes[i]];
