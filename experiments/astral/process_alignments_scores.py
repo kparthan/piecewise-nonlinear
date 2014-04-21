@@ -120,13 +120,13 @@ def compute_measures(confusion_matrix):
   P = tp + fn
   N = fp + tn
   accuracy = float(tp+tn) / float(P+N)
-#  print '# of +ve cases (P): ',str(P)
-#  print '# of -ve cases (N): ',str(N)
-#  print 'Precision (+ve prediction): ',precision
-#  print 'FPR (1-specificity): ',fpr
-#  print 'TPR (sensitivity): ',sensitivity # recall = sensitivity
-#  print 'F-Measure: ',fmeasure
-#  print 'Accuracy: ',accuracy
+  print ' of +ve cases (P): ',str(P)
+  print ' of -ve cases (N): ',str(N)
+  print 'Precision (+ve prediction): ',precision
+  print 'FPR (1-specificity): ',fpr
+  print 'TPR (sensitivity): ',sensitivity  #recall = sensitivity
+  print 'F-Measure: ',fmeasure
+  print 'Accuracy: ',accuracy
   ans = (tp,fp,fn,tn,precision,fmeasure,accuracy,fpr,sensitivity)
   return ans
 
