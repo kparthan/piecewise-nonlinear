@@ -2,8 +2,8 @@ import sys, codecs, os, re
 if sys.stdout.encoding is None:
         sys.stdout = codecs.open('/dev/stdout', 'w', 'utf-8')
 
-fr = open('tmscore.tmalign','r')
-fw = open('tmalign_results_arranged','w')
+fr = open('tmscore_8.tmalign','r')
+fw = open('tmalign_results_arranged_8','w')
 lc = 0
 num = 1
 line = fr.readline()

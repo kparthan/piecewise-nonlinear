@@ -15,5 +15,5 @@ set ylabel "z-scores"
 set xtics font "Times-Roman, 25"
 set ytics font "Times-Roman, 20"
 
-set output "zscores.eps" 
-plot "zscores.dat" using (1):1, "zscores.dat" using (2):2, "zscores.dat" using (3):3, "zscores.dat" using (4):4, "zscores.dat" using (5):5
+set output "zscores_tmalign.eps" 
+plot "zscores_tmalign.dat" using (1):1, "zscores_tmalign.dat" using (2):2, "zscores_tmalign.dat" using (3):3, "zscores_tmalign.dat" using (4):4, "zscores_tmalign.dat" using (5):5

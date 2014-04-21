@@ -14,7 +14,7 @@ set xtics ("Family" 1, "SuperFamily" 2, "Fold" 3, "Class" 4, "Decoy" 5) scale 0.
 set ylabel font "Times-Roman, 25"
 #set yrange[0:25]
 set xtics font "Times-Roman, 25"
-set ytics font "Times-Roman, 30"
+set ytics font "Times-Roman, 20"
 
 set ylabel "Alignment score"
 set output "tmalign_results.eps" 

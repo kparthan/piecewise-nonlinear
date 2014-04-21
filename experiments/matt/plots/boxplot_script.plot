@@ -1,4 +1,4 @@
-set terminal postscript eps enhanced
+set terminal postscript eps enhanced 
 set style fill solid 0.25 border -1
 set style boxplot outliers pointtype 7
 #set style boxplot nooutliers pointtype 7
@@ -14,13 +14,13 @@ set xtics ("Family" 1, "SuperFamily" 2, "Fold" 3, "Class" 4, "Decoy" 5) scale 0.
 set ylabel font "Times-Roman, 25"
 #set yrange[0:25]
 set xtics font "Times-Roman, 25"
-set ytics font "Times-Roman, 30"
+set ytics font "Times-Roman, 20"
 
 set ylabel "Core RMSD"
 set output "core_rmsd.eps" 
 plot "../core_rmsd_values" using (1):1, "../core_rmsd_values" using (2):2, "../core_rmsd_values" using (3):3, "../core_rmsd_values" using (4):4, "../core_rmsd_values" using (5):5 
 
-set ylabel "Raw score"
+set ylabel "Alignment score"
 set output "raw_score.eps" 
 plot "../raw_score_values" using (1):1, "../raw_score_values" using (2):2, "../raw_score_values" using (3):3, "../raw_score_values" using (4):4, "../raw_score_values" using (5):5 
 
@@ -30,4 +30,4 @@ plot "../p_values" using (1):1, "../p_values" using (2):2, "../p_values" using (
 
 set ylabel "z-score"
 set output "zscores.eps" 
-plot "../zscores" using (1):1, "../zscores" using (2):2, "../zscores" using (3):3, "../zscores" using (4):4, "../zscores" using (5):5 
+plot "../zscores_matt" using (1):1, "../zscores_matt" using (2):2, "../zscores_matt" using (3):3, "../zscores_matt" using (4):4, "../zscores_matt" using (5):5 
