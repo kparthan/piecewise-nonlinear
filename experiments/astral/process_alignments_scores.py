@@ -120,13 +120,13 @@ def compute_measures(confusion_matrix):
   P = tp + fn
   N = fp + tn
   accuracy = float(tp+tn) / float(P+N)
-  print ' of +ve cases (P): ',str(P)
-  print ' of -ve cases (N): ',str(N)
-  print 'Precision (+ve prediction): ',precision
-  print 'FPR (1-specificity): ',fpr
-  print 'TPR (sensitivity): ',sensitivity  #recall = sensitivity
-  print 'F-Measure: ',fmeasure
-  print 'Accuracy: ',accuracy
+#  print ' of +ve cases (P): ',str(P)
+#  print ' of -ve cases (N): ',str(N)
+#  print 'Precision (+ve prediction): ',precision
+#  print 'FPR (1-specificity): ',fpr
+#  print 'TPR (sensitivity): ',sensitivity  #recall = sensitivity
+#  print 'F-Measure: ',fmeasure
+#  print 'Accuracy: ',accuracy
   ans = (tp,fp,fn,tn,precision,fmeasure,accuracy,fpr,sensitivity)
   return ans
 
@@ -162,6 +162,10 @@ def plot_roc_curve(query,label_type):
   fw.write('set yrange [0:1]\n')
   #fw.write('set title \"ROC\"\n')
   fw.write('set output \"'+eps_output+'\"\n')
+  fw.write('set xlabel font \"Times-Roman, 25\"\n')
+  fw.write('set ylabel font \"Times-Roman, 25\"\n')
+  fw.write('set xtics font \"Times-Roman, 20\"\n')
+  fw.write('set ytics font \"Times-Roman, 20\"\n')
   fw.write('set xlabel \"False Positive Rate\"\n')
   fw.write('set ylabel \"True Positive Rate\"\n')
   fw.write('plot \"'+query+'_'+label_type+'.measures\" using 9:10 with linespoints lt 1 pt 3 lc rgb \"red\" notitle\n')
